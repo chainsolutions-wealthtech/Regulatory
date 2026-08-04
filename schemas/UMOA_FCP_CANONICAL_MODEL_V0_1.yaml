@@ -1,0 +1,127 @@
+model_id: UMOA_FCP_CANONICAL_MODEL_V0_1
+version: 0.1.0
+status: DRAFT_ARCHITECTURAL
+generated_on: '2026-08-04'
+principle: Une information = un champ canonique = une source principale = plusieurs usages.
+objects:
+- object: RegulatoryContext
+  path: regulatory_context
+  purpose: Pack, juridiction, sources, dates d'effet et versions.
+- object: RegulatoryCoverage
+  path: regulatory_coverage
+  purpose: Statut de couverture de chaque exigence et justification.
+- object: DocumentManifest
+  path: document_manifest
+  purpose: Ordre, sections, versions et manifeste de génération.
+- object: Fund
+  path: fund
+  purpose: Identité, constitution, durée, statut et agréments du fonds.
+- object: ShareClass
+  path: share_classes[]
+  purpose: Classes, devises, revenus, minimums, frais et caractéristiques propres.
+- object: PartLegalCharacteristics
+  path: parts
+  purpose: Nature des droits, représentation, forme, coupons, vote et droits de liquidation.
+- object: ManagementCompany
+  path: manager
+  purpose: SGO, identité, agrément, gouvernance, autres OPC et capital.
+- object: Depositary
+  path: depositary
+  purpose: Identité, sièges, activité principale et rôle de dépositaire.
+- object: AccountingControlPerson
+  path: accounting_control.responsible_persons[]
+  purpose: Personnes chargées du contrôle des données comptables.
+- object: ExternalAdviser
+  path: external_adviser
+  purpose: Conseiller externe, contrat, autres activités et conflits.
+- object: InvestmentPolicy
+  path: investment
+  purpose: Objectifs, style, zones, secteurs, techniques, instruments et limites.
+- object: AssetExposureRange
+  path: investment.asset_ranges[]
+  purpose: Bornes et sous-limites par catégorie d'actifs.
+- object: Borrowing
+  path: borrowing
+  purpose: Capacité, finalité, limite et durée des emprunts.
+- object: RiskFactor
+  path: risks[]
+  purpose: Risques applicables, matérialité, wording et mesures de maîtrise.
+- object: ValuationPolicy
+  path: valuation
+  purpose: Méthodes par actif, hiérarchie de prix et procédures de repli.
+- object: Pricing
+  path: pricing
+  purpose: VL, prix d'émission, vente, souscription, rachat et publication.
+- object: SubscriptionRule
+  path: subscriptions
+  purpose: Émission, vente, souscription, canaux, cut-off et paiements.
+- object: RedemptionRule
+  path: redemption
+  purpose: Rachat, remboursement, délais, suspension et reprise.
+- object: IncomePolicy
+  path: income
+  purpose: Détermination, affectation, capitalisation et distribution.
+- object: FeeAndExpense
+  path: fees[]
+  purpose: Frais transactionnels, payeur, bénéficiaire, assiette et taux.
+- object: Remuneration
+  path: remunerations[]
+  purpose: Rémunérations mises à la charge du fonds.
+- object: ExpenseReimbursement
+  path: expense_reimbursements[]
+  purpose: Remboursements de frais à la SGO, au dépositaire ou à des tiers.
+- object: TaxProfile
+  path: tax
+  purpose: Fiscalité du fonds, porteurs, retenues et sources validées.
+- object: DistributionCountryArrangement
+  path: distribution_countries[]
+  purpose: Dispositifs de paiement, rachat et information par État.
+- object: HistoricalPerformance
+  path: performance
+  purpose: Historique, méthode, source, benchmark et lieu de présentation.
+- object: TargetInvestor
+  path: target_investor
+  purpose: Profil, horizon, risque, capacité de perte et incompatibilités.
+- object: EconomicInformation
+  path: economic_information
+  purpose: Informations économiques, sources, date et revue juridique.
+- object: Evidence
+  path: evidence[]
+  purpose: Pièces, provenance, page, empreinte, validité et revue.
+- object: ReviewApproval
+  path: reviews[]
+  purpose: Revues métier, conformité, juridique, fiscale et direction.
+- object: AuditEvent
+  path: audit_events[]
+  purpose: Journal immuable des créations, modifications et validations.
+cross_cutting_fields:
+  temporal:
+  - valid_from
+  - valid_to
+  - recorded_at
+  - verified_at
+  - superseded_by
+  provenance:
+  - source_type
+  - source_id
+  - document_id
+  - page_or_location
+  - entered_by
+  - verified_by
+  versioning:
+  - schema_version
+  - record_version
+  - pack_version
+  - clause_version
+  - template_version
+  status:
+  - draft
+  - pending_verification
+  - verified
+  - superseded
+  - rejected
+next_steps:
+- Définir chaque champ du catalogue avec type, cardinalité, enum, validations et sensibilité.
+- Produire le JSON Schema V0.1.
+- Produire le dictionnaire de données et le schéma SQL après atomisation de l'Instruction 66/2021.
+- Relier les champs Openfunds pertinents sans dupliquer les identifiants canoniques.

@@ -185,6 +185,130 @@ exigence
 
 ---
 
+## 2026-08-04 — Première atomisation machine-readable de la Circulaire n°05/CREPMF/2022
+
+### Objectif
+
+Passer du cadrage documentaire à une première base réglementaire exploitable par une future application, sans créer de branche et sans modifier la logique validée.
+
+### État initial vérifié
+
+- branche conservée : `main` ;
+- dernier commit lu : `cb60b1dfc0ad5611f0e31c14da16bb5b471b0e56` ;
+- documentation obligatoire relue ;
+- aucune structure de données machine-readable ne préexistait ;
+- le mapping Markdown de la circulaire était initial et partiellement atomisé ;
+- l’Instruction n°66/CREPMF/2021 restait à atomiser.
+
+### Travail réalisé
+
+1. Enregistrement des métadonnées de la Circulaire n°05/CREPMF/2022 dans un fichier YAML dédié.
+2. Enregistrement de la provenance du scan transmis par le propriétaire :
+   - nom d’origine ;
+   - nombre de pages ;
+   - taille ;
+   - empreinte SHA-256 ;
+   - méthode d’extraction ;
+   - statut de vérification.
+3. Création d’un index machine-readable de **62 exigences V1** applicables au parcours FCP/SGO :
+   - règles transversales ;
+   - exigences FCP ;
+   - exigences société de gestion ;
+   - dépositaire ;
+   - conseiller externe ;
+   - dispositifs par État ;
+   - performances, investisseur-type, informations économiques et dépenses.
+4. Attribution d’identifiants stables, d’un ordre, d’une référence de page et de conditions d’applicabilité.
+5. Création d’une première architecture canonique V0.1 comprenant **30 objets principaux**.
+6. Création de quatre matrices CSV avec séparateur `;`, comportant au total **62 lignes**, reliant chaque exigence à :
+   - champs canoniques ;
+   - question ;
+   - type de question ;
+   - options ;
+   - effets ;
+   - groupe de clauses ;
+   - contrôles ;
+   - preuves ;
+   - section de sortie ;
+   - rôles de revue ;
+   - statut d’implémentation.
+7. Création d’un manifeste de validation structurelle.
+
+### Décisions prises
+
+- Les nouveaux artefacts machine-readable sont ajoutés sans réorganiser prématurément l’ensemble des fichiers Markdown.
+- L’organisation documentaire Markdown demeure provisoire, car le propriétaire a annoncé l’envoi prochain d’un prompt complet destiné à créer et organiser tous les fichiers `.md`.
+- Aucun nouveau fichier Markdown de taxonomie générale n’est ajouté avant réception et analyse de ce prompt, sauf mise à jour des fichiers de suivi obligatoires.
+- Le statut `SPECIFIED_NOT_IMPLEMENTED` distingue clairement une exigence spécifiée d’une exigence réellement codée et testée.
+- La validation réalisée est structurelle ; elle ne constitue pas une validation juridique.
+
+### Fichiers créés
+
+- `regulatory/sources/CIRC005_CREPMF_2022.yaml` ;
+- `regulatory/requirements/CIRC005_FCP_REQUIREMENTS_V0_1.yaml` ;
+- `regulatory/matrices/CIRC005_FCP_MATRIX_01_GENERAL_IDENTITY_TAX.csv` ;
+- `regulatory/matrices/CIRC005_FCP_MATRIX_02_PARTS_OPERATIONS.csv` ;
+- `regulatory/matrices/CIRC005_FCP_MATRIX_03_INVESTMENT_PRICING.csv` ;
+- `regulatory/matrices/CIRC005_FCP_MATRIX_04_ACTORS_COUNTRY_OTHER.csv` ;
+- `regulatory/validation/CIRC005_FCP_BOOTSTRAP_VALIDATION.json` ;
+- `schemas/UMOA_FCP_CANONICAL_MODEL_V0_1.yaml`.
+
+### Fichiers modifiés
+
+- `SUIVI.md` ;
+- `TODO.md` ;
+- `CHANGELOG.md`.
+
+### Tests et contrôles
+
+- unicité des identifiants d’exigence : réussie ;
+- présence de l’ordre pour chaque exigence : réussie ;
+- unicité des références de matrice : réussie ;
+- résolution de chaque référence de matrice vers une exigence existante : réussie ;
+- couverture des 62 exigences V1 par les 62 lignes de matrice : réussie ;
+- vérification du séparateur CSV `;` : réussie ;
+- conservation de la branche `main` : réussie ;
+- absence de création de branche : réussie ;
+- absence de réécriture d’historique : réussie.
+
+### Résultats
+
+La première chaîne de traçabilité exploitable par une application existe désormais :
+
+```text
+source
+→ exigence
+→ champ canonique
+→ question
+→ option
+→ effet
+→ groupe de clauses
+→ contrôle
+→ preuve
+→ section
+→ rôle de revue
+```
+
+### Limitations ou points à vérifier
+
+- la date officielle de publication et l’état juridique actuel de la circulaire doivent encore être confirmés dans le registre officiel ;
+- le PDF source binaire n’a pas été archivé dans GitHub par le connecteur utilisé ; son empreinte et sa provenance sont enregistrées ;
+- l’Instruction n°66/CREPMF/2021 n’est pas encore atomisée ;
+- les champs canoniques ne possèdent pas encore tous leur type, cardinalité, enum, sensibilité et règle de migration ;
+- aucune clause juridique n’est encore `APPROVED` ou `ACTIVE` ;
+- les contrôles décrits ne sont pas encore implémentés dans un moteur ;
+- la validation juridique et conformité reste à obtenir ;
+- l’organisation finale des fichiers Markdown sera complétée après réception du prompt annoncé par le propriétaire.
+
+### Prochaine étape
+
+1. recevoir et analyser le prompt complet d’organisation des fichiers `.md` sans effacer les documents ni décisions existants ;
+2. atomiser l’Instruction n°66/CREPMF/2021 à partir d’une copie source vérifiable ;
+3. enrichir le modèle canonique au niveau de chaque champ ;
+4. créer les premiers catalogues de questions, options, règles et clauses en conservant les identifiants créés.
+
+---
+
 ## Modèle obligatoire pour les prochaines entrées
 
 ```markdown

@@ -1,0 +1,29 @@
+{
+  "validation_id": "CIRC005_FCP_BOOTSTRAP_2026_08_04",
+  "validated_on": "2026-08-04",
+  "scope": "Static structural validation of the first machine-readable Circulaire 05/CREPMF/2022 mapping",
+  "checks": {
+    "source_metadata_present": true,
+    "source_sha256_recorded": true,
+    "requirement_ids_unique": true,
+    "requirement_sequence_present": true,
+    "matrix_requirement_ids_unique": true,
+    "matrix_references_existing_requirements": true,
+    "all_v1_fcp_flow_requirements_mapped": true,
+    "semicolon_delimiter_used_for_csv_matrices": true
+  },
+  "counts": {
+    "v1_requirements": 62,
+    "matrix_rows": 62,
+    "matrix_files": 4,
+    "canonical_top_level_objects": 30
+  },
+  "status": "STRUCTURALLY_VALIDATED_LEGAL_REVIEW_PENDING",
+  "limitations": [
+    "This validation checks identifiers, references and structural completeness; it is not a legal opinion.",
+    "Instruction 66/CREPMF/2021 has not yet been atomized.",
+    "The official publication date and current legal status of the circular remain to be verified in the official registry.",
+    "No legal wording has APPROVED or ACTIVE status.",
+    "The complete Markdown file organization remains provisional pending the project owner's forthcoming documentation prompt."
+  ]
+}

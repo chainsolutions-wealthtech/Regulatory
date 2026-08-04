@@ -9,6 +9,8 @@ Légende :
 - `[ ]` à faire ;
 - `[!]` bloqué, incertain ou nécessitant une validation.
 
+> **Entrée attendue du propriétaire :** un prompt complet doit encore être transmis pour créer et organiser l’ensemble des fichiers `.md`. Jusqu’à sa réception et son analyse, ne pas effectuer de refonte globale de la taxonomie documentaire et ne pas supprimer, fusionner ou renommer les documents existants.
+
 ---
 
 ## Phase 0 — Gouvernance et mémoire du projet
@@ -24,16 +26,17 @@ Légende :
 - [x] Créer `docs/ARCHITECTURE.md`.
 - [x] Créer `docs/PROSPECTUS_ENGINE_SPEC.md`.
 - [x] Créer `docs/REGULATORY_MAPPING.md`.
+- [~] Attendre, analyser puis intégrer le prompt complet d’organisation des fichiers `.md` annoncé par le propriétaire.
 - [ ] Définir les responsables métier, conformité, juridique, fiscal, technique et sécurité.
 - [ ] Définir le processus formel d’approbation des clauses.
 - [ ] Définir les environnements de développement, test, recette et production.
 
 ## Phase 1 — Corpus réglementaire source
 
-- [~] Enregistrer la Circulaire n°05/CREPMF/2022 comme source structurante.
+- [x] Enregistrer la Circulaire n°05/CREPMF/2022 comme source structurante dans un registre machine-readable.
 - [~] Enregistrer l’Instruction n°66/CREPMF/2021 comme source structurante.
-- [ ] Archiver les copies officielles autorisées des textes.
-- [ ] Enregistrer pour chaque texte : titre, numéro, date, date d’effet, statut, source officielle et empreinte.
+- [~] Archiver les copies officielles autorisées des textes : métadonnées et empreinte de la circulaire enregistrées ; binaire à archiver ultérieurement.
+- [~] Enregistrer pour chaque texte : titre, numéro, date, date d’effet, statut, source officielle et empreinte.
 - [ ] Vérifier l’existence de versions modifiées, rectificatifs ou textes d’abrogation.
 - [ ] Inventorier les circulaires, instructions et décisions complémentaires relatives aux OPC.
 - [ ] Identifier les textes relatifs à la classification des OPC.
@@ -48,47 +51,50 @@ Légende :
 
 ## Phase 2 — Atomisation des exigences réglementaires
 
-- [~] Créer la première cartographie des points 1.1 à 5.4 de la Circulaire n°05/CREPMF/2022.
+- [x] Créer la première cartographie des points 1.1 à 5.4 de la Circulaire n°05/CREPMF/2022.
+- [x] Produire un index machine-readable de 62 exigences V1 liées au parcours FCP/SGO.
+- [x] Définir un identifiant stable pour chaque exigence V1 de la circulaire.
+- [x] Définir l’ordre réglementaire de chaque exigence V1 de la circulaire.
+- [x] Définir les premières conditions d’applicabilité de la circulaire.
+- [x] Définir les produits concernés dans le périmètre V1 : FCP et SGO, avec acteurs associés.
+- [x] Définir les modes de couverture admis : prospectus, règlement, annexe, non applicable.
+- [~] Définir la sévérité des contrôles.
+- [~] Définir les preuves attendues.
+- [~] Définir les rôles de revue.
+- [~] Définir les dépendances entre exigences.
+- [x] Créer une validation structurelle de complétude du mapping de la circulaire.
 - [ ] Atomiser intégralement l’Instruction n°66/CREPMF/2021.
-- [ ] Définir un identifiant stable par exigence.
-- [ ] Définir l’ordre réglementaire de chaque exigence.
-- [ ] Définir les conditions d’applicabilité.
-- [ ] Définir les produits concernés : FCP, SICAV, autres OPC.
-- [ ] Définir les modes de couverture admis : prospectus, règlement, annexe, non applicable.
-- [ ] Définir la sévérité des contrôles.
-- [ ] Définir les preuves attendues.
-- [ ] Définir les rôles de revue.
-- [ ] Définir les dépendances entre exigences.
-- [ ] Créer des tests de complétude du mapping.
 - [!] Faire valider l’interprétation des exigences par la conformité et le juridique.
 
 ## Phase 3 — Modèle canonique
 
-- [ ] Définir l’objet `RegulatoryContext`.
-- [ ] Définir l’objet `Fund`.
-- [ ] Définir l’objet `ShareClass`.
-- [ ] Définir l’objet `ManagementCompany`.
-- [ ] Définir l’objet `Depositary`.
-- [ ] Définir l’objet `Auditor`.
-- [ ] Définir l’objet `AccountingControlPerson`.
-- [ ] Définir l’objet `ExternalAdviser`.
-- [ ] Définir l’objet `Distributor`.
-- [ ] Définir l’objet `PayingAgent`.
-- [ ] Définir l’objet `InvestmentPolicy`.
-- [ ] Définir l’objet `AssetExposureRange`.
-- [ ] Définir l’objet `Benchmark`.
-- [ ] Définir l’objet `RiskFactor`.
-- [ ] Définir l’objet `FeeAndExpense`.
-- [ ] Définir l’objet `ValuationMethod`.
-- [ ] Définir l’objet `NavRule`.
-- [ ] Définir l’objet `SubscriptionRule`.
-- [ ] Définir l’objet `RedemptionRule`.
-- [ ] Définir l’objet `LiquidityManagementTool`.
-- [ ] Définir l’objet `DistributionCountryArrangement`.
-- [ ] Définir l’objet `Evidence`.
-- [ ] Définir l’objet `RegulatoryCoverage`.
-- [ ] Définir l’objet `ReviewAndApproval`.
-- [ ] Définir l’objet `AuditEvent`.
+- [~] Créer l’architecture canonique V0.1 et inventorier les objets principaux.
+- [~] Définir l’objet `RegulatoryContext`.
+- [~] Définir l’objet `Fund`.
+- [~] Définir l’objet `ShareClass`.
+- [~] Définir l’objet `ManagementCompany`.
+- [~] Définir l’objet `Depositary`.
+- [~] Définir l’objet `Auditor`.
+- [~] Définir l’objet `AccountingControlPerson`.
+- [~] Définir l’objet `ExternalAdviser`.
+- [~] Définir l’objet `Distributor`.
+- [~] Définir l’objet `PayingAgent`.
+- [~] Définir l’objet `InvestmentPolicy`.
+- [~] Définir l’objet `AssetExposureRange`.
+- [~] Définir l’objet `Benchmark`.
+- [~] Définir l’objet `RiskFactor`.
+- [~] Définir l’objet `FeeAndExpense`.
+- [~] Définir l’objet `ValuationMethod`.
+- [~] Définir l’objet `NavRule`.
+- [~] Définir l’objet `SubscriptionRule`.
+- [~] Définir l’objet `RedemptionRule`.
+- [~] Définir l’objet `LiquidityManagementTool`.
+- [~] Définir l’objet `DistributionCountryArrangement`.
+- [~] Définir l’objet `Evidence`.
+- [~] Définir l’objet `RegulatoryCoverage`.
+- [~] Définir l’objet `ReviewAndApproval`.
+- [~] Définir l’objet `AuditEvent`.
+- [ ] Définir chaque champ : description, type, cardinalité, unité, enum, sensibilité, source et validations.
 - [ ] Relier les champs canoniques aux champs Openfunds pertinents.
 - [ ] Définir les migrations et la politique de compatibilité.
 - [ ] Produire JSON Schema, schéma SQL et dictionnaire de données.
@@ -115,29 +121,31 @@ Légende :
 
 ## Phase 5 — Catalogue maître des questions
 
-- [ ] Définir les groupes de questions.
-- [ ] Définir les questions d’aiguillage.
-- [ ] Définir les questions d’identité du fonds.
-- [ ] Définir les questions sur les parts et classes.
-- [ ] Définir les questions sur les acteurs.
-- [ ] Définir les questions sur l’objectif et la stratégie.
-- [ ] Définir les questions sur les actifs et fourchettes.
-- [ ] Définir les questions sur les risques.
-- [ ] Définir les questions sur la VL.
-- [ ] Définir les questions sur la souscription et le rachat.
-- [ ] Définir les questions sur les suspensions et gates.
-- [ ] Définir les questions sur les frais.
-- [ ] Définir les questions sur la valorisation.
-- [ ] Définir les questions sur la fiscalité.
-- [ ] Définir les questions sur la commercialisation multi-États.
-- [ ] Définir les questions sur les performances.
-- [ ] Définir les questions sur les preuves.
-- [ ] Associer chaque question à ses champs, exigences, effets et contrôles.
+- [~] Créer une première matrice reliant les 62 exigences V1 à des questions, effets, clauses, contrôles et preuves.
+- [~] Définir les groupes de questions.
+- [~] Définir les questions d’aiguillage.
+- [~] Définir les questions d’identité du fonds.
+- [~] Définir les questions sur les parts et classes.
+- [~] Définir les questions sur les acteurs.
+- [~] Définir les questions sur l’objectif et la stratégie.
+- [~] Définir les questions sur les actifs et fourchettes.
+- [~] Définir les questions sur les risques.
+- [~] Définir les questions sur la VL.
+- [~] Définir les questions sur la souscription et le rachat.
+- [~] Définir les questions sur les suspensions et gates.
+- [~] Définir les questions sur les frais.
+- [~] Définir les questions sur la valorisation.
+- [~] Définir les questions sur la fiscalité.
+- [~] Définir les questions sur la commercialisation multi-États.
+- [~] Définir les questions sur les performances.
+- [~] Définir les questions sur les preuves.
+- [~] Associer chaque question à ses champs, exigences, effets et contrôles.
+- [ ] Transformer les lignes de matrice en catalogue exécutable versionné.
 - [ ] Tester toutes les branches du graphe.
 
 ## Phase 6 — Bibliothèque de clauses juridiques
 
-- [ ] Définir le schéma d’une clause.
+- [ ] Définir le schéma d’une clause au niveau implémentable.
 - [ ] Définir les catégories de clauses.
 - [ ] Créer les clauses de couverture et avertissement.
 - [ ] Créer les clauses d’identité du FCP.
@@ -260,8 +268,8 @@ Légende :
 
 ## Priorité immédiate
 
-1. Corpus réglementaire complet.
-2. Mapping Circulaire 05/2022 et Instruction 66/2021.
-3. Modèle canonique V1.
-4. Matrice maître exigences/questions/clauses/contrôles/preuves.
-5. Premier cas de test FCP obligataire standard.
+1. Recevoir et intégrer le prompt complet d’organisation des fichiers `.md`, sans régression ni suppression de l’historique documentaire.
+2. Obtenir et atomiser une copie vérifiable de l’Instruction n°66/CREPMF/2021.
+3. Compléter le modèle canonique champ par champ.
+4. Transformer la matrice de la Circulaire 05/2022 en catalogues exécutables de questions, options, règles et groupes de clauses.
+5. Construire le premier cas de test FCP obligataire standard.

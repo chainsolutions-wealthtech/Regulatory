@@ -1,0 +1,38 @@
+source_id: CIRC005_CREPMF_2022
+title: Circulaire n°05/CREPMF/2022 relative au contenu du prospectus des OPC
+jurisdiction: UMOA
+authority_at_publication: CREPMF
+current_authority_name: AMF-UMOA
+document_type: CIRCULAR
+language: fr
+signed_at: Abidjan
+signed_date_visible_on_scan: '2022-01-03'
+publication_date: null
+effective_rule: Prend effet à compter de sa publication.
+effective_from: null
+status: SOURCE_CONFIRMED_PUBLICATION_DATE_TO_VERIFY
+related_sources:
+- INSTRUCTION_66_CREPMF_2021
+scope_summary: Précise les informations minimales à insérer dans le prospectus des OPC, lorsqu'elles ne figurent pas dans
+  le règlement de l'OPC ou les documents constitutifs annexés, et impose l'ordre de présentation de l'annexe 1.
+source_artifact:
+  original_filename: CIRCULAIRE N°005-2022 (1).pdf
+  page_count: 6
+  byte_size: 447246
+  sha256: c235414ff59096dab526e4fdeb4df6e135e65959125332c2e5844c0f54551fa4
+  repository_copy: null
+  copy_status: NOT_ARCHIVED_BINARY_CONNECTOR_LIMITATION
+  provenance: Conversation attachment supplied by project owner
+verification:
+  official_registry_url: null
+  official_registry_status: TO_VERIFY
+  superseded_or_amended: TO_VERIFY
+  legal_review_status: PENDING
+  compliance_review_status: PENDING
+extraction:
+  method: Manual reading of rendered scan pages
+  extracted_on: '2026-08-04'
+  extraction_status: COMPLETE_FOR_VISIBLE_ANNEX
+  quality_notes:
+  - PDF is scanned and has no parsed text layer.
+  - Wording must be rechecked against an official accessible copy before VALIDATED status.

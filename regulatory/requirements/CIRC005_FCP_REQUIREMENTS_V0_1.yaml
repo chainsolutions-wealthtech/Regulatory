@@ -1,0 +1,255 @@
+source_id: CIRC005_CREPMF_2022
+registry_version: 0.1.0
+status: DRAFT_SOURCE_CONFIRMED_REVIEW_PENDING
+scope: UMOA_FCP_PROSPECTUS_V1
+defaults:
+  document_type: PROSPECTUS
+  coverage:
+  - IN_PROSPECTUS
+  - IN_ATTACHED_REGULATION
+  - IN_ATTACHED_CONSTITUTIVE_DOCUMENT
+  source_status: SOURCE_CONFIRMED
+  review_status: PENDING
+requirements:
+- id: CIRC005_GENERAL_SCOPE
+  seq: 1
+  ref: Corps, page 1
+  products: [FCP, SGO]
+  summary: La circulaire complète le règlement de l'OPC et les documents constitutifs annexés.
+- id: CIRC005_GENERAL_MINIMUM
+  seq: 2
+  ref: Corps, page 1
+  products: [FCP]
+  summary: Le prospectus contient au moins les renseignements de l'annexe 1.
+- id: CIRC005_GENERAL_ORDER
+  seq: 3
+  ref: Corps, page 1
+  products: [FCP]
+  coverage: [IN_PROSPECTUS]
+  summary: Le prospectus respecte l'ordre de l'annexe 1.
+- id: CIRC005_GENERAL_EFFECTIVE_DATE
+  seq: 4
+  ref: Corps, page 1
+  products: [FCP, SGO]
+  coverage: [SYSTEM_METADATA]
+  review_status: LEGAL_REVIEW_REQUIRED
+  summary: Prise d'effet à compter de la publication; date officielle à vérifier.
+- id: CIRC005_1_1_FCP_DENOMINATION
+  seq: 101
+  ref: Annexe 1, 1.1, FCP, page 2
+- id: CIRC005_1_2_FCP_CONSTITUTION_DATE
+  seq: 102
+  ref: Annexe 1, 1.2, FCP, page 2
+- id: CIRC005_1_2_FCP_LIMITED_DURATION
+  seq: 103
+  ref: Annexe 1, 1.2, FCP, page 2
+  applicability: IF_DURATION_LIMITED
+- id: CIRC005_1_4_FCP_REGULATION_AVAILABILITY
+  seq: 104
+  ref: Annexe 1, 1.4, FCP, page 2
+  applicability: IF_FUND_REGULATION_NOT_ATTACHED
+- id: CIRC005_1_4_FCP_PERIODIC_REPORTS_AVAILABILITY
+  seq: 105
+  ref: Annexe 1, 1.4, FCP, page 2
+- id: CIRC005_1_5_FCP_TAX_REGIME
+  seq: 106
+  ref: Annexe 1, 1.5, FCP, page 2
+  applicability: IF_RELEVANT_TO_HOLDERS
+  review_status: TAX_AND_LEGAL_REVIEW_REQUIRED
+- id: CIRC005_1_5_FCP_WITHHOLDING_INCOME
+  seq: 107
+  ref: Annexe 1, 1.5, FCP, page 2
+  review_status: TAX_AND_LEGAL_REVIEW_REQUIRED
+- id: CIRC005_1_5_FCP_WITHHOLDING_CAPITAL_GAINS
+  seq: 108
+  ref: Annexe 1, 1.5, FCP, page 2
+  review_status: TAX_AND_LEGAL_REVIEW_REQUIRED
+- id: CIRC005_1_6_FCP_ACCOUNT_CLOSING_DATE
+  seq: 109
+  ref: Annexe 1, 1.6, FCP, page 2
+- id: CIRC005_1_6_FCP_DISTRIBUTION_DATES
+  seq: 110
+  ref: Annexe 1, 1.6, FCP, page 2
+  applicability: IF_DISTRIBUTING
+- id: CIRC005_1_7_FCP_ACCOUNTING_CONTROL_PERSONS
+  seq: 111
+  ref: Annexe 1, 1.7, FCP, page 3
+  review_status: LEGAL_REVIEW_REQUIRED
+- id: CIRC005_1_10_FCP_PARTS_CHARACTERISTICS
+  seq: 112
+  ref: Annexe 1, 1.10, FCP, pages 3-4
+- id: CIRC005_1_10_A_FCP_RIGHT_NATURE
+  seq: 113
+  ref: Annexe 1, 1.10, tiret 1, FCP, page 3
+  parent: CIRC005_1_10_FCP_PARTS_CHARACTERISTICS
+- id: CIRC005_1_10_B_FCP_TITLES_CERTIFICATES
+  seq: 114
+  ref: Annexe 1, 1.10, tiret 2, FCP, page 3
+  parent: CIRC005_1_10_FCP_PARTS_CHARACTERISTICS
+- id: CIRC005_1_10_C_FCP_FORM_COUPONS
+  seq: 115
+  ref: Annexe 1, 1.10, tiret 3, FCP, page 3
+  parent: CIRC005_1_10_FCP_PARTS_CHARACTERISTICS
+- id: CIRC005_1_10_D_FCP_VOTING_RIGHTS
+  seq: 116
+  ref: Annexe 1, 1.10, tiret 4, FCP, page 3
+  applicability: IF_VOTING_RIGHTS_EXIST
+  parent: CIRC005_1_10_FCP_PARTS_CHARACTERISTICS
+- id: CIRC005_1_10_E_FCP_LIQUIDATION_CIRCUMSTANCES
+  seq: 117
+  ref: Annexe 1, 1.10, tiret 5, FCP, page 3
+  parent: CIRC005_1_10_FCP_PARTS_CHARACTERISTICS
+- id: CIRC005_1_10_F_FCP_LIQUIDATION_HOLDER_RIGHTS
+  seq: 118
+  ref: Annexe 1, 1.10, tiret 5, FCP, page 4
+  parent: CIRC005_1_10_FCP_PARTS_CHARACTERISTICS
+- id: CIRC005_1_11_FCP_LISTING_TRADING
+  seq: 119
+  ref: Annexe 1, 1.11, FCP, page 4
+  applicability: IF_LISTED_OR_TRADED
+- id: CIRC005_1_12_FCP_ISSUE_SALE
+  seq: 120
+  ref: Annexe 1, 1.12, FCP, page 4
+- id: CIRC005_1_13_FCP_REDEMPTION_REIMBURSEMENT
+  seq: 121
+  ref: Annexe 1, 1.13, FCP, page 4
+- id: CIRC005_1_13_FCP_SUSPENSION
+  seq: 122
+  ref: Annexe 1, 1.13, FCP, page 4
+- id: CIRC005_1_14_FCP_INCOME_DETERMINATION
+  seq: 123
+  ref: Annexe 1, 1.14, FCP, page 4
+- id: CIRC005_1_14_FCP_INCOME_ALLOCATION
+  seq: 124
+  ref: Annexe 1, 1.14, FCP, page 4
+- id: CIRC005_1_15_FCP_INVESTMENT_OBJECTIVES_POLICY
+  seq: 125
+  ref: Annexe 1, 1.15, FCP, page 4
+- id: CIRC005_1_15_A_FCP_FINANCIAL_OBJECTIVES
+  seq: 126
+  ref: Annexe 1, 1.15, objectifs financiers, FCP, page 4
+  parent: CIRC005_1_15_FCP_INVESTMENT_OBJECTIVES_POLICY
+- id: CIRC005_1_15_B_FCP_PLACEMENT_POLICY
+  seq: 127
+  ref: Annexe 1, 1.15, politique de placement, FCP, page 4
+  parent: CIRC005_1_15_FCP_INVESTMENT_OBJECTIVES_POLICY
+- id: CIRC005_1_15_C_FCP_GEOGRAPHIC_SECTOR_SPECIALIZATION
+  seq: 128
+  ref: Annexe 1, 1.15, spécialisation, FCP, page 4
+  applicability: IF_SPECIALIZED
+  parent: CIRC005_1_15_FCP_INVESTMENT_OBJECTIVES_POLICY
+- id: CIRC005_1_15_D_FCP_POLICY_LIMITS
+  seq: 129
+  ref: Annexe 1, 1.15, limites, FCP, page 4
+  parent: CIRC005_1_15_FCP_INVESTMENT_OBJECTIVES_POLICY
+- id: CIRC005_1_15_E_FCP_TECHNIQUES_INSTRUMENTS
+  seq: 130
+  ref: Annexe 1, 1.15, techniques et instruments, FCP, page 4
+  parent: CIRC005_1_15_FCP_INVESTMENT_OBJECTIVES_POLICY
+- id: CIRC005_1_15_F_FCP_BORROWING_CAPACITY
+  seq: 131
+  ref: Annexe 1, 1.15, capacités d'emprunt, FCP, page 4
+  parent: CIRC005_1_15_FCP_INVESTMENT_OBJECTIVES_POLICY
+- id: CIRC005_1_16_FCP_ASSET_VALUATION
+  seq: 132
+  ref: Annexe 1, 1.16, FCP, page 5
+- id: CIRC005_1_17_FCP_PRICE_DETERMINATION
+  seq: 133
+  ref: Annexe 1, 1.17, FCP, page 5
+- id: CIRC005_1_17_A_FCP_PRICE_METHOD_FREQUENCY
+  seq: 134
+  ref: Annexe 1, 1.17, tiret 1, FCP, page 5
+  parent: CIRC005_1_17_FCP_PRICE_DETERMINATION
+- id: CIRC005_1_17_B_FCP_TRANSACTION_FEES
+  seq: 135
+  ref: Annexe 1, 1.17, tiret 2, FCP, page 5
+  parent: CIRC005_1_17_FCP_PRICE_DETERMINATION
+- id: CIRC005_1_17_C_FCP_PRICE_PUBLICATION
+  seq: 136
+  ref: Annexe 1, 1.17, tiret 3, FCP, page 5
+  parent: CIRC005_1_17_FCP_PRICE_DETERMINATION
+- id: CIRC005_1_18_FCP_REMUNERATION_REIMBURSEMENT
+  seq: 137
+  ref: Annexe 1, 1.18, FCP, page 5
+- id: CIRC005_1_18_A_FCP_REMUNERATION_MODE_AMOUNT_CALCULATION
+  seq: 138
+  ref: Annexe 1, 1.18, rémunérations, FCP, page 5
+  parent: CIRC005_1_18_FCP_REMUNERATION_REIMBURSEMENT
+- id: CIRC005_1_18_B_FCP_EXPENSE_REIMBURSEMENT
+  seq: 139
+  ref: Annexe 1, 1.18, remboursements de frais, FCP, page 5
+  parent: CIRC005_1_18_FCP_REMUNERATION_REIMBURSEMENT
+- id: CIRC005_1_1_SGO_IDENTITY
+  seq: 201
+  ref: Annexe 1, 1.1, SGO, page 2
+  products: [SGO]
+- id: CIRC005_1_2_SGO_CONSTITUTION_DATE
+  seq: 202
+  ref: Annexe 1, 1.2, SGO, page 2
+  products: [SGO]
+- id: CIRC005_1_3_SGO_OTHER_FUNDS
+  seq: 203
+  ref: Annexe 1, 1.3, SGO, page 2
+  products: [SGO]
+  applicability: IF_MANAGER_MANAGES_OTHER_OPC
+- id: CIRC005_1_8_A_SGO_GOVERNANCE_MEMBERS
+  seq: 204
+  ref: Annexe 1, 1.8, SGO, page 3
+  products: [SGO]
+- id: CIRC005_1_8_B_SGO_EXTERNAL_ACTIVITIES
+  seq: 205
+  ref: Annexe 1, 1.8, SGO, page 3
+  products: [SGO]
+  applicability: IF_SIGNIFICANT_EXTERNAL_ACTIVITIES
+- id: CIRC005_1_9_A_SGO_SUBSCRIBED_CAPITAL
+  seq: 206
+  ref: Annexe 1, 1.9, SGO, page 3
+  products: [SGO]
+- id: CIRC005_1_9_B_SGO_PAID_UP_CAPITAL
+  seq: 207
+  ref: Annexe 1, 1.9, SGO, page 3
+  products: [SGO]
+- id: CIRC005_2_1_DEPOSITARY_IDENTITY
+  seq: 401
+  ref: Annexe 1, 2.1, page 5
+- id: CIRC005_2_2_DEPOSITARY_MAIN_ACTIVITY
+  seq: 402
+  ref: Annexe 1, 2.2, page 5
+- id: CIRC005_3_1_EXTERNAL_ADVISER_IDENTITY
+  seq: 501
+  ref: Annexe 1, 3.1, page 5
+  applicability: IF_CONTRACTED_AND_PAID_FROM_OPC_ASSETS
+- id: CIRC005_3_2_EXTERNAL_ADVISER_CONTRACT_CLAUSES
+  seq: 502
+  ref: Annexe 1, 3.2, page 5
+  applicability: IF_CONTRACTED_AND_PAID_FROM_OPC_ASSETS
+  review_status: LEGAL_REVIEW_REQUIRED
+- id: CIRC005_3_3_EXTERNAL_ADVISER_OTHER_ACTIVITIES
+  seq: 503
+  ref: Annexe 1, 3.3, page 5
+  applicability: IF_CONTRACTED_AND_PAID_FROM_OPC_ASSETS
+- id: CIRC005_4_HOME_STATE_ARRANGEMENTS
+  seq: 601
+  ref: Annexe 1, partie 4, page 6
+- id: CIRC005_4_OTHER_MARKETING_STATE_ARRANGEMENTS
+  seq: 602
+  ref: Annexe 1, partie 4, page 6
+  applicability: IF_MARKETED_IN_OTHER_MEMBER_STATE
+- id: CIRC005_5_1_HISTORICAL_PERFORMANCE
+  seq: 701
+  ref: Annexe 1, 5.1, page 6
+  applicability: IF_HISTORICAL_PERFORMANCE_EXISTS
+  coverage: [IN_PROSPECTUS, IN_ATTACHED_CONSTITUTIVE_DOCUMENT]
+- id: CIRC005_5_2_TARGET_INVESTOR
+  seq: 702
+  ref: Annexe 1, 5.2, page 6
+- id: CIRC005_5_3_ECONOMIC_INFORMATION
+  seq: 703
+  ref: Annexe 1, 5.3, page 6
+  review_status: LEGAL_REVIEW_REQUIRED
+- id: CIRC005_5_4_OTHER_EXPENSES_HOLDER
+  seq: 704
+  ref: Annexe 1, 5.4, page 6
+- id: CIRC005_5_4_OTHER_EXPENSES_FUND_ASSETS
+  seq: 705
+  ref: Annexe 1, 5.4, page 6

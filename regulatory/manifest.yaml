@@ -1,0 +1,31 @@
+manifest_id: UMOA_REGULATORY_BOOTSTRAP_V0_1
+version: 0.1.0
+status: DRAFT_STRUCTURALLY_VALIDATED
+created_on: '2026-08-04'
+markdown_organization_status: PROVISIONAL_PENDING_OWNER_PROMPT
+sources:
+- path: regulatory/sources/CIRC005_CREPMF_2022.yaml
+  source_id: CIRC005_CREPMF_2022
+requirements:
+- path: regulatory/requirements/CIRC005_FCP_REQUIREMENTS_V0_1.yaml
+  source_id: CIRC005_CREPMF_2022
+  count: 62
+matrices:
+- path: regulatory/matrices/CIRC005_FCP_MATRIX_01_GENERAL_IDENTITY_TAX.csv
+- path: regulatory/matrices/CIRC005_FCP_MATRIX_02_PARTS_OPERATIONS.csv
+- path: regulatory/matrices/CIRC005_FCP_MATRIX_03_INVESTMENT_PRICING.csv
+- path: regulatory/matrices/CIRC005_FCP_MATRIX_04_ACTORS_COUNTRY_OTHER.csv
+matrix_format:
+  delimiter: ';'
+  total_rows: 62
+schemas:
+- path: schemas/UMOA_FCP_CANONICAL_MODEL_V0_1.yaml
+  top_level_objects: 30
+validation:
+- path: regulatory/validation/CIRC005_FCP_BOOTSTRAP_VALIDATION.json
+known_gaps:
+- Instruction n°66/CREPMF/2021 not atomized.
+- Official publication date and current status of Circulaire 05/2022 to verify.
+- Field-level JSON Schema and SQL schema not yet produced.
+- Legal clauses not yet drafted, approved or activated.
+- Final Markdown taxonomy awaits the project owner's forthcoming prompt.
