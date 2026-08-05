@@ -1,9 +1,13 @@
 manifest_id: UMOA_REGULATORY_BOOTSTRAP_V0_1
-version: 0.2.0
+version: 0.2.1
 status: DRAFT_SOURCES_REGISTERED_ATOMIZATION_PENDING
 created_on: '2026-08-04'
 updated_on: '2026-08-05'
 markdown_organization_status: LOOP_ENGINEERING_INTEGRATED
+registries:
+- path: regulatory/registries/AMF_UMOA_REGULATORY_REGISTRY.yaml
+  registry_id: AMF_UMOA_REGULATORY_REGISTRY
+  status: ACTIVE_DISCOVERY_SOURCE
 sources:
 - path: regulatory/sources/CIRC005_CREPMF_2022.yaml
   source_id: CIRC005_CREPMF_2022
