@@ -2,8 +2,7 @@ name: Regulatory CI
 
 on:
   push:
-    branches:
-      - main
+    branches: [main]
   workflow_dispatch:
 
 permissions:
@@ -14,42 +13,38 @@ concurrency:
   cancel-in-progress: true
 
 jobs:
-  test-generate-document:
+  test-generate-document-and-web:
     runs-on: ubuntu-latest
-    timeout-minutes: 15
-
+    timeout-minutes: 25
     steps:
       - name: Checkout
         uses: actions/checkout@v4
         with:
           fetch-depth: 0
-
       - name: Configure Node.js
         uses: actions/setup-node@v4
         with:
           node-version: '22'
-          cache: npm
-          cache-dependency-path: package.json
-
+      - name: Install Next.js application dependencies
+        run: npm run web:install
+      - name: Typecheck Next.js application
+        run: npm run web:typecheck
+      - name: Build Next.js application
+        run: npm run web:build
       - name: Install document rendering tools
         run: |
           sudo apt-get update
           sudo apt-get install -y --no-install-recommends libreoffice-writer poppler-utils
-
       - name: Run automated tests
         run: npm test
-
       - name: Generate deterministic sample dossier
         run: npm run generate:sample
         env:
           GENERATION_TIMESTAMP: '2026-08-05T00:00:00.000Z'
-
       - name: Generate deterministic DOCX
         run: npm run generate:docx
-
       - name: Validate DOCX package and regulatory caveats
         run: npm run validate:docx
-
       - name: Render DOCX for visual inspection
         run: |
           root='examples/generated/united-capital-diamond'
@@ -62,28 +57,23 @@ jobs:
           root = Path('examples/generated/united-capital-diamond')
           pages = sorted(root.joinpath('rendered-pages').glob('page-*.png'))
           pdf = root / 'prospectus-draft.pdf'
-          manifest = {
-              'renderer': 'LibreOffice Writer + pdftoppm',
-              'page_count': len(pages),
-              'page_files': [str(page.relative_to(root)) for page in pages],
-              'pdf_size_bytes': pdf.stat().st_size,
-              'status': 'READY_FOR_VISUAL_INSPECTION',
-              'caveat': 'PDF créé uniquement pour le contrôle visuel de la sortie DOCX; il ne constitue pas le futur export PDF réglementaire déterministe.'
-          }
-          root.joinpath('render-manifest.json').write_text(
-              json.dumps(manifest, ensure_ascii=False, indent=2) + '\n', encoding='utf-8'
-          )
-          if len(pages) == 0:
-              raise SystemExit('No rendered DOCX pages were produced')
+          root.joinpath('render-manifest.json').write_text(json.dumps({
+            'renderer': 'LibreOffice Writer + pdftoppm',
+            'page_count': len(pages),
+            'page_files': [str(page.relative_to(root)) for page in pages],
+            'pdf_size_bytes': pdf.stat().st_size,
+            'status': 'READY_FOR_VISUAL_INSPECTION',
+            'caveat': 'PDF de contrôle visuel uniquement; il ne constitue pas le futur export PDF réglementaire déterministe.'
+          }, ensure_ascii=False, indent=2) + '\n', encoding='utf-8')
+          if len(pages) == 0: raise SystemExit('No rendered DOCX pages were produced')
           PY
-
       - name: Update Loop Engineering evidence
         run: |
           node scripts/update-loop-dev-docs.mjs
           node scripts/update-docx-loop-docs.mjs
           node scripts/update-visual-qa-docs.mjs
-
-      - name: Validate generated JSON and coverage invariants
+          node scripts/update-nextjs-docs.mjs
+      - name: Validate generated invariants
         run: |
           node --input-type=module <<'NODE'
           import { readFile } from 'node:fs/promises';
@@ -94,26 +84,17 @@ jobs:
           const render = JSON.parse(await readFile(`${root}/render-manifest.json`, 'utf8'));
           if (concordance.length !== 62) throw new Error(`Expected 62 requirements, got ${concordance.length}`);
           if (manifest.coverage_counts.MISSING !== 0) throw new Error(`Expected MISSING=0, got ${manifest.coverage_counts.MISSING}`);
-          if (manifest.ready_for_submission !== false || docx.ready_for_submission !== false) {
-            throw new Error('ready_for_submission must remain false');
-          }
-          if (!Array.isArray(manifest.pending_review_requirement_ids) || manifest.pending_review_requirement_ids.length === 0) {
-            throw new Error('Pending review requirements must remain explicit');
-          }
-          if (docx.component_count !== manifest.component_count) {
-            throw new Error(`DOCX traceability mismatch: ${docx.component_count} vs ${manifest.component_count}`);
-          }
+          if (manifest.ready_for_submission !== false || docx.ready_for_submission !== false) throw new Error('ready_for_submission must remain false');
+          if (!Array.isArray(manifest.pending_review_requirement_ids) || manifest.pending_review_requirement_ids.length === 0) throw new Error('Pending reviews must remain explicit');
+          if (docx.component_count !== manifest.component_count) throw new Error('DOCX traceability mismatch');
           if (render.page_count !== 10) throw new Error(`Expected 10 rendered pages, got ${render.page_count}`);
           NODE
-
       - name: Check textual integrity
         run: git diff --check
-
       - name: Upload DOCX visual review bundle
         uses: actions/upload-artifact@v4
         with:
           name: united-capital-diamond-docx-review
-          if-no-files-found: error
           retention-days: 14
           path: |
             examples/generated/united-capital-diamond/prospectus-draft.docx
@@ -123,28 +104,15 @@ jobs:
             examples/generated/united-capital-diamond/rendered-pages/*.png
             examples/generated/united-capital-diamond/generation-manifest.json
             examples/generated/united-capital-diamond/concordance.json
-
       - name: Commit generated evidence and documentation
         if: github.actor != 'github-actions[bot]'
         run: |
           git config user.name 'github-actions[bot]'
           git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
-          git add \
-            README.md IMPLEMENTATION.md STATUS.md LOOP_STATE.md CURRENT_ITERATION.md \
-            WORK_LOG.md SUIVI.md TODO.md CHANGELOG.md HANDOFF.md NEXT_ACTION.md \
-            examples/generated/united-capital-diamond/prospectus-draft.md \
-            examples/generated/united-capital-diamond/canonical-data.json \
-            examples/generated/united-capital-diamond/questionnaire-state.json \
-            examples/generated/united-capital-diamond/control-report.json \
-            examples/generated/united-capital-diamond/concordance.json \
-            examples/generated/united-capital-diamond/document-model.json \
-            examples/generated/united-capital-diamond/answer-log.json \
-            examples/generated/united-capital-diamond/generation-manifest.json \
-            examples/generated/united-capital-diamond/prospectus-draft.docx \
-            examples/generated/united-capital-diamond/docx-manifest.json
+          git add README.md IMPLEMENTATION.md STATUS.md LOOP_STATE.md CURRENT_ITERATION.md WORK_LOG.md SUIVI.md TODO.md CHANGELOG.md HANDOFF.md NEXT_ACTION.md examples/generated/united-capital-diamond
           if git diff --cached --quiet; then
             echo 'No generated changes to commit.'
           else
-            git commit -m 'chore: refresh generated prospectus and DOCX evidence'
+            git commit -m 'chore: refresh generated prospectus, DOCX and Next.js evidence'
             git push origin HEAD:main
           fi

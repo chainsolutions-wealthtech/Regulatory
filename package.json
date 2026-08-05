@@ -1,9 +1,9 @@
 {
   "name": "regulatory-prospectus-composer",
-  "version": "0.2.1",
+  "version": "0.3.0",
   "private": true,
   "type": "module",
-  "description": "Tranche verticale exécutable du moteur de composition de prospectus OPCVM/FCP UMOA.",
+  "description": "Moteur réglementaire et application Next.js de composition de prospectus OPCVM/FCP UMOA.",
   "engines": {
     "node": ">=22"
   },
@@ -13,6 +13,11 @@
     "generate:docx": "python3 scripts/generate_docx.py && python3 scripts/optimize_docx_layout.py",
     "validate:docx": "python3 scripts/validate_docx.py",
     "document": "npm run generate:sample && npm run generate:docx && npm run validate:docx",
+    "web:install": "npm install --prefix apps/web --no-audit --no-fund",
+    "web:dev": "npm run dev --prefix apps/web",
+    "web:typecheck": "npm run typecheck --prefix apps/web",
+    "web:build": "npm run build --prefix apps/web",
+    "check:web": "npm run web:typecheck && npm run web:build",
     "check": "npm test && npm run document"
   }
 }
