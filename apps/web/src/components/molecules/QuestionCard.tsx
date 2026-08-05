@@ -1,17 +1,20 @@
 "use client";
 
 import { FieldShell, Input, Select, Textarea } from "@/components/atoms/Field";
+import { ShareClassCollectionField } from "@/components/molecules/ShareClassCollectionField";
 import type { ProspectusQuestion } from "@/domain/types";
 
 export function QuestionCard({
   question,
   value,
   disabled,
+  defaultCurrency,
   onChange,
 }: {
   question: ProspectusQuestion;
   value: unknown;
   disabled?: boolean;
+  defaultCurrency?: string;
   onChange: (value: unknown) => void;
 }) {
   const id = `question-${question.id}`;
@@ -34,7 +37,7 @@ export function QuestionCard({
         help={question.helpText}
         required={question.required}
       >
-        {renderControl(question, id, value, disabled, onChange)}
+        {renderControl(question, id, value, disabled, defaultCurrency, onChange)}
       </FieldShell>
       {question.uiFallback ? (
         <p className="question-card__example">
@@ -55,8 +58,21 @@ function renderControl(
   id: string,
   value: unknown,
   disabled: boolean | undefined,
+  defaultCurrency: string | undefined,
   onChange: (value: unknown) => void,
 ) {
+  if (question.type === "SHARE_CLASS_COLLECTION") {
+    return (
+      <ShareClassCollectionField
+        defaultCurrency={defaultCurrency}
+        disabled={disabled}
+        id={id}
+        value={value}
+        onChange={onChange}
+      />
+    );
+  }
+
   const stringValue = formatInputValue(value);
   if (question.type === "TEXTAREA") {
     return (
