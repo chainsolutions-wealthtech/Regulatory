@@ -4,6 +4,7 @@
 from __future__ import annotations
 
 import argparse
+import hashlib
 import json
 import zipfile
 from pathlib import Path
@@ -72,15 +73,25 @@ def main() -> None:
             failures.append(f"Required wording not found: {required_text}")
 
     forbidden_texts = [
-        "Prêt pour soumission</w:t></w:r></w:p></w:tc><w:tc>",
         "conforme à 100 %",
-        "document approuvé par l’AMF-UMOA",
+        "document approuvé par l’amf-umoa",
     ]
     if "Prêt pour soumission" not in document_xml or "Non" not in document_xml:
         failures.append("Submission readiness must be explicitly shown as Non")
-    for forbidden in forbidden_texts[1:]:
+    for forbidden in forbidden_texts:
         if forbidden in document_xml.lower():
             failures.append(f"Forbidden wording found: {forbidden}")
+
+    table_row_count = document_xml.count("<w:tr>")
+    cannot_split_count = document_xml.count("<w:cantSplit/>")
+    if table_row_count == 0:
+        failures.append("The DOCX must contain tables")
+    if cannot_split_count < table_row_count:
+        failures.append(
+            f"Every table row must be protected from splitting: {cannot_split_count}/{table_row_count}"
+        )
+    if "• " not in document_xml:
+        failures.append("Visible list bullet glyphs are missing")
 
     component_count = int(manifest.get("component_count", 0))
     traceability_rows = int(manifest.get("traceability_row_count", 0))
@@ -97,11 +108,20 @@ def main() -> None:
     if docx_path.stat().st_size < 5000:
         failures.append(f"DOCX is unexpectedly small: {docx_path.stat().st_size} bytes")
 
+    actual_digest = hashlib.sha256(docx_path.read_bytes()).hexdigest()
+    if manifest.get("docx_sha256") != actual_digest:
+        failures.append("DOCX SHA-256 does not match docx-manifest.json")
+    if int(manifest.get("docx_size_bytes", 0)) != docx_path.stat().st_size:
+        failures.append("DOCX size does not match docx-manifest.json")
+
     result = {
         "docx": str(docx_path),
         "size_bytes": docx_path.stat().st_size,
+        "sha256": actual_digest,
         "component_count": component_count,
         "traceability_row_count": traceability_rows,
+        "table_row_count": table_row_count,
+        "cannot_split_row_count": cannot_split_count,
         "required_parts": len(REQUIRED_PARTS),
         "status": "PASS" if not failures else "FAIL",
         "failures": failures,
