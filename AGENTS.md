@@ -317,3 +317,69 @@ Avant de déclarer une tâche terminée :
 - [ ] les limitations et incertitudes sont déclarées ;
 - [ ] aucun secret n’a été ajouté ;
 - [ ] le résultat continue la logique existante sans régression.
+
+## 15. Intégration du Loop Engineering
+
+Cette section enrichit les règles historiques sans les remplacer.
+
+### 15.1 Point d’entrée et ordre de lecture
+
+Toute intervention commence désormais par `00_START_HERE.md`, qui définit l’ordre de lecture complet. Cet ordre inclut toutes les obligations historiques de la section 3 et ajoute notamment :
+
+- `SOURCE_OF_TRUTH.md` ;
+- `PROJECT_CONTEXT.md` ;
+- `STATUS.md` ;
+- `NEXT_ACTION.md` ;
+- `LOOP_STATE.md` ;
+- `CURRENT_ITERATION.md`.
+
+Aucun agent ne doit interpréter la section 3 comme une autorisation de sauter `00_START_HERE.md`.
+
+### 15.2 Hiérarchie documentaire
+
+- `SOURCE_OF_TRUTH.md` définit les documents canoniques et les adaptateurs ;
+- `SUIVI.md` reste l’historique chronologique canonique ;
+- `STATUS.md` est la photographie de l’état courant ;
+- `TODO.md` reste le registre opérationnel principal ;
+- `WORK_LOG.md` journalise les actions de la boucle ;
+- `HANDOFF.md` transmet l’état au prochain intervenant ;
+- `NEXT_ACTION.md` contient une seule action exécutable ;
+- `docs/DECISIONS.md` conserve les décisions historiques et `docs/adr/` les décisions détaillées futures ;
+- `docs/ARCHITECTURE.md` reste l’architecture canonique ;
+- `docs/03-architecture/ARCHITECTURE.md` est un adaptateur et ne doit pas dupliquer l’architecture.
+
+Les conversations ne constituent jamais la mémoire canonique du projet.
+
+### 15.3 Boucle obligatoire
+
+Avant d’agir, l’agent doit identifier ou ouvrir une boucle documentée avec :
+
+- un identifiant stable ;
+- un objectif borné ;
+- un état initial ;
+- une tâche liée ;
+- des critères de sortie ;
+- des contrôles et preuves ;
+- une prochaine action unique.
+
+À la fin, il met à jour selon la portée réelle : `STATUS.md`, `LOOP_STATE.md`, `CURRENT_ITERATION.md`, `WORK_LOG.md`, `NEXT_ACTION.md`, `HANDOFF.md`, `SUIVI.md`, `TODO.md` et `CHANGELOG.md`.
+
+### 15.4 Modules conditionnels
+
+Tout module conditionnel porte l’un des statuts suivants :
+
+- `APPLICABLE` ;
+- `NON APPLICABLE`, avec justification ;
+- `À DÉTERMINER`, avec une entrée correspondante dans `OPEN_QUESTIONS.md` ou `TODO.md`.
+
+Pour toute information absente ou non vérifiée, utiliser exactement :
+
+> À DÉFINIR — information non fournie ou non vérifiée à ce stade du projet.
+
+### 15.5 Règles des adaptateurs IA
+
+`CLAUDE.md`, `GEMINI.md` et `.github/copilot-instructions.md` sont des adaptateurs. Ils renvoient vers `00_START_HERE.md`, le présent fichier et les sources canoniques. Ils ne doivent ni introduire une politique concurrente, ni importer le contexte métier d’un autre projet.
+
+### 15.6 Clôture et vérité des validations
+
+Une boucle documentaire peut être `CLOSED` sans que le produit soit juridiquement validé, techniquement implémenté ou prêt pour la production. Toute validation doit préciser sa nature exacte : structurelle, documentaire, technique, conformité, juridique, fiscale ou réglementaire.
