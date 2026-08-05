@@ -178,6 +178,7 @@ function canonicalPathOverride(questionId: string): string | undefined {
     Q_VALUATION_METHODS: "valuation.methods",
     Q_CONFIRM_GOVERNANCE_MEMBERS: "manager.governance_members",
     Q_HOME_STATE_ARRANGEMENTS: "distribution_countries",
+    Q_MARKETING_COUNTRIES: "distribution.marketing_country_codes",
   }[questionId];
 }
 
