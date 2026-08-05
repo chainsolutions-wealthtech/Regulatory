@@ -10,7 +10,7 @@ import {
 import { fileURLToPath } from "node:url";
 import path from "node:path";
 
-const EXPECTED_CHUNK_COUNT = 9;
+const EXPECTED_CHUNK_COUNT = 10;
 const EXPECTED_BASE64_LENGTH = 43_004;
 const EXPECTED_ARCHIVE_SHA256 =
   "f21ef92d245414f230cb7b4c97cc56a2940af93ff54aaa6c7fc350b9d9c8ba04";
