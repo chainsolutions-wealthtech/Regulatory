@@ -1,0 +1,46 @@
+registry_id: AMF_UMOA_REGULATORY_REGISTRY
+version: 0.1.0
+status: ACTIVE_DISCOVERY_SOURCE
+registered_on: '2026-08-05'
+authority: AMF-UMOA
+jurisdiction: UMOA
+base_url: https://www.amf-umoa.org
+sections:
+  circulars_and_notices:
+    url: https://www.amf-umoa.org/reglementation/circulaire
+    status: OFFICIAL
+    intended_use:
+      - discover_circulars
+      - discover_notices
+      - verify_reference_and_abrogation_status
+  instructions:
+    url: https://www.amf-umoa.org/reglementation/instruction
+    status: OFFICIAL
+    intended_use:
+      - discover_instructions
+      - verify_reference_title_and_abrogation_status
+  regulatory_decisions:
+    url: https://www.amf-umoa.org/reglementation/decision
+    status: OFFICIAL
+    intended_use:
+      - discover_regulatory_decisions
+      - verify_reference_title_and_abrogation_status
+  legal_framework:
+    url: https://www.amf-umoa.org/reglementation/convention
+    status: OFFICIAL
+    intended_use:
+      - treaty
+      - convention_and_annex
+      - general_regulation
+usage_policy:
+  - Treat the official registry as the primary discovery and current-status source.
+  - Record the registry check date for every status assertion.
+  - Materialize and hash each normative document before detailed atomization when technically possible.
+  - Preserve the exact title, reference, status and source URL.
+  - Investigate amendments, rectifications, predecessor and replacement relationships.
+  - Do not infer legal validity solely from search-engine indexing or a secondary copy.
+  - Do not mark a requirement VALIDATED without legal and compliance review.
+technical_notes:
+  - Some registry tables and download links are dynamically rendered.
+  - Secondary official-market-infrastructure publications may be used to locate a binary copy, with provenance recorded separately.
+  - Missing binary access, hash or effective date must remain explicit and must not be invented.
