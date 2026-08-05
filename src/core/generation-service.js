@@ -1,6 +1,7 @@
 import { applyQuestionnaireAnswers, buildQuestionCatalog, listApplicableQuestions } from "./questionnaire-engine.js";
 import { runValidation } from "./rule-engine.js";
 import { composeProspectus } from "./prospectus-composer.js";
+import { reconcileCirc005Completeness } from "./circ005-completeness-extension.js";
 
 /**
  * Chaîne de génération de la première tranche verticale.
@@ -13,7 +14,8 @@ export function generateProspectusDraft({ seedData, answers, matrixRows, generat
   enrichCanonicalData(data);
   const applicableQuestions = listApplicableQuestions(questionCatalog, data);
   const validation = runValidation(data);
-  const generation = composeProspectus({ data, matrixRows, validation, answerLog, generatedAt });
+  const baseGeneration = composeProspectus({ data, matrixRows, validation, answerLog, generatedAt });
+  const generation = reconcileCirc005Completeness(baseGeneration);
 
   return {
     ...generation,
