@@ -1,7 +1,7 @@
 import generatedCatalog from "@/generated/regulatory-catalog.json";
 import { APPLICATION_GROUPS, APPLICATION_QUESTIONS } from "./application-questions";
 import { MEMBER_STATES } from "./constants";
-import { SHARE_CLASS_QUESTION_ID } from "./structured-answers";
+import { STRUCTURED_QUESTION_TYPES } from "./structured-answers";
 import type {
   CatalogMetadata,
   CoverageSummary,
@@ -89,35 +89,40 @@ const QUESTION_GROUPS_UNSORTED = mergeGroups(
 
 const regulatoryQuestions: ProspectusQuestion[] = catalog.requirements
   .filter((requirement) => requirement.interactive)
-  .map((requirement) => ({
-    id: requirement.questionId,
-    groupId: requirement.groupId,
-    sequence: requirement.registrySequence,
-    label: requirement.label,
-    helpText: requirement.helpText,
-    type: normalizeUiType(requirement),
-    required: requirement.required,
-    interactive: true,
-    fieldPath: requirement.canonicalFieldPaths[0] ?? `regulatoryAnswers.${requirement.questionId}`,
-    canonicalFieldPaths: requirement.canonicalFieldPaths,
-    requirementIds: [requirement.requirementId],
-    options: normalizeOptions(requirement),
-    displayCondition: requirement.displayCondition ?? undefined,
-    reviewRoles: requirement.reviewRoles,
-    sourceKind: "REGULATORY_MATRIX",
-    sourceMatrix: requirement.sourceMatrix,
-    sourceReference: requirement.sourceReference,
-    originalQuestionType: requirement.originalQuestionType,
-    implementationStatus: requirement.implementationStatus,
-    applicability: requirement.applicability ?? undefined,
-    effects: requirement.effects,
-    controls: requirement.controls,
-    evidenceTypes: requirement.evidenceTypes,
-    clauseGroupId: requirement.clauseGroupId ?? undefined,
-    outputSectionId: requirement.outputSectionId ?? undefined,
-    uiFallback:
-      requirement.questionId === SHARE_CLASS_QUESTION_ID ? false : requirement.uiFallback,
-  }));
+  .map((requirement) => {
+    const structuredType = STRUCTURED_QUESTION_TYPES[requirement.questionId];
+    return {
+      id: requirement.questionId,
+      groupId: requirement.groupId,
+      sequence: requirement.registrySequence,
+      label: requirement.label,
+      helpText: requirement.helpText,
+      type: structuredType ?? normalizeUiType(requirement),
+      required: requirement.required,
+      interactive: true,
+      fieldPath:
+        canonicalPathOverride(requirement.questionId) ??
+        requirement.canonicalFieldPaths[0] ??
+        `regulatoryAnswers.${requirement.questionId}`,
+      canonicalFieldPaths: canonicalPathsOverride(requirement.questionId) ?? requirement.canonicalFieldPaths,
+      requirementIds: [requirement.requirementId],
+      options: structuredType ? undefined : normalizeOptions(requirement),
+      displayCondition: requirement.displayCondition ?? undefined,
+      reviewRoles: requirement.reviewRoles,
+      sourceKind: "REGULATORY_MATRIX" as const,
+      sourceMatrix: requirement.sourceMatrix,
+      sourceReference: requirement.sourceReference,
+      originalQuestionType: requirement.originalQuestionType,
+      implementationStatus: requirement.implementationStatus,
+      applicability: requirement.applicability ?? undefined,
+      effects: requirement.effects,
+      controls: requirement.controls,
+      evidenceTypes: requirement.evidenceTypes,
+      clauseGroupId: requirement.clauseGroupId ?? undefined,
+      outputSectionId: requirement.outputSectionId ?? undefined,
+      uiFallback: structuredType ? false : requirement.uiFallback,
+    };
+  });
 
 export const QUESTIONS: ProspectusQuestion[] = [...APPLICATION_QUESTIONS, ...regulatoryQuestions]
   .toSorted((left, right) => {
@@ -152,18 +157,33 @@ export function createEmptyCoverage(): CoverageSummary {
 }
 
 function normalizeUiType(requirement: GeneratedRequirement): QuestionType {
-  if (requirement.questionId === SHARE_CLASS_QUESTION_ID) return "SHARE_CLASS_COLLECTION";
   if (requirement.originalQuestionType === "COUNTRY_MULTI_SELECT") return "MULTISELECT";
   return requirement.uiType;
 }
 
 function normalizeOptions(requirement: GeneratedRequirement): QuestionOption[] | undefined {
-  if (requirement.questionId === SHARE_CLASS_QUESTION_ID) return undefined;
   if (requirement.options.length > 0) return requirement.options;
   if (requirement.originalQuestionType === "COUNTRY_MULTI_SELECT") {
     return MEMBER_STATES.map((state) => ({ ...state }));
   }
   return undefined;
+}
+
+function canonicalPathOverride(questionId: string): string | undefined {
+  return {
+    Q_SHARE_CLASSES_COUNT: "share_classes",
+    Q_ASSET_EXPOSURE_MATRIX: "investment_policy.asset_class_ranges",
+    Q_TRANSACTION_FEES: "fees.transaction",
+    Q_REMUNERATION_DETAILS: "remunerations",
+    Q_VALUATION_METHODS: "valuation.methods",
+    Q_CONFIRM_GOVERNANCE_MEMBERS: "manager.governance_members",
+    Q_HOME_STATE_ARRANGEMENTS: "distribution_countries",
+  }[questionId];
+}
+
+function canonicalPathsOverride(questionId: string): string[] | undefined {
+  const path = canonicalPathOverride(questionId);
+  return path ? [path] : undefined;
 }
 
 function mergeGroups(...sources: QuestionGroup[][]): QuestionGroup[] {
