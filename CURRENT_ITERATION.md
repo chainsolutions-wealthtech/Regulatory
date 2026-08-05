@@ -1,62 +1,63 @@
-# CURRENT_ITERATION — LOOP-GOV-001
+# CURRENT_ITERATION — LOOP-REG-001
 
-> **Statut :** `COMPLETED`  
-> **Clôturée le :** 2026-08-05
+> **Statut :** `IN_PROGRESS`  
+> **Ouverte le :** 2026-08-05
 
 ## Objectif
 
-Intégrer les `176` fichiers Markdown du kit Loop Engineering dans le dépôt existant, sans écraser les documents canoniques, puis initialiser une boucle documentaire reprenable par n’importe quel agent autorisé.
+Enregistrer une source vérifiable de l’Instruction n°66/CREPMF/2021 et préparer son atomisation complète, sans modifier les identifiants existants de la Circulaire n°05/CREPMF/2022.
 
 ## Pourquoi cette boucle a été ouverte
 
-Le propriétaire avait différé l’organisation globale des fichiers Markdown jusqu’à réception du prompt complet. Le prompt et le kit ont été reçus le 2026-08-05.
+La boucle documentaire `LOOP-GOV-001` avait défini comme prochaine action unique l’obtention d’une source officielle de l’Instruction n°66/CREPMF/2021. Le propriétaire a fourni le registre réglementaire AMF-UMOA permettant d’identifier les Instructions et Circulaires applicables.
 
 ## État initial vérifié
 
-- `11` fichiers Markdown existaient ;
-- les documents canoniques historiques ont été identifiés ;
-- `62` exigences, quatre matrices CSV et `30` objets canoniques existaient déjà ;
-- branche `main` au commit `7433be04ce00d0108c1e01441d5e49f01fb994f4` ;
-- aucun code applicatif, environnement ou déploiement n’entrait dans le périmètre.
+- branche `main` au commit `4a62d87520ce62fcea52c8794f1c9b72cbec439d` ;
+- une seule branche présente ;
+- Circulaire n°05/CREPMF/2022 déjà représentée par `62` exigences et quatre matrices ;
+- modèle canonique V0.1 de `30` objets ;
+- Instruction n°66/CREPMF/2021 non encore enregistrée dans le manifeste ni atomisée.
 
-## Périmètre réalisé
+## Travail déjà réalisé dans l’itération
 
-- audit du dépôt et du kit ;
-- matrice de correspondance ;
-- création additive de tous les chemins Markdown du kit ;
-- adaptateurs pour l’architecture, les décisions et les agents ;
-- sept ADR de gouvernance ;
-- registres d’état, d’action, de journal et de transmission ;
-- enregistrement des métadonnées, de l’inventaire et de l’empreinte du kit ;
-- contrôles de présence, de contenu minimal, de branche, de non-suppression et de préservation des artefacts non Markdown.
+- vérification du registre officiel AMF-UMOA ;
+- confirmation du statut affiché `NON ABROGE` ;
+- identification de la publication BRVM du 12 janvier 2022 ;
+- identification du PDF distant de `65` pages ;
+- création du registre source YAML ;
+- création d’un plan d’atomisation en dix phases ;
+- ajout de la source et du plan au manifeste ;
+- ouverture de la boucle et mise à jour de la question `OQ-002`.
 
-## Hors périmètre respecté
+## Périmètre restant
 
-Aucun code applicatif, YAML réglementaire, CSV, JSON, schéma, validation juridique, environnement, base de données, migration, fusion ou déploiement n’a été modifié ou exécuté dans cette boucle.
+- matérialiser une copie exploitable du PDF et calculer taille et SHA-256 ;
+- confirmer la date de signature et la date d’effet ;
+- identifier le texte précédent annulé et remplacé ;
+- vérifier les modificatifs, rectificatifs et textes connexes ;
+- produire l’index machine-readable de tous les articles ;
+- préparer le crosswalk avec `CIRC005` et le modèle canonique.
+
+## Hors périmètre de cette étape
+
+- rédaction ou activation de clauses juridiques ;
+- implémentation applicative ;
+- modification des `62` exigences CIRC005 ;
+- modification des quatre matrices existantes ;
+- validation juridique ou conformité finale ;
+- déploiement ou modification de données de production.
 
 ## Critères de sortie
 
-- [x] tous les `176` chemins Markdown attendus présents ;
-- [x] aucun fichier Markdown du kit vide ou limité à un titre ;
-- [x] documents historiques conservés ;
-- [x] documents canoniques et adaptateurs explicitement distingués ;
-- [x] catalogues et manifeste rapprochés de l’arborescence ;
-- [x] artefacts réglementaires non Markdown historiques inchangés ;
-- [x] état, prochaine action et handoff consignés ;
-- [x] aucune branche créée ou changée ;
-- [x] aucun force-push, fusion ou déploiement ;
-- [x] anomalie des fragments Base64 déclarée ;
-- [ ] copie binaire exacte du ZIP archivée dans GitHub — non requise pour clôturer l’intégration Markdown, mais non réalisée.
-
-## Résultat quantifié
-
-- Markdown avant : `11` ;
-- Markdown après : `194` ;
-- créations initiales depuis le commit de départ : `192` fichiers, dont `183` Markdown et `9` fragments Base64 historiques ;
-- chemins du kit présents : `176/176` ;
-- fichiers supprimés : `0` ;
-- prochaine action : celle inscrite dans `NEXT_ACTION.md`.
-
-## Limite explicite
-
-Les neuf fragments Base64 actuellement présents ne représentent pas fidèlement le ZIP source et sont exclus de la source de vérité. La clôture porte sur l’intégration des contenus Markdown et la gouvernance, pas sur l’archivage binaire exact du ZIP.
+- [x] registre officiel identifié ;
+- [x] statut courant documenté ;
+- [x] publication et PDF identifiés ;
+- [x] source YAML créée ;
+- [x] plan d’atomisation créé ;
+- [ ] SHA-256 et taille du PDF calculés ;
+- [ ] dates de signature et d’effet confirmées ;
+- [ ] prédécesseur et textes modificatifs inventoriés ;
+- [ ] index structurel complet produit ;
+- [ ] contrôles de non-régression exécutés ;
+- [ ] documentation de clôture et handoff finalisés.
