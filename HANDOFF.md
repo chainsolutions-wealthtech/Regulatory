@@ -1,72 +1,70 @@
-# HANDOFF — Transmission après LOOP-GOV-001
+# HANDOFF — Transmission de LOOP-DEV-001
 
-> **Statut :** `READY`  
-> **Boucle transmise :** `LOOP-GOV-001` — `CLOSED`  
+> **Statut :** `READY_FOR_CONTINUATION`  
+> **Boucle :** `LOOP-DEV-001` — `IN_PROGRESS`  
 > **Date :** `2026-08-05`
 
-## Contexte transmis
+## Contexte
 
-Le dépôt dispose du standard Loop Engineering intégré de manière additive. Les documents historiques ne sont pas remplacés. La hiérarchie canonique est définie dans `SOURCE_OF_TRUTH.md` et l’ordre de reprise dans `00_START_HERE.md`.
+Le propriétaire a demandé de commencer le code afin de construire le prospectus automatiquement et de le préremplir avec les informations déjà disponibles.
 
-## État vérifié
+La branche unique `main` a été conservée. Aucun historique, identifiant réglementaire, matrice ou schéma existant n’a été supprimé ou renommé.
 
-- dépôt : `chainsolutions-wealthtech/Regulatory` ;
-- branche : `main` ;
-- commit de départ de la boucle : `7433be04ce00d0108c1e01441d5e49f01fb994f4` ;
-- Markdown avant : `11` ;
-- Markdown après intégration : `194` ;
-- chemins Markdown du kit présents : `176/176` ;
-- créations initiales depuis le départ : `192` fichiers, dont `183` Markdown et `9` fragments Base64 historiques ;
-- documents canoniques historiques maintenus ;
-- artefacts réglementaires machine-readable antérieurs préservés ;
-- sept ADR de gouvernance présentes ;
-- aucune branche créée ou changée ;
-- aucun force-push, fusion, migration ou déploiement.
+## Ce qui fonctionne
 
-## Avertissement obligatoire sur le kit source
+```bash
+npm test
+npm run generate:sample
+npm run check
+```
 
-Les neuf fichiers sous `docs/kits/parts/` ne constituent pas une archive fidèle : leur nombre et leur longueur sont incompatibles avec la Base64 attendue du ZIP source. Ils ont le statut `INVALID_UNVERIFIED_LEGACY_FRAGMENTS`, sont exclus de la source de vérité et ne doivent jamais être concaténés pour produire une archive supposée valide.
+Résultat local contrôlé : `7/7` tests réussis.
 
-La preuve canonique disponible est : nom du ZIP, taille `112477` octets, SHA-256 `8054b1ea4799364b5d709166536c927b2e28ddd47aba84553469a5469ffecc95`, manifeste version `1.0.0` et présence des `176/176` chemins Markdown. Voir `docs/kits/README.md` et `MANIFEST.md`.
+Le moteur :
 
-## Documents à lire en premier
+- charge les 62 lignes des matrices CIRC005 ;
+- construit le catalogue de questions ;
+- contrôle les champs qu’une réponse peut renseigner ;
+- enrichit les risques de manière déterministe ;
+- exécute les règles ;
+- sélectionne les clauses DRAFT ;
+- produit 29 composants ;
+- rend le prospectus Markdown ;
+- produit une concordance de 62 lignes ;
+- calcule les empreintes et le manifeste.
 
-1. `00_START_HERE.md`
-2. `SOURCE_OF_TRUTH.md`
-3. `STATUS.md`
-4. `SUIVI.md`
-5. `TODO.md`
-6. `NEXT_ACTION.md`
-7. `LOOP_STATE.md`
-8. les documents canoniques concernés
+## Résultat du cas d’exemple
 
-## Prochaine action autorisée
+- 46 exigences dans le prospectus ;
+- 1 exigence non applicable ;
+- 15 exigences manquantes ;
+- 0 blocage ;
+- 2 avertissements ;
+- `ready_for_compliance_review: false` ;
+- `ready_for_submission: false`.
 
-Exécuter uniquement l’action de `NEXT_ACTION.md` dans une nouvelle boucle : obtenir une copie officielle, vérifiable et exploitable de l’Instruction n°66/CREPMF/2021 avant toute atomisation.
+## Fichiers prioritaires
 
-## Points encore ouverts
+1. `IMPLEMENTATION.md`
+2. `CURRENT_ITERATION.md`
+3. `NEXT_ACTION.md`
+4. `examples/generated/united-capital-diamond/generation-manifest.json`
+5. `src/core/generation-service.js`
+6. `src/core/prospectus-composer.js`
+7. `src/catalog/clause-catalog.js`
+8. `src/catalog/rules.js`
+9. `test/`
 
-- source officielle et version actuelle de l’Instruction n°66/CREPMF/2021 ;
-- date officielle de publication et état juridique actuel de la Circulaire n°05/CREPMF/2022 ;
-- rôles et approbateurs ;
-- stack, environnements, build, tests, sécurité opérationnelle et déploiement ;
-- validation juridique et conformité des clauses et mappings ;
-- archive binaire exacte du kit, seulement si une conservation dans GitHub est requise.
+## Limites à respecter
 
-Voir `OPEN_QUESTIONS.md` pour les formulations canoniques et propriétaires non définis.
+- aucune clause n’est `APPROVED` ou `ACTIVE` ;
+- le Markdown généré est un projet de pré-conformité ;
+- le cas United Capital Diamond n’est pas la norme ;
+- les 15 manques ne doivent pas être masqués par des `NOT_APPLICABLE` artificiels ;
+- la fiscalité et le point 5.3 nécessitent une revue ;
+- le DOCX et le PDF restent à développer ;
+- `LOOP-REG-001` est suspendue, pas clôturée.
 
-## À ne pas faire
+## Prochaine action
 
-- ne pas réorganiser les chemins sans ADR ;
-- ne pas créer ou changer de branche ;
-- ne pas modifier les identifiants, matrices, sources ou schémas existants sans boucle et analyse d’impact dédiées ;
-- ne pas confondre un document préparatoire avec une procédure opérationnelle réelle ;
-- ne pas déclarer de validation juridique, réglementaire ou de production inexistante ;
-- ne pas utiliser les conversations comme source de vérité ;
-- ne pas utiliser les neuf fragments Base64 comme archive canonique.
-
-## Preuves et limites
-
-- preuves : `MANIFEST.md`, `DOCUMENT_INTEGRATION_MATRIX.md`, `WORK_LOG.md`, `docs/09-loop/LOOP_HEALTH_CHECK.md`, `SUIVI.md`, `docs/kits/README.md` et historique Git ;
-- limites : aucun crawler exhaustif de tous les liens Markdown ni scanner de secrets dédié ; copie binaire exacte du ZIP non archivée ;
-- la clôture de la boucle est documentaire, pas juridique.
+Exécuter uniquement `NEXT_ACTION.md` et conserver la branche `main`.

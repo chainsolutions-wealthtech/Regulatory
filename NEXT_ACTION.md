@@ -1,56 +1,37 @@
-# NEXT_ACTION — Une seule action exécutable
+# NEXT_ACTION — Action unique immédiatement exécutable
 
 > **Statut :** `READY`  
-> **Boucle active :** `LOOP-REG-001`.
+> **Boucle :** `LOOP-DEV-001`
 
 ## Action
 
-Matérialiser une copie exploitable du PDF de l’Instruction n°66/CREPMF/2021, calculer sa taille et son SHA-256, puis produire l’index machine-readable complet de ses titres, chapitres, sections et articles sans encore créer les exigences atomiques détaillées.
+Réduire de `15` à `0` le nombre d’exigences CIRC005 manquantes dans le cas standard United Capital Diamond en complétant les données, questions, clauses DRAFT, composants et contrôles nécessaires, sans déclarer aucune clause approuvée.
 
-## Préconditions déjà satisfaites
+## Entrées obligatoires
 
-- registre officiel AMF-UMOA identifié ;
-- Instruction n°66/2021 listée `NON ABROGE` au 2026-08-05 ;
-- publication BRVM du 12 janvier 2022 identifiée ;
-- PDF distant de `65` pages identifié ;
-- source enregistrée dans `regulatory/sources/INSTRUCTION_66_CREPMF_2021.yaml` ;
-- plan enregistré dans `regulatory/plans/INSTRUCTION_66_ATOMIZATION_PLAN_V0_1.yaml` ;
-- branche `main` conservée.
+- `examples/generated/united-capital-diamond/generation-manifest.json` ;
+- `regulatory/matrices/CIRC005_FCP_MATRIX_*.csv` ;
+- `examples/united-capital-diamond/preloaded-data.json` ;
+- `examples/united-capital-diamond/answers.json` ;
+- `src/catalog/clause-catalog.js` ;
+- `src/core/prospectus-composer.js` ;
+- `docs/PROSPECTUS_ENGINE_SPEC.md`.
 
-## Fichiers concernés
+## Méthode
 
-- `regulatory/sources/INSTRUCTION_66_CREPMF_2021.yaml`
-- `regulatory/requirements/INST066_ARTICLE_INDEX_V0_1.yaml`
-- `regulatory/manifest.yaml`
-- `docs/REGULATORY_MAPPING.md`
-- `STATUS.md`
-- `LOOP_STATE.md`
-- `CURRENT_ITERATION.md`
-- `WORK_LOG.md`
-- `SUIVI.md`
-- `TODO.md`
+1. générer la concordance complète par `npm run generate:sample` ;
+2. extraire la liste exacte des 15 exigences `MISSING` ;
+3. classer chaque manque en donnée absente, question absente, clause absente, section absente ou information réellement non applicable ;
+4. compléter uniquement les éléments soutenus par une source ou marquer la revue requise ;
+5. générer de nouveau le dossier ;
+6. exécuter `npm run check` ;
+7. vérifier que la baisse du nombre de manques ne provient pas d’un classement artificiel en `NOT_APPLICABLE` ;
+8. mettre à jour les registres de boucle.
 
 ## Résultat attendu
 
-- copie locale ou référence d’archive exploitable ;
-- taille exacte ;
-- SHA-256 ;
-- nombre de pages confirmé ;
-- date de signature et date d’effet relevées lorsqu’elles sont lisibles ;
-- index complet des articles avec coordonnées de page ;
-- aucune exigence détaillée déclarée `VALIDATED` ;
-- aucun identifiant `CIRC005_*` modifié.
-
-## Preuves attendues
-
-- URL de la source ;
-- empreinte et taille ;
-- index des articles ;
-- contrôle d’unicité et de continuité des numéros ;
-- liste des pages illisibles ou ambiguës ;
-- diff Git contrôlé ;
-- journal des limitations.
-
-## Condition d’arrêt
-
-En cas d’impossibilité de matérialiser fidèlement le PDF, enregistrer la limitation et ne pas inventer l’empreinte. L’index peut être préparé uniquement à partir de pages effectivement consultables, avec provenance et niveau de confiance explicites.
+- concordance complète sur les 62 exigences ;
+- aucune exigence obligatoire silencieusement omise ;
+- tous les cas incertains marqués `LEGAL_REVIEW_REQUIRED`, `TAX_AND_LEGAL_REVIEW_REQUIRED` ou `PENDING_CONFIRMATION` ;
+- `ready_for_submission` maintenu à `false` ;
+- tests de non-régression réussis.

@@ -1,0 +1,85 @@
+# Première tranche verticale exécutable — Prospectus Composer
+
+## Statut
+
+`TECHNICAL_PROTOTYPE — NOT_PRODUCTION_READY`
+
+Cette tranche permet déjà de transformer les matrices réglementaires CIRC005 existantes et un jeu de réponses structurées en :
+
+- données canoniques ;
+- état du questionnaire ;
+- contrôles déterministes ;
+- modèle documentaire traçable ;
+- projet de prospectus Markdown ;
+- table de concordance ;
+- manifeste de génération.
+
+Elle ne produit pas encore le DOCX ni le PDF et aucune clause n’est `APPROVED` ou `ACTIVE`.
+
+## Commandes
+
+Prérequis : Node.js 22 ou version ultérieure.
+
+```bash
+npm test
+npm run generate:sample
+npm run check
+```
+
+Aucune installation de dépendances externes n’est nécessaire.
+
+## Entrées exécutables
+
+```text
+regulatory/matrices/*.csv
+examples/united-capital-diamond/preloaded-data.json
+examples/united-capital-diamond/answers.json
+```
+
+Les quatre matrices existantes restent la source des identifiants d’exigence, questions, champs, effets, contrôles et sections. Le code ne recrée pas de second registre concurrent.
+
+## Sorties du cas d’exemple
+
+```text
+examples/generated/united-capital-diamond/
+├── prospectus-draft.md
+├── canonical-data.json
+├── questionnaire-state.json
+├── control-report.json
+├── concordance.json
+├── document-model.json
+├── answer-log.json
+└── generation-manifest.json
+```
+
+Les fichiers non versionnés dans le dépôt sont régénérés par `npm run generate:sample`.
+
+## Chaîne implémentée
+
+```text
+Matrices CIRC005
++ données préchargées
++ réponses structurées
+→ catalogue de questions exécutable
+→ modèle canonique
+→ enrichissements déterministes
+→ contrôles
+→ sélection des clauses DRAFT
+→ composants documentaires
+→ prospectus Markdown
+→ concordance et manifeste
+```
+
+## Règles de sécurité réglementaire
+
+- le cas United Capital Diamond est un cas de test, jamais une norme ;
+- les clauses sont `DRAFT_LEGAL_REVIEW_REQUIRED` ;
+- le moteur affiche toujours `ready_for_submission: false` ;
+- la fiscalité et le point 5.3 « informations d’ordre économique » restent soumis à revue ;
+- les champs manquants restent visibles ;
+- les identifiants `CIRC005_*` proviennent des matrices existantes ;
+- le rendu est déterministe pour un même snapshot et les mêmes versions.
+
+## Prochaine extension technique
+
+La prochaine tranche doit couvrir les exigences encore manquantes, ajouter le schéma JSON canonique détaillé, le stockage versionné d’un projet, les questions conditionnelles complémentaires, la bibliothèque de clauses persistée et le rendu DOCX/PDF après validation des composants.

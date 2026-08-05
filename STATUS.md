@@ -1,65 +1,62 @@
 # STATUS — État courant du projet
 
-> **Statut :** `APPLICABLE`  
-> **Photographie au :** 2026-08-05  
-> **Référence de boucle :** `LOOP-REG-001` — `IN_PROGRESS`.
+> **Date de référence :** 2026-08-05  
+> **Branche :** `main`  
+> **Boucle active :** `LOOP-DEV-001`  
+> **État global :** `EXECUTABLE_VERTICAL_SLICE_IN_PROGRESS`
 
-## Terminé
+## Résumé
 
-- cadrage OPCVM/FCP UMOA ;
-- gouvernance initiale et décisions `DEC-001` à `DEC-014` ;
-- mapping machine-readable initial de la Circulaire n°05/CREPMF/2022 ;
-- `62` exigences V1, quatre matrices CSV et `30` objets canoniques ;
-- intégration additive des `176/176` chemins Markdown du kit Loop Engineering dans `LOOP-GOV-001` ;
-- clôture de `TASK-GOV-001` sans suppression, branche, fusion, migration ou déploiement ;
-- identification du registre officiel AMF-UMOA des Instructions ;
-- confirmation que l’Instruction n°66/2021 est listée `NON ABROGE` au contrôle du 2026-08-05 ;
-- identification de la publication BRVM du 12 janvier 2022 et du PDF de `65` pages ;
-- création de `regulatory/sources/INSTRUCTION_66_CREPMF_2021.yaml` ;
-- création de `regulatory/plans/INSTRUCTION_66_ATOMIZATION_PLAN_V0_1.yaml` ;
-- mise à jour du manifeste réglementaire sans modification des `62` identifiants CIRC005 existants.
+Le dépôt n’est plus uniquement documentaire. Il contient maintenant une première tranche verticale exécutable du Prospectus Composer UMOA/FCP.
 
-## En cours — LOOP-REG-001
+La tranche lit les quatre matrices CIRC005 existantes, applique un jeu de réponses structurées à un modèle canonique, exécute des contrôles déterministes, sélectionne des clauses DRAFT, compose un projet de prospectus Markdown et produit la concordance et le manifeste de génération.
 
-- contrôle de l’intégrité binaire de la copie PDF ;
-- confirmation de la date exacte de signature et de prise d’effet ;
-- identification du texte précédent annulé et remplacé ;
-- inventaire des éventuels modificatifs, rectificatifs et textes connexes ;
-- préparation de l’index des titres, chapitres, sections et articles ;
-- préparation du futur crosswalk `INST066 ↔ CIRC005 ↔ modèle canonique`.
+## État technique
 
-## État documentaire vérifié
+- runtime : Node.js `22+` ;
+- dépendances externes : aucune ;
+- tests locaux : `7/7 PASS` ;
+- commande complète : `npm run check` ;
+- exigences chargées : `62` ;
+- questions applicables au cas : `58` ;
+- réponses du cas : `30` ;
+- composants documentaires : `29`.
 
-- branche conservée : `main` ;
-- aucune autre branche présente au démarrage de `LOOP-REG-001` ;
-- commit de départ de la boucle : `4a62d87520ce62fcea52c8794f1c9b72cbec439d` ;
-- documents canoniques historiques maintenus ;
-- artefacts CIRC005, matrices et modèle canonique préservés ;
-- aucune règle INST066 n’a encore le statut `VALIDATED`, `APPROVED` ou `ACTIVE`.
+## Cas United Capital Diamond
 
-## Anomalie historique conservée — archive binaire du kit Loop Engineering
+- exigences `IN_PROSPECTUS` : `46` ;
+- exigences `NOT_APPLICABLE` : `1` ;
+- exigences `MISSING` : `15` ;
+- blocages automatiques : `0` ;
+- avertissements : `2` ;
+- statut : `DATA_INCOMPLETE` ;
+- prêt pour revue conformité : `false` ;
+- prêt pour soumission : `false`.
 
-Les neuf fragments Base64 sous `docs/kits/parts/` ne permettent pas de reconstruire fidèlement le ZIP source. Ils restent exclus de la source de vérité et marqués `INVALID_UNVERIFIED_LEGACY_FRAGMENTS`.
+Les deux avertissements actuels concernent :
 
-## Bloqué ou non vérifié
+- l’absence de source fiscale validée ;
+- l’interprétation du point 5.3 relatif aux informations d’ordre économique.
 
-- SHA-256 et taille exacte du PDF de l’Instruction n°66/2021 ;
-- date exacte de signature et date d’effet de l’Instruction n°66/2021 ;
-- identité du texte précédent annulé et remplacé ;
-- existence et portée de modificatifs ou rectificatifs postérieurs ;
-- date officielle de publication et état juridique actuel de la Circulaire n°05/CREPMF/2022 ;
-- responsables métier, conformité, juridique, fiscal, technique et sécurité ;
-- stack, environnements, base, build, tests et déploiement ;
-- validation juridique et conformité des clauses et mappings.
+## Livrables actuels
 
-## Risques immédiats
+Le dépôt versionne le projet de prospectus, le rapport de contrôles et le manifeste. La commande `npm run generate:sample` régénère en plus les données canoniques, l’état du questionnaire, la concordance complète, le modèle documentaire et le journal des réponses.
 
-- confondre le statut `NON ABROGE` du registre avec une validation juridique exhaustive de toutes les versions ;
-- atomiser à partir d’une copie non empreintée sans déclarer la limite ;
-- créer des doublons entre `INST066` et `CIRC005` au lieu de lier les exigences ;
-- transformer une observation de prospectus en règle normative ;
-- activer un wording avant revue juridique et conformité.
+## Limites
 
-## Prochaine action unique
+- prototype technique, pas application de production ;
+- aucun DOCX/PDF généré ;
+- aucune persistance ni interface web ;
+- aucune clause approuvée ;
+- 15 exigences encore manquantes ;
+- corpus réglementaire incomplet ;
+- Instruction n°66 non atomisée ;
+- revue juridique, conformité et fiscale non réalisée.
 
-Voir `NEXT_ACTION.md` : compléter le contrôle de source de l’Instruction n°66/2021, puis produire son index structurel machine-readable avant toute atomisation détaillée.
+## Boucle réglementaire
+
+`LOOP-REG-001` est `PAUSED_BY_OWNER_PRIORITY`, non clôturée. Ses résultats et tâches restantes restent valides.
+
+## Prochaine action
+
+Voir `NEXT_ACTION.md` : couvrir les 15 exigences manquantes sans inventer de données ni détourner les statuts de couverture.

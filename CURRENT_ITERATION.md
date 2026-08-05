@@ -1,63 +1,67 @@
-# CURRENT_ITERATION — LOOP-REG-001
+# CURRENT_ITERATION — LOOP-DEV-001
 
 > **Statut :** `IN_PROGRESS`  
 > **Ouverte le :** 2026-08-05
 
 ## Objectif
 
-Enregistrer une source vérifiable de l’Instruction n°66/CREPMF/2021 et préparer son atomisation complète, sans modifier les identifiants existants de la Circulaire n°05/CREPMF/2022.
+Construire la première tranche verticale exécutable du moteur de prospectus FCP/OPCVM UMOA afin de transformer les matrices réglementaires et des réponses structurées en données canoniques, contrôles, composants documentaires, prospectus de travail et table de concordance.
 
-## Pourquoi cette boucle a été ouverte
+## Décision de priorité
 
-La boucle documentaire `LOOP-GOV-001` avait défini comme prochaine action unique l’obtention d’une source officielle de l’Instruction n°66/CREPMF/2021. Le propriétaire a fourni le registre réglementaire AMF-UMOA permettant d’identifier les Instructions et Circulaires applicables.
+Le propriétaire a demandé de commencer immédiatement le code de construction du prospectus. `LOOP-REG-001` n’est pas clôturée : elle est suspendue avec ses travaux restants préservés. La priorité active devient `LOOP-DEV-001`.
 
 ## État initial vérifié
 
-- branche `main` au commit `4a62d87520ce62fcea52c8794f1c9b72cbec439d` ;
-- une seule branche présente ;
-- Circulaire n°05/CREPMF/2022 déjà représentée par `62` exigences et quatre matrices ;
-- modèle canonique V0.1 de `30` objets ;
-- Instruction n°66/CREPMF/2021 non encore enregistrée dans le manifeste ni atomisée.
+- branche unique : `main` ;
+- commit de départ : `a2a7d0a26802169a859b5bf02ca5e88798f483a8` ;
+- aucun code applicatif ni `package.json` ;
+- 62 exigences CIRC005 ;
+- quatre matrices CSV ;
+- modèle canonique architectural de 30 objets ;
+- aucune clause `APPROVED` ou `ACTIVE`.
 
-## Travail déjà réalisé dans l’itération
+## Travail réalisé dans l’itération
 
-- vérification du registre officiel AMF-UMOA ;
-- confirmation du statut affiché `NON ABROGE` ;
-- identification de la publication BRVM du 12 janvier 2022 ;
-- identification du PDF distant de `65` pages ;
-- création du registre source YAML ;
-- création d’un plan d’atomisation en dix phases ;
-- ajout de la source et du plan au manifeste ;
-- ouverture de la boucle et mise à jour de la question `OQ-002`.
+- ajout d’un projet Node.js 22 sans dépendance externe ;
+- chargement exécutable des quatre matrices CIRC005 ;
+- création du catalogue de questions ;
+- application contrôlée des réponses aux chemins canoniques ;
+- création d’un moteur conditionnel initial ;
+- création d’un moteur de règles initial ;
+- création d’une bibliothèque de clauses DRAFT ;
+- création du modèle documentaire et du compositeur Markdown ;
+- création de la table de concordance et du manifeste déterministe ;
+- création du cas United Capital Diamond prérempli ;
+- génération de sorties de contrôle et de traçabilité ;
+- ajout de sept tests automatisés ;
+- résultat local : `7/7` tests réussis ;
+- couverture du cas initial : `46` exigences dans le prospectus, `1` non applicable et `15` manquantes ;
+- contrôles : `0` blocage, `2` avertissements ;
+- statut du dossier : `DATA_INCOMPLETE` ;
+- soumission : interdite.
 
 ## Périmètre restant
 
-- matérialiser une copie exploitable du PDF et calculer taille et SHA-256 ;
-- confirmer la date de signature et la date d’effet ;
-- identifier le texte précédent annulé et remplacé ;
-- vérifier les modificatifs, rectificatifs et textes connexes ;
-- produire l’index machine-readable de tous les articles ;
-- préparer le crosswalk avec `CIRC005` et le modèle canonique.
+- couvrir les 15 exigences encore manquantes ;
+- enrichir le catalogue de questions conditionnelles ;
+- produire le JSON Schema canonique détaillé ;
+- ajouter la persistance versionnée ;
+- séparer les clauses du code vers un registre versionné ;
+- ajouter le rendu DOCX puis PDF ;
+- reprendre et terminer `LOOP-REG-001` pour l’Instruction n°66 ;
+- obtenir les validations juridique, conformité et fiscale.
 
-## Hors périmètre de cette étape
+## Critères de sortie de LOOP-DEV-001
 
-- rédaction ou activation de clauses juridiques ;
-- implémentation applicative ;
-- modification des `62` exigences CIRC005 ;
-- modification des quatre matrices existantes ;
-- validation juridique ou conformité finale ;
-- déploiement ou modification de données de production.
-
-## Critères de sortie
-
-- [x] registre officiel identifié ;
-- [x] statut courant documenté ;
-- [x] publication et PDF identifiés ;
-- [x] source YAML créée ;
-- [x] plan d’atomisation créé ;
-- [ ] SHA-256 et taille du PDF calculés ;
-- [ ] dates de signature et d’effet confirmées ;
-- [ ] prédécesseur et textes modificatifs inventoriés ;
-- [ ] index structurel complet produit ;
-- [ ] contrôles de non-régression exécutés ;
-- [ ] documentation de clôture et handoff finalisés.
+- [x] moteur exécutable sans dépendance externe ;
+- [x] matrices existantes utilisées comme source ;
+- [x] cas d’exemple généré ;
+- [x] tests automatisés réussis localement ;
+- [x] concordance produite sur les 62 exigences ;
+- [ ] zéro exigence obligatoire non traitée dans le cas standard ;
+- [ ] schéma canonique détaillé validé structurellement ;
+- [ ] clauses externalisées et versionnées ;
+- [ ] rendu DOCX déterministe ;
+- [ ] rendu PDF contrôlé ;
+- [ ] revue humaine du modèle et des clauses.
