@@ -2,7 +2,7 @@
 
 > **Statut :** `APPLICABLE`  
 > **Photographie au :** 2026-08-05  
-> **Référence de boucle :** `LOOP-GOV-001` — `CLOSED`.
+> **Référence de boucle :** `LOOP-REG-001` — `IN_PROGRESS`.
 
 ## Terminé
 
@@ -10,49 +10,56 @@
 - gouvernance initiale et décisions `DEC-001` à `DEC-014` ;
 - mapping machine-readable initial de la Circulaire n°05/CREPMF/2022 ;
 - `62` exigences V1, quatre matrices CSV et `30` objets canoniques ;
-- audit du dépôt au commit de départ `7433be04ce00d0108c1e01441d5e49f01fb994f4` ;
-- lecture du kit Loop Engineering version `1.0.0`, de ses `176` fichiers Markdown et de son manifeste ;
-- intégration additive de tous les `176/176` chemins Markdown du kit ;
-- création des adaptateurs, registres d’état, modèles et sept ADR de gouvernance ;
-- enregistrement du nom, de la taille et du SHA-256 du ZIP source ;
-- contrôle de présence des chemins, des comptes de fichiers et de la préservation des artefacts réglementaires ;
-- clôture de `TASK-GOV-001 — Intégrer le standard documentaire Loop Engineering sans régression`.
+- intégration additive des `176/176` chemins Markdown du kit Loop Engineering dans `LOOP-GOV-001` ;
+- clôture de `TASK-GOV-001` sans suppression, branche, fusion, migration ou déploiement ;
+- identification du registre officiel AMF-UMOA des Instructions ;
+- confirmation que l’Instruction n°66/2021 est listée `NON ABROGE` au contrôle du 2026-08-05 ;
+- identification de la publication BRVM du 12 janvier 2022 et du PDF de `65` pages ;
+- création de `regulatory/sources/INSTRUCTION_66_CREPMF_2021.yaml` ;
+- création de `regulatory/plans/INSTRUCTION_66_ATOMIZATION_PLAN_V0_1.yaml` ;
+- mise à jour du manifeste réglementaire sans modification des `62` identifiants CIRC005 existants.
+
+## En cours — LOOP-REG-001
+
+- contrôle de l’intégrité binaire de la copie PDF ;
+- confirmation de la date exacte de signature et de prise d’effet ;
+- identification du texte précédent annulé et remplacé ;
+- inventaire des éventuels modificatifs, rectificatifs et textes connexes ;
+- préparation de l’index des titres, chapitres, sections et articles ;
+- préparation du futur crosswalk `INST066 ↔ CIRC005 ↔ modèle canonique`.
 
 ## État documentaire vérifié
 
-- fichiers Markdown avant la boucle : `11` ;
-- fichiers Markdown après la création initiale : `194` ;
-- fichiers créés depuis le commit de départ lors de l’intégration initiale : `192`, dont `183` Markdown et `9` fragments Base64 historiques ;
-- documents canoniques historiques maintenus : `README.md`, `AGENTS.md`, `SUIVI.md`, `TODO.md`, `docs/DECISIONS.md`, `docs/ARCHITECTURE.md`, `docs/PROSPECTUS_ENGINE_SPEC.md`, `docs/REGULATORY_MAPPING.md` ;
 - branche conservée : `main` ;
-- aucune autre branche présente au contrôle préparatoire ;
-- aucun déploiement, aucune fusion, aucune migration et aucune modification de données de production.
+- aucune autre branche présente au démarrage de `LOOP-REG-001` ;
+- commit de départ de la boucle : `4a62d87520ce62fcea52c8794f1c9b72cbec439d` ;
+- documents canoniques historiques maintenus ;
+- artefacts CIRC005, matrices et modèle canonique préservés ;
+- aucune règle INST066 n’a encore le statut `VALIDATED`, `APPROVED` ou `ACTIVE`.
 
-## Anomalie déclarée — archive binaire du kit
+## Anomalie historique conservée — archive binaire du kit Loop Engineering
 
-Les neuf fragments Base64 sous `docs/kits/parts/` ne permettent pas de reconstruire fidèlement le ZIP source : `9` parties et `164786` caractères sont présents, alors que `13` parties et `149972` caractères sont attendus. Ils sont conservés comme traces historiques, exclus de la source de vérité et marqués `INVALID_UNVERIFIED_LEGACY_FRAGMENTS`.
-
-L’intégration des contenus Markdown reste complète : `176/176` chemins présents, aucun fichier vide et aucun fichier limité à un titre. La copie binaire exacte du ZIP n’est pas archivée dans le dépôt.
+Les neuf fragments Base64 sous `docs/kits/parts/` ne permettent pas de reconstruire fidèlement le ZIP source. Ils restent exclus de la source de vérité et marqués `INVALID_UNVERIFIED_LEGACY_FRAGMENTS`.
 
 ## Bloqué ou non vérifié
 
+- SHA-256 et taille exacte du PDF de l’Instruction n°66/2021 ;
+- date exacte de signature et date d’effet de l’Instruction n°66/2021 ;
+- identité du texte précédent annulé et remplacé ;
+- existence et portée de modificatifs ou rectificatifs postérieurs ;
 - date officielle de publication et état juridique actuel de la Circulaire n°05/CREPMF/2022 ;
-- copie source officielle et version actuelle de l’Instruction n°66/CREPMF/2021 ;
 - responsables métier, conformité, juridique, fiscal, technique et sécurité ;
 - stack, environnements, base, build, tests et déploiement ;
-- validation juridique et conformité des clauses et mappings ;
-- copie binaire exacte du kit dans GitHub, si cette conservation devient nécessaire ;
-- crawler automatisé complet de tous les liens Markdown et scanner de secrets dédié.
+- validation juridique et conformité des clauses et mappings.
 
 ## Risques immédiats
 
-- confusion entre documents canoniques et adaptateurs ;
-- utilisation d’un module `À DÉTERMINER` comme procédure réelle ;
-- duplication de wordings juridiques non approuvés ;
-- dérive entre Markdown et artefacts machine-readable ;
-- interprétation d’une validation structurelle comme une validation juridique ;
-- utilisation erronée des fragments Base64 comme archive source.
+- confondre le statut `NON ABROGE` du registre avec une validation juridique exhaustive de toutes les versions ;
+- atomiser à partir d’une copie non empreintée sans déclarer la limite ;
+- créer des doublons entre `INST066` et `CIRC005` au lieu de lier les exigences ;
+- transformer une observation de prospectus en règle normative ;
+- activer un wording avant revue juridique et conformité.
 
 ## Prochaine action unique
 
-Voir `NEXT_ACTION.md` : obtenir une copie officielle, vérifiable et exploitable de l’Instruction n°66/CREPMF/2021 avant toute atomisation.
+Voir `NEXT_ACTION.md` : compléter le contrôle de source de l’Instruction n°66/2021, puis produire son index structurel machine-readable avant toute atomisation détaillée.
