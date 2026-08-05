@@ -1,6 +1,6 @@
 {
   "name": "@regulatory/prospectus-web",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "private": true,
   "scripts": {
     "dev": "next dev",
@@ -17,6 +17,6 @@
     "@types/node": "24.1.0",
     "@types/react": "19.1.9",
     "@types/react-dom": "19.1.7",
-    "typescript": "7.0.2"
+    "typescript": "6.0.3"
   }
 }
