@@ -4,7 +4,24 @@ import {
   QUESTION_GROUPS,
   QUESTIONS,
 } from "./regulatory-catalog";
+import {
+  ASSET_RANGE_QUESTION_ID,
+  COUNTRY_ARRANGEMENT_QUESTION_ID,
+  EVIDENCE_COLLECTION_QUESTION_ID,
+  GOVERNANCE_PARTY_QUESTION_ID,
+  REMUNERATION_QUESTION_ID,
+  RISK_FACTOR_QUESTION_ID,
+  SERVICE_PROVIDER_QUESTION_ID,
+  STRUCTURED_QUESTION_TYPES,
+  TRANSACTION_FEE_QUESTION_ID,
+  VALUATION_METHOD_QUESTION_ID,
+  validateStructuredQuestionValue,
+} from "./structured-answers";
 import type {
+  AssetClassRangeInput,
+  CountryArrangementInput,
+  EvidenceInput,
+  PartyInput,
   ProjectAnswer,
   ProspectusProject,
   ProspectusQuestion,
@@ -12,6 +29,7 @@ import type {
   QuestionGroup,
   QuestionGroupWithQuestions,
   ValidationFinding,
+  ValuationMethodInput,
 } from "./types";
 
 const LEGACY_QUESTION_ALIASES: Record<string, string> = {
@@ -33,7 +51,8 @@ const LEGACY_QUESTION_ALIASES: Record<string, string> = {
   "objective.benchmark": "APP_BENCHMARK_ENABLED",
   "objective.benchmarkName": "APP_BENCHMARK_REFERENCE",
   "risks.confirm": "APP_RISK_CONFIRMATION",
-  "risks.specific": "APP_RISK_SPECIFIC",
+  "risks.specific": RISK_FACTOR_QUESTION_ID,
+  APP_RISK_SPECIFIC: RISK_FACTOR_QUESTION_ID,
   "nav.frequency": "Q_NAV_FREQUENCY",
   "nav.publication": "Q_PRICE_PUBLICATION",
   "subscriptions.gate": "APP_REDEMPTION_GATE_ENABLED",
@@ -41,7 +60,8 @@ const LEGACY_QUESTION_ALIASES: Record<string, string> = {
   "tax.review": "APP_TAX_REVIEW_CONFIRMED",
   "distribution.countries": "Q_MARKETING_COUNTRIES",
   "performance.available": "Q_HISTORICAL_PERFORMANCE_AVAILABLE",
-  "evidence.approvals": "APP_EVIDENCE_APPROVALS",
+  "evidence.approvals": EVIDENCE_COLLECTION_QUESTION_ID,
+  APP_EVIDENCE_APPROVALS: EVIDENCE_COLLECTION_QUESTION_ID,
   "review.owner": "APP_REVIEW_OWNER",
 };
 
@@ -118,6 +138,25 @@ export function validateProject(project: ProspectusProject): ValidationFinding[]
       });
     }
   }
+
+  for (const questionId of Object.keys(STRUCTURED_QUESTION_TYPES)) {
+    const answer = project.answers[questionId];
+    if (!answer) continue;
+    try {
+      validateStructuredQuestionValue(questionId, answer.value);
+    } catch (error) {
+      findings.push({
+        id: `STRUCTURED_COLLECTION_INVALID:${questionId}`,
+        severity: "BLOCKER",
+        title: "Collection structurée invalide",
+        message: error instanceof Error ? error.message : "Une collection structurée est invalide.",
+        questionIds: [questionId],
+        remediation: "Corriger les lignes signalées puis enregistrer de nouveau la collection.",
+      });
+    }
+  }
+
+  addCrossCollectionFindings(project, findings);
 
   if (String(getAnswerValue(project, "APP_TAX_REVIEW_CONFIRMED")) !== "true") {
     findings.push({
@@ -239,6 +278,105 @@ export function migrateProjectToCurrentCatalog(project: ProspectusProject): Pros
     interactiveQuestionCount: CATALOG_METADATA.interactiveQuestionCount,
   };
   return migrated;
+}
+
+function addCrossCollectionFindings(
+  project: ProspectusProject,
+  findings: ValidationFinding[],
+): void {
+  const ranges = arrayAnswer<AssetClassRangeInput>(project, ASSET_RANGE_QUESTION_ID);
+  const methods = arrayAnswer<ValuationMethodInput>(project, VALUATION_METHOD_QUESTION_ID);
+  if (ranges.length > 0 && methods.length > 0) {
+    const methodAssetClasses = new Set(methods.map((item) => item.asset_class));
+    const missingMethods = ranges
+      .filter((item) => item.maximum_percent > 0 && !methodAssetClasses.has(item.asset_class))
+      .map((item) => item.asset_class);
+    if (missingMethods.length > 0) {
+      findings.push({
+        id: "VALUATION_METHOD_MISSING_FOR_ASSET_CLASS",
+        severity: "BLOCKER",
+        title: "Méthode de valorisation manquante",
+        message: `Aucune méthode n’est déclarée pour : ${missingMethods.join(", ")}.`,
+        questionIds: [ASSET_RANGE_QUESTION_ID, VALUATION_METHOD_QUESTION_ID],
+        remediation: "Ajouter une méthode principale et une méthode de secours pour chaque classe utilisée.",
+      });
+    }
+  }
+
+  const parties = arrayAnswer<PartyInput>(project, SERVICE_PROVIDER_QUESTION_ID);
+  const depositarySelected = hasAnswer(getAnswerValue(project, "Q_SELECT_DEPOSITARY"));
+  if (parties.length > 0 && !parties.some((item) => item.role === "DEPOSITARY") && !depositarySelected) {
+    findings.push({
+      id: "DEPOSITARY_NOT_IDENTIFIED",
+      severity: "BLOCKER",
+      title: "Dépositaire absent",
+      message: "Aucun dépositaire n’est identifié dans le référentiel ou la collection des intervenants.",
+      questionIds: ["Q_SELECT_DEPOSITARY", SERVICE_PROVIDER_QUESTION_ID],
+      remediation: "Identifier le dépositaire et joindre l’agrément ainsi que la convention.",
+    });
+  }
+
+  const countries = arrayAnswer<CountryArrangementInput>(project, COUNTRY_ARRANGEMENT_QUESTION_ID);
+  const marketedCountries = arrayStringAnswer(project, "Q_MARKETING_COUNTRIES");
+  const arrangedCountryCodes = new Set(countries.map((item) => item.country_code));
+  const missingArrangements = marketedCountries.filter((country) => !arrangedCountryCodes.has(country));
+  if (missingArrangements.length > 0) {
+    findings.push({
+      id: "MARKETING_COUNTRY_ARRANGEMENT_MISSING",
+      severity: "BLOCKER",
+      title: "Dispositif local manquant",
+      message: `Les dispositifs de commercialisation manquent pour : ${missingArrangements.join(", ")}.`,
+      questionIds: [COUNTRY_ARRANGEMENT_QUESTION_ID, "Q_MARKETING_COUNTRIES"],
+      remediation: "Ajouter un dispositif de paiement, rachat et information pour chaque État sélectionné.",
+    });
+  }
+
+  const evidence = arrayAnswer<EvidenceInput>(project, EVIDENCE_COLLECTION_QUESTION_ID);
+  const pendingEvidence = evidence.filter((item) => item.verification_status !== "VERIFIED");
+  if (pendingEvidence.length > 0) {
+    findings.push({
+      id: "EVIDENCE_VERIFICATION_PENDING",
+      severity: "WARNING",
+      title: "Pièces justificatives à vérifier",
+      message: `${pendingEvidence.length} pièce(s) restent en attente de vérification ou ont été rejetées.`,
+      questionIds: [EVIDENCE_COLLECTION_QUESTION_ID],
+      remediation: "Contrôler l’émetteur, la référence, l’intégrité et la validité de chaque pièce.",
+    });
+  }
+
+  const unconfirmedCollections = [
+    ASSET_RANGE_QUESTION_ID,
+    TRANSACTION_FEE_QUESTION_ID,
+    REMUNERATION_QUESTION_ID,
+    VALUATION_METHOD_QUESTION_ID,
+    GOVERNANCE_PARTY_QUESTION_ID,
+    SERVICE_PROVIDER_QUESTION_ID,
+    RISK_FACTOR_QUESTION_ID,
+    COUNTRY_ARRANGEMENT_QUESTION_ID,
+  ].filter((questionId) =>
+    arrayAnswer<Record<string, unknown>>(project, questionId).some(
+      (item) => item.review_status && item.review_status !== "CONFIRMED",
+    ),
+  );
+  if (unconfirmedCollections.length > 0) {
+    findings.push({
+      id: "STRUCTURED_COLLECTIONS_PENDING_REVIEW",
+      severity: "WARNING",
+      title: "Collections canoniques à revoir",
+      message: `${unconfirmedCollections.length} collection(s) contiennent des lignes non confirmées.`,
+      questionIds: unconfirmedCollections,
+      remediation: "Faire confirmer les lignes par les rôles métier, risques, conformité, juridique ou fiscal compétents.",
+    });
+  }
+}
+
+function arrayAnswer<T>(project: ProspectusProject, questionId: string): T[] {
+  const value = getAnswerValue(project, questionId);
+  return Array.isArray(value) ? (value as T[]) : [];
+}
+
+function arrayStringAnswer(project: ProspectusProject, questionId: string): string[] {
+  return arrayAnswer<unknown>(project, questionId).map(String);
 }
 
 function hasAnswer(value: unknown): boolean {
