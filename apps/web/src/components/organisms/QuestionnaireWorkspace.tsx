@@ -70,7 +70,7 @@ export function QuestionnaireWorkspace({
       const response = await fetch(`/api/projects/${project.id}/answers`, {
         method: "POST",
         headers: { "content-type": "application/json" },
-        body: JSON.stringify({ questionId, value }),
+        body: JSON.stringify({ questionId, value, expectedVersion: previousProject.version }),
       });
       const body = (await response.json()) as {
         error?: string;
