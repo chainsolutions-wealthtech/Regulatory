@@ -65,7 +65,7 @@ assert(
 );
 
 const generated = await request(`/api/projects/${projectId}/generate`, { method: "POST" });
-assert(generated.response.status === 200, "La génération du snapshot doit réussir.");
+assert(generated.response.status === 200, "La génération documentaire doit réussir.");
 assert(generated.body.generation.readyForSubmission === false, "La soumission doit rester interdite.");
 assert(
   generated.body.canonicalSnapshot.catalogDigest === catalog.metadata.catalogDigest,
@@ -86,12 +86,38 @@ assert(
   "La donnée canonique du fonds doit être alimentée.",
 );
 assert(
-  typeof generated.body.generation.canonicalSnapshotPath === "string",
-  "Le chemin du snapshot canonique doit être conservé dans la génération.",
+  generated.body.preview.generationId === generated.body.generation.generationId,
+  "L’aperçu et le manifeste projet doivent partager le même identifiant de génération.",
+);
+assert(
+  generated.body.preview.sections.length > 0,
+  "Le compositeur historique doit produire au moins une section documentaire.",
 );
 
+const requiredArtifactPathFields = [
+  "artifactDirectoryPath",
+  "canonicalSnapshotPath",
+  "canonicalDataPath",
+  "questionnaireStatePath",
+  "controlReportPath",
+  "concordancePath",
+  "documentModelPath",
+  "answerLogPath",
+  "generationManifestPath",
+  "markdownPath",
+  "docxPath",
+  "docxManifestPath",
+  "docxValidationPath",
+];
+for (const field of requiredArtifactPathFields) {
+  assert(
+    typeof generated.body.generation[field] === "string" && generated.body.generation[field].length > 0,
+    `Le chemin d’artefact ${field} doit être conservé dans la génération.`,
+  );
+}
+
 const validation = {
-  validationId: "CIRC005_WEB_API_INTEGRATION_VALIDATION_V1",
+  validationId: "CIRC005_WEB_API_INTEGRATION_VALIDATION_V2",
   status: "PASS",
   catalogDigest: catalog.metadata.catalogDigest,
   requirementCount: catalog.metadata.requirementCount,
@@ -106,6 +132,9 @@ const validation = {
     conditionalAnswerInvalidation: true,
     canonicalSnapshotGenerated: true,
     canonicalFieldPopulated: true,
+    historicalComposerInvoked: true,
+    completeGenerationBundlePersisted: true,
+    deterministicDocxValidated: true,
     generationArtifactPathRecorded: true,
     readyForSubmissionRemainsFalse: true,
   },
