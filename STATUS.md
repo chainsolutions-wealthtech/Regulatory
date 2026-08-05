@@ -106,3 +106,20 @@ Le DOCX reste un document de pré-conformité. Les exigences `PENDING_REVIEW` et
 - rapport : `docs/05-quality/DOCX_VISUAL_INSPECTION_2026-08-05.md` ;
 - nature du verdict : qualité structurelle et visuelle d’un document de pré-conformité, non validation juridique ou réglementaire.
 <!-- AUTO:LOOP-DEV-001-DOCX-VISUAL-QA:END -->
+
+<!-- AUTO:LOOP-DEV-001-NEXTJS-ATOMIC-DESIGN:START -->
+## Mise à jour LOOP-DEV-001 — Next.js et Atomic Design
+
+- application : `apps/web` ;
+- framework : Next.js App Router + React + TypeScript ;
+- architecture UI : Atomic Design ;
+- groupes de questionnaire : `18` ;
+- API locale : projets, questions, réponses et génération ;
+- persistance : JSON local versionné avec audit NDJSON ;
+- build : vérifié par GitHub Actions ;
+- authentification : non implémentée ;
+- production : interdite ;
+- soumission réglementaire : interdite.
+
+La prochaine étape porte sur la connexion exhaustive du catalogue web au moteur réglementaire, la généralisation de la génération DOCX et les tests d’intégration.
+<!-- AUTO:LOOP-DEV-001-NEXTJS-ATOMIC-DESIGN:END -->

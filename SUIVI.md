@@ -549,3 +549,27 @@ Transformer le modèle documentaire traçable en fichier DOCX de pré-conformit�
 - rapport : `docs/05-quality/DOCX_VISUAL_INSPECTION_2026-08-05.md` ;
 - nature du verdict : qualité structurelle et visuelle d’un document de pré-conformité, non validation juridique ou réglementaire.
 <!-- AUTO:LOOP-DEV-001-DOCX-VISUAL-QA:END -->
+
+<!-- AUTO:LOOP-DEV-001-NEXTJS-ATOMIC-DESIGN:START -->
+## 2026-08-05 — Première application Next.js en Atomic Design
+
+### Réalisé
+
+- création de `apps/web` ;
+- App Router et TypeScript strict ;
+- composants répartis en atoms, molecules, organisms et templates ;
+- tableau de bord et liste des projets ;
+- création d’un projet ;
+- questionnaire adaptatif en 18 groupes ;
+- sauvegarde locale versionnée ;
+- journal d’audit ;
+- contrôles de complétude et de cohérence ;
+- couverture CIRC005 ;
+- aperçu du prospectus ;
+- API locale ;
+- vérification TypeScript et build de production dans la CI.
+
+### Limites
+
+La persistance n’est pas transactionnelle, l’authentification et le RBAC ne sont pas présents, et le catalogue de questions TypeScript est encore un adaptateur provisoire. L’application reste un prototype local de pré-conformité.
+<!-- AUTO:LOOP-DEV-001-NEXTJS-ATOMIC-DESIGN:END -->

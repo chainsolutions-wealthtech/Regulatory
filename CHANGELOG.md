@@ -118,3 +118,21 @@ Le DOCX affiche qu’il s’agit d’un document de pré-conformité non visé, 
 - rapport : `docs/05-quality/DOCX_VISUAL_INSPECTION_2026-08-05.md` ;
 - nature du verdict : qualité structurelle et visuelle d’un document de pré-conformité, non validation juridique ou réglementaire.
 <!-- AUTO:LOOP-DEV-001-DOCX-VISUAL-QA:END -->
+
+<!-- AUTO:LOOP-DEV-001-NEXTJS-ATOMIC-DESIGN:START -->
+## [Unreleased] — Application Next.js / Atomic Design — 2026-08-05
+
+### Added
+
+- application `apps/web` avec Next.js App Router ;
+- composants Atomic Design ;
+- tableau de bord, projets, questionnaire, contrôles et aperçu ;
+- API locale et persistance JSON versionnée ;
+- catalogue initial de questions couvrant 18 groupes ;
+- validation TypeScript et build Next.js en CI ;
+- ADR-0008 et documentation d’architecture front-end.
+
+### Security
+
+L’application est explicitement locale. Aucune authentification fictive n’est présentée comme sécurisée et aucun déploiement n’est autorisé dans cette tranche.
+<!-- AUTO:LOOP-DEV-001-NEXTJS-ATOMIC-DESIGN:END -->

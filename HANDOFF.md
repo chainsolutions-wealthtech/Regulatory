@@ -130,3 +130,24 @@ Le rendu PDF/PNG est un outil de contrôle, non le moteur PDF final.
 - rapport : `docs/05-quality/DOCX_VISUAL_INSPECTION_2026-08-05.md` ;
 - nature du verdict : qualité structurelle et visuelle d’un document de pré-conformité, non validation juridique ou réglementaire.
 <!-- AUTO:LOOP-DEV-001-DOCX-VISUAL-QA:END -->
+
+<!-- AUTO:LOOP-DEV-001-NEXTJS-ATOMIC-DESIGN:START -->
+## Transmission — Application Next.js V0.1
+
+### Entrées principales
+
+- `apps/web/src/app` ;
+- `apps/web/src/components` ;
+- `apps/web/src/domain` ;
+- `apps/web/src/server` ;
+- `docs/04-development/NEXTJS_ATOMIC_DESIGN.md` ;
+- `docs/adr/ADR-0008-nextjs-atomic-design-frontend.md`.
+
+### Commandes
+
+`npm run web:install`, `npm run web:dev`, `npm run web:typecheck` et `npm run web:build`.
+
+### Limite de reprise
+
+Ne pas déployer ou présenter l’application comme sécurisée avant la base transactionnelle, l’authentification, le RBAC, la séparation tenant, les tests d’intégration et la revue sécurité.
+<!-- AUTO:LOOP-DEV-001-NEXTJS-ATOMIC-DESIGN:END -->

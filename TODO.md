@@ -329,3 +329,24 @@ Légende :
 - rapport : `docs/05-quality/DOCX_VISUAL_INSPECTION_2026-08-05.md` ;
 - nature du verdict : qualité structurelle et visuelle d’un document de pré-conformité, non validation juridique ou réglementaire.
 <!-- AUTO:LOOP-DEV-001-DOCX-VISUAL-QA:END -->
+
+<!-- AUTO:LOOP-DEV-001-NEXTJS-ATOMIC-DESIGN:START -->
+## Mise à jour opérationnelle — Next.js / Atomic Design
+
+- [x] Créer l’application Next.js App Router.
+- [x] Structurer les composants selon Atomic Design.
+- [x] Créer le tableau de bord et les projets.
+- [x] Créer le questionnaire en 18 groupes.
+- [x] Ajouter la persistance locale versionnée et l’audit.
+- [x] Ajouter les Route Handlers projets, questions, réponses et génération.
+- [x] Ajouter les contrôles et l’aperçu.
+- [x] Ajouter le typecheck et le build Next.js à la CI.
+- [ ] Générer le catalogue web directement depuis les matrices réglementaires.
+- [ ] Généraliser le moteur documentaire à tous les projets.
+- [ ] Brancher l’export DOCX sur les projets créés dans l’interface.
+- [ ] Ajouter les tests d’intégration des API.
+- [ ] Ajouter PostgreSQL et les migrations.
+- [ ] Ajouter authentification, RBAC et séparation tenant.
+- [ ] Effectuer la recette navigateur desktop et mobile.
+- [ ] Reprendre l’atomisation de l’Instruction n°66/2021.
+<!-- AUTO:LOOP-DEV-001-NEXTJS-ATOMIC-DESIGN:END -->

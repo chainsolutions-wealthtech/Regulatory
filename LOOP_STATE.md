@@ -98,3 +98,16 @@ La boucle réglementaire sera reprise après la tranche de couverture standard o
 - soumission : `FORBIDDEN` ;
 - prochaine tranche : API locale et questionnaire progressif.
 <!-- AUTO:LOOP-DEV-001-DOCX:END -->
+
+<!-- AUTO:LOOP-DEV-001-NEXTJS-ATOMIC-DESIGN:START -->
+## État applicatif de LOOP-DEV-001
+
+- Next.js App Router : `IMPLEMENTED` ;
+- Atomic Design : `IMPLEMENTED` ;
+- questionnaire local : `IMPLEMENTED_V0_1` ;
+- API locale : `IMPLEMENTED_V0_1` ;
+- persistance locale : `IMPLEMENTED_PROTOTYPE` ;
+- build CI : `ENABLED` ;
+- production : `FORBIDDEN` ;
+- prochaine tranche : intégration moteur, tests API et DOCX générique.
+<!-- AUTO:LOOP-DEV-001-NEXTJS-ATOMIC-DESIGN:END -->

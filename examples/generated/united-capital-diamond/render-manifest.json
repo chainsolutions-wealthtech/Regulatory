@@ -1,0 +1,19 @@
+{
+  "renderer": "LibreOffice Writer + pdftoppm",
+  "page_count": 10,
+  "page_files": [
+    "rendered-pages/page-01.png",
+    "rendered-pages/page-02.png",
+    "rendered-pages/page-03.png",
+    "rendered-pages/page-04.png",
+    "rendered-pages/page-05.png",
+    "rendered-pages/page-06.png",
+    "rendered-pages/page-07.png",
+    "rendered-pages/page-08.png",
+    "rendered-pages/page-09.png",
+    "rendered-pages/page-10.png"
+  ],
+  "pdf_size_bytes": 226131,
+  "status": "READY_FOR_VISUAL_INSPECTION",
+  "caveat": "PDF de contrôle visuel uniquement; il ne constitue pas le futur export PDF réglementaire déterministe."
+}

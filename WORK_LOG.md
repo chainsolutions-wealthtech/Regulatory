@@ -160,3 +160,20 @@ Aucune mention de conformité finale, d’agrément ou d’approbation n’a ét
 - rapport : `docs/05-quality/DOCX_VISUAL_INSPECTION_2026-08-05.md` ;
 - nature du verdict : qualité structurelle et visuelle d’un document de pré-conformité, non validation juridique ou réglementaire.
 <!-- AUTO:LOOP-DEV-001-DOCX-VISUAL-QA:END -->
+
+<!-- AUTO:LOOP-DEV-001-NEXTJS-ATOMIC-DESIGN:START -->
+## 2026-08-05 — LOOP-DEV-001 — Next.js et Atomic Design
+
+1. Audit du dépôt, de la branche et des derniers commits.
+2. Conservation de l’unique branche `main`.
+3. Création de l’application sous `apps/web`.
+4. Décomposition Atomic Design.
+5. Implémentation de 18 groupes de questionnaire et de leurs conditions.
+6. Implémentation de la persistance JSON versionnée et du journal d’audit.
+7. Implémentation de six Route Handlers locaux.
+8. Implémentation des contrôles, de la couverture et de l’aperçu.
+9. Ajout du build Next.js à la CI.
+10. Création de l’ADR et de la documentation.
+
+Aucun déploiement, aucune nouvelle branche, aucun force-push et aucune activation de clause juridique n’ont été réalisés.
+<!-- AUTO:LOOP-DEV-001-NEXTJS-ATOMIC-DESIGN:END -->

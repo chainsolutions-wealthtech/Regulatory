@@ -113,3 +113,28 @@ Le modèle documentaire est désormais consommable sous forme de fichier bureaut
 - rapport : `docs/05-quality/DOCX_VISUAL_INSPECTION_2026-08-05.md` ;
 - nature du verdict : qualité structurelle et visuelle d’un document de pré-conformité, non validation juridique ou réglementaire.
 <!-- AUTO:LOOP-DEV-001-DOCX-VISUAL-QA:END -->
+
+<!-- AUTO:LOOP-DEV-001-NEXTJS-ATOMIC-DESIGN:START -->
+## Résultat de l’itération Next.js
+
+La première tranche applicative est implémentée : création de projet, questionnaire guidé, sauvegarde, contrôles et aperçu. Le moteur historique reste la source de vérité réglementaire ; l’application utilise des adaptateurs et ne duplique pas les identifiants CIRC005.
+
+### Critères atteints
+
+- structure Atomic Design ;
+- App Router ;
+- Server Components par défaut ;
+- interactions limitées aux Client Components nécessaires ;
+- persistance locale versionnée ;
+- API locale ;
+- build de production dans la CI.
+
+### Critères non atteints
+
+- PostgreSQL ;
+- authentification et RBAC ;
+- multi-tenant ;
+- tests navigateur ;
+- export DOCX générique ;
+- validation juridique, conformité et fiscale.
+<!-- AUTO:LOOP-DEV-001-NEXTJS-ATOMIC-DESIGN:END -->

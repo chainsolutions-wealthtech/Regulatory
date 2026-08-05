@@ -497,3 +497,19 @@ Le modèle documentaire intermédiaire produit désormais un fichier DOCX OOXML 
 
 Le PDF et les images de pages générés dans la CI servent uniquement à l’inspection visuelle du DOCX. Ils ne constituent pas encore l’export PDF réglementaire déterministe du produit.
 <!-- AUTO:LOOP-DEV-001-DOCX:END -->
+
+<!-- AUTO:LOOP-DEV-001-NEXTJS-ATOMIC-DESIGN:START -->
+## 18. Application Next.js en Atomic Design — 2026-08-05
+
+Une application exécutable est désormais disponible dans `apps/web`. Elle fournit le tableau de bord, la création d’un projet, un questionnaire dynamique en 18 groupes, l’auto-sauvegarde locale versionnée, les contrôles, la couverture CIRC005 et l’aperçu du prospectus.
+
+L’architecture suit Atomic Design :
+
+- `atoms` : primitives d’interface ;
+- `molecules` : questions, alertes, statistiques et lignes de projet ;
+- `organisms` : shell, navigation, wizard, contrôles et aperçu ;
+- `templates` : compositions de pages ;
+- `app` : routes App Router et API locale.
+
+La documentation détaillée se trouve dans `docs/04-development/NEXTJS_ATOMIC_DESIGN.md`. La persistance JSON est locale et réservée au prototype. Aucune authentification, aucun multi-tenant, aucun déploiement et aucune soumission réglementaire ne sont activés.
+<!-- AUTO:LOOP-DEV-001-NEXTJS-ATOMIC-DESIGN:END -->
