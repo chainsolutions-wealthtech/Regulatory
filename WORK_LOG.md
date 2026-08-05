@@ -228,3 +228,60 @@ Aucun déploiement, aucune nouvelle branche, aucun force-push et aucune activati
 - génération par le compositeur historique et DOCX déterministe : `PASS` ;
 - `ready_for_submission` : `false`.
 <!-- AUTO:LOOP-DEV-001-STRUCTURED-SHARE-CLASSES:END -->
+
+<!-- AUTO:LOOP-DEV-001-STRUCTURED-COLLECTIONS-V1:START -->
+## 2026-08-05 — Généralisation des collections structurées
+
+1. Généralisation du type de question répétable en huit familles de composants.
+2. Création d’un éditeur Atomic Design partagé.
+3. Ajout des types canoniques pour allocations, frais, valorisation, intervenants, risques, pays et justificatifs.
+4. Normalisation et validation serveur de chaque ligne.
+5. Écriture directe dans les dix collections canoniques.
+6. Ajout de contrôles intercollections.
+7. Adaptation vers le compositeur documentaire historique.
+8. Test HTTP de bout en bout jusqu’au DOCX déterministe.
+9. Correction d’une collision entre les codes pays sélectionnés et les dispositifs détaillés.
+
+- collections structurées testées : `10` ;
+- classes de parts : `share_classes[]` ;
+- fourchettes d’allocation : `investment_policy.asset_class_ranges[]` ;
+- frais transactionnels : `fees.transaction[]` ;
+- rémunérations : `remunerations[]` ;
+- méthodes de valorisation : `valuation.methods[]` ;
+- gouvernance : `manager.governance_members[]` ;
+- intervenants : `service_providers[]` ;
+- risques : `risks[]` ;
+- dispositifs pays : `distribution_countries[]` ;
+- justificatifs : `evidence[]` ;
+- repli de ces collections dans `_repeating` : `REMOVED` ;
+- test HTTP complet : `PASS` ;
+- compositeur historique et DOCX déterministe : `PASS` ;
+- `ready_for_submission` : `false`.
+<!-- AUTO:LOOP-DEV-001-STRUCTURED-COLLECTIONS-V1:END -->
+
+<!-- AUTO:LOOP-DEV-001-CANONICAL-SCHEMA-POSTGRES-V1:START -->
+## 2026-08-05 — JSON Schema, PostgreSQL et abstraction de stockage
+
+1. Publication du JSON Schema canonique V1.
+2. Publication du dictionnaire de données.
+3. Création de la migration PostgreSQL initiale.
+4. Ajout des tables réglementaires, projets, versions, réponses, snapshots, collections, preuves, revues, documents et audit.
+5. Ajout des contraintes métier, index, gel de version et audit append-only.
+6. Activation de la RLS tenant et politiques associées.
+7. Création d’un test PostgreSQL éphémère avec deux organisations.
+8. Introduction de l’interface `ProjectRepository`.
+9. Conservation volontaire du driver local tant que l’adaptateur PostgreSQL n’est pas sécurisé et activé.
+
+- contrat : `PROSPECTUS_CANONICAL_MODEL_V1.schema.json` ;
+- standard : JSON Schema draft 2020-12 ;
+- collections structurées couvertes : `10` ;
+- tables PostgreSQL : `25` ;
+- tables avec RLS activée : `18` ;
+- politiques tenant : `18` ;
+- versions gelables : `IMPLEMENTED` ;
+- audit append-only : `IMPLEMENTED` ;
+- soumission verrouillée à `false` : `IMPLEMENTED` ;
+- migration exécutée sur PostgreSQL éphémère en CI : `PASS` ;
+- stockage actif dans l’application : `local-json` ;
+- adaptateur PostgreSQL applicatif : `NOT_ACTIVATED`.
+<!-- AUTO:LOOP-DEV-001-CANONICAL-SCHEMA-POSTGRES-V1:END -->

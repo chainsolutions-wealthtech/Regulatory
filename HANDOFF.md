@@ -182,3 +182,62 @@ Fichiers prioritaires :
 
 Ne jamais réintroduire une génération spéciale réservée à United Capital Diamond. Ne jamais supprimer une réponse non mappée sans décision et journalisation explicites.
 <!-- AUTO:LOOP-DEV-001-REGULATORY-CATALOG:END -->
+
+<!-- AUTO:LOOP-DEV-001-STRUCTURED-COLLECTIONS-V1:START -->
+## Transmission — Collections canoniques V1
+
+- collections structurées testées : `10` ;
+- classes de parts : `share_classes[]` ;
+- fourchettes d’allocation : `investment_policy.asset_class_ranges[]` ;
+- frais transactionnels : `fees.transaction[]` ;
+- rémunérations : `remunerations[]` ;
+- méthodes de valorisation : `valuation.methods[]` ;
+- gouvernance : `manager.governance_members[]` ;
+- intervenants : `service_providers[]` ;
+- risques : `risks[]` ;
+- dispositifs pays : `distribution_countries[]` ;
+- justificatifs : `evidence[]` ;
+- repli de ces collections dans `_repeating` : `REMOVED` ;
+- test HTTP complet : `PASS` ;
+- compositeur historique et DOCX déterministe : `PASS` ;
+- `ready_for_submission` : `false`.
+
+Fichiers prioritaires :
+
+- `apps/web/src/domain/structured-answers.ts` ;
+- `apps/web/src/components/molecules/StructuredCollectionField.tsx` ;
+- `apps/web/src/server/canonical-snapshot.ts` ;
+- `src/adapters/web-canonical-snapshot-adapter.js` ;
+- `scripts/test-web-api.mjs` ;
+- `regulatory/validation/CIRC005_WEB_API_INTEGRATION_VALIDATION.json`.
+
+Ne pas considérer une ligne comme validée à cause de sa seule présence dans le snapshot.
+<!-- AUTO:LOOP-DEV-001-STRUCTURED-COLLECTIONS-V1:END -->
+
+<!-- AUTO:LOOP-DEV-001-CANONICAL-SCHEMA-POSTGRES-V1:START -->
+## Transmission — Modèle canonique et PostgreSQL V1
+
+- contrat : `PROSPECTUS_CANONICAL_MODEL_V1.schema.json` ;
+- standard : JSON Schema draft 2020-12 ;
+- collections structurées couvertes : `10` ;
+- tables PostgreSQL : `25` ;
+- tables avec RLS activée : `18` ;
+- politiques tenant : `18` ;
+- versions gelables : `IMPLEMENTED` ;
+- audit append-only : `IMPLEMENTED` ;
+- soumission verrouillée à `false` : `IMPLEMENTED` ;
+- migration exécutée sur PostgreSQL éphémère en CI : `PASS` ;
+- stockage actif dans l’application : `local-json` ;
+- adaptateur PostgreSQL applicatif : `NOT_ACTIVATED`.
+
+Fichiers prioritaires :
+
+- `schemas/canonical/PROSPECTUS_CANONICAL_MODEL_V1.schema.json` ;
+- `docs/03-data/CANONICAL_DATA_DICTIONARY_V1.md` ;
+- `database/migrations/0001_regulatory_core.sql` ;
+- `database/tests/0001_regulatory_core_test.sql` ;
+- `apps/web/src/server/storage/project-repository.ts` ;
+- `apps/web/src/server/storage/index.ts`.
+
+Ne pas sélectionner `REGULATORY_STORAGE_DRIVER=postgresql` avant l’implémentation et la revue de l’adaptateur.
+<!-- AUTO:LOOP-DEV-001-CANONICAL-SCHEMA-POSTGRES-V1:END -->

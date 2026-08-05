@@ -158,3 +158,44 @@ Le blocage « snapshot canonique non consommé par le moteur historique » est l
 
 La première donnée répétable du questionnaire n’est plus saisie sous forme de booléen ou de texte générique. Elle dispose d’un éditeur Atomic Design, d’une validation serveur et d’une collection canonique directement consommable par le compositeur.
 <!-- AUTO:LOOP-DEV-001-STRUCTURED-SHARE-CLASSES:END -->
+
+<!-- AUTO:LOOP-DEV-001-STRUCTURED-COLLECTIONS-V1:START -->
+## Tranche structurée V1 — Collections canoniques
+
+- collections structurées testées : `10` ;
+- classes de parts : `share_classes[]` ;
+- fourchettes d’allocation : `investment_policy.asset_class_ranges[]` ;
+- frais transactionnels : `fees.transaction[]` ;
+- rémunérations : `remunerations[]` ;
+- méthodes de valorisation : `valuation.methods[]` ;
+- gouvernance : `manager.governance_members[]` ;
+- intervenants : `service_providers[]` ;
+- risques : `risks[]` ;
+- dispositifs pays : `distribution_countries[]` ;
+- justificatifs : `evidence[]` ;
+- repli de ces collections dans `_repeating` : `REMOVED` ;
+- test HTTP complet : `PASS` ;
+- compositeur historique et DOCX déterministe : `PASS` ;
+- `ready_for_submission` : `false`.
+
+Les principales données répétables du parcours disposent désormais d’un éditeur Atomic Design partagé, d’une normalisation, d’une validation serveur, de contrôles intercollections et d’une écriture directe dans le snapshot canonique. Les lignes restent non confirmées tant qu’un rôle compétent ne les a pas revues.
+<!-- AUTO:LOOP-DEV-001-STRUCTURED-COLLECTIONS-V1:END -->
+
+<!-- AUTO:LOOP-DEV-001-CANONICAL-SCHEMA-POSTGRES-V1:START -->
+## Modèle canonique et PostgreSQL — baseline V1
+
+- contrat : `PROSPECTUS_CANONICAL_MODEL_V1.schema.json` ;
+- standard : JSON Schema draft 2020-12 ;
+- collections structurées couvertes : `10` ;
+- tables PostgreSQL : `25` ;
+- tables avec RLS activée : `18` ;
+- politiques tenant : `18` ;
+- versions gelables : `IMPLEMENTED` ;
+- audit append-only : `IMPLEMENTED` ;
+- soumission verrouillée à `false` : `IMPLEMENTED` ;
+- migration exécutée sur PostgreSQL éphémère en CI : `PASS` ;
+- stockage actif dans l’application : `local-json` ;
+- adaptateur PostgreSQL applicatif : `NOT_ACTIVATED`.
+
+Le schéma transactionnel est testé mais non déployé. L’application utilise une interface de dépôt explicite et conserve le stockage local de démonstration tant que l’adaptateur PostgreSQL, l’identité et les contrôles d’exploitation ne sont pas activés.
+<!-- AUTO:LOOP-DEV-001-CANONICAL-SCHEMA-POSTGRES-V1:END -->

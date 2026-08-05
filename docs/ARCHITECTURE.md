@@ -570,3 +570,32 @@ La première implémentation de référence est `share_classes[]` :
 
 Le même pattern doit être réutilisé pour les fourchettes d’allocation, frais, méthodes de valorisation et intervenants. Les identifiants CIRC005 ne changent pas ; seul le composant de saisie devient plus précis.
 <!-- AUTO:LOOP-DEV-001-STRUCTURED-SHARE-CLASSES:END -->
+
+<!-- AUTO:LOOP-DEV-001-STRUCTURED-COLLECTIONS-V1:START -->
+## Pattern canonique des collections structurées V1
+
+`Question canonique → composant Atomic Design → normalisation → validation API → réponse versionnée → tableau canonique → contrôles intercollections → compositeur → DOCX`.
+
+Dix collections utilisent ce pattern. Les identifiants réglementaires et la traçabilité ne changent pas. Les données sélectionnées simples, telles que les codes pays, sont séparées des objets détaillés afin d’éviter toute collision canonique.
+<!-- AUTO:LOOP-DEV-001-STRUCTURED-COLLECTIONS-V1:END -->
+
+<!-- AUTO:LOOP-DEV-001-CANONICAL-SCHEMA-POSTGRES-V1:START -->
+## Contrat de données et ports de persistance
+
+Le domaine consomme `ProjectRepository` et non directement le système de fichiers. Le driver `local-json` sert au prototype. La cible PostgreSQL conserve à la fois le snapshot JSON exact et les collections normalisées, dans une transaction unique.
+
+- contrat : `PROSPECTUS_CANONICAL_MODEL_V1.schema.json` ;
+- standard : JSON Schema draft 2020-12 ;
+- collections structurées couvertes : `10` ;
+- tables PostgreSQL : `25` ;
+- tables avec RLS activée : `18` ;
+- politiques tenant : `18` ;
+- versions gelables : `IMPLEMENTED` ;
+- audit append-only : `IMPLEMENTED` ;
+- soumission verrouillée à `false` : `IMPLEMENTED` ;
+- migration exécutée sur PostgreSQL éphémère en CI : `PASS` ;
+- stockage actif dans l’application : `local-json` ;
+- adaptateur PostgreSQL applicatif : `NOT_ACTIVATED`.
+
+La RLS complète les contrôles d’autorisation applicatifs ; elle ne les remplace pas.
+<!-- AUTO:LOOP-DEV-001-CANONICAL-SCHEMA-POSTGRES-V1:END -->

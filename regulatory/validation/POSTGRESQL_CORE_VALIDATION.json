@@ -1,0 +1,18 @@
+{
+  "validationId": "POSTGRESQL_REGULATORY_CORE_VALIDATION_V1",
+  "status": "PASS",
+  "postgresVersion": "17",
+  "migration": "database/migrations/0001_regulatory_core.sql",
+  "testScript": "database/tests/0001_regulatory_core_test.sql",
+  "checks": {
+    "migrationApplied": true,
+    "assetRangeConstraints": true,
+    "singleHomeStateConstraint": true,
+    "readyForSubmissionLockedFalse": true,
+    "frozenVersionImmutable": true,
+    "auditAppendOnly": true,
+    "rowLevelSecurityTenantIsolation": true,
+    "twoTenantSwitchVerified": true
+  },
+  "caveat": "Validation sur PostgreSQL éphémère de CI. Elle ne constitue ni un déploiement, ni un audit de sécurité de production."
+}

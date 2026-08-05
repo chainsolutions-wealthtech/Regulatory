@@ -40,3 +40,44 @@ La question `Q_SHARE_CLASSES_COUNT` utilise maintenant un éditeur de collection
 
 Le comportement est couvert par le test HTTP du flux de génération complet.
 <!-- AUTO:LOOP-DEV-001-STRUCTURED-SHARE-CLASSES:END -->
+
+<!-- AUTO:LOOP-DEV-001-STRUCTURED-COLLECTIONS-V1:START -->
+## Collections structurées V1
+
+Le questionnaire expose désormais dix collections canoniques éditables. L’API normalise et valide chaque ligne, rejette les doublons et incohérences, puis alimente directement le snapshot consommé par le compositeur documentaire.
+
+- collections structurées testées : `10` ;
+- classes de parts : `share_classes[]` ;
+- fourchettes d’allocation : `investment_policy.asset_class_ranges[]` ;
+- frais transactionnels : `fees.transaction[]` ;
+- rémunérations : `remunerations[]` ;
+- méthodes de valorisation : `valuation.methods[]` ;
+- gouvernance : `manager.governance_members[]` ;
+- intervenants : `service_providers[]` ;
+- risques : `risks[]` ;
+- dispositifs pays : `distribution_countries[]` ;
+- justificatifs : `evidence[]` ;
+- repli de ces collections dans `_repeating` : `REMOVED` ;
+- test HTTP complet : `PASS` ;
+- compositeur historique et DOCX déterministe : `PASS` ;
+- `ready_for_submission` : `false`.
+<!-- AUTO:LOOP-DEV-001-STRUCTURED-COLLECTIONS-V1:END -->
+
+<!-- AUTO:LOOP-DEV-001-CANONICAL-SCHEMA-POSTGRES-V1:START -->
+## Stockage et contrat canonique
+
+Les routes et pages utilisent l’interface `ProjectRepository`. `REGULATORY_STORAGE_DRIVER` vaut `local-json` par défaut. La valeur `postgresql` échoue explicitement jusqu’à l’activation d’un adaptateur transactionnel revu et testé.
+
+- contrat : `PROSPECTUS_CANONICAL_MODEL_V1.schema.json` ;
+- standard : JSON Schema draft 2020-12 ;
+- collections structurées couvertes : `10` ;
+- tables PostgreSQL : `25` ;
+- tables avec RLS activée : `18` ;
+- politiques tenant : `18` ;
+- versions gelables : `IMPLEMENTED` ;
+- audit append-only : `IMPLEMENTED` ;
+- soumission verrouillée à `false` : `IMPLEMENTED` ;
+- migration exécutée sur PostgreSQL éphémère en CI : `PASS` ;
+- stockage actif dans l’application : `local-json` ;
+- adaptateur PostgreSQL applicatif : `NOT_ACTIVATED`.
+<!-- AUTO:LOOP-DEV-001-CANONICAL-SCHEMA-POSTGRES-V1:END -->

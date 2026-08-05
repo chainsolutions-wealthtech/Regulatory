@@ -168,3 +168,37 @@ L’API `POST /api/projects/{projectId}/generate` produit désormais le véritab
 
 La question `Q_SHARE_CLASSES_COUNT` produit désormais la collection canonique détaillée des classes au lieu d’une simple indication oui/non.
 <!-- AUTO:LOOP-DEV-001-STRUCTURED-SHARE-CLASSES:END -->
+
+<!-- AUTO:LOOP-DEV-001-STRUCTURED-COLLECTIONS-V1:START -->
+## [Unreleased] — Collections canoniques V1 — 2026-08-05
+
+### Added
+
+- éditeur Atomic Design partagé pour dix collections ;
+- modèles canoniques des allocations, frais, valorisation, intervenants, risques, pays et preuves ;
+- validations serveur et contrôles intercollections ;
+- adaptation des collections vers le compositeur documentaire ;
+- validation d’intégration V4 jusqu’au DOCX.
+
+### Changed
+
+Les principales données répétables sont désormais écrites directement dans leurs tableaux canoniques et ne sont plus rabattues dans `_repeating`.
+<!-- AUTO:LOOP-DEV-001-STRUCTURED-COLLECTIONS-V1:END -->
+
+<!-- AUTO:LOOP-DEV-001-CANONICAL-SCHEMA-POSTGRES-V1:START -->
+## [Unreleased] — Canonical model et PostgreSQL V1 — 2026-08-05
+
+### Added
+
+- JSON Schema canonique V1 ;
+- dictionnaire de données ;
+- migration PostgreSQL multi-tenant ;
+- contraintes des collections structurées ;
+- RLS, gel de versions et audit append-only ;
+- tests PostgreSQL éphémères ;
+- interface `ProjectRepository` et driver local explicite.
+
+### Security
+
+L’activation du driver PostgreSQL échoue explicitement tant qu’aucun adaptateur sécurisé n’est injecté. Aucun repli silencieux n’est autorisé.
+<!-- AUTO:LOOP-DEV-001-CANONICAL-SCHEMA-POSTGRES-V1:END -->

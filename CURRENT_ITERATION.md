@@ -173,3 +173,44 @@ Le même snapshot produit le même identifiant de génération et le même docum
 
 Les anciennes réponses `false` et `true` restent lisibles et sont transformées respectivement en une ou deux classes par défaut lors de la construction du snapshot. Une nouvelle réponse enregistrée est obligatoirement une collection validée.
 <!-- AUTO:LOOP-DEV-001-STRUCTURED-SHARE-CLASSES:END -->
+
+<!-- AUTO:LOOP-DEV-001-STRUCTURED-COLLECTIONS-V1:START -->
+## Résultat — Dix collections canoniques structurées
+
+- collections structurées testées : `10` ;
+- classes de parts : `share_classes[]` ;
+- fourchettes d’allocation : `investment_policy.asset_class_ranges[]` ;
+- frais transactionnels : `fees.transaction[]` ;
+- rémunérations : `remunerations[]` ;
+- méthodes de valorisation : `valuation.methods[]` ;
+- gouvernance : `manager.governance_members[]` ;
+- intervenants : `service_providers[]` ;
+- risques : `risks[]` ;
+- dispositifs pays : `distribution_countries[]` ;
+- justificatifs : `evidence[]` ;
+- repli de ces collections dans `_repeating` : `REMOVED` ;
+- test HTTP complet : `PASS` ;
+- compositeur historique et DOCX déterministe : `PASS` ;
+- `ready_for_submission` : `false`.
+
+Les contrôles couvrent notamment l’unicité des identifiants, les fourchettes `0 ≤ minimum ≤ cible ≤ maximum ≤ 100`, la cohérence des méthodes de valorisation, la présence du dépositaire, les dispositifs par pays et le statut des preuves.
+<!-- AUTO:LOOP-DEV-001-STRUCTURED-COLLECTIONS-V1:END -->
+
+<!-- AUTO:LOOP-DEV-001-CANONICAL-SCHEMA-POSTGRES-V1:START -->
+## Résultat — Contrat canonique et base transactionnelle V1
+
+- contrat : `PROSPECTUS_CANONICAL_MODEL_V1.schema.json` ;
+- standard : JSON Schema draft 2020-12 ;
+- collections structurées couvertes : `10` ;
+- tables PostgreSQL : `25` ;
+- tables avec RLS activée : `18` ;
+- politiques tenant : `18` ;
+- versions gelables : `IMPLEMENTED` ;
+- audit append-only : `IMPLEMENTED` ;
+- soumission verrouillée à `false` : `IMPLEMENTED` ;
+- migration exécutée sur PostgreSQL éphémère en CI : `PASS` ;
+- stockage actif dans l’application : `local-json` ;
+- adaptateur PostgreSQL applicatif : `NOT_ACTIVATED`.
+
+La migration vérifie l’intégrité des fourchettes, l’unicité de l’État d’établissement, le gel des versions, l’audit non modifiable, l’isolation de deux organisations et l’interdiction de `ready_for_submission=true`.
+<!-- AUTO:LOOP-DEV-001-CANONICAL-SCHEMA-POSTGRES-V1:END -->

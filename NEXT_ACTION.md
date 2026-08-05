@@ -5,22 +5,21 @@
 
 ## Action
 
-Créer le composant structuré des fourchettes d’allocation par classe d’actifs et écrire ses lignes directement dans `investment_policy.asset_class_ranges[]`.
+Implémenter l’adaptateur PostgreSQL transactionnel derrière `ProjectRepository`, avec injection d’un exécuteur SQL, résolution d’organisation depuis une identité serveur vérifiée, synchronisation atomique des réponses et collections, puis tests d’intégration sur PostgreSQL éphémère.
 
 ## Résultat attendu
 
-- lignes répétables avec identifiant stable ;
-- classe d’actifs normalisée ;
-- minimum, cible et maximum exprimés en pourcentage ;
-- contrôle `0 ≤ minimum ≤ cible ≤ maximum ≤ 100` ;
-- détection des classes d’actifs dupliquées ;
-- reprise non destructive des anciennes réponses provisoires ;
-- aucune écriture dans `_repeating` pour cette collection ;
-- restitution dans la politique d’investissement et le DOCX ;
-- tests unitaires, TypeScript, build et test HTTP de bout en bout ;
-- documentation et preuves mises à jour ;
-- `ready_for_submission = false` maintenu.
+- adaptateur PostgreSQL sans secret codé en dur ;
+- pool de connexions configuré par variables d’environnement ;
+- transaction par création, réponse et génération ;
+- `SET LOCAL app.current_organization_id` issu du contexte d’identité, jamais du corps HTTP ;
+- verrou optimiste ou pessimiste des versions ;
+- synchronisation snapshot + tables normalisées + audit dans une transaction ;
+- tests entre deux organisations et deux utilisateurs ;
+- test de concurrence sur une même version ;
+- aucun déploiement et aucune activation par défaut ;
+- `ready_for_submission=false` maintenu.
 
 ## Condition d’arrêt
 
-Ne pas déployer, ne pas inventer de limites réglementaires et ne pas présenter les fourchettes saisies ou le document généré comme validés juridiquement, approuvés ou prêts pour soumission.
+Ne pas simuler une authentification. Sans fournisseur d’identité et résolution de tenant vérifiables, l’adaptateur doit rester désactivé hors des tests éphémères.

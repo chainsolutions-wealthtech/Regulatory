@@ -158,3 +158,27 @@ La prochaine évolution doit remplacer les champs génériques représentant des
 
 Ce composant constitue la référence pour les prochains tableaux éditables.
 <!-- AUTO:LOOP-DEV-001-STRUCTURED-SHARE-CLASSES:END -->
+
+<!-- AUTO:LOOP-DEV-001-STRUCTURED-COLLECTIONS-V1:START -->
+## 11. Éditeur partagé des collections canoniques
+
+`StructuredCollectionField` rend les lignes d’allocation, frais, valorisation, intervenants, risques, pays et justificatifs depuis des définitions de champs typées. `ShareClassCollectionField` reste l’éditeur spécialisé des classes de parts.
+
+- collections structurées testées : `10` ;
+- classes de parts : `share_classes[]` ;
+- fourchettes d’allocation : `investment_policy.asset_class_ranges[]` ;
+- frais transactionnels : `fees.transaction[]` ;
+- rémunérations : `remunerations[]` ;
+- méthodes de valorisation : `valuation.methods[]` ;
+- gouvernance : `manager.governance_members[]` ;
+- intervenants : `service_providers[]` ;
+- risques : `risks[]` ;
+- dispositifs pays : `distribution_countries[]` ;
+- justificatifs : `evidence[]` ;
+- repli de ces collections dans `_repeating` : `REMOVED` ;
+- test HTTP complet : `PASS` ;
+- compositeur historique et DOCX déterministe : `PASS` ;
+- `ready_for_submission` : `false`.
+
+Les validations décisives sont répétées côté serveur ; l’interface seule n’est jamais considérée comme une frontière de confiance.
+<!-- AUTO:LOOP-DEV-001-STRUCTURED-COLLECTIONS-V1:END -->

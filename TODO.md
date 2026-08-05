@@ -385,3 +385,46 @@ Légende :
 - [ ] Structurer les méthodes de valorisation.
 - [ ] Structurer les intervenants et la gouvernance.
 <!-- AUTO:LOOP-DEV-001-STRUCTURED-SHARE-CLASSES:END -->
+
+<!-- AUTO:LOOP-DEV-001-STRUCTURED-COLLECTIONS-V1:START -->
+## Collections structurées — état V1
+
+- [x] Classes de parts.
+- [x] Fourchettes d’allocation.
+- [x] Frais et commissions.
+- [x] Rémunérations des intervenants.
+- [x] Méthodes de valorisation.
+- [x] Gouvernance.
+- [x] Prestataires et intervenants.
+- [x] Facteurs de risque.
+- [x] Dispositifs de commercialisation par pays.
+- [x] Pièces justificatives et statut de vérification.
+- [x] Contrôles intercollections.
+- [x] Adaptation vers le compositeur et le DOCX.
+- [ ] Publier le JSON Schema canonique V1.
+- [ ] Créer le schéma PostgreSQL et les migrations.
+- [ ] Remplacer la persistance JSON locale par une interface de stockage transactionnelle.
+- [ ] Implémenter authentification, organisations, RBAC et audit immuable.
+- [ ] Atomiser l’Instruction n°66 et compléter les règles.
+<!-- AUTO:LOOP-DEV-001-STRUCTURED-COLLECTIONS-V1:END -->
+
+<!-- AUTO:LOOP-DEV-001-CANONICAL-SCHEMA-POSTGRES-V1:START -->
+## Persistance et sécurité — état V1
+
+- [x] Publier le JSON Schema canonique.
+- [x] Publier le dictionnaire de données.
+- [x] Créer la migration PostgreSQL initiale.
+- [x] Normaliser les dix collections dans des tables contraintes.
+- [x] Ajouter les index principaux.
+- [x] Ajouter le gel des versions.
+- [x] Ajouter l’audit append-only.
+- [x] Ajouter la RLS par organisation.
+- [x] Tester la migration et la RLS sur PostgreSQL éphémère.
+- [x] Introduire l’interface de dépôt du domaine.
+- [ ] Implémenter l’adaptateur PostgreSQL transactionnel.
+- [ ] Implémenter l’authentification et la résolution sûre du tenant.
+- [ ] Ajouter les rôles métier et autorisations d’action.
+- [ ] Ajouter le stockage sécurisé des fichiers et leur quarantaine.
+- [ ] Ajouter sauvegarde, restauration, observabilité et plan de retour arrière.
+- [ ] Réaliser la revue d’architecture et de sécurité avant activation.
+<!-- AUTO:LOOP-DEV-001-CANONICAL-SCHEMA-POSTGRES-V1:END -->

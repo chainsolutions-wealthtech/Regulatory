@@ -147,3 +147,59 @@ La boucle réglementaire sera reprise après la tranche de couverture standard o
 - génération par le compositeur historique et DOCX déterministe : `PASS` ;
 - `ready_for_submission` : `false`.
 <!-- AUTO:LOOP-DEV-001-STRUCTURED-SHARE-CLASSES:END -->
+
+<!-- AUTO:LOOP-DEV-001-STRUCTURED-COLLECTIONS-V1:START -->
+## LOOP-DEV-001 — Collections répétables V1
+
+- classes de parts : `IMPLEMENTED_AND_VALIDATED` ;
+- fourchettes d’allocation : `IMPLEMENTED_AND_VALIDATED` ;
+- commissions et frais : `IMPLEMENTED_AND_VALIDATED` ;
+- méthodes de valorisation : `IMPLEMENTED_AND_VALIDATED` ;
+- gouvernance et intervenants : `IMPLEMENTED_AND_VALIDATED` ;
+- risques : `IMPLEMENTED_AND_VALIDATED` ;
+- dispositifs pays : `IMPLEMENTED_AND_VALIDATED` ;
+- justificatifs : `IMPLEMENTED_AND_VALIDATED` ;
+- prochaine tranche : `CANONICAL_SCHEMA_AND_POSTGRESQL`.
+
+- collections structurées testées : `10` ;
+- classes de parts : `share_classes[]` ;
+- fourchettes d’allocation : `investment_policy.asset_class_ranges[]` ;
+- frais transactionnels : `fees.transaction[]` ;
+- rémunérations : `remunerations[]` ;
+- méthodes de valorisation : `valuation.methods[]` ;
+- gouvernance : `manager.governance_members[]` ;
+- intervenants : `service_providers[]` ;
+- risques : `risks[]` ;
+- dispositifs pays : `distribution_countries[]` ;
+- justificatifs : `evidence[]` ;
+- repli de ces collections dans `_repeating` : `REMOVED` ;
+- test HTTP complet : `PASS` ;
+- compositeur historique et DOCX déterministe : `PASS` ;
+- `ready_for_submission` : `false`.
+<!-- AUTO:LOOP-DEV-001-STRUCTURED-COLLECTIONS-V1:END -->
+
+<!-- AUTO:LOOP-DEV-001-CANONICAL-SCHEMA-POSTGRES-V1:START -->
+## LOOP-DEV-001 — Industrialisation des données
+
+- JSON Schema canonique : `IMPLEMENTED_AND_TESTED` ;
+- dictionnaire de données : `IMPLEMENTED` ;
+- migration PostgreSQL initiale : `IMPLEMENTED_AND_TESTED_IN_CI` ;
+- RLS tenant : `TESTED_WITH_NON_OWNER_ROLE` ;
+- interface de dépôt : `IMPLEMENTED` ;
+- stockage local : `ACTIVE_FOR_PROTOTYPE` ;
+- adaptateur PostgreSQL : `NEXT` ;
+- authentification réelle : `PENDING`.
+
+- contrat : `PROSPECTUS_CANONICAL_MODEL_V1.schema.json` ;
+- standard : JSON Schema draft 2020-12 ;
+- collections structurées couvertes : `10` ;
+- tables PostgreSQL : `25` ;
+- tables avec RLS activée : `18` ;
+- politiques tenant : `18` ;
+- versions gelables : `IMPLEMENTED` ;
+- audit append-only : `IMPLEMENTED` ;
+- soumission verrouillée à `false` : `IMPLEMENTED` ;
+- migration exécutée sur PostgreSQL éphémère en CI : `PASS` ;
+- stockage actif dans l’application : `local-json` ;
+- adaptateur PostgreSQL applicatif : `NOT_ACTIVATED`.
+<!-- AUTO:LOOP-DEV-001-CANONICAL-SCHEMA-POSTGRES-V1:END -->
