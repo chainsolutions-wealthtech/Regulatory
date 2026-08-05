@@ -1,0 +1,1313 @@
+{
+  "catalog_version": "CIRC005_MATRIX_EXECUTABLE_V0_1",
+  "total_questions": 60,
+  "applicable_questions": [
+    {
+      "question_id": "Q_REGULATORY_PACK_CONFIRMATION",
+      "requirement_id": "CIRC005_GENERAL_SCOPE",
+      "type": "SINGLE_CHOICE",
+      "label": "Confirmez-vous que le fonds relève du pack OPCVM/FCP UMOA ?",
+      "options": [
+        {
+          "value": "CONFIRMED",
+          "label": "Oui"
+        },
+        {
+          "value": "REVIEW_REQUIRED",
+          "label": "Cas particulier"
+        }
+      ],
+      "canonical_fields": [
+        "regulatory_context.pack_id",
+        "regulatory_context.source_versions"
+      ],
+      "output_section_id": "SYSTEM_ONLY",
+      "review_roles": [
+        "COMPLIANCE",
+        "LEGAL"
+      ]
+    },
+    {
+      "question_id": "Q_SOURCE_PUBLICATION_DATE",
+      "requirement_id": "CIRC005_GENERAL_EFFECTIVE_DATE",
+      "type": "DATE",
+      "label": "Quelle est la date officielle de publication de la circulaire ?",
+      "options": [],
+      "canonical_fields": [
+        "regulatory_context.effective_date",
+        "regulatory_sources.publication_date"
+      ],
+      "output_section_id": "SYSTEM_ONLY",
+      "review_roles": [
+        "LEGAL",
+        "COMPLIANCE"
+      ]
+    },
+    {
+      "question_id": "Q_FUND_LEGAL_NAME",
+      "requirement_id": "CIRC005_1_1_FCP_DENOMINATION",
+      "type": "TEXT",
+      "label": "Quelle est la dénomination officielle du fonds ?",
+      "options": [],
+      "canonical_fields": [
+        "fund.legal_name"
+      ],
+      "output_section_id": "SEC_1_1_FCP_DENOMINATION",
+      "review_roles": [
+        "COMPLIANCE"
+      ]
+    },
+    {
+      "question_id": "Q_FUND_CONSTITUTION_DATE",
+      "requirement_id": "CIRC005_1_2_FCP_CONSTITUTION_DATE",
+      "type": "DATE",
+      "label": "Quelle est la date de constitution du fonds ?",
+      "options": [],
+      "canonical_fields": [
+        "fund.constitution_date"
+      ],
+      "output_section_id": "SEC_1_2_FCP_CONSTITUTION_DURATION",
+      "review_roles": [
+        "COMPLIANCE"
+      ]
+    },
+    {
+      "question_id": "Q_FUND_DURATION_TYPE",
+      "requirement_id": "CIRC005_1_2_FCP_LIMITED_DURATION",
+      "type": "SINGLE_CHOICE",
+      "label": "Le fonds est-il constitué pour une durée déterminée ?",
+      "options": [
+        {
+          "value": "INDEFINITE",
+          "label": "Durée indéterminée"
+        },
+        {
+          "value": "LIMITED",
+          "label": "Durée déterminée"
+        }
+      ],
+      "canonical_fields": [
+        "fund.duration_type",
+        "fund.duration_years",
+        "fund.expiration_date"
+      ],
+      "output_section_id": "SEC_1_2_FCP_CONSTITUTION_DURATION",
+      "review_roles": [
+        "LEGAL",
+        "COMPLIANCE"
+      ]
+    },
+    {
+      "question_id": "Q_FUND_REGULATION_ATTACHED",
+      "requirement_id": "CIRC005_1_4_FCP_REGULATION_AVAILABILITY",
+      "type": "SINGLE_CHOICE",
+      "label": "Le règlement du fonds est-il annexé au prospectus ?",
+      "options": [
+        {
+          "value": "true",
+          "label": "Oui"
+        },
+        {
+          "value": "false",
+          "label": "Non"
+        }
+      ],
+      "canonical_fields": [
+        "documents.fund_regulation.is_attached",
+        "documents.fund_regulation.locations",
+        "documents.fund_regulation.url",
+        "documents.fund_regulation.request_contact"
+      ],
+      "output_section_id": "SEC_1_4_DOCUMENT_AVAILABILITY",
+      "review_roles": [
+        "COMPLIANCE"
+      ]
+    },
+    {
+      "question_id": "Q_PERIODIC_REPORTS_LOCATIONS",
+      "requirement_id": "CIRC005_1_4_FCP_PERIODIC_REPORTS_AVAILABILITY",
+      "type": "MULTI_LOCATION",
+      "label": "Où les porteurs pourront-ils obtenir les rapports périodiques ?",
+      "options": [],
+      "canonical_fields": [
+        "documents.periodic_reports.locations",
+        "documents.periodic_reports.url",
+        "documents.periodic_reports.request_contact",
+        "documents.periodic_reports.delivery_delay_days"
+      ],
+      "output_section_id": "SEC_1_4_DOCUMENT_AVAILABILITY",
+      "review_roles": [
+        "COMPLIANCE"
+      ]
+    },
+    {
+      "question_id": "Q_FUND_TAX_REGIME",
+      "requirement_id": "CIRC005_1_5_FCP_TAX_REGIME",
+      "type": "REFERENCE_SELECT",
+      "label": "Sélectionnez le régime fiscal validé applicable au fonds.",
+      "options": [],
+      "canonical_fields": [
+        "tax.fund.summary",
+        "tax.source_reference",
+        "tax.valid_from"
+      ],
+      "output_section_id": "SEC_1_5_TAX",
+      "review_roles": [
+        "TAX",
+        "LEGAL",
+        "COMPLIANCE"
+      ]
+    },
+    {
+      "question_id": "Q_INCOME_WITHHOLDING_EXISTS",
+      "requirement_id": "CIRC005_1_5_FCP_WITHHOLDING_INCOME",
+      "type": "SINGLE_CHOICE",
+      "label": "Une retenue à la source s'applique-t-elle aux revenus versés aux porteurs ?",
+      "options": [
+        {
+          "value": "true",
+          "label": "Oui"
+        },
+        {
+          "value": "false",
+          "label": "Non"
+        },
+        {
+          "value": "REVIEW",
+          "label": "À confirmer"
+        }
+      ],
+      "canonical_fields": [
+        "tax.holders.income_withholding.exists",
+        "tax.holders.income_withholding.rate",
+        "tax.holders.income_withholding.basis",
+        "tax.holders.income_withholding.source"
+      ],
+      "output_section_id": "SEC_1_5_TAX",
+      "review_roles": [
+        "TAX",
+        "LEGAL"
+      ]
+    },
+    {
+      "question_id": "Q_CAPITAL_GAIN_WITHHOLDING_EXISTS",
+      "requirement_id": "CIRC005_1_5_FCP_WITHHOLDING_CAPITAL_GAINS",
+      "type": "SINGLE_CHOICE",
+      "label": "Une retenue à la source s'applique-t-elle aux gains en capital versés aux porteurs ?",
+      "options": [
+        {
+          "value": "true",
+          "label": "Oui"
+        },
+        {
+          "value": "false",
+          "label": "Non"
+        },
+        {
+          "value": "REVIEW",
+          "label": "À confirmer"
+        }
+      ],
+      "canonical_fields": [
+        "tax.holders.capital_gain_withholding.exists",
+        "tax.holders.capital_gain_withholding.rate",
+        "tax.holders.capital_gain_withholding.basis",
+        "tax.holders.capital_gain_withholding.source"
+      ],
+      "output_section_id": "SEC_1_5_TAX",
+      "review_roles": [
+        "TAX",
+        "LEGAL"
+      ]
+    },
+    {
+      "question_id": "Q_FINANCIAL_YEAR_END",
+      "requirement_id": "CIRC005_1_6_FCP_ACCOUNT_CLOSING_DATE",
+      "type": "MONTH_DAY",
+      "label": "Quelle est la date de clôture de l'exercice comptable ?",
+      "options": [],
+      "canonical_fields": [
+        "accounting.financial_year_end"
+      ],
+      "output_section_id": "SEC_1_6_CLOSING_DISTRIBUTIONS",
+      "review_roles": [
+        "COMPLIANCE"
+      ]
+    },
+    {
+      "question_id": "Q_INCOME_POLICY",
+      "requirement_id": "CIRC005_1_6_FCP_DISTRIBUTION_DATES",
+      "type": "SINGLE_CHOICE",
+      "label": "Quelle est la politique d'affectation des revenus ?",
+      "options": [
+        {
+          "value": "CAPITALIZATION",
+          "label": "Capitalisation"
+        },
+        {
+          "value": "DISTRIBUTION",
+          "label": "Distribution"
+        },
+        {
+          "value": "MIXED_BY_SHARE_CLASS",
+          "label": "Selon la classe"
+        }
+      ],
+      "canonical_fields": [
+        "income.policy",
+        "income.distribution_frequency",
+        "income.payment_dates"
+      ],
+      "output_section_id": "SEC_1_6_CLOSING_DISTRIBUTIONS",
+      "review_roles": [
+        "COMPLIANCE"
+      ]
+    },
+    {
+      "question_id": "Q_ACCOUNTING_CONTROL_PERSONS",
+      "requirement_id": "CIRC005_1_7_FCP_ACCOUNTING_CONTROL_PERSONS",
+      "type": "REFERENCE_MULTI_SELECT",
+      "label": "Qui est chargé du contrôle des données comptables du fonds ?",
+      "options": [],
+      "canonical_fields": [
+        "accounting_control.responsible_persons"
+      ],
+      "output_section_id": "SEC_1_7_ACCOUNTING_CONTROL",
+      "review_roles": [
+        "LEGAL",
+        "COMPLIANCE"
+      ]
+    },
+    {
+      "question_id": "Q_SHARE_CLASSES_COUNT",
+      "requirement_id": "CIRC005_1_10_FCP_PARTS_CHARACTERISTICS",
+      "type": "SINGLE_CHOICE",
+      "label": "Le fonds comporte-t-il plusieurs classes de parts ?",
+      "options": [
+        {
+          "value": "false",
+          "label": "Une seule classe"
+        },
+        {
+          "value": "true",
+          "label": "Plusieurs classes"
+        }
+      ],
+      "canonical_fields": [
+        "share_classes"
+      ],
+      "output_section_id": "SEC_1_10_PARTS_CHARACTERISTICS",
+      "review_roles": [
+        "COMPLIANCE"
+      ]
+    },
+    {
+      "question_id": "Q_PART_LEGAL_RIGHT_TYPE",
+      "requirement_id": "CIRC005_1_10_A_FCP_RIGHT_NATURE",
+      "type": "SINGLE_CHOICE",
+      "label": "Quelle est la nature juridique du droit représenté par une part ?",
+      "options": [
+        {
+          "value": "CO_OWNERSHIP_RIGHT",
+          "label": "Droit de copropriété"
+        },
+        {
+          "value": "REAL_RIGHT",
+          "label": "Droit réel"
+        },
+        {
+          "value": "CLAIM_RIGHT",
+          "label": "Droit de créance"
+        },
+        {
+          "value": "OTHER",
+          "label": "Autre"
+        }
+      ],
+      "canonical_fields": [
+        "parts.legal_right_type",
+        "parts.legal_right_description"
+      ],
+      "output_section_id": "SEC_1_10_PARTS_CHARACTERISTICS",
+      "review_roles": [
+        "LEGAL",
+        "COMPLIANCE"
+      ]
+    },
+    {
+      "question_id": "Q_PARTS_DEMATERIALIZED",
+      "requirement_id": "CIRC005_1_10_B_FCP_TITLES_CERTIFICATES",
+      "type": "SINGLE_CHOICE",
+      "label": "Comment les parts sont-elles représentées et enregistrées ?",
+      "options": [
+        {
+          "value": "DEMATERIALIZED_ACCOUNT",
+          "label": "Dématérialisées en compte"
+        },
+        {
+          "value": "DEMATERIALIZED_REGISTER",
+          "label": "Dématérialisées sur registre"
+        },
+        {
+          "value": "CERTIFICATED",
+          "label": "Titres ou certificats"
+        },
+        {
+          "value": "OTHER",
+          "label": "Autre"
+        }
+      ],
+      "canonical_fields": [
+        "parts.dematerialized",
+        "parts.original_titles_exist",
+        "parts.certificates_exist",
+        "parts.registration_method",
+        "parts.register_keeper"
+      ],
+      "output_section_id": "SEC_1_10_PARTS_CHARACTERISTICS",
+      "review_roles": [
+        "LEGAL",
+        "COMPLIANCE"
+      ]
+    },
+    {
+      "question_id": "Q_PART_FORM",
+      "requirement_id": "CIRC005_1_10_C_FCP_FORM_COUPONS",
+      "type": "SINGLE_CHOICE",
+      "label": "Les parts sont-elles nominatives ou au porteur ?",
+      "options": [
+        {
+          "value": "REGISTERED",
+          "label": "Nominatives"
+        },
+        {
+          "value": "BEARER",
+          "label": "Au porteur"
+        },
+        {
+          "value": "OTHER",
+          "label": "Autre"
+        }
+      ],
+      "canonical_fields": [
+        "parts.form",
+        "parts.coupons_exist",
+        "parts.coupon_description"
+      ],
+      "output_section_id": "SEC_1_10_PARTS_CHARACTERISTICS",
+      "review_roles": [
+        "LEGAL",
+        "COMPLIANCE"
+      ]
+    },
+    {
+      "question_id": "Q_PART_VOTING_RIGHTS",
+      "requirement_id": "CIRC005_1_10_D_FCP_VOTING_RIGHTS",
+      "type": "SINGLE_CHOICE",
+      "label": "Un droit de vote est-il attaché aux parts ?",
+      "options": [
+        {
+          "value": "false",
+          "label": "Non"
+        },
+        {
+          "value": "true",
+          "label": "Oui"
+        }
+      ],
+      "canonical_fields": [
+        "parts.voting_rights_exist",
+        "parts.voting_rights_description"
+      ],
+      "output_section_id": "SEC_1_10_PARTS_CHARACTERISTICS",
+      "review_roles": [
+        "LEGAL",
+        "COMPLIANCE"
+      ]
+    },
+    {
+      "question_id": "Q_LIQUIDATION_CIRCUMSTANCES",
+      "requirement_id": "CIRC005_1_10_E_FCP_LIQUIDATION_CIRCUMSTANCES",
+      "type": "MULTI_CHOICE_WITH_DETAILS",
+      "label": "Dans quelles circonstances le fonds peut-il être liquidé ?",
+      "options": [],
+      "canonical_fields": [
+        "liquidation.circumstances",
+        "liquidation.decision_authority",
+        "liquidation.process"
+      ],
+      "output_section_id": "SEC_1_10_PARTS_CHARACTERISTICS",
+      "review_roles": [
+        "LEGAL",
+        "COMPLIANCE"
+      ]
+    },
+    {
+      "question_id": "Q_LIQUIDATION_HOLDER_RIGHTS",
+      "requirement_id": "CIRC005_1_10_F_FCP_LIQUIDATION_HOLDER_RIGHTS",
+      "type": "STRUCTURED_TEXT",
+      "label": "Quels sont les droits des porteurs pendant la liquidation ?",
+      "options": [],
+      "canonical_fields": [
+        "parts.liquidation_rights",
+        "liquidation.distribution_priority",
+        "liquidation.information_method"
+      ],
+      "output_section_id": "SEC_1_10_PARTS_CHARACTERISTICS",
+      "review_roles": [
+        "LEGAL",
+        "COMPLIANCE"
+      ]
+    },
+    {
+      "question_id": "Q_PARTS_LISTED_TRADED",
+      "requirement_id": "CIRC005_1_11_FCP_LISTING_TRADING",
+      "type": "SINGLE_CHOICE",
+      "label": "Les parts seront-elles cotées ou négociées sur un marché ?",
+      "options": [
+        {
+          "value": "false",
+          "label": "Non"
+        },
+        {
+          "value": "true",
+          "label": "Oui"
+        }
+      ],
+      "canonical_fields": [
+        "parts.listed",
+        "parts.traded",
+        "parts.market_name",
+        "parts.ticker",
+        "parts.isin",
+        "parts.admission_date"
+      ],
+      "output_section_id": "SEC_1_11_LISTING",
+      "review_roles": [
+        "COMPLIANCE"
+      ]
+    },
+    {
+      "question_id": "Q_INITIAL_SUBSCRIPTION_PERIOD",
+      "requirement_id": "CIRC005_1_12_FCP_ISSUE_SALE",
+      "type": "SINGLE_CHOICE",
+      "label": "Existe-t-il une période initiale de souscription ?",
+      "options": [
+        {
+          "value": "false",
+          "label": "Non"
+        },
+        {
+          "value": "true",
+          "label": "Oui"
+        }
+      ],
+      "canonical_fields": [
+        "parts.issue.initial_subscription_period",
+        "parts.issue.issue_price",
+        "subscriptions.sales_channels",
+        "subscriptions.authorized_distributors",
+        "subscriptions.payment_methods"
+      ],
+      "output_section_id": "SEC_1_12_ISSUE_SALE",
+      "review_roles": [
+        "COMPLIANCE"
+      ]
+    },
+    {
+      "question_id": "Q_REDEMPTION_ALLOWED",
+      "requirement_id": "CIRC005_1_13_FCP_REDEMPTION_REIMBURSEMENT",
+      "type": "SINGLE_CHOICE",
+      "label": "Les porteurs peuvent-ils demander le rachat de leurs parts ?",
+      "options": [
+        {
+          "value": "true",
+          "label": "Oui"
+        },
+        {
+          "value": "false",
+          "label": "Non — cas particulier"
+        }
+      ],
+      "canonical_fields": [
+        "redemption.request_channels",
+        "redemption.cutoff",
+        "redemption.execution_nav",
+        "redemption.settlement_days",
+        "redemption.minimum_amount",
+        "redemption.notice_period"
+      ],
+      "output_section_id": "SEC_1_13_REDEMPTION_SUSPENSION",
+      "review_roles": [
+        "LEGAL",
+        "COMPLIANCE"
+      ]
+    },
+    {
+      "question_id": "Q_REDEMPTION_SUSPENSION_ALLOWED",
+      "requirement_id": "CIRC005_1_13_FCP_SUSPENSION",
+      "type": "SINGLE_CHOICE",
+      "label": "Le fonds prévoit-il la suspension temporaire des rachats ?",
+      "options": [
+        {
+          "value": "true",
+          "label": "Oui"
+        },
+        {
+          "value": "false",
+          "label": "Non"
+        }
+      ],
+      "canonical_fields": [
+        "redemption.suspension.allowed",
+        "redemption.suspension.circumstances",
+        "redemption.suspension.decision_authority",
+        "redemption.suspension.notification",
+        "redemption.suspension.resumption_conditions"
+      ],
+      "output_section_id": "SEC_1_13_REDEMPTION_SUSPENSION",
+      "review_roles": [
+        "LEGAL",
+        "COMPLIANCE"
+      ]
+    },
+    {
+      "question_id": "Q_INCOME_DETERMINATION_METHOD",
+      "requirement_id": "CIRC005_1_14_FCP_INCOME_DETERMINATION",
+      "type": "REFERENCE_OR_STRUCTURED_TEXT",
+      "label": "Comment les revenus distribuables sont-ils déterminés ?",
+      "options": [],
+      "canonical_fields": [
+        "income.determination_method",
+        "income.distributable_income_definition"
+      ],
+      "output_section_id": "SEC_1_14_INCOME",
+      "review_roles": [
+        "COMPLIANCE"
+      ]
+    },
+    {
+      "question_id": "Q_INCOME_ALLOCATION_POLICY",
+      "requirement_id": "CIRC005_1_14_FCP_INCOME_ALLOCATION",
+      "type": "SINGLE_CHOICE",
+      "label": "Comment les revenus sont-ils affectés ?",
+      "options": [
+        {
+          "value": "CAPITALIZED",
+          "label": "Capitalisés"
+        },
+        {
+          "value": "DISTRIBUTED",
+          "label": "Distribués"
+        },
+        {
+          "value": "PARTIAL",
+          "label": "Partiellement distribués"
+        },
+        {
+          "value": "BY_SHARE_CLASS",
+          "label": "Selon la classe"
+        }
+      ],
+      "canonical_fields": [
+        "income.allocation_policy",
+        "income.capitalization_policy",
+        "income.distribution_policy",
+        "income.decision_authority"
+      ],
+      "output_section_id": "SEC_1_14_INCOME",
+      "review_roles": [
+        "COMPLIANCE"
+      ]
+    },
+    {
+      "question_id": "Q_INVESTMENT_POLICY_START",
+      "requirement_id": "CIRC005_1_15_FCP_INVESTMENT_OBJECTIVES_POLICY",
+      "type": "WIZARD_GROUP",
+      "label": "Décrivez les choix structurants de la politique d'investissement.",
+      "options": [],
+      "canonical_fields": [
+        "investment_policy"
+      ],
+      "output_section_id": "SEC_1_15_INVESTMENT_POLICY",
+      "review_roles": [
+        "COMPLIANCE"
+      ]
+    },
+    {
+      "question_id": "Q_FINANCIAL_OBJECTIVE",
+      "requirement_id": "CIRC005_1_15_A_FCP_FINANCIAL_OBJECTIVES",
+      "type": "SINGLE_CHOICE",
+      "label": "Quel résultat financier le fonds cherche-t-il principalement ?",
+      "options": [
+        {
+          "value": "CAPITAL_GROWTH",
+          "label": "Croissance du capital"
+        },
+        {
+          "value": "INCOME",
+          "label": "Revenu"
+        },
+        {
+          "value": "INCOME_AND_GROWTH",
+          "label": "Revenu et croissance"
+        },
+        {
+          "value": "CAPITAL_PRESERVATION",
+          "label": "Préservation du capital"
+        },
+        {
+          "value": "OUTPERFORMANCE",
+          "label": "Surperformance"
+        },
+        {
+          "value": "REPLICATION",
+          "label": "Réplication"
+        },
+        {
+          "value": "OTHER",
+          "label": "Autre"
+        }
+      ],
+      "canonical_fields": [
+        "investment.objective.primary_type",
+        "investment.objective.horizon_years",
+        "investment.objective.benchmark_usage",
+        "capital_protection.guaranteed"
+      ],
+      "output_section_id": "SEC_1_15_INVESTMENT_POLICY",
+      "review_roles": [
+        "LEGAL",
+        "COMPLIANCE"
+      ]
+    },
+    {
+      "question_id": "Q_MANAGEMENT_STYLE",
+      "requirement_id": "CIRC005_1_15_B_FCP_PLACEMENT_POLICY",
+      "type": "SINGLE_CHOICE",
+      "label": "Quel style de gestion est utilisé ?",
+      "options": [
+        {
+          "value": "ACTIVE_DISCRETIONARY",
+          "label": "Active discrétionnaire"
+        },
+        {
+          "value": "INDEX",
+          "label": "Indicielle"
+        },
+        {
+          "value": "SYSTEMATIC",
+          "label": "Systématique"
+        },
+        {
+          "value": "QUANTITATIVE",
+          "label": "Quantitative"
+        },
+        {
+          "value": "PASSIVE",
+          "label": "Passive"
+        },
+        {
+          "value": "MIXED",
+          "label": "Mixte"
+        }
+      ],
+      "canonical_fields": [
+        "investment.management_style",
+        "investment.asset_ranges",
+        "investment.selection_process"
+      ],
+      "output_section_id": "SEC_1_15_INVESTMENT_POLICY",
+      "review_roles": [
+        "COMPLIANCE",
+        "RISK"
+      ]
+    },
+    {
+      "question_id": "Q_INVESTMENT_SPECIALIZATION",
+      "requirement_id": "CIRC005_1_15_C_FCP_GEOGRAPHIC_SECTOR_SPECIALIZATION",
+      "type": "SINGLE_CHOICE",
+      "label": "Le fonds est-il spécialisé par zone géographique ou secteur ?",
+      "options": [
+        {
+          "value": "false",
+          "label": "Non"
+        },
+        {
+          "value": "true",
+          "label": "Oui"
+        }
+      ],
+      "canonical_fields": [
+        "investment.geographic_focus",
+        "investment.geographic_exclusions",
+        "investment.sector_focus",
+        "investment.sector_exclusions"
+      ],
+      "output_section_id": "SEC_1_15_INVESTMENT_POLICY",
+      "review_roles": [
+        "COMPLIANCE"
+      ]
+    },
+    {
+      "question_id": "Q_ASSET_EXPOSURE_MATRIX",
+      "requirement_id": "CIRC005_1_15_D_FCP_POLICY_LIMITS",
+      "type": "ASSET_RANGE_MATRIX",
+      "label": "Définissez les bornes minimales et maximales par catégorie d'actifs.",
+      "options": [],
+      "canonical_fields": [
+        "investment.asset_ranges",
+        "investment.issuer_limits",
+        "investment.market_limits",
+        "investment.currency_limits"
+      ],
+      "output_section_id": "SEC_1_15_INVESTMENT_POLICY",
+      "review_roles": [
+        "RISK",
+        "COMPLIANCE"
+      ]
+    },
+    {
+      "question_id": "Q_TECHNIQUES_INSTRUMENTS",
+      "requirement_id": "CIRC005_1_15_E_FCP_TECHNIQUES_INSTRUMENTS",
+      "type": "MULTI_CHOICE",
+      "label": "Quelles techniques et quels instruments le fonds peut-il utiliser ?",
+      "options": [],
+      "canonical_fields": [
+        "investment.techniques",
+        "investment.instruments",
+        "investment.derivatives"
+      ],
+      "output_section_id": "SEC_1_15_INVESTMENT_POLICY",
+      "review_roles": [
+        "RISK",
+        "COMPLIANCE"
+      ]
+    },
+    {
+      "question_id": "Q_BORROWING_ALLOWED",
+      "requirement_id": "CIRC005_1_15_F_FCP_BORROWING_CAPACITY",
+      "type": "SINGLE_CHOICE",
+      "label": "Le fonds peut-il recourir à des emprunts ?",
+      "options": [
+        {
+          "value": "false",
+          "label": "Non"
+        },
+        {
+          "value": "true",
+          "label": "Oui"
+        }
+      ],
+      "canonical_fields": [
+        "borrowing.allowed",
+        "borrowing.purpose",
+        "borrowing.maximum_percent",
+        "borrowing.maximum_duration"
+      ],
+      "output_section_id": "SEC_1_15_INVESTMENT_POLICY",
+      "review_roles": [
+        "RISK",
+        "COMPLIANCE"
+      ]
+    },
+    {
+      "question_id": "Q_VALUATION_METHODS",
+      "requirement_id": "CIRC005_1_16_FCP_ASSET_VALUATION",
+      "type": "VALUATION_METHOD_MATRIX",
+      "label": "Confirmez la méthode de valorisation proposée pour chaque catégorie d'actifs utilisée.",
+      "options": [],
+      "canonical_fields": [
+        "valuation.methods",
+        "valuation.price_hierarchy",
+        "valuation.exception_process"
+      ],
+      "output_section_id": "SEC_1_16_VALUATION",
+      "review_roles": [
+        "RISK",
+        "COMPLIANCE"
+      ]
+    },
+    {
+      "question_id": "Q_PRICING_FRAMEWORK",
+      "requirement_id": "CIRC005_1_17_FCP_PRICE_DETERMINATION",
+      "type": "WIZARD_GROUP",
+      "label": "Confirmez les règles de détermination des prix de souscription et de rachat.",
+      "options": [],
+      "canonical_fields": [
+        "pricing"
+      ],
+      "output_section_id": "SEC_1_17_PRICE_DETERMINATION",
+      "review_roles": [
+        "COMPLIANCE"
+      ]
+    },
+    {
+      "question_id": "Q_NAV_FREQUENCY",
+      "requirement_id": "CIRC005_1_17_A_FCP_PRICE_METHOD_FREQUENCY",
+      "type": "SINGLE_CHOICE",
+      "label": "À quelle fréquence la valeur liquidative et les prix sont-ils calculés ?",
+      "options": [
+        {
+          "value": "DAILY",
+          "label": "Quotidienne"
+        },
+        {
+          "value": "WEEKLY",
+          "label": "Hebdomadaire"
+        },
+        {
+          "value": "MONTHLY",
+          "label": "Mensuelle"
+        },
+        {
+          "value": "OTHER",
+          "label": "Autre"
+        }
+      ],
+      "canonical_fields": [
+        "pricing.nav.calculation_method",
+        "pricing.nav.frequency",
+        "pricing.issue_price.formula",
+        "pricing.redemption_price.formula"
+      ],
+      "output_section_id": "SEC_1_17_PRICE_DETERMINATION",
+      "review_roles": [
+        "COMPLIANCE"
+      ]
+    },
+    {
+      "question_id": "Q_TRANSACTION_FEES",
+      "requirement_id": "CIRC005_1_17_B_FCP_TRANSACTION_FEES",
+      "type": "FEE_CATALOG_MULTI_SELECT",
+      "label": "Quels frais s'appliquent aux opérations d'émission, vente, rachat ou remboursement ?",
+      "options": [],
+      "canonical_fields": [
+        "fees.transaction"
+      ],
+      "output_section_id": "SEC_1_17_PRICE_DETERMINATION",
+      "review_roles": [
+        "COMPLIANCE"
+      ]
+    },
+    {
+      "question_id": "Q_PRICE_PUBLICATION",
+      "requirement_id": "CIRC005_1_17_C_FCP_PRICE_PUBLICATION",
+      "type": "PUBLICATION_CHANNEL_MATRIX",
+      "label": "Où et à quelle fréquence les valeurs liquidatives et prix seront-ils publiés ?",
+      "options": [],
+      "canonical_fields": [
+        "pricing.publication.channels",
+        "pricing.publication.locations",
+        "pricing.publication.frequency",
+        "pricing.publication.deadline"
+      ],
+      "output_section_id": "SEC_1_17_PRICE_DETERMINATION",
+      "review_roles": [
+        "COMPLIANCE"
+      ]
+    },
+    {
+      "question_id": "Q_REMUNERATION_REIMBURSEMENT_FRAMEWORK",
+      "requirement_id": "CIRC005_1_18_FCP_REMUNERATION_REIMBURSEMENT",
+      "type": "FEE_AND_REIMBURSEMENT_MATRIX",
+      "label": "Quels rémunérations et remboursements de frais sont supportés par le fonds ?",
+      "options": [],
+      "canonical_fields": [
+        "remunerations",
+        "expense_reimbursements"
+      ],
+      "output_section_id": "SEC_1_18_REMUNERATION_REIMBURSEMENT",
+      "review_roles": [
+        "COMPLIANCE"
+      ]
+    },
+    {
+      "question_id": "Q_REMUNERATION_DETAILS",
+      "requirement_id": "CIRC005_1_18_A_FCP_REMUNERATION_MODE_AMOUNT_CALCULATION",
+      "type": "REPEATING_STRUCTURED",
+      "label": "Complétez le mode, le montant et le calcul de chaque rémunération.",
+      "options": [],
+      "canonical_fields": [
+        "remunerations.beneficiary",
+        "remunerations.calculation_method",
+        "remunerations.basis",
+        "remunerations.rate",
+        "remunerations.amount"
+      ],
+      "output_section_id": "SEC_1_18_REMUNERATION_REIMBURSEMENT",
+      "review_roles": [
+        "COMPLIANCE"
+      ]
+    },
+    {
+      "question_id": "Q_EXPENSE_REIMBURSEMENTS",
+      "requirement_id": "CIRC005_1_18_B_FCP_EXPENSE_REIMBURSEMENT",
+      "type": "SINGLE_CHOICE",
+      "label": "Le fonds rembourse-t-il des frais à la SGO, au dépositaire ou à des tiers ?",
+      "options": [
+        {
+          "value": "false",
+          "label": "Non"
+        },
+        {
+          "value": "true",
+          "label": "Oui"
+        }
+      ],
+      "canonical_fields": [
+        "expense_reimbursements.beneficiary",
+        "expense_reimbursements.expense_type",
+        "expense_reimbursements.basis",
+        "expense_reimbursements.cap"
+      ],
+      "output_section_id": "SEC_1_18_REMUNERATION_REIMBURSEMENT",
+      "review_roles": [
+        "COMPLIANCE"
+      ]
+    },
+    {
+      "question_id": "Q_SELECT_MANAGEMENT_COMPANY",
+      "requirement_id": "CIRC005_1_1_SGO_IDENTITY",
+      "type": "REFERENCE_SELECT",
+      "label": "Sélectionnez la société de gestion.",
+      "options": [],
+      "canonical_fields": [
+        "manager.organization_id",
+        "manager.legal_name",
+        "manager.legal_form",
+        "manager.rccm_number",
+        "manager.registered_office",
+        "manager.central_administration"
+      ],
+      "output_section_id": "SEC_1_SGO_IDENTITY",
+      "review_roles": [
+        "COMPLIANCE"
+      ]
+    },
+    {
+      "question_id": "Q_CONFIRM_MANAGER_CONSTITUTION_DATE",
+      "requirement_id": "CIRC005_1_2_SGO_CONSTITUTION_DATE",
+      "type": "DATE_CONFIRMATION",
+      "label": "Confirmez la date de constitution de la société de gestion.",
+      "options": [],
+      "canonical_fields": [
+        "manager.constitution_date"
+      ],
+      "output_section_id": "SEC_1_SGO_IDENTITY",
+      "review_roles": [
+        "COMPLIANCE"
+      ]
+    },
+    {
+      "question_id": "Q_CONFIRM_OTHER_MANAGED_FUNDS",
+      "requirement_id": "CIRC005_1_3_SGO_OTHER_FUNDS",
+      "type": "REFERENCE_MULTI_CONFIRM",
+      "label": "Confirmez la liste des autres OPC gérés par la société.",
+      "options": [],
+      "canonical_fields": [
+        "manager.managed_funds"
+      ],
+      "output_section_id": "SEC_1_SGO_OTHER_FUNDS",
+      "review_roles": [
+        "COMPLIANCE"
+      ]
+    },
+    {
+      "question_id": "Q_CONFIRM_GOVERNANCE_MEMBERS",
+      "requirement_id": "CIRC005_1_8_A_SGO_GOVERNANCE_MEMBERS",
+      "type": "REFERENCE_MULTI_CONFIRM",
+      "label": "Confirmez les membres des organes d'administration, de direction et de surveillance.",
+      "options": [],
+      "canonical_fields": [
+        "manager.governance_members"
+      ],
+      "output_section_id": "SEC_1_SGO_GOVERNANCE",
+      "review_roles": [
+        "COMPLIANCE"
+      ]
+    },
+    {
+      "question_id": "Q_GOVERNANCE_EXTERNAL_ACTIVITIES",
+      "requirement_id": "CIRC005_1_8_B_SGO_EXTERNAL_ACTIVITIES",
+      "type": "REPEATING_BOOLEAN_DETAILS",
+      "label": "Un membre exerce-t-il une activité externe significative ?",
+      "options": [
+        {
+          "value": "false",
+          "label": "Non"
+        },
+        {
+          "value": "true",
+          "label": "Oui"
+        }
+      ],
+      "canonical_fields": [
+        "manager.governance_members.significant_external_activities",
+        "manager.governance_members.conflicts"
+      ],
+      "output_section_id": "SEC_1_SGO_GOVERNANCE",
+      "review_roles": [
+        "COMPLIANCE",
+        "LEGAL"
+      ]
+    },
+    {
+      "question_id": "Q_CONFIRM_SUBSCRIBED_CAPITAL",
+      "requirement_id": "CIRC005_1_9_A_SGO_SUBSCRIBED_CAPITAL",
+      "type": "MONEY_CONFIRMATION",
+      "label": "Confirmez le montant du capital souscrit.",
+      "options": [],
+      "canonical_fields": [
+        "manager.capital.subscribed_amount",
+        "manager.capital.currency",
+        "manager.capital.reference_date"
+      ],
+      "output_section_id": "SEC_1_SGO_CAPITAL",
+      "review_roles": [
+        "COMPLIANCE"
+      ]
+    },
+    {
+      "question_id": "Q_CONFIRM_PAID_UP_CAPITAL",
+      "requirement_id": "CIRC005_1_9_B_SGO_PAID_UP_CAPITAL",
+      "type": "MONEY_CONFIRMATION",
+      "label": "Confirmez le montant du capital libéré.",
+      "options": [],
+      "canonical_fields": [
+        "manager.capital.paid_up_amount",
+        "manager.capital.paid_up_percentage"
+      ],
+      "output_section_id": "SEC_1_SGO_CAPITAL",
+      "review_roles": [
+        "COMPLIANCE"
+      ]
+    },
+    {
+      "question_id": "Q_SELECT_DEPOSITARY",
+      "requirement_id": "CIRC005_2_1_DEPOSITARY_IDENTITY",
+      "type": "REFERENCE_SELECT",
+      "label": "Sélectionnez le dépositaire.",
+      "options": [],
+      "canonical_fields": [
+        "depositary.organization_id",
+        "depositary.legal_name",
+        "depositary.legal_form",
+        "depositary.registered_office",
+        "depositary.central_administration"
+      ],
+      "output_section_id": "SEC_2_DEPOSITARY",
+      "review_roles": [
+        "COMPLIANCE"
+      ]
+    },
+    {
+      "question_id": "Q_CONFIRM_DEPOSITARY_MAIN_ACTIVITY",
+      "requirement_id": "CIRC005_2_2_DEPOSITARY_MAIN_ACTIVITY",
+      "type": "REFERENCE_CONFIRM",
+      "label": "Confirmez l'activité principale du dépositaire.",
+      "options": [],
+      "canonical_fields": [
+        "depositary.main_activity"
+      ],
+      "output_section_id": "SEC_2_DEPOSITARY",
+      "review_roles": [
+        "COMPLIANCE"
+      ]
+    },
+    {
+      "question_id": "Q_EXTERNAL_ADVISER_PAID_BY_FUND",
+      "requirement_id": "CIRC005_3_1_EXTERNAL_ADVISER_IDENTITY",
+      "type": "SINGLE_CHOICE",
+      "label": "Le fonds paie-t-il sur ses actifs un conseiller externe prévu par contrat ?",
+      "options": [
+        {
+          "value": "false",
+          "label": "Non"
+        },
+        {
+          "value": "true",
+          "label": "Oui"
+        }
+      ],
+      "canonical_fields": [
+        "external_adviser.enabled",
+        "external_adviser.organization_id",
+        "external_adviser.person_name"
+      ],
+      "output_section_id": "SEC_3_EXTERNAL_ADVISERS",
+      "review_roles": [
+        "LEGAL",
+        "COMPLIANCE"
+      ]
+    },
+    {
+      "question_id": "Q_HOME_STATE_ARRANGEMENTS",
+      "requirement_id": "CIRC005_4_HOME_STATE_ARRANGEMENTS",
+      "type": "COUNTRY_ARRANGEMENT_MATRIX",
+      "label": "Confirmez les dispositifs de paiement, rachat et information dans l'État d'établissement.",
+      "options": [],
+      "canonical_fields": [
+        "distribution_countries.country_code",
+        "distribution_countries.is_home_state",
+        "distribution_countries.paying_agents",
+        "distribution_countries.redemption_locations",
+        "distribution_countries.information_locations"
+      ],
+      "output_section_id": "SEC_4_COUNTRY_ARRANGEMENTS",
+      "review_roles": [
+        "COMPLIANCE"
+      ]
+    },
+    {
+      "question_id": "Q_MARKETING_COUNTRIES",
+      "requirement_id": "CIRC005_4_OTHER_MARKETING_STATE_ARRANGEMENTS",
+      "type": "COUNTRY_MULTI_SELECT",
+      "label": "Dans quels autres États membres le fonds sera-t-il commercialisé ?",
+      "options": [],
+      "canonical_fields": [
+        "distribution_countries"
+      ],
+      "output_section_id": "SEC_4_COUNTRY_ARRANGEMENTS",
+      "review_roles": [
+        "COMPLIANCE",
+        "LEGAL"
+      ]
+    },
+    {
+      "question_id": "Q_HISTORICAL_PERFORMANCE_AVAILABLE",
+      "requirement_id": "CIRC005_5_1_HISTORICAL_PERFORMANCE",
+      "type": "SINGLE_CHOICE",
+      "label": "Le fonds dispose-t-il d'un historique de performance ?",
+      "options": [
+        {
+          "value": "false",
+          "label": "Non"
+        },
+        {
+          "value": "true",
+          "label": "Oui"
+        }
+      ],
+      "canonical_fields": [
+        "performance.history_available",
+        "performance.series",
+        "performance.method",
+        "performance.location"
+      ],
+      "output_section_id": "SEC_5_1_HISTORICAL_PERFORMANCE",
+      "review_roles": [
+        "COMPLIANCE",
+        "RISK"
+      ]
+    },
+    {
+      "question_id": "Q_TARGET_INVESTOR_PROFILE",
+      "requirement_id": "CIRC005_5_2_TARGET_INVESTOR",
+      "type": "TARGET_MARKET_WIZARD",
+      "label": "À quel profil d'investisseur le fonds est-il destiné ?",
+      "options": [],
+      "canonical_fields": [
+        "target_investor.investor_types",
+        "target_investor.knowledge_level",
+        "target_investor.experience_level",
+        "target_investor.loss_capacity",
+        "target_investor.risk_tolerance",
+        "target_investor.investment_horizon",
+        "target_investor.liquidity_need",
+        "target_investor.objectives",
+        "target_investor.incompatible_investors"
+      ],
+      "output_section_id": "SEC_5_2_TARGET_INVESTOR",
+      "review_roles": [
+        "COMPLIANCE",
+        "RISK"
+      ]
+    },
+    {
+      "question_id": "Q_ECONOMIC_INFORMATION_APPLICABLE",
+      "requirement_id": "CIRC005_5_3_ECONOMIC_INFORMATION",
+      "type": "SINGLE_CHOICE",
+      "label": "Des informations économiques particulières sont-elles nécessaires à la compréhension du fonds ?",
+      "options": [
+        {
+          "value": "false",
+          "label": "Non — à justifier"
+        },
+        {
+          "value": "true",
+          "label": "Oui"
+        },
+        {
+          "value": "REVIEW",
+          "label": "À déterminer"
+        }
+      ],
+      "canonical_fields": [
+        "economic_information.applicable",
+        "economic_information.summary",
+        "economic_information.sources",
+        "economic_information.reference_date"
+      ],
+      "output_section_id": "SEC_5_3_ECONOMIC_INFORMATION",
+      "review_roles": [
+        "LEGAL",
+        "COMPLIANCE"
+      ]
+    },
+    {
+      "question_id": "Q_OTHER_EXPENSES_HOLDER",
+      "requirement_id": "CIRC005_5_4_OTHER_EXPENSES_HOLDER",
+      "type": "SINGLE_CHOICE",
+      "label": "Existe-t-il d'autres dépenses ou commissions payées directement par le porteur ?",
+      "options": [
+        {
+          "value": "false",
+          "label": "Non"
+        },
+        {
+          "value": "true",
+          "label": "Oui"
+        }
+      ],
+      "canonical_fields": [
+        "other_expenses.payer_type",
+        "other_expenses.beneficiary",
+        "other_expenses.basis",
+        "other_expenses.rate",
+        "other_expenses.amount"
+      ],
+      "output_section_id": "SEC_5_4_OTHER_EXPENSES",
+      "review_roles": [
+        "COMPLIANCE"
+      ]
+    },
+    {
+      "question_id": "Q_OTHER_EXPENSES_FUND",
+      "requirement_id": "CIRC005_5_4_OTHER_EXPENSES_FUND_ASSETS",
+      "type": "SINGLE_CHOICE",
+      "label": "Existe-t-il d'autres dépenses ou commissions prélevées sur les actifs du fonds ?",
+      "options": [
+        {
+          "value": "false",
+          "label": "Non"
+        },
+        {
+          "value": "true",
+          "label": "Oui"
+        }
+      ],
+      "canonical_fields": [
+        "other_expenses.payer_type",
+        "other_expenses.beneficiary",
+        "other_expenses.basis",
+        "other_expenses.rate",
+        "other_expenses.amount"
+      ],
+      "output_section_id": "SEC_5_4_OTHER_EXPENSES",
+      "review_roles": [
+        "COMPLIANCE"
+      ]
+    }
+  ]
+}

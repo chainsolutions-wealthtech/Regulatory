@@ -65,3 +65,23 @@ Le propriétaire a demandé de commencer immédiatement le code de construction 
 - [ ] rendu DOCX déterministe ;
 - [ ] rendu PDF contrôlé ;
 - [ ] revue humaine du modèle et des clauses.
+
+<!-- AUTO:LOOP-DEV-001-COVERAGE:START -->
+## Résultat de l’itération de couverture
+
+- exigences analysées : `62` ;
+- composants documentaires : `44` ;
+- couvertes dans le prospectus : `40` ;
+- en attente de revue : `20` ;
+- manquantes : `0` ;
+- non applicables : `1` ;
+- métadonnées système : `1` ;
+- avertissements : `7` ;
+- blocages : `0` ;
+- prêt pour revue conformité : `false` ;
+- prêt pour soumission : `false`.
+
+L’objectif de réduction des 15 exigences `MISSING` est atteint sans faux reclassement en `NOT_APPLICABLE`. Les informations non vérifiées sont exposées comme `PENDING_REVIEW`.
+
+Reste à collecter les preuves institutionnelles et constitutives, valider la fiscalité et le point 5.3, reprendre l’Instruction n°66/2021 et produire le DOCX déterministe.
+<!-- AUTO:LOOP-DEV-001-COVERAGE:END -->

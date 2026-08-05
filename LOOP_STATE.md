@@ -76,3 +76,14 @@ matrices CIRC005
 ## Condition de reprise de LOOP-REG-001
 
 La boucle réglementaire sera reprise après la tranche de couverture standard ou plus tôt si une règle d’implémentation dépend d’un article non atomisé de l’Instruction n°66.
+
+<!-- AUTO:LOOP-DEV-001-COVERAGE:START -->
+## État V0.2 de LOOP-DEV-001
+
+- objectif intermédiaire `15 → 0 MISSING` : `ACHIEVED` ;
+- exigences en attente de revue : `20` ;
+- génération déterministe : activée ;
+- branche conservée : `main` ;
+- soumission : interdite ;
+- prochaine tranche : export DOCX déterministe de pré-conformité.
+<!-- AUTO:LOOP-DEV-001-COVERAGE:END -->

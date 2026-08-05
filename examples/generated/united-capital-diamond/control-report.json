@@ -1,1 +1,100 @@
-{"rule_catalog_version":"0.1.0","status":"PASSED_WITH_WARNINGS","counts":{"INFO":0,"WARNING":2,"BLOCKER":0},"findings":[{"rule_id":"RULE_TAX_SOURCE_REQUIRED","severity":"WARNING","message":"La fiscalité reste à confirmer à partir d’une source officielle ou d’une note fiscale validée.","field_paths":["tax.source_reference"],"requirement_ids":["CIRC005_1_5_FCP_TAX_REGIME","CIRC005_1_5_FCP_WITHHOLDING_INCOME","CIRC005_1_5_FCP_WITHHOLDING_CAPITAL_GAINS"],"remediation":"Faire compléter et valider la section par le rôle TAX/LEGAL."},{"rule_id":"RULE_ECONOMIC_INFORMATION_REVIEW","severity":"WARNING","message":"La rubrique « informations d’ordre économique » reste soumise à interprétation juridique.","field_paths":["economic_information"],"requirement_ids":["CIRC005_5_3_ECONOMIC_INFORMATION"],"remediation":"Définir le contenu après étude des textes complémentaires et revue juridique."}],"ready_for_compliance_review":true,"ready_for_submission":false}
+{
+  "rule_catalog_version": "0.1.0",
+  "status": "PASSED_WITH_WARNINGS",
+  "counts": {
+    "INFO": 0,
+    "WARNING": 7,
+    "BLOCKER": 0
+  },
+  "findings": [
+    {
+      "rule_id": "RULE_TAX_SOURCE_REQUIRED",
+      "severity": "WARNING",
+      "message": "La fiscalité reste à confirmer à partir d’une source officielle ou d’une note fiscale validée.",
+      "field_paths": [
+        "tax.source_reference"
+      ],
+      "requirement_ids": [
+        "CIRC005_1_5_FCP_TAX_REGIME",
+        "CIRC005_1_5_FCP_WITHHOLDING_INCOME",
+        "CIRC005_1_5_FCP_WITHHOLDING_CAPITAL_GAINS"
+      ],
+      "remediation": "Faire compléter et valider la section par le rôle TAX/LEGAL."
+    },
+    {
+      "rule_id": "RULE_ECONOMIC_INFORMATION_REVIEW",
+      "severity": "WARNING",
+      "message": "La rubrique « informations d’ordre économique » reste soumise à interprétation juridique.",
+      "field_paths": [
+        "economic_information"
+      ],
+      "requirement_ids": [
+        "CIRC005_5_3_ECONOMIC_INFORMATION"
+      ],
+      "remediation": "Définir le contenu après étude des textes complémentaires et revue juridique."
+    },
+    {
+      "rule_id": "RULE_PENDING_OFFICIAL_EFFECTIVE_DATE",
+      "severity": "WARNING",
+      "message": "La date officielle de publication et de prise d’effet reste à vérifier.",
+      "field_paths": [],
+      "requirement_ids": [
+        "CIRC005_GENERAL_EFFECTIVE_DATE"
+      ],
+      "remediation": "Rapprocher le registre officiel et enregistrer la provenance vérifiée."
+    },
+    {
+      "rule_id": "RULE_PENDING_FUND_LEGAL_DETAILS",
+      "severity": "WARNING",
+      "message": "Des caractéristiques juridiques du Fonds restent à confirmer par les pièces constitutives.",
+      "field_paths": [],
+      "requirement_ids": [
+        "CIRC005_1_2_FCP_CONSTITUTION_DATE",
+        "CIRC005_1_7_FCP_ACCOUNTING_CONTROL_PERSONS",
+        "CIRC005_1_10_E_FCP_LIQUIDATION_CIRCUMSTANCES",
+        "CIRC005_1_10_F_FCP_LIQUIDATION_HOLDER_RIGHTS"
+      ],
+      "remediation": "Collecter le règlement, les décisions de nomination et les pièces de constitution."
+    },
+    {
+      "rule_id": "RULE_PENDING_MANAGER_REFERENCE_DATA",
+      "severity": "WARNING",
+      "message": "Le profil institutionnel de la société de gestion est prérempli mais non vérifié.",
+      "field_paths": [],
+      "requirement_ids": [
+        "CIRC005_1_1_SGO_IDENTITY",
+        "CIRC005_1_2_SGO_CONSTITUTION_DATE",
+        "CIRC005_1_3_SGO_OTHER_FUNDS",
+        "CIRC005_1_8_A_SGO_GOVERNANCE_MEMBERS",
+        "CIRC005_1_8_B_SGO_EXTERNAL_ACTIVITIES",
+        "CIRC005_1_9_A_SGO_SUBSCRIBED_CAPITAL",
+        "CIRC005_1_9_B_SGO_PAID_UP_CAPITAL"
+      ],
+      "remediation": "Charger le registre officiel, le RCCM, les statuts, les décisions de nomination et les données de capital."
+    },
+    {
+      "rule_id": "RULE_PENDING_DEPOSITARY_REFERENCE_DATA",
+      "severity": "WARNING",
+      "message": "Le profil du dépositaire reste à confirmer à partir de l’agrément et de la convention.",
+      "field_paths": [],
+      "requirement_ids": [
+        "CIRC005_2_1_DEPOSITARY_IDENTITY",
+        "CIRC005_2_2_DEPOSITARY_MAIN_ACTIVITY"
+      ],
+      "remediation": "Vérifier l’identité, la forme, les sièges, l’activité et le mandat du dépositaire."
+    },
+    {
+      "rule_id": "RULE_PENDING_POLICY_CONFIRMATIONS",
+      "severity": "WARNING",
+      "message": "La spécialisation et l’absence de remboursements de frais distincts restent à confirmer.",
+      "field_paths": [],
+      "requirement_ids": [
+        "CIRC005_1_15_C_FCP_GEOGRAPHIC_SECTOR_SPECIALIZATION",
+        "CIRC005_1_18_B_FCP_EXPENSE_REIMBURSEMENT"
+      ],
+      "remediation": "Faire confirmer ces choix par la gestion, les risques et la conformité."
+    }
+  ],
+  "ready_for_compliance_review": false,
+  "ready_for_submission": false
+}

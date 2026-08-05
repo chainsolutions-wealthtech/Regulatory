@@ -1,0 +1,910 @@
+{
+  "generation_id": "GEN-D23C08F9167F2780",
+  "template_version": "UMOA_FCP_PROSPECTUS_TEMPLATE_V0_1",
+  "sections": [
+    {
+      "id": "COVER",
+      "order": 0,
+      "title": "Prospectus — document de travail",
+      "components": [
+        {
+          "component_id": "CMP-0001",
+          "review_status": "PENDING_LEGAL_REVIEW",
+          "type": "WARNING",
+          "section_id": "COVER",
+          "content": "DOCUMENT DE TRAVAIL — Version générée automatiquement, prête pour revue conformité et juridique. Elle ne constitue ni un agrément, ni un visa, ni une approbation de l’AMF-UMOA.",
+          "clause_id": "UMOA_FCP_DRAFT_DISCLAIMER_V1",
+          "clause_version": 1,
+          "clause_status": "DRAFT_LEGAL_REVIEW_REQUIRED",
+          "requirement_ids": [
+            "CIRC005_GENERAL_MINIMUM",
+            "CIRC005_GENERAL_ORDER"
+          ],
+          "field_paths": [
+            "regulatory_context.document_status"
+          ],
+          "missing_variables": []
+        },
+        {
+          "component_id": "CMP-0030",
+          "type": "PARAGRAPH",
+          "clause_status": "DRAFT_LEGAL_REVIEW_REQUIRED",
+          "review_status": "PENDING_LEGAL_REVIEW",
+          "clause_id": "CIRC005_SCOPE_METADATA_V1",
+          "clause_version": 1,
+          "section_id": "COVER",
+          "requirement_ids": [
+            "CIRC005_GENERAL_SCOPE"
+          ],
+          "field_paths": [],
+          "coverage_status": "SYSTEM_METADATA",
+          "content": "Périmètre configuré : UMOA, UMOA_OPCVM_FCP. La Circulaire n°05 complète le règlement du Fonds et les documents constitutifs annexés."
+        },
+        {
+          "component_id": "CMP-0031",
+          "type": "PARAGRAPH",
+          "clause_status": "DRAFT_LEGAL_REVIEW_REQUIRED",
+          "review_status": "PENDING_CONFIRMATION",
+          "clause_id": "CIRC005_EFFECTIVE_DATE_PENDING_V1",
+          "clause_version": 1,
+          "section_id": "COVER",
+          "requirement_ids": [
+            "CIRC005_GENERAL_EFFECTIVE_DATE"
+          ],
+          "field_paths": [],
+          "coverage_status": "PENDING_REVIEW",
+          "content": "La date officielle de publication et la prise d’effet de la Circulaire n°05/CREPMF/2022 restent à confirmer dans le registre officiel."
+        }
+      ]
+    },
+    {
+      "id": "SEC_1_1_FCP_DENOMINATION",
+      "order": 110,
+      "title": "1.1 Dénomination et identification du FCP",
+      "components": [
+        {
+          "component_id": "CMP-0002",
+          "review_status": "PENDING_LEGAL_REVIEW",
+          "type": "PARAGRAPH",
+          "section_id": "SEC_1_1_FCP_DENOMINATION",
+          "content": "Le Fonds est un FCP dénommé « United Capital Diamond », constitué en Côte d’Ivoire. Son agrément a été délivré le 19/03/2025 sous le numéro FCP/2025-02.",
+          "clause_id": "UMOA_FCP_GENERAL_IDENTIFICATION_V1",
+          "clause_version": 1,
+          "clause_status": "DRAFT_LEGAL_REVIEW_REQUIRED",
+          "requirement_ids": [
+            "CIRC005_1_1_FCP_DENOMINATION",
+            "CIRC005_1_2_FCP_CONSTITUTION_DATE"
+          ],
+          "field_paths": [
+            "fund.legal_name",
+            "fund.legal_form",
+            "fund.country_of_constitution_name",
+            "fund.approval.date_display",
+            "fund.approval.number"
+          ],
+          "missing_variables": []
+        }
+      ]
+    },
+    {
+      "id": "SEC_1_2_FCP_CONSTITUTION_DURATION",
+      "order": 120,
+      "title": "1.2 Constitution et durée",
+      "components": [
+        {
+          "component_id": "CMP-0003",
+          "review_status": "PENDING_LEGAL_REVIEW",
+          "type": "PARAGRAPH",
+          "section_id": "SEC_1_2_FCP_CONSTITUTION_DURATION",
+          "content": "Le Fonds est constitué pour une durée indéterminée.",
+          "clause_id": "UMOA_FCP_INDEFINITE_DURATION_V1",
+          "clause_version": 1,
+          "clause_status": "DRAFT_LEGAL_REVIEW_REQUIRED",
+          "requirement_ids": [
+            "CIRC005_1_2_FCP_LIMITED_DURATION"
+          ],
+          "field_paths": [
+            "fund.duration_type"
+          ],
+          "missing_variables": []
+        }
+      ]
+    },
+    {
+      "id": "SEC_1_4_DOCUMENT_AVAILABILITY",
+      "order": 140,
+      "title": "1.4 Documents disponibles",
+      "components": [
+        {
+          "component_id": "CMP-0004",
+          "review_status": "PENDING_LEGAL_REVIEW",
+          "type": "PARAGRAPH",
+          "section_id": "SEC_1_4_DOCUMENT_AVAILABILITY",
+          "content": "Les documents du Fonds et les rapports périodiques sont disponibles selon les modalités suivantes : auprès de la société de gestion et par les canaux électroniques indiqués dans le dossier, sous réserve de confirmation opérationnelle.",
+          "clause_id": "UMOA_FCP_DOCUMENT_AVAILABILITY_V1",
+          "clause_version": 1,
+          "clause_status": "DRAFT_LEGAL_REVIEW_REQUIRED",
+          "requirement_ids": [
+            "CIRC005_1_4_FCP_REGULATION_AVAILABILITY",
+            "CIRC005_1_4_FCP_PERIODIC_REPORTS_AVAILABILITY"
+          ],
+          "field_paths": [
+            "documents.availability_summary"
+          ],
+          "missing_variables": []
+        }
+      ]
+    },
+    {
+      "id": "SEC_1_5_TAX",
+      "order": 150,
+      "title": "1.5 Régime fiscal",
+      "components": [
+        {
+          "component_id": "CMP-0028",
+          "review_status": "TAX_AND_LEGAL_REVIEW_REQUIRED",
+          "type": "WARNING",
+          "section_id": "SEC_1_5_TAX",
+          "content": "Le régime fiscal du Fonds et des porteurs doit être confirmé à partir des textes fiscaux applicables et d’une revue fiscale validée.",
+          "requirement_ids": [
+            "CIRC005_1_5_FCP_TAX_REGIME",
+            "CIRC005_1_5_FCP_WITHHOLDING_INCOME",
+            "CIRC005_1_5_FCP_WITHHOLDING_CAPITAL_GAINS"
+          ],
+          "field_paths": [
+            "tax"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "SEC_1_6_CLOSING_DISTRIBUTIONS",
+      "order": 160,
+      "title": "1.6 Clôture des comptes et distributions",
+      "components": [
+        {
+          "component_id": "CMP-0005",
+          "review_status": "PENDING_LEGAL_REVIEW",
+          "type": "PARAGRAPH",
+          "section_id": "SEC_1_6_CLOSING_DISTRIBUTIONS",
+          "content": "L’exercice comptable est clôturé le 31 décembre de chaque année.",
+          "clause_id": "UMOA_FCP_ACCOUNTING_PERIOD_V1",
+          "clause_version": 1,
+          "clause_status": "DRAFT_LEGAL_REVIEW_REQUIRED",
+          "requirement_ids": [
+            "CIRC005_1_6_FCP_ACCOUNT_CLOSING_DATE"
+          ],
+          "field_paths": [
+            "accounting.financial_year_end_display"
+          ],
+          "missing_variables": []
+        }
+      ]
+    },
+    {
+      "id": "SEC_1_7_ACCOUNTING_CONTROL",
+      "order": 170,
+      "title": "1.7 Contrôle des données comptables",
+      "components": [
+        {
+          "component_id": "CMP-0032",
+          "type": "PARAGRAPH",
+          "clause_status": "DRAFT_LEGAL_REVIEW_REQUIRED",
+          "review_status": "PENDING_CONFIRMATION",
+          "clause_id": "CIRC005_ACCOUNTING_CONTROL_PENDING_V1",
+          "clause_version": 1,
+          "section_id": "SEC_1_7_ACCOUNTING_CONTROL",
+          "requirement_ids": [
+            "CIRC005_1_7_FCP_ACCOUNTING_CONTROL_PERSONS"
+          ],
+          "field_paths": [],
+          "coverage_status": "PENDING_REVIEW",
+          "content": "L’identité et la qualité des personnes chargées du contrôle des données comptables doivent être confirmées à partir des décisions de nomination et lettres de mission."
+        }
+      ]
+    },
+    {
+      "id": "SEC_1_10_PARTS_CHARACTERISTICS",
+      "order": 200,
+      "title": "1.10 Nature et caractéristiques des parts",
+      "components": [
+        {
+          "component_id": "CMP-0006",
+          "review_status": "PENDING_LEGAL_REVIEW",
+          "type": "PARAGRAPH",
+          "section_id": "SEC_1_10_PARTS_CHARACTERISTICS",
+          "content": "Le Fonds comporte une seule catégorie de parts.",
+          "clause_id": "UMOA_FCP_SINGLE_SHARE_CLASS_V1",
+          "clause_version": 1,
+          "clause_status": "DRAFT_LEGAL_REVIEW_REQUIRED",
+          "requirement_ids": [
+            "CIRC005_1_10_FCP_PARTS_CHARACTERISTICS"
+          ],
+          "field_paths": [
+            "share_classes"
+          ],
+          "missing_variables": []
+        },
+        {
+          "component_id": "CMP-0007",
+          "review_status": "PENDING_LEGAL_REVIEW",
+          "type": "PARAGRAPH",
+          "section_id": "SEC_1_10_PARTS_CHARACTERISTICS",
+          "content": "Aucun droit de vote n’est attaché aux parts du Fonds.",
+          "clause_id": "UMOA_FCP_NO_VOTING_RIGHTS_V1",
+          "clause_version": 1,
+          "clause_status": "DRAFT_LEGAL_REVIEW_REQUIRED",
+          "requirement_ids": [
+            "CIRC005_1_10_D_FCP_VOTING_RIGHTS"
+          ],
+          "field_paths": [
+            "parts.voting_rights_exist"
+          ],
+          "missing_variables": []
+        },
+        {
+          "component_id": "CMP-0021",
+          "review_status": "PENDING_LEGAL_REVIEW",
+          "type": "TABLE",
+          "section_id": "SEC_1_10_PARTS_CHARACTERISTICS",
+          "content": "| Classe | Devise | Revenus | VL d’origine | Minimum initial | Décimalisation |\n| --- | --- | --- | --- | --- | --- |\n| MAIN | XOF | Capitalisation | 100 000 F CFA | un millième de part | parts fractionnées en millièmes |",
+          "requirement_ids": [
+            "CIRC005_1_10_FCP_PARTS_CHARACTERISTICS"
+          ],
+          "field_paths": [
+            "share_classes"
+          ]
+        },
+        {
+          "component_id": "CMP-0033",
+          "type": "PARAGRAPH",
+          "clause_status": "DRAFT_LEGAL_REVIEW_REQUIRED",
+          "review_status": "PENDING_LEGAL_REVIEW",
+          "clause_id": "CIRC005_PART_RIGHT_NATURE_V1",
+          "clause_version": 1,
+          "section_id": "SEC_1_10_PARTS_CHARACTERISTICS",
+          "requirement_ids": [
+            "CIRC005_1_10_A_FCP_RIGHT_NATURE"
+          ],
+          "field_paths": [],
+          "coverage_status": "IN_PROSPECTUS",
+          "content": "Chaque part représente un droit de copropriété sur les actifs du Fonds, proportionnel au nombre de parts détenues."
+        },
+        {
+          "component_id": "CMP-0034",
+          "type": "PARAGRAPH",
+          "clause_status": "DRAFT_LEGAL_REVIEW_REQUIRED",
+          "review_status": "PENDING_LEGAL_REVIEW",
+          "clause_id": "CIRC005_PART_REPRESENTATION_V1",
+          "clause_version": 1,
+          "section_id": "SEC_1_10_PARTS_CHARACTERISTICS",
+          "requirement_ids": [
+            "CIRC005_1_10_B_FCP_TITLES_CERTIFICATES"
+          ],
+          "field_paths": [],
+          "coverage_status": "IN_PROSPECTUS",
+          "content": "Les parts sont dématérialisées et inscrites en compte ou sur un registre selon les modalités opérationnelles du Fonds. Aucun titre ou certificat physique n’est déclaré."
+        },
+        {
+          "component_id": "CMP-0035",
+          "type": "PARAGRAPH",
+          "clause_status": "DRAFT_LEGAL_REVIEW_REQUIRED",
+          "review_status": "PENDING_LEGAL_REVIEW",
+          "clause_id": "CIRC005_PART_FORM_COUPONS_V1",
+          "clause_version": 1,
+          "section_id": "SEC_1_10_PARTS_CHARACTERISTICS",
+          "requirement_ids": [
+            "CIRC005_1_10_C_FCP_FORM_COUPONS"
+          ],
+          "field_paths": [],
+          "coverage_status": "IN_PROSPECTUS",
+          "content": "Les parts sont dématérialisées et ne comportent aucun coupon matériel."
+        },
+        {
+          "component_id": "CMP-0036",
+          "type": "PARAGRAPH",
+          "clause_status": "DRAFT_LEGAL_REVIEW_REQUIRED",
+          "review_status": "PENDING_CONFIRMATION",
+          "clause_id": "CIRC005_LIQUIDATION_CIRCUMSTANCES_PENDING_V1",
+          "clause_version": 1,
+          "section_id": "SEC_1_10_PARTS_CHARACTERISTICS",
+          "requirement_ids": [
+            "CIRC005_1_10_E_FCP_LIQUIDATION_CIRCUMSTANCES"
+          ],
+          "field_paths": [],
+          "coverage_status": "PENDING_REVIEW",
+          "content": "Les circonstances, autorités compétentes et modalités de liquidation doivent être rapprochées du règlement du Fonds et du corpus réglementaire applicable."
+        },
+        {
+          "component_id": "CMP-0037",
+          "type": "PARAGRAPH",
+          "clause_status": "DRAFT_LEGAL_REVIEW_REQUIRED",
+          "review_status": "PENDING_CONFIRMATION",
+          "clause_id": "CIRC005_LIQUIDATION_RIGHTS_PENDING_V1",
+          "clause_version": 1,
+          "section_id": "SEC_1_10_PARTS_CHARACTERISTICS",
+          "requirement_ids": [
+            "CIRC005_1_10_F_FCP_LIQUIDATION_HOLDER_RIGHTS"
+          ],
+          "field_paths": [],
+          "coverage_status": "PENDING_REVIEW",
+          "content": "Les droits des porteurs lors de la liquidation, dont l’information et la répartition du produit net, doivent être confirmés dans le règlement du Fonds."
+        }
+      ]
+    },
+    {
+      "id": "SEC_1_11_LISTING",
+      "order": 210,
+      "title": "1.11 Cotation ou négociation",
+      "components": [
+        {
+          "component_id": "CMP-0008",
+          "review_status": "PENDING_LEGAL_REVIEW",
+          "type": "PARAGRAPH",
+          "section_id": "SEC_1_11_LISTING",
+          "content": "Les parts du Fonds ne sont ni cotées ni admises à la négociation sur un marché.",
+          "clause_id": "UMOA_FCP_NOT_LISTED_V1",
+          "clause_version": 1,
+          "clause_status": "DRAFT_LEGAL_REVIEW_REQUIRED",
+          "requirement_ids": [
+            "CIRC005_1_11_FCP_LISTING_TRADING"
+          ],
+          "field_paths": [
+            "parts.listed",
+            "parts.traded"
+          ],
+          "missing_variables": []
+        }
+      ]
+    },
+    {
+      "id": "SEC_1_12_ISSUE_SALE",
+      "order": 220,
+      "title": "1.12 Émission et vente",
+      "components": [
+        {
+          "component_id": "CMP-0038",
+          "type": "PARAGRAPH",
+          "clause_status": "DRAFT_LEGAL_REVIEW_REQUIRED",
+          "review_status": "PENDING_LEGAL_REVIEW",
+          "clause_id": "CIRC005_ISSUE_AND_SALE_V1",
+          "clause_version": 1,
+          "section_id": "SEC_1_12_ISSUE_SALE",
+          "requirement_ids": [
+            "CIRC005_1_12_FCP_ISSUE_SALE"
+          ],
+          "field_paths": [],
+          "coverage_status": "IN_PROSPECTUS",
+          "content": "Les parts sont émises au prix initial de 100 000 XOF. Les souscriptions sont reçues par Société de gestion et Distributeurs habilités et réglées par Virement et Autre moyen accepté par le centralisateur. Les modalités opérationnelles restent soumises à confirmation par le centralisateur et les distributeurs habilités."
+        }
+      ]
+    },
+    {
+      "id": "SEC_1_13_REDEMPTION_SUSPENSION",
+      "order": 230,
+      "title": "1.13 Rachat, remboursement et suspension",
+      "components": [
+        {
+          "component_id": "CMP-0013",
+          "review_status": "PENDING_LEGAL_REVIEW",
+          "type": "PARAGRAPH",
+          "section_id": "SEC_1_13_REDEMPTION_SUSPENSION",
+          "content": "Les demandes de rachat sont centralisées au plus tard le vendredi à 17 h 00 et exécutées sur la base suivante : la prochaine valeur liquidative calculée conformément au calendrier du Fonds. Le règlement intervient normalement dans un délai de 2 jours ouvrés.",
+          "clause_id": "UMOA_FCP_REDEMPTION_V1",
+          "clause_version": 1,
+          "clause_status": "DRAFT_LEGAL_REVIEW_REQUIRED",
+          "requirement_ids": [
+            "CIRC005_1_13_FCP_REDEMPTION_REIMBURSEMENT"
+          ],
+          "field_paths": [
+            "redemption.cutoff.display",
+            "redemption.settlement_days.standard_business_days",
+            "redemption.execution_nav.description"
+          ],
+          "missing_variables": []
+        },
+        {
+          "component_id": "CMP-0014",
+          "review_status": "PENDING_LEGAL_REVIEW",
+          "type": "PARAGRAPH",
+          "section_id": "SEC_1_13_REDEMPTION_SUSPENSION",
+          "content": "Les rachats peuvent être temporairement suspendus dans les circonstances suivantes : circonstances exceptionnelles lorsque l’intérêt des porteurs ou le fonctionnement normal du Fonds l’exige, sous réserve de validation juridique du wording. L’information est diffusée selon les modalités suivantes : information des porteurs et notification à l’AMF-UMOA selon la procédure applicable.",
+          "clause_id": "UMOA_FCP_REDEMPTION_SUSPENSION_V1",
+          "clause_version": 1,
+          "clause_status": "DRAFT_LEGAL_REVIEW_REQUIRED",
+          "requirement_ids": [
+            "CIRC005_1_13_FCP_SUSPENSION"
+          ],
+          "field_paths": [
+            "redemption.suspension.circumstances",
+            "redemption.suspension.notification"
+          ],
+          "missing_variables": []
+        },
+        {
+          "component_id": "CMP-0015",
+          "review_status": "PENDING_LEGAL_REVIEW",
+          "type": "PARAGRAPH",
+          "section_id": "SEC_1_13_REDEMPTION_SUSPENSION",
+          "content": "Un mécanisme de plafonnement des rachats peut être activé lorsque les demandes représentent plus de 5 % de l’actif net. Son exécution suit la méthode suivante : plafonnement et report du solde des demandes selon les modalités du règlement du Fonds.",
+          "clause_id": "UMOA_FCP_REDEMPTION_GATE_V1",
+          "clause_version": 1,
+          "clause_status": "DRAFT_LEGAL_REVIEW_REQUIRED",
+          "requirement_ids": [
+            "CIRC005_1_13_FCP_REDEMPTION_REIMBURSEMENT",
+            "CIRC005_1_13_FCP_SUSPENSION"
+          ],
+          "field_paths": [
+            "redemption.gates.threshold_percent",
+            "redemption.gates.execution_method"
+          ],
+          "missing_variables": []
+        }
+      ]
+    },
+    {
+      "id": "SEC_1_14_INCOME",
+      "order": 240,
+      "title": "1.14 Détermination et affectation des revenus",
+      "components": [
+        {
+          "component_id": "CMP-0009",
+          "review_status": "PENDING_LEGAL_REVIEW",
+          "type": "PARAGRAPH",
+          "section_id": "SEC_1_14_INCOME",
+          "content": "Les revenus du Fonds sont intégralement capitalisés.",
+          "clause_id": "UMOA_FCP_CAPITALIZATION_V1",
+          "clause_version": 1,
+          "clause_status": "DRAFT_LEGAL_REVIEW_REQUIRED",
+          "requirement_ids": [
+            "CIRC005_1_14_FCP_INCOME_DETERMINATION",
+            "CIRC005_1_14_FCP_INCOME_ALLOCATION",
+            "CIRC005_1_6_FCP_DISTRIBUTION_DATES"
+          ],
+          "field_paths": [
+            "income.policy"
+          ],
+          "missing_variables": []
+        }
+      ]
+    },
+    {
+      "id": "SEC_1_15_INVESTMENT_POLICY",
+      "order": 250,
+      "title": "1.15 Objectifs et politique d’investissement",
+      "components": [
+        {
+          "component_id": "CMP-0010",
+          "review_status": "PENDING_LEGAL_REVIEW",
+          "type": "PARAGRAPH",
+          "section_id": "SEC_1_15_INVESTMENT_POLICY",
+          "content": "L’objectif de gestion est le suivant : rechercher, sur un horizon recommandé de cinq ans, une performance supérieure à celle de l’indicateur de référence grâce à une gestion principalement obligataire. La gestion est active et discrétionnaire.",
+          "clause_id": "UMOA_FCP_ACTIVE_MANAGEMENT_V1",
+          "clause_version": 1,
+          "clause_status": "DRAFT_LEGAL_REVIEW_REQUIRED",
+          "requirement_ids": [
+            "CIRC005_1_15_A_FCP_FINANCIAL_OBJECTIVES",
+            "CIRC005_1_15_B_FCP_PLACEMENT_POLICY"
+          ],
+          "field_paths": [
+            "investment.objective.summary",
+            "investment.management_style"
+          ],
+          "missing_variables": []
+        },
+        {
+          "component_id": "CMP-0011",
+          "review_status": "PENDING_LEGAL_REVIEW",
+          "type": "PARAGRAPH",
+          "section_id": "SEC_1_15_INVESTMENT_POLICY",
+          "content": "L’indicateur de référence est « Courbe de taux moyenne de la Côte d’Ivoire à cinq ans ». Il est utilisé de la manière suivante : comparaison de la performance du Fonds sur la durée recommandée, avec une latitude de gestion active.",
+          "clause_id": "UMOA_FCP_BENCHMARK_V1",
+          "clause_version": 1,
+          "clause_status": "DRAFT_LEGAL_REVIEW_REQUIRED",
+          "requirement_ids": [
+            "CIRC005_1_15_A_FCP_FINANCIAL_OBJECTIVES"
+          ],
+          "field_paths": [
+            "investment.benchmark.name",
+            "investment.benchmark.usage_description"
+          ],
+          "missing_variables": []
+        },
+        {
+          "component_id": "CMP-0012",
+          "review_status": "PENDING_LEGAL_REVIEW",
+          "type": "PARAGRAPH",
+          "section_id": "SEC_1_15_INVESTMENT_POLICY",
+          "content": "Le Fonds peut recourir temporairement à l’emprunt, dans la limite de 10 % de son actif, pour le motif suivant : faire face à des besoins temporaires de liquidité.",
+          "clause_id": "UMOA_FCP_BORROWING_V1",
+          "clause_version": 1,
+          "clause_status": "DRAFT_LEGAL_REVIEW_REQUIRED",
+          "requirement_ids": [
+            "CIRC005_1_15_F_FCP_BORROWING_CAPACITY"
+          ],
+          "field_paths": [
+            "borrowing.maximum_percent",
+            "borrowing.purpose"
+          ],
+          "missing_variables": []
+        },
+        {
+          "component_id": "CMP-0022",
+          "review_status": "PENDING_RISK_AND_COMPLIANCE_REVIEW",
+          "type": "TABLE",
+          "section_id": "SEC_1_15_INVESTMENT_POLICY",
+          "content": "| Catégorie d’actifs | Minimum | Maximum | Précisions |\n| --- | --- | --- | --- |\n| Actions | 0 % | 20 % | Exposition accessoire |\n| Obligations, titres de créance et instruments monétaires | 70 % | 100 % | Poche principale |\n| Liquidités | 0 % | 10 % | Gestion de trésorerie |",
+          "requirement_ids": [
+            "CIRC005_1_15_B_FCP_PLACEMENT_POLICY",
+            "CIRC005_1_15_D_FCP_POLICY_LIMITS",
+            "CIRC005_1_15_E_FCP_TECHNIQUES_INSTRUMENTS"
+          ],
+          "field_paths": [
+            "investment.asset_ranges"
+          ]
+        },
+        {
+          "component_id": "CMP-0023",
+          "review_status": "PENDING_RISK_AND_COMPLIANCE_REVIEW",
+          "type": "LIST",
+          "section_id": "SEC_1_15_INVESTMENT_POLICY",
+          "content": "- **Risque de perte en capital** : Le capital investi n’est pas garanti et peut ne pas être intégralement restitué.\n- **Risque actions** : La valeur des actions détenues peut fluctuer à la hausse comme à la baisse.\n- **Risque de taux** : La valeur des instruments de taux peut diminuer en cas de variation défavorable des taux d’intérêt.\n- **Risque de crédit** : La dégradation de la qualité d’un émetteur peut affecter la valeur des titres détenus.\n- **Risque de liquidité** : Certains actifs peuvent être difficiles à céder rapidement dans des conditions normales de marché.\n- **Risque lié à la gestion discrétionnaire** : Les choix du gestionnaire peuvent ne pas produire les résultats attendus.\n- **Risque opérationnel** : Une défaillance de processus, de système ou d’un prestataire peut affecter le Fonds.",
+          "requirement_ids": [
+            "CIRC005_1_15_FCP_INVESTMENT_OBJECTIVES_POLICY"
+          ],
+          "field_paths": [
+            "risks"
+          ]
+        },
+        {
+          "component_id": "CMP-0039",
+          "type": "PARAGRAPH",
+          "clause_status": "DRAFT_LEGAL_REVIEW_REQUIRED",
+          "review_status": "PENDING_CONFIRMATION",
+          "clause_id": "CIRC005_SPECIALIZATION_PENDING_V1",
+          "clause_version": 1,
+          "section_id": "SEC_1_15_INVESTMENT_POLICY",
+          "requirement_ids": [
+            "CIRC005_1_15_C_FCP_GEOGRAPHIC_SECTOR_SPECIALIZATION"
+          ],
+          "field_paths": [],
+          "coverage_status": "PENDING_REVIEW",
+          "content": "Aucune spécialisation géographique ou sectorielle distincte n’est déclarée dans le présent projet ; ce point doit être confirmé par la société de gestion."
+        }
+      ]
+    },
+    {
+      "id": "SEC_1_16_VALUATION",
+      "order": 260,
+      "title": "1.16 Évaluation des actifs",
+      "components": [
+        {
+          "component_id": "CMP-0024",
+          "review_status": "PENDING_RISK_AND_COMPLIANCE_REVIEW",
+          "type": "TABLE",
+          "section_id": "SEC_1_16_VALUATION",
+          "content": "| Actif | Méthode | Source principale | Méthode de repli |\n| --- | --- | --- | --- |\n| Actions | Dernier cours disponible sur le marché de référence ou méthode de juste valeur en l’absence de cotation exploitable | Marché de cotation | Juste valeur documentée |\n| Obligations et instruments monétaires | Valeur de marché ou méthode actuarielle selon la nature et la liquidité du titre | Prix de marché ou courbe de taux de référence | Méthode actuarielle documentée |\n| Liquidités | Valeur nominale augmentée des intérêts courus lorsqu’ils existent | Relevés bancaires et comptabilité | Rapprochement et validation comptable |",
+          "requirement_ids": [
+            "CIRC005_1_16_FCP_ASSET_VALUATION"
+          ],
+          "field_paths": [
+            "valuation.methods"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "SEC_1_17_PRICE_DETERMINATION",
+      "order": 270,
+      "title": "1.17 Détermination et publication des prix",
+      "components": [
+        {
+          "component_id": "CMP-0025",
+          "review_status": "PENDING_LEGAL_REVIEW",
+          "type": "PARAGRAPH",
+          "section_id": "SEC_1_17_PRICE_DETERMINATION",
+          "content": "La valeur liquidative est calculée selon une fréquence hebdomadaire. Calcul le lundi à partir des valeurs du vendredi précédent. La publication intervient selon l’échéance suivante : lundi à 13 h 00.",
+          "requirement_ids": [
+            "CIRC005_1_17_FCP_PRICE_DETERMINATION",
+            "CIRC005_1_17_A_FCP_PRICE_METHOD_FREQUENCY",
+            "CIRC005_1_17_C_FCP_PRICE_PUBLICATION"
+          ],
+          "field_paths": [
+            "pricing.nav",
+            "pricing.publication"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "SEC_1_18_REMUNERATION_REIMBURSEMENT",
+      "order": 280,
+      "title": "1.18 Rémunérations et remboursements de frais",
+      "components": [
+        {
+          "component_id": "CMP-0026",
+          "review_status": "PENDING_COMPLIANCE_REVIEW",
+          "type": "TABLE",
+          "section_id": "SEC_1_18_REMUNERATION_REIMBURSEMENT",
+          "content": "| Frais | Payeur | Bénéficiaire | Assiette | Taux / montant | Fréquence |\n| --- | --- | --- | --- | --- | --- |\n| Commission de souscription non acquise au Fonds | HOLDER | Distributeur ou intervenant désigné | Montant souscrit | 0.83 % TTC | À chaque souscription |\n| Commission de rachat non acquise au Fonds | HOLDER | Distributeur ou intervenant désigné | Montant racheté | 1.1 % TTC | À chaque rachat |\n| Frais de gestion financière | FUND_ASSETS | Société de gestion | Actif net | 2.2 % TTC | Annuelle, provisionnée selon la périodicité comptable |\n| Rémunération du dépositaire | FUND_ASSETS | Dépositaire | Actif net | 0.22 % TTC | Annuelle |\n| Redevances DC/BR et BRVM | FUND_ASSETS | Infrastructures de marché | Assiette contractuelle à confirmer | 0.3 % | Selon facturation |\n| Redevance annuelle fixe AMF-UMOA | FUND_ASSETS | AMF-UMOA | Forfait annuel | 1 000 000 XOF | Annuelle |\n| Redevance assise sur l’actif net | FUND_ASSETS | AMF-UMOA | Actif net | 0.1 ‰ | Annuelle |\n| Honoraires du commissaire aux comptes | FUND_ASSETS | Commissaire aux comptes | Forfait annuel | 1 500 000 XOF | Annuelle |\n| Commission de surperformance | FUND_ASSETS | Société de gestion | Néant | Néant | Néant |",
+          "requirement_ids": [
+            "CIRC005_1_17_B_FCP_TRANSACTION_FEES",
+            "CIRC005_1_18_FCP_REMUNERATION_REIMBURSEMENT",
+            "CIRC005_1_18_A_FCP_REMUNERATION_MODE_AMOUNT_CALCULATION",
+            "CIRC005_5_4_OTHER_EXPENSES_FUND_ASSETS"
+          ],
+          "field_paths": [
+            "fees"
+          ]
+        },
+        {
+          "component_id": "CMP-0040",
+          "type": "PARAGRAPH",
+          "clause_status": "DRAFT_LEGAL_REVIEW_REQUIRED",
+          "review_status": "PENDING_CONFIRMATION",
+          "clause_id": "CIRC005_EXPENSE_REIMBURSEMENT_PENDING_V1",
+          "clause_version": 1,
+          "section_id": "SEC_1_18_REMUNERATION_REIMBURSEMENT",
+          "requirement_ids": [
+            "CIRC005_1_18_B_FCP_EXPENSE_REIMBURSEMENT"
+          ],
+          "field_paths": [],
+          "coverage_status": "PENDING_REVIEW",
+          "content": "Aucun remboursement de frais distinct des rémunérations et dépenses déjà recensées n’est déclaré ; cette absence doit être confirmée par les conventions et la politique de frais."
+        }
+      ]
+    },
+    {
+      "id": "SEC_1_SGO_IDENTITY",
+      "order": 300,
+      "title": "Société de gestion",
+      "components": [
+        {
+          "component_id": "CMP-0016",
+          "review_status": "PENDING_LEGAL_REVIEW",
+          "type": "PARAGRAPH",
+          "section_id": "SEC_1_SGO_IDENTITY",
+          "content": "La gestion du Fonds est assurée par United Capital for African Wealth & Asset Management (UCAWAL), dont le siège est situé À confirmer à partir du registre officiel et des pièces de la société de gestion et dont l’agrément est référencé SG-OPCVM/2024-01.",
+          "clause_id": "UMOA_FCP_MANAGER_IDENTITY_V1",
+          "clause_version": 1,
+          "clause_status": "DRAFT_LEGAL_REVIEW_REQUIRED",
+          "requirement_ids": [
+            "CIRC005_1_1_SGO_IDENTITY",
+            "CIRC005_1_2_SGO_CONSTITUTION_DATE",
+            "CIRC005_1_9_A_SGO_SUBSCRIBED_CAPITAL",
+            "CIRC005_1_9_B_SGO_PAID_UP_CAPITAL"
+          ],
+          "field_paths": [
+            "manager.legal_name",
+            "manager.registered_office",
+            "manager.approval.number"
+          ],
+          "missing_variables": []
+        }
+      ]
+    },
+    {
+      "id": "SEC_1_SGO_OTHER_FUNDS",
+      "order": 310,
+      "title": "Autres OPC gérés",
+      "components": [
+        {
+          "component_id": "CMP-0041",
+          "type": "PARAGRAPH",
+          "clause_status": "DRAFT_LEGAL_REVIEW_REQUIRED",
+          "review_status": "PENDING_CONFIRMATION",
+          "clause_id": "CIRC005_MANAGER_OTHER_FUNDS_PENDING_V1",
+          "clause_version": 1,
+          "section_id": "SEC_1_SGO_OTHER_FUNDS",
+          "requirement_ids": [
+            "CIRC005_1_3_SGO_OTHER_FUNDS"
+          ],
+          "field_paths": [],
+          "coverage_status": "PENDING_REVIEW",
+          "content": "La liste exhaustive et à jour des autres OPC gérés doit être confirmée à partir du registre officiel AMF-UMOA et du référentiel institutionnel de la société."
+        }
+      ]
+    },
+    {
+      "id": "SEC_1_SGO_GOVERNANCE",
+      "order": 320,
+      "title": "Gouvernance de la société de gestion",
+      "components": [
+        {
+          "component_id": "CMP-0042",
+          "type": "PARAGRAPH",
+          "clause_status": "DRAFT_LEGAL_REVIEW_REQUIRED",
+          "review_status": "PENDING_CONFIRMATION",
+          "clause_id": "CIRC005_MANAGER_GOVERNANCE_PENDING_V1",
+          "clause_version": 1,
+          "section_id": "SEC_1_SGO_GOVERNANCE",
+          "requirement_ids": [
+            "CIRC005_1_8_A_SGO_GOVERNANCE_MEMBERS"
+          ],
+          "field_paths": [],
+          "coverage_status": "PENDING_REVIEW",
+          "content": "L’identité et les fonctions des membres des organes d’administration, de direction et de surveillance restent à confirmer à partir du RCCM, des statuts et des décisions de nomination."
+        },
+        {
+          "component_id": "CMP-0043",
+          "type": "PARAGRAPH",
+          "clause_status": "DRAFT_LEGAL_REVIEW_REQUIRED",
+          "review_status": "PENDING_CONFIRMATION",
+          "clause_id": "CIRC005_MANAGER_EXTERNAL_ACTIVITIES_PENDING_V1",
+          "clause_version": 1,
+          "section_id": "SEC_1_SGO_GOVERNANCE",
+          "requirement_ids": [
+            "CIRC005_1_8_B_SGO_EXTERNAL_ACTIVITIES"
+          ],
+          "field_paths": [],
+          "coverage_status": "PENDING_REVIEW",
+          "content": "Les activités externes significatives et les conflits d’intérêts éventuels des membres de gouvernance restent à déclarer et à valider par la conformité."
+        }
+      ]
+    },
+    {
+      "id": "SEC_2_DEPOSITARY",
+      "order": 400,
+      "title": "2. Dépositaire",
+      "components": [
+        {
+          "component_id": "CMP-0017",
+          "review_status": "PENDING_LEGAL_REVIEW",
+          "type": "PARAGRAPH",
+          "section_id": "SEC_2_DEPOSITARY",
+          "content": "Le dépositaire est United Bank for Africa Côte d’Ivoire. Son activité principale déclarée est : Établissement de crédit et services de dépositaire — à confirmer selon l’agrément et la convention.",
+          "clause_id": "UMOA_FCP_DEPOSITARY_IDENTITY_V1",
+          "clause_version": 1,
+          "clause_status": "DRAFT_LEGAL_REVIEW_REQUIRED",
+          "requirement_ids": [
+            "CIRC005_2_1_DEPOSITARY_IDENTITY",
+            "CIRC005_2_2_DEPOSITARY_MAIN_ACTIVITY"
+          ],
+          "field_paths": [
+            "depositary.legal_name",
+            "depositary.main_activity"
+          ],
+          "missing_variables": []
+        }
+      ]
+    },
+    {
+      "id": "SEC_3_EXTERNAL_ADVISERS",
+      "order": 500,
+      "title": "3. Conseillers externes",
+      "components": [
+        {
+          "component_id": "CMP-0018",
+          "review_status": "PENDING_LEGAL_REVIEW",
+          "type": "PARAGRAPH",
+          "section_id": "SEC_3_EXTERNAL_ADVISERS",
+          "content": "Aucun conseiller externe rémunéré sur les actifs du Fonds n’est déclaré dans le présent projet.",
+          "clause_id": "UMOA_FCP_NO_EXTERNAL_ADVISER_V1",
+          "clause_version": 1,
+          "clause_status": "DRAFT_LEGAL_REVIEW_REQUIRED",
+          "requirement_ids": [
+            "CIRC005_3_1_EXTERNAL_ADVISER_IDENTITY",
+            "CIRC005_3_2_EXTERNAL_ADVISER_CONTRACT_CLAUSES",
+            "CIRC005_3_3_EXTERNAL_ADVISER_OTHER_ACTIVITIES"
+          ],
+          "field_paths": [
+            "external_adviser.enabled"
+          ],
+          "missing_variables": []
+        }
+      ]
+    },
+    {
+      "id": "SEC_4_COUNTRY_ARRANGEMENTS",
+      "order": 600,
+      "title": "4. Paiements, rachats et diffusion de l’information",
+      "components": [
+        {
+          "component_id": "CMP-0027",
+          "review_status": "PENDING_LEGAL_REVIEW",
+          "type": "TABLE",
+          "section_id": "SEC_4_COUNTRY_ARRANGEMENTS",
+          "content": "| État | État d’établissement | Souscription / rachat | Information des porteurs |\n| --- | --- | --- | --- |\n| Côte d’Ivoire | Oui | via la société de gestion et les distributeurs habilités, selon les modalités du prospectus | prospectus, règlement, rapports et valeurs liquidatives disponibles auprès de la société de gestion et par les canaux publiés |",
+          "requirement_ids": [
+            "CIRC005_4_HOME_STATE_ARRANGEMENTS"
+          ],
+          "field_paths": [
+            "distribution_countries"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "SEC_5_1_HISTORICAL_PERFORMANCE",
+      "order": 710,
+      "title": "5.1 Performances historiques",
+      "components": [
+        {
+          "component_id": "CMP-0019",
+          "review_status": "PENDING_LEGAL_REVIEW",
+          "type": "PARAGRAPH",
+          "section_id": "SEC_5_1_HISTORICAL_PERFORMANCE",
+          "content": "Aucun historique de performance n’est présenté dans cette version du projet.",
+          "clause_id": "UMOA_FCP_NO_HISTORICAL_PERFORMANCE_V1",
+          "clause_version": 1,
+          "clause_status": "DRAFT_LEGAL_REVIEW_REQUIRED",
+          "requirement_ids": [
+            "CIRC005_5_1_HISTORICAL_PERFORMANCE"
+          ],
+          "field_paths": [
+            "performance.history_available"
+          ],
+          "missing_variables": []
+        }
+      ]
+    },
+    {
+      "id": "SEC_5_2_TARGET_INVESTOR",
+      "order": 720,
+      "title": "5.2 Investisseur-type",
+      "components": [
+        {
+          "component_id": "CMP-0020",
+          "review_status": "PENDING_LEGAL_REVIEW",
+          "type": "PARAGRAPH",
+          "section_id": "SEC_5_2_TARGET_INVESTOR",
+          "content": "Le Fonds est destiné au profil suivant : tous souscripteurs recherchant une exposition principalement obligataire, capables d’accepter un risque de perte en capital et une liquidité correspondant au fonctionnement hebdomadaire du Fonds. La durée de placement recommandée est de 5 ans.",
+          "clause_id": "UMOA_FCP_TARGET_INVESTOR_V1",
+          "clause_version": 1,
+          "clause_status": "DRAFT_LEGAL_REVIEW_REQUIRED",
+          "requirement_ids": [
+            "CIRC005_5_2_TARGET_INVESTOR"
+          ],
+          "field_paths": [
+            "target_investor.summary",
+            "target_investor.investment_horizon.display"
+          ],
+          "missing_variables": []
+        }
+      ]
+    },
+    {
+      "id": "SEC_5_3_ECONOMIC_INFORMATION",
+      "order": 730,
+      "title": "5.3 Informations d’ordre économique",
+      "components": [
+        {
+          "component_id": "CMP-0029",
+          "review_status": "LEGAL_REVIEW_REQUIRED",
+          "type": "WARNING",
+          "section_id": "SEC_5_3_ECONOMIC_INFORMATION",
+          "content": "À définir après interprétation validée du point 5.3 de la Circulaire n°05/CREPMF/2022.",
+          "requirement_ids": [
+            "CIRC005_5_3_ECONOMIC_INFORMATION"
+          ],
+          "field_paths": [
+            "economic_information"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "SEC_5_4_OTHER_EXPENSES",
+      "order": 740,
+      "title": "5.4 Autres dépenses et commissions",
+      "components": [
+        {
+          "component_id": "CMP-0044",
+          "type": "TABLE",
+          "clause_status": "DRAFT_LEGAL_REVIEW_REQUIRED",
+          "review_status": "PENDING_LEGAL_REVIEW",
+          "clause_id": "CIRC005_HOLDER_EXPENSES_V1",
+          "clause_version": 1,
+          "section_id": "SEC_5_4_OTHER_EXPENSES",
+          "requirement_ids": [
+            "CIRC005_5_4_OTHER_EXPENSES_HOLDER"
+          ],
+          "field_paths": [],
+          "coverage_status": "IN_PROSPECTUS",
+          "content": "| Dépense ou commission | Bénéficiaire | Assiette | Taux / montant |\n| --- | --- | --- | --- |\n| Commission de souscription non acquise au Fonds | Distributeur ou intervenant désigné | Montant souscrit | 0.83 % TTC |\n| Commission de rachat non acquise au Fonds | Distributeur ou intervenant désigné | Montant racheté | 1.1 % TTC |"
+        }
+      ]
+    }
+  ],
+  "completeness_extension_version": "0.2.0"
+}

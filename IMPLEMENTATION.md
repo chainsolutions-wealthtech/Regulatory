@@ -83,3 +83,23 @@ Matrices CIRC005
 ## Prochaine extension technique
 
 La prochaine tranche doit couvrir les exigences encore manquantes, ajouter le schéma JSON canonique détaillé, le stockage versionné d’un projet, les questions conditionnelles complémentaires, la bibliothèque de clauses persistée et le rendu DOCX/PDF après validation des composants.
+
+<!-- AUTO:LOOP-DEV-001-COVERAGE:START -->
+## Réconciliation de couverture V0.2
+
+Le module `src/core/circ005-completeness-extension.js` complète le modèle documentaire et recalcule la concordance après la composition initiale.
+
+Il couvre les 15 exigences précédemment manquantes, sépare les frais directement supportés par le porteur, ajoute les listes `missing_requirement_ids` et `pending_review_requirement_ids`, corrige les sur-couvertures non soutenues par des données vérifiées et maintient `ready_for_submission: false`.
+
+- exigences analysées : `62` ;
+- composants documentaires : `44` ;
+- couvertes dans le prospectus : `40` ;
+- en attente de revue : `20` ;
+- manquantes : `0` ;
+- non applicables : `1` ;
+- métadonnées système : `1` ;
+- avertissements : `7` ;
+- blocages : `0` ;
+- prêt pour revue conformité : `false` ;
+- prêt pour soumission : `false`.
+<!-- AUTO:LOOP-DEV-001-COVERAGE:END -->

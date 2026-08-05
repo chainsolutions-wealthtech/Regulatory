@@ -1,1 +1,55 @@
-{"generation_id":"GEN-1296775F198E526B","generated_at":"2026-08-05T02:25:47.775Z","document_status":"DATA_INCOMPLETE","ready_for_compliance_review":false,"ready_for_submission":false,"rule_pack":"UMOA_OPCVM_FCP","rule_pack_version":"0.1.0-draft","template_version":"UMOA_FCP_PROSPECTUS_TEMPLATE_V0_1","clause_catalog_version":"0.1.0","canonical_data_sha256":"751f7038340264ec410b8de8862fed8f0d926ef83dabe4cbb2a2eeba818e1f0d","prospectus_markdown_sha256":"6c07df5268c9da9bee9ad1da97b7425f81ea66dc1722eeaa1ef3168a2ae556e3","requirement_count":62,"component_count":29,"answer_count":30,"validation_counts":{"INFO":0,"WARNING":2,"BLOCKER":0},"coverage_counts":{"IN_PROSPECTUS":46,"IN_ATTACHED_REGULATION":0,"IN_ATTACHED_CONSTITUTIVE_DOCUMENT":0,"NOT_APPLICABLE":1,"PENDING_REVIEW":0,"MISSING":15,"SYSTEM_METADATA":0},"caveat":"Cette génération est une tranche verticale technique. Les clauses sont DRAFT et une revue humaine juridique, conformité et fiscale reste obligatoire."}
+{
+  "generation_id": "GEN-D23C08F9167F2780",
+  "generated_at": "2026-08-05T00:00:00.000Z",
+  "document_status": "PENDING_HUMAN_REVIEW",
+  "ready_for_compliance_review": false,
+  "ready_for_submission": false,
+  "rule_pack": "UMOA_OPCVM_FCP",
+  "rule_pack_version": "0.2.0-draft",
+  "template_version": "UMOA_FCP_PROSPECTUS_TEMPLATE_V0_1",
+  "clause_catalog_version": "0.1.0",
+  "canonical_data_sha256": "b3dc39190c24cce71ae86e32bf09342a2898198943f904f5464daf567b4de821",
+  "prospectus_markdown_sha256": "73cca4d9ee9924331f2fca660906ffd0a05e502f3886b31c6a8a5b0d7276cb82",
+  "requirement_count": 62,
+  "component_count": 44,
+  "answer_count": 30,
+  "validation_counts": {
+    "INFO": 0,
+    "WARNING": 7,
+    "BLOCKER": 0
+  },
+  "coverage_counts": {
+    "IN_PROSPECTUS": 40,
+    "IN_ATTACHED_REGULATION": 0,
+    "IN_ATTACHED_CONSTITUTIVE_DOCUMENT": 0,
+    "NOT_APPLICABLE": 1,
+    "PENDING_REVIEW": 20,
+    "MISSING": 0,
+    "SYSTEM_METADATA": 1
+  },
+  "caveat": "Aucune exigence n’est silencieusement omise. Les rubriques non vérifiées restent PENDING_REVIEW et empêchent la revue conformité et la soumission.",
+  "completeness_extension_version": "0.2.0",
+  "missing_requirement_ids": [],
+  "pending_review_requirement_ids": [
+    "CIRC005_GENERAL_EFFECTIVE_DATE",
+    "CIRC005_1_2_FCP_CONSTITUTION_DATE",
+    "CIRC005_1_5_FCP_TAX_REGIME",
+    "CIRC005_1_5_FCP_WITHHOLDING_INCOME",
+    "CIRC005_1_5_FCP_WITHHOLDING_CAPITAL_GAINS",
+    "CIRC005_1_7_FCP_ACCOUNTING_CONTROL_PERSONS",
+    "CIRC005_1_10_E_FCP_LIQUIDATION_CIRCUMSTANCES",
+    "CIRC005_1_10_F_FCP_LIQUIDATION_HOLDER_RIGHTS",
+    "CIRC005_1_15_C_FCP_GEOGRAPHIC_SECTOR_SPECIALIZATION",
+    "CIRC005_1_18_B_FCP_EXPENSE_REIMBURSEMENT",
+    "CIRC005_1_1_SGO_IDENTITY",
+    "CIRC005_1_2_SGO_CONSTITUTION_DATE",
+    "CIRC005_1_3_SGO_OTHER_FUNDS",
+    "CIRC005_1_8_A_SGO_GOVERNANCE_MEMBERS",
+    "CIRC005_1_8_B_SGO_EXTERNAL_ACTIVITIES",
+    "CIRC005_1_9_A_SGO_SUBSCRIBED_CAPITAL",
+    "CIRC005_1_9_B_SGO_PAID_UP_CAPITAL",
+    "CIRC005_2_1_DEPOSITARY_IDENTITY",
+    "CIRC005_2_2_DEPOSITARY_MAIN_ACTIVITY",
+    "CIRC005_5_3_ECONOMIC_INFORMATION"
+  ]
+}

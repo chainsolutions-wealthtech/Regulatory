@@ -1,0 +1,468 @@
+{
+  "regulatory_context": {
+    "jurisdiction": "UMOA",
+    "authority": "AMF-UMOA",
+    "rule_pack": "UMOA_OPCVM_FCP",
+    "rule_pack_version": "0.2.0-draft",
+    "document_type": "PROSPECTUS",
+    "document_status": "DRAFT_PRE_COMPLIANCE_REVIEW",
+    "source_versions": [
+      "CIRC005_CREPMF_2022"
+    ],
+    "as_of_date": "2026-08-05",
+    "source_effective_date": null,
+    "source_effective_date_status": "PENDING_OFFICIAL_VERIFICATION"
+  },
+  "fund": {
+    "canonical_id": "united-capital-diamond",
+    "legal_form": "FCP",
+    "country_of_constitution": "CI",
+    "classification": "BOND_AND_DEBT_SECURITIES",
+    "constitution_date": null,
+    "constitution_date_status": "PENDING_CONSTITUTIVE_DOCUMENT",
+    "approval": {
+      "status": "APPROVED",
+      "date": "2025-03-19",
+      "number": "FCP/2025-02",
+      "date_display": "19/03/2025"
+    },
+    "prospectus_visa": {
+      "status": "GRANTED",
+      "number": "FCP/2025-02/P-02-2025"
+    },
+    "legal_name": "United Capital Diamond",
+    "duration_type": "INDEFINITE",
+    "country_of_constitution_name": "Côte d’Ivoire"
+  },
+  "manager": {
+    "organization_id": "uca-wal-ci",
+    "legal_name": "United Capital for African Wealth & Asset Management (UCAWAL)",
+    "approval": {
+      "number": "SG-OPCVM/2024-01",
+      "date": "2024-07-19"
+    },
+    "registered_office": "À confirmer à partir du registre officiel et des pièces de la société de gestion",
+    "central_administration": "À confirmer",
+    "profile_status": "PREFILLED_PENDING_CONFIRMATION",
+    "managed_funds_summary": "La liste exhaustive et à jour des autres OPC gérés doit être confirmée à partir du registre officiel AMF-UMOA et du référentiel institutionnel de la société.",
+    "governance_summary": "L’identité et les fonctions des membres des organes d’administration, de direction et de surveillance restent à confirmer à partir du RCCM, des statuts et des décisions de nomination.",
+    "external_activities_summary": "Les activités externes significatives et les conflits d’intérêts éventuels des membres de gouvernance restent à déclarer et à valider par la conformité."
+  },
+  "depositary": {
+    "organization_id": "uba-cote-divoire",
+    "legal_name": "United Bank for Africa Côte d’Ivoire",
+    "main_activity": "Établissement de crédit et services de dépositaire — à confirmer selon l’agrément et la convention",
+    "profile_status": "PREFILLED_PENDING_CONFIRMATION"
+  },
+  "external_adviser": {
+    "enabled": false
+  },
+  "accounting_control": {
+    "responsible_persons": [],
+    "summary": "L’identité et la qualité des personnes chargées du contrôle des données comptables doivent être confirmées à partir des décisions de nomination et lettres de mission.",
+    "review_status": "PENDING_CONFIRMATION"
+  },
+  "parts": {
+    "legal_right_type": "CO_OWNERSHIP_RIGHT",
+    "legal_right_description": "Chaque part représente un droit de copropriété sur les actifs du Fonds, proportionnel au nombre de parts détenues.",
+    "representation_summary": "Les parts sont dématérialisées et inscrites en compte ou sur un registre selon les modalités opérationnelles du Fonds. Aucun titre ou certificat physique n’est déclaré.",
+    "form_summary": "Les parts sont dématérialisées et ne comportent aucun coupon matériel.",
+    "source_status": "OBSERVED_PROSPECTUS_PENDING_LEGAL_CONFIRMATION",
+    "dematerialized": true,
+    "registration_method": "ACCOUNT_OR_REGISTER",
+    "original_titles_exist": false,
+    "certificates_exist": false,
+    "form": "DEMATERIALIZED",
+    "coupons_exist": false,
+    "voting_rights_exist": false,
+    "listed": false,
+    "traded": false,
+    "issue": {
+      "initial_subscription_period": null,
+      "issue_price": 100000
+    }
+  },
+  "liquidation": {
+    "circumstances_summary": "Les circonstances, autorités compétentes et modalités de liquidation doivent être rapprochées du règlement du Fonds et du corpus réglementaire applicable.",
+    "holder_rights_summary": "Les droits des porteurs lors de la liquidation, dont l’information et la répartition du produit net, doivent être confirmés dans le règlement du Fonds.",
+    "review_status": "LEGAL_REVIEW_REQUIRED"
+  },
+  "evidence": [],
+  "reviews": [],
+  "audit_events": [],
+  "documents": {
+    "availability_summary": "auprès de la société de gestion et par les canaux électroniques indiqués dans le dossier, sous réserve de confirmation opérationnelle",
+    "fund_regulation": {
+      "is_attached": false,
+      "locations": [
+        "Siège de la société de gestion",
+        "Site internet de la société de gestion"
+      ]
+    },
+    "periodic_reports": {
+      "locations": [
+        "Siège de la société de gestion",
+        "Site internet de la société de gestion"
+      ]
+    }
+  },
+  "investment": {
+    "benchmark": {
+      "enabled": true,
+      "name": "Courbe de taux moyenne de la Côte d’Ivoire à cinq ans",
+      "usage_description": "comparaison de la performance du Fonds sur la durée recommandée, avec une latitude de gestion active",
+      "source_status": "OBSERVED_PROSPECTUS_PENDING_CONFIRMATION"
+    },
+    "specialization_summary": "Aucune spécialisation géographique ou sectorielle distincte n’est déclarée dans le présent projet ; ce point doit être confirmé par la société de gestion.",
+    "specialization_status": "PENDING_CONFIRMATION",
+    "objective": {
+      "primary_type": "OUTPERFORMANCE",
+      "summary": "rechercher, sur un horizon recommandé de cinq ans, une performance supérieure à celle de l’indicateur de référence grâce à une gestion principalement obligataire",
+      "horizon_years": 5
+    },
+    "management_style": "ACTIVE_DISCRETIONARY",
+    "selection_process": "Sélection discrétionnaire des titres de créance et autres actifs autorisés selon les analyses du gestionnaire",
+    "asset_ranges": [
+      {
+        "asset_class": "EQUITIES",
+        "label": "Actions",
+        "minimum_percent": 0,
+        "maximum_percent": 20,
+        "notes": "Exposition accessoire"
+      },
+      {
+        "asset_class": "DEBT_AND_MONEY_MARKET",
+        "label": "Obligations, titres de créance et instruments monétaires",
+        "minimum_percent": 70,
+        "maximum_percent": 100,
+        "notes": "Poche principale"
+      },
+      {
+        "asset_class": "CASH",
+        "label": "Liquidités",
+        "minimum_percent": 0,
+        "maximum_percent": 10,
+        "notes": "Gestion de trésorerie"
+      }
+    ],
+    "techniques": [
+      "Gestion active et discrétionnaire"
+    ],
+    "instruments": [
+      "Actions",
+      "Obligations et autres titres de créance",
+      "Instruments monétaires",
+      "Liquidités",
+      "Parts d’OPC dans les limites autorisées"
+    ]
+  },
+  "redemption": {
+    "gates": {
+      "enabled": true,
+      "threshold_percent": 5,
+      "execution_method": "plafonnement et report du solde des demandes selon les modalités du règlement du Fonds",
+      "source_status": "OBSERVED_PROSPECTUS_PENDING_INSTRUCTION_66_MAPPING"
+    },
+    "allowed": true,
+    "request_channels": [
+      "Société de gestion",
+      "Distributeurs habilités"
+    ],
+    "cutoff": {
+      "display": "le vendredi à 17 h 00"
+    },
+    "execution_nav": {
+      "description": "la prochaine valeur liquidative calculée conformément au calendrier du Fonds"
+    },
+    "settlement_days": {
+      "standard_business_days": 2,
+      "exceptional_business_days": 10
+    },
+    "suspension": {
+      "allowed": true,
+      "circumstances": "circonstances exceptionnelles lorsque l’intérêt des porteurs ou le fonctionnement normal du Fonds l’exige, sous réserve de validation juridique du wording",
+      "notification": "information des porteurs et notification à l’AMF-UMOA selon la procédure applicable"
+    }
+  },
+  "expense_reimbursements": {
+    "declared": false,
+    "summary": "Aucun remboursement de frais distinct des rémunérations et dépenses déjà recensées n’est déclaré ; cette absence doit être confirmée par les conventions et la politique de frais.",
+    "status": "PENDING_CONFIRMATION"
+  },
+  "tax": {
+    "review_status": "TAX_AND_LEGAL_REVIEW_REQUIRED",
+    "source_reference": null,
+    "fund": {
+      "summary": "Le régime fiscal du Fonds et des porteurs doit être confirmé à partir des textes fiscaux applicables et d’une revue fiscale validée."
+    }
+  },
+  "pricing": {
+    "nav": {
+      "calculation_method": "Calcul le lundi à partir des valeurs du vendredi précédent",
+      "source_status": "OBSERVED_PROSPECTUS",
+      "frequency": "WEEKLY"
+    },
+    "issue_price": {
+      "formula": "Valeur liquidative applicable augmentée, le cas échéant, des frais de souscription"
+    },
+    "redemption_price": {
+      "formula": "Valeur liquidative applicable diminuée, le cas échéant, des frais de rachat"
+    },
+    "publication": {
+      "channels": [
+        "Société de gestion",
+        "Site internet"
+      ],
+      "locations": [
+        "Siège de la société de gestion"
+      ],
+      "frequency": "WEEKLY",
+      "deadline": "lundi à 13 h 00"
+    }
+  },
+  "economic_information": {
+    "review_status": "LEGAL_REVIEW_REQUIRED",
+    "applicable": "REVIEW",
+    "summary": "À définir après interprétation validée du point 5.3 de la Circulaire n°05/CREPMF/2022."
+  },
+  "accounting": {
+    "financial_year_end": "12-31",
+    "financial_year_end_display": "31 décembre"
+  },
+  "income": {
+    "policy": "CAPITALIZATION",
+    "allocation_policy": "CAPITALIZED",
+    "capitalization_policy": "Les revenus sont capitalisés dans la valeur liquidative",
+    "decision_authority": "Société de gestion, selon le règlement du Fonds"
+  },
+  "share_classes": [
+    {
+      "class_id": "MAIN",
+      "label": "Part unique",
+      "currency": "XOF",
+      "income_policy": "CAPITALIZATION",
+      "target_investors": "Tous souscripteurs",
+      "initial_nav": 100000,
+      "initial_subscription_minimum": {
+        "value": 0.001,
+        "unit": "SHARE",
+        "display": "un millième de part"
+      },
+      "subsequent_subscription_minimum": {
+        "value": 0.001,
+        "unit": "SHARE",
+        "display": "un millième de part"
+      },
+      "decimalization": {
+        "enabled": true,
+        "decimals": 3,
+        "display": "parts fractionnées en millièmes"
+      }
+    }
+  ],
+  "subscriptions": {
+    "sales_channels": [
+      "Société de gestion",
+      "Distributeurs habilités"
+    ],
+    "payment_methods": [
+      "Virement",
+      "Autre moyen accepté par le centralisateur"
+    ]
+  },
+  "borrowing": {
+    "allowed": true,
+    "maximum_percent": 10,
+    "purpose": "faire face à des besoins temporaires de liquidité",
+    "maximum_duration": "temporaire — durée précise à confirmer"
+  },
+  "valuation": {
+    "methods": [
+      {
+        "asset_class": "EQUITIES",
+        "label": "Actions",
+        "method": "Dernier cours disponible sur le marché de référence ou méthode de juste valeur en l’absence de cotation exploitable",
+        "primary_source": "Marché de cotation",
+        "fallback_method": "Juste valeur documentée"
+      },
+      {
+        "asset_class": "DEBT_AND_MONEY_MARKET",
+        "label": "Obligations et instruments monétaires",
+        "method": "Valeur de marché ou méthode actuarielle selon la nature et la liquidité du titre",
+        "primary_source": "Prix de marché ou courbe de taux de référence",
+        "fallback_method": "Méthode actuarielle documentée"
+      },
+      {
+        "asset_class": "CASH",
+        "label": "Liquidités",
+        "method": "Valeur nominale augmentée des intérêts courus lorsqu’ils existent",
+        "primary_source": "Relevés bancaires et comptabilité",
+        "fallback_method": "Rapprochement et validation comptable"
+      }
+    ]
+  },
+  "fees": [
+    {
+      "fee_id": "SUBSCRIPTION_NON_ACQUIRED",
+      "label": "Commission de souscription non acquise au Fonds",
+      "payer_type": "HOLDER",
+      "beneficiary": "Distributeur ou intervenant désigné",
+      "basis": "Montant souscrit",
+      "rate_type": "PERCENTAGE",
+      "rate_percent": 0.83,
+      "tax_display": "TTC",
+      "frequency": "À chaque souscription"
+    },
+    {
+      "fee_id": "REDEMPTION_NON_ACQUIRED",
+      "label": "Commission de rachat non acquise au Fonds",
+      "payer_type": "HOLDER",
+      "beneficiary": "Distributeur ou intervenant désigné",
+      "basis": "Montant racheté",
+      "rate_type": "PERCENTAGE",
+      "rate_percent": 1.1,
+      "tax_display": "TTC",
+      "frequency": "À chaque rachat"
+    },
+    {
+      "fee_id": "MANAGEMENT_FEE",
+      "label": "Frais de gestion financière",
+      "payer_type": "FUND_ASSETS",
+      "beneficiary": "Société de gestion",
+      "basis": "Actif net",
+      "rate_type": "PERCENTAGE",
+      "rate_percent": 2.2,
+      "tax_display": "TTC",
+      "frequency": "Annuelle, provisionnée selon la périodicité comptable"
+    },
+    {
+      "fee_id": "DEPOSITARY_FEE",
+      "label": "Rémunération du dépositaire",
+      "payer_type": "FUND_ASSETS",
+      "beneficiary": "Dépositaire",
+      "basis": "Actif net",
+      "rate_type": "PERCENTAGE",
+      "rate_percent": 0.22,
+      "tax_display": "TTC",
+      "frequency": "Annuelle"
+    },
+    {
+      "fee_id": "MARKET_INFRASTRUCTURE_FEE",
+      "label": "Redevances DC/BR et BRVM",
+      "payer_type": "FUND_ASSETS",
+      "beneficiary": "Infrastructures de marché",
+      "basis": "Assiette contractuelle à confirmer",
+      "rate_type": "PERCENTAGE",
+      "rate_percent": 0.3,
+      "frequency": "Selon facturation"
+    },
+    {
+      "fee_id": "REGULATOR_FIXED_FEE",
+      "label": "Redevance annuelle fixe AMF-UMOA",
+      "payer_type": "FUND_ASSETS",
+      "beneficiary": "AMF-UMOA",
+      "basis": "Forfait annuel",
+      "rate_type": "FIXED",
+      "amount": 1000000,
+      "currency": "XOF",
+      "frequency": "Annuelle"
+    },
+    {
+      "fee_id": "REGULATOR_AUM_FEE",
+      "label": "Redevance assise sur l’actif net",
+      "payer_type": "FUND_ASSETS",
+      "beneficiary": "AMF-UMOA",
+      "basis": "Actif net",
+      "rate_type": "PER_MILLE",
+      "rate_per_mille": 0.1,
+      "frequency": "Annuelle"
+    },
+    {
+      "fee_id": "AUDITOR_FEE",
+      "label": "Honoraires du commissaire aux comptes",
+      "payer_type": "FUND_ASSETS",
+      "beneficiary": "Commissaire aux comptes",
+      "basis": "Forfait annuel",
+      "rate_type": "FIXED",
+      "amount": 1500000,
+      "currency": "XOF",
+      "frequency": "Annuelle"
+    },
+    {
+      "fee_id": "PERFORMANCE_FEE",
+      "label": "Commission de surperformance",
+      "payer_type": "FUND_ASSETS",
+      "beneficiary": "Société de gestion",
+      "basis": "Néant",
+      "rate_type": "NONE",
+      "rate_percent": 0,
+      "frequency": "Néant"
+    }
+  ],
+  "distribution_countries": [
+    {
+      "country_code": "CI",
+      "country_name": "Côte d’Ivoire",
+      "is_home_state": true,
+      "redemption_and_subscription_summary": "via la société de gestion et les distributeurs habilités, selon les modalités du prospectus",
+      "information_summary": "prospectus, règlement, rapports et valeurs liquidatives disponibles auprès de la société de gestion et par les canaux publiés"
+    }
+  ],
+  "performance": {
+    "history_available": false,
+    "location": "Aucun historique dans le projet initial"
+  },
+  "target_investor": {
+    "summary": "tous souscripteurs recherchant une exposition principalement obligataire, capables d’accepter un risque de perte en capital et une liquidité correspondant au fonctionnement hebdomadaire du Fonds",
+    "risk_tolerance": "MODERATE_TO_HIGH",
+    "loss_capacity": "CAPABLE_OF_BEARING_CAPITAL_LOSS",
+    "investment_horizon": {
+      "years": 5,
+      "display": "5 ans"
+    }
+  },
+  "risks": [
+    {
+      "risk_id": "CAPITAL_LOSS",
+      "label": "Risque de perte en capital",
+      "description": "Le capital investi n’est pas garanti et peut ne pas être intégralement restitué.",
+      "provenance": "DERIVED_FROM_PRODUCT_NATURE"
+    },
+    {
+      "risk_id": "EQUITY_MARKET",
+      "label": "Risque actions",
+      "description": "La valeur des actions détenues peut fluctuer à la hausse comme à la baisse.",
+      "provenance": "DERIVED_FROM_ASSET_RANGE:EQUITIES"
+    },
+    {
+      "risk_id": "INTEREST_RATE",
+      "label": "Risque de taux",
+      "description": "La valeur des instruments de taux peut diminuer en cas de variation défavorable des taux d’intérêt.",
+      "provenance": "DERIVED_FROM_ASSET_RANGE:DEBT_AND_MONEY_MARKET"
+    },
+    {
+      "risk_id": "CREDIT",
+      "label": "Risque de crédit",
+      "description": "La dégradation de la qualité d’un émetteur peut affecter la valeur des titres détenus.",
+      "provenance": "DERIVED_FROM_ASSET_RANGE:DEBT_AND_MONEY_MARKET"
+    },
+    {
+      "risk_id": "LIQUIDITY",
+      "label": "Risque de liquidité",
+      "description": "Certains actifs peuvent être difficiles à céder rapidement dans des conditions normales de marché.",
+      "provenance": "DERIVED_FROM_REDEMPTION_AND_ASSET_PROFILE"
+    },
+    {
+      "risk_id": "DISCRETIONARY_MANAGEMENT",
+      "label": "Risque lié à la gestion discrétionnaire",
+      "description": "Les choix du gestionnaire peuvent ne pas produire les résultats attendus.",
+      "provenance": "DERIVED_FROM_MANAGEMENT_STYLE"
+    },
+    {
+      "risk_id": "OPERATIONAL",
+      "label": "Risque opérationnel",
+      "description": "Une défaillance de processus, de système ou d’un prestataire peut affecter le Fonds.",
+      "provenance": "DERIVED_STANDARD_RISK_PENDING_REVIEW"
+    }
+  ]
+}

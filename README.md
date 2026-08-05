@@ -459,3 +459,23 @@ Les avertissements concernent la fiscalité et l’interprétation du point 5.3 
 `LOOP-DEV-001` devient la boucle active. `LOOP-REG-001` est suspendue par priorité du propriétaire, mais reste ouverte et doit être reprise pour terminer l’atomisation de l’Instruction n°66/CREPMF/2021.
 
 La prochaine action unique est définie dans [`NEXT_ACTION.md`](NEXT_ACTION.md) : réduire les 15 exigences manquantes sans inventer de données et sans détourner artificiellement le statut `NOT_APPLICABLE`.
+
+<!-- AUTO:LOOP-DEV-001-COVERAGE:START -->
+## 16. Réconciliation complète de la couverture CIRC005 — 2026-08-05
+
+Le moteur distingue désormais les informations effectivement produites, les informations encore soumises à confirmation ou revue humaine, et les informations absentes. Il ne transforme plus une donnée plausible ou préremplie en information validée.
+
+- exigences analysées : `62` ;
+- composants documentaires : `44` ;
+- couvertes dans le prospectus : `40` ;
+- en attente de revue : `20` ;
+- manquantes : `0` ;
+- non applicables : `1` ;
+- métadonnées système : `1` ;
+- avertissements : `7` ;
+- blocages : `0` ;
+- prêt pour revue conformité : `false` ;
+- prêt pour soumission : `false`.
+
+`MISSING = 0` signifie qu’aucune exigence n’est silencieusement omise. Cela ne signifie ni conformité, ni approbation, ni visa. Les exigences non vérifiées restent `PENDING_REVIEW` et empêchent la revue conformité ainsi que la soumission.
+<!-- AUTO:LOOP-DEV-001-COVERAGE:END -->

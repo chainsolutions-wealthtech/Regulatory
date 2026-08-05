@@ -1,0 +1,424 @@
+[
+  {
+    "question_id": "Q_FUND_LEGAL_NAME",
+    "requirement_id": "CIRC005_1_1_FCP_DENOMINATION",
+    "field_paths": [
+      "fund.legal_name"
+    ],
+    "source": {
+      "type": "OBSERVED_PROSPECTUS",
+      "document": "FCP United Capital Diamond",
+      "page": 3
+    },
+    "review_status": "PENDING_CONFIRMATION"
+  },
+  {
+    "question_id": "Q_FUND_DURATION_TYPE",
+    "requirement_id": "CIRC005_1_2_FCP_LIMITED_DURATION",
+    "field_paths": [
+      "fund.duration_type"
+    ],
+    "source": {
+      "type": "PENDING_CONFIRMATION",
+      "document": "Règlement du fonds à vérifier"
+    },
+    "review_status": "PENDING_CONFIRMATION"
+  },
+  {
+    "question_id": "Q_FUND_REGULATION_ATTACHED",
+    "requirement_id": "CIRC005_1_4_FCP_REGULATION_AVAILABILITY",
+    "field_paths": [
+      "documents.fund_regulation.is_attached",
+      "documents.fund_regulation.locations"
+    ],
+    "source": {
+      "type": "OBSERVED_PROSPECTUS",
+      "document": "FCP United Capital Diamond",
+      "page": 3
+    },
+    "review_status": "PENDING_CONFIRMATION"
+  },
+  {
+    "question_id": "Q_PERIODIC_REPORTS_LOCATIONS",
+    "requirement_id": "CIRC005_1_4_FCP_PERIODIC_REPORTS_AVAILABILITY",
+    "field_paths": [
+      "documents.periodic_reports.locations"
+    ],
+    "source": {
+      "type": "OBSERVED_PROSPECTUS",
+      "document": "FCP United Capital Diamond",
+      "page": 3
+    },
+    "review_status": "PENDING_CONFIRMATION"
+  },
+  {
+    "question_id": "Q_FUND_TAX_REGIME",
+    "requirement_id": "CIRC005_1_5_FCP_TAX_REGIME",
+    "field_paths": [
+      "tax.source_reference",
+      "tax.fund.summary"
+    ],
+    "source": {
+      "type": "PENDING_TAX_REVIEW"
+    },
+    "review_status": "PENDING_CONFIRMATION"
+  },
+  {
+    "question_id": "Q_FINANCIAL_YEAR_END",
+    "requirement_id": "CIRC005_1_6_FCP_ACCOUNT_CLOSING_DATE",
+    "field_paths": [
+      "accounting.financial_year_end"
+    ],
+    "source": {
+      "type": "OBSERVED_PROSPECTUS",
+      "document": "FCP United Capital Diamond",
+      "page": 5
+    },
+    "review_status": "PENDING_CONFIRMATION"
+  },
+  {
+    "question_id": "Q_INCOME_POLICY",
+    "requirement_id": "CIRC005_1_6_FCP_DISTRIBUTION_DATES",
+    "field_paths": [
+      "income.policy"
+    ],
+    "source": {
+      "type": "OBSERVED_PROSPECTUS",
+      "document": "FCP United Capital Diamond",
+      "page": 3
+    },
+    "review_status": "PENDING_CONFIRMATION"
+  },
+  {
+    "question_id": "Q_INCOME_ALLOCATION_POLICY",
+    "requirement_id": "CIRC005_1_14_FCP_INCOME_ALLOCATION",
+    "field_paths": [
+      "income.allocation_policy",
+      "income.capitalization_policy",
+      "income.decision_authority"
+    ],
+    "source": {
+      "type": "OBSERVED_PROSPECTUS",
+      "document": "FCP United Capital Diamond",
+      "page": 3
+    },
+    "review_status": "PENDING_CONFIRMATION"
+  },
+  {
+    "question_id": "Q_SHARE_CLASSES_COUNT",
+    "requirement_id": "CIRC005_1_10_FCP_PARTS_CHARACTERISTICS",
+    "field_paths": [
+      "share_classes"
+    ],
+    "source": {
+      "type": "OBSERVED_PROSPECTUS",
+      "document": "FCP United Capital Diamond",
+      "page": 3
+    },
+    "review_status": "PENDING_CONFIRMATION"
+  },
+  {
+    "question_id": "Q_PARTS_DEMATERIALIZED",
+    "requirement_id": "CIRC005_1_10_B_FCP_TITLES_CERTIFICATES",
+    "field_paths": [
+      "parts.dematerialized",
+      "parts.registration_method",
+      "parts.original_titles_exist",
+      "parts.certificates_exist"
+    ],
+    "source": {
+      "type": "OBSERVED_PROSPECTUS",
+      "document": "FCP United Capital Diamond",
+      "page": 5
+    },
+    "review_status": "PENDING_CONFIRMATION"
+  },
+  {
+    "question_id": "Q_PART_FORM",
+    "requirement_id": "CIRC005_1_10_C_FCP_FORM_COUPONS",
+    "field_paths": [
+      "parts.form",
+      "parts.coupons_exist"
+    ],
+    "source": {
+      "type": "OBSERVED_PROSPECTUS",
+      "document": "FCP United Capital Diamond",
+      "page": 5
+    },
+    "review_status": "PENDING_CONFIRMATION"
+  },
+  {
+    "question_id": "Q_PART_VOTING_RIGHTS",
+    "requirement_id": "CIRC005_1_10_D_FCP_VOTING_RIGHTS",
+    "field_paths": [
+      "parts.voting_rights_exist"
+    ],
+    "source": {
+      "type": "OBSERVED_PROSPECTUS",
+      "document": "FCP United Capital Diamond",
+      "page": 5
+    },
+    "review_status": "PENDING_CONFIRMATION"
+  },
+  {
+    "question_id": "Q_PARTS_LISTED_TRADED",
+    "requirement_id": "CIRC005_1_11_FCP_LISTING_TRADING",
+    "field_paths": [
+      "parts.listed",
+      "parts.traded"
+    ],
+    "source": {
+      "type": "PENDING_CONFIRMATION"
+    },
+    "review_status": "PENDING_CONFIRMATION"
+  },
+  {
+    "question_id": "Q_INITIAL_SUBSCRIPTION_PERIOD",
+    "requirement_id": "CIRC005_1_12_FCP_ISSUE_SALE",
+    "field_paths": [
+      "parts.issue.initial_subscription_period",
+      "parts.issue.issue_price",
+      "subscriptions.sales_channels",
+      "subscriptions.payment_methods"
+    ],
+    "source": {
+      "type": "OBSERVED_PROSPECTUS_AND_PENDING_OPERATIONAL_CONFIRMATION"
+    },
+    "review_status": "PENDING_CONFIRMATION"
+  },
+  {
+    "question_id": "Q_REDEMPTION_ALLOWED",
+    "requirement_id": "CIRC005_1_13_FCP_REDEMPTION_REIMBURSEMENT",
+    "field_paths": [
+      "redemption.allowed",
+      "redemption.request_channels",
+      "redemption.cutoff",
+      "redemption.execution_nav",
+      "redemption.settlement_days"
+    ],
+    "source": {
+      "type": "OBSERVED_PROSPECTUS",
+      "document": "FCP United Capital Diamond",
+      "pages": [
+        9,
+        10
+      ]
+    },
+    "review_status": "PENDING_CONFIRMATION"
+  },
+  {
+    "question_id": "Q_REDEMPTION_SUSPENSION_ALLOWED",
+    "requirement_id": "CIRC005_1_13_FCP_SUSPENSION",
+    "field_paths": [
+      "redemption.suspension.allowed",
+      "redemption.suspension.circumstances",
+      "redemption.suspension.notification"
+    ],
+    "source": {
+      "type": "OBSERVED_PROSPECTUS",
+      "document": "FCP United Capital Diamond",
+      "page": 10
+    },
+    "review_status": "LEGAL_REVIEW_REQUIRED"
+  },
+  {
+    "question_id": "Q_FINANCIAL_OBJECTIVE",
+    "requirement_id": "CIRC005_1_15_A_FCP_FINANCIAL_OBJECTIVES",
+    "field_paths": [
+      "investment.objective.primary_type",
+      "investment.objective.summary",
+      "investment.objective.horizon_years"
+    ],
+    "source": {
+      "type": "OBSERVED_PROSPECTUS",
+      "document": "FCP United Capital Diamond",
+      "page": 6
+    },
+    "review_status": "PENDING_CONFIRMATION"
+  },
+  {
+    "question_id": "Q_MANAGEMENT_STYLE",
+    "requirement_id": "CIRC005_1_15_B_FCP_PLACEMENT_POLICY",
+    "field_paths": [
+      "investment.management_style",
+      "investment.selection_process"
+    ],
+    "source": {
+      "type": "OBSERVED_PROSPECTUS",
+      "document": "FCP United Capital Diamond",
+      "page": 6
+    },
+    "review_status": "PENDING_CONFIRMATION"
+  },
+  {
+    "question_id": "Q_ASSET_EXPOSURE_MATRIX",
+    "requirement_id": "CIRC005_1_15_D_FCP_POLICY_LIMITS",
+    "field_paths": [
+      "investment.asset_ranges"
+    ],
+    "source": {
+      "type": "OBSERVED_PROSPECTUS",
+      "document": "FCP United Capital Diamond",
+      "page": 7
+    },
+    "review_status": "PENDING_CONFIRMATION"
+  },
+  {
+    "question_id": "Q_TECHNIQUES_INSTRUMENTS",
+    "requirement_id": "CIRC005_1_15_E_FCP_TECHNIQUES_INSTRUMENTS",
+    "field_paths": [
+      "investment.techniques",
+      "investment.instruments"
+    ],
+    "source": {
+      "type": "OBSERVED_PROSPECTUS",
+      "document": "FCP United Capital Diamond",
+      "pages": [
+        7,
+        8
+      ]
+    },
+    "review_status": "PENDING_CONFIRMATION"
+  },
+  {
+    "question_id": "Q_BORROWING_ALLOWED",
+    "requirement_id": "CIRC005_1_15_F_FCP_BORROWING_CAPACITY",
+    "field_paths": [
+      "borrowing.allowed",
+      "borrowing.maximum_percent",
+      "borrowing.purpose",
+      "borrowing.maximum_duration"
+    ],
+    "source": {
+      "type": "OBSERVED_PROSPECTUS",
+      "document": "FCP United Capital Diamond",
+      "page": 7
+    },
+    "review_status": "PENDING_CONFIRMATION"
+  },
+  {
+    "question_id": "Q_VALUATION_METHODS",
+    "requirement_id": "CIRC005_1_16_FCP_ASSET_VALUATION",
+    "field_paths": [
+      "valuation.methods"
+    ],
+    "source": {
+      "type": "OBSERVED_PROSPECTUS_SUMMARY",
+      "document": "FCP United Capital Diamond",
+      "page": 12
+    },
+    "review_status": "PENDING_CONFIRMATION"
+  },
+  {
+    "question_id": "Q_NAV_FREQUENCY",
+    "requirement_id": "CIRC005_1_17_A_FCP_PRICE_METHOD_FREQUENCY",
+    "field_paths": [
+      "pricing.nav.frequency",
+      "pricing.issue_price.formula",
+      "pricing.redemption_price.formula",
+      "pricing.nav.calculation_method"
+    ],
+    "source": {
+      "type": "OBSERVED_PROSPECTUS",
+      "document": "FCP United Capital Diamond",
+      "page": 9
+    },
+    "review_status": "PENDING_CONFIRMATION"
+  },
+  {
+    "question_id": "Q_PRICE_PUBLICATION",
+    "requirement_id": "CIRC005_1_17_C_FCP_PRICE_PUBLICATION",
+    "field_paths": [
+      "pricing.publication.channels",
+      "pricing.publication.locations",
+      "pricing.publication.frequency",
+      "pricing.publication.deadline"
+    ],
+    "source": {
+      "type": "OBSERVED_PROSPECTUS",
+      "document": "FCP United Capital Diamond",
+      "page": 9
+    },
+    "review_status": "PENDING_CONFIRMATION"
+  },
+  {
+    "question_id": "Q_TRANSACTION_FEES",
+    "requirement_id": "CIRC005_1_17_B_FCP_TRANSACTION_FEES",
+    "field_paths": [
+      "fees"
+    ],
+    "source": {
+      "type": "OBSERVED_PROSPECTUS",
+      "document": "FCP United Capital Diamond",
+      "page": 11
+    },
+    "review_status": "PENDING_CONFIRMATION"
+  },
+  {
+    "question_id": "Q_EXTERNAL_ADVISER_PAID_BY_FUND",
+    "requirement_id": "CIRC005_3_1_EXTERNAL_ADVISER_IDENTITY",
+    "field_paths": [
+      "external_adviser.enabled"
+    ],
+    "source": {
+      "type": "OBSERVED_PROSPECTUS",
+      "document": "FCP United Capital Diamond",
+      "page": 5
+    },
+    "review_status": "PENDING_CONFIRMATION"
+  },
+  {
+    "question_id": "Q_HOME_STATE_ARRANGEMENTS",
+    "requirement_id": "CIRC005_4_HOME_STATE_ARRANGEMENTS",
+    "field_paths": [
+      "distribution_countries"
+    ],
+    "source": {
+      "type": "OBSERVED_PROSPECTUS_AND_PENDING_OPERATIONAL_CONFIRMATION"
+    },
+    "review_status": "PENDING_CONFIRMATION"
+  },
+  {
+    "question_id": "Q_HISTORICAL_PERFORMANCE_AVAILABLE",
+    "requirement_id": "CIRC005_5_1_HISTORICAL_PERFORMANCE",
+    "field_paths": [
+      "performance.history_available",
+      "performance.location"
+    ],
+    "source": {
+      "type": "NEW_FUND_ASSUMPTION_TO_CONFIRM"
+    },
+    "review_status": "PENDING_CONFIRMATION"
+  },
+  {
+    "question_id": "Q_TARGET_INVESTOR_PROFILE",
+    "requirement_id": "CIRC005_5_2_TARGET_INVESTOR",
+    "field_paths": [
+      "target_investor.summary",
+      "target_investor.risk_tolerance",
+      "target_investor.loss_capacity",
+      "target_investor.investment_horizon"
+    ],
+    "source": {
+      "type": "OBSERVED_PROSPECTUS",
+      "document": "FCP United Capital Diamond",
+      "pages": [
+        3,
+        8
+      ]
+    },
+    "review_status": "PENDING_CONFIRMATION"
+  },
+  {
+    "question_id": "Q_ECONOMIC_INFORMATION_APPLICABLE",
+    "requirement_id": "CIRC005_5_3_ECONOMIC_INFORMATION",
+    "field_paths": [
+      "economic_information.applicable",
+      "economic_information.summary"
+    ],
+    "source": {
+      "type": "REGULATORY_INTERPRETATION_PENDING"
+    },
+    "review_status": "LEGAL_REVIEW_REQUIRED"
+  }
+]

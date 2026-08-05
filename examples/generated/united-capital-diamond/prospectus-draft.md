@@ -2,11 +2,15 @@
 
 **Statut : DRAFT_PRE_COMPLIANCE_REVIEW**
 
-**Pack réglementaire : UMOA_OPCVM_FCP — 0.1.0-draft**
+**Pack réglementaire : UMOA_OPCVM_FCP — 0.2.0-draft**
 
 ## Prospectus — document de travail
 
 > DOCUMENT DE TRAVAIL — Version générée automatiquement, prête pour revue conformité et juridique. Elle ne constitue ni un agrément, ni un visa, ni une approbation de l’AMF-UMOA.
+
+Périmètre configuré : UMOA, UMOA_OPCVM_FCP. La Circulaire n°05 complète le règlement du Fonds et les documents constitutifs annexés.
+
+La date officielle de publication et la prise d’effet de la Circulaire n°05/CREPMF/2022 restent à confirmer dans le registre officiel.
 
 ## 1.1 Dénomination et identification du FCP
 
@@ -28,6 +32,10 @@ Les documents du Fonds et les rapports périodiques sont disponibles selon les m
 
 L’exercice comptable est clôturé le 31 décembre de chaque année.
 
+## 1.7 Contrôle des données comptables
+
+L’identité et la qualité des personnes chargées du contrôle des données comptables doivent être confirmées à partir des décisions de nomination et lettres de mission.
+
 ## 1.10 Nature et caractéristiques des parts
 
 Le Fonds comporte une seule catégorie de parts.
@@ -38,9 +46,23 @@ Aucun droit de vote n’est attaché aux parts du Fonds.
 | --- | --- | --- | --- | --- | --- |
 | MAIN | XOF | Capitalisation | 100 000 F CFA | un millième de part | parts fractionnées en millièmes |
 
+Chaque part représente un droit de copropriété sur les actifs du Fonds, proportionnel au nombre de parts détenues.
+
+Les parts sont dématérialisées et inscrites en compte ou sur un registre selon les modalités opérationnelles du Fonds. Aucun titre ou certificat physique n’est déclaré.
+
+Les parts sont dématérialisées et ne comportent aucun coupon matériel.
+
+Les circonstances, autorités compétentes et modalités de liquidation doivent être rapprochées du règlement du Fonds et du corpus réglementaire applicable.
+
+Les droits des porteurs lors de la liquidation, dont l’information et la répartition du produit net, doivent être confirmés dans le règlement du Fonds.
+
 ## 1.11 Cotation ou négociation
 
 Les parts du Fonds ne sont ni cotées ni admises à la négociation sur un marché.
+
+## 1.12 Émission et vente
+
+Les parts sont émises au prix initial de 100 000 XOF. Les souscriptions sont reçues par Société de gestion et Distributeurs habilités et réglées par Virement et Autre moyen accepté par le centralisateur. Les modalités opérationnelles restent soumises à confirmation par le centralisateur et les distributeurs habilités.
 
 ## 1.13 Rachat, remboursement et suspension
 
@@ -76,6 +98,8 @@ Le Fonds peut recourir temporairement à l’emprunt, dans la limite de 10 % de 
 - **Risque lié à la gestion discrétionnaire** : Les choix du gestionnaire peuvent ne pas produire les résultats attendus.
 - **Risque opérationnel** : Une défaillance de processus, de système ou d’un prestataire peut affecter le Fonds.
 
+Aucune spécialisation géographique ou sectorielle distincte n’est déclarée dans le présent projet ; ce point doit être confirmé par la société de gestion.
+
 ## 1.16 Évaluation des actifs
 
 | Actif | Méthode | Source principale | Méthode de repli |
@@ -102,9 +126,21 @@ La valeur liquidative est calculée selon une fréquence hebdomadaire. Calcul le
 | Honoraires du commissaire aux comptes | FUND_ASSETS | Commissaire aux comptes | Forfait annuel | 1 500 000 XOF | Annuelle |
 | Commission de surperformance | FUND_ASSETS | Société de gestion | Néant | Néant | Néant |
 
+Aucun remboursement de frais distinct des rémunérations et dépenses déjà recensées n’est déclaré ; cette absence doit être confirmée par les conventions et la politique de frais.
+
 ## Société de gestion
 
 La gestion du Fonds est assurée par United Capital for African Wealth & Asset Management (UCAWAL), dont le siège est situé À confirmer à partir du registre officiel et des pièces de la société de gestion et dont l’agrément est référencé SG-OPCVM/2024-01.
+
+## Autres OPC gérés
+
+La liste exhaustive et à jour des autres OPC gérés doit être confirmée à partir du registre officiel AMF-UMOA et du référentiel institutionnel de la société.
+
+## Gouvernance de la société de gestion
+
+L’identité et les fonctions des membres des organes d’administration, de direction et de surveillance restent à confirmer à partir du RCCM, des statuts et des décisions de nomination.
+
+Les activités externes significatives et les conflits d’intérêts éventuels des membres de gouvernance restent à déclarer et à valider par la conformité.
 
 ## 2. Dépositaire
 
@@ -132,15 +168,24 @@ Le Fonds est destiné au profil suivant : tous souscripteurs recherchant une exp
 
 > À définir après interprétation validée du point 5.3 de la Circulaire n°05/CREPMF/2022.
 
+## 5.4 Autres dépenses et commissions
+
+| Dépense ou commission | Bénéficiaire | Assiette | Taux / montant |
+| --- | --- | --- | --- |
+| Commission de souscription non acquise au Fonds | Distributeur ou intervenant désigné | Montant souscrit | 0.83 % TTC |
+| Commission de rachat non acquise au Fonds | Distributeur ou intervenant désigné | Montant racheté | 1.1 % TTC |
+
 ## État des contrôles automatisés
 
 - Blocages : 0
-- Avertissements : 2
+- Avertissements : 7
 - Informations : 0
-- Exigences couvertes dans le projet : 46
-- Exigences encore manquantes : 15
-- Exigences en métadonnées système : 0
+- Exigences couvertes dans le prospectus : 40
+- Exigences en attente de revue ou confirmation : 20
+- Exigences encore manquantes : 0
+- Exigences non applicables : 1
+- Exigences en métadonnées système : 1
 - Prêt pour revue conformité : non
 - Prêt pour soumission : non
 
-> Cette sortie reste un document de pré-conformité. Elle exige une validation humaine avant toute soumission au régulateur.
+> Cette sortie reste un document de pré-conformité. Zéro exigence manquante ne vaut ni validation juridique, ni validation conformité, ni décision du régulateur.

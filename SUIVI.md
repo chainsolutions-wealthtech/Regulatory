@@ -474,3 +474,38 @@ Les questions `OQ-001` à `OQ-009` restent ouvertes dans `OPEN_QUESTIONS.md`, no
 ### Prochaine étape
 
 Exécuter l’action unique de `NEXT_ACTION.md` dans une nouvelle boucle : obtenir une copie officielle, vérifiable et exploitable de l’Instruction n°66/CREPMF/2021, confirmer sa version et son état juridique, puis préparer son atomisation sans modifier les identifiants existants de la Circulaire n°05/CREPMF/2022.
+
+<!-- AUTO:LOOP-DEV-001-COVERAGE:START -->
+## 2026-08-05 — Réconciliation complète de la couverture CIRC005
+
+### Objectif
+
+Réduire les 15 exigences manquantes du cas United Capital Diamond sans inventer de données ni utiliser artificiellement `NOT_APPLICABLE`.
+
+### Travail réalisé
+
+- extension de couverture `0.2.0` ;
+- concordance recalculée ;
+- statuts `PENDING_REVIEW` explicites ;
+- séparation des frais supportés par le porteur ;
+- génération déterministe ;
+- nouveaux tests de non-régression.
+
+### Résultat
+
+- exigences analysées : `62` ;
+- composants documentaires : `44` ;
+- couvertes dans le prospectus : `40` ;
+- en attente de revue : `20` ;
+- manquantes : `0` ;
+- non applicables : `1` ;
+- métadonnées système : `1` ;
+- avertissements : `7` ;
+- blocages : `0` ;
+- prêt pour revue conformité : `false` ;
+- prêt pour soumission : `false`.
+
+### Limite
+
+Le résultat est une pré-conformité technique qui exige toujours les validations juridique, conformité et fiscale.
+<!-- AUTO:LOOP-DEV-001-COVERAGE:END -->

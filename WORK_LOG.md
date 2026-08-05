@@ -101,3 +101,27 @@ Conséquence : les fragments sont conservés pour la traçabilité, mais leur st
 ## Règle d’ajout
 
 Chaque entrée future indique date, boucle, action, fichiers, résultat, preuve et anomalie. Les erreurs ne sont jamais supprimées : elles sont corrigées par une entrée ultérieure.
+
+<!-- AUTO:LOOP-DEV-001-COVERAGE:START -->
+## 2026-08-05 — LOOP-DEV-001 — Réconciliation des exigences manquantes
+
+1. Identification des 15 exigences précédemment `MISSING`.
+2. Ajout d’une extension de couverture distincte du compositeur initial.
+3. Création des composants relatifs aux droits des parts, à l’émission, aux frais porteur, au contrôle comptable, à la gouvernance et aux métadonnées réglementaires.
+4. Correction des sur-couvertures historiques non soutenues par des données vérifiées.
+5. Ajout de tests de non-régression et d’une génération déterministe.
+
+- exigences analysées : `62` ;
+- composants documentaires : `44` ;
+- couvertes dans le prospectus : `40` ;
+- en attente de revue : `20` ;
+- manquantes : `0` ;
+- non applicables : `1` ;
+- métadonnées système : `1` ;
+- avertissements : `7` ;
+- blocages : `0` ;
+- prêt pour revue conformité : `false` ;
+- prêt pour soumission : `false`.
+
+Aucune nouvelle branche, aucun force-push, aucune suppression d’identifiant CIRC005 et aucune activation de clause n’ont été réalisés.
+<!-- AUTO:LOOP-DEV-001-COVERAGE:END -->

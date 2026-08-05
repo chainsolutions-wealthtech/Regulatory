@@ -72,3 +72,20 @@ Le format s’inspire de Keep a Changelog. Le projet n’est pas encore versionn
 - exigence de traçabilité des sources et preuves ;
 - exigence de revue humaine pour les clauses spécifiques et produits complexes ;
 - conservation de l’empreinte du document réglementaire source même lorsque le binaire ne peut pas encore être archivé dans le dépôt.
+
+<!-- AUTO:LOOP-DEV-001-COVERAGE:START -->
+## [Unreleased] — Réconciliation CIRC005 V0.2 — 2026-08-05
+
+### Added
+
+- extension de couverture CIRC005 ;
+- composants pour les 15 exigences précédemment manquantes ;
+- statuts `PENDING_REVIEW` ;
+- listes des exigences manquantes et en attente dans le manifeste ;
+- tests de non-régression ;
+- génération déterministe.
+
+### Changed
+
+La préparation à la revue conformité exige désormais `MISSING = 0` et `PENDING_REVIEW = 0`. Les sur-couvertures non vérifiées sont rétrogradées en attente de revue.
+<!-- AUTO:LOOP-DEV-001-COVERAGE:END -->

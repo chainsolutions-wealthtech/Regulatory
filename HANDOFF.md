@@ -68,3 +68,29 @@ Le moteur :
 ## Prochaine action
 
 Exécuter uniquement `NEXT_ACTION.md` et conserver la branche `main`.
+
+<!-- AUTO:LOOP-DEV-001-COVERAGE:START -->
+## Transmission V0.2
+
+- exigences analysées : `62` ;
+- composants documentaires : `44` ;
+- couvertes dans le prospectus : `40` ;
+- en attente de revue : `20` ;
+- manquantes : `0` ;
+- non applicables : `1` ;
+- métadonnées système : `1` ;
+- avertissements : `7` ;
+- blocages : `0` ;
+- prêt pour revue conformité : `false` ;
+- prêt pour soumission : `false`.
+
+Fichiers prioritaires :
+
+- `src/core/circ005-completeness-extension.js` ;
+- `examples/generated/united-capital-diamond/generation-manifest.json` ;
+- `examples/generated/united-capital-diamond/concordance.json` ;
+- `examples/generated/united-capital-diamond/control-report.json` ;
+- `test/circ005-completeness-extension.test.js`.
+
+Ne jamais convertir les exigences en attente en informations validées sans pièce, source et revue compétente.
+<!-- AUTO:LOOP-DEV-001-COVERAGE:END -->

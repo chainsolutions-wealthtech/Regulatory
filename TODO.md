@@ -287,3 +287,18 @@ Légende :
 5. Compléter le modèle canonique champ par champ.
 6. Transformer la matrice de la Circulaire 05/2022 en catalogues exécutables.
 7. Construire le premier cas de test FCP obligataire standard.
+
+<!-- AUTO:LOOP-DEV-001-COVERAGE:START -->
+## Mise à jour opérationnelle — LOOP-DEV-001 V0.2
+
+- [x] Identifier les 15 exigences CIRC005 manquantes.
+- [x] Ramener `MISSING` à zéro sans faux `NOT_APPLICABLE`.
+- [x] Ajouter les statuts `PENDING_REVIEW` au manifeste.
+- [x] Séparer les dépenses directement supportées par le porteur.
+- [x] Ajouter les tests de non-régression de couverture.
+- [x] Rendre la génération du cas d’exemple déterministe.
+- [ ] Confirmer les `20` exigences en attente de revue.
+- [ ] Produire un export DOCX déterministe de pré-conformité.
+- [ ] Reprendre `LOOP-REG-001` et l’atomisation de l’Instruction n°66/2021.
+- [ ] Obtenir les validations juridique, conformité et fiscale.
+<!-- AUTO:LOOP-DEV-001-COVERAGE:END -->

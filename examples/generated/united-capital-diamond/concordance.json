@@ -1,0 +1,1065 @@
+[
+  {
+    "requirement_id": "CIRC005_GENERAL_SCOPE",
+    "matrix_source": "CIRC005_FCP_MATRIX_01_GENERAL_IDENTITY_TAX.csv:2",
+    "question_id": "Q_REGULATORY_PACK_CONFIRMATION",
+    "output_section_id": "SYSTEM_ONLY",
+    "coverage_status": "SYSTEM_METADATA",
+    "component_ids": [
+      "CMP-0030"
+    ],
+    "clause_ids": [
+      "CIRC005_SCOPE_METADATA_V1"
+    ],
+    "validation_findings": [],
+    "review_roles": [
+      "COMPLIANCE",
+      "LEGAL"
+    ]
+  },
+  {
+    "requirement_id": "CIRC005_GENERAL_MINIMUM",
+    "matrix_source": "CIRC005_FCP_MATRIX_01_GENERAL_IDENTITY_TAX.csv:3",
+    "question_id": "Q_SYSTEM_MINIMUM_COVERAGE",
+    "output_section_id": "SYSTEM_ONLY",
+    "coverage_status": "IN_PROSPECTUS",
+    "component_ids": [
+      "CMP-0001"
+    ],
+    "clause_ids": [
+      "UMOA_FCP_DRAFT_DISCLAIMER_V1"
+    ],
+    "validation_findings": [],
+    "review_roles": [
+      "COMPLIANCE"
+    ]
+  },
+  {
+    "requirement_id": "CIRC005_GENERAL_ORDER",
+    "matrix_source": "CIRC005_FCP_MATRIX_01_GENERAL_IDENTITY_TAX.csv:4",
+    "question_id": "Q_SYSTEM_DOCUMENT_ORDER",
+    "output_section_id": "SYSTEM_ONLY",
+    "coverage_status": "IN_PROSPECTUS",
+    "component_ids": [
+      "CMP-0001"
+    ],
+    "clause_ids": [
+      "UMOA_FCP_DRAFT_DISCLAIMER_V1"
+    ],
+    "validation_findings": [],
+    "review_roles": [
+      "COMPLIANCE"
+    ]
+  },
+  {
+    "requirement_id": "CIRC005_GENERAL_EFFECTIVE_DATE",
+    "matrix_source": "CIRC005_FCP_MATRIX_01_GENERAL_IDENTITY_TAX.csv:5",
+    "question_id": "Q_SOURCE_PUBLICATION_DATE",
+    "output_section_id": "SYSTEM_ONLY",
+    "coverage_status": "PENDING_REVIEW",
+    "component_ids": [
+      "CMP-0031"
+    ],
+    "clause_ids": [
+      "CIRC005_EFFECTIVE_DATE_PENDING_V1"
+    ],
+    "validation_findings": [],
+    "review_roles": [
+      "LEGAL",
+      "COMPLIANCE"
+    ]
+  },
+  {
+    "requirement_id": "CIRC005_1_1_FCP_DENOMINATION",
+    "matrix_source": "CIRC005_FCP_MATRIX_01_GENERAL_IDENTITY_TAX.csv:6",
+    "question_id": "Q_FUND_LEGAL_NAME",
+    "output_section_id": "SEC_1_1_FCP_DENOMINATION",
+    "coverage_status": "IN_PROSPECTUS",
+    "component_ids": [
+      "CMP-0002"
+    ],
+    "clause_ids": [
+      "UMOA_FCP_GENERAL_IDENTIFICATION_V1"
+    ],
+    "validation_findings": [],
+    "review_roles": [
+      "COMPLIANCE"
+    ]
+  },
+  {
+    "requirement_id": "CIRC005_1_2_FCP_CONSTITUTION_DATE",
+    "matrix_source": "CIRC005_FCP_MATRIX_01_GENERAL_IDENTITY_TAX.csv:7",
+    "question_id": "Q_FUND_CONSTITUTION_DATE",
+    "output_section_id": "SEC_1_2_FCP_CONSTITUTION_DURATION",
+    "coverage_status": "PENDING_REVIEW",
+    "component_ids": [
+      "CMP-0002"
+    ],
+    "clause_ids": [
+      "UMOA_FCP_GENERAL_IDENTIFICATION_V1"
+    ],
+    "validation_findings": [],
+    "review_roles": [
+      "COMPLIANCE"
+    ]
+  },
+  {
+    "requirement_id": "CIRC005_1_2_FCP_LIMITED_DURATION",
+    "matrix_source": "CIRC005_FCP_MATRIX_01_GENERAL_IDENTITY_TAX.csv:8",
+    "question_id": "Q_FUND_DURATION_TYPE",
+    "output_section_id": "SEC_1_2_FCP_CONSTITUTION_DURATION",
+    "coverage_status": "IN_PROSPECTUS",
+    "component_ids": [
+      "CMP-0003"
+    ],
+    "clause_ids": [
+      "UMOA_FCP_INDEFINITE_DURATION_V1"
+    ],
+    "validation_findings": [],
+    "review_roles": [
+      "LEGAL",
+      "COMPLIANCE"
+    ]
+  },
+  {
+    "requirement_id": "CIRC005_1_4_FCP_REGULATION_AVAILABILITY",
+    "matrix_source": "CIRC005_FCP_MATRIX_01_GENERAL_IDENTITY_TAX.csv:9",
+    "question_id": "Q_FUND_REGULATION_ATTACHED",
+    "output_section_id": "SEC_1_4_DOCUMENT_AVAILABILITY",
+    "coverage_status": "IN_PROSPECTUS",
+    "component_ids": [
+      "CMP-0004"
+    ],
+    "clause_ids": [
+      "UMOA_FCP_DOCUMENT_AVAILABILITY_V1"
+    ],
+    "validation_findings": [],
+    "review_roles": [
+      "COMPLIANCE"
+    ]
+  },
+  {
+    "requirement_id": "CIRC005_1_4_FCP_PERIODIC_REPORTS_AVAILABILITY",
+    "matrix_source": "CIRC005_FCP_MATRIX_01_GENERAL_IDENTITY_TAX.csv:10",
+    "question_id": "Q_PERIODIC_REPORTS_LOCATIONS",
+    "output_section_id": "SEC_1_4_DOCUMENT_AVAILABILITY",
+    "coverage_status": "IN_PROSPECTUS",
+    "component_ids": [
+      "CMP-0004"
+    ],
+    "clause_ids": [
+      "UMOA_FCP_DOCUMENT_AVAILABILITY_V1"
+    ],
+    "validation_findings": [],
+    "review_roles": [
+      "COMPLIANCE"
+    ]
+  },
+  {
+    "requirement_id": "CIRC005_1_5_FCP_TAX_REGIME",
+    "matrix_source": "CIRC005_FCP_MATRIX_01_GENERAL_IDENTITY_TAX.csv:11",
+    "question_id": "Q_FUND_TAX_REGIME",
+    "output_section_id": "SEC_1_5_TAX",
+    "coverage_status": "PENDING_REVIEW",
+    "component_ids": [
+      "CMP-0028"
+    ],
+    "clause_ids": [],
+    "validation_findings": [
+      "RULE_TAX_SOURCE_REQUIRED"
+    ],
+    "review_roles": [
+      "TAX",
+      "LEGAL",
+      "COMPLIANCE"
+    ]
+  },
+  {
+    "requirement_id": "CIRC005_1_5_FCP_WITHHOLDING_INCOME",
+    "matrix_source": "CIRC005_FCP_MATRIX_01_GENERAL_IDENTITY_TAX.csv:12",
+    "question_id": "Q_INCOME_WITHHOLDING_EXISTS",
+    "output_section_id": "SEC_1_5_TAX",
+    "coverage_status": "PENDING_REVIEW",
+    "component_ids": [
+      "CMP-0028"
+    ],
+    "clause_ids": [],
+    "validation_findings": [
+      "RULE_TAX_SOURCE_REQUIRED"
+    ],
+    "review_roles": [
+      "TAX",
+      "LEGAL"
+    ]
+  },
+  {
+    "requirement_id": "CIRC005_1_5_FCP_WITHHOLDING_CAPITAL_GAINS",
+    "matrix_source": "CIRC005_FCP_MATRIX_01_GENERAL_IDENTITY_TAX.csv:13",
+    "question_id": "Q_CAPITAL_GAIN_WITHHOLDING_EXISTS",
+    "output_section_id": "SEC_1_5_TAX",
+    "coverage_status": "PENDING_REVIEW",
+    "component_ids": [
+      "CMP-0028"
+    ],
+    "clause_ids": [],
+    "validation_findings": [
+      "RULE_TAX_SOURCE_REQUIRED"
+    ],
+    "review_roles": [
+      "TAX",
+      "LEGAL"
+    ]
+  },
+  {
+    "requirement_id": "CIRC005_1_6_FCP_ACCOUNT_CLOSING_DATE",
+    "matrix_source": "CIRC005_FCP_MATRIX_01_GENERAL_IDENTITY_TAX.csv:14",
+    "question_id": "Q_FINANCIAL_YEAR_END",
+    "output_section_id": "SEC_1_6_CLOSING_DISTRIBUTIONS",
+    "coverage_status": "IN_PROSPECTUS",
+    "component_ids": [
+      "CMP-0005"
+    ],
+    "clause_ids": [
+      "UMOA_FCP_ACCOUNTING_PERIOD_V1"
+    ],
+    "validation_findings": [],
+    "review_roles": [
+      "COMPLIANCE"
+    ]
+  },
+  {
+    "requirement_id": "CIRC005_1_6_FCP_DISTRIBUTION_DATES",
+    "matrix_source": "CIRC005_FCP_MATRIX_01_GENERAL_IDENTITY_TAX.csv:15",
+    "question_id": "Q_INCOME_POLICY",
+    "output_section_id": "SEC_1_6_CLOSING_DISTRIBUTIONS",
+    "coverage_status": "IN_PROSPECTUS",
+    "component_ids": [
+      "CMP-0009"
+    ],
+    "clause_ids": [
+      "UMOA_FCP_CAPITALIZATION_V1"
+    ],
+    "validation_findings": [],
+    "review_roles": [
+      "COMPLIANCE"
+    ]
+  },
+  {
+    "requirement_id": "CIRC005_1_7_FCP_ACCOUNTING_CONTROL_PERSONS",
+    "matrix_source": "CIRC005_FCP_MATRIX_01_GENERAL_IDENTITY_TAX.csv:16",
+    "question_id": "Q_ACCOUNTING_CONTROL_PERSONS",
+    "output_section_id": "SEC_1_7_ACCOUNTING_CONTROL",
+    "coverage_status": "PENDING_REVIEW",
+    "component_ids": [
+      "CMP-0032"
+    ],
+    "clause_ids": [
+      "CIRC005_ACCOUNTING_CONTROL_PENDING_V1"
+    ],
+    "validation_findings": [],
+    "review_roles": [
+      "LEGAL",
+      "COMPLIANCE"
+    ]
+  },
+  {
+    "requirement_id": "CIRC005_1_10_FCP_PARTS_CHARACTERISTICS",
+    "matrix_source": "CIRC005_FCP_MATRIX_02_PARTS_OPERATIONS.csv:2",
+    "question_id": "Q_SHARE_CLASSES_COUNT",
+    "output_section_id": "SEC_1_10_PARTS_CHARACTERISTICS",
+    "coverage_status": "IN_PROSPECTUS",
+    "component_ids": [
+      "CMP-0006",
+      "CMP-0021"
+    ],
+    "clause_ids": [
+      "UMOA_FCP_SINGLE_SHARE_CLASS_V1"
+    ],
+    "validation_findings": [],
+    "review_roles": [
+      "COMPLIANCE"
+    ]
+  },
+  {
+    "requirement_id": "CIRC005_1_10_A_FCP_RIGHT_NATURE",
+    "matrix_source": "CIRC005_FCP_MATRIX_02_PARTS_OPERATIONS.csv:3",
+    "question_id": "Q_PART_LEGAL_RIGHT_TYPE",
+    "output_section_id": "SEC_1_10_PARTS_CHARACTERISTICS",
+    "coverage_status": "IN_PROSPECTUS",
+    "component_ids": [
+      "CMP-0033"
+    ],
+    "clause_ids": [
+      "CIRC005_PART_RIGHT_NATURE_V1"
+    ],
+    "validation_findings": [],
+    "review_roles": [
+      "LEGAL",
+      "COMPLIANCE"
+    ]
+  },
+  {
+    "requirement_id": "CIRC005_1_10_B_FCP_TITLES_CERTIFICATES",
+    "matrix_source": "CIRC005_FCP_MATRIX_02_PARTS_OPERATIONS.csv:4",
+    "question_id": "Q_PARTS_DEMATERIALIZED",
+    "output_section_id": "SEC_1_10_PARTS_CHARACTERISTICS",
+    "coverage_status": "IN_PROSPECTUS",
+    "component_ids": [
+      "CMP-0034"
+    ],
+    "clause_ids": [
+      "CIRC005_PART_REPRESENTATION_V1"
+    ],
+    "validation_findings": [],
+    "review_roles": [
+      "LEGAL",
+      "COMPLIANCE"
+    ]
+  },
+  {
+    "requirement_id": "CIRC005_1_10_C_FCP_FORM_COUPONS",
+    "matrix_source": "CIRC005_FCP_MATRIX_02_PARTS_OPERATIONS.csv:5",
+    "question_id": "Q_PART_FORM",
+    "output_section_id": "SEC_1_10_PARTS_CHARACTERISTICS",
+    "coverage_status": "IN_PROSPECTUS",
+    "component_ids": [
+      "CMP-0035"
+    ],
+    "clause_ids": [
+      "CIRC005_PART_FORM_COUPONS_V1"
+    ],
+    "validation_findings": [],
+    "review_roles": [
+      "LEGAL",
+      "COMPLIANCE"
+    ]
+  },
+  {
+    "requirement_id": "CIRC005_1_10_D_FCP_VOTING_RIGHTS",
+    "matrix_source": "CIRC005_FCP_MATRIX_02_PARTS_OPERATIONS.csv:6",
+    "question_id": "Q_PART_VOTING_RIGHTS",
+    "output_section_id": "SEC_1_10_PARTS_CHARACTERISTICS",
+    "coverage_status": "IN_PROSPECTUS",
+    "component_ids": [
+      "CMP-0007"
+    ],
+    "clause_ids": [
+      "UMOA_FCP_NO_VOTING_RIGHTS_V1"
+    ],
+    "validation_findings": [],
+    "review_roles": [
+      "LEGAL",
+      "COMPLIANCE"
+    ]
+  },
+  {
+    "requirement_id": "CIRC005_1_10_E_FCP_LIQUIDATION_CIRCUMSTANCES",
+    "matrix_source": "CIRC005_FCP_MATRIX_02_PARTS_OPERATIONS.csv:7",
+    "question_id": "Q_LIQUIDATION_CIRCUMSTANCES",
+    "output_section_id": "SEC_1_10_PARTS_CHARACTERISTICS",
+    "coverage_status": "PENDING_REVIEW",
+    "component_ids": [
+      "CMP-0036"
+    ],
+    "clause_ids": [
+      "CIRC005_LIQUIDATION_CIRCUMSTANCES_PENDING_V1"
+    ],
+    "validation_findings": [],
+    "review_roles": [
+      "LEGAL",
+      "COMPLIANCE"
+    ]
+  },
+  {
+    "requirement_id": "CIRC005_1_10_F_FCP_LIQUIDATION_HOLDER_RIGHTS",
+    "matrix_source": "CIRC005_FCP_MATRIX_02_PARTS_OPERATIONS.csv:8",
+    "question_id": "Q_LIQUIDATION_HOLDER_RIGHTS",
+    "output_section_id": "SEC_1_10_PARTS_CHARACTERISTICS",
+    "coverage_status": "PENDING_REVIEW",
+    "component_ids": [
+      "CMP-0037"
+    ],
+    "clause_ids": [
+      "CIRC005_LIQUIDATION_RIGHTS_PENDING_V1"
+    ],
+    "validation_findings": [],
+    "review_roles": [
+      "LEGAL",
+      "COMPLIANCE"
+    ]
+  },
+  {
+    "requirement_id": "CIRC005_1_11_FCP_LISTING_TRADING",
+    "matrix_source": "CIRC005_FCP_MATRIX_02_PARTS_OPERATIONS.csv:9",
+    "question_id": "Q_PARTS_LISTED_TRADED",
+    "output_section_id": "SEC_1_11_LISTING",
+    "coverage_status": "IN_PROSPECTUS",
+    "component_ids": [
+      "CMP-0008"
+    ],
+    "clause_ids": [
+      "UMOA_FCP_NOT_LISTED_V1"
+    ],
+    "validation_findings": [],
+    "review_roles": [
+      "COMPLIANCE"
+    ]
+  },
+  {
+    "requirement_id": "CIRC005_1_12_FCP_ISSUE_SALE",
+    "matrix_source": "CIRC005_FCP_MATRIX_02_PARTS_OPERATIONS.csv:10",
+    "question_id": "Q_INITIAL_SUBSCRIPTION_PERIOD",
+    "output_section_id": "SEC_1_12_ISSUE_SALE",
+    "coverage_status": "IN_PROSPECTUS",
+    "component_ids": [
+      "CMP-0038"
+    ],
+    "clause_ids": [
+      "CIRC005_ISSUE_AND_SALE_V1"
+    ],
+    "validation_findings": [],
+    "review_roles": [
+      "COMPLIANCE"
+    ]
+  },
+  {
+    "requirement_id": "CIRC005_1_13_FCP_REDEMPTION_REIMBURSEMENT",
+    "matrix_source": "CIRC005_FCP_MATRIX_02_PARTS_OPERATIONS.csv:11",
+    "question_id": "Q_REDEMPTION_ALLOWED",
+    "output_section_id": "SEC_1_13_REDEMPTION_SUSPENSION",
+    "coverage_status": "IN_PROSPECTUS",
+    "component_ids": [
+      "CMP-0013",
+      "CMP-0015"
+    ],
+    "clause_ids": [
+      "UMOA_FCP_REDEMPTION_V1",
+      "UMOA_FCP_REDEMPTION_GATE_V1"
+    ],
+    "validation_findings": [],
+    "review_roles": [
+      "LEGAL",
+      "COMPLIANCE"
+    ]
+  },
+  {
+    "requirement_id": "CIRC005_1_13_FCP_SUSPENSION",
+    "matrix_source": "CIRC005_FCP_MATRIX_02_PARTS_OPERATIONS.csv:12",
+    "question_id": "Q_REDEMPTION_SUSPENSION_ALLOWED",
+    "output_section_id": "SEC_1_13_REDEMPTION_SUSPENSION",
+    "coverage_status": "IN_PROSPECTUS",
+    "component_ids": [
+      "CMP-0014",
+      "CMP-0015"
+    ],
+    "clause_ids": [
+      "UMOA_FCP_REDEMPTION_SUSPENSION_V1",
+      "UMOA_FCP_REDEMPTION_GATE_V1"
+    ],
+    "validation_findings": [],
+    "review_roles": [
+      "LEGAL",
+      "COMPLIANCE"
+    ]
+  },
+  {
+    "requirement_id": "CIRC005_1_14_FCP_INCOME_DETERMINATION",
+    "matrix_source": "CIRC005_FCP_MATRIX_02_PARTS_OPERATIONS.csv:13",
+    "question_id": "Q_INCOME_DETERMINATION_METHOD",
+    "output_section_id": "SEC_1_14_INCOME",
+    "coverage_status": "IN_PROSPECTUS",
+    "component_ids": [
+      "CMP-0009"
+    ],
+    "clause_ids": [
+      "UMOA_FCP_CAPITALIZATION_V1"
+    ],
+    "validation_findings": [],
+    "review_roles": [
+      "COMPLIANCE"
+    ]
+  },
+  {
+    "requirement_id": "CIRC005_1_14_FCP_INCOME_ALLOCATION",
+    "matrix_source": "CIRC005_FCP_MATRIX_02_PARTS_OPERATIONS.csv:14",
+    "question_id": "Q_INCOME_ALLOCATION_POLICY",
+    "output_section_id": "SEC_1_14_INCOME",
+    "coverage_status": "IN_PROSPECTUS",
+    "component_ids": [
+      "CMP-0009"
+    ],
+    "clause_ids": [
+      "UMOA_FCP_CAPITALIZATION_V1"
+    ],
+    "validation_findings": [],
+    "review_roles": [
+      "COMPLIANCE"
+    ]
+  },
+  {
+    "requirement_id": "CIRC005_1_15_FCP_INVESTMENT_OBJECTIVES_POLICY",
+    "matrix_source": "CIRC005_FCP_MATRIX_03_INVESTMENT_PRICING.csv:2",
+    "question_id": "Q_INVESTMENT_POLICY_START",
+    "output_section_id": "SEC_1_15_INVESTMENT_POLICY",
+    "coverage_status": "IN_PROSPECTUS",
+    "component_ids": [
+      "CMP-0023"
+    ],
+    "clause_ids": [],
+    "validation_findings": [],
+    "review_roles": [
+      "COMPLIANCE"
+    ]
+  },
+  {
+    "requirement_id": "CIRC005_1_15_A_FCP_FINANCIAL_OBJECTIVES",
+    "matrix_source": "CIRC005_FCP_MATRIX_03_INVESTMENT_PRICING.csv:3",
+    "question_id": "Q_FINANCIAL_OBJECTIVE",
+    "output_section_id": "SEC_1_15_INVESTMENT_POLICY",
+    "coverage_status": "IN_PROSPECTUS",
+    "component_ids": [
+      "CMP-0010",
+      "CMP-0011"
+    ],
+    "clause_ids": [
+      "UMOA_FCP_ACTIVE_MANAGEMENT_V1",
+      "UMOA_FCP_BENCHMARK_V1"
+    ],
+    "validation_findings": [],
+    "review_roles": [
+      "LEGAL",
+      "COMPLIANCE"
+    ]
+  },
+  {
+    "requirement_id": "CIRC005_1_15_B_FCP_PLACEMENT_POLICY",
+    "matrix_source": "CIRC005_FCP_MATRIX_03_INVESTMENT_PRICING.csv:4",
+    "question_id": "Q_MANAGEMENT_STYLE",
+    "output_section_id": "SEC_1_15_INVESTMENT_POLICY",
+    "coverage_status": "IN_PROSPECTUS",
+    "component_ids": [
+      "CMP-0010",
+      "CMP-0022"
+    ],
+    "clause_ids": [
+      "UMOA_FCP_ACTIVE_MANAGEMENT_V1"
+    ],
+    "validation_findings": [],
+    "review_roles": [
+      "COMPLIANCE",
+      "RISK"
+    ]
+  },
+  {
+    "requirement_id": "CIRC005_1_15_C_FCP_GEOGRAPHIC_SECTOR_SPECIALIZATION",
+    "matrix_source": "CIRC005_FCP_MATRIX_03_INVESTMENT_PRICING.csv:5",
+    "question_id": "Q_INVESTMENT_SPECIALIZATION",
+    "output_section_id": "SEC_1_15_INVESTMENT_POLICY",
+    "coverage_status": "PENDING_REVIEW",
+    "component_ids": [
+      "CMP-0039"
+    ],
+    "clause_ids": [
+      "CIRC005_SPECIALIZATION_PENDING_V1"
+    ],
+    "validation_findings": [],
+    "review_roles": [
+      "COMPLIANCE"
+    ]
+  },
+  {
+    "requirement_id": "CIRC005_1_15_D_FCP_POLICY_LIMITS",
+    "matrix_source": "CIRC005_FCP_MATRIX_03_INVESTMENT_PRICING.csv:6",
+    "question_id": "Q_ASSET_EXPOSURE_MATRIX",
+    "output_section_id": "SEC_1_15_INVESTMENT_POLICY",
+    "coverage_status": "IN_PROSPECTUS",
+    "component_ids": [
+      "CMP-0022"
+    ],
+    "clause_ids": [],
+    "validation_findings": [],
+    "review_roles": [
+      "RISK",
+      "COMPLIANCE"
+    ]
+  },
+  {
+    "requirement_id": "CIRC005_1_15_E_FCP_TECHNIQUES_INSTRUMENTS",
+    "matrix_source": "CIRC005_FCP_MATRIX_03_INVESTMENT_PRICING.csv:7",
+    "question_id": "Q_TECHNIQUES_INSTRUMENTS",
+    "output_section_id": "SEC_1_15_INVESTMENT_POLICY",
+    "coverage_status": "IN_PROSPECTUS",
+    "component_ids": [
+      "CMP-0022"
+    ],
+    "clause_ids": [],
+    "validation_findings": [],
+    "review_roles": [
+      "RISK",
+      "COMPLIANCE"
+    ]
+  },
+  {
+    "requirement_id": "CIRC005_1_15_F_FCP_BORROWING_CAPACITY",
+    "matrix_source": "CIRC005_FCP_MATRIX_03_INVESTMENT_PRICING.csv:8",
+    "question_id": "Q_BORROWING_ALLOWED",
+    "output_section_id": "SEC_1_15_INVESTMENT_POLICY",
+    "coverage_status": "IN_PROSPECTUS",
+    "component_ids": [
+      "CMP-0012"
+    ],
+    "clause_ids": [
+      "UMOA_FCP_BORROWING_V1"
+    ],
+    "validation_findings": [],
+    "review_roles": [
+      "RISK",
+      "COMPLIANCE"
+    ]
+  },
+  {
+    "requirement_id": "CIRC005_1_16_FCP_ASSET_VALUATION",
+    "matrix_source": "CIRC005_FCP_MATRIX_03_INVESTMENT_PRICING.csv:9",
+    "question_id": "Q_VALUATION_METHODS",
+    "output_section_id": "SEC_1_16_VALUATION",
+    "coverage_status": "IN_PROSPECTUS",
+    "component_ids": [
+      "CMP-0024"
+    ],
+    "clause_ids": [],
+    "validation_findings": [],
+    "review_roles": [
+      "RISK",
+      "COMPLIANCE"
+    ]
+  },
+  {
+    "requirement_id": "CIRC005_1_17_FCP_PRICE_DETERMINATION",
+    "matrix_source": "CIRC005_FCP_MATRIX_03_INVESTMENT_PRICING.csv:10",
+    "question_id": "Q_PRICING_FRAMEWORK",
+    "output_section_id": "SEC_1_17_PRICE_DETERMINATION",
+    "coverage_status": "IN_PROSPECTUS",
+    "component_ids": [
+      "CMP-0025"
+    ],
+    "clause_ids": [],
+    "validation_findings": [],
+    "review_roles": [
+      "COMPLIANCE"
+    ]
+  },
+  {
+    "requirement_id": "CIRC005_1_17_A_FCP_PRICE_METHOD_FREQUENCY",
+    "matrix_source": "CIRC005_FCP_MATRIX_03_INVESTMENT_PRICING.csv:11",
+    "question_id": "Q_NAV_FREQUENCY",
+    "output_section_id": "SEC_1_17_PRICE_DETERMINATION",
+    "coverage_status": "IN_PROSPECTUS",
+    "component_ids": [
+      "CMP-0025"
+    ],
+    "clause_ids": [],
+    "validation_findings": [],
+    "review_roles": [
+      "COMPLIANCE"
+    ]
+  },
+  {
+    "requirement_id": "CIRC005_1_17_B_FCP_TRANSACTION_FEES",
+    "matrix_source": "CIRC005_FCP_MATRIX_03_INVESTMENT_PRICING.csv:12",
+    "question_id": "Q_TRANSACTION_FEES",
+    "output_section_id": "SEC_1_17_PRICE_DETERMINATION",
+    "coverage_status": "IN_PROSPECTUS",
+    "component_ids": [
+      "CMP-0026"
+    ],
+    "clause_ids": [],
+    "validation_findings": [],
+    "review_roles": [
+      "COMPLIANCE"
+    ]
+  },
+  {
+    "requirement_id": "CIRC005_1_17_C_FCP_PRICE_PUBLICATION",
+    "matrix_source": "CIRC005_FCP_MATRIX_03_INVESTMENT_PRICING.csv:13",
+    "question_id": "Q_PRICE_PUBLICATION",
+    "output_section_id": "SEC_1_17_PRICE_DETERMINATION",
+    "coverage_status": "IN_PROSPECTUS",
+    "component_ids": [
+      "CMP-0025"
+    ],
+    "clause_ids": [],
+    "validation_findings": [],
+    "review_roles": [
+      "COMPLIANCE"
+    ]
+  },
+  {
+    "requirement_id": "CIRC005_1_18_FCP_REMUNERATION_REIMBURSEMENT",
+    "matrix_source": "CIRC005_FCP_MATRIX_03_INVESTMENT_PRICING.csv:14",
+    "question_id": "Q_REMUNERATION_REIMBURSEMENT_FRAMEWORK",
+    "output_section_id": "SEC_1_18_REMUNERATION_REIMBURSEMENT",
+    "coverage_status": "IN_PROSPECTUS",
+    "component_ids": [
+      "CMP-0026"
+    ],
+    "clause_ids": [],
+    "validation_findings": [],
+    "review_roles": [
+      "COMPLIANCE"
+    ]
+  },
+  {
+    "requirement_id": "CIRC005_1_18_A_FCP_REMUNERATION_MODE_AMOUNT_CALCULATION",
+    "matrix_source": "CIRC005_FCP_MATRIX_03_INVESTMENT_PRICING.csv:15",
+    "question_id": "Q_REMUNERATION_DETAILS",
+    "output_section_id": "SEC_1_18_REMUNERATION_REIMBURSEMENT",
+    "coverage_status": "IN_PROSPECTUS",
+    "component_ids": [
+      "CMP-0026"
+    ],
+    "clause_ids": [],
+    "validation_findings": [],
+    "review_roles": [
+      "COMPLIANCE"
+    ]
+  },
+  {
+    "requirement_id": "CIRC005_1_18_B_FCP_EXPENSE_REIMBURSEMENT",
+    "matrix_source": "CIRC005_FCP_MATRIX_03_INVESTMENT_PRICING.csv:16",
+    "question_id": "Q_EXPENSE_REIMBURSEMENTS",
+    "output_section_id": "SEC_1_18_REMUNERATION_REIMBURSEMENT",
+    "coverage_status": "PENDING_REVIEW",
+    "component_ids": [
+      "CMP-0040"
+    ],
+    "clause_ids": [
+      "CIRC005_EXPENSE_REIMBURSEMENT_PENDING_V1"
+    ],
+    "validation_findings": [],
+    "review_roles": [
+      "COMPLIANCE"
+    ]
+  },
+  {
+    "requirement_id": "CIRC005_1_1_SGO_IDENTITY",
+    "matrix_source": "CIRC005_FCP_MATRIX_04_ACTORS_COUNTRY_OTHER.csv:2",
+    "question_id": "Q_SELECT_MANAGEMENT_COMPANY",
+    "output_section_id": "SEC_1_SGO_IDENTITY",
+    "coverage_status": "PENDING_REVIEW",
+    "component_ids": [
+      "CMP-0016"
+    ],
+    "clause_ids": [
+      "UMOA_FCP_MANAGER_IDENTITY_V1"
+    ],
+    "validation_findings": [],
+    "review_roles": [
+      "COMPLIANCE"
+    ]
+  },
+  {
+    "requirement_id": "CIRC005_1_2_SGO_CONSTITUTION_DATE",
+    "matrix_source": "CIRC005_FCP_MATRIX_04_ACTORS_COUNTRY_OTHER.csv:3",
+    "question_id": "Q_CONFIRM_MANAGER_CONSTITUTION_DATE",
+    "output_section_id": "SEC_1_SGO_IDENTITY",
+    "coverage_status": "PENDING_REVIEW",
+    "component_ids": [
+      "CMP-0016"
+    ],
+    "clause_ids": [
+      "UMOA_FCP_MANAGER_IDENTITY_V1"
+    ],
+    "validation_findings": [],
+    "review_roles": [
+      "COMPLIANCE"
+    ]
+  },
+  {
+    "requirement_id": "CIRC005_1_3_SGO_OTHER_FUNDS",
+    "matrix_source": "CIRC005_FCP_MATRIX_04_ACTORS_COUNTRY_OTHER.csv:4",
+    "question_id": "Q_CONFIRM_OTHER_MANAGED_FUNDS",
+    "output_section_id": "SEC_1_SGO_OTHER_FUNDS",
+    "coverage_status": "PENDING_REVIEW",
+    "component_ids": [
+      "CMP-0041"
+    ],
+    "clause_ids": [
+      "CIRC005_MANAGER_OTHER_FUNDS_PENDING_V1"
+    ],
+    "validation_findings": [],
+    "review_roles": [
+      "COMPLIANCE"
+    ]
+  },
+  {
+    "requirement_id": "CIRC005_1_8_A_SGO_GOVERNANCE_MEMBERS",
+    "matrix_source": "CIRC005_FCP_MATRIX_04_ACTORS_COUNTRY_OTHER.csv:5",
+    "question_id": "Q_CONFIRM_GOVERNANCE_MEMBERS",
+    "output_section_id": "SEC_1_SGO_GOVERNANCE",
+    "coverage_status": "PENDING_REVIEW",
+    "component_ids": [
+      "CMP-0042"
+    ],
+    "clause_ids": [
+      "CIRC005_MANAGER_GOVERNANCE_PENDING_V1"
+    ],
+    "validation_findings": [],
+    "review_roles": [
+      "COMPLIANCE"
+    ]
+  },
+  {
+    "requirement_id": "CIRC005_1_8_B_SGO_EXTERNAL_ACTIVITIES",
+    "matrix_source": "CIRC005_FCP_MATRIX_04_ACTORS_COUNTRY_OTHER.csv:6",
+    "question_id": "Q_GOVERNANCE_EXTERNAL_ACTIVITIES",
+    "output_section_id": "SEC_1_SGO_GOVERNANCE",
+    "coverage_status": "PENDING_REVIEW",
+    "component_ids": [
+      "CMP-0043"
+    ],
+    "clause_ids": [
+      "CIRC005_MANAGER_EXTERNAL_ACTIVITIES_PENDING_V1"
+    ],
+    "validation_findings": [],
+    "review_roles": [
+      "COMPLIANCE",
+      "LEGAL"
+    ]
+  },
+  {
+    "requirement_id": "CIRC005_1_9_A_SGO_SUBSCRIBED_CAPITAL",
+    "matrix_source": "CIRC005_FCP_MATRIX_04_ACTORS_COUNTRY_OTHER.csv:7",
+    "question_id": "Q_CONFIRM_SUBSCRIBED_CAPITAL",
+    "output_section_id": "SEC_1_SGO_CAPITAL",
+    "coverage_status": "PENDING_REVIEW",
+    "component_ids": [
+      "CMP-0016"
+    ],
+    "clause_ids": [
+      "UMOA_FCP_MANAGER_IDENTITY_V1"
+    ],
+    "validation_findings": [],
+    "review_roles": [
+      "COMPLIANCE"
+    ]
+  },
+  {
+    "requirement_id": "CIRC005_1_9_B_SGO_PAID_UP_CAPITAL",
+    "matrix_source": "CIRC005_FCP_MATRIX_04_ACTORS_COUNTRY_OTHER.csv:8",
+    "question_id": "Q_CONFIRM_PAID_UP_CAPITAL",
+    "output_section_id": "SEC_1_SGO_CAPITAL",
+    "coverage_status": "PENDING_REVIEW",
+    "component_ids": [
+      "CMP-0016"
+    ],
+    "clause_ids": [
+      "UMOA_FCP_MANAGER_IDENTITY_V1"
+    ],
+    "validation_findings": [],
+    "review_roles": [
+      "COMPLIANCE"
+    ]
+  },
+  {
+    "requirement_id": "CIRC005_2_1_DEPOSITARY_IDENTITY",
+    "matrix_source": "CIRC005_FCP_MATRIX_04_ACTORS_COUNTRY_OTHER.csv:9",
+    "question_id": "Q_SELECT_DEPOSITARY",
+    "output_section_id": "SEC_2_DEPOSITARY",
+    "coverage_status": "PENDING_REVIEW",
+    "component_ids": [
+      "CMP-0017"
+    ],
+    "clause_ids": [
+      "UMOA_FCP_DEPOSITARY_IDENTITY_V1"
+    ],
+    "validation_findings": [],
+    "review_roles": [
+      "COMPLIANCE"
+    ]
+  },
+  {
+    "requirement_id": "CIRC005_2_2_DEPOSITARY_MAIN_ACTIVITY",
+    "matrix_source": "CIRC005_FCP_MATRIX_04_ACTORS_COUNTRY_OTHER.csv:10",
+    "question_id": "Q_CONFIRM_DEPOSITARY_MAIN_ACTIVITY",
+    "output_section_id": "SEC_2_DEPOSITARY",
+    "coverage_status": "PENDING_REVIEW",
+    "component_ids": [
+      "CMP-0017"
+    ],
+    "clause_ids": [
+      "UMOA_FCP_DEPOSITARY_IDENTITY_V1"
+    ],
+    "validation_findings": [],
+    "review_roles": [
+      "COMPLIANCE"
+    ]
+  },
+  {
+    "requirement_id": "CIRC005_3_1_EXTERNAL_ADVISER_IDENTITY",
+    "matrix_source": "CIRC005_FCP_MATRIX_04_ACTORS_COUNTRY_OTHER.csv:11",
+    "question_id": "Q_EXTERNAL_ADVISER_PAID_BY_FUND",
+    "output_section_id": "SEC_3_EXTERNAL_ADVISERS",
+    "coverage_status": "IN_PROSPECTUS",
+    "component_ids": [
+      "CMP-0018"
+    ],
+    "clause_ids": [
+      "UMOA_FCP_NO_EXTERNAL_ADVISER_V1"
+    ],
+    "validation_findings": [],
+    "review_roles": [
+      "LEGAL",
+      "COMPLIANCE"
+    ]
+  },
+  {
+    "requirement_id": "CIRC005_3_2_EXTERNAL_ADVISER_CONTRACT_CLAUSES",
+    "matrix_source": "CIRC005_FCP_MATRIX_04_ACTORS_COUNTRY_OTHER.csv:12",
+    "question_id": "Q_ADVISER_IMPORTANT_CLAUSES",
+    "output_section_id": "SEC_3_EXTERNAL_ADVISERS",
+    "coverage_status": "IN_PROSPECTUS",
+    "component_ids": [
+      "CMP-0018"
+    ],
+    "clause_ids": [
+      "UMOA_FCP_NO_EXTERNAL_ADVISER_V1"
+    ],
+    "validation_findings": [],
+    "review_roles": [
+      "LEGAL"
+    ]
+  },
+  {
+    "requirement_id": "CIRC005_3_3_EXTERNAL_ADVISER_OTHER_ACTIVITIES",
+    "matrix_source": "CIRC005_FCP_MATRIX_04_ACTORS_COUNTRY_OTHER.csv:13",
+    "question_id": "Q_ADVISER_OTHER_ACTIVITIES",
+    "output_section_id": "SEC_3_EXTERNAL_ADVISERS",
+    "coverage_status": "IN_PROSPECTUS",
+    "component_ids": [
+      "CMP-0018"
+    ],
+    "clause_ids": [
+      "UMOA_FCP_NO_EXTERNAL_ADVISER_V1"
+    ],
+    "validation_findings": [],
+    "review_roles": [
+      "COMPLIANCE",
+      "LEGAL"
+    ]
+  },
+  {
+    "requirement_id": "CIRC005_4_HOME_STATE_ARRANGEMENTS",
+    "matrix_source": "CIRC005_FCP_MATRIX_04_ACTORS_COUNTRY_OTHER.csv:14",
+    "question_id": "Q_HOME_STATE_ARRANGEMENTS",
+    "output_section_id": "SEC_4_COUNTRY_ARRANGEMENTS",
+    "coverage_status": "IN_PROSPECTUS",
+    "component_ids": [
+      "CMP-0027"
+    ],
+    "clause_ids": [],
+    "validation_findings": [],
+    "review_roles": [
+      "COMPLIANCE"
+    ]
+  },
+  {
+    "requirement_id": "CIRC005_4_OTHER_MARKETING_STATE_ARRANGEMENTS",
+    "matrix_source": "CIRC005_FCP_MATRIX_04_ACTORS_COUNTRY_OTHER.csv:15",
+    "question_id": "Q_MARKETING_COUNTRIES",
+    "output_section_id": "SEC_4_COUNTRY_ARRANGEMENTS",
+    "coverage_status": "NOT_APPLICABLE",
+    "component_ids": [],
+    "clause_ids": [],
+    "validation_findings": [],
+    "review_roles": [
+      "COMPLIANCE",
+      "LEGAL"
+    ]
+  },
+  {
+    "requirement_id": "CIRC005_5_1_HISTORICAL_PERFORMANCE",
+    "matrix_source": "CIRC005_FCP_MATRIX_04_ACTORS_COUNTRY_OTHER.csv:16",
+    "question_id": "Q_HISTORICAL_PERFORMANCE_AVAILABLE",
+    "output_section_id": "SEC_5_1_HISTORICAL_PERFORMANCE",
+    "coverage_status": "IN_PROSPECTUS",
+    "component_ids": [
+      "CMP-0019"
+    ],
+    "clause_ids": [
+      "UMOA_FCP_NO_HISTORICAL_PERFORMANCE_V1"
+    ],
+    "validation_findings": [],
+    "review_roles": [
+      "COMPLIANCE",
+      "RISK"
+    ]
+  },
+  {
+    "requirement_id": "CIRC005_5_2_TARGET_INVESTOR",
+    "matrix_source": "CIRC005_FCP_MATRIX_04_ACTORS_COUNTRY_OTHER.csv:17",
+    "question_id": "Q_TARGET_INVESTOR_PROFILE",
+    "output_section_id": "SEC_5_2_TARGET_INVESTOR",
+    "coverage_status": "IN_PROSPECTUS",
+    "component_ids": [
+      "CMP-0020"
+    ],
+    "clause_ids": [
+      "UMOA_FCP_TARGET_INVESTOR_V1"
+    ],
+    "validation_findings": [],
+    "review_roles": [
+      "COMPLIANCE",
+      "RISK"
+    ]
+  },
+  {
+    "requirement_id": "CIRC005_5_3_ECONOMIC_INFORMATION",
+    "matrix_source": "CIRC005_FCP_MATRIX_04_ACTORS_COUNTRY_OTHER.csv:18",
+    "question_id": "Q_ECONOMIC_INFORMATION_APPLICABLE",
+    "output_section_id": "SEC_5_3_ECONOMIC_INFORMATION",
+    "coverage_status": "PENDING_REVIEW",
+    "component_ids": [
+      "CMP-0029"
+    ],
+    "clause_ids": [],
+    "validation_findings": [
+      "RULE_ECONOMIC_INFORMATION_REVIEW"
+    ],
+    "review_roles": [
+      "LEGAL",
+      "COMPLIANCE"
+    ]
+  },
+  {
+    "requirement_id": "CIRC005_5_4_OTHER_EXPENSES_HOLDER",
+    "matrix_source": "CIRC005_FCP_MATRIX_04_ACTORS_COUNTRY_OTHER.csv:19",
+    "question_id": "Q_OTHER_EXPENSES_HOLDER",
+    "output_section_id": "SEC_5_4_OTHER_EXPENSES",
+    "coverage_status": "IN_PROSPECTUS",
+    "component_ids": [
+      "CMP-0044"
+    ],
+    "clause_ids": [
+      "CIRC005_HOLDER_EXPENSES_V1"
+    ],
+    "validation_findings": [],
+    "review_roles": [
+      "COMPLIANCE"
+    ]
+  },
+  {
+    "requirement_id": "CIRC005_5_4_OTHER_EXPENSES_FUND_ASSETS",
+    "matrix_source": "CIRC005_FCP_MATRIX_04_ACTORS_COUNTRY_OTHER.csv:20",
+    "question_id": "Q_OTHER_EXPENSES_FUND",
+    "output_section_id": "SEC_5_4_OTHER_EXPENSES",
+    "coverage_status": "IN_PROSPECTUS",
+    "component_ids": [
+      "CMP-0026"
+    ],
+    "clause_ids": [],
+    "validation_findings": [],
+    "review_roles": [
+      "COMPLIANCE"
+    ]
+  }
+]

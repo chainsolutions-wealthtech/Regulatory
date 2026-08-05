@@ -60,3 +60,21 @@ Le dépôt versionne le projet de prospectus, le rapport de contrôles et le man
 ## Prochaine action
 
 Voir `NEXT_ACTION.md` : couvrir les 15 exigences manquantes sans inventer de données ni détourner les statuts de couverture.
+
+<!-- AUTO:LOOP-DEV-001-COVERAGE:START -->
+## Mise à jour LOOP-DEV-001 — Réconciliation CIRC005 V0.2
+
+- exigences analysées : `62` ;
+- composants documentaires : `44` ;
+- couvertes dans le prospectus : `40` ;
+- en attente de revue : `20` ;
+- manquantes : `0` ;
+- non applicables : `1` ;
+- métadonnées système : `1` ;
+- avertissements : `7` ;
+- blocages : `0` ;
+- prêt pour revue conformité : `false` ;
+- prêt pour soumission : `false`.
+
+Le prospectus reste un projet de pré-conformité. Les profils institutionnels, la fiscalité, la constitution du Fonds, la gouvernance, le dépositaire, la liquidation et les autres rubriques non vérifiées restent en attente de revue.
+<!-- AUTO:LOOP-DEV-001-COVERAGE:END -->
