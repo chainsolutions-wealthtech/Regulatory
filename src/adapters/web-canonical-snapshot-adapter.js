@@ -31,6 +31,7 @@ export function generateFromWebCanonicalSnapshot({ snapshot, matrixRows, generat
   }
 
   const seedData = structuredClone(snapshot.canonicalData);
+  normalizeCanonicalCollectionsForHistoricalComposer(seedData);
   seedData.regulatory_context = isPlainObject(seedData.regulatory_context)
     ? seedData.regulatory_context
     : {};
@@ -40,6 +41,7 @@ export function generateFromWebCanonicalSnapshot({ snapshot, matrixRows, generat
   seedData.regulatory_context.web_snapshot_schema_version = snapshot.schemaVersion;
   seedData.regulatory_context.web_project_id = snapshot.projectId;
   seedData.regulatory_context.web_project_version = snapshot.projectVersion;
+  seedData.regulatory_context.canonical_collection_adapter_version = "1.0.0";
 
   // Les valeurs sont déjà matérialisées dans canonicalData. Les réponses vides
   // servent uniquement à conserver le lien question → exigence dans le moteur.
@@ -99,9 +101,96 @@ export function generateFromWebCanonicalSnapshot({ snapshot, matrixRows, generat
       web_pending_review_question_ids: pendingReviewQuestionIds,
       legacy_unmapped_answer_question_ids: [...unmappedQuestionIds].toSorted(),
       ready_for_submission: false,
+      canonical_collection_adapter_version: "1.0.0",
       adapter_caveat:
         "Adaptation technique déterministe du snapshot web. Elle ne constitue ni une validation juridique, ni une approbation réglementaire.",
     },
+  };
+}
+
+function normalizeCanonicalCollectionsForHistoricalComposer(seedData) {
+  const ranges = seedData.investment_policy?.asset_class_ranges;
+  if (Array.isArray(ranges)) {
+    seedData.investment = isPlainObject(seedData.investment) ? seedData.investment : {};
+    seedData.investment.asset_ranges = ranges.map((range) => ({
+      range_id: range.range_id,
+      asset_class: range.asset_class,
+      minimum_percent: Number(range.minimum_percent),
+      target_percent: Number(range.target_percent),
+      maximum_percent: Number(range.maximum_percent),
+      review_status: range.review_status ?? "UNREVIEWED",
+      provenance: "WEB_CANONICAL_COLLECTION",
+    }));
+  }
+
+  const transactionFees = Array.isArray(seedData.fees?.transaction)
+    ? seedData.fees.transaction
+    : Array.isArray(seedData.fees)
+      ? seedData.fees
+      : [];
+  const remunerations = Array.isArray(seedData.remunerations) ? seedData.remunerations : [];
+  if (transactionFees.length > 0 || remunerations.length > 0) {
+    seedData.fees = [...transactionFees, ...remunerations].map((fee) => ({
+      ...fee,
+      provenance: fee.provenance ?? "WEB_CANONICAL_COLLECTION",
+    }));
+  }
+
+  const providers = Array.isArray(seedData.service_providers) ? seedData.service_providers : [];
+  const firstByRole = (role) => providers.find((provider) => provider.role === role);
+  const depositary = firstByRole("DEPOSITARY");
+  if (depositary && !isPlainObject(seedData.depositary)) {
+    seedData.depositary = partyToOrganization(depositary);
+  }
+  const auditor = firstByRole("AUDITOR");
+  if (auditor) seedData.auditor = partyToOrganization(auditor);
+  const adviser = firstByRole("EXTERNAL_ADVISER");
+  if (adviser && !isPlainObject(seedData.external_adviser)) {
+    seedData.external_adviser = {
+      enabled: true,
+      organization_id: adviser.party_id,
+      legal_name: adviser.legal_name,
+      person_name: adviser.person_name ?? null,
+      verification_status: adviser.verification_status,
+    };
+  }
+  const accountingControllers = providers.filter((provider) => provider.role === "ACCOUNTING_CONTROL");
+  if (accountingControllers.length > 0) {
+    seedData.accounting_control = isPlainObject(seedData.accounting_control)
+      ? seedData.accounting_control
+      : {};
+    seedData.accounting_control.responsible_persons = accountingControllers;
+  }
+  seedData.distributors = providers.filter((provider) => provider.role === "DISTRIBUTOR");
+  seedData.paying_agents = providers.filter((provider) => provider.role === "PAYING_AGENT");
+
+  if (Array.isArray(seedData.manager?.governance_members)) {
+    const members = seedData.manager.governance_members;
+    seedData.manager.governance_summary = members
+      .map((member) => `${member.person_name ?? member.legal_name ?? "Membre à confirmer"} — ${member.function_title ?? "fonction à confirmer"}`)
+      .join(" ; ");
+  }
+
+  if (Array.isArray(seedData.distribution_countries)) {
+    seedData.distribution = isPlainObject(seedData.distribution) ? seedData.distribution : {};
+    seedData.distribution.countries = seedData.distribution_countries;
+  }
+
+  if (Array.isArray(seedData.evidence)) {
+    seedData.documents = isPlainObject(seedData.documents) ? seedData.documents : {};
+    seedData.documents.evidence_register = seedData.evidence;
+  }
+}
+
+function partyToOrganization(party) {
+  return {
+    organization_id: party.party_id,
+    legal_name: party.legal_name,
+    legal_form: party.legal_form ?? null,
+    approval: party.approval_number ? { number: party.approval_number } : undefined,
+    registered_office: party.registered_office ?? null,
+    main_activity: party.main_activity ?? null,
+    profile_status: party.verification_status ?? "USER_PROVIDED_PENDING_REVIEW",
   };
 }
 
