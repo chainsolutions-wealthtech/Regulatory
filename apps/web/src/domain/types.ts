@@ -136,8 +136,10 @@ export type CanonicalAnswerRecord = {
 
 export type CanonicalSnapshot = {
   schemaVersion: "WEB_CANONICAL_SNAPSHOT_V1";
+  snapshotCreatedAt: string;
   projectId: string;
   projectVersion: number;
+  projectUpdatedAt: string;
   catalogDigest: string;
   rulePack: string;
   requirementCount: number;
@@ -156,10 +158,20 @@ export type GenerationSnapshot = {
   documentStatus: "DRAFT_PRE_COMPLIANCE_REVIEW";
   readyForComplianceReview: boolean;
   readyForSubmission: false;
+  artifactDirectoryPath?: string;
   markdownPath?: string;
   docxPath?: string;
   previewPath?: string;
   canonicalSnapshotPath?: string;
+  canonicalDataPath?: string;
+  questionnaireStatePath?: string;
+  controlReportPath?: string;
+  concordancePath?: string;
+  documentModelPath?: string;
+  answerLogPath?: string;
+  generationManifestPath?: string;
+  docxManifestPath?: string;
+  docxValidationPath?: string;
   catalogDigest?: string;
   requirementCount?: number;
   questionCount?: number;
