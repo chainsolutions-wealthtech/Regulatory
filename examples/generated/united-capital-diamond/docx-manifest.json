@@ -3,8 +3,8 @@
   "generator_version": "0.1.0",
   "source_generation_id": "GEN-D23C08F9167F2780",
   "source_document_model_sha256": "d227671fb10f777ff0ee4276168616e7a8a8dcaba5600e040b0d9cfaae191e5b",
-  "docx_sha256": "5b74e9557a6e7b0d61f7be1b724635a3ab798442730fc41fbb6c2eb8da3ad082",
-  "docx_size_bytes": 13160,
+  "docx_sha256": "673b075cbe8cb31fb9418bc7157af7bbed1f882c53e41627f4d61910f523aa95",
+  "docx_size_bytes": 13208,
   "section_count": 26,
   "component_count": 44,
   "table_count": 9,
@@ -12,5 +12,11 @@
   "traceability_row_count": 44,
   "status": "DRAFT_PRE_COMPLIANCE_REVIEW",
   "ready_for_submission": false,
-  "caveat": "Document de pré-conformité généré automatiquement. Il ne constitue ni un agrément, ni un visa, ni une approbation."
+  "caveat": "Document de pré-conformité généré automatiquement. Il ne constitue ni un agrément, ni un visa, ni une approbation.",
+  "layout_optimizer": "scripts/optimize_docx_layout.py",
+  "layout_optimizer_version": "0.1.0",
+  "layout_fixes": [
+    "VISIBLE_LIST_BULLETS",
+    "TABLE_ROWS_CANNOT_SPLIT"
+  ]
 }

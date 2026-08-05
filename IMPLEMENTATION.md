@@ -112,8 +112,8 @@ La commande `npm run generate:docx` exécute `scripts/generate_docx.py`. Elle g�
 La commande `npm run validate:docx` vérifie les parties OOXML obligatoires, la validité XML, les avertissements réglementaires, la traçabilité et le maintien de `ready_for_submission: false`.
 
 - DOCX : `prospectus-draft.docx` ;
-- taille : `13160` octets ;
-- empreinte SHA-256 : `5b74e9557a6e7b0d61f7be1b724635a3ab798442730fc41fbb6c2eb8da3ad082` ;
+- taille : `13208` octets ;
+- empreinte SHA-256 : `673b075cbe8cb31fb9418bc7157af7bbed1f882c53e41627f4d61910f523aa95` ;
 - composants tracés : `44` ;
 - lignes de traçabilité : `44` ;
 - tableaux OOXML : `9` ;
