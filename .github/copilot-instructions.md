@@ -1,21 +1,28 @@
 # GitHub Copilot / agent instructions
 
+> **Statut :** `APPLICABLE`  
+> **Nature :** adaptateur vers les règles canoniques, enrichi sans supprimer les instructions historiques.  
+> **Autorité :** `00_START_HERE.md`, puis `AGENTS.md` et `SOURCE_OF_TRUTH.md`.
+
+GitHub Copilot doit commencer par `00_START_HERE.md`. En cas de divergence entre ce fichier et les documents canoniques, appliquer la règle la plus restrictive, interrompre l’action irréversible et documenter la contradiction. Ce fichier ne doit pas devenir un corpus de règles parallèle.
+
 These instructions apply to every automated assistant working in this repository.
 
 ## Mandatory startup
 
 Before editing:
 
-1. stay on the existing designated branch;
-2. do not create a branch;
-3. read `README.md`;
-4. read `AGENTS.md`;
-5. read `SUIVI.md`;
-6. read `TODO.md`;
-7. read `docs/DECISIONS.md`;
-8. read `docs/ARCHITECTURE.md`;
-9. read the relevant specification and mapping;
-10. inspect existing code, tests and recent commits.
+1. read `00_START_HERE.md` and follow its complete reading order;
+2. stay on the existing designated branch;
+3. do not create a branch;
+4. read `README.md`;
+5. read `AGENTS.md`;
+6. read `SOURCE_OF_TRUTH.md`;
+7. read `STATUS.md`, `SUIVI.md`, `TODO.md`, `NEXT_ACTION.md`, `LOOP_STATE.md` and `CURRENT_ITERATION.md`;
+8. read `docs/DECISIONS.md`;
+9. read `docs/ARCHITECTURE.md`;
+10. read the relevant specification and mapping;
+11. inspect existing code, tests, structured artifacts and recent commits.
 
 ## Branch policy
 
@@ -32,6 +39,8 @@ Before editing:
 - Do not rename or remove canonical identifiers without migration, impact analysis and tests.
 - Do not modify an active legal clause retroactively; create a new version.
 - Add or update non-regression tests for every meaningful change.
+- Distinguish canonical documents from adapters using `SOURCE_OF_TRUTH.md`.
+- Do not use a conversation as the canonical memory of the project.
 
 ## Regulatory integrity
 
@@ -45,14 +54,19 @@ Before editing:
 
 Update as applicable in the same change:
 
-- `README.md`;
-- `SUIVI.md`;
-- `TODO.md`;
-- `CHANGELOG.md`;
-- `docs/DECISIONS.md`;
-- `docs/ARCHITECTURE.md`;
-- `docs/PROSPECTUS_ENGINE_SPEC.md`;
-- `docs/REGULATORY_MAPPING.md`;
+- `README.md` ;
+- `SUIVI.md` ;
+- `TODO.md` ;
+- `CHANGELOG.md` ;
+- `STATUS.md` ;
+- `WORK_LOG.md` ;
+- `LOOP_STATE.md` ;
+- `NEXT_ACTION.md` ;
+- `HANDOFF.md` ;
+- `docs/DECISIONS.md` ;
+- `docs/ARCHITECTURE.md` ;
+- `docs/PROSPECTUS_ENGINE_SPEC.md` ;
+- `docs/REGULATORY_MAPPING.md` ;
 - tests and examples.
 
 ## Security
@@ -60,3 +74,13 @@ Update as applicable in the same change:
 - Never commit secrets, credentials, tokens or private keys.
 - Preserve evidence provenance and auditability.
 - Apply least privilege and avoid destructive operations.
+
+## End-of-intervention checklist
+
+- [ ] canonical reading order completed ;
+- [ ] current loop and one next action identified ;
+- [ ] branch unchanged and no branch created ;
+- [ ] diff and non-regression impacts reviewed ;
+- [ ] tests or justified non-applicability recorded ;
+- [ ] state, history, TODO, work log and handoff updated ;
+- [ ] no legal, regulatory or production validation invented.
