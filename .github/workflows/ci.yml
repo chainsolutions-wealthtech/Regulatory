@@ -60,8 +60,47 @@ jobs:
           PGUSER: postgres
           PGPASSWORD: postgres
         run: |
-          psql -v ON_ERROR_STOP=1 -f database/migrations/0001_regulatory_core.sql
+          for migration in database/migrations/*.sql; do
+            echo "Applying $migration"
+            psql -v ON_ERROR_STOP=1 -f "$migration"
+          done
           psql -v ON_ERROR_STOP=1 -f database/tests/0001_regulatory_core_test.sql
+          psql -v ON_ERROR_STOP=1 <<'SQL'
+          do $$
+          begin
+            if not exists (select 1 from pg_roles where rolname = 'regulatory_app_ci') then
+              create role regulatory_app_ci
+                login
+                password 'regulatory_app_ci_password'
+                nosuperuser
+                nocreatedb
+                nocreaterole
+                noinherit
+                nobypassrls;
+            else
+              alter role regulatory_app_ci
+                login
+                password 'regulatory_app_ci_password'
+                nosuperuser
+                nocreatedb
+                nocreaterole
+                noinherit
+                nobypassrls;
+            end if;
+          end;
+          $$;
+          grant connect on database regulatory_test to regulatory_app_ci;
+          grant usage on schema regulatory to regulatory_app_ci;
+          grant select, insert, update, delete on all tables in schema regulatory to regulatory_app_ci;
+          grant usage, select on all sequences in schema regulatory to regulatory_app_ci;
+          grant execute on all functions in schema regulatory to regulatory_app_ci;
+          alter default privileges in schema regulatory
+            grant select, insert, update, delete on tables to regulatory_app_ci;
+          alter default privileges in schema regulatory
+            grant usage, select on sequences to regulatory_app_ci;
+          alter default privileges in schema regulatory
+            grant execute on functions to regulatory_app_ci;
+          SQL
           mkdir -p regulatory/validation
           python3 - <<'PY'
           import json
@@ -70,17 +109,19 @@ jobs:
               'validationId': 'POSTGRESQL_REGULATORY_CORE_VALIDATION_V1',
               'status': 'PASS',
               'postgresVersion': '17',
-              'migration': 'database/migrations/0001_regulatory_core.sql',
+              'migrations': sorted(str(path) for path in Path('database/migrations').glob('*.sql')),
               'testScript': 'database/tests/0001_regulatory_core_test.sql',
               'checks': {
-                  'migrationApplied': True,
+                  'migrationsApplied': True,
                   'assetRangeConstraints': True,
                   'singleHomeStateConstraint': True,
                   'readyForSubmissionLockedFalse': True,
                   'frozenVersionImmutable': True,
                   'auditAppendOnly': True,
+                  'auditTenantInsertPolicy': True,
                   'rowLevelSecurityTenantIsolation': True,
                   'twoTenantSwitchVerified': True,
+                  'nonOwnerApplicationRoleCreated': True,
               },
               'caveat': 'Validation sur PostgreSQL éphémère de CI. Elle ne constitue ni un déploiement, ni un audit de sécurité de production.'
           }
@@ -101,7 +142,9 @@ jobs:
 
       - name: Test transactional PostgreSQL project repository
         env:
-          DATABASE_URL: postgresql://postgres:postgres@127.0.0.1:5432/regulatory_test
+          DATABASE_URL: postgresql://regulatory_app_ci:regulatory_app_ci_password@127.0.0.1:5432/regulatory_test
+          DATABASE_ADMIN_URL: postgresql://postgres:postgres@127.0.0.1:5432/regulatory_test
+          PGOPTIONS: -c app.ci_role_name=regulatory_app_ci
           NODE_ENV: test
         run: npm --prefix apps/web run test:postgres-repository
 
@@ -232,12 +275,18 @@ jobs:
           ]) {
             if (api.checks[check] !== true) throw new Error(`Web API invariant failed: ${check}`);
           }
-          if (postgres.status !== 'PASS' || postgres.checks.rowLevelSecurityTenantIsolation !== true) {
+          if (
+            postgres.status !== 'PASS' ||
+            postgres.checks.rowLevelSecurityTenantIsolation !== true ||
+            postgres.checks.auditTenantInsertPolicy !== true
+          ) {
             throw new Error('PostgreSQL core validation failed');
           }
           if (
             repository.status !== 'PASS' ||
+            repository.checks.applicationRoleCannotBypassRls !== true ||
             repository.checks.optimisticConcurrencyConflict !== true ||
+            repository.checks.auditInsertPolicy !== true ||
             repository.checks.auditHashChain !== true ||
             repository.checks.readyForSubmissionRemainsFalse !== true
           ) {
@@ -270,8 +319,8 @@ jobs:
             regulatory/validation/POSTGRESQL_CORE_VALIDATION.json
             regulatory/validation/POSTGRESQL_REPOSITORY_VALIDATION.json
             schemas/canonical/PROSPECTUS_CANONICAL_MODEL_V1.schema.json
-            database/migrations/0001_regulatory_core.sql
-            database/tests/0001_regulatory_core_test.sql
+            database/migrations/*.sql
+            database/tests/*.sql
 
       - name: Commit generated evidence and documentation
         if: github.actor != 'github-actions[bot]'
