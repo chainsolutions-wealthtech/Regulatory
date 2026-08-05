@@ -1,6 +1,6 @@
 import { NextResponse } from "next/server";
 import { CATALOG_METADATA } from "@/domain/regulatory-catalog";
-import { buildProspectusPreview } from "@/server/generation-adapter";
+import { buildProspectusBundle } from "@/server/generation-adapter";
 import { getProject, persistGenerationArtifacts } from "@/server/project-store";
 
 export const runtime = "nodejs";
@@ -13,7 +13,8 @@ export async function POST(
   const project = await getProject(projectId);
   if (!project) return NextResponse.json({ error: "Projet introuvable." }, { status: 404 });
 
-  const preview = await buildProspectusPreview(project);
+  const bundle = await buildProspectusBundle(project);
+  const preview = bundle.preview;
   const generation = {
     generationId: preview.generationId,
     generatedAt: preview.generatedAt,
@@ -29,6 +30,7 @@ export async function POST(
     generation,
     preview,
     canonicalSnapshot: preview.canonicalSnapshot,
+    artifacts: bundle.artifacts,
   });
   return NextResponse.json({
     generation: updatedProject.generation,
