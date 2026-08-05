@@ -405,3 +405,57 @@ Les preuves, limites et contrôles sont détaillés dans `MANIFEST.md`, `WORK_LO
 L’état instantané n’est plus la section 13 historique : il est tenu dans [`STATUS.md`](STATUS.md).
 
 La première matrice machine-readable de la Circulaire n°05/CREPMF/2022 existe déjà. La prochaine action unique est désormais celle de [`NEXT_ACTION.md`](NEXT_ACTION.md) : obtenir une copie officielle, vérifiable et exploitable de l’Instruction n°66/CREPMF/2021 avant son atomisation.
+
+## 15. Première tranche verticale exécutable — mise à jour du 2026-08-05
+
+À la demande du propriétaire, le développement applicatif a commencé sans création de branche et sans modification des identifiants ou matrices réglementaires existants.
+
+Le dépôt contient désormais une première preuve exécutable qui :
+
+- charge les quatre matrices CIRC005 et leurs 62 exigences ;
+- transforme les matrices en catalogue de questions ;
+- applique des réponses structurées à un snapshot canonique ;
+- exécute des contrôles déterministes ;
+- sélectionne des clauses au statut `DRAFT_LEGAL_REVIEW_REQUIRED` ;
+- compose un modèle documentaire traçable ;
+- génère un projet de prospectus Markdown ;
+- produit un rapport de contrôle, une table de concordance et un manifeste de génération.
+
+Le cas United Capital Diamond est prérempli comme fixture de test uniquement. Il ne devient pas une règle normative.
+
+### 15.1 Exécution
+
+Prérequis : Node.js 22 ou ultérieur.
+
+```bash
+npm test
+npm run generate:sample
+npm run check
+```
+
+La documentation technique détaillée est dans [`IMPLEMENTATION.md`](IMPLEMENTATION.md). La décision d’architecture temporaire est enregistrée dans [`docs/adr/ADR-0008-demarrage-de-la-tranche-verticale-executable.md`](docs/adr/ADR-0008-demarrage-de-la-tranche-verticale-executable.md).
+
+### 15.2 Résultat initial
+
+Le cas de test produit :
+
+- 62 exigences analysées ;
+- 58 questions applicables ;
+- 30 réponses structurées ;
+- 29 composants documentaires ;
+- 46 exigences couvertes dans le prospectus ;
+- 1 exigence déclarée non applicable ;
+- 15 exigences encore manquantes ;
+- 0 contrôle bloquant ;
+- 2 avertissements ;
+- statut final `DATA_INCOMPLETE` ;
+- `ready_for_compliance_review: false` ;
+- `ready_for_submission: false`.
+
+Les avertissements concernent la fiscalité et l’interprétation du point 5.3 relatif aux informations d’ordre économique. Aucun DOCX ou PDF n’est encore produit et aucune clause n’est approuvée ou active.
+
+### 15.3 Priorité active
+
+`LOOP-DEV-001` devient la boucle active. `LOOP-REG-001` est suspendue par priorité du propriétaire, mais reste ouverte et doit être reprise pour terminer l’atomisation de l’Instruction n°66/CREPMF/2021.
+
+La prochaine action unique est définie dans [`NEXT_ACTION.md`](NEXT_ACTION.md) : réduire les 15 exigences manquantes sans inventer de données et sans détourner artificiellement le statut `NOT_APPLICABLE`.
