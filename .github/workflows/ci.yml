@@ -16,7 +16,7 @@ concurrency:
 jobs:
   test-generate-document:
     runs-on: ubuntu-latest
-    timeout-minutes: 10
+    timeout-minutes: 15
 
     steps:
       - name: Checkout
@@ -31,6 +31,11 @@ jobs:
           cache: npm
           cache-dependency-path: package.json
 
+      - name: Install document rendering tools
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y --no-install-recommends libreoffice-writer poppler-utils
+
       - name: Run automated tests
         run: npm test
 
@@ -39,8 +44,43 @@ jobs:
         env:
           GENERATION_TIMESTAMP: '2026-08-05T00:00:00.000Z'
 
+      - name: Generate deterministic DOCX
+        run: npm run generate:docx
+
+      - name: Validate DOCX package and regulatory caveats
+        run: npm run validate:docx
+
+      - name: Render DOCX for visual inspection
+        run: |
+          root='examples/generated/united-capital-diamond'
+          mkdir -p "$root/rendered-pages"
+          libreoffice --headless --convert-to pdf --outdir "$root" "$root/prospectus-draft.docx"
+          pdftoppm -png -r 120 "$root/prospectus-draft.pdf" "$root/rendered-pages/page"
+          python3 - <<'PY'
+          import json
+          from pathlib import Path
+          root = Path('examples/generated/united-capital-diamond')
+          pages = sorted(root.joinpath('rendered-pages').glob('page-*.png'))
+          pdf = root / 'prospectus-draft.pdf'
+          manifest = {
+              'renderer': 'LibreOffice Writer + pdftoppm',
+              'page_count': len(pages),
+              'page_files': [str(page.relative_to(root)) for page in pages],
+              'pdf_size_bytes': pdf.stat().st_size,
+              'status': 'READY_FOR_VISUAL_INSPECTION',
+              'caveat': 'PDF créé uniquement pour le contrôle visuel de la sortie DOCX; il ne constitue pas le futur export PDF réglementaire déterministe.'
+          }
+          root.joinpath('render-manifest.json').write_text(
+              json.dumps(manifest, ensure_ascii=False, indent=2) + '\n', encoding='utf-8'
+          )
+          if len(pages) == 0:
+              raise SystemExit('No rendered DOCX pages were produced')
+          PY
+
       - name: Update Loop Engineering evidence
-        run: node scripts/update-loop-dev-docs.mjs
+        run: |
+          node scripts/update-loop-dev-docs.mjs
+          node scripts/update-docx-loop-docs.mjs
 
       - name: Validate generated JSON and coverage invariants
         run: |
@@ -49,16 +89,39 @@ jobs:
           const root = 'examples/generated/united-capital-diamond';
           const manifest = JSON.parse(await readFile(`${root}/generation-manifest.json`, 'utf8'));
           const concordance = JSON.parse(await readFile(`${root}/concordance.json`, 'utf8'));
+          const docx = JSON.parse(await readFile(`${root}/docx-manifest.json`, 'utf8'));
+          const render = JSON.parse(await readFile(`${root}/render-manifest.json`, 'utf8'));
           if (concordance.length !== 62) throw new Error(`Expected 62 requirements, got ${concordance.length}`);
           if (manifest.coverage_counts.MISSING !== 0) throw new Error(`Expected MISSING=0, got ${manifest.coverage_counts.MISSING}`);
-          if (manifest.ready_for_submission !== false) throw new Error('ready_for_submission must remain false');
+          if (manifest.ready_for_submission !== false || docx.ready_for_submission !== false) {
+            throw new Error('ready_for_submission must remain false');
+          }
           if (!Array.isArray(manifest.pending_review_requirement_ids) || manifest.pending_review_requirement_ids.length === 0) {
             throw new Error('Pending review requirements must remain explicit');
           }
+          if (docx.component_count !== manifest.component_count) {
+            throw new Error(`DOCX traceability mismatch: ${docx.component_count} vs ${manifest.component_count}`);
+          }
+          if (render.page_count < 2) throw new Error(`Unexpected rendered page count: ${render.page_count}`);
           NODE
 
       - name: Check textual integrity
         run: git diff --check
+
+      - name: Upload DOCX visual review bundle
+        uses: actions/upload-artifact@v4
+        with:
+          name: united-capital-diamond-docx-review
+          if-no-files-found: error
+          retention-days: 14
+          path: |
+            examples/generated/united-capital-diamond/prospectus-draft.docx
+            examples/generated/united-capital-diamond/docx-manifest.json
+            examples/generated/united-capital-diamond/prospectus-draft.pdf
+            examples/generated/united-capital-diamond/render-manifest.json
+            examples/generated/united-capital-diamond/rendered-pages/*.png
+            examples/generated/united-capital-diamond/generation-manifest.json
+            examples/generated/united-capital-diamond/concordance.json
 
       - name: Commit generated evidence and documentation
         if: github.actor != 'github-actions[bot]'
@@ -68,10 +131,19 @@ jobs:
           git add \
             README.md IMPLEMENTATION.md STATUS.md LOOP_STATE.md CURRENT_ITERATION.md \
             WORK_LOG.md SUIVI.md TODO.md CHANGELOG.md HANDOFF.md NEXT_ACTION.md \
-            examples/generated/united-capital-diamond
+            examples/generated/united-capital-diamond/prospectus-draft.md \
+            examples/generated/united-capital-diamond/canonical-data.json \
+            examples/generated/united-capital-diamond/questionnaire-state.json \
+            examples/generated/united-capital-diamond/control-report.json \
+            examples/generated/united-capital-diamond/concordance.json \
+            examples/generated/united-capital-diamond/document-model.json \
+            examples/generated/united-capital-diamond/answer-log.json \
+            examples/generated/united-capital-diamond/generation-manifest.json \
+            examples/generated/united-capital-diamond/prospectus-draft.docx \
+            examples/generated/united-capital-diamond/docx-manifest.json
           if git diff --cached --quiet; then
             echo 'No generated changes to commit.'
           else
-            git commit -m 'chore: refresh generated prospectus evidence'
+            git commit -m 'chore: refresh generated prospectus and DOCX evidence'
             git push origin HEAD:main
           fi
