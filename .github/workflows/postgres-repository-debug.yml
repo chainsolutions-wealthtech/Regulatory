@@ -1,0 +1,83 @@
+name: PostgreSQL Repository Diagnostic
+
+on:
+  push:
+    branches:
+      - main
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  diagnose:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    services:
+      postgres:
+        image: postgres:17
+        env:
+          POSTGRES_DB: regulatory_test
+          POSTGRES_USER: postgres
+          POSTGRES_PASSWORD: postgres
+        ports:
+          - 5432:5432
+        options: >-
+          --health-cmd "pg_isready -U postgres -d regulatory_test"
+          --health-interval 5s
+          --health-timeout 5s
+          --health-retries 10
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Install PostgreSQL client
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y --no-install-recommends postgresql-client
+      - name: Prepare database and application role
+        env:
+          PGHOST: 127.0.0.1
+          PGPORT: '5432'
+          PGDATABASE: regulatory_test
+          PGUSER: postgres
+          PGPASSWORD: postgres
+        run: |
+          for migration in database/migrations/*.sql; do
+            psql -v ON_ERROR_STOP=1 -f "$migration"
+          done
+          psql -v ON_ERROR_STOP=1 <<'SQL'
+          create role regulatory_app_ci
+            login password 'regulatory_app_ci_password'
+            nosuperuser nocreatedb nocreaterole noinherit nobypassrls;
+          grant connect on database regulatory_test to regulatory_app_ci;
+          grant usage on schema regulatory to regulatory_app_ci;
+          grant select, insert, update, delete on all tables in schema regulatory to regulatory_app_ci;
+          grant usage, select on all sequences in schema regulatory to regulatory_app_ci;
+          grant execute on all functions in schema regulatory to regulatory_app_ci;
+          SQL
+      - name: Install application dependencies
+        run: npm run web:install
+      - name: Run repository diagnostic
+        id: repository-test
+        continue-on-error: true
+        env:
+          DATABASE_URL: postgresql://regulatory_app_ci:regulatory_app_ci_password@127.0.0.1:5432/regulatory_test
+          DATABASE_ADMIN_URL: postgresql://postgres:postgres@127.0.0.1:5432/regulatory_test
+          PGOPTIONS: -c app.ci_role_name=regulatory_app_ci
+          NODE_ENV: test
+        run: |
+          set -o pipefail
+          npm --prefix apps/web run test:postgres-repository 2>&1 | tee postgres-repository-diagnostic.log
+      - name: Upload diagnostic log
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: postgres-repository-diagnostic
+          path: postgres-repository-diagnostic.log
+          if-no-files-found: error
+          retention-days: 3
+      - name: Propagate diagnostic result
+        if: steps.repository-test.outcome == 'failure'
+        run: exit 1
