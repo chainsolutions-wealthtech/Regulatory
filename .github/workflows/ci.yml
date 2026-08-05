@@ -16,7 +16,7 @@ concurrency:
 jobs:
   test-generate-document-and-web:
     runs-on: ubuntu-latest
-    timeout-minutes: 25
+    timeout-minutes: 30
 
     services:
       postgres:
@@ -99,6 +99,12 @@ jobs:
       - name: Typecheck Next.js application
         run: npm run web:typecheck
 
+      - name: Test transactional PostgreSQL project repository
+        env:
+          DATABASE_URL: postgresql://postgres:postgres@127.0.0.1:5432/regulatory_test
+          NODE_ENV: test
+        run: npm --prefix apps/web run test:postgres-repository
+
       - name: Build Next.js application
         run: npm run web:build
         env:
@@ -173,6 +179,7 @@ jobs:
           node scripts/update-regulatory-catalog-docs.mjs
           node scripts/update-structured-share-class-docs.mjs
           node scripts/update-canonical-schema-docs.mjs
+          node scripts/update-postgres-repository-docs.mjs
 
       - name: Validate generated invariants
         run: |
@@ -186,6 +193,7 @@ jobs:
           const catalog = JSON.parse(await readFile('regulatory/validation/CIRC005_WEB_CATALOG_VALIDATION.json', 'utf8'));
           const api = JSON.parse(await readFile('regulatory/validation/CIRC005_WEB_API_INTEGRATION_VALIDATION.json', 'utf8'));
           const postgres = JSON.parse(await readFile('regulatory/validation/POSTGRESQL_CORE_VALIDATION.json', 'utf8'));
+          const repository = JSON.parse(await readFile('regulatory/validation/POSTGRESQL_REPOSITORY_VALIDATION.json', 'utf8'));
           const schema = JSON.parse(await readFile('schemas/canonical/PROSPECTUS_CANONICAL_MODEL_V1.schema.json', 'utf8'));
           if (concordance.length !== 62) throw new Error(`Expected 62 requirements, got ${concordance.length}`);
           if (manifest.coverage_counts.MISSING !== 0) throw new Error(`Expected MISSING=0, got ${manifest.coverage_counts.MISSING}`);
@@ -227,6 +235,14 @@ jobs:
           if (postgres.status !== 'PASS' || postgres.checks.rowLevelSecurityTenantIsolation !== true) {
             throw new Error('PostgreSQL core validation failed');
           }
+          if (
+            repository.status !== 'PASS' ||
+            repository.checks.optimisticConcurrencyConflict !== true ||
+            repository.checks.auditHashChain !== true ||
+            repository.checks.readyForSubmissionRemainsFalse !== true
+          ) {
+            throw new Error('PostgreSQL project repository validation failed');
+          }
           if (schema.$defs.regulatoryContext.properties.ready_for_submission.const !== false) {
             throw new Error('Canonical schema must lock ready_for_submission to false');
           }
@@ -252,6 +268,7 @@ jobs:
             regulatory/validation/CIRC005_WEB_CATALOG_VALIDATION.json
             regulatory/validation/CIRC005_WEB_API_INTEGRATION_VALIDATION.json
             regulatory/validation/POSTGRESQL_CORE_VALIDATION.json
+            regulatory/validation/POSTGRESQL_REPOSITORY_VALIDATION.json
             schemas/canonical/PROSPECTUS_CANONICAL_MODEL_V1.schema.json
             database/migrations/0001_regulatory_core.sql
             database/tests/0001_regulatory_core_test.sql
@@ -266,9 +283,11 @@ jobs:
             WORK_LOG.md SUIVI.md TODO.md CHANGELOG.md HANDOFF.md NEXT_ACTION.md \
             docs/ARCHITECTURE.md docs/PROSPECTUS_ENGINE_SPEC.md \
             docs/04-development/NEXTJS_ATOMIC_DESIGN.md apps/web/README.md \
+            apps/web/package-lock.json \
             regulatory/validation/CIRC005_WEB_CATALOG_VALIDATION.json \
             regulatory/validation/CIRC005_WEB_API_INTEGRATION_VALIDATION.json \
             regulatory/validation/POSTGRESQL_CORE_VALIDATION.json \
+            regulatory/validation/POSTGRESQL_REPOSITORY_VALIDATION.json \
             examples/generated/united-capital-diamond/prospectus-draft.md \
             examples/generated/united-capital-diamond/canonical-data.json \
             examples/generated/united-capital-diamond/questionnaire-state.json \
@@ -282,6 +301,6 @@ jobs:
           if git diff --cached --quiet; then
             echo 'No generated changes to commit.'
           else
-            git commit -m 'chore: refresh regulatory, PostgreSQL and generation evidence'
+            git commit -m 'chore: refresh PostgreSQL repository and generation evidence'
             git push origin HEAD:main
           fi
