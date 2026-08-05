@@ -332,3 +332,145 @@ source
 
 ### Prochaine étape
 ```
+
+---
+
+## 2026-08-05 — Intégration complète et additive du kit Loop Engineering
+
+### Objectif
+
+Intégrer l’architecture documentaire du kit `loop-engineering-starter-kit` version `1.0.0` dans le dépôt existant, sans recommencer le projet, sans créer de modèle documentaire concurrent et sans modifier les artefacts réglementaires machine-readable déjà produits.
+
+### État initial vérifié
+
+- dépôt : `chainsolutions-wealthtech/Regulatory` ;
+- branche conservée : `main` ;
+- commit de départ : `7433be04ce00d0108c1e01441d5e49f01fb994f4` ;
+- `21` fichiers au total, dont `11` Markdown et `10` non Markdown ;
+- documents canoniques historiques présents : `README.md`, `AGENTS.md`, `SUIVI.md`, `TODO.md`, `docs/DECISIONS.md`, `docs/ARCHITECTURE.md`, `docs/PROSPECTUS_ENGINE_SPEC.md`, `docs/REGULATORY_MAPPING.md` ;
+- artefacts présents : source YAML, registre de `62` exigences, quatre matrices CSV, validation JSON et modèle canonique de `30` objets ;
+- une seule branche GitHub présente lors du contrôle préparatoire final : `main` ;
+- kit reçu : `177` fichiers, dont `176` Markdown et `manifest.json` ;
+- ZIP : `112477` octets ; SHA-256 `8054b1ea4799364b5d709166536c927b2e28ddd47aba84553469a5469ffecc95`.
+
+### Matrice d’intégration
+
+`DOCUMENT_INTEGRATION_MATRIX.md` a été créée avant la finalisation pour classer les chemins selon les actions autorisées : conservation, enrichissement additif, création canonique, création de registre, adaptateur, index, modèle, module conditionnel ou archivage documentaire. Aucune action de suppression, remplacement ou renommage n’a été retenue.
+
+### Travail réalisé
+
+1. Création de `00_START_HERE.md` avec l’ordre de lecture définitif.
+2. Création de `SOURCE_OF_TRUTH.md` avec la hiérarchie d’autorité.
+3. Création et clôture de `LOOP-GOV-001` et `TASK-GOV-001`.
+4. Création des registres `STATUS.md`, `LOOP_STATE.md`, `CURRENT_ITERATION.md`, `WORK_LOG.md`, `HANDOFF.md` et `NEXT_ACTION.md`.
+5. Création de tous les chemins Markdown du kit absents du dépôt.
+6. Création des adaptateurs et index empêchant la duplication de l’architecture, des décisions et des règles agents.
+7. Création des documents spécialisés dans `docs/01-governance/` à `docs/12-optional/`.
+8. Création des modèles GitHub et documents d’adaptation IA.
+9. Création de sept ADR de gouvernance.
+10. Conservation documentaire du ZIP sous `docs/kits/` en neuf fragments Base64, avec empreinte de référence.
+11. Enrichissement additif de `README.md`, `AGENTS.md`, `.github/copilot-instructions.md`, `CHANGELOG.md`, `SUIVI.md` et `TODO.md`.
+12. Mise à jour des registres de clôture et de reprise.
+
+### Fichiers créés
+
+- `192` fichiers ont été créés depuis le commit de départ ;
+- `183` sont des fichiers Markdown ;
+- `9` sont les fragments Base64 de l’archive documentaire ;
+- le dépôt contient désormais `213` fichiers au total et `194` fichiers Markdown.
+
+Les `176` chemins Markdown prévus par le kit sont présents. Les créations supplémentaires correspondent notamment aux sept ADR de gouvernance et aux documents propres à l’intégration, après prise en compte des chemins du kit qui existaient déjà au départ.
+
+### Fichiers enrichis
+
+Documents historiques enrichis sans suppression de leurs contenus antérieurs :
+
+- `README.md` ;
+- `AGENTS.md` ;
+- `.github/copilot-instructions.md` ;
+- `CHANGELOG.md` ;
+- `SUIVI.md` ;
+- `TODO.md`.
+
+Registres et documents nouveaux finalisés après leur création :
+
+- `STATUS.md` ;
+- `LOOP_STATE.md` ;
+- `CURRENT_ITERATION.md` ;
+- `WORK_LOG.md` ;
+- `NEXT_ACTION.md` ;
+- `HANDOFF.md` ;
+- `MANIFEST.md` ;
+- `DOCUMENT_INTEGRATION_MATRIX.md` ;
+- `docs/09-loop/LOOP_HEALTH_CHECK.md`.
+
+### Fichiers conservés
+
+Ont notamment été conservés sans réécriture métier :
+
+- `CONTRIBUTING.md` ;
+- `.github/CODEOWNERS` ;
+- `docs/DECISIONS.md` ;
+- `docs/ARCHITECTURE.md` ;
+- `docs/PROSPECTUS_ENGINE_SPEC.md` ;
+- `docs/REGULATORY_MAPPING.md` ;
+- tous les fichiers antérieurs sous `regulatory/` et `schemas/`.
+
+### Décisions prises
+
+- les documents historiques restent canoniques selon `SOURCE_OF_TRUTH.md` ;
+- les nouveaux chemins équivalents sont des adaptateurs ou index ;
+- `SUIVI.md` reste l’historique, `STATUS.md` l’état instantané et `TODO.md` le registre opérationnel principal ;
+- les conversations ne sont pas une source de vérité ;
+- les modules conditionnels sont créés avec statut explicite et questions ouvertes associées ;
+- la clôture de la boucle est documentaire et ne vaut pas validation juridique ou réglementaire.
+
+### ADR créées
+
+- `ADR-0001-adoption-du-loop-engineering.md` ;
+- `ADR-0002-maintien-du-depot-git-comme-source-de-verite.md` ;
+- `ADR-0003-maintien-de-la-politique-de-branche-du-depot.md` ;
+- `ADR-0004-documentation-integree-au-changement.md` ;
+- `ADR-0005-non-regression-et-preuves-obligatoires.md` ;
+- `ADR-0006-contexte-canonique-commun-aux-agents.md` ;
+- `ADR-0007-coexistence-des-chemins-documentaires-historiques-et-du-kit.md`.
+
+### Tests et contrôles
+
+- comparaison de l’arbre au commit de départ avec l’arbre final ;
+- nombre Markdown initial : `11` ;
+- nombre Markdown final : `194` ;
+- présence des chemins du kit : `176/176` ;
+- fichiers du kit vides : `0` ;
+- fichiers du kit limités à un titre : `0` ;
+- fichiers supprimés : `0` ;
+- vérification des documents canoniques et adaptateurs essentiels ;
+- vérification des blobs des artefacts sous `regulatory/` et `schemas/` ;
+- vérification de la branche : `main` uniquement lors du contrôle ;
+- aucune création ou permutation de branche ;
+- aucun force-push, fusion, migration ou déploiement ;
+- recherche ciblée de secrets et inspection des contenus ajoutés ;
+- mise en cohérence de `MANIFEST.md`, `DOCUMENT_INTEGRATION_MATRIX.md`, des registres d’état et du handoff.
+
+### Résultats
+
+La taxonomie Loop Engineering est intégrée comme couche de gouvernance du projet existant. Les décisions, identifiants, matrices, sources, schéma et résultats antérieurs sont préservés. La boucle est clôturée et une seule prochaine action est définie.
+
+### Limitations ou points à vérifier
+
+- la validation est documentaire et structurelle, pas juridique ;
+- aucun crawler exhaustif de tous les liens Markdown n’a été exécuté, même si les liens canoniques essentiels ont été contrôlés ;
+- aucun scanner de secrets dédié ou pipeline de CI n’est encore défini ;
+- l’archive Base64 doit être reconstruite et comparée au SHA-256 avant utilisation binaire ;
+- la date officielle de publication et le statut juridique actuel de la Circulaire n°05/CREPMF/2022 restent à vérifier ;
+- la source officielle et la version actuelle de l’Instruction n°66/CREPMF/2021 restent à obtenir ;
+- les rôles de validation, la stack, les environnements et les procédures de production restent à définir ;
+- aucune clause n’est `APPROVED` ou `ACTIVE`.
+
+### Questions ouvertes
+
+Les questions `OQ-001` à `OQ-009` restent ouvertes dans `OPEN_QUESTIONS.md`, notamment les responsables, les sources réglementaires officielles, les choix techniques, les commandes de contrôle, les politiques opérationnelles et les modules conditionnels.
+
+### Prochaine étape
+
+Exécuter l’action unique de `NEXT_ACTION.md` dans une nouvelle boucle : obtenir une copie officielle, vérifiable et exploitable de l’Instruction n°66/CREPMF/2021, confirmer sa version et son état juridique, puis préparer son atomisation sans modifier les identifiants existants de la Circulaire n°05/CREPMF/2022.
