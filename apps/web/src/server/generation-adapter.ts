@@ -81,17 +81,21 @@ export async function buildProspectusBundle(
       },
     );
 
-    const [markdown, manifestRaw, ...artifactContents] = await Promise.all([
+    const [markdown, manifestRaw] = await Promise.all([
       readFile(path.join(outputDirectory, "prospectus-draft.md"), "utf8"),
       readFile(path.join(outputDirectory, "generation-manifest.json"), "utf8"),
-      ...GENERATED_ARTIFACT_NAMES.map((fileName) => readFile(path.join(outputDirectory, fileName))),
     ]);
+    const artifactContents = await Promise.all(
+      GENERATED_ARTIFACT_NAMES.map((fileName) => readFile(path.join(outputDirectory, fileName))),
+    );
     const manifest = JSON.parse(manifestRaw) as Record<string, unknown>;
     const preview = previewFromMarkdown({ markdown, manifest, canonicalSnapshot });
-    const artifacts = GENERATED_ARTIFACT_NAMES.map((fileName, index) => ({
-      fileName,
-      content: artifactContents[index],
-    }));
+    const artifacts: GeneratedProspectusArtifact[] = GENERATED_ARTIFACT_NAMES.map(
+      (fileName, index) => ({
+        fileName,
+        content: artifactContents[index],
+      }),
+    );
     return { preview, artifacts };
   } finally {
     await rm(temporaryRoot, { recursive: true, force: true });
