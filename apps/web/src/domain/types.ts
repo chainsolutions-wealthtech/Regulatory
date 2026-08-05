@@ -15,6 +15,16 @@ export type CoverageStatus =
   | "MISSING"
   | "SYSTEM_METADATA";
 
+export type StructuredCollectionQuestionType =
+  | "SHARE_CLASS_COLLECTION"
+  | "ASSET_RANGE_COLLECTION"
+  | "FEE_COLLECTION"
+  | "VALUATION_METHOD_COLLECTION"
+  | "PARTY_COLLECTION"
+  | "RISK_COLLECTION"
+  | "COUNTRY_ARRANGEMENT_COLLECTION"
+  | "EVIDENCE_COLLECTION";
+
 export type QuestionType =
   | "TEXT"
   | "TEXTAREA"
@@ -27,7 +37,7 @@ export type QuestionType =
   | "AMOUNT"
   | "COUNTRY"
   | "FILE"
-  | "SHARE_CLASS_COLLECTION";
+  | StructuredCollectionQuestionType;
 
 export type QuestionSourceKind =
   | "REGULATORY_MATRIX"
@@ -46,6 +56,12 @@ export type DisplayCondition = {
   value: string | boolean;
 };
 
+export type ReviewStatus = "UNREVIEWED" | "PENDING_REVIEW" | "CONFIRMED";
+export type DataVerificationStatus =
+  | "USER_PROVIDED_PENDING_REVIEW"
+  | "PREFILLED_PENDING_CONFIRMATION"
+  | "VERIFIED";
+
 export type ShareClassInput = {
   class_id: string;
   currency: string;
@@ -58,6 +74,140 @@ export type ShareClassInput = {
     display: string;
   };
 };
+
+export type AssetClassRangeInput = {
+  range_id: string;
+  asset_class: string;
+  minimum_percent: number;
+  target_percent: number;
+  maximum_percent: number;
+  review_status: ReviewStatus;
+};
+
+export type FeeInput = {
+  fee_id: string;
+  fee_type:
+    | "SUBSCRIPTION"
+    | "REDEMPTION"
+    | "MANAGEMENT"
+    | "DEPOSITARY"
+    | "AUDIT"
+    | "DISTRIBUTION"
+    | "TRANSACTION"
+    | "OTHER";
+  label: string;
+  payer_type: "HOLDER" | "FUND_ASSETS";
+  beneficiary: string;
+  basis: string;
+  rate_type: "PERCENTAGE" | "PER_MILLE" | "FIXED" | "NONE" | "OTHER";
+  rate_percent?: number;
+  rate_per_mille?: number;
+  amount?: number;
+  currency?: string;
+  frequency: string;
+  cap?: string;
+  tax_display?: string;
+  review_status: ReviewStatus;
+};
+
+export type ValuationMethodInput = {
+  method_id: string;
+  asset_class: string;
+  primary_method: string;
+  price_source: string;
+  fallback_method: string;
+  frequency: string;
+  exception_process: string;
+  review_status: ReviewStatus;
+};
+
+export type PartyInput = {
+  party_id: string;
+  role:
+    | "MANAGEMENT_COMPANY"
+    | "GOVERNANCE_MEMBER"
+    | "DEPOSITARY"
+    | "AUDITOR"
+    | "ACCOUNTING_CONTROL"
+    | "EXTERNAL_ADVISER"
+    | "DISTRIBUTOR"
+    | "PAYING_AGENT"
+    | "OTHER";
+  legal_name: string;
+  person_name?: string;
+  legal_form?: string;
+  approval_number?: string;
+  registered_office?: string;
+  main_activity?: string;
+  function_title?: string;
+  significant_external_activities?: string;
+  conflicts?: string;
+  verification_status: DataVerificationStatus;
+};
+
+export type RiskFactorInput = {
+  risk_id: string;
+  category:
+    | "CAPITAL_LOSS"
+    | "MARKET"
+    | "CREDIT"
+    | "INTEREST_RATE"
+    | "LIQUIDITY"
+    | "CURRENCY"
+    | "COUNTERPARTY"
+    | "OPERATIONAL"
+    | "CONCENTRATION"
+    | "VALUATION"
+    | "MANAGEMENT"
+    | "OTHER";
+  label: string;
+  description: string;
+  source: "DERIVED" | "USER" | "REGULATORY_REFERENCE";
+  review_status: ReviewStatus;
+};
+
+export type CountryArrangementInput = {
+  arrangement_id: string;
+  country_code: string;
+  is_home_state: boolean;
+  marketing_authorization_reference: string;
+  paying_agents: string;
+  redemption_locations: string;
+  information_locations: string;
+  review_status: ReviewStatus;
+};
+
+export type EvidenceInput = {
+  evidence_id: string;
+  evidence_type:
+    | "APPROVAL"
+    | "RCCM"
+    | "STATUTES"
+    | "FUND_REGULATION"
+    | "SERVICE_AGREEMENT"
+    | "POLICY"
+    | "OFFICIAL_REGISTER"
+    | "FINANCIAL_STATEMENT"
+    | "LEGAL_MEMO"
+    | "TAX_MEMO"
+    | "OTHER";
+  title: string;
+  reference: string;
+  issuer: string;
+  issue_date?: string;
+  file_reference: string;
+  verification_status: "PENDING" | "VERIFIED" | "REJECTED";
+};
+
+export type StructuredCollectionValue =
+  | ShareClassInput[]
+  | AssetClassRangeInput[]
+  | FeeInput[]
+  | ValuationMethodInput[]
+  | PartyInput[]
+  | RiskFactorInput[]
+  | CountryArrangementInput[]
+  | EvidenceInput[];
 
 export type ProspectusQuestion = {
   id: string;
@@ -123,7 +273,7 @@ export type ProjectAnswer = {
   updatedAt: string;
   updatedBy: string;
   source: "USER" | "PREFILLED" | "DERIVED";
-  reviewStatus: "UNREVIEWED" | "PENDING_REVIEW" | "CONFIRMED";
+  reviewStatus: ReviewStatus;
 };
 
 export type CoverageSummary = Record<CoverageStatus, number>;
