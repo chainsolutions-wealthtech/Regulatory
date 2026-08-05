@@ -9,7 +9,7 @@ Légende :
 - `[ ]` à faire ;
 - `[!]` bloqué, incertain ou nécessitant une validation.
 
-> **Entrée attendue du propriétaire :** un prompt complet doit encore être transmis pour créer et organiser l’ensemble des fichiers `.md`. Jusqu’à sa réception et son analyse, ne pas effectuer de refonte globale de la taxonomie documentaire et ne pas supprimer, fusionner ou renommer les documents existants.
+> **Mise à jour du 2026-08-05 :** le prompt complet et le kit d’organisation des fichiers Markdown ont été reçus, intégrés et contrôlés dans `LOOP-GOV-001`. Les documents historiques, identifiants et artefacts réglementaires ont été préservés. La prochaine action unique est définie dans `NEXT_ACTION.md`.
 
 ---
 
@@ -26,7 +26,12 @@ Légende :
 - [x] Créer `docs/ARCHITECTURE.md`.
 - [x] Créer `docs/PROSPECTUS_ENGINE_SPEC.md`.
 - [x] Créer `docs/REGULATORY_MAPPING.md`.
-- [~] Attendre, analyser puis intégrer le prompt complet d’organisation des fichiers `.md` annoncé par le propriétaire.
+- [x] Recevoir, analyser puis intégrer le prompt complet d’organisation des fichiers `.md` annoncé par le propriétaire.
+- [x] `TASK-GOV-001` — Intégrer le standard documentaire Loop Engineering sans régression.
+- [x] Créer `00_START_HERE.md`, `SOURCE_OF_TRUTH.md` et la hiérarchie canonique des documents.
+- [x] Créer les registres d’état, de boucle, de reprise, de journal et de prochaine action.
+- [x] Créer les sept ADR de gouvernance `ADR-0001` à `ADR-0007`.
+- [x] Vérifier la présence des `176` chemins Markdown du kit et la préservation des artefacts existants.
 - [ ] Définir les responsables métier, conformité, juridique, fiscal, technique et sécurité.
 - [ ] Définir le processus formel d’approbation des clauses.
 - [ ] Définir les environnements de développement, test, recette et production.
@@ -268,8 +273,8 @@ Légende :
 
 ## Priorité immédiate
 
-1. Recevoir et intégrer le prompt complet d’organisation des fichiers `.md`, sans régression ni suppression de l’historique documentaire.
-2. Obtenir et atomiser une copie vérifiable de l’Instruction n°66/CREPMF/2021.
-3. Compléter le modèle canonique champ par champ.
-4. Transformer la matrice de la Circulaire 05/2022 en catalogues exécutables de questions, options, règles et groupes de clauses.
-5. Construire le premier cas de test FCP obligataire standard.
+1. Obtenir une copie officielle, vérifiable et exploitable de l’Instruction n°66/CREPMF/2021, confirmer sa version et son état juridique, puis l’atomiser dans une nouvelle boucle documentée.
+2. Compléter le modèle canonique champ par champ.
+3. Transformer la matrice de la Circulaire 05/2022 en catalogues exécutables de questions, options, règles et groupes de clauses.
+4. Construire le premier cas de test FCP obligataire standard.
+5. Définir les rôles de validation et le processus formel d’approbation des clauses.
