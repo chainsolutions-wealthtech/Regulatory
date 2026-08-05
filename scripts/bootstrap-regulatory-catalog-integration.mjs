@@ -55,6 +55,17 @@ execFileSync("tar", ["-xzf", archivePath, "-C", repoRoot], {
   stdio: "inherit",
 });
 
+const docsUpdaterPath = path.join(
+  repoRoot,
+  "scripts",
+  "update-regulatory-catalog-docs.mjs",
+);
+const normalizedDocsUpdater = readFileSync(docsUpdaterPath, "utf8")
+  .split("\n")
+  .map((line) => line.replace(/[\t ]+$/u, ""))
+  .join("\n");
+writeFileSync(docsUpdaterPath, normalizedDocsUpdater, "utf8");
+
 unlinkSync(archivePath);
 rmSync(chunksDir, { recursive: true, force: true });
 rmSync(legacyPartsDir, { recursive: true, force: true });
@@ -67,6 +78,7 @@ console.log(
       chunks: chunkNames.length,
       base64Length: payload.length,
       archiveSha256: digest,
+      normalizedFiles: ["scripts/update-regulatory-catalog-docs.mjs"],
     },
     null,
     2,
