@@ -600,3 +600,21 @@ Transformer chaque projet créé dans l’interface en livrables documentaires t
 
 Certains types de questions réglementaires utilisent encore une saisie générique et les chemins contenant `[]` sont conservés dans une zone répétable provisoire. L’Instruction n°66/2021 n’est pas entièrement atomisée. Aucun livrable n’est déclaré conforme, approuvé ou prêt pour soumission.
 <!-- AUTO:LOOP-DEV-001-REGULATORY-CATALOG:END -->
+
+<!-- AUTO:LOOP-DEV-001-STRUCTURED-SHARE-CLASSES:START -->
+## 2026-08-05 — Première collection canonique éditable
+
+La gestion des classes de parts est désormais complète de l’interface au document généré. La question CIRC005 conserve son identifiant et sa traçabilité, mais son composant d’interface est maintenant adapté à la structure réelle des données.
+
+- composant dédié : `SHARE_CLASS_COLLECTION` ;
+- question canonique conservée : `Q_SHARE_CLASSES_COUNT` ;
+- exigence conservée : `CIRC005_1_10_FCP_PARTS_CHARACTERISTICS` ;
+- validation ligne par ligne et unicité des identifiants : `PASS` ;
+- migration non destructive des anciennes valeurs booléennes : `IMPLEMENTED` ;
+- écriture directe dans `canonicalData.share_classes[]` : `PASS` ;
+- stockage provisoire dans `_repeating.share_classes` : `REMOVED` ;
+- génération par le compositeur historique et DOCX déterministe : `PASS` ;
+- `ready_for_submission` : `false`.
+
+Aucune conclusion de conformité ou de préparation à la soumission n’en découle.
+<!-- AUTO:LOOP-DEV-001-STRUCTURED-SHARE-CLASSES:END -->

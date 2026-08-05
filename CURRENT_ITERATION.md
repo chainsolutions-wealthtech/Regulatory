@@ -157,3 +157,19 @@ La première tranche applicative est implémentée : création de projet, questi
 
 Le même snapshot produit le même identifiant de génération et le même document. La traçabilité relie les réponses web, leurs champs canoniques, les exigences CIRC005, les composants du modèle documentaire et les fichiers générés. `ready_for_submission` reste forcé à `false` dans le snapshot, le manifeste de génération, le manifeste DOCX et l’API.
 <!-- AUTO:LOOP-DEV-001-REGULATORY-CATALOG:END -->
+
+<!-- AUTO:LOOP-DEV-001-STRUCTURED-SHARE-CLASSES:START -->
+## Résultat — Éditeur structuré des classes de parts
+
+- composant dédié : `SHARE_CLASS_COLLECTION` ;
+- question canonique conservée : `Q_SHARE_CLASSES_COUNT` ;
+- exigence conservée : `CIRC005_1_10_FCP_PARTS_CHARACTERISTICS` ;
+- validation ligne par ligne et unicité des identifiants : `PASS` ;
+- migration non destructive des anciennes valeurs booléennes : `IMPLEMENTED` ;
+- écriture directe dans `canonicalData.share_classes[]` : `PASS` ;
+- stockage provisoire dans `_repeating.share_classes` : `REMOVED` ;
+- génération par le compositeur historique et DOCX déterministe : `PASS` ;
+- `ready_for_submission` : `false`.
+
+Les anciennes réponses `false` et `true` restent lisibles et sont transformées respectivement en une ou deux classes par défaut lors de la construction du snapshot. Une nouvelle réponse enregistrée est obligatoirement une collection validée.
+<!-- AUTO:LOOP-DEV-001-STRUCTURED-SHARE-CLASSES:END -->

@@ -152,3 +152,19 @@ L’application est explicitement locale. Aucune authentification fictive n’es
 
 L’API `POST /api/projects/{projectId}/generate` produit désormais le véritable modèle documentaire historique au lieu d’un aperçu constitué par concaténation des réponses.
 <!-- AUTO:LOOP-DEV-001-REGULATORY-CATALOG:END -->
+
+<!-- AUTO:LOOP-DEV-001-STRUCTURED-SHARE-CLASSES:START -->
+## [Unreleased] — Collections structurées V0.1 — 2026-08-05
+
+### Added
+
+- type de question `SHARE_CLASS_COLLECTION` ;
+- éditeur Atomic Design pour une à vingt classes de parts ;
+- validation serveur des lignes et identifiants ;
+- migration des anciennes réponses booléennes ;
+- test d’intégration vérifiant `share_classes[]` et l’absence de repli dans `_repeating`.
+
+### Changed
+
+La question `Q_SHARE_CLASSES_COUNT` produit désormais la collection canonique détaillée des classes au lieu d’une simple indication oui/non.
+<!-- AUTO:LOOP-DEV-001-STRUCTURED-SHARE-CLASSES:END -->

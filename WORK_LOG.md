@@ -205,3 +205,26 @@ Aucun déploiement, aucune nouvelle branche, aucun force-push et aucune activati
 - DOCX déterministe validé : `true` ;
 - soumission automatique : `false`.
 <!-- AUTO:LOOP-DEV-001-REGULATORY-CATALOG:END -->
+
+<!-- AUTO:LOOP-DEV-001-STRUCTURED-SHARE-CLASSES:START -->
+## 2026-08-05 — Donnée répétable structurée : classes de parts
+
+1. Ajout du type `SHARE_CLASS_COLLECTION`.
+2. Ajout de l’organisme `ShareClassCollectionField` et de ses styles isolés.
+3. Ajout des types canoniques des classes de parts.
+4. Ajout de la normalisation des valeurs historiques booléennes.
+5. Ajout des contrôles : nombre de lignes, identifiant stable et unique, devise, politique de revenus, VL d’origine, minimum de souscription et décimalisation.
+6. Rejet API des lignes invalides.
+7. Écriture directe dans `share_classes[]`.
+8. Test HTTP de bout en bout jusqu’au DOCX.
+
+- composant dédié : `SHARE_CLASS_COLLECTION` ;
+- question canonique conservée : `Q_SHARE_CLASSES_COUNT` ;
+- exigence conservée : `CIRC005_1_10_FCP_PARTS_CHARACTERISTICS` ;
+- validation ligne par ligne et unicité des identifiants : `PASS` ;
+- migration non destructive des anciennes valeurs booléennes : `IMPLEMENTED` ;
+- écriture directe dans `canonicalData.share_classes[]` : `PASS` ;
+- stockage provisoire dans `_repeating.share_classes` : `REMOVED` ;
+- génération par le compositeur historique et DOCX déterministe : `PASS` ;
+- `ready_for_submission` : `false`.
+<!-- AUTO:LOOP-DEV-001-STRUCTURED-SHARE-CLASSES:END -->

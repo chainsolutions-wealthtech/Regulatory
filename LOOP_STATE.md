@@ -126,3 +126,24 @@ La boucle réglementaire sera reprise après la tranche de couverture standard o
 - prochaine tranche : composants structurés pour les données répétables ;
 - production et soumission : `FORBIDDEN`.
 <!-- AUTO:LOOP-DEV-001-REGULATORY-CATALOG:END -->
+
+<!-- AUTO:LOOP-DEV-001-STRUCTURED-SHARE-CLASSES:START -->
+## LOOP-DEV-001 — Collections répétables
+
+- classes de parts : `IMPLEMENTED_AND_VALIDATED` ;
+- fourchettes d’allocation : `NEXT` ;
+- commissions et frais : `PENDING` ;
+- méthodes de valorisation : `PENDING` ;
+- gouvernance et intervenants : `PENDING` ;
+- documents et listes diverses : `PENDING`.
+
+- composant dédié : `SHARE_CLASS_COLLECTION` ;
+- question canonique conservée : `Q_SHARE_CLASSES_COUNT` ;
+- exigence conservée : `CIRC005_1_10_FCP_PARTS_CHARACTERISTICS` ;
+- validation ligne par ligne et unicité des identifiants : `PASS` ;
+- migration non destructive des anciennes valeurs booléennes : `IMPLEMENTED` ;
+- écriture directe dans `canonicalData.share_classes[]` : `PASS` ;
+- stockage provisoire dans `_repeating.share_classes` : `REMOVED` ;
+- génération par le compositeur historique et DOCX déterministe : `PASS` ;
+- `ready_for_submission` : `false`.
+<!-- AUTO:LOOP-DEV-001-STRUCTURED-SHARE-CLASSES:END -->

@@ -560,3 +560,13 @@ Le flux exécutable est désormais :
 
 L’adaptateur se situe dans la couche `src/adapters`. Le compositeur historique reste responsable des clauses, sections, règles, contrôles et concordances. Next.js orchestre la création du snapshot et la persistance des artefacts, sans devenir une seconde implémentation des règles réglementaires.
 <!-- AUTO:LOOP-DEV-001-REGULATORY-CATALOG:END -->
+
+<!-- AUTO:LOOP-DEV-001-STRUCTURED-SHARE-CLASSES:START -->
+## Pattern des collections structurées
+
+La première implémentation de référence est `share_classes[]` :
+
+`Question CIRC005 → composant structuré → validation serveur → réponse versionnée → collection canonique → compositeur historique → DOCX`.
+
+Le même pattern doit être réutilisé pour les fourchettes d’allocation, frais, méthodes de valorisation et intervenants. Les identifiants CIRC005 ne changent pas ; seul le composant de saisie devient plus précis.
+<!-- AUTO:LOOP-DEV-001-STRUCTURED-SHARE-CLASSES:END -->

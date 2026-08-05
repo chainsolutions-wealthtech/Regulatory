@@ -369,3 +369,19 @@ Légende :
 - [ ] Reprendre l’atomisation de l’Instruction n°66/2021.
 - [ ] Ajouter PostgreSQL, authentification, RBAC et séparation tenant avant tout déploiement.
 <!-- AUTO:LOOP-DEV-001-REGULATORY-CATALOG:END -->
+
+<!-- AUTO:LOOP-DEV-001-STRUCTURED-SHARE-CLASSES:START -->
+## Collections structurées — état détaillé
+
+- [x] Créer le type `SHARE_CLASS_COLLECTION`.
+- [x] Créer l’éditeur réutilisable des classes de parts.
+- [x] Valider chaque classe avant persistance.
+- [x] Garantir des identifiants de classe stables et uniques.
+- [x] Migrer les anciennes réponses booléennes sans perte.
+- [x] Alimenter directement `share_classes[]`.
+- [x] Tester le flux questionnaire → snapshot → compositeur → DOCX.
+- [ ] Structurer les fourchettes d’allocation par classe d’actifs.
+- [ ] Structurer les commissions et frais.
+- [ ] Structurer les méthodes de valorisation.
+- [ ] Structurer les intervenants et la gouvernance.
+<!-- AUTO:LOOP-DEV-001-STRUCTURED-SHARE-CLASSES:END -->

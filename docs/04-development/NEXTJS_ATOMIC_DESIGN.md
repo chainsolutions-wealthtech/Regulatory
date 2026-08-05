@@ -140,3 +140,21 @@ Le parcours Atomic Design n’aboutit plus à un simple aperçu. L’action de g
 
 La prochaine évolution doit remplacer les champs génériques représentant des tableaux et collections par des organismes dédiés : classes de parts, fourchettes d’actifs, frais, méthodes de valorisation, intervenants et autres listes répétables.
 <!-- AUTO:LOOP-DEV-001-REGULATORY-CATALOG:END -->
+
+<!-- AUTO:LOOP-DEV-001-STRUCTURED-SHARE-CLASSES:START -->
+## 11. Organisme répétable de référence : classes de parts
+
+`ShareClassCollectionField` gère l’ajout, la suppression et la validation de lignes contenant : identifiant, devise, politique de revenus, VL d’origine, minimum initial de souscription et règle de décimalisation.
+
+- composant dédié : `SHARE_CLASS_COLLECTION` ;
+- question canonique conservée : `Q_SHARE_CLASSES_COUNT` ;
+- exigence conservée : `CIRC005_1_10_FCP_PARTS_CHARACTERISTICS` ;
+- validation ligne par ligne et unicité des identifiants : `PASS` ;
+- migration non destructive des anciennes valeurs booléennes : `IMPLEMENTED` ;
+- écriture directe dans `canonicalData.share_classes[]` : `PASS` ;
+- stockage provisoire dans `_repeating.share_classes` : `REMOVED` ;
+- génération par le compositeur historique et DOCX déterministe : `PASS` ;
+- `ready_for_submission` : `false`.
+
+Ce composant constitue la référence pour les prochains tableaux éditables.
+<!-- AUTO:LOOP-DEV-001-STRUCTURED-SHARE-CLASSES:END -->

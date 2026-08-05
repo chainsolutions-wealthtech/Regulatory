@@ -142,3 +142,19 @@ La prochaine étape porte sur la connexion exhaustive du catalogue web au moteur
 
 Le blocage « snapshot canonique non consommé par le moteur historique » est levé. La génération reste locale, pré-conformité et non déployée. Les champs répétables encore stockés sous une représentation provisoire doivent maintenant être remplacés par des composants structurés dédiés.
 <!-- AUTO:LOOP-DEV-001-REGULATORY-CATALOG:END -->
+
+<!-- AUTO:LOOP-DEV-001-STRUCTURED-SHARE-CLASSES:START -->
+## Tranche structurée 1 — Classes de parts
+
+- composant dédié : `SHARE_CLASS_COLLECTION` ;
+- question canonique conservée : `Q_SHARE_CLASSES_COUNT` ;
+- exigence conservée : `CIRC005_1_10_FCP_PARTS_CHARACTERISTICS` ;
+- validation ligne par ligne et unicité des identifiants : `PASS` ;
+- migration non destructive des anciennes valeurs booléennes : `IMPLEMENTED` ;
+- écriture directe dans `canonicalData.share_classes[]` : `PASS` ;
+- stockage provisoire dans `_repeating.share_classes` : `REMOVED` ;
+- génération par le compositeur historique et DOCX déterministe : `PASS` ;
+- `ready_for_submission` : `false`.
+
+La première donnée répétable du questionnaire n’est plus saisie sous forme de booléen ou de texte générique. Elle dispose d’un éditeur Atomic Design, d’une validation serveur et d’une collection canonique directement consommable par le compositeur.
+<!-- AUTO:LOOP-DEV-001-STRUCTURED-SHARE-CLASSES:END -->

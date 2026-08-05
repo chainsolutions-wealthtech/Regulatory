@@ -32,3 +32,11 @@ La persistance JSON est locale et réservée au prototype. Elle ne constitue ni 
 
 Les artefacts sont enregistrés sous `.local-data/projects/{projectId}/generations/{generationId}/`. Cette persistance est locale et ne constitue pas une architecture de production.
 <!-- AUTO:LOOP-DEV-001-REGULATORY-CATALOG:END -->
+
+<!-- AUTO:LOOP-DEV-001-STRUCTURED-SHARE-CLASSES:START -->
+## Classes de parts structurées
+
+La question `Q_SHARE_CLASSES_COUNT` utilise maintenant un éditeur de collection. L’API rejette les identifiants dupliqués et les lignes incomplètes, migre les anciennes valeurs booléennes et écrit les données validées dans `canonicalData.share_classes[]`.
+
+Le comportement est couvert par le test HTTP du flux de génération complet.
+<!-- AUTO:LOOP-DEV-001-STRUCTURED-SHARE-CLASSES:END -->
