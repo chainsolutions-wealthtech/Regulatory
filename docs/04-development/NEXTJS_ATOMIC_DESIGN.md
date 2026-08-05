@@ -119,3 +119,21 @@ Aucune authentification fictive n’est présentée comme sécurisée. Les endpo
 6. construire le workflow de revue ;
 7. brancher l’export DOCX déterministe sur les projets créés depuis l’interface ;
 8. effectuer la revue visuelle navigateur desktop et mobile.
+
+<!-- AUTO:LOOP-DEV-001-REGULATORY-CATALOG:START -->
+## 9. Catalogue réglementaire généré
+
+Les composants Atomic Design ne dépendent plus d’un tableau réglementaire écrit manuellement en TypeScript. Le catalogue est généré avant le développement, le typecheck et le build depuis les quatre matrices CIRC005 et le registre YAML.
+
+- exigences chargées depuis les matrices : `62` ;
+- questions réglementaires interactives : `58` ;
+- questions système : `4` ;
+- groupes réglementaires générés : `16` ;
+- identifiants d’exigence uniques : `62` ;
+- identifiants de question uniques : `62` ;
+- empreinte du catalogue : `c1f288bcc865becee580e52049ea4757ecd7e1fc97fcccd3f4b61aba3089ea1b` ;
+- test d’intégration API : `PASS` ;
+- soumission automatique : `false`.
+
+Les objets de présentation conservent les identifiants, champs canoniques, effets, contrôles, preuves, rôles, sections et références sources. Les composants spécialisés encore absents utilisent une saisie provisoire explicitement signalée.
+<!-- AUTO:LOOP-DEV-001-REGULATORY-CATALOG:END -->

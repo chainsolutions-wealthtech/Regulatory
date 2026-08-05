@@ -177,3 +177,27 @@ Aucune mention de conformité finale, d’agrément ou d’approbation n’a ét
 
 Aucun déploiement, aucune nouvelle branche, aucun force-push et aucune activation de clause juridique n’ont été réalisés.
 <!-- AUTO:LOOP-DEV-001-NEXTJS-ATOMIC-DESIGN:END -->
+
+<!-- AUTO:LOOP-DEV-001-REGULATORY-CATALOG:START -->
+## 2026-08-05 — LOOP-DEV-001 — Connexion Next.js aux matrices CIRC005
+
+1. Lecture des quatre matrices et du registre YAML.
+2. Création d’un générateur déterministe et d’un rapport de validation.
+3. Remplacement du catalogue réglementaire manuel par un adaptateur généré.
+4. Isolation des questions `APP_*` non réglementaires.
+5. Ajout de la migration non destructive des anciennes réponses.
+6. Ajout du snapshot canonique versionné à chaque génération.
+7. Ajout de l’endpoint `GET /api/regulatory/catalog`.
+8. Ajout de tests HTTP réels sur le serveur Next.js construit.
+9. Maintien explicite de `readyForSubmission: false`.
+
+- exigences chargées depuis les matrices : `62` ;
+- questions réglementaires interactives : `58` ;
+- questions système : `4` ;
+- groupes réglementaires générés : `16` ;
+- identifiants d’exigence uniques : `62` ;
+- identifiants de question uniques : `62` ;
+- empreinte du catalogue : `c1f288bcc865becee580e52049ea4757ecd7e1fc97fcccd3f4b61aba3089ea1b` ;
+- test d’intégration API : `PASS` ;
+- soumission automatique : `false`.
+<!-- AUTO:LOOP-DEV-001-REGULATORY-CATALOG:END -->

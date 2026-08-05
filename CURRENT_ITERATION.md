@@ -138,3 +138,19 @@ La première tranche applicative est implémentée : création de projet, questi
 - export DOCX générique ;
 - validation juridique, conformité et fiscale.
 <!-- AUTO:LOOP-DEV-001-NEXTJS-ATOMIC-DESIGN:END -->
+
+<!-- AUTO:LOOP-DEV-001-REGULATORY-CATALOG:START -->
+## Résultat de l’itération catalogue réglementaire
+
+- exigences chargées depuis les matrices : `62` ;
+- questions réglementaires interactives : `58` ;
+- questions système : `4` ;
+- groupes réglementaires générés : `16` ;
+- identifiants d’exigence uniques : `62` ;
+- identifiants de question uniques : `62` ;
+- empreinte du catalogue : `c1f288bcc865becee580e52049ea4757ecd7e1fc97fcccd3f4b61aba3089ea1b` ;
+- test d’intégration API : `PASS` ;
+- soumission automatique : `false`.
+
+Les composants Atomic Design continuent de consommer des objets `ProspectusQuestion`, mais ces objets sont maintenant construits depuis les matrices canoniques. Les anciennes réponses sont migrées lorsqu’un alias sûr existe et conservées, sans suppression silencieuse, lorsqu’elles nécessitent une reprise humaine.
+<!-- AUTO:LOOP-DEV-001-REGULATORY-CATALOG:END -->

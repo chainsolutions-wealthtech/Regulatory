@@ -550,3 +550,13 @@ Les choix suivants restent ouverts et doivent faire l’objet de décisions docu
 - infrastructure d’hébergement.
 
 Aucun choix ne doit être figé uniquement parce qu’il est populaire. Il doit être évalué par rapport à la traçabilité, au déterminisme, à la maintenance et à la sécurité.
+
+<!-- AUTO:LOOP-DEV-001-REGULATORY-CATALOG:START -->
+## Adaptateur réglementaire de l’application Next.js
+
+Le flux exécutable est désormais :
+
+`matrices CSV + registre YAML → catalogue JSON généré → adaptateur TypeScript → questionnaire/API → snapshot canonique → moteur documentaire`.
+
+Le catalogue JSON est un artefact de build non éditable. Les matrices et le registre restent les sources de vérité. Les questions applicatives sans exigence directe sont isolées et ne portent aucun identifiant CIRC005.
+<!-- AUTO:LOOP-DEV-001-REGULATORY-CATALOG:END -->

@@ -818,3 +818,11 @@ Un cas FCP standard est accepté lorsque :
 - le snapshot est reproductible ;
 - les validations humaines requises sont enregistrées ;
 - le document n’est pas présenté comme approuvé avant décision du régulateur.
+
+<!-- AUTO:LOOP-DEV-001-REGULATORY-CATALOG:START -->
+## Entrée web canonique du moteur documentaire
+
+Chaque génération depuis l’application produit un `canonical-snapshot.json` contenant l’empreinte du catalogue, les chemins canoniques, les réponses, les exigences, les statuts de revue, les contrôles et les éléments historiques non mappés.
+
+Ce snapshot devient le contrat d’entrée de la prochaine tranche du compositeur. Il ne peut jamais porter `readyForSubmission: true` sans workflow humain distinct.
+<!-- AUTO:LOOP-DEV-001-REGULATORY-CATALOG:END -->

@@ -1,0 +1,48 @@
+{
+  "validationId": "CIRC005_WEB_CATALOG_VALIDATION_V1",
+  "status": "PASS",
+  "catalogDigest": "c1f288bcc865becee580e52049ea4757ecd7e1fc97fcccd3f4b61aba3089ea1b",
+  "requirementCount": 62,
+  "uniqueRequirementIdCount": 62,
+  "uniqueQuestionIdCount": 62,
+  "interactiveQuestionCount": 58,
+  "systemQuestionCount": 4,
+  "groupCount": 16,
+  "matrixFiles": [
+    {
+      "path": "regulatory/matrices/CIRC005_FCP_MATRIX_01_GENERAL_IDENTITY_TAX.csv",
+      "sha256": "09fa27c8f650aa7fddcccba3709d6f2b961d9f91273119e25e5a0415f364ef9e",
+      "rowCount": 15
+    },
+    {
+      "path": "regulatory/matrices/CIRC005_FCP_MATRIX_02_PARTS_OPERATIONS.csv",
+      "sha256": "950dc9aa32c3a4356cf57e16769673ea243085d00363351f48da88f2aec4df95",
+      "rowCount": 13
+    },
+    {
+      "path": "regulatory/matrices/CIRC005_FCP_MATRIX_03_INVESTMENT_PRICING.csv",
+      "sha256": "672a67596db78c8bbbb7fd5d82a689778b3b7f7ada46cc009a7441bf1a6a6f86",
+      "rowCount": 15
+    },
+    {
+      "path": "regulatory/matrices/CIRC005_FCP_MATRIX_04_ACTORS_COUNTRY_OTHER.csv",
+      "sha256": "74ba75536a2a25d3c764762d4bf29cfca03c333dc648c223ecc0bdd77d51bd61",
+      "rowCount": 19
+    }
+  ],
+  "registryFile": {
+    "path": "regulatory/requirements/CIRC005_FCP_REQUIREMENTS_V0_1.yaml",
+    "sha256": "aeeb5401bbb114780e30ee98f213d505be180829eaa010a5b99707400aea495a",
+    "requirementCount": 62
+  },
+  "invariants": {
+    "matrixAndRegistrySetsEqual": true,
+    "requirementCountIs62": true,
+    "noDuplicateRequirementIds": true,
+    "noDuplicateQuestionIds": true,
+    "everyRequirementHasCanonicalFields": true,
+    "everyRequirementHasReviewRoles": true,
+    "everyRequirementHasSourceReference": true
+  },
+  "caveat": "La transformation est structurelle et déterministe. Elle ne constitue ni une validation juridique, ni une approbation réglementaire."
+}

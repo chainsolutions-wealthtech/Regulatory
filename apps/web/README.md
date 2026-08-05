@@ -24,3 +24,11 @@ npm run build
 ## Limite
 
 La persistance JSON est locale et réservée au prototype. Elle ne constitue ni une base de production, ni un mécanisme sécurisé de multi-tenant, ni un dispositif de soumission réglementaire.
+
+<!-- AUTO:LOOP-DEV-001-REGULATORY-CATALOG:START -->
+## Catalogue réglementaire
+
+Avant `dev`, `typecheck` et `build`, l’application exécute `scripts/generate-web-regulatory-catalog.mjs`. Le fichier généré sous `src/generated` ne doit jamais être modifié à la main.
+
+L’API `GET /api/regulatory/catalog` expose les métadonnées et les 62 exigences. Chaque génération de projet écrit aussi un snapshot canonique versionné.
+<!-- AUTO:LOOP-DEV-001-REGULATORY-CATALOG:END -->

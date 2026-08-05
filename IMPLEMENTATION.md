@@ -121,3 +121,21 @@ La commande `npm run validate:docx` vérifie les parties OOXML obligatoires, la 
 - statut : `DRAFT_PRE_COMPLIANCE_REVIEW` ;
 - prêt pour soumission : `false`.
 <!-- AUTO:LOOP-DEV-001-DOCX:END -->
+
+<!-- AUTO:LOOP-DEV-001-REGULATORY-CATALOG:START -->
+## Adaptateur matrices CIRC005 → application web V0.1
+
+La génération du catalogue précède `dev`, `typecheck` et `build`. Elle contrôle l’égalité exacte entre les 62 identifiants des matrices CSV et ceux du registre YAML, l’unicité des identifiants et la présence des champs canoniques, rôles et références sources.
+
+- exigences chargées depuis les matrices : `62` ;
+- questions réglementaires interactives : `58` ;
+- questions système : `4` ;
+- groupes réglementaires générés : `16` ;
+- identifiants d’exigence uniques : `62` ;
+- identifiants de question uniques : `62` ;
+- empreinte du catalogue : `c1f288bcc865becee580e52049ea4757ecd7e1fc97fcccd3f4b61aba3089ea1b` ;
+- test d’intégration API : `PASS` ;
+- soumission automatique : `false`.
+
+À chaque génération utilisateur, l’application écrit désormais un `canonical-snapshot.json` versionné contenant les réponses structurées, les chemins canoniques, les exigences, les statuts de revue, les réponses historiques non mappées et l’empreinte du catalogue.
+<!-- AUTO:LOOP-DEV-001-REGULATORY-CATALOG:END -->

@@ -1,0 +1,21 @@
+{
+  "validationId": "CIRC005_WEB_API_INTEGRATION_VALIDATION_V1",
+  "status": "PASS",
+  "catalogDigest": "c1f288bcc865becee580e52049ea4757ecd7e1fc97fcccd3f4b61aba3089ea1b",
+  "requirementCount": 62,
+  "interactiveRegulatoryQuestionCount": 58,
+  "exposedGroupCount": 18,
+  "checks": {
+    "catalogEndpoint": true,
+    "uniqueRequirementIds": true,
+    "projectCreation": true,
+    "canonicalQuestionAccepted": true,
+    "unknownQuestionRejected": true,
+    "conditionalAnswerInvalidation": true,
+    "canonicalSnapshotGenerated": true,
+    "canonicalFieldPopulated": true,
+    "generationArtifactPathRecorded": true,
+    "readyForSubmissionRemainsFalse": true
+  },
+  "caveat": "Test d’intégration d’un prototype local. Il ne constitue ni un test de sécurité de production, ni une validation juridique ou réglementaire."
+}

@@ -573,3 +573,27 @@ Transformer le modèle documentaire traçable en fichier DOCX de pré-conformit�
 
 La persistance n’est pas transactionnelle, l’authentification et le RBAC ne sont pas présents, et le catalogue de questions TypeScript est encore un adaptateur provisoire. L’application reste un prototype local de pré-conformité.
 <!-- AUTO:LOOP-DEV-001-NEXTJS-ATOMIC-DESIGN:END -->
+
+<!-- AUTO:LOOP-DEV-001-REGULATORY-CATALOG:START -->
+## 2026-08-05 — Catalogue CIRC005 généré pour l’application Next.js
+
+### Objectif
+
+Supprimer la duplication réglementaire entre les matrices du dépôt et le catalogue TypeScript provisoire de l’application.
+
+### Résultat
+
+- exigences chargées depuis les matrices : `62` ;
+- questions réglementaires interactives : `58` ;
+- questions système : `4` ;
+- groupes réglementaires générés : `16` ;
+- identifiants d’exigence uniques : `62` ;
+- identifiants de question uniques : `62` ;
+- empreinte du catalogue : `c1f288bcc865becee580e52049ea4757ecd7e1fc97fcccd3f4b61aba3089ea1b` ;
+- test d’intégration API : `PASS` ;
+- soumission automatique : `false`.
+
+### Limites
+
+Les composants structurés spécialisés restent provisoires pour certains types de questions. L’Instruction 66 n’est pas complètement atomisée. Le snapshot canonique doit encore être branché au compositeur historique pour générer les livrables DOCX de tous les projets.
+<!-- AUTO:LOOP-DEV-001-REGULATORY-CATALOG:END -->

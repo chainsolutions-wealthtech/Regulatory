@@ -151,3 +151,29 @@ Le rendu PDF/PNG est un outil de contrôle, non le moteur PDF final.
 
 Ne pas déployer ou présenter l’application comme sécurisée avant la base transactionnelle, l’authentification, le RBAC, la séparation tenant, les tests d’intégration et la revue sécurité.
 <!-- AUTO:LOOP-DEV-001-NEXTJS-ATOMIC-DESIGN:END -->
+
+<!-- AUTO:LOOP-DEV-001-REGULATORY-CATALOG:START -->
+## Transmission — catalogue réglementaire web V0.1
+
+- exigences chargées depuis les matrices : `62` ;
+- questions réglementaires interactives : `58` ;
+- questions système : `4` ;
+- groupes réglementaires générés : `16` ;
+- identifiants d’exigence uniques : `62` ;
+- identifiants de question uniques : `62` ;
+- empreinte du catalogue : `c1f288bcc865becee580e52049ea4757ecd7e1fc97fcccd3f4b61aba3089ea1b` ;
+- test d’intégration API : `PASS` ;
+- soumission automatique : `false`.
+
+Fichiers prioritaires :
+
+- `scripts/generate-web-regulatory-catalog.mjs` ;
+- `apps/web/src/domain/regulatory-catalog.ts` ;
+- `apps/web/src/domain/application-questions.ts` ;
+- `apps/web/src/server/canonical-snapshot.ts` ;
+- `scripts/test-web-api.mjs` ;
+- `regulatory/validation/CIRC005_WEB_CATALOG_VALIDATION.json` ;
+- `regulatory/validation/CIRC005_WEB_API_INTEGRATION_VALIDATION.json`.
+
+Ne jamais réintroduire une liste réglementaire manuelle dans React ou dans un autre catalogue parallèle.
+<!-- AUTO:LOOP-DEV-001-REGULATORY-CATALOG:END -->

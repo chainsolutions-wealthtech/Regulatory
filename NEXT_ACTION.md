@@ -1,24 +1,24 @@
 # NEXT_ACTION — Action unique immédiatement exécutable
 
-> **Statut :** `READY`  
+> **Statut :** `READY`
 > **Boucle :** `LOOP-DEV-001`
 
 ## Action
 
-Connecter l’application Next.js au catalogue réglementaire exécutable du dépôt afin que les groupes, questions, conditions, champs, exigences et statuts de couverture soient générés depuis les matrices et registres canoniques plutôt que maintenus dans un catalogue TypeScript provisoire.
+Faire consommer le `canonical-snapshot.json` de chaque projet Next.js par le compositeur documentaire historique afin de produire, pour tout projet web, le modèle documentaire, le prospectus Markdown, la table de concordance, le rapport de contrôles et le DOCX déterministe.
 
 ## Résultat attendu
 
-- adaptateur matrice → catalogue web ;
-- aucun identifiant CIRC005 dupliqué ;
-- questions regroupées et ordonnées depuis les données canoniques ;
-- conditions et effets testés ;
-- invalidation des réponses devenues inapplicables ;
-- tests d’intégration API ;
-- génération d’un snapshot exploitable par le moteur DOCX ;
-- documentation mise à jour ;
+- contrat d’adaptation snapshot web → données du compositeur ;
+- aucune logique propre au seul cas United Capital Diamond ;
+- génération déterministe pour un même snapshot ;
+- traçabilité question → champ → exigence → composant → document ;
+- conservation des `PENDING_REVIEW` et des réponses historiques non mappées ;
+- sorties versionnées dans le dossier de génération du projet ;
+- tests de non-régression et d’intégration ;
+- documentation et preuves mises à jour ;
 - `ready_for_submission = false` maintenu.
 
 ## Condition d’arrêt
 
-L’application reste locale et non déployée. Ne pas ajouter d’authentification fictive, ne pas utiliser la persistance JSON comme base de production et ne pas déclarer le prospectus conforme ou prêt pour soumission.
+Ne pas déployer, ne pas créer d’authentification fictive et ne pas présenter les livrables comme conformes, visés, approuvés ou prêts pour soumission.

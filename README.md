@@ -513,3 +513,21 @@ L’architecture suit Atomic Design :
 
 La documentation détaillée se trouve dans `docs/04-development/NEXTJS_ATOMIC_DESIGN.md`. La persistance JSON est locale et réservée au prototype. Aucune authentification, aucun multi-tenant, aucun déploiement et aucune soumission réglementaire ne sont activés.
 <!-- AUTO:LOOP-DEV-001-NEXTJS-ATOMIC-DESIGN:END -->
+
+<!-- AUTO:LOOP-DEV-001-REGULATORY-CATALOG:START -->
+## 19. Catalogue réglementaire exécutable dans Next.js — 2026-08-05
+
+L’application Next.js ne maintient plus une copie manuelle des questions réglementaires. Le script `scripts/generate-web-regulatory-catalog.mjs` transforme les quatre matrices CIRC005 et le registre YAML en catalogue JSON déterministe consommé par l’interface, l’API et le snapshot canonique.
+
+- exigences chargées depuis les matrices : `62` ;
+- questions réglementaires interactives : `58` ;
+- questions système : `4` ;
+- groupes réglementaires générés : `16` ;
+- identifiants d’exigence uniques : `62` ;
+- identifiants de question uniques : `62` ;
+- empreinte du catalogue : `c1f288bcc865becee580e52049ea4757ecd7e1fc97fcccd3f4b61aba3089ea1b` ;
+- test d’intégration API : `PASS` ;
+- soumission automatique : `false`.
+
+Les questions purement applicatives sont isolées sous des identifiants `APP_*`. Les questions encore dépendantes de l’Instruction 66 sont explicitement marquées `PENDING_REGULATORY_MAPPING` et ne sont jamais présentées comme exigences CIRC005 validées.
+<!-- AUTO:LOOP-DEV-001-REGULATORY-CATALOG:END -->

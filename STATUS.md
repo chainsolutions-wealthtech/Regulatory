@@ -123,3 +123,19 @@ Le DOCX reste un document de pré-conformité. Les exigences `PENDING_REVIEW` et
 
 La prochaine étape porte sur la connexion exhaustive du catalogue web au moteur réglementaire, la généralisation de la génération DOCX et les tests d’intégration.
 <!-- AUTO:LOOP-DEV-001-NEXTJS-ATOMIC-DESIGN:END -->
+
+<!-- AUTO:LOOP-DEV-001-REGULATORY-CATALOG:START -->
+## Mise à jour LOOP-DEV-001 — Catalogue réglementaire web
+
+- exigences chargées depuis les matrices : `62` ;
+- questions réglementaires interactives : `58` ;
+- questions système : `4` ;
+- groupes réglementaires générés : `16` ;
+- identifiants d’exigence uniques : `62` ;
+- identifiants de question uniques : `62` ;
+- empreinte du catalogue : `c1f288bcc865becee580e52049ea4757ecd7e1fc97fcccd3f4b61aba3089ea1b` ;
+- test d’intégration API : `PASS` ;
+- soumission automatique : `false`.
+
+Le catalogue TypeScript réglementaire manuel est remplacé par un adaptateur généré. La persistance reste locale et le snapshot canonique n’est pas encore consommé par le moteur documentaire historique pour produire un DOCX générique.
+<!-- AUTO:LOOP-DEV-001-REGULATORY-CATALOG:END -->
