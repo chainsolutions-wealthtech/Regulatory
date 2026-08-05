@@ -26,11 +26,10 @@ export async function POST(
     if (!existingProject) {
       return NextResponse.json({ error: "Projet introuvable." }, { status: 404 });
     }
-    const normalizedValue = normalizeQuestionValueForPersistence(
-      body.questionId,
-      body.value,
-      existingProject.fund.currency,
-    );
+    const normalizedValue = normalizeQuestionValueForPersistence(body.questionId, body.value, {
+      currency: existingProject.fund.currency,
+      countryCode: existingProject.fund.countryCode,
+    });
     const project = await saveAnswer({
       projectId,
       questionId: body.questionId,
