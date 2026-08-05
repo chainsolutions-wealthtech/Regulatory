@@ -111,7 +111,7 @@ jobs:
           node scripts/update-loop-dev-docs.mjs
           node scripts/update-docx-loop-docs.mjs
           node scripts/update-visual-qa-docs.mjs
-          node scripts/update-nextjs-loop-docs.mjs
+          node scripts/update-nextjs-docs.mjs
           node scripts/update-regulatory-catalog-docs.mjs
 
       - name: Validate generated invariants
