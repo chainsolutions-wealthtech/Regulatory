@@ -2,7 +2,10 @@ import "server-only";
 
 import { CATALOG_METADATA, getQuestionById } from "@/domain/regulatory-catalog";
 import { validateProject } from "@/domain/questionnaire";
-import { normalizeQuestionValueForSnapshot } from "@/domain/structured-answers";
+import {
+  applyStructuredAnswerToCanonicalData,
+  normalizeQuestionValueForSnapshot,
+} from "@/domain/structured-answers";
 import type {
   CanonicalAnswerRecord,
   CanonicalSnapshot,
@@ -25,18 +28,24 @@ export function buildCanonicalSnapshot(project: ProspectusProject): CanonicalSna
     }
 
     const canonicalFieldPaths = question.canonicalFieldPaths ?? [question.fieldPath];
-    const normalizedValue = normalizeQuestionValueForSnapshot(
-      questionId,
-      answer.value,
-      project.fund.currency,
-    );
+    const normalizedValue = normalizeQuestionValueForSnapshot(questionId, answer.value, {
+      currency: project.fund.currency,
+      countryCode: project.fund.countryCode,
+    });
     structuredAnswers[questionId] = {
       canonicalFieldPaths,
       value: normalizedValue,
     };
 
-    for (const fieldPath of canonicalFieldPaths) {
-      setCanonicalValue(canonicalData, fieldPath, normalizedValue);
+    const structuredApplied = applyStructuredAnswerToCanonicalData(
+      questionId,
+      canonicalData,
+      normalizedValue,
+    );
+    if (!structuredApplied) {
+      for (const fieldPath of canonicalFieldPaths) {
+        setCanonicalValue(canonicalData, fieldPath, normalizedValue);
+      }
     }
 
     answerRecords.push({
