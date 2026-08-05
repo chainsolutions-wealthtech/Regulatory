@@ -94,3 +94,27 @@ Fichiers prioritaires :
 
 Ne jamais convertir les exigences en attente en informations validées sans pièce, source et revue compétente.
 <!-- AUTO:LOOP-DEV-001-COVERAGE:END -->
+
+<!-- AUTO:LOOP-DEV-001-DOCX:START -->
+## Transmission DOCX V0.1
+
+- DOCX : `prospectus-draft.docx` ;
+- taille : `13160` octets ;
+- empreinte SHA-256 : `5b74e9557a6e7b0d61f7be1b724635a3ab798442730fc41fbb6c2eb8da3ad082` ;
+- composants tracés : `44` ;
+- lignes de traçabilité : `44` ;
+- tableaux OOXML : `9` ;
+- pages rendues pour contrôle visuel : `10` ;
+- statut : `DRAFT_PRE_COMPLIANCE_REVIEW` ;
+- prêt pour soumission : `false`.
+
+Fichiers prioritaires :
+
+- `scripts/generate_docx.py` ;
+- `scripts/validate_docx.py` ;
+- `examples/generated/united-capital-diamond/prospectus-draft.docx` ;
+- `examples/generated/united-capital-diamond/docx-manifest.json` ;
+- workflow `.github/workflows/ci.yml`.
+
+Le rendu PDF/PNG est un outil de contrôle, non le moteur PDF final.
+<!-- AUTO:LOOP-DEV-001-DOCX:END -->

@@ -5,27 +5,28 @@
 
 ## Action
 
-Implémenter un export DOCX déterministe de pré-conformité à partir du `document-model.json`, en conservant pour chaque composant son identifiant, ses exigences, sa clause, ses champs sources et son statut de revue.
+Créer la première API locale du questionnaire dynamique et du projet de prospectus, afin de charger le catalogue CIRC005, retourner les groupes et questions applicables, enregistrer les réponses structurées, recalculer le modèle canonique et générer l’aperçu Markdown/DOCX.
 
-## Préconditions satisfaites
+## Entrées obligatoires
 
-- concordance sur `62` exigences ;
-- `MISSING = 0` ;
-- exigences non vérifiées conservées en `PENDING_REVIEW` ;
-- génération Markdown et JSON déterministe ;
-- tests automatisés présents ;
-- `ready_for_submission = false`.
+- `src/core/questionnaire-engine.js` ;
+- `src/core/generation-service.js` ;
+- `regulatory/matrices/CIRC005_FCP_MATRIX_*.csv` ;
+- `examples/united-capital-diamond/` ;
+- `scripts/generate_docx.py`.
 
 ## Résultat attendu
 
-- fichier `prospectus-draft.docx` généré depuis le modèle documentaire ;
-- rendu reproductible pour le même snapshot ;
-- styles, titres, tableaux, avertissements et sauts de page contrôlés ;
-- aucune suppression de la traçabilité ;
-- tests de structure DOCX ;
-- documentation et preuves mises à jour ;
-- aucune conversion PDF dans cette tranche.
+- serveur HTTP local sans dépendance ou avec choix technique documenté ;
+- endpoint de création d’un projet ;
+- endpoint de lecture des questions applicables ;
+- endpoint d’enregistrement contrôlé d’une réponse ;
+- endpoint de génération de l’aperçu ;
+- persistance locale versionnée et isolée de la production ;
+- tests d’intégration ;
+- aucune authentification fictive présentée comme sécurisée ;
+- aucune soumission au régulateur.
 
 ## Condition d’arrêt
 
-Le DOCX reste un document de pré-conformité. Il ne doit comporter aucune mention laissant entendre un agrément, un visa, une approbation ou une conformité finale.
+L’API reste un prototype local. Elle ne doit ni exposer des données sensibles, ni être déployée, ni être présentée comme prête pour la production.

@@ -87,3 +87,14 @@ La boucle réglementaire sera reprise après la tranche de couverture standard o
 - soumission : interdite ;
 - prochaine tranche : export DOCX déterministe de pré-conformité.
 <!-- AUTO:LOOP-DEV-001-COVERAGE:END -->
+
+<!-- AUTO:LOOP-DEV-001-DOCX:START -->
+## État DOCX de LOOP-DEV-001
+
+- générateur OOXML déterministe : `IMPLEMENTED` ;
+- validateur structurel : `IMPLEMENTED` ;
+- rendu LibreOffice de contrôle : `IMPLEMENTED_IN_CI` ;
+- nombre de pages de contrôle : `10` ;
+- soumission : `FORBIDDEN` ;
+- prochaine tranche : API locale et questionnaire progressif.
+<!-- AUTO:LOOP-DEV-001-DOCX:END -->

@@ -509,3 +509,31 @@ Réduire les 15 exigences manquantes du cas United Capital Diamond sans inventer
 
 Le résultat est une pré-conformité technique qui exige toujours les validations juridique, conformité et fiscale.
 <!-- AUTO:LOOP-DEV-001-COVERAGE:END -->
+
+<!-- AUTO:LOOP-DEV-001-DOCX:START -->
+## 2026-08-05 — Première génération DOCX déterministe
+
+### Objectif
+
+Transformer le modèle documentaire traçable en fichier DOCX de pré-conformité, sans perdre les identifiants, les exigences, les clauses ni les statuts de revue.
+
+### Résultat
+
+- DOCX : `prospectus-draft.docx` ;
+- taille : `13160` octets ;
+- empreinte SHA-256 : `5b74e9557a6e7b0d61f7be1b724635a3ab798442730fc41fbb6c2eb8da3ad082` ;
+- composants tracés : `44` ;
+- lignes de traçabilité : `44` ;
+- tableaux OOXML : `9` ;
+- pages rendues pour contrôle visuel : `10` ;
+- statut : `DRAFT_PRE_COMPLIANCE_REVIEW` ;
+- prêt pour soumission : `false`.
+
+### Contrôles
+
+- paquet OOXML structurellement validé ;
+- avertissements obligatoires présents ;
+- soumission explicitement interdite ;
+- rendu PDF/PNG produit pour inspection visuelle ;
+- données sources et concordance inchangées.
+<!-- AUTO:LOOP-DEV-001-DOCX:END -->

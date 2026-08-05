@@ -479,3 +479,21 @@ Le moteur distingue désormais les informations effectivement produites, les inf
 
 `MISSING = 0` signifie qu’aucune exigence n’est silencieusement omise. Cela ne signifie ni conformité, ni approbation, ni visa. Les exigences non vérifiées restent `PENDING_REVIEW` et empêchent la revue conformité ainsi que la soumission.
 <!-- AUTO:LOOP-DEV-001-COVERAGE:END -->
+
+<!-- AUTO:LOOP-DEV-001-DOCX:START -->
+## 17. Export DOCX déterministe de pré-conformité — 2026-08-05
+
+Le modèle documentaire intermédiaire produit désormais un fichier DOCX OOXML sans dépendance Python externe. Le document contient les titres, paragraphes, avertissements, tableaux, pied de page, état de pré-conformité et annexe technique de traçabilité.
+
+- DOCX : `prospectus-draft.docx` ;
+- taille : `13160` octets ;
+- empreinte SHA-256 : `5b74e9557a6e7b0d61f7be1b724635a3ab798442730fc41fbb6c2eb8da3ad082` ;
+- composants tracés : `44` ;
+- lignes de traçabilité : `44` ;
+- tableaux OOXML : `9` ;
+- pages rendues pour contrôle visuel : `10` ;
+- statut : `DRAFT_PRE_COMPLIANCE_REVIEW` ;
+- prêt pour soumission : `false`.
+
+Le PDF et les images de pages générés dans la CI servent uniquement à l’inspection visuelle du DOCX. Ils ne constituent pas encore l’export PDF réglementaire déterministe du produit.
+<!-- AUTO:LOOP-DEV-001-DOCX:END -->

@@ -89,3 +89,20 @@ Le format s’inspire de Keep a Changelog. Le projet n’est pas encore versionn
 
 La préparation à la revue conformité exige désormais `MISSING = 0` et `PENDING_REVIEW = 0`. Les sur-couvertures non vérifiées sont rétrogradées en attente de revue.
 <!-- AUTO:LOOP-DEV-001-COVERAGE:END -->
+
+<!-- AUTO:LOOP-DEV-001-DOCX:START -->
+## [Unreleased] — Export DOCX V0.1 — 2026-08-05
+
+### Added
+
+- générateur DOCX OOXML déterministe ;
+- manifeste DOCX avec SHA-256 et métriques ;
+- annexe de traçabilité ;
+- validateur structurel ;
+- rendu PDF/PNG de contrôle dans GitHub Actions ;
+- artefact de revue de 14 jours.
+
+### Security and compliance
+
+Le DOCX affiche qu’il s’agit d’un document de pré-conformité non visé, non approuvé et non prêt pour soumission.
+<!-- AUTO:LOOP-DEV-001-DOCX:END -->

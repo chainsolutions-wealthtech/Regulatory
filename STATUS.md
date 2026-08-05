@@ -78,3 +78,19 @@ Voir `NEXT_ACTION.md` : couvrir les 15 exigences manquantes sans inventer de don
 
 Le prospectus reste un projet de pré-conformité. Les profils institutionnels, la fiscalité, la constitution du Fonds, la gouvernance, le dépositaire, la liquidation et les autres rubriques non vérifiées restent en attente de revue.
 <!-- AUTO:LOOP-DEV-001-COVERAGE:END -->
+
+<!-- AUTO:LOOP-DEV-001-DOCX:START -->
+## Mise à jour LOOP-DEV-001 — DOCX V0.1
+
+- DOCX : `prospectus-draft.docx` ;
+- taille : `13160` octets ;
+- empreinte SHA-256 : `5b74e9557a6e7b0d61f7be1b724635a3ab798442730fc41fbb6c2eb8da3ad082` ;
+- composants tracés : `44` ;
+- lignes de traçabilité : `44` ;
+- tableaux OOXML : `9` ;
+- pages rendues pour contrôle visuel : `10` ;
+- statut : `DRAFT_PRE_COMPLIANCE_REVIEW` ;
+- prêt pour soumission : `false`.
+
+Le DOCX reste un document de pré-conformité. Les exigences `PENDING_REVIEW` et les validations humaines demeurent inchangées.
+<!-- AUTO:LOOP-DEV-001-DOCX:END -->

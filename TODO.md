@@ -302,3 +302,18 @@ Légende :
 - [ ] Reprendre `LOOP-REG-001` et l’atomisation de l’Instruction n°66/2021.
 - [ ] Obtenir les validations juridique, conformité et fiscale.
 <!-- AUTO:LOOP-DEV-001-COVERAGE:END -->
+
+<!-- AUTO:LOOP-DEV-001-DOCX:START -->
+## Mise à jour opérationnelle — DOCX V0.1
+
+- [x] Générer le DOCX depuis le modèle documentaire.
+- [x] Conserver la traçabilité dans le DOCX.
+- [x] Ajouter les styles, tableaux et avertissements.
+- [x] Ajouter un validateur OOXML.
+- [x] Produire un rendu PDF/PNG de contrôle dans la CI.
+- [ ] Examiner visuellement toutes les pages et corriger les défauts détectés.
+- [ ] Créer l’API locale du questionnaire dynamique.
+- [ ] Créer la première interface web progressive.
+- [ ] Ajouter la persistance versionnée des projets et réponses.
+- [ ] Reprendre l’Instruction n°66/2021.
+<!-- AUTO:LOOP-DEV-001-DOCX:END -->

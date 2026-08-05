@@ -125,3 +125,26 @@ Chaque entrée future indique date, boucle, action, fichiers, résultat, preuve 
 
 Aucune nouvelle branche, aucun force-push, aucune suppression d’identifiant CIRC005 et aucune activation de clause n’ont été réalisés.
 <!-- AUTO:LOOP-DEV-001-COVERAGE:END -->
+
+<!-- AUTO:LOOP-DEV-001-DOCX:START -->
+## 2026-08-05 — LOOP-DEV-001 — Export DOCX déterministe
+
+1. Création du générateur OOXML standard-library-only.
+2. Ajout des styles de couverture, titres, avertissements, listes et tableaux.
+3. Ajout d’une annexe de traçabilité composant → exigences → clause → statut de revue.
+4. Ajout du validateur structurel DOCX.
+5. Ajout du rendu CI LibreOffice/PDF/PNG pour inspection visuelle.
+6. Ajout de l’artefact de revue téléchargeable dans GitHub Actions.
+
+- DOCX : `prospectus-draft.docx` ;
+- taille : `13160` octets ;
+- empreinte SHA-256 : `5b74e9557a6e7b0d61f7be1b724635a3ab798442730fc41fbb6c2eb8da3ad082` ;
+- composants tracés : `44` ;
+- lignes de traçabilité : `44` ;
+- tableaux OOXML : `9` ;
+- pages rendues pour contrôle visuel : `10` ;
+- statut : `DRAFT_PRE_COMPLIANCE_REVIEW` ;
+- prêt pour soumission : `false`.
+
+Aucune mention de conformité finale, d’agrément ou d’approbation n’a été ajoutée.
+<!-- AUTO:LOOP-DEV-001-DOCX:END -->

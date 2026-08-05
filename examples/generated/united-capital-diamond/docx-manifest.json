@@ -1,0 +1,16 @@
+{
+  "generator": "scripts/generate_docx.py",
+  "generator_version": "0.1.0",
+  "source_generation_id": "GEN-D23C08F9167F2780",
+  "source_document_model_sha256": "d227671fb10f777ff0ee4276168616e7a8a8dcaba5600e040b0d9cfaae191e5b",
+  "docx_sha256": "5b74e9557a6e7b0d61f7be1b724635a3ab798442730fc41fbb6c2eb8da3ad082",
+  "docx_size_bytes": 13160,
+  "section_count": 26,
+  "component_count": 44,
+  "table_count": 9,
+  "heading_count": 28,
+  "traceability_row_count": 44,
+  "status": "DRAFT_PRE_COMPLIANCE_REVIEW",
+  "ready_for_submission": false,
+  "caveat": "Document de pré-conformité généré automatiquement. Il ne constitue ni un agrément, ni un visa, ni une approbation."
+}

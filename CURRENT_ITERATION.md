@@ -85,3 +85,19 @@ L’objectif de réduction des 15 exigences `MISSING` est atteint sans faux recl
 
 Reste à collecter les preuves institutionnelles et constitutives, valider la fiscalité et le point 5.3, reprendre l’Instruction n°66/2021 et produire le DOCX déterministe.
 <!-- AUTO:LOOP-DEV-001-COVERAGE:END -->
+
+<!-- AUTO:LOOP-DEV-001-DOCX:START -->
+## Résultat de l’itération DOCX
+
+- DOCX : `prospectus-draft.docx` ;
+- taille : `13160` octets ;
+- empreinte SHA-256 : `5b74e9557a6e7b0d61f7be1b724635a3ab798442730fc41fbb6c2eb8da3ad082` ;
+- composants tracés : `44` ;
+- lignes de traçabilité : `44` ;
+- tableaux OOXML : `9` ;
+- pages rendues pour contrôle visuel : `10` ;
+- statut : `DRAFT_PRE_COMPLIANCE_REVIEW` ;
+- prêt pour soumission : `false`.
+
+Le modèle documentaire est désormais consommable sous forme de fichier bureautique. La traçabilité reste incluse dans le document et dans `docx-manifest.json`. Le PDF de CI est seulement un support d’inspection visuelle.
+<!-- AUTO:LOOP-DEV-001-DOCX:END -->
