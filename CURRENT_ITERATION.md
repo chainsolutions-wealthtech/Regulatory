@@ -101,3 +101,15 @@ Reste à collecter les preuves institutionnelles et constitutives, valider la fi
 
 Le modèle documentaire est désormais consommable sous forme de fichier bureautique. La traçabilité reste incluse dans le document et dans `docx-manifest.json`. Le PDF de CI est seulement un support d’inspection visuelle.
 <!-- AUTO:LOOP-DEV-001-DOCX:END -->
+
+<!-- AUTO:LOOP-DEV-001-DOCX-VISUAL-QA:START -->
+## Inspection visuelle DOCX clôturée — 2026-08-05
+
+- pages rendues et inspectées : `10/10` ;
+- première anomalie : puces de risques invisibles — `CORRECTED` ;
+- seconde anomalie : ligne de traçabilité fractionnée entre pages — `CORRECTED` ;
+- seconde inspection complète : `PASS` ;
+- limitation déclarée : densité élevée de l’annexe technique, sans texte coupé ni ligne fractionnée ;
+- rapport : `docs/05-quality/DOCX_VISUAL_INSPECTION_2026-08-05.md` ;
+- nature du verdict : qualité structurelle et visuelle d’un document de pré-conformité, non validation juridique ou réglementaire.
+<!-- AUTO:LOOP-DEV-001-DOCX-VISUAL-QA:END -->
