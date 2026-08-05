@@ -81,6 +81,7 @@ jobs:
         run: |
           node scripts/update-loop-dev-docs.mjs
           node scripts/update-docx-loop-docs.mjs
+          node scripts/update-visual-qa-docs.mjs
 
       - name: Validate generated JSON and coverage invariants
         run: |
@@ -102,7 +103,7 @@ jobs:
           if (docx.component_count !== manifest.component_count) {
             throw new Error(`DOCX traceability mismatch: ${docx.component_count} vs ${manifest.component_count}`);
           }
-          if (render.page_count < 2) throw new Error(`Unexpected rendered page count: ${render.page_count}`);
+          if (render.page_count !== 10) throw new Error(`Expected 10 rendered pages, got ${render.page_count}`);
           NODE
 
       - name: Check textual integrity
