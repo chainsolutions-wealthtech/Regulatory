@@ -81,3 +81,27 @@ Les routes et pages utilisent l’interface `ProjectRepository`. `REGULATORY_STO
 - stockage actif dans l’application : `local-json` ;
 - adaptateur PostgreSQL applicatif : `NOT_ACTIVATED`.
 <!-- AUTO:LOOP-DEV-001-CANONICAL-SCHEMA-POSTGRES-V1:END -->
+
+<!-- AUTO:LOOP-DEV-001-POSTGRES-REPOSITORY-V1:START -->
+## Adaptateur PostgreSQL
+
+`createPostgresProjectRepository` implémente le même contrat que le driver JSON local. Il exige un pool, un fournisseur d’identité vérifiée et un store d’artefacts.
+
+- dépôt PostgreSQL : `IMPLEMENTED_AND_TESTED` ;
+- identité serveur vérifiée exigée : `true` ;
+- appartenance à l’organisation exigée : `true` ;
+- isolation de deux tenants : `PASS` ;
+- version créée à chaque écriture : `PASS` ;
+- conflit de concurrence optimiste : `PASS` ;
+- snapshot canonique par version : `PASS` ;
+- collections normalisées synchronisées : `PASS` ;
+- métadonnées documentaires persistées : `PASS` ;
+- artefacts staged puis commit : `PASS` ;
+- chaîne d’audit SHA-256 : `PASS` ;
+- versions observées dans le test : `4` ;
+- snapshots observés : `5` ;
+- événements d’audit : `5` ;
+- `ready_for_submission` : `false`.
+
+La CI utilise une identité fixe uniquement lorsque `NODE_ENV=test`.
+<!-- AUTO:LOOP-DEV-001-POSTGRES-REPOSITORY-V1:END -->

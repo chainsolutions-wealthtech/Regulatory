@@ -202,3 +202,22 @@ Les principales données répétables sont désormais écrites directement dans 
 
 L’activation du driver PostgreSQL échoue explicitement tant qu’aucun adaptateur sécurisé n’est injecté. Aucun repli silencieux n’est autorisé.
 <!-- AUTO:LOOP-DEV-001-CANONICAL-SCHEMA-POSTGRES-V1:END -->
+
+<!-- AUTO:LOOP-DEV-001-POSTGRES-REPOSITORY-V1:START -->
+## [Unreleased] — PostgreSQL repository V1 — 2026-08-05
+
+### Added
+
+- adaptateur PostgreSQL transactionnel ;
+- fournisseur d’identité vérifiée injecté ;
+- stockage staged des artefacts ;
+- versionnement par écriture ;
+- contrôle optimiste de concurrence ;
+- synchronisation des collections ;
+- chaîne d’audit SHA-256 ;
+- test d’intégration multi-tenant et concurrence.
+
+### Changed
+
+Les routes d’écriture peuvent transmettre `expectedVersion` et répondent par un conflit explicite lorsque le snapshot utilisateur est obsolète.
+<!-- AUTO:LOOP-DEV-001-POSTGRES-REPOSITORY-V1:END -->

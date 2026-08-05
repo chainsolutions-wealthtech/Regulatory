@@ -203,3 +203,32 @@ La boucle réglementaire sera reprise après la tranche de couverture standard o
 - stockage actif dans l’application : `local-json` ;
 - adaptateur PostgreSQL applicatif : `NOT_ACTIVATED`.
 <!-- AUTO:LOOP-DEV-001-CANONICAL-SCHEMA-POSTGRES-V1:END -->
+
+<!-- AUTO:LOOP-DEV-001-POSTGRES-REPOSITORY-V1:START -->
+## LOOP-DEV-001 — Dépôt PostgreSQL V1
+
+- interface `ProjectRepository` : `STABLE_V1` ;
+- adaptateur PostgreSQL : `IMPLEMENTED_AND_TESTED` ;
+- verrouillage de projet : `FOR UPDATE` ;
+- concurrence : `OPTIMISTIC_VERSION_CHECK` ;
+- transaction réponse → version → snapshot → collections → audit : `PASS` ;
+- génération → snapshot → documents → audit : `PASS` ;
+- activation par défaut : `FORBIDDEN` ;
+- prochaine tranche : `AUTHENTICATION_RBAC_AND_REVIEW_WORKFLOW`.
+
+- dépôt PostgreSQL : `IMPLEMENTED_AND_TESTED` ;
+- identité serveur vérifiée exigée : `true` ;
+- appartenance à l’organisation exigée : `true` ;
+- isolation de deux tenants : `PASS` ;
+- version créée à chaque écriture : `PASS` ;
+- conflit de concurrence optimiste : `PASS` ;
+- snapshot canonique par version : `PASS` ;
+- collections normalisées synchronisées : `PASS` ;
+- métadonnées documentaires persistées : `PASS` ;
+- artefacts staged puis commit : `PASS` ;
+- chaîne d’audit SHA-256 : `PASS` ;
+- versions observées dans le test : `4` ;
+- snapshots observés : `5` ;
+- événements d’audit : `5` ;
+- `ready_for_submission` : `false`.
+<!-- AUTO:LOOP-DEV-001-POSTGRES-REPOSITORY-V1:END -->

@@ -199,3 +199,25 @@ Les principales données répétables du parcours disposent désormais d’un é
 
 Le schéma transactionnel est testé mais non déployé. L’application utilise une interface de dépôt explicite et conserve le stockage local de démonstration tant que l’adaptateur PostgreSQL, l’identité et les contrôles d’exploitation ne sont pas activés.
 <!-- AUTO:LOOP-DEV-001-CANONICAL-SCHEMA-POSTGRES-V1:END -->
+
+<!-- AUTO:LOOP-DEV-001-POSTGRES-REPOSITORY-V1:START -->
+## Dépôt PostgreSQL transactionnel — V1
+
+- dépôt PostgreSQL : `IMPLEMENTED_AND_TESTED` ;
+- identité serveur vérifiée exigée : `true` ;
+- appartenance à l’organisation exigée : `true` ;
+- isolation de deux tenants : `PASS` ;
+- version créée à chaque écriture : `PASS` ;
+- conflit de concurrence optimiste : `PASS` ;
+- snapshot canonique par version : `PASS` ;
+- collections normalisées synchronisées : `PASS` ;
+- métadonnées documentaires persistées : `PASS` ;
+- artefacts staged puis commit : `PASS` ;
+- chaîne d’audit SHA-256 : `PASS` ;
+- versions observées dans le test : `4` ;
+- snapshots observés : `5` ;
+- événements d’audit : `5` ;
+- `ready_for_submission` : `false`.
+
+L’adaptateur est testé sur PostgreSQL éphémère avec une identité fixe exclusivement réservée à la CI. Le driver actif de l’application reste `local-json` tant qu’un fournisseur d’identité réel, un stockage d’artefacts sécurisé et une revue d’exploitation ne sont pas configurés.
+<!-- AUTO:LOOP-DEV-001-POSTGRES-REPOSITORY-V1:END -->

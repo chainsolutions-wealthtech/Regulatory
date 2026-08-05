@@ -663,3 +663,27 @@ Le projet dispose maintenant d’un contrat JSON, d’un dictionnaire et d’un 
 
 Aucune base de production, authentification ou certification de sécurité n’est déclarée.
 <!-- AUTO:LOOP-DEV-001-CANONICAL-SCHEMA-POSTGRES-V1:END -->
+
+<!-- AUTO:LOOP-DEV-001-POSTGRES-REPOSITORY-V1:START -->
+## 2026-08-05 — Persistance transactionnelle testée
+
+Le moteur n’est plus limité conceptuellement au stockage JSON : un adaptateur PostgreSQL complet est disponible derrière le même port de domaine et validé sur une base éphémère.
+
+- dépôt PostgreSQL : `IMPLEMENTED_AND_TESTED` ;
+- identité serveur vérifiée exigée : `true` ;
+- appartenance à l’organisation exigée : `true` ;
+- isolation de deux tenants : `PASS` ;
+- version créée à chaque écriture : `PASS` ;
+- conflit de concurrence optimiste : `PASS` ;
+- snapshot canonique par version : `PASS` ;
+- collections normalisées synchronisées : `PASS` ;
+- métadonnées documentaires persistées : `PASS` ;
+- artefacts staged puis commit : `PASS` ;
+- chaîne d’audit SHA-256 : `PASS` ;
+- versions observées dans le test : `4` ;
+- snapshots observés : `5` ;
+- événements d’audit : `5` ;
+- `ready_for_submission` : `false`.
+
+L’identité fixe du test ne doit jamais être utilisée en production.
+<!-- AUTO:LOOP-DEV-001-POSTGRES-REPOSITORY-V1:END -->

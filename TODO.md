@@ -428,3 +428,25 @@ Légende :
 - [ ] Ajouter sauvegarde, restauration, observabilité et plan de retour arrière.
 - [ ] Réaliser la revue d’architecture et de sécurité avant activation.
 <!-- AUTO:LOOP-DEV-001-CANONICAL-SCHEMA-POSTGRES-V1:END -->
+
+<!-- AUTO:LOOP-DEV-001-POSTGRES-REPOSITORY-V1:START -->
+## Dépôt PostgreSQL — état V1
+
+- [x] Créer le port `ProjectRepository`.
+- [x] Implémenter le dépôt PostgreSQL.
+- [x] Exiger une identité serveur vérifiée.
+- [x] Contrôler l’appartenance tenant.
+- [x] Créer une version à chaque réponse.
+- [x] Ajouter le contrôle optimiste de version.
+- [x] Synchroniser snapshot et tables normalisées.
+- [x] Persister les métadonnées des documents.
+- [x] Ajouter la chaîne d’audit.
+- [x] Tester deux tenants et une écriture concurrente.
+- [ ] Choisir et intégrer le fournisseur d’identité.
+- [ ] Implémenter le RBAC par action et objet.
+- [ ] Construire les écrans et transitions de revue.
+- [ ] Remplacer le stockage fichiers de test par un stockage objet sécurisé.
+- [ ] Ajouter analyse antivirus, quarantaine, chiffrement et rétention.
+- [ ] Ajouter gestion du pool, secrets, sauvegardes et observabilité de production.
+- [ ] Réaliser les revues sécurité et exploitation avant activation.
+<!-- AUTO:LOOP-DEV-001-POSTGRES-REPOSITORY-V1:END -->

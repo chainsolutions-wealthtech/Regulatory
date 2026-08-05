@@ -285,3 +285,33 @@ Aucun déploiement, aucune nouvelle branche, aucun force-push et aucune activati
 - stockage actif dans l’application : `local-json` ;
 - adaptateur PostgreSQL applicatif : `NOT_ACTIVATED`.
 <!-- AUTO:LOOP-DEV-001-CANONICAL-SCHEMA-POSTGRES-V1:END -->
+
+<!-- AUTO:LOOP-DEV-001-POSTGRES-REPOSITORY-V1:START -->
+## 2026-08-05 — Adaptateur PostgreSQL transactionnel
+
+1. Ajout du pool PostgreSQL et des contrats d’identité vérifiée.
+2. Ajout d’un stockage d’artefacts staged pour les tests et le développement.
+3. Implémentation de la création, lecture, liste, réponse et génération.
+4. Création d’une nouvelle version à chaque réponse.
+5. Verrouillage `FOR UPDATE` et contrôle `expectedVersion`.
+6. Synchronisation des snapshots et collections normalisées.
+7. Chaîne d’audit SHA-256 avec lien vers l’événement précédent.
+8. Test de deux organisations et de la concurrence réelle.
+9. Propagation de la précondition de version dans les routes et l’interface.
+
+- dépôt PostgreSQL : `IMPLEMENTED_AND_TESTED` ;
+- identité serveur vérifiée exigée : `true` ;
+- appartenance à l’organisation exigée : `true` ;
+- isolation de deux tenants : `PASS` ;
+- version créée à chaque écriture : `PASS` ;
+- conflit de concurrence optimiste : `PASS` ;
+- snapshot canonique par version : `PASS` ;
+- collections normalisées synchronisées : `PASS` ;
+- métadonnées documentaires persistées : `PASS` ;
+- artefacts staged puis commit : `PASS` ;
+- chaîne d’audit SHA-256 : `PASS` ;
+- versions observées dans le test : `4` ;
+- snapshots observés : `5` ;
+- événements d’audit : `5` ;
+- `ready_for_submission` : `false`.
+<!-- AUTO:LOOP-DEV-001-POSTGRES-REPOSITORY-V1:END -->

@@ -599,3 +599,27 @@ Le domaine consomme `ProjectRepository` et non directement le système de fichie
 
 La RLS complète les contrôles d’autorisation applicatifs ; elle ne les remplace pas.
 <!-- AUTO:LOOP-DEV-001-CANONICAL-SCHEMA-POSTGRES-V1:END -->
+
+<!-- AUTO:LOOP-DEV-001-POSTGRES-REPOSITORY-V1:START -->
+## Dépôt PostgreSQL transactionnel
+
+Le dépôt PostgreSQL ouvre une transaction, fixe le tenant par `SET LOCAL`, vérifie l’appartenance, verrouille le projet, contrôle la version attendue, écrit une nouvelle version, les réponses, le snapshot, les collections et l’audit, puis valide la transaction.
+
+- dépôt PostgreSQL : `IMPLEMENTED_AND_TESTED` ;
+- identité serveur vérifiée exigée : `true` ;
+- appartenance à l’organisation exigée : `true` ;
+- isolation de deux tenants : `PASS` ;
+- version créée à chaque écriture : `PASS` ;
+- conflit de concurrence optimiste : `PASS` ;
+- snapshot canonique par version : `PASS` ;
+- collections normalisées synchronisées : `PASS` ;
+- métadonnées documentaires persistées : `PASS` ;
+- artefacts staged puis commit : `PASS` ;
+- chaîne d’audit SHA-256 : `PASS` ;
+- versions observées dans le test : `4` ;
+- snapshots observés : `5` ;
+- événements d’audit : `5` ;
+- `ready_for_submission` : `false`.
+
+Les artefacts sont préparés avant la transaction et finalisés après le commit. Une cible de production devra utiliser un stockage objet supportant une stratégie de compensation et de réconciliation.
+<!-- AUTO:LOOP-DEV-001-POSTGRES-REPOSITORY-V1:END -->

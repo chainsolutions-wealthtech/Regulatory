@@ -1,0 +1,28 @@
+{
+  "validationId": "POSTGRESQL_PROJECT_REPOSITORY_VALIDATION_V1",
+  "status": "PASS",
+  "checks": {
+    "applicationRoleCannotBypassRls": true,
+    "verifiedIdentityRequired": true,
+    "organizationMembershipRequired": true,
+    "tenantAIsolation": true,
+    "tenantBIsolation": true,
+    "versionPerWrite": true,
+    "optimisticConcurrencyConflict": true,
+    "canonicalSnapshotPerVersion": true,
+    "normalizedAssetRanges": true,
+    "normalizedValuationMethods": true,
+    "generatedDocumentMetadata": true,
+    "stagedArtifactCommit": true,
+    "auditInsertPolicy": true,
+    "auditHashChain": true,
+    "readyForSubmissionRemainsFalse": true
+  },
+  "metrics": {
+    "projectVersions": 4,
+    "snapshots": 5,
+    "generatedDocuments": 2,
+    "auditEvents": 5
+  },
+  "caveat": "Validation transactionnelle sur PostgreSQL éphémère avec identité fixe réservée à la CI et rôle applicatif non propriétaire. Aucun fournisseur d’identité de production ni déploiement n’est activé."
+}

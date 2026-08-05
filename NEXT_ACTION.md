@@ -5,21 +5,21 @@
 
 ## Action
 
-Implémenter l’adaptateur PostgreSQL transactionnel derrière `ProjectRepository`, avec injection d’un exécuteur SQL, résolution d’organisation depuis une identité serveur vérifiée, synchronisation atomique des réponses et collections, puis tests d’intégration sur PostgreSQL éphémère.
+Construire le socle d’authentification, de RBAC et de workflow de revue sans choisir fictivement un fournisseur d’identité : définir les politiques machine-readable, les autorisations par action, les transitions d’état, les décisions et les tests, puis conserver l’intégration fournisseur derrière un port explicitement non configuré.
 
 ## Résultat attendu
 
-- adaptateur PostgreSQL sans secret codé en dur ;
-- pool de connexions configuré par variables d’environnement ;
-- transaction par création, réponse et génération ;
-- `SET LOCAL app.current_organization_id` issu du contexte d’identité, jamais du corps HTTP ;
-- verrou optimiste ou pessimiste des versions ;
-- synchronisation snapshot + tables normalisées + audit dans une transaction ;
-- tests entre deux organisations et deux utilisateurs ;
-- test de concurrence sur une même version ;
-- aucun déploiement et aucune activation par défaut ;
+- modèle des rôles Administrateur, Produit, Risques, Conformité, Juridique, Fiscal, Opérations, Audit et Lecteur ;
+- matrice action × rôle × ressource ;
+- vérification serveur de chaque action sensible ;
+- transitions de workflow déterministes ;
+- demandes de revue, commentaires, changements demandés, approbations et rejets ;
+- aucune auto-approbation ;
+- séparation entre gel interne, approbation interne et décision du régulateur ;
+- tests positifs et négatifs multi-rôles ;
+- port du fournisseur d’identité non configuré en production ;
 - `ready_for_submission=false` maintenu.
 
 ## Condition d’arrêt
 
-Ne pas simuler une authentification. Sans fournisseur d’identité et résolution de tenant vérifiables, l’adaptateur doit rester désactivé hors des tests éphémères.
+Ne pas simuler une connexion, un SSO ou une signature. L’activation d’un fournisseur d’identité et des sessions nécessite des paramètres réels, des secrets hors dépôt et une revue de sécurité.
