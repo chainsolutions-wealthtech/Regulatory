@@ -439,9 +439,8 @@ controls:
   - RULE_EXPENSE_PAYER_CLASSIFICATION
 ```
 
-## 10. Prochaines actions du mapping
+## 10. Prochaines actions du mapping CIRC005
 
-- atomiser l’Instruction n°66/CREPMF/2021 ;
 - confirmer la date exacte de publication et l’état actuel de la circulaire ;
 - identifier les références complémentaires ;
 - relier chaque exigence aux champs canoniques définitifs ;
@@ -451,3 +450,57 @@ controls:
 - définir les preuves ;
 - faire valider le mapping par la conformité et le juridique ;
 - passer les exigences validées de `SOURCE_CONFIRMED` à `VALIDATED` uniquement après revue formelle.
+
+## 11. Instruction n°66/CREPMF/2021 — Source enregistrée et atomisation préparée
+
+### 11.1 État de la source au 2026-08-05
+
+```yaml
+source_id: INSTRUCTION_66_CREPMF_2021
+official_registry: https://www.amf-umoa.org/reglementation/instruction
+registry_status: NON_ABROGE
+registry_checked_on: '2026-08-05'
+brvm_publication_date: '2022-01-12'
+pdf_page_count: 65
+atomization_status: PENDING
+legal_review_status: PENDING
+compliance_review_status: PENDING
+```
+
+Le registre officiel AMF-UMOA identifie l’Instruction n°66/2021 comme non abrogée au jour du contrôle. Une publication BRVM permet d’identifier une copie PDF et indique que le texte annule et remplace le précédent. L’identité du texte remplacé, la date exacte de signature, la date d’effet, la taille et le SHA-256 du PDF ainsi que les éventuels modificatifs restent à confirmer.
+
+### 11.2 Artefacts créés
+
+- `regulatory/sources/INSTRUCTION_66_CREPMF_2021.yaml` ;
+- `regulatory/plans/INSTRUCTION_66_ATOMIZATION_PLAN_V0_1.yaml`.
+
+### 11.3 Politique d’identifiants
+
+Les futures exigences issues de l’Instruction utilisent le préfixe `INST066`. Les identifiants `CIRC005_*` existants ne sont ni renommés ni réutilisés avec un autre sens.
+
+Exemple prévu :
+
+```text
+INST066_ART28_PROSPECTUS_MINIMUM_INFORMATION
+```
+
+### 11.4 Domaines d’atomisation préparés
+
+- champ d’application et définitions ;
+- agrément et gouvernance des OPC et sociétés de gestion ;
+- prospectus, règlement, DICI, information des investisseurs et publicité ;
+- actifs éligibles, ratios, diversification, concentration, emprunts et dérivés ;
+- valorisation, valeur liquidative, souscription, rachat, suspension et liquidité ;
+- dépositaire, conservation, commissaires aux comptes, conseillers et distributeurs ;
+- reporting, modifications, restructurations, dissolution et liquidation ;
+- crosswalk avec la Circulaire n°05/CREPMF/2022 et le modèle canonique.
+
+### 11.5 Contrôle de non-régression
+
+À ce stade :
+
+- aucune exigence INST066 détaillée n’est créée ;
+- aucune matrice CIRC005 n’est modifiée ;
+- aucune clause n’est activée ;
+- aucune validation juridique ou conformité n’est déclarée ;
+- l’étape suivante consiste à produire l’index structurel du texte après contrôle d’intégrité de la copie PDF.
