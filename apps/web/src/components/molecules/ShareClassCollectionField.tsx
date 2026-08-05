@@ -3,6 +3,7 @@
 import { useEffect, useMemo, useState } from "react";
 import { Button } from "@/components/atoms/Button";
 import { Input, Select } from "@/components/atoms/Field";
+import styles from "@/components/molecules/ShareClassCollectionField.module.css";
 import {
   createDefaultShareClass,
   normalizeShareClasses,
@@ -75,20 +76,26 @@ export function ShareClassCollectionField({
   }
 
   return (
-    <div className="repeatable-editor" id={id}>
-      <div className="repeatable-editor__intro">
+    <div className={styles.editor} id={id}>
+      <div className={styles.intro}>
         <p>
           Chaque ligne alimente directement la collection canonique <code>share_classes</code>.
         </p>
-        <Button disabled={disabled || rows.length >= 20} onClick={addRow} size="sm" type="button" variant="secondary">
+        <Button
+          disabled={disabled || rows.length >= 20}
+          onClick={addRow}
+          size="sm"
+          type="button"
+          variant="secondary"
+        >
           Ajouter une classe
         </Button>
       </div>
 
-      <div className="repeatable-editor__rows">
+      <div className={styles.rows}>
         {rows.map((row, index) => (
-          <section className="repeatable-row" key={row.class_id || `share-class-${index}`}>
-            <div className="repeatable-row__header">
+          <section className={styles.row} key={row.class_id || `share-class-${index}`}>
+            <div className={styles.rowHeader}>
               <h3>Classe {index + 1}</h3>
               <Button
                 disabled={disabled || rows.length === 1}
@@ -101,7 +108,7 @@ export function ShareClassCollectionField({
               </Button>
             </div>
 
-            <div className="repeatable-grid">
+            <div className={styles.grid}>
               <label>
                 <span>Identifiant stable</span>
                 <Input
@@ -184,8 +191,10 @@ export function ShareClassCollectionField({
           {error}
         </p>
       ) : null}
-      <div className="repeatable-editor__actions">
-        <span>{rows.length} classe{rows.length > 1 ? "s" : ""}</span>
+      <div className={styles.actions}>
+        <span>
+          {rows.length} classe{rows.length > 1 ? "s" : ""}
+        </span>
         <Button disabled={disabled} onClick={commit} type="button">
           Enregistrer les classes
         </Button>
