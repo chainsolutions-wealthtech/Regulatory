@@ -2,19 +2,25 @@
 
 import { FieldShell, Input, Select, Textarea } from "@/components/atoms/Field";
 import { ShareClassCollectionField } from "@/components/molecules/ShareClassCollectionField";
-import type { ProspectusQuestion } from "@/domain/types";
+import { StructuredCollectionField } from "@/components/molecules/StructuredCollectionField";
+import type {
+  ProspectusQuestion,
+  StructuredCollectionQuestionType,
+} from "@/domain/types";
 
 export function QuestionCard({
   question,
   value,
   disabled,
   defaultCurrency,
+  defaultCountryCode,
   onChange,
 }: {
   question: ProspectusQuestion;
   value: unknown;
   disabled?: boolean;
   defaultCurrency?: string;
+  defaultCountryCode?: string;
   onChange: (value: unknown) => void;
 }) {
   const id = `question-${question.id}`;
@@ -37,7 +43,15 @@ export function QuestionCard({
         help={question.helpText}
         required={question.required}
       >
-        {renderControl(question, id, value, disabled, defaultCurrency, onChange)}
+        {renderControl(
+          question,
+          id,
+          value,
+          disabled,
+          defaultCurrency,
+          defaultCountryCode,
+          onChange,
+        )}
       </FieldShell>
       {question.uiFallback ? (
         <p className="question-card__example">
@@ -59,6 +73,7 @@ function renderControl(
   value: unknown,
   disabled: boolean | undefined,
   defaultCurrency: string | undefined,
+  defaultCountryCode: string | undefined,
   onChange: (value: unknown) => void,
 ) {
   if (question.type === "SHARE_CLASS_COLLECTION") {
@@ -67,6 +82,20 @@ function renderControl(
         defaultCurrency={defaultCurrency}
         disabled={disabled}
         id={id}
+        value={value}
+        onChange={onChange}
+      />
+    );
+  }
+  if (isGenericCollectionType(question.type)) {
+    return (
+      <StructuredCollectionField
+        defaultCountryCode={defaultCountryCode}
+        defaultCurrency={defaultCurrency}
+        disabled={disabled}
+        id={id}
+        questionId={question.id}
+        type={question.type}
         value={value}
         onChange={onChange}
       />
@@ -186,6 +215,20 @@ function renderControl(
       onChange={(event) => onChange(event.target.value)}
     />
   );
+}
+
+function isGenericCollectionType(
+  type: ProspectusQuestion["type"],
+): type is Exclude<StructuredCollectionQuestionType, "SHARE_CLASS_COLLECTION"> {
+  return new Set<ProspectusQuestion["type"]>([
+    "ASSET_RANGE_COLLECTION",
+    "FEE_COLLECTION",
+    "VALUATION_METHOD_COLLECTION",
+    "PARTY_COLLECTION",
+    "RISK_COLLECTION",
+    "COUNTRY_ARRANGEMENT_COLLECTION",
+    "EVIDENCE_COLLECTION",
+  ]).has(type);
 }
 
 function formatInputValue(value: unknown): string {
