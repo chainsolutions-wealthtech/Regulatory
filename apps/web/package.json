@@ -11,7 +11,7 @@
     "prebuild": "npm run catalog:generate",
     "build": "next build",
     "start": "next start",
-    "test:postgres-repository": "tsx src/server/storage/postgres-project-repository.integration.ts"
+    "test:postgres-repository": "NODE_OPTIONS=--conditions=react-server tsx src/server/storage/postgres-project-repository.integration.ts"
   },
   "dependencies": {
     "next": "16.2.12",
