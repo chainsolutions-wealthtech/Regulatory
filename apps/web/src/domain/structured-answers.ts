@@ -46,7 +46,7 @@ export function createDefaultShareClass(
 ): ShareClassInput {
   return {
     class_id: classIdentifier(index),
-    currency: normalizeCurrency(defaultCurrency),
+    currency: defaultCurrency.trim().toUpperCase() || "XOF",
     income_policy: "CAPITALIZED",
     initial_nav: 10_000,
     initial_subscription_minimum: {
@@ -105,14 +105,14 @@ function normalizeShareClass(
     ? record.initial_subscription_minimum
     : {};
   const decimalization = isRecord(record.decimalization) ? record.decimalization : {};
-  const parsedInitialNav = Number(record.initial_nav);
-  const incomePolicy = String(record.income_policy ?? "CAPITALIZED").toUpperCase();
+  const hasInitialNav = Object.hasOwn(record, "initial_nav");
+  const incomePolicy = String(record.income_policy ?? "CAPITALIZED").trim().toUpperCase();
 
   return {
     class_id: String(record.class_id ?? classIdentifier(index)).trim().toUpperCase(),
-    currency: normalizeCurrency(String(record.currency ?? defaultCurrency)),
-    income_policy: incomePolicy === "DISTRIBUTED" ? "DISTRIBUTED" : "CAPITALIZED",
-    initial_nav: Number.isFinite(parsedInitialNav) ? parsedInitialNav : 10_000,
+    currency: String(record.currency ?? defaultCurrency).trim().toUpperCase(),
+    income_policy: incomePolicy as ShareClassInput["income_policy"],
+    initial_nav: hasInitialNav ? Number(record.initial_nav) : 10_000,
     initial_subscription_minimum: {
       display: String(minimum.display ?? "À confirmer").trim(),
     },
@@ -127,11 +127,6 @@ function classIdentifier(index: number): string {
   const cycle = Math.floor(index / 26);
   const suffix = String.fromCharCode(65 + alphabetIndex);
   return cycle === 0 ? `CLASS-${suffix}` : `CLASS-${suffix}-${cycle + 1}`;
-}
-
-function normalizeCurrency(value: string): string {
-  const currency = value.trim().toUpperCase();
-  return /^[A-Z]{3}$/.test(currency) ? currency : "XOF";
 }
 
 function isRecord(value: unknown): value is Record<string, unknown> {
