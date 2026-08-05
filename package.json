@@ -1,6 +1,6 @@
 {
   "name": "regulatory-prospectus-composer",
-  "version": "0.2.0",
+  "version": "0.2.1",
   "private": true,
   "type": "module",
   "description": "Tranche verticale exécutable du moteur de composition de prospectus OPCVM/FCP UMOA.",
@@ -10,7 +10,7 @@
   "scripts": {
     "test": "node --test",
     "generate:sample": "node src/cli/generate-sample.js",
-    "generate:docx": "python3 scripts/generate_docx.py",
+    "generate:docx": "python3 scripts/generate_docx.py && python3 scripts/optimize_docx_layout.py",
     "validate:docx": "python3 scripts/validate_docx.py",
     "document": "npm run generate:sample && npm run generate:docx && npm run validate:docx",
     "check": "npm test && npm run document"
