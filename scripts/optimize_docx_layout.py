@@ -1,13 +1,16 @@
 #!/usr/bin/env python3
 """Apply deterministic layout fixes to the generated OOXML package.
 
-The generator deliberately stays small. This pass adds visible bullet glyphs and
-prevents table rows from being split across rendered pages.
+The generator deliberately stays small. This pass adds visible bullet glyphs,
+prevents table rows from being split across rendered pages and refreshes the
+DOCX digest recorded in the manifest.
 """
 
 from __future__ import annotations
 
 import argparse
+import hashlib
+import json
 import re
 import tempfile
 import zipfile
@@ -22,10 +25,17 @@ def main() -> None:
         "--docx",
         default="examples/generated/united-capital-diamond/prospectus-draft.docx",
     )
+    parser.add_argument(
+        "--manifest",
+        default="examples/generated/united-capital-diamond/docx-manifest.json",
+    )
     args = parser.parse_args()
     path = Path(args.docx)
+    manifest_path = Path(args.manifest)
     if not path.exists():
         raise SystemExit(f"DOCX not found: {path}")
+    if not manifest_path.exists():
+        raise SystemExit(f"DOCX manifest not found: {manifest_path}")
 
     with zipfile.ZipFile(path) as archive:
         entries = {name: archive.read(name) for name in archive.namelist()}
@@ -70,8 +80,19 @@ def main() -> None:
     finally:
         temporary.unlink(missing_ok=True)
 
+    manifest = json.loads(manifest_path.read_text(encoding="utf-8"))
+    manifest["layout_optimizer"] = "scripts/optimize_docx_layout.py"
+    manifest["layout_optimizer_version"] = "0.1.0"
+    manifest["layout_fixes"] = ["VISIBLE_LIST_BULLETS", "TABLE_ROWS_CANNOT_SPLIT"]
+    manifest["docx_sha256"] = hashlib.sha256(path.read_bytes()).hexdigest()
+    manifest["docx_size_bytes"] = path.stat().st_size
+    manifest_path.write_text(
+        json.dumps(manifest, ensure_ascii=False, indent=2) + "\n",
+        encoding="utf-8",
+    )
+
     print(
-        f"Optimized {path}: visible bullets added and table rows marked cantSplit"
+        f"Optimized {path}: visible bullets added, table rows marked cantSplit, manifest refreshed"
     )
 
 
