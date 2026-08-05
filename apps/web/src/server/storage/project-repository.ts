@@ -22,6 +22,7 @@ export type SaveAnswerInput = {
   questionId: string;
   value: unknown;
   updatedBy?: string;
+  expectedVersion?: number;
 };
 
 export type PersistGenerationInput = {
@@ -30,6 +31,7 @@ export type PersistGenerationInput = {
   preview: ProspectusPreview;
   canonicalSnapshot: CanonicalSnapshot;
   artifacts: GeneratedProspectusArtifact[];
+  expectedVersion?: number;
 };
 
 /**
@@ -37,7 +39,8 @@ export type PersistGenerationInput = {
  *
  * Une implémentation transactionnelle doit garantir qu'une réponse, la version
  * du projet, le snapshot, les collections normalisées et l'événement d'audit
- * sont cohérents dans une même transaction.
+ * sont cohérents dans une même transaction. Les écritures peuvent fournir une
+ * précondition de version afin de rejeter une mise à jour concurrente.
  */
 export interface ProjectRepository {
   readonly driver: "local-json" | "postgresql";
