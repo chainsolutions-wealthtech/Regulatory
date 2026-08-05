@@ -1,6 +1,7 @@
 import generatedCatalog from "@/generated/regulatory-catalog.json";
 import { APPLICATION_GROUPS, APPLICATION_QUESTIONS } from "./application-questions";
 import { MEMBER_STATES } from "./constants";
+import { SHARE_CLASS_QUESTION_ID } from "./structured-answers";
 import type {
   CatalogMetadata,
   CoverageSummary,
@@ -114,7 +115,8 @@ const regulatoryQuestions: ProspectusQuestion[] = catalog.requirements
     evidenceTypes: requirement.evidenceTypes,
     clauseGroupId: requirement.clauseGroupId ?? undefined,
     outputSectionId: requirement.outputSectionId ?? undefined,
-    uiFallback: requirement.uiFallback,
+    uiFallback:
+      requirement.questionId === SHARE_CLASS_QUESTION_ID ? false : requirement.uiFallback,
   }));
 
 export const QUESTIONS: ProspectusQuestion[] = [...APPLICATION_QUESTIONS, ...regulatoryQuestions]
@@ -150,11 +152,13 @@ export function createEmptyCoverage(): CoverageSummary {
 }
 
 function normalizeUiType(requirement: GeneratedRequirement): QuestionType {
+  if (requirement.questionId === SHARE_CLASS_QUESTION_ID) return "SHARE_CLASS_COLLECTION";
   if (requirement.originalQuestionType === "COUNTRY_MULTI_SELECT") return "MULTISELECT";
   return requirement.uiType;
 }
 
 function normalizeOptions(requirement: GeneratedRequirement): QuestionOption[] | undefined {
+  if (requirement.questionId === SHARE_CLASS_QUESTION_ID) return undefined;
   if (requirement.options.length > 0) return requirement.options;
   if (requirement.originalQuestionType === "COUNTRY_MULTI_SELECT") {
     return MEMBER_STATES.map((state) => ({ ...state }));
