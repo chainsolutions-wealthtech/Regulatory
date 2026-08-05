@@ -1,15 +1,3 @@
-import type { CoverageSummary } from "./types";
-
-export const EMPTY_COVERAGE: CoverageSummary = {
-  IN_PROSPECTUS: 0,
-  IN_ATTACHED_REGULATION: 0,
-  IN_ATTACHED_CONSTITUTIVE_DOCUMENT: 0,
-  NOT_APPLICABLE: 0,
-  PENDING_REVIEW: 62,
-  MISSING: 0,
-  SYSTEM_METADATA: 0,
-};
-
 export const MEMBER_STATES = [
   { value: "BJ", label: "Bénin" },
   { value: "BF", label: "Burkina Faso" },

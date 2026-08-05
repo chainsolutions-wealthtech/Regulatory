@@ -28,6 +28,11 @@ export type QuestionType =
   | "COUNTRY"
   | "FILE";
 
+export type QuestionSourceKind =
+  | "REGULATORY_MATRIX"
+  | "APPLICATION"
+  | "PENDING_REGULATORY_MAPPING";
+
 export type QuestionOption = {
   value: string;
   label: string;
@@ -49,11 +54,25 @@ export type ProspectusQuestion = {
   example?: string;
   type: QuestionType;
   required: boolean;
+  interactive?: boolean;
   fieldPath: string;
+  canonicalFieldPaths?: string[];
   requirementIds: string[];
   options?: QuestionOption[];
   displayCondition?: DisplayCondition;
   reviewRoles: string[];
+  sourceKind: QuestionSourceKind;
+  sourceMatrix?: string;
+  sourceReference?: string;
+  originalQuestionType?: string;
+  implementationStatus?: string;
+  applicability?: string;
+  effects?: string[];
+  controls?: string[];
+  evidenceTypes?: string[];
+  clauseGroupId?: string;
+  outputSectionId?: string;
+  uiFallback?: boolean;
 };
 
 export type QuestionGroup = {
@@ -61,6 +80,27 @@ export type QuestionGroup = {
   sequence: number;
   title: string;
   description: string;
+  sourceKind?: QuestionSourceKind;
+  regulatoryRequirementCount?: number;
+  interactiveQuestionCount?: number;
+};
+
+export type QuestionGroupWithQuestions = QuestionGroup & {
+  questions: ProspectusQuestion[];
+};
+
+export type CatalogMetadata = {
+  schemaVersion: string;
+  rulePack: string;
+  sourceId: string;
+  registryVersion: string;
+  registryStatus: string;
+  scope: string;
+  catalogDigest: string;
+  requirementCount: number;
+  interactiveQuestionCount: number;
+  systemQuestionCount: number;
+  systemMetadataRequirementCount: number;
 };
 
 export type ProjectAnswer = {
@@ -83,6 +123,33 @@ export type ValidationFinding = {
   remediation: string;
 };
 
+export type CanonicalAnswerRecord = {
+  questionId: string;
+  requirementIds: string[];
+  canonicalFieldPaths: string[];
+  value: unknown;
+  source: ProjectAnswer["source"];
+  reviewStatus: ProjectAnswer["reviewStatus"];
+  sourceKind: QuestionSourceKind;
+  sourceReference?: string;
+};
+
+export type CanonicalSnapshot = {
+  schemaVersion: "WEB_CANONICAL_SNAPSHOT_V1";
+  projectId: string;
+  projectVersion: number;
+  catalogDigest: string;
+  rulePack: string;
+  requirementCount: number;
+  readyForSubmission: false;
+  canonicalData: Record<string, unknown>;
+  structuredAnswers: Record<string, { canonicalFieldPaths: string[]; value: unknown }>;
+  answerRecords: CanonicalAnswerRecord[];
+  legacyUnmappedAnswers: string[];
+  coverage: CoverageSummary;
+  findings: ValidationFinding[];
+};
+
 export type GenerationSnapshot = {
   generationId: string;
   generatedAt: string;
@@ -91,6 +158,11 @@ export type GenerationSnapshot = {
   readyForSubmission: false;
   markdownPath?: string;
   docxPath?: string;
+  previewPath?: string;
+  canonicalSnapshotPath?: string;
+  catalogDigest?: string;
+  requirementCount?: number;
+  questionCount?: number;
 };
 
 export type ProspectusProject = {
@@ -121,6 +193,12 @@ export type ProspectusProject = {
   coverage: CoverageSummary;
   findings: ValidationFinding[];
   generation?: GenerationSnapshot;
+  catalog?: {
+    schemaVersion: string;
+    digest: string;
+    requirementCount: number;
+    interactiveQuestionCount: number;
+  };
   version: number;
 };
 

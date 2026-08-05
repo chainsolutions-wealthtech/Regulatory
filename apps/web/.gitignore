@@ -1,4 +1,5 @@
 .next/
 node_modules/
 .local-data/
+src/generated/regulatory-catalog.json
 *.log

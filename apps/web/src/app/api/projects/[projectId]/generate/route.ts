@@ -1,13 +1,18 @@
 import { NextResponse } from "next/server";
+import { CATALOG_METADATA } from "@/domain/regulatory-catalog";
 import { buildProspectusPreview } from "@/server/generation-adapter";
-import { getProject, persistGeneration } from "@/server/project-store";
+import { getProject, persistGenerationArtifacts } from "@/server/project-store";
 
 export const runtime = "nodejs";
 
-export async function POST(_request: Request, { params }: { params: Promise<{ projectId: string }> }) {
+export async function POST(
+  _request: Request,
+  { params }: { params: Promise<{ projectId: string }> },
+) {
   const { projectId } = await params;
   const project = await getProject(projectId);
   if (!project) return NextResponse.json({ error: "Projet introuvable." }, { status: 404 });
+
   const preview = await buildProspectusPreview(project);
   const generation = {
     generationId: preview.generationId,
@@ -15,7 +20,19 @@ export async function POST(_request: Request, { params }: { params: Promise<{ pr
     documentStatus: "DRAFT_PRE_COMPLIANCE_REVIEW" as const,
     readyForComplianceReview: preview.readyForComplianceReview,
     readyForSubmission: false as const,
+    catalogDigest: CATALOG_METADATA.catalogDigest,
+    requirementCount: CATALOG_METADATA.requirementCount,
+    questionCount: preview.canonicalSnapshot.answerRecords.length,
   };
-  await persistGeneration(projectId, generation);
-  return NextResponse.json({ generation, preview });
+  const updatedProject = await persistGenerationArtifacts({
+    projectId,
+    generation,
+    preview,
+    canonicalSnapshot: preview.canonicalSnapshot,
+  });
+  return NextResponse.json({
+    generation: updatedProject.generation,
+    preview,
+    canonicalSnapshot: preview.canonicalSnapshot,
+  });
 }

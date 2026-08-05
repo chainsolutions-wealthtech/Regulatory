@@ -3,8 +3,10 @@ import "server-only";
 import { createHash } from "node:crypto";
 import { readFile } from "node:fs/promises";
 import path from "node:path";
+import { CATALOG_METADATA } from "@/domain/regulatory-catalog";
 import { getQuestionsByGroup, validateProject } from "@/domain/questionnaire";
-import type { ProspectusProject } from "@/domain/types";
+import type { CanonicalSnapshot, ProspectusProject } from "@/domain/types";
+import { buildCanonicalSnapshot } from "@/server/canonical-snapshot";
 
 export type ProspectusPreviewSection = {
   id: string;
@@ -12,16 +14,22 @@ export type ProspectusPreviewSection = {
   paragraphs: string[];
 };
 
-export async function buildProspectusPreview(project: ProspectusProject): Promise<{
+export type ProspectusPreview = {
   title: string;
   sections: ProspectusPreviewSection[];
   generatedAt: string;
   generationId: string;
   readyForComplianceReview: boolean;
   readyForSubmission: false;
-}> {
+  catalogDigest: string;
+  requirementCount: number;
+  canonicalSnapshot: CanonicalSnapshot;
+};
+
+export async function buildProspectusPreview(project: ProspectusProject): Promise<ProspectusPreview> {
+  const canonicalSnapshot = buildCanonicalSnapshot(project);
   if (project.id === "united-capital-diamond") {
-    const existing = await readExistingMarkdown().catch(() => null);
+    const existing = await readExistingMarkdown(canonicalSnapshot).catch(() => null);
     if (existing) return existing;
   }
 
@@ -33,8 +41,7 @@ export async function buildProspectusPreview(project: ProspectusProject): Promis
         .map((question) => {
           const value = project.answers[question.id]?.value;
           if (value === undefined || value === null || value === "") return null;
-          const rendered = Array.isArray(value) ? value.join(", ") : String(value);
-          return `${question.label} : ${rendered}`;
+          return `${question.label} : ${renderValue(value)}`;
         })
         .filter((value): value is string => Boolean(value)),
     }))
@@ -42,25 +49,28 @@ export async function buildProspectusPreview(project: ProspectusProject): Promis
 
   const findings = validateProject(project);
   const generatedAt = new Date().toISOString();
-  const generationId = `WEB-${digest(JSON.stringify({ project, sections })).slice(0, 16).toUpperCase()}`;
+  const generationId = `WEB-${digest(
+    JSON.stringify({ projectId: project.id, projectVersion: project.version, catalog: CATALOG_METADATA.catalogDigest, canonicalSnapshot }),
+  )
+    .slice(0, 16)
+    .toUpperCase()}`;
   return {
     title: project.fund.legalName || project.name,
     sections,
     generatedAt,
     generationId,
-    readyForComplianceReview: findings.length === 0,
+    readyForComplianceReview:
+      findings.every((finding) => finding.severity !== "BLOCKER") &&
+      project.coverage.MISSING === 0 &&
+      project.coverage.PENDING_REVIEW === 0,
     readyForSubmission: false,
+    catalogDigest: CATALOG_METADATA.catalogDigest,
+    requirementCount: CATALOG_METADATA.requirementCount,
+    canonicalSnapshot,
   };
 }
 
-async function readExistingMarkdown(): Promise<{
-  title: string;
-  sections: ProspectusPreviewSection[];
-  generatedAt: string;
-  generationId: string;
-  readyForComplianceReview: boolean;
-  readyForSubmission: false;
-}> {
+async function readExistingMarkdown(canonicalSnapshot: CanonicalSnapshot): Promise<ProspectusPreview> {
   const repoRoot = path.resolve(process.cwd(), "../..");
   const markdownPath = path.join(
     repoRoot,
@@ -100,7 +110,16 @@ async function readExistingMarkdown(): Promise<{
     generationId: String(manifest.generation_id ?? "GEN-UNKNOWN"),
     readyForComplianceReview: Boolean(manifest.ready_for_compliance_review),
     readyForSubmission: false,
+    catalogDigest: CATALOG_METADATA.catalogDigest,
+    requirementCount: CATALOG_METADATA.requirementCount,
+    canonicalSnapshot,
   };
+}
+
+function renderValue(value: unknown): string {
+  if (Array.isArray(value)) return value.map(renderValue).join(", ");
+  if (value && typeof value === "object") return JSON.stringify(value);
+  return String(value);
 }
 
 function digest(value: string): string {

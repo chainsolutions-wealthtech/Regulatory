@@ -7,23 +7,50 @@ import { Button } from "@/components/atoms/Button";
 import { ProgressBar } from "@/components/atoms/ProgressBar";
 import { QuestionCard } from "@/components/molecules/QuestionCard";
 import { WizardStepper } from "@/components/organisms/WizardStepper";
-import { calculateProgress, getQuestionsByGroup } from "@/domain/questionnaire";
-import type { ProspectusProject } from "@/domain/types";
+import type {
+  ProspectusProject,
+  QuestionGroupWithQuestions,
+} from "@/domain/types";
 
-export function QuestionnaireWorkspace({ initialProject, activeGroupId }: { initialProject: ProspectusProject; activeGroupId: string }) {
+export function QuestionnaireWorkspace({
+  initialProject,
+  initialGroups,
+  activeGroupId,
+}: {
+  initialProject: ProspectusProject;
+  initialGroups: QuestionGroupWithQuestions[];
+  activeGroupId: string;
+}) {
   const router = useRouter();
   const [project, setProject] = useState(initialProject);
+  const [groups, setGroups] = useState(initialGroups);
   const [savingQuestionId, setSavingQuestionId] = useState<string | null>(null);
   const [error, setError] = useState<string | null>(null);
   const [pending] = useTransition();
-  const groups = useMemo(() => getQuestionsByGroup(project), [project]);
   const activeGroup = groups.find((group) => group.id === activeGroupId) ?? groups[0];
-  const completedGroupIds = useMemo(() => new Set(groups.filter((group) => group.questions.every((question) => !question.required || hasAnswer(project.answers[question.id]?.value))).map((group) => group.id)), [groups, project.answers]);
-  const progress = calculateProgress(project);
+  const completedGroupIds = useMemo(
+    () =>
+      new Set(
+        groups
+          .filter((group) =>
+            group.questions.every(
+              (question) => !question.required || hasAnswer(project.answers[question.id]?.value),
+            ),
+          )
+          .map((group) => group.id),
+      ),
+    [groups, project.answers],
+  );
+  const progress = calculateProgress(groups, project);
+
+  if (!activeGroup) {
+    return <p className="form-error">Aucune question applicable n’a été générée.</p>;
+  }
 
   async function save(questionId: string, value: unknown) {
     setSavingQuestionId(questionId);
     setError(null);
+    const previousProject = project;
     const optimistic = {
       ...project,
       answers: {
@@ -45,12 +72,19 @@ export function QuestionnaireWorkspace({ initialProject, activeGroupId }: { init
         headers: { "content-type": "application/json" },
         body: JSON.stringify({ questionId, value }),
       });
-      const body = await response.json();
-      if (!response.ok) throw new Error(body.error ?? "Échec de l’enregistrement");
+      const body = (await response.json()) as {
+        error?: string;
+        project?: ProspectusProject;
+        groups?: QuestionGroupWithQuestions[];
+      };
+      if (!response.ok || !body.project || !body.groups) {
+        throw new Error(body.error ?? "Échec de l’enregistrement");
+      }
       setProject(body.project);
+      setGroups(body.groups);
       router.refresh();
     } catch (caught) {
-      setProject(project);
+      setProject(previousProject);
       setError(caught instanceof Error ? caught.message : "Échec de l’enregistrement");
     } finally {
       setSavingQuestionId(null);
@@ -63,23 +97,76 @@ export function QuestionnaireWorkspace({ initialProject, activeGroupId }: { init
 
   return (
     <div className="wizard-layout">
-      <WizardStepper projectId={project.id} groups={groups} activeGroupId={activeGroup.id} completedGroupIds={completedGroupIds} />
+      <WizardStepper
+        projectId={project.id}
+        groups={groups}
+        activeGroupId={activeGroup.id}
+        completedGroupIds={completedGroupIds}
+      />
       <section className="wizard-content">
         <div className="wizard-content__header">
-          <div><div className="wizard-content__eyeline"><Badge tone={completedGroupIds.has(activeGroup.id) ? "success" : "info"}>Étape {activeGroup.sequence} sur {groups.length}</Badge><span>{savingQuestionId ? "Enregistrement…" : "Sauvegarde automatique"}</span></div><h2>{activeGroup.title}</h2><p>{activeGroup.description}</p></div>
+          <div>
+            <div className="wizard-content__eyeline">
+              <Badge tone={completedGroupIds.has(activeGroup.id) ? "success" : "info"}>
+                Étape {activeGroup.sequence} sur {groups.length}
+              </Badge>
+              <span>{savingQuestionId ? "Enregistrement…" : "Sauvegarde automatique"}</span>
+            </div>
+            <h2>{activeGroup.title}</h2>
+            <p>{activeGroup.description}</p>
+          </div>
           <ProgressBar value={progress} label="Progression totale" />
         </div>
-        {error ? <p className="form-error" role="alert">{error}</p> : null}
+        {error ? (
+          <p className="form-error" role="alert">
+            {error}
+          </p>
+        ) : null}
         <div className="question-stack">
-          {activeGroup.questions.map((question) => <QuestionCard key={question.id} question={question} value={project.answers[question.id]?.value} disabled={pending} onChange={(value) => save(question.id, value)} />)}
+          {activeGroup.questions.map((question) => (
+            <QuestionCard
+              key={question.id}
+              question={question}
+              value={project.answers[question.id]?.value}
+              disabled={pending}
+              onChange={(value) => save(question.id, value)}
+            />
+          ))}
         </div>
         <div className="wizard-actions">
-          {previousGroup ? <Button href={`/projects/${project.id}/questionnaire?group=${previousGroup.id}`} variant="secondary">Étape précédente</Button> : <span />}
-          {nextGroup ? <Button href={`/projects/${project.id}/questionnaire?group=${nextGroup.id}`} icon="arrow">Étape suivante</Button> : <Button href={`/projects/${project.id}/controls`} icon="shield">Voir les contrôles</Button>}
+          {previousGroup ? (
+            <Button
+              href={`/projects/${project.id}/questionnaire?group=${previousGroup.id}`}
+              variant="secondary"
+            >
+              Étape précédente
+            </Button>
+          ) : (
+            <span />
+          )}
+          {nextGroup ? (
+            <Button href={`/projects/${project.id}/questionnaire?group=${nextGroup.id}`} icon="arrow">
+              Étape suivante
+            </Button>
+          ) : (
+            <Button href={`/projects/${project.id}/controls`} icon="shield">
+              Voir les contrôles
+            </Button>
+          )}
         </div>
       </section>
     </div>
   );
+}
+
+function calculateProgress(
+  groups: QuestionGroupWithQuestions[],
+  project: ProspectusProject,
+): number {
+  const required = groups.flatMap((group) => group.questions).filter((question) => question.required);
+  if (required.length === 0) return 0;
+  const completed = required.filter((question) => hasAnswer(project.answers[question.id]?.value)).length;
+  return Math.round((completed / required.length) * 100);
 }
 
 function hasAnswer(value: unknown): boolean {

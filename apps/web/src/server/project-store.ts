@@ -4,16 +4,26 @@ import { randomUUID } from "node:crypto";
 import { appendFile, mkdir, readFile, readdir, writeFile } from "node:fs/promises";
 import path from "node:path";
 import { seedProjects } from "@/data/seed-projects";
-import { EMPTY_COVERAGE } from "@/domain/constants";
+import { createEmptyCoverage, getQuestionById } from "@/domain/regulatory-catalog";
 import {
   calculateProgress,
+  migrateProjectToCurrentCatalog,
   sanitizeAnswersAfterChange,
   toProjectSummary,
   validateProject,
 } from "@/domain/questionnaire";
-import type { ProspectusProject, ProjectAnswer, ProjectSummary } from "@/domain/types";
+import type {
+  CanonicalSnapshot,
+  GenerationSnapshot,
+  ProjectAnswer,
+  ProspectusProject,
+  ProjectSummary,
+} from "@/domain/types";
+import type { ProspectusPreview } from "@/server/generation-adapter";
 
-const DATA_ROOT = path.join(process.cwd(), ".local-data", "projects");
+const DATA_ROOT = process.env.REGULATORY_LOCAL_DATA_ROOT
+  ? path.resolve(process.env.REGULATORY_LOCAL_DATA_ROOT)
+  : path.join(process.cwd(), ".local-data", "projects");
 
 export async function listProjects(): Promise<ProjectSummary[]> {
   const projects = await readAllProjects();
@@ -24,11 +34,9 @@ export async function listProjects(): Promise<ProjectSummary[]> {
 
 export async function getProject(projectId: string): Promise<ProspectusProject | null> {
   const stored = await readStoredProject(projectId);
-  if (stored) {
-    return { ...stored, findings: validateProject(stored) };
-  }
+  if (stored) return hydrateProject(stored);
   const seed = seedProjects.find((project) => project.id === projectId);
-  return seed ? structuredClone({ ...seed, findings: validateProject(seed) }) : null;
+  return seed ? hydrateProject(structuredClone(seed)) : null;
 }
 
 export async function createProject(input: {
@@ -39,8 +47,24 @@ export async function createProject(input: {
   managementCompanyName: string;
 }): Promise<ProspectusProject> {
   const now = new Date().toISOString();
-  const project: ProspectusProject = {
-    id: slugify(input.name) || randomUUID(),
+  const answers = Object.fromEntries(
+    [
+      ["Q_REGULATORY_PACK_CONFIRMATION", "CONFIRMED", "DERIVED"],
+      ["APP_PROJECT_OPERATION", input.operation, "USER"],
+      ["APP_FUND_CATEGORY", input.category, "USER"],
+      ["APP_HOME_STATE", input.countryCode, "USER"],
+      ["APP_MANAGER_PROFILE_CONFIRMED", "false", "PREFILLED"],
+      ["Q_SELECT_MANAGEMENT_COMPANY", input.managementCompanyName, "PREFILLED"],
+      ["Q_FUND_LEGAL_NAME", input.name, "PREFILLED"],
+      ["APP_FUND_CURRENCY", "XOF", "PREFILLED"],
+    ].map(([questionId, value, source]) => [
+      questionId,
+      createAnswer(String(questionId), value, now, source as ProjectAnswer["source"]),
+    ]),
+  );
+
+  const project = migrateProjectToCurrentCatalog({
+    id: await uniqueProjectId(input.name),
     name: input.name,
     fundType: "FCP",
     category: input.category,
@@ -61,11 +85,12 @@ export async function createProject(input: {
       currency: "XOF",
       shareClassCount: 1,
     },
-    answers: {},
-    coverage: structuredClone(EMPTY_COVERAGE),
+    answers,
+    coverage: createEmptyCoverage(),
     findings: [],
     version: 1,
-  };
+  });
+  project.findings = validateProject(project);
   await persistProject(project, "PROJECT_CREATED");
   return project;
 }
@@ -76,11 +101,14 @@ export async function saveAnswer(input: {
   value: unknown;
   updatedBy?: string;
 }): Promise<ProspectusProject> {
+  const question = getQuestionById(input.questionId);
+  if (!question || question.interactive === false) throw new Error("QUESTION_NOT_FOUND");
+
   const project = await getProject(input.projectId);
   if (!project) throw new Error("PROJECT_NOT_FOUND");
 
   const now = new Date().toISOString();
-  const answer: ProjectAnswer = {
+  project.answers[input.questionId] = {
     questionId: input.questionId,
     value: input.value,
     updatedAt: now,
@@ -88,12 +116,11 @@ export async function saveAnswer(input: {
     source: "USER",
     reviewStatus: "UNREVIEWED",
   };
-
-  project.answers[input.questionId] = answer;
   project.answers = sanitizeAnswersAfterChange(project);
   project.updatedAt = now;
   project.version += 1;
-  project.status = calculateProgress(project) === 100 ? "PRE_COMPLIANCE_REVIEW" : "QUESTIONNAIRE_IN_PROGRESS";
+  project.status =
+    calculateProgress(project) === 100 ? "PRE_COMPLIANCE_REVIEW" : "QUESTIONNAIRE_IN_PROGRESS";
   project.findings = validateProject(project);
 
   await persistProject(project, "ANSWER_SAVED", {
@@ -103,17 +130,33 @@ export async function saveAnswer(input: {
   return project;
 }
 
-export async function persistGeneration(
-  projectId: string,
-  generation: ProspectusProject["generation"],
-): Promise<ProspectusProject> {
-  const project = await getProject(projectId);
+export async function persistGenerationArtifacts(input: {
+  projectId: string;
+  generation: GenerationSnapshot;
+  preview: ProspectusPreview;
+  canonicalSnapshot: CanonicalSnapshot;
+}): Promise<ProspectusProject> {
+  const project = await getProject(input.projectId);
   if (!project) throw new Error("PROJECT_NOT_FOUND");
-  project.generation = generation;
+
+  const directory = path.join(projectDirectory(project.id), "generations", safeId(input.generation.generationId));
+  await mkdir(directory, { recursive: true });
+  const previewPath = path.join(directory, "preview.json");
+  const canonicalSnapshotPath = path.join(directory, "canonical-snapshot.json");
+  await Promise.all([
+    writeStableJson(previewPath, input.preview),
+    writeStableJson(canonicalSnapshotPath, input.canonicalSnapshot),
+  ]);
+
+  project.generation = {
+    ...input.generation,
+    previewPath: relativeToDataRoot(previewPath),
+    canonicalSnapshotPath: relativeToDataRoot(canonicalSnapshotPath),
+  };
   project.updatedAt = new Date().toISOString();
   project.version += 1;
   project.findings = validateProject(project);
-  await persistProject(project, "PROSPECTUS_GENERATED", generation);
+  await persistProject(project, "PROSPECTUS_GENERATED", project.generation);
   return project;
 }
 
@@ -126,10 +169,13 @@ async function readAllProjects(): Promise<ProspectusProject[]> {
   const stored = (
     await Promise.all(storedIds.map((projectId) => readStoredProject(projectId)))
   ).filter((project): project is ProspectusProject => project !== null);
+  const hydratedStored = stored.map(hydrateProject);
 
-  const storedIdSet = new Set(stored.map((project) => project.id));
-  const seeds = seedProjects.filter((project) => !storedIdSet.has(project.id));
-  return [...stored, ...structuredClone(seeds)];
+  const storedIdSet = new Set(hydratedStored.map((project) => project.id));
+  const seeds = seedProjects
+    .filter((project) => !storedIdSet.has(project.id))
+    .map((project) => hydrateProject(structuredClone(project)));
+  return [...hydratedStored, ...seeds];
 }
 
 async function readStoredProject(projectId: string): Promise<ProspectusProject | null> {
@@ -141,6 +187,12 @@ async function readStoredProject(projectId: string): Promise<ProspectusProject |
   }
 }
 
+function hydrateProject(project: ProspectusProject): ProspectusProject {
+  const migrated = migrateProjectToCurrentCatalog(project);
+  migrated.findings = validateProject(migrated);
+  return migrated;
+}
+
 async function persistProject(
   project: ProspectusProject,
   eventType: string,
@@ -150,11 +202,10 @@ async function persistProject(
   const versionsDirectory = path.join(directory, "versions");
   await mkdir(versionsDirectory, { recursive: true });
 
-  const stable = `${JSON.stringify(project, null, 2)}\n`;
   const versionName = `${String(project.version).padStart(5, "0")}.json`;
   await Promise.all([
-    writeFile(currentPath(project.id), stable, "utf8"),
-    writeFile(path.join(versionsDirectory, versionName), stable, "utf8"),
+    writeStableJson(currentPath(project.id), project),
+    writeStableJson(path.join(versionsDirectory, versionName), project),
     appendFile(
       path.join(directory, "audit.ndjson"),
       `${JSON.stringify({
@@ -171,6 +222,28 @@ async function persistProject(
   ]);
 }
 
+async function uniqueProjectId(name: string): Promise<string> {
+  const base = slugify(name) || randomUUID();
+  if (!(await readStoredProject(base)) && !seedProjects.some((project) => project.id === base)) return base;
+  return `${base}-${randomUUID().slice(0, 8)}`;
+}
+
+function createAnswer(
+  questionId: string,
+  value: unknown,
+  updatedAt: string,
+  source: ProjectAnswer["source"],
+): ProjectAnswer {
+  return {
+    questionId,
+    value,
+    updatedAt,
+    updatedBy: "local-prototype-user",
+    source,
+    reviewStatus: source === "USER" ? "UNREVIEWED" : "PENDING_REVIEW",
+  };
+}
+
 function projectDirectory(projectId: string): string {
   return path.join(DATA_ROOT, safeId(projectId));
 }
@@ -179,8 +252,12 @@ function currentPath(projectId: string): string {
   return path.join(projectDirectory(projectId), "current.json");
 }
 
+function relativeToDataRoot(filePath: string): string {
+  return path.relative(DATA_ROOT, filePath).split(path.sep).join("/");
+}
+
 function safeId(value: string): string {
-  if (!/^[a-z0-9-]+$/i.test(value)) throw new Error("INVALID_PROJECT_ID");
+  if (!/^[a-z0-9-]+$/i.test(value)) throw new Error("INVALID_IDENTIFIER");
   return value;
 }
 
@@ -192,4 +269,8 @@ function slugify(value: string): string {
     .replace(/[^a-z0-9]+/g, "-")
     .replace(/(^-|-$)/g, "")
     .slice(0, 80);
+}
+
+async function writeStableJson(filePath: string, value: unknown): Promise<void> {
+  await writeFile(filePath, `${JSON.stringify(value, null, 2)}\n`, "utf8");
 }

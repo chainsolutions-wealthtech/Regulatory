@@ -1,12 +1,16 @@
 {
   "name": "@regulatory/prospectus-web",
-  "version": "0.1.1",
+  "version": "0.2.0",
   "private": true,
   "scripts": {
+    "catalog:generate": "node ../../scripts/generate-web-regulatory-catalog.mjs",
+    "predev": "npm run catalog:generate",
     "dev": "next dev",
+    "pretypecheck": "npm run catalog:generate",
+    "typecheck": "tsc --noEmit",
+    "prebuild": "npm run catalog:generate",
     "build": "next build",
-    "start": "next start",
-    "typecheck": "tsc --noEmit"
+    "start": "next start"
   },
   "dependencies": {
     "next": "16.2.12",

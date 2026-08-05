@@ -1,6 +1,6 @@
 {
   "name": "regulatory-prospectus-composer",
-  "version": "0.3.0",
+  "version": "0.4.0",
   "private": true,
   "type": "module",
   "description": "Moteur réglementaire et application Next.js de composition de prospectus OPCVM/FCP UMOA.",
@@ -13,11 +13,14 @@
     "generate:docx": "python3 scripts/generate_docx.py && python3 scripts/optimize_docx_layout.py",
     "validate:docx": "python3 scripts/validate_docx.py",
     "document": "npm run generate:sample && npm run generate:docx && npm run validate:docx",
+    "generate:web-catalog": "node scripts/generate-web-regulatory-catalog.mjs",
     "web:install": "npm install --prefix apps/web --no-audit --no-fund",
     "web:dev": "npm run dev --prefix apps/web",
     "web:typecheck": "npm run typecheck --prefix apps/web",
     "web:build": "npm run build --prefix apps/web",
-    "check:web": "npm run web:typecheck && npm run web:build",
-    "check": "npm test && npm run document"
+    "web:start": "npm run start --prefix apps/web",
+    "web:test:api": "node scripts/test-web-api.mjs",
+    "check:web": "npm run generate:web-catalog && npm run web:typecheck && npm run web:build",
+    "check": "npm test && npm run document && npm run check:web"
   }
 }
