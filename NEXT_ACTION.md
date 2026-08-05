@@ -1,44 +1,56 @@
 # NEXT_ACTION — Une seule action exécutable
 
 > **Statut :** `READY`  
-> **Prérequis documentaire :** `LOOP-GOV-001` clôturée le 2026-08-05.
+> **Boucle active :** `LOOP-REG-001`.
 
 ## Action
 
-Obtenir une copie officielle, vérifiable et exploitable de l’Instruction n°66/CREPMF/2021, l’enregistrer dans le registre des sources, puis préparer son atomisation sans modifier les identifiants existants de la Circulaire n°05/CREPMF/2022.
+Matérialiser une copie exploitable du PDF de l’Instruction n°66/CREPMF/2021, calculer sa taille et son SHA-256, puis produire l’index machine-readable complet de ses titres, chapitres, sections et articles sans encore créer les exigences atomiques détaillées.
 
-## Préconditions
+## Préconditions déjà satisfaites
 
-- source officielle ou copie dont la provenance peut être vérifiée ;
-- confirmation du numéro, de la version, de la date, des éventuelles modifications, rectificatifs, abrogations et du statut juridique ;
-- empreinte du document source ;
-- nouvelle boucle distincte avec objectif, périmètre, contrôles et critères de sortie ;
-- maintien de `main`, sauf désignation explicite d’une autre branche déjà existante.
+- registre officiel AMF-UMOA identifié ;
+- Instruction n°66/2021 listée `NON ABROGE` au 2026-08-05 ;
+- publication BRVM du 12 janvier 2022 identifiée ;
+- PDF distant de `65` pages identifié ;
+- source enregistrée dans `regulatory/sources/INSTRUCTION_66_CREPMF_2021.yaml` ;
+- plan enregistré dans `regulatory/plans/INSTRUCTION_66_ATOMIZATION_PLAN_V0_1.yaml` ;
+- branche `main` conservée.
 
 ## Fichiers concernés
 
-- `regulatory/sources/`
-- `regulatory/requirements/`
+- `regulatory/sources/INSTRUCTION_66_CREPMF_2021.yaml`
+- `regulatory/requirements/INST066_ARTICLE_INDEX_V0_1.yaml`
+- `regulatory/manifest.yaml`
 - `docs/REGULATORY_MAPPING.md`
+- `STATUS.md`
+- `LOOP_STATE.md`
+- `CURRENT_ITERATION.md`
+- `WORK_LOG.md`
 - `SUIVI.md`
 - `TODO.md`
-- registres de la nouvelle boucle
 
 ## Résultat attendu
 
-Une source versionnée avec empreinte, provenance et statut, accompagnée d’un plan d’atomisation et d’une nouvelle boucle distincte. Aucun wording juridique ne doit devenir `APPROVED` ou `ACTIVE` sans revue formelle.
+- copie locale ou référence d’archive exploitable ;
+- taille exacte ;
+- SHA-256 ;
+- nombre de pages confirmé ;
+- date de signature et date d’effet relevées lorsqu’elles sont lisibles ;
+- index complet des articles avec coordonnées de page ;
+- aucune exigence détaillée déclarée `VALIDATED` ;
+- aucun identifiant `CIRC005_*` modifié.
 
 ## Preuves attendues
 
-- URL officielle ou document officiel ;
-- copie source autorisée ou référence d’archive ;
-- SHA-256 ;
-- métadonnées et dates vérifiées ;
-- analyse des versions et textes modificatifs ;
-- diff contrôlé ;
-- validation structurelle ;
-- limites juridiques explicitement déclarées.
+- URL de la source ;
+- empreinte et taille ;
+- index des articles ;
+- contrôle d’unicité et de continuité des numéros ;
+- liste des pages illisibles ou ambiguës ;
+- diff Git contrôlé ;
+- journal des limitations.
 
 ## Condition d’arrêt
 
-En l’absence d’une source suffisamment vérifiable, ne pas inventer ni atomiser le texte : consigner le blocage dans `OPEN_QUESTIONS.md`, `STATUS.md`, `SUIVI.md` et `TODO.md`.
+En cas d’impossibilité de matérialiser fidèlement le PDF, enregistrer la limitation et ne pas inventer l’empreinte. L’index peut être préparé uniquement à partir de pages effectivement consultables, avec provenance et niveau de confiance explicites.
