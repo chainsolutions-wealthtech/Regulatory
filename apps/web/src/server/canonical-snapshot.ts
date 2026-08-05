@@ -47,8 +47,10 @@ export function buildCanonicalSnapshot(project: ProspectusProject): CanonicalSna
 
   return {
     schemaVersion: "WEB_CANONICAL_SNAPSHOT_V1",
+    snapshotCreatedAt: project.updatedAt,
     projectId: project.id,
     projectVersion: project.version,
+    projectUpdatedAt: project.updatedAt,
     catalogDigest: CATALOG_METADATA.catalogDigest,
     rulePack: CATALOG_METADATA.rulePack,
     requirementCount: CATALOG_METADATA.requirementCount,
