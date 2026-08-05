@@ -1,0 +1,154 @@
+{
+  "schemaVersion": "PROSPECTUS_RBAC_V1",
+  "status": "IMPLEMENTATION_BASELINE",
+  "defaultDecision": "DENY",
+  "roles": {
+    "ADMIN": {
+      "label": "Administrateur d’organisation",
+      "description": "Administre les membres, paramètres et réouvertures internes. Ne remplace aucun rôle de revue spécialisé.",
+      "inherits": ["READER"]
+    },
+    "PRODUCT": {
+      "label": "Métier produit",
+      "description": "Crée et renseigne les projets et traite les corrections métier.",
+      "inherits": ["READER"]
+    },
+    "RISK": {
+      "label": "Risques",
+      "description": "Revoit la stratégie, les actifs, limites, liquidité et facteurs de risque.",
+      "inherits": ["READER"]
+    },
+    "COMPLIANCE": {
+      "label": "Conformité",
+      "description": "Revoit la couverture réglementaire, les preuves et les contrôles de pré-conformité.",
+      "inherits": ["READER"]
+    },
+    "LEGAL": {
+      "label": "Juridique",
+      "description": "Revoit les clauses, le règlement et les qualifications juridiques.",
+      "inherits": ["READER"]
+    },
+    "TAX": {
+      "label": "Fiscalité",
+      "description": "Revoit les sources et mentions fiscales par État.",
+      "inherits": ["READER"]
+    },
+    "OPERATIONS": {
+      "label": "Opérations",
+      "description": "Revoit VL, souscriptions, rachats, valorisation et dispositifs opérationnels.",
+      "inherits": ["READER"]
+    },
+    "SECURITY": {
+      "label": "Sécurité",
+      "description": "Revoit sécurité, accès, stockage, rétention et événements sensibles.",
+      "inherits": ["READER"]
+    },
+    "AUDIT": {
+      "label": "Audit",
+      "description": "Accède en lecture aux preuves, versions et journaux d’audit et peut émettre des observations.",
+      "inherits": ["READER"]
+    },
+    "READER": {
+      "label": "Lecteur",
+      "description": "Accès en lecture uniquement aux ressources autorisées de son organisation.",
+      "inherits": []
+    }
+  },
+  "actions": {
+    "PROJECT_LIST": { "resource": "project", "sensitive": false },
+    "PROJECT_READ": { "resource": "project", "sensitive": false },
+    "PROJECT_CREATE": { "resource": "project", "sensitive": true },
+    "PROJECT_EDIT": { "resource": "project", "sensitive": true },
+    "PROJECT_REOPEN": { "resource": "project", "sensitive": true },
+    "ANSWER_READ": { "resource": "answer", "sensitive": false },
+    "ANSWER_WRITE": { "resource": "answer", "sensitive": true },
+    "EVIDENCE_READ": { "resource": "evidence", "sensitive": true },
+    "EVIDENCE_WRITE": { "resource": "evidence", "sensitive": true },
+    "EVIDENCE_VERIFY": { "resource": "evidence", "sensitive": true },
+    "GENERATION_RUN": { "resource": "generated_document", "sensitive": true },
+    "GENERATION_READ": { "resource": "generated_document", "sensitive": false },
+    "REVIEW_REQUEST": { "resource": "review", "sensitive": true },
+    "REVIEW_ASSIGN": { "resource": "review", "sensitive": true },
+    "REVIEW_COMMENT": { "resource": "review", "sensitive": true },
+    "REVIEW_DECIDE_PRODUCT": { "resource": "review", "sensitive": true },
+    "REVIEW_DECIDE_RISK": { "resource": "review", "sensitive": true },
+    "REVIEW_DECIDE_COMPLIANCE": { "resource": "review", "sensitive": true },
+    "REVIEW_DECIDE_LEGAL": { "resource": "review", "sensitive": true },
+    "REVIEW_DECIDE_TAX": { "resource": "review", "sensitive": true },
+    "REVIEW_DECIDE_OPERATIONS": { "resource": "review", "sensitive": true },
+    "REVIEW_DECIDE_SECURITY": { "resource": "review", "sensitive": true },
+    "WORKFLOW_TRANSITION": { "resource": "project_workflow", "sensitive": true },
+    "VERSION_FREEZE": { "resource": "project_version", "sensitive": true },
+    "CLAUSE_READ": { "resource": "clause", "sensitive": false },
+    "CLAUSE_DRAFT": { "resource": "clause", "sensitive": true },
+    "CLAUSE_APPROVE": { "resource": "clause", "sensitive": true },
+    "CLAUSE_ACTIVATE": { "resource": "clause", "sensitive": true },
+    "MEMBERSHIP_MANAGE": { "resource": "membership", "sensitive": true },
+    "AUDIT_READ": { "resource": "audit", "sensitive": true },
+    "SUBMISSION_MARK_READY": { "resource": "submission", "sensitive": true, "disabled": true },
+    "SUBMISSION_SEND": { "resource": "submission", "sensitive": true, "disabled": true }
+  },
+  "grants": {
+    "ADMIN": [
+      "PROJECT_LIST", "PROJECT_READ", "PROJECT_REOPEN", "ANSWER_READ", "EVIDENCE_READ",
+      "GENERATION_READ", "REVIEW_REQUEST", "REVIEW_ASSIGN", "REVIEW_COMMENT",
+      "WORKFLOW_TRANSITION", "MEMBERSHIP_MANAGE", "AUDIT_READ"
+    ],
+    "PRODUCT": [
+      "PROJECT_LIST", "PROJECT_READ", "PROJECT_CREATE", "PROJECT_EDIT", "ANSWER_READ",
+      "ANSWER_WRITE", "EVIDENCE_READ", "EVIDENCE_WRITE", "GENERATION_RUN",
+      "GENERATION_READ", "REVIEW_REQUEST", "REVIEW_COMMENT", "REVIEW_DECIDE_PRODUCT",
+      "WORKFLOW_TRANSITION", "VERSION_FREEZE", "CLAUSE_READ"
+    ],
+    "RISK": [
+      "PROJECT_LIST", "PROJECT_READ", "ANSWER_READ", "EVIDENCE_READ", "GENERATION_READ",
+      "REVIEW_COMMENT", "REVIEW_DECIDE_RISK", "WORKFLOW_TRANSITION", "CLAUSE_READ"
+    ],
+    "COMPLIANCE": [
+      "PROJECT_LIST", "PROJECT_READ", "ANSWER_READ", "EVIDENCE_READ", "EVIDENCE_VERIFY",
+      "GENERATION_READ", "REVIEW_REQUEST", "REVIEW_ASSIGN", "REVIEW_COMMENT",
+      "REVIEW_DECIDE_COMPLIANCE", "WORKFLOW_TRANSITION", "VERSION_FREEZE", "CLAUSE_READ"
+    ],
+    "LEGAL": [
+      "PROJECT_LIST", "PROJECT_READ", "ANSWER_READ", "EVIDENCE_READ", "GENERATION_READ",
+      "REVIEW_COMMENT", "REVIEW_DECIDE_LEGAL", "WORKFLOW_TRANSITION", "VERSION_FREEZE",
+      "CLAUSE_READ", "CLAUSE_DRAFT", "CLAUSE_APPROVE"
+    ],
+    "TAX": [
+      "PROJECT_LIST", "PROJECT_READ", "ANSWER_READ", "EVIDENCE_READ", "GENERATION_READ",
+      "REVIEW_COMMENT", "REVIEW_DECIDE_TAX", "WORKFLOW_TRANSITION", "CLAUSE_READ"
+    ],
+    "OPERATIONS": [
+      "PROJECT_LIST", "PROJECT_READ", "ANSWER_READ", "EVIDENCE_READ", "GENERATION_READ",
+      "REVIEW_COMMENT", "REVIEW_DECIDE_OPERATIONS", "WORKFLOW_TRANSITION", "CLAUSE_READ"
+    ],
+    "SECURITY": [
+      "PROJECT_LIST", "PROJECT_READ", "EVIDENCE_READ", "REVIEW_COMMENT",
+      "REVIEW_DECIDE_SECURITY", "AUDIT_READ"
+    ],
+    "AUDIT": [
+      "PROJECT_LIST", "PROJECT_READ", "ANSWER_READ", "EVIDENCE_READ", "GENERATION_READ",
+      "REVIEW_COMMENT", "CLAUSE_READ", "AUDIT_READ"
+    ],
+    "READER": [
+      "PROJECT_LIST", "PROJECT_READ", "ANSWER_READ", "GENERATION_READ", "CLAUSE_READ"
+    ]
+  },
+  "separationOfDuties": [
+    {
+      "id": "CLAUSE_AUTHOR_CANNOT_SOLE_APPROVE",
+      "description": "L'auteur d'une version de clause ne peut pas être son seul approbateur.",
+      "actions": ["CLAUSE_DRAFT", "CLAUSE_APPROVE"]
+    },
+    {
+      "id": "PRODUCT_CANNOT_SELF_APPROVE_COMPLIANCE",
+      "description": "Le contributeur produit ne peut pas rendre la décision conformité pour son propre travail.",
+      "actions": ["ANSWER_WRITE", "REVIEW_DECIDE_COMPLIANCE"]
+    },
+    {
+      "id": "SUBMISSION_DISABLED_V1",
+      "description": "Aucun rôle ne dispose d'une autorisation de soumission dans la baseline V1.",
+      "actions": ["SUBMISSION_MARK_READY", "SUBMISSION_SEND"]
+    }
+  ]
+}
