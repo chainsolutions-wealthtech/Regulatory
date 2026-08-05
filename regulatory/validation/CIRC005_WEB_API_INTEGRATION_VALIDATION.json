@@ -1,5 +1,5 @@
 {
-  "validationId": "CIRC005_WEB_API_INTEGRATION_VALIDATION_V2",
+  "validationId": "CIRC005_WEB_API_INTEGRATION_VALIDATION_V3",
   "status": "PASS",
   "catalogDigest": "c1f288bcc865becee580e52049ea4757ecd7e1fc97fcccd3f4b61aba3089ea1b",
   "requirementCount": 62,
@@ -12,6 +12,11 @@
     "canonicalQuestionAccepted": true,
     "unknownQuestionRejected": true,
     "conditionalAnswerInvalidation": true,
+    "structuredShareClassQuestionExposed": true,
+    "invalidShareClassRowsRejected": true,
+    "structuredShareClassesPersisted": true,
+    "shareClassesWrittenToCanonicalArray": true,
+    "legacyRepeatingBucketAvoidedForShareClasses": true,
     "canonicalSnapshotGenerated": true,
     "canonicalFieldPopulated": true,
     "historicalComposerInvoked": true,
