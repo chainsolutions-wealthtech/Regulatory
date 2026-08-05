@@ -1,0 +1,209 @@
+{
+  "schemaVersion": "PROSPECTUS_REVIEW_WORKFLOW_V1",
+  "status": "IMPLEMENTATION_BASELINE",
+  "initialState": "DRAFT",
+  "terminalStates": [],
+  "states": {
+    "DRAFT": {
+      "label": "Brouillon",
+      "description": "Projet créé, données encore partielles."
+    },
+    "QUESTIONNAIRE_IN_PROGRESS": {
+      "label": "Questionnaire en cours",
+      "description": "Données et pièces en cours de constitution ou de correction."
+    },
+    "PRE_COMPLIANCE_REVIEW": {
+      "label": "Pré-conformité technique",
+      "description": "Une génération et les contrôles techniques sont disponibles pour les revues humaines."
+    },
+    "RISK_REVIEW": {
+      "label": "Revue risques",
+      "description": "Stratégie, actifs, limites, liquidité et risques sont examinés."
+    },
+    "OPERATIONS_REVIEW": {
+      "label": "Revue opérations",
+      "description": "VL, valorisation, souscriptions, rachats et dispositifs opérationnels sont examinés."
+    },
+    "COMPLIANCE_REVIEW": {
+      "label": "Revue conformité",
+      "description": "Couverture réglementaire, preuves, contrôles et non-applicabilités sont examinés."
+    },
+    "LEGAL_REVIEW": {
+      "label": "Revue juridique",
+      "description": "Clauses, règlement, qualifications et cohérence juridique sont examinés."
+    },
+    "TAX_REVIEW": {
+      "label": "Revue fiscale",
+      "description": "Sources et mentions fiscales applicables sont examinées."
+    },
+    "READY_FOR_INTERNAL_APPROVAL": {
+      "label": "Prêt pour approbation interne",
+      "description": "Les revues requises sont terminées, sans préjuger d'une soumission ou décision du régulateur."
+    },
+    "CHANGES_REQUESTED": {
+      "label": "Corrections demandées",
+      "description": "Au moins une revue a demandé des changements."
+    },
+    "INTERNALLY_FROZEN": {
+      "label": "Version gelée en interne",
+      "description": "Snapshot interne immuable après décision humaine enregistrée. Ce gel n'est ni un visa ni une approbation réglementaire."
+    },
+    "ARCHIVED": {
+      "label": "Archivé",
+      "description": "Projet clos ou remplacé, conservé pour audit."
+    }
+  },
+  "transitions": [
+    {
+      "id": "START_QUESTIONNAIRE",
+      "from": ["DRAFT"],
+      "to": "QUESTIONNAIRE_IN_PROGRESS",
+      "actions": ["PROJECT_EDIT", "ANSWER_WRITE"],
+      "allowedRoles": ["PRODUCT"],
+      "conditions": []
+    },
+    {
+      "id": "GENERATE_PRE_COMPLIANCE",
+      "from": ["QUESTIONNAIRE_IN_PROGRESS", "CHANGES_REQUESTED"],
+      "to": "PRE_COMPLIANCE_REVIEW",
+      "actions": ["GENERATION_RUN"],
+      "allowedRoles": ["PRODUCT"],
+      "conditions": [
+        { "kind": "NO_BLOCKER", "required": true },
+        { "kind": "GENERATION_EXISTS", "required": true },
+        { "kind": "READY_FOR_SUBMISSION_FALSE", "required": true }
+      ]
+    },
+    {
+      "id": "REQUEST_RISK_REVIEW",
+      "from": ["PRE_COMPLIANCE_REVIEW"],
+      "to": "RISK_REVIEW",
+      "actions": ["REVIEW_REQUEST", "WORKFLOW_TRANSITION"],
+      "allowedRoles": ["PRODUCT", "COMPLIANCE"],
+      "conditions": [
+        { "kind": "REVIEW_REQUEST_EXISTS", "role": "RISK", "required": true }
+      ]
+    },
+    {
+      "id": "APPROVE_RISK_REVIEW",
+      "from": ["RISK_REVIEW"],
+      "to": "OPERATIONS_REVIEW",
+      "actions": ["REVIEW_DECIDE_RISK", "WORKFLOW_TRANSITION"],
+      "allowedRoles": ["RISK"],
+      "conditions": [
+        { "kind": "REVIEW_APPROVED", "role": "RISK", "required": true },
+        { "kind": "REVIEW_REQUEST_EXISTS", "role": "OPERATIONS", "required": true }
+      ]
+    },
+    {
+      "id": "APPROVE_OPERATIONS_REVIEW",
+      "from": ["OPERATIONS_REVIEW"],
+      "to": "COMPLIANCE_REVIEW",
+      "actions": ["REVIEW_DECIDE_OPERATIONS", "WORKFLOW_TRANSITION"],
+      "allowedRoles": ["OPERATIONS"],
+      "conditions": [
+        { "kind": "REVIEW_APPROVED", "role": "OPERATIONS", "required": true },
+        { "kind": "REVIEW_REQUEST_EXISTS", "role": "COMPLIANCE", "required": true }
+      ]
+    },
+    {
+      "id": "APPROVE_COMPLIANCE_REVIEW",
+      "from": ["COMPLIANCE_REVIEW"],
+      "to": "LEGAL_REVIEW",
+      "actions": ["REVIEW_DECIDE_COMPLIANCE", "WORKFLOW_TRANSITION"],
+      "allowedRoles": ["COMPLIANCE"],
+      "conditions": [
+        { "kind": "REVIEW_APPROVED", "role": "COMPLIANCE", "required": true },
+        { "kind": "NO_BLOCKER", "required": true },
+        { "kind": "REVIEW_REQUEST_EXISTS", "role": "LEGAL", "required": true }
+      ]
+    },
+    {
+      "id": "APPROVE_LEGAL_REVIEW",
+      "from": ["LEGAL_REVIEW"],
+      "to": "TAX_REVIEW",
+      "actions": ["REVIEW_DECIDE_LEGAL", "WORKFLOW_TRANSITION"],
+      "allowedRoles": ["LEGAL"],
+      "conditions": [
+        { "kind": "REVIEW_APPROVED", "role": "LEGAL", "required": true },
+        { "kind": "NO_UNAPPROVED_ACTIVE_CLAUSE", "required": true },
+        { "kind": "REVIEW_REQUEST_EXISTS", "role": "TAX", "required": true }
+      ]
+    },
+    {
+      "id": "APPROVE_TAX_REVIEW",
+      "from": ["TAX_REVIEW"],
+      "to": "READY_FOR_INTERNAL_APPROVAL",
+      "actions": ["REVIEW_DECIDE_TAX", "WORKFLOW_TRANSITION"],
+      "allowedRoles": ["TAX"],
+      "conditions": [
+        { "kind": "REVIEW_APPROVED", "role": "TAX", "required": true },
+        { "kind": "ALL_REQUIRED_REVIEWS_APPROVED", "roles": ["RISK", "OPERATIONS", "COMPLIANCE", "LEGAL", "TAX"], "required": true },
+        { "kind": "READY_FOR_SUBMISSION_FALSE", "required": true }
+      ]
+    },
+    {
+      "id": "FREEZE_INTERNAL_VERSION",
+      "from": ["READY_FOR_INTERNAL_APPROVAL"],
+      "to": "INTERNALLY_FROZEN",
+      "actions": ["VERSION_FREEZE", "WORKFLOW_TRANSITION"],
+      "allowedRoles": ["PRODUCT", "COMPLIANCE", "LEGAL"],
+      "conditions": [
+        { "kind": "ALL_REQUIRED_REVIEWS_APPROVED", "roles": ["RISK", "OPERATIONS", "COMPLIANCE", "LEGAL", "TAX"], "required": true },
+        { "kind": "HUMAN_INTERNAL_APPROVAL_RECORDED", "required": true },
+        { "kind": "READY_FOR_SUBMISSION_FALSE", "required": true }
+      ],
+      "separationOfDuties": {
+        "minimumDistinctApprovers": 3,
+        "requiredRoles": ["PRODUCT", "COMPLIANCE", "LEGAL"]
+      }
+    },
+    {
+      "id": "REQUEST_CHANGES",
+      "from": ["RISK_REVIEW", "OPERATIONS_REVIEW", "COMPLIANCE_REVIEW", "LEGAL_REVIEW", "TAX_REVIEW", "READY_FOR_INTERNAL_APPROVAL"],
+      "to": "CHANGES_REQUESTED",
+      "actions": ["WORKFLOW_TRANSITION"],
+      "allowedRoles": ["RISK", "OPERATIONS", "COMPLIANCE", "LEGAL", "TAX"],
+      "conditions": [
+        { "kind": "CHANGES_REQUESTED_DECISION_EXISTS", "required": true }
+      ]
+    },
+    {
+      "id": "RESUME_AFTER_CHANGES",
+      "from": ["CHANGES_REQUESTED"],
+      "to": "QUESTIONNAIRE_IN_PROGRESS",
+      "actions": ["PROJECT_EDIT", "ANSWER_WRITE"],
+      "allowedRoles": ["PRODUCT"],
+      "conditions": []
+    },
+    {
+      "id": "REOPEN_INTERNAL_VERSION",
+      "from": ["READY_FOR_INTERNAL_APPROVAL", "INTERNALLY_FROZEN"],
+      "to": "CHANGES_REQUESTED",
+      "actions": ["PROJECT_REOPEN", "WORKFLOW_TRANSITION"],
+      "allowedRoles": ["ADMIN"],
+      "conditions": [
+        { "kind": "REOPEN_RATIONALE_REQUIRED", "required": true }
+      ]
+    },
+    {
+      "id": "ARCHIVE_PROJECT",
+      "from": ["DRAFT", "QUESTIONNAIRE_IN_PROGRESS", "CHANGES_REQUESTED", "INTERNALLY_FROZEN"],
+      "to": "ARCHIVED",
+      "actions": ["WORKFLOW_TRANSITION"],
+      "allowedRoles": ["ADMIN", "PRODUCT"],
+      "conditions": [
+        { "kind": "ARCHIVE_RATIONALE_REQUIRED", "required": true }
+      ]
+    }
+  ],
+  "forbiddenAutomaticTransitions": [
+    "READY_FOR_INTERNAL_APPROVAL",
+    "INTERNALLY_FROZEN"
+  ],
+  "submission": {
+    "enabled": false,
+    "readyFlag": false,
+    "reason": "La baseline V1 s'arrête au gel interne. Toute préparation ou transmission au régulateur exige une décision de gouvernance, une migration dédiée et des validations humaines."
+  }
+}
