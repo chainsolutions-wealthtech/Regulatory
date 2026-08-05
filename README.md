@@ -347,3 +347,61 @@ Prochaine priorité :
 > Constituer le corpus réglementaire source, atomiser chaque exigence et produire la première matrice canonique `exigence → donnée → question → option → effet → clause → contrôle → preuve → section`.
 
 Consulter [SUIVI.md](SUIVI.md) et [TODO.md](TODO.md) avant de commencer tout travail.
+
+## 14. Intégration documentaire Loop Engineering — mise à jour du 2026-08-05
+
+Cette section est postérieure aux sections historiques ci-dessus. Elle les conserve comme mémoire du cadrage initial, mais actualise l’ordre de lecture, l’organisation documentaire et l’état courant.
+
+### 14.1 Point d’entrée obligatoire
+
+Toute intervention commence par [`00_START_HERE.md`](00_START_HERE.md), puis suit l’ordre complet qui y est défini. Cet ordre complète les obligations historiques de la section 11 et de `AGENTS.md` ; il ne les supprime pas.
+
+La hiérarchie d’autorité est définie dans [`SOURCE_OF_TRUTH.md`](SOURCE_OF_TRUTH.md). Les conversations ne constituent jamais la mémoire canonique du projet.
+
+### 14.2 Documents canoniques maintenus
+
+Les documents historiques suivants restent canoniques :
+
+- `README.md` pour la vision et le périmètre général ;
+- `AGENTS.md` pour les règles communes des agents ;
+- `SUIVI.md` pour l’historique chronologique ;
+- `TODO.md` pour le registre opérationnel principal ;
+- `docs/DECISIONS.md` pour les décisions historiques ;
+- `docs/ARCHITECTURE.md` pour l’architecture ;
+- `docs/PROSPECTUS_ENGINE_SPEC.md` pour la spécification fonctionnelle ;
+- `docs/REGULATORY_MAPPING.md` et `regulatory/` pour le mapping réglementaire.
+
+Les chemins équivalents créés par le kit sont des index, adaptateurs ou documents spécialisés. Ils ne doivent pas contenir une copie divergente d’un document canonique.
+
+### 14.3 Registres de continuité
+
+- `STATUS.md` : état instantané ;
+- `LOOP_STATE.md` : état persistant de la boucle ;
+- `CURRENT_ITERATION.md` : itération active ou clôturée ;
+- `WORK_LOG.md` : actions et preuves ;
+- `HANDOFF.md` : transmission ;
+- `NEXT_ACTION.md` : une seule prochaine action exécutable ;
+- `OPEN_QUESTIONS.md` : informations non fournies ou non vérifiées ;
+- `DOCUMENT_INTEGRATION_MATRIX.md`, `FILES_CATALOG.md` et `MANIFEST.md` : taxonomie, présence et contrôles.
+
+### 14.4 Résultat de LOOP-GOV-001
+
+La boucle `LOOP-GOV-001` a intégré le kit version `1.0.0` de manière additive :
+
+- `11` fichiers Markdown avant intervention ;
+- `194` fichiers Markdown après intervention ;
+- `176/176` chemins Markdown du kit présents ;
+- `192` fichiers créés depuis le commit de départ, dont `183` Markdown et `9` fragments d’archive ;
+- aucune suppression, aucun renommage et aucun déplacement historique ;
+- artefacts YAML, CSV, JSON et schéma sous `regulatory/` et `schemas/` préservés ;
+- sept ADR de gouvernance ajoutées ;
+- branche `main` conservée ;
+- aucun force-push, fusion, migration ou déploiement.
+
+Les preuves, limites et contrôles sont détaillés dans `MANIFEST.md`, `WORK_LOG.md`, `docs/09-loop/LOOP_HEALTH_CHECK.md` et `SUIVI.md`.
+
+### 14.5 État courant et prochaine priorité
+
+L’état instantané n’est plus la section 13 historique : il est tenu dans [`STATUS.md`](STATUS.md).
+
+La première matrice machine-readable de la Circulaire n°05/CREPMF/2022 existe déjà. La prochaine action unique est désormais celle de [`NEXT_ACTION.md`](NEXT_ACTION.md) : obtenir une copie officielle, vérifiable et exploitable de l’Instruction n°66/CREPMF/2021 avant son atomisation.
