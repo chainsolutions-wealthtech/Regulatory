@@ -10,123 +10,170 @@ const validation = JSON.parse(
   ),
 );
 
+const requiredChecks = [
+  "structuredQuestionTypesExposed",
+  "invalidStructuredRowsRejected",
+  "shareClassesWrittenToCanonicalArray",
+  "assetRangesWrittenToCanonicalArray",
+  "feesWrittenToCanonicalArrays",
+  "valuationMethodsWrittenToCanonicalArray",
+  "governanceWrittenToCanonicalArray",
+  "serviceProvidersWrittenToCanonicalArray",
+  "risksWrittenToCanonicalArray",
+  "countryArrangementsWrittenToCanonicalArray",
+  "evidenceWrittenToCanonicalArray",
+  "legacyRepeatingBucketsAvoided",
+  "historicalComposerInvoked",
+  "deterministicDocxValidated",
+  "readyForSubmissionRemainsFalse",
+];
+
 if (
   validation.status !== "PASS" ||
-  validation.checks?.structuredShareClassQuestionExposed !== true ||
-  validation.checks?.structuredShareClassesPersisted !== true ||
-  validation.checks?.shareClassesWrittenToCanonicalArray !== true
+  validation.validationId !== "CIRC005_WEB_API_INTEGRATION_VALIDATION_V4" ||
+  validation.structuredCollectionCount !== 10 ||
+  requiredChecks.some((check) => validation.checks?.[check] !== true)
 ) {
-  throw new Error("La preuve structurée des classes de parts n’est pas complète.");
+  throw new Error("La preuve des collections canoniques structurées n’est pas complète.");
 }
 
-const evidence = `- composant dédié : \`SHARE_CLASS_COLLECTION\` ;
-- question canonique conservée : \`Q_SHARE_CLASSES_COUNT\` ;
-- exigence conservée : \`CIRC005_1_10_FCP_PARTS_CHARACTERISTICS\` ;
-- validation ligne par ligne et unicité des identifiants : \`PASS\` ;
-- migration non destructive des anciennes valeurs booléennes : \`IMPLEMENTED\` ;
-- écriture directe dans \`canonicalData.share_classes[]\` : \`PASS\` ;
-- stockage provisoire dans \`_repeating.share_classes\` : \`REMOVED\` ;
-- génération par le compositeur historique et DOCX déterministe : \`PASS\` ;
+const evidence = `- collections structurées testées : \`${validation.structuredCollectionCount}\` ;
+- classes de parts : \`share_classes[]\` ;
+- fourchettes d’allocation : \`investment_policy.asset_class_ranges[]\` ;
+- frais transactionnels : \`fees.transaction[]\` ;
+- rémunérations : \`remunerations[]\` ;
+- méthodes de valorisation : \`valuation.methods[]\` ;
+- gouvernance : \`manager.governance_members[]\` ;
+- intervenants : \`service_providers[]\` ;
+- risques : \`risks[]\` ;
+- dispositifs pays : \`distribution_countries[]\` ;
+- justificatifs : \`evidence[]\` ;
+- repli de ces collections dans \`_repeating\` : \`REMOVED\` ;
+- test HTTP complet : \`PASS\` ;
+- compositeur historique et DOCX déterministe : \`PASS\` ;
 - \`ready_for_submission\` : \`false\`.`;
 
 const blocks = {
-  "STATUS.md": `## Tranche structurée 1 — Classes de parts
+  "STATUS.md": `## Tranche structurée V1 — Collections canoniques
 
 ${evidence}
 
-La première donnée répétable du questionnaire n’est plus saisie sous forme de booléen ou de texte générique. Elle dispose d’un éditeur Atomic Design, d’une validation serveur et d’une collection canonique directement consommable par le compositeur.`,
+Les principales données répétables du parcours disposent désormais d’un éditeur Atomic Design partagé, d’une normalisation, d’une validation serveur, de contrôles intercollections et d’une écriture directe dans le snapshot canonique. Les lignes restent non confirmées tant qu’un rôle compétent ne les a pas revues.`,
 
-  "LOOP_STATE.md": `## LOOP-DEV-001 — Collections répétables
+  "LOOP_STATE.md": `## LOOP-DEV-001 — Collections répétables V1
 
 - classes de parts : \`IMPLEMENTED_AND_VALIDATED\` ;
-- fourchettes d’allocation : \`NEXT\` ;
-- commissions et frais : \`PENDING\` ;
-- méthodes de valorisation : \`PENDING\` ;
-- gouvernance et intervenants : \`PENDING\` ;
-- documents et listes diverses : \`PENDING\`.
+- fourchettes d’allocation : \`IMPLEMENTED_AND_VALIDATED\` ;
+- commissions et frais : \`IMPLEMENTED_AND_VALIDATED\` ;
+- méthodes de valorisation : \`IMPLEMENTED_AND_VALIDATED\` ;
+- gouvernance et intervenants : \`IMPLEMENTED_AND_VALIDATED\` ;
+- risques : \`IMPLEMENTED_AND_VALIDATED\` ;
+- dispositifs pays : \`IMPLEMENTED_AND_VALIDATED\` ;
+- justificatifs : \`IMPLEMENTED_AND_VALIDATED\` ;
+- prochaine tranche : \`CANONICAL_SCHEMA_AND_POSTGRESQL\`.
 
 ${evidence}`,
 
-  "CURRENT_ITERATION.md": `## Résultat — Éditeur structuré des classes de parts
+  "CURRENT_ITERATION.md": `## Résultat — Dix collections canoniques structurées
 
 ${evidence}
 
-Les anciennes réponses \`false\` et \`true\` restent lisibles et sont transformées respectivement en une ou deux classes par défaut lors de la construction du snapshot. Une nouvelle réponse enregistrée est obligatoirement une collection validée.`,
+Les contrôles couvrent notamment l’unicité des identifiants, les fourchettes \`0 ≤ minimum ≤ cible ≤ maximum ≤ 100\`, la cohérence des méthodes de valorisation, la présence du dépositaire, les dispositifs par pays et le statut des preuves.`,
 
-  "WORK_LOG.md": `## 2026-08-05 — Donnée répétable structurée : classes de parts
+  "WORK_LOG.md": `## 2026-08-05 — Généralisation des collections structurées
 
-1. Ajout du type \`SHARE_CLASS_COLLECTION\`.
-2. Ajout de l’organisme \`ShareClassCollectionField\` et de ses styles isolés.
-3. Ajout des types canoniques des classes de parts.
-4. Ajout de la normalisation des valeurs historiques booléennes.
-5. Ajout des contrôles : nombre de lignes, identifiant stable et unique, devise, politique de revenus, VL d’origine, minimum de souscription et décimalisation.
-6. Rejet API des lignes invalides.
-7. Écriture directe dans \`share_classes[]\`.
-8. Test HTTP de bout en bout jusqu’au DOCX.
+1. Généralisation du type de question répétable en huit familles de composants.
+2. Création d’un éditeur Atomic Design partagé.
+3. Ajout des types canoniques pour allocations, frais, valorisation, intervenants, risques, pays et justificatifs.
+4. Normalisation et validation serveur de chaque ligne.
+5. Écriture directe dans les dix collections canoniques.
+6. Ajout de contrôles intercollections.
+7. Adaptation vers le compositeur documentaire historique.
+8. Test HTTP de bout en bout jusqu’au DOCX déterministe.
+9. Correction d’une collision entre les codes pays sélectionnés et les dispositifs détaillés.
 
 ${evidence}`,
 
-  "SUIVI.md": `## 2026-08-05 — Première collection canonique éditable
+  "SUIVI.md": `## 2026-08-05 — Collections canoniques V1 terminées
 
-La gestion des classes de parts est désormais complète de l’interface au document généré. La question CIRC005 conserve son identifiant et sa traçabilité, mais son composant d’interface est maintenant adapté à la structure réelle des données.
+Le questionnaire n’utilise plus de champs texte génériques pour les principales données répétables. Les identifiants CIRC005 sont conservés ; la structure de saisie et le modèle canonique deviennent assez précis pour alimenter le moteur documentaire.
 
 ${evidence}
 
-Aucune conclusion de conformité ou de préparation à la soumission n’en découle.`,
+Cette complétude technique ne constitue pas une validation juridique, conformité, fiscale ou réglementaire.`,
 
-  "TODO.md": `## Collections structurées — état détaillé
+  "TODO.md": `## Collections structurées — état V1
 
-- [x] Créer le type \`SHARE_CLASS_COLLECTION\`.
-- [x] Créer l’éditeur réutilisable des classes de parts.
-- [x] Valider chaque classe avant persistance.
-- [x] Garantir des identifiants de classe stables et uniques.
-- [x] Migrer les anciennes réponses booléennes sans perte.
-- [x] Alimenter directement \`share_classes[]\`.
-- [x] Tester le flux questionnaire → snapshot → compositeur → DOCX.
-- [ ] Structurer les fourchettes d’allocation par classe d’actifs.
-- [ ] Structurer les commissions et frais.
-- [ ] Structurer les méthodes de valorisation.
-- [ ] Structurer les intervenants et la gouvernance.`,
+- [x] Classes de parts.
+- [x] Fourchettes d’allocation.
+- [x] Frais et commissions.
+- [x] Rémunérations des intervenants.
+- [x] Méthodes de valorisation.
+- [x] Gouvernance.
+- [x] Prestataires et intervenants.
+- [x] Facteurs de risque.
+- [x] Dispositifs de commercialisation par pays.
+- [x] Pièces justificatives et statut de vérification.
+- [x] Contrôles intercollections.
+- [x] Adaptation vers le compositeur et le DOCX.
+- [ ] Publier le JSON Schema canonique V1.
+- [ ] Créer le schéma PostgreSQL et les migrations.
+- [ ] Remplacer la persistance JSON locale par une interface de stockage transactionnelle.
+- [ ] Implémenter authentification, organisations, RBAC et audit immuable.
+- [ ] Atomiser l’Instruction n°66 et compléter les règles.`,
 
-  "CHANGELOG.md": `## [Unreleased] — Collections structurées V0.1 — 2026-08-05
+  "CHANGELOG.md": `## [Unreleased] — Collections canoniques V1 — 2026-08-05
 
 ### Added
 
-- type de question \`SHARE_CLASS_COLLECTION\` ;
-- éditeur Atomic Design pour une à vingt classes de parts ;
-- validation serveur des lignes et identifiants ;
-- migration des anciennes réponses booléennes ;
-- test d’intégration vérifiant \`share_classes[]\` et l’absence de repli dans \`_repeating\`.
+- éditeur Atomic Design partagé pour dix collections ;
+- modèles canoniques des allocations, frais, valorisation, intervenants, risques, pays et preuves ;
+- validations serveur et contrôles intercollections ;
+- adaptation des collections vers le compositeur documentaire ;
+- validation d’intégration V4 jusqu’au DOCX.
 
 ### Changed
 
-La question \`Q_SHARE_CLASSES_COUNT\` produit désormais la collection canonique détaillée des classes au lieu d’une simple indication oui/non.`,
+Les principales données répétables sont désormais écrites directement dans leurs tableaux canoniques et ne sont plus rabattues dans \`_repeating\`.`,
 
-  "docs/ARCHITECTURE.md": `## Pattern des collections structurées
-
-La première implémentation de référence est \`share_classes[]\` :
-
-\`Question CIRC005 → composant structuré → validation serveur → réponse versionnée → collection canonique → compositeur historique → DOCX\`.
-
-Le même pattern doit être réutilisé pour les fourchettes d’allocation, frais, méthodes de valorisation et intervenants. Les identifiants CIRC005 ne changent pas ; seul le composant de saisie devient plus précis.`,
-
-  "docs/04-development/NEXTJS_ATOMIC_DESIGN.md": `## 11. Organisme répétable de référence : classes de parts
-
-\`ShareClassCollectionField\` gère l’ajout, la suppression et la validation de lignes contenant : identifiant, devise, politique de revenus, VL d’origine, minimum initial de souscription et règle de décimalisation.
+  "HANDOFF.md": `## Transmission — Collections canoniques V1
 
 ${evidence}
 
-Ce composant constitue la référence pour les prochains tableaux éditables.`,
+Fichiers prioritaires :
 
-  "apps/web/README.md": `## Classes de parts structurées
+- \`apps/web/src/domain/structured-answers.ts\` ;
+- \`apps/web/src/components/molecules/StructuredCollectionField.tsx\` ;
+- \`apps/web/src/server/canonical-snapshot.ts\` ;
+- \`src/adapters/web-canonical-snapshot-adapter.js\` ;
+- \`scripts/test-web-api.mjs\` ;
+- \`regulatory/validation/CIRC005_WEB_API_INTEGRATION_VALIDATION.json\`.
 
-La question \`Q_SHARE_CLASSES_COUNT\` utilise maintenant un éditeur de collection. L’API rejette les identifiants dupliqués et les lignes incomplètes, migre les anciennes valeurs booléennes et écrit les données validées dans \`canonicalData.share_classes[]\`.
+Ne pas considérer une ligne comme validée à cause de sa seule présence dans le snapshot.`,
 
-Le comportement est couvert par le test HTTP du flux de génération complet.`,
+  "docs/ARCHITECTURE.md": `## Pattern canonique des collections structurées V1
+
+\`Question canonique → composant Atomic Design → normalisation → validation API → réponse versionnée → tableau canonique → contrôles intercollections → compositeur → DOCX\`.
+
+Dix collections utilisent ce pattern. Les identifiants réglementaires et la traçabilité ne changent pas. Les données sélectionnées simples, telles que les codes pays, sont séparées des objets détaillés afin d’éviter toute collision canonique.`,
+
+  "docs/04-development/NEXTJS_ATOMIC_DESIGN.md": `## 11. Éditeur partagé des collections canoniques
+
+\`StructuredCollectionField\` rend les lignes d’allocation, frais, valorisation, intervenants, risques, pays et justificatifs depuis des définitions de champs typées. \`ShareClassCollectionField\` reste l’éditeur spécialisé des classes de parts.
+
+${evidence}
+
+Les validations décisives sont répétées côté serveur ; l’interface seule n’est jamais considérée comme une frontière de confiance.`,
+
+  "apps/web/README.md": `## Collections structurées V1
+
+Le questionnaire expose désormais dix collections canoniques éditables. L’API normalise et valide chaque ligne, rejette les doublons et incohérences, puis alimente directement le snapshot consommé par le compositeur documentaire.
+
+${evidence}`,
 };
 
 for (const [file, markdown] of Object.entries(blocks)) {
-  await upsertBlock(file, "LOOP-DEV-001-STRUCTURED-SHARE-CLASSES", markdown);
+  await upsertBlock(file, "LOOP-DEV-001-STRUCTURED-COLLECTIONS-V1", markdown);
 }
 
 await writeFile(
@@ -138,25 +185,23 @@ await writeFile(
 
 ## Action
 
-Créer le composant structuré des fourchettes d’allocation par classe d’actifs et écrire ses lignes directement dans \`investment_policy.asset_class_ranges[]\`.
+Formaliser le modèle canonique V1 sous forme de JSON Schema et de schéma PostgreSQL versionné, puis introduire une interface de persistance transactionnelle sans déployer ni remplacer prématurément le stockage local de démonstration.
 
 ## Résultat attendu
 
-- lignes répétables avec identifiant stable ;
-- classe d’actifs normalisée ;
-- minimum, cible et maximum exprimés en pourcentage ;
-- contrôle \`0 ≤ minimum ≤ cible ≤ maximum ≤ 100\` ;
-- détection des classes d’actifs dupliquées ;
-- reprise non destructive des anciennes réponses provisoires ;
-- aucune écriture dans \`_repeating\` pour cette collection ;
-- restitution dans la politique d’investissement et le DOCX ;
-- tests unitaires, TypeScript, build et test HTTP de bout en bout ;
-- documentation et preuves mises à jour ;
+- \`schemas/canonical/PROSPECTUS_CANONICAL_MODEL_V1.schema.json\` ;
+- dictionnaire de données reliant objet, champ, type, cardinalité, unité, sensibilité, source et validations ;
+- migration PostgreSQL initiale avec organisations, utilisateurs, projets, versions, réponses, snapshots, preuves, revues, approbations, documents générés et audit ;
+- contraintes d’unicité et de cohérence pour les collections structurées ;
+- politique de compatibilité et migrations de schéma ;
+- abstraction de stockage utilisable par le stockage JSON local puis PostgreSQL ;
+- tests de validation du schéma et de la migration ;
+- aucune donnée de production, aucun secret et aucun déploiement ;
 - \`ready_for_submission = false\` maintenu.
 
 ## Condition d’arrêt
 
-Ne pas déployer, ne pas inventer de limites réglementaires et ne pas présenter les fourchettes saisies ou le document généré comme validés juridiquement, approuvés ou prêts pour soumission.
+Ne pas présenter le schéma technique comme une certification de sécurité ou de conformité. L’activation de PostgreSQL, de l’authentification et du multi-tenant exigera une revue d’architecture, de sécurité et d’exploitation.
 `,
   "utf8",
 );
@@ -165,8 +210,9 @@ console.log(
   JSON.stringify(
     {
       updatedDocuments: Object.keys(blocks).length + 1,
-      structuredShareClasses: "PASS",
-      nextAction: "STRUCTURED_ASSET_CLASS_RANGES",
+      structuredCollections: validation.structuredCollectionCount,
+      integrationStatus: validation.status,
+      nextAction: "CANONICAL_SCHEMA_AND_POSTGRESQL",
     },
     null,
     2,
