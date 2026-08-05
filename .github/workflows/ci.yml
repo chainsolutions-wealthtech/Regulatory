@@ -1,0 +1,77 @@
+name: Regulatory CI
+
+on:
+  push:
+    branches:
+      - main
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: regulatory-ci-main
+  cancel-in-progress: true
+
+jobs:
+  test-generate-document:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Configure Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+          cache: npm
+          cache-dependency-path: package.json
+
+      - name: Run automated tests
+        run: npm test
+
+      - name: Generate deterministic sample dossier
+        run: npm run generate:sample
+        env:
+          GENERATION_TIMESTAMP: '2026-08-05T00:00:00.000Z'
+
+      - name: Update Loop Engineering evidence
+        run: node scripts/update-loop-dev-docs.mjs
+
+      - name: Validate generated JSON and coverage invariants
+        run: |
+          node --input-type=module <<'NODE'
+          import { readFile } from 'node:fs/promises';
+          const root = 'examples/generated/united-capital-diamond';
+          const manifest = JSON.parse(await readFile(`${root}/generation-manifest.json`, 'utf8'));
+          const concordance = JSON.parse(await readFile(`${root}/concordance.json`, 'utf8'));
+          if (concordance.length !== 62) throw new Error(`Expected 62 requirements, got ${concordance.length}`);
+          if (manifest.coverage_counts.MISSING !== 0) throw new Error(`Expected MISSING=0, got ${manifest.coverage_counts.MISSING}`);
+          if (manifest.ready_for_submission !== false) throw new Error('ready_for_submission must remain false');
+          if (!Array.isArray(manifest.pending_review_requirement_ids) || manifest.pending_review_requirement_ids.length === 0) {
+            throw new Error('Pending review requirements must remain explicit');
+          }
+          NODE
+
+      - name: Check textual integrity
+        run: git diff --check
+
+      - name: Commit generated evidence and documentation
+        if: github.actor != 'github-actions[bot]'
+        run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add \
+            README.md IMPLEMENTATION.md STATUS.md LOOP_STATE.md CURRENT_ITERATION.md \
+            WORK_LOG.md SUIVI.md TODO.md CHANGELOG.md HANDOFF.md NEXT_ACTION.md \
+            examples/generated/united-capital-diamond
+          if git diff --cached --quiet; then
+            echo 'No generated changes to commit.'
+          else
+            git commit -m 'chore: refresh generated prospectus evidence'
+            git push origin HEAD:main
+          fi
