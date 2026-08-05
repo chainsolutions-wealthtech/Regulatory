@@ -21,6 +21,10 @@ export async function POST(
   if (!question || question.interactive === false) {
     return NextResponse.json({ error: "Question inconnue ou non interactive." }, { status: 422 });
   }
+  const expectedVersion = parseOptionalVersion(body.expectedVersion);
+  if (body.expectedVersion !== undefined && expectedVersion === undefined) {
+    return NextResponse.json({ error: "expectedVersion doit être un entier positif." }, { status: 422 });
+  }
   try {
     const existingProject = await projectRepository.getProject(projectId);
     if (!existingProject) {
@@ -34,12 +38,18 @@ export async function POST(
       projectId,
       questionId: body.questionId,
       value: normalizedValue,
+      expectedVersion,
     });
     return NextResponse.json({ project, groups: getQuestionsByGroup(project) });
   } catch (error) {
-    return NextResponse.json(
-      { error: error instanceof Error ? error.message : "Erreur d’enregistrement." },
-      { status: 400 },
-    );
+    const message = error instanceof Error ? error.message : "Erreur d’enregistrement.";
+    const status = message.startsWith("PROJECT_VERSION_CONFLICT") ? 409 : 400;
+    return NextResponse.json({ error: message }, { status });
   }
+}
+
+function parseOptionalVersion(value: unknown): number | undefined {
+  if (value === undefined || value === null || value === "") return undefined;
+  const parsed = Number(value);
+  return Number.isInteger(parsed) && parsed > 0 ? parsed : undefined;
 }
