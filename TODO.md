@@ -9,7 +9,7 @@ Légende :
 - `[ ]` à faire ;
 - `[!]` bloqué, incertain ou nécessitant une validation.
 
-> **Mise à jour du 2026-08-05 :** le prompt complet et le kit d’organisation des fichiers Markdown ont été reçus, intégrés et contrôlés dans `LOOP-GOV-001`. Les documents historiques, identifiants et artefacts réglementaires ont été préservés. La prochaine action unique est définie dans `NEXT_ACTION.md`.
+> **Mise à jour du 2026-08-05 :** `LOOP-GOV-001` est clôturée. `LOOP-REG-001` est ouverte pour enregistrer, contrôler et préparer l’atomisation de l’Instruction n°66/CREPMF/2021. Le registre officiel AMF-UMOA la liste `NON ABROGE`; la publication BRVM et le PDF de 65 pages sont identifiés. L’empreinte binaire, les dates exactes et l’inventaire des versions restent en cours.
 
 ---
 
@@ -32,6 +32,7 @@ Légende :
 - [x] Créer les registres d’état, de boucle, de reprise, de journal et de prochaine action.
 - [x] Créer les sept ADR de gouvernance `ADR-0001` à `ADR-0007`.
 - [x] Vérifier la présence des `176` chemins Markdown du kit et la préservation des artefacts existants.
+- [x] Ouvrir `LOOP-REG-001` sans créer ni changer de branche.
 - [ ] Définir les responsables métier, conformité, juridique, fiscal, technique et sécurité.
 - [ ] Définir le processus formel d’approbation des clauses.
 - [ ] Définir les environnements de développement, test, recette et production.
@@ -39,11 +40,14 @@ Légende :
 ## Phase 1 — Corpus réglementaire source
 
 - [x] Enregistrer la Circulaire n°05/CREPMF/2022 comme source structurante dans un registre machine-readable.
-- [~] Enregistrer l’Instruction n°66/CREPMF/2021 comme source structurante.
-- [~] Archiver les copies officielles autorisées des textes : métadonnées et empreinte de la circulaire enregistrées ; binaire à archiver ultérieurement.
-- [~] Enregistrer pour chaque texte : titre, numéro, date, date d’effet, statut, source officielle et empreinte.
-- [ ] Vérifier l’existence de versions modifiées, rectificatifs ou textes d’abrogation.
-- [ ] Inventorier les circulaires, instructions et décisions complémentaires relatives aux OPC.
+- [x] Enregistrer l’Instruction n°66/CREPMF/2021 comme source structurante.
+- [x] Enregistrer l’URL du registre officiel AMF-UMOA et son statut `NON ABROGE` au 2026-08-05.
+- [x] Enregistrer la publication BRVM du 12 janvier 2022 et l’URL du PDF de 65 pages.
+- [~] Matérialiser une copie exploitable du PDF et calculer sa taille et son SHA-256.
+- [~] Enregistrer pour l’Instruction 66 : date de signature, date d’effet, prédécesseur, modificatifs et rectificatifs.
+- [~] Archiver les copies officielles autorisées des textes : empreinte de la circulaire enregistrée ; copie binaire de l’Instruction 66 à contrôler.
+- [~] Vérifier l’existence de versions modifiées, rectificatifs ou textes d’abrogation.
+- [~] Inventorier les circulaires, instructions et décisions complémentaires relatives aux OPC à partir des registres AMF-UMOA.
 - [ ] Identifier les textes relatifs à la classification des OPC.
 - [ ] Identifier les textes relatifs aux ratios d’investissement.
 - [ ] Identifier les textes relatifs à la valorisation.
@@ -63,12 +67,15 @@ Légende :
 - [x] Définir les premières conditions d’applicabilité de la circulaire.
 - [x] Définir les produits concernés dans le périmètre V1 : FCP et SGO, avec acteurs associés.
 - [x] Définir les modes de couverture admis : prospectus, règlement, annexe, non applicable.
+- [x] Créer `INSTRUCTION_66_ATOMIZATION_PLAN_V0_1.yaml`.
 - [~] Définir la sévérité des contrôles.
 - [~] Définir les preuves attendues.
 - [~] Définir les rôles de revue.
 - [~] Définir les dépendances entre exigences.
 - [x] Créer une validation structurelle de complétude du mapping de la circulaire.
-- [ ] Atomiser intégralement l’Instruction n°66/CREPMF/2021.
+- [ ] Produire `INST066_ARTICLE_INDEX_V0_1.yaml` avec titres, chapitres, sections, articles et pages.
+- [ ] Atomiser intégralement l’Instruction n°66/CREPMF/2021 avec des identifiants `INST066_*`.
+- [ ] Créer le crosswalk `INST066 ↔ CIRC005 ↔ modèle canonique`.
 - [!] Faire valider l’interprétation des exigences par la conformité et le juridique.
 
 ## Phase 3 — Modèle canonique
@@ -273,8 +280,10 @@ Légende :
 
 ## Priorité immédiate
 
-1. Obtenir une copie officielle, vérifiable et exploitable de l’Instruction n°66/CREPMF/2021, confirmer sa version et son état juridique, puis l’atomiser dans une nouvelle boucle documentée.
-2. Compléter le modèle canonique champ par champ.
-3. Transformer la matrice de la Circulaire 05/2022 en catalogues exécutables de questions, options, règles et groupes de clauses.
-4. Construire le premier cas de test FCP obligataire standard.
-5. Définir les rôles de validation et le processus formel d’approbation des clauses.
+1. Matérialiser et empreinter le PDF de l’Instruction n°66/CREPMF/2021.
+2. Produire l’index complet des titres, chapitres, sections et articles avec coordonnées de page.
+3. Identifier le prédécesseur, les modificatifs, rectificatifs et textes connexes.
+4. Atomiser l’Instruction avec des identifiants `INST066_*` et créer le crosswalk avec `CIRC005`.
+5. Compléter le modèle canonique champ par champ.
+6. Transformer la matrice de la Circulaire 05/2022 en catalogues exécutables.
+7. Construire le premier cas de test FCP obligataire standard.
