@@ -19,7 +19,10 @@ import type {
   ProspectusProject,
   ProjectSummary,
 } from "@/domain/types";
-import type { ProspectusPreview } from "@/server/generation-adapter";
+import type {
+  GeneratedProspectusArtifact,
+  ProspectusPreview,
+} from "@/server/generation-adapter";
 
 const DATA_ROOT = process.env.REGULATORY_LOCAL_DATA_ROOT
   ? path.resolve(process.env.REGULATORY_LOCAL_DATA_ROOT)
@@ -135,6 +138,7 @@ export async function persistGenerationArtifacts(input: {
   generation: GenerationSnapshot;
   preview: ProspectusPreview;
   canonicalSnapshot: CanonicalSnapshot;
+  artifacts: GeneratedProspectusArtifact[];
 }): Promise<ProspectusProject> {
   const project = await getProject(input.projectId);
   if (!project) throw new Error("PROJECT_NOT_FOUND");
@@ -143,15 +147,34 @@ export async function persistGenerationArtifacts(input: {
   await mkdir(directory, { recursive: true });
   const previewPath = path.join(directory, "preview.json");
   const canonicalSnapshotPath = path.join(directory, "canonical-snapshot.json");
+  const artifactPaths = new Map(
+    input.artifacts.map((artifact) => [artifact.fileName, path.join(directory, artifact.fileName)]),
+  );
+
   await Promise.all([
     writeStableJson(previewPath, input.preview),
     writeStableJson(canonicalSnapshotPath, input.canonicalSnapshot),
+    ...input.artifacts.map((artifact) =>
+      writeFile(path.join(directory, artifact.fileName), artifact.content),
+    ),
   ]);
 
   project.generation = {
     ...input.generation,
+    artifactDirectoryPath: relativeToDataRoot(directory),
     previewPath: relativeToDataRoot(previewPath),
     canonicalSnapshotPath: relativeToDataRoot(canonicalSnapshotPath),
+    canonicalDataPath: artifactRelativePath(artifactPaths, "canonical-data.json"),
+    questionnaireStatePath: artifactRelativePath(artifactPaths, "questionnaire-state.json"),
+    controlReportPath: artifactRelativePath(artifactPaths, "control-report.json"),
+    concordancePath: artifactRelativePath(artifactPaths, "concordance.json"),
+    documentModelPath: artifactRelativePath(artifactPaths, "document-model.json"),
+    answerLogPath: artifactRelativePath(artifactPaths, "answer-log.json"),
+    generationManifestPath: artifactRelativePath(artifactPaths, "generation-manifest.json"),
+    markdownPath: artifactRelativePath(artifactPaths, "prospectus-draft.md"),
+    docxPath: artifactRelativePath(artifactPaths, "prospectus-draft.docx"),
+    docxManifestPath: artifactRelativePath(artifactPaths, "docx-manifest.json"),
+    docxValidationPath: artifactRelativePath(artifactPaths, "docx-validation.json"),
   };
   project.updatedAt = new Date().toISOString();
   project.version += 1;
@@ -250,6 +273,14 @@ function projectDirectory(projectId: string): string {
 
 function currentPath(projectId: string): string {
   return path.join(projectDirectory(projectId), "current.json");
+}
+
+function artifactRelativePath(
+  artifactPaths: Map<string, string>,
+  fileName: string,
+): string | undefined {
+  const filePath = artifactPaths.get(fileName);
+  return filePath ? relativeToDataRoot(filePath) : undefined;
 }
 
 function relativeToDataRoot(filePath: string): string {
