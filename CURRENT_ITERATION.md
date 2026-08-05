@@ -23,11 +23,11 @@ Le propriétaire avait différé l’organisation globale des fichiers Markdown 
 
 - audit du dépôt et du kit ;
 - matrice de correspondance ;
-- création additive de tous les chemins du kit ;
+- création additive de tous les chemins Markdown du kit ;
 - adaptateurs pour l’architecture, les décisions et les agents ;
 - sept ADR de gouvernance ;
 - registres d’état, d’action, de journal et de transmission ;
-- conservation documentaire du kit et de son empreinte ;
+- enregistrement des métadonnées, de l’inventaire et de l’empreinte du kit ;
 - contrôles de présence, de contenu minimal, de branche, de non-suppression et de préservation des artefacts non Markdown.
 
 ## Hors périmètre respecté
@@ -36,19 +36,27 @@ Aucun code applicatif, YAML réglementaire, CSV, JSON, schéma, validation jurid
 
 ## Critères de sortie
 
-- [x] tous les chemins attendus présents ;
-- [x] aucun fichier du kit vide ou limité à un titre ;
+- [x] tous les `176` chemins Markdown attendus présents ;
+- [x] aucun fichier Markdown du kit vide ou limité à un titre ;
 - [x] documents historiques conservés ;
 - [x] documents canoniques et adaptateurs explicitement distingués ;
 - [x] catalogues et manifeste rapprochés de l’arborescence ;
-- [x] artefacts non Markdown inchangés ;
+- [x] artefacts réglementaires non Markdown historiques inchangés ;
 - [x] état, prochaine action et handoff consignés ;
 - [x] aucune branche créée ou changée ;
-- [x] aucun force-push, fusion ou déploiement.
+- [x] aucun force-push, fusion ou déploiement ;
+- [x] anomalie des fragments Base64 déclarée ;
+- [ ] copie binaire exacte du ZIP archivée dans GitHub — non requise pour clôturer l’intégration Markdown, mais non réalisée.
 
 ## Résultat quantifié
 
 - Markdown avant : `11` ;
 - Markdown après : `194` ;
-- créations depuis le commit de départ : `192` fichiers, dont `183` Markdown et `9` fragments d’archive ;
+- créations initiales depuis le commit de départ : `192` fichiers, dont `183` Markdown et `9` fragments Base64 historiques ;
+- chemins du kit présents : `176/176` ;
+- fichiers supprimés : `0` ;
 - prochaine action : celle inscrite dans `NEXT_ACTION.md`.
+
+## Limite explicite
+
+Les neuf fragments Base64 actuellement présents ne représentent pas fidèlement le ZIP source et sont exclus de la source de vérité. La clôture porte sur l’intégration des contenus Markdown et la gouvernance, pas sur l’archivage binaire exact du ZIP.
