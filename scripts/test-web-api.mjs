@@ -45,12 +45,43 @@ assert(
   "L’API projet doit utiliser la même empreinte de catalogue.",
 );
 assert(questions.body.groups.length >= 16, "Le questionnaire doit exposer les groupes canoniques.");
+const shareClassQuestion = questions.body.groups
+  .flatMap((group) => group.questions)
+  .find((question) => question.id === "Q_SHARE_CLASSES_COUNT");
+assert(
+  shareClassQuestion?.type === "SHARE_CLASS_COLLECTION",
+  "Les classes de parts doivent utiliser le composant structuré dédié.",
+);
 
 const unknown = await saveAnswer(projectId, "UNKNOWN_QUESTION", "value");
 assert(unknown.response.status === 422, "Une question inconnue doit être rejetée.");
 
 const canonicalAnswer = await saveAnswer(projectId, "Q_FUND_CONSTITUTION_DATE", "2026-08-05");
 assert(canonicalAnswer.response.status === 200, "Une réponse canonique doit être enregistrée.");
+
+const duplicateShareClasses = await saveAnswer(projectId, "Q_SHARE_CLASSES_COUNT", [
+  shareClass("CLASS-A", "XOF", "CAPITALIZED", 10_000),
+  shareClass("CLASS-A", "XOF", "DISTRIBUTED", 20_000),
+]);
+assert(
+  duplicateShareClasses.response.status === 400,
+  "Deux classes partageant le même identifiant doivent être rejetées.",
+);
+
+const structuredShareClasses = [
+  shareClass("CLASS-A", "XOF", "CAPITALIZED", 10_000),
+  shareClass("CLASS-B", "XOF", "DISTRIBUTED", 20_000),
+];
+const shareClassesSaved = await saveAnswer(
+  projectId,
+  "Q_SHARE_CLASSES_COUNT",
+  structuredShareClasses,
+);
+assert(shareClassesSaved.response.status === 200, "Les classes structurées doivent être enregistrées.");
+assert(
+  Array.isArray(shareClassesSaved.body.project.answers.Q_SHARE_CLASSES_COUNT.value),
+  "La réponse persistée doit être une collection et non un booléen.",
+);
 
 assert((await saveAnswer(projectId, "APP_BENCHMARK_ENABLED", "true")).response.status === 200);
 assert(
@@ -86,6 +117,15 @@ assert(
   "La donnée canonique du fonds doit être alimentée.",
 );
 assert(
+  Array.isArray(generated.body.canonicalSnapshot.canonicalData?.share_classes) &&
+    generated.body.canonicalSnapshot.canonicalData.share_classes.length === 2,
+  "Les classes de parts doivent être écrites directement dans la collection canonique.",
+);
+assert(
+  !Object.hasOwn(generated.body.canonicalSnapshot.canonicalData?._repeating ?? {}, "share_classes"),
+  "La collection share_classes ne doit plus être stockée dans _repeating.",
+);
+assert(
   generated.body.preview.generationId === generated.body.generation.generationId,
   "L’aperçu et le manifeste projet doivent partager le même identifiant de génération.",
 );
@@ -117,7 +157,7 @@ for (const field of requiredArtifactPathFields) {
 }
 
 const validation = {
-  validationId: "CIRC005_WEB_API_INTEGRATION_VALIDATION_V2",
+  validationId: "CIRC005_WEB_API_INTEGRATION_VALIDATION_V3",
   status: "PASS",
   catalogDigest: catalog.metadata.catalogDigest,
   requirementCount: catalog.metadata.requirementCount,
@@ -130,6 +170,11 @@ const validation = {
     canonicalQuestionAccepted: true,
     unknownQuestionRejected: true,
     conditionalAnswerInvalidation: true,
+    structuredShareClassQuestionExposed: true,
+    invalidShareClassRowsRejected: true,
+    structuredShareClassesPersisted: true,
+    shareClassesWrittenToCanonicalArray: true,
+    legacyRepeatingBucketAvoidedForShareClasses: true,
     canonicalSnapshotGenerated: true,
     canonicalFieldPopulated: true,
     historicalComposerInvoked: true,
@@ -144,6 +189,17 @@ const validation = {
 await mkdir(path.dirname(validationPath), { recursive: true });
 await writeFile(validationPath, `${JSON.stringify(validation, null, 2)}\n`, "utf8");
 console.log(JSON.stringify(validation, null, 2));
+
+function shareClass(classId, currency, incomePolicy, initialNav) {
+  return {
+    class_id: classId,
+    currency,
+    income_policy: incomePolicy,
+    initial_nav: initialNav,
+    initial_subscription_minimum: { display: "100 000 XOF" },
+    decimalization: { display: "Millièmes de part" },
+  };
+}
 
 async function saveAnswer(projectId, questionId, value) {
   return request(`/api/projects/${projectId}/answers`, {
