@@ -1,0 +1,55 @@
+source_id: INSTRUCTION_66_CREPMF_2021
+title: Instruction n°66/CREPMF/2021 relative aux Organismes de Placement Collectif et à leurs Sociétés de Gestion sur le Marché Financier Régional de l'UMOA
+reference: Instruction n°66/CREPMF/2021
+jurisdiction: UMOA
+authority_at_adoption: CREPMF
+current_authority_name: AMF-UMOA
+document_type: INSTRUCTION
+language: fr
+scope_summary: >-
+  Cadre applicable aux Organismes de Placement Collectif et à leurs sociétés de
+  gestion sur le Marché Financier Régional de l'UMOA. Le texte doit être atomisé
+  avant utilisation par le moteur réglementaire.
+registry:
+  official_index_url: https://www.amf-umoa.org/reglementation/instruction
+  registry_checked_on: '2026-08-05'
+  listed_reference: Instruction N°66/2021
+  listed_status: NON ABROGE
+  verification_status: OFFICIAL_REGISTRY_CONFIRMED
+publication:
+  brvm_record_url: https://www.brvm.org/fr/crepmf-instruction-ndeg662021-instruction-relative-aux-organismes-de-placement-collectif-et-leurs
+  published_on: '2022-01-12'
+  publication_title: >-
+    CREPMF : Instruction N°66/2021 – Instruction relative aux Organismes de
+    Placement Collectif et à leurs Sociétés de Gestion sur le Marché Financier
+    régional (Annule et remplace le précédent)
+  replacement_statement: Annule et remplace le précédent
+source_artifact:
+  pdf_url: https://www.brvm.org/sites/default/files/instruction_ndeg066-crepmf-2021-instruction_relative_aux_organismes_de_placement_collectif_et_a_leurs_societes_de_gestion_sur_le_marche_financier_regional_1.pdf
+  page_count: 65
+  repository_copy: null
+  byte_size: null
+  sha256: null
+  copy_status: REMOTE_PDF_ACCESS_CONFIRMED_HASH_PENDING
+  provenance: >-
+    Statut courant vérifié sur le registre officiel AMF-UMOA; copie PDF publiée
+    par la BRVM, infrastructure officielle du Marché Financier Régional.
+verification:
+  current_legal_status: NON_ABROGE_AS_LISTED_ON_2026_08_05
+  exact_signed_date: null
+  effective_from: null
+  predecessor_replaced: TO_IDENTIFY
+  amendments_rectifications_review: TO_COMPLETE
+  official_amf_binary_url: TO_CAPTURE_FROM_DYNAMIC_REGISTRY
+  legal_review_status: PENDING
+  compliance_review_status: PENDING
+extraction:
+  method: OFFICIAL_REGISTRY_REVIEW_AND_REMOTE_PDF_IDENTIFICATION
+  registered_on: '2026-08-05'
+  extraction_status: REGISTERED_ATOMIZATION_PENDING
+  quality_notes:
+    - The official AMF-UMOA registry currently lists the instruction as NON ABROGE.
+    - The BRVM publication record dates the publication to 12 January 2022.
+    - The accessible PDF contains 65 pages.
+    - The exact binary SHA-256 remains to be computed from a locally materialized copy.
+    - No requirement extracted from this source may become VALIDATED without legal and compliance review.
