@@ -2,14 +2,16 @@ import { access, mkdtemp, rm, writeFile } from "node:fs/promises";
 import { tmpdir } from "node:os";
 import path from "node:path";
 import { Pool } from "pg";
+import type { GenerationSnapshot } from "@/domain/types";
 import { buildCanonicalSnapshot } from "@/server/canonical-snapshot";
 import { createFixedTestIdentityProvider } from "@/server/security/verified-identity";
 import { createFileSystemArtifactStore } from "@/server/storage/artifact-store";
 import { createPostgresProjectRepository } from "@/server/storage/postgres-project-repository";
-import type { GenerationSnapshot } from "@/domain/types";
 
 const databaseUrl = process.env.DATABASE_URL;
+const adminDatabaseUrl = process.env.DATABASE_ADMIN_URL;
 if (!databaseUrl) throw new Error("DATABASE_URL_REQUIRED_FOR_POSTGRES_REPOSITORY_TEST");
+if (!adminDatabaseUrl) throw new Error("DATABASE_ADMIN_URL_REQUIRED_FOR_POSTGRES_REPOSITORY_TEST");
 
 const validationPath = path.resolve(
   process.cwd(),
@@ -17,6 +19,7 @@ const validationPath = path.resolve(
 );
 const artifactRoot = await mkdtemp(path.join(tmpdir(), "regulatory-postgres-artifacts-"));
 const pool = new Pool({ connectionString: databaseUrl, max: 8 });
+const adminPool = new Pool({ connectionString: adminDatabaseUrl, max: 2 });
 
 const tenantA = {
   organizationId: "61000000-0000-0000-0000-000000000001",
@@ -36,8 +39,19 @@ const tenantB = {
 };
 
 try {
-  await seedIdentity(tenantA.organizationId, tenantA.userId, "tenant-repository-alpha", "Alpha Repository Tenant");
-  await seedIdentity(tenantB.organizationId, tenantB.userId, "tenant-repository-beta", "Beta Repository Tenant");
+  await assertApplicationRoleCannotBypassRls();
+  await seedIdentity(
+    tenantA.organizationId,
+    tenantA.userId,
+    "tenant-repository-alpha",
+    "Alpha Repository Tenant",
+  );
+  await seedIdentity(
+    tenantB.organizationId,
+    tenantB.userId,
+    "tenant-repository-beta",
+    "Beta Repository Tenant",
+  );
 
   const artifactStore = createFileSystemArtifactStore(artifactRoot);
   const repositoryA = createPostgresProjectRepository({
@@ -204,9 +218,12 @@ try {
     ],
   });
   assert(generated.generation?.readyForSubmission === false, "Submission must remain false.");
-  assert(generated.status === "PRE_COMPLIANCE_REVIEW", "Generation must move to pre-compliance review.");
+  assert(
+    generated.status === "PRE_COMPLIANCE_REVIEW",
+    "Generation must move to pre-compliance review.",
+  );
 
-  const databaseChecks = await pool.query<{
+  const databaseChecks = await adminPool.query<{
     project_versions: string;
     snapshots: string;
     ranges: string;
@@ -263,6 +280,7 @@ try {
     validationId: "POSTGRESQL_PROJECT_REPOSITORY_VALIDATION_V1",
     status: "PASS",
     checks: {
+      applicationRoleCannotBypassRls: true,
       verifiedIdentityRequired: true,
       organizationMembershipRequired: true,
       tenantAIsolation: true,
@@ -274,6 +292,7 @@ try {
       normalizedValuationMethods: true,
       generatedDocumentMetadata: true,
       stagedArtifactCommit: true,
+      auditInsertPolicy: true,
       auditHashChain: true,
       readyForSubmissionRemainsFalse: true,
     },
@@ -284,13 +303,23 @@ try {
       auditEvents: Number(checks.audit_events),
     },
     caveat:
-      "Validation transactionnelle sur PostgreSQL éphémère avec identité fixe réservée à la CI. Aucun fournisseur d’identité de production ni déploiement n’est activé.",
+      "Validation transactionnelle sur PostgreSQL éphémère avec identité fixe réservée à la CI et rôle applicatif non propriétaire. Aucun fournisseur d’identité de production ni déploiement n’est activé.",
   };
   await writeFile(validationPath, `${JSON.stringify(validation, null, 2)}\n`, "utf8");
   console.log(JSON.stringify(validation, null, 2));
 } finally {
   await pool.end();
+  await adminPool.end();
   await rm(artifactRoot, { recursive: true, force: true });
+}
+
+async function assertApplicationRoleCannotBypassRls(): Promise<void> {
+  const result = await adminPool.query<{ rolsuper: boolean; rolbypassrls: boolean }>(
+    `select rolsuper, rolbypassrls from pg_roles where rolname = current_setting('app.ci_role_name')`,
+  );
+  assert(result.rowCount === 1, "The CI application role must exist.");
+  assert(result.rows[0].rolsuper === false, "The application role must not be superuser.");
+  assert(result.rows[0].rolbypassrls === false, "The application role must not bypass RLS.");
 }
 
 async function seedIdentity(
@@ -299,19 +328,19 @@ async function seedIdentity(
   slug: string,
   legalName: string,
 ): Promise<void> {
-  await pool.query(
+  await adminPool.query(
     `insert into regulatory.organizations (id, slug, legal_name, country_code)
      values ($1, $2, $3, 'CI')
      on conflict (id) do nothing`,
     [organizationId, slug, legalName],
   );
-  await pool.query(
+  await adminPool.query(
     `insert into regulatory.app_users (id, external_subject, email, display_name)
      values ($1, $2, $3, $4)
      on conflict (id) do nothing`,
     [userId, `subject-${userId}`, `${slug}@example.test`, `${legalName} User`],
   );
-  await pool.query(
+  await adminPool.query(
     `insert into regulatory.organization_memberships (
        organization_id, user_id, role, is_administrator
      ) values ($1, $2, 'PRODUCT', true)
