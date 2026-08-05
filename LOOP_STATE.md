@@ -4,56 +4,61 @@
 
 ## Identité
 
-- Loop : `LOOP-GOV-001`
-- Tâche : `TASK-GOV-001 — Intégrer le standard documentaire Loop Engineering sans régression`
-- Type : gouvernance documentaire
-- État : `CLOSED`
-- Date de clôture : `2026-08-05`
+- Loop : `LOOP-REG-001`
+- Tâche : `TASK-REG-001 — Enregistrer et préparer l’atomisation de l’Instruction n°66/CREPMF/2021`
+- Type : corpus et exigences réglementaires
+- État : `IN_PROGRESS`
+- Date d’ouverture : `2026-08-05`
 - Branche conservée : `main`
-- Commit de départ : `7433be04ce00d0108c1e01441d5e49f01fb994f4`
+- Commit de départ : `4a62d87520ce62fcea52c8794f1c9b72cbec439d`
 - Création ou changement de branche : interdit et non réalisé
+- Boucle précédente : `LOOP-GOV-001` — `CLOSED`
 
-## Résultat obtenu
+## Objectif
 
-- tous les `176` chemins Markdown du kit version `1.0.0` sont présents ;
-- les `11` fichiers Markdown historiques sont conservés ;
-- le dépôt contient `194` fichiers Markdown après intégration ;
-- `183` fichiers Markdown nouveaux et `9` fragments Base64 historiques ont été créés depuis le commit de départ ;
-- les documents canoniques historiques et les adaptateurs sont distingués dans `SOURCE_OF_TRUTH.md` et `DOCUMENT_INTEGRATION_MATRIX.md` ;
-- les sept ADR de gouvernance sont présentes ;
-- les artefacts YAML, CSV, JSON et schéma existants sous `regulatory/` et `schemas/` ont conservé leurs blobs de départ ;
-- aucun travail antérieur n’est attribué à cette boucle : il est uniquement inventorié comme état initial.
+Établir une provenance vérifiable de l’Instruction n°66/CREPMF/2021, enregistrer ses métadonnées et préparer une atomisation exhaustive sans modifier les identifiants, matrices et résultats existants de la Circulaire n°05/CREPMF/2022.
 
-## Entrées
+## Entrées vérifiées
 
-- kit `loop-engineering-starter-kit(1).zip` version `1.0.0` ;
-- taille source : `112477` octets ;
-- SHA-256 source : `8054b1ea4799364b5d709166536c927b2e28ddd47aba84553469a5469ffecc95` ;
-- prompt complémentaire du propriétaire ;
-- dépôt au commit de départ ;
-- documents et artefacts existants.
+- registre officiel AMF-UMOA des Instructions ;
+- statut affiché pour l’Instruction n°66/2021 : `NON ABROGE` au 2026-08-05 ;
+- publication BRVM datée du 12 janvier 2022 ;
+- PDF distant identifié, `65` pages ;
+- déclaration de publication : « Annule et remplace le précédent » ;
+- corpus, mapping et schéma existants du dépôt.
 
-## Sorties
+## Sorties créées
 
-- matrice d’intégration ;
-- ordre de lecture et source de vérité ;
-- documents d’état et de reprise ;
-- ADR ;
-- politiques, modèles et registres ;
-- catalogue et manifeste ;
-- métadonnées, inventaire et empreinte du kit source ;
-- preuves de validation et limites déclarées.
+- `regulatory/sources/INSTRUCTION_66_CREPMF_2021.yaml` ;
+- `regulatory/plans/INSTRUCTION_66_ATOMIZATION_PLAN_V0_1.yaml` ;
+- enregistrement de la source dans `regulatory/manifest.yaml` ;
+- mise à jour de l’état et des questions ouvertes.
 
-## Limite d’archive
+## Invariants
 
-La copie binaire exacte du ZIP n’est pas archivée dans le dépôt. Les neuf fragments sous `docs/kits/parts/` sont invalides ou incomplets par rapport au découpage attendu, sont conservés pour la traçabilité et sont exclus de la source de vérité. Voir `docs/kits/README.md`, `MANIFEST.md` et `WORK_LOG.md`.
+- conserver les identifiants `CIRC005_*` ;
+- attribuer des identifiants distincts `INST066_*` ;
+- relier les exigences équivalentes au lieu de les dupliquer silencieusement ;
+- enregistrer article, paragraphe, page, applicabilité, produit et période d’effet ;
+- ne rien marquer `VALIDATED`, `APPROVED` ou `ACTIVE` sans preuve de revue formelle ;
+- ne pas inventer de seuil, ratio, date, dispense ou formulation.
 
-Cette limite ne remet pas en cause la présence et le contrôle des `176/176` chemins Markdown, qui constituent le périmètre principal de la tâche.
+## État des contrôles
 
-## Contrôles de clôture
+- registre officiel et statut courant : `CONFIRMED` ;
+- publication BRVM et date de publication : `CONFIRMED` ;
+- URL du PDF et nombre de pages : `CONFIRMED` ;
+- copie binaire locale, taille et SHA-256 : `PENDING` ;
+- date de signature et date d’effet : `PENDING` ;
+- prédécesseur annulé et remplacé : `PENDING` ;
+- modificatifs et rectificatifs : `PENDING` ;
+- atomisation article par article : `NOT_STARTED`.
 
-Les contrôles et leurs limites sont consignés dans `docs/09-loop/LOOP_HEALTH_CHECK.md`, `MANIFEST.md`, `WORK_LOG.md`, `SUIVI.md` et `HANDOFF.md`.
+## Conditions de fermeture
 
-## Suite
-
-La boucle suivante doit partir exclusivement de `NEXT_ACTION.md` et obtenir une source officielle vérifiable de l’Instruction n°66/CREPMF/2021 avant toute atomisation normative.
+- intégrité binaire ou limitation documentaire formellement résolue ;
+- index de structure complet ;
+- inventaire des versions et textes liés ;
+- plan d’atomisation validé structurellement ;
+- documentation, suivi et prochaine action mis à jour ;
+- aucune régression sur les artefacts CIRC005.
