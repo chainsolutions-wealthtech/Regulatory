@@ -14,7 +14,11 @@ const [seedData, answers, matrixRows] = await Promise.all([
   loadCirc005Matrix(repoRoot),
 ]);
 
-const generation = generateProspectusDraft({ seedData, answers, matrixRows });
+const generatedAt =
+  process.env.GENERATION_TIMESTAMP ??
+  `${seedData.regulatory_context?.as_of_date ?? "2026-08-05"}T00:00:00.000Z`;
+
+const generation = generateProspectusDraft({ seedData, answers, matrixRows, generatedAt });
 
 await mkdir(outputDirectory, { recursive: true });
 await Promise.all([
@@ -30,9 +34,13 @@ await Promise.all([
 
 console.log(JSON.stringify({
   generation_id: generation.manifest.generation_id,
+  generated_at: generation.manifest.generated_at,
   output_directory: path.relative(repoRoot, outputDirectory),
   validation_status: generation.validation.status,
   validation_counts: generation.validation.counts,
+  coverage_counts: generation.manifest.coverage_counts,
+  missing_requirement_ids: generation.manifest.missing_requirement_ids,
+  pending_review_requirement_ids: generation.manifest.pending_review_requirement_ids,
   requirements: generation.concordance.length,
   applicable_questions: generation.questionnaireState.applicable_questions.length,
   ready_for_compliance_review: generation.manifest.ready_for_compliance_review,
