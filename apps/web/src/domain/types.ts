@@ -26,7 +26,8 @@ export type QuestionType =
   | "PERCENTAGE"
   | "AMOUNT"
   | "COUNTRY"
-  | "FILE";
+  | "FILE"
+  | "SHARE_CLASS_COLLECTION";
 
 export type QuestionSourceKind =
   | "REGULATORY_MATRIX"
@@ -43,6 +44,19 @@ export type DisplayCondition = {
   questionId: string;
   operator: "EQUALS" | "NOT_EQUALS" | "INCLUDES";
   value: string | boolean;
+};
+
+export type ShareClassInput = {
+  class_id: string;
+  currency: string;
+  income_policy: "CAPITALIZED" | "DISTRIBUTED";
+  initial_nav: number;
+  initial_subscription_minimum: {
+    display: string;
+  };
+  decimalization: {
+    display: string;
+  };
 };
 
 export type ProspectusQuestion = {
