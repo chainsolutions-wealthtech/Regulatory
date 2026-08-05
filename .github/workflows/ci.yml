@@ -113,6 +113,7 @@ jobs:
           node scripts/update-visual-qa-docs.mjs
           node scripts/update-nextjs-docs.mjs
           node scripts/update-regulatory-catalog-docs.mjs
+          node scripts/update-structured-share-class-docs.mjs
 
       - name: Validate generated invariants
         run: |
@@ -142,6 +143,13 @@ jobs:
           }
           if (api.status !== 'PASS' || api.checks.readyForSubmissionRemainsFalse !== true) {
             throw new Error('Web API integration validation failed');
+          }
+          if (
+            api.checks.structuredShareClassesPersisted !== true ||
+            api.checks.shareClassesWrittenToCanonicalArray !== true ||
+            api.checks.legacyRepeatingBucketAvoidedForShareClasses !== true
+          ) {
+            throw new Error('Structured share class invariants failed');
           }
           NODE
 
