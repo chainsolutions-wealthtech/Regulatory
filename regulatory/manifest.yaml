@@ -1,11 +1,19 @@
 manifest_id: UMOA_REGULATORY_BOOTSTRAP_V0_1
-version: 0.1.0
-status: DRAFT_STRUCTURALLY_VALIDATED
+version: 0.2.0
+status: DRAFT_SOURCES_REGISTERED_ATOMIZATION_PENDING
 created_on: '2026-08-04'
-markdown_organization_status: PROVISIONAL_PENDING_OWNER_PROMPT
+updated_on: '2026-08-05'
+markdown_organization_status: LOOP_ENGINEERING_INTEGRATED
 sources:
 - path: regulatory/sources/CIRC005_CREPMF_2022.yaml
   source_id: CIRC005_CREPMF_2022
+- path: regulatory/sources/INSTRUCTION_66_CREPMF_2021.yaml
+  source_id: INSTRUCTION_66_CREPMF_2021
+  registry_status: OFFICIAL_REGISTRY_CONFIRMED_NON_ABROGE
+  atomization_status: PENDING
+plans:
+- path: regulatory/plans/INSTRUCTION_66_ATOMIZATION_PLAN_V0_1.yaml
+  plan_id: INSTRUCTION_66_ATOMIZATION_PLAN_V0_1
 requirements:
 - path: regulatory/requirements/CIRC005_FCP_REQUIREMENTS_V0_1.yaml
   source_id: CIRC005_CREPMF_2022
@@ -24,8 +32,10 @@ schemas:
 validation:
 - path: regulatory/validation/CIRC005_FCP_BOOTSTRAP_VALIDATION.json
 known_gaps:
-- Instruction n°66/CREPMF/2021 not atomized.
-- Official publication date and current status of Circulaire 05/2022 to verify.
-- Field-level JSON Schema and SQL schema not yet produced.
-- Legal clauses not yet drafted, approved or activated.
-- Final Markdown taxonomy awaits the project owner's forthcoming prompt.
+- Instruction n°66/CREPMF/2021 is registered but not yet atomized.
+- Exact binary size and SHA-256 of the Instruction 66 PDF remain pending local materialization.
+- Exact signed date, effective date, predecessor and amendments of Instruction 66 remain to verify.
+- Official publication date and current status of Circulaire 05/2022 remain to verify.
+- Field-level JSON Schema and SQL schema have not yet been produced.
+- Legal clauses have not yet been drafted, approved or activated.
+- Legal and compliance review remains pending.
