@@ -48,7 +48,7 @@ jobs:
           export REGULATORY_LOCAL_DATA_ROOT="$RUNNER_TEMP/regulatory-web-data"
           export REGULATORY_WEB_BASE_URL='http://127.0.0.1:3100'
           export NEXT_TELEMETRY_DISABLED='1'
-          npm run web:start -- --hostname 127.0.0.1 --port 3100 > "$RUNNER_TEMP/regulatory-web.log" 2>&1 &
+          npm --prefix apps/web run start -- --hostname 127.0.0.1 --port 3100 > "$RUNNER_TEMP/regulatory-web.log" 2>&1 &
           web_pid=$!
           cleanup() {
             kill "$web_pid" 2>/dev/null || true
