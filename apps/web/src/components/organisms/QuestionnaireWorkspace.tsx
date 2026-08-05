@@ -129,6 +129,7 @@ export function QuestionnaireWorkspace({
               question={question}
               value={project.answers[question.id]?.value}
               defaultCurrency={project.fund.currency}
+              defaultCountryCode={project.fund.countryCode}
               disabled={pending}
               onChange={(value) => save(question.id, value)}
             />
