@@ -1,10 +1,10 @@
 import type { Metadata } from "next";
 import { ProjectsTemplate } from "@/components/templates/ProjectsTemplate";
-import { listProjects } from "@/server/project-store";
+import { projectRepository } from "@/server/storage";
 
 export const metadata: Metadata = { title: "Projets" };
 export const dynamic = "force-dynamic";
 
 export default async function ProjectsPage() {
-  return <ProjectsTemplate projects={await listProjects()} />;
+  return <ProjectsTemplate projects={await projectRepository.listProjects()} />;
 }
