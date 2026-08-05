@@ -1,7 +1,7 @@
 import { NextResponse } from "next/server";
 import { CATALOG_METADATA } from "@/domain/regulatory-catalog";
 import { buildProspectusBundle } from "@/server/generation-adapter";
-import { getProject, persistGenerationArtifacts } from "@/server/project-store";
+import { projectRepository } from "@/server/storage";
 
 export const runtime = "nodejs";
 
@@ -10,7 +10,7 @@ export async function POST(
   { params }: { params: Promise<{ projectId: string }> },
 ) {
   const { projectId } = await params;
-  const project = await getProject(projectId);
+  const project = await projectRepository.getProject(projectId);
   if (!project) return NextResponse.json({ error: "Projet introuvable." }, { status: 404 });
 
   const bundle = await buildProspectusBundle(project);
@@ -25,7 +25,7 @@ export async function POST(
     requirementCount: CATALOG_METADATA.requirementCount,
     questionCount: preview.canonicalSnapshot.answerRecords.length,
   };
-  const updatedProject = await persistGenerationArtifacts({
+  const updatedProject = await projectRepository.persistGenerationArtifacts({
     projectId,
     generation,
     preview,
@@ -33,6 +33,7 @@ export async function POST(
     artifacts: bundle.artifacts,
   });
   return NextResponse.json({
+    storageDriver: projectRepository.driver,
     generation: updatedProject.generation,
     preview,
     canonicalSnapshot: preview.canonicalSnapshot,
