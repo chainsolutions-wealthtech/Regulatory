@@ -2,6 +2,7 @@
   "name": "@regulatory/prospectus-web",
   "version": "0.3.0",
   "private": true,
+  "type": "module",
   "scripts": {
     "catalog:generate": "node ../../scripts/generate-web-regulatory-catalog.mjs",
     "predev": "npm run catalog:generate",
