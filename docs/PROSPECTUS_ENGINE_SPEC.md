@@ -820,9 +820,9 @@ Un cas FCP standard est accepté lorsque :
 - le document n’est pas présenté comme approuvé avant décision du régulateur.
 
 <!-- AUTO:LOOP-DEV-001-REGULATORY-CATALOG:START -->
-## Entrée web canonique du moteur documentaire
+## Contrat d’entrée web du moteur documentaire
 
-Chaque génération depuis l’application produit un `canonical-snapshot.json` contenant l’empreinte du catalogue, les chemins canoniques, les réponses, les exigences, les statuts de revue, les contrôles et les éléments historiques non mappés.
+Le moteur accepte le contrat `WEB_CANONICAL_SNAPSHOT_V1`. Les invariants obligatoires sont : objet canonique présent, projet et version identifiés, 62 exigences, catalogue identifié, réponses et éléments historiques non mappés explicitement listés, et `readyForSubmission = false`.
 
-Ce snapshot devient le contrat d’entrée de la prochaine tranche du compositeur. Il ne peut jamais porter `readyForSubmission: true` sans workflow humain distinct.
+La génération enrichit le manifeste avec l’empreinte du snapshot, l’identifiant et la version du projet web, la couverture web, les questions en attente de revue et les réponses non mappées.
 <!-- AUTO:LOOP-DEV-001-REGULATORY-CATALOG:END -->

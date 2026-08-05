@@ -121,9 +121,9 @@ Aucune authentification fictive n’est présentée comme sécurisée. Les endpo
 8. effectuer la revue visuelle navigateur desktop et mobile.
 
 <!-- AUTO:LOOP-DEV-001-REGULATORY-CATALOG:START -->
-## 9. Catalogue réglementaire généré
+## 10. Sortie documentaire réelle
 
-Les composants Atomic Design ne dépendent plus d’un tableau réglementaire écrit manuellement en TypeScript. Le catalogue est généré avant le développement, le typecheck et le build depuis les quatre matrices CIRC005 et le registre YAML.
+Le parcours Atomic Design n’aboutit plus à un simple aperçu. L’action de génération construit un snapshot canonique, appelle le compositeur historique et persiste le bundle documentaire complet.
 
 - exigences chargées depuis les matrices : `62` ;
 - questions réglementaires interactives : `58` ;
@@ -133,7 +133,10 @@ Les composants Atomic Design ne dépendent plus d’un tableau réglementaire é
 - identifiants de question uniques : `62` ;
 - empreinte du catalogue : `c1f288bcc865becee580e52049ea4757ecd7e1fc97fcccd3f4b61aba3089ea1b` ;
 - test d’intégration API : `PASS` ;
+- compositeur documentaire historique invoqué : `true` ;
+- bundle documentaire complet persisté : `true` ;
+- DOCX déterministe validé : `true` ;
 - soumission automatique : `false`.
 
-Les objets de présentation conservent les identifiants, champs canoniques, effets, contrôles, preuves, rôles, sections et références sources. Les composants spécialisés encore absents utilisent une saisie provisoire explicitement signalée.
+La prochaine évolution doit remplacer les champs génériques représentant des tableaux et collections par des organismes dédiés : classes de parts, fourchettes d’actifs, frais, méthodes de valorisation, intervenants et autres listes répétables.
 <!-- AUTO:LOOP-DEV-001-REGULATORY-CATALOG:END -->

@@ -125,7 +125,7 @@ La prochaine étape porte sur la connexion exhaustive du catalogue web au moteur
 <!-- AUTO:LOOP-DEV-001-NEXTJS-ATOMIC-DESIGN:END -->
 
 <!-- AUTO:LOOP-DEV-001-REGULATORY-CATALOG:START -->
-## Mise à jour LOOP-DEV-001 — Catalogue réglementaire web
+## Mise à jour LOOP-DEV-001 — Compositeur générique depuis le snapshot web
 
 - exigences chargées depuis les matrices : `62` ;
 - questions réglementaires interactives : `58` ;
@@ -135,7 +135,10 @@ La prochaine étape porte sur la connexion exhaustive du catalogue web au moteur
 - identifiants de question uniques : `62` ;
 - empreinte du catalogue : `c1f288bcc865becee580e52049ea4757ecd7e1fc97fcccd3f4b61aba3089ea1b` ;
 - test d’intégration API : `PASS` ;
+- compositeur documentaire historique invoqué : `true` ;
+- bundle documentaire complet persisté : `true` ;
+- DOCX déterministe validé : `true` ;
 - soumission automatique : `false`.
 
-Le catalogue TypeScript réglementaire manuel est remplacé par un adaptateur généré. La persistance reste locale et le snapshot canonique n’est pas encore consommé par le moteur documentaire historique pour produire un DOCX générique.
+Le blocage « snapshot canonique non consommé par le moteur historique » est levé. La génération reste locale, pré-conformité et non déployée. Les champs répétables encore stockés sous une représentation provisoire doivent maintenant être remplacés par des composants structurés dédiés.
 <!-- AUTO:LOOP-DEV-001-REGULATORY-CATALOG:END -->

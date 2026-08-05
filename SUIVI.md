@@ -575,11 +575,11 @@ La persistance n’est pas transactionnelle, l’authentification et le RBAC ne 
 <!-- AUTO:LOOP-DEV-001-NEXTJS-ATOMIC-DESIGN:END -->
 
 <!-- AUTO:LOOP-DEV-001-REGULATORY-CATALOG:START -->
-## 2026-08-05 — Catalogue CIRC005 généré pour l’application Next.js
+## 2026-08-05 — Compositeur documentaire générique connecté à Next.js
 
 ### Objectif
 
-Supprimer la duplication réglementaire entre les matrices du dépôt et le catalogue TypeScript provisoire de l’application.
+Transformer chaque projet créé dans l’interface en livrables documentaires traçables sans recopier les règles réglementaires et sans logique réservée à un fonds d’exemple.
 
 ### Résultat
 
@@ -591,9 +591,12 @@ Supprimer la duplication réglementaire entre les matrices du dépôt et le cata
 - identifiants de question uniques : `62` ;
 - empreinte du catalogue : `c1f288bcc865becee580e52049ea4757ecd7e1fc97fcccd3f4b61aba3089ea1b` ;
 - test d’intégration API : `PASS` ;
+- compositeur documentaire historique invoqué : `true` ;
+- bundle documentaire complet persisté : `true` ;
+- DOCX déterministe validé : `true` ;
 - soumission automatique : `false`.
 
-### Limites
+### Limites restantes
 
-Les composants structurés spécialisés restent provisoires pour certains types de questions. L’Instruction 66 n’est pas complètement atomisée. Le snapshot canonique doit encore être branché au compositeur historique pour générer les livrables DOCX de tous les projets.
+Certains types de questions réglementaires utilisent encore une saisie générique et les chemins contenant `[]` sont conservés dans une zone répétable provisoire. L’Instruction n°66/2021 n’est pas entièrement atomisée. Aucun livrable n’est déclaré conforme, approuvé ou prêt pour soumission.
 <!-- AUTO:LOOP-DEV-001-REGULATORY-CATALOG:END -->

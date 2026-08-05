@@ -179,17 +179,18 @@ Aucun déploiement, aucune nouvelle branche, aucun force-push et aucune activati
 <!-- AUTO:LOOP-DEV-001-NEXTJS-ATOMIC-DESIGN:END -->
 
 <!-- AUTO:LOOP-DEV-001-REGULATORY-CATALOG:START -->
-## 2026-08-05 — LOOP-DEV-001 — Connexion Next.js aux matrices CIRC005
+## 2026-08-05 — LOOP-DEV-001 — Snapshot web vers compositeur historique
 
-1. Lecture des quatre matrices et du registre YAML.
-2. Création d’un générateur déterministe et d’un rapport de validation.
-3. Remplacement du catalogue réglementaire manuel par un adaptateur généré.
-4. Isolation des questions `APP_*` non réglementaires.
-5. Ajout de la migration non destructive des anciennes réponses.
-6. Ajout du snapshot canonique versionné à chaque génération.
-7. Ajout de l’endpoint `GET /api/regulatory/catalog`.
-8. Ajout de tests HTTP réels sur le serveur Next.js construit.
-9. Maintien explicite de `readyForSubmission: false`.
+1. Création de `src/adapters/web-canonical-snapshot-adapter.js`.
+2. Validation stricte du contrat `WEB_CANONICAL_SNAPSHOT_V1`.
+3. Création de la CLI générique `src/cli/generate-from-web-snapshot.js`.
+4. Suppression de la dépendance fonctionnelle au cas United Capital Diamond dans l’application web.
+5. Branchement de l’API de génération Next.js sur le compositeur historique.
+6. Génération et validation déterministes du DOCX pour tout projet web.
+7. Persistance de tous les artefacts dans le dossier versionné de la génération.
+8. Conservation des `PENDING_REVIEW` et des réponses historiques non mappées.
+9. Ajout de tests unitaires et HTTP de bout en bout.
+10. Maintien explicite de `readyForSubmission: false`.
 
 - exigences chargées depuis les matrices : `62` ;
 - questions réglementaires interactives : `58` ;
@@ -199,5 +200,8 @@ Aucun déploiement, aucune nouvelle branche, aucun force-push et aucune activati
 - identifiants de question uniques : `62` ;
 - empreinte du catalogue : `c1f288bcc865becee580e52049ea4757ecd7e1fc97fcccd3f4b61aba3089ea1b` ;
 - test d’intégration API : `PASS` ;
+- compositeur documentaire historique invoqué : `true` ;
+- bundle documentaire complet persisté : `true` ;
+- DOCX déterministe validé : `true` ;
 - soumission automatique : `false`.
 <!-- AUTO:LOOP-DEV-001-REGULATORY-CATALOG:END -->

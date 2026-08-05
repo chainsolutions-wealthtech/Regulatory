@@ -552,11 +552,11 @@ Les choix suivants restent ouverts et doivent faire l’objet de décisions docu
 Aucun choix ne doit être figé uniquement parce qu’il est populaire. Il doit être évalué par rapport à la traçabilité, au déterminisme, à la maintenance et à la sécurité.
 
 <!-- AUTO:LOOP-DEV-001-REGULATORY-CATALOG:START -->
-## Adaptateur réglementaire de l’application Next.js
+## Adaptateur du snapshot web vers le compositeur historique
 
 Le flux exécutable est désormais :
 
-`matrices CSV + registre YAML → catalogue JSON généré → adaptateur TypeScript → questionnaire/API → snapshot canonique → moteur documentaire`.
+`matrices CSV + registre YAML → catalogue JSON → questionnaire/API → canonical-snapshot.json → adaptateur web → compositeur historique → modèle documentaire + Markdown + concordance + contrôles + DOCX`.
 
-Le catalogue JSON est un artefact de build non éditable. Les matrices et le registre restent les sources de vérité. Les questions applicatives sans exigence directe sont isolées et ne portent aucun identifiant CIRC005.
+L’adaptateur se situe dans la couche `src/adapters`. Le compositeur historique reste responsable des clauses, sections, règles, contrôles et concordances. Next.js orchestre la création du snapshot et la persistance des artefacts, sans devenir une seconde implémentation des règles réglementaires.
 <!-- AUTO:LOOP-DEV-001-REGULATORY-CATALOG:END -->

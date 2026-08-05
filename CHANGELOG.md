@@ -138,18 +138,17 @@ L’application est explicitement locale. Aucune authentification fictive n’es
 <!-- AUTO:LOOP-DEV-001-NEXTJS-ATOMIC-DESIGN:END -->
 
 <!-- AUTO:LOOP-DEV-001-REGULATORY-CATALOG:START -->
-## [Unreleased] — Catalogue réglementaire web V0.1 — 2026-08-05
+## [Unreleased] — Compositeur documentaire web V0.1 — 2026-08-05
 
 ### Added
 
-- générateur matrices/registre → catalogue Next.js ;
-- validation déterministe des 62 exigences ;
-- endpoint de catalogue réglementaire ;
-- migration non destructive des réponses historiques ;
-- snapshot canonique par génération ;
-- test d’intégration HTTP de l’API.
+- adaptateur générique `WEB_CANONICAL_SNAPSHOT_V1` → compositeur historique ;
+- CLI de génération depuis un snapshot web ;
+- génération DOCX déterministe et validation OOXML pour chaque projet ;
+- persistance de treize artefacts de génération et de leurs chemins ;
+- tests unitaires de déterminisme et test HTTP du bundle complet.
 
 ### Changed
 
-Le catalogue réglementaire TypeScript manuel devient un simple adaptateur de compatibilité. Les questions non issues des matrices sont identifiées par `APP_*` ou `PENDING_REGULATORY_MAPPING`.
+L’API `POST /api/projects/{projectId}/generate` produit désormais le véritable modèle documentaire historique au lieu d’un aperçu constitué par concaténation des réponses.
 <!-- AUTO:LOOP-DEV-001-REGULATORY-CATALOG:END -->

@@ -352,19 +352,20 @@ Légende :
 <!-- AUTO:LOOP-DEV-001-NEXTJS-ATOMIC-DESIGN:END -->
 
 <!-- AUTO:LOOP-DEV-001-REGULATORY-CATALOG:START -->
-## Mise à jour opérationnelle — catalogue réglementaire web
+## Mise à jour opérationnelle — génération documentaire web
 
 - [x] Générer le catalogue web depuis les quatre matrices CIRC005.
 - [x] Vérifier l’égalité exacte avec les 62 exigences du registre YAML.
-- [x] Éliminer la copie manuelle des questions réglementaires.
 - [x] Isoler les questions applicatives sous des identifiants `APP_*`.
 - [x] Préserver et signaler les réponses historiques non mappées.
-- [x] Ajouter l’API de lecture du catalogue.
-- [x] Générer un snapshot canonique par projet.
-- [x] Ajouter les tests d’intégration HTTP.
-- [ ] Faire consommer le snapshot canonique par le compositeur documentaire historique.
-- [ ] Générer Markdown, concordance, contrôles et DOCX pour chaque projet web.
-- [ ] Remplacer les saisies structurées provisoires par des composants dédiés.
+- [x] Générer un snapshot canonique versionné par projet.
+- [x] Faire consommer le snapshot canonique par le compositeur documentaire historique.
+- [x] Générer Markdown, concordance, contrôles et DOCX pour chaque projet web.
+- [x] Persister le bundle complet dans le dossier versionné de génération.
+- [x] Ajouter les tests unitaires et HTTP de bout en bout.
+- [ ] Remplacer les saisies répétables provisoires par des composants dédiés et typés.
+- [ ] Écrire les tableaux structurés directement dans les collections canoniques attendues par le compositeur.
+- [ ] Ajouter une inspection visuelle automatisée du DOCX généré depuis un projet web générique.
 - [ ] Reprendre l’atomisation de l’Instruction n°66/2021.
 - [ ] Ajouter PostgreSQL, authentification, RBAC et séparation tenant avant tout déploiement.
 <!-- AUTO:LOOP-DEV-001-REGULATORY-CATALOG:END -->

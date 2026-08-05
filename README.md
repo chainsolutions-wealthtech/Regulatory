@@ -515,9 +515,9 @@ La documentation détaillée se trouve dans `docs/04-development/NEXTJS_ATOMIC_D
 <!-- AUTO:LOOP-DEV-001-NEXTJS-ATOMIC-DESIGN:END -->
 
 <!-- AUTO:LOOP-DEV-001-REGULATORY-CATALOG:START -->
-## 19. Catalogue réglementaire exécutable dans Next.js — 2026-08-05
+## 19. Catalogue réglementaire et génération documentaire web — 2026-08-05
 
-L’application Next.js ne maintient plus une copie manuelle des questions réglementaires. Le script `scripts/generate-web-regulatory-catalog.mjs` transforme les quatre matrices CIRC005 et le registre YAML en catalogue JSON déterministe consommé par l’interface, l’API et le snapshot canonique.
+L’application Next.js consomme un catalogue déterministe construit depuis les quatre matrices CIRC005 et le registre YAML. Chaque projet web produit désormais un snapshot canonique versionné, transmis au compositeur documentaire historique par un adaptateur générique qui ne contient aucune exception propre au cas United Capital Diamond.
 
 - exigences chargées depuis les matrices : `62` ;
 - questions réglementaires interactives : `58` ;
@@ -527,7 +527,12 @@ L’application Next.js ne maintient plus une copie manuelle des questions régl
 - identifiants de question uniques : `62` ;
 - empreinte du catalogue : `c1f288bcc865becee580e52049ea4757ecd7e1fc97fcccd3f4b61aba3089ea1b` ;
 - test d’intégration API : `PASS` ;
+- compositeur documentaire historique invoqué : `true` ;
+- bundle documentaire complet persisté : `true` ;
+- DOCX déterministe validé : `true` ;
 - soumission automatique : `false`.
 
-Les questions purement applicatives sont isolées sous des identifiants `APP_*`. Les questions encore dépendantes de l’Instruction 66 sont explicitement marquées `PENDING_REGULATORY_MAPPING` et ne sont jamais présentées comme exigences CIRC005 validées.
+Flux effectif : `matrices CSV + registre YAML → catalogue JSON → questionnaire/API → canonical-snapshot.json → adaptateur web → compositeur historique → modèle documentaire + Markdown + concordance + contrôles + DOCX`.
+
+Les questions purement applicatives restent isolées sous des identifiants `APP_*`. Les éléments non mappés ou non confirmés sont conservés explicitement ; ils ne sont jamais supprimés ou considérés comme validés silencieusement.
 <!-- AUTO:LOOP-DEV-001-REGULATORY-CATALOG:END -->

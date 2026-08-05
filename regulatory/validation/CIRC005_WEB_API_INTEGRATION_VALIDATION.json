@@ -1,5 +1,5 @@
 {
-  "validationId": "CIRC005_WEB_API_INTEGRATION_VALIDATION_V1",
+  "validationId": "CIRC005_WEB_API_INTEGRATION_VALIDATION_V2",
   "status": "PASS",
   "catalogDigest": "c1f288bcc865becee580e52049ea4757ecd7e1fc97fcccd3f4b61aba3089ea1b",
   "requirementCount": 62,
@@ -14,6 +14,9 @@
     "conditionalAnswerInvalidation": true,
     "canonicalSnapshotGenerated": true,
     "canonicalFieldPopulated": true,
+    "historicalComposerInvoked": true,
+    "completeGenerationBundlePersisted": true,
+    "deterministicDocxValidated": true,
     "generationArtifactPathRecorded": true,
     "readyForSubmissionRemainsFalse": true
   },

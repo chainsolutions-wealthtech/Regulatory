@@ -140,7 +140,7 @@ La première tranche applicative est implémentée : création de projet, questi
 <!-- AUTO:LOOP-DEV-001-NEXTJS-ATOMIC-DESIGN:END -->
 
 <!-- AUTO:LOOP-DEV-001-REGULATORY-CATALOG:START -->
-## Résultat de l’itération catalogue réglementaire
+## Résultat de l’itération compositeur documentaire web
 
 - exigences chargées depuis les matrices : `62` ;
 - questions réglementaires interactives : `58` ;
@@ -150,7 +150,10 @@ La première tranche applicative est implémentée : création de projet, questi
 - identifiants de question uniques : `62` ;
 - empreinte du catalogue : `c1f288bcc865becee580e52049ea4757ecd7e1fc97fcccd3f4b61aba3089ea1b` ;
 - test d’intégration API : `PASS` ;
+- compositeur documentaire historique invoqué : `true` ;
+- bundle documentaire complet persisté : `true` ;
+- DOCX déterministe validé : `true` ;
 - soumission automatique : `false`.
 
-Les composants Atomic Design continuent de consommer des objets `ProspectusQuestion`, mais ces objets sont maintenant construits depuis les matrices canoniques. Les anciennes réponses sont migrées lorsqu’un alias sûr existe et conservées, sans suppression silencieuse, lorsqu’elles nécessitent une reprise humaine.
+Le même snapshot produit le même identifiant de génération et le même document. La traçabilité relie les réponses web, leurs champs canoniques, les exigences CIRC005, les composants du modèle documentaire et les fichiers générés. `ready_for_submission` reste forcé à `false` dans le snapshot, le manifeste de génération, le manifeste DOCX et l’API.
 <!-- AUTO:LOOP-DEV-001-REGULATORY-CATALOG:END -->

@@ -123,9 +123,9 @@ La commande `npm run validate:docx` vérifie les parties OOXML obligatoires, la 
 <!-- AUTO:LOOP-DEV-001-DOCX:END -->
 
 <!-- AUTO:LOOP-DEV-001-REGULATORY-CATALOG:START -->
-## Adaptateur matrices CIRC005 → application web V0.1
+## Adaptateur snapshot web → compositeur documentaire V0.1
 
-La génération du catalogue précède `dev`, `typecheck` et `build`. Elle contrôle l’égalité exacte entre les 62 identifiants des matrices CSV et ceux du registre YAML, l’unicité des identifiants et la présence des champs canoniques, rôles et références sources.
+Le contrat `WEB_CANONICAL_SNAPSHOT_V1` est validé avant composition. L’adaptateur conserve l’empreinte du catalogue, la version du projet, les chemins canoniques, les statuts de revue, les réponses historiques non mappées et la couverture déclarée par l’application.
 
 - exigences chargées depuis les matrices : `62` ;
 - questions réglementaires interactives : `58` ;
@@ -135,7 +135,10 @@ La génération du catalogue précède `dev`, `typecheck` et `build`. Elle contr
 - identifiants de question uniques : `62` ;
 - empreinte du catalogue : `c1f288bcc865becee580e52049ea4757ecd7e1fc97fcccd3f4b61aba3089ea1b` ;
 - test d’intégration API : `PASS` ;
+- compositeur documentaire historique invoqué : `true` ;
+- bundle documentaire complet persisté : `true` ;
+- DOCX déterministe validé : `true` ;
 - soumission automatique : `false`.
 
-À chaque génération utilisateur, l’application écrit désormais un `canonical-snapshot.json` versionné contenant les réponses structurées, les chemins canoniques, les exigences, les statuts de revue, les réponses historiques non mappées et l’empreinte du catalogue.
+Pour chaque génération, le dossier versionné contient notamment `canonical-snapshot.json`, `canonical-data.json`, `questionnaire-state.json`, `control-report.json`, `concordance.json`, `document-model.json`, `answer-log.json`, `generation-manifest.json`, `prospectus-draft.md`, `prospectus-draft.docx`, `docx-manifest.json` et `docx-validation.json`.
 <!-- AUTO:LOOP-DEV-001-REGULATORY-CATALOG:END -->

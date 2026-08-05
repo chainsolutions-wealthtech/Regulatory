@@ -153,7 +153,7 @@ Ne pas déployer ou présenter l’application comme sécurisée avant la base t
 <!-- AUTO:LOOP-DEV-001-NEXTJS-ATOMIC-DESIGN:END -->
 
 <!-- AUTO:LOOP-DEV-001-REGULATORY-CATALOG:START -->
-## Transmission — catalogue réglementaire web V0.1
+## Transmission — compositeur documentaire web V0.1
 
 - exigences chargées depuis les matrices : `62` ;
 - questions réglementaires interactives : `58` ;
@@ -163,17 +163,22 @@ Ne pas déployer ou présenter l’application comme sécurisée avant la base t
 - identifiants de question uniques : `62` ;
 - empreinte du catalogue : `c1f288bcc865becee580e52049ea4757ecd7e1fc97fcccd3f4b61aba3089ea1b` ;
 - test d’intégration API : `PASS` ;
+- compositeur documentaire historique invoqué : `true` ;
+- bundle documentaire complet persisté : `true` ;
+- DOCX déterministe validé : `true` ;
 - soumission automatique : `false`.
 
 Fichiers prioritaires :
 
-- `scripts/generate-web-regulatory-catalog.mjs` ;
-- `apps/web/src/domain/regulatory-catalog.ts` ;
-- `apps/web/src/domain/application-questions.ts` ;
+- `src/adapters/web-canonical-snapshot-adapter.js` ;
+- `src/cli/generate-from-web-snapshot.js` ;
 - `apps/web/src/server/canonical-snapshot.ts` ;
+- `apps/web/src/server/generation-adapter.ts` ;
+- `apps/web/src/server/project-store.ts` ;
+- `apps/web/src/app/api/projects/[projectId]/generate/route.ts` ;
+- `test/web-canonical-snapshot-adapter.test.js` ;
 - `scripts/test-web-api.mjs` ;
-- `regulatory/validation/CIRC005_WEB_CATALOG_VALIDATION.json` ;
 - `regulatory/validation/CIRC005_WEB_API_INTEGRATION_VALIDATION.json`.
 
-Ne jamais réintroduire une liste réglementaire manuelle dans React ou dans un autre catalogue parallèle.
+Ne jamais réintroduire une génération spéciale réservée à United Capital Diamond. Ne jamais supprimer une réponse non mappée sans décision et journalisation explicites.
 <!-- AUTO:LOOP-DEV-001-REGULATORY-CATALOG:END -->

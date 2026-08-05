@@ -26,9 +26,9 @@ npm run build
 La persistance JSON est locale et réservée au prototype. Elle ne constitue ni une base de production, ni un mécanisme sécurisé de multi-tenant, ni un dispositif de soumission réglementaire.
 
 <!-- AUTO:LOOP-DEV-001-REGULATORY-CATALOG:START -->
-## Catalogue réglementaire
+## Génération documentaire
 
-Avant `dev`, `typecheck` et `build`, l’application exécute `scripts/generate-web-regulatory-catalog.mjs`. Le fichier généré sous `src/generated` ne doit jamais être modifié à la main.
+`POST /api/projects/{projectId}/generate` construit le snapshot canonique puis exécute `src/cli/generate-from-web-snapshot.js`. Le compositeur historique génère le modèle, le Markdown, la concordance, les contrôles et le DOCX déterministe.
 
-L’API `GET /api/regulatory/catalog` expose les métadonnées et les 62 exigences. Chaque génération de projet écrit aussi un snapshot canonique versionné.
+Les artefacts sont enregistrés sous `.local-data/projects/{projectId}/generations/{generationId}/`. Cette persistance est locale et ne constitue pas une architecture de production.
 <!-- AUTO:LOOP-DEV-001-REGULATORY-CATALOG:END -->

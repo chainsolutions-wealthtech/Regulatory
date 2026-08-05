@@ -113,14 +113,16 @@ La boucle réglementaire sera reprise après la tranche de couverture standard o
 <!-- AUTO:LOOP-DEV-001-NEXTJS-ATOMIC-DESIGN:END -->
 
 <!-- AUTO:LOOP-DEV-001-REGULATORY-CATALOG:START -->
-## État catalogue réglementaire de LOOP-DEV-001
+## État de LOOP-DEV-001 après connexion au compositeur
 
 - matrices → catalogue web : `IMPLEMENTED` ;
-- registre YAML rapproché des matrices : `PASS` ;
-- API catalogue : `IMPLEMENTED` ;
-- migration non destructive des anciennes réponses : `IMPLEMENTED` ;
-- snapshot canonique par génération : `IMPLEMENTED_V0_1` ;
-- tests HTTP de l’API : `PASS` ;
-- prochaine tranche : moteur documentaire générique depuis le snapshot canonique ;
+- API catalogue et questionnaire : `IMPLEMENTED` ;
+- migration non destructive des réponses : `IMPLEMENTED` ;
+- snapshot canonique versionné : `IMPLEMENTED` ;
+- adaptateur snapshot → compositeur historique : `IMPLEMENTED_V0_1` ;
+- génération Markdown, concordance, contrôles et DOCX par projet : `IMPLEMENTED_V0_1` ;
+- persistance du bundle versionné : `IMPLEMENTED` ;
+- tests unitaires et HTTP : `PASS` ;
+- prochaine tranche : composants structurés pour les données répétables ;
 - production et soumission : `FORBIDDEN`.
 <!-- AUTO:LOOP-DEV-001-REGULATORY-CATALOG:END -->
