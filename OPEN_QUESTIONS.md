@@ -7,7 +7,7 @@ Les réponses ne doivent jamais être inventées. Lorsqu’une question est rés
 | ID | Question | Pourquoi nécessaire | Propriétaire | Statut |
 |---|---|---|---|---|
 | OQ-001 | Qui sont les responsables métier, conformité, juridique, fiscal, technique et sécurité ? | Workflow, RACI et approbations | À DÉFINIR — information non fournie ou non vérifiée à ce stade du projet. | OPEN |
-| OQ-002 | Quelle copie officielle et quelle version actuelle de l’Instruction n°66/CREPMF/2021 doivent être utilisées ? | Atomisation normative | À DÉFINIR — information non fournie ou non vérifiée à ce stade du projet. | OPEN |
+| OQ-002 | Quelle copie officielle et quelle version actuelle de l’Instruction n°66/CREPMF/2021 doivent être utilisées ? | Atomisation normative | Le registre officiel AMF-UMOA liste l’Instruction n°66/2021 comme `NON ABROGE` au 2026-08-05. La publication BRVM du 12 janvier 2022 et son PDF de 65 pages sont enregistrés dans `regulatory/sources/INSTRUCTION_66_CREPMF_2021.yaml`. Restent à confirmer l’empreinte binaire, la date de signature et d’effet, le texte remplacé et les éventuels modificatifs. | PARTIALLY_RESOLVED |
 | OQ-003 | Quelle est la date officielle de publication et le statut juridique actuel de la Circulaire n°05/CREPMF/2022 ? | Date d’effet et validité | À DÉFINIR — information non fournie ou non vérifiée à ce stade du projet. | OPEN |
 | OQ-004 | Quelle stack applicative, quelle base et quels environnements seront retenus ? | Architecture technique et procédures | À DÉFINIR — information non fournie ou non vérifiée à ce stade du projet. | OPEN |
 | OQ-005 | Quelles commandes de build, test et analyse statique seront applicables ? | Portes de qualité | À DÉFINIR — information non fournie ou non vérifiée à ce stade du projet. | OPEN |
