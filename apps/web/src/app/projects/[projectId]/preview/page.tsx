@@ -25,11 +25,15 @@ export default async function PreviewPage({
             Le contenu est construit depuis le snapshot canonique et conserve le statut de
             pré-conformité.
           </p>
-          <GenerateProspectusButton projectId={project.id} />
+          <GenerateProspectusButton projectId={project.id} projectVersion={project.version} />
           <dl>
             <div>
               <dt>Génération</dt>
               <dd>{preview.generationId}</dd>
+            </div>
+            <div>
+              <dt>Version</dt>
+              <dd>{project.version}</dd>
             </div>
             <div>
               <dt>Sections</dt>
