@@ -2,7 +2,7 @@ import { NextResponse } from "next/server";
 import { getQuestionById } from "@/domain/regulatory-catalog";
 import { normalizeQuestionValueForPersistence } from "@/domain/structured-answers";
 import { getQuestionsByGroup } from "@/domain/questionnaire";
-import { getProject, saveAnswer } from "@/server/project-store";
+import { projectRepository } from "@/server/storage";
 
 export const runtime = "nodejs";
 
@@ -22,7 +22,7 @@ export async function POST(
     return NextResponse.json({ error: "Question inconnue ou non interactive." }, { status: 422 });
   }
   try {
-    const existingProject = await getProject(projectId);
+    const existingProject = await projectRepository.getProject(projectId);
     if (!existingProject) {
       return NextResponse.json({ error: "Projet introuvable." }, { status: 404 });
     }
@@ -30,7 +30,7 @@ export async function POST(
       currency: existingProject.fund.currency,
       countryCode: existingProject.fund.countryCode,
     });
-    const project = await saveAnswer({
+    const project = await projectRepository.saveAnswer({
       projectId,
       questionId: body.questionId,
       value: normalizedValue,
