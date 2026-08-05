@@ -1,0 +1,356 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://chainsolutions-wealthtech.example/schemas/PROSPECTUS_CANONICAL_MODEL_V1.schema.json",
+  "title": "Prospectus Composer Canonical Model V1",
+  "description": "Contrat de données canonique d'un projet de prospectus OPCVM/FCP UMOA. La validation de ce schéma ne constitue pas une validation juridique ou réglementaire.",
+  "type": "object",
+  "additionalProperties": true,
+  "required": ["regulatory_context", "fund", "share_classes"],
+  "properties": {
+    "regulatory_context": { "$ref": "#/$defs/regulatoryContext" },
+    "fund": { "$ref": "#/$defs/fund" },
+    "manager": { "$ref": "#/$defs/organization" },
+    "depositary": { "$ref": "#/$defs/organization" },
+    "auditor": { "$ref": "#/$defs/organization" },
+    "external_adviser": { "$ref": "#/$defs/organization" },
+    "share_classes": {
+      "type": "array",
+      "minItems": 1,
+      "maxItems": 20,
+      "items": { "$ref": "#/$defs/shareClass" }
+    },
+    "investment_policy": {
+      "type": "object",
+      "additionalProperties": true,
+      "properties": {
+        "asset_class_ranges": {
+          "type": "array",
+          "minItems": 1,
+          "maxItems": 50,
+          "items": { "$ref": "#/$defs/assetClassRange" }
+        }
+      }
+    },
+    "fees": {
+      "type": "object",
+      "additionalProperties": true,
+      "properties": {
+        "transaction": {
+          "type": "array",
+          "maxItems": 50,
+          "items": { "$ref": "#/$defs/fee" }
+        }
+      }
+    },
+    "remunerations": {
+      "type": "array",
+      "maxItems": 50,
+      "items": { "$ref": "#/$defs/fee" }
+    },
+    "valuation": {
+      "type": "object",
+      "additionalProperties": true,
+      "properties": {
+        "methods": {
+          "type": "array",
+          "maxItems": 50,
+          "items": { "$ref": "#/$defs/valuationMethod" }
+        }
+      }
+    },
+    "service_providers": {
+      "type": "array",
+      "maxItems": 100,
+      "items": { "$ref": "#/$defs/party" }
+    },
+    "risks": {
+      "type": "array",
+      "maxItems": 100,
+      "items": { "$ref": "#/$defs/riskFactor" }
+    },
+    "distribution": {
+      "type": "object",
+      "additionalProperties": true,
+      "properties": {
+        "marketing_country_codes": {
+          "type": "array",
+          "uniqueItems": true,
+          "items": { "$ref": "#/$defs/countryCode" }
+        }
+      }
+    },
+    "distribution_countries": {
+      "type": "array",
+      "maxItems": 8,
+      "items": { "$ref": "#/$defs/countryArrangement" }
+    },
+    "evidence": {
+      "type": "array",
+      "maxItems": 500,
+      "items": { "$ref": "#/$defs/evidence" }
+    },
+    "reviews": {
+      "type": "array",
+      "items": { "$ref": "#/$defs/review" }
+    },
+    "audit_events": {
+      "type": "array",
+      "items": { "$ref": "#/$defs/auditEvent" }
+    }
+  },
+  "$defs": {
+    "stableId": {
+      "type": "string",
+      "pattern": "^[A-Z0-9][A-Z0-9_-]{0,47}$"
+    },
+    "currencyCode": {
+      "type": "string",
+      "pattern": "^[A-Z]{3}$"
+    },
+    "countryCode": {
+      "type": "string",
+      "enum": ["BJ", "BF", "CI", "GW", "ML", "NE", "SN", "TG"]
+    },
+    "percentage": {
+      "type": "number",
+      "minimum": 0,
+      "maximum": 100
+    },
+    "reviewStatus": {
+      "type": "string",
+      "enum": ["UNREVIEWED", "PENDING_REVIEW", "CONFIRMED"]
+    },
+    "verificationStatus": {
+      "type": "string",
+      "enum": ["USER_PROVIDED_PENDING_REVIEW", "PREFILLED_PENDING_CONFIRMATION", "VERIFIED"]
+    },
+    "regulatoryContext": {
+      "type": "object",
+      "additionalProperties": true,
+      "required": ["jurisdiction", "authority", "rule_pack", "document_type", "document_status"],
+      "properties": {
+        "jurisdiction": { "const": "UMOA" },
+        "authority": { "const": "AMF-UMOA" },
+        "rule_pack": { "type": "string", "minLength": 1 },
+        "rule_pack_version": { "type": ["string", "null"] },
+        "document_type": { "const": "PROSPECTUS" },
+        "document_status": {
+          "type": "string",
+          "enum": ["DRAFT", "DRAFT_PRE_COMPLIANCE_REVIEW", "PRE_COMPLIANCE_REVIEW", "COMPLIANCE_REVIEW", "LEGAL_REVIEW", "READY_FOR_INTERNAL_APPROVAL"]
+        },
+        "ready_for_submission": { "const": false },
+        "source_versions": { "type": "array", "items": { "type": "string" }, "uniqueItems": true }
+      }
+    },
+    "fund": {
+      "type": "object",
+      "additionalProperties": true,
+      "required": ["legal_name", "legal_form", "country_of_constitution"],
+      "properties": {
+        "canonical_id": { "type": "string", "pattern": "^[a-z0-9][a-z0-9-]{0,79}$" },
+        "legal_name": { "type": "string", "minLength": 1, "maxLength": 300 },
+        "legal_form": { "const": "FCP" },
+        "country_of_constitution": { "$ref": "#/$defs/countryCode" },
+        "currency": { "$ref": "#/$defs/currencyCode" },
+        "constitution_date": { "type": ["string", "null"], "format": "date" },
+        "classification": { "type": ["string", "null"] },
+        "approval": { "$ref": "#/$defs/officialReference" },
+        "prospectus_visa": { "$ref": "#/$defs/officialReference" }
+      }
+    },
+    "officialReference": {
+      "type": "object",
+      "additionalProperties": true,
+      "properties": {
+        "status": { "type": ["string", "null"] },
+        "number": { "type": ["string", "null"] },
+        "date": { "type": ["string", "null"], "format": "date" },
+        "source_evidence_id": { "type": ["string", "null"] }
+      }
+    },
+    "organization": {
+      "type": "object",
+      "additionalProperties": true,
+      "properties": {
+        "organization_id": { "type": ["string", "null"] },
+        "legal_name": { "type": ["string", "null"], "maxLength": 300 },
+        "legal_form": { "type": ["string", "null"] },
+        "approval": { "$ref": "#/$defs/officialReference" },
+        "registered_office": { "type": ["string", "null"] },
+        "main_activity": { "type": ["string", "null"] },
+        "profile_status": { "type": ["string", "null"] },
+        "governance_members": {
+          "type": "array",
+          "items": { "$ref": "#/$defs/party" }
+        }
+      }
+    },
+    "shareClass": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["class_id", "currency", "income_policy", "initial_nav", "initial_subscription_minimum", "decimalization"],
+      "properties": {
+        "class_id": { "$ref": "#/$defs/stableId" },
+        "currency": { "$ref": "#/$defs/currencyCode" },
+        "income_policy": { "enum": ["CAPITALIZED", "DISTRIBUTED"] },
+        "initial_nav": { "type": "number", "exclusiveMinimum": 0 },
+        "initial_subscription_minimum": { "$ref": "#/$defs/displayValue" },
+        "decimalization": { "$ref": "#/$defs/displayValue" }
+      }
+    },
+    "displayValue": {
+      "type": "object",
+      "additionalProperties": true,
+      "required": ["display"],
+      "properties": { "display": { "type": "string", "minLength": 1 } }
+    },
+    "assetClassRange": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["range_id", "asset_class", "minimum_percent", "target_percent", "maximum_percent", "review_status"],
+      "properties": {
+        "range_id": { "$ref": "#/$defs/stableId" },
+        "asset_class": { "type": "string", "minLength": 1 },
+        "minimum_percent": { "$ref": "#/$defs/percentage" },
+        "target_percent": { "$ref": "#/$defs/percentage" },
+        "maximum_percent": { "$ref": "#/$defs/percentage" },
+        "review_status": { "$ref": "#/$defs/reviewStatus" }
+      }
+    },
+    "fee": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["fee_id", "fee_type", "label", "payer_type", "beneficiary", "basis", "rate_type", "frequency", "review_status"],
+      "properties": {
+        "fee_id": { "$ref": "#/$defs/stableId" },
+        "fee_type": { "enum": ["SUBSCRIPTION", "REDEMPTION", "MANAGEMENT", "DEPOSITARY", "AUDIT", "DISTRIBUTION", "TRANSACTION", "OTHER"] },
+        "label": { "type": "string", "minLength": 1 },
+        "payer_type": { "enum": ["HOLDER", "FUND_ASSETS"] },
+        "beneficiary": { "type": "string", "minLength": 1 },
+        "basis": { "type": "string", "minLength": 1 },
+        "rate_type": { "enum": ["PERCENTAGE", "PER_MILLE", "FIXED", "NONE", "OTHER"] },
+        "rate_percent": { "$ref": "#/$defs/percentage" },
+        "rate_per_mille": { "type": "number", "minimum": 0, "maximum": 1000 },
+        "amount": { "type": "number", "minimum": 0 },
+        "currency": { "$ref": "#/$defs/currencyCode" },
+        "frequency": { "type": "string", "minLength": 1 },
+        "cap": { "type": ["string", "null"] },
+        "tax_display": { "type": ["string", "null"] },
+        "review_status": { "$ref": "#/$defs/reviewStatus" }
+      },
+      "allOf": [
+        {
+          "if": { "properties": { "rate_type": { "const": "PERCENTAGE" } }, "required": ["rate_type"] },
+          "then": { "required": ["rate_percent"] }
+        },
+        {
+          "if": { "properties": { "rate_type": { "const": "PER_MILLE" } }, "required": ["rate_type"] },
+          "then": { "required": ["rate_per_mille"] }
+        },
+        {
+          "if": { "properties": { "rate_type": { "const": "FIXED" } }, "required": ["rate_type"] },
+          "then": { "required": ["amount", "currency"] }
+        }
+      ]
+    },
+    "valuationMethod": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["method_id", "asset_class", "primary_method", "price_source", "fallback_method", "frequency", "exception_process", "review_status"],
+      "properties": {
+        "method_id": { "$ref": "#/$defs/stableId" },
+        "asset_class": { "type": "string", "minLength": 1 },
+        "primary_method": { "type": "string", "minLength": 1 },
+        "price_source": { "type": "string", "minLength": 1 },
+        "fallback_method": { "type": "string", "minLength": 1 },
+        "frequency": { "type": "string", "minLength": 1 },
+        "exception_process": { "type": "string", "minLength": 1 },
+        "review_status": { "$ref": "#/$defs/reviewStatus" }
+      }
+    },
+    "party": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["party_id", "role", "legal_name", "verification_status"],
+      "properties": {
+        "party_id": { "$ref": "#/$defs/stableId" },
+        "role": { "enum": ["MANAGEMENT_COMPANY", "GOVERNANCE_MEMBER", "DEPOSITARY", "AUDITOR", "ACCOUNTING_CONTROL", "EXTERNAL_ADVISER", "DISTRIBUTOR", "PAYING_AGENT", "OTHER"] },
+        "legal_name": { "type": "string" },
+        "person_name": { "type": ["string", "null"] },
+        "legal_form": { "type": ["string", "null"] },
+        "approval_number": { "type": ["string", "null"] },
+        "registered_office": { "type": ["string", "null"] },
+        "main_activity": { "type": ["string", "null"] },
+        "function_title": { "type": ["string", "null"] },
+        "significant_external_activities": { "type": ["string", "null"] },
+        "conflicts": { "type": ["string", "null"] },
+        "verification_status": { "$ref": "#/$defs/verificationStatus" }
+      }
+    },
+    "riskFactor": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["risk_id", "category", "label", "description", "source", "review_status"],
+      "properties": {
+        "risk_id": { "$ref": "#/$defs/stableId" },
+        "category": { "enum": ["CAPITAL_LOSS", "MARKET", "CREDIT", "INTEREST_RATE", "LIQUIDITY", "CURRENCY", "COUNTERPARTY", "OPERATIONAL", "CONCENTRATION", "VALUATION", "MANAGEMENT", "OTHER"] },
+        "label": { "type": "string", "minLength": 1 },
+        "description": { "type": "string", "minLength": 1 },
+        "source": { "enum": ["DERIVED", "USER", "REGULATORY_REFERENCE"] },
+        "review_status": { "$ref": "#/$defs/reviewStatus" }
+      }
+    },
+    "countryArrangement": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["arrangement_id", "country_code", "is_home_state", "marketing_authorization_reference", "paying_agents", "redemption_locations", "information_locations", "review_status"],
+      "properties": {
+        "arrangement_id": { "$ref": "#/$defs/stableId" },
+        "country_code": { "$ref": "#/$defs/countryCode" },
+        "is_home_state": { "type": "boolean" },
+        "marketing_authorization_reference": { "type": "string", "minLength": 1 },
+        "paying_agents": { "type": "string", "minLength": 1 },
+        "redemption_locations": { "type": "string", "minLength": 1 },
+        "information_locations": { "type": "string", "minLength": 1 },
+        "review_status": { "$ref": "#/$defs/reviewStatus" }
+      }
+    },
+    "evidence": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["evidence_id", "evidence_type", "title", "reference", "issuer", "file_reference", "verification_status"],
+      "properties": {
+        "evidence_id": { "$ref": "#/$defs/stableId" },
+        "evidence_type": { "enum": ["APPROVAL", "RCCM", "STATUTES", "FUND_REGULATION", "SERVICE_AGREEMENT", "POLICY", "OFFICIAL_REGISTER", "FINANCIAL_STATEMENT", "LEGAL_MEMO", "TAX_MEMO", "OTHER"] },
+        "title": { "type": "string", "minLength": 1 },
+        "reference": { "type": "string", "minLength": 1 },
+        "issuer": { "type": "string", "minLength": 1 },
+        "issue_date": { "type": ["string", "null"], "format": "date" },
+        "file_reference": { "type": "string", "minLength": 1 },
+        "verification_status": { "enum": ["PENDING", "VERIFIED", "REJECTED"] }
+      }
+    },
+    "review": {
+      "type": "object",
+      "additionalProperties": true,
+      "required": ["review_id", "role", "status"],
+      "properties": {
+        "review_id": { "$ref": "#/$defs/stableId" },
+        "role": { "enum": ["PRODUCT", "RISK", "COMPLIANCE", "LEGAL", "TAX", "SECURITY", "OPERATIONS"] },
+        "status": { "enum": ["REQUESTED", "IN_PROGRESS", "CHANGES_REQUESTED", "APPROVED", "REJECTED"] },
+        "reviewed_at": { "type": ["string", "null"], "format": "date-time" }
+      }
+    },
+    "auditEvent": {
+      "type": "object",
+      "additionalProperties": true,
+      "required": ["event_id", "event_type", "occurred_at", "actor_id"],
+      "properties": {
+        "event_id": { "type": "string", "format": "uuid" },
+        "event_type": { "type": "string", "minLength": 1 },
+        "occurred_at": { "type": "string", "format": "date-time" },
+        "actor_id": { "type": "string", "minLength": 1 }
+      }
+    }
+  }
+}
