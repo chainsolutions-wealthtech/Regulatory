@@ -1,0 +1,120 @@
+name: Atomize Instruction 66
+
+on:
+  push:
+    branches:
+      - main
+    paths:
+      - .github/workflows/atomize-instruction-66.yml
+      - scripts/atomize_instruction_66.py
+      - regulatory/materialized/INSTRUCTION_66_CREPMF_2021.txt
+      - regulatory/materialized/INSTRUCTION_66_CREPMF_2021.metadata.json
+      - regulatory/matrices/CIRC005_*.csv
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: regulatory-instruction-66-atomization-main
+  cancel-in-progress: false
+
+jobs:
+  atomize-article-level:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - name: Snapshot existing CIRC005 identifiers
+        run: |
+          python3 - <<'PY'
+          import csv
+          import json
+          from pathlib import Path
+
+          identifiers = {}
+          for path in sorted(Path('regulatory/matrices').glob('CIRC005_*.csv')):
+              with path.open(encoding='utf-8', newline='') as handle:
+                  identifiers[str(path)] = [
+                      row['requirement_id']
+                      for row in csv.DictReader(handle, delimiter=';')
+                      if row.get('requirement_id')
+                  ]
+          Path('/tmp/circ005-identifiers-before.json').write_text(
+              json.dumps(identifiers, sort_keys=True), encoding='utf-8'
+          )
+          PY
+      - name: Generate article blocks, article atoms and CIRC005 crosswalk
+        run: python3 scripts/atomize_instruction_66.py
+      - name: Validate atomization invariants
+        run: |
+          python3 - <<'PY'
+          import csv
+          import json
+          from pathlib import Path
+
+          validation = json.loads(Path(
+              'regulatory/validation/INST066_ATOMIZATION_VALIDATION_V0_1.json'
+          ).read_text(encoding='utf-8'))
+          blocks = json.loads(Path(
+              'regulatory/requirements/INST066_ARTICLE_BLOCKS_V0_1.json'
+          ).read_text(encoding='utf-8'))
+          atoms = json.loads(Path(
+              'regulatory/requirements/INST066_ARTICLE_ATOMS_V0_1.json'
+          ).read_text(encoding='utf-8'))
+
+          assert validation['status'] == 'PASS', validation
+          assert blocks['articleCount'] == 92
+          assert atoms['atomCount'] == 92
+          assert blocks['activation'] == 'FORBIDDEN'
+          assert atoms['activation'] == 'FORBIDDEN'
+          assert [item['articleNumber'] for item in blocks['articles']] == list(range(1, 93))
+          assert all(item['status'].startswith('OCR_EXTRACTED_UNVERIFIED') for item in atoms['atoms'])
+          assert all(item['activation'] == 'FORBIDDEN' for item in atoms['atoms'])
+          assert all(item['reviewRoles'] == ['LEGAL', 'COMPLIANCE'] for item in atoms['atoms'])
+
+          forbidden = {'ACTIVE', 'APPROVED', 'VALIDATED'}
+          for item in atoms['atoms']:
+              assert item['status'] not in forbidden
+              assert item['legalReviewStatus'] if 'legalReviewStatus' in item else True
+
+          identifiers = {}
+          for path in sorted(Path('regulatory/matrices').glob('CIRC005_*.csv')):
+              with path.open(encoding='utf-8', newline='') as handle:
+                  identifiers[str(path)] = [
+                      row['requirement_id']
+                      for row in csv.DictReader(handle, delimiter=';')
+                      if row.get('requirement_id')
+                  ]
+          before = json.loads(Path('/tmp/circ005-identifiers-before.json').read_text(encoding='utf-8'))
+          assert identifiers == before, 'CIRC005 identifiers changed during INST066 atomization'
+          PY
+      - name: Upload atomization evidence
+        uses: actions/upload-artifact@v4
+        with:
+          name: instruction-66-article-atomization
+          path: |
+            regulatory/requirements/INST066_ARTICLE_BLOCKS_V0_1.json
+            regulatory/requirements/INST066_ARTICLE_ATOMS_V0_1.json
+            regulatory/matrices/INST066_CIRC005_CROSSWALK_V0_1.csv
+            regulatory/validation/INST066_ATOMIZATION_VALIDATION_V0_1.json
+          if-no-files-found: error
+          retention-days: 30
+      - name: Commit generated atomization outputs
+        run: |
+          git config user.name "regulatory-source-bot"
+          git config user.email "regulatory-source-bot@users.noreply.github.com"
+          git add \
+            regulatory/requirements/INST066_ARTICLE_BLOCKS_V0_1.json \
+            regulatory/requirements/INST066_ARTICLE_ATOMS_V0_1.json \
+            regulatory/matrices/INST066_CIRC005_CROSSWALK_V0_1.csv \
+            regulatory/validation/INST066_ATOMIZATION_VALIDATION_V0_1.json
+          if git diff --cached --quiet; then
+            echo "No atomization changes to commit."
+            exit 0
+          fi
+          git commit -m "regulatory: generate Instruction 66 article atoms"
+          git pull --rebase origin main
+          git push origin HEAD:main
