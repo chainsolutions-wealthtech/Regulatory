@@ -1,0 +1,47 @@
+observation_id: INST066_FINAL_PAGES_SOURCE_OBSERVATION_V0_1
+source_id: INSTRUCTION_66_CREPMF_2021
+observation_type: VISUAL_TRANSCRIPTION_OF_HASHED_SOURCE
+status: SOURCE_FACTS_OBSERVED_REVIEW_APPROVAL_PENDING
+observed_on: '2026-08-06'
+source_integrity:
+  repository_copy: regulatory/materialized/INSTRUCTION_66_CREPMF_2021.pdf
+  sha256: 3f964f2f6ab9ce9eb16912ccda13f34b5023a188dfb18fcba7065590c770d396
+  byte_size: 3470163
+  page_count: 65
+evidence:
+- page: 64
+  file: regulatory/review-evidence/INST066_LEGAL_METADATA/page-64.png
+  observation: >-
+    L'article 92 commence l'inventaire des textes abrogés et présente les cinq
+    premières références.
+- page: 65
+  file: regulatory/review-evidence/INST066_LEGAL_METADATA/page-65.png
+  observation: >-
+    L'article 92 présente les deux dernières références, indique une prise
+    d'effet au 1er janvier 2022 et porte la mention Fait à Abidjan le 16 DEC 2021.
+observed_source_facts:
+  act_date:
+    value: '2021-12-16'
+    evidence_page: 65
+    wording: Fait à Abidjan, le 16 DEC 2021
+    status: VISUALLY_OBSERVED_FROM_HASHED_SOURCE
+  effective_from:
+    value: '2022-01-01'
+    evidence_page: 65
+    wording: Elle prend effet à compter du 1er janvier 2022.
+    status: VISUALLY_OBSERVED_FROM_HASHED_SOURCE
+  abrogated_reference_count:
+    value: 7
+    evidence_pages: [64, 65]
+    status: VISUALLY_OBSERVED_FROM_HASHED_SOURCE
+current_registry_observation:
+  instruction_66_status: NON ABROGE
+  source: https://www.amf-umoa.org/reglementation/instruction
+  checked_on: '2026-08-06'
+  status: OFFICIAL_CURRENT_REGISTRY_OBSERVED
+boundaries:
+  legal_review_status: PENDING
+  compliance_review_status: PENDING
+  historical_registry_crosscheck_status: INCOMPLETE
+  amendments_rectifications_inventory_status: TO_COMPLETE
+  requirement_activation_allowed: false
