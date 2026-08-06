@@ -1,0 +1,92 @@
+name: Materialize Instruction 66
+
+on:
+  push:
+    branches:
+      - main
+    paths:
+      - .github/workflows/materialize-instruction-66.yml
+      - scripts/materialize_instruction_66.py
+      - regulatory/sources/INSTRUCTION_66_CREPMF_2021.yaml
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: regulatory-instruction-66-materialization-main
+  cancel-in-progress: false
+
+jobs:
+  materialize-and-index:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - name: Install PDF inspection tools
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y --no-install-recommends poppler-utils
+      - name: Download, hash and structurally index official PDF
+        run: python3 scripts/materialize_instruction_66.py
+      - name: Validate generated source evidence
+        run: |
+          python3 - <<'PY'
+          import json
+          from pathlib import Path
+
+          metadata = json.loads(Path(
+              'regulatory/materialized/INSTRUCTION_66_CREPMF_2021.metadata.json'
+          ).read_text(encoding='utf-8'))
+          validation = json.loads(Path(
+              'regulatory/validation/INST066_MATERIALIZATION_VALIDATION_V0_1.json'
+          ).read_text(encoding='utf-8'))
+
+          assert validation['status'] == 'PASS', validation
+          assert metadata['pageCount'] == 65, metadata['pageCount']
+          assert len(metadata['sha256']) == 64, metadata['sha256']
+          assert metadata['byteSize'] > 10000, metadata['byteSize']
+          assert metadata['articleCandidateCount'] > 0, metadata['articleCandidateCount']
+          assert metadata['legalMetadata']['exactSignedDate'] is None
+          assert metadata['legalMetadata']['effectiveFrom'] is None
+          assert metadata['legalMetadata']['predecessorReplaced'] == 'TO_IDENTIFY'
+          assert metadata['extraction']['status'] == 'MATERIALIZED_ARTICLE_INDEX_EXTRACTED_UNVERIFIED'
+
+          index_text = Path(
+              'regulatory/requirements/INST066_ARTICLE_INDEX_V0_1.yaml'
+          ).read_text(encoding='utf-8')
+          assert 'status: EXTRACTED_UNVERIFIED_REVIEW_PENDING' in index_text
+          assert 'requirement_activation: FORBIDDEN_PENDING_REVIEW' in index_text
+          assert 'review_status: PENDING_LEGAL_AND_COMPLIANCE_REVIEW' in index_text
+          PY
+      - name: Upload materialization evidence
+        uses: actions/upload-artifact@v4
+        with:
+          name: instruction-66-official-materialization
+          path: |
+            regulatory/materialized/INSTRUCTION_66_CREPMF_2021.pdf
+            regulatory/materialized/INSTRUCTION_66_CREPMF_2021.txt
+            regulatory/materialized/INSTRUCTION_66_CREPMF_2021.metadata.json
+            regulatory/requirements/INST066_ARTICLE_INDEX_V0_1.yaml
+            regulatory/validation/INST066_MATERIALIZATION_VALIDATION_V0_1.json
+          if-no-files-found: error
+          retention-days: 30
+      - name: Commit official source and structural index
+        run: |
+          git config user.name "regulatory-source-bot"
+          git config user.email "regulatory-source-bot@users.noreply.github.com"
+          git add \
+            regulatory/materialized/INSTRUCTION_66_CREPMF_2021.pdf \
+            regulatory/materialized/INSTRUCTION_66_CREPMF_2021.txt \
+            regulatory/materialized/INSTRUCTION_66_CREPMF_2021.metadata.json \
+            regulatory/requirements/INST066_ARTICLE_INDEX_V0_1.yaml \
+            regulatory/validation/INST066_MATERIALIZATION_VALIDATION_V0_1.json
+          if git diff --cached --quiet; then
+            echo "No materialization changes to commit."
+            exit 0
+          fi
+          git commit -m "regulatory: materialize official Instruction 66 source"
+          git pull --rebase origin main
+          git push origin HEAD:main
