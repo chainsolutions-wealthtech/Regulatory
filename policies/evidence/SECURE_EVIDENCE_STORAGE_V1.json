@@ -1,0 +1,95 @@
+{
+  "schemaVersion": "SECURE_EVIDENCE_STORAGE_V1",
+  "status": "IMPLEMENTATION_BASELINE",
+  "scope": "Pièces justificatives et sources documentaires associées aux projets de prospectus.",
+  "defaultDecision": "DENY",
+  "storage": {
+    "publicAccess": false,
+    "directClientRead": false,
+    "directClientWrite": false,
+    "serverSideEncryptionRequired": true,
+    "encryptionKeyReferenceRequired": true,
+    "providerCredentialsInDatabase": false,
+    "providerCredentialsInRepository": false,
+    "objectKeyContainsOriginalFilename": false,
+    "shortLivedReadGrantMaximumSeconds": 300
+  },
+  "ingestion": {
+    "initialState": "QUARANTINED",
+    "maximumByteSize": 52428800,
+    "allowedDetectedMediaTypes": [
+      "application/pdf",
+      "application/vnd.openxmlformats-officedocument.wordprocessingml.document",
+      "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet",
+      "image/png",
+      "image/jpeg"
+    ],
+    "blockedDetectedMediaTypes": [
+      "text/html",
+      "image/svg+xml",
+      "application/javascript",
+      "application/x-dosexec",
+      "application/x-msdownload",
+      "application/zip"
+    ],
+    "declaredMediaTypeIsTrusted": false,
+    "extensionIsTrusted": false,
+    "detectedMediaTypeRequiredBeforeRelease": true,
+    "sha256Required": true,
+    "byteSizeRequired": true,
+    "duplicateDigestPolicy": "REUSE_WITHIN_SAME_TENANT_ONLY_AFTER_CLEAN_STATE"
+  },
+  "malwareScanning": {
+    "required": true,
+    "scannerProviderRequired": true,
+    "scannerVersionRequired": true,
+    "signatureVersionRequired": true,
+    "completedAtRequired": true,
+    "cleanResultRequiredBeforeRelease": true,
+    "infectedObjectMustRemainQuarantined": true,
+    "scanResultMayNotBeSuppliedByBrowser": true
+  },
+  "lifecycleStates": [
+    "QUARANTINED",
+    "SCANNING",
+    "CLEAN",
+    "INFECTED",
+    "REJECTED",
+    "DELETION_PENDING",
+    "DELETED"
+  ],
+  "verification": {
+    "evidenceMayBeVerifiedOnlyWhenPrimaryObjectIsClean": true,
+    "verifierMustBeAuthenticated": true,
+    "verifierMustBelongToTenant": true,
+    "verificationRequiresEVIDENCE_VERIFY": true,
+    "verifiedEvidenceDigestIsImmutable": true
+  },
+  "download": {
+    "cleanStateRequired": true,
+    "authorizationRequiredForEveryRequest": true,
+    "tenantCheckRequired": true,
+    "auditEventRequired": true,
+    "contentDisposition": "attachment",
+    "cacheControl": "private, no-store",
+    "publicUrlForbidden": true
+  },
+  "retention": {
+    "defaultRetentionDays": 3650,
+    "legalHoldOverridesDeletion": true,
+    "hardDeleteRequiresRecordedDecision": true,
+    "metadataTombstoneRetainedAfterObjectDeletion": true
+  },
+  "productionDependencies": {
+    "objectStorageProvider": "REQUIRED_NOT_SELECTED",
+    "keyManagementProvider": "REQUIRED_NOT_SELECTED",
+    "malwareScannerProvider": "REQUIRED_NOT_SELECTED",
+    "backupProvider": "REQUIRED_NOT_SELECTED"
+  },
+  "claims": {
+    "productionStorageOperational": false,
+    "malwareScanningOperational": false,
+    "encryptionProviderOperational": false,
+    "caveat": "Cette politique et ses contrôles techniques ne valent ni déploiement d’un fournisseur de stockage, ni activation d’un antivirus, ni certification de sécurité."
+  }
+}
