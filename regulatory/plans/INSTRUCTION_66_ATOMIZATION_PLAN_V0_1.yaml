@@ -1,145 +1,163 @@
 plan_id: INSTRUCTION_66_ATOMIZATION_PLAN_V0_1
-version: 0.1.0
-status: READY_WITH_BLOCKERS
+version: 0.2.0
+status: STRUCTURAL_ATOMIZATION_COMPLETE_DETAILED_REVIEW_IN_PROGRESS
 created_on: '2026-08-05'
+updated_on: '2026-08-06'
 loop_id: LOOP-REG-001
 task_id: TASK-REG-001
 source_id: INSTRUCTION_66_CREPMF_2021
 objective: >-
-  Préparer une atomisation exhaustive et contrôlée de l'Instruction
-  n°66/CREPMF/2021 sans modifier les identifiants existants de la Circulaire
-  n°05/CREPMF/2022 et sans transformer une interprétation non revue en règle active.
+  Produire une atomisation exhaustive, traçable et contrôlée de l'Instruction
+  n°66/CREPMF/2021 sans modifier les identifiants CIRC005 existants et sans
+  transformer une extraction ou une interprétation non revue en règle active.
 invariants:
-  - Preserve all CIRC005 requirement identifiers and matrices.
-  - Create stable INST066 requirement identifiers.
-  - Keep normative requirements separate from observed market practice.
-  - Record article, paragraph, page, applicability, product and effective period.
-  - Do not assign VALIDATED, APPROVED or ACTIVE without formal review.
-  - Do not invent thresholds, ratios, dates, exemptions or legal wordings.
+- Preserve all CIRC005 requirement identifiers and matrices.
+- Create stable INST066 requirement identifiers.
+- Keep the official hashed PDF separate from the OCR extraction derivative.
+- Keep normative requirements separate from observed market practice.
+- Record article, page, applicability, product, fields, controls and provenance.
+- Do not assign VALIDATED, APPROVED or ACTIVE without formal legal and compliance review.
+- Do not invent thresholds, ratios, dates, exemptions or legal wordings.
+source_control:
+  official_pdf: regulatory/materialized/INSTRUCTION_66_CREPMF_2021.pdf
+  sha256: 3f964f2f6ab9ce9eb16912ccda13f34b5023a188dfb18fcba7065590c770d396
+  byte_size: 3470163
+  page_count: 65
+  act_date_observed: '2021-12-16'
+  effective_from_observed: '2022-01-01'
+  current_registry_status: NON_ABROGE
+  source_observation: regulatory/review-evidence/INST066_LEGAL_METADATA/SOURCE_OBSERVATION_V0_1.yaml
+  abrogated_texts_inventory: regulatory/registries/INST066_ABROGATED_TEXTS_INVENTORY_V0_1.yaml
+  amendments_review: regulatory/registries/INST066_AMENDMENTS_RECTIFICATIONS_REVIEW_V0_1.yaml
+  legal_review_status: PENDING
+  compliance_review_status: PENDING
+progress:
+  article_index:
+    status: COMPLETE_STRUCTURALLY_EXTRACTED_UNVERIFIED
+    first_article: 1
+    last_article: 92
+    missing_article_numbers: []
+    output: regulatory/requirements/INST066_ARTICLE_INDEX_V0_1.yaml
+  article_blocks:
+    status: COMPLETE_OCR_EXTRACTED_UNVERIFIED
+    count: 92
+    output: regulatory/requirements/INST066_ARTICLE_BLOCKS_V0_1.json
+  article_atoms:
+    status: COMPLETE_ARTICLE_LEVEL_INACTIVE
+    count: 92
+    output: regulatory/requirements/INST066_ARTICLE_ATOMS_V0_1.json
+  prospectus_requirement_candidates:
+    status: INITIAL_PRIORITY_SET_COMPILED_INACTIVE
+    count: 38
+    output: regulatory/requirements/INST066_PROSPECTUS_REQUIREMENT_CANDIDATES_V0_1.json
+  circ005_crosswalk:
+    status: INITIAL_NON_DESTRUCTIVE_CROSSWALKS_COMPILED
+    outputs:
+    - regulatory/matrices/INST066_CIRC005_CROSSWALK_V0_1.csv
+    - regulatory/matrices/INST066_CIRC005_DETAILED_CROSSWALK_V0_1.csv
+  source_metadata_consistency:
+    status: CI_VALIDATION_ADDED
+    output: regulatory/validation/INST066_SOURCE_METADATA_CONSISTENCY_V0_1.json
 phases:
-  - id: P01_SOURCE_CONTROL
-    objective: Complete source integrity and version control.
-    outputs:
-      - local_or_repository_copy_reference
-      - byte_size
-      - sha256
-      - exact_signed_date
-      - effective_date
-      - predecessor_identification
-      - amendments_rectifications_inventory
-  - id: P02_DOCUMENT_STRUCTURE
-    objective: Build the title, chapter, section and article index.
-    outputs:
-      - regulatory/requirements/INST066_ARTICLE_INDEX_V0_1.yaml
-      - page_and_article_coordinates
-  - id: P03_SCOPE_AND_DEFINITIONS
-    objective: Atomize scope, definitions, product types and investor categories.
-    domains:
-      - OPC
-      - OPCVM
-      - FIA
-      - FCP
-      - investment_company
-      - management_company
-      - qualified_and_non_qualified_investors
-  - id: P04_AUTHORIZATION_AND_GOVERNANCE
-    objective: Atomize approvals, governance, organization, delegation and conflicts.
-    domains:
-      - fund_approval
-      - management_company_approval
-      - governance
-      - internal_control
-      - risk_management
-      - remuneration
-      - delegation
-      - conflicts_of_interest
-  - id: P05_INFORMATION_DOCUMENTS
-    objective: Atomize prospectus, DICI, publication, advertising and investor information.
-    domains:
-      - prospectus
-      - fund_regulation_and_constitutive_documents
-      - DICI
-      - net_asset_value_and_prices
-      - marketing_communications
-      - update_and_prior_approval
-  - id: P06_INVESTMENT_AND_RISK_RULES
-    objective: Atomize eligible assets, diversification, concentration, borrowing, derivatives and risk limits.
-    domains:
-      - eligible_assets
-      - ratios_and_limits
-      - counterparty
-      - borrowing
-      - derivatives
-      - index_replication
-      - concentration
-      - liquidity
-  - id: P07_VALUATION_AND_OPERATIONS
-    objective: Atomize valuation, NAV, subscription, redemption, suspension and liquidity tools.
-    domains:
-      - valuation
-      - net_asset_value
-      - issue_and_subscription
-      - redemption_and_reimbursement
-      - suspension
-      - liquidity_management_tools
-  - id: P08_SERVICE_PROVIDERS_AND_CONTROL
-    objective: Atomize depositary, custody, auditors, advisers and oversight duties.
-    domains:
-      - depositary
-      - custody_and_sub_custody
-      - auditor
-      - external_adviser
-      - distribution_and_paying_agents
-  - id: P09_REPORTING_AND_LIFECYCLE
-    objective: Atomize reporting, periodic information, changes, mergers, liquidation and sanctions references.
-    domains:
-      - periodic_reporting
-      - regulator_reporting
-      - material_changes
-      - merger_and_restructuring
-      - liquidation
-      - dissolution
-  - id: P10_CROSSWALK_AND_VALIDATION
-    objective: Cross-reference Instruction 66 with Circulaire 05 and the canonical model.
-    outputs:
-      - regulatory/matrices/INST066_CIRC005_CROSSWALK_V0_1.csv
-      - regulatory/validation/INST066_ATOMIZATION_VALIDATION_V0_1.json
-      - docs/REGULATORY_MAPPING.md update
+- id: P01_SOURCE_CONTROL
+  status: COMPLETE_WITH_OPEN_HISTORICAL_REVIEW
+  completed:
+  - official PDF materialized
+  - byte size calculated
+  - SHA-256 calculated
+  - page count validated
+  - act date visually observed on hashed source
+  - effective date visually observed on hashed source
+  - seven abrogated references visually observed
+  remaining:
+  - complete historical registry crosscheck of all seven abrogated references
+  - capture official AMF binary link from the dynamic registry
+  - complete amendments and rectifications review across decisions and bulletins
+  - legal and compliance approval
+- id: P02_DOCUMENT_STRUCTURE
+  status: COMPLETE_STRUCTURALLY_EXTRACTED_UNVERIFIED
+  outputs:
+  - regulatory/requirements/INST066_ARTICLE_INDEX_V0_1.yaml
+  - regulatory/requirements/INST066_ARTICLE_BLOCKS_V0_1.json
+  acceptance:
+  - articles 1 through 92 indexed
+  - no missing article number
+  - page coordinates retained
+- id: P03_SCOPE_AND_DEFINITIONS
+  status: ARTICLE_LEVEL_COMPLETE_PARAGRAPH_LEVEL_PENDING
+  domains: [OPC, OPCVM, FIA, FCP, investment_company, management_company, investor_categories]
+- id: P04_AUTHORIZATION_AND_GOVERNANCE
+  status: PRIORITY_CANDIDATES_COMPILED_REVIEW_PENDING
+  domains: [fund_approval, management_company_approval, governance, internal_control, risk_management, remuneration, delegation, conflicts_of_interest]
+- id: P05_INFORMATION_DOCUMENTS
+  status: PRIORITY_CANDIDATES_COMPILED_REVIEW_PENDING
+  domains: [prospectus, constitutive_documents, DICI, marketing_communications, updates, prior_approval]
+- id: P06_INVESTMENT_AND_RISK_RULES
+  status: PRIORITY_CANDIDATES_COMPILED_REVIEW_PENDING
+  domains: [eligible_assets, ratios_and_limits, counterparty, borrowing, derivatives, index_replication, concentration, liquidity]
+- id: P07_VALUATION_AND_OPERATIONS
+  status: PRIORITY_CANDIDATES_COMPILED_REVIEW_PENDING
+  domains: [valuation, net_asset_value, subscription, redemption, suspension, liquidity_management_tools]
+- id: P08_SERVICE_PROVIDERS_AND_CONTROL
+  status: ARTICLE_LEVEL_COMPLETE_DETAILED_ATOMIZATION_PENDING
+  domains: [depositary, custody_and_sub_custody, auditor, external_adviser, distribution_and_paying_agents]
+- id: P09_REPORTING_AND_LIFECYCLE
+  status: INITIAL_CORPORATE_ACTION_CANDIDATES_COMPILED_REMAINDER_PENDING
+  domains: [periodic_reporting, regulator_reporting, material_changes, merger_and_restructuring, liquidation, dissolution]
+- id: P10_CROSSWALK_AND_VALIDATION
+  status: INITIAL_CROSSWALK_AND_STRUCTURAL_VALIDATION_COMPLETE
+  outputs:
+  - regulatory/matrices/INST066_CIRC005_CROSSWALK_V0_1.csv
+  - regulatory/matrices/INST066_CIRC005_DETAILED_CROSSWALK_V0_1.csv
+  - regulatory/validation/INST066_ATOMIZATION_VALIDATION_V0_1.json
+  - regulatory/validation/INST066_DETAILED_REQUIREMENTS_VALIDATION_V0_1.json
+  - regulatory/validation/INST066_SOURCE_METADATA_CONSISTENCY_V0_1.json
 requirement_schema_minimum:
-  - id
-  - source_id
-  - article
-  - paragraph
-  - page
-  - title
-  - summary
-  - jurisdiction
-  - products
-  - document_types
-  - applicability
-  - effective_period
-  - allowed_coverage_locations
-  - canonical_fields
-  - evidence_requirements
-  - severity
-  - dependencies
-  - review_status
-  - provenance
+- id
+- source_id
+- article
+- paragraph
+- page
+- title
+- summary
+- jurisdiction
+- products
+- document_types
+- applicability
+- effective_period
+- allowed_coverage_locations
+- canonical_fields
+- evidence_requirements
+- severity
+- dependencies
+- review_status
+- provenance
 identifier_policy:
   prefix: INST066
-  example: INST066_ART28_PROSPECTUS_MINIMUM_INFORMATION
+  article_atom_example: INST066_ART028_ATOM001
+  detailed_requirement_example: INST066_ART028_REQ001
   published_identifier_reuse: FORBIDDEN
 acceptance_criteria:
-  - Every visible article is indexed exactly once.
-  - Every atomic requirement resolves to an article and page.
-  - Parent and child requirements are distinguishable.
-  - Cross-references to CIRC005 are explicit and non-destructive.
-  - Duplicate semantic requirements are linked rather than recreated silently.
-  - Applicability to FCP, SICAV, OPCVM, FIA and investor category is explicit.
-  - Structural validation passes before legal review.
-  - Legal and compliance review remain pending unless formally evidenced.
-blockers:
-  - Exact PDF byte size and SHA-256 are pending local materialization.
-  - Exact signed date and effective date remain to be confirmed from the document.
-  - The predecessor identified by the replacement statement remains to be identified.
-  - Amendments, rectifications and related later instruments require an exhaustive registry review.
+- Every visible article is indexed exactly once.
+- Every article has a stable block and article-level atom.
+- Every detailed requirement resolves to an article, page and source digest.
+- Parent and child requirements are distinguishable.
+- Cross-references to CIRC005 are explicit and non-destructive.
+- Duplicate semantic requirements are linked rather than recreated silently.
+- Structural validation passes before legal review.
+- Legal and compliance review remain pending unless formally evidenced.
+completed_evidence:
+- regulatory/validation/INST066_MATERIALIZATION_VALIDATION_V0_1.json
+- regulatory/validation/INST066_ATOMIZATION_VALIDATION_V0_1.json
+- regulatory/validation/INST066_DETAILED_REQUIREMENTS_VALIDATION_V0_1.json
+remaining_blockers:
+- Historical registry crosscheck for the seven texts listed in Article 92 is incomplete.
+- Amendments and rectifications review is not exhaustive across decisions and official bulletins.
+- Paragraph-level segmentation and normative classification remain pending for all 92 articles.
+- The 38 detailed prospectus candidates require legal and compliance review.
+- Canonical fields, questions, clauses and controls proposed for INST066 are not yet active in the application catalog.
+next_action: >-
+  Run source-metadata consistency CI, then continue paragraph-level atomization
+  by theme, starting with scope and definitions, depositary and service-provider
+  duties, reporting, lifecycle and sanctions references. Keep every new output
+  inactive until dual legal and compliance review is recorded.
