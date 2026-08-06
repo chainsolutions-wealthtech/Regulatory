@@ -3,6 +3,14 @@ import rbacPolicy from "../../../../policies/rbac/PROSPECTUS_RBAC_V1.json";
 export type ProspectusRole = keyof typeof rbacPolicy.roles;
 export type ProspectusAction = keyof typeof rbacPolicy.actions;
 
+type ActionPolicy = {
+  resource: string;
+  sensitive: boolean;
+  disabled?: boolean;
+};
+
+const actionPolicies = rbacPolicy.actions as Record<ProspectusAction, ActionPolicy>;
+
 export type AuthorizationSubject = {
   userId: string;
   organizationId: string;
@@ -47,7 +55,7 @@ export function authorize(
   if (subject.organizationId !== resource.organizationId) {
     return decision(false, action, [], "DENIED_TENANT_MISMATCH");
   }
-  if (rbacPolicy.actions[action].disabled === true) {
+  if (actionPolicies[action].disabled === true) {
     return decision(false, action, [], "DENIED_ACTION_DISABLED");
   }
 
@@ -98,7 +106,7 @@ export function actionsForRoles(roles: ProspectusRole[]): ProspectusAction[] {
   const actions = new Set<ProspectusAction>();
   for (const role of expandRoles(roles)) {
     for (const action of rbacPolicy.grants[role] as ProspectusAction[]) {
-      if (rbacPolicy.actions[action].disabled !== true) actions.add(action);
+      if (actionPolicies[action].disabled !== true) actions.add(action);
     }
   }
   return [...actions].toSorted();
