@@ -1,0 +1,53 @@
+name: Trigger Instruction 66 One-shot via Workflow Run
+
+on:
+  workflow_run:
+    workflows:
+      - Compile Instruction 66 Detailed Requirements
+    types:
+      - completed
+
+permissions:
+  contents: write
+  actions: write
+
+concurrency:
+  group: trigger-instruction-66-one-shot-via-workflow-run
+  cancel-in-progress: false
+
+jobs:
+  relay:
+    if: >-
+      github.event.workflow_run.id == 31107479974 &&
+      github.event.workflow_run.run_attempt >= 2
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: main
+          fetch-depth: 0
+
+      - name: Remove relay from final tree
+        run: rm .github/workflows/trigger-one-shot-via-workflow-run.yml
+
+      - name: Commit relay removal
+        run: |
+          git config user.name "regulatory-source-bot"
+          git config user.email "regulatory-source-bot@users.noreply.github.com"
+          git add -A
+          git commit -m "ci: remove completed Instruction 66 workflow-run relay"
+          git pull --rebase origin main
+          git push origin HEAD:main
+
+      - name: Dispatch one-shot orchestration on latest main
+        env:
+          GH_TOKEN: ${{ github.token }}
+          GH_REPO: ${{ github.repository }}
+        run: |
+          gh api \
+            --method POST \
+            -H "Accept: application/vnd.github+json" \
+            -H "X-GitHub-Api-Version: 2022-11-28" \
+            "/repos/$GH_REPO/actions/workflows/one-shot-resume-instruction-66.yml/dispatches" \
+            -f ref=main
