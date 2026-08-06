@@ -48,7 +48,9 @@ jobs:
         run: npm run web:typecheck
       - name: Validate RBAC and workflow engines
         run: npm --prefix apps/web run test:authorization-workflow
-      - name: Apply all review workflow migrations
+      - name: Validate secure evidence object store
+        run: npm --prefix apps/web run test:evidence-store
+      - name: Apply security and review migrations
         env:
           PGHOST: 127.0.0.1
           PGPORT: '5433'
@@ -60,12 +62,15 @@ jobs:
             echo "Applying $migration"
             psql -v ON_ERROR_STOP=1 -f "$migration"
           done
+          psql -v ON_ERROR_STOP=1 -f database/tests/0002_secure_evidence_storage_test.sql
           psql -v ON_ERROR_STOP=1 <<'SQL'
           select 1 from pg_type where typname = 'review_role';
           select 1 from pg_type where typname = 'project_status';
+          select 1 from pg_type where typname = 'evidence_object_state';
           select 1 from information_schema.tables where table_schema = 'regulatory' and table_name = 'review_comments';
           select 1 from information_schema.tables where table_schema = 'regulatory' and table_name = 'internal_approvals';
           select 1 from information_schema.tables where table_schema = 'regulatory' and table_name = 'project_transition_events';
+          select 1 from information_schema.tables where table_schema = 'regulatory' and table_name = 'evidence_objects';
           do $$
           begin
             if not exists (
@@ -84,15 +89,22 @@ jobs:
                 and tablename = 'project_transition_events'
                 and policyname = 'project_transition_events_tenant_insert_policy'
             ) then raise exception 'TRANSITION_INSERT_POLICY_MISSING'; end if;
+            if not exists (
+              select 1 from pg_policies
+              where schemaname = 'regulatory'
+                and tablename = 'evidence_objects'
+                and policyname = 'evidence_objects_tenant_policy'
+            ) then raise exception 'EVIDENCE_OBJECT_POLICY_MISSING'; end if;
           end;
           $$;
           SQL
-      - name: Ensure submission actions stay disabled
+      - name: Ensure submission and public evidence access stay disabled
         run: |
           node --input-type=module <<'NODE'
           import { readFile } from 'node:fs/promises';
           const rbac = JSON.parse(await readFile('policies/rbac/PROSPECTUS_RBAC_V1.json', 'utf8'));
           const workflow = JSON.parse(await readFile('policies/workflow/PROSPECTUS_REVIEW_WORKFLOW_V1.json', 'utf8'));
+          const evidence = JSON.parse(await readFile('policies/evidence/SECURE_EVIDENCE_STORAGE_V1.json', 'utf8'));
           if (rbac.actions.SUBMISSION_SEND.disabled !== true) throw new Error('SUBMISSION_SEND must be disabled');
           if (rbac.actions.SUBMISSION_MARK_READY.disabled !== true) throw new Error('SUBMISSION_MARK_READY must be disabled');
           if (workflow.submission.enabled !== false || workflow.submission.readyFlag !== false) {
@@ -100,5 +112,14 @@ jobs:
           }
           if (!workflow.forbiddenAutomaticTransitions.includes('INTERNALLY_FROZEN')) {
             throw new Error('Automatic internal freeze must remain forbidden');
+          }
+          if (evidence.storage.publicAccess !== false || evidence.download.publicUrlForbidden !== true) {
+            throw new Error('Evidence public access must remain forbidden');
+          }
+          if (evidence.malwareScanning.cleanResultRequiredBeforeRelease !== true) {
+            throw new Error('Clean malware scan must remain required before release');
+          }
+          if (evidence.claims.productionStorageOperational !== false) {
+            throw new Error('Policy must not claim production storage is operational');
           }
           NODE
