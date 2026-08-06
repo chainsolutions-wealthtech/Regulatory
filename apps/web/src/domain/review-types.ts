@@ -100,6 +100,18 @@ export type AddReviewCommentInput = {
   visibility?: ReviewCommentRecord["visibility"];
 };
 
+export type InternalApprovalRole = Extract<
+  ProspectusRole,
+  "PRODUCT" | "RISK" | "OPERATIONS" | "COMPLIANCE" | "LEGAL" | "TAX" | "SECURITY"
+>;
+
+export type RecordInternalApprovalInput = {
+  projectId: string;
+  expectedVersion: number;
+  approvalType: InternalApprovalRole;
+  rationale: string;
+};
+
 export type TransitionReviewWorkflowInput = {
   projectId: string;
   expectedVersion: number;
