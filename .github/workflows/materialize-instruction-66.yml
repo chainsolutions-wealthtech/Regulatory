@@ -7,6 +7,7 @@ on:
     paths:
       - .github/workflows/materialize-instruction-66.yml
       - scripts/materialize_instruction_66.py
+      - scripts/index_instruction_66_articles.py
       - regulatory/sources/INSTRUCTION_66_CREPMF_2021.yaml
   workflow_dispatch:
 
@@ -33,8 +34,10 @@ jobs:
             ocrmypdf \
             tesseract-ocr \
             tesseract-ocr-fra
-      - name: Download, hash and structurally index official PDF
+      - name: Download and hash official PDF
         run: python3 scripts/materialize_instruction_66.py
+      - name: Rebuild complete article index
+        run: python3 scripts/index_instruction_66_articles.py
       - name: Validate generated source evidence
         run: |
           python3 - <<'PY'
@@ -52,7 +55,10 @@ jobs:
           assert metadata['pageCount'] == 65, metadata['pageCount']
           assert len(metadata['sha256']) == 64, metadata['sha256']
           assert metadata['byteSize'] > 10000, metadata['byteSize']
-          assert metadata['articleIndexCount'] > 0, metadata['articleIndexCount']
+          assert metadata['articleIndexCount'] >= 90, metadata['articleIndexCount']
+          assert metadata['firstIndexedArticle'] == 1, metadata['firstIndexedArticle']
+          assert metadata['lastIndexedArticle'] >= 90, metadata['lastIndexedArticle']
+          assert metadata['missingArticleNumbers'] == [], metadata['missingArticleNumbers']
           assert metadata['extraction']['ocrUsed'] is True
           assert metadata['extraction']['ocrLanguage'] == 'fra'
           assert metadata['extraction']['ocrDerivativeCommitted'] is False
@@ -60,11 +66,15 @@ jobs:
           assert metadata['legalMetadata']['effectiveFrom'] is None
           assert metadata['legalMetadata']['predecessorReplaced'] == 'TO_IDENTIFY'
           assert metadata['extraction']['status'] == 'MATERIALIZED_ARTICLE_INDEX_EXTRACTED_UNVERIFIED'
+          assert validation['checks']['articlePremierIndexed'] is True
+          assert validation['checks']['articleNumberRangeContinuous'] is True
+          assert validation['checks']['articleIndexStillUnverified'] is True
 
           index_text = Path(
               'regulatory/requirements/INST066_ARTICLE_INDEX_V0_1.yaml'
           ).read_text(encoding='utf-8')
           assert 'status: EXTRACTED_UNVERIFIED_REVIEW_PENDING' in index_text
+          assert '- id: INST066_ARTICLE_001' in index_text
           assert 'requirement_activation: FORBIDDEN_PENDING_REVIEW' in index_text
           assert 'review_status: PENDING_LEGAL_AND_COMPLIANCE_REVIEW' in index_text
           assert 'ocr_used: true' in index_text
