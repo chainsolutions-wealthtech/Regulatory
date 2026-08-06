@@ -1,0 +1,88 @@
+name: Compile Instruction 66 Detailed Requirements
+
+on:
+  push:
+    branches:
+      - main
+    paths:
+      - .github/workflows/compile-instruction-66-requirements.yml
+      - scripts/compile_instruction_66_requirement_candidates.py
+      - regulatory/requirements/inst066-candidates/*.json
+      - regulatory/requirements/INST066_ARTICLE_BLOCKS_V0_1.json
+      - regulatory/matrices/CIRC005_*.csv
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: regulatory-instruction-66-detailed-requirements-main
+  cancel-in-progress: false
+
+jobs:
+  compile-and-validate:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - name: Snapshot CIRC005 matrices
+        run: sha256sum regulatory/matrices/CIRC005_*.csv > /tmp/circ005-before.sha256
+      - name: Compile detailed requirement candidates
+        run: python3 scripts/compile_instruction_66_requirement_candidates.py
+      - name: Validate compiled registry
+        run: |
+          python3 - <<'PY'
+          import json
+          from pathlib import Path
+
+          registry = json.loads(Path(
+              'regulatory/requirements/INST066_PROSPECTUS_REQUIREMENT_CANDIDATES_V0_1.json'
+          ).read_text(encoding='utf-8'))
+          validation = json.loads(Path(
+              'regulatory/validation/INST066_DETAILED_REQUIREMENTS_VALIDATION_V0_1.json'
+          ).read_text(encoding='utf-8'))
+
+          assert validation['status'] == 'PASS', validation
+          assert registry['activation'] == 'FORBIDDEN'
+          assert registry['status'].startswith('EXTRACTED_UNVERIFIED')
+          assert registry['requirementCandidateCount'] >= 30, registry['requirementCandidateCount']
+          ids = [item['id'] for item in registry['requirements']]
+          assert len(ids) == len(set(ids))
+          assert all(item['activation'] == 'FORBIDDEN' for item in registry['requirements'])
+          assert all(item['legalReviewStatus'] == 'PENDING' for item in registry['requirements'])
+          assert all(item['complianceReviewStatus'] == 'PENDING' for item in registry['requirements'])
+          assert all('LEGAL' in item['reviewRoles'] and 'COMPLIANCE' in item['reviewRoles'] for item in registry['requirements'])
+          assert all(item['sourcePages'] and item['sourceArticleTextSha256'] for item in registry['requirements'])
+          assert not any(item['status'] in {'ACTIVE', 'APPROVED', 'VALIDATED'} for item in registry['requirements'])
+          PY
+      - name: Confirm CIRC005 matrices are byte-identical
+        run: |
+          sha256sum --check /tmp/circ005-before.sha256
+          git diff --exit-code -- regulatory/matrices/CIRC005_*.csv
+      - name: Upload detailed requirement evidence
+        uses: actions/upload-artifact@v4
+        with:
+          name: instruction-66-detailed-requirement-candidates
+          path: |
+            regulatory/requirements/INST066_PROSPECTUS_REQUIREMENT_CANDIDATES_V0_1.json
+            regulatory/matrices/INST066_CIRC005_DETAILED_CROSSWALK_V0_1.csv
+            regulatory/validation/INST066_DETAILED_REQUIREMENTS_VALIDATION_V0_1.json
+          if-no-files-found: error
+          retention-days: 30
+      - name: Commit compiled detailed requirements
+        run: |
+          git config user.name "regulatory-source-bot"
+          git config user.email "regulatory-source-bot@users.noreply.github.com"
+          git add \
+            regulatory/requirements/INST066_PROSPECTUS_REQUIREMENT_CANDIDATES_V0_1.json \
+            regulatory/matrices/INST066_CIRC005_DETAILED_CROSSWALK_V0_1.csv \
+            regulatory/validation/INST066_DETAILED_REQUIREMENTS_VALIDATION_V0_1.json
+          if git diff --cached --quiet; then
+            echo "No detailed requirement changes to commit."
+            exit 0
+          fi
+          git commit -m "regulatory: compile Instruction 66 requirement candidates"
+          git pull --rebase origin main
+          git push origin HEAD:main
