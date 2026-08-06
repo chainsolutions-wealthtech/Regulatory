@@ -8,8 +8,8 @@ document_type: INSTRUCTION
 language: fr
 scope_summary: >-
   Cadre applicable aux Organismes de Placement Collectif et à leurs sociétés de
-  gestion sur le Marché Financier Régional de l'UMOA. Le texte doit être atomisé
-  avant utilisation par le moteur réglementaire.
+  gestion sur le Marché Financier Régional de l'UMOA. Les articles et exigences
+  extraits restent inactifs jusqu'à revue juridique et conformité.
 registry:
   official_index_url: https://www.amf-umoa.org/reglementation/instruction
   registry_checked_on: '2026-08-05'
@@ -27,29 +27,42 @@ publication:
 source_artifact:
   pdf_url: https://www.brvm.org/sites/default/files/instruction_ndeg066-crepmf-2021-instruction_relative_aux_organismes_de_placement_collectif_et_a_leurs_societes_de_gestion_sur_le_marche_financier_regional_1.pdf
   page_count: 65
-  repository_copy: null
-  byte_size: null
-  sha256: null
-  copy_status: REMOTE_PDF_ACCESS_CONFIRMED_HASH_PENDING
+  repository_copy: regulatory/materialized/INSTRUCTION_66_CREPMF_2021.pdf
+  extracted_text_copy: regulatory/materialized/INSTRUCTION_66_CREPMF_2021.txt
+  metadata_copy: regulatory/materialized/INSTRUCTION_66_CREPMF_2021.metadata.json
+  byte_size: 3470163
+  sha256: 3f964f2f6ab9ce9eb16912ccda13f34b5023a188dfb18fcba7065590c770d396
+  retrieved_at: '2026-08-06T13:21:22+00:00'
+  copy_status: MATERIALIZED_HASHED_AND_PAGE_VALIDATED
   provenance: >-
-    Statut courant vérifié sur le registre officiel AMF-UMOA; copie PDF publiée
-    par la BRVM, infrastructure officielle du Marché Financier Régional.
+    Statut courant vérifié sur le registre officiel AMF-UMOA; binaire PDF
+    téléchargé depuis l'URL officielle BRVM, validé comme PDF complet, hashé et
+    conservé dans le dépôt.
 verification:
   current_legal_status: NON_ABROGE_AS_LISTED_ON_2026_08_05
   exact_signed_date: null
   effective_from: null
-  predecessor_replaced: TO_IDENTIFY
+  abrogation_inventory: PENDING_VISUAL_AND_REGISTRY_CONFIRMATION
   amendments_rectifications_review: TO_COMPLETE
   official_amf_binary_url: TO_CAPTURE_FROM_DYNAMIC_REGISTRY
   legal_review_status: PENDING
   compliance_review_status: PENDING
+  review_evidence_directory: regulatory/review-evidence/INST066_LEGAL_METADATA
 extraction:
-  method: OFFICIAL_REGISTRY_REVIEW_AND_REMOTE_PDF_IDENTIFICATION
-  registered_on: '2026-08-05'
-  extraction_status: REGISTERED_ATOMIZATION_PENDING
+  method: FRENCH_OCR_DERIVATIVE_THEN_PAGE_SCOPED_TEXT_EXTRACTION
+  ocr_language: fra
+  ocr_derivative_committed: false
+  usable_character_count: 140644
+  article_index: regulatory/requirements/INST066_ARTICLE_INDEX_V0_1.yaml
+  article_count: 92
+  first_article: 1
+  last_article: 92
+  missing_article_numbers: []
+  extraction_status: MATERIALIZED_ARTICLE_INDEX_EXTRACTED_UNVERIFIED
+  requirement_activation: FORBIDDEN_PENDING_LEGAL_AND_COMPLIANCE_REVIEW
   quality_notes:
-    - The official AMF-UMOA registry currently lists the instruction as NON ABROGE.
-    - The BRVM publication record dates the publication to 12 January 2022.
-    - The accessible PDF contains 65 pages.
-    - The exact binary SHA-256 remains to be computed from a locally materialized copy.
-    - No requirement extracted from this source may become VALIDATED without legal and compliance review.
+    - Le PDF officiel est une image sans couche texte exploitable.
+    - Le texte OCR est un dérivé d'extraction et non la source juridique de référence.
+    - La séquence des articles 1 à 92 est complète et sans numéro manquant.
+    - Les titres, alinéas, dates, abrogations, applicabilités et effets normatifs restent à revoir humainement.
+    - Aucune exigence issue de cette source ne peut devenir ACTIVE, APPROVED ou VALIDATED sans double revue juridique et conformité.
