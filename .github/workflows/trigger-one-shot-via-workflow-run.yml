@@ -3,7 +3,7 @@ name: Trigger Instruction 66 One-shot via Workflow Run
 on:
   workflow_run:
     workflows:
-      - Compile Instruction 66 Detailed Requirements
+      - Validate Instruction 66 Source Metadata
     types:
       - completed
 
@@ -18,7 +18,7 @@ concurrency:
 jobs:
   relay:
     if: >-
-      github.event.workflow_run.id == 31107479974 &&
+      github.event.workflow_run.id == 31108755523 &&
       github.event.workflow_run.run_attempt >= 2
     runs-on: ubuntu-latest
     timeout-minutes: 10
