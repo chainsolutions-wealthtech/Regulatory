@@ -1,0 +1,39 @@
+source_id: INSTRUCTION_66_CREPMF_2021
+review_version: 0.1.0
+status: PENDING_HUMAN_LEGAL_AND_COMPLIANCE_REVIEW
+source_integrity:
+  repository_copy: regulatory/materialized/INSTRUCTION_66_CREPMF_2021.pdf
+  sha256: 3f964f2f6ab9ce9eb16912ccda13f34b5023a188dfb18fcba7065590c770d396
+  byte_size: 3470163
+  page_count: 65
+rendered_evidence:
+- page: 64
+  file: regulatory/review-evidence/INST066_LEGAL_METADATA/page-64.png
+  expected_subject: ARTICLE_92_ABROGATION_INVENTORY_BEGINNING
+- page: 65
+  file: regulatory/review-evidence/INST066_LEGAL_METADATA/page-65.png
+  expected_subject: ARTICLE_92_ABROGATION_INVENTORY_END_EFFECTIVE_DATE_AND_SIGNATURE_DATE
+review_items:
+- id: INST066_REVIEW_EFFECTIVE_DATE
+  extracted_candidate: 2022-01-01
+  evidence_page: 65
+  status: PENDING_HUMAN_CONFIRMATION
+  confirmation_role: LEGAL_AND_COMPLIANCE
+- id: INST066_REVIEW_SIGNED_DATE
+  extracted_candidate: 2021-12-16
+  evidence_page: 65
+  status: PENDING_HUMAN_CONFIRMATION
+  confirmation_role: LEGAL_AND_COMPLIANCE
+- id: INST066_REVIEW_ABROGATION_INVENTORY
+  extracted_candidate_count: 7
+  evidence_pages: [64, 65]
+  status: PENDING_HUMAN_CONFIRMATION_AND_REGISTRY_CROSSCHECK
+  confirmation_role: LEGAL_AND_COMPLIANCE
+claims:
+  dates_confirmed: false
+  abrogation_inventory_confirmed: false
+  amendments_inventory_complete: false
+  requirements_activated: false
+notes:
+- Le rendu est produit à partir du PDF officiel dont l'empreinte a été vérifiée avant conversion.
+- La lecture visuelle doit être consignée par un relecteur humain ; ce fichier ne vaut pas confirmation juridique automatique.
