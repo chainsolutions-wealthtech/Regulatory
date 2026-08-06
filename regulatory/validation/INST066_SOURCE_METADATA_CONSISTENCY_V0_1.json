@@ -1,0 +1,51 @@
+{
+  "validationId": "INST066_SOURCE_METADATA_CONSISTENCY_V0_1",
+  "status": "PASS",
+  "sourceId": "INSTRUCTION_66_CREPMF_2021",
+  "checks": {
+    "pdfDigestMatchesMetadata": true,
+    "pdfByteSizeMatchesMetadata": true,
+    "metadataPageCountIs65": true,
+    "sourceUsesSameDigest": true,
+    "observationUsesSameDigest": true,
+    "abrogationInventoryUsesSameDigest": true,
+    "actDateConsistent": true,
+    "effectiveDateConsistent": true,
+    "sevenAbrogatedReferencesObserved": true,
+    "historicalRegistryCrosscheckStillOpen": true,
+    "amendmentsInventoryDoesNotClaimCompleteness": true,
+    "noSeparateModifierClaimIsQualified": true,
+    "legalReviewStillPending": true,
+    "complianceReviewStillPending": true,
+    "requirementActivationStillForbidden": true,
+    "detailedRequirementsRemainStructurallyValid": true,
+    "detailedRequirementCountIs38": true,
+    "renderedPagesAvailable": true
+  },
+  "sourceFacts": {
+    "sha256": "3f964f2f6ab9ce9eb16912ccda13f34b5023a188dfb18fcba7065590c770d396",
+    "byteSize": 3470163,
+    "pageCount": 65,
+    "actDateObserved": "2021-12-16",
+    "effectiveFromObserved": "2022-01-01",
+    "abrogatedReferenceCountObserved": 7,
+    "renderedPageDimensions": {
+      "64": [
+        1488,
+        2103
+      ],
+      "65": [
+        1488,
+        2103
+      ]
+    }
+  },
+  "openItems": [
+    "HISTORICAL_REGISTRY_CROSSCHECK",
+    "AMENDMENTS_AND_RECTIFICATIONS_EXHAUSTIVE_REVIEW",
+    "LEGAL_APPROVAL",
+    "COMPLIANCE_APPROVAL",
+    "PARAGRAPH_LEVEL_ATOMIZATION_REVIEW"
+  ],
+  "caveat": "PASS means the source artifact and repository metadata are internally consistent. It does not approve legal interpretation or activate requirements."
+}
