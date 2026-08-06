@@ -1,6 +1,8 @@
 name: One-shot Resume Instruction 66
 
 on:
+  issue_comment:
+    types: [created]
   schedule:
     - cron: '*/5 * * * *'
   workflow_dispatch:
@@ -8,6 +10,7 @@ on:
 permissions:
   contents: write
   actions: write
+  issues: write
 
 concurrency:
   group: one-shot-resume-instruction-66
@@ -15,6 +18,9 @@ concurrency:
 
 jobs:
   compile-document-and-dispatch:
+    if: >-
+      github.event_name != 'issue_comment' ||
+      (github.actor == 'Patricked-code' && github.event.comment.body == '/run-inst66-one-shot')
     runs-on: ubuntu-latest
     timeout-minutes: 20
     steps:
@@ -169,3 +175,13 @@ jobs:
               "/repos/$GH_REPO/actions/workflows/$workflow/dispatches" \
               -f ref=main
           done
+
+      - name: Close temporary trigger issue
+        if: github.event_name == 'issue_comment'
+        env:
+          GH_TOKEN: ${{ github.token }}
+          GH_REPO: ${{ github.repository }}
+        run: |
+          gh issue close "${{ github.event.issue.number }}" \
+            --repo "$GH_REPO" \
+            --comment "One-shot Instruction 66 orchestration completed and removed from main."
