@@ -1,6 +1,6 @@
 plan_id: INSTRUCTION_66_ATOMIZATION_PLAN_V0_1
-version: 0.2.0
-status: STRUCTURAL_ATOMIZATION_COMPLETE_DETAILED_REVIEW_IN_PROGRESS
+version: 0.2.1
+status: STRUCTURAL_ATOMIZATION_COMPLETE_BATCH_2_STAGED_CI_BLOCKED
 created_on: '2026-08-05'
 updated_on: '2026-08-06'
 loop_id: LOOP-REG-001
@@ -48,16 +48,46 @@ progress:
     output: regulatory/requirements/INST066_ARTICLE_ATOMS_V0_1.json
   prospectus_requirement_candidates:
     status: INITIAL_PRIORITY_SET_COMPILED_INACTIVE
-    count: 38
+    compiled_count: 38
     output: regulatory/requirements/INST066_PROSPECTUS_REQUIREMENT_CANDIDATES_V0_1.json
+  staged_requirement_candidates:
+    status: SPECIFIED_PENDING_COMPILATION_CI
+    staged_count: 39
+    expected_compiled_total: 77
+    spec_files:
+    - regulatory/requirements/inst066-candidates/00_SCOPE_DEFINITIONS.json
+    - regulatory/requirements/inst066-candidates/05_DEPOSITARY_CUSTODY.json
+    - regulatory/requirements/inst066-candidates/06_REGULATORY_REPORTING.json
+    - regulatory/requirements/inst066-candidates/07_MERGER_AND_SCISSION_LIFECYCLE.json
+    domains:
+    - scope_and_definitions
+    - investor_classification
+    - depositary_and_custody
+    - regulatory_and_periodic_reporting
+    - merger_and_scission
+    activation: FORBIDDEN
+    legal_review_status: PENDING
+    compliance_review_status: PENDING
   circ005_crosswalk:
     status: INITIAL_NON_DESTRUCTIVE_CROSSWALKS_COMPILED
     outputs:
     - regulatory/matrices/INST066_CIRC005_CROSSWALK_V0_1.csv
     - regulatory/matrices/INST066_CIRC005_DETAILED_CROSSWALK_V0_1.csv
   source_metadata_consistency:
-    status: CI_VALIDATION_ADDED
+    status: LAST_COMPLETED_CI_PASS_NEW_BATCH_NOT_YET_COMPILED
     output: regulatory/validation/INST066_SOURCE_METADATA_CONSISTENCY_V0_1.json
+  github_actions_runner:
+    status: BLOCKED_QUEUED_WITHOUT_JOB_ASSIGNMENT
+    observed_on: '2026-08-06'
+    queued_runs:
+    - run_id: 31107479974
+      workflow: Compile Instruction 66 Detailed Requirements
+      reason: rerun_requested_to_emit_native_workflow_run_event
+    - run_id: 31108755523
+      workflow: Validate Instruction 66 Source Metadata
+      reason: rerun_failed_jobs_requested_to_emit_native_workflow_run_event
+    temporary_trigger_workflows_removed: true
+    temporary_issue_closed: true
 phases:
 - id: P01_SOURCE_CONTROL
   status: COMPLETE_WITH_OPEN_HISTORICAL_REVIEW
@@ -84,7 +114,7 @@ phases:
   - no missing article number
   - page coordinates retained
 - id: P03_SCOPE_AND_DEFINITIONS
-  status: ARTICLE_LEVEL_COMPLETE_PARAGRAPH_LEVEL_PENDING
+  status: DETAILED_CANDIDATES_STAGED_CI_PENDING
   domains: [OPC, OPCVM, FIA, FCP, investment_company, management_company, investor_categories]
 - id: P04_AUTHORIZATION_AND_GOVERNANCE
   status: PRIORITY_CANDIDATES_COMPILED_REVIEW_PENDING
@@ -99,13 +129,13 @@ phases:
   status: PRIORITY_CANDIDATES_COMPILED_REVIEW_PENDING
   domains: [valuation, net_asset_value, subscription, redemption, suspension, liquidity_management_tools]
 - id: P08_SERVICE_PROVIDERS_AND_CONTROL
-  status: ARTICLE_LEVEL_COMPLETE_DETAILED_ATOMIZATION_PENDING
+  status: DEPOSITARY_AND_CUSTODY_CANDIDATES_STAGED_CI_PENDING
   domains: [depositary, custody_and_sub_custody, auditor, external_adviser, distribution_and_paying_agents]
 - id: P09_REPORTING_AND_LIFECYCLE
-  status: INITIAL_CORPORATE_ACTION_CANDIDATES_COMPILED_REMAINDER_PENDING
+  status: REPORTING_MERGER_AND_SCISSION_CANDIDATES_STAGED_CI_PENDING
   domains: [periodic_reporting, regulator_reporting, material_changes, merger_and_restructuring, liquidation, dissolution]
 - id: P10_CROSSWALK_AND_VALIDATION
-  status: INITIAL_CROSSWALK_AND_STRUCTURAL_VALIDATION_COMPLETE
+  status: INITIAL_CROSSWALK_COMPLETE_BATCH_2_VALIDATION_BLOCKED_BY_RUNNER
   outputs:
   - regulatory/matrices/INST066_CIRC005_CROSSWALK_V0_1.csv
   - regulatory/matrices/INST066_CIRC005_DETAILED_CROSSWALK_V0_1.csv
@@ -151,13 +181,16 @@ completed_evidence:
 - regulatory/validation/INST066_ATOMIZATION_VALIDATION_V0_1.json
 - regulatory/validation/INST066_DETAILED_REQUIREMENTS_VALIDATION_V0_1.json
 remaining_blockers:
+- GitHub Actions runner has not been assigned to the two accepted reruns; batch 2 cannot be declared compiled or CI-green yet.
 - Historical registry crosscheck for the seven texts listed in Article 92 is incomplete.
 - Amendments and rectifications review is not exhaustive across decisions and official bulletins.
 - Paragraph-level segmentation and normative classification remain pending for all 92 articles.
-- The 38 detailed prospectus candidates require legal and compliance review.
+- The 38 compiled and 39 staged detailed candidates require legal and compliance review.
 - Canonical fields, questions, clauses and controls proposed for INST066 are not yet active in the application catalog.
 next_action: >-
-  Run source-metadata consistency CI, then continue paragraph-level atomization
-  by theme, starting with scope and definitions, depositary and service-provider
-  duties, reporting, lifecycle and sanctions references. Keep every new output
-  inactive until dual legal and compliance review is recorded.
+  As soon as a GitHub Actions runner is assigned, execute
+  compile-instruction-66-requirements.yml on main, confirm 77 candidates and
+  byte-identical CIRC005 matrices, update the source counter to 77, run the
+  source-metadata validator, Regulatory CI and Security and Review Policy CI,
+  then continue with management-company obligations, eligible assets and ratios,
+  remaining service providers, special products, liquidation and sanctions.
