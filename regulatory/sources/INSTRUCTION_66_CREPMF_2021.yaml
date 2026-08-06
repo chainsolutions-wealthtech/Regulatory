@@ -12,10 +12,10 @@ scope_summary: >-
   extraits restent inactifs jusqu'à revue juridique et conformité.
 registry:
   official_index_url: https://www.amf-umoa.org/reglementation/instruction
-  registry_checked_on: '2026-08-05'
+  registry_checked_on: '2026-08-06'
   listed_reference: Instruction N°66/2021
   listed_status: NON ABROGE
-  verification_status: OFFICIAL_REGISTRY_CONFIRMED
+  verification_status: OFFICIAL_CURRENT_REGISTRY_CONFIRMED
 publication:
   brvm_record_url: https://www.brvm.org/fr/crepmf-instruction-ndeg662021-instruction-relative-aux-organismes-de-placement-collectif-et-leurs
   published_on: '2022-01-12'
@@ -24,6 +24,9 @@ publication:
     Placement Collectif et à leurs Sociétés de Gestion sur le Marché Financier
     régional (Annule et remplace le précédent)
   replacement_statement: Annule et remplace le précédent
+  note: >-
+    La date de publication de la fiche BRVM est distincte de la date portée sur
+    l'acte et de sa date d'entrée en vigueur.
 source_artifact:
   pdf_url: https://www.brvm.org/sites/default/files/instruction_ndeg066-crepmf-2021-instruction_relative_aux_organismes_de_placement_collectif_et_a_leurs_societes_de_gestion_sur_le_marche_financier_regional_1.pdf
   page_count: 65
@@ -39,14 +42,28 @@ source_artifact:
     téléchargé depuis l'URL officielle BRVM, validé comme PDF complet, hashé et
     conservé dans le dépôt.
 verification:
-  current_legal_status: NON_ABROGE_AS_LISTED_ON_2026_08_05
-  exact_signed_date: null
-  effective_from: null
-  abrogation_inventory: PENDING_VISUAL_AND_REGISTRY_CONFIRMATION
+  act_date:
+    value: '2021-12-16'
+    evidence_page: 65
+    evidence_wording: Fait à Abidjan, le 16 DEC 2021
+    fact_status: VISUALLY_OBSERVED_FROM_HASHED_OFFICIAL_PDF
+  effective_from:
+    value: '2022-01-01'
+    evidence_page: 65
+    evidence_wording: Elle prend effet à compter du 1er janvier 2022.
+    fact_status: VISUALLY_OBSERVED_FROM_HASHED_OFFICIAL_PDF
+  current_legal_status: NON_ABROGE_AS_LISTED_ON_2026_08_06
+  abrogation_inventory:
+    path: regulatory/registries/INST066_ABROGATED_TEXTS_INVENTORY_V0_1.yaml
+    observed_reference_count: 7
+    source_text_status: VISUALLY_OBSERVED_FROM_HASHED_OFFICIAL_PDF
+    historical_registry_crosscheck_status: INCOMPLETE
   amendments_rectifications_review: TO_COMPLETE
   official_amf_binary_url: TO_CAPTURE_FROM_DYNAMIC_REGISTRY
+  source_observation: regulatory/review-evidence/INST066_LEGAL_METADATA/SOURCE_OBSERVATION_V0_1.yaml
   legal_review_status: PENDING
   compliance_review_status: PENDING
+  requirement_activation_allowed: false
   review_evidence_directory: regulatory/review-evidence/INST066_LEGAL_METADATA
 extraction:
   method: FRENCH_OCR_DERIVATIVE_THEN_PAGE_SCOPED_TEXT_EXTRACTION
@@ -54,15 +71,21 @@ extraction:
   ocr_derivative_committed: false
   usable_character_count: 140644
   article_index: regulatory/requirements/INST066_ARTICLE_INDEX_V0_1.yaml
+  article_blocks: regulatory/requirements/INST066_ARTICLE_BLOCKS_V0_1.json
+  article_atoms: regulatory/requirements/INST066_ARTICLE_ATOMS_V0_1.json
+  detailed_requirement_candidates: regulatory/requirements/INST066_PROSPECTUS_REQUIREMENT_CANDIDATES_V0_1.json
   article_count: 92
   first_article: 1
   last_article: 92
   missing_article_numbers: []
-  extraction_status: MATERIALIZED_ARTICLE_INDEX_EXTRACTED_UNVERIFIED
+  detailed_requirement_candidate_count: 38
+  extraction_status: MATERIALIZED_AND_ATOMIZED_UNVERIFIED
   requirement_activation: FORBIDDEN_PENDING_LEGAL_AND_COMPLIANCE_REVIEW
   quality_notes:
     - Le PDF officiel est une image sans couche texte exploitable.
     - Le texte OCR est un dérivé d'extraction et non la source juridique de référence.
     - La séquence des articles 1 à 92 est complète et sans numéro manquant.
-    - Les titres, alinéas, dates, abrogations, applicabilités et effets normatifs restent à revoir humainement.
+    - Les dates et les sept références abrogées ont été observées visuellement sur les pages 64 et 65 du PDF hashé.
+    - Le rapprochement historique des sept références avec les registres officiels reste incomplet.
+    - Les titres, alinéas, applicabilités et effets normatifs restent à revoir humainement.
     - Aucune exigence issue de cette source ne peut devenir ACTIVE, APPROVED ou VALIDATED sans double revue juridique et conformité.
