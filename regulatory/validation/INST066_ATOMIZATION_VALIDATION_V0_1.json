@@ -1,0 +1,31 @@
+{
+  "validationId": "INST066_ATOMIZATION_VALIDATION_V0_1",
+  "status": "PASS",
+  "sourceId": "INSTRUCTION_66_CREPMF_2021",
+  "sourceSha256": "3f964f2f6ab9ce9eb16912ccda13f34b5023a188dfb18fcba7065590c770d396",
+  "checks": {
+    "sourceSha256Present": true,
+    "articlesOneThroughNinetyTwo": true,
+    "articleIdsUnique": true,
+    "articleTextDigestsPresent": true,
+    "oneArticleAtomPerArticle": true,
+    "atomIdsUnique": true,
+    "allAtomsUnverified": true,
+    "allAtomsInactive": true,
+    "dualReviewRequired": true,
+    "allCirc005LinksResolve": true,
+    "circ005FilesNotWritten": true
+  },
+  "metrics": {
+    "articleBlockCount": 92,
+    "articleAtomCount": 92,
+    "prospectusRelevantArticleCandidateCount": 24,
+    "circ005CrosswalkLinkCount": 31
+  },
+  "outputs": [
+    "regulatory/requirements/INST066_ARTICLE_BLOCKS_V0_1.json",
+    "regulatory/requirements/INST066_ARTICLE_ATOMS_V0_1.json",
+    "regulatory/matrices/INST066_CIRC005_CROSSWALK_V0_1.csv"
+  ],
+  "caveat": "La validation atteste la couverture structurale, la provenance et l'inactivation; elle ne valide aucune interprétation juridique."
+}
