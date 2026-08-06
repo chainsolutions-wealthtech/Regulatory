@@ -33,6 +33,13 @@ def main() -> None:
     expected_digest = metadata["sha256"]
     expected_size = metadata["byteSize"]
     expected_pages = metadata["pageCount"]
+    detailed_count = int(detailed["metrics"]["requirementCandidateCount"])
+    source_count_match = re.search(
+        r"^\s*detailed_requirement_candidate_count:\s*(\d+)\s*$",
+        source,
+        flags=re.MULTILINE,
+    )
+    source_count = int(source_count_match.group(1)) if source_count_match else None
 
     png_dimensions = {}
     for page in (64, 65):
@@ -60,7 +67,8 @@ def main() -> None:
         "complianceReviewStillPending": "compliance_review_status: PENDING" in source,
         "requirementActivationStillForbidden": "requirement_activation_allowed: false" in source,
         "detailedRequirementsRemainStructurallyValid": detailed["status"] == "PASS",
-        "detailedRequirementCountIs38": detailed["metrics"]["requirementCandidateCount"] == 38,
+        "detailedRequirementCountNotRegressed": detailed_count >= 38,
+        "detailedRequirementCountMatchesSource": source_count == detailed_count,
         "renderedPagesAvailable": all(width > 1000 and height > 1000 for width, height in png_dimensions.values()),
     }
     validation = {
@@ -75,6 +83,7 @@ def main() -> None:
             "actDateObserved": "2021-12-16",
             "effectiveFromObserved": "2022-01-01",
             "abrogatedReferenceCountObserved": len(references),
+            "detailedRequirementCandidateCount": detailed_count,
             "renderedPageDimensions": png_dimensions,
         },
         "openItems": [
