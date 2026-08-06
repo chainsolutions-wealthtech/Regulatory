@@ -15,14 +15,19 @@
     "articleSequenceMonotonic": true,
     "legalDatesNotAutoPromoted": true,
     "requirementsNotActivated": true,
-    "humanArticleReviewStillRequired": true
+    "humanArticleReviewStillRequired": true,
+    "articlePremierIndexed": true,
+    "articleNumberRangeContinuous": true,
+    "articleIndexStillUnverified": true
   },
   "metrics": {
     "byteSize": 3470163,
     "pageCount": 65,
-    "rawArticleCandidateCount": 91,
-    "articleIndexCount": 91,
-    "dateCandidateCount": 2
+    "rawArticleCandidateCount": 92,
+    "articleIndexCount": 92,
+    "dateCandidateCount": 2,
+    "firstIndexedArticle": 1,
+    "lastIndexedArticle": 92
   },
   "reviewFlags": {
     "duplicateHeadingOccurrences": [],
@@ -35,5 +40,5 @@
     "regulatory/materialized/INSTRUCTION_66_CREPMF_2021.metadata.json",
     "regulatory/requirements/INST066_ARTICLE_INDEX_V0_1.yaml"
   ],
-  "caveat": "This is source-integrity and structural extraction validation only. OCR text, article titles, paragraph boundaries, dates, applicability and normative meaning remain subject to legal and compliance review."
+  "caveat": "Source integrity and article-number continuity are validated. OCR wording, titles, paragraph boundaries, dates, applicability and normative meaning remain extracted unverified until legal and compliance review."
 }

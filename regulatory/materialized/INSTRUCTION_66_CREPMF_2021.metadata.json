@@ -3,7 +3,7 @@
   "sourceId": "INSTRUCTION_66_CREPMF_2021",
   "title": "Instruction n°66/CREPMF/2021 relative aux Organismes de Placement Collectif et à leurs Sociétés de Gestion sur le Marché Financier Régional de l'UMOA",
   "sourceUrl": "https://www.brvm.org/sites/default/files/instruction_ndeg066-crepmf-2021-instruction_relative_aux_organismes_de_placement_collectif_et_a_leurs_societes_de_gestion_sur_le_marche_financier_regional_1.pdf",
-  "retrievedAt": "2026-08-06T13:11:44+00:00",
+  "retrievedAt": "2026-08-06T13:21:22+00:00",
   "repositoryCopy": "regulatory/materialized/INSTRUCTION_66_CREPMF_2021.pdf",
   "extractedText": "regulatory/materialized/INSTRUCTION_66_CREPMF_2021.txt",
   "sha256": "3f964f2f6ab9ce9eb16912ccda13f34b5023a188dfb18fcba7065590c770d396",
@@ -27,8 +27,8 @@
     "Optimized": "yes",
     "PDF version": "1.6"
   },
-  "rawArticleCandidateCount": 91,
-  "articleIndexCount": 91,
+  "rawArticleCandidateCount": 92,
+  "articleIndexCount": 92,
   "duplicateArticleHeadingOccurrences": [],
   "missingArticleNumbers": [],
   "dateCandidates": [
@@ -63,5 +63,7 @@
     "textTool": "pdftotext version 24.02.0",
     "ocrTool": "15.2.0+dfsg1",
     "status": "MATERIALIZED_ARTICLE_INDEX_EXTRACTED_UNVERIFIED"
-  }
+  },
+  "firstIndexedArticle": 1,
+  "lastIndexedArticle": 92
 }

@@ -15,8 +15,24 @@ defaults:
   review_status: PENDING_LEGAL_AND_COMPLIANCE_REVIEW
   requirement_activation: FORBIDDEN_PENDING_REVIEW
 articles:
-- id: INST066_ARTICLE_002
+- id: INST066_ARTICLE_001
   seq: 1
+  article_number: "premier"
+  page: 2
+  line_number_in_page: 6
+  heading_raw: "Article premier - Définitions"
+  title_candidate: "Définitions"
+  products: [TO_CLASSIFY]
+  document_types: [TO_CLASSIFY]
+  applicability: TO_REVIEW
+  normative_status: TO_ATOMIZE
+  review_status: PENDING_LEGAL_AND_COMPLIANCE_REVIEW
+  provenance:
+    source_sha256: 3f964f2f6ab9ce9eb16912ccda13f34b5023a188dfb18fcba7065590c770d396
+    source_page: 2
+    text_quality: OCR_EXTRACTED_UNVERIFIED
+- id: INST066_ARTICLE_002
+  seq: 2
   article_number: "2"
   page: 6
   line_number_in_page: 8
@@ -32,7 +48,7 @@ articles:
     source_page: 6
     text_quality: OCR_EXTRACTED_UNVERIFIED
 - id: INST066_ARTICLE_003
-  seq: 2
+  seq: 3
   article_number: "3"
   page: 6
   line_number_in_page: 27
@@ -48,7 +64,7 @@ articles:
     source_page: 6
     text_quality: OCR_EXTRACTED_UNVERIFIED
 - id: INST066_ARTICLE_004
-  seq: 3
+  seq: 4
   article_number: "4"
   page: 7
   line_number_in_page: 4
@@ -64,7 +80,7 @@ articles:
     source_page: 7
     text_quality: OCR_EXTRACTED_UNVERIFIED
 - id: INST066_ARTICLE_005
-  seq: 4
+  seq: 5
   article_number: "5"
   page: 8
   line_number_in_page: 13
@@ -80,7 +96,7 @@ articles:
     source_page: 8
     text_quality: OCR_EXTRACTED_UNVERIFIED
 - id: INST066_ARTICLE_006
-  seq: 5
+  seq: 6
   article_number: "6"
   page: 10
   line_number_in_page: 18
@@ -96,7 +112,7 @@ articles:
     source_page: 10
     text_quality: OCR_EXTRACTED_UNVERIFIED
 - id: INST066_ARTICLE_007
-  seq: 6
+  seq: 7
   article_number: "7"
   page: 10
   line_number_in_page: 28
@@ -112,7 +128,7 @@ articles:
     source_page: 10
     text_quality: OCR_EXTRACTED_UNVERIFIED
 - id: INST066_ARTICLE_008
-  seq: 7
+  seq: 8
   article_number: "8"
   page: 11
   line_number_in_page: 1
@@ -128,7 +144,7 @@ articles:
     source_page: 11
     text_quality: OCR_EXTRACTED_UNVERIFIED
 - id: INST066_ARTICLE_009
-  seq: 8
+  seq: 9
   article_number: "9"
   page: 11
   line_number_in_page: 25
@@ -144,7 +160,7 @@ articles:
     source_page: 11
     text_quality: OCR_EXTRACTED_UNVERIFIED
 - id: INST066_ARTICLE_010
-  seq: 9
+  seq: 10
   article_number: "10"
   page: 12
   line_number_in_page: 17
@@ -160,7 +176,7 @@ articles:
     source_page: 12
     text_quality: OCR_EXTRACTED_UNVERIFIED
 - id: INST066_ARTICLE_011
-  seq: 10
+  seq: 11
   article_number: "11"
   page: 12
   line_number_in_page: 32
@@ -176,7 +192,7 @@ articles:
     source_page: 12
     text_quality: OCR_EXTRACTED_UNVERIFIED
 - id: INST066_ARTICLE_012
-  seq: 11
+  seq: 12
   article_number: "12"
   page: 16
   line_number_in_page: 9
@@ -192,7 +208,7 @@ articles:
     source_page: 16
     text_quality: OCR_EXTRACTED_UNVERIFIED
 - id: INST066_ARTICLE_013
-  seq: 12
+  seq: 13
   article_number: "13"
   page: 16
   line_number_in_page: 30
@@ -208,7 +224,7 @@ articles:
     source_page: 16
     text_quality: OCR_EXTRACTED_UNVERIFIED
 - id: INST066_ARTICLE_014
-  seq: 13
+  seq: 14
   article_number: "14"
   page: 18
   line_number_in_page: 30
@@ -224,7 +240,7 @@ articles:
     source_page: 18
     text_quality: OCR_EXTRACTED_UNVERIFIED
 - id: INST066_ARTICLE_015
-  seq: 14
+  seq: 15
   article_number: "15"
   page: 19
   line_number_in_page: 30
@@ -240,7 +256,7 @@ articles:
     source_page: 19
     text_quality: OCR_EXTRACTED_UNVERIFIED
 - id: INST066_ARTICLE_016
-  seq: 15
+  seq: 16
   article_number: "16"
   page: 20
   line_number_in_page: 4
@@ -256,7 +272,7 @@ articles:
     source_page: 20
     text_quality: OCR_EXTRACTED_UNVERIFIED
 - id: INST066_ARTICLE_017
-  seq: 16
+  seq: 17
   article_number: "17"
   page: 20
   line_number_in_page: 12
@@ -272,7 +288,7 @@ articles:
     source_page: 20
     text_quality: OCR_EXTRACTED_UNVERIFIED
 - id: INST066_ARTICLE_018
-  seq: 17
+  seq: 18
   article_number: "18"
   page: 21
   line_number_in_page: 17
@@ -288,7 +304,7 @@ articles:
     source_page: 21
     text_quality: OCR_EXTRACTED_UNVERIFIED
 - id: INST066_ARTICLE_019
-  seq: 18
+  seq: 19
   article_number: "19"
   page: 22
   line_number_in_page: 39
@@ -304,7 +320,7 @@ articles:
     source_page: 22
     text_quality: OCR_EXTRACTED_UNVERIFIED
 - id: INST066_ARTICLE_020
-  seq: 19
+  seq: 20
   article_number: "20"
   page: 23
   line_number_in_page: 22
@@ -320,7 +336,7 @@ articles:
     source_page: 23
     text_quality: OCR_EXTRACTED_UNVERIFIED
 - id: INST066_ARTICLE_021
-  seq: 20
+  seq: 21
   article_number: "21"
   page: 24
   line_number_in_page: 29
@@ -336,7 +352,7 @@ articles:
     source_page: 24
     text_quality: OCR_EXTRACTED_UNVERIFIED
 - id: INST066_ARTICLE_022
-  seq: 21
+  seq: 22
   article_number: "22"
   page: 29
   line_number_in_page: 36
@@ -352,7 +368,7 @@ articles:
     source_page: 29
     text_quality: OCR_EXTRACTED_UNVERIFIED
 - id: INST066_ARTICLE_023
-  seq: 22
+  seq: 23
   article_number: "23"
   page: 30
   line_number_in_page: 14
@@ -368,7 +384,7 @@ articles:
     source_page: 30
     text_quality: OCR_EXTRACTED_UNVERIFIED
 - id: INST066_ARTICLE_024
-  seq: 23
+  seq: 24
   article_number: "24"
   page: 30
   line_number_in_page: 34
@@ -384,7 +400,7 @@ articles:
     source_page: 30
     text_quality: OCR_EXTRACTED_UNVERIFIED
 - id: INST066_ARTICLE_025
-  seq: 24
+  seq: 25
   article_number: "25"
   page: 31
   line_number_in_page: 12
@@ -400,7 +416,7 @@ articles:
     source_page: 31
     text_quality: OCR_EXTRACTED_UNVERIFIED
 - id: INST066_ARTICLE_026
-  seq: 25
+  seq: 26
   article_number: "26"
   page: 32
   line_number_in_page: 19
@@ -416,7 +432,7 @@ articles:
     source_page: 32
     text_quality: OCR_EXTRACTED_UNVERIFIED
 - id: INST066_ARTICLE_027
-  seq: 26
+  seq: 27
   article_number: "27"
   page: 33
   line_number_in_page: 4
@@ -432,7 +448,7 @@ articles:
     source_page: 33
     text_quality: OCR_EXTRACTED_UNVERIFIED
 - id: INST066_ARTICLE_028
-  seq: 27
+  seq: 28
   article_number: "28"
   page: 33
   line_number_in_page: 16
@@ -448,7 +464,7 @@ articles:
     source_page: 33
     text_quality: OCR_EXTRACTED_UNVERIFIED
 - id: INST066_ARTICLE_029
-  seq: 28
+  seq: 29
   article_number: "29"
   page: 34
   line_number_in_page: 6
@@ -464,7 +480,7 @@ articles:
     source_page: 34
     text_quality: OCR_EXTRACTED_UNVERIFIED
 - id: INST066_ARTICLE_030
-  seq: 29
+  seq: 30
   article_number: "30"
   page: 34
   line_number_in_page: 26
@@ -480,7 +496,7 @@ articles:
     source_page: 34
     text_quality: OCR_EXTRACTED_UNVERIFIED
 - id: INST066_ARTICLE_031
-  seq: 30
+  seq: 31
   article_number: "31"
   page: 34
   line_number_in_page: 34
@@ -496,7 +512,7 @@ articles:
     source_page: 34
     text_quality: OCR_EXTRACTED_UNVERIFIED
 - id: INST066_ARTICLE_032
-  seq: 31
+  seq: 32
   article_number: "32"
   page: 35
   line_number_in_page: 5
@@ -512,7 +528,7 @@ articles:
     source_page: 35
     text_quality: OCR_EXTRACTED_UNVERIFIED
 - id: INST066_ARTICLE_033
-  seq: 32
+  seq: 33
   article_number: "33"
   page: 35
   line_number_in_page: 33
@@ -528,7 +544,7 @@ articles:
     source_page: 35
     text_quality: OCR_EXTRACTED_UNVERIFIED
 - id: INST066_ARTICLE_034
-  seq: 33
+  seq: 34
   article_number: "34"
   page: 37
   line_number_in_page: 11
@@ -544,7 +560,7 @@ articles:
     source_page: 37
     text_quality: OCR_EXTRACTED_UNVERIFIED
 - id: INST066_ARTICLE_035
-  seq: 34
+  seq: 35
   article_number: "35"
   page: 37
   line_number_in_page: 28
@@ -560,7 +576,7 @@ articles:
     source_page: 37
     text_quality: OCR_EXTRACTED_UNVERIFIED
 - id: INST066_ARTICLE_036
-  seq: 35
+  seq: 36
   article_number: "36"
   page: 37
   line_number_in_page: 34
@@ -576,7 +592,7 @@ articles:
     source_page: 37
     text_quality: OCR_EXTRACTED_UNVERIFIED
 - id: INST066_ARTICLE_037
-  seq: 36
+  seq: 37
   article_number: "37"
   page: 38
   line_number_in_page: 13
@@ -592,7 +608,7 @@ articles:
     source_page: 38
     text_quality: OCR_EXTRACTED_UNVERIFIED
 - id: INST066_ARTICLE_038
-  seq: 37
+  seq: 38
   article_number: "38"
   page: 40
   line_number_in_page: 5
@@ -608,7 +624,7 @@ articles:
     source_page: 40
     text_quality: OCR_EXTRACTED_UNVERIFIED
 - id: INST066_ARTICLE_039
-  seq: 38
+  seq: 39
   article_number: "39"
   page: 40
   line_number_in_page: 10
@@ -624,7 +640,7 @@ articles:
     source_page: 40
     text_quality: OCR_EXTRACTED_UNVERIFIED
 - id: INST066_ARTICLE_040
-  seq: 39
+  seq: 40
   article_number: "40"
   page: 42
   line_number_in_page: 6
@@ -640,7 +656,7 @@ articles:
     source_page: 42
     text_quality: OCR_EXTRACTED_UNVERIFIED
 - id: INST066_ARTICLE_041
-  seq: 40
+  seq: 41
   article_number: "41"
   page: 43
   line_number_in_page: 21
@@ -656,7 +672,7 @@ articles:
     source_page: 43
     text_quality: OCR_EXTRACTED_UNVERIFIED
 - id: INST066_ARTICLE_042
-  seq: 41
+  seq: 42
   article_number: "42"
   page: 44
   line_number_in_page: 26
@@ -672,7 +688,7 @@ articles:
     source_page: 44
     text_quality: OCR_EXTRACTED_UNVERIFIED
 - id: INST066_ARTICLE_043
-  seq: 42
+  seq: 43
   article_number: "43"
   page: 45
   line_number_in_page: 1
@@ -688,7 +704,7 @@ articles:
     source_page: 45
     text_quality: OCR_EXTRACTED_UNVERIFIED
 - id: INST066_ARTICLE_044
-  seq: 43
+  seq: 44
   article_number: "44"
   page: 45
   line_number_in_page: 24
@@ -704,7 +720,7 @@ articles:
     source_page: 45
     text_quality: OCR_EXTRACTED_UNVERIFIED
 - id: INST066_ARTICLE_045
-  seq: 44
+  seq: 45
   article_number: "45"
   page: 46
   line_number_in_page: 10
@@ -720,7 +736,7 @@ articles:
     source_page: 46
     text_quality: OCR_EXTRACTED_UNVERIFIED
 - id: INST066_ARTICLE_046
-  seq: 45
+  seq: 46
   article_number: "46"
   page: 46
   line_number_in_page: 27
@@ -736,7 +752,7 @@ articles:
     source_page: 46
     text_quality: OCR_EXTRACTED_UNVERIFIED
 - id: INST066_ARTICLE_047
-  seq: 46
+  seq: 47
   article_number: "47"
   page: 47
   line_number_in_page: 1
@@ -752,7 +768,7 @@ articles:
     source_page: 47
     text_quality: OCR_EXTRACTED_UNVERIFIED
 - id: INST066_ARTICLE_048
-  seq: 47
+  seq: 48
   article_number: "48"
   page: 47
   line_number_in_page: 27
@@ -768,7 +784,7 @@ articles:
     source_page: 47
     text_quality: OCR_EXTRACTED_UNVERIFIED
 - id: INST066_ARTICLE_049
-  seq: 48
+  seq: 49
   article_number: "49"
   page: 47
   line_number_in_page: 34
@@ -784,7 +800,7 @@ articles:
     source_page: 47
     text_quality: OCR_EXTRACTED_UNVERIFIED
 - id: INST066_ARTICLE_050
-  seq: 49
+  seq: 50
   article_number: "50"
   page: 48
   line_number_in_page: 1
@@ -800,7 +816,7 @@ articles:
     source_page: 48
     text_quality: OCR_EXTRACTED_UNVERIFIED
 - id: INST066_ARTICLE_051
-  seq: 50
+  seq: 51
   article_number: "51"
   page: 48
   line_number_in_page: 7
@@ -816,7 +832,7 @@ articles:
     source_page: 48
     text_quality: OCR_EXTRACTED_UNVERIFIED
 - id: INST066_ARTICLE_052
-  seq: 51
+  seq: 52
   article_number: "52"
   page: 48
   line_number_in_page: 17
@@ -832,7 +848,7 @@ articles:
     source_page: 48
     text_quality: OCR_EXTRACTED_UNVERIFIED
 - id: INST066_ARTICLE_053
-  seq: 52
+  seq: 53
   article_number: "53"
   page: 48
   line_number_in_page: 25
@@ -848,7 +864,7 @@ articles:
     source_page: 48
     text_quality: OCR_EXTRACTED_UNVERIFIED
 - id: INST066_ARTICLE_054
-  seq: 53
+  seq: 54
   article_number: "54"
   page: 48
   line_number_in_page: 36
@@ -864,7 +880,7 @@ articles:
     source_page: 48
     text_quality: OCR_EXTRACTED_UNVERIFIED
 - id: INST066_ARTICLE_055
-  seq: 54
+  seq: 55
   article_number: "55"
   page: 49
   line_number_in_page: 14
@@ -880,7 +896,7 @@ articles:
     source_page: 49
     text_quality: OCR_EXTRACTED_UNVERIFIED
 - id: INST066_ARTICLE_056
-  seq: 55
+  seq: 56
   article_number: "56"
   page: 49
   line_number_in_page: 41
@@ -896,7 +912,7 @@ articles:
     source_page: 49
     text_quality: OCR_EXTRACTED_UNVERIFIED
 - id: INST066_ARTICLE_057
-  seq: 56
+  seq: 57
   article_number: "57"
   page: 50
   line_number_in_page: 16
@@ -912,7 +928,7 @@ articles:
     source_page: 50
     text_quality: OCR_EXTRACTED_UNVERIFIED
 - id: INST066_ARTICLE_058
-  seq: 57
+  seq: 58
   article_number: "58"
   page: 50
   line_number_in_page: 22
@@ -928,7 +944,7 @@ articles:
     source_page: 50
     text_quality: OCR_EXTRACTED_UNVERIFIED
 - id: INST066_ARTICLE_059
-  seq: 58
+  seq: 59
   article_number: "59"
   page: 50
   line_number_in_page: 38
@@ -944,7 +960,7 @@ articles:
     source_page: 50
     text_quality: OCR_EXTRACTED_UNVERIFIED
 - id: INST066_ARTICLE_060
-  seq: 59
+  seq: 60
   article_number: "60"
   page: 51
   line_number_in_page: 37
@@ -960,7 +976,7 @@ articles:
     source_page: 51
     text_quality: OCR_EXTRACTED_UNVERIFIED
 - id: INST066_ARTICLE_061
-  seq: 60
+  seq: 61
   article_number: "61"
   page: 52
   line_number_in_page: 14
@@ -976,7 +992,7 @@ articles:
     source_page: 52
     text_quality: OCR_EXTRACTED_UNVERIFIED
 - id: INST066_ARTICLE_062
-  seq: 61
+  seq: 62
   article_number: "62"
   page: 52
   line_number_in_page: 20
@@ -992,7 +1008,7 @@ articles:
     source_page: 52
     text_quality: OCR_EXTRACTED_UNVERIFIED
 - id: INST066_ARTICLE_063
-  seq: 62
+  seq: 63
   article_number: "63"
   page: 52
   line_number_in_page: 28
@@ -1008,7 +1024,7 @@ articles:
     source_page: 52
     text_quality: OCR_EXTRACTED_UNVERIFIED
 - id: INST066_ARTICLE_064
-  seq: 63
+  seq: 64
   article_number: "64"
   page: 53
   line_number_in_page: 18
@@ -1024,7 +1040,7 @@ articles:
     source_page: 53
     text_quality: OCR_EXTRACTED_UNVERIFIED
 - id: INST066_ARTICLE_065
-  seq: 64
+  seq: 65
   article_number: "65"
   page: 53
   line_number_in_page: 33
@@ -1040,7 +1056,7 @@ articles:
     source_page: 53
     text_quality: OCR_EXTRACTED_UNVERIFIED
 - id: INST066_ARTICLE_066
-  seq: 65
+  seq: 66
   article_number: "66"
   page: 54
   line_number_in_page: 1
@@ -1056,7 +1072,7 @@ articles:
     source_page: 54
     text_quality: OCR_EXTRACTED_UNVERIFIED
 - id: INST066_ARTICLE_067
-  seq: 66
+  seq: 67
   article_number: "67"
   page: 54
   line_number_in_page: 13
@@ -1072,7 +1088,7 @@ articles:
     source_page: 54
     text_quality: OCR_EXTRACTED_UNVERIFIED
 - id: INST066_ARTICLE_068
-  seq: 67
+  seq: 68
   article_number: "68"
   page: 54
   line_number_in_page: 32
@@ -1088,7 +1104,7 @@ articles:
     source_page: 54
     text_quality: OCR_EXTRACTED_UNVERIFIED
 - id: INST066_ARTICLE_069
-  seq: 68
+  seq: 69
   article_number: "69"
   page: 55
   line_number_in_page: 14
@@ -1104,7 +1120,7 @@ articles:
     source_page: 55
     text_quality: OCR_EXTRACTED_UNVERIFIED
 - id: INST066_ARTICLE_070
-  seq: 69
+  seq: 70
   article_number: "70"
   page: 55
   line_number_in_page: 36
@@ -1120,7 +1136,7 @@ articles:
     source_page: 55
     text_quality: OCR_EXTRACTED_UNVERIFIED
 - id: INST066_ARTICLE_071
-  seq: 70
+  seq: 71
   article_number: "71"
   page: 56
   line_number_in_page: 9
@@ -1136,7 +1152,7 @@ articles:
     source_page: 56
     text_quality: OCR_EXTRACTED_UNVERIFIED
 - id: INST066_ARTICLE_072
-  seq: 71
+  seq: 72
   article_number: "72"
   page: 56
   line_number_in_page: 15
@@ -1152,7 +1168,7 @@ articles:
     source_page: 56
     text_quality: OCR_EXTRACTED_UNVERIFIED
 - id: INST066_ARTICLE_073
-  seq: 72
+  seq: 73
   article_number: "73"
   page: 56
   line_number_in_page: 35
@@ -1168,7 +1184,7 @@ articles:
     source_page: 56
     text_quality: OCR_EXTRACTED_UNVERIFIED
 - id: INST066_ARTICLE_074
-  seq: 73
+  seq: 74
   article_number: "74"
   page: 57
   line_number_in_page: 21
@@ -1184,7 +1200,7 @@ articles:
     source_page: 57
     text_quality: OCR_EXTRACTED_UNVERIFIED
 - id: INST066_ARTICLE_075
-  seq: 74
+  seq: 75
   article_number: "75"
   page: 58
   line_number_in_page: 26
@@ -1200,7 +1216,7 @@ articles:
     source_page: 58
     text_quality: OCR_EXTRACTED_UNVERIFIED
 - id: INST066_ARTICLE_076
-  seq: 75
+  seq: 76
   article_number: "76"
   page: 59
   line_number_in_page: 27
@@ -1216,7 +1232,7 @@ articles:
     source_page: 59
     text_quality: OCR_EXTRACTED_UNVERIFIED
 - id: INST066_ARTICLE_077
-  seq: 76
+  seq: 77
   article_number: "77"
   page: 60
   line_number_in_page: 35
@@ -1232,7 +1248,7 @@ articles:
     source_page: 60
     text_quality: OCR_EXTRACTED_UNVERIFIED
 - id: INST066_ARTICLE_078
-  seq: 77
+  seq: 78
   article_number: "78"
   page: 61
   line_number_in_page: 5
@@ -1248,7 +1264,7 @@ articles:
     source_page: 61
     text_quality: OCR_EXTRACTED_UNVERIFIED
 - id: INST066_ARTICLE_079
-  seq: 78
+  seq: 79
   article_number: "79"
   page: 61
   line_number_in_page: 16
@@ -1264,7 +1280,7 @@ articles:
     source_page: 61
     text_quality: OCR_EXTRACTED_UNVERIFIED
 - id: INST066_ARTICLE_080
-  seq: 79
+  seq: 80
   article_number: "80"
   page: 61
   line_number_in_page: 20
@@ -1280,7 +1296,7 @@ articles:
     source_page: 61
     text_quality: OCR_EXTRACTED_UNVERIFIED
 - id: INST066_ARTICLE_081
-  seq: 80
+  seq: 81
   article_number: "81"
   page: 61
   line_number_in_page: 27
@@ -1296,7 +1312,7 @@ articles:
     source_page: 61
     text_quality: OCR_EXTRACTED_UNVERIFIED
 - id: INST066_ARTICLE_082
-  seq: 81
+  seq: 82
   article_number: "82"
   page: 61
   line_number_in_page: 32
@@ -1312,7 +1328,7 @@ articles:
     source_page: 61
     text_quality: OCR_EXTRACTED_UNVERIFIED
 - id: INST066_ARTICLE_083
-  seq: 82
+  seq: 83
   article_number: "83"
   page: 62
   line_number_in_page: 1
@@ -1328,7 +1344,7 @@ articles:
     source_page: 62
     text_quality: OCR_EXTRACTED_UNVERIFIED
 - id: INST066_ARTICLE_084
-  seq: 83
+  seq: 84
   article_number: "84"
   page: 62
   line_number_in_page: 17
@@ -1344,7 +1360,7 @@ articles:
     source_page: 62
     text_quality: OCR_EXTRACTED_UNVERIFIED
 - id: INST066_ARTICLE_085
-  seq: 84
+  seq: 85
   article_number: "85"
   page: 62
   line_number_in_page: 33
@@ -1360,7 +1376,7 @@ articles:
     source_page: 62
     text_quality: OCR_EXTRACTED_UNVERIFIED
 - id: INST066_ARTICLE_086
-  seq: 85
+  seq: 86
   article_number: "86"
   page: 63
   line_number_in_page: 6
@@ -1376,7 +1392,7 @@ articles:
     source_page: 63
     text_quality: OCR_EXTRACTED_UNVERIFIED
 - id: INST066_ARTICLE_087
-  seq: 86
+  seq: 87
   article_number: "87"
   page: 63
   line_number_in_page: 22
@@ -1392,7 +1408,7 @@ articles:
     source_page: 63
     text_quality: OCR_EXTRACTED_UNVERIFIED
 - id: INST066_ARTICLE_088
-  seq: 87
+  seq: 88
   article_number: "88"
   page: 64
   line_number_in_page: 1
@@ -1408,7 +1424,7 @@ articles:
     source_page: 64
     text_quality: OCR_EXTRACTED_UNVERIFIED
 - id: INST066_ARTICLE_089
-  seq: 88
+  seq: 89
   article_number: "89"
   page: 64
   line_number_in_page: 6
@@ -1424,7 +1440,7 @@ articles:
     source_page: 64
     text_quality: OCR_EXTRACTED_UNVERIFIED
 - id: INST066_ARTICLE_090
-  seq: 89
+  seq: 90
   article_number: "90"
   page: 64
   line_number_in_page: 12
@@ -1440,7 +1456,7 @@ articles:
     source_page: 64
     text_quality: OCR_EXTRACTED_UNVERIFIED
 - id: INST066_ARTICLE_091
-  seq: 90
+  seq: 91
   article_number: "91"
   page: 64
   line_number_in_page: 19
@@ -1456,7 +1472,7 @@ articles:
     source_page: 64
     text_quality: OCR_EXTRACTED_UNVERIFIED
 - id: INST066_ARTICLE_092
-  seq: 91
+  seq: 92
   article_number: "92"
   page: 64
   line_number_in_page: 27
