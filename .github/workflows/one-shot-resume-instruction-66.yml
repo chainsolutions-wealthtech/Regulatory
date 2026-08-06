@@ -1,0 +1,171 @@
+name: One-shot Resume Instruction 66
+
+on:
+  schedule:
+    - cron: '*/5 * * * *'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+  actions: write
+
+concurrency:
+  group: one-shot-resume-instruction-66
+  cancel-in-progress: false
+
+jobs:
+  compile-document-and-dispatch:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Snapshot protected CIRC005 matrices
+        run: sha256sum regulatory/matrices/CIRC005_*.csv > /tmp/circ005-before.sha256
+
+      - name: Compile expanded Instruction 66 requirement candidates
+        run: python3 scripts/compile_instruction_66_requirement_candidates.py
+
+      - name: Synchronize source, plan and iteration tracking
+        run: |
+          python3 - <<'PY'
+          from __future__ import annotations
+
+          import json
+          import re
+          from pathlib import Path
+
+          validation_path = Path('regulatory/validation/INST066_DETAILED_REQUIREMENTS_VALIDATION_V0_1.json')
+          validation = json.loads(validation_path.read_text(encoding='utf-8'))
+          assert validation['status'] == 'PASS', validation
+          count = int(validation['metrics']['requirementCandidateCount'])
+          assert count == 77, count
+
+          source_path = Path('regulatory/sources/INSTRUCTION_66_CREPMF_2021.yaml')
+          source = source_path.read_text(encoding='utf-8')
+          source, replacements = re.subn(
+              r'(?m)^(\s*detailed_requirement_candidate_count:\s*)\d+\s*$',
+              rf'\g<1>{count}',
+              source,
+          )
+          assert replacements == 1, replacements
+          source_path.write_text(source, encoding='utf-8')
+
+          plan_path = Path('regulatory/plans/INSTRUCTION_66_ATOMIZATION_PLAN_V0_1.yaml')
+          plan = plan_path.read_text(encoding='utf-8')
+          plan = plan.replace('version: 0.2.0', 'version: 0.3.0')
+          plan = plan.replace(
+              'status: INITIAL_PRIORITY_SET_COMPILED_INACTIVE\n    count: 38',
+              f'status: EXPANDED_PRIORITY_SET_COMPILED_INACTIVE\n    count: {count}',
+          )
+          plan = plan.replace(
+              'status: ARTICLE_LEVEL_COMPLETE_PARAGRAPH_LEVEL_PENDING\n  domains: [OPC, OPCVM, FIA, FCP, investment_company, management_company, investor_categories]',
+              'status: DETAILED_SCOPE_AND_DEFINITION_CANDIDATES_COMPILED_REVIEW_PENDING\n  domains: [OPC, OPCVM, FIA, FCP, investment_company, management_company, investor_categories]',
+          )
+          plan = plan.replace(
+              'status: ARTICLE_LEVEL_COMPLETE_DETAILED_ATOMIZATION_PENDING\n  domains: [depositary, custody_and_sub_custody, auditor, external_adviser, distribution_and_paying_agents]',
+              'status: DEPOSITARY_AND_CUSTODY_CANDIDATES_COMPILED_REMAINDER_PENDING\n  domains: [depositary, custody_and_sub_custody, auditor, external_adviser, distribution_and_paying_agents]',
+          )
+          plan = plan.replace(
+              'status: INITIAL_CORPORATE_ACTION_CANDIDATES_COMPILED_REMAINDER_PENDING\n  domains: [periodic_reporting, regulator_reporting, material_changes, merger_and_restructuring, liquidation, dissolution]',
+              'status: REPORTING_MERGER_AND_SCISSION_CANDIDATES_COMPILED_REMAINDER_PENDING\n  domains: [periodic_reporting, regulator_reporting, material_changes, merger_and_restructuring, liquidation, dissolution]',
+          )
+          plan = plan.replace(
+              'The 38 detailed prospectus candidates require legal and compliance review.',
+              f'The {count} detailed prospectus candidates require legal and compliance review.',
+          )
+          plan = re.sub(
+              r'next_action: >-\n(?:  .*\n?)+\Z',
+              'next_action: >-\n'
+              '  Continue paragraph-level atomization for management-company obligations,\n'
+              '  eligible assets and quantitative limits, remaining service providers,\n'
+              '  special products, liquidation and sanctions. Keep all INST066 candidates\n'
+              '  inactive until dual legal and compliance review is recorded.\n',
+              plan,
+          )
+          plan_path.write_text(plan, encoding='utf-8')
+
+          iteration_path = Path('CURRENT_ITERATION.md')
+          iteration = iteration_path.read_text(encoding='utf-8')
+          start = '<!-- AUTO:LOOP-REG-001-INST066-EXPANDED-ATOMIZATION:START -->'
+          end = '<!-- AUTO:LOOP-REG-001-INST066-EXPANDED-ATOMIZATION:END -->'
+          block = f'''\n\n{start}\n## Reprise de l’atomisation détaillée de l’Instruction n°66\n\n- source officielle : PDF hashé `3f964f2f6ab9ce9eb16912ccda13f34b5023a188dfb18fcba7065590c770d396` ;\n- articles structurés : `92/92` ;\n- exigences candidates détaillées : `{count}` ;\n- nouveaux thèmes couverts : champ d’application et définitions, dépositaire et conservation, reporting réglementaire, fusion et scission ;\n- matrices `CIRC005_*` : préservées byte pour byte ;\n- statut de toutes les exigences `INST066_*` : `EXTRACTED_UNVERIFIED_PENDING_LEGAL_AND_COMPLIANCE_REVIEW` ;\n- activation : `FORBIDDEN` ;\n- validation juridique : `PENDING` ;\n- validation conformité : `PENDING`.\n\nLe prochain lot porte sur les obligations des sociétés de gestion, les actifs éligibles et ratios, les autres prestataires, les produits spéciaux, la liquidation et les références de sanctions.\n{end}\n'''
+          if start in iteration and end in iteration:
+              iteration = re.sub(
+                  re.escape(start) + r'.*?' + re.escape(end),
+                  block.strip(),
+                  iteration,
+                  flags=re.DOTALL,
+              )
+          else:
+              iteration = iteration.rstrip() + block
+          iteration_path.write_text(iteration.rstrip() + '\n', encoding='utf-8')
+          PY
+
+      - name: Revalidate source metadata on synchronized count
+        run: python3 scripts/validate_instruction_66_source_metadata.py
+
+      - name: Validate inactive states and CIRC005 integrity
+        run: |
+          python3 - <<'PY'
+          import json
+          from pathlib import Path
+
+          registry = json.loads(Path(
+              'regulatory/requirements/INST066_PROSPECTUS_REQUIREMENT_CANDIDATES_V0_1.json'
+          ).read_text(encoding='utf-8'))
+          detailed = json.loads(Path(
+              'regulatory/validation/INST066_DETAILED_REQUIREMENTS_VALIDATION_V0_1.json'
+          ).read_text(encoding='utf-8'))
+          source = json.loads(Path(
+              'regulatory/validation/INST066_SOURCE_METADATA_CONSISTENCY_V0_1.json'
+          ).read_text(encoding='utf-8'))
+
+          assert registry['requirementCandidateCount'] == 77
+          assert detailed['status'] == 'PASS'
+          assert detailed['metrics']['requirementCandidateCount'] == 77
+          assert source['status'] == 'PASS'
+          assert source['sourceFacts']['detailedRequirementCandidateCount'] == 77
+          assert registry['activation'] == 'FORBIDDEN'
+          assert all(item['activation'] == 'FORBIDDEN' for item in registry['requirements'])
+          assert all(item['legalReviewStatus'] == 'PENDING' for item in registry['requirements'])
+          assert all(item['complianceReviewStatus'] == 'PENDING' for item in registry['requirements'])
+          assert not any(item['status'] in {'ACTIVE', 'APPROVED', 'VALIDATED'} for item in registry['requirements'])
+          PY
+          sha256sum --check /tmp/circ005-before.sha256
+          git diff --exit-code -- regulatory/matrices/CIRC005_*.csv
+
+      - name: Remove one-shot workflow from final tree
+        run: rm .github/workflows/one-shot-resume-instruction-66.yml
+
+      - name: Commit final compiled and documented state
+        run: |
+          git config user.name "regulatory-source-bot"
+          git config user.email "regulatory-source-bot@users.noreply.github.com"
+          git add -A
+          git commit -m "regulatory: compile 77 Instruction 66 candidates and update tracking"
+          git pull --rebase origin main
+          git push origin HEAD:main
+          echo "FINAL_SHA=$(git rev-parse HEAD)" >> "$GITHUB_ENV"
+
+      - name: Dispatch all validation workflows on final HEAD
+        env:
+          GH_TOKEN: ${{ github.token }}
+          GH_REPO: ${{ github.repository }}
+        run: |
+          for workflow in \
+            compile-instruction-66-requirements.yml \
+            validate-instruction-66-source-metadata.yml \
+            ci.yml \
+            security-policy.yml
+          do
+            echo "Dispatching $workflow on main at $FINAL_SHA"
+            gh api \
+              --method POST \
+              -H "Accept: application/vnd.github+json" \
+              -H "X-GitHub-Api-Version: 2022-11-28" \
+              "/repos/$GH_REPO/actions/workflows/$workflow/dispatches" \
+              -f ref=main
+          done
