@@ -3,14 +3,22 @@
 import { useEffect, useMemo, useState, useTransition } from "react";
 import { Badge } from "@/components/atoms/Badge";
 import { Button } from "@/components/atoms/Button";
-import { Field } from "@/components/atoms/Field";
-import { Select } from "@/components/atoms/Select";
-import { Textarea } from "@/components/atoms/Textarea";
+import { FieldShell, Select, Textarea } from "@/components/atoms/Field";
 import type { ProspectusRole } from "@/domain/authorization";
-import type { ReviewWorkspace } from "@/domain/review-types";
+import type { InternalApprovalRole, ReviewWorkspace } from "@/domain/review-types";
 import type { ReviewWorkflowTransitionId } from "@/domain/review-workflow";
 
 const REVIEW_ROLES: ProspectusRole[] = [
+  "RISK",
+  "OPERATIONS",
+  "COMPLIANCE",
+  "LEGAL",
+  "TAX",
+  "SECURITY",
+];
+
+const INTERNAL_APPROVAL_ROLES: InternalApprovalRole[] = [
+  "PRODUCT",
   "RISK",
   "OPERATIONS",
   "COMPLIANCE",
@@ -45,7 +53,7 @@ export function ReviewWorkspacePanel({
   const [requestRole, setRequestRole] = useState<ProspectusRole>("RISK");
   const [comment, setComment] = useState("");
   const [rationale, setRationale] = useState("");
-  const [approvalRole, setApprovalRole] = useState<ProspectusRole>("PRODUCT");
+  const [approvalRole, setApprovalRole] = useState<InternalApprovalRole>("PRODUCT");
 
   useEffect(() => {
     void refresh();
@@ -71,10 +79,11 @@ export function ReviewWorkspacePanel({
 
   async function post(path: string, body: Record<string, unknown>) {
     setError(null);
+    const expectedVersion = workspace?.projectVersion ?? projectVersion;
     const response = await fetch(path, {
       method: "POST",
       headers: { "content-type": "application/json" },
-      body: JSON.stringify({ expectedVersion: projectVersion, ...body }),
+      body: JSON.stringify({ expectedVersion, ...body }),
     });
     const payload = await response.json();
     if (!response.ok) throw new Error(explainError(payload.error));
@@ -135,14 +144,15 @@ export function ReviewWorkspacePanel({
       <section className="split-grid">
         <article className="content-section">
           <div className="section-heading"><div><h2>Demander une revue</h2><p>La personne assignée doit posséder le rôle correspondant dans la même organisation.</p></div></div>
-          <Field label="Rôle de revue" htmlFor="review-role">
+          <FieldShell id="review-role" label="Rôle de revue">
             <Select
               id="review-role"
               value={requestRole}
               onChange={(event) => setRequestRole(event.target.value as ProspectusRole)}
-              options={REVIEW_ROLES.map((role) => ({ value: role, label: role }))}
-            />
-          </Field>
+            >
+              {REVIEW_ROLES.map((role) => <option key={role} value={role}>{role}</option>)}
+            </Select>
+          </FieldShell>
           <Button
             disabled={loading || !workspace}
             onClick={() => run(() => post(`/api/projects/${projectId}/reviews`, { role: requestRole }))}
@@ -153,9 +163,13 @@ export function ReviewWorkspacePanel({
 
         <article className="content-section">
           <div className="section-heading"><div><h2>Commentaire</h2><p>Les commentaires ne modifient jamais silencieusement les données ou les décisions.</p></div></div>
-          <Field label="Commentaire motivé" htmlFor="review-comment">
-            <Textarea id="review-comment" value={comment} onChange={(event) => setComment(event.target.value)} />
-          </Field>
+          <FieldShell id="review-comment" label="Commentaire motivé">
+            <Textarea
+              id="review-comment"
+              value={comment}
+              onChange={(event) => setComment(event.target.value)}
+            />
+          </FieldShell>
           <Button
             disabled={loading || !workspace || !comment.trim()}
             onClick={() =>
@@ -210,17 +224,22 @@ export function ReviewWorkspacePanel({
       <section className="split-grid">
         <article className="content-section">
           <div className="section-heading"><div><h2>Approbation interne</h2><p>Cette décision n’est ni un visa ni une approbation du régulateur.</p></div></div>
-          <Field label="Rôle d’approbation" htmlFor="approval-role">
+          <FieldShell id="approval-role" label="Rôle d’approbation">
             <Select
               id="approval-role"
               value={approvalRole}
-              onChange={(event) => setApprovalRole(event.target.value as ProspectusRole)}
-              options={["PRODUCT", "RISK", "OPERATIONS", "COMPLIANCE", "LEGAL", "TAX", "SECURITY"].map((role) => ({ value: role, label: role }))}
+              onChange={(event) => setApprovalRole(event.target.value as InternalApprovalRole)}
+            >
+              {INTERNAL_APPROVAL_ROLES.map((role) => <option key={role} value={role}>{role}</option>)}
+            </Select>
+          </FieldShell>
+          <FieldShell id="approval-rationale" label="Justification">
+            <Textarea
+              id="approval-rationale"
+              value={rationale}
+              onChange={(event) => setRationale(event.target.value)}
             />
-          </Field>
-          <Field label="Justification" htmlFor="approval-rationale">
-            <Textarea id="approval-rationale" value={rationale} onChange={(event) => setRationale(event.target.value)} />
-          </Field>
+          </FieldShell>
           <Button
             disabled={loading || !workspace || !rationale.trim()}
             onClick={() => run(async () => {
