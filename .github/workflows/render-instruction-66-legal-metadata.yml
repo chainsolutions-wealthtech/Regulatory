@@ -35,15 +35,18 @@ jobs:
       - name: Validate evidence remains pending human review
         run: |
           python3 - <<'PY'
+          import struct
           from pathlib import Path
-          from PIL import Image
 
           root = Path('regulatory/review-evidence/INST066_LEGAL_METADATA')
           for page in (64, 65):
               image_path = root / f'page-{page}.png'
               assert image_path.exists() and image_path.stat().st_size > 10000, image_path
-              with Image.open(image_path) as image:
-                  assert image.width > 1000 and image.height > 1000, image.size
+              data = image_path.read_bytes()
+              assert data[:8] == b'\x89PNG\r\n\x1a\n', image_path
+              assert data[12:16] == b'IHDR', image_path
+              width, height = struct.unpack('>II', data[16:24])
+              assert width > 1000 and height > 1000, (width, height)
           checklist = (root / 'REVIEW_CHECKLIST_V0_1.yaml').read_text(encoding='utf-8')
           assert 'status: PENDING_HUMAN_LEGAL_AND_COMPLIANCE_REVIEW' in checklist
           assert 'dates_confirmed: false' in checklist
