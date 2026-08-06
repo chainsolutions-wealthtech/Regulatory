@@ -1,0 +1,59 @@
+name: Validate Instruction 66 Source Metadata
+
+on:
+  push:
+    branches:
+      - main
+    paths:
+      - .github/workflows/validate-instruction-66-source-metadata.yml
+      - scripts/validate_instruction_66_source_metadata.py
+      - regulatory/sources/INSTRUCTION_66_CREPMF_2021.yaml
+      - regulatory/registries/INST066_*.yaml
+      - regulatory/review-evidence/INST066_LEGAL_METADATA/**
+      - regulatory/materialized/INSTRUCTION_66_CREPMF_2021.pdf
+      - regulatory/materialized/INSTRUCTION_66_CREPMF_2021.metadata.json
+      - regulatory/validation/INST066_DETAILED_REQUIREMENTS_VALIDATION_V0_1.json
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: regulatory-instruction-66-source-metadata-main
+  cancel-in-progress: false
+
+jobs:
+  validate-consistency:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - name: Validate source artifact and metadata graph
+        run: python3 scripts/validate_instruction_66_source_metadata.py
+      - name: Ensure no requirement was activated
+        run: |
+          ! grep -R --line-number -E '(^|[[:space:]])(ACTIVE|APPROVED|VALIDATED)([[:space:]]|$)' \
+            regulatory/requirements/INST066_* \
+            regulatory/sources/INSTRUCTION_66_CREPMF_2021.yaml \
+            regulatory/registries/INST066_*.yaml
+      - name: Upload consistency evidence
+        uses: actions/upload-artifact@v4
+        with:
+          name: instruction-66-source-metadata-consistency
+          path: regulatory/validation/INST066_SOURCE_METADATA_CONSISTENCY_V0_1.json
+          if-no-files-found: error
+          retention-days: 30
+      - name: Commit consistency validation
+        run: |
+          git config user.name "regulatory-source-bot"
+          git config user.email "regulatory-source-bot@users.noreply.github.com"
+          git add regulatory/validation/INST066_SOURCE_METADATA_CONSISTENCY_V0_1.json
+          if git diff --cached --quiet; then
+            echo "No consistency validation changes to commit."
+            exit 0
+          fi
+          git commit -m "regulatory: validate Instruction 66 source metadata"
+          git pull --rebase origin main
+          git push origin HEAD:main
