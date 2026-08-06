@@ -1,0 +1,2497 @@
+{
+  "schemaVersion": "INST066_PROSPECTUS_REQUIREMENT_CANDIDATES_V0_1",
+  "sourceId": "INSTRUCTION_66_CREPMF_2021",
+  "sourceSha256": "3f964f2f6ab9ce9eb16912ccda13f34b5023a188dfb18fcba7065590c770d396",
+  "status": "EXTRACTED_UNVERIFIED_PENDING_LEGAL_AND_COMPLIANCE_REVIEW",
+  "activation": "FORBIDDEN",
+  "requirementCandidateCount": 38,
+  "requirements": [
+    {
+      "id": "INST066_ART014_REQ001",
+      "sourceId": "INSTRUCTION_66_CREPMF_2021",
+      "sourceSha256": "3f964f2f6ab9ce9eb16912ccda13f34b5023a188dfb18fcba7065590c770d396",
+      "articleId": "INST066_ARTICLE_014",
+      "articleNumber": 14,
+      "sourcePages": [
+        18,
+        19
+      ],
+      "sourceArticleTextSha256": "42cd80baae3556b3cbb8dea73f4c9189b0190346db314397fd330221dd375eb3",
+      "sourceTextCandidate": "1. Lorsque la Société de Gestion d'OPC délègue à des tiers, en vue de mener leurs activités de manière plus efficace, l’exercice, pour leur compte, d’une ou de plusieurs de leurs fonctions, l’ensemble des conditions préalables suivantes doivent être remplies : a) la délégation est soumise à autorisation préalable du Conseil Régional et doit être dûment motivée en son principe ainsi que Le choix du délégataire au regard des critères prescrits en La matière ; b) le délégataire doit disposer de ressources suffisantes pour exécuter Les tâches respectives et Les personnes qui dirigent Les activités déléguées doivent posséder une honorabilité et une expérience suffisantes ; Jù Avenue Jaseph ANOMA 01 B.P. 1878 Abidjan 01/Côte d’Ivoire Site web : http://www.crepmf.org 18 »- TEL.: (225) 27 20 21 57 42 / 20 31 56 20 Fax: (225) 27 20 33 23 04 presidence@crepmf.ors c) le mandat ne peut entraver Le bon exercice de la surveillance dont la Société de Gestion d’OPC fait l’objet et, en particulier, il n'empêche pas la Société de Gestion d’OPC d’agir, ni l’OPC d’être géré, au mieux des intérêts des investisseurs ; d) la Société de Gestion d’OPC doit être en mesure de prouver que (i) Le délégataire est qualifié et capable d’exercer les fonctions en question, que (ii) toute la diligence requise à été mise en œuvre pour sa sélection et que (iii) La Société de Gestion d’OPC est à même de suivre et contrôler de manière efficace et à tout moment la tâche déléguée, de donner à tout moment des instructions supplémentaires au délégataire et de retirer la délégation avec effet immédiat lorsque cela est dans l’intérêt des investisseurs ; e) selon la nature des fonctions à déléguer, l’entreprise à laquelle des fonctions seront déléguées doit être qualifiée et capable d'exercer les fonctions en quest…",
+      "sourceKeywordHits": [
+        "délégation",
+        "prospectus"
+      ],
+      "normalizedRequirementCandidate": "Le prospectus doit identifier les fonctions de la société de gestion pouvant faire l'objet d'une délégation et décrire les délégations retenues.",
+      "applicabilityCandidate": "OPC_MANAGED_BY_SGO_WHEN_DELEGATION_EXISTS",
+      "products": [
+        "OPCVM",
+        "FCP",
+        "SICAV",
+        "OPCR"
+      ],
+      "documentTypes": [
+        "PROSPECTUS"
+      ],
+      "canonicalFields": [
+        "manager.delegations[]",
+        "manager.delegations[].function",
+        "manager.delegations[].delegate"
+      ],
+      "questionIds": [
+        "Q_MANAGER_DELEGATIONS"
+      ],
+      "clauseGroupIds": [
+        "CG_MANAGER_DELEGATIONS"
+      ],
+      "controlIds": [
+        "RULE_DELEGATED_FUNCTIONS_DISCLOSED",
+        "RULE_DELEGATE_IDENTITY_REQUIRED"
+      ],
+      "evidenceTypes": [
+        "DELEGATION_AGREEMENT",
+        "DELEGATE_APPROVAL"
+      ],
+      "outputSectionIds": [
+        "SEC_1_SGO_DELEGATIONS"
+      ],
+      "reviewRoles": [
+        "LEGAL",
+        "COMPLIANCE"
+      ],
+      "circ005RequirementLinks": [],
+      "status": "EXTRACTED_UNVERIFIED_PENDING_LEGAL_AND_COMPLIANCE_REVIEW",
+      "activation": "FORBIDDEN",
+      "legalReviewStatus": "PENDING",
+      "complianceReviewStatus": "PENDING",
+      "specFile": "regulatory/requirements/inst066-candidates/01_GOVERNANCE_APPROVAL.json",
+      "provenance": {
+        "sourceArtifact": "regulatory/materialized/INSTRUCTION_66_CREPMF_2021.pdf",
+        "ocrDerivative": "regulatory/materialized/INSTRUCTION_66_CREPMF_2021.txt",
+        "articleBlock": "regulatory/requirements/INST066_ARTICLE_BLOCKS_V0_1.json",
+        "textQuality": "OCR_EXTRACTED_UNVERIFIED"
+      }
+    },
+    {
+      "id": "INST066_ART014_REQ002",
+      "sourceId": "INSTRUCTION_66_CREPMF_2021",
+      "sourceSha256": "3f964f2f6ab9ce9eb16912ccda13f34b5023a188dfb18fcba7065590c770d396",
+      "articleId": "INST066_ARTICLE_014",
+      "articleNumber": 14,
+      "sourcePages": [
+        18,
+        19
+      ],
+      "sourceArticleTextSha256": "42cd80baae3556b3cbb8dea73f4c9189b0190346db314397fd330221dd375eb3",
+      "sourceTextCandidate": "… investisseurs ; e) selon la nature des fonctions à déléguer, l’entreprise à laquelle des fonctions seront déléguées doit être qualifiée et capable d'exercer les fonctions en question ; et f) le prospectus ou la notice d’information de l’OPC doit énumérer des fonctions qui peuvent faire l’objet d’une délégation à des tiers. 2. Aucune délégation de gestion de portefeuille et des missions de conformité n’est autorisée. 3. Le fait pour une Société de Gestion d’OPC de déléguer des fonctions à des tiers n’a pas d’incidence sur la responsabilité de la Société de Gestion d’'OPC ou du Dépositaire. Le tiers ne peut pas sous-déléguer Les fonctions qui lui ont été déléguées. 4. Une Circulaire du Conseil Régional précise : a) les conditions pour satisfaire Les exigences énoncées aux alinéas 1 et 2 du présent article ; b) Les conditions dans lesquelles il est considéré que La Société de Gestion d’OPC a délégué ses fonctions au point de devenir une société boîte aux lettres et de ne plus pouvoir être considérée comme la Société de Gestion de l’OPC.",
+      "sourceKeywordHits": [
+        "gestion de portefeuille",
+        "conformité"
+      ],
+      "normalizedRequirementCandidate": "Les fonctions interdites de délégation par le texte doivent être bloquées par le moteur et soumises à revue humaine.",
+      "applicabilityCandidate": "OPC_MANAGEMENT_COMPANY",
+      "products": [
+        "OPCVM",
+        "FCP",
+        "SICAV",
+        "OPCR"
+      ],
+      "documentTypes": [
+        "PROSPECTUS",
+        "INTERNAL_CONTROL_REPORT"
+      ],
+      "canonicalFields": [
+        "manager.delegations[].function",
+        "manager.delegations[].prohibited"
+      ],
+      "questionIds": [
+        "Q_MANAGER_DELEGATION_FUNCTIONS"
+      ],
+      "clauseGroupIds": [],
+      "controlIds": [
+        "RULE_PROHIBITED_DELEGATION_FUNCTIONS"
+      ],
+      "evidenceTypes": [
+        "ORGANIZATION_CHART",
+        "DELEGATION_POLICY"
+      ],
+      "outputSectionIds": [
+        "SYSTEM_ONLY"
+      ],
+      "reviewRoles": [
+        "LEGAL",
+        "COMPLIANCE"
+      ],
+      "circ005RequirementLinks": [],
+      "status": "EXTRACTED_UNVERIFIED_PENDING_LEGAL_AND_COMPLIANCE_REVIEW",
+      "activation": "FORBIDDEN",
+      "legalReviewStatus": "PENDING",
+      "complianceReviewStatus": "PENDING",
+      "specFile": "regulatory/requirements/inst066-candidates/01_GOVERNANCE_APPROVAL.json",
+      "provenance": {
+        "sourceArtifact": "regulatory/materialized/INSTRUCTION_66_CREPMF_2021.pdf",
+        "ocrDerivative": "regulatory/materialized/INSTRUCTION_66_CREPMF_2021.txt",
+        "articleBlock": "regulatory/requirements/INST066_ARTICLE_BLOCKS_V0_1.json",
+        "textQuality": "OCR_EXTRACTED_UNVERIFIED"
+      }
+    },
+    {
+      "id": "INST066_ART017_REQ001",
+      "sourceId": "INSTRUCTION_66_CREPMF_2021",
+      "sourceSha256": "3f964f2f6ab9ce9eb16912ccda13f34b5023a188dfb18fcba7065590c770d396",
+      "articleId": "INST066_ARTICLE_017",
+      "articleNumber": 17,
+      "sourcePages": [
+        20,
+        21
+      ],
+      "sourceArticleTextSha256": "34161cc4db95cb617c6bfcb31e64d86a9732703b4b0a1b07134a7ac0d2735325",
+      "sourceTextCandidate": "…itions du Règlement Général relatif à l’organisation, au fonctionnement et au contrôle du marché financier régional et des Instructions et Circulaires y référents. Un Fonds Commun de Placement n’est agréé que si Le Conseil Régional approuve la demande de la Société de Gestion d'OPC de gérer ce Fonds Commun de Placement, le Règlement du Fonds ou le Prospectus / La Notice d'Information mentionné à l’article 28 et Le choix du Dépositaire. La Société de Gestion d'OPC est informée, dans un délai précisé par une Instruction du Conseil Régional, de l'octroi ou du refus de l'agrément du FCP. Un Fonds Commun de Placement doit disposer lors de sa constitution d’un minimum d’actifs de 100 millions de FCFA, apportés par Les promoteurs dudit Fonds. Une Société d’Investissement n’est agréée que si Le Conseil Régional approuve, d’une part, ses projets de statuts et le prospectus mentionné à l’article 28 et, d’autre part, le choix du Dépositaire, et Le cas échéant, la demande de la Société de Gestion d’OPC désignée pour gérer cette Société d’Investissement. L'OPCVM devra, après agrément, s’acquitter des frais d'agrément en sus des redevances annuelles dont Les montants sont précisés dans une décision du Conseil des Ministres de l’UMOA. Seuls les OPCVM agréés par le Conseil Régional peuvent être commercialisés au sein des Etats Membres de l’UMOA. Le Conseil Régional peut exiger toute information complémentaire utile à l'instruction du dossier d'agrément et indiquer, le cas échéant, les énonciations à modifier ou les informations complémentaires à insérer. Dans ce cas, Les délais prévus aux alinéas 3 et 9 du présent article ne courent qu’à partir de la réception, par le Conseil Régional, des compléments d’informations. En cas de non-transmission des informations et/ou documents complémen…",
+      "sourceKeywordHits": [
+        "agrément",
+        "prospectus"
+      ],
+      "normalizedRequirementCandidate": "Le dossier d'agrément ou d'approbation de l'OPCVM doit comprendre les documents constitutifs et d'information exigés, dont le prospectus ou la notice applicable.",
+      "applicabilityCandidate": "OPCVM_CREATION_OR_APPROVAL",
+      "products": [
+        "OPCVM",
+        "FCP",
+        "SICAV"
+      ],
+      "documentTypes": [
+        "APPROVAL_DOSSIER",
+        "PROSPECTUS"
+      ],
+      "canonicalFields": [
+        "regulatory_approval.application_documents[]",
+        "documents.prospectus.status"
+      ],
+      "questionIds": [
+        "Q_APPROVAL_DOSSIER_DOCUMENTS"
+      ],
+      "clauseGroupIds": [],
+      "controlIds": [
+        "RULE_APPROVAL_DOSSIER_DOCUMENTS_COMPLETE"
+      ],
+      "evidenceTypes": [
+        "FUND_APPROVAL_OR_PROJECT_MANDATE",
+        "FUND_REGULATION",
+        "PROSPECTUS_DRAFT"
+      ],
+      "outputSectionIds": [
+        "SYSTEM_ONLY"
+      ],
+      "reviewRoles": [
+        "LEGAL",
+        "COMPLIANCE"
+      ],
+      "circ005RequirementLinks": [
+        "CIRC005_GENERAL_SCOPE",
+        "CIRC005_GENERAL_MINIMUM"
+      ],
+      "status": "EXTRACTED_UNVERIFIED_PENDING_LEGAL_AND_COMPLIANCE_REVIEW",
+      "activation": "FORBIDDEN",
+      "legalReviewStatus": "PENDING",
+      "complianceReviewStatus": "PENDING",
+      "specFile": "regulatory/requirements/inst066-candidates/01_GOVERNANCE_APPROVAL.json",
+      "provenance": {
+        "sourceArtifact": "regulatory/materialized/INSTRUCTION_66_CREPMF_2021.pdf",
+        "ocrDerivative": "regulatory/materialized/INSTRUCTION_66_CREPMF_2021.txt",
+        "articleBlock": "regulatory/requirements/INST066_ARTICLE_BLOCKS_V0_1.json",
+        "textQuality": "OCR_EXTRACTED_UNVERIFIED"
+      }
+    },
+    {
+      "id": "INST066_ART017_REQ002",
+      "sourceId": "INSTRUCTION_66_CREPMF_2021",
+      "sourceSha256": "3f964f2f6ab9ce9eb16912ccda13f34b5023a188dfb18fcba7065590c770d396",
+      "articleId": "INST066_ARTICLE_017",
+      "articleNumber": 17,
+      "sourcePages": [
+        20,
+        21
+      ],
+      "sourceArticleTextSha256": "34161cc4db95cb617c6bfcb31e64d86a9732703b4b0a1b07134a7ac0d2735325",
+      "sourceTextCandidate": "… contrôle du marché financier régional et des Instructions et Circulaires y référents. Un Fonds Commun de Placement n’est agréé que si Le Conseil Régional approuve la demande de la Société de Gestion d'OPC de gérer ce Fonds Commun de Placement, le Règlement du Fonds ou le Prospectus / La Notice d'Information mentionné à l’article 28 et Le choix du Dépositaire. La Société de Gestion d'OPC est informée, dans un délai précisé par une Instruction du Conseil Régional, de l'octroi ou du refus de l'agrément du FCP. Un Fonds Commun de Placement doit disposer lors de sa constitution d’un minimum d’actifs de 100 millions de FCFA, apportés par Les promoteurs dudit Fonds. Une Société d’Investissement n’est agréée que si Le Conseil Régional approuve, d’une part, ses projets de statuts et le prospectus mentionné à l’article 28 et, d’autre part, le choix du Dépositaire, et Le cas échéant, la demande de la Société de Gestion d’OPC désignée pour gérer cette Société d’Investissement. L'OPCVM devra, après agrément, s’acquitter des frais d'agrément en sus des redevances annuelles dont Les montants sont précisés dans une décision du Conseil des Ministres de l’UMOA. Seuls les OPCVM agréés par le Conseil Régional peuvent être commercialisés au sein des Etats Membres de l’UMOA. Le Conseil Régional peut exiger toute information complémentaire utile à l'instruction du dossier d'agrément et indiquer, le cas échéant, les énonciations à modifier ou les informations complémentaires à insérer. Dans ce cas, Les délais prévus aux alinéas 3 et 9 du présent article ne courent qu’à partir de la réception, par le Conseil Régional, des compléments d’informations. En cas de non-transmission des informations et/ou documents complémentaires dans les délais précisés par une Instruction du Conseil Régional, le d…",
+      "sourceKeywordHits": [
+        "dépositaire",
+        "approbation"
+      ],
+      "normalizedRequirementCandidate": "La désignation du dépositaire et les éléments d'approbation associés doivent être cohérents avec le dossier de l'OPCVM.",
+      "applicabilityCandidate": "OPCVM",
+      "products": [
+        "OPCVM",
+        "FCP",
+        "SICAV"
+      ],
+      "documentTypes": [
+        "APPROVAL_DOSSIER",
+        "PROSPECTUS"
+      ],
+      "canonicalFields": [
+        "depositary.organization_id",
+        "depositary.approval_reference",
+        "depositary.agreement_reference"
+      ],
+      "questionIds": [
+        "Q_SELECT_DEPOSITARY"
+      ],
+      "clauseGroupIds": [
+        "CG_DEPOSITARY_IDENTITY"
+      ],
+      "controlIds": [
+        "RULE_DEPOSITARY_REQUIRED",
+        "RULE_DEPOSITARY_EVIDENCE_REQUIRED"
+      ],
+      "evidenceTypes": [
+        "DEPOSITARY_APPROVAL",
+        "DEPOSITARY_AGREEMENT"
+      ],
+      "outputSectionIds": [
+        "SEC_2_DEPOSITARY"
+      ],
+      "reviewRoles": [
+        "LEGAL",
+        "COMPLIANCE"
+      ],
+      "circ005RequirementLinks": [
+        "CIRC005_2_1_DEPOSITARY_IDENTITY"
+      ],
+      "status": "EXTRACTED_UNVERIFIED_PENDING_LEGAL_AND_COMPLIANCE_REVIEW",
+      "activation": "FORBIDDEN",
+      "legalReviewStatus": "PENDING",
+      "complianceReviewStatus": "PENDING",
+      "specFile": "regulatory/requirements/inst066-candidates/01_GOVERNANCE_APPROVAL.json",
+      "provenance": {
+        "sourceArtifact": "regulatory/materialized/INSTRUCTION_66_CREPMF_2021.pdf",
+        "ocrDerivative": "regulatory/materialized/INSTRUCTION_66_CREPMF_2021.txt",
+        "articleBlock": "regulatory/requirements/INST066_ARTICLE_BLOCKS_V0_1.json",
+        "textQuality": "OCR_EXTRACTED_UNVERIFIED"
+      }
+    },
+    {
+      "id": "INST066_ART018_REQ001",
+      "sourceId": "INSTRUCTION_66_CREPMF_2021",
+      "sourceSha256": "3f964f2f6ab9ce9eb16912ccda13f34b5023a188dfb18fcba7065590c770d396",
+      "articleId": "INST066_ARTICLE_018",
+      "articleNumber": 18,
+      "sourcePages": [
+        21,
+        22
+      ],
+      "sourceArticleTextSha256": "e2182bb85970cf52ca4434cde1b91aac4b64f22b33ea1b5c4f4cbf7cbbd125d7",
+      "sourceTextCandidate": "1. Les OPCVM sont classés selon les catégories suivantes : - OPCVM « Actions » ; - OPCVM « Obligations et autres titres de créances » ; - OPCVM « Monétaire » - OPCVM « Diversifié » ; - OPCVM « Garanti » ; - OPCVM « à formule ». 2. Un OPCVM « Actions » respecte en permanence l’un des critères suivants : - Être en permanence investi et exposé à hauteur de 70% au moins de son actif net, hors liquidité et hors titres d'OPCVM « Actions », en actions et droits d'attribution ou de souscription, cotés à La Bourse Régionale des Valeurs Mobilières ou sur tout autre marché réglementé en fonctionnement régulier et ouvert au public au sein de l’UMOA ; Être en permanence investi et exposé à hauteur de 90 % au moins de son actif net, hors liquidités, en titres d’un ou plusieurs OPCVM « Actions >. 3. Un OPCVM « Obligations et autres titres de créances » respecte en permanence l’un des critères suivants : - Être en permanence investi et exposé à hauteur de 70% au moins de son actif net, hors liquidités en : o emprunts obligataires ayant fait l’objet d’appel public à l’épargne au sein de l’Union ; D Avenue Joseph ANOMA # TEL.: (225) 27 20 21 57 42 / 20 31 56 20 01 B.P. 1878 Abidjan 01/Côte d'Ivoire 21 Fax: (225) 27 20 33 23 C4 Site web : http://www.crepmf.org presidence@crepmf.org o bons, obligations du trésor assimilables et emprunts obligataires garantis par un Etat de l’Union : o valeurs mobilières représentant des titres de créances émis par les États membres de l’Union ; o valeurs mobilières émises sur Le marché monétaire. - Être en permanence investi et exposé dans une proportion de 90 % de son actif net, hors liquidités, de titres d'OPCVM « Obligations et autres titres de créances » ou titres de Fonds Commun de Titrisation de Créances (FCTC). L'exposition au risque « Actions >» de…",
+      "sourceKeywordHits": [
+        "OPCVM"
+      ],
+      "normalizedRequirementCandidate": "La classification de l'OPCVM doit respecter les critères réglementaires et rester cohérente avec sa politique d'investissement et ses limites.",
+      "applicabilityCandidate": "OPCVM",
+      "products": [
+        "OPCVM",
+        "FCP",
+        "SICAV"
+      ],
+      "documentTypes": [
+        "PROSPECTUS",
+        "FUND_REGULATION"
+      ],
+      "canonicalFields": [
+        "fund.category",
+        "investment_policy.asset_class_ranges[]",
+        "regulatory_classification"
+      ],
+      "questionIds": [
+        "APP_FUND_CATEGORY",
+        "Q_ASSET_EXPOSURE_MATRIX"
+      ],
+      "clauseGroupIds": [
+        "CG_INVESTMENT_POLICY_OVERVIEW"
+      ],
+      "controlIds": [
+        "RULE_CLASSIFICATION_CONSISTENCY",
+        "RULE_ASSET_RANGE_VALIDITY"
+      ],
+      "evidenceTypes": [
+        "FUND_REGULATION",
+        "INVESTMENT_PROCESS_POLICY"
+      ],
+      "outputSectionIds": [
+        "SEC_1_15_INVESTMENT_POLICY"
+      ],
+      "reviewRoles": [
+        "RISK",
+        "LEGAL",
+        "COMPLIANCE"
+      ],
+      "circ005RequirementLinks": [
+        "CIRC005_1_15_FCP_INVESTMENT_OBJECTIVES_POLICY",
+        "CIRC005_1_15_D_FCP_POLICY_LIMITS"
+      ],
+      "status": "EXTRACTED_UNVERIFIED_PENDING_LEGAL_AND_COMPLIANCE_REVIEW",
+      "activation": "FORBIDDEN",
+      "legalReviewStatus": "PENDING",
+      "complianceReviewStatus": "PENDING",
+      "specFile": "regulatory/requirements/inst066-candidates/01_GOVERNANCE_APPROVAL.json",
+      "provenance": {
+        "sourceArtifact": "regulatory/materialized/INSTRUCTION_66_CREPMF_2021.pdf",
+        "ocrDerivative": "regulatory/materialized/INSTRUCTION_66_CREPMF_2021.txt",
+        "articleBlock": "regulatory/requirements/INST066_ARTICLE_BLOCKS_V0_1.json",
+        "textQuality": "OCR_EXTRACTED_UNVERIFIED"
+      }
+    },
+    {
+      "id": "INST066_ART018_REQ002",
+      "sourceId": "INSTRUCTION_66_CREPMF_2021",
+      "sourceSha256": "3f964f2f6ab9ce9eb16912ccda13f34b5023a188dfb18fcba7065590c770d396",
+      "articleId": "INST066_ARTICLE_018",
+      "articleNumber": 18,
+      "sourcePages": [
+        21,
+        22
+      ],
+      "sourceArticleTextSha256": "e2182bb85970cf52ca4434cde1b91aac4b64f22b33ea1b5c4f4cbf7cbbd125d7",
+      "sourceTextCandidate": "1. Les OPCVM sont classés selon les catégories suivantes : - OPCVM « Actions » ; - OPCVM « Obligations et autres titres de créances » ; - OPCVM « Monétaire » - OPCVM « Diversifié » ; - OPCVM « Garanti » ; - OPCVM « à formule ». 2. Un OPCVM « Actions » respecte en permanence l’un des critères suivants : - Être en permanence investi et exposé à hauteur de 70% au moins de son actif net, hors liquidité et hors titres d'OPCVM « Actions », en actions et droits d'attribution ou de souscription, cotés à La Bourse Régionale des Valeurs Mobilières ou sur tout autre marché réglementé en fonctionnement régulier et ouvert au public au sein de l’UMOA ; Être en permanence investi et exposé à hauteur de 90 % au moins de son actif net, hors liquidités, en titres d’un ou plusieurs OPCVM « Actions >. 3. Un OPCVM « Obligations et autres titres de créances » respecte en permanence l’un des critères suivants : - Être en permanence investi et exposé à hauteur de 70% au moins de son actif net, hors liquidités en : o emprunts obligataires ayant fait l’objet d’appel public à l’épargne au sein de l’Union ; D Avenue Joseph ANOMA # TEL.: (225) 27 20 21 57 42 / 20 31 56 20 01 B.P. 1878 Abidjan 01/Côte d'Ivoire 21 Fax: (225) 27 20 33 23 C4 Site web : http://www.crepmf.org presidence@crepmf.org o bons, obligations du trésor assimilables et emprunts obligataires garantis par un Etat de l’Union : o valeurs mobilières représentant des titres de créances émis par les États membres de l’Union ; o valeurs mobilières émises sur Le marché monétaire. - Être en permanence investi et exposé dans une proportion de 90 % de son actif net, hors liquidités, de titres d'OPCVM « Obligations et autres titres de créances » ou titres de Fonds Commun de Titrisation de Créances (FCTC). L'exposition au risque « Actions >» de…",
+      "sourceKeywordHits": [
+        "formule",
+        "garanti"
+      ],
+      "normalizedRequirementCandidate": "Pour un OPCVM à formule, garanti ou protégé, le prospectus doit décrire le mécanisme, ses conditions, ses limites et le garant éventuel.",
+      "applicabilityCandidate": "FORMULA_GUARANTEED_OR_PROTECTED_OPCVM",
+      "products": [
+        "OPCVM",
+        "FCP",
+        "SICAV"
+      ],
+      "documentTypes": [
+        "PROSPECTUS"
+      ],
+      "canonicalFields": [
+        "capital_protection.guaranteed",
+        "capital_protection.mechanism",
+        "capital_protection.guarantor"
+      ],
+      "questionIds": [
+        "Q_FINANCIAL_OBJECTIVE",
+        "Q_CAPITAL_PROTECTION_MECHANISM"
+      ],
+      "clauseGroupIds": [
+        "CG_FINANCIAL_OBJECTIVE",
+        "CG_CAPITAL_PROTECTION"
+      ],
+      "controlIds": [
+        "RULE_GUARANTEE_WORDING_CONSISTENCY",
+        "RULE_GUARANTOR_EVIDENCE_REQUIRED"
+      ],
+      "evidenceTypes": [
+        "GUARANTEE_AGREEMENT",
+        "LEGAL_MEMO"
+      ],
+      "outputSectionIds": [
+        "SEC_1_15_INVESTMENT_POLICY"
+      ],
+      "reviewRoles": [
+        "RISK",
+        "LEGAL",
+        "COMPLIANCE"
+      ],
+      "circ005RequirementLinks": [
+        "CIRC005_1_15_A_FCP_FINANCIAL_OBJECTIVES"
+      ],
+      "status": "EXTRACTED_UNVERIFIED_PENDING_LEGAL_AND_COMPLIANCE_REVIEW",
+      "activation": "FORBIDDEN",
+      "legalReviewStatus": "PENDING",
+      "complianceReviewStatus": "PENDING",
+      "specFile": "regulatory/requirements/inst066-candidates/01_GOVERNANCE_APPROVAL.json",
+      "provenance": {
+        "sourceArtifact": "regulatory/materialized/INSTRUCTION_66_CREPMF_2021.pdf",
+        "ocrDerivative": "regulatory/materialized/INSTRUCTION_66_CREPMF_2021.txt",
+        "articleBlock": "regulatory/requirements/INST066_ARTICLE_BLOCKS_V0_1.json",
+        "textQuality": "OCR_EXTRACTED_UNVERIFIED"
+      }
+    },
+    {
+      "id": "INST066_ART027_REQ001",
+      "sourceId": "INSTRUCTION_66_CREPMF_2021",
+      "sourceSha256": "3f964f2f6ab9ce9eb16912ccda13f34b5023a188dfb18fcba7065590c770d396",
+      "articleId": "INST066_ARTICLE_027",
+      "articleNumber": 27,
+      "sourcePages": [
+        33
+      ],
+      "sourceArticleTextSha256": "030c2c546e5c3b1bf68b98c90ebd50fb7f8bc49961e4498f4f2ac62f940f853a",
+      "sourceTextCandidate": "Une Société de Gestion d’OPC ou, le cas échéant, une Société d’Investissement publie un prospectus, pour chacun des OPC que celle-ci gère. Le Prospectus a pour objet de permettre aux investisseurs de juger en pleine connaissance de cause, l’investissement qui leur est proposé, et notamment Les risques inhérents à celui-ci. IL vise à faciliter, pour l'investisseur, La compréhension du profil de risque de L'OPC, indépendamment des instruments dans lesquels il investit. Le prospectus est fourni sans frais aux investisseurs qui Le demandent. Il peut être fourni sur un support durable où au moyen d’un site internet. En tout état de cause, un exemplaire papier est fourni sans frais aux investisseurs qui le demandent.",
+      "sourceKeywordHits": [
+        "risques"
+      ],
+      "normalizedRequirementCandidate": "Le prospectus doit permettre une décision d'investissement éclairée et présenter les risques associés.",
+      "applicabilityCandidate": "OPC",
+      "products": [
+        "OPCVM",
+        "OPCR",
+        "OTHER_OPC"
+      ],
+      "documentTypes": [
+        "PROSPECTUS"
+      ],
+      "canonicalFields": [
+        "document_manifest.sections",
+        "risks[]",
+        "target_investor"
+      ],
+      "questionIds": [
+        "Q_SYSTEM_MINIMUM_COVERAGE"
+      ],
+      "clauseGroupIds": [
+        "CG_PROSPECTUS_PURPOSE"
+      ],
+      "controlIds": [
+        "RULE_ALL_APPLICABLE_REQUIREMENTS_HAVE_COVERAGE",
+        "RULE_RISK_DISCLOSURE_COMPLETE"
+      ],
+      "evidenceTypes": [
+        "REGULATORY_COVERAGE_REPORT"
+      ],
+      "outputSectionIds": [
+        "SYSTEM_ONLY"
+      ],
+      "reviewRoles": [
+        "LEGAL",
+        "COMPLIANCE"
+      ],
+      "circ005RequirementLinks": [
+        "CIRC005_GENERAL_MINIMUM"
+      ],
+      "status": "EXTRACTED_UNVERIFIED_PENDING_LEGAL_AND_COMPLIANCE_REVIEW",
+      "activation": "FORBIDDEN",
+      "legalReviewStatus": "PENDING",
+      "complianceReviewStatus": "PENDING",
+      "specFile": "regulatory/requirements/inst066-candidates/02A_PROSPECTUS_CORE.json",
+      "provenance": {
+        "sourceArtifact": "regulatory/materialized/INSTRUCTION_66_CREPMF_2021.pdf",
+        "ocrDerivative": "regulatory/materialized/INSTRUCTION_66_CREPMF_2021.txt",
+        "articleBlock": "regulatory/requirements/INST066_ARTICLE_BLOCKS_V0_1.json",
+        "textQuality": "OCR_EXTRACTED_UNVERIFIED"
+      }
+    },
+    {
+      "id": "INST066_ART027_REQ002",
+      "sourceId": "INSTRUCTION_66_CREPMF_2021",
+      "sourceSha256": "3f964f2f6ab9ce9eb16912ccda13f34b5023a188dfb18fcba7065590c770d396",
+      "articleId": "INST066_ARTICLE_027",
+      "articleNumber": 27,
+      "sourcePages": [
+        33
+      ],
+      "sourceArticleTextSha256": "030c2c546e5c3b1bf68b98c90ebd50fb7f8bc49961e4498f4f2ac62f940f853a",
+      "sourceTextCandidate": "Une Société de Gestion d’OPC ou, le cas échéant, une Société d’Investissement publie un prospectus, pour chacun des OPC que celle-ci gère. Le Prospectus a pour objet de permettre aux investisseurs de juger en pleine connaissance de cause, l’investissement qui leur est proposé, et notamment Les risques inhérents à celui-ci. IL vise à faciliter, pour l'investisseur, La compréhension du profil de risque de L'OPC, indépendamment des instruments dans lesquels il investit. Le prospectus est fourni sans frais aux investisseurs qui Le demandent. Il peut être fourni sur un support durable où au moyen d’un site internet. En tout état de cause, un exemplaire papier est fourni sans frais aux investisseurs qui le demandent.",
+      "sourceKeywordHits": [],
+      "normalizedRequirementCandidate": "Le prospectus doit être remis ou rendu accessible avant la souscription selon les modalités applicables.",
+      "applicabilityCandidate": "OPC_MARKETING_OR_SUBSCRIPTION",
+      "products": [
+        "OPCVM",
+        "OPCR",
+        "OTHER_OPC"
+      ],
+      "documentTypes": [
+        "PROSPECTUS"
+      ],
+      "canonicalFields": [
+        "documents.prospectus.availability",
+        "documents.prospectus.delivery_timing",
+        "subscriptions.information_channels"
+      ],
+      "questionIds": [
+        "Q_PROSPECTUS_AVAILABILITY"
+      ],
+      "clauseGroupIds": [
+        "CG_DOCUMENT_AVAILABILITY"
+      ],
+      "controlIds": [
+        "RULE_PROSPECTUS_AVAILABLE_BEFORE_SUBSCRIPTION"
+      ],
+      "evidenceTypes": [
+        "DISTRIBUTION_PROCEDURE",
+        "WEBSITE_PUBLICATION_EVIDENCE"
+      ],
+      "outputSectionIds": [
+        "SEC_1_4_DOCUMENT_AVAILABILITY"
+      ],
+      "reviewRoles": [
+        "OPERATIONS",
+        "LEGAL",
+        "COMPLIANCE"
+      ],
+      "circ005RequirementLinks": [
+        "CIRC005_1_4_FCP_REGULATION_AVAILABILITY"
+      ],
+      "status": "EXTRACTED_UNVERIFIED_PENDING_LEGAL_AND_COMPLIANCE_REVIEW",
+      "activation": "FORBIDDEN",
+      "legalReviewStatus": "PENDING",
+      "complianceReviewStatus": "PENDING",
+      "specFile": "regulatory/requirements/inst066-candidates/02A_PROSPECTUS_CORE.json",
+      "provenance": {
+        "sourceArtifact": "regulatory/materialized/INSTRUCTION_66_CREPMF_2021.pdf",
+        "ocrDerivative": "regulatory/materialized/INSTRUCTION_66_CREPMF_2021.txt",
+        "articleBlock": "regulatory/requirements/INST066_ARTICLE_BLOCKS_V0_1.json",
+        "textQuality": "OCR_EXTRACTED_UNVERIFIED"
+      }
+    },
+    {
+      "id": "INST066_ART028_REQ001",
+      "sourceId": "INSTRUCTION_66_CREPMF_2021",
+      "sourceSha256": "3f964f2f6ab9ce9eb16912ccda13f34b5023a188dfb18fcba7065590c770d396",
+      "articleId": "INST066_ARTICLE_028",
+      "articleNumber": 28,
+      "sourcePages": [
+        33,
+        34
+      ],
+      "sourceArticleTextSha256": "36318c69770867c1113508dd0830f3893f986761fba8cadd69853926a245b47b",
+      "sourceTextCandidate": "1. Le Prospectus comporte : a) soit les détails de La politique de rémunération actualisée, y compris, notamment une description de là manière dont les rémunérations et les avantages sont calculés, l'identité des personnes responsables de l'attribution des rémunérations et des avantages, y compris la composition du comité de rémunération, lorsqu'un tel comité existe ; b) soit un résumé de la politique de rémunération et une déclaration indiquant les détails de la politique de rémunération actualisée, notamment, une description de la manière dont Les rémunérations et les avantages sont calculés, l’identité des personnes responsables de l’attribution des rémunérations et des avantages, y compris la composition du comité de rémunération, lorsqu'un tel comité existe. Le Prospectus doit en plus indiquer que ces détails sont disponibles sur un site internet - y compris une référence à ce site internet - et qu’un exemplaire papier sera mis à disposition gratuitement sur demande. 2. Le Prospectus comporte toutes Les informations prévues par une Circulaire du Conseil Régional, pour autant que ces renseignements ne figurent pas dans Le Règlement du Fonds ou les documents constitutifs annexés au prospectus. Si ces informations figurent dans le Règlement du Fonds ou les documents constitutifs, une table de correspondance doit être fournie. 3. Le Règlement du Fonds ou Les documents constitutifs de la Société d’Investissement font partie intégrante du prospectus et y sont annexés. 4. Toutefois, les documents visés à l’alinéa précédent ne doivent pas obligatoirement être annexés au prospectus, si l’investisseur est informé que, sur demande, ces documents lui sont envoyés ou si l’endroit où il peut Les consulter est clairement indiqué. J in Avenue Joseph ANOMA 01 B.P. 1878 Abidjan 01/C…",
+      "sourceKeywordHits": [
+        "prospectus",
+        "informations"
+      ],
+      "normalizedRequirementCandidate": "Le prospectus doit contenir toutes les informations minimales applicables et permettre leur localisation non ambiguë.",
+      "applicabilityCandidate": "OPC",
+      "products": [
+        "OPCVM",
+        "OPCR",
+        "OTHER_OPC"
+      ],
+      "documentTypes": [
+        "PROSPECTUS"
+      ],
+      "canonicalFields": [
+        "regulatory_coverage.requirements",
+        "document_manifest.section_order",
+        "concordance"
+      ],
+      "questionIds": [
+        "Q_SYSTEM_MINIMUM_COVERAGE",
+        "Q_SYSTEM_DOCUMENT_ORDER"
+      ],
+      "clauseGroupIds": [],
+      "controlIds": [
+        "RULE_ALL_APPLICABLE_REQUIREMENTS_HAVE_COVERAGE",
+        "RULE_PROSPECTUS_CONCORDANCE_COMPLETE"
+      ],
+      "evidenceTypes": [
+        "CONCORDANCE_REPORT"
+      ],
+      "outputSectionIds": [
+        "SYSTEM_ONLY"
+      ],
+      "reviewRoles": [
+        "LEGAL",
+        "COMPLIANCE"
+      ],
+      "circ005RequirementLinks": [
+        "CIRC005_GENERAL_MINIMUM",
+        "CIRC005_GENERAL_ORDER"
+      ],
+      "status": "EXTRACTED_UNVERIFIED_PENDING_LEGAL_AND_COMPLIANCE_REVIEW",
+      "activation": "FORBIDDEN",
+      "legalReviewStatus": "PENDING",
+      "complianceReviewStatus": "PENDING",
+      "specFile": "regulatory/requirements/inst066-candidates/02A_PROSPECTUS_CORE.json",
+      "provenance": {
+        "sourceArtifact": "regulatory/materialized/INSTRUCTION_66_CREPMF_2021.pdf",
+        "ocrDerivative": "regulatory/materialized/INSTRUCTION_66_CREPMF_2021.txt",
+        "articleBlock": "regulatory/requirements/INST066_ARTICLE_BLOCKS_V0_1.json",
+        "textQuality": "OCR_EXTRACTED_UNVERIFIED"
+      }
+    },
+    {
+      "id": "INST066_ART028_REQ002",
+      "sourceId": "INSTRUCTION_66_CREPMF_2021",
+      "sourceSha256": "3f964f2f6ab9ce9eb16912ccda13f34b5023a188dfb18fcba7065590c770d396",
+      "articleId": "INST066_ARTICLE_028",
+      "articleNumber": 28,
+      "sourcePages": [
+        33,
+        34
+      ],
+      "sourceArticleTextSha256": "36318c69770867c1113508dd0830f3893f986761fba8cadd69853926a245b47b",
+      "sourceTextCandidate": "1. Le Prospectus comporte : a) soit les détails de La politique de rémunération actualisée, y compris, notamment une description de là manière dont les rémunérations et les avantages sont calculés, l'identité des personnes responsables de l'attribution des rémunérations et des avantages, y compris la composition du comité de rémunération, lorsqu'un tel comité existe ; b) soit un résumé de la politique de rémunération et une déclaration indiquant les détails de la politique de rémunération actualisée, notamment, une description de la manière dont Les rémunérations et les avantages sont calculés, l’identité des personnes responsables de l’attribution des rémunérations et des avantages, y compris la composition du comité de rémunération, lorsqu'un tel comité existe. Le Prospectus doit en plus indiquer que ces détails sont disponibles sur un site internet - y compris une référence à ce site internet - et qu’un exemplaire papier sera mis à disposition gratuitement sur demande. 2. Le Prospectus comporte toutes Les informations prévues par une Circulaire du Conseil Régional, pour autant que ces renseignements ne figurent pas dans Le Règlement du Fonds ou les documents constitutifs annexés au prospectus. Si ces informations figurent dans le Règlement du Fonds ou les documents constitutifs, une table de correspondance doit être fournie. 3. Le Règlement du Fonds ou Les documents constitutifs de la Société d’Investissement font partie intégrante du prospectus et y sont annexés. 4. Toutefois, les documents visés à l’alinéa précédent ne doivent pas obligatoirement être annexés au prospectus, si l’investisseur est informé que, sur demande, ces documents lui sont envoyés ou si l’endroit où il peut Les consulter est clairement indiqué. J in Avenue Joseph ANOMA 01 B.P. 1878 Abidjan 01/C…",
+      "sourceKeywordHits": [],
+      "normalizedRequirementCandidate": "Tout renvoi ou annexe doit identifier le document concerné et son lieu de disponibilité.",
+      "applicabilityCandidate": "OPC_WHEN_CROSS_REFERENCE_USED",
+      "products": [
+        "OPCVM",
+        "OPCR",
+        "OTHER_OPC"
+      ],
+      "documentTypes": [
+        "PROSPECTUS",
+        "ATTACHMENT"
+      ],
+      "canonicalFields": [
+        "documents.attachments[]",
+        "regulatory_coverage.requirements[].location"
+      ],
+      "questionIds": [
+        "Q_DOCUMENT_CROSS_REFERENCES"
+      ],
+      "clauseGroupIds": [
+        "CG_DOCUMENT_AVAILABILITY"
+      ],
+      "controlIds": [
+        "RULE_CROSS_REFERENCE_TARGET_EXISTS",
+        "RULE_DOCUMENT_LOCATION_REQUIRED_IF_NOT_ATTACHED"
+      ],
+      "evidenceTypes": [
+        "ATTACHED_DOCUMENT",
+        "PUBLICATION_EVIDENCE"
+      ],
+      "outputSectionIds": [
+        "SYSTEM_ONLY"
+      ],
+      "reviewRoles": [
+        "LEGAL",
+        "COMPLIANCE"
+      ],
+      "circ005RequirementLinks": [
+        "CIRC005_1_4_FCP_REGULATION_AVAILABILITY"
+      ],
+      "status": "EXTRACTED_UNVERIFIED_PENDING_LEGAL_AND_COMPLIANCE_REVIEW",
+      "activation": "FORBIDDEN",
+      "legalReviewStatus": "PENDING",
+      "complianceReviewStatus": "PENDING",
+      "specFile": "regulatory/requirements/inst066-candidates/02A_PROSPECTUS_CORE.json",
+      "provenance": {
+        "sourceArtifact": "regulatory/materialized/INSTRUCTION_66_CREPMF_2021.pdf",
+        "ocrDerivative": "regulatory/materialized/INSTRUCTION_66_CREPMF_2021.txt",
+        "articleBlock": "regulatory/requirements/INST066_ARTICLE_BLOCKS_V0_1.json",
+        "textQuality": "OCR_EXTRACTED_UNVERIFIED"
+      }
+    },
+    {
+      "id": "INST066_ART028_REQ003",
+      "sourceId": "INSTRUCTION_66_CREPMF_2021",
+      "sourceSha256": "3f964f2f6ab9ce9eb16912ccda13f34b5023a188dfb18fcba7065590c770d396",
+      "articleId": "INST066_ARTICLE_028",
+      "articleNumber": 28,
+      "sourcePages": [
+        33,
+        34
+      ],
+      "sourceArticleTextSha256": "36318c69770867c1113508dd0830f3893f986761fba8cadd69853926a245b47b",
+      "sourceTextCandidate": "1. Le Prospectus comporte : a) soit les détails de La politique de rémunération actualisée, y compris, notamment une description de là manière dont les rémunérations et les avantages sont calculés, l'identité des personnes responsables de l'attribution des rémunérations et des avantages, y compris la composition du comité de rémunération, lorsqu'un tel comité existe ; b) soit un résumé de la politique de rémunération et une déclaration indiquant les détails de la politique de rémunération actualisée, notamment, une description de la manière dont Les rémunérations et les avantages sont calculés, l’identité des personnes responsables de l’attribution des rémunérations et des avantages, y compris la composition du comité de rémunération, lorsqu'un tel comité existe. Le Prospectus doit en plus indiquer que ces détails sont disponibles sur un site internet - y compris une référence à ce site internet - et qu’un exemplaire papier sera mis à disposition gratuitement sur demande. 2. Le Prospectus comporte toutes Les informations prévues par une Circulaire du Conseil Régional, pour autant que ces renseignements ne figurent pas dans Le Règlement du Fonds ou les documents constitutifs annexés au prospectus. Si ces informations figurent dans le Règlement du Fonds ou les documents constitutifs, une table de correspondance doit être fournie. 3. Le Règlement du Fonds ou Les documents constitutifs de la Société d’Investissement font partie intégrante du prospectus et y sont annexés. 4. Toutefois, les documents visés à l’alinéa précédent ne doivent pas obligatoirement être annexés au prospectus, si l’investisseur est informé que, sur demande, ces documents lui sont envoyés ou si l’endroit où il peut Les consulter est clairement indiqué. J in Avenue Joseph ANOMA 01 B.P. 1878 Abidjan 01/C…",
+      "sourceKeywordHits": [
+        "rémunération",
+        "site"
+      ],
+      "normalizedRequirementCandidate": "Le prospectus doit présenter la politique de rémunération de la société de gestion ou son lieu d'accès.",
+      "applicabilityCandidate": "OPC_MANAGED_BY_SGO",
+      "products": [
+        "OPCVM",
+        "OPCR",
+        "OTHER_OPC"
+      ],
+      "documentTypes": [
+        "PROSPECTUS"
+      ],
+      "canonicalFields": [
+        "manager.remuneration_policy.summary",
+        "manager.remuneration_policy.location"
+      ],
+      "questionIds": [
+        "Q_MANAGER_REMUNERATION_POLICY"
+      ],
+      "clauseGroupIds": [
+        "CG_MANAGER_REMUNERATION_POLICY"
+      ],
+      "controlIds": [
+        "RULE_REMUNERATION_POLICY_DISCLOSURE_COMPLETE"
+      ],
+      "evidenceTypes": [
+        "REMUNERATION_POLICY",
+        "WEBSITE_PUBLICATION_EVIDENCE"
+      ],
+      "outputSectionIds": [
+        "SEC_1_SGO_REMUNERATION_POLICY"
+      ],
+      "reviewRoles": [
+        "LEGAL",
+        "COMPLIANCE"
+      ],
+      "circ005RequirementLinks": [],
+      "status": "EXTRACTED_UNVERIFIED_PENDING_LEGAL_AND_COMPLIANCE_REVIEW",
+      "activation": "FORBIDDEN",
+      "legalReviewStatus": "PENDING",
+      "complianceReviewStatus": "PENDING",
+      "specFile": "regulatory/requirements/inst066-candidates/02A_PROSPECTUS_CORE.json",
+      "provenance": {
+        "sourceArtifact": "regulatory/materialized/INSTRUCTION_66_CREPMF_2021.pdf",
+        "ocrDerivative": "regulatory/materialized/INSTRUCTION_66_CREPMF_2021.txt",
+        "articleBlock": "regulatory/requirements/INST066_ARTICLE_BLOCKS_V0_1.json",
+        "textQuality": "OCR_EXTRACTED_UNVERIFIED"
+      }
+    },
+    {
+      "id": "INST066_ART028_REQ004",
+      "sourceId": "INSTRUCTION_66_CREPMF_2021",
+      "sourceSha256": "3f964f2f6ab9ce9eb16912ccda13f34b5023a188dfb18fcba7065590c770d396",
+      "articleId": "INST066_ARTICLE_028",
+      "articleNumber": 28,
+      "sourcePages": [
+        33,
+        34
+      ],
+      "sourceArticleTextSha256": "36318c69770867c1113508dd0830f3893f986761fba8cadd69853926a245b47b",
+      "sourceTextCandidate": "…enue Joseph ANOMA 01 B.P. 1878 Abidjan 01/Côte d’ivoire Site web : http://www.crepmf.org pub 33 D TEL.: (225) 27 20 21 57 42 / 20 31 56 20 Fax: (225) 27 20 33 23 04 presidence@crepmf.org i|l Préalablement à l'émission d’actions ou parts, le Prospectus d’un OPCVM où d’un FIA commercialisé auprès d'investisseurs non-qualifiés doit faire l'objet d’un visa par le Conseil Régional. Le Conseil Régional édicte une Circulaire harmonisant Le format du Prospectus.",
+      "sourceKeywordHits": [
+        "visa"
+      ],
+      "normalizedRequirementCandidate": "La commercialisation doit rester bloquée tant que le visa ou l'approbation du prospectus requis n'est pas obtenu.",
+      "applicabilityCandidate": "PRODUCT_SUBJECT_TO_PROSPECTUS_VISA_OR_APPROVAL",
+      "products": [
+        "OPCVM",
+        "OPCR",
+        "OTHER_OPC"
+      ],
+      "documentTypes": [
+        "PROSPECTUS"
+      ],
+      "canonicalFields": [
+        "documents.prospectus.approval_status",
+        "documents.prospectus.approval_reference",
+        "distribution.marketing_start_date"
+      ],
+      "questionIds": [
+        "Q_PROSPECTUS_APPROVAL_REFERENCE"
+      ],
+      "clauseGroupIds": [],
+      "controlIds": [
+        "RULE_MARKETING_BLOCKED_PENDING_PROSPECTUS_APPROVAL"
+      ],
+      "evidenceTypes": [
+        "PROSPECTUS_VISA_OR_APPROVAL"
+      ],
+      "outputSectionIds": [
+        "SYSTEM_ONLY"
+      ],
+      "reviewRoles": [
+        "LEGAL",
+        "COMPLIANCE"
+      ],
+      "circ005RequirementLinks": [
+        "CIRC005_GENERAL_SCOPE"
+      ],
+      "status": "EXTRACTED_UNVERIFIED_PENDING_LEGAL_AND_COMPLIANCE_REVIEW",
+      "activation": "FORBIDDEN",
+      "legalReviewStatus": "PENDING",
+      "complianceReviewStatus": "PENDING",
+      "specFile": "regulatory/requirements/inst066-candidates/02A_PROSPECTUS_CORE.json",
+      "provenance": {
+        "sourceArtifact": "regulatory/materialized/INSTRUCTION_66_CREPMF_2021.pdf",
+        "ocrDerivative": "regulatory/materialized/INSTRUCTION_66_CREPMF_2021.txt",
+        "articleBlock": "regulatory/requirements/INST066_ARTICLE_BLOCKS_V0_1.json",
+        "textQuality": "OCR_EXTRACTED_UNVERIFIED"
+      }
+    },
+    {
+      "id": "INST066_ART029_REQ001",
+      "sourceId": "INSTRUCTION_66_CREPMF_2021",
+      "sourceSha256": "3f964f2f6ab9ce9eb16912ccda13f34b5023a188dfb18fcba7065590c770d396",
+      "articleId": "INST066_ARTICLE_029",
+      "articleNumber": 29,
+      "sourcePages": [
+        34
+      ],
+      "sourceArticleTextSha256": "f08f3f84ce77e4fa8b3ce0290267be92b8406bd9901cfec59ddf5a36ec01e71b",
+      "sourceTextCandidate": "1. Le Prospectus précise les catégories d’actifs dans lesquels un OPC est habilité à investir. Il indique si les opérations sur instruments financiers dérivés sont autorisées, auquel cas il précise, de manière bien visible, si ces opérations peuvent être effectuées en couverture ou en vue de la réalisation des objectifs d'investissement ainsi que les effets possibles de l’utilisation d'instruments financiers dérivés sur le profil de risque. Lorsqu'un OPC reproduit un indice d’actions ou de titres de créances, son Prospectus et Le cas échéant, ses communications publicitaires comportent une mention bien visible attirant l’attention sur sa politique de placement. Lorsque la valeur d’inventaire nette d’un OPC est susceptible de connaître une volatilité élevée du fait de la composition de son portefeuille pouvant être employée, le Prospectus et, le cas échéant, les communications publicitaires contiennent une mention bien visible attirant l'attention sur cette caractéristique. Si un investisseur en fait la demande, La Société de Gestion d’OPC fournit également des informations complémentaires sur les limites quantitatives qui s’appliquent Le cas échéant à la gestion des risques de L’OPC, sur les méthodes choisies à cette fin et sur l’évolution récente des principaux risques et des rendements des catégories d’instruments.",
+      "sourceKeywordHits": [
+        "investir"
+      ],
+      "normalizedRequirementCandidate": "Le prospectus doit préciser les catégories d'actifs autorisées et les limites d'investissement pertinentes.",
+      "applicabilityCandidate": "OPC",
+      "products": [
+        "OPCVM",
+        "OPCR",
+        "OTHER_OPC"
+      ],
+      "documentTypes": [
+        "PROSPECTUS",
+        "FUND_REGULATION"
+      ],
+      "canonicalFields": [
+        "investment_policy.asset_class_ranges[]",
+        "investment_policy.issuer_limits",
+        "investment_policy.market_limits"
+      ],
+      "questionIds": [
+        "Q_ASSET_EXPOSURE_MATRIX"
+      ],
+      "clauseGroupIds": [
+        "CG_INVESTMENT_LIMITS"
+      ],
+      "controlIds": [
+        "RULE_ASSET_RANGE_VALIDITY",
+        "RULE_SUM_MINIMUMS_POSSIBLE"
+      ],
+      "evidenceTypes": [
+        "FUND_REGULATION",
+        "INVESTMENT_PROCESS_POLICY"
+      ],
+      "outputSectionIds": [
+        "SEC_1_15_INVESTMENT_POLICY"
+      ],
+      "reviewRoles": [
+        "RISK",
+        "LEGAL",
+        "COMPLIANCE"
+      ],
+      "circ005RequirementLinks": [
+        "CIRC005_1_15_D_FCP_POLICY_LIMITS"
+      ],
+      "status": "EXTRACTED_UNVERIFIED_PENDING_LEGAL_AND_COMPLIANCE_REVIEW",
+      "activation": "FORBIDDEN",
+      "legalReviewStatus": "PENDING",
+      "complianceReviewStatus": "PENDING",
+      "specFile": "regulatory/requirements/inst066-candidates/02B_INVESTMENT_DISCLOSURES.json",
+      "provenance": {
+        "sourceArtifact": "regulatory/materialized/INSTRUCTION_66_CREPMF_2021.pdf",
+        "ocrDerivative": "regulatory/materialized/INSTRUCTION_66_CREPMF_2021.txt",
+        "articleBlock": "regulatory/requirements/INST066_ARTICLE_BLOCKS_V0_1.json",
+        "textQuality": "OCR_EXTRACTED_UNVERIFIED"
+      }
+    },
+    {
+      "id": "INST066_ART029_REQ002",
+      "sourceId": "INSTRUCTION_66_CREPMF_2021",
+      "sourceSha256": "3f964f2f6ab9ce9eb16912ccda13f34b5023a188dfb18fcba7065590c770d396",
+      "articleId": "INST066_ARTICLE_029",
+      "articleNumber": 29,
+      "sourcePages": [
+        34
+      ],
+      "sourceArticleTextSha256": "f08f3f84ce77e4fa8b3ce0290267be92b8406bd9901cfec59ddf5a36ec01e71b",
+      "sourceTextCandidate": "1. Le Prospectus précise les catégories d’actifs dans lesquels un OPC est habilité à investir. Il indique si les opérations sur instruments financiers dérivés sont autorisées, auquel cas il précise, de manière bien visible, si ces opérations peuvent être effectuées en couverture ou en vue de la réalisation des objectifs d'investissement ainsi que les effets possibles de l’utilisation d'instruments financiers dérivés sur le profil de risque. Lorsqu'un OPC reproduit un indice d’actions ou de titres de créances, son Prospectus et Le cas échéant, ses communications publicitaires comportent une mention bien visible attirant l’attention sur sa politique de placement. Lorsque la valeur d’inventaire nette d’un OPC est susceptible de connaître une volatilité élevée du fait de la composition de son portefeuille pouvant être employée, le Prospectus et, le cas échéant, les communications publicitaires contiennent une mention bien visible attirant l'attention sur cette caractéristique. Si un investisseur en fait la demande, La Société de Gestion d’OPC fournit également des informations complémentaires sur les limites quantitatives qui s’appliquent Le cas échéant à la gestion des risques de L’OPC, sur les méthodes choisies à cette fin et sur l’évolution récente des principaux risques et des rendements des catégories d’instruments.",
+      "sourceKeywordHits": [
+        "instruments financiers dérivés"
+      ],
+      "normalizedRequirementCandidate": "L'utilisation de techniques, instruments financiers ou dérivés doit être décrite avec ses objectifs, limites et effets de risque.",
+      "applicabilityCandidate": "OPC_USING_DERIVATIVES_OR_SPECIAL_TECHNIQUES",
+      "products": [
+        "OPCVM",
+        "OPCR",
+        "OTHER_OPC"
+      ],
+      "documentTypes": [
+        "PROSPECTUS",
+        "RISK_POLICY"
+      ],
+      "canonicalFields": [
+        "investment_policy.techniques[]",
+        "investment_policy.instruments[]",
+        "investment_policy.derivatives[]",
+        "risks[]"
+      ],
+      "questionIds": [
+        "Q_TECHNIQUES_INSTRUMENTS"
+      ],
+      "clauseGroupIds": [
+        "CG_TECHNIQUES_INSTRUMENTS"
+      ],
+      "controlIds": [
+        "RULE_TECHNIQUE_DISCLOSURE_COMPLETE",
+        "RULE_DERIVATIVE_RISKS_DISCLOSED"
+      ],
+      "evidenceTypes": [
+        "RISK_POLICY",
+        "DERIVATIVES_POLICY"
+      ],
+      "outputSectionIds": [
+        "SEC_1_15_INVESTMENT_POLICY"
+      ],
+      "reviewRoles": [
+        "RISK",
+        "LEGAL",
+        "COMPLIANCE"
+      ],
+      "circ005RequirementLinks": [
+        "CIRC005_1_15_E_FCP_TECHNIQUES_INSTRUMENTS"
+      ],
+      "status": "EXTRACTED_UNVERIFIED_PENDING_LEGAL_AND_COMPLIANCE_REVIEW",
+      "activation": "FORBIDDEN",
+      "legalReviewStatus": "PENDING",
+      "complianceReviewStatus": "PENDING",
+      "specFile": "regulatory/requirements/inst066-candidates/02B_INVESTMENT_DISCLOSURES.json",
+      "provenance": {
+        "sourceArtifact": "regulatory/materialized/INSTRUCTION_66_CREPMF_2021.pdf",
+        "ocrDerivative": "regulatory/materialized/INSTRUCTION_66_CREPMF_2021.txt",
+        "articleBlock": "regulatory/requirements/INST066_ARTICLE_BLOCKS_V0_1.json",
+        "textQuality": "OCR_EXTRACTED_UNVERIFIED"
+      }
+    },
+    {
+      "id": "INST066_ART029_REQ003",
+      "sourceId": "INSTRUCTION_66_CREPMF_2021",
+      "sourceSha256": "3f964f2f6ab9ce9eb16912ccda13f34b5023a188dfb18fcba7065590c770d396",
+      "articleId": "INST066_ARTICLE_029",
+      "articleNumber": 29,
+      "sourcePages": [
+        34
+      ],
+      "sourceArticleTextSha256": "f08f3f84ce77e4fa8b3ce0290267be92b8406bd9901cfec59ddf5a36ec01e71b",
+      "sourceTextCandidate": "…s sur instruments financiers dérivés sont autorisées, auquel cas il précise, de manière bien visible, si ces opérations peuvent être effectuées en couverture ou en vue de la réalisation des objectifs d'investissement ainsi que les effets possibles de l’utilisation d'instruments financiers dérivés sur le profil de risque. Lorsqu'un OPC reproduit un indice d’actions ou de titres de créances, son Prospectus et Le cas échéant, ses communications publicitaires comportent une mention bien visible attirant l’attention sur sa politique de placement. Lorsque la valeur d’inventaire nette d’un OPC est susceptible de connaître une volatilité élevée du fait de la composition de son portefeuille pouvant être employée, le Prospectus et, le cas échéant, les communications publicitaires contiennent une mention bien visible attirant l'attention sur cette caractéristique. Si un investisseur en fait la demande, La Société de Gestion d’OPC fournit également des informations complémentaires sur les limites quantitatives qui s’appliquent Le cas échéant à la gestion des risques de L’OPC, sur les méthodes choisies à cette fin et sur l’évolution récente des principaux risques et des rendements des catégories d’instruments.",
+      "sourceKeywordHits": [
+        "indice"
+      ],
+      "normalizedRequirementCandidate": "Lorsqu'un OPC suit ou reproduit un indice, le prospectus doit identifier l'indice, le mode de suivi et les risques spécifiques.",
+      "applicabilityCandidate": "INDEX_TRACKING_OPC",
+      "products": [
+        "OPCVM",
+        "OPCR",
+        "OTHER_OPC"
+      ],
+      "documentTypes": [
+        "PROSPECTUS"
+      ],
+      "canonicalFields": [
+        "investment.objective.benchmark_usage",
+        "investment.benchmark",
+        "investment.tracking_method",
+        "risks[]"
+      ],
+      "questionIds": [
+        "Q_FINANCIAL_OBJECTIVE",
+        "Q_INDEX_TRACKING_DETAILS"
+      ],
+      "clauseGroupIds": [
+        "CG_FINANCIAL_OBJECTIVE"
+      ],
+      "controlIds": [
+        "RULE_INDEX_DETAILS_REQUIRED",
+        "RULE_TRACKING_RISK_DISCLOSED"
+      ],
+      "evidenceTypes": [
+        "INDEX_METHODOLOGY",
+        "LICENSING_AGREEMENT"
+      ],
+      "outputSectionIds": [
+        "SEC_1_15_INVESTMENT_POLICY"
+      ],
+      "reviewRoles": [
+        "RISK",
+        "LEGAL",
+        "COMPLIANCE"
+      ],
+      "circ005RequirementLinks": [
+        "CIRC005_1_15_A_FCP_FINANCIAL_OBJECTIVES",
+        "CIRC005_1_15_B_FCP_PLACEMENT_POLICY"
+      ],
+      "status": "EXTRACTED_UNVERIFIED_PENDING_LEGAL_AND_COMPLIANCE_REVIEW",
+      "activation": "FORBIDDEN",
+      "legalReviewStatus": "PENDING",
+      "complianceReviewStatus": "PENDING",
+      "specFile": "regulatory/requirements/inst066-candidates/02B_INVESTMENT_DISCLOSURES.json",
+      "provenance": {
+        "sourceArtifact": "regulatory/materialized/INSTRUCTION_66_CREPMF_2021.pdf",
+        "ocrDerivative": "regulatory/materialized/INSTRUCTION_66_CREPMF_2021.txt",
+        "articleBlock": "regulatory/requirements/INST066_ARTICLE_BLOCKS_V0_1.json",
+        "textQuality": "OCR_EXTRACTED_UNVERIFIED"
+      }
+    },
+    {
+      "id": "INST066_ART029_REQ004",
+      "sourceId": "INSTRUCTION_66_CREPMF_2021",
+      "sourceSha256": "3f964f2f6ab9ce9eb16912ccda13f34b5023a188dfb18fcba7065590c770d396",
+      "articleId": "INST066_ARTICLE_029",
+      "articleNumber": 29,
+      "sourcePages": [
+        34
+      ],
+      "sourceArticleTextSha256": "f08f3f84ce77e4fa8b3ce0290267be92b8406bd9901cfec59ddf5a36ec01e71b",
+      "sourceTextCandidate": "1. Le Prospectus précise les catégories d’actifs dans lesquels un OPC est habilité à investir. Il indique si les opérations sur instruments financiers dérivés sont autorisées, auquel cas il précise, de manière bien visible, si ces opérations peuvent être effectuées en couverture ou en vue de la réalisation des objectifs d'investissement ainsi que les effets possibles de l’utilisation d'instruments financiers dérivés sur le profil de risque. Lorsqu'un OPC reproduit un indice d’actions ou de titres de créances, son Prospectus et Le cas échéant, ses communications publicitaires comportent une mention bien visible attirant l’attention sur sa politique de placement. Lorsque la valeur d’inventaire nette d’un OPC est susceptible de connaître une volatilité élevée du fait de la composition de son portefeuille pouvant être employée, le Prospectus et, le cas échéant, les communications publicitaires contiennent une mention bien visible attirant l'attention sur cette caractéristique. Si un investisseur en fait la demande, La Société de Gestion d’OPC fournit également des informations complémentaires sur les limites quantitatives qui s’appliquent Le cas échéant à la gestion des risques de L’OPC, sur les méthodes choisies à cette fin et sur l’évolution récente des principaux risques et des rendements des catégories d’instruments.",
+      "sourceKeywordHits": [],
+      "normalizedRequirementCandidate": "Le prospectus doit signaler les situations dans lesquelles la valeur liquidative est susceptible de connaître une forte volatilité.",
+      "applicabilityCandidate": "OPC_WITH_HIGH_NAV_VOLATILITY_RISK",
+      "products": [
+        "OPCVM",
+        "OPCR",
+        "OTHER_OPC"
+      ],
+      "documentTypes": [
+        "PROSPECTUS"
+      ],
+      "canonicalFields": [
+        "risks[]",
+        "risk_profile.high_nav_volatility"
+      ],
+      "questionIds": [
+        "Q_RISK_FACTORS"
+      ],
+      "clauseGroupIds": [
+        "CG_RISK_FACTORS"
+      ],
+      "controlIds": [
+        "RULE_HIGH_VOLATILITY_WARNING_IF_APPLICABLE"
+      ],
+      "evidenceTypes": [
+        "RISK_ASSESSMENT"
+      ],
+      "outputSectionIds": [
+        "SEC_RISKS"
+      ],
+      "reviewRoles": [
+        "RISK",
+        "LEGAL",
+        "COMPLIANCE"
+      ],
+      "circ005RequirementLinks": [
+        "CIRC005_5_2_TARGET_INVESTOR"
+      ],
+      "status": "EXTRACTED_UNVERIFIED_PENDING_LEGAL_AND_COMPLIANCE_REVIEW",
+      "activation": "FORBIDDEN",
+      "legalReviewStatus": "PENDING",
+      "complianceReviewStatus": "PENDING",
+      "specFile": "regulatory/requirements/inst066-candidates/02B_INVESTMENT_DISCLOSURES.json",
+      "provenance": {
+        "sourceArtifact": "regulatory/materialized/INSTRUCTION_66_CREPMF_2021.pdf",
+        "ocrDerivative": "regulatory/materialized/INSTRUCTION_66_CREPMF_2021.txt",
+        "articleBlock": "regulatory/requirements/INST066_ARTICLE_BLOCKS_V0_1.json",
+        "textQuality": "OCR_EXTRACTED_UNVERIFIED"
+      }
+    },
+    {
+      "id": "INST066_ART030_REQ001",
+      "sourceId": "INSTRUCTION_66_CREPMF_2021",
+      "sourceSha256": "3f964f2f6ab9ce9eb16912ccda13f34b5023a188dfb18fcba7065590c770d396",
+      "articleId": "INST066_ARTICLE_030",
+      "articleNumber": 30,
+      "sourcePages": [
+        34
+      ],
+      "sourceArticleTextSha256": "0ed957cc40a35e1c2dfe0f79a8de45dfa093001aaaaffabe98bdcedd90bacf46",
+      "sourceTextCandidate": "Les éléments essentiels du Prospectus sont tenus à jour pendant toute La durée de placement ou de la commercialisation de l’OPC. Toute mise à jour du Prospectus d’un OPCVM ou d’un OPC commercialisé auprès d’investisseur non-qualifiés est soumise à l’approbation préalable du Conseil Régional. SECTION 2 - PUBLICATION D’AUTRES INFORMATIONS",
+      "sourceKeywordHits": [
+        "mise à jour",
+        "prospectus"
+      ],
+      "normalizedRequirementCandidate": "Le prospectus doit être tenu à jour lorsqu'un changement affecte les informations réglementaires qu'il contient.",
+      "applicabilityCandidate": "OPC_EXISTING_PROSPECTUS",
+      "products": [
+        "OPCVM",
+        "OPCR",
+        "OTHER_OPC"
+      ],
+      "documentTypes": [
+        "PROSPECTUS",
+        "CHANGE_LOG"
+      ],
+      "canonicalFields": [
+        "document_versions[]",
+        "document_change_log[]",
+        "documents.prospectus.updated_at"
+      ],
+      "questionIds": [
+        "APP_PROJECT_OPERATION",
+        "Q_PROSPECTUS_CHANGE_SCOPE"
+      ],
+      "clauseGroupIds": [],
+      "controlIds": [
+        "RULE_CHANGE_IMPACT_ASSESSMENT_COMPLETE",
+        "RULE_PROSPECTUS_VERSION_INCREMENTED"
+      ],
+      "evidenceTypes": [
+        "CHANGE_DECISION",
+        "UPDATED_SUPPORTING_DOCUMENTS"
+      ],
+      "outputSectionIds": [
+        "SYSTEM_ONLY"
+      ],
+      "reviewRoles": [
+        "LEGAL",
+        "COMPLIANCE"
+      ],
+      "circ005RequirementLinks": [
+        "CIRC005_GENERAL_MINIMUM"
+      ],
+      "status": "EXTRACTED_UNVERIFIED_PENDING_LEGAL_AND_COMPLIANCE_REVIEW",
+      "activation": "FORBIDDEN",
+      "legalReviewStatus": "PENDING",
+      "complianceReviewStatus": "PENDING",
+      "specFile": "regulatory/requirements/inst066-candidates/02C_UPDATES_MARKETING_DICI.json",
+      "provenance": {
+        "sourceArtifact": "regulatory/materialized/INSTRUCTION_66_CREPMF_2021.pdf",
+        "ocrDerivative": "regulatory/materialized/INSTRUCTION_66_CREPMF_2021.txt",
+        "articleBlock": "regulatory/requirements/INST066_ARTICLE_BLOCKS_V0_1.json",
+        "textQuality": "OCR_EXTRACTED_UNVERIFIED"
+      }
+    },
+    {
+      "id": "INST066_ART030_REQ002",
+      "sourceId": "INSTRUCTION_66_CREPMF_2021",
+      "sourceSha256": "3f964f2f6ab9ce9eb16912ccda13f34b5023a188dfb18fcba7065590c770d396",
+      "articleId": "INST066_ARTICLE_030",
+      "articleNumber": 30,
+      "sourcePages": [
+        34
+      ],
+      "sourceArticleTextSha256": "0ed957cc40a35e1c2dfe0f79a8de45dfa093001aaaaffabe98bdcedd90bacf46",
+      "sourceTextCandidate": "Les éléments essentiels du Prospectus sont tenus à jour pendant toute La durée de placement ou de la commercialisation de l’OPC. Toute mise à jour du Prospectus d’un OPCVM ou d’un OPC commercialisé auprès d’investisseur non-qualifiés est soumise à l’approbation préalable du Conseil Régional. SECTION 2 - PUBLICATION D’AUTRES INFORMATIONS",
+      "sourceKeywordHits": [
+        "approbation"
+      ],
+      "normalizedRequirementCandidate": "Les modifications du prospectus doivent suivre la procédure d'approbation, d'information ou de notification applicable avant leur utilisation.",
+      "applicabilityCandidate": "PROSPECTUS_UPDATE",
+      "products": [
+        "OPCVM",
+        "OPCR",
+        "OTHER_OPC"
+      ],
+      "documentTypes": [
+        "PROSPECTUS",
+        "REGULATOR_FILING"
+      ],
+      "canonicalFields": [
+        "document_versions[].approval_status",
+        "document_versions[].approval_reference",
+        "holder_information"
+      ],
+      "questionIds": [
+        "Q_PROSPECTUS_UPDATE_APPROVAL"
+      ],
+      "clauseGroupIds": [
+        "CG_PROSPECTUS_UPDATE_NOTICE"
+      ],
+      "controlIds": [
+        "RULE_UPDATED_PROSPECTUS_NOT_PUBLISHED_BEFORE_REQUIRED_APPROVAL"
+      ],
+      "evidenceTypes": [
+        "REGULATOR_APPROVAL_OR_FILING",
+        "HOLDER_INFORMATION_EVIDENCE"
+      ],
+      "outputSectionIds": [
+        "SYSTEM_ONLY"
+      ],
+      "reviewRoles": [
+        "LEGAL",
+        "COMPLIANCE"
+      ],
+      "circ005RequirementLinks": [],
+      "status": "EXTRACTED_UNVERIFIED_PENDING_LEGAL_AND_COMPLIANCE_REVIEW",
+      "activation": "FORBIDDEN",
+      "legalReviewStatus": "PENDING",
+      "complianceReviewStatus": "PENDING",
+      "specFile": "regulatory/requirements/inst066-candidates/02C_UPDATES_MARKETING_DICI.json",
+      "provenance": {
+        "sourceArtifact": "regulatory/materialized/INSTRUCTION_66_CREPMF_2021.pdf",
+        "ocrDerivative": "regulatory/materialized/INSTRUCTION_66_CREPMF_2021.txt",
+        "articleBlock": "regulatory/requirements/INST066_ARTICLE_BLOCKS_V0_1.json",
+        "textQuality": "OCR_EXTRACTED_UNVERIFIED"
+      }
+    },
+    {
+      "id": "INST066_ART032_REQ001",
+      "sourceId": "INSTRUCTION_66_CREPMF_2021",
+      "sourceSha256": "3f964f2f6ab9ce9eb16912ccda13f34b5023a188dfb18fcba7065590c770d396",
+      "articleId": "INST066_ARTICLE_032",
+      "articleNumber": 32,
+      "sourcePages": [
+        35
+      ],
+      "sourceArticleTextSha256": "b0b584f5a792149a95c0b22c30f52498c310423cf697de8d34e30488bde560c0",
+      "sourceTextCandidate": "1. Les Sociétés de Gestion d’OPC veillent à ce que toutes les communications publicitaires adressées aux investisseurs soient identifiables en tant que telles et décrivent les risques et les avantages liés à l’achat de parts ou d’actions d’un FIA ou d’un OPCVM de manière identique et veillent à ce que toutes les informations contenues dans les communications publicitaires soient correctes, claires et non trompeuses. Les Sociétés de Gestion d’OPC veillent à ce que Les communications publicitaires qui contiennent des informations spécifiques sur un OPC ne contredisent pas ou ne diminuent pas la portée des informations fournies dans Le Prospectus visé aux articles 27 à 29 ou Le cas échéant des informations clés pour l’investisseur visées à l’article 33. Les Sociétés de Gestion d'OPC veillent à ce que toutes les communications publicitaires indiquent qu’un Prospectus existe et que, pour Les Sociétés de Gestion d’OPCVM, des informations clés pour l'investisseur sont disponibles. Ces communications publicitaires précisent où et comment les investisseurs ou investisseurs potentiels peuvent se procurer Le Prospectus et, Le cas échéant, Les informations clés pour l'investisseur. Elles fournissent des hyperliens vers ces documents ou les adresses de sites internet permettant d'y accéder. Les communications publicitaires visées à l’alinéa 2 du présent article précisent où et comment les investisseurs ou les investisseurs potentiels peuvent obtenir un résumé des droits des investisseurs et fournissent un hyperlien vers ce résumé, lequel comprend, Le cas échéant, des informations sur le traitement des réclamations. Une Circulaire du Conseil Régional précise les exigences relatives aux communications publicitaires. Ces exigences tiennent notamment compte des aspects liés au format él…",
+      "sourceKeywordHits": [
+        "communications",
+        "prospectus"
+      ],
+      "normalizedRequirementCandidate": "Les communications commerciales doivent être cohérentes avec le prospectus et ne pas contredire les informations réglementaires du fonds.",
+      "applicabilityCandidate": "OPC_MARKETING",
+      "products": [
+        "OPCVM",
+        "OPCR",
+        "OTHER_OPC"
+      ],
+      "documentTypes": [
+        "MARKETING_MATERIAL",
+        "PROSPECTUS"
+      ],
+      "canonicalFields": [
+        "marketing_materials[]",
+        "marketing_materials[].prospectus_version"
+      ],
+      "questionIds": [
+        "Q_MARKETING_MATERIALS"
+      ],
+      "clauseGroupIds": [],
+      "controlIds": [
+        "RULE_MARKETING_PROSPECTUS_CONSISTENCY"
+      ],
+      "evidenceTypes": [
+        "MARKETING_MATERIAL",
+        "MARKETING_APPROVAL_LOG"
+      ],
+      "outputSectionIds": [
+        "SYSTEM_ONLY"
+      ],
+      "reviewRoles": [
+        "LEGAL",
+        "COMPLIANCE"
+      ],
+      "circ005RequirementLinks": [],
+      "status": "EXTRACTED_UNVERIFIED_PENDING_LEGAL_AND_COMPLIANCE_REVIEW",
+      "activation": "FORBIDDEN",
+      "legalReviewStatus": "PENDING",
+      "complianceReviewStatus": "PENDING",
+      "specFile": "regulatory/requirements/inst066-candidates/02C_UPDATES_MARKETING_DICI.json",
+      "provenance": {
+        "sourceArtifact": "regulatory/materialized/INSTRUCTION_66_CREPMF_2021.pdf",
+        "ocrDerivative": "regulatory/materialized/INSTRUCTION_66_CREPMF_2021.txt",
+        "articleBlock": "regulatory/requirements/INST066_ARTICLE_BLOCKS_V0_1.json",
+        "textQuality": "OCR_EXTRACTED_UNVERIFIED"
+      }
+    },
+    {
+      "id": "INST066_ART032_REQ002",
+      "sourceId": "INSTRUCTION_66_CREPMF_2021",
+      "sourceSha256": "3f964f2f6ab9ce9eb16912ccda13f34b5023a188dfb18fcba7065590c770d396",
+      "articleId": "INST066_ARTICLE_032",
+      "articleNumber": 32,
+      "sourcePages": [
+        35
+      ],
+      "sourceArticleTextSha256": "b0b584f5a792149a95c0b22c30f52498c310423cf697de8d34e30488bde560c0",
+      "sourceTextCandidate": "…nt à ce que toutes les informations contenues dans les communications publicitaires soient correctes, claires et non trompeuses. Les Sociétés de Gestion d’OPC veillent à ce que Les communications publicitaires qui contiennent des informations spécifiques sur un OPC ne contredisent pas ou ne diminuent pas la portée des informations fournies dans Le Prospectus visé aux articles 27 à 29 ou Le cas échéant des informations clés pour l’investisseur visées à l’article 33. Les Sociétés de Gestion d'OPC veillent à ce que toutes les communications publicitaires indiquent qu’un Prospectus existe et que, pour Les Sociétés de Gestion d’OPCVM, des informations clés pour l'investisseur sont disponibles. Ces communications publicitaires précisent où et comment les investisseurs ou investisseurs potentiels peuvent se procurer Le Prospectus et, Le cas échéant, Les informations clés pour l'investisseur. Elles fournissent des hyperliens vers ces documents ou les adresses de sites internet permettant d'y accéder. Les communications publicitaires visées à l’alinéa 2 du présent article précisent où et comment les investisseurs ou les investisseurs potentiels peuvent obtenir un résumé des droits des investisseurs et fournissent un hyperlien vers ce résumé, lequel comprend, Le cas échéant, des informations sur le traitement des réclamations. Une Circulaire du Conseil Régional précise les exigences relatives aux communications publicitaires. Ces exigences tiennent notamment compte des aspects liés au format électronique desdites communications. SECTION 3 - INFORMATIONS CLES POUR L’INVESTISSEUR",
+      "sourceKeywordHits": [
+        "obtenir",
+        "prospectus"
+      ],
+      "normalizedRequirementCandidate": "Toute communication commerciale doit indiquer où le prospectus et les documents réglementaires sont accessibles.",
+      "applicabilityCandidate": "OPC_MARKETING",
+      "products": [
+        "OPCVM",
+        "OPCR",
+        "OTHER_OPC"
+      ],
+      "documentTypes": [
+        "MARKETING_MATERIAL",
+        "PROSPECTUS"
+      ],
+      "canonicalFields": [
+        "documents.prospectus.availability",
+        "marketing_materials[].document_location"
+      ],
+      "questionIds": [
+        "Q_PROSPECTUS_AVAILABILITY"
+      ],
+      "clauseGroupIds": [
+        "CG_DOCUMENT_AVAILABILITY"
+      ],
+      "controlIds": [
+        "RULE_MARKETING_DOCUMENT_LOCATION_REQUIRED"
+      ],
+      "evidenceTypes": [
+        "MARKETING_MATERIAL",
+        "WEBSITE_PUBLICATION_EVIDENCE"
+      ],
+      "outputSectionIds": [
+        "SEC_1_4_DOCUMENT_AVAILABILITY"
+      ],
+      "reviewRoles": [
+        "LEGAL",
+        "COMPLIANCE"
+      ],
+      "circ005RequirementLinks": [
+        "CIRC005_1_4_FCP_REGULATION_AVAILABILITY"
+      ],
+      "status": "EXTRACTED_UNVERIFIED_PENDING_LEGAL_AND_COMPLIANCE_REVIEW",
+      "activation": "FORBIDDEN",
+      "legalReviewStatus": "PENDING",
+      "complianceReviewStatus": "PENDING",
+      "specFile": "regulatory/requirements/inst066-candidates/02C_UPDATES_MARKETING_DICI.json",
+      "provenance": {
+        "sourceArtifact": "regulatory/materialized/INSTRUCTION_66_CREPMF_2021.pdf",
+        "ocrDerivative": "regulatory/materialized/INSTRUCTION_66_CREPMF_2021.txt",
+        "articleBlock": "regulatory/requirements/INST066_ARTICLE_BLOCKS_V0_1.json",
+        "textQuality": "OCR_EXTRACTED_UNVERIFIED"
+      }
+    },
+    {
+      "id": "INST066_ART033_REQ001",
+      "sourceId": "INSTRUCTION_66_CREPMF_2021",
+      "sourceSha256": "3f964f2f6ab9ce9eb16912ccda13f34b5023a188dfb18fcba7065590c770d396",
+      "articleId": "INST066_ARTICLE_033",
+      "articleNumber": 33,
+      "sourcePages": [
+        35,
+        36,
+        37
+      ],
+      "sourceArticleTextSha256": "65775e5a678916316b37861de36d090683090295e5c18a9febce21f72496157a",
+      "sourceTextCandidate": "1. Les Sociétés d’Investissement et Les Sociétés de Gestion d’OPC, pour chacun des OPC qu’elles gèrent, établissent un document succinct concernant les informations clés pour l'investisseur. Ce document est dénommé «informations clés pour l'investisseur », et cette dénomination doit figurer clairement sur le document. 2. Les Sociétés d’Investissement et les Sociétés de Gestion d’OPC qui placent ou commercialisent leurs FIA, uniquement auprès d'investisseurs qualifiés, peuvent déroger à l'obligation mentionnée à l'alinéa 1 du présent article. 3. Les informations clés pour l'investisseur de l’OPC comprennent les informations appropriées sur les caractéristiques essentielles, devant être fournies aux Si) Avenue Joseph ANOMA TEL.: (225) 27 20 21 57 42 / 20 31 56 20 01 B.P. 1878 Abidjan 01/Côte d'ivoire 35 À Fax: (225) 27 20 33 23 04 Site web : http://www.crepmf.org presidence@crepmf.org investisseurs afin que ceux-ci puissent raisonnablement comprendre la nature et les risques du produit d'investissement qui leur est proposé et, par voie de conséquence, prendre des décisions en matière de placement en pleine connaissance de cause. 4. _ Les informations clés pour l’investisseur de L’OPC portent sur Les éléments essentiels suivants : a) identification de l’OPC ; b) une brève description de ses objectifs de placement et de sa politique de placement ; c) une présentation de ses performances passées ou, Le cas échéant, de scenarios de performance ; d) Les coûts et les frais liés ; et e) Le profil risque/rémunération de l'investissement, y compris des orientations et des mises en garde appropriées sur Les risques inhérents à l'investissement. Ces éléments essentiels doivent être compréhensibles pour l'investisseur sans renvoi à d’autres documents. 5. Les informations clés pour l'…",
+      "sourceKeywordHits": [
+        "investisseur"
+      ],
+      "normalizedRequirementCandidate": "Le document d'information clé pour l'investisseur doit contenir les rubriques et informations essentielles exigées par le texte.",
+      "applicabilityCandidate": "OPCVM_SUBJECT_TO_DICI",
+      "products": [
+        "OPCVM",
+        "FCP",
+        "SICAV"
+      ],
+      "documentTypes": [
+        "DICI"
+      ],
+      "canonicalFields": [
+        "documents.dici.sections",
+        "documents.dici.version"
+      ],
+      "questionIds": [
+        "Q_DICI_CONTENT"
+      ],
+      "clauseGroupIds": [
+        "CG_DICI"
+      ],
+      "controlIds": [
+        "RULE_DICI_MINIMUM_CONTENT_COMPLETE"
+      ],
+      "evidenceTypes": [
+        "DICI_DRAFT"
+      ],
+      "outputSectionIds": [
+        "DOCUMENT_DICI"
+      ],
+      "reviewRoles": [
+        "LEGAL",
+        "COMPLIANCE"
+      ],
+      "circ005RequirementLinks": [],
+      "status": "EXTRACTED_UNVERIFIED_PENDING_LEGAL_AND_COMPLIANCE_REVIEW",
+      "activation": "FORBIDDEN",
+      "legalReviewStatus": "PENDING",
+      "complianceReviewStatus": "PENDING",
+      "specFile": "regulatory/requirements/inst066-candidates/02C_UPDATES_MARKETING_DICI.json",
+      "provenance": {
+        "sourceArtifact": "regulatory/materialized/INSTRUCTION_66_CREPMF_2021.pdf",
+        "ocrDerivative": "regulatory/materialized/INSTRUCTION_66_CREPMF_2021.txt",
+        "articleBlock": "regulatory/requirements/INST066_ARTICLE_BLOCKS_V0_1.json",
+        "textQuality": "OCR_EXTRACTED_UNVERIFIED"
+      }
+    },
+    {
+      "id": "INST066_ART034_REQ001",
+      "sourceId": "INSTRUCTION_66_CREPMF_2021",
+      "sourceSha256": "3f964f2f6ab9ce9eb16912ccda13f34b5023a188dfb18fcba7065590c770d396",
+      "articleId": "INST066_ARTICLE_034",
+      "articleNumber": 34,
+      "sourcePages": [
+        37
+      ],
+      "sourceArticleTextSha256": "c87ccc506733c7cb0474d174158dcafa2115be040f747fd77faee9329b4c52ce",
+      "sourceTextCandidate": "1. Les Sociétés d’Investissement et Les Sociétés de Gestion d’OPC qui commercialisent des OPC soit directement, soit par une autre personne physique ou morale qui agit pour leur compte et sous leur responsabilité pleine et inconditionnelle, fournissent aux investisseurs les informations clés pour Les investisseurs en temps utile et avant la souscription proposée de parts ou d’actions de ces OPC. Les Sociétés d’Investissement et les Sociétés de Gestion d’OPC, pour chacun des OPC qu’elles gèrent, peuvent fournir les informations clés pour l'investisseur sur un support durable ou au moyen d’un site internet. En tout état de cause, un exemplaire sur papier est fourni sans frais aux investisseurs qui le demandent. En outre, les informations clés pour l'investisseur sont fournies sans frais aux investisseurs et une version actualisée de celle-ci est publiée sur le site internet de la Société d'investissement ou de la Société de Gestion d’OPC. Les intermédiaires qui vendent des OPC ou conseillent les investisseurs sur d'éventuels investissements dans des OPC doivent fournir à leurs clients ou clients potentiels Les informations clés pour l'investisseur.",
+      "sourceKeywordHits": [
+        "souscription"
+      ],
+      "normalizedRequirementCandidate": "Le document d'information clé doit être remis ou rendu disponible à l'investisseur avant l'investissement selon les modalités applicables.",
+      "applicabilityCandidate": "OPCVM_SUBJECT_TO_DICI",
+      "products": [
+        "OPCVM",
+        "FCP",
+        "SICAV"
+      ],
+      "documentTypes": [
+        "DICI"
+      ],
+      "canonicalFields": [
+        "documents.dici.availability",
+        "documents.dici.delivery_timing"
+      ],
+      "questionIds": [
+        "Q_DICI_AVAILABILITY"
+      ],
+      "clauseGroupIds": [
+        "CG_DICI"
+      ],
+      "controlIds": [
+        "RULE_DICI_AVAILABLE_BEFORE_SUBSCRIPTION"
+      ],
+      "evidenceTypes": [
+        "DISTRIBUTION_PROCEDURE",
+        "WEBSITE_PUBLICATION_EVIDENCE"
+      ],
+      "outputSectionIds": [
+        "DOCUMENT_DICI"
+      ],
+      "reviewRoles": [
+        "OPERATIONS",
+        "LEGAL",
+        "COMPLIANCE"
+      ],
+      "circ005RequirementLinks": [],
+      "status": "EXTRACTED_UNVERIFIED_PENDING_LEGAL_AND_COMPLIANCE_REVIEW",
+      "activation": "FORBIDDEN",
+      "legalReviewStatus": "PENDING",
+      "complianceReviewStatus": "PENDING",
+      "specFile": "regulatory/requirements/inst066-candidates/02C_UPDATES_MARKETING_DICI.json",
+      "provenance": {
+        "sourceArtifact": "regulatory/materialized/INSTRUCTION_66_CREPMF_2021.pdf",
+        "ocrDerivative": "regulatory/materialized/INSTRUCTION_66_CREPMF_2021.txt",
+        "articleBlock": "regulatory/requirements/INST066_ARTICLE_BLOCKS_V0_1.json",
+        "textQuality": "OCR_EXTRACTED_UNVERIFIED"
+      }
+    },
+    {
+      "id": "INST066_ART035_REQ001",
+      "sourceId": "INSTRUCTION_66_CREPMF_2021",
+      "sourceSha256": "3f964f2f6ab9ce9eb16912ccda13f34b5023a188dfb18fcba7065590c770d396",
+      "articleId": "INST066_ARTICLE_035",
+      "articleNumber": 35,
+      "sourcePages": [
+        37
+      ],
+      "sourceArticleTextSha256": "9c0e7bd450d5ef830ca846d423544d1230aacd06395b3fb271012669de50fc32",
+      "sourceTextCandidate": "Les informations clés pour l'investisseur sont tenues à jour et leurs éventuelles modifications sont soumises au Conseil régional, pour approbation. SECTION 4 - OBLIGATIONS DE TRANSMISSION D'INFORMATIONS AU CONSEIL REGIONAL",
+      "sourceKeywordHits": [],
+      "normalizedRequirementCandidate": "Le document d'information clé doit être revu et mis à jour lorsque les informations essentielles deviennent inexactes ou obsolètes.",
+      "applicabilityCandidate": "OPCVM_SUBJECT_TO_DICI",
+      "products": [
+        "OPCVM",
+        "FCP",
+        "SICAV"
+      ],
+      "documentTypes": [
+        "DICI",
+        "CHANGE_LOG"
+      ],
+      "canonicalFields": [
+        "documents.dici.updated_at",
+        "documents.dici.change_log[]"
+      ],
+      "questionIds": [
+        "Q_DICI_UPDATE"
+      ],
+      "clauseGroupIds": [],
+      "controlIds": [
+        "RULE_DICI_UPDATE_ASSESSMENT_COMPLETE"
+      ],
+      "evidenceTypes": [
+        "DICI_CHANGE_LOG",
+        "UPDATED_DICI"
+      ],
+      "outputSectionIds": [
+        "DOCUMENT_DICI"
+      ],
+      "reviewRoles": [
+        "LEGAL",
+        "COMPLIANCE"
+      ],
+      "circ005RequirementLinks": [],
+      "status": "EXTRACTED_UNVERIFIED_PENDING_LEGAL_AND_COMPLIANCE_REVIEW",
+      "activation": "FORBIDDEN",
+      "legalReviewStatus": "PENDING",
+      "complianceReviewStatus": "PENDING",
+      "specFile": "regulatory/requirements/inst066-candidates/02C_UPDATES_MARKETING_DICI.json",
+      "provenance": {
+        "sourceArtifact": "regulatory/materialized/INSTRUCTION_66_CREPMF_2021.pdf",
+        "ocrDerivative": "regulatory/materialized/INSTRUCTION_66_CREPMF_2021.txt",
+        "articleBlock": "regulatory/requirements/INST066_ARTICLE_BLOCKS_V0_1.json",
+        "textQuality": "OCR_EXTRACTED_UNVERIFIED"
+      }
+    },
+    {
+      "id": "INST066_ART038_REQ001",
+      "sourceId": "INSTRUCTION_66_CREPMF_2021",
+      "sourceSha256": "3f964f2f6ab9ce9eb16912ccda13f34b5023a188dfb18fcba7065590c770d396",
+      "articleId": "INST066_ARTICLE_038",
+      "articleNumber": 38,
+      "sourcePages": [
+        40
+      ],
+      "sourceArticleTextSha256": "9b0570b312977f74594e69e07fa05c3b2f9b2283f5eeb9e983da8efd53d85200",
+      "sourceTextCandidate": "Un OPCVM ne peut être formé que d’un seul compartiment. Un OPCVM peut offrir des classes de parts ou d’actions différentes dans les conditions déterminées dans une Circulaire du Conseil Régional.",
+      "sourceKeywordHits": [],
+      "normalizedRequirementCandidate": "Les compartiments et classes de parts doivent décrire leurs caractéristiques, droits, devises et politiques de revenus de manière cohérente.",
+      "applicabilityCandidate": "OPC_WITH_COMPARTMENTS_OR_MULTIPLE_SHARE_CLASSES",
+      "products": [
+        "OPCVM",
+        "FCP",
+        "SICAV",
+        "OPCR"
+      ],
+      "documentTypes": [
+        "PROSPECTUS",
+        "FUND_REGULATION"
+      ],
+      "canonicalFields": [
+        "compartments[]",
+        "share_classes[]"
+      ],
+      "questionIds": [
+        "Q_SHARE_CLASSES_COUNT"
+      ],
+      "clauseGroupIds": [
+        "CG_PARTS_OVERVIEW"
+      ],
+      "controlIds": [
+        "RULE_AT_LEAST_ONE_SHARE_CLASS",
+        "RULE_SHARE_CLASS_RIGHTS_COMPLETE",
+        "RULE_COMPARTMENT_CLASS_CONSISTENCY"
+      ],
+      "evidenceTypes": [
+        "FUND_REGULATION"
+      ],
+      "outputSectionIds": [
+        "SEC_1_10_PARTS_CHARACTERISTICS"
+      ],
+      "reviewRoles": [
+        "LEGAL",
+        "COMPLIANCE"
+      ],
+      "circ005RequirementLinks": [
+        "CIRC005_1_10_FCP_PARTS_CHARACTERISTICS"
+      ],
+      "status": "EXTRACTED_UNVERIFIED_PENDING_LEGAL_AND_COMPLIANCE_REVIEW",
+      "activation": "FORBIDDEN",
+      "legalReviewStatus": "PENDING",
+      "complianceReviewStatus": "PENDING",
+      "specFile": "regulatory/requirements/inst066-candidates/03_OPERATIONS_FEES.json",
+      "provenance": {
+        "sourceArtifact": "regulatory/materialized/INSTRUCTION_66_CREPMF_2021.pdf",
+        "ocrDerivative": "regulatory/materialized/INSTRUCTION_66_CREPMF_2021.txt",
+        "articleBlock": "regulatory/requirements/INST066_ARTICLE_BLOCKS_V0_1.json",
+        "textQuality": "OCR_EXTRACTED_UNVERIFIED"
+      }
+    },
+    {
+      "id": "INST066_ART043_REQ001",
+      "sourceId": "INSTRUCTION_66_CREPMF_2021",
+      "sourceSha256": "3f964f2f6ab9ce9eb16912ccda13f34b5023a188dfb18fcba7065590c770d396",
+      "articleId": "INST066_ARTICLE_043",
+      "articleNumber": 43,
+      "sourcePages": [
+        45
+      ],
+      "sourceArticleTextSha256": "2037b126f0b5e2ecff5105e0da470c272be029249e4080d164c8377d1002baae",
+      "sourceTextCandidate": "…ante participation directe ou indirecte, ladite Société de Gestion d'OPCVM ou l’autre société ne peut facturer de droits de souscription ou de remboursement pour l’investissement de l’'OPCVM dans les parts de ces autres OPCVM où autres OPC. Un OPCVM qui investit une part importante de ses actifs dans d’autres OPCVM ou d’autres OPC indique dans son prospectus le niveau maximal des commissions de gestion qui peuvent être facturées à La fois à l’OPCVM lui-même et aux autres OPCVM ou aux autres OPC dans lesquels il entend investir. IL indique, dans son rapport annuel, le pourcentage maximal des frais de gestion facturés tant à Ll’'OPCVM lui- même qu’aux autres OPCVM ou OPC dans lesquels il investit.",
+      "sourceKeywordHits": [
+        "prospectus"
+      ],
+      "normalizedRequirementCandidate": "Pour un fonds de fonds, le prospectus doit présenter les commissions de gestion maximales exigées au niveau du fonds et des fonds sous-jacents.",
+      "applicabilityCandidate": "FUND_OF_FUNDS",
+      "products": [
+        "OPCVM",
+        "FCP",
+        "SICAV"
+      ],
+      "documentTypes": [
+        "PROSPECTUS"
+      ],
+      "canonicalFields": [
+        "fees.underlying_funds",
+        "fees.maximum_aggregate_management_rate"
+      ],
+      "questionIds": [
+        "Q_UNDERLYING_FUND_FEES"
+      ],
+      "clauseGroupIds": [
+        "CG_REMUNERATION_REIMBURSEMENT"
+      ],
+      "controlIds": [
+        "RULE_FUND_OF_FUNDS_MAXIMUM_FEES_DISCLOSED"
+      ],
+      "evidenceTypes": [
+        "FEE_SCHEDULE",
+        "UNDERLYING_FUND_DOCUMENTS"
+      ],
+      "outputSectionIds": [
+        "SEC_1_18_REMUNERATION_REIMBURSEMENT"
+      ],
+      "reviewRoles": [
+        "LEGAL",
+        "COMPLIANCE"
+      ],
+      "circ005RequirementLinks": [
+        "CIRC005_1_18_FCP_REMUNERATION_REIMBURSEMENT"
+      ],
+      "status": "EXTRACTED_UNVERIFIED_PENDING_LEGAL_AND_COMPLIANCE_REVIEW",
+      "activation": "FORBIDDEN",
+      "legalReviewStatus": "PENDING",
+      "complianceReviewStatus": "PENDING",
+      "specFile": "regulatory/requirements/inst066-candidates/03_OPERATIONS_FEES.json",
+      "provenance": {
+        "sourceArtifact": "regulatory/materialized/INSTRUCTION_66_CREPMF_2021.pdf",
+        "ocrDerivative": "regulatory/materialized/INSTRUCTION_66_CREPMF_2021.txt",
+        "articleBlock": "regulatory/requirements/INST066_ARTICLE_BLOCKS_V0_1.json",
+        "textQuality": "OCR_EXTRACTED_UNVERIFIED"
+      }
+    },
+    {
+      "id": "INST066_ART047_REQ001",
+      "sourceId": "INSTRUCTION_66_CREPMF_2021",
+      "sourceSha256": "3f964f2f6ab9ce9eb16912ccda13f34b5023a188dfb18fcba7065590c770d396",
+      "articleId": "INST066_ARTICLE_047",
+      "articleNumber": 47,
+      "sourcePages": [
+        47
+      ],
+      "sourceArticleTextSha256": "5aae9de44f4948187503acad48880f6265b8ec961e9ba6b440b357c0aab4ee5a",
+      "sourceTextCandidate": "…se ses parts ou actions à La demande d’un porteur de parts ou actionnaires, 2. Par dérogation à l’alinéa 1 du présent article : a) un OPCVM, ou la Société de Gestion d’OPC agissant pour le compte de l'OPCVM, peut limiter ou suspendre temporairement, conformément au Règlement du Fonds ou aux documents constitutifs de la Société d’Investissement, Le rachat ou le remboursement de ses parts ou actions ; b) le Conseil Régional peut exiger dans l'intérêt des porteurs de parts ou actionnaires ou dans l'intérêt du public la suspension du rachat ou du remboursement des parts ou actions. La suspension temporaire visée à l’alinéa 2, point a) du présent article, n’est prévue que dans des cas exceptionnels où Les circonstances l’exigent et où la limitation ou la suspension est justifiée, compte tenu des intérêts des porteurs de parts ou actionnaires. 3. En cas de suspension temporaire visée à l’alinéa 2, point a) du présent article, l'OPCVM fait connaître sans délai sa décision au Conseil Régional. Le Conseil Régional peut s’opposer à la décision de L’'OPCVM ou de La Société de Gestion d’OPCVM. 4. Une Circulaire du Conseil Régional précise : - Les méthodes pouvant être utilisées par L’OPCVM pour suspendre temporairement le rachat ou le remboursement de ses parts ou actions ; - les conditions que doit remplir l’OPCVM après l'adoption de la suspension temporaire du rachat ou du remboursement des parts ou actions de l’OPCVM, au sens de l’alinéa 2, point a) du présent article, lorsque la décision de suspension a été prise.",
+      "sourceKeywordHits": [
+        "rachat"
+      ],
+      "normalizedRequirementCandidate": "Le prospectus ou le règlement doit décrire les modalités de rachat, les délais de règlement et les outils de gestion de la liquidité applicables.",
+      "applicabilityCandidate": "OPEN_ENDED_OPC",
+      "products": [
+        "OPCVM",
+        "FCP",
+        "SICAV",
+        "OPCR"
+      ],
+      "documentTypes": [
+        "PROSPECTUS",
+        "FUND_REGULATION"
+      ],
+      "canonicalFields": [
+        "redemption.request_channels",
+        "redemption.cutoff",
+        "redemption.execution_nav",
+        "redemption.settlement_days"
+      ],
+      "questionIds": [
+        "Q_REDEMPTION_ALLOWED"
+      ],
+      "clauseGroupIds": [
+        "CG_REDEMPTION"
+      ],
+      "controlIds": [
+        "RULE_REDEMPTION_PROCESS_COMPLETE"
+      ],
+      "evidenceTypes": [
+        "FUND_REGULATION",
+        "OPERATING_PROCEDURE",
+        "LIQUIDITY_RISK_POLICY"
+      ],
+      "outputSectionIds": [
+        "SEC_1_13_REDEMPTION_SUSPENSION"
+      ],
+      "reviewRoles": [
+        "RISK",
+        "LEGAL",
+        "COMPLIANCE"
+      ],
+      "circ005RequirementLinks": [
+        "CIRC005_1_13_FCP_REDEMPTION_REIMBURSEMENT"
+      ],
+      "status": "EXTRACTED_UNVERIFIED_PENDING_LEGAL_AND_COMPLIANCE_REVIEW",
+      "activation": "FORBIDDEN",
+      "legalReviewStatus": "PENDING",
+      "complianceReviewStatus": "PENDING",
+      "specFile": "regulatory/requirements/inst066-candidates/03_OPERATIONS_FEES.json",
+      "provenance": {
+        "sourceArtifact": "regulatory/materialized/INSTRUCTION_66_CREPMF_2021.pdf",
+        "ocrDerivative": "regulatory/materialized/INSTRUCTION_66_CREPMF_2021.txt",
+        "articleBlock": "regulatory/requirements/INST066_ARTICLE_BLOCKS_V0_1.json",
+        "textQuality": "OCR_EXTRACTED_UNVERIFIED"
+      }
+    },
+    {
+      "id": "INST066_ART047_REQ002",
+      "sourceId": "INSTRUCTION_66_CREPMF_2021",
+      "sourceSha256": "3f964f2f6ab9ce9eb16912ccda13f34b5023a188dfb18fcba7065590c770d396",
+      "articleId": "INST066_ARTICLE_047",
+      "articleNumber": 47,
+      "sourcePages": [
+        47
+      ],
+      "sourceArticleTextSha256": "5aae9de44f4948187503acad48880f6265b8ec961e9ba6b440b357c0aab4ee5a",
+      "sourceTextCandidate": "…agissant pour le compte de l'OPCVM, peut limiter ou suspendre temporairement, conformément au Règlement du Fonds ou aux documents constitutifs de la Société d’Investissement, Le rachat ou le remboursement de ses parts ou actions ; b) le Conseil Régional peut exiger dans l'intérêt des porteurs de parts ou actionnaires ou dans l'intérêt du public la suspension du rachat ou du remboursement des parts ou actions. La suspension temporaire visée à l’alinéa 2, point a) du présent article, n’est prévue que dans des cas exceptionnels où Les circonstances l’exigent et où la limitation ou la suspension est justifiée, compte tenu des intérêts des porteurs de parts ou actionnaires. 3. En cas de suspension temporaire visée à l’alinéa 2, point a) du présent article, l'OPCVM fait connaître sans délai sa décision au Conseil Régional. Le Conseil Régional peut s’opposer à la décision de L’'OPCVM ou de La Société de Gestion d’OPCVM. 4. Une Circulaire du Conseil Régional précise : - Les méthodes pouvant être utilisées par L’OPCVM pour suspendre temporairement le rachat ou le remboursement de ses parts ou actions ; - les conditions que doit remplir l’OPCVM après l'adoption de la suspension temporaire du rachat ou du remboursement des parts ou actions de l’OPCVM, au sens de l’alinéa 2, point a) du présent article, lorsque la décision de suspension a été prise.",
+      "sourceKeywordHits": [
+        "suspension"
+      ],
+      "normalizedRequirementCandidate": "Les circonstances, l'autorité de décision, l'information des porteurs et la reprise d'une suspension des rachats doivent être encadrées.",
+      "applicabilityCandidate": "OPEN_ENDED_OPC",
+      "products": [
+        "OPCVM",
+        "FCP",
+        "SICAV",
+        "OPCR"
+      ],
+      "documentTypes": [
+        "PROSPECTUS",
+        "FUND_REGULATION",
+        "LIQUIDITY_RISK_POLICY"
+      ],
+      "canonicalFields": [
+        "redemption.suspension.allowed",
+        "redemption.suspension.circumstances",
+        "redemption.suspension.decision_authority",
+        "redemption.suspension.notification",
+        "redemption.suspension.resumption_conditions"
+      ],
+      "questionIds": [
+        "Q_REDEMPTION_SUSPENSION_ALLOWED"
+      ],
+      "clauseGroupIds": [
+        "CG_REDEMPTION_SUSPENSION"
+      ],
+      "controlIds": [
+        "RULE_SUSPENSION_CIRCUMSTANCES_REQUIRED"
+      ],
+      "evidenceTypes": [
+        "FUND_REGULATION",
+        "LIQUIDITY_RISK_POLICY"
+      ],
+      "outputSectionIds": [
+        "SEC_1_13_REDEMPTION_SUSPENSION"
+      ],
+      "reviewRoles": [
+        "RISK",
+        "LEGAL",
+        "COMPLIANCE"
+      ],
+      "circ005RequirementLinks": [
+        "CIRC005_1_13_FCP_SUSPENSION"
+      ],
+      "status": "EXTRACTED_UNVERIFIED_PENDING_LEGAL_AND_COMPLIANCE_REVIEW",
+      "activation": "FORBIDDEN",
+      "legalReviewStatus": "PENDING",
+      "complianceReviewStatus": "PENDING",
+      "specFile": "regulatory/requirements/inst066-candidates/03_OPERATIONS_FEES.json",
+      "provenance": {
+        "sourceArtifact": "regulatory/materialized/INSTRUCTION_66_CREPMF_2021.pdf",
+        "ocrDerivative": "regulatory/materialized/INSTRUCTION_66_CREPMF_2021.txt",
+        "articleBlock": "regulatory/requirements/INST066_ARTICLE_BLOCKS_V0_1.json",
+        "textQuality": "OCR_EXTRACTED_UNVERIFIED"
+      }
+    },
+    {
+      "id": "INST066_ART048_REQ001",
+      "sourceId": "INSTRUCTION_66_CREPMF_2021",
+      "sourceSha256": "3f964f2f6ab9ce9eb16912ccda13f34b5023a188dfb18fcba7065590c770d396",
+      "articleId": "INST066_ARTICLE_048",
+      "articleNumber": 48,
+      "sourcePages": [
+        47
+      ],
+      "sourceArticleTextSha256": "fa5575ab93b1fb16d180609e8ba0ee9565f2082254edbf10d83fb0f07240e859",
+      "sourceTextCandidate": "prix de rachat ou de remboursement Les règles d'évaluation des actifs ainsi que Les règles de calcul du prix de vente ou d’émission et du prix de rachat ou de remboursement des parts ou actions d'un OPCVM sont définies dans Le Règlement et Le Prospectus du Fonds ou les documents constitutifs de la Société d’Investissement.",
+      "sourceKeywordHits": [
+        "évaluation",
+        "actifs"
+      ],
+      "normalizedRequirementCandidate": "Les méthodes de valorisation, la hiérarchie des prix et les méthodes de remplacement doivent être définies et cohérentes avec les actifs autorisés.",
+      "applicabilityCandidate": "OPC",
+      "products": [
+        "OPCVM",
+        "FCP",
+        "SICAV",
+        "OPCR"
+      ],
+      "documentTypes": [
+        "PROSPECTUS",
+        "FUND_REGULATION",
+        "VALUATION_POLICY"
+      ],
+      "canonicalFields": [
+        "valuation.methods[]",
+        "valuation.price_hierarchy",
+        "valuation.exception_process"
+      ],
+      "questionIds": [
+        "Q_VALUATION_METHODS"
+      ],
+      "clauseGroupIds": [
+        "CG_VALUATION"
+      ],
+      "controlIds": [
+        "RULE_VALUATION_METHOD_PER_USED_ASSET",
+        "RULE_FALLBACK_METHOD_REQUIRED"
+      ],
+      "evidenceTypes": [
+        "VALUATION_POLICY",
+        "FUND_REGULATION"
+      ],
+      "outputSectionIds": [
+        "SEC_1_16_VALUATION"
+      ],
+      "reviewRoles": [
+        "RISK",
+        "LEGAL",
+        "COMPLIANCE"
+      ],
+      "circ005RequirementLinks": [
+        "CIRC005_1_16_FCP_ASSET_VALUATION"
+      ],
+      "status": "EXTRACTED_UNVERIFIED_PENDING_LEGAL_AND_COMPLIANCE_REVIEW",
+      "activation": "FORBIDDEN",
+      "legalReviewStatus": "PENDING",
+      "complianceReviewStatus": "PENDING",
+      "specFile": "regulatory/requirements/inst066-candidates/03_OPERATIONS_FEES.json",
+      "provenance": {
+        "sourceArtifact": "regulatory/materialized/INSTRUCTION_66_CREPMF_2021.pdf",
+        "ocrDerivative": "regulatory/materialized/INSTRUCTION_66_CREPMF_2021.txt",
+        "articleBlock": "regulatory/requirements/INST066_ARTICLE_BLOCKS_V0_1.json",
+        "textQuality": "OCR_EXTRACTED_UNVERIFIED"
+      }
+    },
+    {
+      "id": "INST066_ART048_REQ002",
+      "sourceId": "INSTRUCTION_66_CREPMF_2021",
+      "sourceSha256": "3f964f2f6ab9ce9eb16912ccda13f34b5023a188dfb18fcba7065590c770d396",
+      "articleId": "INST066_ARTICLE_048",
+      "articleNumber": 48,
+      "sourcePages": [
+        47
+      ],
+      "sourceArticleTextSha256": "fa5575ab93b1fb16d180609e8ba0ee9565f2082254edbf10d83fb0f07240e859",
+      "sourceTextCandidate": "prix de rachat ou de remboursement Les règles d'évaluation des actifs ainsi que Les règles de calcul du prix de vente ou d’émission et du prix de rachat ou de remboursement des parts ou actions d'un OPCVM sont définies dans Le Règlement et Le Prospectus du Fonds ou les documents constitutifs de la Société d’Investissement.",
+      "sourceKeywordHits": [
+        "prix"
+      ],
+      "normalizedRequirementCandidate": "La fréquence de calcul de la valeur liquidative et les formules de prix de souscription et de rachat doivent être définies.",
+      "applicabilityCandidate": "OPC",
+      "products": [
+        "OPCVM",
+        "FCP",
+        "SICAV",
+        "OPCR"
+      ],
+      "documentTypes": [
+        "PROSPECTUS",
+        "FUND_REGULATION",
+        "VALUATION_POLICY"
+      ],
+      "canonicalFields": [
+        "pricing.nav.calculation_method",
+        "pricing.nav.frequency",
+        "pricing.issue_price.formula",
+        "pricing.redemption_price.formula"
+      ],
+      "questionIds": [
+        "Q_NAV_FREQUENCY"
+      ],
+      "clauseGroupIds": [
+        "CG_PRICE_METHOD_FREQUENCY"
+      ],
+      "controlIds": [
+        "RULE_PRICE_FORMULA_COMPLETE",
+        "RULE_NAV_FREQUENCY_COMPLETE"
+      ],
+      "evidenceTypes": [
+        "FUND_REGULATION",
+        "VALUATION_POLICY"
+      ],
+      "outputSectionIds": [
+        "SEC_1_17_PRICE_DETERMINATION"
+      ],
+      "reviewRoles": [
+        "LEGAL",
+        "COMPLIANCE"
+      ],
+      "circ005RequirementLinks": [
+        "CIRC005_1_17_FCP_PRICE_DETERMINATION",
+        "CIRC005_1_17_A_FCP_PRICE_METHOD_FREQUENCY"
+      ],
+      "status": "EXTRACTED_UNVERIFIED_PENDING_LEGAL_AND_COMPLIANCE_REVIEW",
+      "activation": "FORBIDDEN",
+      "legalReviewStatus": "PENDING",
+      "complianceReviewStatus": "PENDING",
+      "specFile": "regulatory/requirements/inst066-candidates/03_OPERATIONS_FEES.json",
+      "provenance": {
+        "sourceArtifact": "regulatory/materialized/INSTRUCTION_66_CREPMF_2021.pdf",
+        "ocrDerivative": "regulatory/materialized/INSTRUCTION_66_CREPMF_2021.txt",
+        "articleBlock": "regulatory/requirements/INST066_ARTICLE_BLOCKS_V0_1.json",
+        "textQuality": "OCR_EXTRACTED_UNVERIFIED"
+      }
+    },
+    {
+      "id": "INST066_ART049_REQ001",
+      "sourceId": "INSTRUCTION_66_CREPMF_2021",
+      "sourceSha256": "3f964f2f6ab9ce9eb16912ccda13f34b5023a188dfb18fcba7065590c770d396",
+      "articleId": "INST066_ARTICLE_049",
+      "articleNumber": 49,
+      "sourcePages": [
+        47
+      ],
+      "sourceArticleTextSha256": "7688c09356d85f29fca067b33c62afc1b4970e4c80df73be6bb1ba4a347cd585",
+      "sourceTextCandidate": "La distribution ou La capitalisation des produits d’un OPCVM s’effectue conformément au Règlement du Fonds ou aux documents constitutifs de La Société d’Investissement. Avenue Joseph ANOMA D TEL.: (225) 27 20 21 57 42 / 2D 31 56 20 01 B.P. 1878 Abidjan 01/Côte d’lvoire 47 Fax: (225) 27 20 33 23 04 Site web : http://www,crepmf.org DA presidence@crepmf.org",
+      "sourceKeywordHits": [
+        "distribution",
+        "capitalisation"
+      ],
+      "normalizedRequirementCandidate": "La politique d'affectation des revenus, notamment capitalisation ou distribution par classe, doit être décrite de manière cohérente.",
+      "applicabilityCandidate": "OPC",
+      "products": [
+        "OPCVM",
+        "FCP",
+        "SICAV",
+        "OPCR"
+      ],
+      "documentTypes": [
+        "PROSPECTUS",
+        "FUND_REGULATION"
+      ],
+      "canonicalFields": [
+        "income.allocation_policy",
+        "income.capitalization_policy",
+        "income.distribution_policy",
+        "share_classes[].income_policy"
+      ],
+      "questionIds": [
+        "Q_INCOME_ALLOCATION_POLICY"
+      ],
+      "clauseGroupIds": [
+        "CG_INCOME_ALLOCATION"
+      ],
+      "controlIds": [
+        "RULE_INCOME_POLICY_SHARE_CLASS_CONSISTENCY"
+      ],
+      "evidenceTypes": [
+        "FUND_REGULATION",
+        "ACCOUNTING_POLICY"
+      ],
+      "outputSectionIds": [
+        "SEC_1_14_INCOME"
+      ],
+      "reviewRoles": [
+        "LEGAL",
+        "COMPLIANCE"
+      ],
+      "circ005RequirementLinks": [
+        "CIRC005_1_14_FCP_INCOME_ALLOCATION",
+        "CIRC005_1_6_FCP_DISTRIBUTION_DATES"
+      ],
+      "status": "EXTRACTED_UNVERIFIED_PENDING_LEGAL_AND_COMPLIANCE_REVIEW",
+      "activation": "FORBIDDEN",
+      "legalReviewStatus": "PENDING",
+      "complianceReviewStatus": "PENDING",
+      "specFile": "regulatory/requirements/inst066-candidates/03_OPERATIONS_FEES.json",
+      "provenance": {
+        "sourceArtifact": "regulatory/materialized/INSTRUCTION_66_CREPMF_2021.pdf",
+        "ocrDerivative": "regulatory/materialized/INSTRUCTION_66_CREPMF_2021.txt",
+        "articleBlock": "regulatory/requirements/INST066_ARTICLE_BLOCKS_V0_1.json",
+        "textQuality": "OCR_EXTRACTED_UNVERIFIED"
+      }
+    },
+    {
+      "id": "INST066_ART053_REQ001",
+      "sourceId": "INSTRUCTION_66_CREPMF_2021",
+      "sourceSha256": "3f964f2f6ab9ce9eb16912ccda13f34b5023a188dfb18fcba7065590c770d396",
+      "articleId": "INST066_ARTICLE_053",
+      "articleNumber": 53,
+      "sourcePages": [
+        48
+      ],
+      "sourceArticleTextSha256": "f7a3fc85abb67e681e916619822f66d01bdca561eb84be136cab768b8e24b892",
+      "sourceTextCandidate": "La rémunération et les dépenses que la Société de Gestion d’OPCVM est habilitée à prélever sur un OPCVM ainsi que le mode de calcul de ces rémunérations, sont précisés dans une Circulaire du Conseil Régional. Une Circulaire du Conseil Régional et les documents constitutifs de la Société d'investissement indiquent la nature des frais à charge de la Société de Gestion d'OPCVM. CHAPITRE 3 - FUSION D’OPCVM SECTION PREMIERE - PRINCIPE, AUTORISATION ET APPROBATION",
+      "sourceKeywordHits": [
+        "rémunération",
+        "frais"
+      ],
+      "normalizedRequirementCandidate": "Les rémunérations, commissions et remboursements supportés par le fonds ou les porteurs doivent préciser bénéficiaire, base, taux ou montant et périodicité.",
+      "applicabilityCandidate": "OPC",
+      "products": [
+        "OPCVM",
+        "FCP",
+        "SICAV",
+        "OPCR"
+      ],
+      "documentTypes": [
+        "PROSPECTUS",
+        "FEE_SCHEDULE"
+      ],
+      "canonicalFields": [
+        "remunerations[]",
+        "expense_reimbursements[]",
+        "fees.transaction[]",
+        "other_expenses[]"
+      ],
+      "questionIds": [
+        "Q_REMUNERATION_REIMBURSEMENT_FRAMEWORK",
+        "Q_TRANSACTION_FEES"
+      ],
+      "clauseGroupIds": [
+        "CG_REMUNERATION_REIMBURSEMENT",
+        "CG_TRANSACTION_FEES"
+      ],
+      "controlIds": [
+        "RULE_REMUNERATION_AND_REIMBURSEMENT_CLASSIFIED",
+        "RULE_FEE_BASIS_BENEFICIARY_PAYER_COMPLETE"
+      ],
+      "evidenceTypes": [
+        "FEE_SCHEDULE",
+        "SERVICE_AGREEMENTS",
+        "EXPENSE_POLICY"
+      ],
+      "outputSectionIds": [
+        "SEC_1_18_REMUNERATION_REIMBURSEMENT",
+        "SEC_1_17_PRICE_DETERMINATION"
+      ],
+      "reviewRoles": [
+        "LEGAL",
+        "COMPLIANCE"
+      ],
+      "circ005RequirementLinks": [
+        "CIRC005_1_18_FCP_REMUNERATION_REIMBURSEMENT",
+        "CIRC005_1_17_B_FCP_TRANSACTION_FEES",
+        "CIRC005_5_4_OTHER_EXPENSES_FUND_ASSETS",
+        "CIRC005_5_4_OTHER_EXPENSES_HOLDER"
+      ],
+      "status": "EXTRACTED_UNVERIFIED_PENDING_LEGAL_AND_COMPLIANCE_REVIEW",
+      "activation": "FORBIDDEN",
+      "legalReviewStatus": "PENDING",
+      "complianceReviewStatus": "PENDING",
+      "specFile": "regulatory/requirements/inst066-candidates/03_OPERATIONS_FEES.json",
+      "provenance": {
+        "sourceArtifact": "regulatory/materialized/INSTRUCTION_66_CREPMF_2021.pdf",
+        "ocrDerivative": "regulatory/materialized/INSTRUCTION_66_CREPMF_2021.txt",
+        "articleBlock": "regulatory/requirements/INST066_ARTICLE_BLOCKS_V0_1.json",
+        "textQuality": "OCR_EXTRACTED_UNVERIFIED"
+      }
+    },
+    {
+      "id": "INST066_ART067_REQ001",
+      "sourceId": "INSTRUCTION_66_CREPMF_2021",
+      "sourceSha256": "3f964f2f6ab9ce9eb16912ccda13f34b5023a188dfb18fcba7065590c770d396",
+      "articleId": "INST066_ARTICLE_067",
+      "articleNumber": 67,
+      "sourcePages": [
+        54
+      ],
+      "sourceArticleTextSha256": "588f1018ba2567d2aa34d9d6139195d15ffcf4c0a553539ca1b153be06ef2d6e",
+      "sourceTextCandidate": "1. Une scission est subordonnée à l'autorisation préalable du Conseil Régional. 2. La Société de Gestion d'OPCVM fournit au Conseil Régional : a) une copie du procès-verbal de l’Assemblée Générale Extraordinaire de La SICAV dont la scission a été décidée ou la copie du procès-verbal du Conseil d'Administration de la Société de Gestion du FCP dont la scission à été décidée ; b) la liste des actifs transférés au FIA Side pocket ; c) une note technique justifiant Le périmètre des actifs transférés ; d) un rapport justifiant La décision de scission et en détaillant les modalités, devant être transmis aux porteurs ou actionnaires ; e) Le rapport du Commissaire aux Comptes de L'OPCVM sur l'opération de scission et fixant la liste des actifs transférés lors de la scission ; f) Le prospectus de l’OPCVM Réplique et du FIA Side pocket. 3. Par dérogation de l’article 4, la Société de Gestion de l'OPCVM concerné est autorisée à gérer le FIA Side pocket. SECTION 2 - CONTROLE DES TIERS, INFORMATIONS ET AUTRES DROITS DES PORTEURS DE PARTS OÙ ACTIONNAIRES, COÛTS ET PRISE D’EFFET",
+      "sourceKeywordHits": [
+        "scission",
+        "prospectus"
+      ],
+      "normalizedRequirementCandidate": "Le dossier de scission doit comprendre les documents et projets de prospectus exigés pour les entités résultantes.",
+      "applicabilityCandidate": "OPC_SCISSION",
+      "products": [
+        "OPCVM",
+        "OPCR",
+        "OTHER_OPC"
+      ],
+      "documentTypes": [
+        "SCISSION_DOSSIER",
+        "PROSPECTUS"
+      ],
+      "canonicalFields": [
+        "corporate_actions[].type",
+        "corporate_actions[].resulting_funds[]",
+        "documents.prospectus.versions[]"
+      ],
+      "questionIds": [
+        "Q_CORPORATE_ACTION_SCISSION"
+      ],
+      "clauseGroupIds": [
+        "CG_CORPORATE_ACTION"
+      ],
+      "controlIds": [
+        "RULE_SCISSION_DOSSIER_COMPLETE"
+      ],
+      "evidenceTypes": [
+        "SCISSION_DECISION",
+        "SCISSION_PLAN",
+        "RESULTING_PROSPECTUS_DRAFTS"
+      ],
+      "outputSectionIds": [
+        "SYSTEM_ONLY"
+      ],
+      "reviewRoles": [
+        "LEGAL",
+        "COMPLIANCE"
+      ],
+      "circ005RequirementLinks": [],
+      "status": "EXTRACTED_UNVERIFIED_PENDING_LEGAL_AND_COMPLIANCE_REVIEW",
+      "activation": "FORBIDDEN",
+      "legalReviewStatus": "PENDING",
+      "complianceReviewStatus": "PENDING",
+      "specFile": "regulatory/requirements/inst066-candidates/04_CORPORATE_SPECIAL_PRODUCTS.json",
+      "provenance": {
+        "sourceArtifact": "regulatory/materialized/INSTRUCTION_66_CREPMF_2021.pdf",
+        "ocrDerivative": "regulatory/materialized/INSTRUCTION_66_CREPMF_2021.txt",
+        "articleBlock": "regulatory/requirements/INST066_ARTICLE_BLOCKS_V0_1.json",
+        "textQuality": "OCR_EXTRACTED_UNVERIFIED"
+      }
+    },
+    {
+      "id": "INST066_ART068_REQ001",
+      "sourceId": "INSTRUCTION_66_CREPMF_2021",
+      "sourceSha256": "3f964f2f6ab9ce9eb16912ccda13f34b5023a188dfb18fcba7065590c770d396",
+      "articleId": "INST066_ARTICLE_068",
+      "articleNumber": 68,
+      "sourcePages": [
+        54,
+        55
+      ],
+      "sourceArticleTextSha256": "d11152fdcf6a1dba244448a9d7dd0fda6448ac0af4ecae2fa95cfdcb5b90f187",
+      "sourceTextCandidate": "actionnaires de la SICAV 1. La SICAY destinée à recevoir Les actifs dont la gestion n’est pas conforme à L'intérêt des actionnaires (FIA side pocket) prévoit dans ses statuts que son activité correspond à la gestion extinctive de tout actif qui lui est transféré Lors de la scission. Par dérogation à l’article 25, son capital initial peut être inférieur à 250 millions FCFA. 2. La SICAV destinée à recevoir les actifs autres que ceux mentionnés à l’alinéa 1 du présent article est de la même nature que La SICAV objet de La scission. à Avenue Joseph ANOMA TEL, : (225) 27 20 21 57 42 / 20 31 56 20 / 01 8.P. 1878 Abidjan 01/Côte d'Ivoire 54 À Fax: (225) 27 20 33 23 04 Y Site web : http://www.crepmf.org ep presidence@crepmf.org 3. Le Dépositaire et le Commissaire aux Comptes des deux SICAV issues de la scission sont, lors de la création de celles-ci, les mêmes que ceux de la SICAV objet de La scission. 4. La SICAV objet de la scission informe immédiatement les actionnaires et leur transmet notamment un rapport justifiant La décision de scission et en détaillant les modalités. Les Prospectus et, le cas échéant, Les documents d’information clé pour l'investisseur des deux SICAV issues de la scission sont également mis à Leur disposition. 5. Le rapport du Commissaire aux Comptes visé à l’article 67 alinéa 2 point e) est tenu à la disposition des actionnaires. 6. Les frais de gestion de la SICAV mentionnée à l'alinéa 1 du présent article doivent être adaptés à une gestion de type extinctive.",
+      "sourceKeywordHits": [
+        "prospectus",
+        "scission"
+      ],
+      "normalizedRequirementCandidate": "Chaque véhicule issu d'une scission doit disposer de documents constitutifs et d'un prospectus cohérents avec les actifs, passifs et porteurs affectés.",
+      "applicabilityCandidate": "RESULTING_OPC_FROM_SCISSION",
+      "products": [
+        "OPCVM",
+        "OPCR",
+        "OTHER_OPC"
+      ],
+      "documentTypes": [
+        "PROSPECTUS",
+        "FUND_REGULATION"
+      ],
+      "canonicalFields": [
+        "corporate_actions[].resulting_funds[].canonical_data",
+        "documents.prospectus.versions[]"
+      ],
+      "questionIds": [
+        "Q_RESULTING_FUND_DOCUMENTS"
+      ],
+      "clauseGroupIds": [
+        "CG_CORPORATE_ACTION"
+      ],
+      "controlIds": [
+        "RULE_RESULTING_FUND_DOCUMENT_SET_COMPLETE"
+      ],
+      "evidenceTypes": [
+        "RESULTING_FUND_REGULATION",
+        "RESULTING_PROSPECTUS_DRAFT"
+      ],
+      "outputSectionIds": [
+        "SYSTEM_ONLY"
+      ],
+      "reviewRoles": [
+        "LEGAL",
+        "COMPLIANCE"
+      ],
+      "circ005RequirementLinks": [],
+      "status": "EXTRACTED_UNVERIFIED_PENDING_LEGAL_AND_COMPLIANCE_REVIEW",
+      "activation": "FORBIDDEN",
+      "legalReviewStatus": "PENDING",
+      "complianceReviewStatus": "PENDING",
+      "specFile": "regulatory/requirements/inst066-candidates/04_CORPORATE_SPECIAL_PRODUCTS.json",
+      "provenance": {
+        "sourceArtifact": "regulatory/materialized/INSTRUCTION_66_CREPMF_2021.pdf",
+        "ocrDerivative": "regulatory/materialized/INSTRUCTION_66_CREPMF_2021.txt",
+        "articleBlock": "regulatory/requirements/INST066_ARTICLE_BLOCKS_V0_1.json",
+        "textQuality": "OCR_EXTRACTED_UNVERIFIED"
+      }
+    },
+    {
+      "id": "INST066_ART069_REQ001",
+      "sourceId": "INSTRUCTION_66_CREPMF_2021",
+      "sourceSha256": "3f964f2f6ab9ce9eb16912ccda13f34b5023a188dfb18fcba7065590c770d396",
+      "articleId": "INST066_ARTICLE_069",
+      "articleNumber": 69,
+      "sourcePages": [
+        55
+      ],
+      "sourceArticleTextSha256": "fd3e5754422a1d1130b56169fc4c4c617bbe395ac21c5cce0e92fc779a294d3c",
+      "sourceTextCandidate": "porteurs de parts du FCP 1. Le FCP destiné à recevoir les actifs dont La gestion n’est pas conforme à l'intérêt des porteurs de parts (FIA side pocket) prévoit dans son Règlement que son activité correspond à la gestion extinctive de tout actif qui lui est transféré lors de la scission. Par dérogation à l’article 17 alinéa 4, Le montant initial de ses actifs peut être inférieur à 100 millions FCFA. 2. Le FCP destiné à recevoir les actifs autres que ceux mentionnés à l’alinéa 1 du présent article est de la même nature que le FCP objet de la scission. 3. Le Dépositaire et Le Commissaire aux Comptes des deux FCP issus de la scission sont, lors de la création de ceux-ci, les mêmes que ceux du Fonds objet de La scission. 4. La Société de Gestion d'OPCVM informe immédiatement les porteurs de parts du Fonds, objet de la scission, et Leur transmet notamment un rapport justifiant La décision de scission et en détaillant les modalités. Elle met également à leur disposition les Prospectus et, le cas échéant, les documents d’information clé pour l'investisseur des deux FCP issus de la scission. 5. Le rapport du Commissaire aux Comptes visé à l’article 67 alinéa 1 point e) est tenu à La disposition des porteurs de parts par La Société de Gestion. 6. Les frais de gestion du FCP mentionné à l’alinéa 1 du présent article doivent être adaptés à une gestion de type extinctive.",
+      "sourceKeywordHits": [
+        "porteurs",
+        "prospectus"
+      ],
+      "normalizedRequirementCandidate": "L'information des porteurs et la disponibilité des prospectus après scission doivent respecter les modalités applicables.",
+      "applicabilityCandidate": "OPC_SCISSION",
+      "products": [
+        "OPCVM",
+        "OPCR",
+        "OTHER_OPC"
+      ],
+      "documentTypes": [
+        "HOLDER_NOTICE",
+        "PROSPECTUS"
+      ],
+      "canonicalFields": [
+        "corporate_actions[].holder_information",
+        "documents.prospectus.availability"
+      ],
+      "questionIds": [
+        "Q_SCISSION_HOLDER_INFORMATION"
+      ],
+      "clauseGroupIds": [
+        "CG_CORPORATE_ACTION_NOTICE"
+      ],
+      "controlIds": [
+        "RULE_SCISSION_HOLDER_INFORMATION_COMPLETE"
+      ],
+      "evidenceTypes": [
+        "HOLDER_NOTICE",
+        "PUBLICATION_EVIDENCE"
+      ],
+      "outputSectionIds": [
+        "SYSTEM_ONLY"
+      ],
+      "reviewRoles": [
+        "LEGAL",
+        "COMPLIANCE"
+      ],
+      "circ005RequirementLinks": [],
+      "status": "EXTRACTED_UNVERIFIED_PENDING_LEGAL_AND_COMPLIANCE_REVIEW",
+      "activation": "FORBIDDEN",
+      "legalReviewStatus": "PENDING",
+      "complianceReviewStatus": "PENDING",
+      "specFile": "regulatory/requirements/inst066-candidates/04_CORPORATE_SPECIAL_PRODUCTS.json",
+      "provenance": {
+        "sourceArtifact": "regulatory/materialized/INSTRUCTION_66_CREPMF_2021.pdf",
+        "ocrDerivative": "regulatory/materialized/INSTRUCTION_66_CREPMF_2021.txt",
+        "articleBlock": "regulatory/requirements/INST066_ARTICLE_BLOCKS_V0_1.json",
+        "textQuality": "OCR_EXTRACTED_UNVERIFIED"
+      }
+    },
+    {
+      "id": "INST066_ART074_REQ001",
+      "sourceId": "INSTRUCTION_66_CREPMF_2021",
+      "sourceSha256": "3f964f2f6ab9ce9eb16912ccda13f34b5023a188dfb18fcba7065590c770d396",
+      "articleId": "INST066_ARTICLE_074",
+      "articleNumber": 74,
+      "sourcePages": [
+        57,
+        58
+      ],
+      "sourceArticleTextSha256": "55207043a609fe18f5741c17b23fa7f7f3956c341b9ad14beed128f4a239d1f2",
+      "sourceTextCandidate": "…par nature des investisseurs non qualifiés. Un FCPE ou une SICAVAS peut être formé d’un seul ou de plusieurs compartiments. Chaque compartiment est considéré comme un OPCR distinct et requiert un enregistrement dans les conditions mentionnées au premier alinéa de l’article 19 de la présente Instruction. Un OPCR peut également offrir des classes de parts différentes dans Les conditions déterminées dans une Circulaire du Conseil Régional. Un OPCVM ne peut être formé que d’un seul compartiment. Un OPCVM peut offrir des classes de parts où d'actions différentes dans Les conditions déterminées dans une Circulaire du Conseil Régional Les FCPE et Les SICAVAS investissent dans les actifs mentionnés aux dispositions de l’article 39. Avenue Joseph ANOMA TEL.: (225) 27 20 21 57 42 / 20 31 56 20 01 B.P. 1878 Abidjan 01/Côte d’ivoire 57 _æ Fax: (225) 27 20 33 23 04 Site web : http://www.crepmf.org presidence@crepmf.org Les FCPE et Les SICAVAS respectent les conditions mentionnées aux articles 41 à 46 et A7 alinéa 2 à 53 ainsi que Les chapitres 3 et 4 du titre II. Par dérogation aux alinéas 3 et 4 du présent article, Les FCPE et Les SICAVAS peuvent détenir, sans limitation, des valeurs mobilières émises par l’entreprise ou par toute entreprise qui lui est liée par un accord d’intéressement, de participation ou un plan d'épargne d’entreprise au sein d’un groupe constitué par des entreprises juridiquement indépendantes, mais ayant établi entre elles des liens financiers et économiques. L’actif d'un FCPE ou d’une SICAVAS mentionné à l’alinéa 5 du présent article doit être constitué en permanence et à hauteur d’au moins 20%, par des actions de l’entreprise ou de toute entreprise qui lui est liée. Pour les entreprises admises à La cote de La Bourse Régionale des Valeurs Mobilières, le rat…",
+      "sourceKeywordHits": [
+        "parts"
+      ],
+      "normalizedRequirementCandidate": "Les fonds d'épargne salariale et leurs classes de parts doivent décrire les bénéficiaires, droits et modalités particulières applicables.",
+      "applicabilityCandidate": "EMPLOYEE_SAVINGS_FUND",
+      "products": [
+        "EMPLOYEE_SAVINGS_FUND"
+      ],
+      "documentTypes": [
+        "PROSPECTUS",
+        "FUND_REGULATION"
+      ],
+      "canonicalFields": [
+        "fund.employee_savings",
+        "share_classes[]",
+        "target_investor.investor_types"
+      ],
+      "questionIds": [
+        "Q_SHARE_CLASSES_COUNT",
+        "Q_TARGET_INVESTOR_PROFILE"
+      ],
+      "clauseGroupIds": [
+        "CG_PARTS_OVERVIEW"
+      ],
+      "controlIds": [
+        "RULE_EMPLOYEE_SAVINGS_CLASS_DETAILS_COMPLETE"
+      ],
+      "evidenceTypes": [
+        "EMPLOYEE_SAVINGS_PLAN",
+        "FUND_REGULATION"
+      ],
+      "outputSectionIds": [
+        "SEC_1_10_PARTS_CHARACTERISTICS",
+        "SEC_5_2_TARGET_INVESTOR"
+      ],
+      "reviewRoles": [
+        "LEGAL",
+        "COMPLIANCE"
+      ],
+      "circ005RequirementLinks": [
+        "CIRC005_1_10_FCP_PARTS_CHARACTERISTICS",
+        "CIRC005_5_2_TARGET_INVESTOR"
+      ],
+      "status": "EXTRACTED_UNVERIFIED_PENDING_LEGAL_AND_COMPLIANCE_REVIEW",
+      "activation": "FORBIDDEN",
+      "legalReviewStatus": "PENDING",
+      "complianceReviewStatus": "PENDING",
+      "specFile": "regulatory/requirements/inst066-candidates/04_CORPORATE_SPECIAL_PRODUCTS.json",
+      "provenance": {
+        "sourceArtifact": "regulatory/materialized/INSTRUCTION_66_CREPMF_2021.pdf",
+        "ocrDerivative": "regulatory/materialized/INSTRUCTION_66_CREPMF_2021.txt",
+        "articleBlock": "regulatory/requirements/INST066_ARTICLE_BLOCKS_V0_1.json",
+        "textQuality": "OCR_EXTRACTED_UNVERIFIED"
+      }
+    },
+    {
+      "id": "INST066_ART086_REQ001",
+      "sourceId": "INSTRUCTION_66_CREPMF_2021",
+      "sourceSha256": "3f964f2f6ab9ce9eb16912ccda13f34b5023a188dfb18fcba7065590c770d396",
+      "articleId": "INST066_ARTICLE_086",
+      "articleNumber": 86,
+      "sourcePages": [
+        63
+      ],
+      "sourceArticleTextSha256": "622977da6f514fb1354a2a4c20c2bac4c8b4c52c9e5a9578519d1f547f5ffc98",
+      "sourceTextCandidate": "Le Règlement ou Les documents constitutifs de L’OPCR prévoient à minima : la durée limitée ou illimitée de l’OPCR et ses conditions de dissolution ; les catégories de titres détenus ; les modalités de modification du capital et politique de souscription et rachat des titres des parts ; le montant et la limite des engagements des différents porteurs de parts ou actionnaires et leurs apports ; les investissements et Les types d'actifs autorisés, conformément aux dispositions des articles 81, 84 et 85 ; les principes de valorisation des actifs ; Les règles de fonctionnement, l’objectif et la stratégie d'investissement ; les modalités d'affectation des résultats et, le cas échéant, de distribution des revenus ; les modalités de rémunération de la Société de Gestion.",
+      "sourceKeywordHits": [
+        "OPCR"
+      ],
+      "normalizedRequirementCandidate": "Le document constitutif d'un OPCR doit contenir les mentions minimales prévues par le texte avec une couverture contrôlable.",
+      "applicabilityCandidate": "OPCR",
+      "products": [
+        "OPCR"
+      ],
+      "documentTypes": [
+        "OPCR_CONSTITUTIVE_DOCUMENT"
+      ],
+      "canonicalFields": [
+        "opcr.constitutive_document",
+        "regulatory_coverage.requirements"
+      ],
+      "questionIds": [
+        "Q_OPCR_CONSTITUTIVE_DOCUMENT"
+      ],
+      "clauseGroupIds": [
+        "CG_OPCR_CONSTITUTIVE_DOCUMENT"
+      ],
+      "controlIds": [
+        "RULE_OPCR_CONSTITUTIVE_DOCUMENT_COMPLETE"
+      ],
+      "evidenceTypes": [
+        "OPCR_CONSTITUTIVE_DOCUMENT"
+      ],
+      "outputSectionIds": [
+        "DOCUMENT_OPCR_CONSTITUTIVE"
+      ],
+      "reviewRoles": [
+        "LEGAL",
+        "COMPLIANCE"
+      ],
+      "circ005RequirementLinks": [],
+      "status": "EXTRACTED_UNVERIFIED_PENDING_LEGAL_AND_COMPLIANCE_REVIEW",
+      "activation": "FORBIDDEN",
+      "legalReviewStatus": "PENDING",
+      "complianceReviewStatus": "PENDING",
+      "specFile": "regulatory/requirements/inst066-candidates/04_CORPORATE_SPECIAL_PRODUCTS.json",
+      "provenance": {
+        "sourceArtifact": "regulatory/materialized/INSTRUCTION_66_CREPMF_2021.pdf",
+        "ocrDerivative": "regulatory/materialized/INSTRUCTION_66_CREPMF_2021.txt",
+        "articleBlock": "regulatory/requirements/INST066_ARTICLE_BLOCKS_V0_1.json",
+        "textQuality": "OCR_EXTRACTED_UNVERIFIED"
+      }
+    },
+    {
+      "id": "INST066_ART087_REQ001",
+      "sourceId": "INSTRUCTION_66_CREPMF_2021",
+      "sourceSha256": "3f964f2f6ab9ce9eb16912ccda13f34b5023a188dfb18fcba7065590c770d396",
+      "articleId": "INST066_ARTICLE_087",
+      "articleNumber": 87,
+      "sourcePages": [
+        63
+      ],
+      "sourceArticleTextSha256": "08faf7b57119989cc37f8cfb1844dbbcdde1f7837813ab902f6ffd034ef2853f",
+      "sourceTextCandidate": "1. Les OPCR rachètent ou remboursent les parts ou actions dans Les conditions décrites dans Le Prospectus. Les OPCR ou la Société de Gestion d’OPCR agissant pour Le compte de l’OPCR peuvent limiter ou suspendre temporaïîrement, conformément au Règlement du Fonds ou aux documents constitutifs de la Société d’investissement, le rachat ou le remboursement de ses parts où actions. Le Conseil Régional peut exiger, dans l’intérêt des porteurs de parts ou actionnaires ou dans l'intérêt du public, La suspension du rachat ou du remboursement des parts ou actions. La limitation et la suspension temporaire visées au deuxième alinéa du présent article ne sont prévues que dans des cas exceptionnels où Les circonstances l’exigent et où La limitation ou La suspension est justifiée compte tenu des intérêts des porteurs de parts ou actionnaires. En cas de suspension temporaire visée à l’alinéa 2 du présent article, les OPCR font connaître sans délai Leur décision au Conseil Régional. JA Avenue Joseph ANOMA 01 B.P. 1878 Abidjan 01/Côte d'Ivoire Site web : http://www.crepmf.org 63 à TEL.: (225) 27 20 21 57 42 / 20 31 56 20 Fax: (225) 27 20 33 23 04 presidence@crepmf.org |",
+      "sourceKeywordHits": [
+        "prospectus"
+      ],
+      "normalizedRequirementCandidate": "Le prospectus d'un OPCR doit décrire les modalités de liquidité, de rachat et les limitations ou suspensions applicables.",
+      "applicabilityCandidate": "OPCR",
+      "products": [
+        "OPCR"
+      ],
+      "documentTypes": [
+        "PROSPECTUS",
+        "LIQUIDITY_POLICY"
+      ],
+      "canonicalFields": [
+        "redemption",
+        "redemption.suspension",
+        "opcr.liquidity_arrangements"
+      ],
+      "questionIds": [
+        "Q_REDEMPTION_ALLOWED",
+        "Q_REDEMPTION_SUSPENSION_ALLOWED"
+      ],
+      "clauseGroupIds": [
+        "CG_REDEMPTION",
+        "CG_REDEMPTION_SUSPENSION"
+      ],
+      "controlIds": [
+        "RULE_OPCR_LIQUIDITY_DISCLOSURE_COMPLETE"
+      ],
+      "evidenceTypes": [
+        "OPCR_LIQUIDITY_POLICY",
+        "OPCR_PROSPECTUS"
+      ],
+      "outputSectionIds": [
+        "SEC_1_13_REDEMPTION_SUSPENSION"
+      ],
+      "reviewRoles": [
+        "RISK",
+        "LEGAL",
+        "COMPLIANCE"
+      ],
+      "circ005RequirementLinks": [
+        "CIRC005_1_13_FCP_REDEMPTION_REIMBURSEMENT",
+        "CIRC005_1_13_FCP_SUSPENSION"
+      ],
+      "status": "EXTRACTED_UNVERIFIED_PENDING_LEGAL_AND_COMPLIANCE_REVIEW",
+      "activation": "FORBIDDEN",
+      "legalReviewStatus": "PENDING",
+      "complianceReviewStatus": "PENDING",
+      "specFile": "regulatory/requirements/inst066-candidates/04_CORPORATE_SPECIAL_PRODUCTS.json",
+      "provenance": {
+        "sourceArtifact": "regulatory/materialized/INSTRUCTION_66_CREPMF_2021.pdf",
+        "ocrDerivative": "regulatory/materialized/INSTRUCTION_66_CREPMF_2021.txt",
+        "articleBlock": "regulatory/requirements/INST066_ARTICLE_BLOCKS_V0_1.json",
+        "textQuality": "OCR_EXTRACTED_UNVERIFIED"
+      }
+    },
+    {
+      "id": "INST066_ART092_REQ001",
+      "sourceId": "INSTRUCTION_66_CREPMF_2021",
+      "sourceSha256": "3f964f2f6ab9ce9eb16912ccda13f34b5023a188dfb18fcba7065590c770d396",
+      "articleId": "INST066_ARTICLE_092",
+      "articleNumber": 92,
+      "sourcePages": [
+        64,
+        65
+      ],
+      "sourceArticleTextSha256": "a5dd625402cac5957eb970ef10349e60b0bd87833532c6f51d531b1ec353b93a",
+      "sourceTextCandidate": "La présente Instruction abroge Les décisions et Instructions suivantes : - Décision n°2012-119 portant modification de l’Instruction N°46/2011 relative à la classification et aux règles d’allocation d’actifs des organismes de placement collectif sur le marché financier régional de l'UMOA ; - Instruction n°46/2011 révisée relative à la classification et aux règles d’allocation d’actifs des organismes de placement collectif sur le marché financier régional de l’UMOA ; - Instruction n°45/2011 relative à l’organisation, au fonctionnement et la gestion des organismes de placement collectif en valeurs mobilières sur le marché financier régional de l’UMOA ; - Instruction n°24/99 relative à la note d’information des Organismes de Placement Collectif en Valeurs Mobilières : - Instruction n°23/99 relative aux actifs gérés par les Organismes de Placement Collectif en Valeurs Mobilières ; Avenue Joseph ANOMA TEL.: (225) 27 20 21 57 42 / 20 31 5620 07 B.P. 1878 Abidjan 01/Côte d’lvoire 64 À Fax: (225) 27 20 33 23 04 au Site web : http://www.crepmf.org presidence@crepmf.org -_ Instruction n°22/99 relative à l'agrément des Organismes de Placement Collectif en Valeurs Mobilières et à l’information du public ; = Instruction n°21/99 relative à la classification des Organismes de Placement Collectif en Valeurs Mobilières. Elle prend effet à compter du 1°’ janvier 2022. Elle sera publiée partout où besoin sera. Fait à Abidjan, le _ 1 6 DEC 2021 TEL.: (225) 27 20 21 57 42 / 20 31 56 20 À) Avenue Joseph ANOMA 65 Fax: (225) 27 20 33 23 04 À 01 B.P. 1878 Abidjan 01/Côte d'ivoire presidence@crepmf.org Site web : http://wWww.crepmf.org",
+      "sourceKeywordHits": [
+        "prend effet",
+        "abroge"
+      ],
+      "normalizedRequirementCandidate": "La date portée sur l'acte, sa date d'entrée en vigueur et l'inventaire des textes abrogés doivent être confirmés visuellement et par rapprochement avec les registres avant mise à jour du pack.",
+      "applicabilityCandidate": "REGULATORY_SOURCE_METADATA_ONLY",
+      "products": [
+        "REGULATORY_SOURCE"
+      ],
+      "documentTypes": [
+        "SOURCE_METADATA",
+        "REVIEW_EVIDENCE"
+      ],
+      "canonicalFields": [
+        "regulatory_sources.effective_from",
+        "regulatory_sources.signed_on",
+        "regulatory_sources.abrogated_texts[]"
+      ],
+      "questionIds": [
+        "Q_SOURCE_EFFECTIVE_DATE"
+      ],
+      "clauseGroupIds": [],
+      "controlIds": [
+        "RULE_SOURCE_EFFECTIVE_DATE_VERIFIED",
+        "RULE_ABROGATION_INVENTORY_CONFIRMED"
+      ],
+      "evidenceTypes": [
+        "OFFICIAL_SOURCE_FINAL_PAGES",
+        "OFFICIAL_REGISTRY_RECORD"
+      ],
+      "outputSectionIds": [
+        "SYSTEM_ONLY"
+      ],
+      "reviewRoles": [
+        "LEGAL",
+        "COMPLIANCE"
+      ],
+      "circ005RequirementLinks": [
+        "CIRC005_GENERAL_EFFECTIVE_DATE"
+      ],
+      "status": "EXTRACTED_UNVERIFIED_PENDING_LEGAL_AND_COMPLIANCE_REVIEW",
+      "activation": "FORBIDDEN",
+      "legalReviewStatus": "PENDING",
+      "complianceReviewStatus": "PENDING",
+      "specFile": "regulatory/requirements/inst066-candidates/04_CORPORATE_SPECIAL_PRODUCTS.json",
+      "provenance": {
+        "sourceArtifact": "regulatory/materialized/INSTRUCTION_66_CREPMF_2021.pdf",
+        "ocrDerivative": "regulatory/materialized/INSTRUCTION_66_CREPMF_2021.txt",
+        "articleBlock": "regulatory/requirements/INST066_ARTICLE_BLOCKS_V0_1.json",
+        "textQuality": "OCR_EXTRACTED_UNVERIFIED"
+      }
+    }
+  ],
+  "caveat": "Les résumés normatifs, applicabilités, champs, questions, clauses et contrôles sont des candidats de modélisation. Ils restent inactifs jusqu'à double revue juridique et conformité fondée sur le PDF officiel."
+}

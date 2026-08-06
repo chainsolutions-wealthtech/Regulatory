@@ -1,0 +1,57 @@
+{
+  "validationId": "INST066_DETAILED_REQUIREMENTS_VALIDATION_V0_1",
+  "status": "PASS",
+  "sourceId": "INSTRUCTION_66_CREPMF_2021",
+  "sourceSha256": "3f964f2f6ab9ce9eb16912ccda13f34b5023a188dfb18fcba7065590c770d396",
+  "checks": {
+    "sourceDigestValid": true,
+    "requirementIdsUnique": true,
+    "stableRequirementIdFormat": true,
+    "allSourceArticlesValid": true,
+    "allSourceDigestsPresent": true,
+    "allRequirementsInactive": true,
+    "allRequirementsUnverified": true,
+    "noForbiddenStatus": true,
+    "dualHumanReviewRequired": true,
+    "allCirc005LinksResolve": true,
+    "allRequirementsHaveControls": true,
+    "allRequirementsHaveEvidence": true,
+    "allRequirementsHaveOutputOrSystemLocation": true
+  },
+  "metrics": {
+    "requirementCandidateCount": 38,
+    "coveredArticleNumbers": [
+      14,
+      17,
+      18,
+      27,
+      28,
+      29,
+      30,
+      32,
+      33,
+      34,
+      35,
+      38,
+      43,
+      47,
+      48,
+      49,
+      53,
+      67,
+      68,
+      69,
+      74,
+      86,
+      87,
+      92
+    ],
+    "circ005CrosswalkLinks": 37,
+    "requirementsWithKeywordHits": 33
+  },
+  "outputs": [
+    "regulatory/requirements/INST066_PROSPECTUS_REQUIREMENT_CANDIDATES_V0_1.json",
+    "regulatory/matrices/INST066_CIRC005_DETAILED_CROSSWALK_V0_1.csv"
+  ],
+  "caveat": "Validation structurelle uniquement; aucune interprétation juridique n'est approuvée."
+}
