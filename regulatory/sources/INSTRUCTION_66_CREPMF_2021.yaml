@@ -58,7 +58,11 @@ verification:
     observed_reference_count: 7
     source_text_status: VISUALLY_OBSERVED_FROM_HASHED_OFFICIAL_PDF
     historical_registry_crosscheck_status: INCOMPLETE
-  amendments_rectifications_review: TO_COMPLETE
+  amendments_rectifications_review:
+    path: regulatory/registries/INST066_AMENDMENTS_RECTIFICATIONS_REVIEW_V0_1.yaml
+    result: NO_SEPARATE_MODIFIER_IDENTIFIED_IN_SEARCHED_OFFICIAL_INDEXES
+    completeness_claimed: false
+    review_status: OPEN
   official_amf_binary_url: TO_CAPTURE_FROM_DYNAMIC_REGISTRY
   source_observation: regulatory/review-evidence/INST066_LEGAL_METADATA/SOURCE_OBSERVATION_V0_1.yaml
   legal_review_status: PENDING
@@ -87,5 +91,6 @@ extraction:
     - La séquence des articles 1 à 92 est complète et sans numéro manquant.
     - Les dates et les sept références abrogées ont été observées visuellement sur les pages 64 et 65 du PDF hashé.
     - Le rapprochement historique des sept références avec les registres officiels reste incomplet.
+    - Aucun modificatif ou rectificatif séparé n'a été identifié dans le périmètre officiel recherché, sans prétention d'exhaustivité.
     - Les titres, alinéas, applicabilités et effets normatifs restent à revoir humainement.
     - Aucune exigence issue de cette source ne peut devenir ACTIVE, APPROVED ou VALIDATED sans double revue juridique et conformité.
