@@ -3,11 +3,13 @@ import {
   authorize,
   roleCanDecideReview,
   type AuthorizationSubject,
+  type ProspectusRole,
 } from "@/domain/authorization";
 import {
   assertTransitionAllowed,
   evaluateTransition,
   workflowSubmissionEnabled,
+  type ReviewDecisionRecord,
   type WorkflowEvaluationContext,
 } from "@/domain/review-workflow";
 
@@ -147,18 +149,19 @@ const validation = {
 };
 console.log(JSON.stringify(validation, null, 2));
 
-function approvedReviews(distinctApprovers: boolean) {
+function approvedReviews(distinctApprovers: boolean): ReviewDecisionRecord[] {
   const common = "72000000-0000-0000-0000-000000000009";
-  return [
+  const approvals: Array<{ role: ProspectusRole; decidedBy: string }> = [
     { role: "RISK", decidedBy: "72000000-0000-0000-0000-000000000004" },
     { role: "OPERATIONS", decidedBy: "72000000-0000-0000-0000-000000000005" },
     { role: "COMPLIANCE", decidedBy: distinctApprovers ? complianceUser : common },
     { role: "LEGAL", decidedBy: distinctApprovers ? "72000000-0000-0000-0000-000000000006" : common },
     { role: "TAX", decidedBy: distinctApprovers ? "72000000-0000-0000-0000-000000000007" : common },
     { role: "PRODUCT", decidedBy: distinctApprovers ? projectOwner : common },
-  ].map((item) => ({
+  ];
+  return approvals.map((item) => ({
     ...item,
-    status: "APPROVED" as const,
+    status: "APPROVED",
     decidedAt: "2026-08-05T10:00:00.000Z",
   }));
 }
