@@ -5,15 +5,16 @@
   "type": "module",
   "scripts": {
     "catalog:generate": "node ../../scripts/generate-web-regulatory-catalog.mjs",
-    "predev": "npm run catalog:generate",
+    "security:generate": "node ../../scripts/generate-web-security-policies.mjs",
+    "predev": "npm run catalog:generate && npm run security:generate",
     "dev": "next dev",
-    "pretypecheck": "npm run catalog:generate",
+    "pretypecheck": "npm run catalog:generate && npm run security:generate",
     "typecheck": "tsc --noEmit",
-    "prebuild": "npm run catalog:generate",
+    "prebuild": "npm run catalog:generate && npm run security:generate",
     "build": "next build",
     "start": "next start",
     "test:postgres-repository": "NODE_OPTIONS=--conditions=react-server tsx src/server/storage/postgres-project-repository.integration.ts",
-    "test:authorization-workflow": "tsx src/domain/authorization-workflow.integration.ts"
+    "test:authorization-workflow": "npm run security:generate && tsx src/domain/authorization-workflow.integration.ts"
   },
   "dependencies": {
     "jose": "6.2.3",
