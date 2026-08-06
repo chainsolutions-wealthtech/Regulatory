@@ -1,6 +1,7 @@
 import type {
   AddReviewCommentInput,
   DecideReviewInput,
+  RecordInternalApprovalInput,
   RequestReviewInput,
   ReviewWorkspace,
   TransitionReviewWorkflowInput,
@@ -12,5 +13,6 @@ export interface ReviewRepository {
   requestReview(input: RequestReviewInput): Promise<ReviewWorkspace>;
   decideReview(input: DecideReviewInput): Promise<ReviewWorkspace>;
   addComment(input: AddReviewCommentInput): Promise<ReviewWorkspace>;
+  recordInternalApproval(input: RecordInternalApprovalInput): Promise<ReviewWorkspace>;
   transition(input: TransitionReviewWorkflowInput): Promise<ReviewWorkspace>;
 }
