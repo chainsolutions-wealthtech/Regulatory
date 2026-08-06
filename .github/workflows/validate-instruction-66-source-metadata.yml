@@ -12,6 +12,7 @@ on:
       - regulatory/review-evidence/INST066_LEGAL_METADATA/**
       - regulatory/materialized/INSTRUCTION_66_CREPMF_2021.pdf
       - regulatory/materialized/INSTRUCTION_66_CREPMF_2021.metadata.json
+      - regulatory/requirements/INST066_*.json
       - regulatory/validation/INST066_DETAILED_REQUIREMENTS_VALIDATION_V0_1.json
   workflow_dispatch:
 
@@ -34,10 +35,24 @@ jobs:
         run: python3 scripts/validate_instruction_66_source_metadata.py
       - name: Ensure no requirement was activated
         run: |
-          ! grep -R --line-number -E '(^|[[:space:]])(ACTIVE|APPROVED|VALIDATED)([[:space:]]|$)' \
-            regulatory/requirements/INST066_* \
-            regulatory/sources/INSTRUCTION_66_CREPMF_2021.yaml \
-            regulatory/registries/INST066_*.yaml
+          python3 - <<'PY'
+          import json
+          from pathlib import Path
+
+          forbidden_statuses = {'ACTIVE', 'APPROVED', 'VALIDATED'}
+          for path in sorted(Path('regulatory/requirements').glob('INST066_*.json')):
+              document = json.loads(path.read_text(encoding='utf-8'))
+              assert document.get('activation') == 'FORBIDDEN', (path, document.get('activation'))
+              assert document.get('status') not in forbidden_statuses, (path, document.get('status'))
+              for collection_name in ('articles', 'atoms', 'requirements'):
+                  for item in document.get(collection_name, []):
+                      assert item.get('activation') == 'FORBIDDEN', (path, item.get('id') or item.get('articleId'))
+                      assert item.get('status') not in forbidden_statuses, (path, item.get('id') or item.get('articleId'))
+
+          source = Path('regulatory/sources/INSTRUCTION_66_CREPMF_2021.yaml').read_text(encoding='utf-8')
+          assert 'requirement_activation_allowed: false' in source
+          assert 'requirement_activation: FORBIDDEN_PENDING_LEGAL_AND_COMPLIANCE_REVIEW' in source
+          PY
       - name: Upload consistency evidence
         uses: actions/upload-artifact@v4
         with:
