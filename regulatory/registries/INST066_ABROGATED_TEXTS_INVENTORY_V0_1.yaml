@@ -1,0 +1,79 @@
+inventory_id: INST066_ABROGATED_TEXTS_INVENTORY_V0_1
+source_id: INSTRUCTION_66_CREPMF_2021
+source_article: 92
+status: SOURCE_TEXT_VISUALLY_OBSERVED_HISTORICAL_REGISTRY_CROSSCHECK_PENDING
+source_evidence:
+  pdf: regulatory/materialized/INSTRUCTION_66_CREPMF_2021.pdf
+  sha256: 3f964f2f6ab9ce9eb16912ccda13f34b5023a188dfb18fcba7065590c770d396
+  pages: [64, 65]
+  rendered_pages:
+  - regulatory/review-evidence/INST066_LEGAL_METADATA/page-64.png
+  - regulatory/review-evidence/INST066_LEGAL_METADATA/page-65.png
+reference_count: 7
+references:
+- seq: 1
+  reference: Décision n°2012-119
+  title_observed: >-
+    Décision n°2012-119 portant modification de l'Instruction n°46/2011 relative
+    à la classification et aux règles d'allocation d'actifs des organismes de
+    placement collectif sur le marché financier régional de l'UMOA
+  evidence_page: 64
+  source_text_status: VISUALLY_OBSERVED
+  historical_registry_status: TO_CROSSCHECK
+- seq: 2
+  reference: Instruction n°46/2011 révisée
+  title_observed: >-
+    Instruction n°46/2011 révisée relative à la classification et aux règles
+    d'allocation d'actifs des organismes de placement collectif sur le marché
+    financier régional de l'UMOA
+  evidence_page: 64
+  source_text_status: VISUALLY_OBSERVED
+  historical_registry_status: TO_CROSSCHECK
+- seq: 3
+  reference: Instruction n°45/2011
+  title_observed: >-
+    Instruction n°45/2011 relative à l'organisation, au fonctionnement et à la
+    gestion des organismes de placement collectif en valeurs mobilières sur le
+    marché financier régional de l'UMOA
+  evidence_page: 64
+  source_text_status: VISUALLY_OBSERVED
+  historical_registry_status: TO_CROSSCHECK
+- seq: 4
+  reference: Instruction n°24/99
+  title_observed: >-
+    Instruction n°24/99 relative à la note d'information des Organismes de
+    Placement Collectif en Valeurs Mobilières
+  evidence_page: 64
+  source_text_status: VISUALLY_OBSERVED
+  historical_registry_status: TO_CROSSCHECK
+- seq: 5
+  reference: Instruction n°23/99
+  title_observed: >-
+    Instruction n°23/99 relative aux actifs gérés par les Organismes de
+    Placement Collectif en Valeurs Mobilières
+  evidence_page: 64
+  source_text_status: VISUALLY_OBSERVED
+  historical_registry_status: TO_CROSSCHECK
+- seq: 6
+  reference: Instruction n°22/99
+  title_observed: >-
+    Instruction n°22/99 relative à l'agrément des Organismes de Placement
+    Collectif en Valeurs Mobilières et à l'information du public
+  evidence_page: 65
+  source_text_status: VISUALLY_OBSERVED
+  historical_registry_status: TO_CROSSCHECK
+- seq: 7
+  reference: Instruction n°21/99
+  title_observed: >-
+    Instruction n°21/99 relative à la classification des Organismes de Placement
+    Collectif en Valeurs Mobilières
+  evidence_page: 65
+  source_text_status: VISUALLY_OBSERVED
+  historical_registry_status: TO_CROSSCHECK
+review_boundaries:
+  source_text_observation_complete: true
+  historical_registry_crosscheck_complete: false
+  legal_review_status: PENDING
+  compliance_review_status: PENDING
+  amendments_rectifications_inventory_status: TO_COMPLETE
+  requirement_activation_allowed: false
