@@ -16,6 +16,11 @@ const sources = [
     input: "policies/workflow/PROSPECTUS_REVIEW_WORKFLOW_V1.json",
     output: "PROSPECTUS_REVIEW_WORKFLOW_V1.json",
   },
+  {
+    id: "evidenceStorage",
+    input: "policies/evidence/SECURE_EVIDENCE_STORAGE_V1.json",
+    output: "SECURE_EVIDENCE_STORAGE_V1.json",
+  },
 ];
 
 await mkdir(outputDirectory, { recursive: true });
