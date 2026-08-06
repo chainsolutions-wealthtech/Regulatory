@@ -1,0 +1,1473 @@
+source_id: INSTRUCTION_66_CREPMF_2021
+registry_version: 0.1.0
+status: EXTRACTED_UNVERIFIED_REVIEW_PENDING
+scope: UMOA_OPC_AND_MANAGEMENT_COMPANIES
+materialization:
+  repository_copy: "regulatory/materialized/INSTRUCTION_66_CREPMF_2021.pdf"
+  sha256: 3f964f2f6ab9ce9eb16912ccda13f34b5023a188dfb18fcba7065590c770d396
+  byte_size: 3470163
+  page_count: 65
+  text_extraction_method: "French OCR derivative via OCRmyPDF, then pdftotext -layout -enc UTF-8"
+  ocr_used: true
+defaults:
+  source_status: SOURCE_MATERIALIZED
+  extraction_status: EXTRACTED_UNVERIFIED
+  review_status: PENDING_LEGAL_AND_COMPLIANCE_REVIEW
+  requirement_activation: FORBIDDEN_PENDING_REVIEW
+articles:
+- id: INST066_ARTICLE_002
+  seq: 1
+  article_number: "2"
+  page: 6
+  line_number_in_page: 8
+  heading_raw: "Article 2 - Objet et Champ d’application"
+  title_candidate: "Objet et Champ d’application"
+  products: [TO_CLASSIFY]
+  document_types: [TO_CLASSIFY]
+  applicability: TO_REVIEW
+  normative_status: TO_ATOMIZE
+  review_status: PENDING_LEGAL_AND_COMPLIANCE_REVIEW
+  provenance:
+    source_sha256: 3f964f2f6ab9ce9eb16912ccda13f34b5023a188dfb18fcba7065590c770d396
+    source_page: 6
+    text_quality: OCR_EXTRACTED_UNVERIFIED
+- id: INST066_ARTICLE_003
+  seq: 2
+  article_number: "3"
+  page: 6
+  line_number_in_page: 27
+  heading_raw: "Article 3 - Typologie des Organismes de gestion collective"
+  title_candidate: "Typologie des Organismes de gestion collective"
+  products: [TO_CLASSIFY]
+  document_types: [TO_CLASSIFY]
+  applicability: TO_REVIEW
+  normative_status: TO_ATOMIZE
+  review_status: PENDING_LEGAL_AND_COMPLIANCE_REVIEW
+  provenance:
+    source_sha256: 3f964f2f6ab9ce9eb16912ccda13f34b5023a188dfb18fcba7065590c770d396
+    source_page: 6
+    text_quality: OCR_EXTRACTED_UNVERIFIED
+- id: INST066_ARTICLE_004
+  seq: 3
+  article_number: "4"
+  page: 7
+  line_number_in_page: 4
+  heading_raw: "Article 4 - Agrément des Sociétés de Gestion d'OPC"
+  title_candidate: "Agrément des Sociétés de Gestion d'OPC"
+  products: [TO_CLASSIFY]
+  document_types: [TO_CLASSIFY]
+  applicability: TO_REVIEW
+  normative_status: TO_ATOMIZE
+  review_status: PENDING_LEGAL_AND_COMPLIANCE_REVIEW
+  provenance:
+    source_sha256: 3f964f2f6ab9ce9eb16912ccda13f34b5023a188dfb18fcba7065590c770d396
+    source_page: 7
+    text_quality: OCR_EXTRACTED_UNVERIFIED
+- id: INST066_ARTICLE_005
+  seq: 4
+  article_number: "5"
+  page: 8
+  line_number_in_page: 13
+  heading_raw: "Article 5 - Conditions d'agrément"
+  title_candidate: "Conditions d'agrément"
+  products: [TO_CLASSIFY]
+  document_types: [TO_CLASSIFY]
+  applicability: TO_REVIEW
+  normative_status: TO_ATOMIZE
+  review_status: PENDING_LEGAL_AND_COMPLIANCE_REVIEW
+  provenance:
+    source_sha256: 3f964f2f6ab9ce9eb16912ccda13f34b5023a188dfb18fcba7065590c770d396
+    source_page: 8
+    text_quality: OCR_EXTRACTED_UNVERIFIED
+- id: INST066_ARTICLE_006
+  seq: 5
+  article_number: "6"
+  page: 10
+  line_number_in_page: 18
+  heading_raw: "Article 6 - Participation qualifiée"
+  title_candidate: "Participation qualifiée"
+  products: [TO_CLASSIFY]
+  document_types: [TO_CLASSIFY]
+  applicability: TO_REVIEW
+  normative_status: TO_ATOMIZE
+  review_status: PENDING_LEGAL_AND_COMPLIANCE_REVIEW
+  provenance:
+    source_sha256: 3f964f2f6ab9ce9eb16912ccda13f34b5023a188dfb18fcba7065590c770d396
+    source_page: 10
+    text_quality: OCR_EXTRACTED_UNVERIFIED
+- id: INST066_ARTICLE_007
+  seq: 6
+  article_number: "7"
+  page: 10
+  line_number_in_page: 28
+  heading_raw: "Article 7 - Dispositions générales"
+  title_candidate: "Dispositions générales"
+  products: [TO_CLASSIFY]
+  document_types: [TO_CLASSIFY]
+  applicability: TO_REVIEW
+  normative_status: TO_ATOMIZE
+  review_status: PENDING_LEGAL_AND_COMPLIANCE_REVIEW
+  provenance:
+    source_sha256: 3f964f2f6ab9ce9eb16912ccda13f34b5023a188dfb18fcba7065590c770d396
+    source_page: 10
+    text_quality: OCR_EXTRACTED_UNVERIFIED
+- id: INST066_ARTICLE_008
+  seq: 7
+  article_number: "8"
+  page: 11
+  line_number_in_page: 1
+  heading_raw: "Article 8 - Règles organisationnelles"
+  title_candidate: "Règles organisationnelles"
+  products: [TO_CLASSIFY]
+  document_types: [TO_CLASSIFY]
+  applicability: TO_REVIEW
+  normative_status: TO_ATOMIZE
+  review_status: PENDING_LEGAL_AND_COMPLIANCE_REVIEW
+  provenance:
+    source_sha256: 3f964f2f6ab9ce9eb16912ccda13f34b5023a188dfb18fcba7065590c770d396
+    source_page: 11
+    text_quality: OCR_EXTRACTED_UNVERIFIED
+- id: INST066_ARTICLE_009
+  seq: 8
+  article_number: "9"
+  page: 11
+  line_number_in_page: 25
+  heading_raw: "Article 9 - Règles de conduite"
+  title_candidate: "Règles de conduite"
+  products: [TO_CLASSIFY]
+  document_types: [TO_CLASSIFY]
+  applicability: TO_REVIEW
+  normative_status: TO_ATOMIZE
+  review_status: PENDING_LEGAL_AND_COMPLIANCE_REVIEW
+  provenance:
+    source_sha256: 3f964f2f6ab9ce9eb16912ccda13f34b5023a188dfb18fcba7065590c770d396
+    source_page: 11
+    text_quality: OCR_EXTRACTED_UNVERIFIED
+- id: INST066_ARTICLE_010
+  seq: 9
+  article_number: "10"
+  page: 12
+  line_number_in_page: 17
+  heading_raw: "Article 10 - Politiques de rémunération"
+  title_candidate: "Politiques de rémunération"
+  products: [TO_CLASSIFY]
+  document_types: [TO_CLASSIFY]
+  applicability: TO_REVIEW
+  normative_status: TO_ATOMIZE
+  review_status: PENDING_LEGAL_AND_COMPLIANCE_REVIEW
+  provenance:
+    source_sha256: 3f964f2f6ab9ce9eb16912ccda13f34b5023a188dfb18fcba7065590c770d396
+    source_page: 12
+    text_quality: OCR_EXTRACTED_UNVERIFIED
+- id: INST066_ARTICLE_011
+  seq: 10
+  article_number: "11"
+  page: 12
+  line_number_in_page: 32
+  heading_raw: "Article 11 - Fonction de gestion des risques et de contrôle"
+  title_candidate: "Fonction de gestion des risques et de contrôle"
+  products: [TO_CLASSIFY]
+  document_types: [TO_CLASSIFY]
+  applicability: TO_REVIEW
+  normative_status: TO_ATOMIZE
+  review_status: PENDING_LEGAL_AND_COMPLIANCE_REVIEW
+  provenance:
+    source_sha256: 3f964f2f6ab9ce9eb16912ccda13f34b5023a188dfb18fcba7065590c770d396
+    source_page: 12
+    text_quality: OCR_EXTRACTED_UNVERIFIED
+- id: INST066_ARTICLE_012
+  seq: 11
+  article_number: "12"
+  page: 16
+  line_number_in_page: 9
+  heading_raw: "Article 12 - Gestion de la liquidité"
+  title_candidate: "Gestion de la liquidité"
+  products: [TO_CLASSIFY]
+  document_types: [TO_CLASSIFY]
+  applicability: TO_REVIEW
+  normative_status: TO_ATOMIZE
+  review_status: PENDING_LEGAL_AND_COMPLIANCE_REVIEW
+  provenance:
+    source_sha256: 3f964f2f6ab9ce9eb16912ccda13f34b5023a188dfb18fcba7065590c770d396
+    source_page: 16
+    text_quality: OCR_EXTRACTED_UNVERIFIED
+- id: INST066_ARTICLE_013
+  seq: 12
+  article_number: "13"
+  page: 16
+  line_number_in_page: 30
+  heading_raw: "Article 13 - Évaluation des actifs"
+  title_candidate: "Évaluation des actifs"
+  products: [TO_CLASSIFY]
+  document_types: [TO_CLASSIFY]
+  applicability: TO_REVIEW
+  normative_status: TO_ATOMIZE
+  review_status: PENDING_LEGAL_AND_COMPLIANCE_REVIEW
+  provenance:
+    source_sha256: 3f964f2f6ab9ce9eb16912ccda13f34b5023a188dfb18fcba7065590c770d396
+    source_page: 16
+    text_quality: OCR_EXTRACTED_UNVERIFIED
+- id: INST066_ARTICLE_014
+  seq: 13
+  article_number: "14"
+  page: 18
+  line_number_in_page: 30
+  heading_raw: "Article 14 - Délégation"
+  title_candidate: "Délégation"
+  products: [TO_CLASSIFY]
+  document_types: [TO_CLASSIFY]
+  applicability: TO_REVIEW
+  normative_status: TO_ATOMIZE
+  review_status: PENDING_LEGAL_AND_COMPLIANCE_REVIEW
+  provenance:
+    source_sha256: 3f964f2f6ab9ce9eb16912ccda13f34b5023a188dfb18fcba7065590c770d396
+    source_page: 18
+    text_quality: OCR_EXTRACTED_UNVERIFIED
+- id: INST066_ARTICLE_015
+  seq: 14
+  article_number: "15"
+  page: 19
+  line_number_in_page: 30
+  heading_raw: "Article 15 - Mécanismes de gestion des réclamations des investisseurs"
+  title_candidate: "Mécanismes de gestion des réclamations des investisseurs"
+  products: [TO_CLASSIFY]
+  document_types: [TO_CLASSIFY]
+  applicability: TO_REVIEW
+  normative_status: TO_ATOMIZE
+  review_status: PENDING_LEGAL_AND_COMPLIANCE_REVIEW
+  provenance:
+    source_sha256: 3f964f2f6ab9ce9eb16912ccda13f34b5023a188dfb18fcba7065590c770d396
+    source_page: 19
+    text_quality: OCR_EXTRACTED_UNVERIFIED
+- id: INST066_ARTICLE_016
+  seq: 15
+  article_number: "16"
+  page: 20
+  line_number_in_page: 4
+  heading_raw: "Article 16 - Principe de proportionnalité"
+  title_candidate: "Principe de proportionnalité"
+  products: [TO_CLASSIFY]
+  document_types: [TO_CLASSIFY]
+  applicability: TO_REVIEW
+  normative_status: TO_ATOMIZE
+  review_status: PENDING_LEGAL_AND_COMPLIANCE_REVIEW
+  provenance:
+    source_sha256: 3f964f2f6ab9ce9eb16912ccda13f34b5023a188dfb18fcba7065590c770d396
+    source_page: 20
+    text_quality: OCR_EXTRACTED_UNVERIFIED
+- id: INST066_ARTICLE_017
+  seq: 16
+  article_number: "17"
+  page: 20
+  line_number_in_page: 12
+  heading_raw: "Article 17 - Agrément de l’OPCVM"
+  title_candidate: "Agrément de l’OPCVM"
+  products: [TO_CLASSIFY]
+  document_types: [TO_CLASSIFY]
+  applicability: TO_REVIEW
+  normative_status: TO_ATOMIZE
+  review_status: PENDING_LEGAL_AND_COMPLIANCE_REVIEW
+  provenance:
+    source_sha256: 3f964f2f6ab9ce9eb16912ccda13f34b5023a188dfb18fcba7065590c770d396
+    source_page: 20
+    text_quality: OCR_EXTRACTED_UNVERIFIED
+- id: INST066_ARTICLE_018
+  seq: 17
+  article_number: "18"
+  page: 21
+  line_number_in_page: 17
+  heading_raw: "Article 18 - Classification des OPCVM"
+  title_candidate: "Classification des OPCVM"
+  products: [TO_CLASSIFY]
+  document_types: [TO_CLASSIFY]
+  applicability: TO_REVIEW
+  normative_status: TO_ATOMIZE
+  review_status: PENDING_LEGAL_AND_COMPLIANCE_REVIEW
+  provenance:
+    source_sha256: 3f964f2f6ab9ce9eb16912ccda13f34b5023a188dfb18fcba7065590c770d396
+    source_page: 21
+    text_quality: OCR_EXTRACTED_UNVERIFIED
+- id: INST066_ARTICLE_019
+  seq: 18
+  article_number: "19"
+  page: 22
+  line_number_in_page: 39
+  heading_raw: "Article 19 - Agrément ou Enregistrement des FIA"
+  title_candidate: "Agrément ou Enregistrement des FIA"
+  products: [TO_CLASSIFY]
+  document_types: [TO_CLASSIFY]
+  applicability: TO_REVIEW
+  normative_status: TO_ATOMIZE
+  review_status: PENDING_LEGAL_AND_COMPLIANCE_REVIEW
+  provenance:
+    source_sha256: 3f964f2f6ab9ce9eb16912ccda13f34b5023a188dfb18fcba7065590c770d396
+    source_page: 22
+    text_quality: OCR_EXTRACTED_UNVERIFIED
+- id: INST066_ARTICLE_020
+  seq: 19
+  article_number: "20"
+  page: 23
+  line_number_in_page: 22
+  heading_raw: "Article 20 - Désignation du Dépositaire"
+  title_candidate: "Désignation du Dépositaire"
+  products: [TO_CLASSIFY]
+  document_types: [TO_CLASSIFY]
+  applicability: TO_REVIEW
+  normative_status: TO_ATOMIZE
+  review_status: PENDING_LEGAL_AND_COMPLIANCE_REVIEW
+  provenance:
+    source_sha256: 3f964f2f6ab9ce9eb16912ccda13f34b5023a188dfb18fcba7065590c770d396
+    source_page: 23
+    text_quality: OCR_EXTRACTED_UNVERIFIED
+- id: INST066_ARTICLE_021
+  seq: 20
+  article_number: "21"
+  page: 24
+  line_number_in_page: 29
+  heading_raw: "Article 21 - Mission du Dépositaire"
+  title_candidate: "Mission du Dépositaire"
+  products: [TO_CLASSIFY]
+  document_types: [TO_CLASSIFY]
+  applicability: TO_REVIEW
+  normative_status: TO_ATOMIZE
+  review_status: PENDING_LEGAL_AND_COMPLIANCE_REVIEW
+  provenance:
+    source_sha256: 3f964f2f6ab9ce9eb16912ccda13f34b5023a188dfb18fcba7065590c770d396
+    source_page: 24
+    text_quality: OCR_EXTRACTED_UNVERIFIED
+- id: INST066_ARTICLE_022
+  seq: 21
+  article_number: "22"
+  page: 29
+  line_number_in_page: 36
+  heading_raw: "Article 22 - Conditions d’accès à l’activité de Société d’Investissement"
+  title_candidate: "Conditions d’accès à l’activité de Société d’Investissement"
+  products: [TO_CLASSIFY]
+  document_types: [TO_CLASSIFY]
+  applicability: TO_REVIEW
+  normative_status: TO_ATOMIZE
+  review_status: PENDING_LEGAL_AND_COMPLIANCE_REVIEW
+  provenance:
+    source_sha256: 3f964f2f6ab9ce9eb16912ccda13f34b5023a188dfb18fcba7065590c770d396
+    source_page: 29
+    text_quality: OCR_EXTRACTED_UNVERIFIED
+- id: INST066_ARTICLE_023
+  seq: 22
+  article_number: "23"
+  page: 30
+  line_number_in_page: 14
+  heading_raw: "Article 23 - Création d’une SICAV"
+  title_candidate: "Création d’une SICAV"
+  products: [TO_CLASSIFY]
+  document_types: [TO_CLASSIFY]
+  applicability: TO_REVIEW
+  normative_status: TO_ATOMIZE
+  review_status: PENDING_LEGAL_AND_COMPLIANCE_REVIEW
+  provenance:
+    source_sha256: 3f964f2f6ab9ce9eb16912ccda13f34b5023a188dfb18fcba7065590c770d396
+    source_page: 30
+    text_quality: OCR_EXTRACTED_UNVERIFIED
+- id: INST066_ARTICLE_024
+  seq: 23
+  article_number: "24"
+  page: 30
+  line_number_in_page: 34
+  heading_raw: "Article 24 - Fonctionnement d’une SICAV"
+  title_candidate: "Fonctionnement d’une SICAV"
+  products: [TO_CLASSIFY]
+  document_types: [TO_CLASSIFY]
+  applicability: TO_REVIEW
+  normative_status: TO_ATOMIZE
+  review_status: PENDING_LEGAL_AND_COMPLIANCE_REVIEW
+  provenance:
+    source_sha256: 3f964f2f6ab9ce9eb16912ccda13f34b5023a188dfb18fcba7065590c770d396
+    source_page: 30
+    text_quality: OCR_EXTRACTED_UNVERIFIED
+- id: INST066_ARTICLE_025
+  seq: 24
+  article_number: "25"
+  page: 31
+  line_number_in_page: 12
+  heading_raw: "Article 25 - Conditions d’agrément des Sociétés d’Investissement"
+  title_candidate: "Conditions d’agrément des Sociétés d’Investissement"
+  products: [TO_CLASSIFY]
+  document_types: [TO_CLASSIFY]
+  applicability: TO_REVIEW
+  normative_status: TO_ATOMIZE
+  review_status: PENDING_LEGAL_AND_COMPLIANCE_REVIEW
+  provenance:
+    source_sha256: 3f964f2f6ab9ce9eb16912ccda13f34b5023a188dfb18fcba7065590c770d396
+    source_page: 31
+    text_quality: OCR_EXTRACTED_UNVERIFIED
+- id: INST066_ARTICLE_026
+  seq: 25
+  article_number: "26"
+  page: 32
+  line_number_in_page: 19
+  heading_raw: "Article 26 - Conditions d’exercice des Sociétés d’Investissement"
+  title_candidate: "Conditions d’exercice des Sociétés d’Investissement"
+  products: [TO_CLASSIFY]
+  document_types: [TO_CLASSIFY]
+  applicability: TO_REVIEW
+  normative_status: TO_ATOMIZE
+  review_status: PENDING_LEGAL_AND_COMPLIANCE_REVIEW
+  provenance:
+    source_sha256: 3f964f2f6ab9ce9eb16912ccda13f34b5023a188dfb18fcba7065590c770d396
+    source_page: 32
+    text_quality: OCR_EXTRACTED_UNVERIFIED
+- id: INST066_ARTICLE_027
+  seq: 26
+  article_number: "27"
+  page: 33
+  line_number_in_page: 4
+  heading_raw: "Article 27 - Objet du Prospectus"
+  title_candidate: "Objet du Prospectus"
+  products: [TO_CLASSIFY]
+  document_types: [TO_CLASSIFY]
+  applicability: TO_REVIEW
+  normative_status: TO_ATOMIZE
+  review_status: PENDING_LEGAL_AND_COMPLIANCE_REVIEW
+  provenance:
+    source_sha256: 3f964f2f6ab9ce9eb16912ccda13f34b5023a188dfb18fcba7065590c770d396
+    source_page: 33
+    text_quality: OCR_EXTRACTED_UNVERIFIED
+- id: INST066_ARTICLE_028
+  seq: 27
+  article_number: "28"
+  page: 33
+  line_number_in_page: 16
+  heading_raw: "Article 28 - Contenu du Prospectus"
+  title_candidate: "Contenu du Prospectus"
+  products: [TO_CLASSIFY]
+  document_types: [TO_CLASSIFY]
+  applicability: TO_REVIEW
+  normative_status: TO_ATOMIZE
+  review_status: PENDING_LEGAL_AND_COMPLIANCE_REVIEW
+  provenance:
+    source_sha256: 3f964f2f6ab9ce9eb16912ccda13f34b5023a188dfb18fcba7065590c770d396
+    source_page: 33
+    text_quality: OCR_EXTRACTED_UNVERIFIED
+- id: INST066_ARTICLE_029
+  seq: 28
+  article_number: "29"
+  page: 34
+  line_number_in_page: 6
+  heading_raw: "Article 29 - Informations spécifiques à fournir"
+  title_candidate: "Informations spécifiques à fournir"
+  products: [TO_CLASSIFY]
+  document_types: [TO_CLASSIFY]
+  applicability: TO_REVIEW
+  normative_status: TO_ATOMIZE
+  review_status: PENDING_LEGAL_AND_COMPLIANCE_REVIEW
+  provenance:
+    source_sha256: 3f964f2f6ab9ce9eb16912ccda13f34b5023a188dfb18fcba7065590c770d396
+    source_page: 34
+    text_quality: OCR_EXTRACTED_UNVERIFIED
+- id: INST066_ARTICLE_030
+  seq: 29
+  article_number: "30"
+  page: 34
+  line_number_in_page: 26
+  heading_raw: "Article 30 - Mise à jour du Prospectus"
+  title_candidate: "Mise à jour du Prospectus"
+  products: [TO_CLASSIFY]
+  document_types: [TO_CLASSIFY]
+  applicability: TO_REVIEW
+  normative_status: TO_ATOMIZE
+  review_status: PENDING_LEGAL_AND_COMPLIANCE_REVIEW
+  provenance:
+    source_sha256: 3f964f2f6ab9ce9eb16912ccda13f34b5023a188dfb18fcba7065590c770d396
+    source_page: 34
+    text_quality: OCR_EXTRACTED_UNVERIFIED
+- id: INST066_ARTICLE_031
+  seq: 30
+  article_number: "31"
+  page: 34
+  line_number_in_page: 34
+  heading_raw: "Article 31 - Publication de la valorisation"
+  title_candidate: "Publication de la valorisation"
+  products: [TO_CLASSIFY]
+  document_types: [TO_CLASSIFY]
+  applicability: TO_REVIEW
+  normative_status: TO_ATOMIZE
+  review_status: PENDING_LEGAL_AND_COMPLIANCE_REVIEW
+  provenance:
+    source_sha256: 3f964f2f6ab9ce9eb16912ccda13f34b5023a188dfb18fcba7065590c770d396
+    source_page: 34
+    text_quality: OCR_EXTRACTED_UNVERIFIED
+- id: INST066_ARTICLE_032
+  seq: 31
+  article_number: "32"
+  page: 35
+  line_number_in_page: 5
+  heading_raw: "Article 32 - Communication à caractère promotionnel"
+  title_candidate: "Communication à caractère promotionnel"
+  products: [TO_CLASSIFY]
+  document_types: [TO_CLASSIFY]
+  applicability: TO_REVIEW
+  normative_status: TO_ATOMIZE
+  review_status: PENDING_LEGAL_AND_COMPLIANCE_REVIEW
+  provenance:
+    source_sha256: 3f964f2f6ab9ce9eb16912ccda13f34b5023a188dfb18fcba7065590c770d396
+    source_page: 35
+    text_quality: OCR_EXTRACTED_UNVERIFIED
+- id: INST066_ARTICLE_033
+  seq: 32
+  article_number: "33"
+  page: 35
+  line_number_in_page: 33
+  heading_raw: "Article 33 - Rédaction d’un document d'informations clés pour l’investisseur"
+  title_candidate: "Rédaction d’un document d'informations clés pour l’investisseur"
+  products: [TO_CLASSIFY]
+  document_types: [TO_CLASSIFY]
+  applicability: TO_REVIEW
+  normative_status: TO_ATOMIZE
+  review_status: PENDING_LEGAL_AND_COMPLIANCE_REVIEW
+  provenance:
+    source_sha256: 3f964f2f6ab9ce9eb16912ccda13f34b5023a188dfb18fcba7065590c770d396
+    source_page: 35
+    text_quality: OCR_EXTRACTED_UNVERIFIED
+- id: INST066_ARTICLE_034
+  seq: 33
+  article_number: "34"
+  page: 37
+  line_number_in_page: 11
+  heading_raw: "Article 34 - Mise à disposition du document d'informations clés aux investisseurs"
+  title_candidate: "Mise à disposition du document d'informations clés aux investisseurs"
+  products: [TO_CLASSIFY]
+  document_types: [TO_CLASSIFY]
+  applicability: TO_REVIEW
+  normative_status: TO_ATOMIZE
+  review_status: PENDING_LEGAL_AND_COMPLIANCE_REVIEW
+  provenance:
+    source_sha256: 3f964f2f6ab9ce9eb16912ccda13f34b5023a188dfb18fcba7065590c770d396
+    source_page: 37
+    text_quality: OCR_EXTRACTED_UNVERIFIED
+- id: INST066_ARTICLE_035
+  seq: 34
+  article_number: "35"
+  page: 37
+  line_number_in_page: 28
+  heading_raw: "Article 35 - Mise à jour du document d’informations clés aux investisseurs"
+  title_candidate: "Mise à jour du document d’informations clés aux investisseurs"
+  products: [TO_CLASSIFY]
+  document_types: [TO_CLASSIFY]
+  applicability: TO_REVIEW
+  normative_status: TO_ATOMIZE
+  review_status: PENDING_LEGAL_AND_COMPLIANCE_REVIEW
+  provenance:
+    source_sha256: 3f964f2f6ab9ce9eb16912ccda13f34b5023a188dfb18fcba7065590c770d396
+    source_page: 37
+    text_quality: OCR_EXTRACTED_UNVERIFIED
+- id: INST066_ARTICLE_036
+  seq: 35
+  article_number: "36"
+  page: 37
+  line_number_in_page: 34
+  heading_raw: "Article 36 - Transmission d'informations occasionnelles au Conseil Régional"
+  title_candidate: "Transmission d'informations occasionnelles au Conseil Régional"
+  products: [TO_CLASSIFY]
+  document_types: [TO_CLASSIFY]
+  applicability: TO_REVIEW
+  normative_status: TO_ATOMIZE
+  review_status: PENDING_LEGAL_AND_COMPLIANCE_REVIEW
+  provenance:
+    source_sha256: 3f964f2f6ab9ce9eb16912ccda13f34b5023a188dfb18fcba7065590c770d396
+    source_page: 37
+    text_quality: OCR_EXTRACTED_UNVERIFIED
+- id: INST066_ARTICLE_037
+  seq: 36
+  article_number: "37"
+  page: 38
+  line_number_in_page: 13
+  heading_raw: "Article 37 - Transmission des informations périodiques"
+  title_candidate: "Transmission des informations périodiques"
+  products: [TO_CLASSIFY]
+  document_types: [TO_CLASSIFY]
+  applicability: TO_REVIEW
+  normative_status: TO_ATOMIZE
+  review_status: PENDING_LEGAL_AND_COMPLIANCE_REVIEW
+  provenance:
+    source_sha256: 3f964f2f6ab9ce9eb16912ccda13f34b5023a188dfb18fcba7065590c770d396
+    source_page: 38
+    text_quality: OCR_EXTRACTED_UNVERIFIED
+- id: INST066_ARTICLE_038
+  seq: 37
+  article_number: "38"
+  page: 40
+  line_number_in_page: 5
+  heading_raw: "Article 38 - Compartiment et classes de parts"
+  title_candidate: "Compartiment et classes de parts"
+  products: [TO_CLASSIFY]
+  document_types: [TO_CLASSIFY]
+  applicability: TO_REVIEW
+  normative_status: TO_ATOMIZE
+  review_status: PENDING_LEGAL_AND_COMPLIANCE_REVIEW
+  provenance:
+    source_sha256: 3f964f2f6ab9ce9eb16912ccda13f34b5023a188dfb18fcba7065590c770d396
+    source_page: 40
+    text_quality: OCR_EXTRACTED_UNVERIFIED
+- id: INST066_ARTICLE_039
+  seq: 38
+  article_number: "39"
+  page: 40
+  line_number_in_page: 10
+  heading_raw: "Article 39 - Actifs éligibles"
+  title_candidate: "Actifs éligibles"
+  products: [TO_CLASSIFY]
+  document_types: [TO_CLASSIFY]
+  applicability: TO_REVIEW
+  normative_status: TO_ATOMIZE
+  review_status: PENDING_LEGAL_AND_COMPLIANCE_REVIEW
+  provenance:
+    source_sha256: 3f964f2f6ab9ce9eb16912ccda13f34b5023a188dfb18fcba7065590c770d396
+    source_page: 40
+    text_quality: OCR_EXTRACTED_UNVERIFIED
+- id: INST066_ARTICLE_040
+  seq: 39
+  article_number: "40"
+  page: 42
+  line_number_in_page: 6
+  heading_raw: "Article 40 - Gestion des risques des OPCVM"
+  title_candidate: "Gestion des risques des OPCVM"
+  products: [TO_CLASSIFY]
+  document_types: [TO_CLASSIFY]
+  applicability: TO_REVIEW
+  normative_status: TO_ATOMIZE
+  review_status: PENDING_LEGAL_AND_COMPLIANCE_REVIEW
+  provenance:
+    source_sha256: 3f964f2f6ab9ce9eb16912ccda13f34b5023a188dfb18fcba7065590c770d396
+    source_page: 42
+    text_quality: OCR_EXTRACTED_UNVERIFIED
+- id: INST066_ARTICLE_041
+  seq: 40
+  article_number: "41"
+  page: 43
+  line_number_in_page: 21
+  heading_raw: "Article 41 - Règles de diversification"
+  title_candidate: "Règles de diversification"
+  products: [TO_CLASSIFY]
+  document_types: [TO_CLASSIFY]
+  applicability: TO_REVIEW
+  normative_status: TO_ATOMIZE
+  review_status: PENDING_LEGAL_AND_COMPLIANCE_REVIEW
+  provenance:
+    source_sha256: 3f964f2f6ab9ce9eb16912ccda13f34b5023a188dfb18fcba7065590c770d396
+    source_page: 43
+    text_quality: OCR_EXTRACTED_UNVERIFIED
+- id: INST066_ARTICLE_042
+  seq: 41
+  article_number: "42"
+  page: 44
+  line_number_in_page: 26
+  heading_raw: "Article 42 - Reproduction de la composition d’un indice"
+  title_candidate: "Reproduction de la composition d’un indice"
+  products: [TO_CLASSIFY]
+  document_types: [TO_CLASSIFY]
+  applicability: TO_REVIEW
+  normative_status: TO_ATOMIZE
+  review_status: PENDING_LEGAL_AND_COMPLIANCE_REVIEW
+  provenance:
+    source_sha256: 3f964f2f6ab9ce9eb16912ccda13f34b5023a188dfb18fcba7065590c770d396
+    source_page: 44
+    text_quality: OCR_EXTRACTED_UNVERIFIED
+- id: INST066_ARTICLE_043
+  seq: 42
+  article_number: "43"
+  page: 45
+  line_number_in_page: 1
+  heading_raw: "Article 43 - Fonds de Fonds"
+  title_candidate: "Fonds de Fonds"
+  products: [TO_CLASSIFY]
+  document_types: [TO_CLASSIFY]
+  applicability: TO_REVIEW
+  normative_status: TO_ATOMIZE
+  review_status: PENDING_LEGAL_AND_COMPLIANCE_REVIEW
+  provenance:
+    source_sha256: 3f964f2f6ab9ce9eb16912ccda13f34b5023a188dfb18fcba7065590c770d396
+    source_page: 45
+    text_quality: OCR_EXTRACTED_UNVERIFIED
+- id: INST066_ARTICLE_044
+  seq: 43
+  article_number: "44"
+  page: 45
+  line_number_in_page: 24
+  heading_raw: "Article 44 - Prise de contrôle"
+  title_candidate: "Prise de contrôle"
+  products: [TO_CLASSIFY]
+  document_types: [TO_CLASSIFY]
+  applicability: TO_REVIEW
+  normative_status: TO_ATOMIZE
+  review_status: PENDING_LEGAL_AND_COMPLIANCE_REVIEW
+  provenance:
+    source_sha256: 3f964f2f6ab9ce9eb16912ccda13f34b5023a188dfb18fcba7065590c770d396
+    source_page: 45
+    text_quality: OCR_EXTRACTED_UNVERIFIED
+- id: INST066_ARTICLE_045
+  seq: 44
+  article_number: "45"
+  page: 46
+  line_number_in_page: 10
+  heading_raw: "Article 45 - Exercice de droits de souscription et franchissement passif des seuils"
+  title_candidate: "Exercice de droits de souscription et franchissement passif des seuils"
+  products: [TO_CLASSIFY]
+  document_types: [TO_CLASSIFY]
+  applicability: TO_REVIEW
+  normative_status: TO_ATOMIZE
+  review_status: PENDING_LEGAL_AND_COMPLIANCE_REVIEW
+  provenance:
+    source_sha256: 3f964f2f6ab9ce9eb16912ccda13f34b5023a188dfb18fcba7065590c770d396
+    source_page: 46
+    text_quality: OCR_EXTRACTED_UNVERIFIED
+- id: INST066_ARTICLE_046
+  seq: 45
+  article_number: "46"
+  page: 46
+  line_number_in_page: 27
+  heading_raw: "Article 46 - Emprunts"
+  title_candidate: "Emprunts"
+  products: [TO_CLASSIFY]
+  document_types: [TO_CLASSIFY]
+  applicability: TO_REVIEW
+  normative_status: TO_ATOMIZE
+  review_status: PENDING_LEGAL_AND_COMPLIANCE_REVIEW
+  provenance:
+    source_sha256: 3f964f2f6ab9ce9eb16912ccda13f34b5023a188dfb18fcba7065590c770d396
+    source_page: 46
+    text_quality: OCR_EXTRACTED_UNVERIFIED
+- id: INST066_ARTICLE_047
+  seq: 46
+  article_number: "47"
+  page: 47
+  line_number_in_page: 1
+  heading_raw: "Article 47 - Liquidité"
+  title_candidate: "Liquidité"
+  products: [TO_CLASSIFY]
+  document_types: [TO_CLASSIFY]
+  applicability: TO_REVIEW
+  normative_status: TO_ATOMIZE
+  review_status: PENDING_LEGAL_AND_COMPLIANCE_REVIEW
+  provenance:
+    source_sha256: 3f964f2f6ab9ce9eb16912ccda13f34b5023a188dfb18fcba7065590c770d396
+    source_page: 47
+    text_quality: OCR_EXTRACTED_UNVERIFIED
+- id: INST066_ARTICLE_048
+  seq: 47
+  article_number: "48"
+  page: 47
+  line_number_in_page: 27
+  heading_raw: "Article 48 - Valorisation des actifs et calcul des prix de vente ou d'émission et des"
+  title_candidate: "Valorisation des actifs et calcul des prix de vente ou d'émission et des"
+  products: [TO_CLASSIFY]
+  document_types: [TO_CLASSIFY]
+  applicability: TO_REVIEW
+  normative_status: TO_ATOMIZE
+  review_status: PENDING_LEGAL_AND_COMPLIANCE_REVIEW
+  provenance:
+    source_sha256: 3f964f2f6ab9ce9eb16912ccda13f34b5023a188dfb18fcba7065590c770d396
+    source_page: 47
+    text_quality: OCR_EXTRACTED_UNVERIFIED
+- id: INST066_ARTICLE_049
+  seq: 48
+  article_number: "49"
+  page: 47
+  line_number_in_page: 34
+  heading_raw: "Article 49 - Distribution et Capitalisation"
+  title_candidate: "Distribution et Capitalisation"
+  products: [TO_CLASSIFY]
+  document_types: [TO_CLASSIFY]
+  applicability: TO_REVIEW
+  normative_status: TO_ATOMIZE
+  review_status: PENDING_LEGAL_AND_COMPLIANCE_REVIEW
+  provenance:
+    source_sha256: 3f964f2f6ab9ce9eb16912ccda13f34b5023a188dfb18fcba7065590c770d396
+    source_page: 47
+    text_quality: OCR_EXTRACTED_UNVERIFIED
+- id: INST066_ARTICLE_050
+  seq: 49
+  article_number: "50"
+  page: 48
+  line_number_in_page: 1
+  heading_raw: "Article 50 - Émission des parts ou actions"
+  title_candidate: "Émission des parts ou actions"
+  products: [TO_CLASSIFY]
+  document_types: [TO_CLASSIFY]
+  applicability: TO_REVIEW
+  normative_status: TO_ATOMIZE
+  review_status: PENDING_LEGAL_AND_COMPLIANCE_REVIEW
+  provenance:
+    source_sha256: 3f964f2f6ab9ce9eb16912ccda13f34b5023a188dfb18fcba7065590c770d396
+    source_page: 48
+    text_quality: OCR_EXTRACTED_UNVERIFIED
+- id: INST066_ARTICLE_051
+  seq: 50
+  article_number: "51"
+  page: 48
+  line_number_in_page: 7
+  heading_raw: "Article 51 - Octroi de crédits ou de garanties"
+  title_candidate: "Octroi de crédits ou de garanties"
+  products: [TO_CLASSIFY]
+  document_types: [TO_CLASSIFY]
+  applicability: TO_REVIEW
+  normative_status: TO_ATOMIZE
+  review_status: PENDING_LEGAL_AND_COMPLIANCE_REVIEW
+  provenance:
+    source_sha256: 3f964f2f6ab9ce9eb16912ccda13f34b5023a188dfb18fcba7065590c770d396
+    source_page: 48
+    text_quality: OCR_EXTRACTED_UNVERIFIED
+- id: INST066_ARTICLE_052
+  seq: 51
+  article_number: "52"
+  page: 48
+  line_number_in_page: 17
+  heading_raw: "Article 52 - Ventes à découvert"
+  title_candidate: "Ventes à découvert"
+  products: [TO_CLASSIFY]
+  document_types: [TO_CLASSIFY]
+  applicability: TO_REVIEW
+  normative_status: TO_ATOMIZE
+  review_status: PENDING_LEGAL_AND_COMPLIANCE_REVIEW
+  provenance:
+    source_sha256: 3f964f2f6ab9ce9eb16912ccda13f34b5023a188dfb18fcba7065590c770d396
+    source_page: 48
+    text_quality: OCR_EXTRACTED_UNVERIFIED
+- id: INST066_ARTICLE_053
+  seq: 52
+  article_number: "53"
+  page: 48
+  line_number_in_page: 25
+  heading_raw: "Article 53 - Rémunération et dépenses à la charge de la Société de Gestion"
+  title_candidate: "Rémunération et dépenses à la charge de la Société de Gestion"
+  products: [TO_CLASSIFY]
+  document_types: [TO_CLASSIFY]
+  applicability: TO_REVIEW
+  normative_status: TO_ATOMIZE
+  review_status: PENDING_LEGAL_AND_COMPLIANCE_REVIEW
+  provenance:
+    source_sha256: 3f964f2f6ab9ce9eb16912ccda13f34b5023a188dfb18fcba7065590c770d396
+    source_page: 48
+    text_quality: OCR_EXTRACTED_UNVERIFIED
+- id: INST066_ARTICLE_054
+  seq: 53
+  article_number: "54"
+  page: 48
+  line_number_in_page: 36
+  heading_raw: "Article 54 - Types de fusion"
+  title_candidate: "Types de fusion"
+  products: [TO_CLASSIFY]
+  document_types: [TO_CLASSIFY]
+  applicability: TO_REVIEW
+  normative_status: TO_ATOMIZE
+  review_status: PENDING_LEGAL_AND_COMPLIANCE_REVIEW
+  provenance:
+    source_sha256: 3f964f2f6ab9ce9eb16912ccda13f34b5023a188dfb18fcba7065590c770d396
+    source_page: 48
+    text_quality: OCR_EXTRACTED_UNVERIFIED
+- id: INST066_ARTICLE_055
+  seq: 54
+  article_number: "55"
+  page: 49
+  line_number_in_page: 14
+  heading_raw: "Article 55 - Autorisation"
+  title_candidate: "Autorisation"
+  products: [TO_CLASSIFY]
+  document_types: [TO_CLASSIFY]
+  applicability: TO_REVIEW
+  normative_status: TO_ATOMIZE
+  review_status: PENDING_LEGAL_AND_COMPLIANCE_REVIEW
+  provenance:
+    source_sha256: 3f964f2f6ab9ce9eb16912ccda13f34b5023a188dfb18fcba7065590c770d396
+    source_page: 49
+    text_quality: OCR_EXTRACTED_UNVERIFIED
+- id: INST066_ARTICLE_056
+  seq: 55
+  article_number: "56"
+  page: 49
+  line_number_in_page: 41
+  heading_raw: "Article 56 - Projet commun de fusion"
+  title_candidate: "Projet commun de fusion"
+  products: [TO_CLASSIFY]
+  document_types: [TO_CLASSIFY]
+  applicability: TO_REVIEW
+  normative_status: TO_ATOMIZE
+  review_status: PENDING_LEGAL_AND_COMPLIANCE_REVIEW
+  provenance:
+    source_sha256: 3f964f2f6ab9ce9eb16912ccda13f34b5023a188dfb18fcba7065590c770d396
+    source_page: 49
+    text_quality: OCR_EXTRACTED_UNVERIFIED
+- id: INST066_ARTICLE_057
+  seq: 56
+  article_number: "57"
+  page: 50
+  line_number_in_page: 16
+  heading_raw: "Article 57 - Déclaration de conformité établie par les Dépositaires"
+  title_candidate: "Déclaration de conformité établie par les Dépositaires"
+  products: [TO_CLASSIFY]
+  document_types: [TO_CLASSIFY]
+  applicability: TO_REVIEW
+  normative_status: TO_ATOMIZE
+  review_status: PENDING_LEGAL_AND_COMPLIANCE_REVIEW
+  provenance:
+    source_sha256: 3f964f2f6ab9ce9eb16912ccda13f34b5023a188dfb18fcba7065590c770d396
+    source_page: 50
+    text_quality: OCR_EXTRACTED_UNVERIFIED
+- id: INST066_ARTICLE_058
+  seq: 57
+  article_number: "58"
+  page: 50
+  line_number_in_page: 22
+  heading_raw: "Article 58 - Rapport du Commissaire aux Comptes"
+  title_candidate: "Rapport du Commissaire aux Comptes"
+  products: [TO_CLASSIFY]
+  document_types: [TO_CLASSIFY]
+  applicability: TO_REVIEW
+  normative_status: TO_ATOMIZE
+  review_status: PENDING_LEGAL_AND_COMPLIANCE_REVIEW
+  provenance:
+    source_sha256: 3f964f2f6ab9ce9eb16912ccda13f34b5023a188dfb18fcba7065590c770d396
+    source_page: 50
+    text_quality: OCR_EXTRACTED_UNVERIFIED
+- id: INST066_ARTICLE_059
+  seq: 58
+  article_number: "59"
+  page: 50
+  line_number_in_page: 38
+  heading_raw: "Article 59 - Informations à fournir aux investisseurs"
+  title_candidate: "Informations à fournir aux investisseurs"
+  products: [TO_CLASSIFY]
+  document_types: [TO_CLASSIFY]
+  applicability: TO_REVIEW
+  normative_status: TO_ATOMIZE
+  review_status: PENDING_LEGAL_AND_COMPLIANCE_REVIEW
+  provenance:
+    source_sha256: 3f964f2f6ab9ce9eb16912ccda13f34b5023a188dfb18fcba7065590c770d396
+    source_page: 50
+    text_quality: OCR_EXTRACTED_UNVERIFIED
+- id: INST066_ARTICLE_060
+  seq: 59
+  article_number: "60"
+  page: 51
+  line_number_in_page: 37
+  heading_raw: "Article 60 - Demande de rachat ou de remboursement durant la fusion"
+  title_candidate: "Demande de rachat ou de remboursement durant la fusion"
+  products: [TO_CLASSIFY]
+  document_types: [TO_CLASSIFY]
+  applicability: TO_REVIEW
+  normative_status: TO_ATOMIZE
+  review_status: PENDING_LEGAL_AND_COMPLIANCE_REVIEW
+  provenance:
+    source_sha256: 3f964f2f6ab9ce9eb16912ccda13f34b5023a188dfb18fcba7065590c770d396
+    source_page: 51
+    text_quality: OCR_EXTRACTED_UNVERIFIED
+- id: INST066_ARTICLE_061
+  seq: 60
+  article_number: "61"
+  page: 52
+  line_number_in_page: 14
+  heading_raw: "Article 61 - Prise en charge des coûts"
+  title_candidate: "Prise en charge des coûts"
+  products: [TO_CLASSIFY]
+  document_types: [TO_CLASSIFY]
+  applicability: TO_REVIEW
+  normative_status: TO_ATOMIZE
+  review_status: PENDING_LEGAL_AND_COMPLIANCE_REVIEW
+  provenance:
+    source_sha256: 3f964f2f6ab9ce9eb16912ccda13f34b5023a188dfb18fcba7065590c770d396
+    source_page: 52
+    text_quality: OCR_EXTRACTED_UNVERIFIED
+- id: INST066_ARTICLE_062
+  seq: 61
+  article_number: "62"
+  page: 52
+  line_number_in_page: 20
+  heading_raw: "Article 62 - Prise d’effet de la fusion"
+  title_candidate: "Prise d’effet de la fusion"
+  products: [TO_CLASSIFY]
+  document_types: [TO_CLASSIFY]
+  applicability: TO_REVIEW
+  normative_status: TO_ATOMIZE
+  review_status: PENDING_LEGAL_AND_COMPLIANCE_REVIEW
+  provenance:
+    source_sha256: 3f964f2f6ab9ce9eb16912ccda13f34b5023a188dfb18fcba7065590c770d396
+    source_page: 52
+    text_quality: OCR_EXTRACTED_UNVERIFIED
+- id: INST066_ARTICLE_063
+  seq: 62
+  article_number: "63"
+  page: 52
+  line_number_in_page: 28
+  heading_raw: "Article 63 - Conséquences de la fusion"
+  title_candidate: "Conséquences de la fusion"
+  products: [TO_CLASSIFY]
+  document_types: [TO_CLASSIFY]
+  applicability: TO_REVIEW
+  normative_status: TO_ATOMIZE
+  review_status: PENDING_LEGAL_AND_COMPLIANCE_REVIEW
+  provenance:
+    source_sha256: 3f964f2f6ab9ce9eb16912ccda13f34b5023a188dfb18fcba7065590c770d396
+    source_page: 52
+    text_quality: OCR_EXTRACTED_UNVERIFIED
+- id: INST066_ARTICLE_064
+  seq: 63
+  article_number: "64"
+  page: 53
+  line_number_in_page: 18
+  heading_raw: "Article 64 - Conditions préalables à la scission"
+  title_candidate: "Conditions préalables à la scission"
+  products: [TO_CLASSIFY]
+  document_types: [TO_CLASSIFY]
+  applicability: TO_REVIEW
+  normative_status: TO_ATOMIZE
+  review_status: PENDING_LEGAL_AND_COMPLIANCE_REVIEW
+  provenance:
+    source_sha256: 3f964f2f6ab9ce9eb16912ccda13f34b5023a188dfb18fcba7065590c770d396
+    source_page: 53
+    text_quality: OCR_EXTRACTED_UNVERIFIED
+- id: INST066_ARTICLE_065
+  seq: 64
+  article_number: "65"
+  page: 53
+  line_number_in_page: 33
+  heading_raw: "Article 65 - Vérification de la faisabilité du transfert des actifs"
+  title_candidate: "Vérification de la faisabilité du transfert des actifs"
+  products: [TO_CLASSIFY]
+  document_types: [TO_CLASSIFY]
+  applicability: TO_REVIEW
+  normative_status: TO_ATOMIZE
+  review_status: PENDING_LEGAL_AND_COMPLIANCE_REVIEW
+  provenance:
+    source_sha256: 3f964f2f6ab9ce9eb16912ccda13f34b5023a188dfb18fcba7065590c770d396
+    source_page: 53
+    text_quality: OCR_EXTRACTED_UNVERIFIED
+- id: INST066_ARTICLE_066
+  seq: 65
+  article_number: "66"
+  page: 54
+  line_number_in_page: 1
+  heading_raw: "Article 66 - Projet de scission"
+  title_candidate: "Projet de scission"
+  products: [TO_CLASSIFY]
+  document_types: [TO_CLASSIFY]
+  applicability: TO_REVIEW
+  normative_status: TO_ATOMIZE
+  review_status: PENDING_LEGAL_AND_COMPLIANCE_REVIEW
+  provenance:
+    source_sha256: 3f964f2f6ab9ce9eb16912ccda13f34b5023a188dfb18fcba7065590c770d396
+    source_page: 54
+    text_quality: OCR_EXTRACTED_UNVERIFIED
+- id: INST066_ARTICLE_067
+  seq: 66
+  article_number: "67"
+  page: 54
+  line_number_in_page: 13
+  heading_raw: "Article 67 - Autorisation"
+  title_candidate: "Autorisation"
+  products: [TO_CLASSIFY]
+  document_types: [TO_CLASSIFY]
+  applicability: TO_REVIEW
+  normative_status: TO_ATOMIZE
+  review_status: PENDING_LEGAL_AND_COMPLIANCE_REVIEW
+  provenance:
+    source_sha256: 3f964f2f6ab9ce9eb16912ccda13f34b5023a188dfb18fcba7065590c770d396
+    source_page: 54
+    text_quality: OCR_EXTRACTED_UNVERIFIED
+- id: INST066_ARTICLE_068
+  seq: 67
+  article_number: "68"
+  page: 54
+  line_number_in_page: 32
+  heading_raw: "Article 68 - Contrôle des tiers, informations des actionnaires et autres droits des"
+  title_candidate: "Contrôle des tiers, informations des actionnaires et autres droits des"
+  products: [TO_CLASSIFY]
+  document_types: [TO_CLASSIFY]
+  applicability: TO_REVIEW
+  normative_status: TO_ATOMIZE
+  review_status: PENDING_LEGAL_AND_COMPLIANCE_REVIEW
+  provenance:
+    source_sha256: 3f964f2f6ab9ce9eb16912ccda13f34b5023a188dfb18fcba7065590c770d396
+    source_page: 54
+    text_quality: OCR_EXTRACTED_UNVERIFIED
+- id: INST066_ARTICLE_069
+  seq: 68
+  article_number: "69"
+  page: 55
+  line_number_in_page: 14
+  heading_raw: "Article 69 - Contrôle des tiers, informations des porteurs de parts et autres droîts des"
+  title_candidate: "Contrôle des tiers, informations des porteurs de parts et autres droîts des"
+  products: [TO_CLASSIFY]
+  document_types: [TO_CLASSIFY]
+  applicability: TO_REVIEW
+  normative_status: TO_ATOMIZE
+  review_status: PENDING_LEGAL_AND_COMPLIANCE_REVIEW
+  provenance:
+    source_sha256: 3f964f2f6ab9ce9eb16912ccda13f34b5023a188dfb18fcba7065590c770d396
+    source_page: 55
+    text_quality: OCR_EXTRACTED_UNVERIFIED
+- id: INST066_ARTICLE_070
+  seq: 69
+  article_number: "70"
+  page: 55
+  line_number_in_page: 36
+  heading_raw: "Article 70 - Gestion extinctive"
+  title_candidate: "Gestion extinctive"
+  products: [TO_CLASSIFY]
+  document_types: [TO_CLASSIFY]
+  applicability: TO_REVIEW
+  normative_status: TO_ATOMIZE
+  review_status: PENDING_LEGAL_AND_COMPLIANCE_REVIEW
+  provenance:
+    source_sha256: 3f964f2f6ab9ce9eb16912ccda13f34b5023a188dfb18fcba7065590c770d396
+    source_page: 55
+    text_quality: OCR_EXTRACTED_UNVERIFIED
+- id: INST066_ARTICLE_071
+  seq: 70
+  article_number: "71"
+  page: 56
+  line_number_in_page: 9
+  heading_raw: "Article 71 - Coûts et prise d’effet"
+  title_candidate: "Coûts et prise d’effet"
+  products: [TO_CLASSIFY]
+  document_types: [TO_CLASSIFY]
+  applicability: TO_REVIEW
+  normative_status: TO_ATOMIZE
+  review_status: PENDING_LEGAL_AND_COMPLIANCE_REVIEW
+  provenance:
+    source_sha256: 3f964f2f6ab9ce9eb16912ccda13f34b5023a188dfb18fcba7065590c770d396
+    source_page: 56
+    text_quality: OCR_EXTRACTED_UNVERIFIED
+- id: INST066_ARTICLE_072
+  seq: 71
+  article_number: "72"
+  page: 56
+  line_number_in_page: 15
+  heading_raw: "Article 72 - Cas particulier du franchissement du seuil d’actif net"
+  title_candidate: "Cas particulier du franchissement du seuil d’actif net"
+  products: [TO_CLASSIFY]
+  document_types: [TO_CLASSIFY]
+  applicability: TO_REVIEW
+  normative_status: TO_ATOMIZE
+  review_status: PENDING_LEGAL_AND_COMPLIANCE_REVIEW
+  provenance:
+    source_sha256: 3f964f2f6ab9ce9eb16912ccda13f34b5023a188dfb18fcba7065590c770d396
+    source_page: 56
+    text_quality: OCR_EXTRACTED_UNVERIFIED
+- id: INST066_ARTICLE_073
+  seq: 72
+  article_number: "73"
+  page: 56
+  line_number_in_page: 35
+  heading_raw: "Article 73 - Cas particulier de la transformation d’un FCP en SICAV"
+  title_candidate: "Cas particulier de la transformation d’un FCP en SICAV"
+  products: [TO_CLASSIFY]
+  document_types: [TO_CLASSIFY]
+  applicability: TO_REVIEW
+  normative_status: TO_ATOMIZE
+  review_status: PENDING_LEGAL_AND_COMPLIANCE_REVIEW
+  provenance:
+    source_sha256: 3f964f2f6ab9ce9eb16912ccda13f34b5023a188dfb18fcba7065590c770d396
+    source_page: 56
+    text_quality: OCR_EXTRACTED_UNVERIFIED
+- id: INST066_ARTICLE_074
+  seq: 73
+  article_number: "74"
+  page: 57
+  line_number_in_page: 21
+  heading_raw: "Article 74 - Caractéristiques des Organismes de Placement Collectif d’Epargne"
+  title_candidate: "Caractéristiques des Organismes de Placement Collectif d’Epargne"
+  products: [TO_CLASSIFY]
+  document_types: [TO_CLASSIFY]
+  applicability: TO_REVIEW
+  normative_status: TO_ATOMIZE
+  review_status: PENDING_LEGAL_AND_COMPLIANCE_REVIEW
+  provenance:
+    source_sha256: 3f964f2f6ab9ce9eb16912ccda13f34b5023a188dfb18fcba7065590c770d396
+    source_page: 57
+    text_quality: OCR_EXTRACTED_UNVERIFIED
+- id: INST066_ARTICLE_075
+  seq: 74
+  article_number: "75"
+  page: 58
+  line_number_in_page: 26
+  heading_raw: "Article 75 - Constitution d’un FCPE"
+  title_candidate: "Constitution d’un FCPE"
+  products: [TO_CLASSIFY]
+  document_types: [TO_CLASSIFY]
+  applicability: TO_REVIEW
+  normative_status: TO_ATOMIZE
+  review_status: PENDING_LEGAL_AND_COMPLIANCE_REVIEW
+  provenance:
+    source_sha256: 3f964f2f6ab9ce9eb16912ccda13f34b5023a188dfb18fcba7065590c770d396
+    source_page: 58
+    text_quality: OCR_EXTRACTED_UNVERIFIED
+- id: INST066_ARTICLE_076
+  seq: 75
+  article_number: "76"
+  page: 59
+  line_number_in_page: 27
+  heading_raw: "Article 76 - Constitution d’une SICAVAS"
+  title_candidate: "Constitution d’une SICAVAS"
+  products: [TO_CLASSIFY]
+  document_types: [TO_CLASSIFY]
+  applicability: TO_REVIEW
+  normative_status: TO_ATOMIZE
+  review_status: PENDING_LEGAL_AND_COMPLIANCE_REVIEW
+  provenance:
+    source_sha256: 3f964f2f6ab9ce9eb16912ccda13f34b5023a188dfb18fcba7065590c770d396
+    source_page: 59
+    text_quality: OCR_EXTRACTED_UNVERIFIED
+- id: INST066_ARTICLE_077
+  seq: 76
+  article_number: "77"
+  page: 60
+  line_number_in_page: 35
+  heading_raw: "Article 77 - Fusion et scission d’ Organismes de Placement Collectif d'Epargne Salariale"
+  title_candidate: "Fusion et scission d’ Organismes de Placement Collectif d'Epargne Salariale"
+  products: [TO_CLASSIFY]
+  document_types: [TO_CLASSIFY]
+  applicability: TO_REVIEW
+  normative_status: TO_ATOMIZE
+  review_status: PENDING_LEGAL_AND_COMPLIANCE_REVIEW
+  provenance:
+    source_sha256: 3f964f2f6ab9ce9eb16912ccda13f34b5023a188dfb18fcba7065590c770d396
+    source_page: 60
+    text_quality: OCR_EXTRACTED_UNVERIFIED
+- id: INST066_ARTICLE_078
+  seq: 77
+  article_number: "78"
+  page: 61
+  line_number_in_page: 5
+  heading_raw: "Article 78 - Caractéristiques des Organismes de Placement Collectif à Risque"
+  title_candidate: "Caractéristiques des Organismes de Placement Collectif à Risque"
+  products: [TO_CLASSIFY]
+  document_types: [TO_CLASSIFY]
+  applicability: TO_REVIEW
+  normative_status: TO_ATOMIZE
+  review_status: PENDING_LEGAL_AND_COMPLIANCE_REVIEW
+  provenance:
+    source_sha256: 3f964f2f6ab9ce9eb16912ccda13f34b5023a188dfb18fcba7065590c770d396
+    source_page: 61
+    text_quality: OCR_EXTRACTED_UNVERIFIED
+- id: INST066_ARTICLE_079
+  seq: 78
+  article_number: "79"
+  page: 61
+  line_number_in_page: 16
+  heading_raw: "Article 79 - Forme des OPCR"
+  title_candidate: "Forme des OPCR"
+  products: [TO_CLASSIFY]
+  document_types: [TO_CLASSIFY]
+  applicability: TO_REVIEW
+  normative_status: TO_ATOMIZE
+  review_status: PENDING_LEGAL_AND_COMPLIANCE_REVIEW
+  provenance:
+    source_sha256: 3f964f2f6ab9ce9eb16912ccda13f34b5023a188dfb18fcba7065590c770d396
+    source_page: 61
+    text_quality: OCR_EXTRACTED_UNVERIFIED
+- id: INST066_ARTICLE_080
+  seq: 79
+  article_number: "80"
+  page: 61
+  line_number_in_page: 20
+  heading_raw: "Article 80 - OPCR à compartiment"
+  title_candidate: "OPCR à compartiment"
+  products: [TO_CLASSIFY]
+  document_types: [TO_CLASSIFY]
+  applicability: TO_REVIEW
+  normative_status: TO_ATOMIZE
+  review_status: PENDING_LEGAL_AND_COMPLIANCE_REVIEW
+  provenance:
+    source_sha256: 3f964f2f6ab9ce9eb16912ccda13f34b5023a188dfb18fcba7065590c770d396
+    source_page: 61
+    text_quality: OCR_EXTRACTED_UNVERIFIED
+- id: INST066_ARTICLE_081
+  seq: 80
+  article_number: "81"
+  page: 61
+  line_number_in_page: 27
+  heading_raw: "Article 81 - Objet des OPCR"
+  title_candidate: "Objet des OPCR"
+  products: [TO_CLASSIFY]
+  document_types: [TO_CLASSIFY]
+  applicability: TO_REVIEW
+  normative_status: TO_ATOMIZE
+  review_status: PENDING_LEGAL_AND_COMPLIANCE_REVIEW
+  provenance:
+    source_sha256: 3f964f2f6ab9ce9eb16912ccda13f34b5023a188dfb18fcba7065590c770d396
+    source_page: 61
+    text_quality: OCR_EXTRACTED_UNVERIFIED
+- id: INST066_ARTICLE_082
+  seq: 81
+  article_number: "82"
+  page: 61
+  line_number_in_page: 32
+  heading_raw: "Article 82 - Emission et rachat des parts ou actions des OPCR"
+  title_candidate: "Emission et rachat des parts ou actions des OPCR"
+  products: [TO_CLASSIFY]
+  document_types: [TO_CLASSIFY]
+  applicability: TO_REVIEW
+  normative_status: TO_ATOMIZE
+  review_status: PENDING_LEGAL_AND_COMPLIANCE_REVIEW
+  provenance:
+    source_sha256: 3f964f2f6ab9ce9eb16912ccda13f34b5023a188dfb18fcba7065590c770d396
+    source_page: 61
+    text_quality: OCR_EXTRACTED_UNVERIFIED
+- id: INST066_ARTICLE_083
+  seq: 82
+  article_number: "83"
+  page: 62
+  line_number_in_page: 1
+  heading_raw: "Article 83 - Fusion et scission d’ Organismes de Placement Collectif à Risque"
+  title_candidate: "Fusion et scission d’ Organismes de Placement Collectif à Risque"
+  products: [TO_CLASSIFY]
+  document_types: [TO_CLASSIFY]
+  applicability: TO_REVIEW
+  normative_status: TO_ATOMIZE
+  review_status: PENDING_LEGAL_AND_COMPLIANCE_REVIEW
+  provenance:
+    source_sha256: 3f964f2f6ab9ce9eb16912ccda13f34b5023a188dfb18fcba7065590c770d396
+    source_page: 62
+    text_quality: OCR_EXTRACTED_UNVERIFIED
+- id: INST066_ARTICLE_084
+  seq: 83
+  article_number: "84"
+  page: 62
+  line_number_in_page: 17
+  heading_raw: "Article 84 - Actifs éligibles à l’OPCR"
+  title_candidate: "Actifs éligibles à l’OPCR"
+  products: [TO_CLASSIFY]
+  document_types: [TO_CLASSIFY]
+  applicability: TO_REVIEW
+  normative_status: TO_ATOMIZE
+  review_status: PENDING_LEGAL_AND_COMPLIANCE_REVIEW
+  provenance:
+    source_sha256: 3f964f2f6ab9ce9eb16912ccda13f34b5023a188dfb18fcba7065590c770d396
+    source_page: 62
+    text_quality: OCR_EXTRACTED_UNVERIFIED
+- id: INST066_ARTICLE_085
+  seq: 84
+  article_number: "85"
+  page: 62
+  line_number_in_page: 33
+  heading_raw: "Article 85 - Objectif d'investissement des OPCR"
+  title_candidate: "Objectif d'investissement des OPCR"
+  products: [TO_CLASSIFY]
+  document_types: [TO_CLASSIFY]
+  applicability: TO_REVIEW
+  normative_status: TO_ATOMIZE
+  review_status: PENDING_LEGAL_AND_COMPLIANCE_REVIEW
+  provenance:
+    source_sha256: 3f964f2f6ab9ce9eb16912ccda13f34b5023a188dfb18fcba7065590c770d396
+    source_page: 62
+    text_quality: OCR_EXTRACTED_UNVERIFIED
+- id: INST066_ARTICLE_086
+  seq: 85
+  article_number: "86"
+  page: 63
+  line_number_in_page: 6
+  heading_raw: "Article 86 - Règlement ou documents constitutifs de l’OPCR"
+  title_candidate: "Règlement ou documents constitutifs de l’OPCR"
+  products: [TO_CLASSIFY]
+  document_types: [TO_CLASSIFY]
+  applicability: TO_REVIEW
+  normative_status: TO_ATOMIZE
+  review_status: PENDING_LEGAL_AND_COMPLIANCE_REVIEW
+  provenance:
+    source_sha256: 3f964f2f6ab9ce9eb16912ccda13f34b5023a188dfb18fcba7065590c770d396
+    source_page: 63
+    text_quality: OCR_EXTRACTED_UNVERIFIED
+- id: INST066_ARTICLE_087
+  seq: 86
+  article_number: "87"
+  page: 63
+  line_number_in_page: 22
+  heading_raw: "Article 87 - Gestion de la liquidité de l’OPCR"
+  title_candidate: "Gestion de la liquidité de l’OPCR"
+  products: [TO_CLASSIFY]
+  document_types: [TO_CLASSIFY]
+  applicability: TO_REVIEW
+  normative_status: TO_ATOMIZE
+  review_status: PENDING_LEGAL_AND_COMPLIANCE_REVIEW
+  provenance:
+    source_sha256: 3f964f2f6ab9ce9eb16912ccda13f34b5023a188dfb18fcba7065590c770d396
+    source_page: 63
+    text_quality: OCR_EXTRACTED_UNVERIFIED
+- id: INST066_ARTICLE_088
+  seq: 87
+  article_number: "88"
+  page: 64
+  line_number_in_page: 1
+  heading_raw: "Article 88 - Traitement des investisseurs d’OPCR"
+  title_candidate: "Traitement des investisseurs d’OPCR"
+  products: [TO_CLASSIFY]
+  document_types: [TO_CLASSIFY]
+  applicability: TO_REVIEW
+  normative_status: TO_ATOMIZE
+  review_status: PENDING_LEGAL_AND_COMPLIANCE_REVIEW
+  provenance:
+    source_sha256: 3f964f2f6ab9ce9eb16912ccda13f34b5023a188dfb18fcba7065590c770d396
+    source_page: 64
+    text_quality: OCR_EXTRACTED_UNVERIFIED
+- id: INST066_ARTICLE_089
+  seq: 88
+  article_number: "89"
+  page: 64
+  line_number_in_page: 6
+  heading_raw: "Article 89 - Évaluation des OPCR"
+  title_candidate: "Évaluation des OPCR"
+  products: [TO_CLASSIFY]
+  document_types: [TO_CLASSIFY]
+  applicability: TO_REVIEW
+  normative_status: TO_ATOMIZE
+  review_status: PENDING_LEGAL_AND_COMPLIANCE_REVIEW
+  provenance:
+    source_sha256: 3f964f2f6ab9ce9eb16912ccda13f34b5023a188dfb18fcba7065590c770d396
+    source_page: 64
+    text_quality: OCR_EXTRACTED_UNVERIFIED
+- id: INST066_ARTICLE_090
+  seq: 89
+  article_number: "90"
+  page: 64
+  line_number_in_page: 12
+  heading_raw: "Article 90 - Publication des rapports des OPCR"
+  title_candidate: "Publication des rapports des OPCR"
+  products: [TO_CLASSIFY]
+  document_types: [TO_CLASSIFY]
+  applicability: TO_REVIEW
+  normative_status: TO_ATOMIZE
+  review_status: PENDING_LEGAL_AND_COMPLIANCE_REVIEW
+  provenance:
+    source_sha256: 3f964f2f6ab9ce9eb16912ccda13f34b5023a188dfb18fcba7065590c770d396
+    source_page: 64
+    text_quality: OCR_EXTRACTED_UNVERIFIED
+- id: INST066_ARTICLE_091
+  seq: 90
+  article_number: "91"
+  page: 64
+  line_number_in_page: 19
+  heading_raw: "Article 91 - Dispositions transitoires"
+  title_candidate: "Dispositions transitoires"
+  products: [TO_CLASSIFY]
+  document_types: [TO_CLASSIFY]
+  applicability: TO_REVIEW
+  normative_status: TO_ATOMIZE
+  review_status: PENDING_LEGAL_AND_COMPLIANCE_REVIEW
+  provenance:
+    source_sha256: 3f964f2f6ab9ce9eb16912ccda13f34b5023a188dfb18fcba7065590c770d396
+    source_page: 64
+    text_quality: OCR_EXTRACTED_UNVERIFIED
+- id: INST066_ARTICLE_092
+  seq: 91
+  article_number: "92"
+  page: 64
+  line_number_in_page: 27
+  heading_raw: "Article 92 - Publication et date d’entrée en vigueur"
+  title_candidate: "Publication et date d’entrée en vigueur"
+  products: [TO_CLASSIFY]
+  document_types: [TO_CLASSIFY]
+  applicability: TO_REVIEW
+  normative_status: TO_ATOMIZE
+  review_status: PENDING_LEGAL_AND_COMPLIANCE_REVIEW
+  provenance:
+    source_sha256: 3f964f2f6ab9ce9eb16912ccda13f34b5023a188dfb18fcba7065590c770d396
+    source_page: 64
+    text_quality: OCR_EXTRACTED_UNVERIFIED

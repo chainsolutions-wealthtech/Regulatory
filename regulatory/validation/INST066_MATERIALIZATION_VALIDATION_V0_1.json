@@ -1,0 +1,39 @@
+{
+  "validationId": "INST066_MATERIALIZATION_VALIDATION_V0_1",
+  "status": "PASS",
+  "sourceId": "INSTRUCTION_66_CREPMF_2021",
+  "checks": {
+    "officialPdfDownloaded": true,
+    "pdfMagicConfirmed": true,
+    "sha256Computed": true,
+    "byteSizePositive": true,
+    "expectedPageCount": true,
+    "textExtracted": true,
+    "ocrUsedOnlyAsExtractionDerivative": true,
+    "articleCandidatesFound": true,
+    "articleIdsUnique": true,
+    "articleSequenceMonotonic": true,
+    "legalDatesNotAutoPromoted": true,
+    "requirementsNotActivated": true,
+    "humanArticleReviewStillRequired": true
+  },
+  "metrics": {
+    "byteSize": 3470163,
+    "pageCount": 65,
+    "rawArticleCandidateCount": 91,
+    "articleIndexCount": 91,
+    "dateCandidateCount": 2
+  },
+  "reviewFlags": {
+    "duplicateHeadingOccurrences": [],
+    "nonMonotonicArticles": [],
+    "missingArticleNumbers": []
+  },
+  "outputs": [
+    "regulatory/materialized/INSTRUCTION_66_CREPMF_2021.pdf",
+    "regulatory/materialized/INSTRUCTION_66_CREPMF_2021.txt",
+    "regulatory/materialized/INSTRUCTION_66_CREPMF_2021.metadata.json",
+    "regulatory/requirements/INST066_ARTICLE_INDEX_V0_1.yaml"
+  ],
+  "caveat": "This is source-integrity and structural extraction validation only. OCR text, article titles, paragraph boundaries, dates, applicability and normative meaning remain subject to legal and compliance review."
+}

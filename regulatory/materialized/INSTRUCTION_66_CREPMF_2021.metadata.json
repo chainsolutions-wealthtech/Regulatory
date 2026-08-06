@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "REGULATORY_SOURCE_MATERIALIZATION_V1",
+  "sourceId": "INSTRUCTION_66_CREPMF_2021",
+  "title": "Instruction n°66/CREPMF/2021 relative aux Organismes de Placement Collectif et à leurs Sociétés de Gestion sur le Marché Financier Régional de l'UMOA",
+  "sourceUrl": "https://www.brvm.org/sites/default/files/instruction_ndeg066-crepmf-2021-instruction_relative_aux_organismes_de_placement_collectif_et_a_leurs_societes_de_gestion_sur_le_marche_financier_regional_1.pdf",
+  "retrievedAt": "2026-08-06T13:11:44+00:00",
+  "repositoryCopy": "regulatory/materialized/INSTRUCTION_66_CREPMF_2021.pdf",
+  "extractedText": "regulatory/materialized/INSTRUCTION_66_CREPMF_2021.txt",
+  "sha256": "3f964f2f6ab9ce9eb16912ccda13f34b5023a188dfb18fcba7065590c770d396",
+  "byteSize": 3470163,
+  "pageCount": 65,
+  "pdfInfo": {
+    "CreationDate": "Wed Jan 12 17:15:20 2022 UTC",
+    "ModDate": "Wed Jan 12 17:15:20 2022 UTC",
+    "Custom Metadata": "no",
+    "Metadata Stream": "yes",
+    "Tagged": "no",
+    "UserProperties": "no",
+    "Suspects": "no",
+    "Form": "none",
+    "JavaScript": "no",
+    "Pages": "65",
+    "Encrypted": "no",
+    "Page size": "595 x 841 pts (A4)",
+    "Page rot": "0",
+    "File size": "3470163 bytes",
+    "Optimized": "yes",
+    "PDF version": "1.6"
+  },
+  "rawArticleCandidateCount": 91,
+  "articleIndexCount": 91,
+  "duplicateArticleHeadingOccurrences": [],
+  "missingArticleNumbers": [],
+  "dateCandidates": [
+    {
+      "page": 1,
+      "value": "23 septembre 2021",
+      "context": "et au contrôle du marché financier régional de l’UMOA ; vu la Décision n° CM/08/09/2021 du 23 septembre 2021 portant modification des articles 72, 82 et 83 du Règlement Gén",
+      "status": "EXTRACTED_UNVERIFIED"
+    },
+    {
+      "page": 1,
+      "value": "26 novembre 2021",
+      "context": "ique et des Marchés Financiers ; Vu Les délibérations du Conseil Régional en sa 90° session ordinaire du 26 novembre 2021 ; ARRETE À NOMA",
+      "status": "EXTRACTED_UNVERIFIED"
+    }
+  ],
+  "legalMetadata": {
+    "exactSignedDate": null,
+    "effectiveFrom": null,
+    "predecessorReplaced": "TO_IDENTIFY",
+    "amendmentsAndRectifications": "TO_COMPLETE",
+    "reviewStatus": "PENDING_LEGAL_AND_COMPLIANCE_REVIEW",
+    "note": "Date candidates are extraction aids only. Publication, signature and effective dates must be distinguished through human review of the official text."
+  },
+  "extraction": {
+    "method": "French OCR derivative via OCRmyPDF, then pdftotext -layout -enc UTF-8",
+    "ocrUsed": true,
+    "ocrLanguage": "fra",
+    "initialUsableCharacterCount": 0,
+    "finalUsableCharacterCount": 140644,
+    "ocrDerivativeCommitted": false,
+    "textTool": "pdftotext version 24.02.0",
+    "ocrTool": "15.2.0+dfsg1",
+    "status": "MATERIALIZED_ARTICLE_INDEX_EXTRACTED_UNVERIFIED"
+  }
+}
