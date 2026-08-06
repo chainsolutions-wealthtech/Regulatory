@@ -4,7 +4,9 @@
   "postgresVersion": "17",
   "migrations": [
     "database/migrations/0001_regulatory_core.sql",
-    "database/migrations/0002_audit_insert_policy.sql"
+    "database/migrations/0002_audit_insert_policy.sql",
+    "database/migrations/0003_review_roles_and_states.sql",
+    "database/migrations/0004_review_workflow.sql"
   ],
   "testScript": "database/tests/0001_regulatory_core_test.sql",
   "checks": {
