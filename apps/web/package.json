@@ -12,7 +12,8 @@
     "prebuild": "npm run catalog:generate",
     "build": "next build",
     "start": "next start",
-    "test:postgres-repository": "NODE_OPTIONS=--conditions=react-server tsx src/server/storage/postgres-project-repository.integration.ts"
+    "test:postgres-repository": "NODE_OPTIONS=--conditions=react-server tsx src/server/storage/postgres-project-repository.integration.ts",
+    "test:authorization-workflow": "tsx src/domain/authorization-workflow.integration.ts"
   },
   "dependencies": {
     "jose": "6.2.3",
