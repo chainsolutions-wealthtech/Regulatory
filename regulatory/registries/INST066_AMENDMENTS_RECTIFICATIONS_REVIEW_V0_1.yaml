@@ -1,0 +1,44 @@
+review_id: INST066_AMENDMENTS_RECTIFICATIONS_REVIEW_V0_1
+source_id: INSTRUCTION_66_CREPMF_2021
+checked_on: '2026-08-06'
+status: NO_SEPARATE_MODIFIER_IDENTIFIED_IN_SEARCHED_OFFICIAL_INDEXES_REVIEW_OPEN
+search_scope:
+- source: AMF_UMOA_INSTRUCTION_REGISTRY
+  url: https://www.amf-umoa.org/reglementation/instruction
+  observation: >-
+    L'Instruction n°66/2021 est listée NON ABROGÉE. Aucun intitulé séparé de
+    modification ou de rectification de l'Instruction n°66 n'a été identifié
+    dans le contenu officiel indexé et analysable lors de cette vérification.
+- source: BRVM_INSTRUCTION_66_RECORD
+  url: https://www.brvm.org/fr/crepmf-instruction-ndeg662021-instruction-relative-aux-organismes-de-placement-collectif-et-leurs
+  observation: >-
+    La fiche publie l'Instruction n°66/2021 le 12 janvier 2022 et porte la
+    mention Annule et remplace le précédent. Aucun fichier modificatif ou
+    rectificatif distinct n'est présenté dans la fiche indexée.
+- source: OFFICIAL_DOMAIN_SEARCH
+  domains: [amf-umoa.org, brvm.org]
+  queries:
+  - Instruction n°66/CREPMF/2021 modification
+  - Instruction n°66/CREPMF/2021 modificatif
+  - Instruction n°66/CREPMF/2021 rectificatif
+  - Instruction N°66/2021 amendement
+  observation: NO_DISTINCT_OFFICIAL_RESULT_IDENTIFIED
+result:
+  current_instruction_status: NON_ABROGE
+  separate_amending_text_identified: false
+  separate_rectification_identified: false
+  completeness_claimed: false
+limitations:
+- Le registre dynamique peut contenir des pièces non exposées dans son texte indexable.
+- Les décisions, circulaires, communiqués ou bulletins officiels non indexés doivent encore être contrôlés.
+- L'absence de résultat dans le périmètre recherché ne constitue pas une preuve d'absence absolue.
+next_checks:
+- CAPTURE_OFFICIAL_AMF_BINARY_LINK_FROM_DYNAMIC_REGISTRY
+- REVIEW_AMF_DECISIONS_AND_OFFICIAL_BULLETINS
+- REVIEW_LATER_OPC_INSTRUCTIONS_FOR_EXPLICIT_MODIFICATION
+- LEGAL_AND_COMPLIANCE_CONFIRMATION
+review_boundaries:
+  inventory_complete: false
+  legal_review_status: PENDING
+  compliance_review_status: PENDING
+  requirement_activation_allowed: false
