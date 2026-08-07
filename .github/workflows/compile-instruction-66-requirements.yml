@@ -7,6 +7,8 @@ on:
     paths:
       - .github/workflows/compile-instruction-66-requirements.yml
       - scripts/compile_instruction_66_requirement_candidates.py
+      - scripts/validate_instruction_66_staged_specs.py
+      - regulatory/plans/INSTRUCTION_66_ATOMIZATION_PLAN_V0_1.yaml
       - regulatory/requirements/inst066-candidates/*.json
       - regulatory/requirements/INST066_ARTICLE_BLOCKS_V0_1.json
       - regulatory/matrices/CIRC005_*.csv
@@ -29,12 +31,15 @@ jobs:
           fetch-depth: 0
       - name: Snapshot CIRC005 matrices
         run: sha256sum regulatory/matrices/CIRC005_*.csv > /tmp/circ005-before.sha256
+      - name: Validate staged specifications before compilation
+        run: python3 scripts/validate_instruction_66_staged_specs.py
       - name: Compile detailed requirement candidates
         run: python3 scripts/compile_instruction_66_requirement_candidates.py
       - name: Validate compiled registry
         run: |
           python3 - <<'PY'
           import json
+          import re
           from pathlib import Path
 
           registry = json.loads(Path(
@@ -43,11 +48,23 @@ jobs:
           validation = json.loads(Path(
               'regulatory/validation/INST066_DETAILED_REQUIREMENTS_VALIDATION_V0_1.json'
           ).read_text(encoding='utf-8'))
+          staged_validation = json.loads(Path(
+              'regulatory/validation/INST066_STAGED_SPEC_VALIDATION_V0_1.json'
+          ).read_text(encoding='utf-8'))
+          plan = Path(
+              'regulatory/plans/INSTRUCTION_66_ATOMIZATION_PLAN_V0_1.yaml'
+          ).read_text(encoding='utf-8')
+          expected_match = re.search(r'(?m)^\s*expected_compiled_total:\s*(\d+)\s*$', plan)
+          assert expected_match, 'expected_compiled_total missing from atomization plan'
+          expected_total = int(expected_match.group(1))
 
+          assert staged_validation['status'] == 'PASS', staged_validation
           assert validation['status'] == 'PASS', validation
           assert registry['activation'] == 'FORBIDDEN'
           assert registry['status'].startswith('EXTRACTED_UNVERIFIED')
-          assert registry['requirementCandidateCount'] >= 30, registry['requirementCandidateCount']
+          assert registry['requirementCandidateCount'] == expected_total, (
+              registry['requirementCandidateCount'], expected_total
+          )
           ids = [item['id'] for item in registry['requirements']]
           assert len(ids) == len(set(ids))
           assert all(item['activation'] == 'FORBIDDEN' for item in registry['requirements'])
@@ -68,6 +85,7 @@ jobs:
           path: |
             regulatory/requirements/INST066_PROSPECTUS_REQUIREMENT_CANDIDATES_V0_1.json
             regulatory/matrices/INST066_CIRC005_DETAILED_CROSSWALK_V0_1.csv
+            regulatory/validation/INST066_STAGED_SPEC_VALIDATION_V0_1.json
             regulatory/validation/INST066_DETAILED_REQUIREMENTS_VALIDATION_V0_1.json
           if-no-files-found: error
           retention-days: 30
@@ -78,6 +96,7 @@ jobs:
           git add \
             regulatory/requirements/INST066_PROSPECTUS_REQUIREMENT_CANDIDATES_V0_1.json \
             regulatory/matrices/INST066_CIRC005_DETAILED_CROSSWALK_V0_1.csv \
+            regulatory/validation/INST066_STAGED_SPEC_VALIDATION_V0_1.json \
             regulatory/validation/INST066_DETAILED_REQUIREMENTS_VALIDATION_V0_1.json
           if git diff --cached --quiet; then
             echo "No detailed requirement changes to commit."
