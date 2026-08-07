@@ -1,0 +1,61 @@
+source_id: INSTRUCTION_58_CREPMF_2019
+title: Instruction n°58/CREPMF/2019 relative à l'exercice du commissariat aux comptes auprès des structures agréées et des sociétés cotées du Marché Financier Régional de l'UMOA
+reference: Instruction n°58/CREPMF/2019
+jurisdiction: UMOA
+authority_at_adoption: CREPMF
+current_authority_name: AMF-UMOA
+document_type: INSTRUCTION
+language: fr
+scope_summary: >-
+  Texte relatif à l'exercice du commissariat aux comptes auprès des structures
+  agréées et des sociétés cotées du Marché Financier Régional de l'UMOA. Il est
+  explicitement référencé par l'article 37 de l'Instruction n°66/CREPMF/2021
+  pour les rapports de certification des Commissaires aux Comptes.
+registry:
+  official_index_url: https://www.amf-umoa.org/reglementation/instruction
+  registry_checked_on: '2026-08-07'
+  listed_reference: TO_VERIFY_IN_DYNAMIC_OFFICIAL_REGISTRY
+  listed_status: TO_VERIFY_IN_DYNAMIC_OFFICIAL_REGISTRY
+  verification_status: PENDING_OFFICIAL_REGISTRY_CONFIRMATION
+publication:
+  brvm_record_url: https://www.brvm.org/fr/instruction-ndeg58-crepmf-2019-relative-lexercice-du-commissariat-aux-comptes-aux-comptes-aupres-des
+  published_on: '2019-07-25'
+  publication_title: >-
+    Instruction N°58-CREPMF-2019 – Relative à l’exercice du commissariat aux
+    comptes auprès des structures agréées et des sociétés cotées du Marché
+    Financier Régional de l’UMOA
+source_artifact:
+  pdf_url: https://www.brvm.org/sites/default/files/20190725-instruction_ndeg58-crepmf-2019_-_exercice_du_commissariat_aux_comptes_aupres_des_structures_agreers_et_des_societes_cotees_du_mfr_de_lumoa_0.pdf
+  expected_page_count_from_official_web_reader: 17
+  repository_copy: regulatory/materialized/INSTRUCTION_58_CREPMF_2019.pdf
+  extracted_text_copy: regulatory/materialized/INSTRUCTION_58_CREPMF_2019.txt
+  metadata_copy: regulatory/materialized/INSTRUCTION_58_CREPMF_2019.metadata.json
+  byte_size: null
+  sha256: null
+  page_count: null
+  copy_status: MATERIALIZATION_PENDING
+verification:
+  exact_signed_date: null
+  effective_from: null
+  predecessor_replaced: TO_IDENTIFY
+  amendments_rectifications_review: TO_COMPLETE
+  current_legal_status: PENDING_OFFICIAL_REGISTRY_CONFIRMATION
+  legal_review_status: PENDING
+  compliance_review_status: PENDING
+  requirement_activation_allowed: false
+extraction:
+  article_index: regulatory/requirements/INST058_ARTICLE_INDEX_V0_1.yaml
+  materialization_validation: regulatory/validation/INST058_MATERIALIZATION_VALIDATION_V0_1.json
+  extraction_status: PENDING
+  requirement_prefix: INST058
+  requirement_activation: FORBIDDEN_PENDING_LEGAL_AND_COMPLIANCE_REVIEW
+cross_source_dependencies:
+- source_id: INSTRUCTION_66_CREPMF_2021
+  article: 37
+  relationship: EXPLICITLY_REFERENCES_INSTRUCTION_58_FOR_AUDITOR_CERTIFICATION_REPORTS
+  status: OBSERVED_IN_HASHED_INSTRUCTION_66_SOURCE
+notes:
+- Le PDF officiel doit être matérialisé et hashé avant toute atomisation détaillée.
+- La date de publication BRVM ne doit pas être assimilée à la date de signature ni à la date d'entrée en vigueur.
+- Aucun statut NON ABROGE, aucune date d'effet et aucun modificatif ne doivent être déduits sans preuve officielle.
+- Les futures exigences INST058_* restent distinctes des exigences INST066_* et CIRC005_*.
