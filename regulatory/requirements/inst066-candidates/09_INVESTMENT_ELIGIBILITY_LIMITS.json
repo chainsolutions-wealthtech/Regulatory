@@ -124,7 +124,7 @@
       "circ005RequirementLinks": ["CIRC005_1_15_A_FCP_FINANCIAL_OBJECTIVES", "CIRC005_1_15_B_FCP_PLACEMENT_POLICY"]
     },
     {
-      "id": "INST066_ART043_REQ001",
+      "id": "INST066_ART043_REQ002",
       "articleNumber": 43,
       "normalizedRequirementCandidate": "Pour un fonds de fonds, les investissements dans d'autres OPC, les concentrations correspondantes et les éventuels conflits ou doubles frais doivent être identifiés et soumis aux limites de l'article 43 après revue.",
       "keywords": ["fonds de fonds", "parts d'OPCVM", "autres OPC"],
@@ -171,7 +171,7 @@
       "controlIds": ["RULE_PASSIVE_LIMIT_BREACH_RECORDED_AND_REMEDIATED"],
       "evidenceTypes": ["LIMIT_BREACH_REPORT", "PORTFOLIO_SNAPSHOT", "REMEDIATION_PLAN"],
       "outputSectionIds": ["SYSTEM_ONLY"],
-      "reviewRoles": ["RISK", "COMPLIANCE"],
+      "reviewRoles": ["RISK", "LEGAL", "COMPLIANCE"],
       "circ005RequirementLinks": []
     },
     {
@@ -192,7 +192,7 @@
       "circ005RequirementLinks": ["CIRC005_1_15_D_FCP_POLICY_LIMITS"]
     },
     {
-      "id": "INST066_ART047_REQ001",
+      "id": "INST066_ART047_REQ003",
       "articleNumber": 47,
       "normalizedRequirementCandidate": "La politique de liquidité de l'OPCVM doit être explicitement documentée et reliée aux modalités de souscription, rachat, suspension et outils de gestion de liquidité applicables.",
       "keywords": ["liquidité", "rachat", "OPCVM"],
