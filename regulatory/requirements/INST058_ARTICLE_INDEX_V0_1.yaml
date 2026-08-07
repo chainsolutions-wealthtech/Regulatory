@@ -1,0 +1,384 @@
+index_id: INST058_ARTICLE_INDEX_V0_1
+source_id: INSTRUCTION_58_CREPMF_2019
+source_sha256: 38258d7cae5518a6bea6b195facbb717e4a98c1eb734b30bc5e7de91917d0c57
+status: EXTRACTED_UNVERIFIED_REVIEW_PENDING
+requirement_activation: FORBIDDEN_PENDING_REVIEW
+review_status: PENDING_LEGAL_AND_COMPLIANCE_REVIEW
+page_count: 17
+article_count: 34
+ocr_used: true
+articles:
+- id: INST058_ARTICLE_001
+  article_number: 1
+  source_page: 2
+  source_line: 4
+  label_raw: "1"
+  heading_raw: "Article 1°\": Définitions"
+  title_candidate: "°\": Définitions"
+  extraction_status: EXTRACTED_UNVERIFIED
+  legal_review_status: PENDING
+  compliance_review_status: PENDING
+  activation: FORBIDDEN
+- id: INST058_ARTICLE_002
+  article_number: 2
+  source_page: 2
+  source_line: 36
+  label_raw: "2"
+  heading_raw: "Article 2 : Objet"
+  title_candidate: "Objet"
+  extraction_status: EXTRACTED_UNVERIFIED
+  legal_review_status: PENDING
+  compliance_review_status: PENDING
+  activation: FORBIDDEN
+- id: INST058_ARTICLE_003
+  article_number: 3
+  source_page: 2
+  source_line: 41
+  label_raw: "3"
+  heading_raw: "Article 3 : Champ d'application"
+  title_candidate: "Champ d'application"
+  extraction_status: EXTRACTED_UNVERIFIED
+  legal_review_status: PENDING
+  compliance_review_status: PENDING
+  activation: FORBIDDEN
+- id: INST058_ARTICLE_004
+  article_number: 4
+  source_page: 3
+  source_line: 2
+  label_raw: "4"
+  heading_raw: "Article 4 : Personnes concernées"
+  title_candidate: "Personnes concernées"
+  extraction_status: EXTRACTED_UNVERIFIED
+  legal_review_status: PENDING
+  compliance_review_status: PENDING
+  activation: FORBIDDEN
+- id: INST058_ARTICLE_005
+  article_number: 5
+  source_page: 3
+  source_line: 7
+  label_raw: "5"
+  heading_raw: "Article 5 : Désignation des Commissaires aux Comptes"
+  title_candidate: "Désignation des Commissaires aux Comptes"
+  extraction_status: EXTRACTED_UNVERIFIED
+  legal_review_status: PENDING
+  compliance_review_status: PENDING
+  activation: FORBIDDEN
+- id: INST058_ARTICLE_006
+  article_number: 6
+  source_page: 3
+  source_line: 22
+  label_raw: "6"
+  heading_raw: "Article 6 : Lettre d'acceptation de mandat"
+  title_candidate: "Lettre d'acceptation de mandat"
+  extraction_status: EXTRACTED_UNVERIFIED
+  legal_review_status: PENDING
+  compliance_review_status: PENDING
+  activation: FORBIDDEN
+- id: INST058_ARTICLE_007
+  article_number: 7
+  source_page: 3
+  source_line: 29
+  label_raw: "7"
+  heading_raw: "Article 7 : Conditions d'approbation des Commissaires aux Comptes"
+  title_candidate: "Conditions d'approbation des Commissaires aux Comptes"
+  extraction_status: EXTRACTED_UNVERIFIED
+  legal_review_status: PENDING
+  compliance_review_status: PENDING
+  activation: FORBIDDEN
+- id: INST058_ARTICLE_008
+  article_number: 8
+  source_page: 4
+  source_line: 13
+  label_raw: "8"
+  heading_raw: "Article 8 : Instruction du dossier"
+  title_candidate: "Instruction du dossier"
+  extraction_status: EXTRACTED_UNVERIFIED
+  legal_review_status: PENDING
+  compliance_review_status: PENDING
+  activation: FORBIDDEN
+- id: INST058_ARTICLE_009
+  article_number: 9
+  source_page: 4
+  source_line: 28
+  label_raw: "9"
+  heading_raw: "Article 9 : Notification de la décision du Conseil Régional"
+  title_candidate: "Notification de la décision du Conseil Régional"
+  extraction_status: EXTRACTED_UNVERIFIED
+  legal_review_status: PENDING
+  compliance_review_status: PENDING
+  activation: FORBIDDEN
+- id: INST058_ARTICLE_010
+  article_number: 10
+  source_page: 4
+  source_line: 37
+  label_raw: "10"
+  heading_raw: "Article 10 : Etablissement, mise à jour et publication de la liste des Commissaires"
+  title_candidate: "Etablissement, mise à jour et publication de la liste des Commissaires"
+  extraction_status: EXTRACTED_UNVERIFIED
+  legal_review_status: PENDING
+  compliance_review_status: PENDING
+  activation: FORBIDDEN
+- id: INST058_ARTICLE_011
+  article_number: 11
+  source_page: 5
+  source_line: 10
+  label_raw: "11"
+  heading_raw: "Article 11 : Contenu du dossier d’approbation des Commissaires aux Comptes"
+  title_candidate: "Contenu du dossier d’approbation des Commissaires aux Comptes"
+  extraction_status: EXTRACTED_UNVERIFIED
+  legal_review_status: PENDING
+  compliance_review_status: PENDING
+  activation: FORBIDDEN
+- id: INST058_ARTICLE_012
+  article_number: 12
+  source_page: 7
+  source_line: 21
+  label_raw: "12"
+  heading_raw: "Article 12 : Maintien des conditions d'approbation"
+  title_candidate: "Maintien des conditions d'approbation"
+  extraction_status: EXTRACTED_UNVERIFIED
+  legal_review_status: PENDING
+  compliance_review_status: PENDING
+  activation: FORBIDDEN
+- id: INST058_ARTICLE_013
+  article_number: 13
+  source_page: 7
+  source_line: 33
+  label_raw: "13"
+  heading_raw: "Article 13 : Dispositions générales"
+  title_candidate: "Dispositions générales"
+  extraction_status: EXTRACTED_UNVERIFIED
+  legal_review_status: PENDING
+  compliance_review_status: PENDING
+  activation: FORBIDDEN
+- id: INST058_ARTICLE_014
+  article_number: 14
+  source_page: 8
+  source_line: 2
+  label_raw: "14"
+  heading_raw: "Article 14 : Missions des Commissaires aux Comptes titulaires et suppléants"
+  title_candidate: "Missions des Commissaires aux Comptes titulaires et suppléants"
+  extraction_status: EXTRACTED_UNVERIFIED
+  legal_review_status: PENDING
+  compliance_review_status: PENDING
+  activation: FORBIDDEN
+- id: INST058_ARTICLE_015
+  article_number: 15
+  source_page: 8
+  source_line: 16
+  label_raw: "15"
+  heading_raw: "Article 15 : Rotation des mandats"
+  title_candidate: "Rotation des mandats"
+  extraction_status: EXTRACTED_UNVERIFIED
+  legal_review_status: PENDING
+  compliance_review_status: PENDING
+  activation: FORBIDDEN
+- id: INST058_ARTICLE_016
+  article_number: 16
+  source_page: 8
+  source_line: 28
+  label_raw: "16"
+  heading_raw: "Article 16 : Contenu du rapport d'audit annuel"
+  title_candidate: "Contenu du rapport d'audit annuel"
+  extraction_status: EXTRACTED_UNVERIFIED
+  legal_review_status: PENDING
+  compliance_review_status: PENDING
+  activation: FORBIDDEN
+- id: INST058_ARTICLE_017
+  article_number: 17
+  source_page: 9
+  source_line: 13
+  label_raw: "17"
+  heading_raw: "Article 17 : Rapport sur les états financiers de fin de premier semestre"
+  title_candidate: "Rapport sur les états financiers de fin de premier semestre"
+  extraction_status: EXTRACTED_UNVERIFIED
+  legal_review_status: PENDING
+  compliance_review_status: PENDING
+  activation: FORBIDDEN
+- id: INST058_ARTICLE_018
+  article_number: 18
+  source_page: 9
+  source_line: 20
+  label_raw: "18"
+  heading_raw: "Article 18 : Opinions"
+  title_candidate: "Opinions"
+  extraction_status: EXTRACTED_UNVERIFIED
+  legal_review_status: PENDING
+  compliance_review_status: PENDING
+  activation: FORBIDDEN
+- id: INST058_ARTICLE_019
+  article_number: 19
+  source_page: 9
+  source_line: 34
+  label_raw: "19"
+  heading_raw: "Article 19 : Devoir d’information"
+  title_candidate: "Devoir d’information"
+  extraction_status: EXTRACTED_UNVERIFIED
+  legal_review_status: PENDING
+  compliance_review_status: PENDING
+  activation: FORBIDDEN
+- id: INST058_ARTICLE_020
+  article_number: 20
+  source_page: 10
+  source_line: 4
+  label_raw: "20"
+  heading_raw: "Article 20 : Attestation trimestrielle de la composition détaillée des actifs de"
+  title_candidate: "Attestation trimestrielle de la composition détaillée des actifs de"
+  extraction_status: EXTRACTED_UNVERIFIED
+  legal_review_status: PENDING
+  compliance_review_status: PENDING
+  activation: FORBIDDEN
+- id: INST058_ARTICLE_021
+  article_number: 21
+  source_page: 10
+  source_line: 12
+  label_raw: "21"
+  heading_raw: "Article 21 : Examen du rapport du Président du Conseil d'Administration relatif"
+  title_candidate: "Examen du rapport du Président du Conseil d'Administration relatif"
+  extraction_status: EXTRACTED_UNVERIFIED
+  legal_review_status: PENDING
+  compliance_review_status: PENDING
+  activation: FORBIDDEN
+- id: INST058_ARTICLE_022
+  article_number: 22
+  source_page: 10
+  source_line: 19
+  label_raw: "22"
+  heading_raw: "Article 22 : Revue des réglementations spécifiques liées au secteur d'activité"
+  title_candidate: "Revue des réglementations spécifiques liées au secteur d'activité"
+  extraction_status: EXTRACTED_UNVERIFIED
+  legal_review_status: PENDING
+  compliance_review_status: PENDING
+  activation: FORBIDDEN
+- id: INST058_ARTICLE_023
+  article_number: 23
+  source_page: 10
+  source_line: 31
+  label_raw: "23"
+  heading_raw: "Article 23 : Obligation de diffusion de l’Instruction à la charge des Structures"
+  title_candidate: "Obligation de diffusion de l’Instruction à la charge des Structures"
+  extraction_status: EXTRACTED_UNVERIFIED
+  legal_review_status: PENDING
+  compliance_review_status: PENDING
+  activation: FORBIDDEN
+- id: INST058_ARTICLE_024
+  article_number: 24
+  source_page: 11
+  source_line: 2
+  label_raw: "24"
+  heading_raw: "Article 24 : Cadre d'échanges"
+  title_candidate: "Cadre d'échanges"
+  extraction_status: EXTRACTED_UNVERIFIED
+  legal_review_status: PENDING
+  compliance_review_status: PENDING
+  activation: FORBIDDEN
+- id: INST058_ARTICLE_025
+  article_number: 25
+  source_page: 11
+  source_line: 12
+  label_raw: "25"
+  heading_raw: "Article 25 : Obligations d’information à la charge des Commissaires aux Comptes"
+  title_candidate: "Obligations d’information à la charge des Commissaires aux Comptes"
+  extraction_status: EXTRACTED_UNVERIFIED
+  legal_review_status: PENDING
+  compliance_review_status: PENDING
+  activation: FORBIDDEN
+- id: INST058_ARTICLE_026
+  article_number: 26
+  source_page: 11
+  source_line: 20
+  label_raw: "26"
+  heading_raw: "Article 26 : Rencontre entre le Conseil Régional et les Commissaires aux Comptes"
+  title_candidate: "Rencontre entre le Conseil Régional et les Commissaires aux Comptes"
+  extraction_status: EXTRACTED_UNVERIFIED
+  legal_review_status: PENDING
+  compliance_review_status: PENDING
+  activation: FORBIDDEN
+- id: INST058_ARTICLE_027
+  article_number: 27
+  source_page: 11
+  source_line: 31
+  label_raw: "27"
+  heading_raw: "Article 27 : Demande d'informations du Conseil Régional aux Commissaires aux"
+  title_candidate: "Demande d'informations du Conseil Régional aux Commissaires aux"
+  extraction_status: EXTRACTED_UNVERIFIED
+  legal_review_status: PENDING
+  compliance_review_status: PENDING
+  activation: FORBIDDEN
+- id: INST058_ARTICLE_028
+  article_number: 28
+  source_page: 12
+  source_line: 2
+  label_raw: "28"
+  heading_raw: "Article 28 : Droit pour le Commissaire aux Comptes d'interroger le Conseil"
+  title_candidate: "Droit pour le Commissaire aux Comptes d'interroger le Conseil"
+  extraction_status: EXTRACTED_UNVERIFIED
+  legal_review_status: PENDING
+  compliance_review_status: PENDING
+  activation: FORBIDDEN
+- id: INST058_ARTICLE_030
+  article_number: 30
+  source_page: 12
+  source_line: 24
+  label_raw: "30"
+  heading_raw: "Article 30 : Retrait de l’approbation"
+  title_candidate: "Retrait de l’approbation"
+  extraction_status: EXTRACTED_UNVERIFIED
+  legal_review_status: PENDING
+  compliance_review_status: PENDING
+  activation: FORBIDDEN
+- id: INST058_ARTICLE_031
+  article_number: 31
+  source_page: 12
+  source_line: 38
+  label_raw: "31"
+  heading_raw: "Article 31 n cas de non approbation des mandats du Commissaires aux Comptes"
+  title_candidate: "n cas de non approbation des mandats du Commissaires aux Comptes"
+  extraction_status: EXTRACTED_UNVERIFIED
+  legal_review_status: PENDING
+  compliance_review_status: PENDING
+  activation: FORBIDDEN
+- id: INST058_ARTICLE_032
+  article_number: 32
+  source_page: 13
+  source_line: 2
+  label_raw: "32"
+  heading_raw: "Article 32 : Manquements dans l'exercice du Commissariat aux Comptes"
+  title_candidate: "Manquements dans l'exercice du Commissariat aux Comptes"
+  extraction_status: EXTRACTED_UNVERIFIED
+  legal_review_status: PENDING
+  compliance_review_status: PENDING
+  activation: FORBIDDEN
+- id: INST058_ARTICLE_033
+  article_number: 33
+  source_page: 13
+  source_line: 13
+  label_raw: "33"
+  heading_raw: "Article 33 : Dispositions transitoires"
+  title_candidate: "Dispositions transitoires"
+  extraction_status: EXTRACTED_UNVERIFIED
+  legal_review_status: PENDING
+  compliance_review_status: PENDING
+  activation: FORBIDDEN
+- id: INST058_ARTICLE_034
+  article_number: 34
+  source_page: 13
+  source_line: 18
+  label_raw: "34"
+  heading_raw: "Article 34 : Abrogation"
+  title_candidate: "Abrogation"
+  extraction_status: EXTRACTED_UNVERIFIED
+  legal_review_status: PENDING
+  compliance_review_status: PENDING
+  activation: FORBIDDEN
+- id: INST058_ARTICLE_035
+  article_number: 35
+  source_page: 13
+  source_line: 22
+  label_raw: "35"
+  heading_raw: "Article 35 : Entrée en vigueur"
+  title_candidate: "Entrée en vigueur"
+  extraction_status: EXTRACTED_UNVERIFIED
+  legal_review_status: PENDING
+  compliance_review_status: PENDING
+  activation: FORBIDDEN

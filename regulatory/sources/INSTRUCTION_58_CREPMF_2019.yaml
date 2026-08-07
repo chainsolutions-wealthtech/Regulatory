@@ -30,10 +30,10 @@ source_artifact:
   repository_copy: regulatory/materialized/INSTRUCTION_58_CREPMF_2019.pdf
   extracted_text_copy: regulatory/materialized/INSTRUCTION_58_CREPMF_2019.txt
   metadata_copy: regulatory/materialized/INSTRUCTION_58_CREPMF_2019.metadata.json
-  byte_size: null
-  sha256: null
-  page_count: null
-  copy_status: MATERIALIZATION_PENDING
+  byte_size: 4242350
+  sha256: 38258d7cae5518a6bea6b195facbb717e4a98c1eb734b30bc5e7de91917d0c57
+  page_count: 17
+  copy_status: MATERIALIZED_HASHED_AND_PAGE_VALIDATED
 verification:
   exact_signed_date: null
   effective_from: null
@@ -46,8 +46,9 @@ verification:
 extraction:
   article_index: regulatory/requirements/INST058_ARTICLE_INDEX_V0_1.yaml
   materialization_validation: regulatory/validation/INST058_MATERIALIZATION_VALIDATION_V0_1.json
-  extraction_status: PENDING
+  extraction_status: MATERIALIZED_ARTICLE_INDEX_EXTRACTED_UNVERIFIED
   requirement_prefix: INST058
+  article_count: 34
   requirement_activation: FORBIDDEN_PENDING_LEGAL_AND_COMPLIANCE_REVIEW
 cross_source_dependencies:
 - source_id: INSTRUCTION_66_CREPMF_2021

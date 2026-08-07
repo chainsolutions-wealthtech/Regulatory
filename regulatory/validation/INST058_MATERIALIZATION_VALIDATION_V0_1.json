@@ -1,0 +1,46 @@
+{
+  "validationId": "INST058_MATERIALIZATION_VALIDATION_V0_1",
+  "status": "PASS",
+  "sourceId": "INSTRUCTION_58_CREPMF_2019",
+  "checks": {
+    "officialPdfDownloaded": true,
+    "pdfMagicConfirmed": true,
+    "sha256Computed": true,
+    "byteSizePositive": true,
+    "expectedPageCount": true,
+    "textExtracted": true,
+    "articleHeadingsFound": true,
+    "articleIdsUnique": true,
+    "articleSequenceMonotonic": true,
+    "legalDatesNotAutoPromoted": true,
+    "currentStatusNotInvented": true,
+    "requirementsNotActivated": true,
+    "humanReviewStillRequired": true
+  },
+  "metrics": {
+    "byteSize": 4242350,
+    "pageCount": 17,
+    "usableTextCharacterCount": 31667,
+    "rawArticleHeadingCount": 34,
+    "articleIndexCount": 34,
+    "firstIndexedArticle": 1,
+    "lastIndexedArticle": 35,
+    "dateCandidateCount": 9
+  },
+  "reviewFlags": {
+    "duplicateHeadingOccurrences": [],
+    "missingArticleNumbers": [
+      29
+    ],
+    "nonMonotonicArticles": [],
+    "registryStatusStillPending": true,
+    "signatureAndEffectiveDatesStillPending": true
+  },
+  "outputs": [
+    "regulatory/materialized/INSTRUCTION_58_CREPMF_2019.pdf",
+    "regulatory/materialized/INSTRUCTION_58_CREPMF_2019.txt",
+    "regulatory/materialized/INSTRUCTION_58_CREPMF_2019.metadata.json",
+    "regulatory/requirements/INST058_ARTICLE_INDEX_V0_1.yaml"
+  ],
+  "caveat": "PASS validates source integrity and structural extraction only. Extracted text, article titles, dates, applicability and normative meaning remain unverified and inactive pending legal and compliance review."
+}
