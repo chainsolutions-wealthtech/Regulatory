@@ -136,6 +136,8 @@ def main() -> None:
             "canonicalFields": [],
             "evidenceRequirements": [],
             "reviewRoles": ["LEGAL", "COMPLIANCE"],
+            "legalReviewStatus": "PENDING",
+            "complianceReviewStatus": "PENDING",
             "status": "EXTRACTED_UNVERIFIED_PENDING_LEGAL_AND_COMPLIANCE_REVIEW",
             "activation": "FORBIDDEN",
             "provenance": {
@@ -179,6 +181,10 @@ def main() -> None:
             "articleRangeContinuous": [item["articleNumber"] for item in atoms] == list(range(1, 36)),
             "allAtomsInactive": all(item["activation"] == "FORBIDDEN" for item in atoms),
             "dualReviewRequired": all(item["reviewRoles"] == ["LEGAL", "COMPLIANCE"] for item in atoms),
+            "explicitReviewStatesPending": all(
+                item["legalReviewStatus"] == "PENDING" and item["complianceReviewStatus"] == "PENDING"
+                for item in atoms
+            ),
             "sourceTextDigestsPresent": all(len(item["sourceTextSha256"]) == 64 for item in blocks),
             "ocrNeverPromotedToNormativeTruth": all(item["normativeClassification"] == "PENDING_HUMAN_REVIEW" for item in atoms),
         },
