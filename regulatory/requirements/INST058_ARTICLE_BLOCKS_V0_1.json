@@ -1,0 +1,655 @@
+{
+  "schemaVersion": "INST058_ARTICLE_BLOCKS_V0_1",
+  "sourceId": "INSTRUCTION_58_CREPMF_2019",
+  "sourceSha256": "38258d7cae5518a6bea6b195facbb717e4a98c1eb734b30bc5e7de91917d0c57",
+  "status": "OCR_EXTRACTED_UNVERIFIED_PENDING_REVIEW",
+  "activation": "FORBIDDEN",
+  "articleBlockCount": 35,
+  "blocks": [
+    {
+      "id": "INST058_ART001_BLOCK001",
+      "sourceId": "INSTRUCTION_58_CREPMF_2019",
+      "sourceSha256": "38258d7cae5518a6bea6b195facbb717e4a98c1eb734b30bc5e7de91917d0c57",
+      "articleId": "INST058_ARTICLE_001",
+      "articleNumber": 1,
+      "sourcePages": [
+        2
+      ],
+      "headingCandidate": "Article 1°\": Définitions",
+      "titleCandidate": "°\": Définitions",
+      "sourceTextCandidate": "Article 1°\": Définitions\n\nAu sens de La présente Instruction, Le terme « Structures Agréées » désigne :\n-    la Bourse Régionale des Valeurs Mobilières (BRVM),\n-    le Dépositaire Central / Banque de Règlement (DC/BR),\n-    les Sociétés de Gestion et d’Intermédiation (SGI),\n-    les Sociétés de Gestion de Patrimoine (SGP),\n-    les Banques ‘Teneurs de Comptes et Conservateurs” (BTCC),\n     Les Apporteurs d'Affaires (AA),\n     Les Conseils en Investissement Boursier (CIB),\n     Les Démarcheurs,\n     Les Sociétés de Gestion des Organismes de Placement Collectif (SGO),\n - Les Organismes de Placement Collectif (OPC),\n - les Listing Sponsors (LS),\n -   tout autre acteur agréé ou approuvé par Le Conseil Régional, soumis à l'obligation\n     de désigner un ou plusieurs Commissaires aux Comptes.\n Le terme « Sociétés Cotées » désigne Les Sociétés, entités publiques ou privées dont\nLes titres sont inscrits au compartiment actions de la Bourse Régionale des Valeurs\nMobilières (BRVM).\nLe terme «OPC» désigne les Organismes de Placement Collectif en Valeurs\nMobilières (OPCVM), les Fonds Communs de Titrisation de Créances (FCTC) ou tout\nautre véhicule de placement collectif agréé par le Conseil Régional. Les OPCVM\nprennent la forme de Société d’Investissement à Capital Variable (SICAV), de Fonds\nCommun de Placement (FCP).\nLe terme « Conseil Régional » désigne Le Conseil Régional de L'Epargne Publique et\ndes Marchés Financiers (CREPMF).\nL'Associé signataire est le Commissaire aux Comptes inscrit au tableau de l'Ordre\ndes Experts Comptables de l’un des Etats membres de l'UMOA ou dans un ordre\nreconnu représentant Le Commissaire aux Comptes (personne morale) désigné par La\nsociété cotée ou structure agréée, et habilité à engager la responsabilité dudit\nCommissaire aux Comptes.",
+      "sourceTextSha256": "fb24e0dff56985e27af417fadc2d5c796c073fdea0bcfe0f48e813bb50fdc74b",
+      "extractionStatus": "OCR_EXTRACTED_UNVERIFIED",
+      "legalReviewStatus": "PENDING",
+      "complianceReviewStatus": "PENDING",
+      "activation": "FORBIDDEN"
+    },
+    {
+      "id": "INST058_ART002_BLOCK001",
+      "sourceId": "INSTRUCTION_58_CREPMF_2019",
+      "sourceSha256": "38258d7cae5518a6bea6b195facbb717e4a98c1eb734b30bc5e7de91917d0c57",
+      "articleId": "INST058_ARTICLE_002",
+      "articleNumber": 2,
+      "sourcePages": [
+        2
+      ],
+      "headingCandidate": "Article 2 : Objet",
+      "titleCandidate": "Objet",
+      "sourceTextCandidate": "Article 2 : Objet\nLa présente Instruction a pour objet de présenter la procédure d'approbation des\nCommissaires aux Comptes, le contenu des dossiers de demande d'approbation de\nmandat, les conditions d'exercice de leur mandat, les diligences spécifiques\nattendues d'eux ainsi que Leurs relations avec Le Conseil Régional.",
+      "sourceTextSha256": "648dc6e8fe5718b56b135f66ce11fe14de0fefbbc9ec624781928fb1fe385d01",
+      "extractionStatus": "OCR_EXTRACTED_UNVERIFIED",
+      "legalReviewStatus": "PENDING",
+      "complianceReviewStatus": "PENDING",
+      "activation": "FORBIDDEN"
+    },
+    {
+      "id": "INST058_ART003_BLOCK001",
+      "sourceId": "INSTRUCTION_58_CREPMF_2019",
+      "sourceSha256": "38258d7cae5518a6bea6b195facbb717e4a98c1eb734b30bc5e7de91917d0c57",
+      "articleId": "INST058_ARTICLE_003",
+      "articleNumber": 3,
+      "sourcePages": [
+        2,
+        3
+      ],
+      "headingCandidate": "Article 3 : Champ d'application",
+      "titleCandidate": "Champ d'application",
+      "sourceTextCandidate": "Article 3 : Champ d'application\nLa présente Instruction s'applique aux Commissaires aux Comptes des Structures\nAgréées par Le CREPMF et des Sociétés Cotées telles que définies précédemment.\n\n                                            2\n‘Avenue Joseph ANOMA                                         Tél: (225) 20 21 57 42 / 20 21 51 79\nO1 8P 178 abdhan ot» cie doi |     gl                                            Fac 20 2 1657\npredencegercpnters                                                              same or\nInstruction n°_.=        =        _JCREPMF/2019",
+      "sourceTextSha256": "eb7e23b00a14358facf6cf2743a9f4ee45ac4c16cbcf52a19fcab064b89b9dd4",
+      "extractionStatus": "OCR_EXTRACTED_UNVERIFIED",
+      "legalReviewStatus": "PENDING",
+      "complianceReviewStatus": "PENDING",
+      "activation": "FORBIDDEN"
+    },
+    {
+      "id": "INST058_ART004_BLOCK001",
+      "sourceId": "INSTRUCTION_58_CREPMF_2019",
+      "sourceSha256": "38258d7cae5518a6bea6b195facbb717e4a98c1eb734b30bc5e7de91917d0c57",
+      "articleId": "INST058_ARTICLE_004",
+      "articleNumber": 4,
+      "sourcePages": [
+        3
+      ],
+      "headingCandidate": "Article 4 : Personnes concernées",
+      "titleCandidate": "Personnes concernées",
+      "sourceTextCandidate": "Article 4 : Personnes concernées\nLes Commissaires aux Comptes doivent obligatoirement être inscrits au tableau de\nL'Ordre des Experts Comptables de l’un des Etats membres de L'UMOA et à jour de\nleurs obligations au niveau de cet ordre.\nCHAPITRE 2 - PROCEDURE D’APPROBATION DES COMMISSAIRES AUX COMPTES",
+      "sourceTextSha256": "7faae00fe907d0a8eccd08791e13fd6ac00f9e23783dd9117e8b15db6e54c974",
+      "extractionStatus": "OCR_EXTRACTED_UNVERIFIED",
+      "legalReviewStatus": "PENDING",
+      "complianceReviewStatus": "PENDING",
+      "activation": "FORBIDDEN"
+    },
+    {
+      "id": "INST058_ART005_BLOCK001",
+      "sourceId": "INSTRUCTION_58_CREPMF_2019",
+      "sourceSha256": "38258d7cae5518a6bea6b195facbb717e4a98c1eb734b30bc5e7de91917d0c57",
+      "articleId": "INST058_ARTICLE_005",
+      "articleNumber": 5,
+      "sourcePages": [
+        3
+      ],
+      "headingCandidate": "Article 5 : Désignation des Commissaires aux Comptes",
+      "titleCandidate": "Désignation des Commissaires aux Comptes",
+      "sourceTextCandidate": "Article 5 : Désignation des Commissaires aux Comptes\nCas des sociétés cotées et des structures agréées du marché financier régional\nLes Commissaires aux Comptes des sociétés cotées ou des structures agréées autres\nque Les entités sans personnalité morale, sont désignés selon les dispositions de\nVActe Uniforme de l'OHADA relatif aux sociétés commerciales et du GIE ou celles\nspécifiques au secteur d'activité de La société ou de la structure agréée :\n     -   par l'Assemblée Générale Ordinaire, pour une durée maximale de six (6) ans\n         ou toute autre durée fixée par l’autorité de supervision de l'entité contrôlée ;\n         dans Les Statuts ou par l’Assemblée Générale Constitutive, pour une durée de\n         deux (2) ans, couvrant Les deux premiers exercices sociaux.\nCas des entités sans personnalité morale\nLes Commissaires aux Comptes des entités sans personnalité morale telles que Les\nFonds Communs de Placement (FCP) ou Fonds Communs de Titrisation de Créances\n(FCTC) sont désignés par Les Conseils d'Administration des Sociétés de Gestion qui\nadministrent lesdites entités.",
+      "sourceTextSha256": "f7c7909335e99834ed78f26f4c3c7ccebd6e87cfcad761121a14ace36026e2f7",
+      "extractionStatus": "OCR_EXTRACTED_UNVERIFIED",
+      "legalReviewStatus": "PENDING",
+      "complianceReviewStatus": "PENDING",
+      "activation": "FORBIDDEN"
+    },
+    {
+      "id": "INST058_ART006_BLOCK001",
+      "sourceId": "INSTRUCTION_58_CREPMF_2019",
+      "sourceSha256": "38258d7cae5518a6bea6b195facbb717e4a98c1eb734b30bc5e7de91917d0c57",
+      "articleId": "INST058_ARTICLE_006",
+      "articleNumber": 6,
+      "sourcePages": [
+        3
+      ],
+      "headingCandidate": "Article 6 : Lettre d'acceptation de mandat",
+      "titleCandidate": "Lettre d'acceptation de mandat",
+      "sourceTextCandidate": "Article 6 : Lettre d'acceptation de mandat\nLes Commissaires aux Comptes titulaires et suppléants des sociétés cotées ou des\nstructures agréées adressent, dès leur désignation par Les instances habilitées, une\nlettre d'acceptation de leur mandat au représentant Légal de la structure agréée ou\nde la société concernée.",
+      "sourceTextSha256": "1bb834529972fb03b0f46b9a09010543ddfadaca6c23e7b6adcead8f6b433041",
+      "extractionStatus": "OCR_EXTRACTED_UNVERIFIED",
+      "legalReviewStatus": "PENDING",
+      "complianceReviewStatus": "PENDING",
+      "activation": "FORBIDDEN"
+    },
+    {
+      "id": "INST058_ART007_BLOCK001",
+      "sourceId": "INSTRUCTION_58_CREPMF_2019",
+      "sourceSha256": "38258d7cae5518a6bea6b195facbb717e4a98c1eb734b30bc5e7de91917d0c57",
+      "articleId": "INST058_ARTICLE_007",
+      "articleNumber": 7,
+      "sourcePages": [
+        3,
+        4
+      ],
+      "headingCandidate": "Article 7 : Conditions d'approbation des Commissaires aux Comptes",
+      "titleCandidate": "Conditions d'approbation des Commissaires aux Comptes",
+      "sourceTextCandidate": "Article 7 : Conditions d'approbation des Commissaires aux Comptes\nAprès leur nomination par une Structure Agréée et/ou une Société Cotée et avant\nl'exercice de leurs fonctions, les Commissaires aux Comptes titulaires ainsi que leurs\nsuppléants doivent être approuvés par Le Conseil Régional.\nNul ne peut exercer Les fonctions de commissaires aux comptes d’une société cotée\nou d'une structure agréée sans l'approbation de sa désignation par Le Conseil\nRégional, conformément à la procédure en vigueur.\nLes Commissaires aux Comptes doivent s'assurer de l'approbation de leurs mandats\npar Le Conseil Régional avant l'exercice de leurs fonctions. Dans Le cas contraire, ils\ncommettent un manquement à la présente Instruction.\n\n\n\n\nAvenue Joseph ANOMA           L                               Tél: (225) 20 21 57 42 / 20 21 51 79\nO1 8P 1878 Abidjan Of - te d'ivoire               ER)   S                         Fax: 20 2 16 57\npresidence@crepmf.org                                                            vv.crepmf.org\ninstruction n° __1    = JcREPMr/2019\nA cet effet, dès l'acceptation par le(s) Commissaire(s) aux Comptes du (des)\nmandat(s), les Sociétés Cotées du marché financier régional et Les Structures Agréées\nà l'exception des OPC ne disposant pas de la personnalité morale, doivent\ntransmettre au Secrétariat Général du Conseil Régional, pour approbation, Le dossier\ndu ou des Commissaires aux Comptes qu’elles ont nommés.\nLa procédure d'approbation concerne Les Commissaires aux Comptes titulaires ainsi\nque leurs suppléants. Elle s’applique           tant   à leur   première    nomination,       qu’au\nrenouvellement de leur mandat.\nLes Commissaires aux Comptes titulaires et suppléants ne peuvent appartenir au\nmême cabinet ou à des structures ayant des liens juridiques ou d'intérêts entre elles.\nILen est de même pour Les Co-Commissaires aux Comptes.",
+      "sourceTextSha256": "e9861ddd630616af080b6581e86169fec063df692a4a99cd20992b2e978a204c",
+      "extractionStatus": "OCR_EXTRACTED_UNVERIFIED",
+      "legalReviewStatus": "PENDING",
+      "complianceReviewStatus": "PENDING",
+      "activation": "FORBIDDEN"
+    },
+    {
+      "id": "INST058_ART008_BLOCK001",
+      "sourceId": "INSTRUCTION_58_CREPMF_2019",
+      "sourceSha256": "38258d7cae5518a6bea6b195facbb717e4a98c1eb734b30bc5e7de91917d0c57",
+      "articleId": "INST058_ARTICLE_008",
+      "articleNumber": 8,
+      "sourcePages": [
+        4
+      ],
+      "headingCandidate": "Article 8 : Instruction du dossier",
+      "titleCandidate": "Instruction du dossier",
+      "sourceTextCandidate": "Article 8 : Instruction du dossier\n\nLe Conseil      Régional   dispose   d’un   délai de deux   mois à compter       de     la date de\nréception du dossier complet de demande d'approbation ou de renouvellement de\nmandats pour statuer. En l'absence de réponse dans Le délai imparti, la décision du\nConseil Régional est réputée favorable.\nSi Le Conseil Régional l'estime nécessaire, il peut demander à la structure ayant\ndésigné le Commissaire aux Comptes, à l'Ordre des Experts Comptables, et à tout\nautre intéressé des informations complémentaires sur Le dossier en cours de\ntraitement.\nEn outre, le Conseil Régional peut également solliciter l'avis d’autres autorités de\nsupervision si l'entité contrôlée exerce dans un secteur d'activité spécifique.\nDans les deux cas, le délai indiqué au premier alinéa du présent article est alors\nsuspendu jusqu’à la réception des éléments complémentaires requis et notifié au\nrequérant.",
+      "sourceTextSha256": "98f260f6583f483334ebcdb8722f8fbb7b276f74c39aeef1c4fb07b158a15dab",
+      "extractionStatus": "OCR_EXTRACTED_UNVERIFIED",
+      "legalReviewStatus": "PENDING",
+      "complianceReviewStatus": "PENDING",
+      "activation": "FORBIDDEN"
+    },
+    {
+      "id": "INST058_ART009_BLOCK001",
+      "sourceId": "INSTRUCTION_58_CREPMF_2019",
+      "sourceSha256": "38258d7cae5518a6bea6b195facbb717e4a98c1eb734b30bc5e7de91917d0c57",
+      "articleId": "INST058_ARTICLE_009",
+      "articleNumber": 9,
+      "sourcePages": [
+        4
+      ],
+      "headingCandidate": "Article 9 : Notification de la décision du Conseil Régional",
+      "titleCandidate": "Notification de la décision du Conseil Régional",
+      "sourceTextCandidate": "Article 9 : Notification de la décision du Conseil Régional\n\nLe Conseil Régional notifie à La Structure Agréée ou à la Société Cotée sa dé\nEn cas de rejet de la demande d'approbation, La Structure Agréée ou la Soc\nCotée, qui ne peut passer outre, devra soumettre au Conseil Régional, le dossier d’un\nautre Commissaire aux Comptes.\nLe rejet d’une demande d'approbation de mandat fait l’objet d’une notification\nmotivée. Ce rejet ne constitue pas une sanction à l'encontre du Commissaire aux\nComptes.",
+      "sourceTextSha256": "e9ff35dea098323e942be6347c3b2cccaeed02804c7d62399a3e63a3f38c41e7",
+      "extractionStatus": "OCR_EXTRACTED_UNVERIFIED",
+      "legalReviewStatus": "PENDING",
+      "complianceReviewStatus": "PENDING",
+      "activation": "FORBIDDEN"
+    },
+    {
+      "id": "INST058_ART010_BLOCK001",
+      "sourceId": "INSTRUCTION_58_CREPMF_2019",
+      "sourceSha256": "38258d7cae5518a6bea6b195facbb717e4a98c1eb734b30bc5e7de91917d0c57",
+      "articleId": "INST058_ARTICLE_010",
+      "articleNumber": 10,
+      "sourcePages": [
+        4,
+        5
+      ],
+      "headingCandidate": "Article 10 : Etablissement, mise à jour et publication de la liste des Commissaires",
+      "titleCandidate": "Etablissement, mise à jour et publication de la liste des Commissaires",
+      "sourceTextCandidate": "Article 10 : Etablissement, mise à jour et publication de la liste des Commissaires\naux Comptes approuvés par le Conseil Régional\nL’approbation d’un Commissaire aux Comptes par Le Conseil Régional emporte son\ninscription sur la liste des Commissaires aux Comptes approuvés tenue par l'Organe.\nCette liste est mise à jour de façon semestrielle.\n                                                 a\nAvenue Jo5cph ANOVA                                                TL: (229)\n                                                                          20 2 87 427 20 21 5179\nOP 178 Abd O1 Cie doc            # QA                                                 Fax 2022 1657\nresidence rep or                                       %                              vnncrepm.or\nInstruction n°            ICREPMF/2019\nLa liste fait objet d'évaluation régulière en vue de s'assurer du respect par Les\nCommissaires aux Comptes des conditions initiales d'approbation.\nCette liste est publiée au Bulletin Officiel de La Cote de La BRVM ainsi que sur Le\nportail internet du Conseil Régional.\n\nCHAPITRE         3 - DOSSIER   DE   DEMANDE   D’APPROBATION    DES   COMMISSAIRES   AUX\nCOMPTES",
+      "sourceTextSha256": "0ef0ad015c628a60c2a3e799db37138a8a10a66d872daf3681ae24e44c1951bd",
+      "extractionStatus": "OCR_EXTRACTED_UNVERIFIED",
+      "legalReviewStatus": "PENDING",
+      "complianceReviewStatus": "PENDING",
+      "activation": "FORBIDDEN"
+    },
+    {
+      "id": "INST058_ART011_BLOCK001",
+      "sourceId": "INSTRUCTION_58_CREPMF_2019",
+      "sourceSha256": "38258d7cae5518a6bea6b195facbb717e4a98c1eb734b30bc5e7de91917d0c57",
+      "articleId": "INST058_ARTICLE_011",
+      "articleNumber": 11,
+      "sourcePages": [
+        5,
+        6,
+        7
+      ],
+      "headingCandidate": "Article 11 : Contenu du dossier d’approbation des Commissaires aux Comptes",
+      "titleCandidate": "Contenu du dossier d’approbation des Commissaires aux Comptes",
+      "sourceTextCandidate": "Article 11 : Contenu du dossier d’approbation des Commissaires aux Comptes\nLe contenu du dossier d'approbation des Commissaires aux Comptes des Sociétés\nCotées et des Structures Agréées à l'exception des OPC ne disposant pas de\npersonnalité morale est décrit comme ci-après :\n1. Nomination des Commissaires aux Comptes par une Structure Agréée ou une\n   Société Cotée\nLe dossier doit comporter, en plus de la demande :\nCas d’un Commissaire aux Comptes, personne physique\n+ le procès-verbal de l'Assemblée Générale des actionnaires ayant désigné Le\n    Commissaire aux Comptes ;\n+   la lettre d'acceptation du mandat qui lui a été confié (indiquer l’antériorité de\n    la relation et La période actuelle du mandat),\nele curriculum vitae daté et signé ;\n+_ l'attestation d’inscription à l'Ordre des Experts Comptables et Comptables Agréés\n   datant de moins de six mois en cas d'absence sur la liste fournie par l'Ordre des\n   Experts Comptables ;\n+ _ l'engagement écrit du Commissaire aux Comptes de n’exercer directement ou\n    indirectement aucune activité ou fonction incompatible et d’éviter tout conflit\n    d'intérêt ;\n+ _ l'engagement écrit du Commissaire aux Comptes à se conformer aux normes de\n    contrôle de qualité des prestations édictées par l'OHADA;\n+ _ l'engagement écrit du Commissaire aux Comptes à respecter La réglementation\n    du marché financier régional ;\n+   les références du Commissaire aux Comptes en matière d'audit et de\n    Commissariat aux Comptes. Les références concernant les sociétés cotées à La\n    BRVM et Les structures agréées doivent être précises.\nCas d’un Commissaire aux Comptes, personne morale\n+ Le procès-verbal de l’Assemblée Générale des actionnaires ayant désigné le\n    cabinet ;\n+   la lettre d’acceptation du mandat qui lui a été confié (indiquer l’antériorité de\n    la relation et la période actuelle du mandat concernant les sociétés cotées et Les\n    structures agréées) ;\n\n\n\nmm                                                5\n                                                              LE      ERP        ETES)\nGP 178 2j O1 «Ge otre                         a       =                     Fan 02 1657\nee                                  (                     +                Nu dent\nInstructionn°     _?     = _JCREPMF/2019\n+   la plaquette de présentation du cabinet avec la description détaillée des moyens\n    humains (formation,           grade, ancienneté du personnel technique permanent) et\n    techniques ainsi que ses références en matière d'audit et de Commissariat aux\n   Comptes (indiquer l’antériorité de la relation et la période actuelle du mandat\n   concernant Les sociétés cotées et Les structures agréées) ;\nele curriculum vitae du Directeur Général, et du ou des Associés signataires ;\n+. L'attestation d'inscription à l'Ordre des Experts Comptables du cabinet et celles\n   des signataires ;\n+   l'engagement       écrit du      cabinet    de n’exercer   directement     ou     indirectement\n    aucune activité ou fonction incompatible et d'éviter tout conflit d'intérêt ;\n+ L'engagement du cabinet et des signataires à se conformer aux normes de\n  contrôle de qualité des prestations édictées par l'OHADA ;\n+ L'engagement du cabinet à se conformer à la réglementation du marché financier\n  régional.\n2. Renouvellement du mandat des Commissaires aux Comptes par une Structure\n   Agréée ou une Société Cotée\nDans les quarante-cinq            (45) jours suivant la tenue de l’Assemblée          Générale        des\nactionnaires ayant procédé au renouvellement du mandat du ou des Commissaires\naux Comptes, la Structure Agréée ou la Société Cotée doit transmettre au Conseil\nRégional, dans le cadre d’une procédure simplifiée, Les documents ci-après qu’il\ns'agisse d’une personne physique ou d’une personne morale :\n+ le procès-verbal de l’Assemblée Générale des actionnaires ayant procédé au\n  renouvellement du ou des mandats des Commissaires aux Comptes ;\n+ _ la lettre d'acceptation du mandat qui lui a été confié ;\n+ l'engagement écrit du Commissaire aux Comptes (y compris le dirigeant ou Les\n  associés dans le cas d’une personne morale) de n’exercer directement ou\n  indirectement aucune activité ou fonction incompatible et d'éviter tout conflit\n    d'intérêt ;\n+   l'engagement       du Commissaire          aux Comptes à se conformer           aux     normes de\n    contrôle de qualité des prestations édictées par l'OHADA ;\n+ l'engagement du Commissaire aux Comptes à respecter la réglementation du\n  marché financier régional ;\n+ la plaquette de présentation du cabinet avec La description détaillée des moyens\n    humains et techniques en cas de modification depuis la dernière approbation.\nLes Commissaires aux Comptes titulaires et suppléants des OPC ne disposant pas de\npersonnalité morale sont désignés directement par Le Conseil d'Administration de la\nSociété de Gestion. À cet effet, Le procès-verbal de l'Assemblée Générale des\nactionnaires ayant procédé à La nomination ou au renouvellement du ou des mandats\ndes Commissaires aux Comptes est remplacé par un procès-verbal de Conseil\nd'Administration de la société de gestion fixant La durée du mandat des Commissaires\naux Comptes titulaires et suppléants. Le contenu                du   dossier   d'approbation          est\nidentique à celui prévu au point 1 de l’article 10.\n\n\n                                                      6\nRe EEE                                                               RGP                    NAN\nO1 BP 1876 Abidjan Of Ce d'oire         14       ex                                       Fax 2022 1657\nmécano                                                    4                               cents\n                     E\nInstructionn°7            Ù © _/CREPMF/2019\nLes premiers             Commissaires        aux       Comptes         titulaires et suppléants           doivent être\napprouvés au moment de l'agrément de L'OPC, qu’il dispose ou non de la\npersonnalité morale.\nEn outre, le Conseil Régional peut être amené à demander des informations\ncomplémentaires relativement aux moyens dont dispose le Commissaire aux Comptes\ndans Le cadre de ses missions dans des secteurs spécifiques et/ou réglementés.\n\n3. Nomination d’un ou plusieurs Commissaires aux Comptes figurant sur la liste\n   tenue par le Conseil Régional\nLorsqu'une         Structure        Agréée        ou        une    Société    Cotée     nomme        un    où    plusieurs\nCommissaires aux Comptes déjà inscrits sur la liste tenue par Le Conseil Régional,\nelle transmet au Conseil Régional, dans le cadre d’une procédure simplifiée, Les\nmêmes documents tels que listés au point 2 de l’article 10 qu’il s’agisse d’une\npersonne physique ou personne morale.\nL'inscription d’un ou plusieurs Commissaires aux Comptes sur la Liste tenue par Le\nConseil Régional n’entraine pas son approbation automatique dans le cadre de\nV'instruction de dossiers relatifs aux mandats en cours et à venir.",
+      "sourceTextSha256": "8ff1b4e08d589ebbd341ab71c44cc228b6301077971db23d55ffaa250b59f185",
+      "extractionStatus": "OCR_EXTRACTED_UNVERIFIED",
+      "legalReviewStatus": "PENDING",
+      "complianceReviewStatus": "PENDING",
+      "activation": "FORBIDDEN"
+    },
+    {
+      "id": "INST058_ART012_BLOCK001",
+      "sourceId": "INSTRUCTION_58_CREPMF_2019",
+      "sourceSha256": "38258d7cae5518a6bea6b195facbb717e4a98c1eb734b30bc5e7de91917d0c57",
+      "articleId": "INST058_ARTICLE_012",
+      "articleNumber": 12,
+      "sourcePages": [
+        7
+      ],
+      "headingCandidate": "Article 12 : Maintien des conditions d'approbation",
+      "titleCandidate": "Maintien des conditions d'approbation",
+      "sourceTextCandidate": "Article 12 : Maintien des conditions d'approbation\nLes Commissaires aux Comptes figurant sur la liste tenue par Le Conseil Régional\ndoivent l'informer, dans Les meilleurs délais, de tout changement dans les éléments\nconstitutifs de leur dossier d'approbation, notamment en cas de suspension par\nVOrdre des Experts Comptables ou de radiation du tableau dudit Ordre,\nd'empêchement ou de faillite personnelle, de redressement judiciaire et de\ncondamnation par un tribunal.\nIls sont tenus d’informer Le Conseil Régional, dans les 30 jours suivant la survenance\ndu fait, de tout changement du signataire exerçant la mission au nom d’une société\nde Commissaires aux comptes, et de tout ajout d’un cosignataire.\n\nCHAPITRE 4 - EXERCICE DU COMMISSARIAT AUX COMPTES",
+      "sourceTextSha256": "eb57ff3caaa6a819e8fc2a358f832db060f8eefed0581dcd22e0097a10d1f552",
+      "extractionStatus": "OCR_EXTRACTED_UNVERIFIED",
+      "legalReviewStatus": "PENDING",
+      "complianceReviewStatus": "PENDING",
+      "activation": "FORBIDDEN"
+    },
+    {
+      "id": "INST058_ART013_BLOCK001",
+      "sourceId": "INSTRUCTION_58_CREPMF_2019",
+      "sourceSha256": "38258d7cae5518a6bea6b195facbb717e4a98c1eb734b30bc5e7de91917d0c57",
+      "articleId": "INST058_ARTICLE_013",
+      "articleNumber": 13,
+      "sourcePages": [
+        7,
+        8
+      ],
+      "headingCandidate": "Article 13 : Dispositions générales",
+      "titleCandidate": "Dispositions générales",
+      "sourceTextCandidate": "Article 13 : Dispositions générales\nLe contrôle des informations financières des Structures Agréées du marché financier\nrégional      et    des     Sociétés      Cotées            s'exerce    par   les     Commissaires        aux    Comptes\nconformément aux dispositions de L’Acte Uniforme de L'OHADA relatif au Droit des\nSociétés Commerciales et du Groupement d'Intérêt Economique (GIE) et des textes\nspécifiques, Le cas échéant.\nLes Commissaires aux Comptes restent tenus du respect des dispositions\nrèglementaires prévues par l'Acte Uniforme et Les Règles Comptables Spécifiques\nnotamment          au titre du          rapport        sur les états financiers annuels et des rapports\nspéciaux à Leurs charges.\n\n                                                              je\nAvenue Joseph ANONA                                                                     T8: (229) 20 21 57 42 / 20 21 5179\nO1 BP 1878 Abidjan O1 - Côte d'ivoire                  Q\\               E                                  Fax: 20 22 16 57\npresidencetcrepmf.org                                                                                      wvnmcrepmr.org\nInstruction n°           D    JcREPMrI2019",
+      "sourceTextSha256": "c29d37c900d81512f6409118daff47f72a35ea20d242f4af7fe771901cef6d89",
+      "extractionStatus": "OCR_EXTRACTED_UNVERIFIED",
+      "legalReviewStatus": "PENDING",
+      "complianceReviewStatus": "PENDING",
+      "activation": "FORBIDDEN"
+    },
+    {
+      "id": "INST058_ART014_BLOCK001",
+      "sourceId": "INSTRUCTION_58_CREPMF_2019",
+      "sourceSha256": "38258d7cae5518a6bea6b195facbb717e4a98c1eb734b30bc5e7de91917d0c57",
+      "articleId": "INST058_ARTICLE_014",
+      "articleNumber": 14,
+      "sourcePages": [
+        8
+      ],
+      "headingCandidate": "Article 14 : Missions des Commissaires aux Comptes titulaires et suppléants",
+      "titleCandidate": "Missions des Commissaires aux Comptes titulaires et suppléants",
+      "sourceTextCandidate": "Article 14 : Missions des Commissaires aux Comptes titulaires et suppléants\nLes Commissaires aux Comptes sont investis d'une mission générale qui comporte                                     un\naudit de L'information financière et comptable et des vérifications spécifiques. Ils\npeuvent également réaliser des missions spécifiques prévues par Les réglementations\ndes entités auprès desquelles                  ils exercent     leurs mandats     de commissariat             aux\ncomptes.\nPar ailleurs, en leur qualité de Commissaires aux Comptes, ils effectuent des\ninterventions         connexes   à leur mission            générale,   consécutives     à des opérations\nparticulières ou à des événements nécessitant Leur intervention.\nConformément aux exigences légales et réglementaires, les Commissaires aux\ncomptes mènent, en toute indépendance, Les diligences appropriées pour apprécier\nla qualité de l'information financière et comptable mise à la disposition du public ou\ntransmise au Conseil Régional.",
+      "sourceTextSha256": "2080651ba1df53e55e43633d066edbe67fec8521563ddf74cead16db000c318a",
+      "extractionStatus": "OCR_EXTRACTED_UNVERIFIED",
+      "legalReviewStatus": "PENDING",
+      "complianceReviewStatus": "PENDING",
+      "activation": "FORBIDDEN"
+    },
+    {
+      "id": "INST058_ART015_BLOCK001",
+      "sourceId": "INSTRUCTION_58_CREPMF_2019",
+      "sourceSha256": "38258d7cae5518a6bea6b195facbb717e4a98c1eb734b30bc5e7de91917d0c57",
+      "articleId": "INST058_ARTICLE_015",
+      "articleNumber": 15,
+      "sourcePages": [
+        8
+      ],
+      "headingCandidate": "Article 15 : Rotation des mandats",
+      "titleCandidate": "Rotation des mandats",
+      "sourceTextCandidate": "Article 15 : Rotation des mandats\nLa durée d'exercice d’un mandat auprès d’une même société cotée ou d’une\nstructure agréée ne pourra excéder trois (03) mandats successifs, y compris                                        Le\nmandat en cours à compter de l’entrée en vigueur de La présente Instruction.\nUne période probatoire équivalente à six (06) exercices sociaux devra être observée\navant toute nouvelle désignation par la même entité.\nLes Commissaires aux Comptes sont tenus de veiller au respect de toute disposition\nplus contraignante fixée par une Autorité de supervision du marché financier à\nlaquelle ils sont assujettis.\n\nCHAPITRE 5 - OPINION DU COMMISSAIRE AUX COMPTES SUR LES ETATS FINANCIERS",
+      "sourceTextSha256": "f7644e9679477ce24e74699fc2f9884c9f0d776ec889ae7b6320d439c766367b",
+      "extractionStatus": "OCR_EXTRACTED_UNVERIFIED",
+      "legalReviewStatus": "PENDING",
+      "complianceReviewStatus": "PENDING",
+      "activation": "FORBIDDEN"
+    },
+    {
+      "id": "INST058_ART016_BLOCK001",
+      "sourceId": "INSTRUCTION_58_CREPMF_2019",
+      "sourceSha256": "38258d7cae5518a6bea6b195facbb717e4a98c1eb734b30bc5e7de91917d0c57",
+      "articleId": "INST058_ARTICLE_016",
+      "articleNumber": 16,
+      "sourcePages": [
+        8,
+        9
+      ],
+      "headingCandidate": "Article 16 : Contenu du rapport d'audit annuel",
+      "titleCandidate": "Contenu du rapport d'audit annuel",
+      "sourceTextCandidate": "Article 16 : Contenu du rapport d'audit annuel\nL'opinion du Commissaire aux Comptes est matérialisée dans un rapport qui doit être\ndaté et signé par Le Commissaire aux comptes dont La désignation a été formellement\napprouvée par le Conseil Régional. Ce rapport doit être transmis au Conseil Régional\npar le Commissaire aux Comptes au plus tard sept (7) jours après la tenue de\nl'Assemblée Générale Ordinaire des Actionnaires.\nSi plusieurs Commissaires           aux Comptes             sont en fonction,     ils peuvent         procéder\nséparément à leurs investigations, vérifications et contrôles mais ils établissent un\nrapport commun.\nEn cas de désaccord entre les Commissaires aux Comptes, le rapport indique les\ndifférentes opinions exprimées.\nLes Commissaires aux Comptes doivent examiner au titre du rapport d'audit annuel,\nnotamment l’organisation interne, La gouvernance, le fonctionnement des organes\nsociaux,    l'exercice       du contrôle        interne,    la qualité du système        d’information             et\ncomptable, le respect des exigences réglementaires spécifiques le cas échéant, ainsi\nque La gestion et La qualité des risques.\n\n\n\nGi amet cu core\nAvenue Joseph ANOMA\npresidencegerepmt.org                      |\n                                                     ui\n                                                                            Tél: (225) 20 21 57 42 / 20 21 51 79\n                                                                                               Fax: 20 22 16 57\n                                                                                               u.cropmf.org\nInstructionn° __2 Ù © JCREPMF/2019\nLe rapport d’audit des Commissaires aux Comptes des sociétés                             cotées        et des\nstructures agréées comporte notamment Les points-clés ci-après :\n= L'opinion ;\n-    les observations (obligatoires en cas de changement de méthode comptable et\n     d'incertitude sur la continuité de l'exploitation, etc.) ;\n+    les vérifications spécifiques prévues par La loi et Les exigences réglementaires\n     notamment la revue des règles prudentielles, Le cas échéant, en fonction du\n     secteur d’activité.\nLes diligences spécifiques du Commissaire aux Comptes sur certaines parties du\nrapport d'audit sont détaillées au chapitre 6 de la présente Instruction.",
+      "sourceTextSha256": "fb3550103694aa1a018f8aa65f44cb7b9b0ec14eefc681f3072e8c4e29e689ac",
+      "extractionStatus": "OCR_EXTRACTED_UNVERIFIED",
+      "legalReviewStatus": "PENDING",
+      "complianceReviewStatus": "PENDING",
+      "activation": "FORBIDDEN"
+    },
+    {
+      "id": "INST058_ART017_BLOCK001",
+      "sourceId": "INSTRUCTION_58_CREPMF_2019",
+      "sourceSha256": "38258d7cae5518a6bea6b195facbb717e4a98c1eb734b30bc5e7de91917d0c57",
+      "articleId": "INST058_ARTICLE_017",
+      "articleNumber": 17,
+      "sourcePages": [
+        9
+      ],
+      "headingCandidate": "Article 17 : Rapport sur les états financiers de fin de premier semestre",
+      "titleCandidate": "Rapport sur les états financiers de fin de premier semestre",
+      "sourceTextCandidate": "Article 17 : Rapport sur les états financiers de fin de premier semestre\nLe Commissaire aux Comptes procède à une revue des comptes semestriels des\nsociétés cotées et des structures agréées hors FCP et FCTC et transmet à la structure\ncontrôlée dans un délai de deux (2) mois à compter de la fin du premier semestre,\nun rapport d'examen limité sur Les états financiers de fin de premier semestre selon\nLes normes d'examen limité en vigueur.",
+      "sourceTextSha256": "cc1ff68de9184351db107c39d171a9012dc9ef94ca7ff450a72d151efefecb06",
+      "extractionStatus": "OCR_EXTRACTED_UNVERIFIED",
+      "legalReviewStatus": "PENDING",
+      "complianceReviewStatus": "PENDING",
+      "activation": "FORBIDDEN"
+    },
+    {
+      "id": "INST058_ART018_BLOCK001",
+      "sourceId": "INSTRUCTION_58_CREPMF_2019",
+      "sourceSha256": "38258d7cae5518a6bea6b195facbb717e4a98c1eb734b30bc5e7de91917d0c57",
+      "articleId": "INST058_ARTICLE_018",
+      "articleNumber": 18,
+      "sourcePages": [
+        9
+      ],
+      "headingCandidate": "Article 18 : Opinions",
+      "titleCandidate": "Opinions",
+      "sourceTextCandidate": "Article 18 : Opinions\nLes états financiers, sociaux et/ou consolidés,                    clos au 31 décembre doivent être\nexaminés par Le ou les Commissaire(s) aux Comptes, lesquels :\n-    soit émettent une opinion indiquant que les états financiers de synthèse sont\n     réguliers et sincères et donnent une image fidèle du résultat des opérations de\n     l'exercice écoulé ainsi que de la situation financière et du patrimoine, à la fin de\n     cet exercice ;\n-    soit expriment          en    la motivant,      une opinion    avec réserve    ou   défavorable           ou\n    indiquent qu’ils sont dans l'impossibilité d'exprimer une opinion.\nLorsque l'opinion est assortie de réserves ou que l’on se trouve dans un cas d'opinion\ndéfavorable ou d’impossibilité d’opiner,                  le Commissaire     aux Comptes,           y compris\ncelui    opérant        auprès      des   OPC   hors    FCP   et FCTC,     doit   adresser     un     rapport\ncirconstancié au Conseil Régional dans les trente (30) jours suivant l'émission du\nrapport d’audit annuel.",
+      "sourceTextSha256": "cc5e8875d0c6c0e132e225647ad0066f0e2e17c71717de851dd357e1e17fd0a2",
+      "extractionStatus": "OCR_EXTRACTED_UNVERIFIED",
+      "legalReviewStatus": "PENDING",
+      "complianceReviewStatus": "PENDING",
+      "activation": "FORBIDDEN"
+    },
+    {
+      "id": "INST058_ART019_BLOCK001",
+      "sourceId": "INSTRUCTION_58_CREPMF_2019",
+      "sourceSha256": "38258d7cae5518a6bea6b195facbb717e4a98c1eb734b30bc5e7de91917d0c57",
+      "articleId": "INST058_ARTICLE_019",
+      "articleNumber": 19,
+      "sourcePages": [
+        9,
+        10
+      ],
+      "headingCandidate": "Article 19 : Devoir d’information",
+      "titleCandidate": "Devoir d’information",
+      "sourceTextCandidate": "Article 19 : Devoir d’information\nLorsqu’au cours de leur mission, les Commissaires aux Comptes                         relèvent des faits\ndélictueux ou de nature à compromettre la continuité de L’exploitation d’une société\ncotée ou d’une structure agréée, ils doivent, sans délai, en informer par écrit le\nConseil Régional, avec ampliation à la société cotée ou la structure agréée\nconcernée.\n\n\n\nAVR Joseph ANONA                          F                                 LOPEZ              TE TEE\nO1 BP 1878 Abidjan O1 - Côte d'ivoire                                                        Fax: 20 22 1657\ngresidencecrepmf.ors                      F     B\\              4                            um crepntorg\nInstructionn° __ © Ù    JCREPMF/2019\nCHAPITRE 6 - DILIGENCES SPECIFIQUES LIEES AU COMMISSARIAT AUX COMPTES",
+      "sourceTextSha256": "a95a9e2a16e726c36141a11efe592405b3ce71c3c1f18bf187320f102fb9cc94",
+      "extractionStatus": "OCR_EXTRACTED_UNVERIFIED",
+      "legalReviewStatus": "PENDING",
+      "complianceReviewStatus": "PENDING",
+      "activation": "FORBIDDEN"
+    },
+    {
+      "id": "INST058_ART020_BLOCK001",
+      "sourceId": "INSTRUCTION_58_CREPMF_2019",
+      "sourceSha256": "38258d7cae5518a6bea6b195facbb717e4a98c1eb734b30bc5e7de91917d0c57",
+      "articleId": "INST058_ARTICLE_020",
+      "articleNumber": 20,
+      "sourcePages": [
+        10
+      ],
+      "headingCandidate": "Article 20 : Attestation trimestrielle de la composition détaillée des actifs de",
+      "titleCandidate": "Attestation trimestrielle de la composition détaillée des actifs de",
+      "sourceTextCandidate": "Article 20 : Attestation trimestrielle de la composition détaillée des actifs de\nVOPC\nLe Commissaire aux Comptes atteste, par La transmission d’un rapport au Conseil\nRégional, dans les 30 jours calendaires suivant la fin de chaque trimestre, la\ncomposition détaillée des actifs de L'OPC à la date du dernier jour de bourse du\ntrimestre considéré. En cas d’impossibilité pour Le Commissaire aux Comptes de\nmener à bien cette diligence, il en informe le Conseil Régional par courrier\ncirconstancié dans Le délai imparti.",
+      "sourceTextSha256": "1d01cf9a7688e8b9d3cae149480f4209d630b62116c946eb2e184f0f40683176",
+      "extractionStatus": "OCR_EXTRACTED_UNVERIFIED",
+      "legalReviewStatus": "PENDING",
+      "complianceReviewStatus": "PENDING",
+      "activation": "FORBIDDEN"
+    },
+    {
+      "id": "INST058_ART021_BLOCK001",
+      "sourceId": "INSTRUCTION_58_CREPMF_2019",
+      "sourceSha256": "38258d7cae5518a6bea6b195facbb717e4a98c1eb734b30bc5e7de91917d0c57",
+      "articleId": "INST058_ARTICLE_021",
+      "articleNumber": 21,
+      "sourcePages": [
+        10
+      ],
+      "headingCandidate": "Article 21 : Examen du rapport du Président du Conseil d'Administration relatif",
+      "titleCandidate": "Examen du rapport du Président du Conseil d'Administration relatif",
+      "sourceTextCandidate": "Article 21 : Examen du rapport du Président du Conseil d'Administration relatif\nà la gouvernance et aux procédures de contrôle interne et de gestion des risques\nEn application de l'Acte Uniforme de l'OHADA, Le Commissaire aux Comptes doit, dans\nle cadre de sa mission, examiner le contenu du rapport du Président du Conseil\nd'Administration relatif à la gouvernance et aux procédures de contrôle interne et\nde gestion des risques mises en place par la société cotée et s’assurer qu’il ne\ncontient pas d'incohérence ou d’anomalie significative.",
+      "sourceTextSha256": "d3dddf90151338934a15218204ae02d88304d9a55039f7db625c80d767797480",
+      "extractionStatus": "OCR_EXTRACTED_UNVERIFIED",
+      "legalReviewStatus": "PENDING",
+      "complianceReviewStatus": "PENDING",
+      "activation": "FORBIDDEN"
+    },
+    {
+      "id": "INST058_ART022_BLOCK001",
+      "sourceId": "INSTRUCTION_58_CREPMF_2019",
+      "sourceSha256": "38258d7cae5518a6bea6b195facbb717e4a98c1eb734b30bc5e7de91917d0c57",
+      "articleId": "INST058_ARTICLE_022",
+      "articleNumber": 22,
+      "sourcePages": [
+        10
+      ],
+      "headingCandidate": "Article 22 : Revue des réglementations spécifiques liées au secteur d'activité",
+      "titleCandidate": "Revue des réglementations spécifiques liées au secteur d'activité",
+      "sourceTextCandidate": "Article 22 : Revue des réglementations spécifiques      liées au secteur d'activité\nLe Commissaire aux Comptes doit s’assurer que les états financiers sont élaborés\nconformément au référentiel comptable et aux textes spécifiques applicables aux\nStructures Agréées et aux Sociétés Cotées.\nS'agissant des entreprises exerçant dans un secteur spécifiquement réglementé, les\nCommissaires aux Comptes sont tenus, de procéder à une revue du respect de la\nréglementation à laquelle sont assujetties ces entités.\n\n\nCHAPITRE 7 - RELATIONS ENTRE LE CONSEIL REGIONAL ET LE COMMISSAIRE AUX\nCOMPTES",
+      "sourceTextSha256": "814c6c26b5d02cf2382b0f9c52b7cc9e95ea541d4c17414dc374ed1e460ad71c",
+      "extractionStatus": "OCR_EXTRACTED_UNVERIFIED",
+      "legalReviewStatus": "PENDING",
+      "complianceReviewStatus": "PENDING",
+      "activation": "FORBIDDEN"
+    },
+    {
+      "id": "INST058_ART023_BLOCK001",
+      "sourceId": "INSTRUCTION_58_CREPMF_2019",
+      "sourceSha256": "38258d7cae5518a6bea6b195facbb717e4a98c1eb734b30bc5e7de91917d0c57",
+      "articleId": "INST058_ARTICLE_023",
+      "articleNumber": 23,
+      "sourcePages": [
+        10,
+        11
+      ],
+      "headingCandidate": "Article 23 : Obligation de diffusion de l’Instruction à la charge des Structures",
+      "titleCandidate": "Obligation de diffusion de l’Instruction à la charge des Structures",
+      "sourceTextCandidate": "Article 23 : Obligation de diffusion de l’Instruction à la charge des Structures\nAgréées, des Sociétés Cotées et de leurs Commissaires aux Comptes\nLes Structures Agréées et Les Sociétés Cotées du marché financier régional veillent à\nla diffusion de la présente Instruction auprès de leurs Commissaires aux Comptes.\nLes Commissaires aux Comptes, dès l'acceptation de leur mandat, doivent prendre\nconnaissance de la réglementation applicable à l'exercice de leurs fonctions auprès\ndes Structures agréés et des Sociétés Cotées.\n\n\n\n\n                                          10\n‘Avenue Joseph ANOMA               4            ù          Tél: (225) 20 21 57 42 / 20 21 5179\nOù a 178 dan «te dore                    uw         4                          Fa 20 1657\npresidencemcrepmt.org                                                         rvnuicrepmf.org\ninstructionn° _ 7 D © JCREPMF/2019",
+      "sourceTextSha256": "d290468119b0ed0efccd9783944cfff29ead5fb21bb3adb37f348304dece825d",
+      "extractionStatus": "OCR_EXTRACTED_UNVERIFIED",
+      "legalReviewStatus": "PENDING",
+      "complianceReviewStatus": "PENDING",
+      "activation": "FORBIDDEN"
+    },
+    {
+      "id": "INST058_ART024_BLOCK001",
+      "sourceId": "INSTRUCTION_58_CREPMF_2019",
+      "sourceSha256": "38258d7cae5518a6bea6b195facbb717e4a98c1eb734b30bc5e7de91917d0c57",
+      "articleId": "INST058_ARTICLE_024",
+      "articleNumber": 24,
+      "sourcePages": [
+        11
+      ],
+      "headingCandidate": "Article 24 : Cadre d'échanges",
+      "titleCandidate": "Cadre d'échanges",
+      "sourceTextCandidate": "Article 24 : Cadre d'échanges\nLes échanges entre le Conseil Régional et le Commissaire aux Comptes interviennent\nà un niveau suffisamment élevé, et impliquent des personnes dûment informées et\nhabilitées à communiquer des informations à caractère confidentiel. À titre\nd'exemple :\n= pour le Conseil Régional : le Secrétaire Général du CREPMF ou à défaut un\n  Directeur habilité ;\n= pour le cabinet d'audit : le signataire des rapports ou Le responsable technique\n  de La mission concernée.",
+      "sourceTextSha256": "55bf174394e24b563b530424dd8dfc05513e8cd8498dedfe8d4abd4ab3d8cc21",
+      "extractionStatus": "OCR_EXTRACTED_UNVERIFIED",
+      "legalReviewStatus": "PENDING",
+      "complianceReviewStatus": "PENDING",
+      "activation": "FORBIDDEN"
+    },
+    {
+      "id": "INST058_ART025_BLOCK001",
+      "sourceId": "INSTRUCTION_58_CREPMF_2019",
+      "sourceSha256": "38258d7cae5518a6bea6b195facbb717e4a98c1eb734b30bc5e7de91917d0c57",
+      "articleId": "INST058_ARTICLE_025",
+      "articleNumber": 25,
+      "sourcePages": [
+        11
+      ],
+      "headingCandidate": "Article 25 : Obligations d’information à la charge des Commissaires aux Comptes",
+      "titleCandidate": "Obligations d’information à la charge des Commissaires aux Comptes",
+      "sourceTextCandidate": "Article 25 : Obligations d’information à la charge des Commissaires aux Comptes\nLes Commissaires aux Comptes sont tenus de signaler dans les soixante-douze (72)\nheures au Conseil Régional, tout fait ou décision concernant une Structure Agréée\nou Société Cotée, dont ils ont eu connaissance dans l’exercice de leur mission et de\nnature à constituer une violation des dispositions du Règlement Général relatives aux\nrègles de bonne conduite, aux conditions d'exercice des activités de conservation ou\nd'administration d'instruments financiers ou des abus de marché.",
+      "sourceTextSha256": "a43b8c9cc7c9c5af2b55c950e3b68fd71d9ff48e2cbef1e0dff6e45c7428ba2c",
+      "extractionStatus": "OCR_EXTRACTED_UNVERIFIED",
+      "legalReviewStatus": "PENDING",
+      "complianceReviewStatus": "PENDING",
+      "activation": "FORBIDDEN"
+    },
+    {
+      "id": "INST058_ART026_BLOCK001",
+      "sourceId": "INSTRUCTION_58_CREPMF_2019",
+      "sourceSha256": "38258d7cae5518a6bea6b195facbb717e4a98c1eb734b30bc5e7de91917d0c57",
+      "articleId": "INST058_ARTICLE_026",
+      "articleNumber": 26,
+      "sourcePages": [
+        11
+      ],
+      "headingCandidate": "Article 26 : Rencontre entre le Conseil Régional et les Commissaires aux Comptes",
+      "titleCandidate": "Rencontre entre le Conseil Régional et les Commissaires aux Comptes",
+      "sourceTextCandidate": "Article 26 : Rencontre entre le Conseil Régional et les Commissaires aux Comptes\nA L'occasion notamment des missions de vérification du Conseil Régional, les\nCommissaires aux Comptes sont tenus de participer aux réunions auxquelles ils sont\ninvités par la mission et de fournir tous documents ou renseignements sollicités. Ils\npeuvent se faire assister par leurs collaborateurs.\nLes relations entre Le Conseil Régional et Les Commissaires aux Comptes doivent être\nentretenues par des contacts ponctuels où la communication par écrit\nd'informations. Dans ce dernier cas, une ampliation des documents contenant les\ninformations transmises est faite à l'établissement concerné par le ou les\nCommissaires aux Comptes.",
+      "sourceTextSha256": "601bbe59c64dfaa35082321161ddec2d03fc6998ab1053cc17ba125d166b4052",
+      "extractionStatus": "OCR_EXTRACTED_UNVERIFIED",
+      "legalReviewStatus": "PENDING",
+      "complianceReviewStatus": "PENDING",
+      "activation": "FORBIDDEN"
+    },
+    {
+      "id": "INST058_ART027_BLOCK001",
+      "sourceId": "INSTRUCTION_58_CREPMF_2019",
+      "sourceSha256": "38258d7cae5518a6bea6b195facbb717e4a98c1eb734b30bc5e7de91917d0c57",
+      "articleId": "INST058_ARTICLE_027",
+      "articleNumber": 27,
+      "sourcePages": [
+        11,
+        12
+      ],
+      "headingCandidate": "Article 27 : Demande d'informations du Conseil Régional aux Commissaires aux",
+      "titleCandidate": "Demande d'informations du Conseil Régional aux Commissaires aux",
+      "sourceTextCandidate": "Article 27 : Demande d'informations du Conseil Régional aux Commissaires aux\nComptes\nLe     Conseil     Régional        peut   demander      aux     Commissaires        aux   Comptes,       tous\nrenseignements sur Les Structures Agréées et Les Sociétés Cotées auprès desquelles\nils exercent leur mandat.\nLa demande        d'informations du Conseil Régional porte sur des aspects spécifiques tels\nque Les diligences d’audit, l'appréciation des traitements comptables préalablement\ndécrits et justifiés par l'entité contrôlée, les diligences spécifiques à la charge du\nCommissaire aux Comptes au sens de la présente Instruction.\nLes     Commissaires         aux      Comptes   sont   déliés       du   secret   professionnel     et   leur\nresponsabilité ne peut de ce seul fait être engagée pour Les informations données et\nen exécution des obligations et démarches prévues dans la présente Instruction.\n\n                                                       in\nAvenue Jeep ANONX                                                             TÉL 25 20 2 ST A2 TIOH SI7S\nO1 BP 1878 Abidjan O1 - Côte d'oire              ex             4                                 0221657\n resident          or                                                                             crepmi.ors\nInstruction           n°!       JCREPMF/2019",
+      "sourceTextSha256": "fca76e29e8ba63622b92a088106e022137d858f8b4c1e163bd987b70234b2e2a",
+      "extractionStatus": "OCR_EXTRACTED_UNVERIFIED",
+      "legalReviewStatus": "PENDING",
+      "complianceReviewStatus": "PENDING",
+      "activation": "FORBIDDEN"
+    },
+    {
+      "id": "INST058_ART028_BLOCK001",
+      "sourceId": "INSTRUCTION_58_CREPMF_2019",
+      "sourceSha256": "38258d7cae5518a6bea6b195facbb717e4a98c1eb734b30bc5e7de91917d0c57",
+      "articleId": "INST058_ARTICLE_028",
+      "articleNumber": 28,
+      "sourcePages": [
+        12
+      ],
+      "headingCandidate": "Article 28 : Droit pour le Commissaire aux Comptes d'interroger le Conseil",
+      "titleCandidate": "Droit pour le Commissaire aux Comptes d'interroger le Conseil",
+      "sourceTextCandidate": "Article 28 : Droit pour le Commissaire aux Comptes d'interroger le Conseil\nRégional\nLes Commissaires aux Comptes des Structures Agréées et des Sociétés Cotées du\nmarché financier régional peuvent interroger le Secrétariat Général du Conseil\nRégional sur toute question rencontrée dans l'exercice de Leur mission et susceptible\nd’avoir un effet sur l'information financière de l'assujetti.\nLe Commissaire aux Comptes privilégie les questions formulées par écrit. IL expose\nclairement la difficulté rencontrée et communique toutes les informations utiles et\nnécessaires au Conseil Régional pour formuler sa réponse dans un délai de trente\n(30) jours. IL précise au Conseil Régional si sa démarche est confidentielle vis-à-vis\nde L'entité.\nLe Commissaire aux Comptes apprécie l'opportunité de communiquer à l'entité\ncontrôlée sa question et la réponse apportée par Le Conseil Régional.",
+      "sourceTextSha256": "0fdebd0dc8b15caabd926c6cf442c8ac87ce8536a56b95cc7566ba687835c9bc",
+      "extractionStatus": "OCR_EXTRACTED_UNVERIFIED",
+      "legalReviewStatus": "PENDING",
+      "complianceReviewStatus": "PENDING",
+      "activation": "FORBIDDEN"
+    },
+    {
+      "id": "INST058_ART029_BLOCK001",
+      "sourceId": "INSTRUCTION_58_CREPMF_2019",
+      "sourceSha256": "38258d7cae5518a6bea6b195facbb717e4a98c1eb734b30bc5e7de91917d0c57",
+      "articleId": "INST058_ARTICLE_029",
+      "articleNumber": 29,
+      "sourcePages": [
+        12
+      ],
+      "headingCandidate": "Aticle 29 : Transmission d'informations par le CREPMF aux Commissaires aux",
+      "titleCandidate": "Transmission d'informations par le CREPMF aux Commissaires aux",
+      "sourceTextCandidate": "Aticle 29 : Transmission d'informations par le CREPMF aux Commissaires aux\nComptes\nLe CREPMF peut également transmettre aux Commissaires aux Comptes des\nStructures       Agréées       et      des   Sociétés    Cotées    du   marché    financier      régional       les\ninformations nécessaires à l'accomplissement de leur mission. Les informations ainsi\ntransmises sont couvertes par La règle du secret professionnel.\n\nCHAPITRE 8 - SANCTIONS",
+      "sourceTextSha256": "46a9faa3c62fa6d7d6cd746f160f1690d30902e6d53bb4eb035b3783ba312d9b",
+      "extractionStatus": "OCR_EXTRACTED_UNVERIFIED",
+      "legalReviewStatus": "PENDING",
+      "complianceReviewStatus": "PENDING",
+      "activation": "FORBIDDEN"
+    },
+    {
+      "id": "INST058_ART030_BLOCK001",
+      "sourceId": "INSTRUCTION_58_CREPMF_2019",
+      "sourceSha256": "38258d7cae5518a6bea6b195facbb717e4a98c1eb734b30bc5e7de91917d0c57",
+      "articleId": "INST058_ARTICLE_030",
+      "articleNumber": 30,
+      "sourcePages": [
+        12
+      ],
+      "headingCandidate": "Article 30 : Retrait de l’approbation",
+      "titleCandidate": "Retrait de l’approbation",
+      "sourceTextCandidate": "Article 30 : Retrait de l’approbation\nL'approbation du Commissaire aux Comptes peut être retirée par le Conseil Régional\npour les motifs          qu’il apprécie,         notamment        sa radiation   du   tableau       de l'Ordre\nNational des Experts Comptables et Comptables Agréés ou sa suspension dudit Ordre,\ndes manquements graves à la réglementation du marché financier, des insuffisances\nconstatées dans Les travaux ou d'exercice d’activités incompatibles ou susceptibles\nd’affecter L'indépendance attendue du Commissaire aux Comptes.\nLe retrait de l'approbation peut emporter interdiction d’exercer les fonctions de\nCommissaires aux Comptes au sein des sociétés cotées ou des structures agréées du\nmarché pour une durée limitée ou illimitée.\nLe retrait de l'approbation n’est pas une sanction disciplinaire.\nSi le Conseil Régional l'estime nécessaire, il fait procéder à La publication du retrait\nd'approbation par tous Les moyens de communication qu’il jugera utile.",
+      "sourceTextSha256": "a01cfe9a489203091ab8fb0b455d97bb3597c3dd4ce6dc7725a3c3969800625a",
+      "extractionStatus": "OCR_EXTRACTED_UNVERIFIED",
+      "legalReviewStatus": "PENDING",
+      "complianceReviewStatus": "PENDING",
+      "activation": "FORBIDDEN"
+    },
+    {
+      "id": "INST058_ART031_BLOCK001",
+      "sourceId": "INSTRUCTION_58_CREPMF_2019",
+      "sourceSha256": "38258d7cae5518a6bea6b195facbb717e4a98c1eb734b30bc5e7de91917d0c57",
+      "articleId": "INST058_ARTICLE_031",
+      "articleNumber": 31,
+      "sourcePages": [
+        12,
+        13
+      ],
+      "headingCandidate": "Article 31 n cas de non approbation des mandats du Commissaires aux Comptes",
+      "titleCandidate": "n cas de non approbation des mandats du Commissaires aux Comptes",
+      "sourceTextCandidate": "Article 31    n cas de non approbation des mandats du Commissaires aux Comptes\nLes Structures Agréées et Les Sociétés Cotées du marché financier régional n'ayant\npas fait approuver leurs Commissaires aux Comptes, ainsi que Les Commissaires aux\nComptes concernés sont passibles de sanctions prévues par la Décision\nn°CM/5J/001/03/2016 du Conseil des Ministres de L'UMOA portant sur Les sanctions\npécuniaires applicables sur Le marché financier régional.\n                                                             2\nAvenue Joseph ANOMA                                                          Tél: (225) 20 21 57 42 / 20 21 51 79\nO1 8P 1878 AbidjanO1 - Côte d'Ivoire                    mi                                      Fax: 20 22 16 57\nPresidenceacrepm.org                                                     :                      srvvcrepm.ors\nInstructionn° __DEG À == ycrEPuF/2019",
+      "sourceTextSha256": "2afcf827ae085ef0dca30aeaab84db65d414e8eacc9d974d858f50a21da40c2c",
+      "extractionStatus": "OCR_EXTRACTED_UNVERIFIED",
+      "legalReviewStatus": "PENDING",
+      "complianceReviewStatus": "PENDING",
+      "activation": "FORBIDDEN"
+    },
+    {
+      "id": "INST058_ART032_BLOCK001",
+      "sourceId": "INSTRUCTION_58_CREPMF_2019",
+      "sourceSha256": "38258d7cae5518a6bea6b195facbb717e4a98c1eb734b30bc5e7de91917d0c57",
+      "articleId": "INST058_ARTICLE_032",
+      "articleNumber": 32,
+      "sourcePages": [
+        13
+      ],
+      "headingCandidate": "Article 32 : Manquements dans l'exercice du Commissariat aux Comptes",
+      "titleCandidate": "Manquements dans l'exercice du Commissariat aux Comptes",
+      "sourceTextCandidate": "Article 32 : Manquements dans l'exercice du Commissariat aux Comptes\nLes Commissaires aux Comptes responsables, de faits ou omissions constitutifs de\nmanquements à la règlementation du marché financier régional, de négligence\ngrave,     de non       transmission ou de transmission   hors délais des rapports requis\ns’exposent à des sanctions conformément à la Décision n°CM/SJ/001/03/2016 du\nConseil des Ministres de L'UMOA.\nPar ailleurs, le Conseil Régional se réserve Le droit d'engager la responsabilité des\nCommissaires aux Comptes en cas de non divulgation d’infractions commises par Les\ndirigeants de l'entité contrôlée.\nCHAPITRE 9 - DISPOSITIONS TRANSITOIRES ET FINALES",
+      "sourceTextSha256": "47074793f425559ccc858c9b90c532afbf1e98ad0aae44f9078b66b689a78c69",
+      "extractionStatus": "OCR_EXTRACTED_UNVERIFIED",
+      "legalReviewStatus": "PENDING",
+      "complianceReviewStatus": "PENDING",
+      "activation": "FORBIDDEN"
+    },
+    {
+      "id": "INST058_ART033_BLOCK001",
+      "sourceId": "INSTRUCTION_58_CREPMF_2019",
+      "sourceSha256": "38258d7cae5518a6bea6b195facbb717e4a98c1eb734b30bc5e7de91917d0c57",
+      "articleId": "INST058_ARTICLE_033",
+      "articleNumber": 33,
+      "sourcePages": [
+        13
+      ],
+      "headingCandidate": "Article 33 : Dispositions transitoires",
+      "titleCandidate": "Dispositions transitoires",
+      "sourceTextCandidate": "Article 33 : Dispositions transitoires\nLes approbations accordées par le Conseil Régional avant L'entrée en vigueur de la\nprésente Instruction restent valables jusqu’à leur terme sous réserve de la\ntransmission de La Lettre d'engagement présentée en annexe, dûment signée par les\npersonnes habilitées.",
+      "sourceTextSha256": "011a6b31816c849b51c9e66b7b75ad587b74582f62b978f8bb5a1c697cbd8df8",
+      "extractionStatus": "OCR_EXTRACTED_UNVERIFIED",
+      "legalReviewStatus": "PENDING",
+      "complianceReviewStatus": "PENDING",
+      "activation": "FORBIDDEN"
+    },
+    {
+      "id": "INST058_ART034_BLOCK001",
+      "sourceId": "INSTRUCTION_58_CREPMF_2019",
+      "sourceSha256": "38258d7cae5518a6bea6b195facbb717e4a98c1eb734b30bc5e7de91917d0c57",
+      "articleId": "INST058_ARTICLE_034",
+      "articleNumber": 34,
+      "sourcePages": [
+        13
+      ],
+      "headingCandidate": "Article 34 : Abrogation",
+      "titleCandidate": "Abrogation",
+      "sourceTextCandidate": "Article 34 : Abrogation\nLa présente Instruction abroge et remplace toutes autres dispositions antérieures,\nnotamment l’Instruction n°31/2005 du 7 juin 2005.",
+      "sourceTextSha256": "eefc089a50d4ea80093a73f6d555f8f972829eae0b0bd34cfd3b4d93a12b2478",
+      "extractionStatus": "OCR_EXTRACTED_UNVERIFIED",
+      "legalReviewStatus": "PENDING",
+      "complianceReviewStatus": "PENDING",
+      "activation": "FORBIDDEN"
+    },
+    {
+      "id": "INST058_ART035_BLOCK001",
+      "sourceId": "INSTRUCTION_58_CREPMF_2019",
+      "sourceSha256": "38258d7cae5518a6bea6b195facbb717e4a98c1eb734b30bc5e7de91917d0c57",
+      "articleId": "INST058_ARTICLE_035",
+      "articleNumber": 35,
+      "sourcePages": [
+        13,
+        14,
+        15,
+        16,
+        17
+      ],
+      "headingCandidate": "Article 35 : Entrée en vigueur",
+      "titleCandidate": "Entrée en vigueur",
+      "sourceTextCandidate": "Article 35 : Entrée en vigueur\nLa présente Instruction entre en vigueur à compter de sa date de signature et fera\nl'objet de publication partout où besoin sera.\n\n\n                                                     Fait à Abidjan, te. Z 4. JUIL. 2019\n\n                                                     Pour le Conseil Région ES\n\n\n\n\n                                                13\n‘Avenue Joseph ANOMA                                             Tél: (225) 20 21 57 42 7 20 21 5179\nO1 8P 1878 AbidjanO1 + Côte d'Ivoire       ax                                        Fax: 20 22 16 57\npresidencencrepm.org                                                                 Mvmcrepmf.org\nInstructionn°__ 2!                JCREPMF/2019\n               Modèle de lettre d'engagement du Commissaire aux Comptes\n                           d’une société cotée et d'une structure agréée\n\nLogo et entête du Commissaire aux Comptes\n\n                                                                          Monsieur Le Secrétaire Général\n                                                                            Conseil Régional de L'Epargne\n                                                                      Publique et des Marchés Financiers\n                                                                                       Abidjan - Côte d’Ivoire\nObiet : Lettre d'engagement\n\nNous (je), soussigné, cabinet (Madame / Monsieur)                                … , en qualité de Commissaire\naux Comptes           … (titulaire / suppléant) de la société …                         pour un mandat allant\ndu            au               nous engageons (m’engage) par la présente à :\n     + n'exercer directement ou indirectement aucune activité ou fonction\n       incompatible avec l'exercice du mandat de commissaires aux comptes de\n          l'établissement assujetti et à éviter tout conflit d’intérêt ;\n\n     + nous (me) conformer aux normes de contrôle et de qualité des prestations\n       initiées par l'OHADA ;\n     +    nous (me) conformer à la règlementation du Marché Financier Régional ;\n\n     + mettre en place et à maintenir une organisation efficace pour assurer notre\n       (ma) mission de commissariat aux comptes.\nNous nous engageons (Je m'engage) à satisfaire aux exigences suivantes :\n     1.   mettre en place des moyens                          nécessaires        permettant       d'assumer       les\n          responsabilités, en matière :\n          +    d’adéquation             à   l'ampleur   de    la   mission   à    accomplir,      de    ressources\n               humaines et techniques mises en œuvre ;\n          + de contrôle du respect des règles applicables à la profession et\n            d'appréciation régulière des risques ;\n          +    d'évaluation périodique des connaissances et de formation continue des\n               équipes.\n     2. mettre en place des procédures :\n          +    assurant une évaluation périodique des conditions d’exercice des missions\n               de contrôle, en vue de vérifier que celles-ci peuvent être poursuivies dans\n               le respect des exigences déontologiques, notamment en matière\n               d'indépendance :\n\n\nAvenue Joseph ANOMA                            ÿ             mn                    TL: (225) 2021 57 42 7 20 21 5179\nO1 BP 1878 Abidjan 01 - Côte d'Ivoire                                                                Fax: 20 22 16\npresidencencrepmf.org                                                                                rvn.crepmf.org\nInstruction n°2         1 = /CREPMF/2019\n\n              permettant de décider rapidement des mesures de sauvegarde si celles-ci\n              s'avèrent nécessaires.\n     3. garantir, le cas échéant :\n              la rotation des signataires, lorsque la loi ou La réglementation Le prévoit ;\n              la mise en place d’une revue indépendante des opinions émises ;\n              le renforcement des moyens affectés au contrôle lorsque la difficulté\n              technique de la mission ou les exigences déontologiques Le commandent ;\n              la mise en place d’un dispositif de contrôle interne.\n\n\nEn foi de      quoi, le présent engagement est délivré pour servir et valoir ce que de\ndroit.\n\n\nFait à …, le\n\n\n(Personne morale)\nCabinet\nReprésenté par Madame/Monsieur .\nFonction\nSignature\n\n\n(Personne physique)\nMadame/ Monsieur                ”\n(le cas échéant) agissant au sein du cabinet         - en qualité de ….\nSignature\n\n\n\n\na                                             L                Ress\npresidence@erepmt.org                                                        ww.crepmf.org\n    imstructionn°          D © = ycrepurrzo1o\n       Principales activités des Commissaires aux Comptes dans l’exercice de leurs\n              missions auprès de sociétés cotées et de structures agréées du\n                                  marché financier régional\n\n    La présente liste n’est pas exhaustive et fera l’objet de révision lors de La relecture\n    des textes de base du marché financier régional.\n\n                 Rubriques                                          Activités à mener\n\n                  Sociétés cotées à la Bourse Régionale des Valeurs Mobilières\n\n    Revue des comptes annuels                  l'etaborer Les différents rapports et attestations selon Les\n                                                 dispositions de l'OHADA, de la BCEAO, des cadres\n                                                 réglementaires spécifiques ainsi que celles prévues à la\n                                                présente Instruction et suivant le type de société\n\n    Revue des comptes semestriels _ | Attestation à produire au plus tard Le 31 août suivant les\n                                      formats réglementaires (Cf. dispositions de l'OHADA, du\n                                      CREPMF, de la CIMA, de la BCEAO et d'autres secteurs\n                                      spécifiques)\n    Attestations spécifiques                    Attestation du Commissaire aux Comptes sur les\n                                                informations financières contenues dans une note\n|                                               d’information (Cf. Instruction n°.      CREPMF/2019)\n\n    Rapport circonstancié                       Rapport circonstancié en cas de réserves dans Les trente\n                                                (30) jours de L'émission du rapport d'audit annuel\n                                                  Structures Centrales\n\n    Revue des comptes annuels                       =   Opinion sur Le rapport du Président du Conseil\n                                                        d'Administration relatif à la gouvernance\n                                                    -   Opinion sur les états financiers annuels\n                                                        comprenant le bilan, Le compte de résultat, Le\n                                                        tableau des flux de trésorerie (TFT) et Les notes\n                                                        annexes conformément aux Règles Comptables\n                                                        Spécifiques\n                                                    -   En cas de réserves, transmission au CREPMF d’un\n                                                        rapport Les motivant\n                                                    -   Elaboration et transmission au CREPMF d’un\n|                                                       rapport     général   et     d’un    rapport       spécial\n                                                        conformément à l'Acte Uniforme de l'OHADA\n                                                    -   Attestation des états financiers de synthèse\n                                                        approuvés et consolidés\n                                                    -   Respect des conditions d'agrément et des cahiers\n                                                        de charge\n\n\n\n                                                           16\n    ‘Avenue Joseph ANOMA                  FA                                   Tél: (225) 20 21 57 42 / 20 21 51 79\n    O1 BP 1878 Abidjan O1» Côte d'hoire                   us                                       Fax: 2022 1657\n    presidencemcrepmt.org                                                                         srums.crepmf.org\nInstruction            n°_ D ! 7 JcREPMF/2019\nOutre, les missions ci-dessus énumérées et prévues par L’Acte Uniforme de l'OHADA,\nles Commissaires aux Comptes doivent pour le compte des structures agréées du\nmarché financier régional réaliser Les missions spécifiques ci-après.\n\n                   Missions                                      Activités à mener\n\n                         Structures agréées du marché financier régional\n Revue des comptes annuels                               Tenir compte des dispositions de la norme\n                                                         ISA 250 ;\n                                                         Elaborer un rapport circonstancié dans Le\n                                                         rapport annuel de contrôle de comptes |\n                                                         relatif au contrôle du dispositif de Lutte |\n                                                         Contre Le Blanchiment et Le Financement du\n                                                         Terrorisme\n                                                         Elaborer Les rapports d'audit des états\n                                                         financiers annuels des Intervenants\n                                                         commerciaux agréés et/ou des OPCVM gérés,\n                                                         établis conformément aux dispositions des\n                                                         Règles Comptables Spécifiques applicables\n                                                         aux intervenants agréés du marché financier\n                                                         régional de L'UMOA ;\n                                                         Elaborer les rapports spéciaux établis\n                                                         conformément    aux dispositions de          l'Acte\n                                                         Uniforme du Traité de l'OHADA relatif au |\n                                                         droit des sociétés commerciales et du GIE\n Revue des comptes trimestriels                 Aucune\n Certification         trimestrielle     des             Certifier La composition détaillée des actifs |\n OPCVM                                                   des OPCVM (Cf. Instruction 45/2011 du |\n                                                         CREPMF) au titre des Organismes de\n                                                         Placement Collectif en Valeurs mobitières |\n                                                         (OPCVM).                                   |\n\n\n\n\nAvenue Joseph ANOMA                                                       TéL: (225) 20 1 57 427 20 21 5179\nOf BP 1878 Abidjan Of - Câte d'Ivoire                                                        Fax: 20 22 16 57\npresidence@crepmf.org                                                                        von crepmf. org",
+      "sourceTextSha256": "593a89b59512f7238462a32e5948bd2d905eed868513e8fb7c05b3088f0a2b65",
+      "extractionStatus": "OCR_EXTRACTED_UNVERIFIED",
+      "legalReviewStatus": "PENDING",
+      "complianceReviewStatus": "PENDING",
+      "activation": "FORBIDDEN"
+    }
+  ]
+}

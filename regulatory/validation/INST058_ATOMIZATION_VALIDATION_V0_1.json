@@ -1,0 +1,28 @@
+{
+  "validationId": "INST058_ATOMIZATION_VALIDATION_V0_1",
+  "status": "PASS",
+  "sourceId": "INSTRUCTION_58_CREPMF_2019",
+  "checks": {
+    "sourceSha256Propagated": true,
+    "all35ArticlesBlocked": true,
+    "all35ArticlesAtomized": true,
+    "atomIdsUnique": true,
+    "articleRangeContinuous": true,
+    "allAtomsInactive": true,
+    "dualReviewRequired": true,
+    "explicitReviewStatesPending": true,
+    "sourceTextDigestsPresent": true,
+    "ocrNeverPromotedToNormativeTruth": true
+  },
+  "metrics": {
+    "articleBlockCount": 35,
+    "articleAtomCount": 35,
+    "firstArticle": 1,
+    "lastArticle": 35
+  },
+  "outputs": [
+    "regulatory/requirements/INST058_ARTICLE_BLOCKS_V0_1.json",
+    "regulatory/requirements/INST058_ARTICLE_ATOMS_V0_1.json"
+  ],
+  "caveat": "Structural atomization only; normative meaning and applicability require legal and compliance review."
+}

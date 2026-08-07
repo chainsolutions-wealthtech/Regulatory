@@ -1,0 +1,1110 @@
+{
+  "schemaVersion": "INST058_ARTICLE_ATOMS_V0_1",
+  "sourceId": "INSTRUCTION_58_CREPMF_2019",
+  "sourceSha256": "38258d7cae5518a6bea6b195facbb717e4a98c1eb734b30bc5e7de91917d0c57",
+  "status": "EXTRACTED_UNVERIFIED_PENDING_LEGAL_AND_COMPLIANCE_REVIEW",
+  "activation": "FORBIDDEN",
+  "articleAtomCount": 35,
+  "atoms": [
+    {
+      "id": "INST058_ART001_ATOM001",
+      "sourceId": "INSTRUCTION_58_CREPMF_2019",
+      "sourceSha256": "38258d7cae5518a6bea6b195facbb717e4a98c1eb734b30bc5e7de91917d0c57",
+      "articleId": "INST058_ARTICLE_001",
+      "articleNumber": 1,
+      "sourceBlockId": "INST058_ART001_BLOCK001",
+      "sourcePages": [
+        2
+      ],
+      "sourceTextSha256": "fb24e0dff56985e27af417fadc2d5c796c073fdea0bcfe0f48e813bb50fdc74b",
+      "titleCandidate": "°\": Définitions",
+      "summaryCandidate": null,
+      "normativeClassification": "PENDING_HUMAN_REVIEW",
+      "applicability": "PENDING_HUMAN_REVIEW",
+      "canonicalFields": [],
+      "evidenceRequirements": [],
+      "reviewRoles": [
+        "LEGAL",
+        "COMPLIANCE"
+      ],
+      "legalReviewStatus": "PENDING",
+      "complianceReviewStatus": "PENDING",
+      "status": "EXTRACTED_UNVERIFIED_PENDING_LEGAL_AND_COMPLIANCE_REVIEW",
+      "activation": "FORBIDDEN",
+      "provenance": {
+        "sourceArtifact": "regulatory/materialized/INSTRUCTION_58_CREPMF_2019.pdf",
+        "ocrDerivative": "regulatory/materialized/INSTRUCTION_58_CREPMF_2019.txt",
+        "textQuality": "OCR_EXTRACTED_UNVERIFIED"
+      }
+    },
+    {
+      "id": "INST058_ART002_ATOM001",
+      "sourceId": "INSTRUCTION_58_CREPMF_2019",
+      "sourceSha256": "38258d7cae5518a6bea6b195facbb717e4a98c1eb734b30bc5e7de91917d0c57",
+      "articleId": "INST058_ARTICLE_002",
+      "articleNumber": 2,
+      "sourceBlockId": "INST058_ART002_BLOCK001",
+      "sourcePages": [
+        2
+      ],
+      "sourceTextSha256": "648dc6e8fe5718b56b135f66ce11fe14de0fefbbc9ec624781928fb1fe385d01",
+      "titleCandidate": "Objet",
+      "summaryCandidate": null,
+      "normativeClassification": "PENDING_HUMAN_REVIEW",
+      "applicability": "PENDING_HUMAN_REVIEW",
+      "canonicalFields": [],
+      "evidenceRequirements": [],
+      "reviewRoles": [
+        "LEGAL",
+        "COMPLIANCE"
+      ],
+      "legalReviewStatus": "PENDING",
+      "complianceReviewStatus": "PENDING",
+      "status": "EXTRACTED_UNVERIFIED_PENDING_LEGAL_AND_COMPLIANCE_REVIEW",
+      "activation": "FORBIDDEN",
+      "provenance": {
+        "sourceArtifact": "regulatory/materialized/INSTRUCTION_58_CREPMF_2019.pdf",
+        "ocrDerivative": "regulatory/materialized/INSTRUCTION_58_CREPMF_2019.txt",
+        "textQuality": "OCR_EXTRACTED_UNVERIFIED"
+      }
+    },
+    {
+      "id": "INST058_ART003_ATOM001",
+      "sourceId": "INSTRUCTION_58_CREPMF_2019",
+      "sourceSha256": "38258d7cae5518a6bea6b195facbb717e4a98c1eb734b30bc5e7de91917d0c57",
+      "articleId": "INST058_ARTICLE_003",
+      "articleNumber": 3,
+      "sourceBlockId": "INST058_ART003_BLOCK001",
+      "sourcePages": [
+        2,
+        3
+      ],
+      "sourceTextSha256": "eb7e23b00a14358facf6cf2743a9f4ee45ac4c16cbcf52a19fcab064b89b9dd4",
+      "titleCandidate": "Champ d'application",
+      "summaryCandidate": null,
+      "normativeClassification": "PENDING_HUMAN_REVIEW",
+      "applicability": "PENDING_HUMAN_REVIEW",
+      "canonicalFields": [],
+      "evidenceRequirements": [],
+      "reviewRoles": [
+        "LEGAL",
+        "COMPLIANCE"
+      ],
+      "legalReviewStatus": "PENDING",
+      "complianceReviewStatus": "PENDING",
+      "status": "EXTRACTED_UNVERIFIED_PENDING_LEGAL_AND_COMPLIANCE_REVIEW",
+      "activation": "FORBIDDEN",
+      "provenance": {
+        "sourceArtifact": "regulatory/materialized/INSTRUCTION_58_CREPMF_2019.pdf",
+        "ocrDerivative": "regulatory/materialized/INSTRUCTION_58_CREPMF_2019.txt",
+        "textQuality": "OCR_EXTRACTED_UNVERIFIED"
+      }
+    },
+    {
+      "id": "INST058_ART004_ATOM001",
+      "sourceId": "INSTRUCTION_58_CREPMF_2019",
+      "sourceSha256": "38258d7cae5518a6bea6b195facbb717e4a98c1eb734b30bc5e7de91917d0c57",
+      "articleId": "INST058_ARTICLE_004",
+      "articleNumber": 4,
+      "sourceBlockId": "INST058_ART004_BLOCK001",
+      "sourcePages": [
+        3
+      ],
+      "sourceTextSha256": "7faae00fe907d0a8eccd08791e13fd6ac00f9e23783dd9117e8b15db6e54c974",
+      "titleCandidate": "Personnes concernées",
+      "summaryCandidate": null,
+      "normativeClassification": "PENDING_HUMAN_REVIEW",
+      "applicability": "PENDING_HUMAN_REVIEW",
+      "canonicalFields": [],
+      "evidenceRequirements": [],
+      "reviewRoles": [
+        "LEGAL",
+        "COMPLIANCE"
+      ],
+      "legalReviewStatus": "PENDING",
+      "complianceReviewStatus": "PENDING",
+      "status": "EXTRACTED_UNVERIFIED_PENDING_LEGAL_AND_COMPLIANCE_REVIEW",
+      "activation": "FORBIDDEN",
+      "provenance": {
+        "sourceArtifact": "regulatory/materialized/INSTRUCTION_58_CREPMF_2019.pdf",
+        "ocrDerivative": "regulatory/materialized/INSTRUCTION_58_CREPMF_2019.txt",
+        "textQuality": "OCR_EXTRACTED_UNVERIFIED"
+      }
+    },
+    {
+      "id": "INST058_ART005_ATOM001",
+      "sourceId": "INSTRUCTION_58_CREPMF_2019",
+      "sourceSha256": "38258d7cae5518a6bea6b195facbb717e4a98c1eb734b30bc5e7de91917d0c57",
+      "articleId": "INST058_ARTICLE_005",
+      "articleNumber": 5,
+      "sourceBlockId": "INST058_ART005_BLOCK001",
+      "sourcePages": [
+        3
+      ],
+      "sourceTextSha256": "f7c7909335e99834ed78f26f4c3c7ccebd6e87cfcad761121a14ace36026e2f7",
+      "titleCandidate": "Désignation des Commissaires aux Comptes",
+      "summaryCandidate": null,
+      "normativeClassification": "PENDING_HUMAN_REVIEW",
+      "applicability": "PENDING_HUMAN_REVIEW",
+      "canonicalFields": [],
+      "evidenceRequirements": [],
+      "reviewRoles": [
+        "LEGAL",
+        "COMPLIANCE"
+      ],
+      "legalReviewStatus": "PENDING",
+      "complianceReviewStatus": "PENDING",
+      "status": "EXTRACTED_UNVERIFIED_PENDING_LEGAL_AND_COMPLIANCE_REVIEW",
+      "activation": "FORBIDDEN",
+      "provenance": {
+        "sourceArtifact": "regulatory/materialized/INSTRUCTION_58_CREPMF_2019.pdf",
+        "ocrDerivative": "regulatory/materialized/INSTRUCTION_58_CREPMF_2019.txt",
+        "textQuality": "OCR_EXTRACTED_UNVERIFIED"
+      }
+    },
+    {
+      "id": "INST058_ART006_ATOM001",
+      "sourceId": "INSTRUCTION_58_CREPMF_2019",
+      "sourceSha256": "38258d7cae5518a6bea6b195facbb717e4a98c1eb734b30bc5e7de91917d0c57",
+      "articleId": "INST058_ARTICLE_006",
+      "articleNumber": 6,
+      "sourceBlockId": "INST058_ART006_BLOCK001",
+      "sourcePages": [
+        3
+      ],
+      "sourceTextSha256": "1bb834529972fb03b0f46b9a09010543ddfadaca6c23e7b6adcead8f6b433041",
+      "titleCandidate": "Lettre d'acceptation de mandat",
+      "summaryCandidate": null,
+      "normativeClassification": "PENDING_HUMAN_REVIEW",
+      "applicability": "PENDING_HUMAN_REVIEW",
+      "canonicalFields": [],
+      "evidenceRequirements": [],
+      "reviewRoles": [
+        "LEGAL",
+        "COMPLIANCE"
+      ],
+      "legalReviewStatus": "PENDING",
+      "complianceReviewStatus": "PENDING",
+      "status": "EXTRACTED_UNVERIFIED_PENDING_LEGAL_AND_COMPLIANCE_REVIEW",
+      "activation": "FORBIDDEN",
+      "provenance": {
+        "sourceArtifact": "regulatory/materialized/INSTRUCTION_58_CREPMF_2019.pdf",
+        "ocrDerivative": "regulatory/materialized/INSTRUCTION_58_CREPMF_2019.txt",
+        "textQuality": "OCR_EXTRACTED_UNVERIFIED"
+      }
+    },
+    {
+      "id": "INST058_ART007_ATOM001",
+      "sourceId": "INSTRUCTION_58_CREPMF_2019",
+      "sourceSha256": "38258d7cae5518a6bea6b195facbb717e4a98c1eb734b30bc5e7de91917d0c57",
+      "articleId": "INST058_ARTICLE_007",
+      "articleNumber": 7,
+      "sourceBlockId": "INST058_ART007_BLOCK001",
+      "sourcePages": [
+        3,
+        4
+      ],
+      "sourceTextSha256": "e9861ddd630616af080b6581e86169fec063df692a4a99cd20992b2e978a204c",
+      "titleCandidate": "Conditions d'approbation des Commissaires aux Comptes",
+      "summaryCandidate": null,
+      "normativeClassification": "PENDING_HUMAN_REVIEW",
+      "applicability": "PENDING_HUMAN_REVIEW",
+      "canonicalFields": [],
+      "evidenceRequirements": [],
+      "reviewRoles": [
+        "LEGAL",
+        "COMPLIANCE"
+      ],
+      "legalReviewStatus": "PENDING",
+      "complianceReviewStatus": "PENDING",
+      "status": "EXTRACTED_UNVERIFIED_PENDING_LEGAL_AND_COMPLIANCE_REVIEW",
+      "activation": "FORBIDDEN",
+      "provenance": {
+        "sourceArtifact": "regulatory/materialized/INSTRUCTION_58_CREPMF_2019.pdf",
+        "ocrDerivative": "regulatory/materialized/INSTRUCTION_58_CREPMF_2019.txt",
+        "textQuality": "OCR_EXTRACTED_UNVERIFIED"
+      }
+    },
+    {
+      "id": "INST058_ART008_ATOM001",
+      "sourceId": "INSTRUCTION_58_CREPMF_2019",
+      "sourceSha256": "38258d7cae5518a6bea6b195facbb717e4a98c1eb734b30bc5e7de91917d0c57",
+      "articleId": "INST058_ARTICLE_008",
+      "articleNumber": 8,
+      "sourceBlockId": "INST058_ART008_BLOCK001",
+      "sourcePages": [
+        4
+      ],
+      "sourceTextSha256": "98f260f6583f483334ebcdb8722f8fbb7b276f74c39aeef1c4fb07b158a15dab",
+      "titleCandidate": "Instruction du dossier",
+      "summaryCandidate": null,
+      "normativeClassification": "PENDING_HUMAN_REVIEW",
+      "applicability": "PENDING_HUMAN_REVIEW",
+      "canonicalFields": [],
+      "evidenceRequirements": [],
+      "reviewRoles": [
+        "LEGAL",
+        "COMPLIANCE"
+      ],
+      "legalReviewStatus": "PENDING",
+      "complianceReviewStatus": "PENDING",
+      "status": "EXTRACTED_UNVERIFIED_PENDING_LEGAL_AND_COMPLIANCE_REVIEW",
+      "activation": "FORBIDDEN",
+      "provenance": {
+        "sourceArtifact": "regulatory/materialized/INSTRUCTION_58_CREPMF_2019.pdf",
+        "ocrDerivative": "regulatory/materialized/INSTRUCTION_58_CREPMF_2019.txt",
+        "textQuality": "OCR_EXTRACTED_UNVERIFIED"
+      }
+    },
+    {
+      "id": "INST058_ART009_ATOM001",
+      "sourceId": "INSTRUCTION_58_CREPMF_2019",
+      "sourceSha256": "38258d7cae5518a6bea6b195facbb717e4a98c1eb734b30bc5e7de91917d0c57",
+      "articleId": "INST058_ARTICLE_009",
+      "articleNumber": 9,
+      "sourceBlockId": "INST058_ART009_BLOCK001",
+      "sourcePages": [
+        4
+      ],
+      "sourceTextSha256": "e9ff35dea098323e942be6347c3b2cccaeed02804c7d62399a3e63a3f38c41e7",
+      "titleCandidate": "Notification de la décision du Conseil Régional",
+      "summaryCandidate": null,
+      "normativeClassification": "PENDING_HUMAN_REVIEW",
+      "applicability": "PENDING_HUMAN_REVIEW",
+      "canonicalFields": [],
+      "evidenceRequirements": [],
+      "reviewRoles": [
+        "LEGAL",
+        "COMPLIANCE"
+      ],
+      "legalReviewStatus": "PENDING",
+      "complianceReviewStatus": "PENDING",
+      "status": "EXTRACTED_UNVERIFIED_PENDING_LEGAL_AND_COMPLIANCE_REVIEW",
+      "activation": "FORBIDDEN",
+      "provenance": {
+        "sourceArtifact": "regulatory/materialized/INSTRUCTION_58_CREPMF_2019.pdf",
+        "ocrDerivative": "regulatory/materialized/INSTRUCTION_58_CREPMF_2019.txt",
+        "textQuality": "OCR_EXTRACTED_UNVERIFIED"
+      }
+    },
+    {
+      "id": "INST058_ART010_ATOM001",
+      "sourceId": "INSTRUCTION_58_CREPMF_2019",
+      "sourceSha256": "38258d7cae5518a6bea6b195facbb717e4a98c1eb734b30bc5e7de91917d0c57",
+      "articleId": "INST058_ARTICLE_010",
+      "articleNumber": 10,
+      "sourceBlockId": "INST058_ART010_BLOCK001",
+      "sourcePages": [
+        4,
+        5
+      ],
+      "sourceTextSha256": "0ef0ad015c628a60c2a3e799db37138a8a10a66d872daf3681ae24e44c1951bd",
+      "titleCandidate": "Etablissement, mise à jour et publication de la liste des Commissaires",
+      "summaryCandidate": null,
+      "normativeClassification": "PENDING_HUMAN_REVIEW",
+      "applicability": "PENDING_HUMAN_REVIEW",
+      "canonicalFields": [],
+      "evidenceRequirements": [],
+      "reviewRoles": [
+        "LEGAL",
+        "COMPLIANCE"
+      ],
+      "legalReviewStatus": "PENDING",
+      "complianceReviewStatus": "PENDING",
+      "status": "EXTRACTED_UNVERIFIED_PENDING_LEGAL_AND_COMPLIANCE_REVIEW",
+      "activation": "FORBIDDEN",
+      "provenance": {
+        "sourceArtifact": "regulatory/materialized/INSTRUCTION_58_CREPMF_2019.pdf",
+        "ocrDerivative": "regulatory/materialized/INSTRUCTION_58_CREPMF_2019.txt",
+        "textQuality": "OCR_EXTRACTED_UNVERIFIED"
+      }
+    },
+    {
+      "id": "INST058_ART011_ATOM001",
+      "sourceId": "INSTRUCTION_58_CREPMF_2019",
+      "sourceSha256": "38258d7cae5518a6bea6b195facbb717e4a98c1eb734b30bc5e7de91917d0c57",
+      "articleId": "INST058_ARTICLE_011",
+      "articleNumber": 11,
+      "sourceBlockId": "INST058_ART011_BLOCK001",
+      "sourcePages": [
+        5,
+        6,
+        7
+      ],
+      "sourceTextSha256": "8ff1b4e08d589ebbd341ab71c44cc228b6301077971db23d55ffaa250b59f185",
+      "titleCandidate": "Contenu du dossier d’approbation des Commissaires aux Comptes",
+      "summaryCandidate": null,
+      "normativeClassification": "PENDING_HUMAN_REVIEW",
+      "applicability": "PENDING_HUMAN_REVIEW",
+      "canonicalFields": [],
+      "evidenceRequirements": [],
+      "reviewRoles": [
+        "LEGAL",
+        "COMPLIANCE"
+      ],
+      "legalReviewStatus": "PENDING",
+      "complianceReviewStatus": "PENDING",
+      "status": "EXTRACTED_UNVERIFIED_PENDING_LEGAL_AND_COMPLIANCE_REVIEW",
+      "activation": "FORBIDDEN",
+      "provenance": {
+        "sourceArtifact": "regulatory/materialized/INSTRUCTION_58_CREPMF_2019.pdf",
+        "ocrDerivative": "regulatory/materialized/INSTRUCTION_58_CREPMF_2019.txt",
+        "textQuality": "OCR_EXTRACTED_UNVERIFIED"
+      }
+    },
+    {
+      "id": "INST058_ART012_ATOM001",
+      "sourceId": "INSTRUCTION_58_CREPMF_2019",
+      "sourceSha256": "38258d7cae5518a6bea6b195facbb717e4a98c1eb734b30bc5e7de91917d0c57",
+      "articleId": "INST058_ARTICLE_012",
+      "articleNumber": 12,
+      "sourceBlockId": "INST058_ART012_BLOCK001",
+      "sourcePages": [
+        7
+      ],
+      "sourceTextSha256": "eb57ff3caaa6a819e8fc2a358f832db060f8eefed0581dcd22e0097a10d1f552",
+      "titleCandidate": "Maintien des conditions d'approbation",
+      "summaryCandidate": null,
+      "normativeClassification": "PENDING_HUMAN_REVIEW",
+      "applicability": "PENDING_HUMAN_REVIEW",
+      "canonicalFields": [],
+      "evidenceRequirements": [],
+      "reviewRoles": [
+        "LEGAL",
+        "COMPLIANCE"
+      ],
+      "legalReviewStatus": "PENDING",
+      "complianceReviewStatus": "PENDING",
+      "status": "EXTRACTED_UNVERIFIED_PENDING_LEGAL_AND_COMPLIANCE_REVIEW",
+      "activation": "FORBIDDEN",
+      "provenance": {
+        "sourceArtifact": "regulatory/materialized/INSTRUCTION_58_CREPMF_2019.pdf",
+        "ocrDerivative": "regulatory/materialized/INSTRUCTION_58_CREPMF_2019.txt",
+        "textQuality": "OCR_EXTRACTED_UNVERIFIED"
+      }
+    },
+    {
+      "id": "INST058_ART013_ATOM001",
+      "sourceId": "INSTRUCTION_58_CREPMF_2019",
+      "sourceSha256": "38258d7cae5518a6bea6b195facbb717e4a98c1eb734b30bc5e7de91917d0c57",
+      "articleId": "INST058_ARTICLE_013",
+      "articleNumber": 13,
+      "sourceBlockId": "INST058_ART013_BLOCK001",
+      "sourcePages": [
+        7,
+        8
+      ],
+      "sourceTextSha256": "c29d37c900d81512f6409118daff47f72a35ea20d242f4af7fe771901cef6d89",
+      "titleCandidate": "Dispositions générales",
+      "summaryCandidate": null,
+      "normativeClassification": "PENDING_HUMAN_REVIEW",
+      "applicability": "PENDING_HUMAN_REVIEW",
+      "canonicalFields": [],
+      "evidenceRequirements": [],
+      "reviewRoles": [
+        "LEGAL",
+        "COMPLIANCE"
+      ],
+      "legalReviewStatus": "PENDING",
+      "complianceReviewStatus": "PENDING",
+      "status": "EXTRACTED_UNVERIFIED_PENDING_LEGAL_AND_COMPLIANCE_REVIEW",
+      "activation": "FORBIDDEN",
+      "provenance": {
+        "sourceArtifact": "regulatory/materialized/INSTRUCTION_58_CREPMF_2019.pdf",
+        "ocrDerivative": "regulatory/materialized/INSTRUCTION_58_CREPMF_2019.txt",
+        "textQuality": "OCR_EXTRACTED_UNVERIFIED"
+      }
+    },
+    {
+      "id": "INST058_ART014_ATOM001",
+      "sourceId": "INSTRUCTION_58_CREPMF_2019",
+      "sourceSha256": "38258d7cae5518a6bea6b195facbb717e4a98c1eb734b30bc5e7de91917d0c57",
+      "articleId": "INST058_ARTICLE_014",
+      "articleNumber": 14,
+      "sourceBlockId": "INST058_ART014_BLOCK001",
+      "sourcePages": [
+        8
+      ],
+      "sourceTextSha256": "2080651ba1df53e55e43633d066edbe67fec8521563ddf74cead16db000c318a",
+      "titleCandidate": "Missions des Commissaires aux Comptes titulaires et suppléants",
+      "summaryCandidate": null,
+      "normativeClassification": "PENDING_HUMAN_REVIEW",
+      "applicability": "PENDING_HUMAN_REVIEW",
+      "canonicalFields": [],
+      "evidenceRequirements": [],
+      "reviewRoles": [
+        "LEGAL",
+        "COMPLIANCE"
+      ],
+      "legalReviewStatus": "PENDING",
+      "complianceReviewStatus": "PENDING",
+      "status": "EXTRACTED_UNVERIFIED_PENDING_LEGAL_AND_COMPLIANCE_REVIEW",
+      "activation": "FORBIDDEN",
+      "provenance": {
+        "sourceArtifact": "regulatory/materialized/INSTRUCTION_58_CREPMF_2019.pdf",
+        "ocrDerivative": "regulatory/materialized/INSTRUCTION_58_CREPMF_2019.txt",
+        "textQuality": "OCR_EXTRACTED_UNVERIFIED"
+      }
+    },
+    {
+      "id": "INST058_ART015_ATOM001",
+      "sourceId": "INSTRUCTION_58_CREPMF_2019",
+      "sourceSha256": "38258d7cae5518a6bea6b195facbb717e4a98c1eb734b30bc5e7de91917d0c57",
+      "articleId": "INST058_ARTICLE_015",
+      "articleNumber": 15,
+      "sourceBlockId": "INST058_ART015_BLOCK001",
+      "sourcePages": [
+        8
+      ],
+      "sourceTextSha256": "f7644e9679477ce24e74699fc2f9884c9f0d776ec889ae7b6320d439c766367b",
+      "titleCandidate": "Rotation des mandats",
+      "summaryCandidate": null,
+      "normativeClassification": "PENDING_HUMAN_REVIEW",
+      "applicability": "PENDING_HUMAN_REVIEW",
+      "canonicalFields": [],
+      "evidenceRequirements": [],
+      "reviewRoles": [
+        "LEGAL",
+        "COMPLIANCE"
+      ],
+      "legalReviewStatus": "PENDING",
+      "complianceReviewStatus": "PENDING",
+      "status": "EXTRACTED_UNVERIFIED_PENDING_LEGAL_AND_COMPLIANCE_REVIEW",
+      "activation": "FORBIDDEN",
+      "provenance": {
+        "sourceArtifact": "regulatory/materialized/INSTRUCTION_58_CREPMF_2019.pdf",
+        "ocrDerivative": "regulatory/materialized/INSTRUCTION_58_CREPMF_2019.txt",
+        "textQuality": "OCR_EXTRACTED_UNVERIFIED"
+      }
+    },
+    {
+      "id": "INST058_ART016_ATOM001",
+      "sourceId": "INSTRUCTION_58_CREPMF_2019",
+      "sourceSha256": "38258d7cae5518a6bea6b195facbb717e4a98c1eb734b30bc5e7de91917d0c57",
+      "articleId": "INST058_ARTICLE_016",
+      "articleNumber": 16,
+      "sourceBlockId": "INST058_ART016_BLOCK001",
+      "sourcePages": [
+        8,
+        9
+      ],
+      "sourceTextSha256": "fb3550103694aa1a018f8aa65f44cb7b9b0ec14eefc681f3072e8c4e29e689ac",
+      "titleCandidate": "Contenu du rapport d'audit annuel",
+      "summaryCandidate": null,
+      "normativeClassification": "PENDING_HUMAN_REVIEW",
+      "applicability": "PENDING_HUMAN_REVIEW",
+      "canonicalFields": [],
+      "evidenceRequirements": [],
+      "reviewRoles": [
+        "LEGAL",
+        "COMPLIANCE"
+      ],
+      "legalReviewStatus": "PENDING",
+      "complianceReviewStatus": "PENDING",
+      "status": "EXTRACTED_UNVERIFIED_PENDING_LEGAL_AND_COMPLIANCE_REVIEW",
+      "activation": "FORBIDDEN",
+      "provenance": {
+        "sourceArtifact": "regulatory/materialized/INSTRUCTION_58_CREPMF_2019.pdf",
+        "ocrDerivative": "regulatory/materialized/INSTRUCTION_58_CREPMF_2019.txt",
+        "textQuality": "OCR_EXTRACTED_UNVERIFIED"
+      }
+    },
+    {
+      "id": "INST058_ART017_ATOM001",
+      "sourceId": "INSTRUCTION_58_CREPMF_2019",
+      "sourceSha256": "38258d7cae5518a6bea6b195facbb717e4a98c1eb734b30bc5e7de91917d0c57",
+      "articleId": "INST058_ARTICLE_017",
+      "articleNumber": 17,
+      "sourceBlockId": "INST058_ART017_BLOCK001",
+      "sourcePages": [
+        9
+      ],
+      "sourceTextSha256": "cc1ff68de9184351db107c39d171a9012dc9ef94ca7ff450a72d151efefecb06",
+      "titleCandidate": "Rapport sur les états financiers de fin de premier semestre",
+      "summaryCandidate": null,
+      "normativeClassification": "PENDING_HUMAN_REVIEW",
+      "applicability": "PENDING_HUMAN_REVIEW",
+      "canonicalFields": [],
+      "evidenceRequirements": [],
+      "reviewRoles": [
+        "LEGAL",
+        "COMPLIANCE"
+      ],
+      "legalReviewStatus": "PENDING",
+      "complianceReviewStatus": "PENDING",
+      "status": "EXTRACTED_UNVERIFIED_PENDING_LEGAL_AND_COMPLIANCE_REVIEW",
+      "activation": "FORBIDDEN",
+      "provenance": {
+        "sourceArtifact": "regulatory/materialized/INSTRUCTION_58_CREPMF_2019.pdf",
+        "ocrDerivative": "regulatory/materialized/INSTRUCTION_58_CREPMF_2019.txt",
+        "textQuality": "OCR_EXTRACTED_UNVERIFIED"
+      }
+    },
+    {
+      "id": "INST058_ART018_ATOM001",
+      "sourceId": "INSTRUCTION_58_CREPMF_2019",
+      "sourceSha256": "38258d7cae5518a6bea6b195facbb717e4a98c1eb734b30bc5e7de91917d0c57",
+      "articleId": "INST058_ARTICLE_018",
+      "articleNumber": 18,
+      "sourceBlockId": "INST058_ART018_BLOCK001",
+      "sourcePages": [
+        9
+      ],
+      "sourceTextSha256": "cc5e8875d0c6c0e132e225647ad0066f0e2e17c71717de851dd357e1e17fd0a2",
+      "titleCandidate": "Opinions",
+      "summaryCandidate": null,
+      "normativeClassification": "PENDING_HUMAN_REVIEW",
+      "applicability": "PENDING_HUMAN_REVIEW",
+      "canonicalFields": [],
+      "evidenceRequirements": [],
+      "reviewRoles": [
+        "LEGAL",
+        "COMPLIANCE"
+      ],
+      "legalReviewStatus": "PENDING",
+      "complianceReviewStatus": "PENDING",
+      "status": "EXTRACTED_UNVERIFIED_PENDING_LEGAL_AND_COMPLIANCE_REVIEW",
+      "activation": "FORBIDDEN",
+      "provenance": {
+        "sourceArtifact": "regulatory/materialized/INSTRUCTION_58_CREPMF_2019.pdf",
+        "ocrDerivative": "regulatory/materialized/INSTRUCTION_58_CREPMF_2019.txt",
+        "textQuality": "OCR_EXTRACTED_UNVERIFIED"
+      }
+    },
+    {
+      "id": "INST058_ART019_ATOM001",
+      "sourceId": "INSTRUCTION_58_CREPMF_2019",
+      "sourceSha256": "38258d7cae5518a6bea6b195facbb717e4a98c1eb734b30bc5e7de91917d0c57",
+      "articleId": "INST058_ARTICLE_019",
+      "articleNumber": 19,
+      "sourceBlockId": "INST058_ART019_BLOCK001",
+      "sourcePages": [
+        9,
+        10
+      ],
+      "sourceTextSha256": "a95a9e2a16e726c36141a11efe592405b3ce71c3c1f18bf187320f102fb9cc94",
+      "titleCandidate": "Devoir d’information",
+      "summaryCandidate": null,
+      "normativeClassification": "PENDING_HUMAN_REVIEW",
+      "applicability": "PENDING_HUMAN_REVIEW",
+      "canonicalFields": [],
+      "evidenceRequirements": [],
+      "reviewRoles": [
+        "LEGAL",
+        "COMPLIANCE"
+      ],
+      "legalReviewStatus": "PENDING",
+      "complianceReviewStatus": "PENDING",
+      "status": "EXTRACTED_UNVERIFIED_PENDING_LEGAL_AND_COMPLIANCE_REVIEW",
+      "activation": "FORBIDDEN",
+      "provenance": {
+        "sourceArtifact": "regulatory/materialized/INSTRUCTION_58_CREPMF_2019.pdf",
+        "ocrDerivative": "regulatory/materialized/INSTRUCTION_58_CREPMF_2019.txt",
+        "textQuality": "OCR_EXTRACTED_UNVERIFIED"
+      }
+    },
+    {
+      "id": "INST058_ART020_ATOM001",
+      "sourceId": "INSTRUCTION_58_CREPMF_2019",
+      "sourceSha256": "38258d7cae5518a6bea6b195facbb717e4a98c1eb734b30bc5e7de91917d0c57",
+      "articleId": "INST058_ARTICLE_020",
+      "articleNumber": 20,
+      "sourceBlockId": "INST058_ART020_BLOCK001",
+      "sourcePages": [
+        10
+      ],
+      "sourceTextSha256": "1d01cf9a7688e8b9d3cae149480f4209d630b62116c946eb2e184f0f40683176",
+      "titleCandidate": "Attestation trimestrielle de la composition détaillée des actifs de",
+      "summaryCandidate": null,
+      "normativeClassification": "PENDING_HUMAN_REVIEW",
+      "applicability": "PENDING_HUMAN_REVIEW",
+      "canonicalFields": [],
+      "evidenceRequirements": [],
+      "reviewRoles": [
+        "LEGAL",
+        "COMPLIANCE"
+      ],
+      "legalReviewStatus": "PENDING",
+      "complianceReviewStatus": "PENDING",
+      "status": "EXTRACTED_UNVERIFIED_PENDING_LEGAL_AND_COMPLIANCE_REVIEW",
+      "activation": "FORBIDDEN",
+      "provenance": {
+        "sourceArtifact": "regulatory/materialized/INSTRUCTION_58_CREPMF_2019.pdf",
+        "ocrDerivative": "regulatory/materialized/INSTRUCTION_58_CREPMF_2019.txt",
+        "textQuality": "OCR_EXTRACTED_UNVERIFIED"
+      }
+    },
+    {
+      "id": "INST058_ART021_ATOM001",
+      "sourceId": "INSTRUCTION_58_CREPMF_2019",
+      "sourceSha256": "38258d7cae5518a6bea6b195facbb717e4a98c1eb734b30bc5e7de91917d0c57",
+      "articleId": "INST058_ARTICLE_021",
+      "articleNumber": 21,
+      "sourceBlockId": "INST058_ART021_BLOCK001",
+      "sourcePages": [
+        10
+      ],
+      "sourceTextSha256": "d3dddf90151338934a15218204ae02d88304d9a55039f7db625c80d767797480",
+      "titleCandidate": "Examen du rapport du Président du Conseil d'Administration relatif",
+      "summaryCandidate": null,
+      "normativeClassification": "PENDING_HUMAN_REVIEW",
+      "applicability": "PENDING_HUMAN_REVIEW",
+      "canonicalFields": [],
+      "evidenceRequirements": [],
+      "reviewRoles": [
+        "LEGAL",
+        "COMPLIANCE"
+      ],
+      "legalReviewStatus": "PENDING",
+      "complianceReviewStatus": "PENDING",
+      "status": "EXTRACTED_UNVERIFIED_PENDING_LEGAL_AND_COMPLIANCE_REVIEW",
+      "activation": "FORBIDDEN",
+      "provenance": {
+        "sourceArtifact": "regulatory/materialized/INSTRUCTION_58_CREPMF_2019.pdf",
+        "ocrDerivative": "regulatory/materialized/INSTRUCTION_58_CREPMF_2019.txt",
+        "textQuality": "OCR_EXTRACTED_UNVERIFIED"
+      }
+    },
+    {
+      "id": "INST058_ART022_ATOM001",
+      "sourceId": "INSTRUCTION_58_CREPMF_2019",
+      "sourceSha256": "38258d7cae5518a6bea6b195facbb717e4a98c1eb734b30bc5e7de91917d0c57",
+      "articleId": "INST058_ARTICLE_022",
+      "articleNumber": 22,
+      "sourceBlockId": "INST058_ART022_BLOCK001",
+      "sourcePages": [
+        10
+      ],
+      "sourceTextSha256": "814c6c26b5d02cf2382b0f9c52b7cc9e95ea541d4c17414dc374ed1e460ad71c",
+      "titleCandidate": "Revue des réglementations spécifiques liées au secteur d'activité",
+      "summaryCandidate": null,
+      "normativeClassification": "PENDING_HUMAN_REVIEW",
+      "applicability": "PENDING_HUMAN_REVIEW",
+      "canonicalFields": [],
+      "evidenceRequirements": [],
+      "reviewRoles": [
+        "LEGAL",
+        "COMPLIANCE"
+      ],
+      "legalReviewStatus": "PENDING",
+      "complianceReviewStatus": "PENDING",
+      "status": "EXTRACTED_UNVERIFIED_PENDING_LEGAL_AND_COMPLIANCE_REVIEW",
+      "activation": "FORBIDDEN",
+      "provenance": {
+        "sourceArtifact": "regulatory/materialized/INSTRUCTION_58_CREPMF_2019.pdf",
+        "ocrDerivative": "regulatory/materialized/INSTRUCTION_58_CREPMF_2019.txt",
+        "textQuality": "OCR_EXTRACTED_UNVERIFIED"
+      }
+    },
+    {
+      "id": "INST058_ART023_ATOM001",
+      "sourceId": "INSTRUCTION_58_CREPMF_2019",
+      "sourceSha256": "38258d7cae5518a6bea6b195facbb717e4a98c1eb734b30bc5e7de91917d0c57",
+      "articleId": "INST058_ARTICLE_023",
+      "articleNumber": 23,
+      "sourceBlockId": "INST058_ART023_BLOCK001",
+      "sourcePages": [
+        10,
+        11
+      ],
+      "sourceTextSha256": "d290468119b0ed0efccd9783944cfff29ead5fb21bb3adb37f348304dece825d",
+      "titleCandidate": "Obligation de diffusion de l’Instruction à la charge des Structures",
+      "summaryCandidate": null,
+      "normativeClassification": "PENDING_HUMAN_REVIEW",
+      "applicability": "PENDING_HUMAN_REVIEW",
+      "canonicalFields": [],
+      "evidenceRequirements": [],
+      "reviewRoles": [
+        "LEGAL",
+        "COMPLIANCE"
+      ],
+      "legalReviewStatus": "PENDING",
+      "complianceReviewStatus": "PENDING",
+      "status": "EXTRACTED_UNVERIFIED_PENDING_LEGAL_AND_COMPLIANCE_REVIEW",
+      "activation": "FORBIDDEN",
+      "provenance": {
+        "sourceArtifact": "regulatory/materialized/INSTRUCTION_58_CREPMF_2019.pdf",
+        "ocrDerivative": "regulatory/materialized/INSTRUCTION_58_CREPMF_2019.txt",
+        "textQuality": "OCR_EXTRACTED_UNVERIFIED"
+      }
+    },
+    {
+      "id": "INST058_ART024_ATOM001",
+      "sourceId": "INSTRUCTION_58_CREPMF_2019",
+      "sourceSha256": "38258d7cae5518a6bea6b195facbb717e4a98c1eb734b30bc5e7de91917d0c57",
+      "articleId": "INST058_ARTICLE_024",
+      "articleNumber": 24,
+      "sourceBlockId": "INST058_ART024_BLOCK001",
+      "sourcePages": [
+        11
+      ],
+      "sourceTextSha256": "55bf174394e24b563b530424dd8dfc05513e8cd8498dedfe8d4abd4ab3d8cc21",
+      "titleCandidate": "Cadre d'échanges",
+      "summaryCandidate": null,
+      "normativeClassification": "PENDING_HUMAN_REVIEW",
+      "applicability": "PENDING_HUMAN_REVIEW",
+      "canonicalFields": [],
+      "evidenceRequirements": [],
+      "reviewRoles": [
+        "LEGAL",
+        "COMPLIANCE"
+      ],
+      "legalReviewStatus": "PENDING",
+      "complianceReviewStatus": "PENDING",
+      "status": "EXTRACTED_UNVERIFIED_PENDING_LEGAL_AND_COMPLIANCE_REVIEW",
+      "activation": "FORBIDDEN",
+      "provenance": {
+        "sourceArtifact": "regulatory/materialized/INSTRUCTION_58_CREPMF_2019.pdf",
+        "ocrDerivative": "regulatory/materialized/INSTRUCTION_58_CREPMF_2019.txt",
+        "textQuality": "OCR_EXTRACTED_UNVERIFIED"
+      }
+    },
+    {
+      "id": "INST058_ART025_ATOM001",
+      "sourceId": "INSTRUCTION_58_CREPMF_2019",
+      "sourceSha256": "38258d7cae5518a6bea6b195facbb717e4a98c1eb734b30bc5e7de91917d0c57",
+      "articleId": "INST058_ARTICLE_025",
+      "articleNumber": 25,
+      "sourceBlockId": "INST058_ART025_BLOCK001",
+      "sourcePages": [
+        11
+      ],
+      "sourceTextSha256": "a43b8c9cc7c9c5af2b55c950e3b68fd71d9ff48e2cbef1e0dff6e45c7428ba2c",
+      "titleCandidate": "Obligations d’information à la charge des Commissaires aux Comptes",
+      "summaryCandidate": null,
+      "normativeClassification": "PENDING_HUMAN_REVIEW",
+      "applicability": "PENDING_HUMAN_REVIEW",
+      "canonicalFields": [],
+      "evidenceRequirements": [],
+      "reviewRoles": [
+        "LEGAL",
+        "COMPLIANCE"
+      ],
+      "legalReviewStatus": "PENDING",
+      "complianceReviewStatus": "PENDING",
+      "status": "EXTRACTED_UNVERIFIED_PENDING_LEGAL_AND_COMPLIANCE_REVIEW",
+      "activation": "FORBIDDEN",
+      "provenance": {
+        "sourceArtifact": "regulatory/materialized/INSTRUCTION_58_CREPMF_2019.pdf",
+        "ocrDerivative": "regulatory/materialized/INSTRUCTION_58_CREPMF_2019.txt",
+        "textQuality": "OCR_EXTRACTED_UNVERIFIED"
+      }
+    },
+    {
+      "id": "INST058_ART026_ATOM001",
+      "sourceId": "INSTRUCTION_58_CREPMF_2019",
+      "sourceSha256": "38258d7cae5518a6bea6b195facbb717e4a98c1eb734b30bc5e7de91917d0c57",
+      "articleId": "INST058_ARTICLE_026",
+      "articleNumber": 26,
+      "sourceBlockId": "INST058_ART026_BLOCK001",
+      "sourcePages": [
+        11
+      ],
+      "sourceTextSha256": "601bbe59c64dfaa35082321161ddec2d03fc6998ab1053cc17ba125d166b4052",
+      "titleCandidate": "Rencontre entre le Conseil Régional et les Commissaires aux Comptes",
+      "summaryCandidate": null,
+      "normativeClassification": "PENDING_HUMAN_REVIEW",
+      "applicability": "PENDING_HUMAN_REVIEW",
+      "canonicalFields": [],
+      "evidenceRequirements": [],
+      "reviewRoles": [
+        "LEGAL",
+        "COMPLIANCE"
+      ],
+      "legalReviewStatus": "PENDING",
+      "complianceReviewStatus": "PENDING",
+      "status": "EXTRACTED_UNVERIFIED_PENDING_LEGAL_AND_COMPLIANCE_REVIEW",
+      "activation": "FORBIDDEN",
+      "provenance": {
+        "sourceArtifact": "regulatory/materialized/INSTRUCTION_58_CREPMF_2019.pdf",
+        "ocrDerivative": "regulatory/materialized/INSTRUCTION_58_CREPMF_2019.txt",
+        "textQuality": "OCR_EXTRACTED_UNVERIFIED"
+      }
+    },
+    {
+      "id": "INST058_ART027_ATOM001",
+      "sourceId": "INSTRUCTION_58_CREPMF_2019",
+      "sourceSha256": "38258d7cae5518a6bea6b195facbb717e4a98c1eb734b30bc5e7de91917d0c57",
+      "articleId": "INST058_ARTICLE_027",
+      "articleNumber": 27,
+      "sourceBlockId": "INST058_ART027_BLOCK001",
+      "sourcePages": [
+        11,
+        12
+      ],
+      "sourceTextSha256": "fca76e29e8ba63622b92a088106e022137d858f8b4c1e163bd987b70234b2e2a",
+      "titleCandidate": "Demande d'informations du Conseil Régional aux Commissaires aux",
+      "summaryCandidate": null,
+      "normativeClassification": "PENDING_HUMAN_REVIEW",
+      "applicability": "PENDING_HUMAN_REVIEW",
+      "canonicalFields": [],
+      "evidenceRequirements": [],
+      "reviewRoles": [
+        "LEGAL",
+        "COMPLIANCE"
+      ],
+      "legalReviewStatus": "PENDING",
+      "complianceReviewStatus": "PENDING",
+      "status": "EXTRACTED_UNVERIFIED_PENDING_LEGAL_AND_COMPLIANCE_REVIEW",
+      "activation": "FORBIDDEN",
+      "provenance": {
+        "sourceArtifact": "regulatory/materialized/INSTRUCTION_58_CREPMF_2019.pdf",
+        "ocrDerivative": "regulatory/materialized/INSTRUCTION_58_CREPMF_2019.txt",
+        "textQuality": "OCR_EXTRACTED_UNVERIFIED"
+      }
+    },
+    {
+      "id": "INST058_ART028_ATOM001",
+      "sourceId": "INSTRUCTION_58_CREPMF_2019",
+      "sourceSha256": "38258d7cae5518a6bea6b195facbb717e4a98c1eb734b30bc5e7de91917d0c57",
+      "articleId": "INST058_ARTICLE_028",
+      "articleNumber": 28,
+      "sourceBlockId": "INST058_ART028_BLOCK001",
+      "sourcePages": [
+        12
+      ],
+      "sourceTextSha256": "0fdebd0dc8b15caabd926c6cf442c8ac87ce8536a56b95cc7566ba687835c9bc",
+      "titleCandidate": "Droit pour le Commissaire aux Comptes d'interroger le Conseil",
+      "summaryCandidate": null,
+      "normativeClassification": "PENDING_HUMAN_REVIEW",
+      "applicability": "PENDING_HUMAN_REVIEW",
+      "canonicalFields": [],
+      "evidenceRequirements": [],
+      "reviewRoles": [
+        "LEGAL",
+        "COMPLIANCE"
+      ],
+      "legalReviewStatus": "PENDING",
+      "complianceReviewStatus": "PENDING",
+      "status": "EXTRACTED_UNVERIFIED_PENDING_LEGAL_AND_COMPLIANCE_REVIEW",
+      "activation": "FORBIDDEN",
+      "provenance": {
+        "sourceArtifact": "regulatory/materialized/INSTRUCTION_58_CREPMF_2019.pdf",
+        "ocrDerivative": "regulatory/materialized/INSTRUCTION_58_CREPMF_2019.txt",
+        "textQuality": "OCR_EXTRACTED_UNVERIFIED"
+      }
+    },
+    {
+      "id": "INST058_ART029_ATOM001",
+      "sourceId": "INSTRUCTION_58_CREPMF_2019",
+      "sourceSha256": "38258d7cae5518a6bea6b195facbb717e4a98c1eb734b30bc5e7de91917d0c57",
+      "articleId": "INST058_ARTICLE_029",
+      "articleNumber": 29,
+      "sourceBlockId": "INST058_ART029_BLOCK001",
+      "sourcePages": [
+        12
+      ],
+      "sourceTextSha256": "46a9faa3c62fa6d7d6cd746f160f1690d30902e6d53bb4eb035b3783ba312d9b",
+      "titleCandidate": "Transmission d'informations par le CREPMF aux Commissaires aux",
+      "summaryCandidate": null,
+      "normativeClassification": "PENDING_HUMAN_REVIEW",
+      "applicability": "PENDING_HUMAN_REVIEW",
+      "canonicalFields": [],
+      "evidenceRequirements": [],
+      "reviewRoles": [
+        "LEGAL",
+        "COMPLIANCE"
+      ],
+      "legalReviewStatus": "PENDING",
+      "complianceReviewStatus": "PENDING",
+      "status": "EXTRACTED_UNVERIFIED_PENDING_LEGAL_AND_COMPLIANCE_REVIEW",
+      "activation": "FORBIDDEN",
+      "provenance": {
+        "sourceArtifact": "regulatory/materialized/INSTRUCTION_58_CREPMF_2019.pdf",
+        "ocrDerivative": "regulatory/materialized/INSTRUCTION_58_CREPMF_2019.txt",
+        "textQuality": "OCR_EXTRACTED_UNVERIFIED"
+      }
+    },
+    {
+      "id": "INST058_ART030_ATOM001",
+      "sourceId": "INSTRUCTION_58_CREPMF_2019",
+      "sourceSha256": "38258d7cae5518a6bea6b195facbb717e4a98c1eb734b30bc5e7de91917d0c57",
+      "articleId": "INST058_ARTICLE_030",
+      "articleNumber": 30,
+      "sourceBlockId": "INST058_ART030_BLOCK001",
+      "sourcePages": [
+        12
+      ],
+      "sourceTextSha256": "a01cfe9a489203091ab8fb0b455d97bb3597c3dd4ce6dc7725a3c3969800625a",
+      "titleCandidate": "Retrait de l’approbation",
+      "summaryCandidate": null,
+      "normativeClassification": "PENDING_HUMAN_REVIEW",
+      "applicability": "PENDING_HUMAN_REVIEW",
+      "canonicalFields": [],
+      "evidenceRequirements": [],
+      "reviewRoles": [
+        "LEGAL",
+        "COMPLIANCE"
+      ],
+      "legalReviewStatus": "PENDING",
+      "complianceReviewStatus": "PENDING",
+      "status": "EXTRACTED_UNVERIFIED_PENDING_LEGAL_AND_COMPLIANCE_REVIEW",
+      "activation": "FORBIDDEN",
+      "provenance": {
+        "sourceArtifact": "regulatory/materialized/INSTRUCTION_58_CREPMF_2019.pdf",
+        "ocrDerivative": "regulatory/materialized/INSTRUCTION_58_CREPMF_2019.txt",
+        "textQuality": "OCR_EXTRACTED_UNVERIFIED"
+      }
+    },
+    {
+      "id": "INST058_ART031_ATOM001",
+      "sourceId": "INSTRUCTION_58_CREPMF_2019",
+      "sourceSha256": "38258d7cae5518a6bea6b195facbb717e4a98c1eb734b30bc5e7de91917d0c57",
+      "articleId": "INST058_ARTICLE_031",
+      "articleNumber": 31,
+      "sourceBlockId": "INST058_ART031_BLOCK001",
+      "sourcePages": [
+        12,
+        13
+      ],
+      "sourceTextSha256": "2afcf827ae085ef0dca30aeaab84db65d414e8eacc9d974d858f50a21da40c2c",
+      "titleCandidate": "n cas de non approbation des mandats du Commissaires aux Comptes",
+      "summaryCandidate": null,
+      "normativeClassification": "PENDING_HUMAN_REVIEW",
+      "applicability": "PENDING_HUMAN_REVIEW",
+      "canonicalFields": [],
+      "evidenceRequirements": [],
+      "reviewRoles": [
+        "LEGAL",
+        "COMPLIANCE"
+      ],
+      "legalReviewStatus": "PENDING",
+      "complianceReviewStatus": "PENDING",
+      "status": "EXTRACTED_UNVERIFIED_PENDING_LEGAL_AND_COMPLIANCE_REVIEW",
+      "activation": "FORBIDDEN",
+      "provenance": {
+        "sourceArtifact": "regulatory/materialized/INSTRUCTION_58_CREPMF_2019.pdf",
+        "ocrDerivative": "regulatory/materialized/INSTRUCTION_58_CREPMF_2019.txt",
+        "textQuality": "OCR_EXTRACTED_UNVERIFIED"
+      }
+    },
+    {
+      "id": "INST058_ART032_ATOM001",
+      "sourceId": "INSTRUCTION_58_CREPMF_2019",
+      "sourceSha256": "38258d7cae5518a6bea6b195facbb717e4a98c1eb734b30bc5e7de91917d0c57",
+      "articleId": "INST058_ARTICLE_032",
+      "articleNumber": 32,
+      "sourceBlockId": "INST058_ART032_BLOCK001",
+      "sourcePages": [
+        13
+      ],
+      "sourceTextSha256": "47074793f425559ccc858c9b90c532afbf1e98ad0aae44f9078b66b689a78c69",
+      "titleCandidate": "Manquements dans l'exercice du Commissariat aux Comptes",
+      "summaryCandidate": null,
+      "normativeClassification": "PENDING_HUMAN_REVIEW",
+      "applicability": "PENDING_HUMAN_REVIEW",
+      "canonicalFields": [],
+      "evidenceRequirements": [],
+      "reviewRoles": [
+        "LEGAL",
+        "COMPLIANCE"
+      ],
+      "legalReviewStatus": "PENDING",
+      "complianceReviewStatus": "PENDING",
+      "status": "EXTRACTED_UNVERIFIED_PENDING_LEGAL_AND_COMPLIANCE_REVIEW",
+      "activation": "FORBIDDEN",
+      "provenance": {
+        "sourceArtifact": "regulatory/materialized/INSTRUCTION_58_CREPMF_2019.pdf",
+        "ocrDerivative": "regulatory/materialized/INSTRUCTION_58_CREPMF_2019.txt",
+        "textQuality": "OCR_EXTRACTED_UNVERIFIED"
+      }
+    },
+    {
+      "id": "INST058_ART033_ATOM001",
+      "sourceId": "INSTRUCTION_58_CREPMF_2019",
+      "sourceSha256": "38258d7cae5518a6bea6b195facbb717e4a98c1eb734b30bc5e7de91917d0c57",
+      "articleId": "INST058_ARTICLE_033",
+      "articleNumber": 33,
+      "sourceBlockId": "INST058_ART033_BLOCK001",
+      "sourcePages": [
+        13
+      ],
+      "sourceTextSha256": "011a6b31816c849b51c9e66b7b75ad587b74582f62b978f8bb5a1c697cbd8df8",
+      "titleCandidate": "Dispositions transitoires",
+      "summaryCandidate": null,
+      "normativeClassification": "PENDING_HUMAN_REVIEW",
+      "applicability": "PENDING_HUMAN_REVIEW",
+      "canonicalFields": [],
+      "evidenceRequirements": [],
+      "reviewRoles": [
+        "LEGAL",
+        "COMPLIANCE"
+      ],
+      "legalReviewStatus": "PENDING",
+      "complianceReviewStatus": "PENDING",
+      "status": "EXTRACTED_UNVERIFIED_PENDING_LEGAL_AND_COMPLIANCE_REVIEW",
+      "activation": "FORBIDDEN",
+      "provenance": {
+        "sourceArtifact": "regulatory/materialized/INSTRUCTION_58_CREPMF_2019.pdf",
+        "ocrDerivative": "regulatory/materialized/INSTRUCTION_58_CREPMF_2019.txt",
+        "textQuality": "OCR_EXTRACTED_UNVERIFIED"
+      }
+    },
+    {
+      "id": "INST058_ART034_ATOM001",
+      "sourceId": "INSTRUCTION_58_CREPMF_2019",
+      "sourceSha256": "38258d7cae5518a6bea6b195facbb717e4a98c1eb734b30bc5e7de91917d0c57",
+      "articleId": "INST058_ARTICLE_034",
+      "articleNumber": 34,
+      "sourceBlockId": "INST058_ART034_BLOCK001",
+      "sourcePages": [
+        13
+      ],
+      "sourceTextSha256": "eefc089a50d4ea80093a73f6d555f8f972829eae0b0bd34cfd3b4d93a12b2478",
+      "titleCandidate": "Abrogation",
+      "summaryCandidate": null,
+      "normativeClassification": "PENDING_HUMAN_REVIEW",
+      "applicability": "PENDING_HUMAN_REVIEW",
+      "canonicalFields": [],
+      "evidenceRequirements": [],
+      "reviewRoles": [
+        "LEGAL",
+        "COMPLIANCE"
+      ],
+      "legalReviewStatus": "PENDING",
+      "complianceReviewStatus": "PENDING",
+      "status": "EXTRACTED_UNVERIFIED_PENDING_LEGAL_AND_COMPLIANCE_REVIEW",
+      "activation": "FORBIDDEN",
+      "provenance": {
+        "sourceArtifact": "regulatory/materialized/INSTRUCTION_58_CREPMF_2019.pdf",
+        "ocrDerivative": "regulatory/materialized/INSTRUCTION_58_CREPMF_2019.txt",
+        "textQuality": "OCR_EXTRACTED_UNVERIFIED"
+      }
+    },
+    {
+      "id": "INST058_ART035_ATOM001",
+      "sourceId": "INSTRUCTION_58_CREPMF_2019",
+      "sourceSha256": "38258d7cae5518a6bea6b195facbb717e4a98c1eb734b30bc5e7de91917d0c57",
+      "articleId": "INST058_ARTICLE_035",
+      "articleNumber": 35,
+      "sourceBlockId": "INST058_ART035_BLOCK001",
+      "sourcePages": [
+        13,
+        14,
+        15,
+        16,
+        17
+      ],
+      "sourceTextSha256": "593a89b59512f7238462a32e5948bd2d905eed868513e8fb7c05b3088f0a2b65",
+      "titleCandidate": "Entrée en vigueur",
+      "summaryCandidate": null,
+      "normativeClassification": "PENDING_HUMAN_REVIEW",
+      "applicability": "PENDING_HUMAN_REVIEW",
+      "canonicalFields": [],
+      "evidenceRequirements": [],
+      "reviewRoles": [
+        "LEGAL",
+        "COMPLIANCE"
+      ],
+      "legalReviewStatus": "PENDING",
+      "complianceReviewStatus": "PENDING",
+      "status": "EXTRACTED_UNVERIFIED_PENDING_LEGAL_AND_COMPLIANCE_REVIEW",
+      "activation": "FORBIDDEN",
+      "provenance": {
+        "sourceArtifact": "regulatory/materialized/INSTRUCTION_58_CREPMF_2019.pdf",
+        "ocrDerivative": "regulatory/materialized/INSTRUCTION_58_CREPMF_2019.txt",
+        "textQuality": "OCR_EXTRACTED_UNVERIFIED"
+      }
+    }
+  ]
+}
