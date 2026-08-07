@@ -4,8 +4,955 @@
   "sourceSha256": "3f964f2f6ab9ce9eb16912ccda13f34b5023a188dfb18fcba7065590c770d396",
   "status": "EXTRACTED_UNVERIFIED_PENDING_LEGAL_AND_COMPLIANCE_REVIEW",
   "activation": "FORBIDDEN",
-  "requirementCandidateCount": 38,
+  "requirementCandidateCount": 83,
   "requirements": [
+    {
+      "id": "INST066_ART001_REQ001",
+      "sourceId": "INSTRUCTION_66_CREPMF_2021",
+      "sourceSha256": "3f964f2f6ab9ce9eb16912ccda13f34b5023a188dfb18fcba7065590c770d396",
+      "articleId": "INST066_ARTICLE_001",
+      "articleNumber": 1,
+      "sourcePages": [
+        2,
+        3,
+        4,
+        5,
+        6
+      ],
+      "sourceArticleTextSha256": "18f33284472d0307a5e70e2cbe17ef457ad07e81de3c47c4fcc39b18bf41ebc2",
+      "sourceTextCandidate": "…n, on entend par : Dépositaire : un établissement chargé des missions exposées aux articles 20 et 21 de la présente Instruction. Document d'informations Clés pour l’Investisseur (DICI) : un Document remis aux investisseurs désirant réaliser un placement dans un OPC. IL présente les principales informations pour comprendre l'investissement proposé. Fonds Commun de Placement (FCP) : un OPC n’ayant pas de personnalité juridique, qui émet des parts de copropriété, et dont les modalités de constitution et de fonctionnement sont régies par la présente Instruction. Fonds Commun de Placement d'Entreprise (FCPE) : un Fonds Commun de Placement dédié à l’épargne salariale. Les modalités de constitution et de fonctionnement des FCPE sont régies par la présente Instruction. Fonds d'investissement Alternatif (FIA) : un OPC qui n’est pas un OPCVM et qui lève des capitaux auprès d’un certain nombre d’investisseurs en vue de les investir, conformément à une politique d’investissement définie, dans l’intérêt de ces investisseurs. Les modalités de constitution et de fonctionnement des FIA sont régies par la présente Instruction. Fusion : une fusion entre des OPC établis au sein de l’UMOA Gestionnaire de Portefeuille : La personne physique qui est en charge de la gestion de l’OPC. Gestionnaire des Risques : la personne physique au sein de la Société de Gestion d’OPC, chargé de l'évaluation de l’adéquation des systèmes de gestion des risques mis en place par les Sociétés de Gestion d’OPC et n’exerçant pas d’activités au sein des unités opérationnelles, y compris de la fonction de gestion de portefeuille. Investisseurs qualifiés : sont considérés de droit comme investisseurs qualifiés, Les banques, les établissements financiers, Les Sociétés de Gestion et d’Intermédiation, les Sociétés de Ge…",
+      "sourceKeywordHits": [
+        "Organisme de Placement Collectif",
+        "Fonds Commun de Placement",
+        "Société d’Investissement"
+      ],
+      "normalizedRequirementCandidate": "Le moteur doit qualifier chaque véhicule selon les catégories et formes définies par l'Instruction, notamment OPC, OPCVM, FIA, FCP et Société d'Investissement, avant de sélectionner le pack documentaire applicable.",
+      "applicabilityCandidate": "ALL_OPC_PROJECTS",
+      "products": [
+        "OPCVM",
+        "FIA",
+        "FCP",
+        "SICAV",
+        "OPCR",
+        "OTHER_OPC"
+      ],
+      "documentTypes": [
+        "CANONICAL_MODEL",
+        "PROSPECTUS",
+        "FUND_REGULATION"
+      ],
+      "canonicalFields": [
+        "fund.regulatory_product_type",
+        "fund.legal_form",
+        "fund.vehicle_family"
+      ],
+      "questionIds": [
+        "Q_REGULATORY_PRODUCT_TYPE",
+        "Q_FUND_LEGAL_FORM"
+      ],
+      "clauseGroupIds": [],
+      "controlIds": [
+        "RULE_REGULATORY_PRODUCT_TYPE_REQUIRED",
+        "RULE_LEGAL_FORM_COMPATIBLE_WITH_PRODUCT_TYPE"
+      ],
+      "evidenceTypes": [
+        "FUND_APPROVAL_OR_PROJECT_MANDATE",
+        "DRAFT_CONSTITUTIVE_DOCUMENT"
+      ],
+      "outputSectionIds": [
+        "SYSTEM_ONLY"
+      ],
+      "reviewRoles": [
+        "LEGAL",
+        "COMPLIANCE"
+      ],
+      "circ005RequirementLinks": [
+        "CIRC005_GENERAL_SCOPE"
+      ],
+      "status": "EXTRACTED_UNVERIFIED_PENDING_LEGAL_AND_COMPLIANCE_REVIEW",
+      "activation": "FORBIDDEN",
+      "legalReviewStatus": "PENDING",
+      "complianceReviewStatus": "PENDING",
+      "specFile": "regulatory/requirements/inst066-candidates/00_SCOPE_DEFINITIONS.json",
+      "provenance": {
+        "sourceArtifact": "regulatory/materialized/INSTRUCTION_66_CREPMF_2021.pdf",
+        "ocrDerivative": "regulatory/materialized/INSTRUCTION_66_CREPMF_2021.txt",
+        "articleBlock": "regulatory/requirements/INST066_ARTICLE_BLOCKS_V0_1.json",
+        "textQuality": "OCR_EXTRACTED_UNVERIFIED"
+      }
+    },
+    {
+      "id": "INST066_ART001_REQ002",
+      "sourceId": "INSTRUCTION_66_CREPMF_2021",
+      "sourceSha256": "3f964f2f6ab9ce9eb16912ccda13f34b5023a188dfb18fcba7065590c770d396",
+      "articleId": "INST066_ARTICLE_001",
+      "articleNumber": 1,
+      "sourcePages": [
+        2,
+        3,
+        4,
+        5,
+        6
+      ],
+      "sourceArticleTextSha256": "18f33284472d0307a5e70e2cbe17ef457ad07e81de3c47c4fcc39b18bf41ebc2",
+      "sourceTextCandidate": "…la gestion de l’OPC. Gestionnaire des Risques : la personne physique au sein de la Société de Gestion d’OPC, chargé de l'évaluation de l’adéquation des systèmes de gestion des risques mis en place par les Sociétés de Gestion d’OPC et n’exerçant pas d’activités au sein des unités opérationnelles, y compris de la fonction de gestion de portefeuille. Investisseurs qualifiés : sont considérés de droit comme investisseurs qualifiés, Les banques, les établissements financiers, Les Sociétés de Gestion et d’Intermédiation, les Sociétés de Gestion d'Organisme de Placement Collectif (OPC) où de Patrimoine agissant pour leur propre compte, Les compagnies d'assurance et de réassurance, les sociétés de groupe d'assurance, Les mutuelles et unions de mutuelles et les institutions de prévoyance, les caisses de dépôts, d'amortissement ou de stabilisation, les Organismes de Placement Collectif et les sociétés d'investissement à capital fixe ou de capital-risque. Les autres investisseurs qualifiés et notamment les personnes physiques à même d'appréhender les mérites et les risques inhérents aux opérations sur Les instruments financiers ou valeurs mobilières sont déclarés comme tels auprès du Conseil Régional. no Avenue Joseph ANOMA TEL.: (225) 27 20 21 57 42 / 20 31 56 20 01 B.P. 1878 Abidjan 01/Côte d'Ivoire ex 2 » 4 Fax: (225) 27 20 33 23 04 Site web : http://www.crepmf.org presidence@crepmf.org Investisseurs non qualifiés : toutes Les personnes qui ne sont pas des investisseurs qualifiés. Instruments financiers : a) valeurs mobilières ; b) instruments du marché monétaire ; c) parts d’organismes de placement collectif ; d) contrats d’option, contrats à terme, contrats d'échange, accords de taux futurs et tous autres contrats dérivés relatifs à des valeurs mobilières, des monnaies, des t…",
+      "sourceKeywordHits": [
+        "Investisseurs qualifiés",
+        "Investisseurs non qualifiés"
+      ],
+      "normalizedRequirementCandidate": "Le statut d'investisseur qualifié ou non qualifié doit être enregistré et utilisé pour déterminer les restrictions de commercialisation, les informations précontractuelles et les dérogations éventuellement applicables.",
+      "applicabilityCandidate": "ALL_MARKETING_AND_TARGET_INVESTOR_DECISIONS",
+      "products": [
+        "OPCVM",
+        "FIA",
+        "FCP",
+        "SICAV",
+        "OPCR",
+        "OTHER_OPC"
+      ],
+      "documentTypes": [
+        "PROSPECTUS",
+        "DICI",
+        "MARKETING_PLAN",
+        "CANONICAL_MODEL"
+      ],
+      "canonicalFields": [
+        "target_investor.qualification",
+        "distribution.eligible_investor_categories[]",
+        "distribution.restrictions[]"
+      ],
+      "questionIds": [
+        "Q_TARGET_INVESTOR_PROFILE",
+        "Q_INVESTOR_QUALIFICATION"
+      ],
+      "clauseGroupIds": [
+        "CG_TARGET_INVESTOR"
+      ],
+      "controlIds": [
+        "RULE_INVESTOR_QUALIFICATION_REQUIRED",
+        "RULE_MARKETING_SCOPE_MATCHES_INVESTOR_QUALIFICATION"
+      ],
+      "evidenceTypes": [
+        "PRODUCT_GOVERNANCE_POLICY",
+        "MARKETING_AUTHORIZATION"
+      ],
+      "outputSectionIds": [
+        "SEC_5_2_TARGET_INVESTOR",
+        "SYSTEM_ONLY"
+      ],
+      "reviewRoles": [
+        "LEGAL",
+        "COMPLIANCE"
+      ],
+      "circ005RequirementLinks": [
+        "CIRC005_5_2_TARGET_INVESTOR"
+      ],
+      "status": "EXTRACTED_UNVERIFIED_PENDING_LEGAL_AND_COMPLIANCE_REVIEW",
+      "activation": "FORBIDDEN",
+      "legalReviewStatus": "PENDING",
+      "complianceReviewStatus": "PENDING",
+      "specFile": "regulatory/requirements/inst066-candidates/00_SCOPE_DEFINITIONS.json",
+      "provenance": {
+        "sourceArtifact": "regulatory/materialized/INSTRUCTION_66_CREPMF_2021.pdf",
+        "ocrDerivative": "regulatory/materialized/INSTRUCTION_66_CREPMF_2021.txt",
+        "articleBlock": "regulatory/requirements/INST066_ARTICLE_BLOCKS_V0_1.json",
+        "textQuality": "OCR_EXTRACTED_UNVERIFIED"
+      }
+    },
+    {
+      "id": "INST066_ART001_REQ003",
+      "sourceId": "INSTRUCTION_66_CREPMF_2021",
+      "sourceSha256": "3f964f2f6ab9ce9eb16912ccda13f34b5023a188dfb18fcba7065590c770d396",
+      "articleId": "INST066_ARTICLE_001",
+      "articleNumber": 1,
+      "sourcePages": [
+        2,
+        3,
+        4,
+        5,
+        6
+      ],
+      "sourceArticleTextSha256": "18f33284472d0307a5e70e2cbe17ef457ad07e81de3c47c4fcc39b18bf41ebc2",
+      "sourceTextCandidate": "…dence@crepmf.org Preneurs de risque : les preneurs de risques représentent des catégories de personnel dont les activités professionnelles ont une incidence significative sur Le profil de risque de la Société de Gestion d’OPC ou La Société d’Investissement. Promoteur de l’OPC : tout établissement ou personne à l'initiative de La création d’un OPC. Prospectus de l’OPC : document destiné à informer Le public que Les Sociétés de Gestion d’OPC ou Les Sociétés d’investissement doivent mettre à disposition avant la commercialisation de l’OPC. Quasi-capitaux propres : tout type d’instrument de financement dont le rendement dépend des profits ou des pertes de l’entreprise et dont le remboursement, en cas de défaillance, n’est pas pleinement garanti. Règlement Général : Le Règlement Général relatif à l'organisation, au fonctionnement et au contrôle du marché financier régional de l'UMOA. Société de Gestion d’OPC : une société qui en vertu de son agrément par Le Conseil Régional, a Le statut d'établissement financier et est autorisée à conduire Les activités visées à l’article 4 de la présente Instruction. Société de Gestion d'OPCVM : une Société de Gestion d’OPC agréée dédiée à la gestion exclusive d’'OPCVM. Société de Gestion d'OPC à Risque : une Société de Gestion d’OPC agréée dédiée à La gestion exclusive d’Organismes de Placement Collectif à Risque (OPCR). Société de Gestion d’OPC de Titrisation : une Société de Gestion d’OPC agréée dédiée à la gestion exclusive de Fonds Communs de Titrisation de Créances. Société de Gestion d'OPC Immobilier : une Société de Gestion d'OPC agréée dédiée à la gestion exclusive de Fonds Immobiliers. Société de Gestion et d’intermédiation (SGi): les SGl sont les catégories d'établissements financiers mentionnés dans le Règlement Général du Conse…",
+      "sourceKeywordHits": [
+        "Prospectus de l’OPC",
+        "avant la commercialisation"
+      ],
+      "normalizedRequirementCandidate": "Le prospectus doit être traité comme un document d'information du public à mettre à disposition avant la commercialisation de l'OPC.",
+      "applicabilityCandidate": "OPC_BEFORE_MARKETING",
+      "products": [
+        "OPCVM",
+        "FIA",
+        "FCP",
+        "SICAV",
+        "OPCR",
+        "OTHER_OPC"
+      ],
+      "documentTypes": [
+        "PROSPECTUS",
+        "MARKETING_READINESS_REPORT"
+      ],
+      "canonicalFields": [
+        "documents.prospectus.status",
+        "documents.prospectus.available_from",
+        "distribution.marketing_start_date"
+      ],
+      "questionIds": [
+        "Q_PROSPECTUS_AVAILABILITY",
+        "Q_MARKETING_START_DATE"
+      ],
+      "clauseGroupIds": [],
+      "controlIds": [
+        "RULE_PROSPECTUS_AVAILABLE_BEFORE_MARKETING",
+        "RULE_MARKETING_BLOCKED_WITHOUT_PROSPECTUS"
+      ],
+      "evidenceTypes": [
+        "PROSPECTUS_FINAL_REVIEWED",
+        "PUBLICATION_EVIDENCE",
+        "MARKETING_AUTHORIZATION"
+      ],
+      "outputSectionIds": [
+        "SYSTEM_ONLY"
+      ],
+      "reviewRoles": [
+        "LEGAL",
+        "COMPLIANCE"
+      ],
+      "circ005RequirementLinks": [
+        "CIRC005_GENERAL_SCOPE",
+        "CIRC005_GENERAL_MINIMUM"
+      ],
+      "status": "EXTRACTED_UNVERIFIED_PENDING_LEGAL_AND_COMPLIANCE_REVIEW",
+      "activation": "FORBIDDEN",
+      "legalReviewStatus": "PENDING",
+      "complianceReviewStatus": "PENDING",
+      "specFile": "regulatory/requirements/inst066-candidates/00_SCOPE_DEFINITIONS.json",
+      "provenance": {
+        "sourceArtifact": "regulatory/materialized/INSTRUCTION_66_CREPMF_2021.pdf",
+        "ocrDerivative": "regulatory/materialized/INSTRUCTION_66_CREPMF_2021.txt",
+        "articleBlock": "regulatory/requirements/INST066_ARTICLE_BLOCKS_V0_1.json",
+        "textQuality": "OCR_EXTRACTED_UNVERIFIED"
+      }
+    },
+    {
+      "id": "INST066_ART002_REQ001",
+      "sourceId": "INSTRUCTION_66_CREPMF_2021",
+      "sourceSha256": "3f964f2f6ab9ce9eb16912ccda13f34b5023a188dfb18fcba7065590c770d396",
+      "articleId": "INST066_ARTICLE_002",
+      "articleNumber": 2,
+      "sourcePages": [
+        6
+      ],
+      "sourceArticleTextSha256": "dbc4d4affb9387c4ab131481c287be894d1f3d87c88600fc8e8a3e1b6dad4927",
+      "sourceTextCandidate": "La présente Instruction a pour objet de fixer les règles relatives à la gestion d'Organismes de Placement Collectif et à leurs Sociétés de Gestion sur Le marché financier régional de l'UMOA. Les dispositions de la présente Instruction s’appliquent aux : 1- Organismes de Placement Collectif (OPC), Sociétés de Gestion d’OPC et Dépositaires dûment agréés ou, selon Le cas, enregistrés sur le marché financier régional de l’UMOA ; 2- OPC de pays tiers gérés dans l’UMOA où dont la commercialisation au sein de l'UMOA a été autorisée par Le Conseil Régional, sous réserve de l’avis conforme des autorités en charge de la règlementation des changes, et s’effectue dans Le cadre des accords avec les pays tiers prévus par Les articles 20 alinéa 6 et 25 de La présente Instruction ; 3- Sociétés de Gestion de pays tiers gérant ou commercialisant des OPC dans l'UMOA, dans le cadre des accords avec les pays tiers prévus par l’article 20 alinéa 6 de la présente Instruction. La présente Instruction ne s’applique pas aux entreprises d'investissement à capital fixe au sens de la Loi Uniforme relative aux entreprises d'investissement à capital fixe. :",
+      "sourceKeywordHits": [
+        "dûment agréés",
+        "enregistrés sur le marché financier régional"
+      ],
+      "normalizedRequirementCandidate": "Le pack Instruction 66 doit être appliqué aux OPC, sociétés de gestion et dépositaires agréés ou enregistrés sur le marché financier régional de l'UMOA.",
+      "applicabilityCandidate": "UMOA_REGULATED_OPC_ECOSYSTEM",
+      "products": [
+        "OPCVM",
+        "FIA",
+        "FCP",
+        "SICAV",
+        "OPCR",
+        "OTHER_OPC"
+      ],
+      "documentTypes": [
+        "REGULATORY_PACK_SELECTION",
+        "PROSPECTUS"
+      ],
+      "canonicalFields": [
+        "regulatory_context.jurisdiction",
+        "regulatory_context.pack_id",
+        "regulatory_approval.status"
+      ],
+      "questionIds": [
+        "Q_REGULATORY_PACK_CONFIRMATION",
+        "Q_REGULATORY_APPROVAL_STATUS"
+      ],
+      "clauseGroupIds": [],
+      "controlIds": [
+        "RULE_PACK_SCOPE_CONFIRMED",
+        "RULE_UMOA_APPROVAL_OR_REGISTRATION_EVIDENCED"
+      ],
+      "evidenceTypes": [
+        "REGULATOR_REGISTER",
+        "FUND_APPROVAL_OR_PROJECT_MANDATE",
+        "SGO_APPROVAL"
+      ],
+      "outputSectionIds": [
+        "SYSTEM_ONLY"
+      ],
+      "reviewRoles": [
+        "LEGAL",
+        "COMPLIANCE"
+      ],
+      "circ005RequirementLinks": [
+        "CIRC005_GENERAL_SCOPE"
+      ],
+      "status": "EXTRACTED_UNVERIFIED_PENDING_LEGAL_AND_COMPLIANCE_REVIEW",
+      "activation": "FORBIDDEN",
+      "legalReviewStatus": "PENDING",
+      "complianceReviewStatus": "PENDING",
+      "specFile": "regulatory/requirements/inst066-candidates/00_SCOPE_DEFINITIONS.json",
+      "provenance": {
+        "sourceArtifact": "regulatory/materialized/INSTRUCTION_66_CREPMF_2021.pdf",
+        "ocrDerivative": "regulatory/materialized/INSTRUCTION_66_CREPMF_2021.txt",
+        "articleBlock": "regulatory/requirements/INST066_ARTICLE_BLOCKS_V0_1.json",
+        "textQuality": "OCR_EXTRACTED_UNVERIFIED"
+      }
+    },
+    {
+      "id": "INST066_ART002_REQ002",
+      "sourceId": "INSTRUCTION_66_CREPMF_2021",
+      "sourceSha256": "3f964f2f6ab9ce9eb16912ccda13f34b5023a188dfb18fcba7065590c770d396",
+      "articleId": "INST066_ARTICLE_002",
+      "articleNumber": 2,
+      "sourcePages": [
+        6
+      ],
+      "sourceArticleTextSha256": "dbc4d4affb9387c4ab131481c287be894d1f3d87c88600fc8e8a3e1b6dad4927",
+      "sourceTextCandidate": "…mes de Placement Collectif et à leurs Sociétés de Gestion sur Le marché financier régional de l'UMOA. Les dispositions de la présente Instruction s’appliquent aux : 1- Organismes de Placement Collectif (OPC), Sociétés de Gestion d’OPC et Dépositaires dûment agréés ou, selon Le cas, enregistrés sur le marché financier régional de l’UMOA ; 2- OPC de pays tiers gérés dans l’UMOA où dont la commercialisation au sein de l'UMOA a été autorisée par Le Conseil Régional, sous réserve de l’avis conforme des autorités en charge de la règlementation des changes, et s’effectue dans Le cadre des accords avec les pays tiers prévus par Les articles 20 alinéa 6 et 25 de La présente Instruction ; 3- Sociétés de Gestion de pays tiers gérant ou commercialisant des OPC dans l'UMOA, dans le cadre des accords avec les pays tiers prévus par l’article 20 alinéa 6 de la présente Instruction. La présente Instruction ne s’applique pas aux entreprises d'investissement à capital fixe au sens de la Loi Uniforme relative aux entreprises d'investissement à capital fixe. :",
+      "sourceKeywordHits": [
+        "pays tiers",
+        "règlementation des changes",
+        "accords avec les pays tiers"
+      ],
+      "normalizedRequirementCandidate": "Pour un OPC ou une société de gestion de pays tiers géré ou commercialisé dans l'UMOA, le dossier doit documenter les autorisations, accords de coopération et, le cas échéant, l'avis relatif à la réglementation des changes.",
+      "applicabilityCandidate": "THIRD_COUNTRY_OPC_OR_MANAGER_IN_UMOA",
+      "products": [
+        "THIRD_COUNTRY_OPC",
+        "THIRD_COUNTRY_MANAGER"
+      ],
+      "documentTypes": [
+        "PROSPECTUS",
+        "MARKETING_AUTHORIZATION_DOSSIER",
+        "REGULATORY_PACK_SELECTION"
+      ],
+      "canonicalFields": [
+        "cross_border.home_country",
+        "cross_border.umoa_authorization",
+        "cross_border.cooperation_agreement",
+        "cross_border.fx_clearance"
+      ],
+      "questionIds": [
+        "Q_THIRD_COUNTRY_STATUS",
+        "Q_UMOA_MARKETING_AUTHORIZATION",
+        "Q_FX_REGULATORY_CLEARANCE"
+      ],
+      "clauseGroupIds": [
+        "CG_CROSS_BORDER_DISTRIBUTION"
+      ],
+      "controlIds": [
+        "RULE_THIRD_COUNTRY_AUTHORIZATION_COMPLETE",
+        "RULE_COOPERATION_AGREEMENT_EVIDENCED",
+        "RULE_FX_CLEARANCE_IF_REQUIRED"
+      ],
+      "evidenceTypes": [
+        "MARKETING_AUTHORIZATION",
+        "COOPERATION_AGREEMENT_REFERENCE",
+        "FX_AUTHORITY_OPINION"
+      ],
+      "outputSectionIds": [
+        "SEC_4_COUNTRY_ARRANGEMENTS",
+        "SYSTEM_ONLY"
+      ],
+      "reviewRoles": [
+        "LEGAL",
+        "COMPLIANCE"
+      ],
+      "circ005RequirementLinks": [
+        "CIRC005_GENERAL_SCOPE",
+        "CIRC005_4_OTHER_MARKETING_STATE_ARRANGEMENTS"
+      ],
+      "status": "EXTRACTED_UNVERIFIED_PENDING_LEGAL_AND_COMPLIANCE_REVIEW",
+      "activation": "FORBIDDEN",
+      "legalReviewStatus": "PENDING",
+      "complianceReviewStatus": "PENDING",
+      "specFile": "regulatory/requirements/inst066-candidates/00_SCOPE_DEFINITIONS.json",
+      "provenance": {
+        "sourceArtifact": "regulatory/materialized/INSTRUCTION_66_CREPMF_2021.pdf",
+        "ocrDerivative": "regulatory/materialized/INSTRUCTION_66_CREPMF_2021.txt",
+        "articleBlock": "regulatory/requirements/INST066_ARTICLE_BLOCKS_V0_1.json",
+        "textQuality": "OCR_EXTRACTED_UNVERIFIED"
+      }
+    },
+    {
+      "id": "INST066_ART002_REQ003",
+      "sourceId": "INSTRUCTION_66_CREPMF_2021",
+      "sourceSha256": "3f964f2f6ab9ce9eb16912ccda13f34b5023a188dfb18fcba7065590c770d396",
+      "articleId": "INST066_ARTICLE_002",
+      "articleNumber": 2,
+      "sourcePages": [
+        6
+      ],
+      "sourceArticleTextSha256": "dbc4d4affb9387c4ab131481c287be894d1f3d87c88600fc8e8a3e1b6dad4927",
+      "sourceTextCandidate": "…es, et s’effectue dans Le cadre des accords avec les pays tiers prévus par Les articles 20 alinéa 6 et 25 de La présente Instruction ; 3- Sociétés de Gestion de pays tiers gérant ou commercialisant des OPC dans l'UMOA, dans le cadre des accords avec les pays tiers prévus par l’article 20 alinéa 6 de la présente Instruction. La présente Instruction ne s’applique pas aux entreprises d'investissement à capital fixe au sens de la Loi Uniforme relative aux entreprises d'investissement à capital fixe. :",
+      "sourceKeywordHits": [
+        "ne s’applique pas",
+        "entreprises d'investissement à capital fixe"
+      ],
+      "normalizedRequirementCandidate": "Les entreprises d'investissement à capital fixe exclues du champ de l'Instruction doivent être détectées et bloquées avant sélection du pack OPC.",
+      "applicabilityCandidate": "FIXED_CAPITAL_INVESTMENT_COMPANY_EXCLUSION",
+      "products": [
+        "FIXED_CAPITAL_INVESTMENT_COMPANY"
+      ],
+      "documentTypes": [
+        "REGULATORY_PACK_SELECTION"
+      ],
+      "canonicalFields": [
+        "fund.legal_form",
+        "regulatory_context.exclusion_reason"
+      ],
+      "questionIds": [
+        "Q_FIXED_CAPITAL_STATUS"
+      ],
+      "clauseGroupIds": [],
+      "controlIds": [
+        "RULE_INSTRUCTION_66_SCOPE_EXCLUSION_BLOCK"
+      ],
+      "evidenceTypes": [
+        "STATUTES",
+        "LEGAL_FORM_EVIDENCE"
+      ],
+      "outputSectionIds": [
+        "SYSTEM_ONLY"
+      ],
+      "reviewRoles": [
+        "LEGAL",
+        "COMPLIANCE"
+      ],
+      "circ005RequirementLinks": [],
+      "status": "EXTRACTED_UNVERIFIED_PENDING_LEGAL_AND_COMPLIANCE_REVIEW",
+      "activation": "FORBIDDEN",
+      "legalReviewStatus": "PENDING",
+      "complianceReviewStatus": "PENDING",
+      "specFile": "regulatory/requirements/inst066-candidates/00_SCOPE_DEFINITIONS.json",
+      "provenance": {
+        "sourceArtifact": "regulatory/materialized/INSTRUCTION_66_CREPMF_2021.pdf",
+        "ocrDerivative": "regulatory/materialized/INSTRUCTION_66_CREPMF_2021.txt",
+        "articleBlock": "regulatory/requirements/INST066_ARTICLE_BLOCKS_V0_1.json",
+        "textQuality": "OCR_EXTRACTED_UNVERIFIED"
+      }
+    },
+    {
+      "id": "INST066_ART003_REQ001",
+      "sourceId": "INSTRUCTION_66_CREPMF_2021",
+      "sourceSha256": "3f964f2f6ab9ce9eb16912ccda13f34b5023a188dfb18fcba7065590c770d396",
+      "articleId": "INST066_ARTICLE_003",
+      "articleNumber": 3,
+      "sourcePages": [
+        6,
+        7
+      ],
+      "sourceArticleTextSha256": "6c67807084ef257554b7ad5bda965b17557b5766e5f7fae2e29e255663903e4b",
+      "sourceTextCandidate": "4- La gestion collective s'effectue au sein d’'OPC regroupant les OPCVM et les FIA. 2- Les OPCVM peuvent revêtir la forme contractuelle de Fonds Communs de Placement (FCP) gérés par une Société de Gestion d’OPC ou la forme statutaire de Société d’Investissement. 3- Les FIA peuvent revêtir la forme contractuelle de Fonds Communs de Placement (FCP) gérés par une Société de Gestion ou la forme statutaire de Société d'investissement ou toutes autres formes précisées dans cette Instruction. \\Q, Avenue Joseph ANOMA _# TEL.: (225) 27 20 21 57 42 / 20 31 56 20 / O1 B.P. 1878 Abidjan 01/Côte d’ivoire ex * 6 Fax: (225) 27 20 33 23 04 Site web : http://www.crepmf.org presidence®crepmf.org CHAPITRE 2 - OBLIGATIONS CONCERNANT LES SOCIETES DE GESTION D'OPC SECTION PREMIÈRE - CONDITIONS D'ACCES",
+      "sourceKeywordHits": [
+        "OPCVM",
+        "FIA",
+        "forme contractuelle",
+        "forme statutaire"
+      ],
+      "normalizedRequirementCandidate": "Le modèle canonique doit distinguer OPCVM et FIA ainsi que leur forme contractuelle de FCP ou leur forme statutaire de Société d'Investissement.",
+      "applicabilityCandidate": "ALL_OPC_PRODUCT_STRUCTURES",
+      "products": [
+        "OPCVM",
+        "FIA",
+        "FCP",
+        "SICAV",
+        "OTHER_INVESTMENT_COMPANY"
+      ],
+      "documentTypes": [
+        "CANONICAL_MODEL",
+        "PROSPECTUS",
+        "FUND_REGULATION",
+        "STATUTES"
+      ],
+      "canonicalFields": [
+        "fund.regulatory_product_type",
+        "fund.legal_form",
+        "fund.has_legal_personality"
+      ],
+      "questionIds": [
+        "Q_REGULATORY_PRODUCT_TYPE",
+        "Q_FUND_LEGAL_FORM"
+      ],
+      "clauseGroupIds": [
+        "CG_FCP_IDENTITY"
+      ],
+      "controlIds": [
+        "RULE_PRODUCT_TYPE_LEGAL_FORM_MATRIX",
+        "RULE_CONSTITUTIVE_DOCUMENT_TYPE_MATCHES_LEGAL_FORM"
+      ],
+      "evidenceTypes": [
+        "FUND_REGULATION",
+        "STATUTES",
+        "FUND_APPROVAL_OR_PROJECT_MANDATE"
+      ],
+      "outputSectionIds": [
+        "SEC_1_1_FCP_DENOMINATION",
+        "SYSTEM_ONLY"
+      ],
+      "reviewRoles": [
+        "LEGAL",
+        "COMPLIANCE"
+      ],
+      "circ005RequirementLinks": [
+        "CIRC005_GENERAL_SCOPE"
+      ],
+      "status": "EXTRACTED_UNVERIFIED_PENDING_LEGAL_AND_COMPLIANCE_REVIEW",
+      "activation": "FORBIDDEN",
+      "legalReviewStatus": "PENDING",
+      "complianceReviewStatus": "PENDING",
+      "specFile": "regulatory/requirements/inst066-candidates/00_SCOPE_DEFINITIONS.json",
+      "provenance": {
+        "sourceArtifact": "regulatory/materialized/INSTRUCTION_66_CREPMF_2021.pdf",
+        "ocrDerivative": "regulatory/materialized/INSTRUCTION_66_CREPMF_2021.txt",
+        "articleBlock": "regulatory/requirements/INST066_ARTICLE_BLOCKS_V0_1.json",
+        "textQuality": "OCR_EXTRACTED_UNVERIFIED"
+      }
+    },
+    {
+      "id": "INST066_ART004_REQ001",
+      "sourceId": "INSTRUCTION_66_CREPMF_2021",
+      "sourceSha256": "3f964f2f6ab9ce9eb16912ccda13f34b5023a188dfb18fcba7065590c770d396",
+      "articleId": "INST066_ARTICLE_004",
+      "articleNumber": 4,
+      "sourcePages": [
+        7,
+        8
+      ],
+      "sourceArticleTextSha256": "1e9e72f7530b7f4f8e1945849df26885f5e8db4c08c1257a21b5d8516e861291",
+      "sourceTextCandidate": "1- L'accès à l’activité des Sociétés de Gestion d’OPC est subordonné à un agrément préalable délivré par le Conseil Régional. 2- Les Sociétés de Gestion d’OPC doivent opter pour l’une des catégories suivantes : - Société de Gestion d'OPCYM ; - Société de Gestion de FCPE ; - Société de Gestion d’OPC à Risque ; -_ Société de Gestion d’OPC de Titrisation de Créances ; - Société de Gestion d’OPC immobilier. 3- Une Société de Gestion d’OPC n’est pas autorisée à cumuler au sein de la même entité juridique Les activités relevant de plusieurs catégories de Sociétés de Gestion d’OPC mentionnées à l’alinéa 2. 4- Par dérogation à l’alinéa 3, une Société de Gestion d’'OPCVM peut gérer des FCPE et/ou des OPC à Risque. 5- Les Fonds Communs de Titrisation de Créances encadrés par l'instruction 43/2010 ne peuvent être gérés que par des Sociétés de Gestion d'OPC de titrisation de créances. 6- Les activités de la Société de Gestion d’OPC doivent se limiter à La gestion d'OPC agréés et/ou enregistrés telles que définies dans sa catégorie et son programme d'activité. L'activité des Sociétés de Gestion d’OPC doit au minimum couvrir les fonctions suivantes : - La gestion de portefeuille ; - [a gestion des risques. 7- La Société de Gestion d’OPC peut exercer d’autres activités à titre complémentaire dans le cadre de la gestion collective d’un OPC, notamment : -_ L’administration : a) Services juridiques et de gestion comptable du Fonds ; b) Demandes de renseignements des clients ; c) Évaluation du portefeuille et détermination de La valeur des parts (y compris les aspects fiscaux) ; d) Contrôle du respect des dispositions réglementaires ; e) Tenue du registre des porteurs de parts ; f) Répartition des revenus ; nu Avenue Joseph ANOMA 01 B.P. 1878 Abidjan 01/Côte d'Ivoire Site web : http: //ww…",
+      "sourceKeywordHits": [
+        "agrément préalable",
+        "catégories",
+        "société de gestion"
+      ],
+      "normalizedRequirementCandidate": "L'accès à l'activité de société de gestion d'OPC est subordonné à un agrément préalable et la catégorie d'agrément doit être enregistrée comme donnée de référence de la société de gestion.",
+      "applicabilityCandidate": "OPC_MANAGEMENT_COMPANY",
+      "products": [
+        "OPCVM",
+        "FCP",
+        "SICAV",
+        "OPCR",
+        "OTHER_OPC"
+      ],
+      "documentTypes": [
+        "MANAGEMENT_COMPANY_PROFILE",
+        "PROSPECTUS"
+      ],
+      "canonicalFields": [
+        "manager.approval_reference",
+        "manager.approval_category",
+        "manager.approval_status"
+      ],
+      "questionIds": [
+        "Q_MANAGER_APPROVAL",
+        "Q_MANAGER_CATEGORY"
+      ],
+      "clauseGroupIds": [
+        "CG_MANAGER_IDENTITY"
+      ],
+      "controlIds": [
+        "RULE_MANAGER_APPROVAL_EVIDENCE_REQUIRED",
+        "RULE_MANAGER_CATEGORY_RECORDED"
+      ],
+      "evidenceTypes": [
+        "MANAGEMENT_COMPANY_APPROVAL",
+        "OFFICIAL_REGISTER_EXTRACT"
+      ],
+      "outputSectionIds": [
+        "SEC_1_SGO_IDENTITY"
+      ],
+      "reviewRoles": [
+        "LEGAL",
+        "COMPLIANCE"
+      ],
+      "circ005RequirementLinks": [
+        "CIRC005_1_3_SGO_OTHER_FUNDS"
+      ],
+      "status": "EXTRACTED_UNVERIFIED_PENDING_LEGAL_AND_COMPLIANCE_REVIEW",
+      "activation": "FORBIDDEN",
+      "legalReviewStatus": "PENDING",
+      "complianceReviewStatus": "PENDING",
+      "specFile": "regulatory/requirements/inst066-candidates/08_MANAGER_COMPANY_CORE.json",
+      "provenance": {
+        "sourceArtifact": "regulatory/materialized/INSTRUCTION_66_CREPMF_2021.pdf",
+        "ocrDerivative": "regulatory/materialized/INSTRUCTION_66_CREPMF_2021.txt",
+        "articleBlock": "regulatory/requirements/INST066_ARTICLE_BLOCKS_V0_1.json",
+        "textQuality": "OCR_EXTRACTED_UNVERIFIED"
+      }
+    },
+    {
+      "id": "INST066_ART004_REQ002",
+      "sourceId": "INSTRUCTION_66_CREPMF_2021",
+      "sourceSha256": "3f964f2f6ab9ce9eb16912ccda13f34b5023a188dfb18fcba7065590c770d396",
+      "articleId": "INST066_ARTICLE_004",
+      "articleNumber": 4,
+      "sourcePages": [
+        7,
+        8
+      ],
+      "sourceArticleTextSha256": "1e9e72f7530b7f4f8e1945849df26885f5e8db4c08c1257a21b5d8516e861291",
+      "sourceTextCandidate": "1- L'accès à l’activité des Sociétés de Gestion d’OPC est subordonné à un agrément préalable délivré par le Conseil Régional. 2- Les Sociétés de Gestion d’OPC doivent opter pour l’une des catégories suivantes : - Société de Gestion d'OPCYM ; - Société de Gestion de FCPE ; - Société de Gestion d’OPC à Risque ; -_ Société de Gestion d’OPC de Titrisation de Créances ; - Société de Gestion d’OPC immobilier. 3- Une Société de Gestion d’OPC n’est pas autorisée à cumuler au sein de la même entité juridique Les activités relevant de plusieurs catégories de Sociétés de Gestion d’OPC mentionnées à l’alinéa 2. 4- Par dérogation à l’alinéa 3, une Société de Gestion d’'OPCVM peut gérer des FCPE et/ou des OPC à Risque. 5- Les Fonds Communs de Titrisation de Créances encadrés par l'instruction 43/2010 ne peuvent être gérés que par des Sociétés de Gestion d'OPC de titrisation de créances. 6- Les activités de la Société de Gestion d’OPC doivent se limiter à La gestion d'OPC agréés et/ou enregistrés telles que définies dans sa catégorie et son programme d'activité. L'activité des Sociétés de Gestion d’OPC doit au minimum couvrir les fonctions suivantes : - La gestion de portefeuille ; - [a gestion des risques. 7- La Société de Gestion d’OPC peut exercer d’autres activités à titre complémentaire dans le cadre de la gestion collective d’un OPC, notamment : -_ L’administration : a) Services juridiques et de gestion comptable du Fonds ; b) Demandes de renseignements des clients ; c) Évaluation du portefeuille et détermination de La valeur des parts (y compris les aspects fiscaux) ; d) Contrôle du respect des dispositions réglementaires ; e) Tenue du registre des porteurs de parts ; f) Répartition des revenus ; nu Avenue Joseph ANOMA 01 B.P. 1878 Abidjan 01/Côte d'Ivoire Site web : http: //ww…",
+      "sourceKeywordHits": [
+        "catégorie",
+        "cumul",
+        "dérogation"
+      ],
+      "normalizedRequirementCandidate": "La catégorie d'activité de la société de gestion et les éventuelles dérogations autorisées doivent être cohérentes avec les types d'OPC effectivement gérés.",
+      "applicabilityCandidate": "OPC_MANAGEMENT_COMPANY",
+      "products": [
+        "OPCVM",
+        "FCP",
+        "SICAV",
+        "OPCR",
+        "OTHER_OPC"
+      ],
+      "documentTypes": [
+        "MANAGEMENT_COMPANY_PROFILE",
+        "INTERNAL_CONTROL_REPORT"
+      ],
+      "canonicalFields": [
+        "manager.approval_category",
+        "manager.authorized_product_types[]",
+        "manager.managed_funds[]"
+      ],
+      "questionIds": [
+        "Q_MANAGER_AUTHORIZED_PRODUCTS",
+        "Q_MANAGER_OTHER_FUNDS"
+      ],
+      "clauseGroupIds": [],
+      "controlIds": [
+        "RULE_MANAGER_PRODUCT_SCOPE_CONSISTENCY"
+      ],
+      "evidenceTypes": [
+        "MANAGEMENT_COMPANY_APPROVAL",
+        "MANAGED_FUNDS_REGISTER"
+      ],
+      "outputSectionIds": [
+        "SEC_1_SGO_OTHER_FUNDS",
+        "SYSTEM_ONLY"
+      ],
+      "reviewRoles": [
+        "LEGAL",
+        "COMPLIANCE"
+      ],
+      "circ005RequirementLinks": [
+        "CIRC005_1_3_SGO_OTHER_FUNDS"
+      ],
+      "status": "EXTRACTED_UNVERIFIED_PENDING_LEGAL_AND_COMPLIANCE_REVIEW",
+      "activation": "FORBIDDEN",
+      "legalReviewStatus": "PENDING",
+      "complianceReviewStatus": "PENDING",
+      "specFile": "regulatory/requirements/inst066-candidates/08_MANAGER_COMPANY_CORE.json",
+      "provenance": {
+        "sourceArtifact": "regulatory/materialized/INSTRUCTION_66_CREPMF_2021.pdf",
+        "ocrDerivative": "regulatory/materialized/INSTRUCTION_66_CREPMF_2021.txt",
+        "articleBlock": "regulatory/requirements/INST066_ARTICLE_BLOCKS_V0_1.json",
+        "textQuality": "OCR_EXTRACTED_UNVERIFIED"
+      }
+    },
+    {
+      "id": "INST066_ART004_REQ003",
+      "sourceId": "INSTRUCTION_66_CREPMF_2021",
+      "sourceSha256": "3f964f2f6ab9ce9eb16912ccda13f34b5023a188dfb18fcba7065590c770d396",
+      "articleId": "INST066_ARTICLE_004",
+      "articleNumber": 4,
+      "sourcePages": [
+        7,
+        8
+      ],
+      "sourceArticleTextSha256": "1e9e72f7530b7f4f8e1945849df26885f5e8db4c08c1257a21b5d8516e861291",
+      "sourceTextCandidate": "…uction 43/2010 ne peuvent être gérés que par des Sociétés de Gestion d'OPC de titrisation de créances. 6- Les activités de la Société de Gestion d’OPC doivent se limiter à La gestion d'OPC agréés et/ou enregistrés telles que définies dans sa catégorie et son programme d'activité. L'activité des Sociétés de Gestion d’OPC doit au minimum couvrir les fonctions suivantes : - La gestion de portefeuille ; - [a gestion des risques. 7- La Société de Gestion d’OPC peut exercer d’autres activités à titre complémentaire dans le cadre de la gestion collective d’un OPC, notamment : -_ L’administration : a) Services juridiques et de gestion comptable du Fonds ; b) Demandes de renseignements des clients ; c) Évaluation du portefeuille et détermination de La valeur des parts (y compris les aspects fiscaux) ; d) Contrôle du respect des dispositions réglementaires ; e) Tenue du registre des porteurs de parts ; f) Répartition des revenus ; nu Avenue Joseph ANOMA 01 B.P. 1878 Abidjan 01/Côte d'Ivoire Site web : http: //www,crepmf.org pi 7 _ÀE TEL.: (225) 27 20 21 57 42 / 20 31 56 20 Fax: (225) 27 20 33 23 04 presidence@crepmf.org g) Émissions et rachats de parts ; h) Dénouements des contrats (y compris envoi des certificats) ; i) Enregistrement et conservation des opérations. - La commercialisation. - Les services auxiliaires : a) Conseils en investissement ; b) Garde et administration des parts d’autres Organismes de Placement Collectif dont elle n’assure pas la gestion. Une Circulaire du Conseil Régional définit Les limites dans lesquelles les services auxiliaires peuvent être fournies par Les Sociétés de Gestion d’OPC. Ces services restent accessoires à l’activité principale.",
+      "sourceKeywordHits": [
+        "gestion de portefeuille",
+        "gestion des risques",
+        "fonctions"
+      ],
+      "normalizedRequirementCandidate": "Le dispositif organisationnel de la société de gestion doit identifier au minimum les fonctions de gestion de portefeuille et de gestion des risques, sans présumer de leur conformité avant revue.",
+      "applicabilityCandidate": "OPC_MANAGEMENT_COMPANY",
+      "products": [
+        "OPCVM",
+        "FCP",
+        "SICAV",
+        "OPCR",
+        "OTHER_OPC"
+      ],
+      "documentTypes": [
+        "MANAGEMENT_COMPANY_PROFILE",
+        "ORGANIZATION_CHART",
+        "PROSPECTUS"
+      ],
+      "canonicalFields": [
+        "manager.functions[]",
+        "manager.governance_members[]",
+        "manager.risk_management_function"
+      ],
+      "questionIds": [
+        "Q_MANAGER_CORE_FUNCTIONS",
+        "Q_MANAGER_GOVERNANCE"
+      ],
+      "clauseGroupIds": [
+        "CG_MANAGER_GOVERNANCE"
+      ],
+      "controlIds": [
+        "RULE_MANAGER_CORE_FUNCTIONS_IDENTIFIED"
+      ],
+      "evidenceTypes": [
+        "ORGANIZATION_CHART",
+        "FUNCTION_DESCRIPTIONS",
+        "RISK_MANAGEMENT_POLICY"
+      ],
+      "outputSectionIds": [
+        "SEC_1_8_SGO_GOVERNANCE"
+      ],
+      "reviewRoles": [
+        "RISK",
+        "LEGAL",
+        "COMPLIANCE"
+      ],
+      "circ005RequirementLinks": [
+        "CIRC005_1_8_A_SGO_GOVERNANCE_MEMBERS"
+      ],
+      "status": "EXTRACTED_UNVERIFIED_PENDING_LEGAL_AND_COMPLIANCE_REVIEW",
+      "activation": "FORBIDDEN",
+      "legalReviewStatus": "PENDING",
+      "complianceReviewStatus": "PENDING",
+      "specFile": "regulatory/requirements/inst066-candidates/08_MANAGER_COMPANY_CORE.json",
+      "provenance": {
+        "sourceArtifact": "regulatory/materialized/INSTRUCTION_66_CREPMF_2021.pdf",
+        "ocrDerivative": "regulatory/materialized/INSTRUCTION_66_CREPMF_2021.txt",
+        "articleBlock": "regulatory/requirements/INST066_ARTICLE_BLOCKS_V0_1.json",
+        "textQuality": "OCR_EXTRACTED_UNVERIFIED"
+      }
+    },
+    {
+      "id": "INST066_ART004_REQ004",
+      "sourceId": "INSTRUCTION_66_CREPMF_2021",
+      "sourceSha256": "3f964f2f6ab9ce9eb16912ccda13f34b5023a188dfb18fcba7065590c770d396",
+      "articleId": "INST066_ARTICLE_004",
+      "articleNumber": 4,
+      "sourcePages": [
+        7,
+        8
+      ],
+      "sourceArticleTextSha256": "1e9e72f7530b7f4f8e1945849df26885f5e8db4c08c1257a21b5d8516e861291",
+      "sourceTextCandidate": "…es dans sa catégorie et son programme d'activité. L'activité des Sociétés de Gestion d’OPC doit au minimum couvrir les fonctions suivantes : - La gestion de portefeuille ; - [a gestion des risques. 7- La Société de Gestion d’OPC peut exercer d’autres activités à titre complémentaire dans le cadre de la gestion collective d’un OPC, notamment : -_ L’administration : a) Services juridiques et de gestion comptable du Fonds ; b) Demandes de renseignements des clients ; c) Évaluation du portefeuille et détermination de La valeur des parts (y compris les aspects fiscaux) ; d) Contrôle du respect des dispositions réglementaires ; e) Tenue du registre des porteurs de parts ; f) Répartition des revenus ; nu Avenue Joseph ANOMA 01 B.P. 1878 Abidjan 01/Côte d'Ivoire Site web : http: //www,crepmf.org pi 7 _ÀE TEL.: (225) 27 20 21 57 42 / 20 31 56 20 Fax: (225) 27 20 33 23 04 presidence@crepmf.org g) Émissions et rachats de parts ; h) Dénouements des contrats (y compris envoi des certificats) ; i) Enregistrement et conservation des opérations. - La commercialisation. - Les services auxiliaires : a) Conseils en investissement ; b) Garde et administration des parts d’autres Organismes de Placement Collectif dont elle n’assure pas la gestion. Une Circulaire du Conseil Régional définit Les limites dans lesquelles les services auxiliaires peuvent être fournies par Les Sociétés de Gestion d’OPC. Ces services restent accessoires à l’activité principale.",
+      "sourceKeywordHits": [
+        "administration",
+        "commercialisation"
+      ],
+      "normalizedRequirementCandidate": "Les activités complémentaires exercées par la société de gestion doivent être identifiées et rapprochées de son programme d'activité et de son périmètre d'agrément.",
+      "applicabilityCandidate": "OPC_MANAGEMENT_COMPANY",
+      "products": [
+        "OPCVM",
+        "FCP",
+        "SICAV",
+        "OPCR",
+        "OTHER_OPC"
+      ],
+      "documentTypes": [
+        "MANAGEMENT_COMPANY_PROFILE",
+        "PROSPECTUS"
+      ],
+      "canonicalFields": [
+        "manager.external_activities[]",
+        "manager.complementary_activities[]",
+        "manager.activity_program_reference"
+      ],
+      "questionIds": [
+        "Q_MANAGER_EXTERNAL_ACTIVITIES",
+        "Q_MANAGER_COMPLEMENTARY_ACTIVITIES"
+      ],
+      "clauseGroupIds": [
+        "CG_MANAGER_ACTIVITIES"
+      ],
+      "controlIds": [
+        "RULE_MANAGER_ACTIVITIES_WITHIN_APPROVED_SCOPE"
+      ],
+      "evidenceTypes": [
+        "ACTIVITY_PROGRAM",
+        "MANAGEMENT_COMPANY_APPROVAL"
+      ],
+      "outputSectionIds": [
+        "SEC_1_8_SGO_EXTERNAL_ACTIVITIES"
+      ],
+      "reviewRoles": [
+        "LEGAL",
+        "COMPLIANCE"
+      ],
+      "circ005RequirementLinks": [
+        "CIRC005_1_8_B_SGO_EXTERNAL_ACTIVITIES"
+      ],
+      "status": "EXTRACTED_UNVERIFIED_PENDING_LEGAL_AND_COMPLIANCE_REVIEW",
+      "activation": "FORBIDDEN",
+      "legalReviewStatus": "PENDING",
+      "complianceReviewStatus": "PENDING",
+      "specFile": "regulatory/requirements/inst066-candidates/08_MANAGER_COMPANY_CORE.json",
+      "provenance": {
+        "sourceArtifact": "regulatory/materialized/INSTRUCTION_66_CREPMF_2021.pdf",
+        "ocrDerivative": "regulatory/materialized/INSTRUCTION_66_CREPMF_2021.txt",
+        "articleBlock": "regulatory/requirements/INST066_ARTICLE_BLOCKS_V0_1.json",
+        "textQuality": "OCR_EXTRACTED_UNVERIFIED"
+      }
+    },
+    {
+      "id": "INST066_ART005_REQ001",
+      "sourceId": "INSTRUCTION_66_CREPMF_2021",
+      "sourceSha256": "3f964f2f6ab9ce9eb16912ccda13f34b5023a188dfb18fcba7065590c770d396",
+      "articleId": "INST066_ARTICLE_005",
+      "articleNumber": 5,
+      "sourcePages": [
+        8,
+        9,
+        10
+      ],
+      "sourceArticleTextSha256": "740a8b628332de7f2699a26ac5fb55e396832da2806c7d0602ff8fc5a75ad81d",
+      "sourceTextCandidate": "1- Le Conseil Régional n’accorde l’agrément à une Société de Gestion d’OPC que si Les conditions suivantes sont remplies : a) la Société de Gestion d’OPC doit être constituée sous la forme de société anonyme avec un capital social initial minimal de 250 millions de FCFA, outre les éléments suivants dont il est tenu compte : i) lorsque la valeur des portefeuilles de la Société de Gestion d’OPC excède vingt-cinq (25) milliards de FCFA, la Société de Gestion d’OPC doit fournir un montant supplémentaire de capital qui est égal à 0,02 % du montant de la valeur des portefeuilles excédant vingt-cinq (25) milliards de FCFA. Toutefois, Le total requis du montant supplémentaire ne peut pas dépasser cent vingt-cinq (125) millions de FCFA ; ii) aux fins du présent alinéa, doivent être considérés comme les portefeuilles relevant d’une Société de Gestion d’OPC, les portefeuilles suivants : - les Fonds Communs de Placement gérés par La Société de Gestion d'OPC ; - Les Sociétés d'investissement pour lesquelles La Société de Gestion d'OPC est La Société de Gestion d'OPC désignée ; - les autres Organismes de Placement Collectif gérés par la Société de Gestion d’OPC ; ii) indépendamment du montant sur lequel portent ces exigences, les fonds propres de la Société de Gestion d'OPC ne doivent jamais être inférieurs à 20 % des frais généraux de l’année précédente. Une Circulaire du Conseil Régional précise les éléments définissant les frais généraux ; b) le capital social doit être intégralement libéré ; Jd, Avenue Joseph ANOMA D: TEL.: (225) 27 20 21 57 42 / 20 31 56 20 01 B.P. 1878 Abidjan 01/Côte d'Ivoire 8 Fax: (225) 27 20 33 23 04 Site web : http://www.crepmf.org pa presidence@crepmf.org c) les personnes qui dirigent la Société de Gestion d’OPC doivent également remplir Les conditions d’…",
+      "sourceKeywordHits": [
+        "capital social",
+        "fonds propres",
+        "société anonyme"
+      ],
+      "normalizedRequirementCandidate": "La forme juridique, le capital social et les exigences complémentaires de fonds propres de la société de gestion doivent être enregistrés avec leurs preuves officielles ; les seuils OCR ne doivent pas devenir des contrôles actifs avant revue juridique et conformité.",
+      "applicabilityCandidate": "OPC_MANAGEMENT_COMPANY",
+      "products": [
+        "OPCVM",
+        "FCP",
+        "SICAV",
+        "OPCR",
+        "OTHER_OPC"
+      ],
+      "documentTypes": [
+        "MANAGEMENT_COMPANY_PROFILE",
+        "PROSPECTUS"
+      ],
+      "canonicalFields": [
+        "manager.legal_form",
+        "manager.share_capital",
+        "manager.additional_capital_requirements",
+        "manager.capital_currency"
+      ],
+      "questionIds": [
+        "Q_MANAGER_LEGAL_FORM",
+        "Q_MANAGER_CAPITAL"
+      ],
+      "clauseGroupIds": [
+        "CG_MANAGER_IDENTITY"
+      ],
+      "controlIds": [
+        "RULE_MANAGER_CAPITAL_SOURCE_REVIEW_REQUIRED"
+      ],
+      "evidenceTypes": [
+        "ARTICLES_OF_ASSOCIATION",
+        "CAPITAL_CERTIFICATE",
+        "MANAGEMENT_COMPANY_APPROVAL"
+      ],
+      "outputSectionIds": [
+        "SEC_1_SGO_IDENTITY"
+      ],
+      "reviewRoles": [
+        "LEGAL",
+        "COMPLIANCE"
+      ],
+      "circ005RequirementLinks": [],
+      "status": "EXTRACTED_UNVERIFIED_PENDING_LEGAL_AND_COMPLIANCE_REVIEW",
+      "activation": "FORBIDDEN",
+      "legalReviewStatus": "PENDING",
+      "complianceReviewStatus": "PENDING",
+      "specFile": "regulatory/requirements/inst066-candidates/08_MANAGER_COMPANY_CORE.json",
+      "provenance": {
+        "sourceArtifact": "regulatory/materialized/INSTRUCTION_66_CREPMF_2021.pdf",
+        "ocrDerivative": "regulatory/materialized/INSTRUCTION_66_CREPMF_2021.txt",
+        "articleBlock": "regulatory/requirements/INST066_ARTICLE_BLOCKS_V0_1.json",
+        "textQuality": "OCR_EXTRACTED_UNVERIFIED"
+      }
+    },
+    {
+      "id": "INST066_ART005_REQ002",
+      "sourceId": "INSTRUCTION_66_CREPMF_2021",
+      "sourceSha256": "3f964f2f6ab9ce9eb16912ccda13f34b5023a188dfb18fcba7065590c770d396",
+      "articleId": "INST066_ARTICLE_005",
+      "articleNumber": 5,
+      "sourcePages": [
+        8,
+        9,
+        10
+      ],
+      "sourceArticleTextSha256": "740a8b628332de7f2699a26ac5fb55e396832da2806c7d0602ff8fc5a75ad81d",
+      "sourceTextCandidate": "…leur succédant dans leurs fonctions, doivent être notifiées sans délai au Conseil Régional et La conduite de l’activité de la Société de Gestion d’OPC doit être déterminée par au moins deux personnes remplissant ces conditions ; d) la demande d’agrément est accompagnée d’un programme d'activité dans lequel est indiquée, au moins, la structure de l’organisation de la Société de Gestion d’'OPC ; et e) l'administration centrale et le siège statutaire de la Société de Gestion d’OPC sont situés dans le même État de l’Union. Une circulaire du Conseil Régional précise La liste des documents et informations ainsi que Le contenu et La forme du programme d'activité visé à l’alinéa 1 point d. Lorsque des liens étroîts existent entre la Société de Gestion d’OPC et d’autres personnes physiques ou morales, la Société de Gestion d’OPC doit fournir des garanties suffisantes que ces liens étroits ne vont pas entraver Le bon exercice de sa mission. Le Conseil Régional peut refuser l’agrément si les dispositions législatives, réglementaires ou administratives d’un pays tiers dont relèvent une ou plusieurs personnes physiques ou morales avec lesquelles la Société de Gestion d’OPC entretient des liens étroits, ou des difficultés tenant à leur application, entravent Le bon exercice de sa mission. Les Sociétés de Gestion d'OPC communiquent toutes les informations exigées par Le Conseil Régional à cette fin. Le délai pour l'octroi d'agrément d’une Société de Gestion d’OPC ne peut être supérieur au délai mentionné dans une Instruction du Conseil Régional. Ce délai ne court qu’à compter de la réception d’une demande complète. Le refus d'agrément est motivé par le Conseil Régional. La délivrance de l’agrément à une Société de Gestion d'OPC est soumise à l’appréciation par le Conseil Régional des …",
+      "sourceKeywordHits": [
+        "organisation",
+        "siège statutaire",
+        "administration centrale",
+        "liens étroits"
+      ],
+      "normalizedRequirementCandidate": "La gouvernance, l'organisation, le siège statutaire, l'administration centrale et les liens étroits de la société de gestion doivent être documentés et vérifiables à partir de preuves officielles.",
+      "applicabilityCandidate": "OPC_MANAGEMENT_COMPANY",
+      "products": [
+        "OPCVM",
+        "FCP",
+        "SICAV",
+        "OPCR",
+        "OTHER_OPC"
+      ],
+      "documentTypes": [
+        "MANAGEMENT_COMPANY_PROFILE",
+        "PROSPECTUS",
+        "INTERNAL_CONTROL_REPORT"
+      ],
+      "canonicalFields": [
+        "manager.governance_members[]",
+        "manager.registered_office",
+        "manager.central_administration",
+        "manager.close_links[]",
+        "manager.organization_structure"
+      ],
+      "questionIds": [
+        "Q_MANAGER_GOVERNANCE",
+        "Q_MANAGER_REGISTERED_OFFICE",
+        "Q_MANAGER_CLOSE_LINKS"
+      ],
+      "clauseGroupIds": [
+        "CG_MANAGER_GOVERNANCE"
+      ],
+      "controlIds": [
+        "RULE_MANAGER_GOVERNANCE_EVIDENCE_REQUIRED",
+        "RULE_MANAGER_OFFICE_AND_CENTRAL_ADMIN_RECORDED"
+      ],
+      "evidenceTypes": [
+        "ORGANIZATION_CHART",
+        "CORPORATE_REGISTER_EXTRACT",
+        "GOVERNANCE_REGISTER",
+        "CLOSE_LINKS_DECLARATION"
+      ],
+      "outputSectionIds": [
+        "SEC_1_8_SGO_GOVERNANCE",
+        "SYSTEM_ONLY"
+      ],
+      "reviewRoles": [
+        "LEGAL",
+        "COMPLIANCE"
+      ],
+      "circ005RequirementLinks": [
+        "CIRC005_1_8_A_SGO_GOVERNANCE_MEMBERS"
+      ],
+      "status": "EXTRACTED_UNVERIFIED_PENDING_LEGAL_AND_COMPLIANCE_REVIEW",
+      "activation": "FORBIDDEN",
+      "legalReviewStatus": "PENDING",
+      "complianceReviewStatus": "PENDING",
+      "specFile": "regulatory/requirements/inst066-candidates/08_MANAGER_COMPANY_CORE.json",
+      "provenance": {
+        "sourceArtifact": "regulatory/materialized/INSTRUCTION_66_CREPMF_2021.pdf",
+        "ocrDerivative": "regulatory/materialized/INSTRUCTION_66_CREPMF_2021.txt",
+        "articleBlock": "regulatory/requirements/INST066_ARTICLE_BLOCKS_V0_1.json",
+        "textQuality": "OCR_EXTRACTED_UNVERIFIED"
+      }
+    },
     {
       "id": "INST066_ART014_REQ001",
       "sourceId": "INSTRUCTION_66_CREPMF_2021",
@@ -402,6 +1349,883 @@
       "legalReviewStatus": "PENDING",
       "complianceReviewStatus": "PENDING",
       "specFile": "regulatory/requirements/inst066-candidates/01_GOVERNANCE_APPROVAL.json",
+      "provenance": {
+        "sourceArtifact": "regulatory/materialized/INSTRUCTION_66_CREPMF_2021.pdf",
+        "ocrDerivative": "regulatory/materialized/INSTRUCTION_66_CREPMF_2021.txt",
+        "articleBlock": "regulatory/requirements/INST066_ARTICLE_BLOCKS_V0_1.json",
+        "textQuality": "OCR_EXTRACTED_UNVERIFIED"
+      }
+    },
+    {
+      "id": "INST066_ART020_REQ001",
+      "sourceId": "INSTRUCTION_66_CREPMF_2021",
+      "sourceSha256": "3f964f2f6ab9ce9eb16912ccda13f34b5023a188dfb18fcba7065590c770d396",
+      "articleId": "INST066_ARTICLE_020",
+      "articleNumber": 20,
+      "sourcePages": [
+        23,
+        24
+      ],
+      "sourceArticleTextSha256": "ab238a51ed48f969622328b945889e8ea7d2130461c70f2b8e8b24bd6886f86d",
+      "sourceTextCandidate": "1. Pour chaque OPC qu'elle gère, la Société de Gestion d’OPC veille à ce qu’un seul et unique Dépositaire soit désigné conformément au présent article. La désignation du Dépositaire est matérialisée par un contrat écrit, Ce contrat régit notamment Le flux des informations considérées comme nécessaires pour permettre au Dépositaire de remplir ses fonctions pour l’OPC dont il a été désigné Dépositaire. Sauf exception prévue dans la réglementation en vigueur, Le Dépositaire est : a) une Société de Gestion et d’Intermédiation (SGI) ayant son siège statutaire dans un Etat membre de l’Union soumise aux exigences de fonds propres conformément à la règlementation du marché financier régional de l’UMOA ; b) un établissement de crédit agréé par le Conseil Régional en qualité de Teneur de Compte - Conservateur et ayant son siège statutaire dans l’Union. Pour les OPC de pays tiers gérés ou commercialisés dans l’'UMOA, et sans préjudice de l’alinéa 5 point b) ci-après, Le Dépositaire peut également être un établissement de crédit ou toute autre entité de même nature que les entités visées aux points a) et b) du présent alinéa, pour autant que les conditions de l'alinéa 6, point b) ci-après, soient remplies. 4. Pour éviter les conflits d'intérêts entre le Dépositaire, La Société de Gestion et/ou les OPC et/ou ses investisseurs : a) une Société de Gestion d’OPC n’agit pas en tant que Dépositaire ; Avenue Joseph ANOMA TEL,: (225) 27 20 21 57 42 / 20 31 56 20 A 01 B.P. 1878 Abidjan 01/Côte d’ivoire 23 ne Fax: (225) 27 20 33 23 04 Site web : http://www.crepmf.org pi, presidence@crepmf.org b) un courtier principal agissant comme contrepartie à L’OPC, n’agit pas en tant que Dépositaire pour cet OPC, sauf s’il a séparé, sur les plans fonctionnel et hiérarchique, l’exécution de ses fonctions…",
+      "sourceKeywordHits": [
+        "un seul et unique Dépositaire",
+        "soit désigné"
+      ],
+      "normalizedRequirementCandidate": "Chaque OPC doit disposer d'un seul et unique dépositaire désigné, sans coexistence de plusieurs dépositaires pour le même véhicule.",
+      "applicabilityCandidate": "EACH_OPC",
+      "products": [
+        "OPCVM",
+        "FIA",
+        "FCP",
+        "SICAV",
+        "OPCR",
+        "OTHER_OPC"
+      ],
+      "documentTypes": [
+        "PROSPECTUS",
+        "FUND_REGULATION",
+        "DEPOSITARY_AGREEMENT"
+      ],
+      "canonicalFields": [
+        "depositary.organization_id",
+        "depositary.is_sole_depositary",
+        "depositary.appointment_date"
+      ],
+      "questionIds": [
+        "Q_SELECT_DEPOSITARY"
+      ],
+      "clauseGroupIds": [
+        "CG_DEPOSITARY_IDENTITY"
+      ],
+      "controlIds": [
+        "RULE_DEPOSITARY_REQUIRED",
+        "RULE_SINGLE_DEPOSITARY_PER_FUND"
+      ],
+      "evidenceTypes": [
+        "DEPOSITARY_APPROVAL",
+        "DEPOSITARY_AGREEMENT",
+        "FUND_APPROVAL_OR_PROJECT_MANDATE"
+      ],
+      "outputSectionIds": [
+        "SEC_2_DEPOSITARY"
+      ],
+      "reviewRoles": [
+        "LEGAL",
+        "COMPLIANCE"
+      ],
+      "circ005RequirementLinks": [
+        "CIRC005_2_1_DEPOSITARY_IDENTITY"
+      ],
+      "status": "EXTRACTED_UNVERIFIED_PENDING_LEGAL_AND_COMPLIANCE_REVIEW",
+      "activation": "FORBIDDEN",
+      "legalReviewStatus": "PENDING",
+      "complianceReviewStatus": "PENDING",
+      "specFile": "regulatory/requirements/inst066-candidates/05_DEPOSITARY_CUSTODY.json",
+      "provenance": {
+        "sourceArtifact": "regulatory/materialized/INSTRUCTION_66_CREPMF_2021.pdf",
+        "ocrDerivative": "regulatory/materialized/INSTRUCTION_66_CREPMF_2021.txt",
+        "articleBlock": "regulatory/requirements/INST066_ARTICLE_BLOCKS_V0_1.json",
+        "textQuality": "OCR_EXTRACTED_UNVERIFIED"
+      }
+    },
+    {
+      "id": "INST066_ART020_REQ002",
+      "sourceId": "INSTRUCTION_66_CREPMF_2021",
+      "sourceSha256": "3f964f2f6ab9ce9eb16912ccda13f34b5023a188dfb18fcba7065590c770d396",
+      "articleId": "INST066_ARTICLE_020",
+      "articleNumber": 20,
+      "sourcePages": [
+        23,
+        24
+      ],
+      "sourceArticleTextSha256": "ab238a51ed48f969622328b945889e8ea7d2130461c70f2b8e8b24bd6886f86d",
+      "sourceTextCandidate": "1. Pour chaque OPC qu'elle gère, la Société de Gestion d’OPC veille à ce qu’un seul et unique Dépositaire soit désigné conformément au présent article. La désignation du Dépositaire est matérialisée par un contrat écrit, Ce contrat régit notamment Le flux des informations considérées comme nécessaires pour permettre au Dépositaire de remplir ses fonctions pour l’OPC dont il a été désigné Dépositaire. Sauf exception prévue dans la réglementation en vigueur, Le Dépositaire est : a) une Société de Gestion et d’Intermédiation (SGI) ayant son siège statutaire dans un Etat membre de l’Union soumise aux exigences de fonds propres conformément à la règlementation du marché financier régional de l’UMOA ; b) un établissement de crédit agréé par le Conseil Régional en qualité de Teneur de Compte - Conservateur et ayant son siège statutaire dans l’Union. Pour les OPC de pays tiers gérés ou commercialisés dans l’'UMOA, et sans préjudice de l’alinéa 5 point b) ci-après, Le Dépositaire peut également être un établissement de crédit ou toute autre entité de même nature que les entités visées aux points a) et b) du présent alinéa, pour autant que les conditions de l'alinéa 6, point b) ci-après, soient remplies. 4. Pour éviter les conflits d'intérêts entre le Dépositaire, La Société de Gestion et/ou les OPC et/ou ses investisseurs : a) une Société de Gestion d’OPC n’agit pas en tant que Dépositaire ; Avenue Joseph ANOMA TEL,: (225) 27 20 21 57 42 / 20 31 56 20 A 01 B.P. 1878 Abidjan 01/Côte d’ivoire 23 ne Fax: (225) 27 20 33 23 04 Site web : http://www.crepmf.org pi, presidence@crepmf.org b) un courtier principal agissant comme contrepartie à L’OPC, n’agit pas en tant que Dépositaire pour cet OPC, sauf s’il a séparé, sur les plans fonctionnel et hiérarchique, l’exécution de ses fonctions…",
+      "sourceKeywordHits": [
+        "contrat écrit",
+        "flux des informations"
+      ],
+      "normalizedRequirementCandidate": "La désignation du dépositaire doit être matérialisée par un contrat écrit décrivant notamment les flux d'information nécessaires à l'exercice de ses missions.",
+      "applicabilityCandidate": "EACH_OPC_DEPOSITARY_APPOINTMENT",
+      "products": [
+        "OPCVM",
+        "FIA",
+        "FCP",
+        "SICAV",
+        "OPCR",
+        "OTHER_OPC"
+      ],
+      "documentTypes": [
+        "DEPOSITARY_AGREEMENT",
+        "PROSPECTUS"
+      ],
+      "canonicalFields": [
+        "depositary.agreement_reference",
+        "depositary.agreement_date",
+        "depositary.information_flows[]"
+      ],
+      "questionIds": [
+        "Q_DEPOSITARY_AGREEMENT",
+        "Q_DEPOSITARY_INFORMATION_FLOWS"
+      ],
+      "clauseGroupIds": [
+        "CG_DEPOSITARY_APPOINTMENT"
+      ],
+      "controlIds": [
+        "RULE_DEPOSITARY_WRITTEN_AGREEMENT_REQUIRED",
+        "RULE_DEPOSITARY_INFORMATION_FLOWS_DOCUMENTED"
+      ],
+      "evidenceTypes": [
+        "DEPOSITARY_AGREEMENT",
+        "OPERATING_PROCEDURE"
+      ],
+      "outputSectionIds": [
+        "SEC_2_DEPOSITARY",
+        "SYSTEM_ONLY"
+      ],
+      "reviewRoles": [
+        "LEGAL",
+        "COMPLIANCE"
+      ],
+      "circ005RequirementLinks": [
+        "CIRC005_2_1_DEPOSITARY_IDENTITY"
+      ],
+      "status": "EXTRACTED_UNVERIFIED_PENDING_LEGAL_AND_COMPLIANCE_REVIEW",
+      "activation": "FORBIDDEN",
+      "legalReviewStatus": "PENDING",
+      "complianceReviewStatus": "PENDING",
+      "specFile": "regulatory/requirements/inst066-candidates/05_DEPOSITARY_CUSTODY.json",
+      "provenance": {
+        "sourceArtifact": "regulatory/materialized/INSTRUCTION_66_CREPMF_2021.pdf",
+        "ocrDerivative": "regulatory/materialized/INSTRUCTION_66_CREPMF_2021.txt",
+        "articleBlock": "regulatory/requirements/INST066_ARTICLE_BLOCKS_V0_1.json",
+        "textQuality": "OCR_EXTRACTED_UNVERIFIED"
+      }
+    },
+    {
+      "id": "INST066_ART020_REQ003",
+      "sourceId": "INSTRUCTION_66_CREPMF_2021",
+      "sourceSha256": "3f964f2f6ab9ce9eb16912ccda13f34b5023a188dfb18fcba7065590c770d396",
+      "articleId": "INST066_ARTICLE_020",
+      "articleNumber": 20,
+      "sourcePages": [
+        23,
+        24
+      ],
+      "sourceArticleTextSha256": "ab238a51ed48f969622328b945889e8ea7d2130461c70f2b8e8b24bd6886f86d",
+      "sourceTextCandidate": "…ent article. La désignation du Dépositaire est matérialisée par un contrat écrit, Ce contrat régit notamment Le flux des informations considérées comme nécessaires pour permettre au Dépositaire de remplir ses fonctions pour l’OPC dont il a été désigné Dépositaire. Sauf exception prévue dans la réglementation en vigueur, Le Dépositaire est : a) une Société de Gestion et d’Intermédiation (SGI) ayant son siège statutaire dans un Etat membre de l’Union soumise aux exigences de fonds propres conformément à la règlementation du marché financier régional de l’UMOA ; b) un établissement de crédit agréé par le Conseil Régional en qualité de Teneur de Compte - Conservateur et ayant son siège statutaire dans l’Union. Pour les OPC de pays tiers gérés ou commercialisés dans l’'UMOA, et sans préjudice de l’alinéa 5 point b) ci-après, Le Dépositaire peut également être un établissement de crédit ou toute autre entité de même nature que les entités visées aux points a) et b) du présent alinéa, pour autant que les conditions de l'alinéa 6, point b) ci-après, soient remplies. 4. Pour éviter les conflits d'intérêts entre le Dépositaire, La Société de Gestion et/ou les OPC et/ou ses investisseurs : a) une Société de Gestion d’OPC n’agit pas en tant que Dépositaire ; Avenue Joseph ANOMA TEL,: (225) 27 20 21 57 42 / 20 31 56 20 A 01 B.P. 1878 Abidjan 01/Côte d’ivoire 23 ne Fax: (225) 27 20 33 23 04 Site web : http://www.crepmf.org pi, presidence@crepmf.org b) un courtier principal agissant comme contrepartie à L’OPC, n’agit pas en tant que Dépositaire pour cet OPC, sauf s’il a séparé, sur les plans fonctionnel et hiérarchique, l’exécution de ses fonctions de Dépositaire et ses tâches de courtier principal et que les conflits d’intérêts potentiels sont identifiés, gérés, suivis et révélés aux…",
+      "sourceKeywordHits": [
+        "Société de Gestion et d’Intermédiation",
+        "établissement de crédit agréé",
+        "siège statutaire"
+      ],
+      "normalizedRequirementCandidate": "L'éligibilité du dépositaire doit être vérifiée au regard de sa catégorie réglementaire, de son agrément, de ses exigences de fonds propres et de son lieu d'établissement.",
+      "applicabilityCandidate": "UMOA_OPC_DEPOSITARY",
+      "products": [
+        "OPCVM",
+        "FIA",
+        "FCP",
+        "SICAV",
+        "OPCR",
+        "OTHER_OPC"
+      ],
+      "documentTypes": [
+        "PROSPECTUS",
+        "DEPOSITARY_DUE_DILIGENCE",
+        "APPROVAL_DOSSIER"
+      ],
+      "canonicalFields": [
+        "depositary.entity_type",
+        "depositary.approval_reference",
+        "depositary.registered_office.country",
+        "depositary.prudential_status"
+      ],
+      "questionIds": [
+        "Q_SELECT_DEPOSITARY",
+        "Q_CONFIRM_DEPOSITARY_MAIN_ACTIVITY",
+        "Q_DEPOSITARY_PRUDENTIAL_STATUS"
+      ],
+      "clauseGroupIds": [
+        "CG_DEPOSITARY_IDENTITY",
+        "CG_DEPOSITARY_MAIN_ACTIVITY"
+      ],
+      "controlIds": [
+        "RULE_DEPOSITARY_ELIGIBILITY",
+        "RULE_DEPOSITARY_ESTABLISHMENT_LOCATION"
+      ],
+      "evidenceTypes": [
+        "DEPOSITARY_APPROVAL",
+        "REGULATOR_REGISTER",
+        "PRUDENTIAL_STATUS_EVIDENCE"
+      ],
+      "outputSectionIds": [
+        "SEC_2_DEPOSITARY"
+      ],
+      "reviewRoles": [
+        "LEGAL",
+        "COMPLIANCE"
+      ],
+      "circ005RequirementLinks": [
+        "CIRC005_2_1_DEPOSITARY_IDENTITY",
+        "CIRC005_2_2_DEPOSITARY_MAIN_ACTIVITY"
+      ],
+      "status": "EXTRACTED_UNVERIFIED_PENDING_LEGAL_AND_COMPLIANCE_REVIEW",
+      "activation": "FORBIDDEN",
+      "legalReviewStatus": "PENDING",
+      "complianceReviewStatus": "PENDING",
+      "specFile": "regulatory/requirements/inst066-candidates/05_DEPOSITARY_CUSTODY.json",
+      "provenance": {
+        "sourceArtifact": "regulatory/materialized/INSTRUCTION_66_CREPMF_2021.pdf",
+        "ocrDerivative": "regulatory/materialized/INSTRUCTION_66_CREPMF_2021.txt",
+        "articleBlock": "regulatory/requirements/INST066_ARTICLE_BLOCKS_V0_1.json",
+        "textQuality": "OCR_EXTRACTED_UNVERIFIED"
+      }
+    },
+    {
+      "id": "INST066_ART020_REQ004",
+      "sourceId": "INSTRUCTION_66_CREPMF_2021",
+      "sourceSha256": "3f964f2f6ab9ce9eb16912ccda13f34b5023a188dfb18fcba7065590c770d396",
+      "articleId": "INST066_ARTICLE_020",
+      "articleNumber": 20,
+      "sourcePages": [
+        23,
+        24
+      ],
+      "sourceArticleTextSha256": "ab238a51ed48f969622328b945889e8ea7d2130461c70f2b8e8b24bd6886f86d",
+      "sourceTextCandidate": "…érés ou commercialisés dans l’'UMOA, et sans préjudice de l’alinéa 5 point b) ci-après, Le Dépositaire peut également être un établissement de crédit ou toute autre entité de même nature que les entités visées aux points a) et b) du présent alinéa, pour autant que les conditions de l'alinéa 6, point b) ci-après, soient remplies. 4. Pour éviter les conflits d'intérêts entre le Dépositaire, La Société de Gestion et/ou les OPC et/ou ses investisseurs : a) une Société de Gestion d’OPC n’agit pas en tant que Dépositaire ; Avenue Joseph ANOMA TEL,: (225) 27 20 21 57 42 / 20 31 56 20 A 01 B.P. 1878 Abidjan 01/Côte d’ivoire 23 ne Fax: (225) 27 20 33 23 04 Site web : http://www.crepmf.org pi, presidence@crepmf.org b) un courtier principal agissant comme contrepartie à L’OPC, n’agit pas en tant que Dépositaire pour cet OPC, sauf s’il a séparé, sur les plans fonctionnel et hiérarchique, l’exécution de ses fonctions de Dépositaire et ses tâches de courtier principal et que les conflits d’intérêts potentiels sont identifiés, gérés, suivis et révélés aux investisseurs de l’OPC de manière appropriée. Le Dépositaire est établi dans l’un des lieux suivants : a) pour les OPC de l’Union, dans l’un des États de l’Union ; b) pour Les OPC de pays tiers, dans Le pays tiers dans lequel L'OPC ou la Société de Gestion d’OPC est établi. Sans préjudice des exigences visées à l’alinéa 3, la désignation d’un Dépositaire établi dans un pays tiers reste à tout moment soumise aux conditions suivantes: a) le Conseil Régional a signé un accord définissant Les modalités de coopération et d'échange d’informations avec les autorités compétentes du Dépositaire ; b) le Dépositaire est soumis à une réglementation prudentielle efficace, y compris à des exigences minimales de fonds propres, et à une surveillance…",
+      "sourceKeywordHits": [
+        "conflits d'intérêts",
+        "n’agit pas en tant que Dépositaire",
+        "courtier principal"
+      ],
+      "normalizedRequirementCandidate": "Les incompatibilités et conflits d'intérêts liés au dépositaire doivent être identifiés, notamment l'interdiction pour la société de gestion d'agir comme dépositaire et les conditions applicables au courtier principal.",
+      "applicabilityCandidate": "EACH_OPC_DEPOSITARY_RELATIONSHIP",
+      "products": [
+        "OPCVM",
+        "FIA",
+        "FCP",
+        "SICAV",
+        "OPCR",
+        "OTHER_OPC"
+      ],
+      "documentTypes": [
+        "PROSPECTUS",
+        "CONFLICTS_POLICY",
+        "DEPOSITARY_DUE_DILIGENCE"
+      ],
+      "canonicalFields": [
+        "depositary.conflicts[]",
+        "depositary.is_manager",
+        "depositary.is_prime_broker",
+        "depositary.functional_separation",
+        "depositary.conflict_disclosure"
+      ],
+      "questionIds": [
+        "Q_DEPOSITARY_CONFLICTS",
+        "Q_DEPOSITARY_PRIME_BROKER_STATUS"
+      ],
+      "clauseGroupIds": [
+        "CG_DEPOSITARY_CONFLICTS"
+      ],
+      "controlIds": [
+        "RULE_MANAGER_CANNOT_BE_DEPOSITARY",
+        "RULE_PRIME_BROKER_SEPARATION_AND_DISCLOSURE"
+      ],
+      "evidenceTypes": [
+        "CONFLICTS_OF_INTEREST_POLICY",
+        "ORGANIZATION_CHART",
+        "INVESTOR_CONFLICT_DISCLOSURE"
+      ],
+      "outputSectionIds": [
+        "SEC_2_DEPOSITARY",
+        "SYSTEM_ONLY"
+      ],
+      "reviewRoles": [
+        "LEGAL",
+        "COMPLIANCE"
+      ],
+      "circ005RequirementLinks": [
+        "CIRC005_2_1_DEPOSITARY_IDENTITY"
+      ],
+      "status": "EXTRACTED_UNVERIFIED_PENDING_LEGAL_AND_COMPLIANCE_REVIEW",
+      "activation": "FORBIDDEN",
+      "legalReviewStatus": "PENDING",
+      "complianceReviewStatus": "PENDING",
+      "specFile": "regulatory/requirements/inst066-candidates/05_DEPOSITARY_CUSTODY.json",
+      "provenance": {
+        "sourceArtifact": "regulatory/materialized/INSTRUCTION_66_CREPMF_2021.pdf",
+        "ocrDerivative": "regulatory/materialized/INSTRUCTION_66_CREPMF_2021.txt",
+        "articleBlock": "regulatory/requirements/INST066_ARTICLE_BLOCKS_V0_1.json",
+        "textQuality": "OCR_EXTRACTED_UNVERIFIED"
+      }
+    },
+    {
+      "id": "INST066_ART020_REQ005",
+      "sourceId": "INSTRUCTION_66_CREPMF_2021",
+      "sourceSha256": "3f964f2f6ab9ce9eb16912ccda13f34b5023a188dfb18fcba7065590c770d396",
+      "articleId": "INST066_ARTICLE_020",
+      "articleNumber": 20,
+      "sourcePages": [
+        23,
+        24
+      ],
+      "sourceArticleTextSha256": "ab238a51ed48f969622328b945889e8ea7d2130461c70f2b8e8b24bd6886f86d",
+      "sourceTextCandidate": "…iation (SGI) ayant son siège statutaire dans un Etat membre de l’Union soumise aux exigences de fonds propres conformément à la règlementation du marché financier régional de l’UMOA ; b) un établissement de crédit agréé par le Conseil Régional en qualité de Teneur de Compte - Conservateur et ayant son siège statutaire dans l’Union. Pour les OPC de pays tiers gérés ou commercialisés dans l’'UMOA, et sans préjudice de l’alinéa 5 point b) ci-après, Le Dépositaire peut également être un établissement de crédit ou toute autre entité de même nature que les entités visées aux points a) et b) du présent alinéa, pour autant que les conditions de l'alinéa 6, point b) ci-après, soient remplies. 4. Pour éviter les conflits d'intérêts entre le Dépositaire, La Société de Gestion et/ou les OPC et/ou ses investisseurs : a) une Société de Gestion d’OPC n’agit pas en tant que Dépositaire ; Avenue Joseph ANOMA TEL,: (225) 27 20 21 57 42 / 20 31 56 20 A 01 B.P. 1878 Abidjan 01/Côte d’ivoire 23 ne Fax: (225) 27 20 33 23 04 Site web : http://www.crepmf.org pi, presidence@crepmf.org b) un courtier principal agissant comme contrepartie à L’OPC, n’agit pas en tant que Dépositaire pour cet OPC, sauf s’il a séparé, sur les plans fonctionnel et hiérarchique, l’exécution de ses fonctions de Dépositaire et ses tâches de courtier principal et que les conflits d’intérêts potentiels sont identifiés, gérés, suivis et révélés aux investisseurs de l’OPC de manière appropriée. Le Dépositaire est établi dans l’un des lieux suivants : a) pour les OPC de l’Union, dans l’un des États de l’Union ; b) pour Les OPC de pays tiers, dans Le pays tiers dans lequel L'OPC ou la Société de Gestion d’OPC est établi. Sans préjudice des exigences visées à l’alinéa 3, la désignation d’un Dépositaire établi dans un pays tier…",
+      "sourceKeywordHits": [
+        "pays tiers",
+        "accord définissant Les modalités de coopération",
+        "réglementation prudentielle",
+        "Groupe d’Action Financière"
+      ],
+      "normalizedRequirementCandidate": "La désignation d'un dépositaire établi dans un pays tiers doit être conditionnée par les accords de coopération, la surveillance prudentielle, les contrôles de juridiction, les échanges fiscaux et l'engagement de responsabilité requis.",
+      "applicabilityCandidate": "THIRD_COUNTRY_DEPOSITARY",
+      "products": [
+        "THIRD_COUNTRY_OPC",
+        "FIA",
+        "OPCVM"
+      ],
+      "documentTypes": [
+        "PROSPECTUS",
+        "DEPOSITARY_DUE_DILIGENCE",
+        "CROSS_BORDER_AUTHORIZATION_DOSSIER"
+      ],
+      "canonicalFields": [
+        "depositary.third_country",
+        "depositary.cooperation_agreement",
+        "depositary.prudential_equivalence",
+        "depositary.fatf_status",
+        "depositary.tax_information_exchange",
+        "depositary.contractual_liability"
+      ],
+      "questionIds": [
+        "Q_THIRD_COUNTRY_DEPOSITARY",
+        "Q_DEPOSITARY_COOPERATION_AGREEMENT",
+        "Q_DEPOSITARY_PRUDENTIAL_EQUIVALENCE"
+      ],
+      "clauseGroupIds": [
+        "CG_THIRD_COUNTRY_DEPOSITARY"
+      ],
+      "controlIds": [
+        "RULE_THIRD_COUNTRY_DEPOSITARY_CONDITIONS_COMPLETE",
+        "RULE_NON_COOPERATIVE_JURISDICTION_BLOCK"
+      ],
+      "evidenceTypes": [
+        "COOPERATION_AGREEMENT_REFERENCE",
+        "PRUDENTIAL_EQUIVALENCE_EVIDENCE",
+        "FATF_JURISDICTION_CHECK",
+        "TAX_INFORMATION_EXCHANGE_AGREEMENT",
+        "DEPOSITARY_AGREEMENT"
+      ],
+      "outputSectionIds": [
+        "SEC_2_DEPOSITARY",
+        "SYSTEM_ONLY"
+      ],
+      "reviewRoles": [
+        "LEGAL",
+        "COMPLIANCE"
+      ],
+      "circ005RequirementLinks": [
+        "CIRC005_2_1_DEPOSITARY_IDENTITY",
+        "CIRC005_4_OTHER_MARKETING_STATE_ARRANGEMENTS"
+      ],
+      "status": "EXTRACTED_UNVERIFIED_PENDING_LEGAL_AND_COMPLIANCE_REVIEW",
+      "activation": "FORBIDDEN",
+      "legalReviewStatus": "PENDING",
+      "complianceReviewStatus": "PENDING",
+      "specFile": "regulatory/requirements/inst066-candidates/05_DEPOSITARY_CUSTODY.json",
+      "provenance": {
+        "sourceArtifact": "regulatory/materialized/INSTRUCTION_66_CREPMF_2021.pdf",
+        "ocrDerivative": "regulatory/materialized/INSTRUCTION_66_CREPMF_2021.txt",
+        "articleBlock": "regulatory/requirements/INST066_ARTICLE_BLOCKS_V0_1.json",
+        "textQuality": "OCR_EXTRACTED_UNVERIFIED"
+      }
+    },
+    {
+      "id": "INST066_ART021_REQ001",
+      "sourceId": "INSTRUCTION_66_CREPMF_2021",
+      "sourceSha256": "3f964f2f6ab9ce9eb16912ccda13f34b5023a188dfb18fcba7065590c770d396",
+      "articleId": "INST066_ARTICLE_021",
+      "articleNumber": 21,
+      "sourcePages": [
+        24,
+        25,
+        26,
+        27,
+        28,
+        29
+      ],
+      "sourceArticleTextSha256": "89bb3a7b1b84c3af3663f3e76457736f1ad51c55f45b7efec32f46e50fcd76ad",
+      "sourceTextCandidate": "1. Le Dépositaire veille de façon générale au suivi adéquat des flux de liquidités de l’OPC et, plus particulièrement à ce que tous les paiements effectués par des investisseurs ou en leur nom, lors de la souscription de parts ou d’actions d’OPC, aient été reçus et que toutes les liquidités de l’OPC aient été comptabilisées sur des comptes d’espèces, ouverts au nom de l’OPC ou au nom de la Société de Gestion d’OPC agissant pour le compte de l’OPC, ou au Dépositaire agissant pour le compte de l’OPC. Lorsque les comptes de liquidités sont ouverts au nom du Dépositaire agissant pour le compte de l’OPC, aucune liquidité de l’entité visée au premier alinéa et aucune liquidité propre du Dépositaire ne sont comptabilisées sur de tels comptes. 2. La garde des actifs d’un OPC est confiée à un Dépositaire, selon ce qui suit : 1: Avenue Joseph ANOMA 01 B.P. 1878 Abidjan 01/Côte d’lvoire Site web : http://www.crepmf.org pur 24 ÿ TEL.: (225) 27 20 21 57 42 / 20 31 56 20 Fax: Ê (225) 27 20 33 23 04 presidence@crepmf.org a) pour les instruments financiers dont La conservation peut être assurée : i) Le Dépositaire assure la conservation de tous les instruments financiers qui peuvent être enregistrés sur un compte d'instruments financiers ouvert dans ses livres et de tous Les instruments financiers qui peuvent lui être livrés physiquement; ii) à cette fin, Le Dépositaire veille à ce que tous ces instruments financiers qui peuvent être enregistrés sur un compte d’instruments financiers ouvert dans ses livres, y soient inscrits sur des comptes distincts de ses propres actifs et de ceux des autres clients, ouverts au nom de l’OPC, afin qu’ils puissent à tout moment être clairement identifiés comme appartenant à l’OPC. b) pour les autres actifs : i) le Dépositaire vérifie la propriété de ce…",
+      "sourceKeywordHits": [
+        "suivi adéquat des flux de liquidités",
+        "paiements effectués par des investisseurs",
+        "comptes d’espèces"
+      ],
+      "normalizedRequirementCandidate": "Le dépositaire doit suivre les flux de liquidités, vérifier la réception des souscriptions et assurer la comptabilisation des liquidités sur des comptes identifiés au nom de l'OPC ou pour son compte.",
+      "applicabilityCandidate": "EACH_OPC",
+      "products": [
+        "OPCVM",
+        "FIA",
+        "FCP",
+        "SICAV",
+        "OPCR",
+        "OTHER_OPC"
+      ],
+      "documentTypes": [
+        "DEPOSITARY_AGREEMENT",
+        "OPERATING_PROCEDURE",
+        "PROSPECTUS"
+      ],
+      "canonicalFields": [
+        "depositary.cash_monitoring",
+        "cash_accounts[]",
+        "subscriptions.cash_reconciliation"
+      ],
+      "questionIds": [
+        "Q_DEPOSITARY_CASH_MONITORING",
+        "Q_FUND_CASH_ACCOUNTS"
+      ],
+      "clauseGroupIds": [
+        "CG_DEPOSITARY_MISSIONS"
+      ],
+      "controlIds": [
+        "RULE_SUBSCRIPTION_CASH_RECEIPT_RECONCILED",
+        "RULE_FUND_CASH_ACCOUNTS_IDENTIFIED"
+      ],
+      "evidenceTypes": [
+        "CASH_MONITORING_PROCEDURE",
+        "BANK_ACCOUNT_EVIDENCE",
+        "DEPOSITARY_AGREEMENT"
+      ],
+      "outputSectionIds": [
+        "SEC_2_DEPOSITARY",
+        "SYSTEM_ONLY"
+      ],
+      "reviewRoles": [
+        "LEGAL",
+        "COMPLIANCE"
+      ],
+      "circ005RequirementLinks": [
+        "CIRC005_2_2_DEPOSITARY_MAIN_ACTIVITY"
+      ],
+      "status": "EXTRACTED_UNVERIFIED_PENDING_LEGAL_AND_COMPLIANCE_REVIEW",
+      "activation": "FORBIDDEN",
+      "legalReviewStatus": "PENDING",
+      "complianceReviewStatus": "PENDING",
+      "specFile": "regulatory/requirements/inst066-candidates/05_DEPOSITARY_CUSTODY.json",
+      "provenance": {
+        "sourceArtifact": "regulatory/materialized/INSTRUCTION_66_CREPMF_2021.pdf",
+        "ocrDerivative": "regulatory/materialized/INSTRUCTION_66_CREPMF_2021.txt",
+        "articleBlock": "regulatory/requirements/INST066_ARTICLE_BLOCKS_V0_1.json",
+        "textQuality": "OCR_EXTRACTED_UNVERIFIED"
+      }
+    },
+    {
+      "id": "INST066_ART021_REQ002",
+      "sourceId": "INSTRUCTION_66_CREPMF_2021",
+      "sourceSha256": "3f964f2f6ab9ce9eb16912ccda13f34b5023a188dfb18fcba7065590c770d396",
+      "articleId": "INST066_ARTICLE_021",
+      "articleNumber": 21,
+      "sourcePages": [
+        24,
+        25,
+        26,
+        27,
+        28,
+        29
+      ],
+      "sourceArticleTextSha256": "89bb3a7b1b84c3af3663f3e76457736f1ad51c55f45b7efec32f46e50fcd76ad",
+      "sourceTextCandidate": "…fs d’un OPC est confiée à un Dépositaire, selon ce qui suit : 1: Avenue Joseph ANOMA 01 B.P. 1878 Abidjan 01/Côte d’lvoire Site web : http://www.crepmf.org pur 24 ÿ TEL.: (225) 27 20 21 57 42 / 20 31 56 20 Fax: Ê (225) 27 20 33 23 04 presidence@crepmf.org a) pour les instruments financiers dont La conservation peut être assurée : i) Le Dépositaire assure la conservation de tous les instruments financiers qui peuvent être enregistrés sur un compte d'instruments financiers ouvert dans ses livres et de tous Les instruments financiers qui peuvent lui être livrés physiquement; ii) à cette fin, Le Dépositaire veille à ce que tous ces instruments financiers qui peuvent être enregistrés sur un compte d’instruments financiers ouvert dans ses livres, y soient inscrits sur des comptes distincts de ses propres actifs et de ceux des autres clients, ouverts au nom de l’OPC, afin qu’ils puissent à tout moment être clairement identifiés comme appartenant à l’OPC. b) pour les autres actifs : i) le Dépositaire vérifie la propriété de ces actifs par l’OPC ou par la Société de Gestion d’OPC agissant pour le compte de l’OPC, et tient un registre concernant les actifs dont il a l’assurance que l’OPC ou la Société de Gestion d’OPC agissant pour le compte de l’OPC détient la propriété ; üi) l’établissement de la propriété des actifs par l’OPC ou par la Société de Gestion, est basé sur les informations ou les documents fournis par l’OPC ou la Société de Gestion et, le cas échéant, sur des éléments de preuve externes ; ii) Le Dépositaire tient son registre à jour. 3. En sus des tâches visées aux alinéas 1 et 2 du présent article, le Dépositaire : a) s’assure que la vente, l'émission, le rachat, le remboursement et l’annulation des parts ou actions de L’OPC se font conformément au droit de l’Unio…",
+      "sourceKeywordHits": [
+        "assure la conservation",
+        "comptes distincts",
+        "clairement identifiés comme appartenant"
+      ],
+      "normalizedRequirementCandidate": "Les instruments financiers conservables doivent être inscrits sur des comptes distincts permettant de les identifier à tout moment comme appartenant à l'OPC.",
+      "applicabilityCandidate": "OPC_WITH_CUSTODIABLE_FINANCIAL_INSTRUMENTS",
+      "products": [
+        "OPCVM",
+        "FIA",
+        "FCP",
+        "SICAV",
+        "OPCR",
+        "OTHER_OPC"
+      ],
+      "documentTypes": [
+        "CUSTODY_PROCEDURE",
+        "DEPOSITARY_AGREEMENT",
+        "PROSPECTUS"
+      ],
+      "canonicalFields": [
+        "depositary.custody_accounts[]",
+        "depositary.asset_segregation",
+        "portfolio.custodiable_assets[]"
+      ],
+      "questionIds": [
+        "Q_DEPOSITARY_CUSTODY_ACCOUNTS",
+        "Q_ASSET_SEGREGATION"
+      ],
+      "clauseGroupIds": [
+        "CG_DEPOSITARY_MISSIONS"
+      ],
+      "controlIds": [
+        "RULE_CUSTODY_ACCOUNT_SEGREGATION",
+        "RULE_CUSTODIABLE_ASSETS_IDENTIFIABLE"
+      ],
+      "evidenceTypes": [
+        "CUSTODY_AGREEMENT",
+        "ACCOUNT_STRUCTURE_EVIDENCE",
+        "ASSET_RECONCILIATION_PROCEDURE"
+      ],
+      "outputSectionIds": [
+        "SEC_2_DEPOSITARY",
+        "SYSTEM_ONLY"
+      ],
+      "reviewRoles": [
+        "LEGAL",
+        "COMPLIANCE"
+      ],
+      "circ005RequirementLinks": [
+        "CIRC005_2_2_DEPOSITARY_MAIN_ACTIVITY"
+      ],
+      "status": "EXTRACTED_UNVERIFIED_PENDING_LEGAL_AND_COMPLIANCE_REVIEW",
+      "activation": "FORBIDDEN",
+      "legalReviewStatus": "PENDING",
+      "complianceReviewStatus": "PENDING",
+      "specFile": "regulatory/requirements/inst066-candidates/05_DEPOSITARY_CUSTODY.json",
+      "provenance": {
+        "sourceArtifact": "regulatory/materialized/INSTRUCTION_66_CREPMF_2021.pdf",
+        "ocrDerivative": "regulatory/materialized/INSTRUCTION_66_CREPMF_2021.txt",
+        "articleBlock": "regulatory/requirements/INST066_ARTICLE_BLOCKS_V0_1.json",
+        "textQuality": "OCR_EXTRACTED_UNVERIFIED"
+      }
+    },
+    {
+      "id": "INST066_ART021_REQ003",
+      "sourceId": "INSTRUCTION_66_CREPMF_2021",
+      "sourceSha256": "3f964f2f6ab9ce9eb16912ccda13f34b5023a188dfb18fcba7065590c770d396",
+      "articleId": "INST066_ARTICLE_021",
+      "articleNumber": 21,
+      "sourcePages": [
+        24,
+        25,
+        26,
+        27,
+        28,
+        29
+      ],
+      "sourceArticleTextSha256": "89bb3a7b1b84c3af3663f3e76457736f1ad51c55f45b7efec32f46e50fcd76ad",
+      "sourceTextCandidate": "… qui peuvent être enregistrés sur un compte d’instruments financiers ouvert dans ses livres, y soient inscrits sur des comptes distincts de ses propres actifs et de ceux des autres clients, ouverts au nom de l’OPC, afin qu’ils puissent à tout moment être clairement identifiés comme appartenant à l’OPC. b) pour les autres actifs : i) le Dépositaire vérifie la propriété de ces actifs par l’OPC ou par la Société de Gestion d’OPC agissant pour le compte de l’OPC, et tient un registre concernant les actifs dont il a l’assurance que l’OPC ou la Société de Gestion d’OPC agissant pour le compte de l’OPC détient la propriété ; üi) l’établissement de la propriété des actifs par l’OPC ou par la Société de Gestion, est basé sur les informations ou les documents fournis par l’OPC ou la Société de Gestion et, le cas échéant, sur des éléments de preuve externes ; ii) Le Dépositaire tient son registre à jour. 3. En sus des tâches visées aux alinéas 1 et 2 du présent article, le Dépositaire : a) s’assure que la vente, l'émission, le rachat, le remboursement et l’annulation des parts ou actions de L’OPC se font conformément au droit de l’Union et au Règlement ou aux documents constitutifs de l’OPC : b) s’assure que le calcul de la valeur des parts ou actions de l’OPC est effectué conformément au droit de l’Union, au Règlement ou aux documents constitutifs de l’OPC et aux procédures fixées dans une instruction du Conseil Régional ; c) exécute les instructions de la Société de Gestion, sauf si elles sont contraires au droit de l’Union ou au Règlement ou aux documents constitutifs de l’OPC ; d) s'assure que, dans Les opérations portant sur Les actifs de l’OPC, la contrepartie est remise à l’OPC dans les délais habituels ; e) s’assure que les produits de l’OPC reçoivent l’affectation conform…",
+      "sourceKeywordHits": [
+        "vérifie la propriété",
+        "tient un registre",
+        "éléments de preuve externes"
+      ],
+      "normalizedRequirementCandidate": "Pour les autres actifs, le dépositaire doit vérifier la propriété de l'OPC ou de la société de gestion agissant pour son compte et tenir un registre à jour fondé sur des informations ou preuves appropriées.",
+      "applicabilityCandidate": "OPC_WITH_NON_CUSTODIABLE_ASSETS",
+      "products": [
+        "FIA",
+        "OPCR",
+        "OPCVM",
+        "OTHER_OPC"
+      ],
+      "documentTypes": [
+        "ASSET_OWNERSHIP_REGISTER",
+        "DEPOSITARY_AGREEMENT",
+        "PROSPECTUS"
+      ],
+      "canonicalFields": [
+        "depositary.ownership_verification",
+        "depositary.non_custody_asset_register",
+        "portfolio.non_custodiable_assets[]"
+      ],
+      "questionIds": [
+        "Q_NON_CUSTODIABLE_ASSETS",
+        "Q_ASSET_OWNERSHIP_EVIDENCE"
+      ],
+      "clauseGroupIds": [
+        "CG_DEPOSITARY_MISSIONS"
+      ],
+      "controlIds": [
+        "RULE_NON_CUSTODY_ASSET_OWNERSHIP_VERIFIED",
+        "RULE_NON_CUSTODY_ASSET_REGISTER_CURRENT"
+      ],
+      "evidenceTypes": [
+        "TITLE_OR_OWNERSHIP_EVIDENCE",
+        "ASSET_REGISTER",
+        "EXTERNAL_CONFIRMATION"
+      ],
+      "outputSectionIds": [
+        "SEC_2_DEPOSITARY",
+        "SYSTEM_ONLY"
+      ],
+      "reviewRoles": [
+        "LEGAL",
+        "COMPLIANCE"
+      ],
+      "circ005RequirementLinks": [
+        "CIRC005_2_2_DEPOSITARY_MAIN_ACTIVITY"
+      ],
+      "status": "EXTRACTED_UNVERIFIED_PENDING_LEGAL_AND_COMPLIANCE_REVIEW",
+      "activation": "FORBIDDEN",
+      "legalReviewStatus": "PENDING",
+      "complianceReviewStatus": "PENDING",
+      "specFile": "regulatory/requirements/inst066-candidates/05_DEPOSITARY_CUSTODY.json",
+      "provenance": {
+        "sourceArtifact": "regulatory/materialized/INSTRUCTION_66_CREPMF_2021.pdf",
+        "ocrDerivative": "regulatory/materialized/INSTRUCTION_66_CREPMF_2021.txt",
+        "articleBlock": "regulatory/requirements/INST066_ARTICLE_BLOCKS_V0_1.json",
+        "textQuality": "OCR_EXTRACTED_UNVERIFIED"
+      }
+    },
+    {
+      "id": "INST066_ART021_REQ004",
+      "sourceId": "INSTRUCTION_66_CREPMF_2021",
+      "sourceSha256": "3f964f2f6ab9ce9eb16912ccda13f34b5023a188dfb18fcba7065590c770d396",
+      "articleId": "INST066_ARTICLE_021",
+      "articleNumber": 21,
+      "sourcePages": [
+        24,
+        25,
+        26,
+        27,
+        28,
+        29
+      ],
+      "sourceArticleTextSha256": "89bb3a7b1b84c3af3663f3e76457736f1ad51c55f45b7efec32f46e50fcd76ad",
+      "sourceTextCandidate": "…é des actifs par l’OPC ou par la Société de Gestion, est basé sur les informations ou les documents fournis par l’OPC ou la Société de Gestion et, le cas échéant, sur des éléments de preuve externes ; ii) Le Dépositaire tient son registre à jour. 3. En sus des tâches visées aux alinéas 1 et 2 du présent article, le Dépositaire : a) s’assure que la vente, l'émission, le rachat, le remboursement et l’annulation des parts ou actions de L’OPC se font conformément au droit de l’Union et au Règlement ou aux documents constitutifs de l’OPC : b) s’assure que le calcul de la valeur des parts ou actions de l’OPC est effectué conformément au droit de l’Union, au Règlement ou aux documents constitutifs de l’OPC et aux procédures fixées dans une instruction du Conseil Régional ; c) exécute les instructions de la Société de Gestion, sauf si elles sont contraires au droit de l’Union ou au Règlement ou aux documents constitutifs de l’OPC ; d) s'assure que, dans Les opérations portant sur Les actifs de l’OPC, la contrepartie est remise à l’OPC dans les délais habituels ; e) s’assure que les produits de l’OPC reçoivent l’affectation conforme au droit de l’Union applicable et au Règlement ou aux documents constitutifs de Ll’OPC ; f) réalise les contrôles liés à la Lutte contre le Blanchiment de Capitaux et le Financement du Terrorisme, si la gestion du passif de L’OPC lui est déléguée. Dans ce cas, Les modalités de réalisation doivent être définies dans La convention de Dépositaire et doivent couvrir l’ensemble des aspects prévus dans l'instruction n°59/2019/CREPMF. A, Avenue Joseph ANOMA 01 B.P. 1878 Abidjan 01/Côte d'Ivoire Site web : http://www.crepmnf.org 25 D TEL.: (225) 27 20 21 57 42 / 20 31 5620 Fax: (225) 27 20 33 23 04 presidence@crepmf.org Dans le cadre de leurs rôles respectif…",
+      "sourceKeywordHits": [
+        "vente, l'émission, le rachat",
+        "calcul de la valeur",
+        "contrepartie",
+        "produits de l’OPC"
+      ],
+      "normalizedRequirementCandidate": "Le dépositaire doit contrôler la conformité des émissions, rachats, remboursements et annulations, du calcul de la valeur des parts, de l'exécution des instructions, du règlement des contreparties et de l'affectation des produits.",
+      "applicabilityCandidate": "EACH_OPC",
+      "products": [
+        "OPCVM",
+        "FIA",
+        "FCP",
+        "SICAV",
+        "OPCR",
+        "OTHER_OPC"
+      ],
+      "documentTypes": [
+        "DEPOSITARY_CONTROL_PLAN",
+        "OPERATING_PROCEDURE",
+        "PROSPECTUS",
+        "FUND_REGULATION"
+      ],
+      "canonicalFields": [
+        "depositary.oversight_controls[]",
+        "pricing.nav.calculation_method",
+        "subscriptions",
+        "redemption",
+        "income.allocation_policy"
+      ],
+      "questionIds": [
+        "Q_DEPOSITARY_OVERSIGHT_CONTROLS",
+        "Q_NAV_FREQUENCY",
+        "Q_REDEMPTION_ALLOWED",
+        "Q_INCOME_ALLOCATION_POLICY"
+      ],
+      "clauseGroupIds": [
+        "CG_DEPOSITARY_MISSIONS",
+        "CG_PRICING_OVERVIEW",
+        "CG_REDEMPTION",
+        "CG_INCOME_ALLOCATION"
+      ],
+      "controlIds": [
+        "RULE_DEPOSITARY_OPERATION_OVERSIGHT_COMPLETE",
+        "RULE_DEPOSITARY_NAV_CONTROL",
+        "RULE_DEPOSITARY_INCOME_ALLOCATION_CONTROL"
+      ],
+      "evidenceTypes": [
+        "DEPOSITARY_CONTROL_PLAN",
+        "NAV_CONTROL_PROCEDURE",
+        "OPERATING_PROCEDURE",
+        "FUND_REGULATION"
+      ],
+      "outputSectionIds": [
+        "SEC_2_DEPOSITARY",
+        "SEC_1_17_PRICE_DETERMINATION",
+        "SEC_1_13_REDEMPTION_SUSPENSION",
+        "SEC_1_14_INCOME"
+      ],
+      "reviewRoles": [
+        "LEGAL",
+        "COMPLIANCE"
+      ],
+      "circ005RequirementLinks": [
+        "CIRC005_1_13_FCP_REDEMPTION_REIMBURSEMENT",
+        "CIRC005_1_14_FCP_INCOME_ALLOCATION",
+        "CIRC005_1_17_A_FCP_PRICE_METHOD_FREQUENCY"
+      ],
+      "status": "EXTRACTED_UNVERIFIED_PENDING_LEGAL_AND_COMPLIANCE_REVIEW",
+      "activation": "FORBIDDEN",
+      "legalReviewStatus": "PENDING",
+      "complianceReviewStatus": "PENDING",
+      "specFile": "regulatory/requirements/inst066-candidates/05_DEPOSITARY_CUSTODY.json",
+      "provenance": {
+        "sourceArtifact": "regulatory/materialized/INSTRUCTION_66_CREPMF_2021.pdf",
+        "ocrDerivative": "regulatory/materialized/INSTRUCTION_66_CREPMF_2021.txt",
+        "articleBlock": "regulatory/requirements/INST066_ARTICLE_BLOCKS_V0_1.json",
+        "textQuality": "OCR_EXTRACTED_UNVERIFIED"
+      }
+    },
+    {
+      "id": "INST066_ART021_REQ005",
+      "sourceId": "INSTRUCTION_66_CREPMF_2021",
+      "sourceSha256": "3f964f2f6ab9ce9eb16912ccda13f34b5023a188dfb18fcba7065590c770d396",
+      "articleId": "INST066_ARTICLE_021",
+      "articleNumber": 21,
+      "sourcePages": [
+        24,
+        25,
+        26,
+        27,
+        28,
+        29
+      ],
+      "sourceArticleTextSha256": "89bb3a7b1b84c3af3663f3e76457736f1ad51c55f45b7efec32f46e50fcd76ad",
+      "sourceTextCandidate": "…nstitutifs de l’OPC ; d) s'assure que, dans Les opérations portant sur Les actifs de l’OPC, la contrepartie est remise à l’OPC dans les délais habituels ; e) s’assure que les produits de l’OPC reçoivent l’affectation conforme au droit de l’Union applicable et au Règlement ou aux documents constitutifs de Ll’OPC ; f) réalise les contrôles liés à la Lutte contre le Blanchiment de Capitaux et le Financement du Terrorisme, si la gestion du passif de L’OPC lui est déléguée. Dans ce cas, Les modalités de réalisation doivent être définies dans La convention de Dépositaire et doivent couvrir l’ensemble des aspects prévus dans l'instruction n°59/2019/CREPMF. A, Avenue Joseph ANOMA 01 B.P. 1878 Abidjan 01/Côte d'Ivoire Site web : http://www.crepmnf.org 25 D TEL.: (225) 27 20 21 57 42 / 20 31 5620 Fax: (225) 27 20 33 23 04 presidence@crepmf.org Dans le cadre de leurs rôles respectifs, La Société de Gestion d’OPC et Le Dépositaire agissent de manière honnête, loyale, professionnelle, indépendante et dans l'intérêt de L’OPC et des investisseurs de L’OPC. Un Dépositaire ne peut exercer d’activités, en ce qui concerne L’OPC ou La Société de Gestion d’OPC agissant pour le compte de L’OPC, qui seraient susceptibles d’engendrer des conflits d'intérêts entre l’OPC, les investisseurs dudit OPC, la Société de Gestion d’OPC et Le Dépositaire lui-même, sauf si le Dépositaire a séparé, sur les plans fonctionnel et hiérarchique, l’exécution de ses tâches de Dépositaire et ses autres tâches qui pourraient s’avérer incompatibles et que les conflits d’intérêts potentiels sont identifiés, gérés, suivis et révélés aux investisseurs de l’OPC de manière appropriée. Le Dépositaire et tout tiers auquel la fonction de conservation a été déléguée, ne doivent pas faire usage des actifs conservés pour leur …",
+      "sourceKeywordHits": [
+        "Lutte contre le Blanchiment",
+        "gestion du passif",
+        "convention de Dépositaire"
+      ],
+      "normalizedRequirementCandidate": "Lorsque la gestion du passif est déléguée au dépositaire, la convention et les procédures doivent couvrir les contrôles de lutte contre le blanchiment de capitaux et le financement du terrorisme.",
+      "applicabilityCandidate": "DEPOSITARY_WITH_DELEGATED_LIABILITY_MANAGEMENT",
+      "products": [
+        "OPCVM",
+        "FIA",
+        "FCP",
+        "SICAV",
+        "OPCR",
+        "OTHER_OPC"
+      ],
+      "documentTypes": [
+        "DEPOSITARY_AGREEMENT",
+        "AML_CFT_PROCEDURE",
+        "OPERATING_PROCEDURE"
+      ],
+      "canonicalFields": [
+        "depositary.liability_management_delegated",
+        "depositary.aml_cft_controls",
+        "depositary.agreement_reference"
+      ],
+      "questionIds": [
+        "Q_DEPOSITARY_LIABILITY_MANAGEMENT",
+        "Q_DEPOSITARY_AML_CONTROLS"
+      ],
+      "clauseGroupIds": [
+        "CG_DEPOSITARY_MISSIONS"
+      ],
+      "controlIds": [
+        "RULE_AML_CONTROLS_IF_LIABILITY_MANAGEMENT_DELEGATED",
+        "RULE_AML_SCOPE_IN_DEPOSITARY_AGREEMENT"
+      ],
+      "evidenceTypes": [
+        "DEPOSITARY_AGREEMENT",
+        "AML_CFT_POLICY",
+        "AML_CFT_CONTROL_MATRIX"
+      ],
+      "outputSectionIds": [
+        "SEC_2_DEPOSITARY",
+        "SYSTEM_ONLY"
+      ],
+      "reviewRoles": [
+        "LEGAL",
+        "COMPLIANCE"
+      ],
+      "circ005RequirementLinks": [],
+      "status": "EXTRACTED_UNVERIFIED_PENDING_LEGAL_AND_COMPLIANCE_REVIEW",
+      "activation": "FORBIDDEN",
+      "legalReviewStatus": "PENDING",
+      "complianceReviewStatus": "PENDING",
+      "specFile": "regulatory/requirements/inst066-candidates/05_DEPOSITARY_CUSTODY.json",
+      "provenance": {
+        "sourceArtifact": "regulatory/materialized/INSTRUCTION_66_CREPMF_2021.pdf",
+        "ocrDerivative": "regulatory/materialized/INSTRUCTION_66_CREPMF_2021.txt",
+        "articleBlock": "regulatory/requirements/INST066_ARTICLE_BLOCKS_V0_1.json",
+        "textQuality": "OCR_EXTRACTED_UNVERIFIED"
+      }
+    },
+    {
+      "id": "INST066_ART021_REQ006",
+      "sourceId": "INSTRUCTION_66_CREPMF_2021",
+      "sourceSha256": "3f964f2f6ab9ce9eb16912ccda13f34b5023a188dfb18fcba7065590c770d396",
+      "articleId": "INST066_ARTICLE_021",
+      "articleNumber": 21,
+      "sourcePages": [
+        24,
+        25,
+        26,
+        27,
+        28,
+        29
+      ],
+      "sourceArticleTextSha256": "89bb3a7b1b84c3af3663f3e76457736f1ad51c55f45b7efec32f46e50fcd76ad",
+      "sourceTextCandidate": "…s actifs à condition d’avoir reçu l’accord préalable du FIA ou de la Société de Gestion d'OPC agissant pour Le compte du FIA. En cas de procédure de redressement ou de liquidation des biens à l’encontre du Dépositaire et/ou de tout tiers situé dans l’Union auquel la conservation des actifs de l’OPCVM a été déléguée, les actifs d’un OPCVM conservés ne peuvent pas être distribués ou réalisés au bénéfice de leurs créanciers. Le Dépositaire ne délègue pas à des tiers ses fonctions énoncées dans le présent article, exceptées celles visées à l’alinéa 2 du présent article. Lorsque Le Dépositaire délègue à des tiers Les fonctions visées dans Le présent article, les conditions suivantes doivent être satisfaites : a) les tâches ne sont pas déléguées dans l’intention de se soustraire aux exigences de la présente Instruction ; b) le Dépositaire peut démontrer que la délégation est justifiée par une raison objective ; c) le Dépositaire a agi avec toute la compétence, le soin et la diligence requis lors de la sélection et de la désignation du tiers auquel il souhaite déléguer certaines Li Avenue Joseph ANOMA TEL.: (225) 27 20 21 57 42 / 20 31 56 20 01 B.P. 1878 Abidjan 01/Côte d’Ivoire 26 À Fax: (225) 27 20 33 23 04 Site web : http://www.crepmf.org by presidence@crepmf.org parties de ses tâches. Il continue à faire preuve de toute la compétence, du soin et de la diligence requis dans l’évaluation périodique et Le suivi permanent du tiers et des dispositions prises par ce dernier concernant Les fonctions et tâches qui lui ont été déléguées ; et d) le Dépositaire veille à ce que le tiers remplisse les conditions suivantes en permanence dans l’exécution des tâches qui lui ont été déléguées : i) Le tiers dispose de structures et d’une expertise qui sont adéquates et proportionnées à la n…",
+      "sourceKeywordHits": [
+        "ne délègue pas à des tiers",
+        "raison objective",
+        "ne peuvent pas être distribués ou réalisés au bénéfice de leurs créanciers"
+      ],
+      "normalizedRequirementCandidate": "La délégation des fonctions de garde doit être limitée aux fonctions autorisées, justifiée par une raison objective, encadrée pour éviter le contournement réglementaire et préserver les actifs en cas d'insolvabilité du dépositaire ou du sous-conservateur.",
+      "applicabilityCandidate": "DEPOSITARY_CUSTODY_DELEGATION",
+      "products": [
+        "OPCVM",
+        "FIA",
+        "FCP",
+        "SICAV",
+        "OPCR",
+        "OTHER_OPC"
+      ],
+      "documentTypes": [
+        "CUSTODY_DELEGATION_AGREEMENT",
+        "DEPOSITARY_DUE_DILIGENCE",
+        "PROSPECTUS"
+      ],
+      "canonicalFields": [
+        "depositary.custody_delegations[]",
+        "depositary.custody_delegations[].objective_reason",
+        "depositary.custody_delegations[].insolvency_protection"
+      ],
+      "questionIds": [
+        "Q_CUSTODY_DELEGATION",
+        "Q_CUSTODY_DELEGATION_REASON",
+        "Q_CUSTODY_INSOLVENCY_PROTECTION"
+      ],
+      "clauseGroupIds": [
+        "CG_DEPOSITARY_DELEGATION"
+      ],
+      "controlIds": [
+        "RULE_CUSTODY_DELEGATION_SCOPE",
+        "RULE_CUSTODY_DELEGATION_OBJECTIVE_REASON",
+        "RULE_CUSTODIED_ASSETS_INSOLVENCY_PROTECTED"
+      ],
+      "evidenceTypes": [
+        "CUSTODY_DELEGATION_AGREEMENT",
+        "SUB_CUSTODIAN_DUE_DILIGENCE",
+        "LEGAL_OPINION_ON_ASSET_SEGREGATION"
+      ],
+      "outputSectionIds": [
+        "SEC_2_DEPOSITARY",
+        "SYSTEM_ONLY"
+      ],
+      "reviewRoles": [
+        "LEGAL",
+        "COMPLIANCE"
+      ],
+      "circ005RequirementLinks": [
+        "CIRC005_2_1_DEPOSITARY_IDENTITY"
+      ],
+      "status": "EXTRACTED_UNVERIFIED_PENDING_LEGAL_AND_COMPLIANCE_REVIEW",
+      "activation": "FORBIDDEN",
+      "legalReviewStatus": "PENDING",
+      "complianceReviewStatus": "PENDING",
+      "specFile": "regulatory/requirements/inst066-candidates/05_DEPOSITARY_CUSTODY.json",
       "provenance": {
         "sourceArtifact": "regulatory/materialized/INSTRUCTION_66_CREPMF_2021.pdf",
         "ocrDerivative": "regulatory/materialized/INSTRUCTION_66_CREPMF_2021.txt",
@@ -1494,6 +3318,669 @@
       }
     },
     {
+      "id": "INST066_ART036_REQ001",
+      "sourceId": "INSTRUCTION_66_CREPMF_2021",
+      "sourceSha256": "3f964f2f6ab9ce9eb16912ccda13f34b5023a188dfb18fcba7065590c770d396",
+      "articleId": "INST066_ARTICLE_036",
+      "articleNumber": 36,
+      "sourcePages": [
+        37,
+        38
+      ],
+      "sourceArticleTextSha256": "26e13861343b489b47b28099408296fcf900598f12e4bbb338f588fd713c788f",
+      "sourceTextCandidate": "1. Les Sociétés de Gestion d'OPC et les Sociétés d’Investissement informent régulièrement le Conseil Régional des principaux marchés et instruments sur lesquels elles négocient pour Le compte des OPC qu’elles gèrent. Elles fournissent des informations sur Les principaux instruments qu’elles négocient, sur les marchés dont elles sont membres ou sur lesquels elles sont actives et sur les principales expositions et Les concentrations les plus importantes de chacun des OPC qu’elles gèrent. À Avenue Joseph ANOMA TEL.: (225) 27 20 21 57 42 / 20 31 56 20 01 B.P. 1878 Abidjan 01/Côte d'Ivoire 37 À Fax: (225) 27 20 33 23 Q4 7 Site web : http://www.crepmf.org presidence@crepmf.org 2. Pour chaque OPC de l’Union qu’elle gère et pour chaque OPC qu’elle commercialise dans l’Union, les Sociétés de Gestion d’OPC et Les Sociétés d’investissement fournissent des informations qui sont précisées dans une Circulaire du Conseil Régional. Lorsque cela est nécessaire pour le suivi efficace du risque systémique, le Conseil Régional peut exiger des informations supplémentaires à celles décrites dans la Circulaire précitée. Dans des circonstances exceptionnelles, et lorsque cela est nécessaire pour assurer la stabilité et l'intégrité du système financier, ou pour promouvoir une croissance durable à long terme, le Conseil Régional peut imposer des exigences supplémentaires en matière de comptes rendus.",
+      "sourceKeywordHits": [
+        "principaux marchés et instruments",
+        "négocient pour Le compte des OPC"
+      ],
+      "normalizedRequirementCandidate": "La société de gestion ou la société d'investissement doit identifier et transmettre au régulateur les principaux marchés et instruments sur lesquels elle négocie pour chaque OPC géré.",
+      "applicabilityCandidate": "ALL_MANAGED_OR_MARKETED_OPC",
+      "products": [
+        "OPCVM",
+        "FIA",
+        "FCP",
+        "SICAV",
+        "OPCR",
+        "OTHER_OPC"
+      ],
+      "documentTypes": [
+        "REGULATORY_REPORT",
+        "TRADING_ACTIVITY_REPORT"
+      ],
+      "canonicalFields": [
+        "regulatory_reporting.main_markets[]",
+        "regulatory_reporting.main_instruments[]",
+        "portfolio.trading_venues[]"
+      ],
+      "questionIds": [
+        "Q_MAIN_MARKETS_AND_INSTRUMENTS"
+      ],
+      "clauseGroupIds": [],
+      "controlIds": [
+        "RULE_MAIN_MARKETS_AND_INSTRUMENTS_REPORTED"
+      ],
+      "evidenceTypes": [
+        "TRADING_ACTIVITY_REPORT",
+        "PORTFOLIO_SYSTEM_EXPORT",
+        "REGULATORY_SUBMISSION_RECEIPT"
+      ],
+      "outputSectionIds": [
+        "REGULATORY_REPORTING_PACKAGE"
+      ],
+      "reviewRoles": [
+        "LEGAL",
+        "COMPLIANCE"
+      ],
+      "circ005RequirementLinks": [],
+      "status": "EXTRACTED_UNVERIFIED_PENDING_LEGAL_AND_COMPLIANCE_REVIEW",
+      "activation": "FORBIDDEN",
+      "legalReviewStatus": "PENDING",
+      "complianceReviewStatus": "PENDING",
+      "specFile": "regulatory/requirements/inst066-candidates/06_REGULATORY_REPORTING.json",
+      "provenance": {
+        "sourceArtifact": "regulatory/materialized/INSTRUCTION_66_CREPMF_2021.pdf",
+        "ocrDerivative": "regulatory/materialized/INSTRUCTION_66_CREPMF_2021.txt",
+        "articleBlock": "regulatory/requirements/INST066_ARTICLE_BLOCKS_V0_1.json",
+        "textQuality": "OCR_EXTRACTED_UNVERIFIED"
+      }
+    },
+    {
+      "id": "INST066_ART036_REQ002",
+      "sourceId": "INSTRUCTION_66_CREPMF_2021",
+      "sourceSha256": "3f964f2f6ab9ce9eb16912ccda13f34b5023a188dfb18fcba7065590c770d396",
+      "articleId": "INST066_ARTICLE_036",
+      "articleNumber": 36,
+      "sourcePages": [
+        37,
+        38
+      ],
+      "sourceArticleTextSha256": "26e13861343b489b47b28099408296fcf900598f12e4bbb338f588fd713c788f",
+      "sourceTextCandidate": "… Sociétés d’Investissement informent régulièrement le Conseil Régional des principaux marchés et instruments sur lesquels elles négocient pour Le compte des OPC qu’elles gèrent. Elles fournissent des informations sur Les principaux instruments qu’elles négocient, sur les marchés dont elles sont membres ou sur lesquels elles sont actives et sur les principales expositions et Les concentrations les plus importantes de chacun des OPC qu’elles gèrent. À Avenue Joseph ANOMA TEL.: (225) 27 20 21 57 42 / 20 31 56 20 01 B.P. 1878 Abidjan 01/Côte d'Ivoire 37 À Fax: (225) 27 20 33 23 Q4 7 Site web : http://www.crepmf.org presidence@crepmf.org 2. Pour chaque OPC de l’Union qu’elle gère et pour chaque OPC qu’elle commercialise dans l’Union, les Sociétés de Gestion d’OPC et Les Sociétés d’investissement fournissent des informations qui sont précisées dans une Circulaire du Conseil Régional. Lorsque cela est nécessaire pour le suivi efficace du risque systémique, le Conseil Régional peut exiger des informations supplémentaires à celles décrites dans la Circulaire précitée. Dans des circonstances exceptionnelles, et lorsque cela est nécessaire pour assurer la stabilité et l'intégrité du système financier, ou pour promouvoir une croissance durable à long terme, le Conseil Régional peut imposer des exigences supplémentaires en matière de comptes rendus.",
+      "sourceKeywordHits": [
+        "principales expositions",
+        "concentrations les plus importantes"
+      ],
+      "normalizedRequirementCandidate": "Les principales expositions et concentrations de chaque OPC doivent être calculées, conservées et transmises dans le reporting réglementaire applicable.",
+      "applicabilityCandidate": "ALL_MANAGED_OR_MARKETED_OPC",
+      "products": [
+        "OPCVM",
+        "FIA",
+        "FCP",
+        "SICAV",
+        "OPCR",
+        "OTHER_OPC"
+      ],
+      "documentTypes": [
+        "REGULATORY_REPORT",
+        "RISK_REPORT"
+      ],
+      "canonicalFields": [
+        "risk.exposures[]",
+        "risk.concentrations[]",
+        "regulatory_reporting.reference_date"
+      ],
+      "questionIds": [
+        "Q_REGULATORY_EXPOSURE_REPORTING"
+      ],
+      "clauseGroupIds": [],
+      "controlIds": [
+        "RULE_MAJOR_EXPOSURES_REPORTED",
+        "RULE_MAJOR_CONCENTRATIONS_REPORTED"
+      ],
+      "evidenceTypes": [
+        "RISK_SYSTEM_EXPORT",
+        "PORTFOLIO_HOLDINGS",
+        "REGULATORY_SUBMISSION_RECEIPT"
+      ],
+      "outputSectionIds": [
+        "REGULATORY_REPORTING_PACKAGE"
+      ],
+      "reviewRoles": [
+        "RISK",
+        "LEGAL",
+        "COMPLIANCE"
+      ],
+      "circ005RequirementLinks": [
+        "CIRC005_1_15_D_FCP_POLICY_LIMITS"
+      ],
+      "status": "EXTRACTED_UNVERIFIED_PENDING_LEGAL_AND_COMPLIANCE_REVIEW",
+      "activation": "FORBIDDEN",
+      "legalReviewStatus": "PENDING",
+      "complianceReviewStatus": "PENDING",
+      "specFile": "regulatory/requirements/inst066-candidates/06_REGULATORY_REPORTING.json",
+      "provenance": {
+        "sourceArtifact": "regulatory/materialized/INSTRUCTION_66_CREPMF_2021.pdf",
+        "ocrDerivative": "regulatory/materialized/INSTRUCTION_66_CREPMF_2021.txt",
+        "articleBlock": "regulatory/requirements/INST066_ARTICLE_BLOCKS_V0_1.json",
+        "textQuality": "OCR_EXTRACTED_UNVERIFIED"
+      }
+    },
+    {
+      "id": "INST066_ART036_REQ003",
+      "sourceId": "INSTRUCTION_66_CREPMF_2021",
+      "sourceSha256": "3f964f2f6ab9ce9eb16912ccda13f34b5023a188dfb18fcba7065590c770d396",
+      "articleId": "INST066_ARTICLE_036",
+      "articleNumber": 36,
+      "sourcePages": [
+        37,
+        38
+      ],
+      "sourceArticleTextSha256": "26e13861343b489b47b28099408296fcf900598f12e4bbb338f588fd713c788f",
+      "sourceTextCandidate": "…: http://www.crepmf.org presidence@crepmf.org 2. Pour chaque OPC de l’Union qu’elle gère et pour chaque OPC qu’elle commercialise dans l’Union, les Sociétés de Gestion d’OPC et Les Sociétés d’investissement fournissent des informations qui sont précisées dans une Circulaire du Conseil Régional. Lorsque cela est nécessaire pour le suivi efficace du risque systémique, le Conseil Régional peut exiger des informations supplémentaires à celles décrites dans la Circulaire précitée. Dans des circonstances exceptionnelles, et lorsque cela est nécessaire pour assurer la stabilité et l'intégrité du système financier, ou pour promouvoir une croissance durable à long terme, le Conseil Régional peut imposer des exigences supplémentaires en matière de comptes rendus.",
+      "sourceKeywordHits": [
+        "risque systémique",
+        "informations supplémentaires",
+        "stabilité et l'intégrité du système financier"
+      ],
+      "normalizedRequirementCandidate": "Le dispositif de reporting doit permettre de produire des informations supplémentaires lorsque le régulateur les exige pour le suivi du risque systémique, la stabilité ou l'intégrité du système financier.",
+      "applicabilityCandidate": "REGULATOR_ADDITIONAL_REPORTING_REQUEST",
+      "products": [
+        "OPCVM",
+        "FIA",
+        "FCP",
+        "SICAV",
+        "OPCR",
+        "OTHER_OPC"
+      ],
+      "documentTypes": [
+        "AD_HOC_REGULATORY_REPORT",
+        "REGULATORY_REQUEST_RESPONSE"
+      ],
+      "canonicalFields": [
+        "regulatory_reporting.ad_hoc_requests[]",
+        "regulatory_reporting.systemic_risk_data"
+      ],
+      "questionIds": [
+        "Q_AD_HOC_REGULATORY_REQUEST"
+      ],
+      "clauseGroupIds": [],
+      "controlIds": [
+        "RULE_AD_HOC_REGULATORY_REQUEST_TRACKED",
+        "RULE_ADDITIONAL_REPORTING_EVIDENCED"
+      ],
+      "evidenceTypes": [
+        "REGULATORY_REQUEST",
+        "REGULATORY_RESPONSE",
+        "SUBMISSION_RECEIPT"
+      ],
+      "outputSectionIds": [
+        "REGULATORY_REPORTING_PACKAGE",
+        "SYSTEM_ONLY"
+      ],
+      "reviewRoles": [
+        "RISK",
+        "LEGAL",
+        "COMPLIANCE"
+      ],
+      "circ005RequirementLinks": [],
+      "status": "EXTRACTED_UNVERIFIED_PENDING_LEGAL_AND_COMPLIANCE_REVIEW",
+      "activation": "FORBIDDEN",
+      "legalReviewStatus": "PENDING",
+      "complianceReviewStatus": "PENDING",
+      "specFile": "regulatory/requirements/inst066-candidates/06_REGULATORY_REPORTING.json",
+      "provenance": {
+        "sourceArtifact": "regulatory/materialized/INSTRUCTION_66_CREPMF_2021.pdf",
+        "ocrDerivative": "regulatory/materialized/INSTRUCTION_66_CREPMF_2021.txt",
+        "articleBlock": "regulatory/requirements/INST066_ARTICLE_BLOCKS_V0_1.json",
+        "textQuality": "OCR_EXTRACTED_UNVERIFIED"
+      }
+    },
+    {
+      "id": "INST066_ART037_REQ001",
+      "sourceId": "INSTRUCTION_66_CREPMF_2021",
+      "sourceSha256": "3f964f2f6ab9ce9eb16912ccda13f34b5023a188dfb18fcba7065590c770d396",
+      "articleId": "INST066_ARTICLE_037",
+      "articleNumber": 37,
+      "sourcePages": [
+        38,
+        39,
+        40
+      ],
+      "sourceArticleTextSha256": "f56fefefebe5bbb958afbbfe3eea6d367f970a0a5626bd309ee06bd2a50e9926",
+      "sourceTextCandidate": "1. Une Société de Gestion d'OPC ou la Société d’Investissement pour chaque OPC qu’elle transmet, au Conseil Régional et met à disposition de ses investisseurs dans les conditions énumérées à l’article 34.2 ; a) des informations annuelles ; b) des informations semestrielles couvrant Les six premiers mois de l'exercice ; c) des informations trimestrielles couvrant chaque trimestre de l’exercice. Une Société d'investissement ou Société de Gestion d'OPC, pour chacun des FIA qu’elle gère, est exonérée de La transmission des informations trimestrielles à condition que la commercialisation du FIA aît été réalisée auprès d'investisseurs qualifiés. Les informations annuelles mentionnées à l’alinéa 1 du présent article doivent être transmises dans les six (06) mois suivant la fin de l'exercice et doivent comprendre les éléments ci-après : a) un rapport sur L’OPC contenant un état de l’actif et du passif, un compte ventilé des revenus et des dépenses de l'exercice, un rapport sur les activités de l'exercice et les autres renseignements prévus dans une Circulaire du Conseil Régional, ainsi que toute information significative permettant aux investisseurs de porter, en pleine connaissance de cause, un jugement sur l’évolution de l’activité et les résultats de L’OPC ; b) Les états financiers annuels de l’OPC, établis conformément aux dispositions de la réglementation comptable spécifique applicable aux intervenants agréés du marché financier régional de l’UMOA et certifiés par le Commissaire aux Comptes ; c) Les rapports de certification du Commissaire aux Comptes établis conformément aux dispositions de l'instruction n°58/CREPMF/2019 relative à l’exercice du commissariat aux comptes auprès des structures agréées et des sociétés cotées du marché financier régional de l'UMOA ; d) le pr…",
+      "sourceKeywordHits": [
+        "informations annuelles",
+        "informations semestrielles",
+        "informations trimestrielles"
+      ],
+      "normalizedRequirementCandidate": "Pour chaque OPC, le dispositif documentaire doit organiser les informations annuelles, semestrielles et trimestrielles à transmettre au régulateur et à mettre à disposition des investisseurs.",
+      "applicabilityCandidate": "EACH_OPC_PERIODIC_INFORMATION",
+      "products": [
+        "OPCVM",
+        "FIA",
+        "FCP",
+        "SICAV",
+        "OPCR",
+        "OTHER_OPC"
+      ],
+      "documentTypes": [
+        "ANNUAL_REPORT",
+        "SEMIANNUAL_REPORT",
+        "QUARTERLY_REPORT",
+        "INVESTOR_INFORMATION"
+      ],
+      "canonicalFields": [
+        "periodic_reporting.annual",
+        "periodic_reporting.semiannual",
+        "periodic_reporting.quarterly",
+        "documents.periodic_reports.locations"
+      ],
+      "questionIds": [
+        "Q_PERIODIC_REPORTS_LOCATIONS",
+        "Q_PERIODIC_REPORTING_CALENDAR"
+      ],
+      "clauseGroupIds": [
+        "CG_DOCUMENT_AVAILABILITY"
+      ],
+      "controlIds": [
+        "RULE_PERIODIC_REPORTING_CALENDAR_COMPLETE",
+        "RULE_PERIODIC_REPORTS_AVAILABLE_TO_INVESTORS"
+      ],
+      "evidenceTypes": [
+        "ANNUAL_REPORT",
+        "SEMIANNUAL_REPORT",
+        "QUARTERLY_REPORT",
+        "PUBLICATION_EVIDENCE"
+      ],
+      "outputSectionIds": [
+        "SEC_1_4_DOCUMENT_AVAILABILITY",
+        "REGULATORY_REPORTING_PACKAGE"
+      ],
+      "reviewRoles": [
+        "LEGAL",
+        "COMPLIANCE"
+      ],
+      "circ005RequirementLinks": [
+        "CIRC005_1_4_FCP_PERIODIC_REPORTS_AVAILABILITY"
+      ],
+      "status": "EXTRACTED_UNVERIFIED_PENDING_LEGAL_AND_COMPLIANCE_REVIEW",
+      "activation": "FORBIDDEN",
+      "legalReviewStatus": "PENDING",
+      "complianceReviewStatus": "PENDING",
+      "specFile": "regulatory/requirements/inst066-candidates/06_REGULATORY_REPORTING.json",
+      "provenance": {
+        "sourceArtifact": "regulatory/materialized/INSTRUCTION_66_CREPMF_2021.pdf",
+        "ocrDerivative": "regulatory/materialized/INSTRUCTION_66_CREPMF_2021.txt",
+        "articleBlock": "regulatory/requirements/INST066_ARTICLE_BLOCKS_V0_1.json",
+        "textQuality": "OCR_EXTRACTED_UNVERIFIED"
+      }
+    },
+    {
+      "id": "INST066_ART037_REQ002",
+      "sourceId": "INSTRUCTION_66_CREPMF_2021",
+      "sourceSha256": "3f964f2f6ab9ce9eb16912ccda13f34b5023a188dfb18fcba7065590c770d396",
+      "articleId": "INST066_ARTICLE_037",
+      "articleNumber": 37,
+      "sourcePages": [
+        38,
+        39,
+        40
+      ],
+      "sourceArticleTextSha256": "f56fefefebe5bbb958afbbfe3eea6d367f970a0a5626bd309ee06bd2a50e9926",
+      "sourceTextCandidate": "…s investisseurs dans les conditions énumérées à l’article 34.2 ; a) des informations annuelles ; b) des informations semestrielles couvrant Les six premiers mois de l'exercice ; c) des informations trimestrielles couvrant chaque trimestre de l’exercice. Une Société d'investissement ou Société de Gestion d'OPC, pour chacun des FIA qu’elle gère, est exonérée de La transmission des informations trimestrielles à condition que la commercialisation du FIA aît été réalisée auprès d'investisseurs qualifiés. Les informations annuelles mentionnées à l’alinéa 1 du présent article doivent être transmises dans les six (06) mois suivant la fin de l'exercice et doivent comprendre les éléments ci-après : a) un rapport sur L’OPC contenant un état de l’actif et du passif, un compte ventilé des revenus et des dépenses de l'exercice, un rapport sur les activités de l'exercice et les autres renseignements prévus dans une Circulaire du Conseil Régional, ainsi que toute information significative permettant aux investisseurs de porter, en pleine connaissance de cause, un jugement sur l’évolution de l’activité et les résultats de L’OPC ; b) Les états financiers annuels de l’OPC, établis conformément aux dispositions de la réglementation comptable spécifique applicable aux intervenants agréés du marché financier régional de l’UMOA et certifiés par le Commissaire aux Comptes ; c) Les rapports de certification du Commissaire aux Comptes établis conformément aux dispositions de l'instruction n°58/CREPMF/2019 relative à l’exercice du commissariat aux comptes auprès des structures agréées et des sociétés cotées du marché financier régional de l'UMOA ; d) le procès-verbal du Conseil d'Administration de la Société de Gestion d’OPC ayant arrêté les comptes du FCP ; A \"ns Avenue Joseph ANOMA 7 TEL.: (225…",
+      "sourceKeywordHits": [
+        "exonérée de La transmission des informations trimestrielles",
+        "investisseurs qualifiés"
+      ],
+      "normalizedRequirementCandidate": "La dérogation aux informations trimestrielles pour un FIA commercialisé uniquement auprès d'investisseurs qualifiés doit être conditionnée et justifiée par le périmètre réel de commercialisation.",
+      "applicabilityCandidate": "FIA_MARKETED_ONLY_TO_QUALIFIED_INVESTORS",
+      "products": [
+        "FIA"
+      ],
+      "documentTypes": [
+        "REGULATORY_REPORTING_POLICY",
+        "MARKETING_PLAN"
+      ],
+      "canonicalFields": [
+        "target_investor.qualification",
+        "distribution.eligible_investor_categories[]",
+        "periodic_reporting.quarterly.exemption"
+      ],
+      "questionIds": [
+        "Q_INVESTOR_QUALIFICATION",
+        "Q_FIA_QUARTERLY_REPORTING_EXEMPTION"
+      ],
+      "clauseGroupIds": [
+        "CG_TARGET_INVESTOR"
+      ],
+      "controlIds": [
+        "RULE_FIA_QUARTERLY_EXEMPTION_ONLY_IF_QUALIFIED_INVESTORS",
+        "RULE_MARKETING_SCOPE_SUPPORTS_REPORTING_EXEMPTION"
+      ],
+      "evidenceTypes": [
+        "MARKETING_AUTHORIZATION",
+        "INVESTOR_ELIGIBILITY_POLICY",
+        "REGULATORY_REPORTING_POLICY"
+      ],
+      "outputSectionIds": [
+        "REGULATORY_REPORTING_PACKAGE",
+        "SYSTEM_ONLY"
+      ],
+      "reviewRoles": [
+        "LEGAL",
+        "COMPLIANCE"
+      ],
+      "circ005RequirementLinks": [
+        "CIRC005_5_2_TARGET_INVESTOR"
+      ],
+      "status": "EXTRACTED_UNVERIFIED_PENDING_LEGAL_AND_COMPLIANCE_REVIEW",
+      "activation": "FORBIDDEN",
+      "legalReviewStatus": "PENDING",
+      "complianceReviewStatus": "PENDING",
+      "specFile": "regulatory/requirements/inst066-candidates/06_REGULATORY_REPORTING.json",
+      "provenance": {
+        "sourceArtifact": "regulatory/materialized/INSTRUCTION_66_CREPMF_2021.pdf",
+        "ocrDerivative": "regulatory/materialized/INSTRUCTION_66_CREPMF_2021.txt",
+        "articleBlock": "regulatory/requirements/INST066_ARTICLE_BLOCKS_V0_1.json",
+        "textQuality": "OCR_EXTRACTED_UNVERIFIED"
+      }
+    },
+    {
+      "id": "INST066_ART037_REQ003",
+      "sourceId": "INSTRUCTION_66_CREPMF_2021",
+      "sourceSha256": "3f964f2f6ab9ce9eb16912ccda13f34b5023a188dfb18fcba7065590c770d396",
+      "articleId": "INST066_ARTICLE_037",
+      "articleNumber": 37,
+      "sourcePages": [
+        38,
+        39,
+        40
+      ],
+      "sourceArticleTextSha256": "f56fefefebe5bbb958afbbfe3eea6d367f970a0a5626bd309ee06bd2a50e9926",
+      "sourceTextCandidate": "…ociété d'investissement ou Société de Gestion d'OPC, pour chacun des FIA qu’elle gère, est exonérée de La transmission des informations trimestrielles à condition que la commercialisation du FIA aît été réalisée auprès d'investisseurs qualifiés. Les informations annuelles mentionnées à l’alinéa 1 du présent article doivent être transmises dans les six (06) mois suivant la fin de l'exercice et doivent comprendre les éléments ci-après : a) un rapport sur L’OPC contenant un état de l’actif et du passif, un compte ventilé des revenus et des dépenses de l'exercice, un rapport sur les activités de l'exercice et les autres renseignements prévus dans une Circulaire du Conseil Régional, ainsi que toute information significative permettant aux investisseurs de porter, en pleine connaissance de cause, un jugement sur l’évolution de l’activité et les résultats de L’OPC ; b) Les états financiers annuels de l’OPC, établis conformément aux dispositions de la réglementation comptable spécifique applicable aux intervenants agréés du marché financier régional de l’UMOA et certifiés par le Commissaire aux Comptes ; c) Les rapports de certification du Commissaire aux Comptes établis conformément aux dispositions de l'instruction n°58/CREPMF/2019 relative à l’exercice du commissariat aux comptes auprès des structures agréées et des sociétés cotées du marché financier régional de l'UMOA ; d) le procès-verbal du Conseil d'Administration de la Société de Gestion d’OPC ayant arrêté les comptes du FCP ; A \"ns Avenue Joseph ANOMA 7 TEL.: (225) 27 20 21 57 42 / 20 31 56 20 01 B.P, 1878 Abidjan 01/Côte d’Ivoire 38 Fax: (225) 27 20 33 23 04 Site web : http://www.crepmf.org presidence@crepmf.org e) le rapport du Dépositaire établi conformément à l’article 21 alinéa 13 de la présente Instruction. 3. L…",
+      "sourceKeywordHits": [
+        "six (06) mois suivant la fin de l'exercice",
+        "états financiers annuels",
+        "rapport du Dépositaire"
+      ],
+      "normalizedRequirementCandidate": "Les informations annuelles de l'OPC doivent être produites dans les six mois suivant la clôture et inclure le rapport d'activité, les états financiers certifiés, les rapports du commissaire aux comptes, les décisions requises et le rapport du dépositaire.",
+      "applicabilityCandidate": "EACH_OPC_ANNUAL_REPORTING",
+      "products": [
+        "OPCVM",
+        "FIA",
+        "FCP",
+        "SICAV",
+        "OPCR",
+        "OTHER_OPC"
+      ],
+      "documentTypes": [
+        "ANNUAL_REPORT",
+        "AUDITED_FINANCIAL_STATEMENTS",
+        "DEPOSITARY_REPORT",
+        "BOARD_MINUTES"
+      ],
+      "canonicalFields": [
+        "periodic_reporting.annual.deadline",
+        "periodic_reporting.annual.documents[]",
+        "accounting.financial_year_end"
+      ],
+      "questionIds": [
+        "Q_FINANCIAL_YEAR_END",
+        "Q_ANNUAL_REPORTING_DOCUMENTS"
+      ],
+      "clauseGroupIds": [
+        "CG_ACCOUNTING_DATES",
+        "CG_DOCUMENT_AVAILABILITY"
+      ],
+      "controlIds": [
+        "RULE_ANNUAL_REPORTING_DEADLINE",
+        "RULE_ANNUAL_REPORTING_DOCUMENT_SET_COMPLETE",
+        "RULE_ANNUAL_FINANCIAL_STATEMENTS_CERTIFIED"
+      ],
+      "evidenceTypes": [
+        "ANNUAL_REPORT",
+        "AUDITED_FINANCIAL_STATEMENTS",
+        "AUDITOR_REPORT",
+        "BOARD_MINUTES",
+        "DEPOSITARY_REPORT"
+      ],
+      "outputSectionIds": [
+        "SEC_1_4_DOCUMENT_AVAILABILITY",
+        "REGULATORY_REPORTING_PACKAGE"
+      ],
+      "reviewRoles": [
+        "LEGAL",
+        "COMPLIANCE"
+      ],
+      "circ005RequirementLinks": [
+        "CIRC005_1_4_FCP_PERIODIC_REPORTS_AVAILABILITY",
+        "CIRC005_1_6_FCP_ACCOUNT_CLOSING_DATE",
+        "CIRC005_1_7_FCP_ACCOUNTING_CONTROL_PERSONS"
+      ],
+      "status": "EXTRACTED_UNVERIFIED_PENDING_LEGAL_AND_COMPLIANCE_REVIEW",
+      "activation": "FORBIDDEN",
+      "legalReviewStatus": "PENDING",
+      "complianceReviewStatus": "PENDING",
+      "specFile": "regulatory/requirements/inst066-candidates/06_REGULATORY_REPORTING.json",
+      "provenance": {
+        "sourceArtifact": "regulatory/materialized/INSTRUCTION_66_CREPMF_2021.pdf",
+        "ocrDerivative": "regulatory/materialized/INSTRUCTION_66_CREPMF_2021.txt",
+        "articleBlock": "regulatory/requirements/INST066_ARTICLE_BLOCKS_V0_1.json",
+        "textQuality": "OCR_EXTRACTED_UNVERIFIED"
+      }
+    },
+    {
+      "id": "INST066_ART037_REQ004",
+      "sourceId": "INSTRUCTION_66_CREPMF_2021",
+      "sourceSha256": "3f964f2f6ab9ce9eb16912ccda13f34b5023a188dfb18fcba7065590c770d396",
+      "articleId": "INST066_ARTICLE_037",
+      "articleNumber": 37,
+      "sourcePages": [
+        38,
+        39,
+        40
+      ],
+      "sourceArticleTextSha256": "f56fefefebe5bbb958afbbfe3eea6d367f970a0a5626bd309ee06bd2a50e9926",
+      "sourceTextCandidate": "1. Une Société de Gestion d'OPC ou la Société d’Investissement pour chaque OPC qu’elle transmet, au Conseil Régional et met à disposition de ses investisseurs dans les conditions énumérées à l’article 34.2 ; a) des informations annuelles ; b) des informations semestrielles couvrant Les six premiers mois de l'exercice ; c) des informations trimestrielles couvrant chaque trimestre de l’exercice. Une Société d'investissement ou Société de Gestion d'OPC, pour chacun des FIA qu’elle gère, est exonérée de La transmission des informations trimestrielles à condition que la commercialisation du FIA aît été réalisée auprès d'investisseurs qualifiés. Les informations annuelles mentionnées à l’alinéa 1 du présent article doivent être transmises dans les six (06) mois suivant la fin de l'exercice et doivent comprendre les éléments ci-après : a) un rapport sur L’OPC contenant un état de l’actif et du passif, un compte ventilé des revenus et des dépenses de l'exercice, un rapport sur les activités de l'exercice et les autres renseignements prévus dans une Circulaire du Conseil Régional, ainsi que toute information significative permettant aux investisseurs de porter, en pleine connaissance de cause, un jugement sur l’évolution de l’activité et les résultats de L’OPC ; b) Les états financiers annuels de l’OPC, établis conformément aux dispositions de la réglementation comptable spécifique applicable aux intervenants agréés du marché financier régional de l’UMOA et certifiés par le Commissaire aux Comptes ; c) Les rapports de certification du Commissaire aux Comptes établis conformément aux dispositions de l'instruction n°58/CREPMF/2019 relative à l’exercice du commissariat aux comptes auprès des structures agréées et des sociétés cotées du marché financier régional de l'UMOA ; d) le pr…",
+      "sourceKeywordHits": [
+        "deux (02) mois suivant la fin du semestre",
+        "informations semestrielles"
+      ],
+      "normalizedRequirementCandidate": "Les informations semestrielles doivent être transmises dans les deux mois suivant la fin du semestre et comprendre le rapport requis sur les OPC gérés.",
+      "applicabilityCandidate": "EACH_OPC_SEMIANNUAL_REPORTING",
+      "products": [
+        "OPCVM",
+        "FIA",
+        "FCP",
+        "SICAV",
+        "OPCR",
+        "OTHER_OPC"
+      ],
+      "documentTypes": [
+        "SEMIANNUAL_REPORT"
+      ],
+      "canonicalFields": [
+        "periodic_reporting.semiannual.deadline",
+        "periodic_reporting.semiannual.report"
+      ],
+      "questionIds": [
+        "Q_SEMIANNUAL_REPORTING_CALENDAR"
+      ],
+      "clauseGroupIds": [
+        "CG_DOCUMENT_AVAILABILITY"
+      ],
+      "controlIds": [
+        "RULE_SEMIANNUAL_REPORTING_DEADLINE",
+        "RULE_SEMIANNUAL_REPORT_PRESENT"
+      ],
+      "evidenceTypes": [
+        "SEMIANNUAL_REPORT",
+        "REGULATORY_SUBMISSION_RECEIPT"
+      ],
+      "outputSectionIds": [
+        "SEC_1_4_DOCUMENT_AVAILABILITY",
+        "REGULATORY_REPORTING_PACKAGE"
+      ],
+      "reviewRoles": [
+        "LEGAL",
+        "COMPLIANCE"
+      ],
+      "circ005RequirementLinks": [
+        "CIRC005_1_4_FCP_PERIODIC_REPORTS_AVAILABILITY"
+      ],
+      "status": "EXTRACTED_UNVERIFIED_PENDING_LEGAL_AND_COMPLIANCE_REVIEW",
+      "activation": "FORBIDDEN",
+      "legalReviewStatus": "PENDING",
+      "complianceReviewStatus": "PENDING",
+      "specFile": "regulatory/requirements/inst066-candidates/06_REGULATORY_REPORTING.json",
+      "provenance": {
+        "sourceArtifact": "regulatory/materialized/INSTRUCTION_66_CREPMF_2021.pdf",
+        "ocrDerivative": "regulatory/materialized/INSTRUCTION_66_CREPMF_2021.txt",
+        "articleBlock": "regulatory/requirements/INST066_ARTICLE_BLOCKS_V0_1.json",
+        "textQuality": "OCR_EXTRACTED_UNVERIFIED"
+      }
+    },
+    {
+      "id": "INST066_ART037_REQ005",
+      "sourceId": "INSTRUCTION_66_CREPMF_2021",
+      "sourceSha256": "3f964f2f6ab9ce9eb16912ccda13f34b5023a188dfb18fcba7065590c770d396",
+      "articleId": "INST066_ARTICLE_037",
+      "articleNumber": 37,
+      "sourcePages": [
+        38,
+        39,
+        40
+      ],
+      "sourceArticleTextSha256": "f56fefefebe5bbb958afbbfe3eea6d367f970a0a5626bd309ee06bd2a50e9926",
+      "sourceTextCandidate": "…ment à l’article 21 alinéa 13 de la présente Instruction. 3. Les informations semestrielles doivent être transmises dans Les deux (02) mois suivant la fin du semestre et doivent comprendre un rapport sur Les OPC gérés par la Société d’investissement ou la Société de Gestion d’OPC. 4. Les informations trimestrielles doivent être transmises dans Les trente (30) jours qui suivent la fin du trimestre et doivent comprendre les éléments ci-après : - les états financiers trimestriels de l’OPC, établis conformément aux dispositions de la réglementation comptable spécifique applicable aux intervenants agréés du marché financier régional de l’UMOA ; - la composition détaillée des actifs de l’OPC à la date du dernier jour de bourse du trimestre considéré, certifiée par un Commissaire aux Comptes ; -_ les informations sur les réclamations reçues, leurs traitements y compris le délai de traitement et Les éventuelles indemnisations. 5. Une Société de Gestion d’OPC transmet, au Conseil Régional : a) Dans Les trente (30) jours qui suivent la date de tenue de l'Assemblée Générale Ordinaire appelée à approuver les comptes de l’exercice : i) les états financiers annuels de la société de gestion d’OPC, établis conformément aux dispositions de la réglementation comptable spécifique applicable aux intervenants agréés du marché financier régional de l’UMOA et certifiés par Le Commissaire aux Comptes, ñ) les rapports de certification du Commissaire aux Comptes établis conformément aux dispositions de L’Instruction n°58/CREPMF/2019 relative à l'exercice du commissariat aux comptes auprès des structures agréées et des sociétés cotées du marché financier régional de l’UMOA, iii) Les rapports spéciaux des Commissaires aux Comptes établis conformément aux dispositions de l’Acte Uniforme du Traité d…",
+      "sourceKeywordHits": [
+        "trente (30) jours",
+        "composition détaillée des actifs",
+        "réclamations reçues"
+      ],
+      "normalizedRequirementCandidate": "Les informations trimestrielles doivent être transmises dans les trente jours suivant la fin du trimestre et inclure les états financiers, la composition détaillée des actifs certifiée et les données relatives aux réclamations et indemnisations.",
+      "applicabilityCandidate": "EACH_OPC_QUARTERLY_REPORTING_UNLESS_EXEMPT",
+      "products": [
+        "OPCVM",
+        "FIA",
+        "FCP",
+        "SICAV",
+        "OPCR",
+        "OTHER_OPC"
+      ],
+      "documentTypes": [
+        "QUARTERLY_REPORT",
+        "QUARTERLY_FINANCIAL_STATEMENTS",
+        "CERTIFIED_PORTFOLIO",
+        "COMPLAINTS_REPORT"
+      ],
+      "canonicalFields": [
+        "periodic_reporting.quarterly.deadline",
+        "periodic_reporting.quarterly.financial_statements",
+        "periodic_reporting.quarterly.certified_assets",
+        "complaints.statistics"
+      ],
+      "questionIds": [
+        "Q_QUARTERLY_REPORTING_CALENDAR",
+        "Q_COMPLAINTS_REPORTING"
+      ],
+      "clauseGroupIds": [],
+      "controlIds": [
+        "RULE_QUARTERLY_REPORTING_DEADLINE",
+        "RULE_QUARTERLY_ASSET_COMPOSITION_CERTIFIED",
+        "RULE_COMPLAINTS_REPORTING_COMPLETE"
+      ],
+      "evidenceTypes": [
+        "QUARTERLY_FINANCIAL_STATEMENTS",
+        "CERTIFIED_PORTFOLIO",
+        "COMPLAINTS_REGISTER",
+        "REGULATORY_SUBMISSION_RECEIPT"
+      ],
+      "outputSectionIds": [
+        "REGULATORY_REPORTING_PACKAGE"
+      ],
+      "reviewRoles": [
+        "LEGAL",
+        "COMPLIANCE"
+      ],
+      "circ005RequirementLinks": [],
+      "status": "EXTRACTED_UNVERIFIED_PENDING_LEGAL_AND_COMPLIANCE_REVIEW",
+      "activation": "FORBIDDEN",
+      "legalReviewStatus": "PENDING",
+      "complianceReviewStatus": "PENDING",
+      "specFile": "regulatory/requirements/inst066-candidates/06_REGULATORY_REPORTING.json",
+      "provenance": {
+        "sourceArtifact": "regulatory/materialized/INSTRUCTION_66_CREPMF_2021.pdf",
+        "ocrDerivative": "regulatory/materialized/INSTRUCTION_66_CREPMF_2021.txt",
+        "articleBlock": "regulatory/requirements/INST066_ARTICLE_BLOCKS_V0_1.json",
+        "textQuality": "OCR_EXTRACTED_UNVERIFIED"
+      }
+    },
+    {
+      "id": "INST066_ART037_REQ006",
+      "sourceId": "INSTRUCTION_66_CREPMF_2021",
+      "sourceSha256": "3f964f2f6ab9ce9eb16912ccda13f34b5023a188dfb18fcba7065590c770d396",
+      "articleId": "INST066_ARTICLE_037",
+      "articleNumber": 37,
+      "sourcePages": [
+        38,
+        39,
+        40
+      ],
+      "sourceArticleTextSha256": "f56fefefebe5bbb958afbbfe3eea6d367f970a0a5626bd309ee06bd2a50e9926",
+      "sourceTextCandidate": "… intervenants agréés du marché financier régional de l’UMOA ; - la composition détaillée des actifs de l’OPC à la date du dernier jour de bourse du trimestre considéré, certifiée par un Commissaire aux Comptes ; -_ les informations sur les réclamations reçues, leurs traitements y compris le délai de traitement et Les éventuelles indemnisations. 5. Une Société de Gestion d’OPC transmet, au Conseil Régional : a) Dans Les trente (30) jours qui suivent la date de tenue de l'Assemblée Générale Ordinaire appelée à approuver les comptes de l’exercice : i) les états financiers annuels de la société de gestion d’OPC, établis conformément aux dispositions de la réglementation comptable spécifique applicable aux intervenants agréés du marché financier régional de l’UMOA et certifiés par Le Commissaire aux Comptes, ñ) les rapports de certification du Commissaire aux Comptes établis conformément aux dispositions de L’Instruction n°58/CREPMF/2019 relative à l'exercice du commissariat aux comptes auprès des structures agréées et des sociétés cotées du marché financier régional de l’UMOA, iii) Les rapports spéciaux des Commissaires aux Comptes établis conformément aux dispositions de l’Acte Uniforme du Traité de l’OHADA relatif au droit des sociétés commerciales et du GIE, iv) Les procès-verbaux du Conseil d'Administration et de l’Assemblée Générale Ordinaire ayant respectivement arrêté et approuvé les comptes de la société ; b) dans les deux (02) mois suivant la fin du semestre, un rapport d’examen limité du Commissaire aux Comptes sur Les états financiers de fin de premier semestre de la société ; c) dans les trente (30) jours qui suivent la fin du trimestre, les états financiers trimestriels de la société établis conformément aux dispositions de la réglementation comptable spécifiqu…",
+      "sourceKeywordHits": [
+        "Une Société de Gestion d’OPC transmet",
+        "Assemblée Générale Ordinaire",
+        "rapport d’examen limité"
+      ],
+      "normalizedRequirementCandidate": "La société de gestion doit disposer d'un calendrier distinct pour ses propres états financiers annuels, semestriels et trimestriels ainsi que pour les rapports et procès-verbaux exigés.",
+      "applicabilityCandidate": "MANAGEMENT_COMPANY_PERIODIC_REPORTING",
+      "products": [
+        "MANAGEMENT_COMPANY"
+      ],
+      "documentTypes": [
+        "SGO_ANNUAL_FINANCIAL_STATEMENTS",
+        "SGO_SEMIANNUAL_REVIEW",
+        "SGO_QUARTERLY_FINANCIAL_STATEMENTS",
+        "BOARD_AND_GENERAL_MEETING_MINUTES"
+      ],
+      "canonicalFields": [
+        "manager.periodic_reporting.annual",
+        "manager.periodic_reporting.semiannual",
+        "manager.periodic_reporting.quarterly",
+        "manager.governance_minutes[]"
+      ],
+      "questionIds": [
+        "Q_MANAGER_REPORTING_CALENDAR"
+      ],
+      "clauseGroupIds": [],
+      "controlIds": [
+        "RULE_MANAGER_ANNUAL_REPORTING_COMPLETE",
+        "RULE_MANAGER_SEMIANNUAL_REPORTING_COMPLETE",
+        "RULE_MANAGER_QUARTERLY_REPORTING_COMPLETE"
+      ],
+      "evidenceTypes": [
+        "SGO_AUDITED_FINANCIAL_STATEMENTS",
+        "AUDITOR_SPECIAL_REPORTS",
+        "BOARD_MINUTES",
+        "GENERAL_MEETING_MINUTES",
+        "LIMITED_REVIEW_REPORT"
+      ],
+      "outputSectionIds": [
+        "REGULATORY_REPORTING_PACKAGE",
+        "SYSTEM_ONLY"
+      ],
+      "reviewRoles": [
+        "LEGAL",
+        "COMPLIANCE"
+      ],
+      "circ005RequirementLinks": [
+        "CIRC005_1_7_FCP_ACCOUNTING_CONTROL_PERSONS"
+      ],
+      "status": "EXTRACTED_UNVERIFIED_PENDING_LEGAL_AND_COMPLIANCE_REVIEW",
+      "activation": "FORBIDDEN",
+      "legalReviewStatus": "PENDING",
+      "complianceReviewStatus": "PENDING",
+      "specFile": "regulatory/requirements/inst066-candidates/06_REGULATORY_REPORTING.json",
+      "provenance": {
+        "sourceArtifact": "regulatory/materialized/INSTRUCTION_66_CREPMF_2021.pdf",
+        "ocrDerivative": "regulatory/materialized/INSTRUCTION_66_CREPMF_2021.txt",
+        "articleBlock": "regulatory/requirements/INST066_ARTICLE_BLOCKS_V0_1.json",
+        "textQuality": "OCR_EXTRACTED_UNVERIFIED"
+      }
+    },
+    {
       "id": "INST066_ART038_REQ001",
       "sourceId": "INSTRUCTION_66_CREPMF_2021",
       "sourceSha256": "3f964f2f6ab9ce9eb16912ccda13f34b5023a188dfb18fcba7065590c770d396",
@@ -2037,6 +4524,897 @@
       "legalReviewStatus": "PENDING",
       "complianceReviewStatus": "PENDING",
       "specFile": "regulatory/requirements/inst066-candidates/03_OPERATIONS_FEES.json",
+      "provenance": {
+        "sourceArtifact": "regulatory/materialized/INSTRUCTION_66_CREPMF_2021.pdf",
+        "ocrDerivative": "regulatory/materialized/INSTRUCTION_66_CREPMF_2021.txt",
+        "articleBlock": "regulatory/requirements/INST066_ARTICLE_BLOCKS_V0_1.json",
+        "textQuality": "OCR_EXTRACTED_UNVERIFIED"
+      }
+    },
+    {
+      "id": "INST066_ART054_REQ001",
+      "sourceId": "INSTRUCTION_66_CREPMF_2021",
+      "sourceSha256": "3f964f2f6ab9ce9eb16912ccda13f34b5023a188dfb18fcba7065590c770d396",
+      "articleId": "INST066_ARTICLE_054",
+      "articleNumber": 54,
+      "sourcePages": [
+        48,
+        49
+      ],
+      "sourceArticleTextSha256": "f1f5d1b7b42aee9972de059e8a96093f9f3f6255ffa24c7f12b37ffc78faff33",
+      "sourceTextCandidate": "Le Conseil Régional autorise Les opérations de fusion telles que définies à l’article premier de la présente Instruction, conformément à une ou plusieurs des techniques de fusion suivantes : a) opération par laquelle un ou plusieurs OPCVM dénommés « OPCVM absorbés », transfèrent, par suite et au moment de leur dissolution sans liquidation, D Avenue Joseph ANOMA 01 B.P. 1878 Abidjan 01/Côte d'ivoire Site web : http://www.crepmf.org 48 L TEL.: (225) 27 20 21 57 42 / 20 31 56 20 Fax: (225) 27 20 33 23 04 presidence@crepmf.org l’ensemble de leur patrimoine, activement et passivement, à un autre OPCVM existant dénommé « OPCVM absorbeur », moyennant l'attribution, à leurs porteurs de parts, de parts de l’OPCVM absorbeur et, éventuellement, d’un paiement en espèces ne dépassant pas 10% de la valeur nette d'inventaire de ces parts ; b} opération par laquelle au moins deux QPCVM dénommés « OPCVM absorbés », transfèrent, par suite et au moment de leur dissolution sans liquidation, l’ensemble de Leur patrimoine, activement et passivement, à Un OPCVM qu'ils constituent, dénommé « OPCVM absorbeur », moyennant l'attribution, à leurs porteurs de parts, de parts de l'OPCVM absorbeur et, éventuellement, d’un paiement en espèces ne dépassant pas 10% de La valeur nette d'inventaire de ces parts.",
+      "sourceKeywordHits": [
+        "techniques de fusion",
+        "OPCVM absorbés",
+        "paiement en espèces ne dépassant pas 10%"
+      ],
+      "normalizedRequirementCandidate": "Toute fusion doit être qualifiée selon la technique réglementaire utilisée, identifier les OPCVM absorbés et absorbeur et contrôler que l'éventuel paiement en espèces ne dépasse pas la limite indiquée par le texte.",
+      "applicabilityCandidate": "OPCVM_MERGER",
+      "products": [
+        "OPCVM",
+        "FCP",
+        "SICAV"
+      ],
+      "documentTypes": [
+        "MERGER_PLAN",
+        "MERGER_AUTHORIZATION_DOSSIER"
+      ],
+      "canonicalFields": [
+        "corporate_actions[].type",
+        "corporate_actions[].merger_technique",
+        "corporate_actions[].absorbed_funds[]",
+        "corporate_actions[].absorbing_fund",
+        "corporate_actions[].cash_payment_percent"
+      ],
+      "questionIds": [
+        "Q_MERGER_TECHNIQUE",
+        "Q_MERGER_CASH_PAYMENT"
+      ],
+      "clauseGroupIds": [
+        "CG_CORPORATE_ACTION"
+      ],
+      "controlIds": [
+        "RULE_MERGER_TECHNIQUE_CLASSIFIED",
+        "RULE_MERGER_CASH_PAYMENT_LIMIT"
+      ],
+      "evidenceTypes": [
+        "MERGER_PLAN",
+        "BOARD_OR_HOLDER_APPROVAL",
+        "VALUATION_WORKPAPER"
+      ],
+      "outputSectionIds": [
+        "SYSTEM_ONLY"
+      ],
+      "reviewRoles": [
+        "LEGAL",
+        "COMPLIANCE"
+      ],
+      "circ005RequirementLinks": [],
+      "status": "EXTRACTED_UNVERIFIED_PENDING_LEGAL_AND_COMPLIANCE_REVIEW",
+      "activation": "FORBIDDEN",
+      "legalReviewStatus": "PENDING",
+      "complianceReviewStatus": "PENDING",
+      "specFile": "regulatory/requirements/inst066-candidates/07_MERGER_AND_SCISSION_LIFECYCLE.json",
+      "provenance": {
+        "sourceArtifact": "regulatory/materialized/INSTRUCTION_66_CREPMF_2021.pdf",
+        "ocrDerivative": "regulatory/materialized/INSTRUCTION_66_CREPMF_2021.txt",
+        "articleBlock": "regulatory/requirements/INST066_ARTICLE_BLOCKS_V0_1.json",
+        "textQuality": "OCR_EXTRACTED_UNVERIFIED"
+      }
+    },
+    {
+      "id": "INST066_ART055_REQ001",
+      "sourceId": "INSTRUCTION_66_CREPMF_2021",
+      "sourceSha256": "3f964f2f6ab9ce9eb16912ccda13f34b5023a188dfb18fcba7065590c770d396",
+      "articleId": "INST066_ARTICLE_055",
+      "articleNumber": 55,
+      "sourcePages": [
+        49
+      ],
+      "sourceArticleTextSha256": "dafb1fb4290dbd0e53f5d5798d2ee40435516ca4caead953fe593adf0970af3f",
+      "sourceTextCandidate": "1. Une fusion est subordonnée à une autorisation préalable délivrée par le Conseil Régional. 2. Les informations suivantes sont communiquées au Conseil Régional : a} le projet commun de fusion proposée, dûment approuvé par L'OPCVM absorbé et L'OPCVM absorbeur : b} une version actualisée du Prospectus et des informations clés pour l'investisseur de L'GPCVAM absorbeur ; c) une déclaration de conformité émise par chacun des Dépositaires des OPCVM absorbé et absorbeur confirmant que, conformément à l’article 57, ils ont vérifié la conformité des éléments d'information énoncés à l’article 56, alinéa 1, points a}, f} et g}, avec les exigences de la présente Instruction et avec le Réglement du Fonds ou avec les documents constitutifs de leur OPCVM respectif ; et ä) les informations relatives à ta fusion proposée que les OPCVM absorbeur et absorbé cornptent fournir à leurs porteurs de parts respectifs : e) le ou les rapport{s) du ou des Commissaire{s) aux Comptes visé(s) à l’article 58 alinéa 1. Le Conseil Régional autorise la fusion proposée si La fusion est conforme à toutes les [#5] exigences des articles 55 à 58. 4, Une Circulaire du Conseil Régional précise Le contenu du dossier d'agrément à soumettre dans le cadre des fusions.",
+      "sourceKeywordHits": [
+        "autorisation préalable",
+        "version actualisée du Prospectus",
+        "déclaration de conformité",
+        "rapport{s)"
+      ],
+      "normalizedRequirementCandidate": "La fusion doit être bloquée tant que l'autorisation préalable du régulateur et le dossier comprenant projet commun, documents actualisés, déclarations des dépositaires, information des porteurs et rapports des commissaires aux comptes ne sont pas complets.",
+      "applicabilityCandidate": "OPCVM_MERGER_AUTHORIZATION",
+      "products": [
+        "OPCVM",
+        "FCP",
+        "SICAV"
+      ],
+      "documentTypes": [
+        "MERGER_AUTHORIZATION_DOSSIER",
+        "PROSPECTUS",
+        "DICI",
+        "DEPOSITARY_CONFORMITY_STATEMENT",
+        "AUDITOR_REPORT",
+        "HOLDER_NOTICE"
+      ],
+      "canonicalFields": [
+        "corporate_actions[].authorization",
+        "corporate_actions[].documents[]",
+        "documents.prospectus.versions[]",
+        "documents.dici.versions[]"
+      ],
+      "questionIds": [
+        "Q_MERGER_AUTHORIZATION_DOSSIER"
+      ],
+      "clauseGroupIds": [
+        "CG_CORPORATE_ACTION"
+      ],
+      "controlIds": [
+        "RULE_MERGER_PRIOR_AUTHORIZATION",
+        "RULE_MERGER_AUTHORIZATION_DOSSIER_COMPLETE"
+      ],
+      "evidenceTypes": [
+        "REGULATORY_AUTHORIZATION",
+        "MERGER_PLAN",
+        "UPDATED_PROSPECTUS",
+        "UPDATED_DICI",
+        "DEPOSITARY_CONFORMITY_STATEMENT",
+        "AUDITOR_REPORT",
+        "HOLDER_NOTICE_DRAFT"
+      ],
+      "outputSectionIds": [
+        "SYSTEM_ONLY"
+      ],
+      "reviewRoles": [
+        "LEGAL",
+        "COMPLIANCE"
+      ],
+      "circ005RequirementLinks": [
+        "CIRC005_GENERAL_MINIMUM"
+      ],
+      "status": "EXTRACTED_UNVERIFIED_PENDING_LEGAL_AND_COMPLIANCE_REVIEW",
+      "activation": "FORBIDDEN",
+      "legalReviewStatus": "PENDING",
+      "complianceReviewStatus": "PENDING",
+      "specFile": "regulatory/requirements/inst066-candidates/07_MERGER_AND_SCISSION_LIFECYCLE.json",
+      "provenance": {
+        "sourceArtifact": "regulatory/materialized/INSTRUCTION_66_CREPMF_2021.pdf",
+        "ocrDerivative": "regulatory/materialized/INSTRUCTION_66_CREPMF_2021.txt",
+        "articleBlock": "regulatory/requirements/INST066_ARTICLE_BLOCKS_V0_1.json",
+        "textQuality": "OCR_EXTRACTED_UNVERIFIED"
+      }
+    },
+    {
+      "id": "INST066_ART056_REQ001",
+      "sourceId": "INSTRUCTION_66_CREPMF_2021",
+      "sourceSha256": "3f964f2f6ab9ce9eb16912ccda13f34b5023a188dfb18fcba7065590c770d396",
+      "articleId": "INST066_ARTICLE_056",
+      "articleNumber": 56,
+      "sourcePages": [
+        49,
+        50
+      ],
+      "sourceArticleTextSha256": "b98f631660aa5dfae4035d0d19e5c57cb169beb37ed63603965b834a7c791c42",
+      "sourceTextCandidate": "L'OPCVM absorbé et L'OPCVM absorbeur rédigent un « projet commun de fusion », dont les étéments sont Les suivants, auquel ils peuvent ajouter des éléments supplémentaires : a} une identification du type de fusion et des OPCVM concernés ; b) le contexte et La motivation de la fusion proposée ; TO ÿ Avenue Joseph ANOMA 4 TEL: (225) 27 20 21 57 42 / 20 31 56 20 Le 51 8.P. 1878 Abidjan 01/Côte d'ivoire ; 43 Fax: (225) 27 20 33 23 DA Site web : Attp://Wwww.crepmf.org presidence@crepmf.org c) l'incidence prévue de la fusion proposée sur la situation des porteurs de parts tant de L’OPCVM absorbé que de L’OPCVM absorbeur ; d) les critères adoptés pour l'évaluation de L’actif et, Le cas échéant, du passif à la date de calcul du ratio d'échange visée à l’article 62 alinéa 1 ; e) la méthode de calcul du ratio d'échange ; f) La date d’effet prévue pour la fusion ; g) les règles applicables respectivement au transfert d’actifs et à l’échange de parts ; et h) en cas de fusion, conformément à l’article 54, point b), Le Règlement du Fonds ou les documents constitutifs de l’OPCVM absorbeur nouvellement constitué. SECTION 2 - CONTROLE DES TIERS, INFORMATIONS ET AUTRES DROITS DES PORTEURS DE PARTS, COUTS ET PRISE D’EFFET",
+      "sourceKeywordHits": [
+        "projet commun de fusion",
+        "contexte et La motivation",
+        "méthode de calcul du ratio d'échange",
+        "date d’effet prévue"
+      ],
+      "normalizedRequirementCandidate": "Le projet commun de fusion doit identifier la technique et les fonds, exposer le contexte et la motivation, décrire l'incidence sur les porteurs, les critères d'évaluation, la méthode de parité, la date d'effet et les règles de transfert et d'échange.",
+      "applicabilityCandidate": "OPCVM_MERGER_PLAN",
+      "products": [
+        "OPCVM",
+        "FCP",
+        "SICAV"
+      ],
+      "documentTypes": [
+        "MERGER_PLAN"
+      ],
+      "canonicalFields": [
+        "corporate_actions[].rationale",
+        "corporate_actions[].holder_impact",
+        "corporate_actions[].valuation_criteria",
+        "corporate_actions[].exchange_ratio_method",
+        "corporate_actions[].planned_effective_date",
+        "corporate_actions[].asset_transfer_rules",
+        "corporate_actions[].unit_exchange_rules"
+      ],
+      "questionIds": [
+        "Q_MERGER_PLAN_DETAILS"
+      ],
+      "clauseGroupIds": [
+        "CG_CORPORATE_ACTION"
+      ],
+      "controlIds": [
+        "RULE_COMMON_MERGER_PLAN_COMPLETE"
+      ],
+      "evidenceTypes": [
+        "MERGER_PLAN",
+        "VALUATION_POLICY",
+        "EXCHANGE_RATIO_WORKPAPER"
+      ],
+      "outputSectionIds": [
+        "DOCUMENT_MERGER_PLAN"
+      ],
+      "reviewRoles": [
+        "LEGAL",
+        "COMPLIANCE"
+      ],
+      "circ005RequirementLinks": [],
+      "status": "EXTRACTED_UNVERIFIED_PENDING_LEGAL_AND_COMPLIANCE_REVIEW",
+      "activation": "FORBIDDEN",
+      "legalReviewStatus": "PENDING",
+      "complianceReviewStatus": "PENDING",
+      "specFile": "regulatory/requirements/inst066-candidates/07_MERGER_AND_SCISSION_LIFECYCLE.json",
+      "provenance": {
+        "sourceArtifact": "regulatory/materialized/INSTRUCTION_66_CREPMF_2021.pdf",
+        "ocrDerivative": "regulatory/materialized/INSTRUCTION_66_CREPMF_2021.txt",
+        "articleBlock": "regulatory/requirements/INST066_ARTICLE_BLOCKS_V0_1.json",
+        "textQuality": "OCR_EXTRACTED_UNVERIFIED"
+      }
+    },
+    {
+      "id": "INST066_ART057_REQ001",
+      "sourceId": "INSTRUCTION_66_CREPMF_2021",
+      "sourceSha256": "3f964f2f6ab9ce9eb16912ccda13f34b5023a188dfb18fcba7065590c770d396",
+      "articleId": "INST066_ARTICLE_057",
+      "articleNumber": 57,
+      "sourcePages": [
+        50
+      ],
+      "sourceArticleTextSha256": "da0b3d87bbde7003878ab5962873708bf32d8d763c4f900f50426551153882ca",
+      "sourceTextCandidate": "Les Dépositaires de l’OPCVM absorbé et de l’OPCVM absorbeur établissent «une déclaration de conformité » après avoir vérifié La conformité avec les exigences de la présente Instruction et avec le Règlement ou avec les documents constitutifs de leur OPCVM des éléments énoncés à l’article 56, paragraphe a), f) et g).",
+      "sourceKeywordHits": [
+        "déclaration de conformité",
+        "Dépositaires de l’OPCVM absorbé",
+        "éléments énoncés à l’article 56"
+      ],
+      "normalizedRequirementCandidate": "Les dépositaires des OPCVM absorbé et absorbeur doivent produire une déclaration de conformité portant sur les éléments du projet de fusion identifiés par le texte.",
+      "applicabilityCandidate": "OPCVM_MERGER",
+      "products": [
+        "OPCVM",
+        "FCP",
+        "SICAV"
+      ],
+      "documentTypes": [
+        "DEPOSITARY_CONFORMITY_STATEMENT",
+        "MERGER_AUTHORIZATION_DOSSIER"
+      ],
+      "canonicalFields": [
+        "corporate_actions[].depositary_conformity_statements[]",
+        "depositary.organization_id"
+      ],
+      "questionIds": [
+        "Q_MERGER_DEPOSITARY_CONFORMITY"
+      ],
+      "clauseGroupIds": [],
+      "controlIds": [
+        "RULE_BOTH_DEPOSITARY_CONFORMITY_STATEMENTS_PRESENT",
+        "RULE_DEPOSITARY_CONFORMITY_SCOPE"
+      ],
+      "evidenceTypes": [
+        "DEPOSITARY_CONFORMITY_STATEMENT",
+        "DEPOSITARY_AGREEMENT"
+      ],
+      "outputSectionIds": [
+        "SYSTEM_ONLY"
+      ],
+      "reviewRoles": [
+        "LEGAL",
+        "COMPLIANCE"
+      ],
+      "circ005RequirementLinks": [
+        "CIRC005_2_1_DEPOSITARY_IDENTITY"
+      ],
+      "status": "EXTRACTED_UNVERIFIED_PENDING_LEGAL_AND_COMPLIANCE_REVIEW",
+      "activation": "FORBIDDEN",
+      "legalReviewStatus": "PENDING",
+      "complianceReviewStatus": "PENDING",
+      "specFile": "regulatory/requirements/inst066-candidates/07_MERGER_AND_SCISSION_LIFECYCLE.json",
+      "provenance": {
+        "sourceArtifact": "regulatory/materialized/INSTRUCTION_66_CREPMF_2021.pdf",
+        "ocrDerivative": "regulatory/materialized/INSTRUCTION_66_CREPMF_2021.txt",
+        "articleBlock": "regulatory/requirements/INST066_ARTICLE_BLOCKS_V0_1.json",
+        "textQuality": "OCR_EXTRACTED_UNVERIFIED"
+      }
+    },
+    {
+      "id": "INST066_ART058_REQ001",
+      "sourceId": "INSTRUCTION_66_CREPMF_2021",
+      "sourceSha256": "3f964f2f6ab9ce9eb16912ccda13f34b5023a188dfb18fcba7065590c770d396",
+      "articleId": "INST066_ARTICLE_058",
+      "articleNumber": 58,
+      "sourcePages": [
+        50
+      ],
+      "sourceArticleTextSha256": "ef0824a6a9cdf7bbc7844ab81d5ae84e4b3246b861af0505c1d190ce0cdebfc3",
+      "sourceTextCandidate": "1. Les rapports sur les conditions de réalisation de la fusion sont établis par les Commissaires aux Comptes de l'OPCVM absorbé et de l'OPCVM absorbant. Toutefois, l'un de ces Commissaires aux Comptes peut établir un rapport unique pour le compte des OPCVM concernés. Ce ou ces rapports valide(nt) les éléments suivants : a) les critères adoptés pour l'évaluation de l’actif et, Le cas échéant, du passif à la date de calcul du ratio d'échange visée à l’article 62, alinéa 1 ; b) le cas échéant, le paiement en espèces par part ; et c) la méthode de calcul de La parité d'échange, ainsi que le ratio réel d’échange déterminé à la date de calcul de ce ratio visée à l’article 62, alinéa 1. 2. Un exemplaire du ou des rapports du ou des Commissaire(s) aux Comptes, le cas échéant, de la Déclaration de conformité établie par Les Dépositaires est mis, sur demande et gratuitement, à la disposition des porteurs de parts tant de Ll’'OPCVM absorbé que de l’OPCVM absorbeur.",
+      "sourceKeywordHits": [
+        "rapports sur les conditions de réalisation de la fusion",
+        "critères adoptés pour l'évaluation",
+        "ratio réel d’échange",
+        "gratuitement"
+      ],
+      "normalizedRequirementCandidate": "Le ou les commissaires aux comptes doivent établir un rapport validant les critères d'évaluation, l'éventuel paiement en espèces, la méthode et le ratio réel d'échange, et ce rapport doit être disponible gratuitement sur demande des porteurs.",
+      "applicabilityCandidate": "OPCVM_MERGER",
+      "products": [
+        "OPCVM",
+        "FCP",
+        "SICAV"
+      ],
+      "documentTypes": [
+        "AUDITOR_MERGER_REPORT",
+        "INVESTOR_INFORMATION"
+      ],
+      "canonicalFields": [
+        "corporate_actions[].auditor_reports[]",
+        "corporate_actions[].exchange_ratio",
+        "corporate_actions[].cash_payment",
+        "corporate_actions[].document_availability"
+      ],
+      "questionIds": [
+        "Q_MERGER_AUDITOR_REPORT",
+        "Q_MERGER_REPORT_AVAILABILITY"
+      ],
+      "clauseGroupIds": [
+        "CG_DOCUMENT_AVAILABILITY"
+      ],
+      "controlIds": [
+        "RULE_MERGER_AUDITOR_REPORT_COMPLETE",
+        "RULE_MERGER_REPORT_FREE_ON_REQUEST"
+      ],
+      "evidenceTypes": [
+        "AUDITOR_MERGER_REPORT",
+        "PUBLICATION_OR_AVAILABILITY_EVIDENCE"
+      ],
+      "outputSectionIds": [
+        "SEC_1_4_DOCUMENT_AVAILABILITY",
+        "SYSTEM_ONLY"
+      ],
+      "reviewRoles": [
+        "LEGAL",
+        "COMPLIANCE"
+      ],
+      "circ005RequirementLinks": [
+        "CIRC005_1_4_FCP_PERIODIC_REPORTS_AVAILABILITY",
+        "CIRC005_1_7_FCP_ACCOUNTING_CONTROL_PERSONS"
+      ],
+      "status": "EXTRACTED_UNVERIFIED_PENDING_LEGAL_AND_COMPLIANCE_REVIEW",
+      "activation": "FORBIDDEN",
+      "legalReviewStatus": "PENDING",
+      "complianceReviewStatus": "PENDING",
+      "specFile": "regulatory/requirements/inst066-candidates/07_MERGER_AND_SCISSION_LIFECYCLE.json",
+      "provenance": {
+        "sourceArtifact": "regulatory/materialized/INSTRUCTION_66_CREPMF_2021.pdf",
+        "ocrDerivative": "regulatory/materialized/INSTRUCTION_66_CREPMF_2021.txt",
+        "articleBlock": "regulatory/requirements/INST066_ARTICLE_BLOCKS_V0_1.json",
+        "textQuality": "OCR_EXTRACTED_UNVERIFIED"
+      }
+    },
+    {
+      "id": "INST066_ART059_REQ001",
+      "sourceId": "INSTRUCTION_66_CREPMF_2021",
+      "sourceSha256": "3f964f2f6ab9ce9eb16912ccda13f34b5023a188dfb18fcba7065590c770d396",
+      "articleId": "INST066_ARTICLE_059",
+      "articleNumber": 59,
+      "sourcePages": [
+        50,
+        51
+      ],
+      "sourceArticleTextSha256": "a3fda3c9a36c544e480e71562a34c29e456b290e00a0c4b7f46081948cf9a36d",
+      "sourceTextCandidate": "1. Les OPCVM absorbés et Les OPCVM absorbeurs fournissent à leurs porteurs de parts respectifs des informations utiles et précises quant à la fusion proposée afin de LL Avenue Joseph ANOMA 01 B.P. 1878 Abidjan 01/Côâte d’lvoire Site web : http://www.crepmf.org RAP 50 z TEL.: (225) 27 20 21 57 42 / 20 31 56 20 Fax: (225) 27 20 33 23 O4 presidence@crepmf.org permettre à ces derniers de juger en pleine connaissance de cause de l'incidence de cette fusion sur leur investissement. Ces informations sont transmises aux porteurs de parts des OPCVM absorbés et des OPCVM absorbeurs uniquement après que Le Conseil Régional ait autorisé La fusion proposée en vertu de l’article 55. Elles sont transmises au moins trente (30) jours avant La date ultime de demande de rachat ou de remboursement ou, le cas échéant, de conversion sans frais supplémentaires au titre de l’article 60, alinéa 1. Les informations à fournir aux porteurs de parts de l’OPCVM absorbé et de l’OPCVM absorbeur incluent des informations utiles et précises quant à la fusion proposée, afin de leur permettre de juger en pleine connaissance de cause de l'incidence possible de cette fusion sur leur investissement et d’exercer les droîts que leur confèrent les articles 59 et 60. Elles comprennent Les éléments suivants : d) le contexte et la motivation de la fusion proposée ; e) l'incidence possible de la fusion proposée sur la situation des porteurs de parts, notamment, toutes différences substantielles en ce qui concerne la politique et la stratégie de placement, Les coûts, Les résultats attendus, la présentation périodique de rapports et le risque de dilution de la performance ainsi que, Le cas échéant, un avertissement bien visible aux investisseurs sur le fait que leur régime fiscal pourrait changer à la suite de La fus…",
+      "sourceKeywordHits": [
+        "informations utiles et précises",
+        "au moins trente (30) jours",
+        "régime fiscal pourrait changer",
+        "droits spécifiques des porteurs"
+      ],
+      "normalizedRequirementCandidate": "L'information des porteurs sur une fusion doit être utile, précise, transmise après autorisation et suffisamment avant la date limite d'exercice des droits; elle doit couvrir les impacts, différences de politique, coûts, risques, fiscalité, droits, procédure, date d'effet, DICI et rapports.",
+      "applicabilityCandidate": "OPCVM_MERGER_HOLDER_INFORMATION",
+      "products": [
+        "OPCVM",
+        "FCP",
+        "SICAV"
+      ],
+      "documentTypes": [
+        "HOLDER_NOTICE",
+        "DICI",
+        "AUDITOR_MERGER_REPORT"
+      ],
+      "canonicalFields": [
+        "corporate_actions[].holder_information",
+        "corporate_actions[].notice_date",
+        "corporate_actions[].holder_rights",
+        "corporate_actions[].tax_impact_warning",
+        "corporate_actions[].planned_effective_date"
+      ],
+      "questionIds": [
+        "Q_MERGER_HOLDER_INFORMATION",
+        "Q_MERGER_TAX_IMPACT"
+      ],
+      "clauseGroupIds": [
+        "CG_CORPORATE_ACTION_NOTICE"
+      ],
+      "controlIds": [
+        "RULE_MERGER_NOTICE_AFTER_AUTHORIZATION",
+        "RULE_MERGER_NOTICE_TIMING",
+        "RULE_MERGER_NOTICE_CONTENT_COMPLETE"
+      ],
+      "evidenceTypes": [
+        "REGULATORY_AUTHORIZATION",
+        "HOLDER_NOTICE",
+        "DELIVERY_EVIDENCE",
+        "UPDATED_DICI",
+        "AUDITOR_MERGER_REPORT"
+      ],
+      "outputSectionIds": [
+        "DOCUMENT_HOLDER_NOTICE",
+        "SYSTEM_ONLY"
+      ],
+      "reviewRoles": [
+        "LEGAL",
+        "COMPLIANCE"
+      ],
+      "circ005RequirementLinks": [
+        "CIRC005_1_4_FCP_PERIODIC_REPORTS_AVAILABILITY"
+      ],
+      "status": "EXTRACTED_UNVERIFIED_PENDING_LEGAL_AND_COMPLIANCE_REVIEW",
+      "activation": "FORBIDDEN",
+      "legalReviewStatus": "PENDING",
+      "complianceReviewStatus": "PENDING",
+      "specFile": "regulatory/requirements/inst066-candidates/07_MERGER_AND_SCISSION_LIFECYCLE.json",
+      "provenance": {
+        "sourceArtifact": "regulatory/materialized/INSTRUCTION_66_CREPMF_2021.pdf",
+        "ocrDerivative": "regulatory/materialized/INSTRUCTION_66_CREPMF_2021.txt",
+        "articleBlock": "regulatory/requirements/INST066_ARTICLE_BLOCKS_V0_1.json",
+        "textQuality": "OCR_EXTRACTED_UNVERIFIED"
+      }
+    },
+    {
+      "id": "INST066_ART060_REQ001",
+      "sourceId": "INSTRUCTION_66_CREPMF_2021",
+      "sourceSha256": "3f964f2f6ab9ce9eb16912ccda13f34b5023a188dfb18fcba7065590c770d396",
+      "articleId": "INST066_ARTICLE_060",
+      "articleNumber": 60,
+      "sourcePages": [
+        51,
+        52
+      ],
+      "sourceArticleTextSha256": "6428777f21a16349abc676f4e3e24e5f7482fa9c516186f75eb3f1cb341d13bc",
+      "sourceTextCandidate": "Les porteurs de parts, tant de l’OPCVM absorbé que de L’OPCVM absorbeur, ont le droit d’exiger, sans frais autres que ceux retenus par L’OPCVM pour couvrir les coûts de désinvestissement, le rachat où Le remboursement de leurs parts ou, lorsque c’est possible, leur conversion en parts d’un autre OPCVM poursuivant une politique Avenue Joseph ANOMA dB TEL.: (225) 27 20 21 57 42 / 20 31 56 20 01 B.P. 1878 Abidjan 01/Côte d'Ivoire 51 Fax: (225) 27 20 33 23 04 Site web : http://www.crepmf.org presidence@crepmf.org de placement similaire et géré par La même Société de Gestion d’OPC ou par toute autre société avec laquelle La Société de Gestion d’OPC est liée dans Le cadre d’une communauté de gestion ou de contrôle ou par une importante participation directe ou indirecte. Ce droit devient effectif au moment où les porteurs de parts de l’OPCVM absorbé et ceux de l’OPCVM absorbeur ont été informés de la fusion proposée conformément à l’article 59 et expire cinq jours (05) ouvrables avant la date de calcul du ratio d'échange visée à l’article 62, alinéa 1. Sans préjudice de l’alinéa 1 du présent article, pour les fusions entre OPCVM et par dérogation de l’article 47, le Conseil Régional peut imposer où autoriser la Suspension temporaire de la souscription, du rachat ou du remboursement des parts, à condition qu’une telle suspension soit justifiée par Le souci de protéger Les porteurs de parts.",
+      "sourceKeywordHits": [
+        "droit d’exiger",
+        "sans frais autres que ceux retenus",
+        "conversion en parts d’un autre OPCVM",
+        "expire cinq jours"
+      ],
+      "normalizedRequirementCandidate": "Après l'information sur la fusion, les porteurs doivent pouvoir exercer dans le délai applicable un droit de rachat, remboursement ou conversion sans frais autres que les coûts de désinvestissement autorisés.",
+      "applicabilityCandidate": "OPCVM_MERGER_HOLDER_EXIT_RIGHT",
+      "products": [
+        "OPCVM",
+        "FCP",
+        "SICAV"
+      ],
+      "documentTypes": [
+        "HOLDER_NOTICE",
+        "REDEMPTION_PROCEDURE",
+        "MERGER_PLAN"
+      ],
+      "canonicalFields": [
+        "corporate_actions[].holder_exit_right",
+        "corporate_actions[].exit_right_deadline",
+        "corporate_actions[].permitted_disinvestment_costs",
+        "redemption"
+      ],
+      "questionIds": [
+        "Q_MERGER_HOLDER_EXIT_RIGHT",
+        "Q_REDEMPTION_ALLOWED"
+      ],
+      "clauseGroupIds": [
+        "CG_CORPORATE_ACTION_NOTICE",
+        "CG_REDEMPTION"
+      ],
+      "controlIds": [
+        "RULE_MERGER_EXIT_RIGHT_DISCLOSED",
+        "RULE_MERGER_EXIT_RIGHT_DEADLINE",
+        "RULE_NO_UNAUTHORIZED_MERGER_EXIT_FEE"
+      ],
+      "evidenceTypes": [
+        "HOLDER_NOTICE",
+        "REDEMPTION_PROCEDURE",
+        "TRANSACTION_FEE_SCHEDULE"
+      ],
+      "outputSectionIds": [
+        "DOCUMENT_HOLDER_NOTICE",
+        "SEC_1_13_REDEMPTION_SUSPENSION"
+      ],
+      "reviewRoles": [
+        "LEGAL",
+        "COMPLIANCE"
+      ],
+      "circ005RequirementLinks": [
+        "CIRC005_1_13_FCP_REDEMPTION_REIMBURSEMENT"
+      ],
+      "status": "EXTRACTED_UNVERIFIED_PENDING_LEGAL_AND_COMPLIANCE_REVIEW",
+      "activation": "FORBIDDEN",
+      "legalReviewStatus": "PENDING",
+      "complianceReviewStatus": "PENDING",
+      "specFile": "regulatory/requirements/inst066-candidates/07_MERGER_AND_SCISSION_LIFECYCLE.json",
+      "provenance": {
+        "sourceArtifact": "regulatory/materialized/INSTRUCTION_66_CREPMF_2021.pdf",
+        "ocrDerivative": "regulatory/materialized/INSTRUCTION_66_CREPMF_2021.txt",
+        "articleBlock": "regulatory/requirements/INST066_ARTICLE_BLOCKS_V0_1.json",
+        "textQuality": "OCR_EXTRACTED_UNVERIFIED"
+      }
+    },
+    {
+      "id": "INST066_ART060_REQ002",
+      "sourceId": "INSTRUCTION_66_CREPMF_2021",
+      "sourceSha256": "3f964f2f6ab9ce9eb16912ccda13f34b5023a188dfb18fcba7065590c770d396",
+      "articleId": "INST066_ARTICLE_060",
+      "articleNumber": 60,
+      "sourcePages": [
+        51,
+        52
+      ],
+      "sourceArticleTextSha256": "6428777f21a16349abc676f4e3e24e5f7482fa9c516186f75eb3f1cb341d13bc",
+      "sourceTextCandidate": "…absorbeur ont été informés de la fusion proposée conformément à l’article 59 et expire cinq jours (05) ouvrables avant la date de calcul du ratio d'échange visée à l’article 62, alinéa 1. Sans préjudice de l’alinéa 1 du présent article, pour les fusions entre OPCVM et par dérogation de l’article 47, le Conseil Régional peut imposer où autoriser la Suspension temporaire de la souscription, du rachat ou du remboursement des parts, à condition qu’une telle suspension soit justifiée par Le souci de protéger Les porteurs de parts.",
+      "sourceKeywordHits": [
+        "Suspension temporaire",
+        "protéger Les porteurs de parts"
+      ],
+      "normalizedRequirementCandidate": "Toute suspension temporaire des souscriptions, rachats ou remboursements liée à une fusion doit être autorisée ou imposée par le régulateur et justifiée par la protection des porteurs.",
+      "applicabilityCandidate": "OPCVM_MERGER_TEMPORARY_SUSPENSION",
+      "products": [
+        "OPCVM",
+        "FCP",
+        "SICAV"
+      ],
+      "documentTypes": [
+        "REGULATORY_DECISION",
+        "SUSPENSION_NOTICE",
+        "LIQUIDITY_RISK_POLICY"
+      ],
+      "canonicalFields": [
+        "corporate_actions[].temporary_suspension",
+        "redemption.suspension",
+        "subscriptions.suspension"
+      ],
+      "questionIds": [
+        "Q_MERGER_TEMPORARY_SUSPENSION",
+        "Q_REDEMPTION_SUSPENSION_ALLOWED"
+      ],
+      "clauseGroupIds": [
+        "CG_REDEMPTION_SUSPENSION"
+      ],
+      "controlIds": [
+        "RULE_MERGER_SUSPENSION_REGULATOR_AUTHORIZED",
+        "RULE_MERGER_SUSPENSION_HOLDER_PROTECTION_RATIONALE"
+      ],
+      "evidenceTypes": [
+        "REGULATORY_DECISION",
+        "SUSPENSION_NOTICE",
+        "LIQUIDITY_RISK_POLICY"
+      ],
+      "outputSectionIds": [
+        "SEC_1_13_REDEMPTION_SUSPENSION",
+        "SYSTEM_ONLY"
+      ],
+      "reviewRoles": [
+        "LEGAL",
+        "COMPLIANCE"
+      ],
+      "circ005RequirementLinks": [
+        "CIRC005_1_13_FCP_SUSPENSION"
+      ],
+      "status": "EXTRACTED_UNVERIFIED_PENDING_LEGAL_AND_COMPLIANCE_REVIEW",
+      "activation": "FORBIDDEN",
+      "legalReviewStatus": "PENDING",
+      "complianceReviewStatus": "PENDING",
+      "specFile": "regulatory/requirements/inst066-candidates/07_MERGER_AND_SCISSION_LIFECYCLE.json",
+      "provenance": {
+        "sourceArtifact": "regulatory/materialized/INSTRUCTION_66_CREPMF_2021.pdf",
+        "ocrDerivative": "regulatory/materialized/INSTRUCTION_66_CREPMF_2021.txt",
+        "articleBlock": "regulatory/requirements/INST066_ARTICLE_BLOCKS_V0_1.json",
+        "textQuality": "OCR_EXTRACTED_UNVERIFIED"
+      }
+    },
+    {
+      "id": "INST066_ART061_REQ001",
+      "sourceId": "INSTRUCTION_66_CREPMF_2021",
+      "sourceSha256": "3f964f2f6ab9ce9eb16912ccda13f34b5023a188dfb18fcba7065590c770d396",
+      "articleId": "INST066_ARTICLE_061",
+      "articleNumber": 61,
+      "sourcePages": [
+        52
+      ],
+      "sourceArticleTextSha256": "fd554d218273893fdc549d9e664e0c096fee730b172ad7848e287aa2208d996e",
+      "sourceTextCandidate": "Sauf dans les cas où les OPCVM n’ont pas désigné de Société de Gestion d’OPCVM, les coûts juridiques, des services de conseil ou administratifs associés à La préparation et à la réalisation de la fusion, ne peuvent être facturés à L’OPCVM absorbé, à l’OPCVM absorbeur ou à leurs porteurs de parts.",
+      "sourceKeywordHits": [
+        "coûts juridiques",
+        "ne peuvent être facturés",
+        "porteurs de parts"
+      ],
+      "normalizedRequirementCandidate": "Les coûts juridiques, de conseil et administratifs liés à la préparation et à la réalisation de la fusion ne doivent pas être imputés aux OPCVM concernés ni à leurs porteurs, sauf cas expressément prévu par le texte.",
+      "applicabilityCandidate": "OPCVM_MERGER_COST_ALLOCATION",
+      "products": [
+        "OPCVM",
+        "FCP",
+        "SICAV"
+      ],
+      "documentTypes": [
+        "MERGER_BUDGET",
+        "FEE_POLICY",
+        "HOLDER_NOTICE"
+      ],
+      "canonicalFields": [
+        "corporate_actions[].costs[]",
+        "corporate_actions[].cost_payer",
+        "fees.transaction"
+      ],
+      "questionIds": [
+        "Q_MERGER_COST_ALLOCATION"
+      ],
+      "clauseGroupIds": [
+        "CG_REMUNERATION_REIMBURSEMENT"
+      ],
+      "controlIds": [
+        "RULE_MERGER_COSTS_NOT_CHARGED_TO_FUNDS_OR_HOLDERS",
+        "RULE_MERGER_COST_EXCEPTION_REVIEW"
+      ],
+      "evidenceTypes": [
+        "MERGER_BUDGET",
+        "SERVICE_PROVIDER_INVOICES",
+        "LEGAL_MEMO"
+      ],
+      "outputSectionIds": [
+        "SYSTEM_ONLY"
+      ],
+      "reviewRoles": [
+        "LEGAL",
+        "COMPLIANCE"
+      ],
+      "circ005RequirementLinks": [
+        "CIRC005_1_18_FCP_REMUNERATION_REIMBURSEMENT"
+      ],
+      "status": "EXTRACTED_UNVERIFIED_PENDING_LEGAL_AND_COMPLIANCE_REVIEW",
+      "activation": "FORBIDDEN",
+      "legalReviewStatus": "PENDING",
+      "complianceReviewStatus": "PENDING",
+      "specFile": "regulatory/requirements/inst066-candidates/07_MERGER_AND_SCISSION_LIFECYCLE.json",
+      "provenance": {
+        "sourceArtifact": "regulatory/materialized/INSTRUCTION_66_CREPMF_2021.pdf",
+        "ocrDerivative": "regulatory/materialized/INSTRUCTION_66_CREPMF_2021.txt",
+        "articleBlock": "regulatory/requirements/INST066_ARTICLE_BLOCKS_V0_1.json",
+        "textQuality": "OCR_EXTRACTED_UNVERIFIED"
+      }
+    },
+    {
+      "id": "INST066_ART062_REQ001",
+      "sourceId": "INSTRUCTION_66_CREPMF_2021",
+      "sourceSha256": "3f964f2f6ab9ce9eb16912ccda13f34b5023a188dfb18fcba7065590c770d396",
+      "articleId": "INST066_ARTICLE_062",
+      "articleNumber": 62,
+      "sourcePages": [
+        52
+      ],
+      "sourceArticleTextSha256": "0c0c420e9ad23fca5e1705f23d1d8458c2400df6c8de50ab4409bac3469ccda9",
+      "sourceTextCandidate": "1. La fusion prend effet dans les trente (30) jours après autorisation du Conseil Régional. Le calcul du ratio d'échange des parts ou actions de l'OPCVM absorbé avec celles de l'OPCVM absorbant est effectué a La date à Laquelle La fusion prend effet. La valeur liquidative retenue pour les paiements en espèces est celle appliquée à la fusion.",
+      "sourceKeywordHits": [
+        "trente (30) jours après autorisation",
+        "calcul du ratio d'échange",
+        "valeur liquidative retenue"
+      ],
+      "normalizedRequirementCandidate": "La date de prise d'effet de la fusion, le calcul du ratio d'échange et la valeur liquidative utilisée pour les paiements en espèces doivent être déterminés et contrôlés selon la séquence prévue après autorisation.",
+      "applicabilityCandidate": "OPCVM_MERGER_EFFECTIVE_DATE_AND_EXCHANGE",
+      "products": [
+        "OPCVM",
+        "FCP",
+        "SICAV"
+      ],
+      "documentTypes": [
+        "MERGER_CLOSING_REPORT",
+        "EXCHANGE_RATIO_WORKPAPER",
+        "NAV_EVIDENCE"
+      ],
+      "canonicalFields": [
+        "corporate_actions[].authorization_date",
+        "corporate_actions[].effective_date",
+        "corporate_actions[].exchange_ratio",
+        "corporate_actions[].cash_payment_nav"
+      ],
+      "questionIds": [
+        "Q_MERGER_EFFECTIVE_DATE",
+        "Q_MERGER_EXCHANGE_RATIO"
+      ],
+      "clauseGroupIds": [
+        "CG_CORPORATE_ACTION"
+      ],
+      "controlIds": [
+        "RULE_MERGER_EFFECTIVE_DATE_AFTER_AUTHORIZATION",
+        "RULE_EXCHANGE_RATIO_CALCULATED_AT_EFFECTIVE_DATE",
+        "RULE_CASH_PAYMENT_NAV_MATCHES_MERGER_NAV"
+      ],
+      "evidenceTypes": [
+        "REGULATORY_AUTHORIZATION",
+        "EXCHANGE_RATIO_WORKPAPER",
+        "NAV_CALCULATION",
+        "MERGER_CLOSING_REPORT"
+      ],
+      "outputSectionIds": [
+        "SYSTEM_ONLY"
+      ],
+      "reviewRoles": [
+        "LEGAL",
+        "COMPLIANCE"
+      ],
+      "circ005RequirementLinks": [
+        "CIRC005_1_17_A_FCP_PRICE_METHOD_FREQUENCY"
+      ],
+      "status": "EXTRACTED_UNVERIFIED_PENDING_LEGAL_AND_COMPLIANCE_REVIEW",
+      "activation": "FORBIDDEN",
+      "legalReviewStatus": "PENDING",
+      "complianceReviewStatus": "PENDING",
+      "specFile": "regulatory/requirements/inst066-candidates/07_MERGER_AND_SCISSION_LIFECYCLE.json",
+      "provenance": {
+        "sourceArtifact": "regulatory/materialized/INSTRUCTION_66_CREPMF_2021.pdf",
+        "ocrDerivative": "regulatory/materialized/INSTRUCTION_66_CREPMF_2021.txt",
+        "articleBlock": "regulatory/requirements/INST066_ARTICLE_BLOCKS_V0_1.json",
+        "textQuality": "OCR_EXTRACTED_UNVERIFIED"
+      }
+    },
+    {
+      "id": "INST066_ART063_REQ001",
+      "sourceId": "INSTRUCTION_66_CREPMF_2021",
+      "sourceSha256": "3f964f2f6ab9ce9eb16912ccda13f34b5023a188dfb18fcba7065590c770d396",
+      "articleId": "INST066_ARTICLE_063",
+      "articleNumber": 63,
+      "sourcePages": [
+        52,
+        53
+      ],
+      "sourceArticleTextSha256": "3e2d29b8b0bf2ebdd63ccd6d46fb64c9637ad15ec1332565efcd2dd26645d1dc",
+      "sourceTextCandidate": "1. Une fusion effectuée conformément à l’article 54, point a), entraîne les conséquences suivantes : a) tout l’actif et tout le passif de l’OPCVM absorbé sont transférés à l’'OPCVM absorbeur ou, le cas échéant, au Dépositaire de L’OPCVM absorbeur ; b) les porteurs de parts de l’OPCVM absorbé deviennent porteurs de parts de l'OPCVM absorbeur et, Le cas échéant, ils ont droit à un paiement en espèces ne dépassant pas 10% de la valeur nette d'inventaire de leurs parts dans l’OPCVM absorbé ; et c) l’OPCVM absorbé cesse d’exister à La date de prise d’effet de la fusion. Une fusion effectuée conformément à l’article 54, point b), entraîne les conséquences suivantes : À Avenue Joseph ANOMA 01 B.P. 1878 Abidjan 01/Côte d'Ivoire Site web : http://www.crepmf.org QU À / 52 À TEL.: (225} 27 20 21 57 42 / 20 31 56 20 Fax: (225) 27 20 33 23 04 presidence@crepmf.org a) tout l’actif et tout le passif des OPCVM absorbés sont transférés à l’OPCVM absorbeur nouvellement constitué ou, le cas échéant, au Dépositaire de L'OPCVM absorbeur ; b) les porteurs de parts des OPCVM absorbés deviennent porteurs de parts de l’OPCVM absorbeur nouvellement constitué et, Le cas échéant, ils ont droit à un paiement en espèces ne dépassant pas 10% de la valeur nette d’inventaire de leurs parts dans Les OPCVM absorbés ; et C) Les OPCVM absorbés cessent d'exister à la date de prise d’effet de la fusion. 3. La Société de Gestion de L’OPCVM absorbeur doit mettre en place une procédure confirmant au Dépositaire de l’OPCVM absorbeur que le transfert de l'actif et, Le cas échéant, du passif a été effectué. Si L’OPCVM absorbeur n’a pas désigné de Société de Gestion d’OPC, il adresse cette confirmation au Dépositaire de l’OPCVM absorbeur. CHAPITRE 4 - SCISSION D’OPCVM SECTION PREMIERE - PRINCIPE, AUTORISATION ET AP…",
+      "sourceKeywordHits": [
+        "tout l’actif et tout le passif",
+        "deviennent porteurs de parts",
+        "cesse d’exister",
+        "confirmant au Dépositaire"
+      ],
+      "normalizedRequirementCandidate": "La clôture de la fusion doit tracer le transfert de l'actif et du passif, la conversion des porteurs, la cessation des OPCVM absorbés et la confirmation du transfert au dépositaire de l'OPCVM absorbeur.",
+      "applicabilityCandidate": "OPCVM_MERGER_CLOSING",
+      "products": [
+        "OPCVM",
+        "FCP",
+        "SICAV"
+      ],
+      "documentTypes": [
+        "MERGER_CLOSING_REPORT",
+        "ASSET_TRANSFER_CONFIRMATION",
+        "HOLDER_CONVERSION_REGISTER"
+      ],
+      "canonicalFields": [
+        "corporate_actions[].asset_transfer",
+        "corporate_actions[].liability_transfer",
+        "corporate_actions[].holder_conversion",
+        "corporate_actions[].absorbed_fund_termination",
+        "corporate_actions[].depositary_confirmation"
+      ],
+      "questionIds": [
+        "Q_MERGER_CLOSING_CONFIRMATION"
+      ],
+      "clauseGroupIds": [],
+      "controlIds": [
+        "RULE_MERGER_ASSET_AND_LIABILITY_TRANSFER_CONFIRMED",
+        "RULE_MERGER_HOLDER_CONVERSION_RECONCILED",
+        "RULE_ABSORBED_FUNDS_TERMINATED",
+        "RULE_DEPOSITARY_TRANSFER_CONFIRMATION"
+      ],
+      "evidenceTypes": [
+        "ASSET_TRANSFER_CONFIRMATION",
+        "LIABILITY_TRANSFER_CONFIRMATION",
+        "HOLDER_CONVERSION_REGISTER",
+        "FUND_TERMINATION_EVIDENCE",
+        "DEPOSITARY_CONFIRMATION"
+      ],
+      "outputSectionIds": [
+        "SYSTEM_ONLY"
+      ],
+      "reviewRoles": [
+        "LEGAL",
+        "COMPLIANCE"
+      ],
+      "circ005RequirementLinks": [
+        "CIRC005_2_1_DEPOSITARY_IDENTITY"
+      ],
+      "status": "EXTRACTED_UNVERIFIED_PENDING_LEGAL_AND_COMPLIANCE_REVIEW",
+      "activation": "FORBIDDEN",
+      "legalReviewStatus": "PENDING",
+      "complianceReviewStatus": "PENDING",
+      "specFile": "regulatory/requirements/inst066-candidates/07_MERGER_AND_SCISSION_LIFECYCLE.json",
+      "provenance": {
+        "sourceArtifact": "regulatory/materialized/INSTRUCTION_66_CREPMF_2021.pdf",
+        "ocrDerivative": "regulatory/materialized/INSTRUCTION_66_CREPMF_2021.txt",
+        "articleBlock": "regulatory/requirements/INST066_ARTICLE_BLOCKS_V0_1.json",
+        "textQuality": "OCR_EXTRACTED_UNVERIFIED"
+      }
+    },
+    {
+      "id": "INST066_ART064_REQ001",
+      "sourceId": "INSTRUCTION_66_CREPMF_2021",
+      "sourceSha256": "3f964f2f6ab9ce9eb16912ccda13f34b5023a188dfb18fcba7065590c770d396",
+      "articleId": "INST066_ARTICLE_064",
+      "articleNumber": 64,
+      "sourcePages": [
+        53
+      ],
+      "sourceArticleTextSha256": "0ad13faaf279c4fb99c1db53f4652f93d230379405a3b979968c5f029395beb4",
+      "sourceTextCandidate": "1. Un OPCVM peut faire l'objet de scission lorsque la cession de certains actifs n’est pas conforme à l’intérêt des porteurs de parts. Un OPCVM est créé pour recevoir Les actifs dont là cession n’est pas conforme à l’intérêt des porteurs ou actionnaires (FIA Side pocket} et un autre destiné à recevoir les autres actifs dénommé OPCVM Réplique. 2. Les OPCVM résultant d’une scission peuvent ne pas présenter Les mêmes caractéristiques que l’'OPCVM initial. En cas, de changement de caractéristique, les investisseurs qui ne désirent pas rester dans l’OPCVM, peuvent demander le rachat de Leur part sans frais ni pénalité. 3. Chaque porteur reçoit un nombre de parts des nouveaux Fonds égal à celui qu’il détient dans l’ancien. L’ancien OPCVM est mis en liquidation dès que le transfert des actifs a été effectué. 4, En dérogation de l’article 4.3, une société de gestion d’'OPCVM est habilitée à gérer un FIA side pocket issue de la cession d’un de ses OPCVM.",
+      "sourceKeywordHits": [
+        "cession de certains actifs n’est pas conforme à l’intérêt des porteurs",
+        "FIA Side pocket",
+        "OPCVM Réplique",
+        "rachat de Leur part sans frais ni pénalité"
+      ],
+      "normalizedRequirementCandidate": "Une scission doit être justifiée par l'intérêt des porteurs, organiser la création du FIA side pocket et de l'OPCVM réplique, attribuer les parts, liquider l'ancien OPCVM après transfert et permettre une sortie sans frais en cas de changement de caractéristiques.",
+      "applicabilityCandidate": "OPCVM_SCISSION_WITH_ILLIQUID_OR_NON_TRANSFERABLE_ASSETS",
+      "products": [
+        "OPCVM",
+        "FIA_SIDE_POCKET",
+        "FCP",
+        "SICAV"
+      ],
+      "documentTypes": [
+        "SCISSION_PLAN",
+        "RESULTING_FUND_DOCUMENTS",
+        "HOLDER_NOTICE",
+        "LIQUIDATION_PLAN"
+      ],
+      "canonicalFields": [
+        "corporate_actions[].scission_rationale",
+        "corporate_actions[].side_pocket",
+        "corporate_actions[].replica_fund",
+        "corporate_actions[].unit_allocation",
+        "corporate_actions[].holder_exit_right",
+        "corporate_actions[].old_fund_liquidation"
+      ],
+      "questionIds": [
+        "Q_SCISSION_RATIONALE",
+        "Q_SIDE_POCKET_STRUCTURE",
+        "Q_SCISSION_HOLDER_EXIT_RIGHT"
+      ],
+      "clauseGroupIds": [
+        "CG_CORPORATE_ACTION",
+        "CG_CORPORATE_ACTION_NOTICE"
+      ],
+      "controlIds": [
+        "RULE_SCISSION_HOLDER_INTEREST_RATIONALE",
+        "RULE_SIDE_POCKET_AND_REPLICA_CREATED",
+        "RULE_SCISSION_UNIT_ALLOCATION",
+        "RULE_SCISSION_FREE_EXIT_IF_CHARACTERISTICS_CHANGE",
+        "RULE_OLD_FUND_LIQUIDATION_AFTER_TRANSFER"
+      ],
+      "evidenceTypes": [
+        "SCISSION_PLAN",
+        "ASSET_TRANSFER_ANALYSIS",
+        "RESULTING_FUND_REGULATION",
+        "HOLDER_NOTICE",
+        "LIQUIDATION_PLAN"
+      ],
+      "outputSectionIds": [
+        "SYSTEM_ONLY"
+      ],
+      "reviewRoles": [
+        "LEGAL",
+        "COMPLIANCE"
+      ],
+      "circ005RequirementLinks": [
+        "CIRC005_1_13_FCP_REDEMPTION_REIMBURSEMENT"
+      ],
+      "status": "EXTRACTED_UNVERIFIED_PENDING_LEGAL_AND_COMPLIANCE_REVIEW",
+      "activation": "FORBIDDEN",
+      "legalReviewStatus": "PENDING",
+      "complianceReviewStatus": "PENDING",
+      "specFile": "regulatory/requirements/inst066-candidates/07_MERGER_AND_SCISSION_LIFECYCLE.json",
       "provenance": {
         "sourceArtifact": "regulatory/materialized/INSTRUCTION_66_CREPMF_2021.pdf",
         "ocrDerivative": "regulatory/materialized/INSTRUCTION_66_CREPMF_2021.txt",
