@@ -82,13 +82,15 @@ extraction:
   first_article: 1
   last_article: 92
   missing_article_numbers: []
-  detailed_requirement_candidate_count: 38
-  extraction_status: MATERIALIZED_AND_ATOMIZED_UNVERIFIED
+  detailed_requirement_candidate_count: 111
+  staged_detailed_requirement_candidate_count: 0
+  extraction_status: MATERIALIZED_ATOMIZED_AND_DETAILED_CANDIDATES_COMPILED_UNVERIFIED
   requirement_activation: FORBIDDEN_PENDING_LEGAL_AND_COMPLIANCE_REVIEW
   quality_notes:
     - Le PDF officiel est une image sans couche texte exploitable.
     - Le texte OCR est un dérivé d'extraction et non la source juridique de référence.
     - La séquence des articles 1 à 92 est complète et sans numéro manquant.
+    - Les 111 exigences candidates détaillées sont compilées structurellement mais restent non validées juridiquement et en conformité.
     - Les dates et les sept références abrogées ont été observées visuellement sur les pages 64 et 65 du PDF hashé.
     - Le rapprochement historique des sept références avec les registres officiels reste incomplet.
     - Aucun modificatif ou rectificatif séparé n'a été identifié dans le périmètre officiel recherché, sans prétention d'exhaustivité.
