@@ -19,7 +19,8 @@
     "complianceReviewStillPending": true,
     "requirementActivationStillForbidden": true,
     "detailedRequirementsRemainStructurallyValid": true,
-    "detailedRequirementCountIs38": true,
+    "detailedRequirementCountNotRegressed": true,
+    "detailedRequirementCountMatchesSource": true,
     "renderedPagesAvailable": true
   },
   "sourceFacts": {
@@ -29,6 +30,7 @@
     "actDateObserved": "2021-12-16",
     "effectiveFromObserved": "2022-01-01",
     "abrogatedReferenceCountObserved": 7,
+    "detailedRequirementCandidateCount": 111,
     "renderedPageDimensions": {
       "64": [
         1488,
