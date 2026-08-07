@@ -5,8 +5,8 @@
   "metrics": {
     "specFileCount": 15,
     "specRequirementCount": 111,
-    "compiledRequirementCount": 83,
-    "uncompiledStagedRequirementCount": 28,
+    "compiledRequirementCount": 111,
+    "uncompiledStagedRequirementCount": 0,
     "articleCoverageCount": 61,
     "circ005IdentifierCount": 65
   },
