@@ -1,0 +1,126 @@
+review_id: INST066_REMAINING_DOMAIN_REVIEW_V0_1
+source_id: INSTRUCTION_66_CREPMF_2021
+reviewed_on: '2026-08-07'
+status: SOURCE_REVIEW_RECORDED_LEGAL_AND_COMPLIANCE_REVIEW_PENDING
+activation: FORBIDDEN
+source_artifact:
+  path: regulatory/materialized/INSTRUCTION_66_CREPMF_2021.pdf
+  sha256: 3f964f2f6ab9ce9eb16912ccda13f34b5023a188dfb18fcba7065590c770d396
+  page_count: 65
+extraction_derivative:
+  article_blocks: regulatory/requirements/INST066_ARTICLE_BLOCKS_V0_1.json
+  status: OCR_EXTRACTED_UNVERIFIED
+principles:
+- A source-search hit is not a legal approval.
+- An OCR-derived number, threshold or exception remains inactive until reviewed against the official PDF.
+- A domain that is not explicitly supported by the Instruction must not be fabricated as an INST066 requirement.
+- Existing candidates are reused when they already cover the normative concept.
+- Legal and compliance review remain mandatory before any activation.
+domains:
+- domain: COMMISSAIRE_AUX_COMPTES
+  result: EXPLICITLY_PRESENT_ALREADY_COVERED_BY_EXISTING_CANDIDATES
+  source_observations:
+  - Article 13 permits, in the circumstances described, verification of valuation procedures or valuations by an external valuation expert or, where applicable, the statutory auditor or a designated accountant.
+  - Article 37 requires audited/certified financial information and reports of the statutory auditor in periodic reporting.
+  - Article 58 defines the statutory-auditor report for merger conditions and its availability to holders.
+  existing_candidate_links:
+  - INST066_ART013_REQ001
+  - INST066_ART013_REQ004
+  - INST066_ART037_REQ003
+  - INST066_ART037_REQ005
+  - INST066_ART037_REQ006
+  - INST066_ART058_REQ001
+  conclusion: >-
+    No additional generic auditor candidate is created merely to duplicate the
+    accounting-control or merger-report obligations already represented.
+  external_dependency: >-
+    Instruction n°58/CREPMF/2019 is expressly referenced by Article 37 for the
+    exercise of statutory audit and must be added as a separate source before
+    modelling its detailed auditor obligations.
+- domain: INVESTMENT_ADVICE_AND_AUXILIARY_SERVICES
+  result: EXPLICITLY_PRESENT_AT_ARTICLE_4_ALREADY_COVERED_AT_ACTIVITY_SCOPE_LEVEL
+  source_observations:
+  - Article 4 lists marketing among management-company activities.
+  - Article 4 lists investment advice and custody/administration of units of other OPC as auxiliary services.
+  - Article 4 states that a Council Circular defines the limits within which auxiliary services may be provided.
+  existing_candidate_links:
+  - INST066_ART004_REQ004
+  conclusion: >-
+    Article 4 supports recording these activities in the management-company
+    profile, but the detailed limits must not be invented from Instruction 66;
+    the referenced Circular is an external regulatory dependency.
+  external_dependency: CIRCULAR_DEFINING_LIMITS_FOR_AUXILIARY_SERVICES_TO_IDENTIFY
+- domain: DISTRIBUTOR_AND_PAYING_AGENT
+  result: NO_DISTINCT_PAYING_AGENT_REQUIREMENT_LOCATED_IN_INSTRUCTION_66_OCR
+  source_observations:
+  - Marketing/commercialisation is explicitly present as an activity and in product-distribution conditions.
+  - No distinct occurrence of the expression 'agent payeur' was located in the article-block extraction used for this review.
+  conclusion: >-
+    Do not create an INST066 paying-agent requirement without an explicit source
+    provision. Distributor/intermediary duties must be sourced from the applicable
+    General Regulation, Circular, Instruction or market-participant rules.
+  external_dependency: DISTRIBUTION_AND_PAYING_AGENT_SOURCE_TO_IDENTIFY
+- domain: PERIODIC_REPORTING_AND_AUDIT_CERTIFICATION
+  result: EXPLICITLY_PRESENT_ALREADY_COVERED
+  existing_candidate_links:
+  - INST066_ART036_REQ001
+  - INST066_ART036_REQ002
+  - INST066_ART036_REQ003
+  - INST066_ART037_REQ001
+  - INST066_ART037_REQ002
+  - INST066_ART037_REQ003
+  - INST066_ART037_REQ004
+  - INST066_ART037_REQ005
+  - INST066_ART037_REQ006
+  conclusion: No duplicate reporting candidate required.
+- domain: MERGER_SCISSION_AND_EXTINCTIVE_MANAGEMENT
+  result: EXPLICITLY_PRESENT_ALREADY_COVERED
+  existing_candidate_links:
+  - INST066_ART054_REQ001
+  - INST066_ART055_REQ001
+  - INST066_ART056_REQ001
+  - INST066_ART057_REQ001
+  - INST066_ART058_REQ001
+  - INST066_ART059_REQ001
+  - INST066_ART060_REQ001
+  - INST066_ART060_REQ002
+  - INST066_ART061_REQ001
+  - INST066_ART062_REQ001
+  - INST066_ART067_REQ001
+  - INST066_ART068_REQ001
+  - INST066_ART069_REQ001
+  - INST066_ART069_REQ002
+  - INST066_ART070_REQ001
+  - INST066_ART070_REQ002
+  - INST066_ART071_REQ001
+  - INST066_ART071_REQ002
+  conclusion: >-
+    The current candidate set already represents the principal lifecycle dossier,
+    holder-rights, control, cost and extinctive-management concepts identified in
+    the reviewed articles. Further additions require a distinct source obligation,
+    not merely another wording of the same concept.
+- domain: ENFORCEMENT_AND_SANCTIONS
+  result: NO_EXPLICIT_SANCTION_DOMAIN_LOCATED_IN_CURRENT_INSTRUCTION_66_ARTICLE_BLOCK_SEARCH
+  searched_terms:
+  - sanction
+  - retrait
+  - mise en demeure
+  conclusion: >-
+    No generic INST066 sanction requirement is created. Enforcement powers,
+    disciplinary measures and sanctions must be sourced from the General Regulation
+    or other applicable AMF-UMOA/CREPMF texts if not explicitly located in the
+    Instruction after human page review.
+  external_dependency: GENERAL_REGULATION_OR_SPECIFIC_ENFORCEMENT_TEXT_TO_IDENTIFY
+review_outcome:
+  new_requirement_candidates_created: 0
+  existing_candidates_reused: true
+  external_regulatory_dependencies_open: true
+  legal_review_status: PENDING
+  compliance_review_status: PENDING
+  requirement_activation_allowed: false
+next_actions:
+- Materialize and atomize Instruction n°58/CREPMF/2019 as a separate regulatory source if it remains current and applicable.
+- Identify the Circular referenced by Article 4 for auxiliary-service limits.
+- Identify the applicable source for distributor/paying-agent duties.
+- Identify the General Regulation or other source governing enforcement and sanctions.
+- Keep these external-source obligations separate from INST066 until their official texts are materialized and reviewed.
