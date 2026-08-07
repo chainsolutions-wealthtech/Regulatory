@@ -7,6 +7,7 @@ on:
     paths:
       - .github/workflows/materialize-instruction-58.yml
       - scripts/materialize_instruction_58.py
+      - scripts/index_instruction_58_articles.py
       - scripts/sync_instruction_58_source.py
       - regulatory/sources/INSTRUCTION_58_CREPMF_2019.yaml
   workflow_dispatch:
@@ -36,6 +37,8 @@ jobs:
             tesseract-ocr-fra
       - name: Download hash and structurally extract official PDF
         run: python3 scripts/materialize_instruction_58.py
+      - name: Rebuild strict continuous article index
+        run: python3 scripts/index_instruction_58_articles.py
       - name: Synchronize source record from actual bytes
         run: python3 scripts/sync_instruction_58_source.py
       - name: Validate generated source evidence
@@ -62,17 +65,25 @@ jobs:
           assert metadata['pageCount'] == 17, metadata['pageCount']
           assert metadata['byteSize'] > 10000, metadata['byteSize']
           assert len(metadata['sha256']) == 64, metadata['sha256']
-          assert metadata['articleIndexCount'] > 0, metadata['articleIndexCount']
+          assert metadata['articleIndexCount'] == 35, metadata['articleIndexCount']
           assert metadata['firstIndexedArticle'] == 1, metadata['firstIndexedArticle']
+          assert metadata['lastIndexedArticle'] == 35, metadata['lastIndexedArticle']
+          assert metadata['missingArticleNumbers'] == [], metadata['missingArticleNumbers']
+          assert metadata['articleIndexRepair']['status'] == 'STRICT_REINDEX_PASS'
           assert metadata['legalMetadata']['exactSignedDate'] is None
           assert metadata['legalMetadata']['effectiveFrom'] is None
           assert metadata['legalMetadata']['currentRegistryStatus'].startswith('TO_VERIFY')
+          assert validation['checks']['articlePremierIndexed'] is True
+          assert validation['checks']['articleNumberRangeContinuous'] is True
+          assert validation['checks']['articleIndexStillUnverified'] is True
           assert validation['checks']['currentStatusNotInvented'] is True
           assert validation['checks']['requirementsNotActivated'] is True
           assert validation['checks']['humanReviewStillRequired'] is True
           assert 'status: EXTRACTED_UNVERIFIED_REVIEW_PENDING' in index
           assert 'requirement_activation: FORBIDDEN_PENDING_REVIEW' in index
           assert 'review_status: PENDING_LEGAL_AND_COMPLIANCE_REVIEW' in index
+          assert '- id: INST058_ARTICLE_029' in index
+          assert 'article_count: 35' in index
           assert 'copy_status: MATERIALIZED_HASHED_AND_PAGE_VALIDATED' in source
           assert 'current_legal_status: PENDING_OFFICIAL_REGISTRY_CONFIRMATION' in source
           assert 'requirement_activation_allowed: false' in source
