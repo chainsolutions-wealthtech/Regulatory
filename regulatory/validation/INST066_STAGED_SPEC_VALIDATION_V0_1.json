@@ -1,0 +1,31 @@
+{
+  "schemaVersion": "INST066_STAGED_SPEC_VALIDATION_V0_1",
+  "status": "PASS",
+  "activationAllowed": false,
+  "metrics": {
+    "specFileCount": 15,
+    "specRequirementCount": 111,
+    "compiledRequirementCount": 83,
+    "uncompiledStagedRequirementCount": 28,
+    "articleCoverageCount": 61,
+    "circ005IdentifierCount": 65
+  },
+  "fileCounts": {
+    "regulatory/requirements/inst066-candidates/00_SCOPE_DEFINITIONS.json": 7,
+    "regulatory/requirements/inst066-candidates/01_GOVERNANCE_APPROVAL.json": 6,
+    "regulatory/requirements/inst066-candidates/02A_PROSPECTUS_CORE.json": 6,
+    "regulatory/requirements/inst066-candidates/02B_INVESTMENT_DISCLOSURES.json": 4,
+    "regulatory/requirements/inst066-candidates/02C_UPDATES_MARKETING_DICI.json": 7,
+    "regulatory/requirements/inst066-candidates/03_OPERATIONS_FEES.json": 8,
+    "regulatory/requirements/inst066-candidates/04_CORPORATE_SPECIAL_PRODUCTS.json": 7,
+    "regulatory/requirements/inst066-candidates/05_DEPOSITARY_CUSTODY.json": 11,
+    "regulatory/requirements/inst066-candidates/06_REGULATORY_REPORTING.json": 9,
+    "regulatory/requirements/inst066-candidates/07_MERGER_AND_SCISSION_LIFECYCLE.json": 12,
+    "regulatory/requirements/inst066-candidates/08_MANAGER_COMPANY_CORE.json": 6,
+    "regulatory/requirements/inst066-candidates/09_INVESTMENT_ELIGIBILITY_LIMITS.json": 12,
+    "regulatory/requirements/inst066-candidates/10_OPCR_SPECIAL_PRODUCTS.json": 7,
+    "regulatory/requirements/inst066-candidates/11_VALUATION_GOVERNANCE.json": 4,
+    "regulatory/requirements/inst066-candidates/12_EXTINCTIVE_MANAGEMENT_AND_HOLDER_RIGHTS.json": 5
+  },
+  "errors": []
+}
