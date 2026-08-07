@@ -48,7 +48,7 @@ extraction:
   materialization_validation: regulatory/validation/INST058_MATERIALIZATION_VALIDATION_V0_1.json
   extraction_status: MATERIALIZED_ARTICLE_INDEX_EXTRACTED_UNVERIFIED
   requirement_prefix: INST058
-  article_count: 34
+  article_count: 35
   requirement_activation: FORBIDDEN_PENDING_LEGAL_AND_COMPLIANCE_REVIEW
 cross_source_dependencies:
 - source_id: INSTRUCTION_66_CREPMF_2021

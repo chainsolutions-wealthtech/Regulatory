@@ -15,26 +15,31 @@
     "legalDatesNotAutoPromoted": true,
     "currentStatusNotInvented": true,
     "requirementsNotActivated": true,
-    "humanReviewStillRequired": true
+    "humanReviewStillRequired": true,
+    "articlePremierIndexed": true,
+    "articleNumberRangeContinuous": true,
+    "articleIndexStillUnverified": true
   },
   "metrics": {
     "byteSize": 4242350,
     "pageCount": 17,
     "usableTextCharacterCount": 31667,
     "rawArticleHeadingCount": 34,
-    "articleIndexCount": 34,
+    "articleIndexCount": 35,
     "firstIndexedArticle": 1,
     "lastIndexedArticle": 35,
     "dateCandidateCount": 9
   },
   "reviewFlags": {
     "duplicateHeadingOccurrences": [],
-    "missingArticleNumbers": [
-      29
-    ],
+    "missingArticleNumbers": [],
     "nonMonotonicArticles": [],
     "registryStatusStillPending": true,
-    "signatureAndEffectiveDatesStillPending": true
+    "signatureAndEffectiveDatesStillPending": true,
+    "ocrHeadingNormalization": {
+      "Aticle 29": "Article 29",
+      "status": "EXTRACTION_NORMALIZATION_ONLY"
+    }
   },
   "outputs": [
     "regulatory/materialized/INSTRUCTION_58_CREPMF_2019.pdf",

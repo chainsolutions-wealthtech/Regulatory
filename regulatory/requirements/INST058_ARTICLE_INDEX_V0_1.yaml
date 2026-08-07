@@ -5,7 +5,7 @@ status: EXTRACTED_UNVERIFIED_REVIEW_PENDING
 requirement_activation: FORBIDDEN_PENDING_REVIEW
 review_status: PENDING_LEGAL_AND_COMPLIANCE_REVIEW
 page_count: 17
-article_count: 34
+article_count: 35
 ocr_used: true
 articles:
 - id: INST058_ARTICLE_001
@@ -15,6 +15,7 @@ articles:
   label_raw: "1"
   heading_raw: "Article 1°\": Définitions"
   title_candidate: "°\": Définitions"
+  article_text_sha256: fb24e0dff56985e27af417fadc2d5c796c073fdea0bcfe0f48e813bb50fdc74b
   extraction_status: EXTRACTED_UNVERIFIED
   legal_review_status: PENDING
   compliance_review_status: PENDING
@@ -26,6 +27,7 @@ articles:
   label_raw: "2"
   heading_raw: "Article 2 : Objet"
   title_candidate: "Objet"
+  article_text_sha256: 648dc6e8fe5718b56b135f66ce11fe14de0fefbbc9ec624781928fb1fe385d01
   extraction_status: EXTRACTED_UNVERIFIED
   legal_review_status: PENDING
   compliance_review_status: PENDING
@@ -37,6 +39,7 @@ articles:
   label_raw: "3"
   heading_raw: "Article 3 : Champ d'application"
   title_candidate: "Champ d'application"
+  article_text_sha256: eb7e23b00a14358facf6cf2743a9f4ee45ac4c16cbcf52a19fcab064b89b9dd4
   extraction_status: EXTRACTED_UNVERIFIED
   legal_review_status: PENDING
   compliance_review_status: PENDING
@@ -48,6 +51,7 @@ articles:
   label_raw: "4"
   heading_raw: "Article 4 : Personnes concernées"
   title_candidate: "Personnes concernées"
+  article_text_sha256: 7faae00fe907d0a8eccd08791e13fd6ac00f9e23783dd9117e8b15db6e54c974
   extraction_status: EXTRACTED_UNVERIFIED
   legal_review_status: PENDING
   compliance_review_status: PENDING
@@ -59,6 +63,7 @@ articles:
   label_raw: "5"
   heading_raw: "Article 5 : Désignation des Commissaires aux Comptes"
   title_candidate: "Désignation des Commissaires aux Comptes"
+  article_text_sha256: f7c7909335e99834ed78f26f4c3c7ccebd6e87cfcad761121a14ace36026e2f7
   extraction_status: EXTRACTED_UNVERIFIED
   legal_review_status: PENDING
   compliance_review_status: PENDING
@@ -70,6 +75,7 @@ articles:
   label_raw: "6"
   heading_raw: "Article 6 : Lettre d'acceptation de mandat"
   title_candidate: "Lettre d'acceptation de mandat"
+  article_text_sha256: 1bb834529972fb03b0f46b9a09010543ddfadaca6c23e7b6adcead8f6b433041
   extraction_status: EXTRACTED_UNVERIFIED
   legal_review_status: PENDING
   compliance_review_status: PENDING
@@ -81,6 +87,7 @@ articles:
   label_raw: "7"
   heading_raw: "Article 7 : Conditions d'approbation des Commissaires aux Comptes"
   title_candidate: "Conditions d'approbation des Commissaires aux Comptes"
+  article_text_sha256: e9861ddd630616af080b6581e86169fec063df692a4a99cd20992b2e978a204c
   extraction_status: EXTRACTED_UNVERIFIED
   legal_review_status: PENDING
   compliance_review_status: PENDING
@@ -92,6 +99,7 @@ articles:
   label_raw: "8"
   heading_raw: "Article 8 : Instruction du dossier"
   title_candidate: "Instruction du dossier"
+  article_text_sha256: 98f260f6583f483334ebcdb8722f8fbb7b276f74c39aeef1c4fb07b158a15dab
   extraction_status: EXTRACTED_UNVERIFIED
   legal_review_status: PENDING
   compliance_review_status: PENDING
@@ -103,6 +111,7 @@ articles:
   label_raw: "9"
   heading_raw: "Article 9 : Notification de la décision du Conseil Régional"
   title_candidate: "Notification de la décision du Conseil Régional"
+  article_text_sha256: e9ff35dea098323e942be6347c3b2cccaeed02804c7d62399a3e63a3f38c41e7
   extraction_status: EXTRACTED_UNVERIFIED
   legal_review_status: PENDING
   compliance_review_status: PENDING
@@ -114,6 +123,7 @@ articles:
   label_raw: "10"
   heading_raw: "Article 10 : Etablissement, mise à jour et publication de la liste des Commissaires"
   title_candidate: "Etablissement, mise à jour et publication de la liste des Commissaires"
+  article_text_sha256: 0ef0ad015c628a60c2a3e799db37138a8a10a66d872daf3681ae24e44c1951bd
   extraction_status: EXTRACTED_UNVERIFIED
   legal_review_status: PENDING
   compliance_review_status: PENDING
@@ -125,6 +135,7 @@ articles:
   label_raw: "11"
   heading_raw: "Article 11 : Contenu du dossier d’approbation des Commissaires aux Comptes"
   title_candidate: "Contenu du dossier d’approbation des Commissaires aux Comptes"
+  article_text_sha256: 8ff1b4e08d589ebbd341ab71c44cc228b6301077971db23d55ffaa250b59f185
   extraction_status: EXTRACTED_UNVERIFIED
   legal_review_status: PENDING
   compliance_review_status: PENDING
@@ -136,6 +147,7 @@ articles:
   label_raw: "12"
   heading_raw: "Article 12 : Maintien des conditions d'approbation"
   title_candidate: "Maintien des conditions d'approbation"
+  article_text_sha256: eb57ff3caaa6a819e8fc2a358f832db060f8eefed0581dcd22e0097a10d1f552
   extraction_status: EXTRACTED_UNVERIFIED
   legal_review_status: PENDING
   compliance_review_status: PENDING
@@ -147,6 +159,7 @@ articles:
   label_raw: "13"
   heading_raw: "Article 13 : Dispositions générales"
   title_candidate: "Dispositions générales"
+  article_text_sha256: c29d37c900d81512f6409118daff47f72a35ea20d242f4af7fe771901cef6d89
   extraction_status: EXTRACTED_UNVERIFIED
   legal_review_status: PENDING
   compliance_review_status: PENDING
@@ -158,6 +171,7 @@ articles:
   label_raw: "14"
   heading_raw: "Article 14 : Missions des Commissaires aux Comptes titulaires et suppléants"
   title_candidate: "Missions des Commissaires aux Comptes titulaires et suppléants"
+  article_text_sha256: 2080651ba1df53e55e43633d066edbe67fec8521563ddf74cead16db000c318a
   extraction_status: EXTRACTED_UNVERIFIED
   legal_review_status: PENDING
   compliance_review_status: PENDING
@@ -169,6 +183,7 @@ articles:
   label_raw: "15"
   heading_raw: "Article 15 : Rotation des mandats"
   title_candidate: "Rotation des mandats"
+  article_text_sha256: f7644e9679477ce24e74699fc2f9884c9f0d776ec889ae7b6320d439c766367b
   extraction_status: EXTRACTED_UNVERIFIED
   legal_review_status: PENDING
   compliance_review_status: PENDING
@@ -180,6 +195,7 @@ articles:
   label_raw: "16"
   heading_raw: "Article 16 : Contenu du rapport d'audit annuel"
   title_candidate: "Contenu du rapport d'audit annuel"
+  article_text_sha256: fb3550103694aa1a018f8aa65f44cb7b9b0ec14eefc681f3072e8c4e29e689ac
   extraction_status: EXTRACTED_UNVERIFIED
   legal_review_status: PENDING
   compliance_review_status: PENDING
@@ -191,6 +207,7 @@ articles:
   label_raw: "17"
   heading_raw: "Article 17 : Rapport sur les états financiers de fin de premier semestre"
   title_candidate: "Rapport sur les états financiers de fin de premier semestre"
+  article_text_sha256: cc1ff68de9184351db107c39d171a9012dc9ef94ca7ff450a72d151efefecb06
   extraction_status: EXTRACTED_UNVERIFIED
   legal_review_status: PENDING
   compliance_review_status: PENDING
@@ -202,6 +219,7 @@ articles:
   label_raw: "18"
   heading_raw: "Article 18 : Opinions"
   title_candidate: "Opinions"
+  article_text_sha256: cc5e8875d0c6c0e132e225647ad0066f0e2e17c71717de851dd357e1e17fd0a2
   extraction_status: EXTRACTED_UNVERIFIED
   legal_review_status: PENDING
   compliance_review_status: PENDING
@@ -213,6 +231,7 @@ articles:
   label_raw: "19"
   heading_raw: "Article 19 : Devoir d’information"
   title_candidate: "Devoir d’information"
+  article_text_sha256: a95a9e2a16e726c36141a11efe592405b3ce71c3c1f18bf187320f102fb9cc94
   extraction_status: EXTRACTED_UNVERIFIED
   legal_review_status: PENDING
   compliance_review_status: PENDING
@@ -224,6 +243,7 @@ articles:
   label_raw: "20"
   heading_raw: "Article 20 : Attestation trimestrielle de la composition détaillée des actifs de"
   title_candidate: "Attestation trimestrielle de la composition détaillée des actifs de"
+  article_text_sha256: 1d01cf9a7688e8b9d3cae149480f4209d630b62116c946eb2e184f0f40683176
   extraction_status: EXTRACTED_UNVERIFIED
   legal_review_status: PENDING
   compliance_review_status: PENDING
@@ -235,6 +255,7 @@ articles:
   label_raw: "21"
   heading_raw: "Article 21 : Examen du rapport du Président du Conseil d'Administration relatif"
   title_candidate: "Examen du rapport du Président du Conseil d'Administration relatif"
+  article_text_sha256: d3dddf90151338934a15218204ae02d88304d9a55039f7db625c80d767797480
   extraction_status: EXTRACTED_UNVERIFIED
   legal_review_status: PENDING
   compliance_review_status: PENDING
@@ -246,6 +267,7 @@ articles:
   label_raw: "22"
   heading_raw: "Article 22 : Revue des réglementations spécifiques liées au secteur d'activité"
   title_candidate: "Revue des réglementations spécifiques liées au secteur d'activité"
+  article_text_sha256: 814c6c26b5d02cf2382b0f9c52b7cc9e95ea541d4c17414dc374ed1e460ad71c
   extraction_status: EXTRACTED_UNVERIFIED
   legal_review_status: PENDING
   compliance_review_status: PENDING
@@ -257,6 +279,7 @@ articles:
   label_raw: "23"
   heading_raw: "Article 23 : Obligation de diffusion de l’Instruction à la charge des Structures"
   title_candidate: "Obligation de diffusion de l’Instruction à la charge des Structures"
+  article_text_sha256: d290468119b0ed0efccd9783944cfff29ead5fb21bb3adb37f348304dece825d
   extraction_status: EXTRACTED_UNVERIFIED
   legal_review_status: PENDING
   compliance_review_status: PENDING
@@ -268,6 +291,7 @@ articles:
   label_raw: "24"
   heading_raw: "Article 24 : Cadre d'échanges"
   title_candidate: "Cadre d'échanges"
+  article_text_sha256: 55bf174394e24b563b530424dd8dfc05513e8cd8498dedfe8d4abd4ab3d8cc21
   extraction_status: EXTRACTED_UNVERIFIED
   legal_review_status: PENDING
   compliance_review_status: PENDING
@@ -279,6 +303,7 @@ articles:
   label_raw: "25"
   heading_raw: "Article 25 : Obligations d’information à la charge des Commissaires aux Comptes"
   title_candidate: "Obligations d’information à la charge des Commissaires aux Comptes"
+  article_text_sha256: a43b8c9cc7c9c5af2b55c950e3b68fd71d9ff48e2cbef1e0dff6e45c7428ba2c
   extraction_status: EXTRACTED_UNVERIFIED
   legal_review_status: PENDING
   compliance_review_status: PENDING
@@ -290,6 +315,7 @@ articles:
   label_raw: "26"
   heading_raw: "Article 26 : Rencontre entre le Conseil Régional et les Commissaires aux Comptes"
   title_candidate: "Rencontre entre le Conseil Régional et les Commissaires aux Comptes"
+  article_text_sha256: 601bbe59c64dfaa35082321161ddec2d03fc6998ab1053cc17ba125d166b4052
   extraction_status: EXTRACTED_UNVERIFIED
   legal_review_status: PENDING
   compliance_review_status: PENDING
@@ -301,6 +327,7 @@ articles:
   label_raw: "27"
   heading_raw: "Article 27 : Demande d'informations du Conseil Régional aux Commissaires aux"
   title_candidate: "Demande d'informations du Conseil Régional aux Commissaires aux"
+  article_text_sha256: fca76e29e8ba63622b92a088106e022137d858f8b4c1e163bd987b70234b2e2a
   extraction_status: EXTRACTED_UNVERIFIED
   legal_review_status: PENDING
   compliance_review_status: PENDING
@@ -312,6 +339,19 @@ articles:
   label_raw: "28"
   heading_raw: "Article 28 : Droit pour le Commissaire aux Comptes d'interroger le Conseil"
   title_candidate: "Droit pour le Commissaire aux Comptes d'interroger le Conseil"
+  article_text_sha256: 0fdebd0dc8b15caabd926c6cf442c8ac87ce8536a56b95cc7566ba687835c9bc
+  extraction_status: EXTRACTED_UNVERIFIED
+  legal_review_status: PENDING
+  compliance_review_status: PENDING
+  activation: FORBIDDEN
+- id: INST058_ARTICLE_029
+  article_number: 29
+  source_page: 12
+  source_line: 16
+  label_raw: "29"
+  heading_raw: "Aticle 29 : Transmission d'informations par le CREPMF aux Commissaires aux"
+  title_candidate: "Transmission d'informations par le CREPMF aux Commissaires aux"
+  article_text_sha256: 46a9faa3c62fa6d7d6cd746f160f1690d30902e6d53bb4eb035b3783ba312d9b
   extraction_status: EXTRACTED_UNVERIFIED
   legal_review_status: PENDING
   compliance_review_status: PENDING
@@ -323,6 +363,7 @@ articles:
   label_raw: "30"
   heading_raw: "Article 30 : Retrait de l’approbation"
   title_candidate: "Retrait de l’approbation"
+  article_text_sha256: a01cfe9a489203091ab8fb0b455d97bb3597c3dd4ce6dc7725a3c3969800625a
   extraction_status: EXTRACTED_UNVERIFIED
   legal_review_status: PENDING
   compliance_review_status: PENDING
@@ -334,6 +375,7 @@ articles:
   label_raw: "31"
   heading_raw: "Article 31 n cas de non approbation des mandats du Commissaires aux Comptes"
   title_candidate: "n cas de non approbation des mandats du Commissaires aux Comptes"
+  article_text_sha256: 2afcf827ae085ef0dca30aeaab84db65d414e8eacc9d974d858f50a21da40c2c
   extraction_status: EXTRACTED_UNVERIFIED
   legal_review_status: PENDING
   compliance_review_status: PENDING
@@ -345,6 +387,7 @@ articles:
   label_raw: "32"
   heading_raw: "Article 32 : Manquements dans l'exercice du Commissariat aux Comptes"
   title_candidate: "Manquements dans l'exercice du Commissariat aux Comptes"
+  article_text_sha256: 47074793f425559ccc858c9b90c532afbf1e98ad0aae44f9078b66b689a78c69
   extraction_status: EXTRACTED_UNVERIFIED
   legal_review_status: PENDING
   compliance_review_status: PENDING
@@ -356,6 +399,7 @@ articles:
   label_raw: "33"
   heading_raw: "Article 33 : Dispositions transitoires"
   title_candidate: "Dispositions transitoires"
+  article_text_sha256: 011a6b31816c849b51c9e66b7b75ad587b74582f62b978f8bb5a1c697cbd8df8
   extraction_status: EXTRACTED_UNVERIFIED
   legal_review_status: PENDING
   compliance_review_status: PENDING
@@ -367,6 +411,7 @@ articles:
   label_raw: "34"
   heading_raw: "Article 34 : Abrogation"
   title_candidate: "Abrogation"
+  article_text_sha256: eefc089a50d4ea80093a73f6d555f8f972829eae0b0bd34cfd3b4d93a12b2478
   extraction_status: EXTRACTED_UNVERIFIED
   legal_review_status: PENDING
   compliance_review_status: PENDING
@@ -378,6 +423,7 @@ articles:
   label_raw: "35"
   heading_raw: "Article 35 : Entrée en vigueur"
   title_candidate: "Entrée en vigueur"
+  article_text_sha256: 593a89b59512f7238462a32e5948bd2d905eed868513e8fb7c05b3088f0a2b65
   extraction_status: EXTRACTED_UNVERIFIED
   legal_review_status: PENDING
   compliance_review_status: PENDING
