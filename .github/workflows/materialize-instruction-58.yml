@@ -1,0 +1,111 @@
+name: Materialize Instruction 58
+
+on:
+  push:
+    branches:
+      - main
+    paths:
+      - .github/workflows/materialize-instruction-58.yml
+      - scripts/materialize_instruction_58.py
+      - scripts/sync_instruction_58_source.py
+      - regulatory/sources/INSTRUCTION_58_CREPMF_2019.yaml
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: regulatory-instruction-58-materialization-main
+  cancel-in-progress: false
+
+jobs:
+  materialize-and-index:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - name: Install PDF and French OCR tools
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y --no-install-recommends \
+            poppler-utils \
+            ocrmypdf \
+            tesseract-ocr \
+            tesseract-ocr-fra
+      - name: Download hash and structurally extract official PDF
+        run: python3 scripts/materialize_instruction_58.py
+      - name: Synchronize source record from actual bytes
+        run: python3 scripts/sync_instruction_58_source.py
+      - name: Validate generated source evidence
+        run: |
+          python3 - <<'PY'
+          import json
+          from pathlib import Path
+
+          metadata = json.loads(Path(
+              'regulatory/materialized/INSTRUCTION_58_CREPMF_2019.metadata.json'
+          ).read_text(encoding='utf-8'))
+          validation = json.loads(Path(
+              'regulatory/validation/INST058_MATERIALIZATION_VALIDATION_V0_1.json'
+          ).read_text(encoding='utf-8'))
+          source = Path(
+              'regulatory/sources/INSTRUCTION_58_CREPMF_2019.yaml'
+          ).read_text(encoding='utf-8')
+          index = Path(
+              'regulatory/requirements/INST058_ARTICLE_INDEX_V0_1.yaml'
+          ).read_text(encoding='utf-8')
+
+          assert validation['status'] == 'PASS', validation
+          assert metadata['sourceId'] == 'INSTRUCTION_58_CREPMF_2019'
+          assert metadata['pageCount'] == 17, metadata['pageCount']
+          assert metadata['byteSize'] > 10000, metadata['byteSize']
+          assert len(metadata['sha256']) == 64, metadata['sha256']
+          assert metadata['articleIndexCount'] > 0, metadata['articleIndexCount']
+          assert metadata['firstIndexedArticle'] == 1, metadata['firstIndexedArticle']
+          assert metadata['legalMetadata']['exactSignedDate'] is None
+          assert metadata['legalMetadata']['effectiveFrom'] is None
+          assert metadata['legalMetadata']['currentRegistryStatus'].startswith('TO_VERIFY')
+          assert validation['checks']['currentStatusNotInvented'] is True
+          assert validation['checks']['requirementsNotActivated'] is True
+          assert validation['checks']['humanReviewStillRequired'] is True
+          assert 'status: EXTRACTED_UNVERIFIED_REVIEW_PENDING' in index
+          assert 'requirement_activation: FORBIDDEN_PENDING_REVIEW' in index
+          assert 'review_status: PENDING_LEGAL_AND_COMPLIANCE_REVIEW' in index
+          assert 'copy_status: MATERIALIZED_HASHED_AND_PAGE_VALIDATED' in source
+          assert 'current_legal_status: PENDING_OFFICIAL_REGISTRY_CONFIRMATION' in source
+          assert 'requirement_activation_allowed: false' in source
+          PY
+      - name: Upload source-integrity evidence
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: instruction-58-official-materialization
+          path: |
+            regulatory/materialized/INSTRUCTION_58_CREPMF_2019.pdf
+            regulatory/materialized/INSTRUCTION_58_CREPMF_2019.txt
+            regulatory/materialized/INSTRUCTION_58_CREPMF_2019.metadata.json
+            regulatory/requirements/INST058_ARTICLE_INDEX_V0_1.yaml
+            regulatory/validation/INST058_MATERIALIZATION_VALIDATION_V0_1.json
+            regulatory/sources/INSTRUCTION_58_CREPMF_2019.yaml
+          if-no-files-found: warn
+          retention-days: 30
+      - name: Commit official source and structural index
+        run: |
+          git config user.name "regulatory-source-bot"
+          git config user.email "regulatory-source-bot@users.noreply.github.com"
+          git add \
+            regulatory/materialized/INSTRUCTION_58_CREPMF_2019.pdf \
+            regulatory/materialized/INSTRUCTION_58_CREPMF_2019.txt \
+            regulatory/materialized/INSTRUCTION_58_CREPMF_2019.metadata.json \
+            regulatory/requirements/INST058_ARTICLE_INDEX_V0_1.yaml \
+            regulatory/validation/INST058_MATERIALIZATION_VALIDATION_V0_1.json \
+            regulatory/sources/INSTRUCTION_58_CREPMF_2019.yaml
+          if git diff --cached --quiet; then
+            echo "No Instruction 58 materialization changes to commit."
+            exit 0
+          fi
+          git commit -m "regulatory: materialize official Instruction 58 source"
+          git pull --rebase origin main
+          git push origin HEAD:main
