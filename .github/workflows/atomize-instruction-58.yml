@@ -1,0 +1,84 @@
+name: Atomize Instruction 58
+
+on:
+  push:
+    branches:
+      - main
+    paths:
+      - .github/workflows/atomize-instruction-58.yml
+      - scripts/atomize_instruction_58.py
+      - regulatory/materialized/INSTRUCTION_58_CREPMF_2019.txt
+      - regulatory/materialized/INSTRUCTION_58_CREPMF_2019.metadata.json
+      - regulatory/requirements/INST058_ARTICLE_INDEX_V0_1.yaml
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: regulatory-instruction-58-atomization-main
+  cancel-in-progress: false
+
+jobs:
+  atomize:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - name: Atomize all Instruction 58 articles
+        run: python3 scripts/atomize_instruction_58.py
+      - name: Validate inactive structural atoms
+        run: |
+          python3 - <<'PY'
+          import json
+          from pathlib import Path
+
+          blocks = json.loads(Path(
+              'regulatory/requirements/INST058_ARTICLE_BLOCKS_V0_1.json'
+          ).read_text(encoding='utf-8'))
+          atoms = json.loads(Path(
+              'regulatory/requirements/INST058_ARTICLE_ATOMS_V0_1.json'
+          ).read_text(encoding='utf-8'))
+          validation = json.loads(Path(
+              'regulatory/validation/INST058_ATOMIZATION_VALIDATION_V0_1.json'
+          ).read_text(encoding='utf-8'))
+
+          assert validation['status'] == 'PASS', validation
+          assert blocks['articleBlockCount'] == 35
+          assert atoms['articleAtomCount'] == 35
+          assert [a['articleNumber'] for a in atoms['atoms']] == list(range(1, 36))
+          assert all(a['activation'] == 'FORBIDDEN' for a in atoms['atoms'])
+          assert all(a['status'].startswith('EXTRACTED_UNVERIFIED') for a in atoms['atoms'])
+          assert all(a['legalReviewStatus'] == 'PENDING' for a in atoms['atoms'])
+          assert all(a['complianceReviewStatus'] == 'PENDING' for a in atoms['atoms'])
+          assert all(a['reviewRoles'] == ['LEGAL', 'COMPLIANCE'] for a in atoms['atoms'])
+          assert all(a['normativeClassification'] == 'PENDING_HUMAN_REVIEW' for a in atoms['atoms'])
+          assert atoms['atoms'][28]['id'] == 'INST058_ART029_ATOM001'
+          PY
+      - name: Upload atomization evidence
+        uses: actions/upload-artifact@v4
+        with:
+          name: instruction-58-structural-atomization
+          path: |
+            regulatory/requirements/INST058_ARTICLE_BLOCKS_V0_1.json
+            regulatory/requirements/INST058_ARTICLE_ATOMS_V0_1.json
+            regulatory/validation/INST058_ATOMIZATION_VALIDATION_V0_1.json
+          if-no-files-found: error
+          retention-days: 30
+      - name: Commit structural atomization
+        run: |
+          git config user.name "regulatory-source-bot"
+          git config user.email "regulatory-source-bot@users.noreply.github.com"
+          git add \
+            regulatory/requirements/INST058_ARTICLE_BLOCKS_V0_1.json \
+            regulatory/requirements/INST058_ARTICLE_ATOMS_V0_1.json \
+            regulatory/validation/INST058_ATOMIZATION_VALIDATION_V0_1.json
+          if git diff --cached --quiet; then
+            echo "No Instruction 58 atomization changes to commit."
+            exit 0
+          fi
+          git commit -m "regulatory: atomize Instruction 58 articles"
+          git pull --rebase origin main
+          git push origin HEAD:main
