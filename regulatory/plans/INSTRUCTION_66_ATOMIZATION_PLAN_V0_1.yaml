@@ -1,6 +1,6 @@
 plan_id: INSTRUCTION_66_ATOMIZATION_PLAN_V0_1
-version: 0.2.2
-status: STRUCTURAL_ATOMIZATION_COMPLETE_EXPANDED_STAGING_CI_BLOCKED
+version: 0.2.3
+status: STRUCTURAL_ATOMIZATION_COMPLETE_EXPANDED_STAGING_VALIDATION_IN_PROGRESS
 created_on: '2026-08-05'
 updated_on: '2026-08-07'
 loop_id: LOOP-REG-001
@@ -47,30 +47,19 @@ progress:
     count: 92
     output: regulatory/requirements/INST066_ARTICLE_ATOMS_V0_1.json
   prospectus_requirement_candidates:
-    status: INITIAL_PRIORITY_SET_COMPILED_INACTIVE
-    compiled_count: 38
+    status: COMPILED_INACTIVE_INTERMEDIATE_STATE
+    compiled_count: 83
     output: regulatory/requirements/INST066_PROSPECTUS_REQUIREMENT_CANDIDATES_V0_1.json
   staged_requirement_candidates:
     status: EXPANDED_SPECIFIED_PENDING_COMPILATION_CI
-    staged_count: 73
+    staged_count: 28
     expected_compiled_total: 111
     spec_files:
-    - regulatory/requirements/inst066-candidates/00_SCOPE_DEFINITIONS.json
-    - regulatory/requirements/inst066-candidates/05_DEPOSITARY_CUSTODY.json
-    - regulatory/requirements/inst066-candidates/06_REGULATORY_REPORTING.json
-    - regulatory/requirements/inst066-candidates/07_MERGER_AND_SCISSION_LIFECYCLE.json
-    - regulatory/requirements/inst066-candidates/08_MANAGER_COMPANY_CORE.json
     - regulatory/requirements/inst066-candidates/09_INVESTMENT_ELIGIBILITY_LIMITS.json
     - regulatory/requirements/inst066-candidates/10_OPCR_SPECIAL_PRODUCTS.json
     - regulatory/requirements/inst066-candidates/11_VALUATION_GOVERNANCE.json
     - regulatory/requirements/inst066-candidates/12_EXTINCTIVE_MANAGEMENT_AND_HOLDER_RIGHTS.json
     domains:
-    - scope_and_definitions
-    - investor_classification
-    - depositary_and_custody
-    - regulatory_and_periodic_reporting
-    - merger_and_scission
-    - management_company_core
     - eligible_assets_and_limits
     - derivatives_and_global_risk
     - borrowing_and_liquidity
@@ -81,7 +70,7 @@ progress:
     legal_review_status: PENDING
     compliance_review_status: PENDING
   circ005_crosswalk:
-    status: INITIAL_NON_DESTRUCTIVE_CROSSWALKS_COMPILED
+    status: INTERMEDIATE_NON_DESTRUCTIVE_CROSSWALKS_COMPILED
     outputs:
     - regulatory/matrices/INST066_CIRC005_CROSSWALK_V0_1.csv
     - regulatory/matrices/INST066_CIRC005_DETAILED_CROSSWALK_V0_1.csv
@@ -89,18 +78,15 @@ progress:
     status: LAST_COMPLETED_CI_PASS_EXPANDED_STAGING_NOT_YET_COMPILED
     output: regulatory/validation/INST066_SOURCE_METADATA_CONSISTENCY_V0_1.json
   github_actions_runner:
-    status: BLOCKED_QUEUED_WITHOUT_JOB_ASSIGNMENT
-    first_observed_on: '2026-08-06'
-    last_observed_on: '2026-08-07'
-    queued_runs:
-    - run_id: 31107479974
-      workflow: Compile Instruction 66 Detailed Requirements
-      reason: rerun accepted but still queued without job assignment
-    - run_id: 31108755523
-      workflow: Validate Instruction 66 Source Metadata
-      reason: rerun accepted but still queued without job assignment
-    temporary_trigger_workflows_removed: true
-    temporary_issue_closed: true
+    status: RECOVERED_AFTER_GITHUB_ACTIONS_INCIDENT
+    incident_observed_from: '2026-08-06'
+    recovered_on: '2026-08-07'
+    latest_compile_run_id: 31212829067
+    latest_compile_result: FAILED_AT_STAGED_SPEC_VALIDATION_BEFORE_COMPILATION
+    failure_findings_fixed_in_source:
+    - missing LEGAL review role on INST066_ART045_REQ001
+    - duplicate INST066_ART043_REQ001 renumbered to INST066_ART043_REQ002
+    - duplicate INST066_ART047_REQ001 renumbered to INST066_ART047_REQ003
 phases:
 - id: P01_SOURCE_CONTROL
   status: COMPLETE_WITH_OPEN_HISTORICAL_REVIEW
@@ -127,10 +113,10 @@ phases:
   - no missing article number
   - page coordinates retained
 - id: P03_SCOPE_AND_DEFINITIONS
-  status: DETAILED_CANDIDATES_STAGED_CI_PENDING
+  status: DETAILED_CANDIDATES_COMPILED_REVIEW_PENDING
   domains: [OPC, OPCVM, FIA, FCP, investment_company, management_company, investor_categories]
 - id: P04_AUTHORIZATION_AND_GOVERNANCE
-  status: PRIORITY_COMPILED_AND_MANAGER_CORE_STAGED_REVIEW_PENDING
+  status: MANAGER_CORE_CANDIDATES_COMPILED_REVIEW_PENDING
   domains: [fund_approval, management_company_approval, governance, internal_control, risk_management, remuneration, delegation, conflicts_of_interest]
 - id: P05_INFORMATION_DOCUMENTS
   status: PRIORITY_CANDIDATES_COMPILED_REVIEW_PENDING
@@ -142,19 +128,20 @@ phases:
   status: PRIORITY_COMPILED_AND_VALUATION_GOVERNANCE_STAGED_REVIEW_PENDING
   domains: [valuation, valuation_governance, external_valuer, net_asset_value, subscription, redemption, suspension, liquidity_management_tools]
 - id: P08_SERVICE_PROVIDERS_AND_CONTROL
-  status: DEPOSITARY_CUSTODY_AND_VALUATION_PROVIDER_CANDIDATES_STAGED_CI_PENDING
+  status: DEPOSITARY_CUSTODY_COMPILED_VALUATION_PROVIDER_STAGED_CI_PENDING
   domains: [depositary, custody_and_sub_custody, external_valuer, auditor, external_adviser, distribution_and_paying_agents]
 - id: P09_REPORTING_AND_LIFECYCLE
-  status: REPORTING_MERGER_SCISSION_AND_EXTINCTIVE_CANDIDATES_STAGED_CI_PENDING
+  status: REPORTING_MERGER_SCISSION_COMPILED_EXTINCTIVE_STAGED_CI_PENDING
   domains: [periodic_reporting, regulator_reporting, material_changes, merger_and_restructuring, liquidation, dissolution, extinctive_management, holder_rights]
 - id: P10_CROSSWALK_AND_VALIDATION
-  status: INITIAL_CROSSWALK_COMPLETE_EXPANDED_STAGING_VALIDATION_BLOCKED_BY_RUNNER
+  status: INTERMEDIATE_CROSSWALK_COMPLETE_FINAL_111_COMPILATION_PENDING
   outputs:
   - regulatory/matrices/INST066_CIRC005_CROSSWALK_V0_1.csv
   - regulatory/matrices/INST066_CIRC005_DETAILED_CROSSWALK_V0_1.csv
   - regulatory/validation/INST066_ATOMIZATION_VALIDATION_V0_1.json
   - regulatory/validation/INST066_DETAILED_REQUIREMENTS_VALIDATION_V0_1.json
   - regulatory/validation/INST066_SOURCE_METADATA_CONSISTENCY_V0_1.json
+  - regulatory/validation/INST066_STAGED_SPEC_VALIDATION_V0_1.json
 requirement_schema_minimum:
 - id
 - source_id
@@ -194,15 +181,14 @@ completed_evidence:
 - regulatory/validation/INST066_ATOMIZATION_VALIDATION_V0_1.json
 - regulatory/validation/INST066_DETAILED_REQUIREMENTS_VALIDATION_V0_1.json
 remaining_blockers:
-- GitHub Actions runner has still not been assigned to the two accepted reruns; the 73 staged candidates cannot be declared compiled or CI-green yet.
+- Compile the remaining 28 staged candidates and validate the expected total of 111.
 - Historical registry crosscheck for the seven texts listed in Article 92 is incomplete.
 - Amendments and rectifications review is not exhaustive across decisions and official bulletins.
-- Paragraph-level segmentation and normative classification remain pending outside the detailed themes already staged.
-- The 38 compiled and 73 staged detailed candidates require legal and compliance review.
+- Paragraph-level segmentation and normative classification remain pending outside the detailed themes already specified.
+- All 111 detailed candidates require legal and compliance review before activation.
 - Canonical fields, questions, clauses and controls proposed for INST066 are not yet active in the application catalog.
 next_action: >-
-  As soon as a GitHub Actions runner is assigned, execute
-  compile-instruction-66-requirements.yml on main, confirm 111 candidates and
+  Run compile-instruction-66-requirements.yml on main, confirm 111 candidates and
   byte-identical CIRC005 matrices, update the source counter to 111, run the
   source-metadata validator, Regulatory CI and Security and Review Policy CI,
   then continue the remaining exact-source review for auditors, external advisers,
