@@ -5,51 +5,78 @@
 
 ## Action
 
-Poursuivre le **cross-check historique de l'article 92 de l'Instruction n°66/CREPMF/2021**, en recherchant maintenant une source officielle propre ou une seconde corroboration officielle pour l'**Instruction n°21/99**, relative à la classification des Organismes de Placement Collectif en Valeurs Mobilières.
+Poursuivre **R4 — textes d'application explicitement appelés par l'Instruction n°66/CREPMF/2021**, en traitant maintenant le bloc **Article 5 — conditions d'agrément de la Société de Gestion d'OPC**.
 
-L'état de référence est enregistré dans :
+La priorité de cette tranche est d'identifier et, si possible, matérialiser le **binaire officiel de l'Instruction n°64/CREPMF/2020**, puis de comparer son texte aux renvois procéduraux de l'article 5 et de l'article 17 avant tout rapprochement définitif.
 
-- `regulatory/registries/INST066_ABROGATED_TEXTS_INVENTORY_V0_1.yaml` ;
-- `regulatory/review-evidence/INST066_HISTORICAL_CROSSCHECK/OFFICIAL_SOURCE_SEARCH_2026-08-08.yaml` ;
-- `regulatory/sources/INSTRUCTION_21_CREPMF_1999.yaml`.
+État de référence :
 
-Le référentiel historique de l'article 92 couvre `7/7` sources distinctes :
+- `regulatory/registries/INST066_EXTERNAL_IMPLEMENTING_TEXTS_INVENTORY_V0_1.json` ;
+- `regulatory/validation/INST066_EXTERNAL_IMPLEMENTING_TEXTS_VALIDATION_V0_1.json` ;
+- `regulatory/sources/INSTRUCTION_64_CREPMF_2020.yaml` ;
+- `regulatory/sources/INSTRUCTION_61_CREPMF_2020.yaml` ;
+- `regulatory/registries/INST066_SPECIFIC_ACCOUNTING_REGULATION_DEPENDENCY_V0_1.yaml` ;
+- `regulatory/review-evidence/INST066_EXTERNAL_DEPENDENCIES/ART004_AUXILIARY_SERVICES_CIRCULAR_SEARCH_2026-08-08.yaml`.
 
-- `1/7` possède son propre binaire officiel matérialisé : Instruction n°46/2011 révisée ;
-- `2/7` — Instructions n°45/2011 et n°24/99 — sont corroborées par plusieurs actes officiels distincts, sans binaire propre ;
-- `4/7` restent au niveau de preuve de l'article 92 officiel : Décision n°2012-119 et Instructions n°23/99, n°22/99 et n°21/99.
+## État R4 actuel
 
-Les Instructions n°23/99 et n°22/99 ont atteint leur condition d'arrêt pour le périmètre public contrôlé le 2026-08-08 : leurs binaires propres n'ont pas été identifiés, les recherches institutionnelles sont documentées, et les décisions officielles `PCR/DA/2017/121` et `PCR/DA/2018/165` ne les citent pas.
+L'inventaire déterministe issu du PDF officiel hashé de l'Instruction 66 contient :
 
-Cette absence ne vaut pas preuve d'inexistence historique ; ces textes devront être repris si une archive institutionnelle, un binaire propre ou un nouvel acte officiel pertinent devient disponible.
+- `49` occurrences de dépendances externes ;
+- `47` occurrences non résolues ;
+- `26` articles concernés ;
+- `34` renvois à des circulaires du Conseil Régional ;
+- `7` renvois génériques à des instructions du Conseil Régional ;
+- `5` renvois à la réglementation comptable spécifique ;
+- `2` occurrences explicitement reliées à l'Instruction 58 matérialisée ;
+- `1` dépendance explicitement nommée supplémentaire : Instruction n°61/CREPMF/2020.
+
+L'article 4 a atteint sa condition d'arrêt pour le périmètre public contrôlé : aucune référence officielle de la circulaire sur les limites de fourniture des services auxiliaires par les SGO n'a été identifiée. Aucun numéro n'a été inventé.
+
+## Article 5 — dépendances à résoudre
+
+L'Instruction 66 renvoie distinctement à :
+
+1. une circulaire définissant les frais généraux servant au calcul du plancher de fonds propres ;
+2. une circulaire précisant la liste des documents et le contenu/forme du programme d'activité ;
+3. une instruction précisant le délai de notification des pièces manquantes ;
+4. une instruction précisant les étapes du processus de traitement de la demande ;
+5. une instruction précisant le délai d'acquittement des frais d'agrément.
+
+Le registre officiel AMF-UMOA confirme actuellement :
+
+- référence : `Instruction N°64/2020` ;
+- intitulé : `Instruction relative aux conditions de traitement des dossiers de demande d'agrément ou d'approbation` ;
+- statut observé au `2026-08-08` : `NON_ABROGE`.
+
+Cette correspondance d'objet fait de l'Instruction 64 un candidat officiel fort pour une partie des renvois procéduraux des articles 5 et 17, mais **elle n'est pas encore une résolution** : son propre texte officiel doit être matérialisé et comparé.
+
+Les recherches publiques par objet exact sur les circulaires « frais généraux » et « programme d'activité » n'ont pas encore donné de référence institutionnelle exploitable.
+
+## Résultat attendu
+
+Pour l'Instruction 64 :
+
+- identifier une route binaire officielle AMF-UMOA, ancien CREPMF ou BRVM ;
+- télécharger uniquement le binaire officiel ;
+- vérifier `%PDF`, calculer SHA-256 et taille, confirmer la pagination ;
+- extraire le texte avec OCR uniquement si nécessaire ;
+- relever date d'acte, date d'effet, clauses d'abrogation/modification et statut documentaire ;
+- comparer son périmètre mot à mot aux dépendances génériques des articles 5 et 17 ;
+- ne passer une dépendance à `RESOLVED` que si le texte propre confirme la correspondance ;
+- conserver les renvois non couverts en `REFERENCE_NOT_YET_IDENTIFIED`.
+
+Si aucun binaire officiel de l'Instruction 64 n'est trouvé dans les routes institutionnelles publiques contrôlables, documenter `OFFICIAL_BINARY_NOT_MATERIALIZED` et poursuivre les deux circulaires de l'article 5 sans utiliser de copie tierce comme norme.
 
 ## R1 sanctions — blocage conservé
 
-Le régime de sanctions 2016 ↔ 2022 reste prioritaire juridiquement mais bloqué par l'absence des binaires officiels nécessaires. La preuve de recherche est conservée dans :
-
-`regulatory/review-evidence/SANCTIONS_2016_2022/OFFICIAL_BINARY_SEARCH_2026-08-08.yaml`
-
-R1 doit être repris immédiatement si un binaire officiel 2016 ou 2022 devient disponible. Aucune copie tierce ne peut être utilisée comme substitut normatif.
-
-## Résultat attendu de l'action courante
-
-Pour l'Instruction n°21/99 :
-
-- rechercher les routes institutionnelles AMF-UMOA, ancien CREPMF, BRVM et archives officielles disponibles ;
-- rechercher des actes administratifs officiels susceptibles de la citer explicitement dans leurs visas ;
-- tenir compte du fait que les décisions officielles 2017 et 2018 déjà matérialisées ne citent pas 21/99 ;
-- distinguer strictement une preuve corroborante de l'acte normatif propre ;
-- si un binaire officiel propre est identifié : vérifier `%PDF`, calculer SHA-256 et taille, confirmer la pagination, extraire le texte avec OCR uniquement si nécessaire et matérialiser la source ;
-- si un nouvel acte officiel de corroboration est trouvé : l'archiver séparément et ne promouvoir que les éléments réellement observés ;
-- conserver le statut historique abrogé par l'article 92 de l'Instruction 66 ;
-- ne reconstruire aucune classification historique depuis une copie tierce ;
-- si aucune nouvelle route officielle n'est trouvée, documenter la condition d'arrêt et clôturer la première passe publique sur les sept textes de l'article 92.
+Le régime de sanctions 2016 ↔ 2022 reste prioritaire juridiquement mais bloqué par l'absence des binaires officiels nécessaires. Reprendre immédiatement R1 si un binaire officiel 2016 ou 2022 devient disponible.
 
 ## Invariants
 
-- `historical_rule_reactivation_allowed=false` ;
+- `candidate_match_is_resolution=false` tant que le binaire de l'Instruction 64 n'est pas comparé ;
+- `automatic_dependency_resolution_allowed=false` ;
+- `automatic_rule_reconstruction_allowed=false` ;
 - `requirement_activation_allowed=false` pour tout candidat non validé ;
-- `automatic_rule_reconstruction_allowed=false` pour les textes historiques non matérialisés ;
-- aucune règle historique n'est automatiquement migrée vers l'Instruction 66 ;
 - revue juridique et conformité humaines obligatoires ;
 - `ready_for_submission=false`.
