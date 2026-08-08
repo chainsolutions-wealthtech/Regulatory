@@ -25,6 +25,7 @@ source_artifact:
   page_count: 9
   copy_status: MATERIALIZED_HASHED_AND_PAGE_VALIDATED
   first_page_visual_identity_status: CONFIRMED
+  article_index: regulatory/requirements/INST046_REVISED_ARTICLE_INDEX_V0_1.yaml
 
 historical_evidence:
   abrogating_source_id: INSTRUCTION_66_CREPMF_2021
@@ -35,33 +36,18 @@ historical_evidence:
 
 legal_metadata:
   original_2011_act_date: PENDING_HISTORICAL_OFFICIAL_SOURCE_REVIEW
-  revision_date: PENDING_OFFICIAL_BINARY_END_PAGE_REVIEW
-  effective_from: PENDING_OFFICIAL_BINARY_REVIEW
+  revision_date: '2018-07-30'
+  effective_from: '2018-07-30'
+  effective_date_rule: ARTICLE_21_EFFECTIVE_ON_SIGNATURE_DATE
+  transitional_article_20_compliance_period_months: 6
+  final_clause_article_21: ALL_PRIOR_CONTRARY_PROVISIONS_ABROGATED
   relationship_to_decision_2012_119: PENDING_HISTORICAL_OFFICIAL_SOURCE_REVIEW
   current_legal_status: ABROGATED_BY_INSTRUCTION_66_EFFECTIVE_2022_01_01
   activation_allowed: false
 
 materialization_plan:
-  binary_acquisition_status: MATERIALIZED_FROM_OFFICIAL_BRVM_URL
+  binary_acquisition_status: MATERIALIZED_HASHED_AND_PAGE_VALIDATED
   next_steps:
-    - DOWNLOAD_OFFICIAL_PDF
-    - VERIFY_PDF_MAGIC
-    - COMPUTE_SHA256_AND_BYTE_SIZE
-    - VERIFY_PAGE_COUNT
-    - EXTRACT_TEXT_OR_OCR_IF_REQUIRED
-    - VERIFY_SIGNATURE_AND_EFFECTIVE_DATE
-    - INDEX_ARTICLES
-    - LINK_HISTORICAL_MIGRATION_TO_INSTRUCTION_66
-
-safety:
-  requirement_activation_allowed: false
-  historical_rule_reactivation_allowed: false
-  automatic_migration_inference_allowed: false
-  human_legal_review_required: true
-  human_compliance_review_required: true
-
-notes:
-  - "La fiche BRVM institutionnelle et le lien PDF direct sont identifiés et vérifiés publiquement."
-  - "Le PDF n'est pas encore matérialisé dans le dépôt ; aucune empreinte SHA-256 ni taille n'est inventée."
-  - "L'Instruction 66 article 92 abroge explicitement cette Instruction ; son contenu historique ne doit pas être réactivé."
-  - "Cette source est utile pour l'analyse de migration réglementaire et la traçabilité historique du corpus OPC."
+    - REVIEW_RELATIONSHIP_TO_DECISION_2012_119
+    - COMPLETE_HISTORICAL_CROSSCHECK
+    - HUMAN_LEGAL_AND_COMPLIANCE_REVIEW

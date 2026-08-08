@@ -13,7 +13,11 @@
     "historicalRuleReactivationForbidden": true,
     "requirementActivationAllowed": false,
     "humanLegalReviewRequired": true,
-    "humanComplianceReviewRequired": true
+    "humanComplianceReviewRequired": true,
+    "curatedLegalMetadataEnriched": true,
+    "article20TransitionalRuleCaptured": true,
+    "article21EffectiveDateRuleCaptured": true,
+    "articleSequenceContinuous1To21": true
   },
   "metrics": {
     "byteSize": 3474284,
@@ -24,7 +28,17 @@
   "outputs": [
     "regulatory/materialized/INSTRUCTION_46_CREPMF_2011_REVISEE.pdf",
     "regulatory/materialized/INSTRUCTION_46_CREPMF_2011_REVISEE.txt",
-    "regulatory/materialized/INSTRUCTION_46_CREPMF_2011_REVISEE.metadata.json"
+    "regulatory/materialized/INSTRUCTION_46_CREPMF_2011_REVISEE.metadata.json",
+    "regulatory/requirements/INST046_REVISED_ARTICLE_INDEX_V0_1.yaml"
   ],
-  "caveat": "PASS validates historical source integrity and text extraction only. Instruction 46 revised is explicitly abrogated by Instruction 66 article 92; no historical rule may be reactivated from this materialization."
+  "caveat": "PASS validates historical source integrity and text extraction only. Instruction 46 revised is explicitly abrogated by Instruction 66 article 92; no historical rule may be reactivated from this materialization.",
+  "legalMetadataEnrichment": {
+    "status": "PASS",
+    "revisionDate": "2018-07-30",
+    "effectiveFrom": "2018-07-30",
+    "effectiveDateRule": "ARTICLE_21_EFFECTIVE_ON_SIGNATURE_DATE",
+    "transitionalPeriodMonths": 6,
+    "articleCount": 21,
+    "activationAllowed": false
+  }
 }

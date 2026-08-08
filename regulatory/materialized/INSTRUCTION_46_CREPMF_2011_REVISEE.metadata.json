@@ -2,7 +2,7 @@
   "schemaVersion": "REGULATORY_HISTORICAL_SOURCE_MATERIALIZATION_V1",
   "sourceId": "INSTRUCTION_46_CREPMF_2011_REVISEE",
   "sourceUrl": "https://www.brvm.org/sites/default/files/20180822-instruction_ndeg46-2011_revisee-classification_et_aux_regles_d.pdf",
-  "retrievedAt": "2026-08-08T10:26:05+00:00",
+  "retrievedAt": "2026-08-08T10:29:37+00:00",
   "repositoryCopy": "regulatory/materialized/INSTRUCTION_46_CREPMF_2011_REVISEE.pdf",
   "extractedText": "regulatory/materialized/INSTRUCTION_46_CREPMF_2011_REVISEE.txt",
   "sha256": "6ab1a373b7671457cafd0f36cfbb96d031ab9839c2ecc0c18fabac602f972478",
@@ -57,11 +57,24 @@
   "historicalStatus": "EXPLICITLY_ABROGATED_BY_INSTRUCTION_66_ARTICLE_92",
   "legalMetadata": {
     "original2011ActDate": null,
-    "revisionDate": null,
-    "effectiveFrom": null,
+    "revisionDate": "2018-07-30",
+    "effectiveFrom": "2018-07-30",
     "relationshipToDecision2012_119": "PENDING_HISTORICAL_OFFICIAL_SOURCE_REVIEW",
     "currentLegalStatus": "ABROGATED_BY_INSTRUCTION_66_EFFECTIVE_2022_01_01",
-    "reviewStatus": "PENDING_LEGAL_AND_COMPLIANCE_REVIEW"
+    "reviewStatus": "PENDING_LEGAL_AND_COMPLIANCE_REVIEW",
+    "effectiveDateRule": "ARTICLE_21_EFFECTIVE_ON_SIGNATURE_DATE",
+    "transitionalRule": {
+      "article": 20,
+      "scope": "OPCVM_AGREES_AVANT_PUBLICATION",
+      "compliancePeriodMonths": 6,
+      "status": "CURATED_FROM_OFFICIAL_MATERIALIZED_SOURCE_TEXT"
+    },
+    "finalClause": {
+      "article": 21,
+      "abrogationWordingScope": "ALL_PRIOR_CONTRARY_PROVISIONS",
+      "status": "CURATED_FROM_OFFICIAL_MATERIALIZED_SOURCE_TEXT"
+    },
+    "evidenceStatus": "CURATED_FROM_OFFICIAL_MATERIALIZED_SOURCE_TEXT"
   },
   "extraction": {
     "method": "French OCR derivative via OCRmyPDF, then pdftotext -layout -enc UTF-8",
@@ -72,5 +85,10 @@
     "finalUsableCharacterCount": 13523,
     "usableCharacterCount": 13523,
     "status": "MATERIALIZED_TEXT_EXTRACTED_UNVERIFIED"
-  }
+  },
+  "articleIndex": "regulatory/requirements/INST046_REVISED_ARTICLE_INDEX_V0_1.yaml",
+  "articleIndexCount": 21,
+  "firstIndexedArticle": 1,
+  "lastIndexedArticle": 21,
+  "missingArticleNumbers": []
 }

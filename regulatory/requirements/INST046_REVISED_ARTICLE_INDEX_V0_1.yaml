@@ -1,0 +1,120 @@
+index_id: INST046_REVISED_ARTICLE_INDEX_V0_1
+source_id: INSTRUCTION_46_CREPMF_2011_REVISEE
+status: HISTORICAL_SOURCE_INDEX_EXTRACTED_UNVERIFIED
+historical_status: EXPLICITLY_ABROGATED_BY_INSTRUCTION_66_ARTICLE_92
+requirement_activation: FORBIDDEN
+article_count: 21
+first_article: 1
+last_article: 21
+missing_article_numbers: []
+articles:
+  - id: INST046_REVISED_ARTICLE_001
+    article_number: 1
+    extracted_text_line: 73
+    status: EXTRACTED_UNVERIFIED_REVIEW_PENDING
+    activation_allowed: false
+  - id: INST046_REVISED_ARTICLE_002
+    article_number: 2
+    extracted_text_line: 90
+    status: EXTRACTED_UNVERIFIED_REVIEW_PENDING
+    activation_allowed: false
+  - id: INST046_REVISED_ARTICLE_003
+    article_number: 3
+    extracted_text_line: 96
+    status: EXTRACTED_UNVERIFIED_REVIEW_PENDING
+    activation_allowed: false
+  - id: INST046_REVISED_ARTICLE_004
+    article_number: 4
+    extracted_text_line: 130
+    status: EXTRACTED_UNVERIFIED_REVIEW_PENDING
+    activation_allowed: false
+  - id: INST046_REVISED_ARTICLE_005
+    article_number: 5
+    extracted_text_line: 141
+    status: EXTRACTED_UNVERIFIED_REVIEW_PENDING
+    activation_allowed: false
+  - id: INST046_REVISED_ARTICLE_006
+    article_number: 6
+    extracted_text_line: 148
+    status: EXTRACTED_UNVERIFIED_REVIEW_PENDING
+    activation_allowed: false
+  - id: INST046_REVISED_ARTICLE_007
+    article_number: 7
+    extracted_text_line: 153
+    status: EXTRACTED_UNVERIFIED_REVIEW_PENDING
+    activation_allowed: false
+  - id: INST046_REVISED_ARTICLE_008
+    article_number: 8
+    extracted_text_line: 237
+    status: EXTRACTED_UNVERIFIED_REVIEW_PENDING
+    activation_allowed: false
+  - id: INST046_REVISED_ARTICLE_009
+    article_number: 9
+    extracted_text_line: 244
+    status: EXTRACTED_UNVERIFIED_REVIEW_PENDING
+    activation_allowed: false
+  - id: INST046_REVISED_ARTICLE_010
+    article_number: 10
+    extracted_text_line: 256
+    status: EXTRACTED_UNVERIFIED_REVIEW_PENDING
+    activation_allowed: false
+  - id: INST046_REVISED_ARTICLE_011
+    article_number: 11
+    extracted_text_line: 284
+    status: EXTRACTED_UNVERIFIED_REVIEW_PENDING
+    activation_allowed: false
+  - id: INST046_REVISED_ARTICLE_012
+    article_number: 12
+    extracted_text_line: 307
+    status: EXTRACTED_UNVERIFIED_REVIEW_PENDING
+    activation_allowed: false
+  - id: INST046_REVISED_ARTICLE_013
+    article_number: 13
+    extracted_text_line: 322
+    status: EXTRACTED_UNVERIFIED_REVIEW_PENDING
+    activation_allowed: false
+  - id: INST046_REVISED_ARTICLE_014
+    article_number: 14
+    extracted_text_line: 342
+    status: EXTRACTED_UNVERIFIED_REVIEW_PENDING
+    activation_allowed: false
+  - id: INST046_REVISED_ARTICLE_015
+    article_number: 15
+    extracted_text_line: 363
+    status: EXTRACTED_UNVERIFIED_REVIEW_PENDING
+    activation_allowed: false
+  - id: INST046_REVISED_ARTICLE_016
+    article_number: 16
+    extracted_text_line: 382
+    status: EXTRACTED_UNVERIFIED_REVIEW_PENDING
+    activation_allowed: false
+  - id: INST046_REVISED_ARTICLE_017
+    article_number: 17
+    extracted_text_line: 407
+    status: EXTRACTED_UNVERIFIED_REVIEW_PENDING
+    activation_allowed: false
+  - id: INST046_REVISED_ARTICLE_018
+    article_number: 18
+    extracted_text_line: 414
+    status: EXTRACTED_UNVERIFIED_REVIEW_PENDING
+    activation_allowed: false
+  - id: INST046_REVISED_ARTICLE_019
+    article_number: 19
+    extracted_text_line: 419
+    status: EXTRACTED_UNVERIFIED_REVIEW_PENDING
+    activation_allowed: false
+  - id: INST046_REVISED_ARTICLE_020
+    article_number: 20
+    extracted_text_line: 435
+    status: EXTRACTED_UNVERIFIED_REVIEW_PENDING
+    activation_allowed: false
+  - id: INST046_REVISED_ARTICLE_021
+    article_number: 21
+    extracted_text_line: 450
+    status: EXTRACTED_UNVERIFIED_REVIEW_PENDING
+    activation_allowed: false
+review_boundaries:
+  historical_rule_reactivation_allowed: false
+  legal_review_status: PENDING
+  compliance_review_status: PENDING
+  relationship_to_instruction_66: EXPLICITLY_ABROGATED_BY_ARTICLE_92
