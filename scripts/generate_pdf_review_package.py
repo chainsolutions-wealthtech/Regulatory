@@ -1,10 +1,12 @@
 #!/usr/bin/env python3
-"""Generate a normalized PDF and deterministic pre-compliance review ZIP.
+"""Generate a reproducible PDF and deterministic pre-compliance review ZIP.
 
-The DOCX remains the composition source. LibreOffice performs the rendering;
-ExifTool normalizes mutable PDF metadata; qpdf normalizes the trailer/document
-ID and streams. The resulting ZIP uses fixed entry timestamps, permissions and
-ordering. This pipeline never changes ready_for_submission to true.
+The DOCX remains the composition source. LibreOffice renders the same DOCX twice
+with isolated profiles. Mutable PDF dates/IDs are normalized in-place without
+changing byte lengths. The two normalized byte streams MUST be identical or the
+pipeline fails. The ZIP uses fixed entry timestamps, permissions and ordering.
+
+This pipeline never changes ready_for_submission to true.
 """
 
 from __future__ import annotations
@@ -14,6 +16,7 @@ import hashlib
 import json
 import os
 from pathlib import Path
+import re
 import shutil
 import subprocess
 import tempfile
@@ -21,6 +24,14 @@ from datetime import datetime, timezone
 from zipfile import ZIP_DEFLATED, ZipFile, ZipInfo
 
 FIXED_ZIP_TIME = (1980, 1, 1, 0, 0, 0)
+PDF_DATE_PATTERN = re.compile(rb"/(CreationDate|ModDate)\s*\((D:[^)]*)\)")
+ISO_DATE_PATTERN = re.compile(
+    rb"20\d{2}-\d{2}-\d{2}T\d{2}:\d{2}:\d{2}(?:\.\d+)?(?:Z|[+-]\d{2}:?\d{2})?"
+)
+PDF_ID_PATTERN = re.compile(
+    rb"/ID\s*\[\s*<([0-9A-Fa-f]+)>\s*<([0-9A-Fa-f]+)>\s*\]"
+)
+UUID_PATTERN = re.compile(rb"uuid:[0-9A-Fa-f-]{36}")
 
 
 def main() -> None:
@@ -53,77 +64,25 @@ def main() -> None:
 
     check_tool("libreoffice")
     check_tool("pdfinfo")
-    check_tool("exiftool")
-    check_tool("qpdf")
 
+    docx_sha = sha256_file(docx)
+    normalized_runs: list[bytes] = []
     with tempfile.TemporaryDirectory(prefix="regulatory-pdf-") as temporary:
         temp = Path(temporary)
-        libreoffice_dir = temp / "libreoffice"
-        libreoffice_dir.mkdir(parents=True, exist_ok=True)
-        render_dir = temp / "render"
-        render_dir.mkdir(parents=True, exist_ok=True)
-        profile_dir = temp / "profile"
-        profile_dir.mkdir(parents=True, exist_ok=True)
+        for run_number in (1, 2):
+            rendered_pdf = render_docx_to_pdf(docx, temp, run_number)
+            normalized_runs.append(
+                normalize_pdf_bytes(
+                    rendered_pdf.read_bytes(),
+                    generated_at=generated_at,
+                    deterministic_seed=f"{generation_id}|{docx_sha}",
+                )
+            )
 
-        rendered_pdf = render_dir / f"{docx.stem}.pdf"
-        env = os.environ.copy()
-        env.update(
-            {
-                "HOME": str(libreoffice_dir),
-                "TMPDIR": str(temp),
-                "TZ": "UTC",
-                "LC_ALL": "C.UTF-8",
-                "LANG": "C.UTF-8",
-                "SAL_USE_VCLPLUGIN": "svp",
-            }
-        )
-        run(
-            [
-                "libreoffice",
-                "--headless",
-                "--nologo",
-                "--nodefault",
-                "--nofirststartwizard",
-                f"-env:UserInstallation=file://{profile_dir}",
-                "--convert-to",
-                "pdf:writer_pdf_Export",
-                "--outdir",
-                str(render_dir),
-                str(docx),
-            ],
-            env=env,
-        )
-        require_file(rendered_pdf)
-
-        metadata_pdf = temp / "metadata-normalized.pdf"
-        shutil.copyfile(rendered_pdf, metadata_pdf)
-        exif_timestamp = generated_at.strftime("%Y:%m:%d %H:%M:%S+00:00")
-        run(
-            [
-                "exiftool",
-                "-overwrite_original",
-                f"-CreateDate={exif_timestamp}",
-                f"-ModifyDate={exif_timestamp}",
-                f"-MetadataDate={exif_timestamp}",
-                "-Creator=ChainSolutions Regulatory Prospectus Composer",
-                "-Producer=LibreOffice Writer normalized by ChainSolutions Regulatory",
-                str(metadata_pdf),
-            ]
-        )
-
-        normalized_pdf = temp / "normalized.pdf"
-        run(
-            [
-                "qpdf",
-                "--deterministic-id",
-                "--object-streams=generate",
-                "--stream-data=compress",
-                str(metadata_pdf),
-                str(normalized_pdf),
-            ]
-        )
-        require_pdf(normalized_pdf)
-        shutil.copyfile(normalized_pdf, output_pdf)
+    if normalized_runs[0] != normalized_runs[1]:
+        raise SystemExit("PDF_NORMALIZATION_NOT_DETERMINISTIC")
+    output_pdf.write_bytes(normalized_runs[0])
+    require_pdf(output_pdf)
 
     pdf_info = parse_pdfinfo(output_pdf)
     page_count = int(pdf_info.get("Pages", "0"))
@@ -136,13 +95,14 @@ def main() -> None:
         "generation_id": generation_id,
         "generated_at": generated_at.isoformat().replace("+00:00", "Z"),
         "source_docx": docx.name,
-        "source_docx_sha256": sha256_file(docx),
+        "source_docx_sha256": docx_sha,
         "pdf_file": output_pdf.name,
         "pdf_sha256": pdf_sha,
         "pdf_size_bytes": output_pdf.stat().st_size,
         "page_count": page_count,
         "renderer": "LibreOffice Writer headless",
-        "normalization": "ExifTool fixed metadata + qpdf deterministic-id",
+        "normalization": "Python fixed-length PDF date/ID normalization",
+        "reproducibility_check": "TWO_ISOLATED_RENDER_RUNS_BYTE_IDENTICAL_AFTER_NORMALIZATION",
         "document_status": "DRAFT_PRE_COMPLIANCE_REVIEW",
         "ready_for_submission": False,
         "caveat": (
@@ -183,18 +143,128 @@ def main() -> None:
     write_deterministic_zip(package_zip, package_entries)
     zip_sha = sha256_file(package_zip)
 
+    with tempfile.TemporaryDirectory(prefix="regulatory-zip-check-") as temporary:
+        second_zip = Path(temporary) / package_zip.name
+        write_deterministic_zip(second_zip, package_entries)
+        if package_zip.read_bytes() != second_zip.read_bytes():
+            raise SystemExit("REVIEW_PACKAGE_ZIP_NOT_DETERMINISTIC")
+
     result = {
         "status": "PASS",
         "generation_id": generation_id,
         "pdf_file": output_pdf.name,
         "pdf_sha256": pdf_sha,
         "pdf_pages": page_count,
+        "pdf_reproducible": True,
         "package_file": package_zip.name,
         "package_sha256": zip_sha,
         "package_entries": len(package_entries),
+        "package_reproducible": True,
         "ready_for_submission": False,
     }
     print(json.dumps(result, ensure_ascii=False, indent=2))
+
+
+def render_docx_to_pdf(docx: Path, temp: Path, run_number: int) -> Path:
+    home_dir = temp / f"home-{run_number}"
+    render_dir = temp / f"render-{run_number}"
+    profile_dir = temp / f"profile-{run_number}"
+    for directory in (home_dir, render_dir, profile_dir):
+        directory.mkdir(parents=True, exist_ok=True)
+    rendered_pdf = render_dir / f"{docx.stem}.pdf"
+    env = os.environ.copy()
+    env.update(
+        {
+            "HOME": str(home_dir),
+            "TMPDIR": str(temp),
+            "TZ": "UTC",
+            "LC_ALL": "C.UTF-8",
+            "LANG": "C.UTF-8",
+            "SAL_USE_VCLPLUGIN": "svp",
+        }
+    )
+    run(
+        [
+            "libreoffice",
+            "--headless",
+            "--nologo",
+            "--nodefault",
+            "--nofirststartwizard",
+            f"-env:UserInstallation=file://{profile_dir}",
+            "--convert-to",
+            "pdf:writer_pdf_Export",
+            "--outdir",
+            str(render_dir),
+            str(docx),
+        ],
+        env=env,
+    )
+    require_pdf(rendered_pdf)
+    return rendered_pdf
+
+
+def normalize_pdf_bytes(data: bytes, generated_at: datetime, deterministic_seed: str) -> bytes:
+    normalized = PDF_DATE_PATTERN.sub(
+        lambda match: b"/" + match.group(1) + b" (" + normalize_pdf_date(match.group(2), generated_at) + b")",
+        data,
+    )
+    normalized = ISO_DATE_PATTERN.sub(
+        lambda match: normalize_iso_datetime(match.group(0), generated_at),
+        normalized,
+    )
+    normalized = PDF_ID_PATTERN.sub(
+        lambda match: normalize_pdf_id(match, deterministic_seed),
+        normalized,
+    )
+    normalized = UUID_PATTERN.sub(
+        lambda match: deterministic_uuid_bytes(match.group(0), deterministic_seed),
+        normalized,
+    )
+    return normalized
+
+
+def normalize_pdf_date(original: bytes, generated_at: datetime) -> bytes:
+    digits = generated_at.strftime("%Y%m%d%H%M%S") + "0000"
+    return replace_digits_preserving_length(original, digits)
+
+
+def normalize_iso_datetime(original: bytes, generated_at: datetime) -> bytes:
+    digits = generated_at.strftime("%Y%m%d%H%M%S") + "000000000000"
+    return replace_digits_preserving_length(original, digits)
+
+
+def replace_digits_preserving_length(original: bytes, digits: str) -> bytes:
+    output = bytearray(original)
+    digit_index = 0
+    for index, value in enumerate(output):
+        if 48 <= value <= 57:
+            output[index] = ord(digits[digit_index % len(digits)])
+            digit_index += 1
+    return bytes(output)
+
+
+def normalize_pdf_id(match: re.Match[bytes], deterministic_seed: str) -> bytes:
+    first = deterministic_hex(deterministic_seed + "|pdf-id-1", len(match.group(1)))
+    second = deterministic_hex(deterministic_seed + "|pdf-id-2", len(match.group(2)))
+    return b"/ID [<" + first + b"><" + second + b">]"
+
+
+def deterministic_uuid_bytes(original: bytes, deterministic_seed: str) -> bytes:
+    digest = hashlib.sha256((deterministic_seed + "|uuid").encode("utf-8")).hexdigest()
+    uuid = f"uuid:{digest[0:8]}-{digest[8:12]}-{digest[12:16]}-{digest[16:20]}-{digest[20:32]}"
+    encoded = uuid.encode("ascii")
+    if len(encoded) != len(original):
+        return original
+    return encoded
+
+
+def deterministic_hex(seed: str, length: int) -> bytes:
+    output = ""
+    counter = 0
+    while len(output) < length:
+        output += hashlib.sha256(f"{seed}|{counter}".encode("utf-8")).hexdigest()
+        counter += 1
+    return output[:length].encode("ascii")
 
 
 def parse_args() -> argparse.Namespace:
