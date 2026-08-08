@@ -13,11 +13,13 @@
     "instruction58ReferencesDetected": true,
     "unresolvedReferencesRemainInactive": true,
     "resolvedInstruction58StillPendingHumanReview": true,
-    "allDependenciesRequireHumanReview": true
+    "allDependenciesRequireHumanReview": true,
+    "additionalNamedCrepmfInstructionsDetected": true,
+    "namedInstructionsRemainInactiveUntilVerified": true
   },
   "metrics": {
-    "dependencyOccurrenceCount": 48,
-    "unresolvedReferenceCount": 46,
+    "dependencyOccurrenceCount": 49,
+    "unresolvedReferenceCount": 47,
     "resolvedReferenceOccurrenceCount": 2,
     "articleCountWithExternalDependencies": 26,
     "articleNumbersWithExternalDependencies": [
@@ -51,6 +53,7 @@
     "countsByKind": {
       "COUNCIL_CIRCULAR": 34,
       "COUNCIL_INSTRUCTION": 7,
+      "EXPLICIT_NAMED_CREPMF_INSTRUCTION": 1,
       "EXPLICIT_NAMED_INSTRUCTION_58": 2,
       "SPECIFIC_ACCOUNTING_REGULATION": 5
     }
@@ -58,5 +61,8 @@
   "outputs": [
     "regulatory/registries/INST066_EXTERNAL_IMPLEMENTING_TEXTS_INVENTORY_V0_1.json"
   ],
-  "caveat": "PASS validates deterministic discovery of explicit external-text references only. It does not identify the unresolved instruments, validate their legal status, or activate any requirement."
+  "caveat": "PASS validates deterministic discovery of explicit external-text references only. It does not identify the unresolved instruments, validate their legal status, or activate any requirement.",
+  "namedInstructionReferences": [
+    "Instruction n°61/CREPMF/2020"
+  ]
 }

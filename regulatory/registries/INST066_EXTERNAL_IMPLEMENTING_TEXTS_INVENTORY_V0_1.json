@@ -11,13 +11,15 @@
       "COUNCIL_CIRCULAR",
       "COUNCIL_INSTRUCTION",
       "SPECIFIC_ACCOUNTING_REGULATION",
-      "EXPLICIT_NAMED_INSTRUCTION_58"
+      "EXPLICIT_NAMED_INSTRUCTION_58",
+      "EXPLICIT_NAMED_CREPMF_INSTRUCTION"
     ],
-    "rule": "Record explicit references only; do not infer unnamed implementing instruments beyond the wording present in Instruction 66."
+    "rule": "Record explicit references only; do not infer unnamed implementing instruments beyond the wording present in Instruction 66.",
+    "namedInstructionPass": "Second deterministic pass captures explicit Instruction [n°]XX/CREPMF/YYYY references not already represented."
   },
   "summary": {
-    "dependencyOccurrenceCount": 48,
-    "unresolvedReferenceCount": 46,
+    "dependencyOccurrenceCount": 49,
+    "unresolvedReferenceCount": 47,
     "resolvedReferenceOccurrenceCount": 2,
     "articleCountWithExternalDependencies": 26,
     "articleNumbersWithExternalDependencies": [
@@ -51,6 +53,7 @@
     "countsByKind": {
       "COUNCIL_CIRCULAR": 34,
       "COUNCIL_INSTRUCTION": 7,
+      "EXPLICIT_NAMED_CREPMF_INSTRUCTION": 1,
       "EXPLICIT_NAMED_INSTRUCTION_58": 2,
       "SPECIFIC_ACCOUNTING_REGULATION": 5
     }
@@ -228,6 +231,30 @@
       "sourceContext": "… e qui pourrait être accordée au titre des aménagements relatifs à l’effet de levier, compte tenu, notamment : a) du type de FIA ; b) de la stratégie d’investissement du FIA ; c) des sources de l’effet de levier pour Le FIA ; d) de toute autre indépendance ou relation pertinente avec d’autres établissements de services financiers susceptibles de présenter un risque systémique; e) de la nécessité de limiter l’exposition à une seule contrepartie ; f) du degré de garantie dont l’effet de levier est assorti ; g) du ratio actif-passif ; h) du volume, de la nature et de l’étendue de l’activité de la Société de Gestion sur Les marchés concernés. 11. Une Circulaire du Conseil Régional précise Les mesures relatives : a) aux systèmes de gestion des risques devant être utilisés par les Sociétés de Gestion en relation avec les risques auxquels celles-ci sont exposées pour le compte des OPC ; À Avenue Joseph ANOMA 01 8.P. 1878 Abidjan 01/Côte d'ivoire Site web : http://www.crepmf.org ll 45 # TEL.: (225) 27 20 21 57 42 / 20 31 56 20 Fax: (225) 27 20 33 23 O4 presidence@crepmf.org b) à la fréquence appropriée d'examen du système de gestion des risques ; c) à la manière dont la fonction de gestion des risques doit être séparée sur les plans fonctionnel et hiérarchique des unités opérationnelles, y compris de la fonction de gestio …",
       "purposeCandidate": "Implementing details expressly delegated by Fonction de gestion des risques et de contrôle; exact instrument reference remains to be identified from an official source.",
       "normativeBoundary": "The dependency is recorded because Instruction 66 explicitly refers to it. No missing reference, title, rule, threshold, method or obligation is inferred.",
+      "activation": "FORBIDDEN_PENDING_OFFICIAL_SOURCE_IDENTIFICATION_AND_REVIEW",
+      "legalReviewStatus": "PENDING",
+      "complianceReviewStatus": "PENDING"
+    },
+    {
+      "dependencyId": "INST066_ART011_DEP_NAMED_INST_01",
+      "sourceId": "INSTRUCTION_66_CREPMF_2021",
+      "articleNumber": 11,
+      "articleTitle": "Fonction de gestion des risques et de contrôle",
+      "sourcePages": [
+        12,
+        13,
+        14,
+        15,
+        16
+      ],
+      "dependencyKind": "EXPLICIT_NAMED_CREPMF_INSTRUCTION",
+      "referenceStatus": "EXPLICIT_REFERENCE_SOURCE_RECORD_OR_BINARY_TO_VERIFY",
+      "officialReference": "Instruction n°61/CREPMF/2020",
+      "resolvedSourceId": null,
+      "sourceWording": "Instruction 61/CREPMF/2020",
+      "sourceContext": "… Le niveau de risque actuel encouru par chaque OPC géré et sur tout dépassement effectif ou prévisible des limites de risque fixées dans la, conformément à l’alinéa 7 du présent article, afin que des mesures rapides et appropriées puissent être prises. 2. La Société de gestion d’OPC établit et maintient opérationnelle une fonction permanente de contrôle interne distincte des gestionnaires des risques et des autres fonctions opérationnelles dans les conditions et selon Les modalités prévues par l’Instruction 61/CREPMF/2020 relative à l’organisation du système de contrôle interne des acteurs agréés du marché financier régional de l’UMOA, et désignent un Responsable du Contrôle Interne, conformément à La même instruction. 3. Les fonctions de gestion des risques et de contrôle interne jouissent de l'autorité nécessaire et d’un accès à toutes les informations pertinentes nécessaires à l’accomplissement des tâches énumérées respectivement à l’alinéa 1 du présent article et dans l’Instruction 61/CREPMF/2020. 4. La Soci …",
+      "purposeCandidate": "Instruction 66 explicitly names Instruction n°61/CREPMF/2020; its own official source and current legal status must be verified before this dependency can be treated as resolved.",
+      "normativeBoundary": "The number/year are taken verbatim from Instruction 66. No title, date, amendment status or normative content is inferred from the reference alone.",
       "activation": "FORBIDDEN_PENDING_OFFICIAL_SOURCE_IDENTIFICATION_AND_REVIEW",
       "legalReviewStatus": "PENDING",
       "complianceReviewStatus": "PENDING"
