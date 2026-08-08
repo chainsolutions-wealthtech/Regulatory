@@ -1,0 +1,118 @@
+evidence_id: INST066_HISTORICAL_SOURCE_CROSSCHECK_2026_08_08
+review_date: 2026-08-08
+source_id: INSTRUCTION_66_CREPMF_2021
+source_article: 92
+purpose: >-
+  Identifier des publications ou binaires institutionnels pour les sept textes
+  explicitement abrogés par l'article 92 de l'Instruction n°66/CREPMF/2021, afin
+  de constituer une chaîne historique vérifiable sans réactiver les anciennes règles.
+
+primary_source_basis:
+  inventory: regulatory/registries/INST066_ABROGATED_TEXTS_INVENTORY_V0_1.yaml
+  source_pdf: regulatory/materialized/INSTRUCTION_66_CREPMF_2021.pdf
+  source_sha256: 3f964f2f6ab9ce9eb16912ccda13f34b5023a188dfb18fcba7065590c770d396
+  article_92_reference_count: 7
+
+institutional_routes_checked:
+  - authority: BRVM
+    route: https://www.brvm.org/fr/node/315
+    scope: >-
+      Bibliothèque paginée « Instructions, circulaires et autres textes publiés par
+      l'AMF-UMOA », pages historiques 6 à 9 examinées jusqu'aux publications de 1999.
+    result: >-
+      Une publication institutionnelle distincte de l'Instruction n°46/2011 révisée
+      a été identifiée via la BRVM. Les anciennes Instructions CREPMF n°21/99,
+      n°22/99, n°23/99, n°24/99 et n°45/2011 ainsi que la Décision n°2012-119
+      n'ont pas été identifiées sous ces références dans les pages historiques parcourues.
+    interpretation_boundary: >-
+      L'absence de ces références dans la bibliothèque BRVM parcourue n'est pas une
+      preuve de non-publication ou d'absence juridique ; elle signifie uniquement
+      qu'aucune route exploitable n'a été identifiée dans ce périmètre.
+
+  - authority: BRVM_AND_AMF_UMOA
+    scope: EXACT_REFERENCE_AND_TITLE_SEARCHES
+    result: >-
+      Des recherches ciblées sur les numéros et intitulés complets des six références
+      restantes n'ont pas fourni de route institutionnelle publique exploitable dans
+      le périmètre indexé contrôlé le 2026-08-08.
+
+crosscheck_results:
+  - seq: 1
+    reference: "Décision n°2012-119"
+    result: OFFICIAL_PUBLIC_ROUTE_NOT_IDENTIFIED
+    source_record: null
+    binary_status: NOT_MATERIALIZED
+    note: >-
+      L'article 92 de l'Instruction 66 constitue la preuve officielle de son abrogation.
+      Aucun contenu, date ou effet modificatif détaillé n'est promu sans source officielle.
+
+  - seq: 2
+    reference: "Instruction n°46/2011 révisée"
+    result: OFFICIAL_BRVM_PUBLICATION_AND_BINARY_MATERIALIZED
+    source_record: regulatory/sources/INSTRUCTION_46_CREPMF_2011_REVISEE.yaml
+    binary: regulatory/materialized/INSTRUCTION_46_CREPMF_2011_REVISEE.pdf
+    sha256: 6ab1a373b7671457cafd0f36cfbb96d031ab9839c2ecc0c18fabac602f972478
+    byte_size: 3474284
+    page_count: 9
+    article_count: 21
+    revision_date: 2018-07-30
+    effective_from: 2018-07-30
+    historical_status: EXPLICITLY_ABROGATED_BY_INSTRUCTION_66_ARTICLE_92
+
+  - seq: 3
+    reference: "Instruction n°45/2011"
+    result: OFFICIAL_PUBLIC_ROUTE_NOT_IDENTIFIED
+    source_record: null
+    binary_status: NOT_MATERIALIZED
+
+  - seq: 4
+    reference: "Instruction n°24/99"
+    result: OFFICIAL_PUBLIC_ROUTE_NOT_IDENTIFIED
+    source_record: null
+    binary_status: NOT_MATERIALIZED
+
+  - seq: 5
+    reference: "Instruction n°23/99"
+    result: OFFICIAL_PUBLIC_ROUTE_NOT_IDENTIFIED
+    source_record: null
+    binary_status: NOT_MATERIALIZED
+
+  - seq: 6
+    reference: "Instruction n°22/99"
+    result: OFFICIAL_PUBLIC_ROUTE_NOT_IDENTIFIED
+    source_record: null
+    binary_status: NOT_MATERIALIZED
+
+  - seq: 7
+    reference: "Instruction n°21/99"
+    result: OFFICIAL_PUBLIC_ROUTE_NOT_IDENTIFIED
+    source_record: null
+    binary_status: NOT_MATERIALIZED
+
+progress:
+  total_historical_references: 7
+  officially_materialized: 1
+  official_public_route_not_identified: 6
+  crosscheck_status: IN_PROGRESS_1_OF_7_MATERIALIZED
+
+third_party_source_policy:
+  normative_use_allowed: false
+  note: >-
+    Des reproductions ou commentaires tiers peuvent servir uniquement de pistes de
+    recherche. Ils ne remplacent pas les actes officiels et ne doivent pas servir à
+    reconstituer automatiquement les obligations historiques.
+
+safety:
+  historical_rule_reactivation_allowed: false
+  requirement_activation_allowed: false
+  automatic_migration_inference_allowed: false
+  legal_review_required: true
+  compliance_review_required: true
+  ready_for_submission_must_remain_false: true
+
+next_actions:
+  - LOCATE_OFFICIAL_DECISION_2012_119
+  - LOCATE_OFFICIAL_INSTRUCTION_45_2011
+  - LOCATE_OFFICIAL_INSTRUCTIONS_21_22_23_24_1999
+  - MATERIALIZE_EACH_OFFICIAL_BINARY_WHEN_IDENTIFIED
+  - COMPARE_HISTORICAL_RULES_ONLY_FOR_REGULATORY_MIGRATION_ANALYSIS
