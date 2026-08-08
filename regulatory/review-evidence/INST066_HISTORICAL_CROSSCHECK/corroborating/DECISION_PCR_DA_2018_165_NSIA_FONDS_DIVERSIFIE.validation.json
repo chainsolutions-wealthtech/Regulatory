@@ -1,0 +1,27 @@
+{
+  "validationId": "INST066_HISTORICAL_CORROBORATION_NSIA_2018_165_V1",
+  "status": "PASS",
+  "checks": {
+    "officialBrvmPdfDownloaded": true,
+    "pdfMagicConfirmed": true,
+    "sha256Computed": true,
+    "byteSizePositive": true,
+    "pageCountPositive": true,
+    "textExtracted": true,
+    "evidenceRoleNonNormative": true,
+    "historicalRuleReactivationForbidden": true,
+    "requirementActivationAllowed": false
+  },
+  "metrics": {
+    "byteSize": 1432596,
+    "pageCount": 4,
+    "usableTextCharacterCount": 6098,
+    "observedHistoricalReferenceCount": 3
+  },
+  "outputs": [
+    "regulatory/review-evidence/INST066_HISTORICAL_CROSSCHECK/corroborating/DECISION_PCR_DA_2018_165_NSIA_FONDS_DIVERSIFIE.pdf",
+    "regulatory/review-evidence/INST066_HISTORICAL_CROSSCHECK/corroborating/DECISION_PCR_DA_2018_165_NSIA_FONDS_DIVERSIFIE.txt",
+    "regulatory/review-evidence/INST066_HISTORICAL_CROSSCHECK/corroborating/DECISION_PCR_DA_2018_165_NSIA_FONDS_DIVERSIFIE.metadata.json"
+  ],
+  "caveat": "This is corroborating evidence, not the normative historical source."
+}

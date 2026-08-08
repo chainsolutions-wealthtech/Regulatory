@@ -1,0 +1,94 @@
+{
+  "schemaVersion": "REGULATORY_CORROBORATING_EVIDENCE_V1",
+  "evidenceId": "INST066_HISTORICAL_CORROBORATION_NSIA_2018_165",
+  "evidenceRole": "OFFICIAL_ADMINISTRATIVE_CORROBORATION_ONLY_NOT_NORMATIVE_SUBSTITUTE",
+  "sourcePage": "https://www.brvm.org/fr/crepmf-agrement-du-fonds-commun-de-placement-fcp-nsia-fonds-diversifie-en-qualite-dopcvm-sur-le",
+  "sourceUrl": "https://www.brvm.org/sites/default/files/20181121_-_decision_ndeg_pcr-da-2018-165_agrement_du_fcp_nsia_fonds_diversifie_en_qualite_dopcvm_sur_le_marche_financier_regional_0.pdf",
+  "retrievedAt": "2026-08-08T10:35:49+00:00",
+  "repositoryCopy": "regulatory/review-evidence/INST066_HISTORICAL_CROSSCHECK/corroborating/DECISION_PCR_DA_2018_165_NSIA_FONDS_DIVERSIFIE.pdf",
+  "extractedText": "regulatory/review-evidence/INST066_HISTORICAL_CROSSCHECK/corroborating/DECISION_PCR_DA_2018_165_NSIA_FONDS_DIVERSIFIE.txt",
+  "sha256": "282b603d99e80699203c4ca75abc683dee8e550f2a8f6f79eccd7e937b0c7337",
+  "byteSize": 1432596,
+  "pageCount": 4,
+  "pdfInfo": {
+    "Title": "",
+    "Subject": "",
+    "Author": "",
+    "Creator": "",
+    "Producer": "",
+    "CreationDate": "",
+    "ModDate": "Wed Nov 21 17:27:52 2018 UTC",
+    "Custom Metadata": "yes",
+    "Metadata Stream": "yes",
+    "Tagged": "no",
+    "UserProperties": "no",
+    "Suspects": "no",
+    "Form": "AcroForm",
+    "JavaScript": "no",
+    "Pages": "4",
+    "Encrypted": "no",
+    "Page size": "596 x 842 pts (A4)",
+    "Page rot": "0",
+    "File size": "1432596 bytes",
+    "Optimized": "no",
+    "PDF version": "1.6"
+  },
+  "extraction": {
+    "method": "French OCR derivative via OCRmyPDF then pdftotext",
+    "ocrUsed": true,
+    "ocrLanguage": "fra"
+  },
+  "historicalReferenceObservations": {
+    "INSTRUCTION_45_2011": {
+      "observed": true,
+      "matchCount": 1,
+      "snippets": [
+        "hé financier Régional de l’UMOA ; Vu l’Instruction n°24/99 relative à la note d’information des Organismes de Placement Collectif en Valeurs Mobilières (OPCVM) ; Vu Ulnstruction n°45/2011 relative à l’organisation, au fonctionnement et la gestion des Organismes de Placement Collectif en Valeurs Mobilières sur le marché financier régional de l’UMOA ; Vu l'instruction n°46/2011 relative à la classification"
+      ],
+      "status": "OFFICIAL_CORROBORATING_ACT_OBSERVED"
+    },
+    "INSTRUCTION_46_2011": {
+      "observed": true,
+      "matchCount": 2,
+      "snippets": [
+        "ative à l’organisation, au fonctionnement et la gestion des Organismes de Placement Collectif en Valeurs Mobilières sur le marché financier régional de l’UMOA ; Vu l'instruction n°46/2011 relative à la classification et aux règles d’allocation d'actifs des Organismes de Placement Collectif sur le marché financier régional de l’UMOA ; Vu la Décision n°CREPMF/PCR/2018/01 en date du 13 juin 2018 portant mod",
+        "n°45/2011 relative à l’organisation, au fonctionnement et la gestion des Organismes de Placement Collectif en Valeurs Mobilières sur le marché financier régional de l’UMOA ; Vu l'instruction n°46/2011 relative à la classification et aux règles d’allocation d'actifs des Organismes de Placement Collectif sur le marché financier régional de l’UMOA ; Vu la Décision n°CREPMF/PCR/2018/01 en date du 13 juin 2018 portant mod"
+      ],
+      "status": "OFFICIAL_CORROBORATING_ACT_OBSERVED"
+    },
+    "INSTRUCTION_24_99": {
+      "observed": true,
+      "matchCount": 2,
+      "snippets": [
+        "ciers ; Vu le Règlement Général n°001/97 du 28 novembre 1997 relatif à l'Organisation, au Fonctionnement et au Contrôle du marché financier Régional de l’UMOA ; Vu l’Instruction n°24/99 relative à la note d’information des Organismes de Placement Collectif en Valeurs Mobilières (OPCVM) ; Vu Ulnstruction n°45/2011 relative à l’organisation, au fonctionnement et la gestion des Organismes de Placement Col",
+        "Marchés Financiers ; Vu le Règlement Général n°001/97 du 28 novembre 1997 relatif à l'Organisation, au Fonctionnement et au Contrôle du marché financier Régional de l’UMOA ; Vu l’Instruction n°24/99 relative à la note d’information des Organismes de Placement Collectif en Valeurs Mobilières (OPCVM) ; Vu Ulnstruction n°45/2011 relative à l’organisation, au fonctionnement et la gestion des Organismes de Placement Col"
+      ],
+      "status": "OFFICIAL_CORROBORATING_ACT_OBSERVED"
+    },
+    "INSTRUCTION_23_99": {
+      "observed": false,
+      "matchCount": 0,
+      "snippets": [],
+      "status": "NOT_OBSERVED_IN_THIS_ACT"
+    },
+    "INSTRUCTION_22_99": {
+      "observed": false,
+      "matchCount": 0,
+      "snippets": [],
+      "status": "NOT_OBSERVED_IN_THIS_ACT"
+    },
+    "INSTRUCTION_21_99": {
+      "observed": false,
+      "matchCount": 0,
+      "snippets": [],
+      "status": "NOT_OBSERVED_IN_THIS_ACT"
+    },
+    "DECISION_2012_119": {
+      "observed": false,
+      "matchCount": 0,
+      "snippets": [],
+      "status": "NOT_OBSERVED_IN_THIS_ACT"
+    }
+  },
+  "interpretationBoundary": "A citation in this later approval decision corroborates the existence/reference of a historical text only. It does not replace the historical act, prove its full content, or authorize rule reconstruction."
+}
