@@ -2,7 +2,7 @@ schema_version: INST066_CONFIRMED_EXTERNAL_DEPENDENCY_RESOLUTIONS_V0_1
 source_instruction: INSTRUCTION_66_CREPMF_2021
 source_instruction_sha256: 3f964f2f6ab9ce9eb16912ccda13f34b5023a188dfb18fcba7065590c770d396
 status: DOCUMENTARY_RESOLUTIONS_CONFIRMED_HUMAN_LEGAL_AND_COMPLIANCE_REVIEW_PENDING
-resolution_count: 24
+resolution_count: 25
 resolutions:
   - dependency_id: INST066_ART005_DEP_CIRC_01
     article_number: 5
@@ -268,6 +268,17 @@ resolutions:
     legal_review_status: PENDING
     compliance_review_status: PENDING
     activation: FORBIDDEN
+
+  - dependency_id: INST066_ART080_DEP_CIRC_01
+    article_number: 80
+    resolved_source_id: CIRCULAIRE_13_CREPMF_2022
+    official_reference: "Circulaire n°13/CREPMF/2022"
+    resolution_basis: CIRCULAR_EXPLICITLY_CITES_ARTICLE_80_FOR_OPCR_SHARE_CLASSES
+    documentary_status: RESOLVED
+    current_legal_status: TO_VERIFY
+    legal_review_status: PENDING
+    compliance_review_status: PENDING
+    activation: FORBIDDEN
 boundary:
   raw_inventory_mutated: false
   documentary_resolution_is_requirement_activation: false
@@ -276,9 +287,8 @@ boundary:
   human_compliance_review_required: true
   ready_for_submission_must_remain_false: true
 next_actions:
-  - recover_exact_article_80_dependency_identifier_and_map_only_the_share_class_occurrence_to_circular_13
-  - inspect_article_21_annual_report_dependency_before_mapping_to_circular_04_or_08
-  - inspect_articles_75_76_reporting_dependencies_before_mapping_to_circular_08
+  - investigate_nine_remaining_circular_dependencies_without_confirmed_exact_match
+  - keep_article_21_annual_report_dependency_open_until_its_reporting_content_source_is_identified
+  - keep_articles_75_76_supervisory_council_annual_report_dependencies_open_until_exact_source_is_identified
   - verify_current_legal_status_of_each_resolved_circular_from_official_registry_or_later_amendments
   - consume_this_override_registry_in_future_derived_research_queue_generation
-  - continue_exact_scope_review_of_remaining_2022_circular_candidates
