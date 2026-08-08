@@ -1,7 +1,7 @@
 inventory_id: INST066_ABROGATED_TEXTS_INVENTORY_V0_1
 source_id: INSTRUCTION_66_CREPMF_2021
 source_article: 92
-status: SOURCE_TEXT_VISUALLY_OBSERVED_HISTORICAL_REGISTRY_CROSSCHECK_PENDING
+status: SOURCE_TEXT_VISUALLY_OBSERVED_HISTORICAL_REGISTRY_CROSSCHECK_IN_PROGRESS
 source_evidence:
   pdf: regulatory/materialized/INSTRUCTION_66_CREPMF_2021.pdf
   sha256: 3f964f2f6ab9ce9eb16912ccda13f34b5023a188dfb18fcba7065590c770d396
@@ -10,6 +10,9 @@ source_evidence:
   - regulatory/review-evidence/INST066_LEGAL_METADATA/page-64.png
   - regulatory/review-evidence/INST066_LEGAL_METADATA/page-65.png
 reference_count: 7
+crosscheck_progress:
+  official_publication_or_binary_identified_count: 1
+  remaining_count: 6
 references:
 - seq: 1
   reference: Décision n°2012-119
@@ -28,7 +31,13 @@ references:
     financier régional de l'UMOA
   evidence_page: 64
   source_text_status: VISUALLY_OBSERVED
-  historical_registry_status: TO_CROSSCHECK
+  historical_registry_status: OFFICIAL_BRVM_PUBLICATION_AND_BINARY_URL_IDENTIFIED
+  source_record: regulatory/sources/INSTRUCTION_46_CREPMF_2011_REVISEE.yaml
+  official_publication_page: https://www.brvm.org/fr/instruction-ndeg46-2011-revisee
+  official_binary_url: https://www.brvm.org/sites/default/files/20180822-instruction_ndeg46-2011_revisee-classification_et_aux_regles_d.pdf
+  publication_date_observed: 2018-08-22
+  binary_page_count_observed: 9
+  binary_materialization_status: NOT_YET_MATERIALIZED_IN_REPOSITORY
 - seq: 3
   reference: Instruction n°45/2011
   title_observed: >-
@@ -73,6 +82,7 @@ references:
 review_boundaries:
   source_text_observation_complete: true
   historical_registry_crosscheck_complete: false
+  historical_registry_crosscheck_progress: 1_OF_7
   legal_review_status: PENDING
   compliance_review_status: PENDING
   amendments_rectifications_inventory_status: TO_COMPLETE
