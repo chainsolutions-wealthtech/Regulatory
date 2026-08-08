@@ -2,7 +2,7 @@
   "schemaVersion": "REGULATORY_HISTORICAL_SOURCE_MATERIALIZATION_V1",
   "sourceId": "INSTRUCTION_46_CREPMF_2011_REVISEE",
   "sourceUrl": "https://www.brvm.org/sites/default/files/20180822-instruction_ndeg46-2011_revisee-classification_et_aux_regles_d.pdf",
-  "retrievedAt": "2026-08-08T10:29:37+00:00",
+  "retrievedAt": "2026-08-08T10:47:18+00:00",
   "repositoryCopy": "regulatory/materialized/INSTRUCTION_46_CREPMF_2011_REVISEE.pdf",
   "extractedText": "regulatory/materialized/INSTRUCTION_46_CREPMF_2011_REVISEE.txt",
   "sha256": "6ab1a373b7671457cafd0f36cfbb96d031ab9839c2ecc0c18fabac602f972478",
