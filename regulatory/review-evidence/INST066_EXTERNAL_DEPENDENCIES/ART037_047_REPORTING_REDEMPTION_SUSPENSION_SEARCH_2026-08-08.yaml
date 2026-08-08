@@ -1,0 +1,58 @@
+evidence_id: INST066_ART037_047_REPORTING_REDEMPTION_SUSPENSION_SEARCH_2026_08_08
+review_date: 2026-08-08
+source_id: INSTRUCTION_66_CREPMF_2021
+scope: >-
+  Recherche des textes d'application explicitement appelés par les articles 37
+  et 47 de l'Instruction 66 : circulaire de reporting/informations périodiques
+  et circulaire encadrant la suspension temporaire des rachats.
+
+dependencies:
+  - article: 37
+    dependency_kind: COUNCIL_CIRCULAR
+    subject: "reporting et modalités d'informations périodiques des OPC"
+    search_result: OFFICIAL_PUBLIC_REFERENCE_NOT_IDENTIFIED
+    already_resolved_related_source: INSTRUCTION_58_CREPMF_2019
+    accounting_dependency_status: CANDIDATE_REGULATION_09_2006_CURRENT_VERSION_PENDING
+    activation: FORBIDDEN_PENDING_OFFICIAL_SOURCE_IDENTIFICATION_AND_REVIEW
+
+  - article: 47
+    dependency_kind: COUNCIL_CIRCULAR
+    subject: "conditions et modalités de suspension temporaire des rachats"
+    search_result: OFFICIAL_PUBLIC_REFERENCE_NOT_IDENTIFIED
+    activation: FORBIDDEN_PENDING_OFFICIAL_SOURCE_IDENTIFICATION_AND_REVIEW
+
+research_scope:
+  official_domains_checked:
+    - amf-umoa.org
+    - brvm.org
+    - crepmf.org
+  query_concepts:
+    - "reporting OPCVM"
+    - "informations périodiques OPCVM"
+    - "états financiers OPCVM"
+    - "suspension temporaire des rachats"
+    - "suspension rachats OPCVM"
+  result: >-
+    Aucune référence numérotée ou route binaire institutionnelle publiquement
+    indexée n'a été identifiée permettant de rattacher sans ambiguïté les
+    circulaires recherchées aux articles 37 et 47.
+
+interpretation_boundaries:
+  - DO_NOT_INFER_CIRCULAR_NUMBERS
+  - DO_NOT_INFER_REPORTING_FORMATS_OR_DEADLINES
+  - DO_NOT_RECONSTRUCT_REDEMPTION_SUSPENSION_CONDITIONS
+  - DO_NOT_MARK_DEPENDENCIES_RESOLVED
+  - DO_NOT_USE_THIRD_PARTY_REPRODUCTIONS_AS_NORMATIVE_SOURCES
+
+status:
+  article_37_reporting_circular: OPEN_OFFICIAL_REFERENCE_NOT_IDENTIFIED
+  article_47_redemption_suspension_circular: OPEN_OFFICIAL_REFERENCE_NOT_IDENTIFIED
+  activation_allowed: false
+  legal_review: PENDING
+  compliance_review: PENDING
+  ready_for_submission: false
+
+resume_conditions:
+  - OFFICIAL_AMF_BRVM_OR_CREPMF_CIRCULAR_REFERENCE_IDENTIFIED
+  - OFFICIAL_CIRCULAR_BINARY_AVAILABLE
+  - DIRECT_REGULATOR_CONFIRMATION_OF_IMPLEMENTING_INSTRUMENT
