@@ -1,0 +1,62 @@
+dependency_record_id: INST066_SPECIFIC_ACCOUNTING_REGULATION_DEPENDENCY_V0_1
+source_id: INSTRUCTION_66_CREPMF_2021
+dependency_family: SPECIFIC_ACCOUNTING_REGULATION
+status: EXISTENCE_OFFICIALLY_CORROBORATED_REFERENCE_AND_CURRENT_VERSION_NOT_YET_IDENTIFIED
+
+inst066_evidence:
+  inventory: regulatory/registries/INST066_EXTERNAL_IMPLEMENTING_TEXTS_INVENTORY_V0_1.json
+  explicit_wording: "réglementation comptable spécifique applicable aux intervenants agréés du marché financier régional de l'UMOA"
+  occurrence_count_from_inventory: 5
+  known_articles:
+    - article: 13
+      subject: "Évaluation des actifs et calcul de la valeur nette d'inventaire"
+    - article: 37
+      subject: "Informations périodiques et états financiers"
+  note: >-
+    Le registre automatique contient cinq occurrences. Les articles indiqués ici sont
+    uniquement ceux déjà relus explicitement ; les autres occurrences doivent être
+    rapprochées depuis l'inventaire machine avant résolution.
+
+current_official_corroboration:
+  authority: AMF_UMOA
+  official_page: https://www.amf-umoa.org/actuality-details?actualiteId=1000015
+  event: "Atelier sur la révision du référentiel comptable des acteurs du Marché Financier de l'UMOA"
+  event_dates: "2023-03-28/2023-03-30"
+  publication_observed_on: 2026-08-08
+  evidence_scope:
+    - "existence d'un référentiel/règles comptables spécifiques appliqué depuis plus de dix ans"
+    - "révision du référentiel comptable engagée par l'AMF-UMOA"
+    - "objectif d'uniformisation des méthodes et pratiques comptables des intervenants agréés"
+  interpretation_boundary: >-
+    Cette actualité officielle confirme l'existence et la révision du référentiel
+    comptable spécifique. Elle ne permet pas d'identifier à elle seule la référence
+    juridique, la version actuellement en vigueur, sa date d'effet ni le binaire
+    normatif applicable aux cinq renvois de l'Instruction 66.
+
+source_identification:
+  official_reference: TO_IDENTIFY
+  official_title: TO_IDENTIFY
+  official_binary_url: TO_IDENTIFY
+  repository_copy: null
+  sha256: null
+  byte_size: null
+  page_count: null
+  current_legal_status: TO_VERIFY
+
+research_plan:
+  - SEARCH_AMF_UMOA_ACCOUNTING_REGULATION_INDEX_AND_BULLETINS
+  - SEARCH_BRVM_REGULATORY_LIBRARY_FOR_ACCOUNTING_RULES
+  - IDENTIFY_PRE_REVISION_AND_REVISED_REFERENTIALS
+  - DETERMINE_CURRENTLY_EFFECTIVE_VERSION_FROM_OFFICIAL_SOURCE
+  - MATERIALIZE_OFFICIAL_BINARY
+  - MAP_EACH_OF_FIVE_INST066_OCCURRENCES
+  - HUMAN_LEGAL_AND_COMPLIANCE_REVIEW
+
+safety:
+  reference_inference_allowed: false
+  current_version_inference_allowed: false
+  automatic_rule_reconstruction_allowed: false
+  automatic_requirement_activation_allowed: false
+  human_legal_review_required: true
+  human_compliance_review_required: true
+  ready_for_submission_must_remain_false: true
