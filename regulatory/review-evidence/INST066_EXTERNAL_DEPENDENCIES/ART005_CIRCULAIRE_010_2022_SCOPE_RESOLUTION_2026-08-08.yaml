@@ -1,0 +1,52 @@
+evidence_id: INST066_ART005_CIRCULAIRE_010_2022_SCOPE_RESOLUTION_2026_08_08
+review_date: 2026-08-08
+instruction_source:
+  source_id: INSTRUCTION_66_CREPMF_2021
+  sha256: 3f964f2f6ab9ce9eb16912ccda13f34b5023a188dfb18fcba7065590c770d396
+  article_number: 5
+  dependency_id: INST066_ART005_DEP_CIRC_01
+  dependency_kind: COUNCIL_CIRCULAR
+  dependency_context: >-
+    Instruction 66 requires that SGO own funds never be lower than 20 percent of
+    the previous year's general expenses and states that a Council Circular
+    specifies the elements defining those general expenses.
+candidate_source:
+  source_id: CIRCULAIRE_10_CREPMF_2022
+  reference: "Circulaire n°10/CREPMF/2022"
+  actualite_id: 1000138
+  official_api_object: "CIRCULAIRE N°010-2022"
+  official_binary_sha256: 9d331643fd2acf4588e7099d4991fb6a031a7fababaad752f76ea505f6c2d31c
+  repository_pdf: regulatory/sources/amf-umoa-2022-circulars/CIRCULAIRE_10_AMF_UMOA_2022.pdf
+  repository_text: regulatory/sources/amf-umoa-2022-circulars/CIRCULAIRE_10_AMF_UMOA_2022.txt
+comparison:
+  exact_subject_match: true
+  explicit_instruction_66_article_5_citation_in_circular: true
+  circular_defines_general_expense_elements: true
+  circular_links_general_expenses_to_sgo_own_funds: true
+  contradictory_scope_found: false
+  conclusion: DOCUMENTARY_DEPENDENCY_MATCH_CONFIRMED
+resolution:
+  dependency_id: INST066_ART005_DEP_CIRC_01
+  resolved_source_id: CIRCULAIRE_10_CREPMF_2022
+  official_reference: "Circulaire n°10/CREPMF/2022"
+  documentary_reference_status: OFFICIAL_REFERENCE_IDENTIFIED_AND_BINARY_MATERIALIZED
+  documentary_resolution_status: RESOLVED_BY_EXPLICIT_TEXTUAL_CROSS_REFERENCE
+  current_legal_status: TO_VERIFY
+  legal_review_status: PENDING
+  compliance_review_status: PENDING
+  requirement_activation: FORBIDDEN_PENDING_HUMAN_REVIEW
+boundaries:
+  - >-
+    This evidence closes identification of the implementing document only. It does
+    not constitute a legal opinion on the current legal status of Circular 10/2022.
+  - >-
+    No regulatory requirement, threshold, control or submission status becomes
+    active merely because this dependency has been identified.
+  - >-
+    The signature date visible in OCR is not promoted because the extracted date is
+    garbled and requires visual or official metadata confirmation.
+safety:
+  automatic_requirement_activation_allowed: false
+  legal_review_required: true
+  compliance_review_required: true
+  ready_for_submission_must_remain_false: true
