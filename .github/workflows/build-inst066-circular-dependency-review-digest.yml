@@ -1,0 +1,45 @@
+name: Build INST066 Circular Dependency Review Digest
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'scripts/build_inst066_circular_dependency_review_digest.py'
+      - '.github/workflows/build-inst066-circular-dependency-review-digest.yml'
+      - 'regulatory/registries/INST066_EXTERNAL_DEPENDENCY_RESEARCH_QUEUE_V0_1.json'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - name: Build compact review digest
+        run: python3 scripts/build_inst066_circular_dependency_review_digest.py
+      - name: Validate digest
+        run: |
+          python3 - <<'PY'
+          import json
+          from pathlib import Path
+          d=json.loads(Path('regulatory/registries/INST066_CIRCULAR_DEPENDENCY_REVIEW_DIGEST_V0_1.json').read_text())
+          assert d['rowCount']==34
+          assert len(d['rows'])==34
+          assert all(r['dependencyId'].startswith('INST066_ART') for r in d['rows'])
+          assert d['boundary']['automaticDependencyResolutionAllowed'] is False
+          print('INST066 circular dependency review digest: PASS')
+          PY
+      - name: Commit digest
+        run: |
+          if git status --porcelain -- regulatory/registries/INST066_CIRCULAR_DEPENDENCY_REVIEW_DIGEST_V0_1.json | grep -q .; then
+            git config user.name 'github-actions[bot]'
+            git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+            git add regulatory/registries/INST066_CIRCULAR_DEPENDENCY_REVIEW_DIGEST_V0_1.json
+            git commit -m 'regulatory: build INST066 circular dependency review digest'
+            git pull --rebase origin main
+            git push origin HEAD:main
+          fi
