@@ -1,0 +1,30 @@
+{
+  "validationId": "INST046_REVISED_MATERIALIZATION_VALIDATION_V0_1",
+  "status": "PASS",
+  "sourceId": "INSTRUCTION_46_CREPMF_2011_REVISEE",
+  "checks": {
+    "officialBrvmPdfDownloaded": true,
+    "pdfMagicConfirmed": true,
+    "sha256Computed": true,
+    "byteSizePositive": true,
+    "expectedPageCount": true,
+    "textExtracted": true,
+    "historicalAbrogationPreserved": true,
+    "historicalRuleReactivationForbidden": true,
+    "requirementActivationAllowed": false,
+    "humanLegalReviewRequired": true,
+    "humanComplianceReviewRequired": true
+  },
+  "metrics": {
+    "byteSize": 3474284,
+    "pageCount": 9,
+    "usableTextCharacterCount": 13523,
+    "articleHeadingCandidateCount": 21
+  },
+  "outputs": [
+    "regulatory/materialized/INSTRUCTION_46_CREPMF_2011_REVISEE.pdf",
+    "regulatory/materialized/INSTRUCTION_46_CREPMF_2011_REVISEE.txt",
+    "regulatory/materialized/INSTRUCTION_46_CREPMF_2011_REVISEE.metadata.json"
+  ],
+  "caveat": "PASS validates historical source integrity and text extraction only. Instruction 46 revised is explicitly abrogated by Instruction 66 article 92; no historical rule may be reactivated from this materialization."
+}

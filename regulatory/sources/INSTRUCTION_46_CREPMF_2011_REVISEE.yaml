@@ -19,10 +19,11 @@ publication:
 source_artifact:
   pdf_url: https://www.brvm.org/sites/default/files/20180822-instruction_ndeg46-2011_revisee-classification_et_aux_regles_d.pdf
   page_count_observed_from_public_reader: 9
-  repository_copy: null
-  sha256: null
-  byte_size: null
-  copy_status: OFFICIAL_BINARY_URL_IDENTIFIED_NOT_MATERIALIZED
+  repository_copy: regulatory/materialized/INSTRUCTION_46_CREPMF_2011_REVISEE.pdf
+  sha256: 6ab1a373b7671457cafd0f36cfbb96d031ab9839c2ecc0c18fabac602f972478
+  byte_size: 3474284
+  page_count: 9
+  copy_status: MATERIALIZED_HASHED_AND_PAGE_VALIDATED
   first_page_visual_identity_status: CONFIRMED
 
 historical_evidence:
@@ -41,7 +42,7 @@ legal_metadata:
   activation_allowed: false
 
 materialization_plan:
-  binary_acquisition_status: OFFICIAL_URL_READY_FOR_MATERIALIZATION
+  binary_acquisition_status: MATERIALIZED_FROM_OFFICIAL_BRVM_URL
   next_steps:
     - DOWNLOAD_OFFICIAL_PDF
     - VERIFY_PDF_MAGIC
