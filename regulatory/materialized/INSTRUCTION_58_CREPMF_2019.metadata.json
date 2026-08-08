@@ -3,7 +3,7 @@
   "sourceId": "INSTRUCTION_58_CREPMF_2019",
   "title": "Instruction n°58/CREPMF/2019 relative à l'exercice du commissariat aux comptes auprès des structures agréées et des sociétés cotées du Marché Financier Régional de l'UMOA",
   "sourceUrl": "https://www.brvm.org/sites/default/files/20190725-instruction_ndeg58-crepmf-2019_-_exercice_du_commissariat_aux_comptes_aupres_des_structures_agreers_et_des_societes_cotees_du_mfr_de_lumoa_0.pdf",
-  "retrievedAt": "2026-08-08T09:13:01+00:00",
+  "retrievedAt": "2026-08-08T09:14:27+00:00",
   "repositoryCopy": "regulatory/materialized/INSTRUCTION_58_CREPMF_2019.pdf",
   "extractedText": "regulatory/materialized/INSTRUCTION_58_CREPMF_2019.txt",
   "sha256": "38258d7cae5518a6bea6b195facbb717e4a98c1eb734b30bc5e7de91917d0c57",
@@ -85,13 +85,25 @@
     }
   ],
   "legalMetadata": {
-    "exactSignedDate": null,
-    "effectiveFrom": null,
-    "predecessorReplaced": "TO_IDENTIFY",
-    "amendmentsAndRectifications": "TO_COMPLETE",
+    "exactSignedDate": "2019-07-24",
+    "effectiveFrom": "2019-07-24",
+    "predecessorReplaced": {
+      "reference": "Instruction n°31/2005",
+      "datedOn": "2005-06-07",
+      "relationship": "EXPLICITLY_ABROGATED_AND_REPLACED",
+      "evidenceArticle": 34
+    },
+    "amendmentsAndRectifications": "OPEN_OFFICIAL_REGISTRY_AND_BULLETIN_SEARCH_REQUIRED",
     "currentRegistryStatus": "TO_VERIFY_IN_DYNAMIC_OFFICIAL_REGISTRY",
     "reviewStatus": "PENDING_LEGAL_AND_COMPLIANCE_REVIEW",
-    "note": "Dates detected in extracted text are navigation aids only. Publication, signature, effective date and current legal status require separate official verification."
+    "note": "Articles 34 and 35 and the signature block were reviewed from the official materialized source. Current registry status and any later amendments remain pending official verification.",
+    "effectiveDateRule": "ARTICLE_35_EFFECTIVE_ON_SIGNATURE_DATE",
+    "evidenceStatus": "CURATED_FROM_OFFICIAL_MATERIALIZED_SOURCE_TEXT",
+    "signatureEvidence": {
+      "page": 13,
+      "status": "SOURCE_TEXT_CONFIRMED_VISUAL_RECHECK_RECOMMENDED",
+      "note": "The OCR signature block is degraded; the curated date is not inferred by OCR automation."
+    }
   },
   "extraction": {
     "method": "French OCR derivative via OCRmyPDF, then pdftotext -layout -enc UTF-8",

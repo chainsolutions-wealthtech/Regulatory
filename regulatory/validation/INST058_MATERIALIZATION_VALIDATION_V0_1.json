@@ -18,7 +18,10 @@
     "humanReviewStillRequired": true,
     "articlePremierIndexed": true,
     "articleNumberRangeContinuous": true,
-    "articleIndexStillUnverified": true
+    "articleIndexStillUnverified": true,
+    "curatedLegalMetadataEnriched": true,
+    "article34PredecessorRelationshipCaptured": true,
+    "article35EffectiveDateRuleCaptured": true
   },
   "metrics": {
     "byteSize": 4242350,
@@ -35,11 +38,14 @@
     "missingArticleNumbers": [],
     "nonMonotonicArticles": [],
     "registryStatusStillPending": true,
-    "signatureAndEffectiveDatesStillPending": true,
+    "signatureAndEffectiveDatesStillPending": false,
     "ocrHeadingNormalization": {
       "Aticle 29": "Article 29",
       "status": "EXTRACTION_NORMALIZATION_ONLY"
-    }
+    },
+    "signatureVisualRecheckRecommended": true,
+    "currentRegistryStatusStillPending": true,
+    "amendmentsAndRectificationsStillPending": true
   },
   "outputs": [
     "regulatory/materialized/INSTRUCTION_58_CREPMF_2019.pdf",
@@ -47,5 +53,13 @@
     "regulatory/materialized/INSTRUCTION_58_CREPMF_2019.metadata.json",
     "regulatory/requirements/INST058_ARTICLE_INDEX_V0_1.yaml"
   ],
-  "caveat": "PASS validates source integrity and structural extraction only. Extracted text, article titles, dates, applicability and normative meaning remain unverified and inactive pending legal and compliance review."
+  "caveat": "PASS validates source integrity and structural extraction only. Extracted text, article titles, dates, applicability and normative meaning remain unverified and inactive pending legal and compliance review.",
+  "legalMetadataEnrichment": {
+    "status": "PASS",
+    "signedDate": "2019-07-24",
+    "effectiveFrom": "2019-07-24",
+    "predecessorReference": "Instruction n°31/2005",
+    "predecessorDate": "2005-06-07",
+    "activationAllowed": false
+  }
 }
