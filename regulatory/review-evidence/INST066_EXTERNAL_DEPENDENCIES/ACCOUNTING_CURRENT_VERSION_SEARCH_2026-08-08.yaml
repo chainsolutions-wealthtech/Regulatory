@@ -1,0 +1,62 @@
+evidence_id: INST066_ACCOUNTING_CURRENT_VERSION_SEARCH_2026_08_08
+review_date: 2026-08-08
+source_id: INSTRUCTION_66_CREPMF_2021
+dependency_family: SPECIFIC_ACCOUNTING_REGULATION
+candidate_source: regulatory/sources/REGLEMENT_09_2006_CM_UEMOA_ACCOUNTING.yaml
+candidate_reference: "Règlement n°09/2006/CM/UEMOA"
+
+established_official_facts:
+  - >-
+    Le Secrétariat Général du Gouvernement du Mali liste officiellement le
+    Règlement n°09/2006/CM/UEMOA du 29 juin 2006 portant adoption de règles
+    comptables spécifiques applicables aux intervenants agréés du marché financier régional.
+  - >-
+    La BCEAO confirme officiellement que le Conseil des Ministres a adopté le
+    29 juin 2006 les règles comptables spécifiques applicables aux intervenants agréés.
+  - >-
+    L'AMF-UMOA a indiqué en 2023 qu'un référentiel comptable spécifique existait
+    depuis plus de dix ans et qu'un chantier de révision avait été engagé afin de
+    prendre en compte les évolutions réglementaires, institutionnelles et comptables.
+
+current_version_search:
+  official_domains_checked:
+    - amf-umoa.org
+    - bceao.int
+    - brvm.org
+    - uemoa.int
+    - sgg-mali.ml
+  date_scope: "2006-08-08/2026-08-08"
+  focused_post_revision_scope: "2023-01-01/2026-08-08"
+  searched_concepts:
+    - "Règlement n°09/2006/CM/UEMOA"
+    - "référentiel comptable acteurs du marché financier"
+    - "règles comptables spécifiques intervenants agréés"
+    - "révision référentiel comptable"
+    - "adoption référentiel comptable révisé"
+  result: NO_POST_2006_OFFICIAL_REPLACEMENT_OR_REVISED_ADOPTION_IDENTIFIED_IN_CHECKED_PUBLIC_INDEXES
+
+interpretation_boundary: >-
+  L'absence d'un acte postérieur dans les sources publiquement indexées contrôlées
+  ne prouve pas que le Règlement 09/2006 n'a jamais été modifié, remplacé ou complété.
+  Le chantier de révision annoncé par l'AMF-UMOA en 2023 ne constitue pas, à lui seul,
+  une preuve d'adoption d'une nouvelle version. Le statut courant demeure donc ouvert.
+
+mapping_evidence:
+  dependency_inventory: regulatory/registries/INST066_EXTERNAL_IMPLEMENTING_TEXTS_INVENTORY_V0_1.json
+  candidate_mapping: regulatory/registries/INST066_ACCOUNTING_DEPENDENCY_MAPPING_V0_1.json
+  occurrence_count: 5
+  mapping_status: CANDIDATE_SOURCE_MATERIALIZED_CURRENT_VERSION_PENDING
+  resolution_status: NOT_RESOLVED_CURRENT_VERSION_AND_SCOPE_REVIEW_PENDING
+
+status:
+  current_accounting_version: PENDING_CURRENT_VERSION_AND_AMENDMENTS_REVIEW
+  automatic_dependency_resolution_allowed: false
+  requirement_activation_allowed: false
+  legal_review: PENDING
+  compliance_review: PENDING
+  ready_for_submission: false
+
+resume_conditions:
+  - OFFICIAL_AMF_UEMOA_BCEAO_OR_MEMBER_STATE_ACT_IDENTIFIES_AMENDMENT_OR_REPLACEMENT
+  - OFFICIAL_REVISED_REFERENTIAL_ADOPTION_FOUND
+  - DIRECT_REGULATOR_CONFIRMATION_OF_CURRENT_ACCOUNTING_VERSION
