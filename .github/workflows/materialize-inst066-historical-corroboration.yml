@@ -1,0 +1,88 @@
+name: Materialize INST066 Historical Corroboration
+
+on:
+  push:
+    branches:
+      - main
+    paths:
+      - .github/workflows/materialize-inst066-historical-corroboration.yml
+      - scripts/materialize_inst066_historical_corroboration_nsia_2018.py
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: inst066-historical-corroboration-main
+  cancel-in-progress: false
+
+jobs:
+  materialize-corroboration:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Install PDF and French OCR tools
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y --no-install-recommends \
+            poppler-utils \
+            ocrmypdf \
+            tesseract-ocr \
+            tesseract-ocr-fra
+
+      - name: Materialize official corroborating decision
+        run: python3 scripts/materialize_inst066_historical_corroboration_nsia_2018.py
+
+      - name: Validate corroborating evidence boundary
+        run: |
+          python3 - <<'PY'
+          import json
+          from pathlib import Path
+
+          root = Path('regulatory/review-evidence/INST066_HISTORICAL_CROSSCHECK/corroborating')
+          metadata = json.loads((root / 'DECISION_PCR_DA_2018_165_NSIA_FONDS_DIVERSIFIE.metadata.json').read_text(encoding='utf-8'))
+          validation = json.loads((root / 'DECISION_PCR_DA_2018_165_NSIA_FONDS_DIVERSIFIE.validation.json').read_text(encoding='utf-8'))
+
+          assert validation['status'] == 'PASS', validation
+          assert metadata['evidenceRole'] == 'OFFICIAL_ADMINISTRATIVE_CORROBORATION_ONLY_NOT_NORMATIVE_SUBSTITUTE'
+          assert len(metadata['sha256']) == 64
+          assert metadata['byteSize'] > 10000
+          assert metadata['pageCount'] > 0
+          assert validation['checks']['officialBrvmPdfDownloaded'] is True
+          assert validation['checks']['pdfMagicConfirmed'] is True
+          assert validation['checks']['textExtracted'] is True
+          assert validation['checks']['evidenceRoleNonNormative'] is True
+          assert validation['checks']['historicalRuleReactivationForbidden'] is True
+          assert validation['checks']['requirementActivationAllowed'] is False
+          PY
+
+      - name: Upload corroboration evidence
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: inst066-historical-corroboration-nsia-2018
+          retention-days: 30
+          if-no-files-found: error
+          path: |
+            regulatory/review-evidence/INST066_HISTORICAL_CROSSCHECK/corroborating/DECISION_PCR_DA_2018_165_NSIA_FONDS_DIVERSIFIE.pdf
+            regulatory/review-evidence/INST066_HISTORICAL_CROSSCHECK/corroborating/DECISION_PCR_DA_2018_165_NSIA_FONDS_DIVERSIFIE.txt
+            regulatory/review-evidence/INST066_HISTORICAL_CROSSCHECK/corroborating/DECISION_PCR_DA_2018_165_NSIA_FONDS_DIVERSIFIE.metadata.json
+            regulatory/review-evidence/INST066_HISTORICAL_CROSSCHECK/corroborating/DECISION_PCR_DA_2018_165_NSIA_FONDS_DIVERSIFIE.validation.json
+
+      - name: Commit corroborating evidence
+        run: |
+          git config user.name "regulatory-source-bot"
+          git config user.email "regulatory-source-bot@users.noreply.github.com"
+          git add regulatory/review-evidence/INST066_HISTORICAL_CROSSCHECK/corroborating/
+          if git diff --cached --quiet; then
+            echo "No corroboration changes to commit."
+            exit 0
+          fi
+          git commit -m "regulatory: materialize official historical corroboration"
+          git pull --rebase origin main
+          git push origin HEAD:main
