@@ -1,0 +1,75 @@
+source_id: DECISION_CM_13_12_2011_TARIFS
+source_family: DECISION
+reference: "Décision n° CM/13/12/2011"
+title: "Décision portant fixation des tarifs du Conseil Régional de l'Épargne Publique et des Marchés Financiers"
+issuing_authority: "Conseil des Ministres de l'UMOA"
+document_type: DECISION
+language: fr
+
+official_registry:
+  url: https://www.amf-umoa.org/reglementation/decision
+  listed_reference: "Décision n° CM/13/12/2011"
+  listed_title: "Décision portant fixation des tarifs du Conseil Régional de l'Épargne Publique et des Marchés Financiers"
+  listed_status_observed: NON_ABROGE
+  observed_on: 2026-08-08
+
+official_api:
+  endpoint: https://www.amf-umoa.org/service/api/elastic/actualite
+  actualite_id: 1000178
+  detail_url: "https://www.amf-umoa.org/service/api/elastic/actualite?id=1000178&langue=fr"
+  document_url_field: "AC-DECISION-2025-F85A41EA-3271-458A-B2AF-7777802F18FB.pdf"
+  title_observed: "DECISION N° CM/13/12/2011"
+  summary_observed: "DECISION N° CM/13/12/2011 PORTANT FIXATION DES TARIFS DU CONSEIL REGIONAL DE L'EPARGNE PUBLIQUE ET DES MARCHES FINANCIERS"
+  portal_date_observed: 2011-12-13
+  portal_date_is_effective_date: false
+  portal_abroge_observed: false
+  portal_abroge_is_sole_legal_status_proof: false
+  observed_on: 2026-08-08
+  route_status: OFFICIAL_DETAIL_ROUTE_IDENTIFIED
+
+source_integrity:
+  official_binary_transport: AMF_UMOA_DETAIL_API_DOC_EXPECTED
+  repository_copy: null
+  sha256: null
+  byte_size: null
+  page_count: null
+  copy_status: OFFICIAL_ROUTE_IDENTIFIED_MATERIALIZATION_BLOCKED_BY_GITHUB_ACTIONS_BILLING
+
+inst066_relationship:
+  article: 5
+  source_context: >-
+    Les montants des frais d'agrément sont précisés dans une Décision du Conseil des
+    Ministres de l'UMOA et les délais de règlement par une Instruction du Conseil Régional.
+  candidate_role: TARIFF_AMOUNT_SOURCE
+  paired_instruction_candidate: INSTRUCTION_54_CREPMF_2017_REVISEE
+  pairing_logic: >-
+    La Décision 2011 porte sur la fixation des tarifs, tandis que l'Instruction 54/2017
+    révisée porte sur les modalités de facturation, paiement et recouvrement. Les deux
+    textes doivent être matérialisés et comparés ensemble pour déterminer leur rôle
+    exact et leur version applicable au renvoi de l'article 5.
+  match_status: OFFICIAL_TARIFF_SOURCE_CANDIDATE_OWN_BINARY_REVIEW_REQUIRED
+  resolved: false
+
+legal_metadata:
+  act_date: PENDING_OWN_BINARY_CONFIRMATION
+  effective_from: PENDING_OWN_BINARY_REVIEW
+  amendments_and_rectifications: TO_COMPLETE
+  current_legal_status: REGISTRY_NON_ABROGE_PENDING_BINARY_AND_SUCCESSOR_REVIEW
+
+next_steps:
+  - MATERIALIZE_DETAIL_API_BINARY_AFTER_GITHUB_ACTIONS_RECOVERY
+  - READ_TARIFF_TABLE_AND_SCOPE
+  - IDENTIFY_AGREMENT_FEE_LINES_APPLICABLE_TO_SGO_AND_OPC
+  - COMPARE_WITH_INSTRUCTION_54_PAYMENT_RULES
+  - CHECK_LATER_TARIFF_DECISIONS_OR_REVISIONS
+  - HUMAN_LEGAL_AND_COMPLIANCE_REVIEW
+
+safety:
+  registry_non_abroge_is_sole_legal_status_proof: false
+  tariff_amount_activation_allowed: false
+  title_match_is_resolution: false
+  automatic_dependency_resolution_allowed: false
+  automatic_requirement_activation_allowed: false
+  human_legal_review_required: true
+  human_compliance_review_required: true
+  ready_for_submission_must_remain_false: true
