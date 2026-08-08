@@ -1,0 +1,56 @@
+name: Materialize AMF-UMOA 2022 Circular Binaries
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'scripts/materialize_amf_umoa_2022_circular_binaries.py'
+      - '.github/workflows/materialize-amf-umoa-2022-circular-binaries.yml'
+      - 'regulatory/registries/AMF_UMOA_2022_CIRCULAR_API_REGISTRY_V0_1.json'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  materialize:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - name: Install PDF and OCR tools
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y poppler-utils tesseract-ocr tesseract-ocr-fra
+      - name: Materialize official API Base64 circular binaries
+        run: python3 scripts/materialize_amf_umoa_2022_circular_binaries.py
+      - name: Validate 16-binary corpus invariants
+        run: |
+          python3 - <<'PY'
+          import json
+          from pathlib import Path
+          c=json.loads(Path('regulatory/registries/AMF_UMOA_2022_CIRCULAR_CATALOG_V0_1.json').read_text())
+          v=json.loads(Path('regulatory/validation/AMF_UMOA_2022_CIRCULAR_BINARIES_VALIDATION_V0_1.json').read_text())
+          assert v['result']=='PASS'
+          assert c['status']=='COMPLETE_16_BINARIES_MATERIALIZED'
+          assert c['circularCount']==16
+          assert [e['number'] for e in c['entries']]==list(range(1,17))
+          assert all(e['dependencyResolutionStatus']=='BINARY_MATERIALIZED_SCOPE_MAPPING_PENDING' for e in c['entries'])
+          assert c['boundary']['automaticDependencyResolutionAllowed'] is False
+          assert c['boundary']['automaticRequirementActivationAllowed'] is False
+          assert c['boundary']['readyForSubmissionMustRemainFalse'] is True
+          print('AMF-UMOA 2022 16-binary corpus invariants: PASS')
+          PY
+      - name: Commit materialized circular corpus
+        run: |
+          if git status --porcelain -- regulatory/sources/amf-umoa-2022-circulars regulatory/registries/AMF_UMOA_2022_CIRCULAR_CATALOG_V0_1.json regulatory/validation/AMF_UMOA_2022_CIRCULAR_BINARIES_VALIDATION_V0_1.json | grep -q .; then
+            git config user.name 'github-actions[bot]'
+            git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+            git add regulatory/sources/amf-umoa-2022-circulars regulatory/registries/AMF_UMOA_2022_CIRCULAR_CATALOG_V0_1.json regulatory/validation/AMF_UMOA_2022_CIRCULAR_BINARIES_VALIDATION_V0_1.json
+            git commit -m 'regulatory: materialize AMF-UMOA 2022 circular binary corpus'
+            git pull --rebase origin main
+            git push origin HEAD:main
+          else
+            echo 'No materialized corpus changes to commit.'
+          fi
