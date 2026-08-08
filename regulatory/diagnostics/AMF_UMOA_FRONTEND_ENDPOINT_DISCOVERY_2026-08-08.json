@@ -1,13 +1,13 @@
 {
-  "schemaVersion": "AMF_UMOA_FRONTEND_ENDPOINT_DISCOVERY_V0_1",
+  "schemaVersion": "AMF_UMOA_FRONTEND_ENDPOINT_DISCOVERY_V0_2",
   "sourcePages": [
     {
-      "url": "https://www.crepmf.org/actuality-details?actualiteId=1000138",
-      "error": "<urlopen error [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: Hostname mismatch, certificate is not valid for 'www.crepmf.org'. (_ssl.c:1000)>"
+      "url": "https://crepmf.org/actuality-details?actualiteId=1000138",
+      "error": "<urlopen error [Errno -5] No address associated with hostname>"
     },
     {
-      "url": "https://www.crepmf.org/publication/rapport",
-      "error": "<urlopen error [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: Hostname mismatch, certificate is not valid for 'www.crepmf.org'. (_ssl.c:1000)>"
+      "url": "https://crepmf.org/publication/rapport",
+      "error": "<urlopen error [Errno -5] No address associated with hostname>"
     }
   ],
   "javascriptBundles": [],
@@ -15,6 +15,7 @@
   "relevantSnippets": [],
   "boundary": {
     "diagnosticOnly": true,
-    "endpointCandidateIsRegulatoryEvidence": false
+    "endpointCandidateIsRegulatoryEvidence": false,
+    "tlsVerificationDisabled": false
   }
 }
