@@ -1,0 +1,109 @@
+name: Materialize Instruction 46 Revised
+
+on:
+  push:
+    branches:
+      - main
+    paths:
+      - .github/workflows/materialize-instruction-46-revised.yml
+      - scripts/materialize_instruction_46_revised.py
+      - regulatory/sources/INSTRUCTION_46_CREPMF_2011_REVISEE.yaml
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: regulatory-instruction-46-revised-materialization-main
+  cancel-in-progress: false
+
+jobs:
+  materialize-historical-source:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Install PDF and French OCR tools
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y --no-install-recommends \
+            poppler-utils \
+            ocrmypdf \
+            tesseract-ocr \
+            tesseract-ocr-fra
+
+      - name: Download hash and extract historical official PDF
+        run: python3 scripts/materialize_instruction_46_revised.py
+
+      - name: Validate historical source evidence
+        run: |
+          python3 - <<'PY'
+          import json
+          from pathlib import Path
+
+          metadata = json.loads(Path(
+              'regulatory/materialized/INSTRUCTION_46_CREPMF_2011_REVISEE.metadata.json'
+          ).read_text(encoding='utf-8'))
+          validation = json.loads(Path(
+              'regulatory/validation/INST046_REVISED_MATERIALIZATION_VALIDATION_V0_1.json'
+          ).read_text(encoding='utf-8'))
+          source = Path(
+              'regulatory/sources/INSTRUCTION_46_CREPMF_2011_REVISEE.yaml'
+          ).read_text(encoding='utf-8')
+
+          assert validation['status'] == 'PASS', validation
+          assert metadata['sourceId'] == 'INSTRUCTION_46_CREPMF_2011_REVISEE'
+          assert metadata['pageCount'] == 9, metadata['pageCount']
+          assert metadata['byteSize'] > 10000, metadata['byteSize']
+          assert len(metadata['sha256']) == 64, metadata['sha256']
+          assert metadata['historicalStatus'] == 'EXPLICITLY_ABROGATED_BY_INSTRUCTION_66_ARTICLE_92'
+          assert metadata['legalMetadata']['currentLegalStatus'] == 'ABROGATED_BY_INSTRUCTION_66_EFFECTIVE_2022_01_01'
+          assert validation['checks']['officialBrvmPdfDownloaded'] is True
+          assert validation['checks']['pdfMagicConfirmed'] is True
+          assert validation['checks']['expectedPageCount'] is True
+          assert validation['checks']['textExtracted'] is True
+          assert validation['checks']['historicalAbrogationPreserved'] is True
+          assert validation['checks']['historicalRuleReactivationForbidden'] is True
+          assert validation['checks']['requirementActivationAllowed'] is False
+          assert validation['checks']['humanLegalReviewRequired'] is True
+          assert validation['checks']['humanComplianceReviewRequired'] is True
+          assert 'copy_status: MATERIALIZED_HASHED_AND_PAGE_VALIDATED' in source
+          assert 'binary_acquisition_status: MATERIALIZED_FROM_OFFICIAL_BRVM_URL' in source
+          assert 'activation_allowed: false' in source
+          PY
+
+      - name: Upload historical source evidence
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: instruction-46-revised-historical-source
+          path: |
+            regulatory/materialized/INSTRUCTION_46_CREPMF_2011_REVISEE.pdf
+            regulatory/materialized/INSTRUCTION_46_CREPMF_2011_REVISEE.txt
+            regulatory/materialized/INSTRUCTION_46_CREPMF_2011_REVISEE.metadata.json
+            regulatory/validation/INST046_REVISED_MATERIALIZATION_VALIDATION_V0_1.json
+            regulatory/sources/INSTRUCTION_46_CREPMF_2011_REVISEE.yaml
+          if-no-files-found: warn
+          retention-days: 30
+
+      - name: Commit historical official source
+        run: |
+          git config user.name "regulatory-source-bot"
+          git config user.email "regulatory-source-bot@users.noreply.github.com"
+          git add \
+            regulatory/materialized/INSTRUCTION_46_CREPMF_2011_REVISEE.pdf \
+            regulatory/materialized/INSTRUCTION_46_CREPMF_2011_REVISEE.txt \
+            regulatory/materialized/INSTRUCTION_46_CREPMF_2011_REVISEE.metadata.json \
+            regulatory/validation/INST046_REVISED_MATERIALIZATION_VALIDATION_V0_1.json \
+            regulatory/sources/INSTRUCTION_46_CREPMF_2011_REVISEE.yaml
+          if git diff --cached --quiet; then
+            echo "No Instruction 46 revised materialization changes to commit."
+            exit 0
+          fi
+          git commit -m "regulatory: materialize official historical Instruction 46 revised"
+          git pull --rebase origin main
+          git push origin HEAD:main
