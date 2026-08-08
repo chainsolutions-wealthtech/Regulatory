@@ -26,6 +26,23 @@ historical_evidence:
     source_sha256: 3f964f2f6ab9ce9eb16912ccda13f34b5023a188dfb18fcba7065590c770d396
     status: VISUALLY_OBSERVED_FROM_HASHED_OFFICIAL_PDF
   crosscheck_evidence: regulatory/review-evidence/INST066_HISTORICAL_CROSSCHECK/OFFICIAL_SOURCE_SEARCH_2026-08-08.yaml
+  corroboration_search:
+    checked_official_acts:
+      - reference: "Décision n° PCR/DA/2018/165"
+        repository_copy: regulatory/review-evidence/INST066_HISTORICAL_CROSSCHECK/corroborating/DECISION_PCR_DA_2018_165_NSIA_FONDS_DIVERSIFIE.pdf
+        sha256: 282b603d99e80699203c4ca75abc683dee8e550f2a8f6f79eccd7e937b0c7337
+        result: NOT_OBSERVED_IN_THIS_ACT
+      - reference: "Décision n° PCR/DA/2017/121"
+        repository_copy: regulatory/review-evidence/INST066_HISTORICAL_CROSSCHECK/corroborating/DECISION_PCR_DA_2017_121_FCP_LIQUIDITE_OPTIMUM.pdf
+        sha256: b33a03daf3416dd2710c65f23d7652d4732f8bca7d5b0f4e6b719e65bc1755b8
+        result: NOT_OBSERVED_IN_THIS_ACT
+    institutional_title_search_status: NO_OFFICIAL_PUBLIC_ROUTE_IDENTIFIED_2026_08_08
+    first_public_search_pass_status: CLOSED_WITHOUT_OWN_BINARY_OR_SECOND_CORROBORATION
+    interpretation_boundary: >-
+      L'absence de l'Instruction n°21/99 dans ces deux décisions d'agrément et dans
+      les routes institutionnelles publiquement indexées contrôlées ne prouve ni son
+      absence juridique historique ni son contenu. Elle clôt uniquement la première
+      passe de recherche publique documentée au 2026-08-08.
 
 legal_metadata:
   act_date: PENDING_OFFICIAL_BINARY_REVIEW
@@ -46,4 +63,6 @@ safety:
 notes:
   - "La référence, l'intitulé et l'abrogation sont établis par l'article 92 de l'Instruction 66 officielle matérialisée."
   - "Le binaire propre de l'Instruction 21/99 n'a pas été identifié dans les routes institutionnelles publiques contrôlées le 2026-08-08."
+  - "Deux décisions d'agrément CREPMF/BRVM officielles de 2017 et 2018 ont été matérialisées et analysées ; aucune ne cite l'Instruction n°21/99."
+  - "La première passe publique est clôturée ; toute reprise exige une nouvelle archive institutionnelle, un binaire propre ou une nouvelle source officielle pertinente."
   - "Aucune règle historique de classification ne doit être réactivée depuis une copie tierce."
