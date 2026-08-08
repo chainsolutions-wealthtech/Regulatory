@@ -2,7 +2,7 @@ schema_version: INST066_CONFIRMED_EXTERNAL_DEPENDENCY_RESOLUTIONS_V0_1
 source_instruction: INSTRUCTION_66_CREPMF_2021
 source_instruction_sha256: 3f964f2f6ab9ce9eb16912ccda13f34b5023a188dfb18fcba7065590c770d396
 status: DOCUMENTARY_RESOLUTIONS_CONFIRMED_HUMAN_LEGAL_AND_COMPLIANCE_REVIEW_PENDING
-resolution_count: 9
+resolution_count: 24
 resolutions:
   - dependency_id: INST066_ART005_DEP_CIRC_01
     article_number: 5
@@ -21,6 +21,28 @@ resolutions:
     resolved_source_id: CIRCULAIRE_02_CREPMF_2022
     official_reference: "Circulaire n°02/CREPMF/2022"
     resolution_basis: EXPLICIT_ARTICLE_5_APPROVAL_FILE_AND_ACTIVITY_PROGRAMME_SCOPE
+    documentary_status: RESOLVED
+    current_legal_status: TO_VERIFY
+    legal_review_status: PENDING
+    compliance_review_status: PENDING
+    activation: FORBIDDEN
+
+  - dependency_id: INST066_ART009_DEP_CIRC_01
+    article_number: 9
+    resolved_source_id: CIRCULAIRE_16_CREPMF_2022
+    official_reference: "Circulaire n°16/CREPMF/2022"
+    resolution_basis: EXPLICIT_INSTRUCTION_66_RULES_OF_CONDUCT_EXECUTION_SCOPE
+    documentary_status: RESOLVED
+    current_legal_status: TO_VERIFY
+    legal_review_status: PENDING
+    compliance_review_status: PENDING
+    activation: FORBIDDEN
+
+  - dependency_id: INST066_ART011_DEP_CIRC_01
+    article_number: 11
+    resolved_source_id: CIRCULAIRE_15_CREPMF_2022
+    official_reference: "Circulaire n°15/CREPMF/2022"
+    resolution_basis: EXPLICIT_INSTRUCTION_66_RISK_SYSTEMS_AND_REVIEW_FREQUENCY_SCOPE
     documentary_status: RESOLVED
     current_legal_status: TO_VERIFY
     legal_review_status: PENDING
@@ -60,11 +82,33 @@ resolutions:
     compliance_review_status: PENDING
     activation: FORBIDDEN
 
+  - dependency_id: INST066_ART021_DEP_CIRC_02
+    article_number: 21
+    resolved_source_id: CIRCULAIRE_04_CREPMF_2022
+    official_reference: "Circulaire n°04/CREPMF/2022"
+    resolution_basis: EXPLICIT_DEPOSITARY_CONTRACT_AND_DUTIES_IMPLEMENTATION_SCOPE
+    documentary_status: RESOLVED
+    current_legal_status: TO_VERIFY
+    legal_review_status: PENDING
+    compliance_review_status: PENDING
+    activation: FORBIDDEN
+
   - dependency_id: INST066_ART025_DEP_CIRC_01
     article_number: 25
     resolved_source_id: CIRCULAIRE_03_CREPMF_2022
     official_reference: "Circulaire n°03/CREPMF/2022"
     resolution_basis: CIRCULAR_EXPLICITLY_STATES_IMPLEMENTATION_OF_ARTICLE_25
+    documentary_status: RESOLVED
+    current_legal_status: TO_VERIFY
+    legal_review_status: PENDING
+    compliance_review_status: PENDING
+    activation: FORBIDDEN
+
+  - dependency_id: INST066_ART028_DEP_CIRC_01
+    article_number: 28
+    resolved_source_id: CIRCULAIRE_05_CREPMF_2022
+    official_reference: "Circulaire n°05/CREPMF/2022"
+    resolution_basis: EXPLICIT_PROSPECTUS_CONTENT_SCOPE_AND_INSTRUCTION_66_REFERENCE
     documentary_status: RESOLVED
     current_legal_status: TO_VERIFY
     legal_review_status: PENDING
@@ -82,11 +126,110 @@ resolutions:
     compliance_review_status: PENDING
     activation: FORBIDDEN
 
+  - dependency_id: INST066_ART033_DEP_CIRC_01
+    article_number: 33
+    resolved_source_id: CIRCULAIRE_06_CREPMF_2022
+    official_reference: "Circulaire n°06/CREPMF/2022"
+    resolution_basis: EXPLICIT_DICI_CONTENT_FORM_PRESENTATION_SCOPE_AND_INSTRUCTION_66_REFERENCE
+    documentary_status: RESOLVED
+    current_legal_status: TO_VERIFY
+    legal_review_status: PENDING
+    compliance_review_status: PENDING
+    activation: FORBIDDEN
+
+  - dependency_id: INST066_ART036_DEP_CIRC_01
+    article_number: 36
+    resolved_source_id: CIRCULAIRE_09_CREPMF_2022
+    official_reference: "Circulaire n°09/CREPMF/2022"
+    resolution_basis: EXPLICIT_INFORMATION_REPORTING_TO_COUNCIL_SCOPE_AND_INSTRUCTION_66_REFERENCE
+    documentary_status: RESOLVED
+    current_legal_status: TO_VERIFY
+    legal_review_status: PENDING
+    compliance_review_status: PENDING
+    activation: FORBIDDEN
+
+  - dependency_id: INST066_ART037_DEP_CIRC_01
+    article_number: 37
+    resolved_source_id: CIRCULAIRE_08_CREPMF_2022
+    official_reference: "Circulaire n°08/CREPMF/2022"
+    resolution_basis: EXPLICIT_ARTICLE_37_PERIODIC_REPORT_CONTENT_CROSS_REFERENCE
+    documentary_status: RESOLVED
+    current_legal_status: TO_VERIFY
+    legal_review_status: PENDING
+    compliance_review_status: PENDING
+    activation: FORBIDDEN
+
+  - dependency_id: INST066_ART037_DEP_CIRC_02
+    article_number: 37
+    resolved_source_id: CIRCULAIRE_08_CREPMF_2022
+    official_reference: "Circulaire n°08/CREPMF/2022"
+    resolution_basis: EXPLICIT_PERIODIC_REPORT_PRESENTATION_AND_FORMAT_SCOPE
+    documentary_status: RESOLVED
+    current_legal_status: TO_VERIFY
+    legal_review_status: PENDING
+    compliance_review_status: PENDING
+    activation: FORBIDDEN
+
+  - dependency_id: INST066_ART038_DEP_CIRC_01
+    article_number: 38
+    resolved_source_id: CIRCULAIRE_13_CREPMF_2022
+    official_reference: "Circulaire n°13/CREPMF/2022"
+    resolution_basis: CIRCULAR_EXPLICITLY_CITES_ARTICLE_38_FOR_SHARE_CLASSES
+    documentary_status: RESOLVED
+    current_legal_status: TO_VERIFY
+    legal_review_status: PENDING
+    compliance_review_status: PENDING
+    activation: FORBIDDEN
+
+  - dependency_id: INST066_ART040_DEP_CIRC_01
+    article_number: 40
+    resolved_source_id: CIRCULAIRE_15_CREPMF_2022
+    official_reference: "Circulaire n°15/CREPMF/2022"
+    resolution_basis: CIRCULAR_DEFINES_GROSS_METHOD_FOR_EXPOSURE_AND_GLOBAL_RISK
+    documentary_status: RESOLVED
+    current_legal_status: TO_VERIFY
+    legal_review_status: PENDING
+    compliance_review_status: PENDING
+    activation: FORBIDDEN
+
+  - dependency_id: INST066_ART040_DEP_CIRC_02
+    article_number: 40
+    resolved_source_id: CIRCULAIRE_15_CREPMF_2022
+    official_reference: "Circulaire n°15/CREPMF/2022"
+    resolution_basis: CIRCULAR_DEFINES_OTC_DERIVATIVE_VALUATION_AND_DERIVATIVE_REPORTING
+    documentary_status: RESOLVED
+    current_legal_status: TO_VERIFY
+    legal_review_status: PENDING
+    compliance_review_status: PENDING
+    activation: FORBIDDEN
+
   - dependency_id: INST066_ART047_DEP_CIRC_01
     article_number: 47
     resolved_source_id: CIRCULAIRE_14_CREPMF_2022
     official_reference: "Circulaire n°14/CREPMF/2022"
     resolution_basis: EXPLICIT_INSTRUCTION_66_REFERENCE_AND_TEMPORARY_REDEMPTION_SUSPENSION_SCOPE
+    documentary_status: RESOLVED
+    current_legal_status: TO_VERIFY
+    legal_review_status: PENDING
+    compliance_review_status: PENDING
+    activation: FORBIDDEN
+
+  - dependency_id: INST066_ART053_DEP_CIRC_01
+    article_number: 53
+    resolved_source_id: CIRCULAIRE_11_CREPMF_2022
+    official_reference: "Circulaire n°11/CREPMF/2022"
+    resolution_basis: EXACT_REMUNERATION_EXPENSE_AND_CALCULATION_SCOPE
+    documentary_status: RESOLVED
+    current_legal_status: TO_VERIFY
+    legal_review_status: PENDING
+    compliance_review_status: PENDING
+    activation: FORBIDDEN
+
+  - dependency_id: INST066_ART053_DEP_CIRC_02
+    article_number: 53
+    resolved_source_id: CIRCULAIRE_11_CREPMF_2022
+    official_reference: "Circulaire n°11/CREPMF/2022"
+    resolution_basis: EXACT_NATURE_OF_OPC_FEES_SCOPE
     documentary_status: RESOLVED
     current_legal_status: TO_VERIFY
     legal_review_status: PENDING
@@ -103,6 +246,28 @@ resolutions:
     legal_review_status: PENDING
     compliance_review_status: PENDING
     activation: FORBIDDEN
+
+  - dependency_id: INST066_ART074_DEP_CIRC_01
+    article_number: 74
+    resolved_source_id: CIRCULAIRE_13_CREPMF_2022
+    official_reference: "Circulaire n°13/CREPMF/2022"
+    resolution_basis: CIRCULAR_EXPLICITLY_CITES_ARTICLE_74_FOR_SHARE_CLASSES
+    documentary_status: RESOLVED
+    current_legal_status: TO_VERIFY
+    legal_review_status: PENDING
+    compliance_review_status: PENDING
+    activation: FORBIDDEN
+
+  - dependency_id: INST066_ART074_DEP_CIRC_02
+    article_number: 74
+    resolved_source_id: CIRCULAIRE_13_CREPMF_2022
+    official_reference: "Circulaire n°13/CREPMF/2022"
+    resolution_basis: CIRCULAR_EXPLICITLY_CITES_ARTICLE_74_FOR_SHARE_CLASSES
+    documentary_status: RESOLVED
+    current_legal_status: TO_VERIFY
+    legal_review_status: PENDING
+    compliance_review_status: PENDING
+    activation: FORBIDDEN
 boundary:
   raw_inventory_mutated: false
   documentary_resolution_is_requirement_activation: false
@@ -111,6 +276,9 @@ boundary:
   human_compliance_review_required: true
   ready_for_submission_must_remain_false: true
 next_actions:
+  - recover_exact_article_80_dependency_identifier_and_map_only_the_share_class_occurrence_to_circular_13
+  - inspect_article_21_annual_report_dependency_before_mapping_to_circular_04_or_08
+  - inspect_articles_75_76_reporting_dependencies_before_mapping_to_circular_08
   - verify_current_legal_status_of_each_resolved_circular_from_official_registry_or_later_amendments
   - consume_this_override_registry_in_future_derived_research_queue_generation
   - continue_exact_scope_review_of_remaining_2022_circular_candidates
