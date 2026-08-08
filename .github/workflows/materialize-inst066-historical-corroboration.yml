@@ -7,6 +7,7 @@ on:
     paths:
       - .github/workflows/materialize-inst066-historical-corroboration.yml
       - scripts/materialize_inst066_historical_corroboration_nsia_2018.py
+      - scripts/materialize_inst066_historical_corroboration_liquidite_2017.py
   workflow_dispatch:
 
 permissions:
@@ -35,8 +36,11 @@ jobs:
             tesseract-ocr \
             tesseract-ocr-fra
 
-      - name: Materialize official corroborating decision
+      - name: Materialize official 2018 corroborating decision
         run: python3 scripts/materialize_inst066_historical_corroboration_nsia_2018.py
+
+      - name: Materialize official 2017 corroborating decision
+        run: python3 scripts/materialize_inst066_historical_corroboration_liquidite_2017.py
 
       - name: Validate corroborating evidence boundary
         run: |
@@ -45,27 +49,32 @@ jobs:
           from pathlib import Path
 
           root = Path('regulatory/review-evidence/INST066_HISTORICAL_CROSSCHECK/corroborating')
-          metadata = json.loads((root / 'DECISION_PCR_DA_2018_165_NSIA_FONDS_DIVERSIFIE.metadata.json').read_text(encoding='utf-8'))
-          validation = json.loads((root / 'DECISION_PCR_DA_2018_165_NSIA_FONDS_DIVERSIFIE.validation.json').read_text(encoding='utf-8'))
-
-          assert validation['status'] == 'PASS', validation
-          assert metadata['evidenceRole'] == 'OFFICIAL_ADMINISTRATIVE_CORROBORATION_ONLY_NOT_NORMATIVE_SUBSTITUTE'
-          assert len(metadata['sha256']) == 64
-          assert metadata['byteSize'] > 10000
-          assert metadata['pageCount'] > 0
-          assert validation['checks']['officialBrvmPdfDownloaded'] is True
-          assert validation['checks']['pdfMagicConfirmed'] is True
-          assert validation['checks']['textExtracted'] is True
-          assert validation['checks']['evidenceRoleNonNormative'] is True
-          assert validation['checks']['historicalRuleReactivationForbidden'] is True
-          assert validation['checks']['requirementActivationAllowed'] is False
+          cases = [
+              'DECISION_PCR_DA_2018_165_NSIA_FONDS_DIVERSIFIE',
+              'DECISION_PCR_DA_2017_121_FCP_LIQUIDITE_OPTIMUM',
+          ]
+          for case in cases:
+              metadata = json.loads((root / f'{case}.metadata.json').read_text(encoding='utf-8'))
+              validation = json.loads((root / f'{case}.validation.json').read_text(encoding='utf-8'))
+              assert validation['status'] == 'PASS', (case, validation)
+              assert metadata['evidenceRole'] == 'OFFICIAL_ADMINISTRATIVE_CORROBORATION_ONLY_NOT_NORMATIVE_SUBSTITUTE'
+              assert len(metadata['sha256']) == 64
+              assert metadata['byteSize'] > 10000
+              assert metadata['pageCount'] > 0
+              assert validation['checks']['officialBrvmPdfDownloaded'] is True
+              assert validation['checks']['pdfMagicConfirmed'] is True
+              assert validation['checks']['textExtracted'] is True
+              assert validation['checks']['evidenceRoleNonNormative'] is True
+              assert validation['checks']['historicalRuleReactivationForbidden'] is True
+              assert validation['checks']['requirementActivationAllowed'] is False
+          assert json.loads((root / 'DECISION_PCR_DA_2017_121_FCP_LIQUIDITE_OPTIMUM.metadata.json').read_text(encoding='utf-8'))['pageCount'] == 3
           PY
 
       - name: Upload corroboration evidence
         if: always()
         uses: actions/upload-artifact@v4
         with:
-          name: inst066-historical-corroboration-nsia-2018
+          name: inst066-historical-corroboration
           retention-days: 30
           if-no-files-found: error
           path: |
@@ -73,6 +82,10 @@ jobs:
             regulatory/review-evidence/INST066_HISTORICAL_CROSSCHECK/corroborating/DECISION_PCR_DA_2018_165_NSIA_FONDS_DIVERSIFIE.txt
             regulatory/review-evidence/INST066_HISTORICAL_CROSSCHECK/corroborating/DECISION_PCR_DA_2018_165_NSIA_FONDS_DIVERSIFIE.metadata.json
             regulatory/review-evidence/INST066_HISTORICAL_CROSSCHECK/corroborating/DECISION_PCR_DA_2018_165_NSIA_FONDS_DIVERSIFIE.validation.json
+            regulatory/review-evidence/INST066_HISTORICAL_CROSSCHECK/corroborating/DECISION_PCR_DA_2017_121_FCP_LIQUIDITE_OPTIMUM.pdf
+            regulatory/review-evidence/INST066_HISTORICAL_CROSSCHECK/corroborating/DECISION_PCR_DA_2017_121_FCP_LIQUIDITE_OPTIMUM.txt
+            regulatory/review-evidence/INST066_HISTORICAL_CROSSCHECK/corroborating/DECISION_PCR_DA_2017_121_FCP_LIQUIDITE_OPTIMUM.metadata.json
+            regulatory/review-evidence/INST066_HISTORICAL_CROSSCHECK/corroborating/DECISION_PCR_DA_2017_121_FCP_LIQUIDITE_OPTIMUM.validation.json
 
       - name: Commit corroborating evidence
         run: |
