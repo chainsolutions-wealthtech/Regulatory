@@ -14,47 +14,44 @@ primary_evidence:
   source_sha256: 3f964f2f6ab9ce9eb16912ccda13f34b5023a188dfb18fcba7065590c770d396
   article: 11
   evidence_status: EXPLICIT_REFERENCE_AND_TITLE_OBSERVED_IN_HASHED_OFFICIAL_SOURCE
-  wording_summary: >-
-    L'article 11 de l'Instruction 66 renvoie explicitement à l'Instruction
-    61/CREPMF/2020 relative à l'organisation du système de contrôle interne des
-    acteurs agréés du marché financier régional de l'UMOA et y renvoie de nouveau
-    pour les missions de la fonction de contrôle interne.
 
 official_api:
   endpoint: https://www.amf-umoa.org/service/api/elastic/actualite
   actualite_id: 1000106
   detail_url: "https://www.amf-umoa.org/service/api/elastic/actualite?id=1000106&langue=fr"
   document_url_field: "AC-INSTRUCTION-2023-102DB091-845C-43F9-BE95-D672A9ADD868.pdf"
+  api_raw_sha256: 129396b7d3b9dce53af601dcf61e161dc5906ee68962696b8b06c61a32ce5e87
   title_observed: "Instruction N°61/2020"
-  summary_observed: "RELATIVE A L'ORGANISATION DU SYSTEME DE CONTRÔLE INTERNE DES ACTEURS DU MARCHE FINANCIER REGIONAL DE L'UMOA"
   portal_date_observed: 2023-08-24
   portal_date_is_adoption_or_effective_date: false
   observed_on: 2026-08-08
-  acquisition_status: OFFICIAL_DETAIL_ROUTE_IDENTIFIED_BINARY_MATERIALIZATION_IN_PROGRESS
-
-registry:
-  official_index_url: https://www.amf-umoa.org/reglementation/instruction
-  registry_checked_on: 2026-08-08
-  verification_status: OFFICIAL_API_ENTRY_CONFIRMED_STATUS_REQUIRES_LEGAL_REVIEW
-  note: >-
-    L'API actuelle de l'AMF-UMOA expose désormais directement l'entrée 61/2020.
-    Les métadonnées du portail ne sont pas, à elles seules, une conclusion sur la
-    date d'effet ni le statut juridique courant.
+  acquisition_status: OFFICIAL_DETAIL_API_AND_BINARY_MATERIALIZED
 
 source_integrity:
-  official_binary_transport: AMF_UMOA_DETAIL_API_DOC_BASE64_EXPECTED
+  official_binary_transport: AMF_UMOA_DETAIL_API_DOC_BASE64
   official_detail_api_id: 1000106
-  repository_copy: null
-  sha256: null
-  byte_size: null
-  page_count: null
-  copy_status: OFFICIAL_API_DETAIL_IDENTIFIED_BINARY_MATERIALIZATION_IN_PROGRESS
+  repository_copy: regulatory/sources/amf-umoa-priority-api-documents/INSTRUCTION_61_CREPMF_2020.pdf
+  repository_text: regulatory/sources/amf-umoa-priority-api-documents/INSTRUCTION_61_CREPMF_2020.txt
+  sha256: f7a5e0bfc86a067cf9fb9a570cbdcd8f7918f62a5d3f015e37cf046293be0932
+  byte_size: 11098415
+  page_count: 15
+  text_extraction_method: OCR_TESSERACT_FRA_FALLBACK
+  useful_text_chars: 31610
+  copy_status: OFFICIAL_BINARY_MATERIALIZED_AND_HASHED
 
 legal_metadata:
-  act_date: PENDING_OWN_OFFICIAL_BINARY_REVIEW
-  effective_from: PENDING_OWN_OFFICIAL_BINARY_REVIEW
+  signed_at: Abidjan
+  signed_on: 2020-03-20
+  effective_from: 2020-03-20
+  transition:
+    article: 29
+    period: 6_MONTHS_FROM_SIGNATURE
+    beneficiaries: ACTORS_APPROVED_BEFORE_EFFECTIVE_DATE
+  final_clause:
+    article: 30
+    effect: "abroge toutes dispositions antérieures et contraires"
   amendments_and_rectifications: TO_COMPLETE
-  current_legal_status: PENDING_DIRECT_BINARY_AND_LEGAL_REVIEW
+  current_legal_status: PENDING_COMPLETE_CURRENT_LEGAL_STATUS_REVIEW
   legal_review_status: PENDING
   compliance_review_status: PENDING
   requirement_activation_allowed: false
@@ -63,22 +60,12 @@ inst066_relationships:
   - article: 11
     relationship: EXPLICITLY_REFERENCED_FOR_INTERNAL_CONTROL_FUNCTION_ORGANISATION
     inventory: regulatory/registries/INST066_EXTERNAL_IMPLEMENTING_TEXTS_INVENTORY_V0_1.json
-    activation: FORBIDDEN_PENDING_OFFICIAL_SOURCE_IDENTIFICATION_AND_REVIEW
-
-materialization_plan:
-  status: OFFICIAL_DETAIL_API_FOUND_MATERIALIZATION_WORKFLOW_RUNNING
-  workflow: .github/workflows/materialize-amf-umoa-priority-api-documents.yml
-  next_steps:
-    - DECODE_DETAIL_API_DOC_BASE64
-    - VERIFY_PDF_MAGIC
-    - COMPUTE_SHA256_AND_BYTE_SIZE
-    - VERIFY_PAGE_COUNT
-    - EXTRACT_TEXT_OR_OCR_IF_REQUIRED
-    - VERIFY_SIGNATURE_EFFECTIVE_DATE_AND_CURRENT_STATUS
-    - COMPARE_ARTICLE_11_DEPENDENCY_SCOPE
+    match_status: OWN_OFFICIAL_BINARY_NOW_AVAILABLE_SCOPE_REVIEW_PENDING
+    activation: FORBIDDEN_PENDING_LEGAL_AND_COMPLIANCE_REVIEW
 
 safety:
   portal_metadata_is_sole_legal_status_proof: false
+  binary_materialization_is_requirement_activation: false
   automatic_dependency_resolution_allowed: false
   automatic_rule_reconstruction_allowed: false
   requirement_activation_allowed: false
@@ -87,5 +74,5 @@ safety:
   ready_for_submission_must_remain_false: true
 
 notes:
-  - "Le numéro, l'année et l'intitulé proviennent directement de l'Instruction 66 officielle matérialisée et sont maintenant corroborés par l'API actuelle de l'AMF-UMOA."
-  - "Aucune date d'acte ou d'effet n'est déduite de la date de publication/enregistrement du portail."
+  - "La date de signature et l'entrée en vigueur sont lues dans l'article 30 du binaire officiel matérialisé, et non déduites de la date du portail."
+  - "L'article 29 prévoit six mois de mise en conformité pour les acteurs agréés avant la prise d'effet."
