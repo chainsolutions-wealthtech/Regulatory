@@ -1,0 +1,111 @@
+evidence_id: SANCTIONS_2022_PUBLIC_BINARY_SEARCH_BOUNDARY_2026_08_08
+review_date: 2026-08-08
+source_id: DECISION_CM_10_06_2022
+reference: "Décision n° CM/10/06/2022"
+status: PUBLIC_INDEXED_ROUTES_EXHAUSTED_BINARY_NOT_FOUND
+
+institutional_reference_confirmation:
+  bceao:
+    status: CONFIRMED
+    evidence: "adoption on 2022-06-24 of a revised sanctions device for the regional financial market"
+  centif_senegal:
+    status: CONFIRMED
+    evidence: "exact reference CM/10/06/2022 and sanctions title"
+
+public_binary_searches_checked:
+  - domain: centif.sn
+    queries:
+      - exact reference
+      - exact title
+      - filetype:pdf exact reference
+      - filetype:pdf sanctions title
+    result: REFERENCE_PAGE_INDEXED_NO_PDF_INDEXED
+    page_access_state: CURRENTLY_502_THROUGH_WEB_READER
+  - domain: bceao.int
+    queries:
+      - exact reference
+      - sanctions title
+      - council session 2022-06-24
+    result: ADOPTION_COMMUNIQUE_FOUND_NO_BINARY
+  - domain: amf-umoa.org
+    queries:
+      - exact reference
+      - sanctions title
+      - current Decision registry
+      - current Decision category API snapshot
+    result: 2016_PRESENT_2022_CM_10_06_NOT_PRESENT_IN_CURRENT_VISIBLE_DECISION_SET
+  - domain: uemoa.int
+    queries:
+      - exact reference
+      - revised sanctions device title
+    result: NO_INDEXED_BINARY
+  - domain: e-docucenter.uemoa.int
+    queries:
+      - exact reference
+      - sanctions title
+    result: NO_INDEXED_BINARY
+  - domain: sgg-mali.ml
+    queries:
+      - exact reference
+      - UMOA sanctions
+    result: NO_INDEXED_BINARY
+  - domain: journal-officiel.gouv.sn
+    queries:
+      - exact reference
+    result: NO_INDEXED_BINARY
+  - domain: sgg.gouv.bj
+    queries:
+      - exact reference
+      - UMOA sanctions
+    result: NO_INDEXED_BINARY
+  - domain: journalofficiel.gouv.ci
+    queries:
+      - exact reference
+      - UMOA sanctions
+    result: NO_INDEXED_BINARY
+
+secondary_search_only:
+  legal_publications:
+    result: >-
+      Secondary legal publications corroborate the reference and describe the revised
+      sanctions structure, but are not accepted as normative sources for clauses,
+      effective dates, categories or sanction amounts.
+    normative_use_allowed: false
+
+search_stop_condition:
+  reached: true
+  interpretation: >-
+    Repeating the same public-web searches is no longer an efficient next action.
+    The next acquisition mode should target non-indexed institutional document
+    recovery or direct archive access rather than inferential or secondary-source use.
+
+next_acquisition_mode:
+  priority: INSTITUTIONAL_NON_INDEXED_DOCUMENT_RECOVERY
+  routes:
+    - CENTIF_SENEGAL_ATTACHMENT_OR_DOCUMENT_ARCHIVE
+    - UMOA_COUNCIL_OF_MINISTERS_ARCHIVE
+    - BCEAO_COUNCIL_SESSION_DOCUMENT_ARCHIVE
+    - AMF_UMOA_OR_LEGACY_CREPMF_UNINDEXED_ARCHIVE
+    - MEMBER_STATE_GOVERNMENT_ARCHIVE_NOT_SEARCH_ENGINE_INDEXED
+  required_output:
+    - OFFICIAL_OR_INSTITUTIONAL_PDF
+    - PDF_MAGIC_CHECK
+    - SHA256
+    - BYTE_SIZE
+    - PAGE_COUNT
+    - TEXT_EXTRACTION_OR_OCR
+    - SIGNATURE_AND_EFFECTIVE_DATE
+    - ABROGATION_MODIFICATION_REPLACEMENT_CLAUSES
+    - TRANSITIONAL_PROVISIONS
+    - ANNEX_CLASSIFICATION_AND_QUANTA
+
+legal_boundary:
+  public_search_exhaustion_means_document_does_not_exist: false
+  revised_device_means_2016_abrogated: false
+  secondary_copy_may_activate_rules: false
+  sanction_amount_calculation_allowed: false
+  automatic_enforcement_allowed: false
+  automatic_requirement_activation_allowed: false
+  human_legal_review_required: true
+  human_compliance_review_required: true
+  ready_for_submission_must_remain_false: true
