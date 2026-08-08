@@ -7,6 +7,7 @@ on:
     paths:
       - .github/workflows/build-inst066-external-dependencies.yml
       - scripts/build_inst066_external_implementing_texts_inventory.py
+      - scripts/augment_inst066_named_instruction_dependencies.py
       - regulatory/requirements/INST066_ARTICLE_BLOCKS_V0_1.json
       - regulatory/sources/INSTRUCTION_66_CREPMF_2021.yaml
   workflow_dispatch:
@@ -31,6 +32,9 @@ jobs:
       - name: Derive explicit external implementing-text references
         run: python3 scripts/build_inst066_external_implementing_texts_inventory.py
 
+      - name: Add explicit named CREPMF instruction references
+        run: python3 scripts/augment_inst066_named_instruction_dependencies.py
+
       - name: Validate dependency inventory boundaries
         run: |
           python3 - <<'PY'
@@ -47,23 +51,26 @@ jobs:
           assert validation['status'] == 'PASS', validation
           assert inventory['sourceId'] == 'INSTRUCTION_66_CREPMF_2021'
           assert inventory['sourceArticleCount'] == 92
-          assert inventory['summary']['dependencyOccurrenceCount'] > 0
+          assert inventory['summary']['dependencyOccurrenceCount'] > 48
           assert inventory['summary']['unresolvedReferenceCount'] > 0
           assert inventory['summary']['countsByKind']['COUNCIL_CIRCULAR'] > 0
           assert inventory['summary']['countsByKind']['SPECIFIC_ACCOUNTING_REGULATION'] > 0
           assert inventory['summary']['countsByKind']['COUNCIL_INSTRUCTION'] > 0
           assert inventory['summary']['countsByKind']['EXPLICIT_NAMED_INSTRUCTION_58'] > 0
+          assert inventory['summary']['countsByKind']['EXPLICIT_NAMED_CREPMF_INSTRUCTION'] > 0
+          assert validation['checks']['additionalNamedCrepmfInstructionsDetected'] is True
+          assert validation['checks']['namedInstructionsRemainInactiveUntilVerified'] is True
           assert inventory['safety']['missingReferenceInferenceAllowed'] is False
           assert inventory['safety']['automaticRuleReconstructionAllowed'] is False
           assert inventory['safety']['automaticRequirementActivationAllowed'] is False
           assert inventory['safety']['humanLegalReviewRequired'] is True
           assert inventory['safety']['humanComplianceReviewRequired'] is True
           assert inventory['safety']['readyForSubmissionMustRemainFalse'] is True
+          assert len(validation['namedInstructionReferences']) > 0
           for dep in inventory['dependencies']:
-              if dep['referenceStatus'] == 'REFERENCE_NOT_YET_IDENTIFIED':
-                  assert dep['activation'] == 'FORBIDDEN_PENDING_OFFICIAL_SOURCE_IDENTIFICATION_AND_REVIEW'
-              else:
-                  assert dep['resolvedSourceId'] == 'INSTRUCTION_58_CREPMF_2019'
+              assert dep['activation'].startswith('FORBIDDEN_')
+              assert dep['legalReviewStatus'] == 'PENDING'
+              assert dep['complianceReviewStatus'] == 'PENDING'
           PY
 
       - name: Upload dependency inventory
