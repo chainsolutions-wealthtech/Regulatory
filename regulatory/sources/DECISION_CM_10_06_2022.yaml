@@ -1,7 +1,7 @@
 source_id: DECISION_CM_10_06_2022
 source_family: DECISION
 reference: "DECISION N° CM/10/06/2022"
-reference_status: CORROBORATED_PENDING_OFFICIAL_BINARY
+reference_status: CONFIRMED_BY_PUBLIC_AUTHORITY_PENDING_BINARY
 reference_date: 2022-06-24
 title: "Décision relative à la mise en œuvre du dispositif des sanctions pécuniaires applicables sur le Marché Financier Régional de l'UMOA"
 issuing_authority: "Conseil des Ministres de l'UMOA"
@@ -11,59 +11,113 @@ adoption_evidence:
     authority: BCEAO
     url: "https://www.bceao.int/fr/communique-presse/communique-de-presse-de-la-session-ordinaire-du-conseil-des-ministres-de-lunion-5"
     observed_on: 2026-08-08
-    evidence: "Le communiqué officiel de la session du 24 juin 2022 indique que le Conseil des Ministres a adopté le dispositif révisé des sanctions pécuniaires applicables sur le marché financier régional de l'UMOA."
-    revision_purpose: "Alignement, pour les mêmes agissements, sur la Loi Uniforme relative aux infractions boursières et adaptation aux évolutions nécessaires du cadre de régulation."
-    evidence_scope: ADOPTION_OF_REVISED_DEVICE_AND_PURPOSE_CONFIRMED
-  corroborating_sources:
-    - authority: CENTIF_SENEGAL
-      url: "https://www.centif.sn/reglementation/fr/reglcommu"
-      evidence: "La page de réglementation communautaire référence la Décision n° CM/10/06/2022 sous l'intitulé relatif à la mise en œuvre du dispositif des sanctions pécuniaires."
-      evidence_scope: REFERENCE_AND_TITLE_CORROBORATED
-    - authority: LEXTENSO
-      url: "https://www.labase-lextenso.fr/lessentiel-droits-africains-des-affaires/DAA201j5"
-      evidence: "La publication juridique identifie la Décision n° CM/10/06/2022 du 24 juin 2022 et son objet."
-      evidence_scope: REFERENCE_DATE_AND_TITLE_CORROBORATED
+    evidence: >-
+      Le communiqué officiel de la session du 24 juin 2022 indique que le Conseil
+      des Ministres a adopté le dispositif révisé des sanctions pécuniaires
+      applicables sur le marché financier régional de l'UMOA.
+    revision_purpose: >-
+      Alignement, pour les mêmes agissements, sur la Loi Uniforme relative aux
+      infractions boursières et adaptation aux évolutions nécessaires du cadre de régulation.
+    evidence_scope: ADOPTION_DATE_AND_REVISED_DEVICE_PURPOSE_CONFIRMED
+  public_authority_reference_source:
+    authority: CENTIF_SENEGAL
+    url: "https://www.centif.sn/reglementation/fr/reglcommu"
+    observed_on: 2026-08-08
+    evidence: >-
+      La page de réglementation communautaire référence explicitement la DECISION
+      n° CM / 10 / 06 / 2022 du Conseil des Ministres de l'Union Monétaire Ouest
+      Africaine relative à la mise en œuvre du dispositif des sanctions pécuniaires
+      applicables sur le marché financier régional de l'UMOA.
+    evidence_scope: EXACT_REFERENCE_AND_TITLE_CONFIRMED_BY_PUBLIC_AUTHORITY
+  secondary_corroboration:
+    authority: LEXTENSO
+    url: "https://www.labase-lextenso.fr/lessentiel-droits-africains-des-affaires/DAA201j5"
+    evidence: >-
+      La publication juridique identifie la Décision n° CM/10/06/2022 du 24 juin
+      2022 et décrit sa structure en catégories de manquements et quantums annexés.
+    evidence_scope: SEARCH_CORROBORATION_ONLY
+    normative_use_allowed: false
+
+current_amf_umoa_state:
+  decision_index_url: https://www.amf-umoa.org/reglementation/decision
+  checked_on: 2026-08-08
+  current_decision_count_observed: 10
+  decision_2016_present: true
+  decision_2016_status_observed: NON_ABROGE
+  decision_2022_cm_10_06_present: false
+  other_2022_decisions_present:
+    - CM/10/09/2022
+    - CM/17/09/2022
+    - CM/15/09/2022
+    - CM/13/09/2022
+  interpretation_boundary: >-
+    L'absence de CM/10/06/2022 de la table et de la catégorie Decision de l'API
+    actuelle ne vaut pas preuve d'inexistence ou d'inapplicabilité, puisque la BCEAO
+    confirme son adoption et la CENTIF en confirme la référence et l'objet.
 
 source_integrity:
-  official_binary_url: TO_IDENTIFY_FROM_OFFICIAL_SOURCE
+  official_or_institutional_binary_url: TO_IDENTIFY
+  preferred_recovery_routes:
+    - CENTIF_SENEGAL_DOCUMENT_LINK_OR_ARCHIVE
+    - BCEAO_OR_UMOA_COUNCIL_ARCHIVE
+    - MEMBER_STATE_OFFICIAL_JOURNAL_OR_GOVERNMENT_ARCHIVE
+    - AMF_UMOA_UNINDEXED_ARCHIVE
   repository_copy: null
   sha256: null
   byte_size: null
   page_count: null
-  copy_status: OFFICIAL_ADOPTION_CONFIRMED_BINARY_NOT_MATERIALIZED
+  copy_status: OFFICIAL_OR_INSTITUTIONAL_BINARY_NOT_MATERIALIZED
   acquisition_search_evidence: regulatory/review-evidence/SANCTIONS_2016_2022/OFFICIAL_BINARY_SEARCH_2026-08-08.yaml
-  acquisition_status: PUBLIC_OFFICIAL_ROUTES_CHECKED_BINARY_NOT_IDENTIFIED
+  acquisition_status: REFERENCE_ADOPTION_AND_TITLE_CONFIRMED_BINARY_NOT_IDENTIFIED
 
 legal_metadata:
   adopted_on: 2022-06-24
-  signed_on: PENDING_OFFICIAL_BINARY_REVIEW
-  effective_from: PENDING_OFFICIAL_BINARY_REVIEW
-  predecessor: TO_IDENTIFY_FROM_OFFICIAL_BINARY
+  signed_on: PENDING_BINARY_REVIEW
+  effective_from: PENDING_BINARY_REVIEW
+  predecessor_or_modified_source: DECISION_CM_SJ_001_03_2016_RELATIONSHIP_TO_VERIFY
   amendments_and_rectifications: TO_COMPLETE
-  current_legal_status: PENDING_OFFICIAL_BINARY_AND_REGISTRY_REVIEW
+  current_legal_status: PENDING_BINARY_AND_RELATIONSHIP_REVIEW
   relationship_to_2016_decision:
     related_source_id: DECISION_CM_SJ_001_03_2016
+    related_2016_binary_sha256: 888b971071f32a6453647b979f3f9cc551d686e1bc7135d6a659e8907aa9dbe2
+    related_2016_effective_from: 2017-01-01
     status: REVISED_DEVICE_CONFIRMED_RELATIONSHIP_NOT_LEGALLY_CONCLUDED
-    note: "L'existence d'un dispositif révisé adopté en 2022 est officiellement confirmée. La nature juridique exacte de la relation avec la décision de 2016 (remplacement, modification, abrogation totale ou partielle, coexistence transitoire) ne doit pas être déduite sans examen des deux textes officiels."
+    note: >-
+      Le binaire 2016 est désormais acquis. Le texte 2022 manque encore. Le terme
+      "dispositif révisé" ne permet pas, sans les clauses propres de 2022, de décider
+      s'il remplace, modifie, abroge totalement ou partiellement la Décision 2016,
+      ni de déterminer une éventuelle période transitoire.
 
 linked_sources:
   - DECISION_CM_SJ_001_03_2016
   - INSTRUCTION_58_CREPMF_2019
+  - DECISION_CM_07_09_2021
 
 linked_requirements:
   - INST058_ART031_REQ001
   - INST058_ART032_REQ001
 
+next_required_reading_when_binary_found:
+  - FULL_REFERENCE_AND_SIGNATURE_BLOCK
+  - EFFECTIVE_DATE
+  - ABROGATION_OR_MODIFICATION_CLAUSES
+  - TRANSITIONAL_PROVISIONS
+  - ANNEX_1_BREACH_CLASSIFICATION
+  - ANNEX_2_SANCTION_QUANTA
+  - RELATIONSHIP_TO_CM_SJ_001_03_2016
+  - RELATIONSHIP_TO_CM_07_09_2021_UNIFORM_LAW
+
 safety:
   requirement_activation_allowed: false
   sanction_amount_calculation_allowed: false
   automatic_enforcement_allowed: false
-  official_binary_required_before_atomization: true
+  official_or_institutional_binary_required_before_active_atomization: true
+  automatic_relationship_inference_allowed: false
   human_legal_review_required: true
   human_compliance_review_required: true
+  ready_for_submission_must_remain_false: true
 
 notes:
-  - "Cette entrée enregistre une dépendance documentaire et juridique ; elle ne constitue pas l'atomisation normative de la décision."
-  - "Aucun montant, barème, seuil, catégorie de manquement ou sanction ne doit être modélisé comme actif avant matérialisation du texte officiel et double revue juridique/conformité."
-  - "Les sources de corroboration ne remplacent pas le binaire officiel normatif."
-  - "La recherche publique du 2026-08-08 n'a pas identifié de binaire officiel stable exploitable ; les copies tierces restent exclues du corpus normatif."
+  - "La Décision 2022 est institutionnellement attestée ; seul son binaire reste à acquérir."
+  - "Les quatre Décisions 2022 actuellement visibles dans la table AMF concernent d'autres objets et ne doivent pas être confondues avec CM/10/06/2022."
+  - "Aucun montant, barème, seuil, catégorie de manquement ou effet juridique ne doit être activé avant lecture du binaire et comparaison 2016↔2022."
