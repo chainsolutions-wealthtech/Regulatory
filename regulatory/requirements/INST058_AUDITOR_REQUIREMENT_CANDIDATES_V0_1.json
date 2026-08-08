@@ -1,0 +1,2225 @@
+{
+  "schemaVersion": "INST058_AUDITOR_REQUIREMENT_CANDIDATES_V0_1",
+  "sourceId": "INSTRUCTION_58_CREPMF_2019",
+  "sourceSha256": "38258d7cae5518a6bea6b195facbb717e4a98c1eb734b30bc5e7de91917d0c57",
+  "status": "EXTRACTED_UNVERIFIED_PENDING_LEGAL_AND_COMPLIANCE_REVIEW",
+  "activation": "FORBIDDEN",
+  "requirementCandidateCount": 32,
+  "requirements": [
+    {
+      "id": "INST058_ART001_REQ001",
+      "sourceId": "INSTRUCTION_58_CREPMF_2019",
+      "sourceSha256": "38258d7cae5518a6bea6b195facbb717e4a98c1eb734b30bc5e7de91917d0c57",
+      "articleId": "INST058_ARTICLE_001",
+      "articleNumber": 1,
+      "sourceBlockId": "INST058_ART001_BLOCK001",
+      "sourcePages": [
+        2
+      ],
+      "sourceArticleTextSha256": "fb24e0dff56985e27af417fadc2d5c796c073fdea0bcfe0f48e813bb50fdc74b",
+      "sourceTextCandidate": "…le des Valeurs Mobilières (BRVM), - le Dépositaire Central / Banque de Règlement (DC/BR), - les Sociétés de Gestion et d’Intermédiation (SGI), - les Sociétés de Gestion de Patrimoine (SGP), - les Banques ‘Teneurs de Comptes et Conservateurs” (BTCC), Les Apporteurs d'Affaires (AA), Les Conseils en Investissement Boursier (CIB), Les Démarcheurs, Les Sociétés de Gestion des Organismes de Placement Collectif (SGO), - Les Organismes de Placement Collectif (OPC), - les Listing Sponsors (LS), - tout autre acteur agréé ou approuvé par Le Conseil Régional, soumis à l'obligation de désigner un ou plusieurs Commissaires aux Comptes. Le terme « Sociétés Cotées » désigne Les Sociétés, entités publiques ou privées dont Les titres sont inscrits au compartiment actions de la Bourse Régionale des Valeurs Mobilières (BRVM). Le terme «OPC» désigne les Organismes de Placement Collectif en Valeurs Mobilières (OPCVM), les Fonds Communs de Titrisation de Créances (FCTC) ou tout autre véhicule de placement collectif agréé par le Conseil Régional. Les OPCVM prennent la forme de Société d’Investissement à Capital Variable (SICAV), de Fonds Commun de Placement (FCP). Le terme « Conseil Régional » désigne Le Conseil Régional de L'Epargne Publique et des Marchés Financiers (CREPMF). L'Associé signataire est le Commissaire aux Comptes inscrit au tableau de l'Ordre des Experts Comptables de l’un des Etats membres de l'UMOA ou dans un ordre reconnu représentant Le Commissaire aux Comptes (personne morale) désigné par La société cotée ou structure agréée, et habilité à engager la responsabilité dudit Commissaire aux Comptes.",
+      "sourceKeywordHits": [
+        "Sociétés de Gestion des Organismes de Placement Collectif",
+        "Organismes de Placement Collectif",
+        "Fonds Commun de Placement"
+      ],
+      "normalizedRequirementCandidate": "Le référentiel doit reconnaître les SGO et les OPC comme structures couvertes par l'Instruction 58 et reconnaître le FCP comme forme d'OPCVM sans personnalité morale.",
+      "applicabilityCandidate": "REGULATORY_SCOPE_CLASSIFICATION",
+      "products": [
+        "MANAGEMENT_COMPANY",
+        "OPCVM",
+        "FCP",
+        "SICAV",
+        "OTHER_OPC"
+      ],
+      "documentTypes": [
+        "CANONICAL_MODEL",
+        "AUDITOR_REGISTER"
+      ],
+      "canonicalFields": [
+        "fund.regulatory_product_type",
+        "fund.legal_form",
+        "manager.regulatory_status"
+      ],
+      "questionIds": [
+        "Q_REGULATORY_PRODUCT_TYPE",
+        "Q_FUND_LEGAL_FORM"
+      ],
+      "clauseGroupIds": [],
+      "controlIds": [
+        "RULE_INST058_SCOPE_CLASSIFICATION_REQUIRED"
+      ],
+      "evidenceTypes": [
+        "FUND_APPROVAL_OR_PROJECT_MANDATE",
+        "MANAGEMENT_COMPANY_APPROVAL"
+      ],
+      "outputSectionIds": [
+        "SYSTEM_ONLY"
+      ],
+      "reviewRoles": [
+        "LEGAL",
+        "COMPLIANCE"
+      ],
+      "circ005RequirementLinks": [
+        "CIRC005_GENERAL_SCOPE"
+      ],
+      "inst066RequirementLinks": [
+        "INST066_ART001_REQ001"
+      ],
+      "status": "EXTRACTED_UNVERIFIED_PENDING_LEGAL_AND_COMPLIANCE_REVIEW",
+      "activation": "FORBIDDEN",
+      "legalReviewStatus": "PENDING",
+      "complianceReviewStatus": "PENDING",
+      "specFile": "regulatory/requirements/inst058-candidates/00_SCOPE_APPROVAL_FCP.json",
+      "provenance": {
+        "sourceArtifact": "regulatory/materialized/INSTRUCTION_58_CREPMF_2019.pdf",
+        "ocrDerivative": "regulatory/materialized/INSTRUCTION_58_CREPMF_2019.txt",
+        "articleBlock": "regulatory/requirements/INST058_ARTICLE_BLOCKS_V0_1.json",
+        "textQuality": "OCR_EXTRACTED_UNVERIFIED"
+      }
+    },
+    {
+      "id": "INST058_ART003_REQ001",
+      "sourceId": "INSTRUCTION_58_CREPMF_2019",
+      "sourceSha256": "38258d7cae5518a6bea6b195facbb717e4a98c1eb734b30bc5e7de91917d0c57",
+      "articleId": "INST058_ARTICLE_003",
+      "articleNumber": 3,
+      "sourceBlockId": "INST058_ART003_BLOCK001",
+      "sourcePages": [
+        2,
+        3
+      ],
+      "sourceArticleTextSha256": "eb7e23b00a14358facf6cf2743a9f4ee45ac4c16cbcf52a19fcab064b89b9dd4",
+      "sourceTextCandidate": "Article 3 : Champ d'application La présente Instruction s'applique aux Commissaires aux Comptes des Structures Agréées par Le CREPMF et des Sociétés Cotées telles que définies précédemment. 2 ‘Avenue Joseph ANOMA Tél: (225) 20 21 57 42 / 20 21 51 79 O1 8P 178 abdhan ot» cie doi | gl Fac 20 2 1657 predencegercpnters same or Instruction n°_.= = _JCREPMF/2019",
+      "sourceKeywordHits": [
+        "s'applique aux Commissaires aux Comptes",
+        "Structures Agréées"
+      ],
+      "normalizedRequirementCandidate": "L'Instruction 58 s'applique aux commissaires aux comptes des structures agréées entrant dans son champ ; l'applicabilité doit être établie à partir du statut réglementaire de l'entité contrôlée.",
+      "applicabilityCandidate": "AUDITOR_OF_REGULATED_STRUCTURE",
+      "products": [
+        "MANAGEMENT_COMPANY",
+        "OPCVM",
+        "FCP",
+        "SICAV",
+        "OTHER_OPC"
+      ],
+      "documentTypes": [
+        "AUDITOR_REGISTER",
+        "CONTROL_REPORT"
+      ],
+      "canonicalFields": [
+        "accounting_control.responsible_persons",
+        "service_providers[]",
+        "regulatory_coverage.requirements"
+      ],
+      "questionIds": [
+        "Q_ACCOUNTING_CONTROL_PERSONS"
+      ],
+      "clauseGroupIds": [
+        "CG_ACCOUNTING_CONTROL"
+      ],
+      "controlIds": [
+        "RULE_INST058_APPLICABILITY_ASSESSED"
+      ],
+      "evidenceTypes": [
+        "AUDITOR_APPOINTMENT",
+        "OFFICIAL_REGISTER_EXTRACT"
+      ],
+      "outputSectionIds": [
+        "SEC_1_7_ACCOUNTING_CONTROL",
+        "SYSTEM_ONLY"
+      ],
+      "reviewRoles": [
+        "LEGAL",
+        "COMPLIANCE"
+      ],
+      "circ005RequirementLinks": [
+        "CIRC005_1_7_FCP_ACCOUNTING_CONTROL_PERSONS"
+      ],
+      "inst066RequirementLinks": [
+        "INST066_ART037_REQ003"
+      ],
+      "status": "EXTRACTED_UNVERIFIED_PENDING_LEGAL_AND_COMPLIANCE_REVIEW",
+      "activation": "FORBIDDEN",
+      "legalReviewStatus": "PENDING",
+      "complianceReviewStatus": "PENDING",
+      "specFile": "regulatory/requirements/inst058-candidates/00_SCOPE_APPROVAL_FCP.json",
+      "provenance": {
+        "sourceArtifact": "regulatory/materialized/INSTRUCTION_58_CREPMF_2019.pdf",
+        "ocrDerivative": "regulatory/materialized/INSTRUCTION_58_CREPMF_2019.txt",
+        "articleBlock": "regulatory/requirements/INST058_ARTICLE_BLOCKS_V0_1.json",
+        "textQuality": "OCR_EXTRACTED_UNVERIFIED"
+      }
+    },
+    {
+      "id": "INST058_ART004_REQ001",
+      "sourceId": "INSTRUCTION_58_CREPMF_2019",
+      "sourceSha256": "38258d7cae5518a6bea6b195facbb717e4a98c1eb734b30bc5e7de91917d0c57",
+      "articleId": "INST058_ARTICLE_004",
+      "articleNumber": 4,
+      "sourceBlockId": "INST058_ART004_BLOCK001",
+      "sourcePages": [
+        3
+      ],
+      "sourceArticleTextSha256": "7faae00fe907d0a8eccd08791e13fd6ac00f9e23783dd9117e8b15db6e54c974",
+      "sourceTextCandidate": "Article 4 : Personnes concernées Les Commissaires aux Comptes doivent obligatoirement être inscrits au tableau de L'Ordre des Experts Comptables de l’un des Etats membres de L'UMOA et à jour de leurs obligations au niveau de cet ordre. CHAPITRE 2 - PROCEDURE D’APPROBATION DES COMMISSAIRES AUX COMPTES",
+      "sourceKeywordHits": [
+        "inscrits au tableau",
+        "Ordre des Experts Comptables",
+        "Etats membres de L'UMOA"
+      ],
+      "normalizedRequirementCandidate": "Le commissaire aux comptes doit être inscrit au tableau de l'Ordre des Experts Comptables d'un État membre de l'UMOA et à jour de ses obligations auprès de cet ordre.",
+      "applicabilityCandidate": "AUDITOR_DESIGNATED_FOR_REGULATED_STRUCTURE",
+      "products": [
+        "MANAGEMENT_COMPANY",
+        "OPCVM",
+        "FCP",
+        "SICAV",
+        "OTHER_OPC"
+      ],
+      "documentTypes": [
+        "AUDITOR_REGISTER",
+        "CONTROL_REPORT"
+      ],
+      "canonicalFields": [
+        "accounting_control.responsible_persons[].professional_order",
+        "accounting_control.responsible_persons[].registration_status"
+      ],
+      "questionIds": [
+        "Q_ACCOUNTING_CONTROL_PERSONS"
+      ],
+      "clauseGroupIds": [
+        "CG_ACCOUNTING_CONTROL"
+      ],
+      "controlIds": [
+        "RULE_AUDITOR_PROFESSIONAL_ORDER_EVIDENCE_REQUIRED"
+      ],
+      "evidenceTypes": [
+        "PROFESSIONAL_ORDER_REGISTRATION",
+        "AUDITOR_APPROVAL_RECORD"
+      ],
+      "outputSectionIds": [
+        "SEC_1_7_ACCOUNTING_CONTROL"
+      ],
+      "reviewRoles": [
+        "LEGAL",
+        "COMPLIANCE"
+      ],
+      "circ005RequirementLinks": [
+        "CIRC005_1_7_FCP_ACCOUNTING_CONTROL_PERSONS"
+      ],
+      "inst066RequirementLinks": [],
+      "status": "EXTRACTED_UNVERIFIED_PENDING_LEGAL_AND_COMPLIANCE_REVIEW",
+      "activation": "FORBIDDEN",
+      "legalReviewStatus": "PENDING",
+      "complianceReviewStatus": "PENDING",
+      "specFile": "regulatory/requirements/inst058-candidates/00_SCOPE_APPROVAL_FCP.json",
+      "provenance": {
+        "sourceArtifact": "regulatory/materialized/INSTRUCTION_58_CREPMF_2019.pdf",
+        "ocrDerivative": "regulatory/materialized/INSTRUCTION_58_CREPMF_2019.txt",
+        "articleBlock": "regulatory/requirements/INST058_ARTICLE_BLOCKS_V0_1.json",
+        "textQuality": "OCR_EXTRACTED_UNVERIFIED"
+      }
+    },
+    {
+      "id": "INST058_ART005_REQ001",
+      "sourceId": "INSTRUCTION_58_CREPMF_2019",
+      "sourceSha256": "38258d7cae5518a6bea6b195facbb717e4a98c1eb734b30bc5e7de91917d0c57",
+      "articleId": "INST058_ARTICLE_005",
+      "articleNumber": 5,
+      "sourceBlockId": "INST058_ART005_BLOCK001",
+      "sourcePages": [
+        3
+      ],
+      "sourceArticleTextSha256": "f7c7909335e99834ed78f26f4c3c7ccebd6e87cfcad761121a14ace36026e2f7",
+      "sourceTextCandidate": "…x (6) ans ou toute autre durée fixée par l’autorité de supervision de l'entité contrôlée ; dans Les Statuts ou par l’Assemblée Générale Constitutive, pour une durée de deux (2) ans, couvrant Les deux premiers exercices sociaux. Cas des entités sans personnalité morale Les Commissaires aux Comptes des entités sans personnalité morale telles que Les Fonds Communs de Placement (FCP) ou Fonds Communs de Titrisation de Créances (FCTC) sont désignés par Les Conseils d'Administration des Sociétés de Gestion qui administrent lesdites entités.",
+      "sourceKeywordHits": [
+        "Fonds Communs de Placement",
+        "désignés par Les Conseils d'Administration des Sociétés de Gestion"
+      ],
+      "normalizedRequirementCandidate": "Pour un FCP sans personnalité morale, le commissaire aux comptes est désigné par le Conseil d'Administration de la société de gestion qui administre le fonds.",
+      "applicabilityCandidate": "FCP_WITHOUT_LEGAL_PERSONALITY",
+      "products": [
+        "FCP"
+      ],
+      "documentTypes": [
+        "AUDITOR_APPOINTMENT",
+        "PROSPECTUS",
+        "BOARD_MINUTES"
+      ],
+      "canonicalFields": [
+        "accounting_control.responsible_persons",
+        "accounting_control.appointment_body",
+        "accounting_control.appointment_date",
+        "manager.governance_minutes[]"
+      ],
+      "questionIds": [
+        "Q_ACCOUNTING_CONTROL_PERSONS",
+        "Q_AUDITOR_APPOINTMENT"
+      ],
+      "clauseGroupIds": [
+        "CG_ACCOUNTING_CONTROL"
+      ],
+      "controlIds": [
+        "RULE_FCP_AUDITOR_APPOINTED_BY_MANAGER_BOARD"
+      ],
+      "evidenceTypes": [
+        "AUDITOR_APPOINTMENT",
+        "BOARD_MINUTES"
+      ],
+      "outputSectionIds": [
+        "SEC_1_7_ACCOUNTING_CONTROL"
+      ],
+      "reviewRoles": [
+        "LEGAL",
+        "COMPLIANCE"
+      ],
+      "circ005RequirementLinks": [
+        "CIRC005_1_7_FCP_ACCOUNTING_CONTROL_PERSONS"
+      ],
+      "inst066RequirementLinks": [],
+      "status": "EXTRACTED_UNVERIFIED_PENDING_LEGAL_AND_COMPLIANCE_REVIEW",
+      "activation": "FORBIDDEN",
+      "legalReviewStatus": "PENDING",
+      "complianceReviewStatus": "PENDING",
+      "specFile": "regulatory/requirements/inst058-candidates/00_SCOPE_APPROVAL_FCP.json",
+      "provenance": {
+        "sourceArtifact": "regulatory/materialized/INSTRUCTION_58_CREPMF_2019.pdf",
+        "ocrDerivative": "regulatory/materialized/INSTRUCTION_58_CREPMF_2019.txt",
+        "articleBlock": "regulatory/requirements/INST058_ARTICLE_BLOCKS_V0_1.json",
+        "textQuality": "OCR_EXTRACTED_UNVERIFIED"
+      }
+    },
+    {
+      "id": "INST058_ART006_REQ001",
+      "sourceId": "INSTRUCTION_58_CREPMF_2019",
+      "sourceSha256": "38258d7cae5518a6bea6b195facbb717e4a98c1eb734b30bc5e7de91917d0c57",
+      "articleId": "INST058_ARTICLE_006",
+      "articleNumber": 6,
+      "sourceBlockId": "INST058_ART006_BLOCK001",
+      "sourcePages": [
+        3
+      ],
+      "sourceArticleTextSha256": "1bb834529972fb03b0f46b9a09010543ddfadaca6c23e7b6adcead8f6b433041",
+      "sourceTextCandidate": "Article 6 : Lettre d'acceptation de mandat Les Commissaires aux Comptes titulaires et suppléants des sociétés cotées ou des structures agréées adressent, dès leur désignation par Les instances habilitées, une lettre d'acceptation de leur mandat au représentant Légal de la structure agréée ou de la société concernée.",
+      "sourceKeywordHits": [
+        "lettre d'acceptation",
+        "dès leur désignation",
+        "représentant Légal"
+      ],
+      "normalizedRequirementCandidate": "Après sa désignation, le commissaire aux comptes titulaire ou suppléant doit formaliser l'acceptation de son mandat auprès du représentant légal de l'entité concernée.",
+      "applicabilityCandidate": "DESIGNATED_AUDITOR",
+      "products": [
+        "MANAGEMENT_COMPANY",
+        "OPCVM",
+        "FCP",
+        "SICAV",
+        "OTHER_OPC"
+      ],
+      "documentTypes": [
+        "AUDITOR_ENGAGEMENT",
+        "EVIDENCE_REGISTER"
+      ],
+      "canonicalFields": [
+        "accounting_control.responsible_persons[].mandate_acceptance",
+        "evidence[]"
+      ],
+      "questionIds": [
+        "Q_AUDITOR_MANDATE_ACCEPTED"
+      ],
+      "clauseGroupIds": [
+        "CG_ACCOUNTING_CONTROL"
+      ],
+      "controlIds": [
+        "RULE_AUDITOR_ACCEPTANCE_LETTER_REQUIRED"
+      ],
+      "evidenceTypes": [
+        "ENGAGEMENT_LETTER"
+      ],
+      "outputSectionIds": [
+        "SEC_1_7_ACCOUNTING_CONTROL",
+        "SYSTEM_ONLY"
+      ],
+      "reviewRoles": [
+        "LEGAL",
+        "COMPLIANCE"
+      ],
+      "circ005RequirementLinks": [
+        "CIRC005_1_7_FCP_ACCOUNTING_CONTROL_PERSONS"
+      ],
+      "inst066RequirementLinks": [],
+      "status": "EXTRACTED_UNVERIFIED_PENDING_LEGAL_AND_COMPLIANCE_REVIEW",
+      "activation": "FORBIDDEN",
+      "legalReviewStatus": "PENDING",
+      "complianceReviewStatus": "PENDING",
+      "specFile": "regulatory/requirements/inst058-candidates/00_SCOPE_APPROVAL_FCP.json",
+      "provenance": {
+        "sourceArtifact": "regulatory/materialized/INSTRUCTION_58_CREPMF_2019.pdf",
+        "ocrDerivative": "regulatory/materialized/INSTRUCTION_58_CREPMF_2019.txt",
+        "articleBlock": "regulatory/requirements/INST058_ARTICLE_BLOCKS_V0_1.json",
+        "textQuality": "OCR_EXTRACTED_UNVERIFIED"
+      }
+    },
+    {
+      "id": "INST058_ART007_REQ001",
+      "sourceId": "INSTRUCTION_58_CREPMF_2019",
+      "sourceSha256": "38258d7cae5518a6bea6b195facbb717e4a98c1eb734b30bc5e7de91917d0c57",
+      "articleId": "INST058_ARTICLE_007",
+      "articleNumber": 7,
+      "sourceBlockId": "INST058_ART007_BLOCK001",
+      "sourcePages": [
+        3,
+        4
+      ],
+      "sourceArticleTextSha256": "e9861ddd630616af080b6581e86169fec063df692a4a99cd20992b2e978a204c",
+      "sourceTextCandidate": "Article 7 : Conditions d'approbation des Commissaires aux Comptes Après leur nomination par une Structure Agréée et/ou une Société Cotée et avant l'exercice de leurs fonctions, les Commissaires aux Comptes titulaires ainsi que leurs suppléants doivent être approuvés par Le Conseil Régional. Nul ne peut exercer Les fonctions de commissaires aux comptes d’une société cotée ou d'une structure agréée sans l'approbation de sa désignation par Le Conseil Régional, conformément à la procédure en vigueur. Les Commissaires aux Comptes doivent s'assurer de l'approbation de leurs mandats par Le Conseil Régional avant l'exercice de leurs fonctions. Dans Le cas contraire, ils commettent un manquement à la présente Instruction. Avenue Joseph ANOMA L Tél: (225) 20 21 57 42 / 20 21 51 79 O1 8P 1878 Abidjan Of - te d'ivoire ER) S Fax: 20 2 16 57 presidence@crepmf.org vv.crepmf.org instruction n° __1 = JcREPMr/2019 A cet effet, dès l'acceptation par le(s) Commissaire(s) aux Comptes du (des) mandat(s), les Sociétés Cotées du marché financier régional et Les Structures Agréées à l'exception des OPC ne disposant pas de la personnalité morale, doivent transmettre au Secrétariat Général du Conseil Régional, pour approbation, Le dossier du ou des Commissaires aux Comptes qu’elles ont nommés. La procédure d'approbation concerne Les Commissaires aux Comptes titulaires ainsi que leurs suppléants. Elle s’applique tant à leur première nomination, qu’au renouvellement de leur mandat. Les Commissaires aux Comptes titulaires et suppléants ne peuvent appartenir au même cabinet ou à des structures ayant des liens juridiques ou d'intérêts entre elles. ILen est de même pour Les Co-Commissaires aux Comptes.",
+      "sourceKeywordHits": [
+        "avant l'exercice de leurs fonctions",
+        "doivent être approuvés",
+        "Nul ne peut exercer"
+      ],
+      "normalizedRequirementCandidate": "Le commissaire aux comptes titulaire et son suppléant doivent disposer de l'approbation du Conseil Régional avant l'exercice de leurs fonctions ; le moteur doit empêcher de présenter une approbation non prouvée comme acquise.",
+      "applicabilityCandidate": "AUDITOR_BEFORE_EXERCISE_OF_MANDATE",
+      "products": [
+        "MANAGEMENT_COMPANY",
+        "OPCVM",
+        "FCP",
+        "SICAV",
+        "OTHER_OPC"
+      ],
+      "documentTypes": [
+        "AUDITOR_REGISTER",
+        "CONTROL_REPORT",
+        "PROSPECTUS"
+      ],
+      "canonicalFields": [
+        "accounting_control.responsible_persons[].regulatory_approval",
+        "accounting_control.responsible_persons[].approval_status"
+      ],
+      "questionIds": [
+        "Q_AUDITOR_APPROVAL_STATUS"
+      ],
+      "clauseGroupIds": [
+        "CG_ACCOUNTING_CONTROL"
+      ],
+      "controlIds": [
+        "RULE_AUDITOR_REGULATORY_APPROVAL_EVIDENCE_REQUIRED"
+      ],
+      "evidenceTypes": [
+        "AUDITOR_APPROVAL_RECORD"
+      ],
+      "outputSectionIds": [
+        "SEC_1_7_ACCOUNTING_CONTROL",
+        "SYSTEM_ONLY"
+      ],
+      "reviewRoles": [
+        "LEGAL",
+        "COMPLIANCE"
+      ],
+      "circ005RequirementLinks": [
+        "CIRC005_1_7_FCP_ACCOUNTING_CONTROL_PERSONS"
+      ],
+      "inst066RequirementLinks": [],
+      "status": "EXTRACTED_UNVERIFIED_PENDING_LEGAL_AND_COMPLIANCE_REVIEW",
+      "activation": "FORBIDDEN",
+      "legalReviewStatus": "PENDING",
+      "complianceReviewStatus": "PENDING",
+      "specFile": "regulatory/requirements/inst058-candidates/00_SCOPE_APPROVAL_FCP.json",
+      "provenance": {
+        "sourceArtifact": "regulatory/materialized/INSTRUCTION_58_CREPMF_2019.pdf",
+        "ocrDerivative": "regulatory/materialized/INSTRUCTION_58_CREPMF_2019.txt",
+        "articleBlock": "regulatory/requirements/INST058_ARTICLE_BLOCKS_V0_1.json",
+        "textQuality": "OCR_EXTRACTED_UNVERIFIED"
+      }
+    },
+    {
+      "id": "INST058_ART007_REQ002",
+      "sourceId": "INSTRUCTION_58_CREPMF_2019",
+      "sourceSha256": "38258d7cae5518a6bea6b195facbb717e4a98c1eb734b30bc5e7de91917d0c57",
+      "articleId": "INST058_ARTICLE_007",
+      "articleNumber": 7,
+      "sourceBlockId": "INST058_ART007_BLOCK001",
+      "sourcePages": [
+        3,
+        4
+      ],
+      "sourceArticleTextSha256": "e9861ddd630616af080b6581e86169fec063df692a4a99cd20992b2e978a204c",
+      "sourceTextCandidate": "…du Conseil Régional, pour approbation, Le dossier du ou des Commissaires aux Comptes qu’elles ont nommés. La procédure d'approbation concerne Les Commissaires aux Comptes titulaires ainsi que leurs suppléants. Elle s’applique tant à leur première nomination, qu’au renouvellement de leur mandat. Les Commissaires aux Comptes titulaires et suppléants ne peuvent appartenir au même cabinet ou à des structures ayant des liens juridiques ou d'intérêts entre elles. ILen est de même pour Les Co-Commissaires aux Comptes.",
+      "sourceKeywordHits": [
+        "ne peuvent appartenir au même cabinet",
+        "liens juridiques ou d'intérêts",
+        "Co-Commissaires"
+      ],
+      "normalizedRequirementCandidate": "Les commissaires aux comptes titulaires et suppléants, ainsi que les co-commissaires, doivent être contrôlés au regard des incompatibilités de cabinet ou de liens juridiques ou d'intérêts décrites par l'article 7.",
+      "applicabilityCandidate": "MULTIPLE_AUDITORS_OR_AUDITOR_AND_ALTERNATE",
+      "products": [
+        "MANAGEMENT_COMPANY",
+        "OPCVM",
+        "FCP",
+        "SICAV",
+        "OTHER_OPC"
+      ],
+      "documentTypes": [
+        "AUDITOR_REGISTER",
+        "INDEPENDENCE_ASSESSMENT"
+      ],
+      "canonicalFields": [
+        "accounting_control.responsible_persons[]",
+        "accounting_control.independence_assessment",
+        "conflicts.audit_firms[]"
+      ],
+      "questionIds": [
+        "Q_AUDITOR_INDEPENDENCE"
+      ],
+      "clauseGroupIds": [],
+      "controlIds": [
+        "RULE_AUDITOR_FIRM_AND_INTEREST_INDEPENDENCE"
+      ],
+      "evidenceTypes": [
+        "AUDITOR_INDEPENDENCE_DECLARATION",
+        "AUDIT_FIRM_REGISTER"
+      ],
+      "outputSectionIds": [
+        "SYSTEM_ONLY"
+      ],
+      "reviewRoles": [
+        "LEGAL",
+        "COMPLIANCE"
+      ],
+      "circ005RequirementLinks": [
+        "CIRC005_1_7_FCP_ACCOUNTING_CONTROL_PERSONS"
+      ],
+      "inst066RequirementLinks": [],
+      "status": "EXTRACTED_UNVERIFIED_PENDING_LEGAL_AND_COMPLIANCE_REVIEW",
+      "activation": "FORBIDDEN",
+      "legalReviewStatus": "PENDING",
+      "complianceReviewStatus": "PENDING",
+      "specFile": "regulatory/requirements/inst058-candidates/00_SCOPE_APPROVAL_FCP.json",
+      "provenance": {
+        "sourceArtifact": "regulatory/materialized/INSTRUCTION_58_CREPMF_2019.pdf",
+        "ocrDerivative": "regulatory/materialized/INSTRUCTION_58_CREPMF_2019.txt",
+        "articleBlock": "regulatory/requirements/INST058_ARTICLE_BLOCKS_V0_1.json",
+        "textQuality": "OCR_EXTRACTED_UNVERIFIED"
+      }
+    },
+    {
+      "id": "INST058_ART011_REQ001",
+      "sourceId": "INSTRUCTION_58_CREPMF_2019",
+      "sourceSha256": "38258d7cae5518a6bea6b195facbb717e4a98c1eb734b30bc5e7de91917d0c57",
+      "articleId": "INST058_ARTICLE_011",
+      "articleNumber": 11,
+      "sourceBlockId": "INST058_ART011_BLOCK001",
+      "sourcePages": [
+        5,
+        6,
+        7
+      ],
+      "sourceArticleTextSha256": "8ff1b4e08d589ebbd341ab71c44cc228b6301077971db23d55ffaa250b59f185",
+      "sourceTextCandidate": "Article 11 : Contenu du dossier d’approbation des Commissaires aux Comptes Le contenu du dossier d'approbation des Commissaires aux Comptes des Sociétés Cotées et des Structures Agréées à l'exception des OPC ne disposant pas de personnalité morale est décrit comme ci-après : 1. Nomination des Commissaires aux Comptes par une Structure Agréée ou une Société Cotée Le dossier doit comporter, en plus de la demande : Cas d’un Commissaire aux Comptes, personne physique + le procès-verbal de l'Assemblée Générale des actionnaires ayant désigné Le Commissaire aux Comptes ; + la lettre d'acceptation du mandat qui lui a été confié (indiquer l’antériorité de la relation et La période actuelle du mandat), ele curriculum vitae daté et signé ; +_ l'attestation d’inscription à l'Ordre des Experts Comptables et Comptables Agréés datant de moins de six mois en cas d'absence sur la liste fournie par l'Ordre des Experts Comptables ; + _ l'engagement écrit du Commissaire aux Comptes de n’exercer directement ou indirectement aucune activité ou fonction incompatible et d’éviter tout conflit d'intérêt ; + _ l'engagement écrit du Commissaire aux Comptes à se conformer aux normes de contrôle de qualité des prestations édictées par l'OHADA; + _ l'engagement écrit du Commissaire aux Comptes à respecter La réglementation du marché financier régional ; + les références du Commissaire aux Comptes en matière d'audit et de Commissariat aux Comptes. Les références concernant les sociétés cotées à La BRVM et Les structures agréées doivent être précises. Cas d’un Commissaire aux Comptes, personne morale + Le procès-verbal de l’Assemblée Générale des actionnaires ayant désigné le cabinet ; + la lettre d’acceptation du mandat qui lui a été confié (indiquer l’antériorité de la relation et la période actuelle…",
+      "sourceKeywordHits": [
+        "OPC ne disposant pas de personnalité morale",
+        "procès-verbal de Conseil d'Administration",
+        "fixant La durée du mandat"
+      ],
+      "normalizedRequirementCandidate": "Pour les OPC sans personnalité morale, le procès-verbal du Conseil d'Administration de la société de gestion fixant la durée du mandat remplace le procès-verbal d'Assemblée Générale exigé dans le dossier générique de nomination ou renouvellement.",
+      "applicabilityCandidate": "FCP_OR_OTHER_OPC_WITHOUT_LEGAL_PERSONALITY",
+      "products": [
+        "FCP",
+        "OTHER_OPC_WITHOUT_LEGAL_PERSONALITY"
+      ],
+      "documentTypes": [
+        "AUDITOR_APPROVAL_DOSSIER",
+        "BOARD_MINUTES"
+      ],
+      "canonicalFields": [
+        "accounting_control.appointment_evidence",
+        "accounting_control.mandate_duration",
+        "manager.governance_minutes[]"
+      ],
+      "questionIds": [
+        "Q_AUDITOR_APPOINTMENT_EVIDENCE",
+        "Q_AUDITOR_MANDATE_DURATION"
+      ],
+      "clauseGroupIds": [
+        "CG_ACCOUNTING_CONTROL"
+      ],
+      "controlIds": [
+        "RULE_FCP_AUDITOR_BOARD_MINUTES_REQUIRED",
+        "RULE_FCP_AUDITOR_AGM_MINUTES_NOT_REQUIRED_WHEN_BOARD_MINUTES_APPLY"
+      ],
+      "evidenceTypes": [
+        "BOARD_MINUTES",
+        "AUDITOR_APPROVAL_DOSSIER"
+      ],
+      "outputSectionIds": [
+        "SEC_1_7_ACCOUNTING_CONTROL",
+        "SYSTEM_ONLY"
+      ],
+      "reviewRoles": [
+        "LEGAL",
+        "COMPLIANCE"
+      ],
+      "circ005RequirementLinks": [
+        "CIRC005_1_7_FCP_ACCOUNTING_CONTROL_PERSONS"
+      ],
+      "inst066RequirementLinks": [],
+      "status": "EXTRACTED_UNVERIFIED_PENDING_LEGAL_AND_COMPLIANCE_REVIEW",
+      "activation": "FORBIDDEN",
+      "legalReviewStatus": "PENDING",
+      "complianceReviewStatus": "PENDING",
+      "specFile": "regulatory/requirements/inst058-candidates/00_SCOPE_APPROVAL_FCP.json",
+      "provenance": {
+        "sourceArtifact": "regulatory/materialized/INSTRUCTION_58_CREPMF_2019.pdf",
+        "ocrDerivative": "regulatory/materialized/INSTRUCTION_58_CREPMF_2019.txt",
+        "articleBlock": "regulatory/requirements/INST058_ARTICLE_BLOCKS_V0_1.json",
+        "textQuality": "OCR_EXTRACTED_UNVERIFIED"
+      }
+    },
+    {
+      "id": "INST058_ART012_REQ001",
+      "sourceId": "INSTRUCTION_58_CREPMF_2019",
+      "sourceSha256": "38258d7cae5518a6bea6b195facbb717e4a98c1eb734b30bc5e7de91917d0c57",
+      "articleId": "INST058_ARTICLE_012",
+      "articleNumber": 12,
+      "sourceBlockId": "INST058_ART012_BLOCK001",
+      "sourcePages": [
+        7
+      ],
+      "sourceArticleTextSha256": "eb57ff3caaa6a819e8fc2a358f832db060f8eefed0581dcd22e0097a10d1f552",
+      "sourceTextCandidate": "Article 12 : Maintien des conditions d'approbation Les Commissaires aux Comptes figurant sur la liste tenue par Le Conseil Régional doivent l'informer, dans Les meilleurs délais, de tout changement dans les éléments constitutifs de leur dossier d'approbation, notamment en cas de suspension par VOrdre des Experts Comptables ou de radiation du tableau dudit Ordre, d'empêchement ou de faillite personnelle, de redressement judiciaire et de condamnation par un tribunal. Ils sont tenus d’informer Le Conseil Régional, dans les 30 jours suivant la survenance du fait, de tout changement du signataire exerçant la mission au nom d’une société de Commissaires aux comptes, et de tout ajout d’un cosignataire. CHAPITRE 4 - EXERCICE DU COMMISSARIAT AUX COMPTES",
+      "sourceKeywordHits": [
+        "tout changement",
+        "dossier d'approbation",
+        "suspension",
+        "radiation"
+      ],
+      "normalizedRequirementCandidate": "Les changements affectant les conditions d'approbation du commissaire aux comptes doivent être enregistrés et faire l'objet d'un suivi réglementaire, notamment lorsque son statut professionnel ou sa capacité à exercer évolue.",
+      "applicabilityCandidate": "APPROVED_AUDITOR",
+      "products": [
+        "MANAGEMENT_COMPANY",
+        "OPCVM",
+        "FCP",
+        "SICAV",
+        "OTHER_OPC"
+      ],
+      "documentTypes": [
+        "AUDITOR_REGISTER",
+        "CHANGE_EVENT",
+        "CONTROL_REPORT"
+      ],
+      "canonicalFields": [
+        "accounting_control.responsible_persons[].approval_changes[]",
+        "regulatory_events[]"
+      ],
+      "questionIds": [
+        "Q_AUDITOR_APPROVAL_CHANGE"
+      ],
+      "clauseGroupIds": [],
+      "controlIds": [
+        "RULE_AUDITOR_APPROVAL_CHANGE_RECORDED"
+      ],
+      "evidenceTypes": [
+        "AUDITOR_STATUS_CHANGE_NOTICE",
+        "PROFESSIONAL_ORDER_RECORD"
+      ],
+      "outputSectionIds": [
+        "SYSTEM_ONLY"
+      ],
+      "reviewRoles": [
+        "LEGAL",
+        "COMPLIANCE"
+      ],
+      "circ005RequirementLinks": [
+        "CIRC005_1_7_FCP_ACCOUNTING_CONTROL_PERSONS"
+      ],
+      "inst066RequirementLinks": [],
+      "status": "EXTRACTED_UNVERIFIED_PENDING_LEGAL_AND_COMPLIANCE_REVIEW",
+      "activation": "FORBIDDEN",
+      "legalReviewStatus": "PENDING",
+      "complianceReviewStatus": "PENDING",
+      "specFile": "regulatory/requirements/inst058-candidates/00_SCOPE_APPROVAL_FCP.json",
+      "provenance": {
+        "sourceArtifact": "regulatory/materialized/INSTRUCTION_58_CREPMF_2019.pdf",
+        "ocrDerivative": "regulatory/materialized/INSTRUCTION_58_CREPMF_2019.txt",
+        "articleBlock": "regulatory/requirements/INST058_ARTICLE_BLOCKS_V0_1.json",
+        "textQuality": "OCR_EXTRACTED_UNVERIFIED"
+      }
+    },
+    {
+      "id": "INST058_ART013_REQ001",
+      "sourceId": "INSTRUCTION_58_CREPMF_2019",
+      "sourceSha256": "38258d7cae5518a6bea6b195facbb717e4a98c1eb734b30bc5e7de91917d0c57",
+      "articleId": "INST058_ARTICLE_013",
+      "articleNumber": 13,
+      "sourceBlockId": "INST058_ART013_BLOCK001",
+      "sourcePages": [
+        7,
+        8
+      ],
+      "sourceArticleTextSha256": "c29d37c900d81512f6409118daff47f72a35ea20d242f4af7fe771901cef6d89",
+      "sourceTextCandidate": "Article 13 : Dispositions générales Le contrôle des informations financières des Structures Agréées du marché financier régional et des Sociétés Cotées s'exerce par les Commissaires aux Comptes conformément aux dispositions de L’Acte Uniforme de L'OHADA relatif au Droit des Sociétés Commerciales et du Groupement d'Intérêt Economique (GIE) et des textes spécifiques, Le cas échéant. Les Commissaires aux Comptes restent tenus du respect des dispositions règlementaires prévues par l'Acte Uniforme et Les Règles Comptables Spécifiques notamment au titre du rapport sur les états financiers annuels et des rapports spéciaux à Leurs charges. je Avenue Joseph ANONA T8: (229) 20 21 57 42 / 20 21 5179 O1 BP 1878 Abidjan O1 - Côte d'ivoire Q\\ E Fax: 20 22 16 57 presidencetcrepmf.org wvnmcrepmr.org Instruction n° D JcREPMrI2019",
+      "sourceKeywordHits": [
+        "contrôle des informations financières",
+        "textes spécifiques"
+      ],
+      "normalizedRequirementCandidate": "Le contrôle des informations financières d'une structure agréée doit être rattaché aux normes comptables et textes spécifiques applicables, sans substituer l'Instruction 58 aux autres sources requises.",
+      "applicabilityCandidate": "REGULATED_STRUCTURE_FINANCIAL_AUDIT",
+      "products": [
+        "MANAGEMENT_COMPANY",
+        "OPCVM",
+        "FCP",
+        "SICAV",
+        "OTHER_OPC"
+      ],
+      "documentTypes": [
+        "AUDIT_POLICY",
+        "FINANCIAL_STATEMENTS",
+        "CONTROL_REPORT"
+      ],
+      "canonicalFields": [
+        "accounting_control.applicable_standards[]",
+        "accounting_control.responsible_persons"
+      ],
+      "questionIds": [
+        "Q_ACCOUNTING_CONTROL_PERSONS"
+      ],
+      "clauseGroupIds": [
+        "CG_ACCOUNTING_CONTROL"
+      ],
+      "controlIds": [
+        "RULE_AUDIT_APPLICABLE_STANDARDS_IDENTIFIED"
+      ],
+      "evidenceTypes": [
+        "AUDIT_ENGAGEMENT",
+        "ACCOUNTING_STANDARD_REFERENCE"
+      ],
+      "outputSectionIds": [
+        "SEC_1_7_ACCOUNTING_CONTROL",
+        "SYSTEM_ONLY"
+      ],
+      "reviewRoles": [
+        "LEGAL",
+        "COMPLIANCE"
+      ],
+      "circ005RequirementLinks": [
+        "CIRC005_1_7_FCP_ACCOUNTING_CONTROL_PERSONS"
+      ],
+      "inst066RequirementLinks": [
+        "INST066_ART037_REQ003"
+      ],
+      "status": "EXTRACTED_UNVERIFIED_PENDING_LEGAL_AND_COMPLIANCE_REVIEW",
+      "activation": "FORBIDDEN",
+      "legalReviewStatus": "PENDING",
+      "complianceReviewStatus": "PENDING",
+      "specFile": "regulatory/requirements/inst058-candidates/01_MISSIONS_REPORTING_OPC.json",
+      "provenance": {
+        "sourceArtifact": "regulatory/materialized/INSTRUCTION_58_CREPMF_2019.pdf",
+        "ocrDerivative": "regulatory/materialized/INSTRUCTION_58_CREPMF_2019.txt",
+        "articleBlock": "regulatory/requirements/INST058_ARTICLE_BLOCKS_V0_1.json",
+        "textQuality": "OCR_EXTRACTED_UNVERIFIED"
+      }
+    },
+    {
+      "id": "INST058_ART014_REQ001",
+      "sourceId": "INSTRUCTION_58_CREPMF_2019",
+      "sourceSha256": "38258d7cae5518a6bea6b195facbb717e4a98c1eb734b30bc5e7de91917d0c57",
+      "articleId": "INST058_ARTICLE_014",
+      "articleNumber": 14,
+      "sourceBlockId": "INST058_ART014_BLOCK001",
+      "sourcePages": [
+        8
+      ],
+      "sourceArticleTextSha256": "2080651ba1df53e55e43633d066edbe67fec8521563ddf74cead16db000c318a",
+      "sourceTextCandidate": "Article 14 : Missions des Commissaires aux Comptes titulaires et suppléants Les Commissaires aux Comptes sont investis d'une mission générale qui comporte un audit de L'information financière et comptable et des vérifications spécifiques. Ils peuvent également réaliser des missions spécifiques prévues par Les réglementations des entités auprès desquelles ils exercent leurs mandats de commissariat aux comptes. Par ailleurs, en leur qualité de Commissaires aux Comptes, ils effectuent des interventions connexes à leur mission générale, consécutives à des opérations particulières ou à des événements nécessitant Leur intervention. Conformément aux exigences légales et réglementaires, les Commissaires aux comptes mènent, en toute indépendance, Les diligences appropriées pour apprécier la qualité de l'information financière et comptable mise à la disposition du public ou transmise au Conseil Régional.",
+      "sourceKeywordHits": [
+        "mission générale",
+        "audit de L'information financière et comptable",
+        "vérifications spécifiques"
+      ],
+      "normalizedRequirementCandidate": "La mission du commissaire aux comptes doit couvrir l'audit de l'information financière et comptable ainsi que les vérifications spécifiques applicables à l'entité contrôlée.",
+      "applicabilityCandidate": "APPROVED_AUDITOR_MANDATE",
+      "products": [
+        "MANAGEMENT_COMPANY",
+        "OPCVM",
+        "FCP",
+        "SICAV",
+        "OTHER_OPC"
+      ],
+      "documentTypes": [
+        "AUDIT_ENGAGEMENT",
+        "CONTROL_REPORT"
+      ],
+      "canonicalFields": [
+        "accounting_control.mandate_scope",
+        "accounting_control.specific_diligences[]"
+      ],
+      "questionIds": [
+        "Q_AUDITOR_MANDATE_SCOPE"
+      ],
+      "clauseGroupIds": [
+        "CG_ACCOUNTING_CONTROL"
+      ],
+      "controlIds": [
+        "RULE_AUDITOR_MANDATE_SCOPE_COMPLETE"
+      ],
+      "evidenceTypes": [
+        "AUDIT_ENGAGEMENT",
+        "AUDIT_PLAN"
+      ],
+      "outputSectionIds": [
+        "SEC_1_7_ACCOUNTING_CONTROL",
+        "SYSTEM_ONLY"
+      ],
+      "reviewRoles": [
+        "LEGAL",
+        "COMPLIANCE"
+      ],
+      "circ005RequirementLinks": [
+        "CIRC005_1_7_FCP_ACCOUNTING_CONTROL_PERSONS"
+      ],
+      "inst066RequirementLinks": [],
+      "status": "EXTRACTED_UNVERIFIED_PENDING_LEGAL_AND_COMPLIANCE_REVIEW",
+      "activation": "FORBIDDEN",
+      "legalReviewStatus": "PENDING",
+      "complianceReviewStatus": "PENDING",
+      "specFile": "regulatory/requirements/inst058-candidates/01_MISSIONS_REPORTING_OPC.json",
+      "provenance": {
+        "sourceArtifact": "regulatory/materialized/INSTRUCTION_58_CREPMF_2019.pdf",
+        "ocrDerivative": "regulatory/materialized/INSTRUCTION_58_CREPMF_2019.txt",
+        "articleBlock": "regulatory/requirements/INST058_ARTICLE_BLOCKS_V0_1.json",
+        "textQuality": "OCR_EXTRACTED_UNVERIFIED"
+      }
+    },
+    {
+      "id": "INST058_ART015_REQ001",
+      "sourceId": "INSTRUCTION_58_CREPMF_2019",
+      "sourceSha256": "38258d7cae5518a6bea6b195facbb717e4a98c1eb734b30bc5e7de91917d0c57",
+      "articleId": "INST058_ARTICLE_015",
+      "articleNumber": 15,
+      "sourceBlockId": "INST058_ART015_BLOCK001",
+      "sourcePages": [
+        8
+      ],
+      "sourceArticleTextSha256": "f7644e9679477ce24e74699fc2f9884c9f0d776ec889ae7b6320d439c766367b",
+      "sourceTextCandidate": "Article 15 : Rotation des mandats La durée d'exercice d’un mandat auprès d’une même société cotée ou d’une structure agréée ne pourra excéder trois (03) mandats successifs, y compris Le mandat en cours à compter de l’entrée en vigueur de La présente Instruction. Une période probatoire équivalente à six (06) exercices sociaux devra être observée avant toute nouvelle désignation par la même entité. Les Commissaires aux Comptes sont tenus de veiller au respect de toute disposition plus contraignante fixée par une Autorité de supervision du marché financier à laquelle ils sont assujettis. CHAPITRE 5 - OPINION DU COMMISSAIRE AUX COMPTES SUR LES ETATS FINANCIERS",
+      "sourceKeywordHits": [
+        "trois (03) mandats successifs",
+        "six (06) exercices sociaux"
+      ],
+      "normalizedRequirementCandidate": "La durée cumulée des mandats successifs du commissaire aux comptes et la période avant une nouvelle désignation par la même entité doivent être traçables ; les valeurs numériques OCR de l'article 15 restent inactives jusqu'à vérification juridique et conformité.",
+      "applicabilityCandidate": "AUDITOR_ROTATION_TRACKING",
+      "products": [
+        "MANAGEMENT_COMPANY",
+        "OPCVM",
+        "FCP",
+        "SICAV",
+        "OTHER_OPC"
+      ],
+      "documentTypes": [
+        "AUDITOR_REGISTER",
+        "CONTROL_REPORT"
+      ],
+      "canonicalFields": [
+        "accounting_control.responsible_persons[].mandates[]",
+        "accounting_control.rotation_history"
+      ],
+      "questionIds": [
+        "Q_AUDITOR_MANDATE_HISTORY"
+      ],
+      "clauseGroupIds": [],
+      "controlIds": [
+        "RULE_ART015_ROTATION_THRESHOLDS_PENDING_DUAL_REVIEW"
+      ],
+      "evidenceTypes": [
+        "AUDITOR_APPOINTMENT_HISTORY",
+        "BOARD_MINUTES"
+      ],
+      "outputSectionIds": [
+        "SYSTEM_ONLY"
+      ],
+      "reviewRoles": [
+        "LEGAL",
+        "COMPLIANCE"
+      ],
+      "circ005RequirementLinks": [
+        "CIRC005_1_7_FCP_ACCOUNTING_CONTROL_PERSONS"
+      ],
+      "inst066RequirementLinks": [],
+      "status": "EXTRACTED_UNVERIFIED_PENDING_LEGAL_AND_COMPLIANCE_REVIEW",
+      "activation": "FORBIDDEN",
+      "legalReviewStatus": "PENDING",
+      "complianceReviewStatus": "PENDING",
+      "specFile": "regulatory/requirements/inst058-candidates/01_MISSIONS_REPORTING_OPC.json",
+      "provenance": {
+        "sourceArtifact": "regulatory/materialized/INSTRUCTION_58_CREPMF_2019.pdf",
+        "ocrDerivative": "regulatory/materialized/INSTRUCTION_58_CREPMF_2019.txt",
+        "articleBlock": "regulatory/requirements/INST058_ARTICLE_BLOCKS_V0_1.json",
+        "textQuality": "OCR_EXTRACTED_UNVERIFIED"
+      }
+    },
+    {
+      "id": "INST058_ART016_REQ001",
+      "sourceId": "INSTRUCTION_58_CREPMF_2019",
+      "sourceSha256": "38258d7cae5518a6bea6b195facbb717e4a98c1eb734b30bc5e7de91917d0c57",
+      "articleId": "INST058_ARTICLE_016",
+      "articleNumber": 16,
+      "sourceBlockId": "INST058_ART016_BLOCK001",
+      "sourcePages": [
+        8,
+        9
+      ],
+      "sourceArticleTextSha256": "fb3550103694aa1a018f8aa65f44cb7b9b0ec14eefc681f3072e8c4e29e689ac",
+      "sourceTextCandidate": "Article 16 : Contenu du rapport d'audit annuel L'opinion du Commissaire aux Comptes est matérialisée dans un rapport qui doit être daté et signé par Le Commissaire aux comptes dont La désignation a été formellement approuvée par le Conseil Régional. Ce rapport doit être transmis au Conseil Régional par le Commissaire aux Comptes au plus tard sept (7) jours après la tenue de l'Assemblée Générale Ordinaire des Actionnaires. Si plusieurs Commissaires aux Comptes sont en fonction, ils peuvent procéder séparément à leurs investigations, vérifications et contrôles mais ils établissent un rapport commun. En cas de désaccord entre les Commissaires aux Comptes, le rapport indique les différentes opinions exprimées. Les Commissaires aux Comptes doivent examiner au titre du rapport d'audit annuel, notamment l’organisation interne, La gouvernance, le fonctionnement des organes sociaux, l'exercice du contrôle interne, la qualité du système d’information et comptable, le respect des exigences réglementaires spécifiques le cas échéant, ainsi que La gestion et La qualité des risques. Gi amet cu core Avenue Joseph ANOMA presidencegerepmt.org | ui Tél: (225) 20 21 57 42 / 20 21 51 79 Fax: 20 22 16 57 u.cropmf.org Instructionn° __2 Ù © JCREPMF/2019 Le rapport d’audit des Commissaires aux Comptes des sociétés cotées et des structures agréées comporte notamment Les points-clés ci-après : = L'opinion ; - les observations (obligatoires en cas de changement de méthode comptable et d'incertitude sur la continuité de l'exploitation, etc.) ; + les vérifications spécifiques prévues par La loi et Les exigences réglementaires notamment la revue des règles prudentielles, Le cas échéant, en fonction du secteur d’activité. Les diligences spécifiques du Commissaire aux Comptes sur certaines parties du r…",
+      "sourceKeywordHits": [
+        "rapport d'audit annuel",
+        "daté et signé",
+        "sept (7) jours"
+      ],
+      "normalizedRequirementCandidate": "Lorsqu'un rapport d'audit annuel relevant de l'article 16 est applicable, il doit être daté, signé par le commissaire aux comptes formellement approuvé et inscrit au calendrier de transmission ; le délai OCR ne doit pas être activé sans revue.",
+      "applicabilityCandidate": "ENTITY_WITH_ART016_ANNUAL_AUDIT_REPORTING_WHERE_AGM_APPLIES",
+      "products": [
+        "MANAGEMENT_COMPANY",
+        "SICAV",
+        "OTHER_REGULATED_STRUCTURE"
+      ],
+      "documentTypes": [
+        "ANNUAL_AUDIT_REPORT",
+        "REGULATORY_REPORTING_CALENDAR"
+      ],
+      "canonicalFields": [
+        "periodic_reporting.annual.audit_report",
+        "periodic_reporting.annual.audit_report_deadline",
+        "accounting_control.responsible_persons[].approval_status"
+      ],
+      "questionIds": [
+        "Q_ANNUAL_AUDIT_REPORTING_CALENDAR"
+      ],
+      "clauseGroupIds": [],
+      "controlIds": [
+        "RULE_ART016_REPORT_SIGNATURE_AND_APPROVAL_REQUIRED",
+        "RULE_ART016_DEADLINE_PENDING_DUAL_REVIEW"
+      ],
+      "evidenceTypes": [
+        "ANNUAL_AUDIT_REPORT",
+        "AUDITOR_APPROVAL_RECORD",
+        "REGULATORY_SUBMISSION_RECEIPT"
+      ],
+      "outputSectionIds": [
+        "REGULATORY_REPORTING_PACKAGE"
+      ],
+      "reviewRoles": [
+        "LEGAL",
+        "COMPLIANCE"
+      ],
+      "circ005RequirementLinks": [],
+      "inst066RequirementLinks": [
+        "INST066_ART037_REQ003"
+      ],
+      "status": "EXTRACTED_UNVERIFIED_PENDING_LEGAL_AND_COMPLIANCE_REVIEW",
+      "activation": "FORBIDDEN",
+      "legalReviewStatus": "PENDING",
+      "complianceReviewStatus": "PENDING",
+      "specFile": "regulatory/requirements/inst058-candidates/01_MISSIONS_REPORTING_OPC.json",
+      "provenance": {
+        "sourceArtifact": "regulatory/materialized/INSTRUCTION_58_CREPMF_2019.pdf",
+        "ocrDerivative": "regulatory/materialized/INSTRUCTION_58_CREPMF_2019.txt",
+        "articleBlock": "regulatory/requirements/INST058_ARTICLE_BLOCKS_V0_1.json",
+        "textQuality": "OCR_EXTRACTED_UNVERIFIED"
+      }
+    },
+    {
+      "id": "INST058_ART017_REQ001",
+      "sourceId": "INSTRUCTION_58_CREPMF_2019",
+      "sourceSha256": "38258d7cae5518a6bea6b195facbb717e4a98c1eb734b30bc5e7de91917d0c57",
+      "articleId": "INST058_ARTICLE_017",
+      "articleNumber": 17,
+      "sourceBlockId": "INST058_ART017_BLOCK001",
+      "sourcePages": [
+        9
+      ],
+      "sourceArticleTextSha256": "cc1ff68de9184351db107c39d171a9012dc9ef94ca7ff450a72d151efefecb06",
+      "sourceTextCandidate": "Article 17 : Rapport sur les états financiers de fin de premier semestre Le Commissaire aux Comptes procède à une revue des comptes semestriels des sociétés cotées et des structures agréées hors FCP et FCTC et transmet à la structure contrôlée dans un délai de deux (2) mois à compter de la fin du premier semestre, un rapport d'examen limité sur Les états financiers de fin de premier semestre selon Les normes d'examen limité en vigueur.",
+      "sourceKeywordHits": [
+        "hors FCP et FCTC",
+        "rapport d'examen limité"
+      ],
+      "normalizedRequirementCandidate": "L'examen limité semestriel prévu par l'article 17 ne doit pas être imposé au FCP ou au FCTC lorsque l'exclusion explicite de ces véhicules s'applique ; cette exclusion doit être conservée comme règle de périmètre et non comme donnée manquante.",
+      "applicabilityCandidate": "SEMIANNUAL_AUDIT_REVIEW_EXCLUDES_FCP_AND_FCTC",
+      "products": [
+        "FCP",
+        "FCTC",
+        "MANAGEMENT_COMPANY",
+        "SICAV",
+        "OTHER_REGULATED_STRUCTURE"
+      ],
+      "documentTypes": [
+        "CONTROL_REPORT",
+        "REGULATORY_COVERAGE"
+      ],
+      "canonicalFields": [
+        "regulatory_coverage.requirements",
+        "periodic_reporting.semiannual.audit_review_applicability"
+      ],
+      "questionIds": [
+        "Q_SEMIANNUAL_AUDIT_REVIEW_APPLICABILITY"
+      ],
+      "clauseGroupIds": [],
+      "controlIds": [
+        "RULE_INST058_ART017_NOT_APPLICABLE_TO_FCP_FCTC_WITH_SOURCE_JUSTIFICATION"
+      ],
+      "evidenceTypes": [
+        "OFFICIAL_REGULATORY_SOURCE"
+      ],
+      "outputSectionIds": [
+        "SYSTEM_ONLY"
+      ],
+      "reviewRoles": [
+        "LEGAL",
+        "COMPLIANCE"
+      ],
+      "circ005RequirementLinks": [
+        "CIRC005_1_4_FCP_PERIODIC_REPORTS_AVAILABILITY"
+      ],
+      "inst066RequirementLinks": [
+        "INST066_ART037_REQ004"
+      ],
+      "status": "EXTRACTED_UNVERIFIED_PENDING_LEGAL_AND_COMPLIANCE_REVIEW",
+      "activation": "FORBIDDEN",
+      "legalReviewStatus": "PENDING",
+      "complianceReviewStatus": "PENDING",
+      "specFile": "regulatory/requirements/inst058-candidates/01_MISSIONS_REPORTING_OPC.json",
+      "provenance": {
+        "sourceArtifact": "regulatory/materialized/INSTRUCTION_58_CREPMF_2019.pdf",
+        "ocrDerivative": "regulatory/materialized/INSTRUCTION_58_CREPMF_2019.txt",
+        "articleBlock": "regulatory/requirements/INST058_ARTICLE_BLOCKS_V0_1.json",
+        "textQuality": "OCR_EXTRACTED_UNVERIFIED"
+      }
+    },
+    {
+      "id": "INST058_ART018_REQ001",
+      "sourceId": "INSTRUCTION_58_CREPMF_2019",
+      "sourceSha256": "38258d7cae5518a6bea6b195facbb717e4a98c1eb734b30bc5e7de91917d0c57",
+      "articleId": "INST058_ARTICLE_018",
+      "articleNumber": 18,
+      "sourceBlockId": "INST058_ART018_BLOCK001",
+      "sourcePages": [
+        9
+      ],
+      "sourceArticleTextSha256": "cc5e8875d0c6c0e132e225647ad0066f0e2e17c71717de851dd357e1e17fd0a2",
+      "sourceTextCandidate": "Article 18 : Opinions Les états financiers, sociaux et/ou consolidés, clos au 31 décembre doivent être examinés par Le ou les Commissaire(s) aux Comptes, lesquels : - soit émettent une opinion indiquant que les états financiers de synthèse sont réguliers et sincères et donnent une image fidèle du résultat des opérations de l'exercice écoulé ainsi que de la situation financière et du patrimoine, à la fin de cet exercice ; - soit expriment en la motivant, une opinion avec réserve ou défavorable ou indiquent qu’ils sont dans l'impossibilité d'exprimer une opinion. Lorsque l'opinion est assortie de réserves ou que l’on se trouve dans un cas d'opinion défavorable ou d’impossibilité d’opiner, le Commissaire aux Comptes, y compris celui opérant auprès des OPC hors FCP et FCTC, doit adresser un rapport circonstancié au Conseil Régional dans les trente (30) jours suivant l'émission du rapport d’audit annuel.",
+      "sourceKeywordHits": [
+        "Opinions",
+        "opinion",
+        "réserves",
+        "impossibilité d’opiner"
+      ],
+      "normalizedRequirementCandidate": "Le type d'opinion du commissaire aux comptes sur les états financiers doit être enregistré et toute réserve, opinion défavorable ou impossibilité d'opiner doit déclencher les diligences réglementaires applicables sans supposer leur applicabilité au FCP lorsqu'elle n'est pas établie.",
+      "applicabilityCandidate": "AUDITED_FINANCIAL_STATEMENTS",
+      "products": [
+        "MANAGEMENT_COMPANY",
+        "OPCVM",
+        "FCP",
+        "SICAV",
+        "OTHER_OPC"
+      ],
+      "documentTypes": [
+        "ANNUAL_AUDIT_REPORT",
+        "CONTROL_REPORT"
+      ],
+      "canonicalFields": [
+        "accounting_control.audit_opinion",
+        "accounting_control.audit_opinion_qualifications[]",
+        "regulatory_events[]"
+      ],
+      "questionIds": [
+        "Q_AUDIT_OPINION"
+      ],
+      "clauseGroupIds": [],
+      "controlIds": [
+        "RULE_AUDIT_OPINION_RECORDED",
+        "RULE_QUALIFIED_OPINION_REQUIRES_APPLICABILITY_REVIEW"
+      ],
+      "evidenceTypes": [
+        "ANNUAL_AUDIT_REPORT",
+        "CIRCUMSTANTIATED_AUDITOR_REPORT"
+      ],
+      "outputSectionIds": [
+        "REGULATORY_REPORTING_PACKAGE",
+        "SYSTEM_ONLY"
+      ],
+      "reviewRoles": [
+        "LEGAL",
+        "COMPLIANCE"
+      ],
+      "circ005RequirementLinks": [
+        "CIRC005_1_7_FCP_ACCOUNTING_CONTROL_PERSONS"
+      ],
+      "inst066RequirementLinks": [
+        "INST066_ART037_REQ003"
+      ],
+      "status": "EXTRACTED_UNVERIFIED_PENDING_LEGAL_AND_COMPLIANCE_REVIEW",
+      "activation": "FORBIDDEN",
+      "legalReviewStatus": "PENDING",
+      "complianceReviewStatus": "PENDING",
+      "specFile": "regulatory/requirements/inst058-candidates/01_MISSIONS_REPORTING_OPC.json",
+      "provenance": {
+        "sourceArtifact": "regulatory/materialized/INSTRUCTION_58_CREPMF_2019.pdf",
+        "ocrDerivative": "regulatory/materialized/INSTRUCTION_58_CREPMF_2019.txt",
+        "articleBlock": "regulatory/requirements/INST058_ARTICLE_BLOCKS_V0_1.json",
+        "textQuality": "OCR_EXTRACTED_UNVERIFIED"
+      }
+    },
+    {
+      "id": "INST058_ART019_REQ001",
+      "sourceId": "INSTRUCTION_58_CREPMF_2019",
+      "sourceSha256": "38258d7cae5518a6bea6b195facbb717e4a98c1eb734b30bc5e7de91917d0c57",
+      "articleId": "INST058_ARTICLE_019",
+      "articleNumber": 19,
+      "sourceBlockId": "INST058_ART019_BLOCK001",
+      "sourcePages": [
+        9,
+        10
+      ],
+      "sourceArticleTextSha256": "a95a9e2a16e726c36141a11efe592405b3ce71c3c1f18bf187320f102fb9cc94",
+      "sourceTextCandidate": "Article 19 : Devoir d’information Lorsqu’au cours de leur mission, les Commissaires aux Comptes relèvent des faits délictueux ou de nature à compromettre la continuité de L’exploitation d’une société cotée ou d’une structure agréée, ils doivent, sans délai, en informer par écrit le Conseil Régional, avec ampliation à la société cotée ou la structure agréée concernée. AVR Joseph ANONA F LOPEZ TE TEE O1 BP 1878 Abidjan O1 - Côte d'ivoire Fax: 20 22 1657 gresidencecrepmf.ors F B\\ 4 um crepntorg Instructionn° __ © Ù JCREPMF/2019 CHAPITRE 6 - DILIGENCES SPECIFIQUES LIEES AU COMMISSARIAT AUX COMPTES",
+      "sourceKeywordHits": [
+        "faits délictueux",
+        "compromettre la continuité",
+        "sans délai"
+      ],
+      "normalizedRequirementCandidate": "Les faits délictueux ou événements susceptibles de compromettre la continuité d'exploitation relevés par le commissaire aux comptes doivent être traçables comme événements réglementaires avec leur notification et leurs preuves.",
+      "applicabilityCandidate": "AUDITOR_IDENTIFIES_SERIOUS_FACT_OR_GOING_CONCERN_EVENT",
+      "products": [
+        "MANAGEMENT_COMPANY",
+        "OPCVM",
+        "FCP",
+        "SICAV",
+        "OTHER_OPC"
+      ],
+      "documentTypes": [
+        "REGULATORY_EVENT",
+        "AUDITOR_NOTICE",
+        "CONTROL_REPORT"
+      ],
+      "canonicalFields": [
+        "regulatory_events[]",
+        "accounting_control.notifications[]",
+        "continuity.events[]"
+      ],
+      "questionIds": [
+        "Q_AUDITOR_SERIOUS_EVENT_NOTIFICATION"
+      ],
+      "clauseGroupIds": [],
+      "controlIds": [
+        "RULE_AUDITOR_SERIOUS_EVENT_NOTIFICATION_EVIDENCE_REQUIRED"
+      ],
+      "evidenceTypes": [
+        "AUDITOR_NOTICE",
+        "REGULATORY_SUBMISSION_RECEIPT"
+      ],
+      "outputSectionIds": [
+        "SYSTEM_ONLY"
+      ],
+      "reviewRoles": [
+        "LEGAL",
+        "COMPLIANCE"
+      ],
+      "circ005RequirementLinks": [],
+      "inst066RequirementLinks": [],
+      "status": "EXTRACTED_UNVERIFIED_PENDING_LEGAL_AND_COMPLIANCE_REVIEW",
+      "activation": "FORBIDDEN",
+      "legalReviewStatus": "PENDING",
+      "complianceReviewStatus": "PENDING",
+      "specFile": "regulatory/requirements/inst058-candidates/01_MISSIONS_REPORTING_OPC.json",
+      "provenance": {
+        "sourceArtifact": "regulatory/materialized/INSTRUCTION_58_CREPMF_2019.pdf",
+        "ocrDerivative": "regulatory/materialized/INSTRUCTION_58_CREPMF_2019.txt",
+        "articleBlock": "regulatory/requirements/INST058_ARTICLE_BLOCKS_V0_1.json",
+        "textQuality": "OCR_EXTRACTED_UNVERIFIED"
+      }
+    },
+    {
+      "id": "INST058_ART020_REQ001",
+      "sourceId": "INSTRUCTION_58_CREPMF_2019",
+      "sourceSha256": "38258d7cae5518a6bea6b195facbb717e4a98c1eb734b30bc5e7de91917d0c57",
+      "articleId": "INST058_ARTICLE_020",
+      "articleNumber": 20,
+      "sourceBlockId": "INST058_ART020_BLOCK001",
+      "sourcePages": [
+        10
+      ],
+      "sourceArticleTextSha256": "1d01cf9a7688e8b9d3cae149480f4209d630b62116c946eb2e184f0f40683176",
+      "sourceTextCandidate": "Article 20 : Attestation trimestrielle de la composition détaillée des actifs de VOPC Le Commissaire aux Comptes atteste, par La transmission d’un rapport au Conseil Régional, dans les 30 jours calendaires suivant la fin de chaque trimestre, la composition détaillée des actifs de L'OPC à la date du dernier jour de bourse du trimestre considéré. En cas d’impossibilité pour Le Commissaire aux Comptes de mener à bien cette diligence, il en informe le Conseil Régional par courrier circonstancié dans Le délai imparti.",
+      "sourceKeywordHits": [
+        "composition détaillée des actifs",
+        "30 jours calendaires",
+        "dernier jour de bourse"
+      ],
+      "normalizedRequirementCandidate": "Le commissaire aux comptes doit attester la composition détaillée des actifs de l'OPC à la date du dernier jour de bourse du trimestre considéré et transmettre le rapport correspondant ; le délai de trente jours extrait par OCR reste inactif jusqu'à double revue.",
+      "applicabilityCandidate": "OPC_QUARTERLY_ASSET_COMPOSITION_ATTESTATION",
+      "products": [
+        "OPCVM",
+        "FCP",
+        "SICAV",
+        "OTHER_OPC"
+      ],
+      "documentTypes": [
+        "CERTIFIED_PORTFOLIO",
+        "QUARTERLY_REPORT",
+        "REGULATORY_SUBMISSION"
+      ],
+      "canonicalFields": [
+        "periodic_reporting.quarterly.certified_assets",
+        "periodic_reporting.quarterly.asset_attestation_deadline",
+        "portfolio.snapshot_date"
+      ],
+      "questionIds": [
+        "Q_QUARTERLY_ASSET_ATTESTATION"
+      ],
+      "clauseGroupIds": [],
+      "controlIds": [
+        "RULE_QUARTERLY_ASSET_COMPOSITION_CERTIFIED",
+        "RULE_INST058_ART020_DEADLINE_PENDING_DUAL_REVIEW"
+      ],
+      "evidenceTypes": [
+        "CERTIFIED_PORTFOLIO",
+        "AUDITOR_ATTESTATION",
+        "REGULATORY_SUBMISSION_RECEIPT"
+      ],
+      "outputSectionIds": [
+        "REGULATORY_REPORTING_PACKAGE"
+      ],
+      "reviewRoles": [
+        "LEGAL",
+        "COMPLIANCE"
+      ],
+      "circ005RequirementLinks": [],
+      "inst066RequirementLinks": [
+        "INST066_ART037_REQ005"
+      ],
+      "status": "EXTRACTED_UNVERIFIED_PENDING_LEGAL_AND_COMPLIANCE_REVIEW",
+      "activation": "FORBIDDEN",
+      "legalReviewStatus": "PENDING",
+      "complianceReviewStatus": "PENDING",
+      "specFile": "regulatory/requirements/inst058-candidates/01_MISSIONS_REPORTING_OPC.json",
+      "provenance": {
+        "sourceArtifact": "regulatory/materialized/INSTRUCTION_58_CREPMF_2019.pdf",
+        "ocrDerivative": "regulatory/materialized/INSTRUCTION_58_CREPMF_2019.txt",
+        "articleBlock": "regulatory/requirements/INST058_ARTICLE_BLOCKS_V0_1.json",
+        "textQuality": "OCR_EXTRACTED_UNVERIFIED"
+      }
+    },
+    {
+      "id": "INST058_ART020_REQ002",
+      "sourceId": "INSTRUCTION_58_CREPMF_2019",
+      "sourceSha256": "38258d7cae5518a6bea6b195facbb717e4a98c1eb734b30bc5e7de91917d0c57",
+      "articleId": "INST058_ARTICLE_020",
+      "articleNumber": 20,
+      "sourceBlockId": "INST058_ART020_BLOCK001",
+      "sourcePages": [
+        10
+      ],
+      "sourceArticleTextSha256": "1d01cf9a7688e8b9d3cae149480f4209d630b62116c946eb2e184f0f40683176",
+      "sourceTextCandidate": "Article 20 : Attestation trimestrielle de la composition détaillée des actifs de VOPC Le Commissaire aux Comptes atteste, par La transmission d’un rapport au Conseil Régional, dans les 30 jours calendaires suivant la fin de chaque trimestre, la composition détaillée des actifs de L'OPC à la date du dernier jour de bourse du trimestre considéré. En cas d’impossibilité pour Le Commissaire aux Comptes de mener à bien cette diligence, il en informe le Conseil Régional par courrier circonstancié dans Le délai imparti.",
+      "sourceKeywordHits": [
+        "En cas d’impossibilité",
+        "courrier circonstancié",
+        "délai imparti"
+      ],
+      "normalizedRequirementCandidate": "En cas d'impossibilité pour le commissaire aux comptes de réaliser l'attestation trimestrielle de la composition des actifs, l'impossibilité et le courrier circonstancié au régulateur doivent être enregistrés dans le dossier de preuve.",
+      "applicabilityCandidate": "OPC_QUARTERLY_ASSET_ATTESTATION_FAILURE",
+      "products": [
+        "OPCVM",
+        "FCP",
+        "SICAV",
+        "OTHER_OPC"
+      ],
+      "documentTypes": [
+        "AUDITOR_NOTICE",
+        "CONTROL_REPORT"
+      ],
+      "canonicalFields": [
+        "periodic_reporting.quarterly.attestation_exception",
+        "regulatory_events[]"
+      ],
+      "questionIds": [
+        "Q_QUARTERLY_ASSET_ATTESTATION_EXCEPTION"
+      ],
+      "clauseGroupIds": [],
+      "controlIds": [
+        "RULE_ASSET_ATTESTATION_FAILURE_NOTICE_REQUIRED"
+      ],
+      "evidenceTypes": [
+        "CIRCUMSTANTIATED_AUDITOR_NOTICE",
+        "REGULATORY_SUBMISSION_RECEIPT"
+      ],
+      "outputSectionIds": [
+        "SYSTEM_ONLY"
+      ],
+      "reviewRoles": [
+        "LEGAL",
+        "COMPLIANCE"
+      ],
+      "circ005RequirementLinks": [],
+      "inst066RequirementLinks": [
+        "INST066_ART037_REQ005"
+      ],
+      "status": "EXTRACTED_UNVERIFIED_PENDING_LEGAL_AND_COMPLIANCE_REVIEW",
+      "activation": "FORBIDDEN",
+      "legalReviewStatus": "PENDING",
+      "complianceReviewStatus": "PENDING",
+      "specFile": "regulatory/requirements/inst058-candidates/01_MISSIONS_REPORTING_OPC.json",
+      "provenance": {
+        "sourceArtifact": "regulatory/materialized/INSTRUCTION_58_CREPMF_2019.pdf",
+        "ocrDerivative": "regulatory/materialized/INSTRUCTION_58_CREPMF_2019.txt",
+        "articleBlock": "regulatory/requirements/INST058_ARTICLE_BLOCKS_V0_1.json",
+        "textQuality": "OCR_EXTRACTED_UNVERIFIED"
+      }
+    },
+    {
+      "id": "INST058_ART022_REQ001",
+      "sourceId": "INSTRUCTION_58_CREPMF_2019",
+      "sourceSha256": "38258d7cae5518a6bea6b195facbb717e4a98c1eb734b30bc5e7de91917d0c57",
+      "articleId": "INST058_ARTICLE_022",
+      "articleNumber": 22,
+      "sourceBlockId": "INST058_ART022_BLOCK001",
+      "sourcePages": [
+        10
+      ],
+      "sourceArticleTextSha256": "814c6c26b5d02cf2382b0f9c52b7cc9e95ea541d4c17414dc374ed1e460ad71c",
+      "sourceTextCandidate": "Article 22 : Revue des réglementations spécifiques liées au secteur d'activité Le Commissaire aux Comptes doit s’assurer que les états financiers sont élaborés conformément au référentiel comptable et aux textes spécifiques applicables aux Structures Agréées et aux Sociétés Cotées. S'agissant des entreprises exerçant dans un secteur spécifiquement réglementé, les Commissaires aux Comptes sont tenus, de procéder à une revue du respect de la réglementation à laquelle sont assujetties ces entités. CHAPITRE 7 - RELATIONS ENTRE LE CONSEIL REGIONAL ET LE COMMISSAIRE AUX COMPTES",
+      "sourceKeywordHits": [
+        "référentiel comptable",
+        "textes spécifiques applicables",
+        "secteur spécifiquement réglementé"
+      ],
+      "normalizedRequirementCandidate": "Le commissaire aux comptes doit vérifier que les états financiers sont élaborés selon le référentiel comptable et les textes spécifiques applicables au secteur de la structure contrôlée.",
+      "applicabilityCandidate": "REGULATED_STRUCTURE_WITH_SPECIFIC_ACCOUNTING_OR_SECTOR_RULES",
+      "products": [
+        "MANAGEMENT_COMPANY",
+        "OPCVM",
+        "FCP",
+        "SICAV",
+        "OTHER_OPC"
+      ],
+      "documentTypes": [
+        "AUDIT_REPORT",
+        "ACCOUNTING_POLICY",
+        "CONTROL_REPORT"
+      ],
+      "canonicalFields": [
+        "accounting_control.applicable_standards[]",
+        "accounting_control.sector_specific_reviews[]"
+      ],
+      "questionIds": [
+        "Q_AUDIT_APPLICABLE_STANDARDS"
+      ],
+      "clauseGroupIds": [],
+      "controlIds": [
+        "RULE_FINANCIAL_STATEMENTS_MATCH_APPLICABLE_ACCOUNTING_FRAMEWORK"
+      ],
+      "evidenceTypes": [
+        "AUDIT_REPORT",
+        "ACCOUNTING_POLICY",
+        "COMPLIANCE_REVIEW_REPORT"
+      ],
+      "outputSectionIds": [
+        "SYSTEM_ONLY"
+      ],
+      "reviewRoles": [
+        "LEGAL",
+        "COMPLIANCE"
+      ],
+      "circ005RequirementLinks": [],
+      "inst066RequirementLinks": [
+        "INST066_ART037_REQ003"
+      ],
+      "status": "EXTRACTED_UNVERIFIED_PENDING_LEGAL_AND_COMPLIANCE_REVIEW",
+      "activation": "FORBIDDEN",
+      "legalReviewStatus": "PENDING",
+      "complianceReviewStatus": "PENDING",
+      "specFile": "regulatory/requirements/inst058-candidates/01_MISSIONS_REPORTING_OPC.json",
+      "provenance": {
+        "sourceArtifact": "regulatory/materialized/INSTRUCTION_58_CREPMF_2019.pdf",
+        "ocrDerivative": "regulatory/materialized/INSTRUCTION_58_CREPMF_2019.txt",
+        "articleBlock": "regulatory/requirements/INST058_ARTICLE_BLOCKS_V0_1.json",
+        "textQuality": "OCR_EXTRACTED_UNVERIFIED"
+      }
+    },
+    {
+      "id": "INST058_ART023_REQ001",
+      "sourceId": "INSTRUCTION_58_CREPMF_2019",
+      "sourceSha256": "38258d7cae5518a6bea6b195facbb717e4a98c1eb734b30bc5e7de91917d0c57",
+      "articleId": "INST058_ARTICLE_023",
+      "articleNumber": 23,
+      "sourceBlockId": "INST058_ART023_BLOCK001",
+      "sourcePages": [
+        10,
+        11
+      ],
+      "sourceArticleTextSha256": "d290468119b0ed0efccd9783944cfff29ead5fb21bb3adb37f348304dece825d",
+      "sourceTextCandidate": "Article 23 : Obligation de diffusion de l’Instruction à la charge des Structures Agréées, des Sociétés Cotées et de leurs Commissaires aux Comptes Les Structures Agréées et Les Sociétés Cotées du marché financier régional veillent à la diffusion de la présente Instruction auprès de leurs Commissaires aux Comptes. Les Commissaires aux Comptes, dès l'acceptation de leur mandat, doivent prendre connaissance de la réglementation applicable à l'exercice de leurs fonctions auprès des Structures agréés et des Sociétés Cotées. 10 ‘Avenue Joseph ANOMA 4 ù Tél: (225) 20 21 57 42 / 20 21 5179 Où a 178 dan «te dore uw 4 Fa 20 1657 presidencemcrepmt.org rvnuicrepmf.org instructionn° _ 7 D © JCREPMF/2019",
+      "sourceKeywordHits": [
+        "diffusion de la présente Instruction",
+        "prendre connaissance de la réglementation applicable"
+      ],
+      "normalizedRequirementCandidate": "La structure agréée doit veiller à la diffusion de l'Instruction 58 auprès de son commissaire aux comptes et l'acceptation du mandat doit être accompagnée de la prise de connaissance de la réglementation applicable.",
+      "applicabilityCandidate": "REGULATED_STRUCTURE_AND_DESIGNATED_AUDITOR",
+      "products": [
+        "MANAGEMENT_COMPANY",
+        "OPCVM",
+        "FCP",
+        "SICAV",
+        "OTHER_OPC"
+      ],
+      "documentTypes": [
+        "AUDITOR_ENGAGEMENT",
+        "EVIDENCE_REGISTER"
+      ],
+      "canonicalFields": [
+        "accounting_control.regulatory_acknowledgements[]",
+        "evidence[]"
+      ],
+      "questionIds": [
+        "Q_AUDITOR_REGULATORY_ACKNOWLEDGEMENT"
+      ],
+      "clauseGroupIds": [],
+      "controlIds": [
+        "RULE_AUDITOR_REGULATORY_ACKNOWLEDGEMENT_EVIDENCED"
+      ],
+      "evidenceTypes": [
+        "REGULATORY_ACKNOWLEDGEMENT",
+        "ENGAGEMENT_LETTER"
+      ],
+      "outputSectionIds": [
+        "SYSTEM_ONLY"
+      ],
+      "reviewRoles": [
+        "LEGAL",
+        "COMPLIANCE"
+      ],
+      "circ005RequirementLinks": [
+        "CIRC005_1_7_FCP_ACCOUNTING_CONTROL_PERSONS"
+      ],
+      "inst066RequirementLinks": [],
+      "status": "EXTRACTED_UNVERIFIED_PENDING_LEGAL_AND_COMPLIANCE_REVIEW",
+      "activation": "FORBIDDEN",
+      "legalReviewStatus": "PENDING",
+      "complianceReviewStatus": "PENDING",
+      "specFile": "regulatory/requirements/inst058-candidates/01_MISSIONS_REPORTING_OPC.json",
+      "provenance": {
+        "sourceArtifact": "regulatory/materialized/INSTRUCTION_58_CREPMF_2019.pdf",
+        "ocrDerivative": "regulatory/materialized/INSTRUCTION_58_CREPMF_2019.txt",
+        "articleBlock": "regulatory/requirements/INST058_ARTICLE_BLOCKS_V0_1.json",
+        "textQuality": "OCR_EXTRACTED_UNVERIFIED"
+      }
+    },
+    {
+      "id": "INST058_ART024_REQ001",
+      "sourceId": "INSTRUCTION_58_CREPMF_2019",
+      "sourceSha256": "38258d7cae5518a6bea6b195facbb717e4a98c1eb734b30bc5e7de91917d0c57",
+      "articleId": "INST058_ARTICLE_024",
+      "articleNumber": 24,
+      "sourceBlockId": "INST058_ART024_BLOCK001",
+      "sourcePages": [
+        11
+      ],
+      "sourceArticleTextSha256": "55bf174394e24b563b530424dd8dfc05513e8cd8498dedfe8d4abd4ab3d8cc21",
+      "sourceTextCandidate": "Article 24 : Cadre d'échanges Les échanges entre le Conseil Régional et le Commissaire aux Comptes interviennent à un niveau suffisamment élevé, et impliquent des personnes dûment informées et habilitées à communiquer des informations à caractère confidentiel. À titre d'exemple : = pour le Conseil Régional : le Secrétaire Général du CREPMF ou à défaut un Directeur habilité ; = pour le cabinet d'audit : le signataire des rapports ou Le responsable technique de La mission concernée.",
+      "sourceKeywordHits": [
+        "Cadre d'échanges",
+        "personnes dûment informées",
+        "informations à caractère confidentiel"
+      ],
+      "normalizedRequirementCandidate": "Les échanges entre le régulateur et le commissaire aux comptes doivent être portés par des personnes habilitées et traités comme des communications confidentielles traçables.",
+      "applicabilityCandidate": "REGULATOR_AUDITOR_COMMUNICATION",
+      "products": [
+        "MANAGEMENT_COMPANY",
+        "OPCVM",
+        "FCP",
+        "SICAV",
+        "OTHER_OPC"
+      ],
+      "documentTypes": [
+        "REGULATORY_COMMUNICATION",
+        "AUDIT_FILE"
+      ],
+      "canonicalFields": [
+        "accounting_control.regulator_contacts[]",
+        "regulatory_communications[]"
+      ],
+      "questionIds": [
+        "Q_AUDITOR_REGULATOR_CONTACTS"
+      ],
+      "clauseGroupIds": [],
+      "controlIds": [
+        "RULE_REGULATOR_AUDITOR_COMMUNICATION_AUTHORIZED_AND_TRACEABLE"
+      ],
+      "evidenceTypes": [
+        "REGULATORY_CORRESPONDENCE",
+        "CONTACT_AUTHORIZATION"
+      ],
+      "outputSectionIds": [
+        "SYSTEM_ONLY"
+      ],
+      "reviewRoles": [
+        "LEGAL",
+        "COMPLIANCE"
+      ],
+      "circ005RequirementLinks": [],
+      "inst066RequirementLinks": [],
+      "status": "EXTRACTED_UNVERIFIED_PENDING_LEGAL_AND_COMPLIANCE_REVIEW",
+      "activation": "FORBIDDEN",
+      "legalReviewStatus": "PENDING",
+      "complianceReviewStatus": "PENDING",
+      "specFile": "regulatory/requirements/inst058-candidates/02_REGULATOR_RELATIONS_SANCTIONS_METADATA.json",
+      "provenance": {
+        "sourceArtifact": "regulatory/materialized/INSTRUCTION_58_CREPMF_2019.pdf",
+        "ocrDerivative": "regulatory/materialized/INSTRUCTION_58_CREPMF_2019.txt",
+        "articleBlock": "regulatory/requirements/INST058_ARTICLE_BLOCKS_V0_1.json",
+        "textQuality": "OCR_EXTRACTED_UNVERIFIED"
+      }
+    },
+    {
+      "id": "INST058_ART025_REQ001",
+      "sourceId": "INSTRUCTION_58_CREPMF_2019",
+      "sourceSha256": "38258d7cae5518a6bea6b195facbb717e4a98c1eb734b30bc5e7de91917d0c57",
+      "articleId": "INST058_ARTICLE_025",
+      "articleNumber": 25,
+      "sourceBlockId": "INST058_ART025_BLOCK001",
+      "sourcePages": [
+        11
+      ],
+      "sourceArticleTextSha256": "a43b8c9cc7c9c5af2b55c950e3b68fd71d9ff48e2cbef1e0dff6e45c7428ba2c",
+      "sourceTextCandidate": "Article 25 : Obligations d’information à la charge des Commissaires aux Comptes Les Commissaires aux Comptes sont tenus de signaler dans les soixante-douze (72) heures au Conseil Régional, tout fait ou décision concernant une Structure Agréée ou Société Cotée, dont ils ont eu connaissance dans l’exercice de leur mission et de nature à constituer une violation des dispositions du Règlement Général relatives aux règles de bonne conduite, aux conditions d'exercice des activités de conservation ou d'administration d'instruments financiers ou des abus de marché.",
+      "sourceKeywordHits": [
+        "soixante-douze (72) heures",
+        "Obligations d’information",
+        "violation"
+      ],
+      "normalizedRequirementCandidate": "Les faits ou décisions relevant du devoir d'information du commissaire aux comptes doivent être enregistrés avec leur notification au régulateur ; le délai de soixante-douze heures extrait par OCR reste inactif jusqu'à double revue.",
+      "applicabilityCandidate": "AUDITOR_IDENTIFIES_ART025_REPORTABLE_FACT",
+      "products": [
+        "MANAGEMENT_COMPANY",
+        "OPCVM",
+        "FCP",
+        "SICAV",
+        "OTHER_OPC"
+      ],
+      "documentTypes": [
+        "REGULATORY_EVENT",
+        "AUDITOR_NOTICE",
+        "CONTROL_REPORT"
+      ],
+      "canonicalFields": [
+        "accounting_control.notifications[]",
+        "regulatory_events[]",
+        "regulatory_events[].deadline"
+      ],
+      "questionIds": [
+        "Q_AUDITOR_REPORTABLE_FACT"
+      ],
+      "clauseGroupIds": [],
+      "controlIds": [
+        "RULE_ART025_NOTICE_EVIDENCE_REQUIRED",
+        "RULE_ART025_72H_DEADLINE_PENDING_DUAL_REVIEW"
+      ],
+      "evidenceTypes": [
+        "AUDITOR_NOTICE",
+        "REGULATORY_SUBMISSION_RECEIPT"
+      ],
+      "outputSectionIds": [
+        "SYSTEM_ONLY"
+      ],
+      "reviewRoles": [
+        "LEGAL",
+        "COMPLIANCE"
+      ],
+      "circ005RequirementLinks": [],
+      "inst066RequirementLinks": [],
+      "status": "EXTRACTED_UNVERIFIED_PENDING_LEGAL_AND_COMPLIANCE_REVIEW",
+      "activation": "FORBIDDEN",
+      "legalReviewStatus": "PENDING",
+      "complianceReviewStatus": "PENDING",
+      "specFile": "regulatory/requirements/inst058-candidates/02_REGULATOR_RELATIONS_SANCTIONS_METADATA.json",
+      "provenance": {
+        "sourceArtifact": "regulatory/materialized/INSTRUCTION_58_CREPMF_2019.pdf",
+        "ocrDerivative": "regulatory/materialized/INSTRUCTION_58_CREPMF_2019.txt",
+        "articleBlock": "regulatory/requirements/INST058_ARTICLE_BLOCKS_V0_1.json",
+        "textQuality": "OCR_EXTRACTED_UNVERIFIED"
+      }
+    },
+    {
+      "id": "INST058_ART026_REQ001",
+      "sourceId": "INSTRUCTION_58_CREPMF_2019",
+      "sourceSha256": "38258d7cae5518a6bea6b195facbb717e4a98c1eb734b30bc5e7de91917d0c57",
+      "articleId": "INST058_ARTICLE_026",
+      "articleNumber": 26,
+      "sourceBlockId": "INST058_ART026_BLOCK001",
+      "sourcePages": [
+        11
+      ],
+      "sourceArticleTextSha256": "601bbe59c64dfaa35082321161ddec2d03fc6998ab1053cc17ba125d166b4052",
+      "sourceTextCandidate": "Article 26 : Rencontre entre le Conseil Régional et les Commissaires aux Comptes A L'occasion notamment des missions de vérification du Conseil Régional, les Commissaires aux Comptes sont tenus de participer aux réunions auxquelles ils sont invités par la mission et de fournir tous documents ou renseignements sollicités. Ils peuvent se faire assister par leurs collaborateurs. Les relations entre Le Conseil Régional et Les Commissaires aux Comptes doivent être entretenues par des contacts ponctuels où la communication par écrit d'informations. Dans ce dernier cas, une ampliation des documents contenant les informations transmises est faite à l'établissement concerné par le ou les Commissaires aux Comptes.",
+      "sourceKeywordHits": [
+        "missions de vérification",
+        "participer aux réunions",
+        "fournir tous documents ou renseignements"
+      ],
+      "normalizedRequirementCandidate": "Lors d'une mission de vérification du régulateur, les convocations adressées au commissaire aux comptes, sa participation et les documents ou renseignements fournis doivent pouvoir être consignés et prouvés.",
+      "applicabilityCandidate": "REGULATORY_INSPECTION_INVOLVING_AUDITOR",
+      "products": [
+        "MANAGEMENT_COMPANY",
+        "OPCVM",
+        "FCP",
+        "SICAV",
+        "OTHER_OPC"
+      ],
+      "documentTypes": [
+        "REGULATORY_INSPECTION_FILE",
+        "AUDIT_FILE"
+      ],
+      "canonicalFields": [
+        "regulatory_inspections[]",
+        "accounting_control.regulator_meetings[]"
+      ],
+      "questionIds": [
+        "Q_AUDITOR_REGULATORY_INSPECTION"
+      ],
+      "clauseGroupIds": [],
+      "controlIds": [
+        "RULE_AUDITOR_INSPECTION_COOPERATION_EVIDENCED"
+      ],
+      "evidenceTypes": [
+        "MEETING_INVITATION",
+        "MEETING_MINUTES",
+        "DOCUMENT_TRANSMISSION_RECEIPT"
+      ],
+      "outputSectionIds": [
+        "SYSTEM_ONLY"
+      ],
+      "reviewRoles": [
+        "LEGAL",
+        "COMPLIANCE"
+      ],
+      "circ005RequirementLinks": [],
+      "inst066RequirementLinks": [],
+      "status": "EXTRACTED_UNVERIFIED_PENDING_LEGAL_AND_COMPLIANCE_REVIEW",
+      "activation": "FORBIDDEN",
+      "legalReviewStatus": "PENDING",
+      "complianceReviewStatus": "PENDING",
+      "specFile": "regulatory/requirements/inst058-candidates/02_REGULATOR_RELATIONS_SANCTIONS_METADATA.json",
+      "provenance": {
+        "sourceArtifact": "regulatory/materialized/INSTRUCTION_58_CREPMF_2019.pdf",
+        "ocrDerivative": "regulatory/materialized/INSTRUCTION_58_CREPMF_2019.txt",
+        "articleBlock": "regulatory/requirements/INST058_ARTICLE_BLOCKS_V0_1.json",
+        "textQuality": "OCR_EXTRACTED_UNVERIFIED"
+      }
+    },
+    {
+      "id": "INST058_ART027_REQ001",
+      "sourceId": "INSTRUCTION_58_CREPMF_2019",
+      "sourceSha256": "38258d7cae5518a6bea6b195facbb717e4a98c1eb734b30bc5e7de91917d0c57",
+      "articleId": "INST058_ARTICLE_027",
+      "articleNumber": 27,
+      "sourceBlockId": "INST058_ART027_BLOCK001",
+      "sourcePages": [
+        11,
+        12
+      ],
+      "sourceArticleTextSha256": "fca76e29e8ba63622b92a088106e022137d858f8b4c1e163bd987b70234b2e2a",
+      "sourceTextCandidate": "Article 27 : Demande d'informations du Conseil Régional aux Commissaires aux Comptes Le Conseil Régional peut demander aux Commissaires aux Comptes, tous renseignements sur Les Structures Agréées et Les Sociétés Cotées auprès desquelles ils exercent leur mandat. La demande d'informations du Conseil Régional porte sur des aspects spécifiques tels que Les diligences d’audit, l'appréciation des traitements comptables préalablement décrits et justifiés par l'entité contrôlée, les diligences spécifiques à la charge du Commissaire aux Comptes au sens de la présente Instruction. Les Commissaires aux Comptes sont déliés du secret professionnel et leur responsabilité ne peut de ce seul fait être engagée pour Les informations données et en exécution des obligations et démarches prévues dans la présente Instruction. in Avenue Jeep ANONX TÉL 25 20 2 ST A2 TIOH SI7S O1 BP 1878 Abidjan O1 - Côte d'oire ex 4 0221657 resident or crepmi.ors Instruction n°! JCREPMF/2019",
+      "sourceKeywordHits": [
+        "Demande d'informations",
+        "peut demander",
+        "tous renseignements"
+      ],
+      "normalizedRequirementCandidate": "Les demandes d'informations adressées par le régulateur au commissaire aux comptes et les réponses associées doivent être suivies dans le registre des communications réglementaires.",
+      "applicabilityCandidate": "REGULATOR_INFORMATION_REQUEST_TO_AUDITOR",
+      "products": [
+        "MANAGEMENT_COMPANY",
+        "OPCVM",
+        "FCP",
+        "SICAV",
+        "OTHER_OPC"
+      ],
+      "documentTypes": [
+        "REGULATORY_INFORMATION_REQUEST",
+        "AUDIT_FILE"
+      ],
+      "canonicalFields": [
+        "regulatory_communications[]",
+        "accounting_control.information_requests[]"
+      ],
+      "questionIds": [
+        "Q_REGULATOR_INFORMATION_REQUEST"
+      ],
+      "clauseGroupIds": [],
+      "controlIds": [
+        "RULE_REGULATOR_INFORMATION_REQUEST_TRACKED"
+      ],
+      "evidenceTypes": [
+        "REGULATOR_INFORMATION_REQUEST",
+        "AUDITOR_RESPONSE",
+        "TRANSMISSION_RECEIPT"
+      ],
+      "outputSectionIds": [
+        "SYSTEM_ONLY"
+      ],
+      "reviewRoles": [
+        "LEGAL",
+        "COMPLIANCE"
+      ],
+      "circ005RequirementLinks": [],
+      "inst066RequirementLinks": [],
+      "status": "EXTRACTED_UNVERIFIED_PENDING_LEGAL_AND_COMPLIANCE_REVIEW",
+      "activation": "FORBIDDEN",
+      "legalReviewStatus": "PENDING",
+      "complianceReviewStatus": "PENDING",
+      "specFile": "regulatory/requirements/inst058-candidates/02_REGULATOR_RELATIONS_SANCTIONS_METADATA.json",
+      "provenance": {
+        "sourceArtifact": "regulatory/materialized/INSTRUCTION_58_CREPMF_2019.pdf",
+        "ocrDerivative": "regulatory/materialized/INSTRUCTION_58_CREPMF_2019.txt",
+        "articleBlock": "regulatory/requirements/INST058_ARTICLE_BLOCKS_V0_1.json",
+        "textQuality": "OCR_EXTRACTED_UNVERIFIED"
+      }
+    },
+    {
+      "id": "INST058_ART028_REQ001",
+      "sourceId": "INSTRUCTION_58_CREPMF_2019",
+      "sourceSha256": "38258d7cae5518a6bea6b195facbb717e4a98c1eb734b30bc5e7de91917d0c57",
+      "articleId": "INST058_ARTICLE_028",
+      "articleNumber": 28,
+      "sourceBlockId": "INST058_ART028_BLOCK001",
+      "sourcePages": [
+        12
+      ],
+      "sourceArticleTextSha256": "0fdebd0dc8b15caabd926c6cf442c8ac87ce8536a56b95cc7566ba687835c9bc",
+      "sourceTextCandidate": "Article 28 : Droit pour le Commissaire aux Comptes d'interroger le Conseil Régional Les Commissaires aux Comptes des Structures Agréées et des Sociétés Cotées du marché financier régional peuvent interroger le Secrétariat Général du Conseil Régional sur toute question rencontrée dans l'exercice de Leur mission et susceptible d’avoir un effet sur l'information financière de l'assujetti. Le Commissaire aux Comptes privilégie les questions formulées par écrit. IL expose clairement la difficulté rencontrée et communique toutes les informations utiles et nécessaires au Conseil Régional pour formuler sa réponse dans un délai de trente (30) jours. IL précise au Conseil Régional si sa démarche est confidentielle vis-à-vis de L'entité. Le Commissaire aux Comptes apprécie l'opportunité de communiquer à l'entité contrôlée sa question et la réponse apportée par Le Conseil Régional.",
+      "sourceKeywordHits": [
+        "Conseil Régional"
+      ],
+      "normalizedRequirementCandidate": "Les demandes d'éclaircissement adressées par le commissaire aux comptes au régulateur sur des questions susceptibles d'affecter l'information financière doivent être conservées dans le dossier d'audit réglementaire.",
+      "applicabilityCandidate": "AUDITOR_REQUESTS_REGULATORY_CLARIFICATION",
+      "products": [
+        "MANAGEMENT_COMPANY",
+        "OPCVM",
+        "FCP",
+        "SICAV",
+        "OTHER_OPC"
+      ],
+      "documentTypes": [
+        "REGULATORY_CLARIFICATION_REQUEST",
+        "AUDIT_FILE"
+      ],
+      "canonicalFields": [
+        "accounting_control.regulatory_clarifications[]",
+        "regulatory_communications[]"
+      ],
+      "questionIds": [
+        "Q_AUDITOR_REGULATORY_CLARIFICATION"
+      ],
+      "clauseGroupIds": [],
+      "controlIds": [
+        "RULE_AUDITOR_REGULATORY_CLARIFICATION_TRACEABLE"
+      ],
+      "evidenceTypes": [
+        "REGULATORY_CLARIFICATION_REQUEST",
+        "REGULATOR_RESPONSE"
+      ],
+      "outputSectionIds": [
+        "SYSTEM_ONLY"
+      ],
+      "reviewRoles": [
+        "LEGAL",
+        "COMPLIANCE"
+      ],
+      "circ005RequirementLinks": [],
+      "inst066RequirementLinks": [],
+      "status": "EXTRACTED_UNVERIFIED_PENDING_LEGAL_AND_COMPLIANCE_REVIEW",
+      "activation": "FORBIDDEN",
+      "legalReviewStatus": "PENDING",
+      "complianceReviewStatus": "PENDING",
+      "specFile": "regulatory/requirements/inst058-candidates/02_REGULATOR_RELATIONS_SANCTIONS_METADATA.json",
+      "provenance": {
+        "sourceArtifact": "regulatory/materialized/INSTRUCTION_58_CREPMF_2019.pdf",
+        "ocrDerivative": "regulatory/materialized/INSTRUCTION_58_CREPMF_2019.txt",
+        "articleBlock": "regulatory/requirements/INST058_ARTICLE_BLOCKS_V0_1.json",
+        "textQuality": "OCR_EXTRACTED_UNVERIFIED"
+      }
+    },
+    {
+      "id": "INST058_ART029_REQ001",
+      "sourceId": "INSTRUCTION_58_CREPMF_2019",
+      "sourceSha256": "38258d7cae5518a6bea6b195facbb717e4a98c1eb734b30bc5e7de91917d0c57",
+      "articleId": "INST058_ARTICLE_029",
+      "articleNumber": 29,
+      "sourceBlockId": "INST058_ART029_BLOCK001",
+      "sourcePages": [
+        12
+      ],
+      "sourceArticleTextSha256": "46a9faa3c62fa6d7d6cd746f160f1690d30902e6d53bb4eb035b3783ba312d9b",
+      "sourceTextCandidate": "Aticle 29 : Transmission d'informations par le CREPMF aux Commissaires aux Comptes Le CREPMF peut également transmettre aux Commissaires aux Comptes des Structures Agréées et des Sociétés Cotées du marché financier régional les informations nécessaires à l'accomplissement de leur mission. Les informations ainsi transmises sont couvertes par La règle du secret professionnel. CHAPITRE 8 - SANCTIONS",
+      "sourceKeywordHits": [
+        "informations nécessaires",
+        "secret professionnel"
+      ],
+      "normalizedRequirementCandidate": "Les informations transmises par le régulateur au commissaire aux comptes pour l'accomplissement de sa mission doivent être traitées comme informations couvertes par le secret professionnel et conservées avec un niveau d'accès approprié.",
+      "applicabilityCandidate": "REGULATOR_TRANSMITS_INFORMATION_TO_AUDITOR",
+      "products": [
+        "MANAGEMENT_COMPANY",
+        "OPCVM",
+        "FCP",
+        "SICAV",
+        "OTHER_OPC"
+      ],
+      "documentTypes": [
+        "CONFIDENTIAL_REGULATORY_INFORMATION",
+        "AUDIT_FILE"
+      ],
+      "canonicalFields": [
+        "regulatory_communications[].confidentiality",
+        "accounting_control.confidential_information[]"
+      ],
+      "questionIds": [
+        "Q_CONFIDENTIAL_REGULATORY_INFORMATION"
+      ],
+      "clauseGroupIds": [],
+      "controlIds": [
+        "RULE_REGULATOR_AUDITOR_INFORMATION_CONFIDENTIAL"
+      ],
+      "evidenceTypes": [
+        "REGULATOR_INFORMATION",
+        "ACCESS_LOG"
+      ],
+      "outputSectionIds": [
+        "SYSTEM_ONLY"
+      ],
+      "reviewRoles": [
+        "LEGAL",
+        "COMPLIANCE"
+      ],
+      "circ005RequirementLinks": [],
+      "inst066RequirementLinks": [],
+      "status": "EXTRACTED_UNVERIFIED_PENDING_LEGAL_AND_COMPLIANCE_REVIEW",
+      "activation": "FORBIDDEN",
+      "legalReviewStatus": "PENDING",
+      "complianceReviewStatus": "PENDING",
+      "specFile": "regulatory/requirements/inst058-candidates/02_REGULATOR_RELATIONS_SANCTIONS_METADATA.json",
+      "provenance": {
+        "sourceArtifact": "regulatory/materialized/INSTRUCTION_58_CREPMF_2019.pdf",
+        "ocrDerivative": "regulatory/materialized/INSTRUCTION_58_CREPMF_2019.txt",
+        "articleBlock": "regulatory/requirements/INST058_ARTICLE_BLOCKS_V0_1.json",
+        "textQuality": "OCR_EXTRACTED_UNVERIFIED"
+      }
+    },
+    {
+      "id": "INST058_ART030_REQ001",
+      "sourceId": "INSTRUCTION_58_CREPMF_2019",
+      "sourceSha256": "38258d7cae5518a6bea6b195facbb717e4a98c1eb734b30bc5e7de91917d0c57",
+      "articleId": "INST058_ARTICLE_030",
+      "articleNumber": 30,
+      "sourceBlockId": "INST058_ART030_BLOCK001",
+      "sourcePages": [
+        12
+      ],
+      "sourceArticleTextSha256": "a01cfe9a489203091ab8fb0b455d97bb3597c3dd4ce6dc7725a3c3969800625a",
+      "sourceTextCandidate": "Article 30 : Retrait de l’approbation L'approbation du Commissaire aux Comptes peut être retirée par le Conseil Régional pour les motifs qu’il apprécie, notamment sa radiation du tableau de l'Ordre National des Experts Comptables et Comptables Agréés ou sa suspension dudit Ordre, des manquements graves à la réglementation du marché financier, des insuffisances constatées dans Les travaux ou d'exercice d’activités incompatibles ou susceptibles d’affecter L'indépendance attendue du Commissaire aux Comptes. Le retrait de l'approbation peut emporter interdiction d’exercer les fonctions de Commissaires aux Comptes au sein des sociétés cotées ou des structures agréées du marché pour une durée limitée ou illimitée. Le retrait de l'approbation n’est pas une sanction disciplinaire. Si le Conseil Régional l'estime nécessaire, il fait procéder à La publication du retrait d'approbation par tous Les moyens de communication qu’il jugera utile.",
+      "sourceKeywordHits": [
+        "Retrait de l’approbation",
+        "peut être retirée",
+        "publication du retrait"
+      ],
+      "normalizedRequirementCandidate": "Le retrait de l'approbation d'un commissaire aux comptes doit être enregistré comme événement de statut empêchant de présenter son mandat comme approuvé et pouvant nécessiter son remplacement.",
+      "applicabilityCandidate": "AUDITOR_APPROVAL_WITHDRAWN",
+      "products": [
+        "MANAGEMENT_COMPANY",
+        "OPCVM",
+        "FCP",
+        "SICAV",
+        "OTHER_OPC"
+      ],
+      "documentTypes": [
+        "AUDITOR_REGISTER",
+        "REGULATORY_EVENT",
+        "CONTROL_REPORT"
+      ],
+      "canonicalFields": [
+        "accounting_control.responsible_persons[].approval_status",
+        "accounting_control.responsible_persons[].approval_events[]",
+        "regulatory_events[]"
+      ],
+      "questionIds": [
+        "Q_AUDITOR_APPROVAL_STATUS"
+      ],
+      "clauseGroupIds": [],
+      "controlIds": [
+        "RULE_WITHDRAWN_AUDITOR_NOT_PRESENTED_AS_APPROVED",
+        "RULE_AUDITOR_REPLACEMENT_REVIEW_REQUIRED"
+      ],
+      "evidenceTypes": [
+        "AUDITOR_APPROVAL_WITHDRAWAL_DECISION",
+        "OFFICIAL_PUBLICATION_EVIDENCE"
+      ],
+      "outputSectionIds": [
+        "SYSTEM_ONLY"
+      ],
+      "reviewRoles": [
+        "LEGAL",
+        "COMPLIANCE"
+      ],
+      "circ005RequirementLinks": [
+        "CIRC005_1_7_FCP_ACCOUNTING_CONTROL_PERSONS"
+      ],
+      "inst066RequirementLinks": [],
+      "status": "EXTRACTED_UNVERIFIED_PENDING_LEGAL_AND_COMPLIANCE_REVIEW",
+      "activation": "FORBIDDEN",
+      "legalReviewStatus": "PENDING",
+      "complianceReviewStatus": "PENDING",
+      "specFile": "regulatory/requirements/inst058-candidates/02_REGULATOR_RELATIONS_SANCTIONS_METADATA.json",
+      "provenance": {
+        "sourceArtifact": "regulatory/materialized/INSTRUCTION_58_CREPMF_2019.pdf",
+        "ocrDerivative": "regulatory/materialized/INSTRUCTION_58_CREPMF_2019.txt",
+        "articleBlock": "regulatory/requirements/INST058_ARTICLE_BLOCKS_V0_1.json",
+        "textQuality": "OCR_EXTRACTED_UNVERIFIED"
+      }
+    },
+    {
+      "id": "INST058_ART031_REQ001",
+      "sourceId": "INSTRUCTION_58_CREPMF_2019",
+      "sourceSha256": "38258d7cae5518a6bea6b195facbb717e4a98c1eb734b30bc5e7de91917d0c57",
+      "articleId": "INST058_ARTICLE_031",
+      "articleNumber": 31,
+      "sourceBlockId": "INST058_ART031_BLOCK001",
+      "sourcePages": [
+        12,
+        13
+      ],
+      "sourceArticleTextSha256": "2afcf827ae085ef0dca30aeaab84db65d414e8eacc9d974d858f50a21da40c2c",
+      "sourceTextCandidate": "Article 31 n cas de non approbation des mandats du Commissaires aux Comptes Les Structures Agréées et Les Sociétés Cotées du marché financier régional n'ayant pas fait approuver leurs Commissaires aux Comptes, ainsi que Les Commissaires aux Comptes concernés sont passibles de sanctions prévues par la Décision n°CM/5J/001/03/2016 du Conseil des Ministres de L'UMOA portant sur Les sanctions pécuniaires applicables sur Le marché financier régional. 2 Avenue Joseph ANOMA Tél: (225) 20 21 57 42 / 20 21 51 79 O1 8P 1878 AbidjanO1 - Côte d'Ivoire mi Fax: 20 22 16 57 Presidenceacrepm.org : srvvcrepm.ors Instructionn° __DEG À == ycrEPuF/2019",
+      "sourceKeywordHits": [
+        "non approbation",
+        "sanctions"
+      ],
+      "normalizedRequirementCandidate": "L'absence d'approbation du mandat du commissaire aux comptes est rattachée par l'article 31 à un régime de sanctions prévu par la Décision n°CM/SJ/001/03/2016 ; aucune sanction ni montant ne doit être calculé avant matérialisation de cette décision.",
+      "applicabilityCandidate": "AUDITOR_MANDATE_NOT_APPROVED",
+      "products": [
+        "MANAGEMENT_COMPANY",
+        "OPCVM",
+        "FCP",
+        "SICAV",
+        "OTHER_OPC"
+      ],
+      "documentTypes": [
+        "CONTROL_REPORT",
+        "REGULATORY_DEPENDENCY"
+      ],
+      "canonicalFields": [
+        "accounting_control.responsible_persons[].approval_status",
+        "regulatory_sources.dependencies[]",
+        "compliance.breaches[]"
+      ],
+      "questionIds": [
+        "Q_AUDITOR_APPROVAL_STATUS"
+      ],
+      "clauseGroupIds": [],
+      "controlIds": [
+        "RULE_UNAPPROVED_AUDITOR_IS_BLOCKER",
+        "RULE_SANCTION_DETAILS_REQUIRE_CM_SJ_001_03_2016_SOURCE"
+      ],
+      "evidenceTypes": [
+        "AUDITOR_APPROVAL_RECORD",
+        "OFFICIAL_SANCTIONS_DECISION"
+      ],
+      "outputSectionIds": [
+        "SYSTEM_ONLY"
+      ],
+      "reviewRoles": [
+        "LEGAL",
+        "COMPLIANCE"
+      ],
+      "circ005RequirementLinks": [
+        "CIRC005_1_7_FCP_ACCOUNTING_CONTROL_PERSONS"
+      ],
+      "inst066RequirementLinks": [],
+      "status": "EXTRACTED_UNVERIFIED_PENDING_LEGAL_AND_COMPLIANCE_REVIEW",
+      "activation": "FORBIDDEN",
+      "legalReviewStatus": "PENDING",
+      "complianceReviewStatus": "PENDING",
+      "specFile": "regulatory/requirements/inst058-candidates/02_REGULATOR_RELATIONS_SANCTIONS_METADATA.json",
+      "provenance": {
+        "sourceArtifact": "regulatory/materialized/INSTRUCTION_58_CREPMF_2019.pdf",
+        "ocrDerivative": "regulatory/materialized/INSTRUCTION_58_CREPMF_2019.txt",
+        "articleBlock": "regulatory/requirements/INST058_ARTICLE_BLOCKS_V0_1.json",
+        "textQuality": "OCR_EXTRACTED_UNVERIFIED"
+      }
+    },
+    {
+      "id": "INST058_ART032_REQ001",
+      "sourceId": "INSTRUCTION_58_CREPMF_2019",
+      "sourceSha256": "38258d7cae5518a6bea6b195facbb717e4a98c1eb734b30bc5e7de91917d0c57",
+      "articleId": "INST058_ARTICLE_032",
+      "articleNumber": 32,
+      "sourceBlockId": "INST058_ART032_BLOCK001",
+      "sourcePages": [
+        13
+      ],
+      "sourceArticleTextSha256": "47074793f425559ccc858c9b90c532afbf1e98ad0aae44f9078b66b689a78c69",
+      "sourceTextCandidate": "Article 32 : Manquements dans l'exercice du Commissariat aux Comptes Les Commissaires aux Comptes responsables, de faits ou omissions constitutifs de manquements à la règlementation du marché financier régional, de négligence grave, de non transmission ou de transmission hors délais des rapports requis s’exposent à des sanctions conformément à la Décision n°CM/SJ/001/03/2016 du Conseil des Ministres de L'UMOA. Par ailleurs, le Conseil Régional se réserve Le droit d'engager la responsabilité des Commissaires aux Comptes en cas de non divulgation d’infractions commises par Les dirigeants de l'entité contrôlée. CHAPITRE 9 - DISPOSITIONS TRANSITOIRES ET FINALES",
+      "sourceKeywordHits": [
+        "Manquements",
+        "négligence grave",
+        "non transmission",
+        "CM/SJ/001/03/2016"
+      ],
+      "normalizedRequirementCandidate": "Les manquements du commissaire aux comptes, notamment les faits ou omissions, la négligence grave ou les défauts de transmission des rapports, doivent être enregistrés comme événements de conformité ; le régime de sanctions dépend de la Décision n°CM/SJ/001/03/2016 à matérialiser séparément.",
+      "applicabilityCandidate": "AUDITOR_REGULATORY_BREACH",
+      "products": [
+        "MANAGEMENT_COMPANY",
+        "OPCVM",
+        "FCP",
+        "SICAV",
+        "OTHER_OPC"
+      ],
+      "documentTypes": [
+        "CONTROL_REPORT",
+        "REGULATORY_EVENT",
+        "REGULATORY_DEPENDENCY"
+      ],
+      "canonicalFields": [
+        "compliance.breaches[]",
+        "accounting_control.breaches[]",
+        "regulatory_sources.dependencies[]"
+      ],
+      "questionIds": [
+        "Q_AUDITOR_REGULATORY_BREACH"
+      ],
+      "clauseGroupIds": [],
+      "controlIds": [
+        "RULE_AUDITOR_BREACH_RECORDED",
+        "RULE_SANCTION_DETAILS_REQUIRE_CM_SJ_001_03_2016_SOURCE"
+      ],
+      "evidenceTypes": [
+        "AUDITOR_BREACH_REPORT",
+        "REGULATOR_CORRESPONDENCE",
+        "OFFICIAL_SANCTIONS_DECISION"
+      ],
+      "outputSectionIds": [
+        "SYSTEM_ONLY"
+      ],
+      "reviewRoles": [
+        "LEGAL",
+        "COMPLIANCE"
+      ],
+      "circ005RequirementLinks": [],
+      "inst066RequirementLinks": [],
+      "status": "EXTRACTED_UNVERIFIED_PENDING_LEGAL_AND_COMPLIANCE_REVIEW",
+      "activation": "FORBIDDEN",
+      "legalReviewStatus": "PENDING",
+      "complianceReviewStatus": "PENDING",
+      "specFile": "regulatory/requirements/inst058-candidates/02_REGULATOR_RELATIONS_SANCTIONS_METADATA.json",
+      "provenance": {
+        "sourceArtifact": "regulatory/materialized/INSTRUCTION_58_CREPMF_2019.pdf",
+        "ocrDerivative": "regulatory/materialized/INSTRUCTION_58_CREPMF_2019.txt",
+        "articleBlock": "regulatory/requirements/INST058_ARTICLE_BLOCKS_V0_1.json",
+        "textQuality": "OCR_EXTRACTED_UNVERIFIED"
+      }
+    },
+    {
+      "id": "INST058_ART033_REQ001",
+      "sourceId": "INSTRUCTION_58_CREPMF_2019",
+      "sourceSha256": "38258d7cae5518a6bea6b195facbb717e4a98c1eb734b30bc5e7de91917d0c57",
+      "articleId": "INST058_ARTICLE_033",
+      "articleNumber": 33,
+      "sourceBlockId": "INST058_ART033_BLOCK001",
+      "sourcePages": [
+        13
+      ],
+      "sourceArticleTextSha256": "011a6b31816c849b51c9e66b7b75ad587b74582f62b978f8bb5a1c697cbd8df8",
+      "sourceTextCandidate": "Article 33 : Dispositions transitoires Les approbations accordées par le Conseil Régional avant L'entrée en vigueur de la présente Instruction restent valables jusqu’à leur terme sous réserve de la transmission de La Lettre d'engagement présentée en annexe, dûment signée par les personnes habilitées.",
+      "sourceKeywordHits": [
+        "Dispositions transitoires",
+        "restent valables jusqu’à leur terme",
+        "Lettre d'engagement"
+      ],
+      "normalizedRequirementCandidate": "Les approbations antérieures relevant des dispositions transitoires doivent être distinguées des nouvelles approbations et ne peuvent être considérées valides au-delà de leur terme sans les preuves prévues par le texte.",
+      "applicabilityCandidate": "PRE_EXISTING_AUDITOR_APPROVAL_AT_INST058_ENTRY_INTO_FORCE",
+      "products": [
+        "MANAGEMENT_COMPANY",
+        "OPCVM",
+        "FCP",
+        "SICAV",
+        "OTHER_OPC"
+      ],
+      "documentTypes": [
+        "AUDITOR_REGISTER",
+        "TRANSITIONAL_EVIDENCE"
+      ],
+      "canonicalFields": [
+        "accounting_control.responsible_persons[].transitional_approval",
+        "regulatory_coverage.temporal_applicability"
+      ],
+      "questionIds": [
+        "Q_AUDITOR_TRANSITIONAL_APPROVAL"
+      ],
+      "clauseGroupIds": [],
+      "controlIds": [
+        "RULE_TRANSITIONAL_AUDITOR_APPROVAL_REQUIRES_TERM_AND_UNDERTAKING"
+      ],
+      "evidenceTypes": [
+        "LEGACY_AUDITOR_APPROVAL",
+        "SIGNED_UNDERTAKING_LETTER"
+      ],
+      "outputSectionIds": [
+        "SYSTEM_ONLY"
+      ],
+      "reviewRoles": [
+        "LEGAL",
+        "COMPLIANCE"
+      ],
+      "circ005RequirementLinks": [],
+      "inst066RequirementLinks": [],
+      "status": "EXTRACTED_UNVERIFIED_PENDING_LEGAL_AND_COMPLIANCE_REVIEW",
+      "activation": "FORBIDDEN",
+      "legalReviewStatus": "PENDING",
+      "complianceReviewStatus": "PENDING",
+      "specFile": "regulatory/requirements/inst058-candidates/02_REGULATOR_RELATIONS_SANCTIONS_METADATA.json",
+      "provenance": {
+        "sourceArtifact": "regulatory/materialized/INSTRUCTION_58_CREPMF_2019.pdf",
+        "ocrDerivative": "regulatory/materialized/INSTRUCTION_58_CREPMF_2019.txt",
+        "articleBlock": "regulatory/requirements/INST058_ARTICLE_BLOCKS_V0_1.json",
+        "textQuality": "OCR_EXTRACTED_UNVERIFIED"
+      }
+    },
+    {
+      "id": "INST058_ART034_REQ001",
+      "sourceId": "INSTRUCTION_58_CREPMF_2019",
+      "sourceSha256": "38258d7cae5518a6bea6b195facbb717e4a98c1eb734b30bc5e7de91917d0c57",
+      "articleId": "INST058_ARTICLE_034",
+      "articleNumber": 34,
+      "sourceBlockId": "INST058_ART034_BLOCK001",
+      "sourcePages": [
+        13
+      ],
+      "sourceArticleTextSha256": "eefc089a50d4ea80093a73f6d555f8f972829eae0b0bd34cfd3b4d93a12b2478",
+      "sourceTextCandidate": "Article 34 : Abrogation La présente Instruction abroge et remplace toutes autres dispositions antérieures, notamment l’Instruction n°31/2005 du 7 juin 2005.",
+      "sourceKeywordHits": [
+        "abroge et remplace",
+        "Instruction n°31/2005",
+        "7 juin 2005"
+      ],
+      "normalizedRequirementCandidate": "Le registre de sources doit enregistrer que l'article 34 annonce l'abrogation et le remplacement des dispositions antérieures, notamment l'Instruction n°31/2005 du 7 juin 2005, sous réserve de revue juridique de la portée exacte.",
+      "applicabilityCandidate": "REGULATORY_SOURCE_METADATA_ONLY",
+      "products": [
+        "REGULATORY_SOURCE"
+      ],
+      "documentTypes": [
+        "SOURCE_METADATA"
+      ],
+      "canonicalFields": [
+        "regulatory_sources.abrogated_texts[]",
+        "regulatory_sources.predecessor"
+      ],
+      "questionIds": [
+        "Q_SOURCE_PREDECESSOR"
+      ],
+      "clauseGroupIds": [],
+      "controlIds": [
+        "RULE_INST058_PREDECESSOR_REQUIRES_LEGAL_REVIEW"
+      ],
+      "evidenceTypes": [
+        "OFFICIAL_SOURCE_FINAL_PAGES",
+        "OFFICIAL_REGISTRY_RECORD"
+      ],
+      "outputSectionIds": [
+        "SYSTEM_ONLY"
+      ],
+      "reviewRoles": [
+        "LEGAL",
+        "COMPLIANCE"
+      ],
+      "circ005RequirementLinks": [],
+      "inst066RequirementLinks": [],
+      "status": "EXTRACTED_UNVERIFIED_PENDING_LEGAL_AND_COMPLIANCE_REVIEW",
+      "activation": "FORBIDDEN",
+      "legalReviewStatus": "PENDING",
+      "complianceReviewStatus": "PENDING",
+      "specFile": "regulatory/requirements/inst058-candidates/02_REGULATOR_RELATIONS_SANCTIONS_METADATA.json",
+      "provenance": {
+        "sourceArtifact": "regulatory/materialized/INSTRUCTION_58_CREPMF_2019.pdf",
+        "ocrDerivative": "regulatory/materialized/INSTRUCTION_58_CREPMF_2019.txt",
+        "articleBlock": "regulatory/requirements/INST058_ARTICLE_BLOCKS_V0_1.json",
+        "textQuality": "OCR_EXTRACTED_UNVERIFIED"
+      }
+    },
+    {
+      "id": "INST058_ART035_REQ001",
+      "sourceId": "INSTRUCTION_58_CREPMF_2019",
+      "sourceSha256": "38258d7cae5518a6bea6b195facbb717e4a98c1eb734b30bc5e7de91917d0c57",
+      "articleId": "INST058_ARTICLE_035",
+      "articleNumber": 35,
+      "sourceBlockId": "INST058_ART035_BLOCK001",
+      "sourcePages": [
+        13,
+        14,
+        15,
+        16,
+        17
+      ],
+      "sourceArticleTextSha256": "593a89b59512f7238462a32e5948bd2d905eed868513e8fb7c05b3088f0a2b65",
+      "sourceTextCandidate": "Article 35 : Entrée en vigueur La présente Instruction entre en vigueur à compter de sa date de signature et fera l'objet de publication partout où besoin sera. Fait à Abidjan, te. Z 4. JUIL. 2019 Pour le Conseil Région ES 13 ‘Avenue Joseph ANOMA Tél: (225) 20 21 57 42 7 20 21 5179 O1 8P 1878 AbidjanO1 + Côte d'Ivoire ax Fax: 20 22 16 57 presidencencrepm.org Mvmcrepmf.org Instructionn°__ 2! JCREPMF/2019 Modèle de lettre d'engagement du Commissaire aux Comptes d’une société cotée et d'une structure agréée Logo et entête du Commissaire aux Comptes Monsieur Le Secrétaire Général Conseil Régional de L'Epargne Publique et des Marchés Financiers Abidjan - Côte d’Ivoire Obiet : Lettre d'engagement Nous (je), soussigné, cabinet (Madame / Monsieur) … , en qualité de Commissaire aux Comptes … (titulaire / suppléant) de la société … pour un mandat allant du au nous engageons (m’engage) par la présente à : + n'exercer directement ou indirectement aucune activité ou fonction incompatible avec l'exercice du mandat de commissaires aux comptes de l'établissement assujetti et à éviter tout conflit d’intérêt ; + nous (me) conformer aux normes de contrôle et de qualité des prestations initiées par l'OHADA ; + nous (me) conformer à la règlementation du Marché Financier Régional ; + mettre en place et à maintenir une organisation efficace pour assurer notre (ma) mission de commissariat aux comptes. Nous nous engageons (Je m'engage) à satisfaire aux exigences suivantes : 1. mettre en place des moyens nécessaires permettant d'assumer les responsabilités, en matière : + d’adéquation à l'ampleur de la mission à accomplir, de ressources humaines et techniques mises en œuvre ; + de contrôle du respect des règles applicables à la profession et d'appréciation régulière des risques ; + d'évaluation …",
+      "sourceKeywordHits": [
+        "Entrée en vigueur",
+        "date de signature",
+        "Fait à Abidjan"
+      ],
+      "normalizedRequirementCandidate": "L'article 35 indique une entrée en vigueur à la date de signature ; la date exacte ne doit être renseignée comme métadonnée vérifiée qu'après inspection visuelle de la page finale du PDF officiel hashé.",
+      "applicabilityCandidate": "REGULATORY_SOURCE_METADATA_ONLY",
+      "products": [
+        "REGULATORY_SOURCE"
+      ],
+      "documentTypes": [
+        "SOURCE_METADATA",
+        "REVIEW_EVIDENCE"
+      ],
+      "canonicalFields": [
+        "regulatory_sources.effective_from",
+        "regulatory_sources.signed_on"
+      ],
+      "questionIds": [
+        "Q_SOURCE_EFFECTIVE_DATE"
+      ],
+      "clauseGroupIds": [],
+      "controlIds": [
+        "RULE_INST058_EFFECTIVE_DATE_REQUIRES_VISUAL_SOURCE_REVIEW"
+      ],
+      "evidenceTypes": [
+        "OFFICIAL_SOURCE_FINAL_PAGE"
+      ],
+      "outputSectionIds": [
+        "SYSTEM_ONLY"
+      ],
+      "reviewRoles": [
+        "LEGAL",
+        "COMPLIANCE"
+      ],
+      "circ005RequirementLinks": [
+        "CIRC005_GENERAL_EFFECTIVE_DATE"
+      ],
+      "inst066RequirementLinks": [],
+      "status": "EXTRACTED_UNVERIFIED_PENDING_LEGAL_AND_COMPLIANCE_REVIEW",
+      "activation": "FORBIDDEN",
+      "legalReviewStatus": "PENDING",
+      "complianceReviewStatus": "PENDING",
+      "specFile": "regulatory/requirements/inst058-candidates/02_REGULATOR_RELATIONS_SANCTIONS_METADATA.json",
+      "provenance": {
+        "sourceArtifact": "regulatory/materialized/INSTRUCTION_58_CREPMF_2019.pdf",
+        "ocrDerivative": "regulatory/materialized/INSTRUCTION_58_CREPMF_2019.txt",
+        "articleBlock": "regulatory/requirements/INST058_ARTICLE_BLOCKS_V0_1.json",
+        "textQuality": "OCR_EXTRACTED_UNVERIFIED"
+      }
+    }
+  ],
+  "caveat": "Les résumés, applicabilités, délais, sanctions, champs, questions et contrôles restent des candidats inactifs jusqu'à double revue juridique et conformité. La Décision n°CM/SJ/001/03/2016 doit être matérialisée séparément avant toute interprétation ou calcul de sanction."
+}
