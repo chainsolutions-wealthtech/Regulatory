@@ -1,7 +1,7 @@
 import "server-only";
 
 import { createHash, randomUUID } from "node:crypto";
-import { mkdir, rm, writeFile } from "node:fs/promises";
+import { mkdir, readFile, rm, writeFile } from "node:fs/promises";
 import path from "node:path";
 import type { GeneratedProspectusArtifact } from "@/server/generation-adapter";
 
@@ -27,6 +27,7 @@ export interface ArtifactStore {
     generationId: string;
     artifacts: GeneratedProspectusArtifact[];
   }): Promise<StagedArtifactBatch>;
+  read(storageReference: string): Promise<Buffer>;
 }
 
 /**
@@ -101,7 +102,27 @@ export function createFileSystemArtifactStore(rootDirectory: string): ArtifactSt
         },
       };
     },
+    async read(storageReference) {
+      const filePath = resolveStorageReference(resolvedRoot, storageReference);
+      return readFile(filePath);
+    },
   };
+}
+
+function resolveStorageReference(rootDirectory: string, value: string): string {
+  if (!value || value.startsWith("/") || value.includes("\\")) {
+    throw new Error("INVALID_ARTIFACT_STORAGE_REFERENCE");
+  }
+  const segments = value.split("/");
+  if (segments.some((segment) => !segment || segment === "." || segment === "..")) {
+    throw new Error("INVALID_ARTIFACT_STORAGE_REFERENCE");
+  }
+  const resolved = path.resolve(rootDirectory, ...segments);
+  const relative = path.relative(rootDirectory, resolved);
+  if (relative.startsWith("..") || path.isAbsolute(relative)) {
+    throw new Error("ARTIFACT_STORAGE_REFERENCE_OUTSIDE_ROOT");
+  }
+  return resolved;
 }
 
 function safeSegment(value: string): string {
@@ -124,7 +145,9 @@ function mediaType(fileName: string): string {
   }
   if (fileName.endsWith(".json")) return "application/json";
   if (fileName.endsWith(".md")) return "text/markdown";
+  if (fileName.endsWith(".csv")) return "text/csv";
   if (fileName.endsWith(".pdf")) return "application/pdf";
+  if (fileName.endsWith(".zip")) return "application/zip";
   return "application/octet-stream";
 }
 
