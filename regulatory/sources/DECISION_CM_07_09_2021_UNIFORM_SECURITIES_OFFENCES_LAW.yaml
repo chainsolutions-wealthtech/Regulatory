@@ -1,0 +1,66 @@
+source_id: DECISION_CM_07_09_2021_UNIFORM_SECURITIES_OFFENCES_LAW
+source_family: DECISION
+reference: "Décision n° CM/07/09/2021"
+title: "Décision portant adoption de la Loi uniforme relative aux infractions boursières sur le marché financier régional de l'UMOA"
+issuing_authority: "Conseil des Ministres de l'UMOA"
+document_type: DECISION
+language: fr
+
+official_publication:
+  authority: AMF_UMOA
+  page_url: "https://www.amf-umoa.org/actuality-details?actualiteId=1000182"
+  actualite_id: 1000182
+  page_observed_on: 2026-08-08
+  page_evidence:
+    - "DECISION N° CM/07/09/2021"
+    - "PORTANT ADOPTION DE LA LOI UNIFORME RELATIVE AUX INFRACTIONS BOURSIERES SUR LE MARCHE FINANCIER REGIONAL DE L'UMOA"
+  corroborating_public_authority:
+    authority: CENTIF_SENEGAL
+    url: "https://www.centif.sn/reglementation/fr/reglcommu"
+    evidence_scope: REFERENCE_AND_TITLE_CORROBORATED
+
+source_integrity:
+  official_detail_route: "https://www.amf-umoa.org/actuality-details?actualiteId=1000182"
+  official_api_detail: "https://www.amf-umoa.org/service/api/elastic/actualite?id=1000182&langue=fr"
+  repository_copy: null
+  sha256: null
+  byte_size: null
+  page_count: null
+  copy_status: OFFICIAL_ROUTE_IDENTIFIED_BINARY_NOT_MATERIALIZED
+  materialization_blocker: GITHUB_ACTIONS_BILLING_OR_DIRECT_API_ACCESS_REQUIRED
+
+sanctions_chain_relationship:
+  predecessor_context:
+    source_id: DECISION_CM_SJ_001_03_2016
+    relationship: ORIGINAL_SANCTIONS_DEVICE
+  successor_context:
+    source_id: DECISION_CM_10_06_2022
+    relationship: REVISED_SANCTIONS_DEVICE_ALIGNED_WITH_UNIFORM_LAW
+  official_link_evidence: >-
+    Le communiqué BCEAO du 24 juin 2022 indique que la révision du dispositif des
+    sanctions pécuniaires vise notamment l'alignement, pour les mêmes agissements,
+    sur la Loi Uniforme relative aux infractions boursières.
+  relationship_status: NORMATIVE_CONTEXT_CONFIRMED_2022_EFFECT_NOT_YET_RESOLVED
+
+legal_metadata:
+  act_date: PENDING_OWN_BINARY_REVIEW
+  effective_from: PENDING_OWN_BINARY_REVIEW
+  amendments_and_rectifications: TO_COMPLETE
+  current_legal_status: PENDING_BINARY_AND_LEGAL_REVIEW
+
+next_steps:
+  - MATERIALIZE_OWN_OFFICIAL_BINARY
+  - VERIFY_SIGNATURE_AND_EFFECTIVE_DATE
+  - IDENTIFY_UNIFORM_LAW_ATTACHMENT_OR_TEXT
+  - MAP_RELEVANT_SECURITIES_OFFENCES_TO_2022_SANCTIONS_REVISION_CONTEXT
+  - DO_NOT_INFER_2022_SANCTION_QUANTA_FROM_THIS_SOURCE
+  - HUMAN_LEGAL_AND_COMPLIANCE_REVIEW
+
+safety:
+  contextual_link_is_legal_relationship_resolution: false
+  automatic_sanction_rule_reconstruction_allowed: false
+  sanction_amount_calculation_allowed: false
+  automatic_enforcement_allowed: false
+  automatic_dependency_resolution_allowed: false
+  automatic_requirement_activation_allowed: false
+  ready_for_submission_must_remain_false: true
