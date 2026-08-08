@@ -1,0 +1,37 @@
+source_id: CIRCULAIRE_06_CREPMF_2022
+source_type: CIRCULAR
+authority: CREPMF_AMF_UMOA
+reference: "Circulaire n°06/CREPMF/2022"
+title: "Relative au document d'informations clés à fournir à l'investisseur d'un OPC"
+jurisdiction: UMOA
+source_origin:
+  authority_api: AMF_UMOA
+  actualite_id: 1000134
+  binary_identity: API_OBJECT_REFERENCE_MATCH_AND_BASE64_PDF_MAGIC_CONFIRMED
+materialization:
+  pdf: regulatory/sources/amf-umoa-2022-circulars/CIRCULAIRE_06_AMF_UMOA_2022.pdf
+  text: regulatory/sources/amf-umoa-2022-circulars/CIRCULAIRE_06_AMF_UMOA_2022.txt
+  metadata: regulatory/sources/amf-umoa-2022-circulars/CIRCULAIRE_06_AMF_UMOA_2022.metadata.json
+  sha256: 992c96b03ef9592ddd6163157b75b028559f23c335a5a393a3ff715a3064766e
+  byte_size: 873019
+  page_count: 11
+  extraction_method: OCR_TESSERACT_FRA_FALLBACK
+legal_metadata:
+  current_legal_status: TO_VERIFY
+instruction_66_relationship:
+  dependency_id: INST066_ART033_DEP_CIRC_01
+  article_number: 33
+  relationship: EXPLICIT_IMPLEMENTING_CIRCULAR
+  documentary_dependency_resolution: CONFIRMED
+  evidence: >-
+    The circular expressly defines Instruction as Instruction n°66/CREPMF/2021
+    and specifies the detailed content, form and presentation of the key investor
+    information document delegated by Article 33.
+review:
+  legal_review_required: true
+  legal_review_status: PENDING
+  compliance_review_required: true
+  compliance_review_status: PENDING
+safety:
+  automatic_requirement_activation_allowed: false
+  ready_for_submission_must_remain_false: true
