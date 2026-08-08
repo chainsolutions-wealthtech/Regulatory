@@ -1,0 +1,79 @@
+name: Build INST066 Tail Research Brief
+
+on:
+  push:
+    branches:
+      - main
+    paths:
+      - .github/workflows/build-inst066-tail-research-brief.yml
+      - scripts/build_inst066_tail_research_brief.py
+      - regulatory/registries/INST066_EXTERNAL_DEPENDENCY_RESEARCH_QUEUE_V0_1.json
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: inst066-tail-research-brief-main
+  cancel-in-progress: true
+
+jobs:
+  build-and-validate:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Build deterministic tail brief
+        run: python3 scripts/build_inst066_tail_research_brief.py
+
+      - name: Validate brief boundaries
+        run: |
+          python3 - <<'PY'
+          import json
+          from pathlib import Path
+          brief = json.loads(Path(
+              'regulatory/registries/INST066_TAIL_DEPENDENCY_RESEARCH_BRIEF_V0_1.json'
+          ).read_text(encoding='utf-8'))
+          validation = json.loads(Path(
+              'regulatory/validation/INST066_TAIL_DEPENDENCY_RESEARCH_BRIEF_VALIDATION_V0_1.json'
+          ).read_text(encoding='utf-8'))
+          assert validation['status'] == 'PASS', validation
+          assert brief['targetArticles'] == [74, 75, 76, 80]
+          assert [a['articleNumber'] for a in brief['articles']] == [74, 75, 76, 80]
+          assert all(a['dependencyOccurrenceCount'] > 0 for a in brief['articles'])
+          assert all(a['researchPriority'] == 'NEXT_TAIL_REVIEW' for a in brief['articles'])
+          assert brief['safety']['automaticReferenceInferenceAllowed'] is False
+          assert brief['safety']['automaticDependencyResolutionAllowed'] is False
+          assert brief['safety']['automaticRequirementActivationAllowed'] is False
+          assert brief['safety']['readyForSubmissionMustRemainFalse'] is True
+          PY
+
+      - name: Upload tail research brief
+        uses: actions/upload-artifact@v4
+        with:
+          name: inst066-tail-dependency-research-brief
+          retention-days: 30
+          if-no-files-found: error
+          path: |
+            regulatory/registries/INST066_TAIL_DEPENDENCY_RESEARCH_BRIEF_V0_1.json
+            regulatory/validation/INST066_TAIL_DEPENDENCY_RESEARCH_BRIEF_VALIDATION_V0_1.json
+
+      - name: Commit deterministic tail brief
+        if: github.actor != 'github-actions[bot]'
+        run: |
+          git config user.name 'regulatory-source-bot'
+          git config user.email 'regulatory-source-bot@users.noreply.github.com'
+          git add \
+            regulatory/registries/INST066_TAIL_DEPENDENCY_RESEARCH_BRIEF_V0_1.json \
+            regulatory/validation/INST066_TAIL_DEPENDENCY_RESEARCH_BRIEF_VALIDATION_V0_1.json
+          if git diff --cached --quiet; then
+            echo 'No tail research brief changes to commit.'
+          else
+            git commit -m 'regulatory: build Instruction 66 tail dependency research brief'
+            git pull --rebase origin main
+            git push origin HEAD:main
+          fi
