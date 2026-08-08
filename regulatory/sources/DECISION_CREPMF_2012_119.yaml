@@ -1,0 +1,53 @@
+source_id: DECISION_CREPMF_2012_119
+source_family: DECISION
+reference: "Décision n°2012-119"
+title: "Décision portant modification de l'Instruction n°46/2011 relative à la classification et aux règles d'allocation d'actifs des organismes de placement collectif sur le marché financier régional de l'UMOA"
+jurisdiction: UMOA
+authority_at_adoption: CREPMF
+current_authority_name: AMF-UMOA
+document_type: DECISION
+language: fr
+historical_status: EXPLICITLY_ABROGATED_BY_INSTRUCTION_66_ARTICLE_92
+
+source_integrity:
+  official_binary_url: TO_IDENTIFY_FROM_OFFICIAL_SOURCE
+  repository_copy: null
+  sha256: null
+  byte_size: null
+  page_count: null
+  copy_status: OFFICIAL_ARTICLE92_REFERENCE_ONLY_BINARY_NOT_MATERIALIZED
+
+historical_evidence:
+  primary_abrogation_source:
+    source_id: INSTRUCTION_66_CREPMF_2021
+    article: 92
+    evidence_pages: [64, 65]
+    source_pdf: regulatory/materialized/INSTRUCTION_66_CREPMF_2021.pdf
+    source_sha256: 3f964f2f6ab9ce9eb16912ccda13f34b5023a188dfb18fcba7065590c770d396
+    status: VISUALLY_OBSERVED_FROM_HASHED_OFFICIAL_PDF
+  related_historical_source:
+    source_id: INSTRUCTION_46_CREPMF_2011_REVISEE
+    relationship: MODIFICATION_CHAIN_PRECEDES_REVISED_VERSION_BUT_EXACT_EFFECT_PENDING_OWN_BINARY
+    status: PENDING_HISTORICAL_OFFICIAL_SOURCE_REVIEW
+  crosscheck_evidence: regulatory/review-evidence/INST066_HISTORICAL_CROSSCHECK/OFFICIAL_SOURCE_SEARCH_2026-08-08.yaml
+
+legal_metadata:
+  act_date: PENDING_OFFICIAL_BINARY_REVIEW
+  effective_from: PENDING_OFFICIAL_BINARY_REVIEW
+  exact_modifications_to_instruction_46: PENDING_OFFICIAL_BINARY_REVIEW
+  current_legal_status: ABROGATED_BY_INSTRUCTION_66_EFFECTIVE_2022_01_01
+  historical_binary_status: OFFICIAL_BINARY_NOT_MATERIALIZED
+  activation_allowed: false
+
+safety:
+  requirement_activation_allowed: false
+  historical_rule_reactivation_allowed: false
+  automatic_rule_reconstruction_allowed: false
+  automatic_migration_inference_allowed: false
+  human_legal_review_required: true
+  human_compliance_review_required: true
+
+notes:
+  - "L'existence, la référence, l'objet et l'abrogation de cette décision sont établis par l'article 92 de l'Instruction 66 officielle matérialisée."
+  - "Le binaire propre de la Décision n°2012-119 n'a pas été identifié dans les routes institutionnelles publiques contrôlées le 2026-08-08."
+  - "Aucune date, aucun article modifié et aucun effet précis sur l'Instruction 46 ne doivent être reconstruits à partir de sources tierces."
