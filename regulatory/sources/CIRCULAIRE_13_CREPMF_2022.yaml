@@ -1,0 +1,47 @@
+source_id: CIRCULAIRE_13_CREPMF_2022
+source_type: CIRCULAR
+authority: CREPMF_AMF_UMOA
+reference: "Circulaire n°13/CREPMF/2022"
+title: "Relative aux classes de parts / actions"
+jurisdiction: UMOA
+source_origin:
+  authority_api: AMF_UMOA
+  actualite_id: 1000141
+  binary_identity: API_OBJECT_REFERENCE_MATCH_AND_BASE64_PDF_MAGIC_CONFIRMED
+materialization:
+  pdf: regulatory/sources/amf-umoa-2022-circulars/CIRCULAIRE_13_AMF_UMOA_2022.pdf
+  text: regulatory/sources/amf-umoa-2022-circulars/CIRCULAIRE_13_AMF_UMOA_2022.txt
+  metadata: regulatory/sources/amf-umoa-2022-circulars/CIRCULAIRE_13_AMF_UMOA_2022.metadata.json
+  sha256: 438c787f98d176af8c66235d283b516bc8ce4b49dd7e267ac25fe8a4df7b560f
+  byte_size: 94204
+  page_count: 1
+  extraction_method: OCR_TESSERACT_FRA_FALLBACK
+legal_metadata:
+  effective_clause: "La présente Circulaire prend effet à compter de sa publication."
+  current_legal_status: TO_VERIFY
+instruction_66_relationships:
+  - dependency_id: INST066_ART038_DEP_CIRC_01
+    article_number: 38
+    relationship: EXPLICIT_ARTICLE_CITATION
+    documentary_dependency_resolution: CONFIRMED
+  - dependency_id: INST066_ART074_DEP_CIRC_01
+    article_number: 74
+    relationship: EXPLICIT_ARTICLE_CITATION
+    documentary_dependency_resolution: CONFIRMED
+  - dependency_id: INST066_ART074_DEP_CIRC_02
+    article_number: 74
+    relationship: EXPLICIT_ARTICLE_CITATION
+    documentary_dependency_resolution: CONFIRMED
+  evidence: >-
+    The circular states that it specifies the conditions under which an OPC may offer
+    different classes of units/shares and expressly cites Articles 38, 74 and 80 of
+    Instruction n°66/CREPMF/2021. The Article 80 dependency will be added only after
+    its exact dependency identifier is recovered from the source inventory.
+review:
+  legal_review_required: true
+  legal_review_status: PENDING
+  compliance_review_required: true
+  compliance_review_status: PENDING
+safety:
+  automatic_requirement_activation_allowed: false
+  ready_for_submission_must_remain_false: true
