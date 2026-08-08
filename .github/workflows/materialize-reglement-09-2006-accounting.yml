@@ -1,0 +1,113 @@
+name: Materialize Regulation 09 2006 Accounting
+
+on:
+  push:
+    branches:
+      - main
+    paths:
+      - .github/workflows/materialize-reglement-09-2006-accounting.yml
+      - scripts/materialize_reglement_09_2006_accounting.py
+      - regulatory/sources/REGLEMENT_09_2006_CM_UEMOA_ACCOUNTING.yaml
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: regulatory-reglement-09-2006-accounting-main
+  cancel-in-progress: false
+
+jobs:
+  materialize-accounting-regulation:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Install PDF and French OCR tools
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y --no-install-recommends \
+            poppler-utils \
+            ocrmypdf \
+            tesseract-ocr \
+            tesseract-ocr-fra
+
+      - name: Download hash and extract official government archive PDF
+        run: python3 scripts/materialize_reglement_09_2006_accounting.py
+
+      - name: Validate source identity and safety boundaries
+        run: |
+          python3 - <<'PY'
+          import json
+          from pathlib import Path
+
+          metadata = json.loads(Path(
+              'regulatory/materialized/REGLEMENT_09_2006_CM_UEMOA_ACCOUNTING.metadata.json'
+          ).read_text(encoding='utf-8'))
+          validation = json.loads(Path(
+              'regulatory/validation/REGLEMENT_09_2006_ACCOUNTING_MATERIALIZATION_VALIDATION_V0_1.json'
+          ).read_text(encoding='utf-8'))
+          source = Path(
+              'regulatory/sources/REGLEMENT_09_2006_CM_UEMOA_ACCOUNTING.yaml'
+          ).read_text(encoding='utf-8')
+
+          assert validation['status'] == 'PASS', validation
+          assert metadata['sourceId'] == 'REGLEMENT_09_2006_CM_UEMOA_ACCOUNTING'
+          assert metadata['sourceProvenance'] == 'OFFICIAL_MEMBER_STATE_GOVERNMENT_ARCHIVE_COPY'
+          assert metadata['byteSize'] > 10000
+          assert metadata['pageCount'] > 0
+          assert len(metadata['sha256']) == 64
+          assert metadata['referenceDetection']['present'] is True
+          assert len(metadata['referenceDetection']['pages']) > 0
+          assert all(metadata['titleDetection']['termPresence'].values())
+          assert metadata['legalMetadata']['adoptedOn'] == '2006-06-29'
+          assert metadata['legalMetadata']['currentLegalStatus'] == 'PENDING_CURRENT_VERSION_AND_AMENDMENTS_REVIEW'
+          assert validation['checks']['officialGovernmentPdfDownloaded'] is True
+          assert validation['checks']['pdfMagicConfirmed'] is True
+          assert validation['checks']['regulationReferenceDetected'] is True
+          assert validation['checks']['accountingTitleTermsDetected'] is True
+          assert validation['checks']['currentVersionNotInferred'] is True
+          assert validation['checks']['requirementActivationAllowed'] is False
+          assert validation['checks']['humanLegalReviewRequired'] is True
+          assert validation['checks']['humanComplianceReviewRequired'] is True
+          assert 'copy_status: MATERIALIZED_HASHED_AND_IDENTITY_VALIDATED' in source
+          assert 'current_legal_status: PENDING_CURRENT_VERSION_AND_AMENDMENTS_REVIEW' in source
+          assert 'automatic_dependency_resolution_allowed: false' in source
+          assert 'requirement_activation_allowed: false' in source
+          PY
+
+      - name: Upload accounting regulation evidence
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: regulation-09-2006-accounting-source
+          retention-days: 30
+          if-no-files-found: error
+          path: |
+            regulatory/materialized/REGLEMENT_09_2006_CM_UEMOA_ACCOUNTING.pdf
+            regulatory/materialized/REGLEMENT_09_2006_CM_UEMOA_ACCOUNTING.txt
+            regulatory/materialized/REGLEMENT_09_2006_CM_UEMOA_ACCOUNTING.metadata.json
+            regulatory/validation/REGLEMENT_09_2006_ACCOUNTING_MATERIALIZATION_VALIDATION_V0_1.json
+            regulatory/sources/REGLEMENT_09_2006_CM_UEMOA_ACCOUNTING.yaml
+
+      - name: Commit official accounting source
+        run: |
+          git config user.name "regulatory-source-bot"
+          git config user.email "regulatory-source-bot@users.noreply.github.com"
+          git add \
+            regulatory/materialized/REGLEMENT_09_2006_CM_UEMOA_ACCOUNTING.pdf \
+            regulatory/materialized/REGLEMENT_09_2006_CM_UEMOA_ACCOUNTING.txt \
+            regulatory/materialized/REGLEMENT_09_2006_CM_UEMOA_ACCOUNTING.metadata.json \
+            regulatory/validation/REGLEMENT_09_2006_ACCOUNTING_MATERIALIZATION_VALIDATION_V0_1.json \
+            regulatory/sources/REGLEMENT_09_2006_CM_UEMOA_ACCOUNTING.yaml
+          if git diff --cached --quiet; then
+            echo "No Regulation 09/2006 materialization changes to commit."
+            exit 0
+          fi
+          git commit -m "regulatory: materialize official Regulation 09/2006 accounting source"
+          git pull --rebase origin main
+          git push origin HEAD:main
