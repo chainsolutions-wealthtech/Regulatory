@@ -3,7 +3,7 @@
 
 The first-pass inventory detects generic references (Council circular/instruction), the
 specific accounting regulation and Instruction 58. This pass detects any other explicit
-`Instruction n°XX/CREPMF/YYYY` references present in the hash-bound article blocks.
+`Instruction [n°]XX/CREPMF/YYYY` references present in the hash-bound article blocks.
 It never guesses titles or legal status.
 """
 
@@ -19,8 +19,12 @@ BLOCKS_PATH = ROOT / "regulatory" / "requirements" / "INST066_ARTICLE_BLOCKS_V0_
 INVENTORY_PATH = ROOT / "regulatory" / "registries" / "INST066_EXTERNAL_IMPLEMENTING_TEXTS_INVENTORY_V0_1.json"
 VALIDATION_PATH = ROOT / "regulatory" / "validation" / "INST066_EXTERNAL_IMPLEMENTING_TEXTS_VALIDATION_V0_1.json"
 
+# OCR variants observed in the official source include both:
+#   Instruction n°58/CREPMF/2019
+#   Instruction 61/CREPMF/2020
+# The n° marker is therefore optional; the CREPMF/year structure remains mandatory.
 PATTERN = re.compile(
-    r"Instruction\s+n\s*[°º]?\s*(?P<number>\d{1,3})\s*/\s*CREPMF\s*/\s*(?P<year>20\d{2})",
+    r"Instruction\s+(?:n\s*[°ºo]?\s*)?(?P<number>\d{1,3})\s*/\s*CREPMF\s*/\s*(?P<year>20\d{2})",
     re.IGNORECASE,
 )
 
@@ -94,9 +98,11 @@ def main() -> None:
         key=lambda item: (int(item["articleNumber"]), item["dependencyKind"], item["dependencyId"])
     )
     refresh_summary(inventory)
-    inventory.setdefault("method", {}).setdefault("detection", []).append("EXPLICIT_NAMED_CREPMF_INSTRUCTION")
+    detection = inventory.setdefault("method", {}).setdefault("detection", [])
+    if "EXPLICIT_NAMED_CREPMF_INSTRUCTION" not in detection:
+        detection.append("EXPLICIT_NAMED_CREPMF_INSTRUCTION")
     inventory["method"]["namedInstructionPass"] = (
-        "Second deterministic pass captures explicit Instruction n°XX/CREPMF/YYYY references not already represented."
+        "Second deterministic pass captures explicit Instruction [n°]XX/CREPMF/YYYY references not already represented."
     )
     INVENTORY_PATH.write_text(json.dumps(inventory, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
 
