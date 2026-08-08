@@ -1,0 +1,38 @@
+source_id: CIRCULAIRE_05_CREPMF_2022
+source_type: CIRCULAR
+authority: CREPMF_AMF_UMOA
+reference: "Circulaire n°05/CREPMF/2022"
+title: "Relative au contenu du prospectus des OPC"
+jurisdiction: UMOA
+source_origin:
+  authority_api: AMF_UMOA
+  actualite_id: 1000133
+  binary_identity: API_OBJECT_REFERENCE_MATCH_AND_BASE64_PDF_MAGIC_CONFIRMED
+materialization:
+  pdf: regulatory/sources/amf-umoa-2022-circulars/CIRCULAIRE_05_AMF_UMOA_2022.pdf
+  text: regulatory/sources/amf-umoa-2022-circulars/CIRCULAIRE_05_AMF_UMOA_2022.txt
+  metadata: regulatory/sources/amf-umoa-2022-circulars/CIRCULAIRE_05_AMF_UMOA_2022.metadata.json
+  sha256: c235414ff59096dab526e4fdeb4df6e135e65959125332c2e5844c0f54551fa4
+  byte_size: 447246
+  page_count: 6
+  extraction_method: OCR_TESSERACT_FRA_FALLBACK
+legal_metadata:
+  effective_clause: "La présente Circulaire prend effet à compter de sa publication."
+  current_legal_status: TO_VERIFY
+instruction_66_relationship:
+  dependency_id: INST066_ART028_DEP_CIRC_01
+  article_number: 28
+  relationship: EXPLICIT_IMPLEMENTING_CIRCULAR
+  documentary_dependency_resolution: CONFIRMED
+  evidence: >-
+    The circular expressly defines Instruction as Instruction n°66/CREPMF/2021
+    and states that it specifies the information that the Prospectus must contain,
+    matching Article 28's delegated prospectus-content requirement.
+review:
+  legal_review_required: true
+  legal_review_status: PENDING
+  compliance_review_required: true
+  compliance_review_status: PENDING
+safety:
+  automatic_requirement_activation_allowed: false
+  ready_for_submission_must_remain_false: true
