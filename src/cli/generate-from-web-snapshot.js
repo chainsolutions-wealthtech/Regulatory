@@ -36,6 +36,11 @@ const modelPath = path.join(outputDirectory, "document-model.json");
 const generationManifestPath = path.join(outputDirectory, "generation-manifest.json");
 const docxPath = path.join(outputDirectory, "prospectus-draft.docx");
 const docxManifestPath = path.join(outputDirectory, "docx-manifest.json");
+const docxValidationPath = path.join(outputDirectory, "docx-validation.json");
+const pdfPath = path.join(outputDirectory, "prospectus-draft.pdf");
+const pdfManifestPath = path.join(outputDirectory, "pdf-manifest.json");
+const packageZipPath = path.join(outputDirectory, "review-package.zip");
+const packageManifestPath = path.join(outputDirectory, "review-package-manifest.json");
 
 await runPython("scripts/generate_docx.py", [
   "--model",
@@ -60,7 +65,38 @@ const validationOutput = await runPython("scripts/validate_docx.py", [
   docxManifestPath,
 ]);
 const docxValidation = parseLastJsonObject(validationOutput.stdout);
-await writeJson(path.join(outputDirectory, "docx-validation.json"), docxValidation);
+await writeJson(docxValidationPath, docxValidation);
+
+const packageOutput = await runPython("scripts/generate_pdf_review_package.py", [
+  "--docx",
+  docxPath,
+  "--generation-manifest",
+  generationManifestPath,
+  "--output-pdf",
+  pdfPath,
+  "--pdf-manifest",
+  pdfManifestPath,
+  "--package-zip",
+  packageZipPath,
+  "--package-manifest",
+  packageManifestPath,
+  ...[
+    "canonical-snapshot.json",
+    "canonical-data.json",
+    "questionnaire-state.json",
+    "control-report.json",
+    "concordance.json",
+    "document-model.json",
+    "answer-log.json",
+    "prospectus-draft.md",
+    "docx-manifest.json",
+    "docx-validation.json",
+  ].flatMap((fileName) => ["--include", path.join(outputDirectory, fileName)]),
+]);
+const packageValidation = parseLastJsonObject(packageOutput.stdout);
+if (packageValidation.status !== "PASS" || packageValidation.ready_for_submission !== false) {
+  throw new Error("PDF_REVIEW_PACKAGE_VALIDATION_FAILED");
+}
 
 const result = {
   generation_id: generation.manifest.generation_id,
@@ -77,6 +113,9 @@ const result = {
   ready_for_compliance_review: generation.manifest.ready_for_compliance_review,
   ready_for_submission: false,
   docx_validation_status: docxValidation.status,
+  pdf_validation_status: packageValidation.status,
+  pdf_sha256: packageValidation.pdf_sha256,
+  review_package_sha256: packageValidation.package_sha256,
 };
 console.log(JSON.stringify(result, null, 2));
 
@@ -84,7 +123,7 @@ async function runPython(script, scriptArgs) {
   return execFileAsync("python3", [script, ...scriptArgs], {
     cwd: repoRoot,
     encoding: "utf8",
-    maxBuffer: 10 * 1024 * 1024,
+    maxBuffer: 20 * 1024 * 1024,
   });
 }
 
