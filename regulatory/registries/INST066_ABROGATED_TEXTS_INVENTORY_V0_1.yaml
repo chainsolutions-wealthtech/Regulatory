@@ -1,126 +1,166 @@
 inventory_id: INST066_ABROGATED_TEXTS_INVENTORY_V0_1
 source_id: INSTRUCTION_66_CREPMF_2021
 source_article: 92
-status: SOURCE_TEXT_VISUALLY_OBSERVED_HISTORICAL_REGISTRY_CROSSCHECK_IN_PROGRESS
+status: SOURCE_TEXT_OBSERVED_7_SOURCE_RECORDS_6_OFFICIAL_ROUTES_IDENTIFIED_1_ROUTE_MISSING
 source_evidence:
   pdf: regulatory/materialized/INSTRUCTION_66_CREPMF_2021.pdf
   sha256: 3f964f2f6ab9ce9eb16912ccda13f34b5023a188dfb18fcba7065590c770d396
   pages: [64, 65]
   rendered_pages:
-  - regulatory/review-evidence/INST066_LEGAL_METADATA/page-64.png
-  - regulatory/review-evidence/INST066_LEGAL_METADATA/page-65.png
+    - regulatory/review-evidence/INST066_LEGAL_METADATA/page-64.png
+    - regulatory/review-evidence/INST066_LEGAL_METADATA/page-65.png
 crosscheck_search_evidence: regulatory/review-evidence/INST066_HISTORICAL_CROSSCHECK/OFFICIAL_SOURCE_SEARCH_2026-08-08.yaml
-corroborating_official_evidence:
-  - regulatory/review-evidence/INST066_HISTORICAL_CROSSCHECK/corroborating/DECISION_PCR_DA_2018_165_NSIA_FONDS_DIVERSIFIE.pdf
 reference_count: 7
+
 crosscheck_progress:
   source_records_created_count: 7
   officially_materialized_count: 1
-  official_reference_title_corroborated_count: 2
-  article_92_only_count: 4
-  historical_binaries_still_missing_count: 6
+  additional_official_api_routes_identified_count: 5
+  official_routes_total_count: 6
+  official_route_not_identified_count: 1
+  historical_binaries_still_not_materialized_count: 6
+  binaries_with_route_ready_for_future_materialization_count: 5
+  route_still_missing_reference: "Décision n°2012-119"
+  github_actions_materialization_blocker: regulatory/validation/GITHUB_ACTIONS_BILLING_BLOCKER_2026-08-08.yaml
+
+portal_metadata_conflict:
+  observed_on: 2026-08-08
+  affected_historical_instructions:
+    - Instruction n°45/2011
+    - Instruction n°24/99
+    - Instruction n°23/99
+    - Instruction n°22/99
+    - Instruction n°21/99
+  portal_field_observed: "abroge=false"
+  controlling_legal_source: "Instruction n°66/CREPMF/2021, article 92"
+  controlling_legal_effect: EXPLICIT_ABROGATION
+  interpretation: >-
+    Le champ abroge=false du portail actuel est traité comme une métadonnée technique
+    du référentiel documentaire et non comme une source capable de réactiver les
+    textes. L'article 92 du binaire officiel hashé de l'Instruction 66 les abroge
+    expressément. Toute automatisation doit donner priorité à cette abrogation normative.
+
 references:
-- seq: 1
-  reference: Décision n°2012-119
-  title_observed: >-
-    Décision n°2012-119 portant modification de l'Instruction n°46/2011 relative
-    à la classification et aux règles d'allocation d'actifs des organismes de
-    placement collectif sur le marché financier régional de l'UMOA
-  evidence_page: 64
-  source_text_status: VISUALLY_OBSERVED
-  evidence_grade: ARTICLE_92_OFFICIAL_SOURCE_ONLY
-  source_record: regulatory/sources/DECISION_CREPMF_2012_119.yaml
-  historical_registry_status: OFFICIAL_PUBLIC_ROUTE_NOT_IDENTIFIED_2026_08_08
-  binary_materialization_status: NOT_MATERIALIZED
-- seq: 2
-  reference: Instruction n°46/2011 révisée
-  title_observed: >-
-    Instruction n°46/2011 révisée relative à la classification et aux règles
-    d'allocation d'actifs des organismes de placement collectif sur le marché
-    financier régional de l'UMOA
-  evidence_page: 64
-  source_text_status: VISUALLY_OBSERVED
-  evidence_grade: OFFICIAL_NORMATIVE_BINARY_MATERIALIZED
-  historical_registry_status: OFFICIAL_BRVM_SOURCE_MATERIALIZED_HASHED_AND_INDEXED
-  source_record: regulatory/sources/INSTRUCTION_46_CREPMF_2011_REVISEE.yaml
-  official_publication_page: https://www.brvm.org/fr/instruction-ndeg46-2011-revisee
-  official_binary_url: https://www.brvm.org/sites/default/files/20180822-instruction_ndeg46-2011_revisee-classification_et_aux_regles_d.pdf
-  repository_binary: regulatory/materialized/INSTRUCTION_46_CREPMF_2011_REVISEE.pdf
-  sha256: 6ab1a373b7671457cafd0f36cfbb96d031ab9839c2ecc0c18fabac602f972478
-  byte_size: 3474284
-  page_count: 9
-  article_count: 21
-  publication_date_observed: 2018-08-22
-  revision_date: 2018-07-30
-  effective_from: 2018-07-30
-  binary_materialization_status: MATERIALIZED_HASHED_AND_PAGE_VALIDATED
-- seq: 3
-  reference: Instruction n°45/2011
-  title_observed: >-
-    Instruction n°45/2011 relative à l'organisation, au fonctionnement et à la
-    gestion des organismes de placement collectif en valeurs mobilières sur le
-    marché financier régional de l'UMOA
-  evidence_page: 64
-  source_text_status: VISUALLY_OBSERVED
-  evidence_grade: TWO_DISTINCT_OFFICIAL_ACTS_REFERENCE_AND_TITLE_CORROBORATED
-  historical_registry_status: OFFICIAL_REFERENCE_AND_TITLE_CORROBORATED_BINARY_NOT_MATERIALIZED
-  source_record: regulatory/sources/INSTRUCTION_45_CREPMF_2011.yaml
-  corroborating_act: regulatory/review-evidence/INST066_HISTORICAL_CROSSCHECK/corroborating/DECISION_PCR_DA_2018_165_NSIA_FONDS_DIVERSIFIE.pdf
-  corroborating_act_sha256: 282b603d99e80699203c4ca75abc683dee8e550f2a8f6f79eccd7e937b0c7337
-  binary_materialization_status: NOT_MATERIALIZED
-- seq: 4
-  reference: Instruction n°24/99
-  title_observed: >-
-    Instruction n°24/99 relative à la note d'information des Organismes de
-    Placement Collectif en Valeurs Mobilières
-  evidence_page: 64
-  source_text_status: VISUALLY_OBSERVED
-  evidence_grade: TWO_DISTINCT_OFFICIAL_ACTS_REFERENCE_AND_TITLE_CORROBORATED
-  historical_registry_status: OFFICIAL_REFERENCE_AND_TITLE_CORROBORATED_BINARY_NOT_MATERIALIZED
-  source_record: regulatory/sources/INSTRUCTION_24_CREPMF_1999.yaml
-  corroborating_act: regulatory/review-evidence/INST066_HISTORICAL_CROSSCHECK/corroborating/DECISION_PCR_DA_2018_165_NSIA_FONDS_DIVERSIFIE.pdf
-  corroborating_act_sha256: 282b603d99e80699203c4ca75abc683dee8e550f2a8f6f79eccd7e937b0c7337
-  binary_materialization_status: NOT_MATERIALIZED
-- seq: 5
-  reference: Instruction n°23/99
-  title_observed: >-
-    Instruction n°23/99 relative aux actifs gérés par les Organismes de
-    Placement Collectif en Valeurs Mobilières
-  evidence_page: 64
-  source_text_status: VISUALLY_OBSERVED
-  evidence_grade: ARTICLE_92_OFFICIAL_SOURCE_ONLY
-  source_record: regulatory/sources/INSTRUCTION_23_CREPMF_1999.yaml
-  historical_registry_status: OFFICIAL_PUBLIC_ROUTE_NOT_IDENTIFIED_2026_08_08
-  binary_materialization_status: NOT_MATERIALIZED
-- seq: 6
-  reference: Instruction n°22/99
-  title_observed: >-
-    Instruction n°22/99 relative à l'agrément des Organismes de Placement
-    Collectif en Valeurs Mobilières et à l'information du public
-  evidence_page: 65
-  source_text_status: VISUALLY_OBSERVED
-  evidence_grade: ARTICLE_92_OFFICIAL_SOURCE_ONLY
-  source_record: regulatory/sources/INSTRUCTION_22_CREPMF_1999.yaml
-  historical_registry_status: OFFICIAL_PUBLIC_ROUTE_NOT_IDENTIFIED_2026_08_08
-  binary_materialization_status: NOT_MATERIALIZED
-- seq: 7
-  reference: Instruction n°21/99
-  title_observed: >-
-    Instruction n°21/99 relative à la classification des Organismes de Placement
-    Collectif en Valeurs Mobilières
-  evidence_page: 65
-  source_text_status: VISUALLY_OBSERVED
-  evidence_grade: ARTICLE_92_OFFICIAL_SOURCE_ONLY
-  source_record: regulatory/sources/INSTRUCTION_21_CREPMF_1999.yaml
-  historical_registry_status: OFFICIAL_PUBLIC_ROUTE_NOT_IDENTIFIED_2026_08_08
-  binary_materialization_status: NOT_MATERIALIZED
+  - seq: 1
+    reference: Décision n°2012-119
+    title_observed: >-
+      Décision n°2012-119 portant modification de l'Instruction n°46/2011 relative
+      à la classification et aux règles d'allocation d'actifs des organismes de
+      placement collectif sur le marché financier régional de l'UMOA
+    evidence_page: 64
+    source_text_status: VISUALLY_OBSERVED
+    evidence_grade: ARTICLE_92_OFFICIAL_SOURCE_ONLY
+    source_record: regulatory/sources/DECISION_CREPMF_2012_119.yaml
+    historical_registry_status: OFFICIAL_ROUTE_NOT_IDENTIFIED_AFTER_CURRENT_API_CATEGORY_REVIEW
+    binary_materialization_status: NOT_MATERIALIZED
+
+  - seq: 2
+    reference: Instruction n°46/2011 révisée
+    title_observed: >-
+      Instruction n°46/2011 révisée relative à la classification et aux règles
+      d'allocation d'actifs des organismes de placement collectif sur le marché
+      financier régional de l'UMOA
+    evidence_page: 64
+    source_text_status: VISUALLY_OBSERVED
+    evidence_grade: OFFICIAL_NORMATIVE_BINARY_MATERIALIZED
+    historical_registry_status: OFFICIAL_BRVM_SOURCE_MATERIALIZED_HASHED_AND_INDEXED
+    source_record: regulatory/sources/INSTRUCTION_46_CREPMF_2011_REVISEE.yaml
+    official_publication_page: https://www.brvm.org/fr/instruction-ndeg46-2011-revisee
+    official_binary_url: https://www.brvm.org/sites/default/files/20180822-instruction_ndeg46-2011_revisee-classification_et_aux_regles_d.pdf
+    repository_binary: regulatory/materialized/INSTRUCTION_46_CREPMF_2011_REVISEE.pdf
+    sha256: 6ab1a373b7671457cafd0f36cfbb96d031ab9839c2ecc0c18fabac602f972478
+    byte_size: 3474284
+    page_count: 9
+    article_count: 21
+    revision_date: 2018-07-30
+    effective_from: 2018-07-30
+    binary_materialization_status: MATERIALIZED_HASHED_AND_PAGE_VALIDATED
+
+  - seq: 3
+    reference: Instruction n°45/2011
+    title_observed: >-
+      Instruction n°45/2011 relative à l'organisation, au fonctionnement et à la
+      gestion des organismes de placement collectif en valeurs mobilières sur le
+      marché financier régional de l'UMOA
+    evidence_page: 64
+    source_text_status: VISUALLY_OBSERVED
+    evidence_grade: ARTICLE92_PLUS_CORROBORATING_ACT_PLUS_CURRENT_OFFICIAL_API_ROUTE
+    source_record: regulatory/sources/INSTRUCTION_45_CREPMF_2011.yaml
+    official_api_actualite_id: 1000090
+    official_api_detail: "https://www.amf-umoa.org/service/api/elastic/actualite?id=1000090&langue=fr"
+    document_url_field: "AC-INSTRUCTION-2023-32CC8108-179B-44B7-A629-AC7EAF531DD5.pdf"
+    historical_registry_status: OFFICIAL_DETAIL_ROUTE_IDENTIFIED
+    binary_materialization_status: BLOCKED_BY_GITHUB_ACTIONS_BILLING
+
+  - seq: 4
+    reference: Instruction n°24/99
+    title_observed: >-
+      Instruction n°24/99 relative à la note d'information des Organismes de
+      Placement Collectif en Valeurs Mobilières
+    evidence_page: 64
+    source_text_status: VISUALLY_OBSERVED
+    evidence_grade: ARTICLE92_PLUS_CORROBORATING_ACT_PLUS_CURRENT_OFFICIAL_API_ROUTE
+    source_record: regulatory/sources/INSTRUCTION_24_CREPMF_1999.yaml
+    official_api_actualite_id: 1000070
+    official_api_detail: "https://www.amf-umoa.org/service/api/elastic/actualite?id=1000070&langue=fr"
+    document_url_field: "AC-INSTRUCTION-2023-D5C75F66-3040-4C69-8749-1889764AA995.pdf"
+    historical_registry_status: OFFICIAL_DETAIL_ROUTE_IDENTIFIED
+    binary_materialization_status: BLOCKED_BY_GITHUB_ACTIONS_BILLING
+
+  - seq: 5
+    reference: Instruction n°23/99
+    title_observed: >-
+      Instruction n°23/99 relative aux actifs gérés par les Organismes de
+      Placement Collectif en Valeurs Mobilières
+    evidence_page: 64
+    source_text_status: VISUALLY_OBSERVED
+    evidence_grade: ARTICLE92_PLUS_CURRENT_OFFICIAL_API_ROUTE
+    source_record: regulatory/sources/INSTRUCTION_23_CREPMF_1999.yaml
+    official_api_actualite_id: 1000069
+    official_api_detail: "https://www.amf-umoa.org/service/api/elastic/actualite?id=1000069&langue=fr"
+    document_url_field: "AC-INSTRUCTION-2023-23C4F331-24F1-48EC-985C-6A191EC1357A.pdf"
+    historical_registry_status: OFFICIAL_DETAIL_ROUTE_IDENTIFIED
+    binary_materialization_status: BLOCKED_BY_GITHUB_ACTIONS_BILLING
+
+  - seq: 6
+    reference: Instruction n°22/99
+    title_observed: >-
+      Instruction n°22/99 relative à l'agrément des Organismes de Placement
+      Collectif en Valeurs Mobilières et à l'information du public
+    evidence_page: 65
+    source_text_status: VISUALLY_OBSERVED
+    evidence_grade: ARTICLE92_PLUS_CURRENT_OFFICIAL_API_ROUTE
+    source_record: regulatory/sources/INSTRUCTION_22_CREPMF_1999.yaml
+    official_api_actualite_id: 1000068
+    official_api_detail: "https://www.amf-umoa.org/service/api/elastic/actualite?id=1000068&langue=fr"
+    document_url_field: "AC-INSTRUCTION-2023-CC8CB320-D22C-48E4-84A0-51A0D0A4A7EB.pdf"
+    historical_registry_status: OFFICIAL_DETAIL_ROUTE_IDENTIFIED
+    binary_materialization_status: BLOCKED_BY_GITHUB_ACTIONS_BILLING
+
+  - seq: 7
+    reference: Instruction n°21/99
+    title_observed: >-
+      Instruction n°21/99 relative à la classification des Organismes de Placement
+      Collectif en Valeurs Mobilières
+    evidence_page: 65
+    source_text_status: VISUALLY_OBSERVED
+    evidence_grade: ARTICLE92_PLUS_CURRENT_OFFICIAL_API_ROUTE
+    source_record: regulatory/sources/INSTRUCTION_21_CREPMF_1999.yaml
+    official_api_actualite_id: 1000067
+    official_api_detail: "https://www.amf-umoa.org/service/api/elastic/actualite?id=1000067&langue=fr"
+    document_url_field: "AC-INSTRUCTION-2023-CBE701CC-FCE9-45C4-BE12-ED102D8865B4.pdf"
+    historical_registry_status: OFFICIAL_DETAIL_ROUTE_IDENTIFIED
+    binary_materialization_status: BLOCKED_BY_GITHUB_ACTIONS_BILLING
+
 review_boundaries:
   source_text_observation_complete: true
   historical_source_records_complete: true
+  official_route_discovery_complete_for_instructions_21_22_23_24_45_46: true
   historical_registry_crosscheck_complete: false
-  historical_registry_crosscheck_progress: 7_SOURCE_RECORDS_1_BINARY_MATERIALIZED_2_OFFICIALLY_CORROBORATED_4_ARTICLE92_ONLY
+  remaining_route_discovery_target: DECISION_CREPMF_2012_119
   legal_review_status: PENDING
   compliance_review_status: PENDING
   amendments_rectifications_inventory_status: TO_COMPLETE
   requirement_activation_allowed: false
   historical_rule_reactivation_allowed: false
+  portal_metadata_may_override_article92: false
