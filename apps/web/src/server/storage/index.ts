@@ -3,7 +3,15 @@ import "server-only";
 import { Pool } from "pg";
 import { createNextOidcIdentityProvider } from "@/server/security/oidc-identity-provider";
 import type { VerifiedIdentityProvider } from "@/server/security/verified-identity";
-import { createFileSystemArtifactStore } from "@/server/storage/artifact-store";
+import {
+  createFileSystemArtifactStore,
+  type ArtifactStore,
+} from "@/server/storage/artifact-store";
+import {
+  createPostgresGenerationArtifactRepository,
+  localGenerationArtifactRepository,
+  type GenerationArtifactRepository,
+} from "@/server/storage/generation-artifact-repository";
 import { localProjectRepository } from "@/server/storage/local-project-repository";
 import { createPostgresProjectRepository } from "@/server/storage/postgres-project-repository";
 import type { ProjectRepository } from "@/server/storage/project-repository";
@@ -14,6 +22,7 @@ export const regulatoryStorageDriver = resolveStorageDriver();
 
 let runtimePool: Pool | undefined;
 let runtimeIdentityProvider: VerifiedIdentityProvider | undefined;
+let runtimeArtifactStore: ArtifactStore | undefined;
 
 /**
  * Retourne le pool applicatif PostgreSQL. Aucun URL par défaut ni secret fictif
@@ -48,16 +57,40 @@ export function getRuntimeIdentityProvider(): VerifiedIdentityProvider {
   return runtimeIdentityProvider;
 }
 
+/**
+ * Store binaire runtime. Le filesystem reste un adaptateur de pré-production ;
+ * son remplacement par un stockage objet ne doit pas modifier les repositories.
+ */
+export function getRuntimeArtifactStore(): ArtifactStore {
+  if (regulatoryStorageDriver !== "postgresql") {
+    throw new Error("ARTIFACT_RUNTIME_REQUIRES_POSTGRESQL_DRIVER");
+  }
+  runtimeArtifactStore ??= createFileSystemArtifactStore(
+    requiredEnvironment("REGULATORY_ARTIFACT_ROOT"),
+  );
+  return runtimeArtifactStore;
+}
+
 export function getProjectRepository(): ProjectRepository {
   if (regulatoryStorageDriver === "local-json") return localProjectRepository;
   return createPostgresProjectRepository({
     pool: getRuntimePostgresPool(),
     identityProvider: getRuntimeIdentityProvider(),
-    artifactStore: createFileSystemArtifactStore(requiredEnvironment("REGULATORY_ARTIFACT_ROOT")),
+    artifactStore: getRuntimeArtifactStore(),
+  });
+}
+
+export function getGenerationArtifactRepository(): GenerationArtifactRepository {
+  if (regulatoryStorageDriver === "local-json") return localGenerationArtifactRepository;
+  return createPostgresGenerationArtifactRepository({
+    pool: getRuntimePostgresPool(),
+    identityProvider: getRuntimeIdentityProvider(),
+    artifactStore: getRuntimeArtifactStore(),
   });
 }
 
 export const projectRepository = getProjectRepository();
+export const generationArtifactRepository = getGenerationArtifactRepository();
 
 function resolveStorageDriver(): RegulatoryStorageDriver {
   const value = process.env.REGULATORY_STORAGE_DRIVER?.trim() || "local-json";
