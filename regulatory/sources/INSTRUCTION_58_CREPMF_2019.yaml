@@ -13,7 +13,7 @@ scope_summary: >-
   pour les rapports de certification des Commissaires aux Comptes.
 registry:
   official_index_url: https://www.amf-umoa.org/reglementation/instruction
-  registry_checked_on: '2026-08-07'
+  registry_checked_on: '2026-08-08'
   listed_reference: TO_VERIFY_IN_DYNAMIC_OFFICIAL_REGISTRY
   listed_status: TO_VERIFY_IN_DYNAMIC_OFFICIAL_REGISTRY
   verification_status: PENDING_OFFICIAL_REGISTRY_CONFIRMATION
@@ -35,10 +35,24 @@ source_artifact:
   page_count: 17
   copy_status: MATERIALIZED_HASHED_AND_PAGE_VALIDATED
 verification:
-  exact_signed_date: null
-  effective_from: null
-  predecessor_replaced: TO_IDENTIFY
-  amendments_rectifications_review: TO_COMPLETE
+  exact_signed_date: '2019-07-24'
+  exact_signed_date_evidence:
+    source: OFFICIAL_MATERIALIZED_PDF
+    location: 'Article 35 signature block, PDF page 13'
+    extracted_text: 'Fait à Abidjan, le 24 JUIL. 2019'
+    status: SOURCE_TEXT_CONFIRMED_VISUAL_RECHECK_RECOMMENDED
+  effective_from: '2019-07-24'
+  effective_from_evidence:
+    source: OFFICIAL_MATERIALIZED_PDF
+    article: 35
+    rule: EFFECTIVE_ON_SIGNATURE_DATE
+    status: SOURCE_TEXT_CONFIRMED
+  predecessor_replaced:
+    reference: 'Instruction n°31/2005'
+    dated_on: '2005-06-07'
+    relationship: EXPLICITLY_ABROGATED_AND_REPLACED
+    evidence_article: 34
+  amendments_rectifications_review: OPEN_OFFICIAL_REGISTRY_AND_BULLETIN_SEARCH_REQUIRED
   current_legal_status: PENDING_OFFICIAL_REGISTRY_CONFIRMATION
   legal_review_status: PENDING
   compliance_review_status: PENDING
@@ -56,7 +70,9 @@ cross_source_dependencies:
   relationship: EXPLICITLY_REFERENCES_INSTRUCTION_58_FOR_AUDITOR_CERTIFICATION_REPORTS
   status: OBSERVED_IN_HASHED_INSTRUCTION_66_SOURCE
 notes:
-- Le PDF officiel doit être matérialisé et hashé avant toute atomisation détaillée.
-- La date de publication BRVM ne doit pas être assimilée à la date de signature ni à la date d'entrée en vigueur.
-- Aucun statut NON ABROGE, aucune date d'effet et aucun modificatif ne doivent être déduits sans preuve officielle.
-- Les futures exigences INST058_* restent distinctes des exigences INST066_* et CIRC005_*.
+- La date de publication BRVM du 25 juillet 2019 est distincte de la date de signature et d'entrée en vigueur du 24 juillet 2019.
+- L'article 34 abroge et remplace les dispositions antérieures et cite explicitement l'Instruction n°31/2005 du 7 juin 2005.
+- L'article 35 fixe l'entrée en vigueur à la date de signature.
+- Le statut juridique courant, les éventuels modificatifs et rectificatifs restent à confirmer dans les sources officielles dynamiques et bulletins.
+- Aucun statut NON ABROGE actuel ne doit être déduit de l'absence de résultat dans le moteur de recherche public.
+- Les exigences INST058_* restent distinctes des exigences INST066_* et CIRC005_* et leur activation reste interdite avant revue juridique et conformité.
