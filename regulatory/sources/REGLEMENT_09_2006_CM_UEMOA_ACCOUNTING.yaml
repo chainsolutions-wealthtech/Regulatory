@@ -1,0 +1,95 @@
+source_id: REGLEMENT_09_2006_CM_UEMOA_ACCOUNTING
+source_family: REGLEMENT
+reference: "Règlement n°09/2006/CM/UEMOA"
+title: "Règlement portant adoption de règles comptables spécifiques applicables aux intervenants agréés du marché financier régional"
+jurisdiction: UEMOA
+issuing_authority: "Conseil des Ministres de l'UEMOA"
+document_type: REGLEMENT
+language: fr
+
+official_identification:
+  member_state_government_source:
+    authority: "Secrétariat Général du Gouvernement du Mali"
+    listing_url: "https://sgg-mali.ml/themes/uemoa.html"
+    displayed_reference: "REGLEMENT N° 09/2006/CM/UEMOA DU 29 JUIN 2006"
+    displayed_title: "PORTANT ADOPTION DE REGLES COMPTABLES SPECIFIQUES APPLICABLES AUX INTERVENANTS AGREES DU MARCHE FINANCIER REGIONAL"
+    observed_on: 2026-08-08
+    verification_status: OFFICIAL_MEMBER_STATE_GOVERNMENT_LISTING_CONFIRMED
+  bceao_adoption_evidence:
+    authority: BCEAO
+    evidence_scope: OFFICIAL_COUNCIL_ADOPTION_CONFIRMED
+    adopted_on: 2006-06-29
+    note: >-
+      Le rapport officiel BCEAO sur la session du Conseil des Ministres du
+      29 juin 2006 confirme l'adoption de règles comptables spécifiques applicables
+      aux intervenants agréés du marché financier régional.
+
+source_integrity:
+  official_binary_url: "https://sgg-mali.ml/txts-droit-reg/UEMOA-Reglement-2006-09-intervenants-agrees-marche-financier-regional.pdf"
+  binary_provenance: OFFICIAL_MEMBER_STATE_GOVERNMENT_ARCHIVE_COPY
+  repository_copy: null
+  extracted_text_copy: null
+  metadata_copy: null
+  sha256: null
+  byte_size: null
+  page_count: null
+  copy_status: OFFICIAL_GOVERNMENT_BINARY_URL_IDENTIFIED_NOT_MATERIALIZED
+
+legal_metadata:
+  adopted_on: 2006-06-29
+  signed_on: PENDING_OFFICIAL_BINARY_REVIEW
+  effective_from: PENDING_OFFICIAL_BINARY_REVIEW
+  amendments_and_rectifications: TO_COMPLETE
+  current_legal_status: PENDING_CURRENT_VERSION_AND_AMENDMENTS_REVIEW
+  current_version_review_note: >-
+    L'AMF-UMOA a annoncé en 2023 une révision du référentiel comptable des acteurs
+    du marché financier régional. Cette révision ne permet pas, à elle seule, de
+    conclure que le Règlement n°09/2006 a été remplacé, modifié ou abrogé. La version
+    actuellement applicable doit être établie à partir d'un acte officiel postérieur.
+  legal_review_status: PENDING
+  compliance_review_status: PENDING
+  requirement_activation_allowed: false
+
+inst066_relationships:
+  status: STRONG_CANDIDATE_FOR_SPECIFIC_ACCOUNTING_REGULATION_REFERENCES_REQUIRES_BINARY_AND_CURRENT_VERSION_REVIEW
+  dependency_inventory: regulatory/registries/INST066_EXTERNAL_IMPLEMENTING_TEXTS_INVENTORY_V0_1.json
+  detected_occurrence_count: 5
+  known_subjects:
+    - "évaluation des actifs et calcul de la valeur nette d'inventaire"
+    - "états financiers et informations périodiques"
+  explicit_non_resolution: true
+  note: >-
+    L'intitulé du Règlement 09/2006 correspond à la formulation de l'Instruction 66
+    relative à la réglementation comptable spécifique applicable aux intervenants
+    agréés. Le rapprochement des cinq occurrences ne devient RESOLVED qu'après
+    matérialisation du texte, vérification de son périmètre et détermination de la
+    version juridiquement applicable.
+
+materialization_plan:
+  status: OFFICIAL_GOVERNMENT_BINARY_READY_FOR_MATERIALIZATION
+  next_steps:
+    - DOWNLOAD_OFFICIAL_SGG_MALI_PDF
+    - VERIFY_PDF_MAGIC
+    - COMPUTE_SHA256_AND_BYTE_SIZE
+    - VERIFY_PAGE_COUNT
+    - EXTRACT_TEXT_OR_OCR_IF_REQUIRED
+    - CONFIRM_EXACT_REFERENCE_AND_TITLE_IN_BINARY
+    - LOCATE_OPCVM_SPECIFIC_ACCOUNTING_PROVISIONS
+    - VERIFY_EFFECTIVE_DATE_AND_FINAL_CLAUSES
+    - SEARCH_POST_2006_AMENDMENTS_AND_2023_REVISION_OUTCOME
+    - MAP_FIVE_INST066_ACCOUNTING_DEPENDENCIES
+
+safety:
+  current_version_inference_allowed: false
+  automatic_dependency_resolution_allowed: false
+  automatic_rule_reconstruction_allowed: false
+  requirement_activation_allowed: false
+  human_legal_review_required: true
+  human_compliance_review_required: true
+  ready_for_submission_must_remain_false: true
+
+notes:
+  - "La route PDF provient directement du lien du Secrétariat Général du Gouvernement du Mali."
+  - "La BCEAO confirme officiellement l'adoption des règles comptables spécifiques le 29 juin 2006."
+  - "Le binaire doit être matérialisé avant toute extraction normative détaillée."
+  - "Le statut courant et l'issue de la révision engagée en 2023 restent à établir avant toute activation."
