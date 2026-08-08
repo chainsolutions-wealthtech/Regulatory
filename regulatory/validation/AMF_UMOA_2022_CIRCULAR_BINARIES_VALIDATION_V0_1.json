@@ -1,0 +1,13 @@
+{
+  "schemaVersion": "AMF_UMOA_2022_CIRCULAR_BINARIES_VALIDATION_V0_1",
+  "result": "PASS",
+  "checks": {
+    "exactly16Binaries": true,
+    "numbers01To16": true,
+    "noMaterializationFailures": true,
+    "allPdfMagicAndApiReferenceValidated": true,
+    "automaticResolutionForbidden": true,
+    "readyForSubmissionFalse": true
+  },
+  "failures": []
+}

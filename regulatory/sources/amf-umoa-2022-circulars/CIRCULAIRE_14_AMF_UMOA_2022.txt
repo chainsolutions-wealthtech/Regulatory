@@ -1,0 +1,290 @@
+UNION MONETAIRE OUEST AFRICAINE
+SOIENT AE".
+CRE
+CONSEIL REGIONAL DE L'EPARGNE PUBLIQUE
+ET DES MARCHES FINANCIERS
+CIRCULAIRE N ° 14/CREPMF/2022
+RELATIVE AUX OUTILS DE GESTION DE LA LIQUIDITE
+Le Secrétariat Général du Conseil Régional de l'Épargne Publique et des Marchés
+Financiers (CREPMF) rappelle à l'attention des Organismes de Placement Collectif
+(OPC) et des Sociétés de Gestion d'OPC (SGO) agréés sur Le marché financier régional
+de L'UMOA qu'ils doivent, conformément à La règlementation en vigueur, respecter
+les dispositions de la présente Circulaire qui précise Les systèmes et procédures de
+gestion de la liquidité, Les modalités d’application des simulations de crise, les
+méthodes pouvant être utilisés par l’OPC pour suspendre temporairement le rachat
+ou Le remboursement de ses parts ou actions et Les conditions que doit remplir L’OPC,
+après l'adoption de la suspension temporaire du rachat où du remboursement des
+parts ou actions.
+Pour Les besoins de La présente Circulaire, Le terme Instruction réfère à l’Instruction
+n°66/CREPMF/2021 relative aux Organismes de Placement Collectif et à leurs
+Sociétés de Gestion sur Le marché financier régional de l’UMOA.
+1. Outils de gestion de la liquidité
+Un OPC peut prévoir, dans son Prospectus, les outils de gestion de la liquidité
+suivants :
+-__ plafonnement des rachats ou « gates » ;
+-__ valeur liquidative ajustée ou « swing pricing » ;
+-__ droits ajustés ;
+-__cantonnement des actifs ou « side pockets » ;
+- suspension à titre provisoire des rachats.
+2. Modalités de mise en place des mécanismes de plafonnement des rachats ou
+
+« gates »
+
+a) La mise en place des plafonnements des rachats doit être décrite de façon
+précise dans le Prospectus ainsi que dans le Règlement ou les statuts.
+Lorsqu'un OPC établit un document d’informations clés, celui-ci doit
+mentionner Le plafonnement des rachats et renvoyer vers Le Prospectus et le
+Règlement ou les statuts qui en décrivent le fonctionnement.
+
+venue Joseph ANOMA TEL.: (225) 27 20 21 57 42 / 27 20 31 56 20
+01 B.P. 1878 Abidjan 01/Côte d'ivoire 1 Fax: (225) 27 20 33 23 04
+Site web : http://www.crepmf.org Email : sg@crepmf.org
+
+
+b) L'introduction ou la modification concernant le plafonnement des rachats
+dans le Règlement et Les statuts d’un OPC commercialisé auprès
+d’investisseurs non qualifiés existant doit être agréée par le Conseil
+Régional, puis faire l’objet d’une information particulière des porteurs de
+parts ou actionnaires, leur proposant de sortir de L’OPC sans frais.
+
+c) Le seuil au-delà duquel le plafonnement des rachats peut être déclenché
+doit être justifié, au regard de la périodicité de La valeur liquidative de
+L'OPC, de son orientation de gestion et de la liquidité des actifs qu’il détient.
+Son niveau ne doit pas être de nature à remettre totalement en cause la
+possibilité pour un porteur de racheter ses parts ou actions dans les
+conditions normales de marché. Ce seuil est mentionné dans Le Règlement
+ou les statuts de l’OPC et se conforme aux dispositions suivantes :
+
+à = ee Seuil de plafonnement
+Fréquence de la valeur liquidative (en % des actifs nets)
+Trimestrielle ou inférieure
+d) Le seuil de déclenchement des plafonnements des rachats correspond au
+
+rapport entre :
+
+- {a différence constatée, à une même date de centralisation, entre Le
+nombre de parts ou actions de L’OPC dont Le rachat est demandé ou le
+montant total de ces rachats, et Le nombre de parts ou actions de ce
+même OPC dont la souscription est demandée ou Le montant total de
+ces souscriptions ; et
+
+-__ l'actif net ou le nombre total de parts ou actions de l'OPC.
+
+Le seuil des ordres qui ne seront pas exécutés, doit être déterminé
+
+immédiatement à issue de La date de centralisation, de façon à informer de
+
+manière particulière Les porteurs concernés dans Les plus brefs délais et de
+leur permettre de s’opposer au report de leur ordre, s’ils le souhaitent et
+lorsque cela est prévu par le Règlement ou Les statuts, pour le reliquat qui
+n’aura pas été exécuté et dans Le respect des préavis.
+Pour Les OPC disposant de plusieurs catégories de parts ou actions, le seuil de
+déclenchement des plafonnements des rachats doit être Le même pour toutes
+les catégories de parts ou actions. Le calcul de déclenchement du
+plafonnement des rachats est réalisé dès la fin de La centralisation des ordres,
+mais Les rachats nets des souscriptions sont exprimés en montant (nombre de
+parts ou actions multiplié par la dernière valeur liquidative) puis comparés à
+l'actif net de La dernière valeur liquidative de l’ensemble de L’OPC et non pas
+comparés à la valeur liquidative de la catégorie de parts ou actions.
+Dans Le cas où une valeur liquidative indicative aurait été calculée, elle peut
+être retenue pour le calcul du seuil. D'une manière générale, la Société de
+4, Gestion d’OPC doit procéder aux corrections qu’elle estime nécessaires pour 4°
+Avenue Joseph ANOMA TEL.: (225) 27 20 21 57 42 / 27 20 31 56 20
+01 B.P. 1878 Abidjan 01/Côte d’Ivoire 2 Fax: (225) 27 20 33 23 04
+Site web : http://www.crepmf.org “ Email : sg@crepmf.org
+
+
+la détermination de l'actif net de référence pour tenir compte des
+
+informations dont elle a eu connaissance depuis Le dernier calcul de la valeur
+
+liquidative. Toutefois, les rachats nets (numérateur) et l’actif net utilisé
+(dénominateur) doivent être calculés de la même manière, et notamment sur
+la base de La même valeur liquidative.
+
+Les opérations de souscription et de rachat, pour un même nombre de parts
+ou actions, sur la base de La même valeur liquidative et pour un même porteur
+ou ayant droit économique (dites opérations d’aller-retour) peuvent ne pas
+être soumises à La suspension des rachats, dès Lors que Le Règlement ou les
+statuts Le prévoient. Cette disposition permet d'éviter qu'un porteur réalisant
+une opération « d'aller-retour » ne voit son ordre de rachat fractionné alors
+qu'un ordre de souscription d'un montant équivalent neutralise l'impact de cet
+ordre de rachat sur l'OPC.
+
+e) Le déclenchement ou non du mécanisme de plafonnement des rachats prévus
+dans le Règlement ou Les statuts de L’OPC, est une décision relevant de la
+responsabilité de la Société de Gestion d'OPC. La Société de Gestion d’OPC
+doit justifier que des circonstances exceptionnelles l’exigent et que l'intérêt
+des porteurs ou actionnaires ou du public Le commande. Il en est ainsi
+lorsqu’indépendamment de la mise en œuvre courante de la stratégie de
+gestion, Les demandes de rachat sont telles qu’au regard des conditions de
+liquidité de l’actif de l’OPC, elles ne pourraient être honorées dans des
+conditions préservant l'intérêt des porteurs ou actionnaires assurant un
+traitement équitable à ceux-ci, ou lorsque les demandes de rachats se
+présentent dans des circonstances portant atteinte à l'intégrité du marché.
+
+f) La Société de Gestion d'OPC peut décider d’honorer Les demandes de rachats
+au-delà du plafonnement prévu et exécuter ainsi partiellement ou
+totalement les ordres qui pourraient être bloqués. L’application de cette
+décision ne doit pas être différente en fonction des porteurs / actionnaires
+ayant formulé une demande de rachat sur une même valeur liquidative. Dans
+ce cas, la décision et les conditions de déclenchement doivent être
+documentées par La Société de Gestion d’OPC. Ces documents sont tenus à
+La disposition du Conseil Régional.
+
+g) Dès Lors qu’une Société de Gestion d'OPC déclenche Le plafonnement des
+rachats, elle doit en informer Le Conseil Régional dans Les plus brefs délais.
+
+h) Les porteurs de parts ou actionnaires dont une fraction de l’ordre n’a pas
+été exécutée, doivent en être informés de manière particulière dans les
+conditions mentionnées dans Le Prospectus et Le Règlement ou Les statuts de
+L'OPC. Les autres porteurs de parts ou actionnaires de L’OPC, le public et Les
+investisseurs potentiels doivent également être informés du déclenchement
+du plafonnement des rachats. Cette information doit être reprise dans la
+prochaine information périodique des porteurs de parts ou actionnaires.
+
+i) Le plafonnement des rachats ne peut être introduit qu’à titre provisoire. Le
+Règlement ou les statuts de l’OPC doivent prévoir la durée maximale du
+plafonnement. Cette durée doit être justifiée et ne devrait pas dépasser Le
+nombre de valeurs liquidatives défini dans Le tableau suivant :
+
+Avenue Joseph ANOMA TEL.: (225) 27 20 21 57 42 / 27 20 31 56 20
+01 B.P. 1878 Abidjan 01/Côte d'Ivoire 3 Fax: (225) 27 20 33 23 04
+Site web : http://www.crepmf.org m1] Email : sg@crepmf.org
+
+
+Fréquence de la valeur Nombre maximal de Estimation du temps de
+liquidative valeurs liquidatives (VL) plafonnement maximal
+pour lesquelles un
+plafonnement des rachats
+peut être appliqué
+
+j) A l'issue du délai fixé au paragraphe i, La Société de Gestion d’OPC doit
+mettre fin au plafonnement des rachats et envisager une autre solution
+exceptionnelle mentionnée au point 1.
+
+k) La Société de Gestion d’OPC doit déterminer et préciser dans le Règlement
+où les statuts de l’OPC si Les ordres non exécutés seront annulés ou reportés
+automatiquement sur la valeur liquidative suivante, au regard du dispositif
+global de gestion de la liquidité. Elle doit également tenir compte du risque
+que les modalités de report n'incitent Les porteurs à anticiper leurs demandes
+de rachat où à passer des ordres supérieurs à leur souhait en sachant qu’ils
+seront partiellement exécutés. De surcroit, concernant la possibilité pour un
+porteur de parts ou actionnaires de révoquer un ordre non exécuté, la
+Société de Gestion d'OPC doit s'assurer de la faisabilité opérationnelle du
+schéma retenu avec Les acteurs concernés. Les modalités de traitement et
+de report des ordres doivent respecter les conditions suivantes :
+
+-__les ordres de rachats doivent être exécutés dans Les mêmes proportions
+pour tous Les porteurs de parts ou actionnaires ayant demandé un rachat
+depuis la dernière date de centralisation. Lorsque Les ordres dépassant
+Le seuil fixé pour le plafonnement des rachats ne sont pas exécutés, Les
+règles de réduction des ordres doivent assurer un traitement équitable
+des porteurs de parts ou actionnaires sortants ;
+
+- Les ordres de rachats non exécutés sont annulés ou automatiquement
+reportés sur La prochaine valeur liquidative ;
+
+-__ La part des ordres de rachats non exécutés et automatiquement reportés,
+peut être révoquée par Les porteurs de parts ou actionnaires concernés,
+dans Les conditions prévues dans le Règlement ou les statuts. Lorsque la
+Société de Gestion d'OPC donne aux porteurs de parts ou actionnaires la
+possibilité de s'opposer au report des ordres non exécutés, elle doit
+prévoir des modalités de fonctionnement permettant de connaître les
+ordres de rachat reportés où révoqués dans Le respect des préavis prévus
+par le Règlement ou les statuts ;
+
+- Les ordres reportés ne sont pas prioritaires sur Les nouveaux ordres de
+rachat passés pour exécution sur La valeur liquidative suivante. Si un
+fractionnement des rachats est à nouveau activé sur cette valeur
+liquidative, ils sont donc fractionnés dans les mêmes conditions que les
+
+nouveaux ordres.
+Avenue Joseph ANOMA TEL.: (225) 27 20 21 57 42 / 27 20 31 56 20
+01 B.P. 1878 Abidjan 01/Côte d'Ivoire 4 Fax: (225) 27 20 33 23 04
+Site web : http://www.crepmf.org * Email : sg@crepmf.org
+
+
+l) La Société de Gestion d’'OPC doit s’assurer qu’il n’existe pas de possibilité
+de modifier Les ordres postérieurement à La date de centralisation, y compris
+par l'intermédiaire de demandes d'annulation qui pourraient être assimilées
+à des opérations de « late trading ».
+
+m) La Société de Gestion d’OPC doit observer la plus stricte confidentialité sur
+Le niveau des ordres de souscription et de rachat reçus afin qu’aucun porteur
+ne puisse bénéficier d’information sur la probabilité que Le plafonnement
+des rachats soit déclenché ou non.
+
+3. Modalités de mise en place des suspensions à titre provisoire des rachats
+Dans les circonstances mentionnées au point 2. e, les Sociétés de Gestion d’OPC
+peuvent décider la suspension totale, à titre provisoire des rachats de parts ou
+actions des OPC.
+
+Dans le cas mentionné au paragraphe 1, Les dispositions des points 2.a à 2.j et 2.m
+s’appliquent. Aux fins du point 2, « Le plafonnement des rachats » est remplacé par
+« La suspension des rachats ».
+
+4. Modalités de mise en place du mécanisme de valeur liquidative ajustée ou de
+
+« sWing pricing »
+
+Le mécanisme de valeur liquidative ajustée permet de conserver une unique valeur
+liquidative à chaque date de calcul et de compenser Les coûts de réaménagement du
+portefeuille et leurs impacts sur la performance à long terme de l’OPC. Ce
+mécanisme est décrit dans Le Prospectus de l’OPC et son Règlement ou Les statuts de
+V'OPC.
+Les Sociétés de Gestion d'OPC ayant mis en place un mécanisme de valeurs
+liquidatives ajustées formalisent une politique de valeurs liquidatives ajustées, qui
+décrit notamment la méthodologie de calcul du coût total de réaménagement du
+portefeuille et ses paramètres. Cette politique n’est pas rendue publique mais est
+mise à la disposition du Conseil Régional.
+La Société de Gestion d’OPC peut décider de mettre en place une valeur liquidative
+ajustée partielle assortie d’un seuil de déclenchement lorsque les flux nets de
+souscription et rachats dépassent le seuil défini dans Le Prospectus, Le règlement ou
+les statuts de l'OPC.
+Dans le cas mentionné au paragraphe 3, Les dispositions des points 2.a à 2.j et 2.m
+s’appliquent. Aux fins du point 2, « Le plafonnement des rachats » est remplacé par
+« La valeur liquidative ajustée ».
+5. Modalités de mise en place du mécanisme des droits ajustés
+Le mécanisme de droits ajustés permet de facturer au porteur sortant ou entrant Les
+frais de vente ou d’achat supportés lors du réaménagement du portefeuille, sans
+ajuster La valeur liquidative de l’OPC. Ce mécanisme est décrit dans le Prospectus
+de l’OPC et son Règlement ou les statuts de l’OPC.
+Les Sociétés de Gestion d'OPC ayant mis en place un mécanisme de droits ajustés
+formalisent une politique des droits ajustables, qui décrit notamment la
+méthodologie de calcul du coût total de réaménagement du portefeuille et ses "4
+Avenue Joseph ANOMA TEL.: (225) 27 20 21 57 42 / 27 20 31 56 20
+01 B.P. 1878 Abidjan 01/Côte d'Ivoire 5 Fax: (225) 27 20 33 23 04
+Site web : http://www.crepmf.org fai Email : sg@crepmf.org
+
+
+paramètres. Cette politique n'est pas rendue publique mais est mise à la disposition
+du Conseil Régional.
+La Société de Gestion d'OPC peut décider de mettre en place un mécanisme
+« partiel » de droits ajustés auquel cas Les frais ajustables ne sont facturés que
+lorsque Les flux nets de souscription/ rachat dépassent un certain seuil.
+Dans Le cas mentionné au paragraphe 3, Les dispositions des points 2.a à 2.j et 2.m
+s'appliquent. Aux fins du point 2, « Le plafonnement des rachats » est remplacé par
+« droits ajustés ».
+6. Modalités de mise en place du mécanisme de cantonnement ou « side
+pockets »
+Une Société de Gestion d’OPC peut décider de cantonner Les actifs d’un OPC qu'il
+gère, lorsque la cession de certains actifs ne serait pas conforme à l'intérêt des
+porteurs de parts où actionnaires. Dans ce cas, un OPC est créé pour recevoir les
+actifs dont la cession ne serait pas conforme à l’intérêt des porteurs ou actionnaires
+{FIA side pocket) et un autre destiné à recevoir Les autres actifs (OPC Réplique).
+Dans ce cas, Les dispositions des articles 64 à 73 de l’Instruction s'appliquent.
+La présente Circulaire prend effet à compter de sa publication.
+Fait à Abidjan, Le 3 LAN 2999
+Le Secrétaire Général
+gl de l'Ep,
+A ve
+DA CAT
+=— x" Te Secrétaire) &
+:8 éà éral F4
++ LorBp1e7e / 5
+2 \ABIDJAN 01 / À
+Ripert BOSSOGKR y
+Srchés A
+01 B.P. 1878 Abidjan 01/Côte d'Ivoire 6 Fax: (225) 27 20 33 23 04
+Site web : http://www.crepmf.org Email : sg@crepmf.org
