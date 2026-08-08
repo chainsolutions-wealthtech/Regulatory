@@ -1,44 +1,49 @@
 evidence_id: SANCTIONS_2016_2022_OFFICIAL_BINARY_SEARCH_2026_08_08
 review_date: 2026-08-08
 scope: >-
-  Recherche documentaire ciblée visant à identifier des binaires officiels stables
-  pour la Décision n° CM/SJ/O01/03/2016 et la Décision n° CM/10/06/2022 relatives
-  au dispositif des sanctions pécuniaires sur le Marché Financier Régional de l'UMOA.
+  Recherche documentaire ciblée visant à établir la chaîne officielle des Décisions
+  n° CM/SJ/O01/03/2016 et n° CM/10/06/2022 relatives au dispositif des sanctions
+  pécuniaires sur le Marché Financier Régional de l'UMOA, à matérialiser leurs
+  binaires et à déterminer leur relation juridique avant toute activation de barème.
 
 sources_checked:
   - authority: AMF_UMOA
     source_type: CURRENT_REGULATORY_DECISION_INDEX
     url: https://www.amf-umoa.org/reglementation/decision
+    checked_on: 2026-08-08
     observations:
       - "La Décision n° CM/SJ/O01/03/2016 est listée sous son intitulé sanctions pécuniaires."
       - "Le statut affiché pour l'entrée 2016 est NON ABROGE."
-      - "La table publique observée contient plusieurs décisions de 2022, mais l'entrée CM/10/06/2022 n'y a pas été identifiée lors du contrôle du 2026-08-08."
-    binary_identified: false
+      - "La table publique actuelle expose dix Décisions réglementaires."
+      - "Elle expose quatre Décisions de 2022 relatives à d'autres objets, mais pas CM/10/06/2022."
     interpretation_boundary: >-
-      L'absence d'une entrée CM/10/06/2022 dans la table publique observée ne constitue
-      pas une preuve d'absence, d'abrogation, de non-publication ou d'inapplicabilité.
+      L'absence de CM/10/06/2022 dans cette table ne constitue pas une preuve
+      d'inexistence, d'abrogation, de non-publication ou d'inapplicabilité, puisque
+      d'autres sources institutionnelles confirment explicitement son adoption et sa référence.
 
   - authority: AMF_UMOA
-    source_type: OFFICIAL_2016_DETAIL_PAGE
-    url: https://www.amf-umoa.org/actuality-details?actualiteId=1000179
+    source_type: CURRENT_FRONTEND_DETAIL_API
+    url: "https://www.amf-umoa.org/service/api/elastic/actualite?id=1000179&langue=fr"
     observations:
-      - "La fiche officielle porte la référence CM/SJ/O01/03/2016."
-      - "La fiche affiche la date du 24 mars 2016."
-      - "Le contenu publiquement indexé expose une image mais aucune URL binaire PDF stable n'a été identifiée dans le périmètre de recherche disponible."
-    binary_identified: false
-
-  - authority: AMF_UMOA
-    source_type: CURRENT_LEGAL_FRAMEWORK_PAGE
-    url: https://www.amf-umoa.org/reglementation/organisation
-    observations:
-      - >-
-        La page de cadre légal cite parmi les textes postérieurs applicables une
-        Décision du Conseil des Ministres relative au dispositif des sanctions
-        pécuniaires applicable sur le Marché Financier Régional.
-    binary_identified: false
-    interpretation_boundary: >-
-      Cette mention générique ne permet pas, à elle seule, d'identifier la version
-      juridiquement applicable entre les textes 2016 et 2022.
+      - "actualiteId=1000179 retourne la Décision CM/SJ/O01/03/2016."
+      - "Le détail API contient le document officiel en Base64."
+      - "Le document a été décodé, vérifié comme PDF, hashé et conservé dans le dépôt."
+    binary_identified: true
+    binary_materialized: true
+    repository_pdf: regulatory/sources/amf-umoa-priority-api-documents/DECISION_SANCTIONS_2016.pdf
+    repository_text: regulatory/sources/amf-umoa-priority-api-documents/DECISION_SANCTIONS_2016.txt
+    sha256: 888b971071f32a6453647b979f3f9cc551d686e1bc7135d6a659e8907aa9dbe2
+    byte_size: 4146126
+    page_count: 12
+    extraction: OCR_TESSERACT_FRA_FALLBACK
+    legal_metadata_from_binary:
+      signed_on: 2016-03-24
+      effective_from: 2017-01-01
+      effective_article: 12
+      transition_article: 10
+      categories_article: 4
+      amounts_and_grids_present: true
+      amounts_and_grids_activation: FORBIDDEN_PENDING_2016_2022_RELATIONSHIP
 
   - authority: BCEAO
     source_type: OFFICIAL_COUNCIL_OF_MINISTERS_COMMUNIQUE
@@ -47,18 +52,18 @@ sources_checked:
       - "La session officielle s'est tenue le 24 juin 2022."
       - >-
         Au titre du CREPMF, le Conseil des Ministres a adopté un dispositif révisé
-        des sanctions pécuniaires applicables sur le marché financier régional de
-        l'UMOA.
+        des sanctions pécuniaires applicables sur le marché financier régional de l'UMOA.
       - >-
-        Le communiqué précise que cette révision vise notamment l'alignement, pour
-        les mêmes agissements, sur la Loi Uniforme relative aux infractions boursières
-        et l'adaptation aux évolutions nécessaires du cadre de régulation.
+        La révision vise notamment l'alignement, pour les mêmes agissements, sur la
+        Loi Uniforme relative aux infractions boursières et l'adaptation aux évolutions
+        nécessaires du cadre de régulation.
     binary_identified: false
-    evidence_scope: OFFICIAL_ADOPTION_AND_REVISION_PURPOSE_CONFIRMED
+    evidence_scope: OFFICIAL_ADOPTION_DATE_AND_REVISION_PURPOSE_CONFIRMED
 
   - authority: CENTIF_SENEGAL
     source_type: PUBLIC_AUTHORITY_COMMUNITY_REGULATION_PAGE
     url: https://www.centif.sn/reglementation/fr/reglcommu
+    checked_on: 2026-08-08
     observations:
       - >-
         La page référence explicitement la DECISION n° CM / 10 / 06 / 2022 du
@@ -66,58 +71,85 @@ sources_checked:
         mise en œuvre du dispositif des sanctions pécuniaires applicables sur le
         marché financier régional de l'UMOA.
     binary_identified: false
-    evidence_scope: REFERENCE_AND_TITLE_CORROBORATED
+    evidence_scope: EXACT_REFERENCE_AND_TITLE_CONFIRMED_BY_PUBLIC_AUTHORITY
+
+  - authority: LEXTENSO
+    source_type: SECONDARY_SPECIALIST_LEGAL_PUBLICATION
+    url: https://www.labase-lextenso.fr/lessentiel-droits-africains-des-affaires/DAA201j5
+    observations:
+      - "Identifie la Décision n° CM/10/06/2022 du 24 juin 2022 sous le même objet."
+      - "Décrit une catégorisation des manquements en quatre catégories et des quantums en annexes."
+    evidence_scope: SEARCH_CORROBORATION_ONLY_NOT_NORMATIVE_SOURCE
+    normative_use_allowed: false
 
 search_result:
   decision_2016:
     source_id: DECISION_CM_SJ_001_03_2016
     official_registry_record: CONFIRMED
-    official_detail_page: CONFIRMED
+    official_detail_api: CONFIRMED
+    official_binary_status: MATERIALIZED_HASHED_AND_TEXT_EXTRACTED
     registry_status_observed: NON_ABROGE
-    official_binary_status: OFFICIAL_BINARY_NOT_MATERIALIZED
+    signed_on: 2016-03-24
+    effective_from: 2017-01-01
 
   decision_2022:
     source_id: DECISION_CM_10_06_2022
-    official_adoption_of_revised_device: CONFIRMED
-    exact_reference_from_public_authority_source: CORROBORATED
-    current_amf_decision_table_entry: NOT_IDENTIFIED_IN_OBSERVED_PUBLIC_TABLE
+    adopted_on: 2022-06-24
+    official_adoption_of_revised_device: CONFIRMED_BY_BCEAO
+    exact_reference_and_title: CONFIRMED_BY_CENTIF_SENEGAL
+    current_amf_decision_table_entry: NOT_PRESENT_IN_CURRENT_10_ROW_TABLE_OBSERVED_2026_08_08
+    current_amf_api_decision_category_entry: NOT_IDENTIFIED_IN_CURRENT_10_OBJECT_CATEGORY_LIST
     official_binary_status: OFFICIAL_BINARY_NOT_MATERIALIZED
 
 relationship_status:
   value: REVISED_DEVICE_CONFIRMED_RELATIONSHIP_NOT_LEGALLY_CONCLUDED
+  reason: >-
+    La décision 2016 est désormais acquise intégralement. Le texte 2022 reste absent
+    du corpus binaire. Le terme "dispositif révisé" et l'existence d'une nouvelle
+    décision de même objet ne suffisent pas à déterminer sans le texte propre s'il
+    s'agit d'un remplacement, d'une modification, d'une abrogation totale ou
+    partielle, ou d'un régime comportant des dispositions transitoires.
   prohibited_inferences:
     - DO_NOT_INFER_TOTAL_ABROGATION
     - DO_NOT_INFER_PARTIAL_ABROGATION
     - DO_NOT_INFER_REPLACEMENT
     - DO_NOT_INFER_COEXISTENCE
     - DO_NOT_INFER_EFFECTIVE_DATE_OF_2022_DECISION
-    - DO_NOT_INFER_SANCTION_AMOUNTS_OR_RANGES
+    - DO_NOT_ACTIVATE_2016_SANCTION_AMOUNTS
+    - DO_NOT_INFER_2022_SANCTION_AMOUNTS_OR_RANGES
   required_next_evidence:
-    - OFFICIAL_BINARY_2016
-    - OFFICIAL_BINARY_2022
-    - OFFICIAL_EFFECTIVE_DATE_AND_TRANSITION_CLAUSES
+    - OFFICIAL_OR_INSTITUTIONAL_BINARY_2022
+    - 2022_SIGNATURE_AND_EFFECTIVE_CLAUSES
+    - 2022_ABROGATION_MODIFICATION_TRANSITION_CLAUSES
     - HUMAN_LEGAL_COMPARISON_2016_VS_2022
     - HUMAN_COMPLIANCE_REVIEW
+
+current_search_boundary:
+  amf_current_decision_index_checked: true
+  amf_current_decision_api_category_checked: true
+  bceao_official_adoption_communique_checked: true
+  centif_public_authority_reference_checked: true
+  official_member_state_journal_search_performed: true
+  publicly_indexed_pdf_found: false
+  next_priority: RECOVER_DOCUMENT_LINK_OR_BINARY_FROM_CENTIF_OR_OTHER_OFFICIAL_ARCHIVE
 
 third_party_source_policy:
   normative_use_allowed: false
   note: >-
-    Des copies tierces éventuellement accessibles ne doivent pas être matérialisées
-    comme sources normatives ni utilisées pour activer des montants, barèmes,
-    catégories de manquements ou effets juridiques. Elles peuvent au plus servir de
-    piste de recherche vers une source officielle.
+    Les publications tierces peuvent aider à localiser un document ou comprendre
+    quelles clauses rechercher, mais ne remplacent jamais le binaire officiel ou
+    institutionnel pour les quantums, catégories, dates d'effet ou effets juridiques.
 
 safety:
-  atomization_allowed: false
+  active_atomization_allowed: false
   requirement_activation_allowed: false
   sanction_amount_calculation_allowed: false
   automatic_enforcement_allowed: false
   ready_for_submission_must_remain_false: true
 
 conclusion: >-
-  Le contrôle public du 2026-08-08 confirme l'existence officielle du texte 2016,
-  l'adoption officielle d'un dispositif révisé en 2022 et la référence CM/10/06/2022
-  via une source d'autorité publique. Il n'a pas permis d'identifier, dans les routes
-  officielles publiquement indexées contrôlées, les binaires normatifs nécessaires.
-  La matérialisation et l'atomisation restent donc bloquées sans substitution par une
-  copie tierce.
+  La recherche du 2026-08-08 a désormais fermé l'acquisition documentaire de la
+  Décision 2016 et confirmé par deux sources institutionnelles distinctes l'adoption,
+  la date, la référence et l'objet de la Décision 2022. Le seul verrou documentaire
+  principal de R1 est maintenant le binaire de CM/10/06/2022. Tant qu'il manque, la
+  relation juridique 2016↔2022 et les barèmes de sanctions restent inactifs.
