@@ -8,10 +8,11 @@ Ce document est une photographie opérationnelle du reste à faire après la com
 
 - Circulaire n°05/CREPMF/2022 : `62` exigences V1 structurées pour le parcours FCP/SGO.
 - Instruction n°66/CREPMF/2021 : PDF officiel matérialisé, SHA-256 calculé, `65` pages, articles `1–92` indexés, `92` atomes structuraux et `111` exigences candidates détaillées compilées.
+- Instruction 66 : date d'acte `2021-12-16`, prise d'effet `2022-01-01`, statut `NON ABROGE` observé au registre officiel AMF-UMOA le `2026-08-06`, inventaire source des sept textes abrogés par l'article 92 et recherche de modificatifs/rectificatifs déjà tracée sans prétention d'exhaustivité.
 - Instruction n°58/CREPMF/2019 : PDF officiel matérialisé, SHA-256 `38258d7cae5518a6bea6b195facbb717e4a98c1eb734b30bc5e7de91917d0c57`, `17` pages, articles `1–35` indexés, `35` blocs, `35` atomes et `32` exigences candidates détaillées compilées.
 - Instruction 58 : article 34 relu et enregistré comme abrogeant/remplaçant notamment l'Instruction n°31/2005 du 7 juin 2005.
 - Instruction 58 : article 35 relu ; entrée en vigueur à la date de signature ; date de signature enregistrée au `2019-07-24` à partir du bloc final de la source officielle matérialisée.
-- Instruction 58 : étape CI séparée ajoutée pour enrichir les métadonnées juridiques relues sans transformer l'OCR en décision juridique automatique.
+- Instruction 58 : étape CI séparée ajoutée pour enrichir les métadonnées juridiques relues sans transformer l'OCR en décision juridique automatique ; workflow spécialisé validé `success` le `2026-08-08`.
 - Crosswalk Instruction 58 : `18` liens vers CIRC005 et `9` liens vers INST066.
 - Toutes les exigences INST066 et INST058 restent `FORBIDDEN`, avec revue juridique et conformité `PENDING`.
 - Le produit exécutable, le modèle canonique, PostgreSQL/RLS, le workflow de revue, le DOCX déterministe et les principales CI existent déjà.
@@ -76,12 +77,24 @@ Reste ouvert :
 
 ### R3 — Métadonnées et historique complet Instruction 66
 
-État : `OPEN`.
+État : `PARTIALLY_CLOSED_HISTORICAL_CROSSCHECK_PENDING`.
 
-- fermer l'inventaire des textes cités et prédécesseurs ;
-- rechercher les modificatifs et rectificatifs ;
-- conserver une preuve officielle de chaque statut courant ;
-- revoir juridiquement les seuils, exemptions et délais extraits par OCR.
+Déjà établi et tracé :
+
+- source officielle matérialisée et hashée ;
+- date d'acte : `2021-12-16` ;
+- date d'effet : `2022-01-01` ;
+- statut de registre : `NON_ABROGE` observé au `2026-08-06` ;
+- sept références explicitement abrogées par l'article 92 inventoriées à partir des pages 64–65 ;
+- recherche de modificatifs/rectificatifs effectuée sur un périmètre officiel sans texte séparé identifié, mais sans déclaration d'exhaustivité.
+
+Reste ouvert :
+
+- cross-check historique officiel des sept références abrogées : Décision n°2012-119, Instruction n°46/2011 révisée, Instructions n°45/2011, n°24/99, n°23/99, n°22/99 et n°21/99 ;
+- matérialiser les textes historiques nécessaires lorsque leur contenu est utile à l'analyse de migration réglementaire ;
+- fermer la recherche de modificatifs et rectificatifs sur les registres/bulletins officiels disponibles ;
+- conserver une preuve officielle datée de chaque statut historique vérifiable ;
+- revoir juridiquement les seuils, exemptions, délais, exceptions et applicabilités issus de l'OCR avant toute activation.
 
 ### R4 — Textes OPC complémentaires encore nécessaires
 
@@ -156,7 +169,7 @@ Tant que ces revues ne sont pas terminées :
 1. identifier et matérialiser les binaires officiels des Décisions `CM/SJ/O01/03/2016` et `CM/10/06/2022` ;
 2. comparer 2016 ↔ 2022 et faire établir juridiquement le régime applicable ;
 3. terminer R2 par la vérification du statut courant et des éventuels textes postérieurs de l'Instruction 58 ;
-4. fermer les métadonnées et l'historique de l'Instruction 66 ;
+4. terminer R3 par le cross-check historique officiel et la fermeture des modificatifs/rectificatifs de l'Instruction 66 ;
 5. inventorier et matérialiser les autres textes OPC complémentaires ;
 6. lancer la double revue humaine INST066/INST058 et la revue du régime de sanctions ;
 7. activer uniquement les règles explicitement approuvées ;
