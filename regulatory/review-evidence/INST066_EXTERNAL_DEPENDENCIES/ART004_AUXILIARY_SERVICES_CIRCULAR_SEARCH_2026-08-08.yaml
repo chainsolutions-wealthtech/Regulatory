@@ -1,0 +1,49 @@
+evidence_id: INST066_ART004_AUXILIARY_SERVICES_CIRCULAR_SEARCH_2026_08_08
+review_date: 2026-08-08
+source_id: INSTRUCTION_66_CREPMF_2021
+source_article: 4
+dependency_id: INST066_ART004_DEP_CIRC_01
+dependency_kind: COUNCIL_CIRCULAR
+source_wording: >-
+  Une Circulaire du Conseil Régional définit les limites dans lesquelles les services
+  auxiliaires peuvent être fournies par les Sociétés de Gestion d'OPC.
+
+research_scope:
+  official_domains_checked:
+    - amf-umoa.org
+    - brvm.org
+    - crepmf.org
+  query_concepts:
+    - "services auxiliaires"
+    - "Sociétés de Gestion d'OPC"
+    - "limites"
+    - "circulaire"
+  result: OFFICIAL_PUBLIC_REFERENCE_NOT_IDENTIFIED
+
+observations:
+  - >-
+    Aucune page, fiche ou binaire institutionnel publiquement indexé n'a été
+    identifié avec un intitulé permettant de rattacher sans ambiguïté une circulaire
+    spécifique à ce renvoi de l'article 4.
+  - >-
+    Une reproduction tierce de l'Instruction 66 elle-même a été retrouvée, mais elle
+    n'identifie pas le numéro de la circulaire et ne constitue pas une source normative
+    d'application.
+
+interpretation_boundary:
+  - DO_NOT_INFER_CIRCULAR_NUMBER
+  - DO_NOT_INFER_CIRCULAR_TITLE
+  - DO_NOT_INFER_EFFECTIVE_DATE
+  - DO_NOT_INFER_LIMITS_ON_AUXILIARY_SERVICES
+  - DO_NOT_USE_THIRD_PARTY_COPY_AS_NORMATIVE_SOURCE
+
+status:
+  dependency_resolution: OPEN_OFFICIAL_REFERENCE_NOT_IDENTIFIED
+  activation: FORBIDDEN_PENDING_OFFICIAL_SOURCE_IDENTIFICATION_AND_REVIEW
+  legal_review: PENDING
+  compliance_review: PENDING
+
+resume_condition: >-
+  Reprendre immédiatement si une fiche AMF-UMOA/BRVM, un bulletin officiel, une
+  archive CREPMF institutionnelle ou un binaire officiel identifiant cette circulaire
+  devient disponible.
