@@ -1,0 +1,70 @@
+evidence_id: INST066_ART012_013_LIQUIDITY_VALUATION_CIRCULAR_SEARCH_2026_08_08
+review_date: 2026-08-08
+source_id: INSTRUCTION_66_CREPMF_2021
+scope: >-
+  Recherche des circulaires du Conseil Régional explicitement appelées par les
+  articles 12 et 13 de l'Instruction 66 pour, respectivement, la gestion du risque
+  de liquidité et les critères/procédures de valorisation des actifs.
+
+dependencies:
+  - article: 12
+    subject: "gestion du risque de liquidité, profil de liquidité, procédures et stress tests"
+    dependency_kind: COUNCIL_CIRCULAR
+    search_result: OFFICIAL_PUBLIC_REFERENCE_NOT_IDENTIFIED
+    activation: FORBIDDEN_PENDING_OFFICIAL_SOURCE_IDENTIFICATION_AND_REVIEW
+
+  - article: 13
+    subject: "critères et procédures de valorisation des actifs et garanties relatives à l'évaluateur externe"
+    dependency_kind: COUNCIL_CIRCULAR
+    search_result: OFFICIAL_PUBLIC_REFERENCE_NOT_IDENTIFIED
+    activation: FORBIDDEN_PENDING_OFFICIAL_SOURCE_IDENTIFICATION_AND_REVIEW
+
+research_scope:
+  official_domains_checked:
+    - amf-umoa.org
+    - brvm.org
+    - crepmf.org
+  query_concepts:
+    - "risque de liquidité"
+    - "stress tests"
+    - "profil de liquidité"
+    - "valorisation des actifs"
+    - "critères de valorisation"
+    - "procédures de valorisation"
+    - "évaluateur externe"
+  result: >-
+    Aucune fiche, référence numérotée ou route binaire institutionnelle publiquement
+    indexée n'a été identifiée permettant de rattacher sans ambiguïté une circulaire
+    précise à l'article 12 ou à l'article 13.
+
+shared_accounting_dependency:
+  dependency_record: regulatory/registries/INST066_SPECIFIC_ACCOUNTING_REGULATION_DEPENDENCY_V0_1.yaml
+  candidate_source: regulatory/sources/REGLEMENT_09_2006_CM_UEMOA_ACCOUNTING.yaml
+  candidate_reference: "Règlement n°09/2006/CM/UEMOA"
+  candidate_status: OFFICIAL_GOVERNMENT_BINARY_IDENTIFIED_MATERIALIZATION_IN_PROGRESS_CURRENT_VERSION_PENDING
+  note: >-
+    Les articles 12 et 13 appellent également la réglementation comptable spécifique.
+    Le Règlement 09/2006 est un candidat documenté pour cette dépendance mais ne doit
+    pas être considéré comme version actuellement applicable avant matérialisation,
+    analyse des modifications et recherche de l'issue de la révision AMF-UMOA de 2023.
+
+interpretation_boundaries:
+  - DO_NOT_INFER_CIRCULAR_NUMBERS
+  - DO_NOT_INFER_CIRCULAR_TITLES
+  - DO_NOT_RECONSTRUCT_LIQUIDITY_THRESHOLDS
+  - DO_NOT_RECONSTRUCT_VALUATION_METHODS_FROM_UNIDENTIFIED_TEXTS
+  - DO_NOT_MARK_ACCOUNTING_DEPENDENCY_RESOLVED_BEFORE_CURRENT_VERSION_REVIEW
+  - DO_NOT_USE_THIRD_PARTY_REPRODUCTIONS_AS_NORMATIVE_SOURCES
+
+resume_conditions:
+  - OFFICIAL_AMF_BRVM_OR_CREPMF_CIRCULAR_REFERENCE_IDENTIFIED
+  - OFFICIAL_CIRCULAR_BINARY_AVAILABLE
+  - OFFICIAL_ACCOUNTING_REFERENTIAL_VERSION_OR_AMENDMENT_IDENTIFIED
+
+safety:
+  automatic_dependency_resolution_allowed: false
+  automatic_rule_reconstruction_allowed: false
+  requirement_activation_allowed: false
+  legal_review_required: true
+  compliance_review_required: true
+  ready_for_submission_must_remain_false: true
