@@ -9,7 +9,11 @@ Ce document est une photographie opérationnelle du reste à faire après la com
 - Circulaire n°05/CREPMF/2022 : `62` exigences V1 structurées pour le parcours FCP/SGO.
 - Instruction n°66/CREPMF/2021 : PDF officiel matérialisé, SHA-256 calculé, `65` pages, articles `1–92` indexés, `92` atomes structuraux et `111` exigences candidates détaillées compilées.
 - Instruction 66 : date d'acte `2021-12-16`, prise d'effet `2022-01-01`, statut `NON ABROGE` observé au registre officiel AMF-UMOA le `2026-08-06` et inventaire des sept textes explicitement abrogés par l'article 92.
+- Référentiel historique Article 92 : `7/7` textes disposent désormais d'un objet source distinct dans `regulatory/sources/`, même lorsque leur binaire propre n'est pas encore disponible.
 - Instruction n°46/2011 révisée : publication BRVM officielle retrouvée, PDF officiel matérialisé, SHA-256 `6ab1a373b7671457cafd0f36cfbb96d031ab9839c2ecc0c18fabac602f972478`, `3 474 284` octets, `9` pages, OCR français, articles `1–21` indexés, date de révision/signature et d'effet `2018-07-30`, délai transitoire de six mois de l'article 20 conservé, statut historique abrogé par l'article 92 de l'Instruction 66 maintenu.
+- Instructions n°45/2011 et n°24/99 : référence et intitulé corroborés par deux actes officiels distincts — l'article 92 de l'Instruction 66 et la Décision CREPMF `PCR/DA/2018/165` matérialisée depuis la BRVM — mais leurs binaires propres restent à identifier.
+- Décision n°2012-119 et Instructions n°23/99, n°22/99, n°21/99 : objets source créés avec référence/intitulé issus de l'article 92 officiel ; leurs propres binaires et preuves complémentaires restent à retrouver.
+- Décision CREPMF `PCR/DA/2018/165` : preuve administrative corroborante officielle matérialisée, SHA-256 `282b603d99e80699203c4ca75abc683dee8e550f2a8f6f79eccd7e937b0c7337`, `4` pages ; elle est explicitement classée `OFFICIAL_ADMINISTRATIVE_CORROBORATION_ONLY_NOT_NORMATIVE_SUBSTITUTE`.
 - Instruction n°58/CREPMF/2019 : PDF officiel matérialisé, SHA-256 `38258d7cae5518a6bea6b195facbb717e4a98c1eb734b30bc5e7de91917d0c57`, `17` pages, articles `1–35` indexés, `35` blocs, `35` atomes et `32` exigences candidates détaillées compilées.
 - Instruction 58 : article 34 enregistré comme abrogeant/remplaçant notamment l'Instruction n°31/2005 du 7 juin 2005 ; article 35 et bloc final établissent la signature et l'entrée en vigueur au `2019-07-24`.
 - Instruction 58 : chaîne CI séparée d'enrichissement juridique validée `success`.
@@ -22,6 +26,7 @@ Ce document est une photographie opérationnelle du reste à faire après la com
 - La référence de la décision 2022 est enregistrée comme `CM/10/06/2022`, avec statut `CORROBORATED_PENDING_OFFICIAL_BINARY`.
 - La recherche publique des binaires sanctions 2016/2022 est documentée dans `regulatory/review-evidence/SANCTIONS_2016_2022/OFFICIAL_BINARY_SEARCH_2026-08-08.yaml`.
 - Le cross-check historique de l'article 92 est documenté dans `regulatory/review-evidence/INST066_HISTORICAL_CROSSCHECK/OFFICIAL_SOURCE_SEARCH_2026-08-08.yaml`.
+- Les dernières exécutions `Regulatory CI` et `Security and Review Policy CI` contrôlées après les changements historiques sont `success`.
 
 ## Reste réglementaire prioritaire
 
@@ -83,7 +88,7 @@ Reste ouvert :
 
 ### R3 — Métadonnées et historique complet Instruction 66
 
-État : `IN_PROGRESS_1_OF_7_HISTORICAL_SOURCES_MATERIALIZED`.
+État : `IN_PROGRESS_7_OF_7_SOURCE_RECORDS_1_BINARY_MATERIALIZED`.
 
 Déjà établi et tracé :
 
@@ -92,25 +97,29 @@ Déjà établi et tracé :
 - date d'effet : `2022-01-01` ;
 - statut de registre : `NON_ABROGE` observé au `2026-08-06` ;
 - sept références explicitement abrogées par l'article 92 inventoriées à partir des pages 64–65 ;
+- `7/7` références disposent d'un `source_record` ;
 - bibliothèque BRVM historique parcourue jusqu'aux publications de 1999 ;
-- recherches institutionnelles exactes exécutées pour les références historiques ;
-- Instruction n°46/2011 révisée entièrement matérialisée et indexée comme source historique ;
-- relation précise entre l'Instruction 46 révisée et la Décision n°2012-119 toujours laissée `PENDING` faute de binaire officiel de cette décision.
+- recherches institutionnelles exactes exécutées ;
+- Instruction n°46/2011 révisée entièrement matérialisée et indexée ;
+- Instructions n°45/2011 et n°24/99 corroborées par un second acte officiel sans promotion de dates ou de contenu non vérifié ;
+- relation précise entre l'Instruction 46 révisée et la Décision n°2012-119 toujours `PENDING` faute du binaire propre de la décision.
 
 #### Progression des sept textes de l'article 92
 
-1. Décision n°2012-119 — `OFFICIAL_PUBLIC_ROUTE_NOT_IDENTIFIED` ;
-2. Instruction n°46/2011 révisée — `MATERIALIZED_HASHED_INDEXED_1_TO_21` ;
-3. Instruction n°45/2011 — `OFFICIAL_PUBLIC_ROUTE_NOT_IDENTIFIED` ;
-4. Instruction n°24/99 — `OFFICIAL_PUBLIC_ROUTE_NOT_IDENTIFIED` ;
-5. Instruction n°23/99 — `OFFICIAL_PUBLIC_ROUTE_NOT_IDENTIFIED` ;
-6. Instruction n°22/99 — `OFFICIAL_PUBLIC_ROUTE_NOT_IDENTIFIED` ;
-7. Instruction n°21/99 — `OFFICIAL_PUBLIC_ROUTE_NOT_IDENTIFIED`.
+1. Décision n°2012-119 — `SOURCE_RECORD_CREATED / ARTICLE_92_OFFICIAL_SOURCE_ONLY / BINARY_MISSING` ;
+2. Instruction n°46/2011 révisée — `SOURCE_RECORD_CREATED / MATERIALIZED_HASHED_INDEXED_1_TO_21` ;
+3. Instruction n°45/2011 — `SOURCE_RECORD_CREATED / TWO_OFFICIAL_ACTS_CORROBORATED / BINARY_MISSING` ;
+4. Instruction n°24/99 — `SOURCE_RECORD_CREATED / TWO_OFFICIAL_ACTS_CORROBORATED / BINARY_MISSING` ;
+5. Instruction n°23/99 — `SOURCE_RECORD_CREATED / ARTICLE_92_OFFICIAL_SOURCE_ONLY / BINARY_MISSING` ;
+6. Instruction n°22/99 — `SOURCE_RECORD_CREATED / ARTICLE_92_OFFICIAL_SOURCE_ONLY / BINARY_MISSING` ;
+7. Instruction n°21/99 — `SOURCE_RECORD_CREATED / ARTICLE_92_OFFICIAL_SOURCE_ONLY / BINARY_MISSING`.
 
 Reste ouvert :
 
-- poursuivre la recherche institutionnelle de l'Instruction n°45/2011 en priorité ;
-- rechercher ensuite les Instructions n°24/99, n°23/99, n°22/99 et n°21/99 et la Décision n°2012-119 ;
+- rechercher en priorité une source officielle propre ou une seconde corroboration officielle pour l'Instruction n°23/99 ;
+- poursuivre ensuite l'Instruction n°22/99 puis l'Instruction n°21/99 ;
+- reprendre la recherche des binaires propres de l'Instruction n°45/2011 et de l'Instruction n°24/99 ;
+- retrouver le binaire officiel de la Décision n°2012-119 pour fermer la chaîne de modification de l'Instruction 46 ;
 - matérialiser immédiatement chaque binaire officiel retrouvé avec hash, taille, pagination et extraction ;
 - fermer la recherche de modificatifs et rectificatifs de l'Instruction 66 sur les registres/bulletins officiels disponibles ;
 - conserver une preuve datée de chaque recherche négative ou positive ;
@@ -191,11 +200,12 @@ Tant que ces revues ne sont pas terminées :
 ## Ordre recommandé à partir de l'état actuel
 
 1. **R1 dès qu'une source officielle devient disponible** : matérialiser les décisions sanctions 2016/2022 et établir leur relation juridique ;
-2. **en attendant R1** : poursuivre R3 avec l'Instruction n°45/2011 puis les cinq autres références historiques non matérialisées ;
-3. terminer R2 par la vérification du statut courant et des éventuels textes postérieurs de l'Instruction 58 ;
-4. fermer la recherche de modificatifs/rectificatifs de l'Instruction 66 ;
-5. inventorier et matérialiser les autres textes OPC complémentaires ;
-6. lancer la double revue humaine INST066/INST058 et la revue du régime de sanctions lorsqu'il sera matérialisé ;
-7. activer uniquement les règles explicitement approuvées ;
-8. terminer l'infrastructure réelle et la recette ;
-9. seulement ensuite préparer une version réellement prête pour dépôt.
+2. **en attendant R1** : poursuivre R3 avec l'Instruction n°23/99, puis n°22/99 et n°21/99 ;
+3. reprendre ensuite les binaires manquants de 45/2011, 24/99 et de la Décision 2012-119 ;
+4. terminer R2 par la vérification du statut courant et des éventuels textes postérieurs de l'Instruction 58 ;
+5. fermer la recherche de modificatifs/rectificatifs de l'Instruction 66 ;
+6. inventorier et matérialiser les autres textes OPC complémentaires ;
+7. lancer la double revue humaine INST066/INST058 et la revue du régime de sanctions lorsqu'il sera matérialisé ;
+8. activer uniquement les règles explicitement approuvées ;
+9. terminer l'infrastructure réelle et la recette ;
+10. seulement ensuite préparer une version réellement prête pour dépôt.
