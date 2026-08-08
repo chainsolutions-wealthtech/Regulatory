@@ -34,19 +34,6 @@ export type PersistGenerationInput = {
   expectedVersion?: number;
 };
 
-export type GenerationArtifactSummary = {
-  generationId: string;
-  fileName: string;
-  documentType: string;
-  mediaType: string;
-  sha256: string;
-  byteSize: number;
-};
-
-export type GenerationArtifactContent = GenerationArtifactSummary & {
-  content: Buffer;
-};
-
 /**
  * Port de persistance du domaine projet.
  *
@@ -55,9 +42,9 @@ export type GenerationArtifactContent = GenerationArtifactSummary & {
  * sont cohérents dans une même transaction. Les écritures peuvent fournir une
  * précondition de version afin de rejeter une mise à jour concurrente.
  *
- * Les opérations d'artefacts n'acceptent jamais de chemin de stockage fourni
- * par l'appelant. Elles résolvent uniquement un triplet projet/génération/fichier
- * déjà persisté par le repository.
+ * La lecture des documents générés relève du port séparé
+ * `GenerationArtifactRepository`, afin de pouvoir substituer un stockage objet
+ * au filesystem sans élargir le repository métier projet.
  */
 export interface ProjectRepository {
   readonly driver: "local-json" | "postgresql";
@@ -66,10 +53,4 @@ export interface ProjectRepository {
   createProject(input: CreateProjectInput): Promise<ProspectusProject>;
   saveAnswer(input: SaveAnswerInput): Promise<ProspectusProject>;
   persistGenerationArtifacts(input: PersistGenerationInput): Promise<ProspectusProject>;
-  listGenerationArtifacts(projectId: string, generationId: string): Promise<GenerationArtifactSummary[]>;
-  readGenerationArtifact(
-    projectId: string,
-    generationId: string,
-    fileName: string,
-  ): Promise<GenerationArtifactContent | null>;
 }
