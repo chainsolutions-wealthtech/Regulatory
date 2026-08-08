@@ -1,6 +1,6 @@
 import "server-only";
 
-import { randomUUID } from "node:crypto";
+import { createHash, randomUUID } from "node:crypto";
 import { appendFile, mkdir, readFile, readdir, writeFile } from "node:fs/promises";
 import path from "node:path";
 import { seedProjects } from "@/data/seed-projects";
@@ -23,6 +23,10 @@ import type {
   GeneratedProspectusArtifact,
   ProspectusPreview,
 } from "@/server/generation-adapter";
+import type {
+  GenerationArtifactContent,
+  GenerationArtifactSummary,
+} from "@/server/storage/project-repository";
 
 const DATA_ROOT = process.env.REGULATORY_LOCAL_DATA_ROOT
   ? path.resolve(process.env.REGULATORY_LOCAL_DATA_ROOT)
@@ -143,7 +147,7 @@ export async function persistGenerationArtifacts(input: {
   const project = await getProject(input.projectId);
   if (!project) throw new Error("PROJECT_NOT_FOUND");
 
-  const directory = path.join(projectDirectory(project.id), "generations", safeId(input.generation.generationId));
+  const directory = generationDirectory(project.id, input.generation.generationId);
   await mkdir(directory, { recursive: true });
   const previewPath = path.join(directory, "preview.json");
   const canonicalSnapshotPath = path.join(directory, "canonical-snapshot.json");
@@ -155,7 +159,7 @@ export async function persistGenerationArtifacts(input: {
     writeStableJson(previewPath, input.preview),
     writeStableJson(canonicalSnapshotPath, input.canonicalSnapshot),
     ...input.artifacts.map((artifact) =>
-      writeFile(path.join(directory, artifact.fileName), artifact.content),
+      writeFile(path.join(directory, safeFileName(artifact.fileName)), artifact.content),
     ),
   ]);
 
@@ -181,6 +185,60 @@ export async function persistGenerationArtifacts(input: {
   project.findings = validateProject(project);
   await persistProject(project, "PROSPECTUS_GENERATED", project.generation);
   return project;
+}
+
+export async function listGenerationArtifacts(
+  projectId: string,
+  generationId: string,
+): Promise<GenerationArtifactSummary[]> {
+  const project = await getProject(projectId);
+  if (!project) throw new Error("PROJECT_NOT_FOUND");
+  const directory = generationDirectory(projectId, generationId);
+  const entries = await readdir(directory, { withFileTypes: true }).catch(() => []);
+  const fileNames = entries
+    .filter((entry) => entry.isFile())
+    .map((entry) => safeFileName(entry.name))
+    .toSorted();
+  return Promise.all(fileNames.map((fileName) => summarizeLocalArtifact(generationId, directory, fileName)));
+}
+
+export async function readGenerationArtifact(
+  projectId: string,
+  generationId: string,
+  fileName: string,
+): Promise<GenerationArtifactContent | null> {
+  const project = await getProject(projectId);
+  if (!project) throw new Error("PROJECT_NOT_FOUND");
+  const safeName = safeFileName(fileName);
+  const directory = generationDirectory(projectId, generationId);
+  const available = await readdir(directory, { withFileTypes: true }).catch(() => []);
+  if (!available.some((entry) => entry.isFile() && entry.name === safeName)) return null;
+  const content = await readFile(path.join(directory, safeName));
+  return {
+    generationId,
+    fileName: safeName,
+    documentType: documentType(safeName),
+    mediaType: mediaType(safeName),
+    sha256: createHash("sha256").update(content).digest("hex"),
+    byteSize: content.byteLength,
+    content,
+  };
+}
+
+async function summarizeLocalArtifact(
+  generationId: string,
+  directory: string,
+  fileName: string,
+): Promise<GenerationArtifactSummary> {
+  const content = await readFile(path.join(directory, fileName));
+  return {
+    generationId,
+    fileName,
+    documentType: documentType(fileName),
+    mediaType: mediaType(fileName),
+    sha256: createHash("sha256").update(content).digest("hex"),
+    byteSize: content.byteLength,
+  };
 }
 
 async function readAllProjects(): Promise<ProspectusProject[]> {
@@ -271,6 +329,10 @@ function projectDirectory(projectId: string): string {
   return path.join(DATA_ROOT, safeId(projectId));
 }
 
+function generationDirectory(projectId: string, generationId: string): string {
+  return path.join(projectDirectory(projectId), "generations", safeId(generationId));
+}
+
 function currentPath(projectId: string): string {
   return path.join(projectDirectory(projectId), "current.json");
 }
@@ -290,6 +352,27 @@ function relativeToDataRoot(filePath: string): string {
 function safeId(value: string): string {
   if (!/^[a-z0-9-]+$/i.test(value)) throw new Error("INVALID_IDENTIFIER");
   return value;
+}
+
+function safeFileName(value: string): string {
+  if (!/^[a-z0-9][a-z0-9._-]{0,127}$/i.test(value) || value.includes("..")) {
+    throw new Error("INVALID_ARTIFACT_FILE_NAME");
+  }
+  return value;
+}
+
+function mediaType(fileName: string): string {
+  if (fileName.endsWith(".docx")) return "application/vnd.openxmlformats-officedocument.wordprocessingml.document";
+  if (fileName.endsWith(".json")) return "application/json";
+  if (fileName.endsWith(".md")) return "text/markdown";
+  if (fileName.endsWith(".csv")) return "text/csv";
+  if (fileName.endsWith(".pdf")) return "application/pdf";
+  if (fileName.endsWith(".zip")) return "application/zip";
+  return "application/octet-stream";
+}
+
+function documentType(fileName: string): string {
+  return fileName.replace(/[^a-z0-9]+/gi, "_").replace(/^_+|_+$/g, "").toUpperCase();
 }
 
 function slugify(value: string): string {
