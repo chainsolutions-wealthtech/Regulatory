@@ -1,0 +1,59 @@
+evidence_id: INST066_ART055_059_RISK_DERIVATIVES_CIRCULAR_SEARCH_2026_08_08
+review_date: 2026-08-08
+source_id: INSTRUCTION_66_CREPMF_2021
+scope: >-
+  Recherche des textes d'application explicitement appelés par les articles 55 et
+  59 de l'Instruction 66 pour les pondérations/marges/décotes et la mesure ou gestion
+  des expositions liées aux instruments dérivés, notamment de gré à gré.
+
+dependencies:
+  - article: 55
+    subject: "pondérations, marges, décotes et modalités quantitatives associées"
+    dependency_kind: COUNCIL_CIRCULAR
+    search_result: OFFICIAL_PUBLIC_REFERENCE_NOT_IDENTIFIED
+    activation: FORBIDDEN_PENDING_OFFICIAL_SOURCE_IDENTIFICATION_AND_REVIEW
+
+  - article: 59
+    subject: "exposition aux instruments dérivés de gré à gré et méthodes de mesure/gestion des risques"
+    dependency_kind: COUNCIL_CIRCULAR
+    search_result: OFFICIAL_PUBLIC_REFERENCE_NOT_IDENTIFIED
+    activation: FORBIDDEN_PENDING_OFFICIAL_SOURCE_IDENTIFICATION_AND_REVIEW
+
+research_scope:
+  official_domains_checked:
+    - amf-umoa.org
+    - brvm.org
+    - crepmf.org
+  query_concepts:
+    - "pondérations OPCVM"
+    - "marges OPCVM"
+    - "décotes OPCVM"
+    - "instruments dérivés OTC OPCVM"
+    - "dérivés de gré à gré OPCVM"
+    - "exposition dérivés OPCVM"
+    - "méthodes de gestion des risques OPCVM"
+    - "circulaire Conseil Régional"
+  result: >-
+    Aucune fiche, référence numérotée ou route binaire institutionnelle publiquement
+    indexée n'a été identifiée permettant de rattacher sans ambiguïté les circulaires
+    recherchées aux articles 55 et 59.
+
+interpretation_boundaries:
+  - DO_NOT_INFER_CIRCULAR_NUMBERS
+  - DO_NOT_INFER_RISK_WEIGHTS_MARGINS_OR_HAIRCUTS
+  - DO_NOT_INFER_OTC_EXPOSURE_LIMITS_OR_FORMULAS
+  - DO_NOT_RECONSTRUCT_DERIVATIVE_RISK_METHODS_FROM_THIRD_PARTY_COPIES
+  - DO_NOT_MARK_DEPENDENCIES_RESOLVED
+
+status:
+  article_55_dependency: OPEN_OFFICIAL_REFERENCE_NOT_IDENTIFIED
+  article_59_dependency: OPEN_OFFICIAL_REFERENCE_NOT_IDENTIFIED
+  activation_allowed: false
+  legal_review: PENDING
+  compliance_review: PENDING
+  ready_for_submission: false
+
+resume_conditions:
+  - OFFICIAL_AMF_BRVM_OR_CREPMF_CIRCULAR_REFERENCE_IDENTIFIED
+  - OFFICIAL_CIRCULAR_BINARY_AVAILABLE
+  - DIRECT_REGULATOR_CONFIRMATION_OF_IMPLEMENTING_INSTRUMENTS
