@@ -12,7 +12,7 @@ import type {
 export type {
   GenerationArtifactContent,
   GenerationArtifactSummary,
-} from "@/server/storage/generation-artifact-repository";
+} from "@/server/storage/generation-artifact-types";
 
 export type CreateProjectInput = {
   name: string;
