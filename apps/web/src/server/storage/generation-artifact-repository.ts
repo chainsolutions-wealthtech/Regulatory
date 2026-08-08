@@ -7,24 +7,15 @@ import {
   readGenerationArtifact as readLocalGenerationArtifact,
 } from "@/server/project-store";
 import type { ArtifactStore } from "@/server/storage/artifact-store";
+import type {
+  GenerationArtifactContent,
+  GenerationArtifactSummary,
+} from "@/server/storage/generation-artifact-types";
 import {
   assertVerifiedIdentity,
   type VerifiedIdentityContext,
   type VerifiedIdentityProvider,
 } from "@/server/security/verified-identity";
-
-export type GenerationArtifactSummary = {
-  generationId: string;
-  fileName: string;
-  documentType: string;
-  mediaType: string;
-  sha256: string;
-  byteSize: number;
-};
-
-export type GenerationArtifactContent = GenerationArtifactSummary & {
-  content: Buffer;
-};
 
 export interface GenerationArtifactRepository {
   readonly driver: "local-json" | "postgresql";
