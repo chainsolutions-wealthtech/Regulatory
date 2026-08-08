@@ -2,6 +2,7 @@ import { Badge } from "@/components/atoms/Badge";
 import { AppHeader } from "@/components/organisms/AppHeader";
 import { AppShell } from "@/components/organisms/AppShell";
 import { StatCard } from "@/components/molecules/StatCard";
+import { CLAUSE_CATALOG, CLAUSE_CATALOG_METADATA } from "@/domain/clause-catalog";
 import {
   CATALOG_METADATA,
   QUESTION_GROUPS,
@@ -33,13 +34,13 @@ export function RegulatoryLibraryTemplate() {
     <AppShell active="library">
       <AppHeader
         title="Bibliothèque réglementaire"
-        description="Vue en lecture seule du catalogue réglementaire actuellement utilisé par le questionnaire et le moteur documentaire. Les statuts affichés sont ceux du registre généré ; ils ne valent ni approbation juridique ni activation automatique."
+        description="Vue en lecture seule des exigences et clauses réellement consommées par le questionnaire et le compositeur. Les statuts affichés ne valent ni approbation juridique ni activation automatique."
       />
       <div className="page-stack">
         <section className="stat-grid">
           <StatCard label="Exigences" value={CATALOG_METADATA.requirementCount} detail={CATALOG_METADATA.rulePack} tone="info" />
+          <StatCard label="Clauses" value={CLAUSE_CATALOG_METADATA.clauseCount} detail={`Catalogue ${CLAUSE_CATALOG_METADATA.clauseCatalogVersion}`} tone="warning" />
           <StatCard label="Questions interactives" value={CATALOG_METADATA.interactiveQuestionCount} detail="Catalogue généré" tone="success" />
-          <StatCard label="Groupes" value={QUESTION_GROUPS.length} detail="Parcours réglementaire" tone="neutral" />
           <StatCard label="Revue en attente" value={pendingReview} detail="Validation humaine" tone={pendingReview > 0 ? "warning" : "success"} />
         </section>
 
@@ -47,7 +48,7 @@ export function RegulatoryLibraryTemplate() {
           <div className="section-heading">
             <div>
               <h2>Pack actif</h2>
-              <p>Identité et empreinte du catalogue consommé par l’application.</p>
+              <p>Identité et empreinte des catalogues consommés par l’application.</p>
             </div>
             <Badge tone="warning">Pré-conformité</Badge>
           </div>
@@ -56,7 +57,8 @@ export function RegulatoryLibraryTemplate() {
             <div><dt>Version du registre</dt><dd>{CATALOG_METADATA.registryVersion}</dd></div>
             <div><dt>Statut du registre</dt><dd>{CATALOG_METADATA.registryStatus}</dd></div>
             <div><dt>Exigences couvertes par défaut</dt><dd>{covered} / {CATALOG_METADATA.requirementCount}</dd></div>
-            <div><dt>Digest</dt><dd>{CATALOG_METADATA.catalogDigest}</dd></div>
+            <div><dt>Digest exigences</dt><dd>{CATALOG_METADATA.catalogDigest}</dd></div>
+            <div><dt>Digest clauses</dt><dd>{CLAUSE_CATALOG_METADATA.catalogDigest}</dd></div>
           </dl>
         </section>
 
@@ -75,6 +77,30 @@ export function RegulatoryLibraryTemplate() {
                   <div><small>{group.description}</small></div>
                 </div>
                 <Badge tone="info">{requirementsByGroup.get(group.id) ?? 0} exigence(s)</Badge>
+              </div>
+            ))}
+          </div>
+        </section>
+
+        <section className="content-section">
+          <div className="section-heading">
+            <div>
+              <h2>Clauses du compositeur</h2>
+              <p>Projection déterministe de `src/catalog/clause-catalog.js`. Toutes les clauses restent en revue juridique tant qu’un approbateur humain compétent ne les a pas validées.</p>
+            </div>
+            <Badge tone="warning">{CLAUSE_CATALOG.length} clause(s)</Badge>
+          </div>
+          <div className="coverage-table">
+            {CLAUSE_CATALOG.map((clause) => (
+              <div className="coverage-table__row" key={clause.clauseId}>
+                <div>
+                  <strong>{clause.clauseId} · v{clause.version}</strong>
+                  <div><small>{clause.sectionId} · {clause.category}</small></div>
+                  <p>{clause.wording}</p>
+                  <div><small>Exigences : {clause.requirementIds.join(", ")}</small></div>
+                  <div><small>Champs : {clause.fieldPaths.join(", ")}</small></div>
+                </div>
+                <Badge tone={badgeTone(clause.status)}>{clause.status}</Badge>
               </div>
             ))}
           </div>
