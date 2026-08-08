@@ -1,0 +1,65 @@
+source_id: DECISION_CM_10_06_2022
+source_family: DECISION
+reference: "DECISION N° CM/10/06/2022"
+reference_status: CORROBORATED_PENDING_OFFICIAL_BINARY
+reference_date: 2022-06-24
+title: "Décision relative à la mise en œuvre du dispositif des sanctions pécuniaires applicables sur le Marché Financier Régional de l'UMOA"
+issuing_authority: "Conseil des Ministres de l'UMOA"
+
+adoption_evidence:
+  official_source:
+    authority: BCEAO
+    url: "https://www.bceao.int/fr/communique-presse/communique-de-presse-de-la-session-ordinaire-du-conseil-des-ministres-de-lunion-5"
+    observed_on: 2026-08-08
+    evidence: "Le communiqué officiel de la session du 24 juin 2022 indique que le Conseil des Ministres a adopté le dispositif révisé des sanctions pécuniaires applicables sur le marché financier régional de l'UMOA."
+    evidence_scope: ADOPTION_OF_REVISED_DEVICE_CONFIRMED
+  corroborating_sources:
+    - authority: CENTIF_SENEGAL
+      url: "https://www.centif.sn/reglementation/fr/reglcommu"
+      evidence: "La page de réglementation communautaire référence la Décision n° CM/10/06/2022 sous l'intitulé relatif à la mise en œuvre du dispositif des sanctions pécuniaires."
+      evidence_scope: REFERENCE_AND_TITLE_CORROBORATED
+    - authority: LEXTENSO
+      url: "https://www.labase-lextenso.fr/lessentiel-droits-africains-des-affaires/DAA201j5"
+      evidence: "La publication juridique identifie la Décision n° CM/10/06/2022 du 24 juin 2022 et son objet."
+      evidence_scope: REFERENCE_DATE_AND_TITLE_CORROBORATED
+
+source_integrity:
+  official_binary_url: TO_IDENTIFY_FROM_OFFICIAL_SOURCE
+  repository_copy: null
+  sha256: null
+  byte_size: null
+  page_count: null
+  copy_status: OFFICIAL_ADOPTION_CONFIRMED_BINARY_NOT_MATERIALIZED
+
+legal_metadata:
+  adopted_on: 2022-06-24
+  signed_on: PENDING_OFFICIAL_BINARY_REVIEW
+  effective_from: PENDING_OFFICIAL_BINARY_REVIEW
+  predecessor: TO_IDENTIFY_FROM_OFFICIAL_BINARY
+  amendments_and_rectifications: TO_COMPLETE
+  current_legal_status: PENDING_OFFICIAL_BINARY_AND_REGISTRY_REVIEW
+  relationship_to_2016_decision:
+    related_source_id: DECISION_CM_SJ_001_03_2016
+    status: REVISED_DEVICE_CONFIRMED_RELATIONSHIP_NOT_LEGALLY_CONCLUDED
+    note: "L'existence d'un dispositif révisé adopté en 2022 est officiellement confirmée. La nature juridique exacte de la relation avec la décision de 2016 (remplacement, modification, abrogation totale ou partielle, coexistence transitoire) ne doit pas être déduite sans examen des deux textes officiels."
+
+linked_sources:
+  - DECISION_CM_SJ_001_03_2016
+  - INSTRUCTION_58_CREPMF_2019
+
+linked_requirements:
+  - INST058_ART031_REQ001
+  - INST058_ART032_REQ001
+
+safety:
+  requirement_activation_allowed: false
+  sanction_amount_calculation_allowed: false
+  automatic_enforcement_allowed: false
+  official_binary_required_before_atomization: true
+  human_legal_review_required: true
+  human_compliance_review_required: true
+
+notes:
+  - "Cette entrée enregistre une dépendance documentaire et juridique ; elle ne constitue pas l'atomisation normative de la décision."
+  - "Aucun montant, barème, seuil, catégorie de manquement ou sanction ne doit être modélisé comme actif avant matérialisation du texte officiel et double revue juridique/conformité."
+  - "Les sources de corroboration ne remplacent pas le binaire officiel normatif."
