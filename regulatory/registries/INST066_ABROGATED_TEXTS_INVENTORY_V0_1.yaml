@@ -14,6 +14,7 @@ corroborating_official_evidence:
   - regulatory/review-evidence/INST066_HISTORICAL_CROSSCHECK/corroborating/DECISION_PCR_DA_2018_165_NSIA_FONDS_DIVERSIFIE.pdf
 reference_count: 7
 crosscheck_progress:
+  source_records_created_count: 7
   officially_materialized_count: 1
   official_reference_title_corroborated_count: 2
   article_92_only_count: 4
@@ -28,6 +29,7 @@ references:
   evidence_page: 64
   source_text_status: VISUALLY_OBSERVED
   evidence_grade: ARTICLE_92_OFFICIAL_SOURCE_ONLY
+  source_record: regulatory/sources/DECISION_CREPMF_2012_119.yaml
   historical_registry_status: OFFICIAL_PUBLIC_ROUTE_NOT_IDENTIFIED_2026_08_08
   binary_materialization_status: NOT_MATERIALIZED
 - seq: 2
@@ -87,6 +89,7 @@ references:
   evidence_page: 64
   source_text_status: VISUALLY_OBSERVED
   evidence_grade: ARTICLE_92_OFFICIAL_SOURCE_ONLY
+  source_record: regulatory/sources/INSTRUCTION_23_CREPMF_1999.yaml
   historical_registry_status: OFFICIAL_PUBLIC_ROUTE_NOT_IDENTIFIED_2026_08_08
   binary_materialization_status: NOT_MATERIALIZED
 - seq: 6
@@ -97,6 +100,7 @@ references:
   evidence_page: 65
   source_text_status: VISUALLY_OBSERVED
   evidence_grade: ARTICLE_92_OFFICIAL_SOURCE_ONLY
+  source_record: regulatory/sources/INSTRUCTION_22_CREPMF_1999.yaml
   historical_registry_status: OFFICIAL_PUBLIC_ROUTE_NOT_IDENTIFIED_2026_08_08
   binary_materialization_status: NOT_MATERIALIZED
 - seq: 7
@@ -107,12 +111,14 @@ references:
   evidence_page: 65
   source_text_status: VISUALLY_OBSERVED
   evidence_grade: ARTICLE_92_OFFICIAL_SOURCE_ONLY
+  source_record: regulatory/sources/INSTRUCTION_21_CREPMF_1999.yaml
   historical_registry_status: OFFICIAL_PUBLIC_ROUTE_NOT_IDENTIFIED_2026_08_08
   binary_materialization_status: NOT_MATERIALIZED
 review_boundaries:
   source_text_observation_complete: true
+  historical_source_records_complete: true
   historical_registry_crosscheck_complete: false
-  historical_registry_crosscheck_progress: 1_BINARY_MATERIALIZED_2_OFFICIALLY_CORROBORATED_4_ARTICLE92_ONLY
+  historical_registry_crosscheck_progress: 7_SOURCE_RECORDS_1_BINARY_MATERIALIZED_2_OFFICIALLY_CORROBORATED_4_ARTICLE92_ONLY
   legal_review_status: PENDING
   compliance_review_status: PENDING
   amendments_rectifications_inventory_status: TO_COMPLETE
