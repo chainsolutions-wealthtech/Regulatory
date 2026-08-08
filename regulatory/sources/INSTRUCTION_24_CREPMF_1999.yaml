@@ -9,49 +9,61 @@ document_type: INSTRUCTION
 language: fr
 historical_status: EXPLICITLY_ABROGATED_BY_INSTRUCTION_66_ARTICLE_92
 
+official_api:
+  endpoint: https://www.amf-umoa.org/service/api/elastic/actualite
+  actualite_id: 1000070
+  detail_url: "https://www.amf-umoa.org/service/api/elastic/actualite?id=1000070&langue=fr"
+  document_url_field: "AC-INSTRUCTION-2023-D5C75F66-3040-4C69-8749-1889764AA995.pdf"
+  title_observed: "Instruction N°24/99"
+  summary_observed: "RELATIVE LA NOTE D’INFORMATION DES ORGANISMES DE PLACEMENT COLLECTIF EN VALEURS MOBILIERES"
+  portal_abroge_observed: false
+  portal_abroge_is_legal_status_proof: false
+  observed_on: 2026-08-08
+  route_status: OFFICIAL_DETAIL_ROUTE_IDENTIFIED
+
 source_integrity:
-  official_binary_url: TO_IDENTIFY_FROM_OFFICIAL_SOURCE
+  official_binary_transport: AMF_UMOA_DETAIL_API_DOC_EXPECTED
+  official_binary_url: "https://www.amf-umoa.org/service/api/elastic/actualite?id=1000070&langue=fr"
   repository_copy: null
   sha256: null
   byte_size: null
   page_count: null
-  copy_status: OFFICIAL_REFERENCE_AND_TITLE_CORROBORATED_BINARY_NOT_MATERIALIZED
+  copy_status: OFFICIAL_ROUTE_IDENTIFIED_MATERIALIZATION_BLOCKED_BY_GITHUB_ACTIONS_BILLING
 
 historical_evidence:
   primary_abrogation_source:
     source_id: INSTRUCTION_66_CREPMF_2021
     article: 92
     status: VISUALLY_OBSERVED_FROM_HASHED_OFFICIAL_PDF
+    legal_priority_over_portal_metadata: true
   corroborating_official_act:
     reference: "Décision n° PCR/DA/2018/165"
-    source_page: https://www.brvm.org/fr/crepmf-agrement-du-fonds-commun-de-placement-fcp-nsia-fonds-diversifie-en-qualite-dopcvm-sur-le
     repository_copy: regulatory/review-evidence/INST066_HISTORICAL_CROSSCHECK/corroborating/DECISION_PCR_DA_2018_165_NSIA_FONDS_DIVERSIFIE.pdf
     sha256: 282b603d99e80699203c4ca75abc683dee8e550f2a8f6f79eccd7e937b0c7337
-    evidence_text: >-
-      Le visa de la décision officielle cite l'Instruction n°24/99 relative à la
-      note d'information des Organismes de Placement Collectif en Valeurs Mobilières
-      (OPCVM).
     evidence_scope: REFERENCE_AND_TITLE_CORROBORATED_ONLY
-  crosscheck_evidence: regulatory/review-evidence/INST066_HISTORICAL_CROSSCHECK/OFFICIAL_SOURCE_SEARCH_2026-08-08.yaml
+  previous_public_search_evidence: regulatory/review-evidence/INST066_HISTORICAL_CROSSCHECK/OFFICIAL_SOURCE_SEARCH_2026-08-08.yaml
 
 legal_metadata:
   act_date: PENDING_OFFICIAL_BINARY_REVIEW
   effective_from: PENDING_OFFICIAL_BINARY_REVIEW
   amendments_and_rectifications: TO_COMPLETE
   current_legal_status: ABROGATED_BY_INSTRUCTION_66_EFFECTIVE_2022_01_01
-  historical_binary_status: OFFICIAL_BINARY_NOT_MATERIALIZED
+  legal_status_source: INSTRUCTION_66_ARTICLE_92
+  portal_abroge_false_ignored_for_reactivation: true
+  historical_binary_status: OFFICIAL_ROUTE_IDENTIFIED_BINARY_NOT_YET_MATERIALIZED
   activation_allowed: false
 
 safety:
+  portal_metadata_may_override_article92_abrogation: false
   requirement_activation_allowed: false
   historical_rule_reactivation_allowed: false
   automatic_rule_reconstruction_allowed: false
   automatic_migration_inference_allowed: false
   human_legal_review_required: true
   human_compliance_review_required: true
+  ready_for_submission_must_remain_false: true
 
 notes:
-  - "La référence et l'intitulé sont corroborés par deux sources officielles distinctes : l'article 92 de l'Instruction 66 et une décision d'agrément CREPMF/BRVM de 2018."
-  - "L'acte 2018 est une preuve corroborante et ne remplace pas le binaire normatif de l'Instruction 24/99."
-  - "Aucune date issue d'une copie tierce n'est promue dans cette fiche."
-  - "Aucune obligation historique ne doit être reconstruite ou réactivée avant matérialisation du texte officiel et revue humaine."
+  - "L'API officielle actuelle fournit désormais la route propre de l'Instruction 24/99."
+  - "Le champ portail abroge=false ne peut pas contredire l'abrogation expresse de l'article 92."
+  - "La matérialisation doit reprendre après rétablissement de GitHub Actions."
