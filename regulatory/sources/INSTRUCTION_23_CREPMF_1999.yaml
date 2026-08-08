@@ -1,0 +1,49 @@
+source_id: INSTRUCTION_23_CREPMF_1999
+source_family: INSTRUCTION
+reference: "Instruction n°23/99"
+title: "Instruction relative aux actifs gérés par les Organismes de Placement Collectif en Valeurs Mobilières"
+jurisdiction: UMOA
+authority_at_adoption: CREPMF
+current_authority_name: AMF-UMOA
+document_type: INSTRUCTION
+language: fr
+historical_status: EXPLICITLY_ABROGATED_BY_INSTRUCTION_66_ARTICLE_92
+
+source_integrity:
+  official_binary_url: TO_IDENTIFY_FROM_OFFICIAL_SOURCE
+  repository_copy: null
+  sha256: null
+  byte_size: null
+  page_count: null
+  copy_status: OFFICIAL_ARTICLE92_REFERENCE_ONLY_BINARY_NOT_MATERIALIZED
+
+historical_evidence:
+  primary_abrogation_source:
+    source_id: INSTRUCTION_66_CREPMF_2021
+    article: 92
+    evidence_pages: [64, 65]
+    source_pdf: regulatory/materialized/INSTRUCTION_66_CREPMF_2021.pdf
+    source_sha256: 3f964f2f6ab9ce9eb16912ccda13f34b5023a188dfb18fcba7065590c770d396
+    status: VISUALLY_OBSERVED_FROM_HASHED_OFFICIAL_PDF
+  crosscheck_evidence: regulatory/review-evidence/INST066_HISTORICAL_CROSSCHECK/OFFICIAL_SOURCE_SEARCH_2026-08-08.yaml
+
+legal_metadata:
+  act_date: PENDING_OFFICIAL_BINARY_REVIEW
+  effective_from: PENDING_OFFICIAL_BINARY_REVIEW
+  amendments_and_rectifications: TO_COMPLETE
+  current_legal_status: ABROGATED_BY_INSTRUCTION_66_EFFECTIVE_2022_01_01
+  historical_binary_status: OFFICIAL_BINARY_NOT_MATERIALIZED
+  activation_allowed: false
+
+safety:
+  requirement_activation_allowed: false
+  historical_rule_reactivation_allowed: false
+  automatic_rule_reconstruction_allowed: false
+  automatic_migration_inference_allowed: false
+  human_legal_review_required: true
+  human_compliance_review_required: true
+
+notes:
+  - "La référence, l'intitulé et l'abrogation sont établis par l'article 92 de l'Instruction 66 officielle matérialisée."
+  - "Le binaire propre de l'Instruction 23/99 n'a pas été identifié dans les routes institutionnelles publiques contrôlées le 2026-08-08."
+  - "Une copie tierce éventuellement accessible ne doit pas être importée comme source normative ni utilisée pour reconstruire ses ratios, seuils ou obligations."
