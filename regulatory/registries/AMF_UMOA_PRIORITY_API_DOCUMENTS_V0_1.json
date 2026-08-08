@@ -1,0 +1,103 @@
+{
+  "schemaVersion": "AMF_UMOA_PRIORITY_API_DOCUMENTS_V0_1",
+  "authority": "AMF-UMOA",
+  "sourceApi": "https://www.amf-umoa.org/service/api/elastic/actualite",
+  "status": "COMPLETE_3_OF_3",
+  "documents": [
+    {
+      "sourceId": "INSTRUCTION_61_CREPMF_2020",
+      "actualiteId": 1000106,
+      "apiUrl": "https://www.amf-umoa.org/service/api/elastic/actualite?id=1000106&langue=fr",
+      "apiRawSha256": "129396b7d3b9dce53af601dcf61e161dc5906ee68962696b8b06c61a32ce5e87",
+      "titreFromApi": "Instruction N°61/2020",
+      "resumeFromApi": "RELATIVE A L'ORGANISATION DU SYSTEME DE CONTRÔLE INTERNE DES ACTEURS DU MARCHE FINANCIER REGIONAL DE L'UMOA",
+      "texteFromApi": "RELATIVE A L'ORGANISATION DU SYSTEME DE CONTRÔLE INTERNE DES ACTEURS DU MARCHE FINANCIER REGIONAL DE L'UMOA",
+      "datePortalMetadata": "2023-08-24",
+      "validePortalMetadata": true,
+      "abrogePortalMetadata": false,
+      "documentUrlFromApi": "AC-INSTRUCTION-2023-102DB091-845C-43F9-BE95-D672A9ADD868.pdf",
+      "sha256": "f7a5e0bfc86a067cf9fb9a570cbdcd8f7918f62a5d3f015e37cf046293be0932",
+      "byteSize": 11098415,
+      "pageCount": 15,
+      "textExtractionMethod": "OCR_TESSERACT_FRA_FALLBACK",
+      "usefulTextChars": 31610,
+      "repositoryPdf": "regulatory/sources/amf-umoa-priority-api-documents/INSTRUCTION_61_CREPMF_2020.pdf",
+      "repositoryText": "regulatory/sources/amf-umoa-priority-api-documents/INSTRUCTION_61_CREPMF_2020.txt",
+      "legalBoundary": {
+        "portalDateIsAdoptionDate": false,
+        "portalAbrogeIsSoleLegalStatusProof": false,
+        "binaryMaterializationIsRuleActivation": false,
+        "automaticDependencyResolutionAllowed": false,
+        "automaticRequirementActivationAllowed": false,
+        "humanLegalReviewRequired": true,
+        "humanComplianceReviewRequired": true
+      }
+    },
+    {
+      "sourceId": "INSTRUCTION_64_CREPMF_2020",
+      "actualiteId": 1000110,
+      "apiUrl": "https://www.amf-umoa.org/service/api/elastic/actualite?id=1000110&langue=fr",
+      "apiRawSha256": "0b2b9b7aec9203d40f628762ab24a792569c353d5c70a76099d384b30b16476f",
+      "titreFromApi": "Instruction N°64/2020",
+      "resumeFromApi": "INSTRUCTION N° 64 2020 CREPMF RELATIVE AUX CONDITIONS DE TRAITEMENT DES DOSSIERS DE DEMANDE D'AGREMENT OU D'APPROBATION",
+      "texteFromApi": "INSTRUCTION N° 64 2020 CREPMF RELATIVE AUX CONDITIONS DE TRAITEMENT DES DOSSIERS DE DEMANDE D'AGREMENT OU D'APPROBATION",
+      "datePortalMetadata": "2023-08-24",
+      "validePortalMetadata": true,
+      "abrogePortalMetadata": false,
+      "documentUrlFromApi": "AC-INSTRUCTION-2023-4509A4B9-A83F-4EEE-B4D5-BF492750CB30.pdf",
+      "sha256": "db5091c4388e5c050c22b028e7494522e36d6b5b041ba265cf96ccedada24469",
+      "byteSize": 18083424,
+      "pageCount": 97,
+      "textExtractionMethod": "PDFTOTEXT",
+      "usefulTextChars": 92519,
+      "repositoryPdf": "regulatory/sources/amf-umoa-priority-api-documents/INSTRUCTION_64_CREPMF_2020.pdf",
+      "repositoryText": "regulatory/sources/amf-umoa-priority-api-documents/INSTRUCTION_64_CREPMF_2020.txt",
+      "legalBoundary": {
+        "portalDateIsAdoptionDate": false,
+        "portalAbrogeIsSoleLegalStatusProof": false,
+        "binaryMaterializationIsRuleActivation": false,
+        "automaticDependencyResolutionAllowed": false,
+        "automaticRequirementActivationAllowed": false,
+        "humanLegalReviewRequired": true,
+        "humanComplianceReviewRequired": true
+      }
+    },
+    {
+      "sourceId": "DECISION_SANCTIONS_2016",
+      "actualiteId": 1000179,
+      "apiUrl": "https://www.amf-umoa.org/service/api/elastic/actualite?id=1000179&langue=fr",
+      "apiRawSha256": "1823c95164b11429a414d26c18512d339c97137bc6faa05f5031c03863e1168c",
+      "titreFromApi": "DECISION N° CM/SJ/O01/03/2016",
+      "resumeFromApi": "DECISION N° CM/SJ/O01/03/2016 RELATIVE A LA MISE EN OEUVRE DU DISPOSITIF DES SANCTIONS PECUNIAIRES APPLICABLES SUR LE MARCHE FINANCIER REGIONAL DE L’UMOA",
+      "texteFromApi": "DECISION N° CM/SJ/O01/03/2016 RELATIVE A LA MISE EN OEUVRE DU DISPOSITIF DES SANCTIONS PECUNIAIRES APPLICABLES SUR LE MARCHE FINANCIER REGIONAL DE L’UMOA",
+      "datePortalMetadata": "2016-03-24",
+      "validePortalMetadata": true,
+      "abrogePortalMetadata": false,
+      "documentUrlFromApi": "AC-DECISION-2023-3B578016-221F-496D-8C27-2B7D62DFB43E.pdf",
+      "sha256": "888b971071f32a6453647b979f3f9cc551d686e1bc7135d6a659e8907aa9dbe2",
+      "byteSize": 4146126,
+      "pageCount": 12,
+      "textExtractionMethod": "OCR_TESSERACT_FRA_FALLBACK",
+      "usefulTextChars": 16010,
+      "repositoryPdf": "regulatory/sources/amf-umoa-priority-api-documents/DECISION_SANCTIONS_2016.pdf",
+      "repositoryText": "regulatory/sources/amf-umoa-priority-api-documents/DECISION_SANCTIONS_2016.txt",
+      "legalBoundary": {
+        "portalDateIsAdoptionDate": false,
+        "portalAbrogeIsSoleLegalStatusProof": false,
+        "binaryMaterializationIsRuleActivation": false,
+        "automaticDependencyResolutionAllowed": false,
+        "automaticRequirementActivationAllowed": false,
+        "humanLegalReviewRequired": true,
+        "humanComplianceReviewRequired": true
+      }
+    }
+  ],
+  "failures": [],
+  "boundary": {
+    "automaticDependencyResolutionAllowed": false,
+    "automaticRequirementActivationAllowed": false,
+    "humanLegalReviewRequired": true,
+    "humanComplianceReviewRequired": true,
+    "readyForSubmissionMustRemainFalse": true
+  }
+}

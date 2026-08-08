@@ -1,0 +1,794 @@
+Union Monétaire Ouest Africaine
+Conseil Régional de l'Epargne
+Publique et des Marchés Financiers
+INSTRUCTION N° L 6 Î -/CREPMF/2020
+RELATIVE A L'ORGANISATION DU SYSTÈME DE CONTRÔLE INTERNE DES
+ACTEURS DU MARCHÉ FINANCIER RÉGIONAL DE L'UMOA
+
+Le Conseil Régional de l’Epargne Publique et des Marchés financiers
+
+Vu la Convention du 3 juillet 1996 portant création du Conseil Régional de l'Épargne
+Publique et des Marchés Financiers (ci-après "Conseil Régional” ou "CREPMF") et
+son Annexe portant Composition, Organisation, Fonctionnement et Attributions
+du Conseil Régional de l'Épargne Publique et des Marchés Financiers ;
+
+Vu Le Règlement Général n°001/97 du 28 novembre 1997 relatif à l'Organisation, au
+Fonctionnement et au Contrôle du marché financier régional notamment en ses
+articles 23 et 54 ;
+
+Vu le Règlement n°9/2006/CM/UEMOA du 29 juin 2006 portant adoption des Règles
+Comptables Spécifiques applicables aux intervenants agréés du marché financier
+régional ;
+
+Vu la Décision n° CM /DAC/04/04/2017 du 14 avril 2017 du Conseil des Ministres de
+l'UMOA portant nomination du Président du Conseil Régional ;
+
+Vu les délibérations du Conseil Régional en sa 37°" session extraordinaire du
+17 décembre 2019 ;
+
+ARRÊTE
+C3
+Avenue Joseph ANOMA 01 B. P. :1878 Abidjan 01/Côte d'ivoire ] TEL.: (225) 20215742/20215179 Fax: 20221657 h
+presidence@crepmf.org wWww.crepmf.org
+
+
+TITRE 1 : DISPOSITIONS GÉNÉRALES
+Article 1°" : Définitions
+Aux fins de la présente Instruction, on entend par :
+
+a) Audit interne : Surveillance du système de contrôle interne, du dispositif de
+gouvernance et du dispositif de gestion des risques, avec une évaluation
+indépendante du respect des politiques et procédures établies et de la conformité
+aux Lois et à La réglementation.
+
+b) Cartographie des risques : Représentation synthétique et visuelle des risques de
+
+l'acteur du marché. Elle constitue ainsi un outil de mise en évidence des risques à
+couvrir en priorité.
+La cartographie des risques est établie sur La base d’un système d'identification
+et d'évaluation rigoureuse des risques inhérents à l’acteur du marché à partir des
+facteurs internes (métiers et activités, modifications organisationnelles, etc.) et
+externes (conditions économiques, progrès technologiques, changements
+législatifs et réglementaires, etc.).
+
+c) Charte d’audit interne : Document qui définit le positionnement de la fonction
+d'audit interne au sein de La structure agréée et précise l’organisation, les
+pouvoirs, Les responsabilités et les modalités de fonctionnement de ladite
+fonction.
+
+d) Comité d’Audit : Comité instauré par l'organe délibérant pour l’assister dans
+l'exercice de ses missions, et en particulier vérifier la fiabilité et la transparence
+des informations financières, apprécier la pertinence des méthodes comptables
+ainsi que la qualité du Système de Contrôle Interne (SCI) et du système de gestion
+des risques, évaluer la stratégie d’audit et proposer le cas échéant, des pistes
+d'amélioration.
+
+e) Contrôle Interne : Mesures mises en place par Les organes exécutifs et qui ont
+pour but d’assurer que :
+
+"Les objectifs posés par l'acteur du marché sont réalistes et atteints ;
+
+" Les ressources sont utilisées de façon économique et efficiente, Les risques
+sont contrôlés adéquatement ;
+
+" Le patrimoine est protégé ;
+
+= L’information financière et l’information de gestion sont complètes et fiables ;
+
+=" Les lois et réglementations ainsi que les politiques, Les plans, les règles et Les
+procédures internes sont respectés.
+
+f) Cycle des contrôles : Intervalle au cours duquel toutes les activités et Les entités
+de l'acteur du marché auront été vérifiées au moins une fois par La fonction de
+contrôle interne.
+
+/ - 2
+Avenue Joseph ANOMA 01 B. P. :1878 Abidjan 01/Côte d'Ivoire TEL.: (225) 20215742/20215179 Fax: 20221657 Le
+presidence@crepmf.org www. crepmf.org
+
+
+éstructonn® À 6 acrepur en
+
+g) Fonction d’audit interne : Fonction chargée de donner une assurance
+raisonnable, indépendante et objective quant à la qualité et a l'efficacité du SCI,
+des dispositifs de gouvernance, de gestion des risques de non-conformité, en vue
+de faciliter la maîtrise des activités et des risques encourus.
+
+h) Fonctions de contrôle : Ensemble des fonctions indépendantes de la gestion
+opérationnelle dont le rôle est de fournir des évaluations objectives de la
+situation de l'acteur dans leur domaine de compétence. Elles comprennent
+notamment la fonction d'audit interne, La fonction gestion des risques et la
+fonction conformité.
+
+i) Organe délibérant : Conseil d'Administration dans les sociétés anonymes ou son
+équivalent dans les autres sociétés constituées sous une autre forme. IL est
+l'organe investi de tous les pouvoirs pour contrôler et influencer les affaires de
+l'acteur agréé dans la limite de son objet social et des prérogatives dévolues à
+l’Assemblée Générale.
+
+j) Organe exécutif : Ensemble des comités ou des structures qui concourent à la
+gestion courante d’un acteur agréé et assurent l’application effective de
+l'orientation de l’activité définie par l'organe délibérant.
+
+k) Piste d’audit: Ensemble de procédures internes permanentes permettant de
+reconstituer les opérations dans un ordre chronologique, de justifier toute
+information par une pièce d’origine à partir de laquelle il doit être possible de
+remonter, par un cheminement ininterrompu, au document de synthèse et
+réciproquement et d’expliquer l’évolution des soldes d’un arrêté comptable a
+l'autre, grâce à la conservation des mouvements ayant affecté les postes
+comptables.
+
+)_ Référentiel de contrôle interne : Document qui décrit Le Système de Contrôle
+Interne de l'acteur.
+
+m) Responsable du Contrôle Interne (RCI) : Personne au sein de l’acteur de marché
+chargée de gérer la fonction d’audit interne
+
+n) Système de Contrôle Interne (SCI) : Ensemble des règles, méthodes et mesures
+de contrôle régissant la structure organisationnelle et opérationnelle d'un acteur
+agréé, IL comprend Les processus de reporting et de contrôle.
+
+Article 2 : Objet
+
+La présente Instruction fixe les règles applicables en matière de contrôle interne aux
+
+acteurs agréés du marché financier régional.
+
+Article 3 : Champ d’application
+
+La présente Instruction s’applique aux acteurs agréés ci-après listés, disposant de la
+
+personnalité morale, à l'exception des Structures Centrales du marché :
+
+” Les Sociétés de Gestion et d’Intermédiation (SGI),
+2 3
+Î prete Joseph ANOMA 01 B. P. :1878 Abidjan 01/Côte d'Ivoire TEL.: (225) 20215742/20215179 Fax: 20221657 Fe
+presidence@crepmf.org www. crepmf.org
+
+
+" Les Sociétés de Gestion de Patrimoine (SGP),
+
+" les Organismes de Placement Collectif (OPC) autogérés,
+
+” Les Sociétés de Gestion d’OPC,
+
+" les Banques Teneurs de Comptes Conservateurs (BTCC),
+
+“" Les Apporteurs d'Affaires,
+
+“ les Garants,
+
+" les Agences de Notation, toute autre entité agréée ou approuvée par le
+Conseil Régional.
+
+Article 4 : Périmètre de contrôle
+
+La gouvernance d’entreprise des acteurs agréés du marché financier régional intègre
+un Système de Contrôle Interne (SCI) sur lequel doit reposer la gestion saine et
+prudente de l’entité. Ce système comporte :
+
+”“ La surveillance de la fiabilité et l'intégrité des informations financières et
+opérationnelles et les moyens utilisés pour identifier, évaluer, classer et
+rapporter ces informations ;
+
+" la vérification de la conformité des opérations réalisées et de l’organisation
+avec Les dispositions législatives, réglementaires et prudentielles en vigueur,
+les normes et usages professionnels et déontologiques, les orientations et
+décisions des organes délibérants et exécutifs, notamment en matière de
+risques, de pouvoirs et de signature ainsi que les procédures internes ;
+
+” le suivi et l’évaluation de l'efficacité du système de gestion des risques de
+l'entité.
+
+Article 5 : Mise en place d’un SCI
+Tout acteur, personne morale, agréé par Le CREPMF est tenu de se doter d’un SCI qui
+précise l’organisation et les objectifs du contrôle interne ainsi que les moyens et
+l’organisation destinés à assurer La fiabilité de son fonctionnement. Il est décrit dans
+un référentiel de contrôle interne qui fait partie intégrante des procédures internes de
+l’acteur agréé.
+Le référentiel de contrôle interne doit être approuvé par l'organe délibérant de
+l'acteur agréé avant sa mise en application.
+Article 6 : Organisation du SCI
+Les acteurs agréés mettent en place une organisation et un SCI adaptés à La nature, à
+l’environnement, à la taille, aux spécificités, à la complexité et au profil de risques
+des activités qu’ils exercent.
+Ils adoptent une approche systématique et disciplinée des actions de contrôle sur la
+base d’un plan de contrôle établi à partir d’une cartographie recensant les risques
+qu’ils encourent.
+À 4
+Avenue Joseph ANOMA 01 B. P. :1878 Abidjan 01/Côte d'Ivoire TEL.: (225) 20215742/20215179 Fax: 20221657 7%.
+presidence@crepmf.org | WWwwW.crepmf.org /
+
+
+TITRE 2 : ROLE ET RESPONSABILITÉS DES ORGANES DÉLIBÉRANTS ET EXÉCUTIFS
+
+Article 7 : Dispositions communes aux acteurs agréés relatives à la responsabilité
+de l’Organe délibérant
+
+Les organes délibérants et exécutifs sont responsables de La bonne marche du SCI de
+
+l'acteur agréé. Ils sont tenus de :
+
+a. veiller à la mise en place et à La mise à jour d’une organisation, des politiques et
+procédures écrites de contrôle, pour une saine et prudente gestion des activités
+de l’acteur agréé ;
+
+b. définir et valider, selon une périodicité adaptée, Le niveau de risque acceptable
+auquel l'acteur agréé est exposé, notamment par la fixation de limites
+acceptables de risques de contrepartie, de liquidité et de marché ainsi que par
+la mise en place de dispositifs appropriés pour encadrer Les risques opérationnels
+et de non-conformité ;
+
+c. veiller à la séparation des tâches incompatibles, notamment les fonctions de
+décision, de détention des valeurs, d’enregistrement et de contrôle.
+
+Article 8 : Comité d’Audit
+Les prérogatives minimales du Comité d’Audit consistent à :
+
+= examiner l'efficacité du SCI mis en place pour identifier, évaluer, gérer et
+contrôler Les risques financiers et non financiers ;
+
+= évaluer la politique de contrôle interne et Le cycle des contrôles, y compris la
+politique d'escalade lors de La matérialisation de risques importants ;
+
+=" participer à la sélection des Commissaires aux Comptes et l'examen des
+conclusions de leurs travaux, conformément aux dispositions légales et
+réglementaires ;
+
+" analyser la conformité du respect des principes déontologiques et comptables
+appliqués avec les normes et usages professionnels en vigueur ;
+
+" examiner de manière approfondie les états de synthèse annuels avant leur
+présentation aux organes délibérants ;
+
+" examiner le référentiel de contrôle interne et la charte d’audit interne avant
+son approbation par l'organe délibérant ;
+
+"adopter Le plan d’audit.
+
+Article 9 : Responsabilités de l'organe exécutif
+L’organe exécutif est tenu de mettre en place un SCI adapté à la nature, à
+l’environnement, à la taille, aux spécificités, à la complexité et au profil de risque de
+l'entité et de surveiller son adéquation et son efficacité. IL veille à ce que les
+politiques et procédures soient développées et appliquées efficacement par les
+personnes qui disposent de la compétence en la matière et que toutes Les personnes
+concernées comprennent et assument leurs responsabilités à cet égard. Il définit Les
+5
+
+Avenue Joseph ANOMA 01 B. P. :1878 Abidjan 01/Côte d’Ivoi TEL.: (225) 20215742/20215179 Fax: 20221657 "e-
+
+presidence@crepmf.org , L www.crepmf.org
+
+
+critères d’escalade en réponse à la matérialisation des risques importants de non-
+conformité et s’assure de La mise en œuvre des mesures appropriées.
+
+TITRE 3 : COMPOSANTES DU SYSTÈME DE CONTRÔLE INTERNE (SCI)
+
+Article 10 : Environnement de contrôle
+
+L'environnement de contrôle doit reposer sur :
+
+" des systèmes de mesure des risques d’exécution, de règlement-livraison et de
+liquidité résultant des différentes activités exercées par Les Acteurs du marché ;
+
+"des systèmes de suivi quotidien des opérations ayant entrainé la survenance des
+suspens ;
+
+" des systèmes de contrôle et des procédures visant à garantir la sécurité des
+avoirs de la clientèle ;
+
+" des systèmes de surveillance et de maîtrise des risques de conformité incluant la
+prévention des conflits d'intérêt, des abus de marché, les diligences en matière
+de lutte contre Le blanchiment et le financement du terrorisme et le respect de
+l'intérêt du client ;
+
+"l'engagement des organes délibérants et exécutifs en faveur de la promotion de
+l'intégrité et des valeurs éthiques ;
+
+= l'instauration d'une culture qui se traduit par une forte adhésion, à tous les
+niveaux de l'organisation, aux exigences et à l'importance du contrôle interne et
+de la gestion du risque ;
+
+" les supervisions par chaque responsable hiérarchique de l'application effective
+des procédures de contrôle interne par ses collaborateurs ;
+
+» une implication effective des organes délibérants et exécutifs dans Le suivi et les
+résultats du SCI ;
+
+= l'établissement par les organes délibérants et exécutifs des critères qualitatifs
+afin de mesurer et d’évaluer l’efficacité du SCI.
+
+Article 11 : Evaluation des risques
+Le système de contrôle interne doit s'assurer que :
+
+= Les objectifs et politiques en matière de gestion des risques, sont diffusés et
+appliqués ;
+
+"Le respect des limites liées aux risques est soumis à une surveillance ;
+
+= Les dépassements de limites sont corrigés conformément aux politiques de
+l'acteur agréé.
+
+L'acteur agréé doit procéder à l'identification et à l'évaluation, d'une part, des facteurs
+internes, notamment La nature des activités de l'acteur agréé, La qualité du personnel,
+les modifications organisationnelles et les mouvements d'effectifs et, d'autre part, des
+facteurs externes, en particulier l'évolution des conditions économiques, les
+changements au sein de la profession et les progrès technologiques qui pourraient
+compromettre la réalisation de ses objectifs. Cette évaluation, qui couvre l'ensemble
+€ 6
+Avenue Joseph ANOMA 01 B. P. :1878 Abidjan 01/Côte d'Ivoire TEL.: (225) 20215742/202 9 Fax: 20221657 du
+presidence@crepmf.org www.crepmf.org
+
+
+Instruction n° Û 6 À zcrcpmr 72020
+
+des entités et activités de l'acteur agréé, doit aboutir à La détermination des risques
+qui sont contrôlables et de ceux qui ne Le sont pas.
+
+Les risques contrôlables par l'acteur agréé doivent être ramenés à un niveau acceptable
+au moyen de procédures de contrôle interne.
+
+En ce qui concerne les risques non contrôlables, l'acteur agréé doit décider soit de les
+accepter, soit de se désengager, soit de Les transférer, soit encore de réduire Le niveau
+des activités concernées.
+
+L'évaluation réalisée par l'acteur agréé doit notamment prendre en compte l’ensemble
+des risques auxquels il est ou pourrait être exposé, en particulier les risques de
+contrepartie, de marché, de liquidité, de concentration et opérationnels.
+
+Le système de contrôle interne doit faire l'objet d'une révision visant à traiter avec
+diligence tout risque précédemment non contrôlé ou mal géré et tout nouveau risque
+émanant de changements significatifs de l'environnement interne et externe.
+
+Article 12 : Activités de contrôle
+
+L'acteur agréé doit s'assurer que des activités de contrôle adéquates, proportionnées
+aux enjeux propres à chaque processus et conçues pour s'assurer que les mesures
+nécessaires sont prises en vue de maîtriser les risques susceptibles d’affecter la
+réalisation des objectifs, sont intégrées aux fonctions quotidiennes de l'ensemble du
+personnel. A cet égard, il est tenu de mettre en place des activités de contrôle à tout
+niveau et dans toute fonction au sein de l'organisation, en vue de garantir La mise en
+œuvre effective des mesures prises pour atténuer Les risques identifiés au moyen du
+processus d’évaluation des risques décrit à l'article 11 ci-dessus.
+
+En outre, une attention toute particulière doit être portée aux contrôles des processus
+de conception / implémentation et de fonctionnement des systèmes d’information. Les
+activités de contrôle s'articulent autour des deux étapes ci-après consistant à :
+
+" mettre en place des activités de contrôle à travers des politiques approuvées par
+l'organe délibérant, qui précisent les objectifs poursuivis et des procédures
+formalisées qui mettent en œuvre lesdites politiques ;
+
+” vérifier le respect de la conformité à ces politiques et procédures ainsi qu'à
+garantir la traçabilité du contrôle.
+
+Les activités de contrôle sont orientées vers les contrôles de type préventif où de
+détection. Elles sont réalisées au moyen de contrôles manuels, automatisés, physiques
+où hiérarchiques. L'acteur agréé doit veiller à retenir une combinaison optimale de ces
+différents types de contrôles. Dans ce cadre, lesdites activités doivent être définies en
+fonction de La nature des objectifs auxquels elles se rapportent. L'acteur agréé doit
+s'assurer que les politiques et procédures régissant ses activités de contrôle demeurent
+adaptées à son environnement interne et externe, L'efficacité des activités de contrôle
+requiert, au préalable, d'assurer une séparation appropriée des fonctions et d'éviter
+l'attribution de responsabilités conflictuelles. Tout domaine susceptible de donner lieu
+à des conflits d'intérêts doit être identifié, circonscrit aussi étroitement que possible et
+faire l’objet d’une surveillance attentive d’une tierce partie indépendante.
+YZ 7
+Avenue Joseph ANOMA 01 B. P. :1878 Abidjan 01/Côte d'Ivoire TEL.: (225) 20215742/20215179 Fax: 20221657 ss
+presidence@crepmf.org fl Www.crepmf.org
+
+
+Article 13 : Information et communication
+
+Les canaux d'information et de communication établis au sein de l'acteur agréé doivent
+permettre à tout membre du personnel de disposer des informations dont il a besoin
+pour effectuer les activités de contrôle qui lui sont assignées.
+
+Les systèmes d'information doivent, d'une part, couvrir toutes Les activités importantes
+de l'acteur agréé et, d'autre part, garantir la qualité des données et informations
+comptables, prudentielles, opérationnelles ou celles ayant trait au respect de la
+conformité. Ces données doivent être exhaustives, fiables, pertinentes, à jour,
+accessibles et présentées sous une forme cohérente pour faciliter Le fonctionnement de
+toutes Les composantes du contrôle interne. En ce qui concerne les données et
+informations comptables et financières, l'acteur agréé est tenu de garantir l'existence
+d’une piste d’audit et veiller au respect des dispositions du référentiel comptable
+applicable. Les éléments constitutifs de la piste d’audit doivent être conservés pendant
+au moins dix ans. Les systèmes qui comportent et utilisent des données informatisées
+doivent faire l'objet de contrôles visant à assurer leur bon fonctionnement en
+permanence. Ces contrôles incluent notamment des procédures internes de sauvegarde
+et de reprise, des politiques de développement et d’acquisition de logiciels, des
+procédures de maintenance ainsi que des contrôles de sécurité d’accès physiques et
+logiques. L'acteur agréé est tenu d'établir un plan de secours et de continuité des
+activités informatiques conforme aux exigences définies dans la Circulaire relative aux
+exigences fonctionnelles minimales des logiciels de gestion ainsi qu’à la sécurité du
+système d'information.
+
+Le système de contrôle interne doit intégrer une communication interne performante
+en termes de délais, de destinataires et de contenu pour permettre aux acteurs
+concernés d'exercer leurs responsabilités en la matière. Ces acteurs doivent connaître
+leurs rôles et obligations ainsi que les imbrications avec d'autres unités
+organisationnelles.
+
+Article 14 : Lignes de défense du SCI
+
+Le SCI est organisé de façon à fournir des appréciations objectives de la situation de
+l'acteur du marché, la maîtrise des risques et la conformité de son fonctionnement aux
+règles et procédures en vigueur. Il comprend :
+
+“un contrôle permanent qui correspond, d’une part, à l'ensemble des contrôles
+réalisés par les unités opérationnelles et leur hiérarchie dans le cadre du
+traitement des opérations quotidiennes, ce qui constitue La première ligne de
+défense, et d’autre part, les contrôles exécutés par les fonctions supports
+indépendantes des unités opérationnelles, qui forment la deuxième ligne de
+défense ;
+
+“un contrôle périodique qui correspond aux contrôles a posteriori réalisés dans Le
+cadre d’un plan de contrôle élaboré à partir d’une cartographie des risques, ce
+qui constitue la dernière ligne de défense représentée par l’audit interne. Le
+plan de contrôle élaboré par l'approche par les risques doit être réaliste et
+flexible afin de permettre Le respect du cycle de contrôle et la prise en charge
+des activités imprévues. IL doit régulièrement faire l'objet de mise à jour en vue
+de répondre aux changements de l’environnement interne et externe de l’acteur
+du marché.
+
+Br Vo De
+Avenue Joseph ANOMA 01 B. P. :1878 Abidjan 01/Côte d'Ivoire TEL.: (225) 20215742/20215179 Fax: 20221657 #
+presidence@crepmf.org www.crepmf.org
+
+ei?
+
+
+istrctionn® À 6 À creer 72620
+
+Toutefois, l'acteur agréé doit veiller à une coordination rigoureuse des activités de
+
+contrôle des différentes lignes de défense afin de s'assurer que le système de contrôle
+
+interne fonctionne efficacement. En outre, les Commissaires aux Comptes de l'acteur
+
+agréé, le CREPMF ainsi que les autres superviseurs constituent une ligne de défense
+
+complémentaire, au regard des revues indépendantes et objectives qu'ils réalisent sur
+
+les activités de contrôle des trois lignes de défense.
+
+IITRE 4: DÉSIGNATION, RÉVOCATION ET RESPONSABILITÉ DU RESPONSABLE DU
+CONTRÔLE INTERNE (RCI)
+
+Article 15 : Désignation du Responsable du Contrôle Interne
+
+Sur proposition de l'organe exécutif, l'organe délibérant de l'acteur du marché désigne
+
+un Responsable du Contrôle Interne qui doit disposer d’une indépendance fonctionnelle
+
+et jouir de prérogatives étendues quant au champ de ses interventions et à la
+
+communication de ses travaux auxdits organes ainsi qu’au Secrétariat Général du
+
+Conseil Régional.
+
+En vue de consacrer cette indépendance, Le Responsable du Contrôle Interne doit être
+
+rattaché à l’organe délibérant, auquel il rend compte.
+
+Article 16 : Révocation du Responsable du Contrôle Interne
+
+L'acteur du marché est tenu, dans un délai de quinze (15) jours après La révocation du
+
+Responsable du Contrôle Interne, d’en informer le Conseil Régional en indiquant les
+
+motifs raisonnables.
+
+Article 17 : Responsabilité du Responsable du Contrôle Interne
+
+Le Responsable du Contrôle Interne est chargé de gérer La fonction d’audit interne. IL a
+
+la responsabilité de dresser le plan de contrôles sur la base de la cartographie des
+
+risques, s'impliquer dans sa réalisation, veiller au respect du cycle des contrôles et
+
+s'assurer de la qualité des travaux de La fonction. IL vérifie que les anomalies et
+
+déficiences de contrôle interne identifiées sont documentées dans un rapport écrit.
+
+IL apprécie Les éléments constitutifs (les composantes) du SCI, élabore le référentiel de
+
+contrôle interne, veille à sa révision régulière et la diffuse à toutes Les parties
+
+prenantes après son approbation par l'organe délibérant, le cas échéant, par
+
+l'intermédiaire du Comité d’Audit.
+
+Le Responsable du Contrôle Interne peut, si ceci n’emporte pas conflit d'intérêts et
+
+dans Le respect de la séparation des fonctions :
+
+= être impliqué en amont des projets afin d’identifier et d'évaluer de façon
+proactive les enjeux et risques potentiels de non-conformité ;
+
+»“ aider à sensibiliser et à former le personnel et fournir des orientations aux
+membres du personnel quant à l'application appropriée des lois et
+règlements.
+
+En outre, le Responsable du Contrôle Interne s’assure du respect des obligations de
+
+reporting d’informations au CREPMF, dans Les délais et Les formats requis. IL informe le
+
+a ( NA 9
+
+ee Joseph ANOMA 01 B. P. :1878 Abidjan 01 1Côte d'Ivoire TEL.: (225) 20215742/20215179 Fax: 20221657 %
+presidence@crepmf.org v ] WWww.crepmf.org
+
+
+Instruction n° û 6 | ICREPMF /2020
+
+stone À PCRERME 2020
+CREPMF de toute difficulté y relative, le cas échéant. IL est tenu au secret
+professionnel.
+
+Article 18 : Charte d’audit interne
+
+Le Responsable du Contrôle Interne doit élaborer et réviser, au moins tous Les trois (03)
+ans, la charte d'audit interne et la soumettre à l'approbation de l'organe délibérant, le
+cas échéant, par l'intermédiaire du Comité d'audit. La charte d’audit interne précise La
+position de La fonction d’audit interne au sein de l’organisation de l’acteur du marché,
+sa mission, ses pouvoirs, ses obligations et son périmètre d'intervention. Elle définit Les
+caractéristiques de la fonction et son mode de fonctionnement et de communication
+avec Les personnes n’appartenant pas à la fonction.
+
+Elle précise notamment :
+
+" La position de l'audit interne au sein de l'acteur agréé, ses pouvoirs, ses
+obligations et ses relations avec Les autres fonctions de contrôle ;
+
+"La mission et Le périmètre d'intervention de la fonction d'audit interne ;
+
+" Les caractéristiques essentielles de la fonction d'audit interne, notamment
+l'indépendance, l'objectivité, la confidentialité, la compétence, la conscience
+professionnelle et l'intégrité ;
+
+“ l'obligation pour les auditeurs internes de communiquer les résultats de leurs
+travaux, la description de la manière dont ces résultats doivent être
+communiqués et Les destinataires ;
+
+“ Les critères qui doivent être pris en compte dans le cadre du recours à des
+prestataires externes pour la réalisation de certaines missions d'audit interne ;
+
+" les modalités et les conditions selon lesquelles La fonction d’audit interne peut
+être sollicitée pour apporter un avis, une assistance ou effectuer des missions
+spécifiques ;
+
+“ Les attributions et compétences du responsable de la fonction d'audit interne ;
+
+=” l'exigence de se conformer aux meilleures pratiques en matière d'audit interne ;
+
+" Les procédures pour coordonner les activités de La fonction d'audit interne avec
+celles des commissaires aux comptes de l'acteur agréé ;
+
+“l'accès illimité aux informations, aux personnes et aux locaux de l'acteur agréé.
+
+La charte d’audit interne doit être approuvée par l’organe délibérant de l’acteur agréé
+avant sa mise en application.
+
+Article 19 : Plan d'audit
+
+Le Responsable du Contrôle Interne doit établir un plan d'audit annuel ou pluriannuel
+basé sur les risques. IL doit également communiquer à l'organe délibérant, pour examen
+et approbation, son plan d'audit, ses besoins ainsi que tout changement important
+susceptible d’intervenir en cours d’exercice. Ce plan, établi à partir d'une cartographie
+des risques de l'acteur agréé, doit notamment :
+
+“s'appuyer sur une évaluation rigoureuse des risques inhérents à l'ensemble de ses
+activités et entités ;
+
+Æ l 10
+Avenue Joseph ANOMA 01 B. P. :1878 Abidjan 01/Côte d'Ivoire ” TEL.: (225) 20215742/20215179 Fax: 20221657 +
+Ÿ presidence@crepmf.org Www.crepmf.org
+pu
+
+
+=" intégrer l’évaluation des moyens humains, matériels et financiers nécessaires à
+la réalisation des actions prévues ;
+” être réaliste et flexible afin de permettre le respect du cycle d'audit et la prise
+en charge des activités imprévues ;
+= faire l'objet d'une mise à jour en vue de répondre aux changements de son
+environnement interne et externe.
+Le Responsable du contrôle interne peut initier des missions non prévues dans son plan
+d'audit, lorsque des circonstances particulières le nécessitent, ou sur demande de
+l'organe délibérant, des Comités spécialisés, du Directeur Général ou du Conseil
+Régional.
+TITRE 5: TRAÇABILITÉ DES DONNÉES ET INFORMATIONS COMPTABLES, FINANCIÈRES ET
+DE GESTION
+Article 20 : Piste d'audit
+Le SCI doit garantir l'existence de La piste d’audit telle que définie au k) de l’article 1
+et veiller au respect des dispositions du référentiel comptable. Les éléments
+constitutifs de La piste d’audit doivent être conservés pendant au moins dix (10) ans.
+Article 21 : Maintien et sécurité des données informatisées
+Le SCI doit comprendre des procédures internes de sauvegarde et de reprise des
+systèmes qui utilisent des données informatisées, des politiques de développement et
+de maintenance appropriées de ces systèmes ainsi que des contrôles de sécurité
+d'accès physiques et logiques.
+TITRE 6 : EXTERNALISATION ET DÉLÉGATION DES TÂCHES DE CONTRÔLE INTERNE
+Article 22 : Autorisation préalable
+L'externalisation d’activités ayant trait aux fonctions de contrôle ne peut intervenir
+qu'après accord de l’organe délibérant et autorisation préalable du CREPMF. Cette
+disposition est également valable pour l'acteur du marché qui souhaite déléguer cette
+activité à une filiale ou une structure de son groupe d’appartenance.
+Cependant, l'acteur concerné conserve la maîtrise d'œuvre des activités d'audit interne
+externalisées et veille au transfert des connaissances spécialisées du prestataire au
+personnel de l'audit interne.
+Article 23 : Supervision de l’externalisation et la délégation
+L’externalisation et la délégation de certaines tâches de contrôle ne remettent pas en
+cause l'obligation de supervision de ces travaux par l'organe délibérant ainsi que par le
+Comité d’Audit, le cas échéant. Le RCI, dont la fonction ne peut être ni externalisée ni
+déléguée, est tenu de s'assurer que les tiers prestataires des activités de contrôle
+respectent les principes du référentiel du contrôle interne et les dispositions de la
+D ; 11
+Avenue Joseph ANOMA 01 B. P. :1878 Abidjan 01/Côte d’lvoire TEL.: (225) 20215742/20215179 Fax: 20 21657 va
+TT presidenceacreomt org î 1 www.crepmf.org /
+
+
+instruction n° (] 6 Li 1CREPMF /2020
+PEUR ND 4. PCREPME RQ
+présente Instruction. Le contrat qui lie l’acteur de marché et ses prestataires décrit la
+nature des services de contrôle rendus par Les tiers et définit les critères de
+performance pour mesurer la qualité des services rendus.
+TITRE 7 : RAPPORTS DE CONTRÔLE INTERNE
+Article 24 : Examen par l’organe délibérant
+Au plus tard un (01) mois après leur élaboration, les rapports de contrôle interne sont
+portés à la connaissance de l’organe délibérant ou, Le cas échéant, du Comité d’Audit
+afin de faire l’objet d’un examen et d’un suivi adéquat.
+Article 25 : Transmission périodique au CREPMF
+Les acteurs agréés sont tenus d'établir un rapport annuel et deux (02) rapports
+semestriels relatifs à la mise en œuvre des mesures de contrôle interne au sein de leur
+structure. Ces rapports doivent être communiqués au Secrétariat Général du Conseil
+Régional dans les conditions précisées à l’annexe qui fait partie intégrante de la
+présente Instruction.
+Article 26 : Détection d'anomalies de conformité
+Toutes anomalies et déficiences significatives de conformité qui constitueraient un
+manquement aux dispositions réglementaires du CREPMF doivent faire l’objet d’une
+documentation et d’un rapport circonstancié spécifique adressé à l’organe délibérant
+de l’acteur agréé concerné et au CREPMF.
+Les rapports de contrôle interne contenant des constats mettant en cause les
+dirigeants ne peuvent être modifiés par ces derniers.
+Toutefois, les personnes mises en cause peuvent formuler des observations sur les
+constats dressés. Les observations formulées doivent être jointes au rapport de
+contrôle.
+Le non-respect de ces dispositions expose Les contrevenants aux sanctions prévues par
+la réglementation, sans préjudice des sanctions pénales.
+Article 27 : Contenu des rapports de contrôle interne
+L’annexe ci-jointe, qui fait partie intégrante de la présente Instruction, précise Le
+format de présentation et la périodicité des rapports de contrôle interne destinés au
+CREPMF.
+Article 28 : Relation entre le CREPMF, la fonction d'audit interne et le
+Commissaire aux Comptes
+Dans le cadre du renforcement de l'efficacité de sa supervision, Le CREPMF s'appuie sur
+les travaux de la fonction d'audit interne et ceux des Commissaires aux Comptes de
+l'acteur agréé. Il porte, à cet effet, une attention particulière aux observations et
+12
+Avenue Joseph ANOMA 01 B. P. :1878 Abidjan 01/Côte d’Ivoi TEL.: (225) 20215742/20215179 Fax: 20221657 "h
+# presidence@crepmf.org pÂ WWwWw.crepmf.org L
+
+
+recommandations relatives à l'efficacité du système de contrôle interne, émanant de
+ces structures. En outre, il veille à ce que les organes de gouvernance s'assurent de
+répondre de manière satisfaisante aux préoccupations et recommandations qui sont
+exprimées.
+TITRE 8 : DISPOSITIONS TRANSITOIRES ET FINALES
+Article 29 : Dispositions transitoires
+Les acteurs agréés avant la date de prise d’effet de la présente Instruction disposent
+d’un délai maximum de six (06) mois à compter de sa date de signature pour se mettre
+en conformité avec ses dispositions.
+Article 30 : Publication et date d’entrée en vigueur
+La présente Instruction, qui sera publiée partout où besoin sera, abroge toutes
+dispositions antérieures et contraires.
+Elle entre en vigueur à compter de sa date de signature.
+Fait à Abidjan, le 2 0 MAR 2020
+Pour le Conseil Régional,
+Le Président
+nal de 7;
+ET : : ee
+5 TS &
+&. Tész è
+ÿ ET 08h _n È
+a CT ê
+Mamadou NDIAYE 072
+oe x
+Chés FinaS
+13
+Avenue Joseph ANOMA 01 B. P. :1878 Abidjan 01 1Côte d'Ivoire TEL.: (225) 20215742/20215179 Fax: 202216 -
+presidence@crepmf.org www. crepmf.org |
+eut
+
+
+Instruction n° Û 6 1 ICREPMF /2020
+2
+ANNEXE
+
+FORMAT DE PRÉSENTATION ET PÉRIODICITÉ DES RAPPORTS DE CONTRÔLE INTERNE
+SE ERIQDIICTEE DES RAPPORTS DE CONTRÔLE INTERNE
+Le rapport d’audit interne doit être élaboré par Le Responsable du Contrôle Interne.
+
+1- Semestriellement
+Au plus tard deux (02) mois après chaque semestre, les acteurs du marché doivent
+adresser, au CREPMF, un rapport comportant :
+
+“une description de l’organisation et du fonctionnement du contrôle interne au
+cours de la période sous revue, faisant notamment ressortir Les moyens mis en
+œuvre, les travaux réalisés et les modifications significatives éventuellement
+intervenues dans Les méthodes et l’activité de contrôle ;
+
+“Un inventaire des contrôles effectués par le Responsable du Contrôle Interne,
+accompagné des principaux constats et des mesures correctrices entreprises ;
+
+“ un développement sur La mesure et la surveillance des risques auxquels est
+exposé l'acteur du marché, faisant apparaître, le cas échéant, les
+franchissements de limites et leur contexte ;
+
+" Uétat de mise en œuvre des recommandations antérieures du contrôle interne
+et des missions d’inspection du CREPMF ;
+
+“une présentation du programme d'actions pour Le semestre à venir.
+
+2- Annuellement
+
+Au plus tard le 30 avril de chaque année, un rapport d’audit interne de l’exercice
+précédent mentionnant toutes Les insuffisances relevées et portant sur les éléments
+suivants :
+
+“La mission du Responsable du Contrôle Interne ;
+
+"les informations générales sur l’acteur du marché ;
+
+"Les principales observations de l’auditeur interne ;
+
+" une description de l’organisation administrative et le système de contrôle
+interne ;
+
+"Les travaux réalisés portant au minimum sur les aspects relatifs à l’organisation
+administrative, le gouvernement d’entreprise, La régularité des opérations, Le
+système d’information et de documentation, la comptabilité et la surveillance
+prudentielle ;
+
+“ les manquements aux dispositions réglementaires du marché et aux textes
+internes propres à l’acteur du marché, notamment :
+
+© le respect des règles prudentielles du marché financier régional ;
+© la conformité des procédures internes avec les dispositions règlementaires
+relatives à la lutte contre le blanchiment de capitaux et le financement
+1 ( £- 14
+LA Avenue Joseph ANOMA 01 B. P. :1878 Abidjan 01/Côte d'Ivoiré TEL.: (225) 20215742/20215179 Fax: 2022165 %-
+presidence@crepmf.org l k WWw.crepmf.org !
+
+
+Instruction n° () 6 Â ICREPMF /2020
+o la conformité des procédures internes avec les dispositions règlementaires
+relatives à La lutte contre le blanchiment de capitaux et Le financement
+du terrorisme ainsi que leur mise en œuvre effective qui fera l’objet d’un
+rapport séparé ;
+o le respect des obligations de vérification de La régularité des décisions de
+gestion prises pour le compte de l’OPC, lorsque l’acteur du marché est
+Dépositaire d’un OPC ;
+o le respect des dispositions réglementaires relatives à l’exercice d’activités
+de gestion sous mandat, le cas échéant.
+" La (les) situation(s) particulière(s) portant principalement sur les cas de
+malveillance, de conflits d’intérêts et d'exercice d’activités non prévues ;
+“un état de suivi des réclamations de la clientèle ;
+" l'évaluation de la mise en œuvre des accords ou conventions liant l’acteur du
+marché à ses partenaires, Le cas échéant ;
+" l'évaluation des procédures budgétaires et de leur mise en œuvre ainsi que des
+opérations figurant dans les comptes de régularisation ;
+" l’état de mise en œuvre des recommandations des missions d’inspection du
+CREPNF ;
+" un état de suivi des recommandations issues du rapport des commissaires aux
+comptes ou de tout autre rapport d’audits et de contrôles externes.
+Le rapport de contrôle interne doit motiver chacune des anomalies relevées,
+mentionner le risque auquel l’acteur du marché est exposé et préconiser un délai pour
+sa régularisation. IL doit comporter en annexe Le planning annuel de contrôle interne de
+l'exercice suivant, validé par les organes délibérants ou exécutifs et, le cas échéant,
+des observations des dirigeants sur les manquements et irrégularités relevés.
+q 15
+AS Joseph ANOMA 01 B. P. :1878 Abidjan 01/Côte d’Ivoif. TEL.: (225) 20215742/20215179 Fax: 20221657 he
+presidence@crepmf.org www. crepmf.org
+eut

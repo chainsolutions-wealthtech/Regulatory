@@ -1,0 +1,11 @@
+{
+  "schemaVersion": "AMF_UMOA_PRIORITY_API_DOCUMENTS_VALIDATION_V0_1",
+  "result": "PASS",
+  "checks": {
+    "exactly3": true,
+    "noFailures": true,
+    "allPdfMagicAndReferenceValidated": true,
+    "automaticResolutionForbidden": true
+  },
+  "failures": []
+}

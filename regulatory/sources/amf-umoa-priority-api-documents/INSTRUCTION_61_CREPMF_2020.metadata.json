@@ -1,0 +1,29 @@
+{
+  "sourceId": "INSTRUCTION_61_CREPMF_2020",
+  "actualiteId": 1000106,
+  "apiUrl": "https://www.amf-umoa.org/service/api/elastic/actualite?id=1000106&langue=fr",
+  "apiRawSha256": "129396b7d3b9dce53af601dcf61e161dc5906ee68962696b8b06c61a32ce5e87",
+  "titreFromApi": "Instruction N°61/2020",
+  "resumeFromApi": "RELATIVE A L'ORGANISATION DU SYSTEME DE CONTRÔLE INTERNE DES ACTEURS DU MARCHE FINANCIER REGIONAL DE L'UMOA",
+  "texteFromApi": "RELATIVE A L'ORGANISATION DU SYSTEME DE CONTRÔLE INTERNE DES ACTEURS DU MARCHE FINANCIER REGIONAL DE L'UMOA",
+  "datePortalMetadata": "2023-08-24",
+  "validePortalMetadata": true,
+  "abrogePortalMetadata": false,
+  "documentUrlFromApi": "AC-INSTRUCTION-2023-102DB091-845C-43F9-BE95-D672A9ADD868.pdf",
+  "sha256": "f7a5e0bfc86a067cf9fb9a570cbdcd8f7918f62a5d3f015e37cf046293be0932",
+  "byteSize": 11098415,
+  "pageCount": 15,
+  "textExtractionMethod": "OCR_TESSERACT_FRA_FALLBACK",
+  "usefulTextChars": 31610,
+  "repositoryPdf": "regulatory/sources/amf-umoa-priority-api-documents/INSTRUCTION_61_CREPMF_2020.pdf",
+  "repositoryText": "regulatory/sources/amf-umoa-priority-api-documents/INSTRUCTION_61_CREPMF_2020.txt",
+  "legalBoundary": {
+    "portalDateIsAdoptionDate": false,
+    "portalAbrogeIsSoleLegalStatusProof": false,
+    "binaryMaterializationIsRuleActivation": false,
+    "automaticDependencyResolutionAllowed": false,
+    "automaticRequirementActivationAllowed": false,
+    "humanLegalReviewRequired": true,
+    "humanComplianceReviewRequired": true
+  }
+}

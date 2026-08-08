@@ -1,0 +1,29 @@
+{
+  "sourceId": "DECISION_SANCTIONS_2016",
+  "actualiteId": 1000179,
+  "apiUrl": "https://www.amf-umoa.org/service/api/elastic/actualite?id=1000179&langue=fr",
+  "apiRawSha256": "1823c95164b11429a414d26c18512d339c97137bc6faa05f5031c03863e1168c",
+  "titreFromApi": "DECISION N° CM/SJ/O01/03/2016",
+  "resumeFromApi": "DECISION N° CM/SJ/O01/03/2016 RELATIVE A LA MISE EN OEUVRE DU DISPOSITIF DES SANCTIONS PECUNIAIRES APPLICABLES SUR LE MARCHE FINANCIER REGIONAL DE L’UMOA",
+  "texteFromApi": "DECISION N° CM/SJ/O01/03/2016 RELATIVE A LA MISE EN OEUVRE DU DISPOSITIF DES SANCTIONS PECUNIAIRES APPLICABLES SUR LE MARCHE FINANCIER REGIONAL DE L’UMOA",
+  "datePortalMetadata": "2016-03-24",
+  "validePortalMetadata": true,
+  "abrogePortalMetadata": false,
+  "documentUrlFromApi": "AC-DECISION-2023-3B578016-221F-496D-8C27-2B7D62DFB43E.pdf",
+  "sha256": "888b971071f32a6453647b979f3f9cc551d686e1bc7135d6a659e8907aa9dbe2",
+  "byteSize": 4146126,
+  "pageCount": 12,
+  "textExtractionMethod": "OCR_TESSERACT_FRA_FALLBACK",
+  "usefulTextChars": 16010,
+  "repositoryPdf": "regulatory/sources/amf-umoa-priority-api-documents/DECISION_SANCTIONS_2016.pdf",
+  "repositoryText": "regulatory/sources/amf-umoa-priority-api-documents/DECISION_SANCTIONS_2016.txt",
+  "legalBoundary": {
+    "portalDateIsAdoptionDate": false,
+    "portalAbrogeIsSoleLegalStatusProof": false,
+    "binaryMaterializationIsRuleActivation": false,
+    "automaticDependencyResolutionAllowed": false,
+    "automaticRequirementActivationAllowed": false,
+    "humanLegalReviewRequired": true,
+    "humanComplianceReviewRequired": true
+  }
+}
