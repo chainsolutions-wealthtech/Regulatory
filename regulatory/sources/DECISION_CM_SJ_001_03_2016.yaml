@@ -3,21 +3,36 @@ source_family: DECISION
 reference: "DECISION N° CM/SJ/O01/03/2016"
 title: "Décision relative à la mise en œuvre du dispositif des sanctions pécuniaires applicables sur le Marché Financier Régional de l'UMOA"
 issuing_authority: "Conseil des Ministres de l'UMOA"
+
 official_registry:
   url: "https://www.amf-umoa.org/reglementation/decision"
   detail_url: "https://www.amf-umoa.org/actuality-details?actualiteId=1000179"
   status_observed: NON_ABROGE
   status_observed_on: 2026-08-08
   displayed_date: 2016-03-24
+
+official_api:
+  endpoint: https://www.amf-umoa.org/service/api/elastic/actualite
+  actualite_id: 1000179
+  detail_api_url: "https://www.amf-umoa.org/service/api/elastic/actualite?id=1000179&langue=fr"
+  document_url_field: "AC-DECISION-2023-3B578016-221F-496D-8C27-2B7D62DFB43E.pdf"
+  title_observed: "DECISION N° CM/SJ/O01/03/2016"
+  summary_observed: "DECISION N° CM/SJ/O01/03/2016 RELATIVE A LA MISE EN OEUVRE DU DISPOSITIF DES SANCTIONS PECUNIAIRES APPLICABLES SUR LE MARCHE FINANCIER REGIONAL DE L’UMOA"
+  portal_date_observed: 2016-03-24
+  observed_on: 2026-08-08
+  acquisition_status: OFFICIAL_DETAIL_ROUTE_IDENTIFIED_BINARY_MATERIALIZATION_IN_PROGRESS
+
 source_integrity:
-  official_binary_url: TO_IDENTIFY_FROM_OFFICIAL_SOURCE
+  official_binary_transport: AMF_UMOA_DETAIL_API_DOC_BASE64_EXPECTED
+  official_detail_api_id: 1000179
   repository_copy: null
   sha256: null
   byte_size: null
   page_count: null
-  copy_status: OFFICIAL_REGISTRY_VERIFIED_BINARY_NOT_MATERIALIZED
+  copy_status: OFFICIAL_API_DETAIL_IDENTIFIED_BINARY_MATERIALIZATION_IN_PROGRESS
   acquisition_search_evidence: regulatory/review-evidence/SANCTIONS_2016_2022/OFFICIAL_BINARY_SEARCH_2026-08-08.yaml
-  acquisition_status: PUBLIC_OFFICIAL_ROUTES_CHECKED_BINARY_NOT_IDENTIFIED
+  acquisition_status: PREVIOUS_PUBLIC_ROUTES_NEGATIVE_CURRENT_OFFICIAL_API_ROUTE_NOW_IDENTIFIED
+
 legal_metadata:
   signed_on: PENDING_OFFICIAL_BINARY_REVIEW
   effective_from: PENDING_OFFICIAL_BINARY_REVIEW
@@ -27,22 +42,44 @@ legal_metadata:
   later_related_source:
     source_id: DECISION_CM_10_06_2022
     relationship_status: REVISED_DEVICE_CONFIRMED_RELATIONSHIP_NOT_LEGALLY_CONCLUDED
-    note: "Le Conseil des Ministres a officiellement adopté un dispositif révisé des sanctions pécuniaires le 24 juin 2022. Le texte binaire officiel de la Décision n° CM/10/06/2022 doit être matérialisé avant de conclure à une modification, un remplacement ou une abrogation de la décision de 2016."
+    note: >-
+      Le Conseil des Ministres a officiellement adopté un dispositif révisé des
+      sanctions pécuniaires en 2022. La liste courante des dix Décisions exposée par
+      l'API AMF-UMOA ne contient pas la référence CM/10/06/2022 ; le binaire officiel
+      de cet acte reste donc à acquérir avant de conclure à une modification, un
+      remplacement ou une abrogation de la décision 2016.
+
 linked_sources:
   - INSTRUCTION_58_CREPMF_2019
   - DECISION_CM_10_06_2022
 linked_requirements:
   - INST058_ART031_REQ001
   - INST058_ART032_REQ001
+
+materialization_plan:
+  status: OFFICIAL_2016_DETAIL_API_FOUND_MATERIALIZATION_WORKFLOW_RUNNING
+  workflow: .github/workflows/materialize-amf-umoa-priority-api-documents.yml
+  next_steps:
+    - DECODE_DETAIL_API_DOC_BASE64
+    - VERIFY_PDF_MAGIC
+    - COMPUTE_SHA256_AND_BYTE_SIZE
+    - VERIFY_PAGE_COUNT
+    - EXTRACT_TEXT_OR_OCR_IF_REQUIRED
+    - READ_SIGNATURE_AND_EFFECTIVE_CLAUSES
+    - KEEP_SANCTION_AMOUNTS_INACTIVE_UNTIL_2016_2022_RELATIONSHIP_IS_RESOLVED
+
 safety:
+  portal_metadata_is_sole_legal_status_proof: false
   requirement_activation_allowed: false
   sanction_amount_calculation_allowed: false
   automatic_enforcement_allowed: false
   official_binary_required_before_atomization: true
+  automatic_dependency_resolution_allowed: false
   human_legal_review_required: true
   human_compliance_review_required: true
+
 notes:
   - "Les articles 31 et 32 de l'Instruction 58 renvoient au régime de sanctions ; la relation entre les décisions de 2016 et 2022 doit être établie avant toute activation."
   - "Aucun montant, barème, seuil ou qualification de sanction ne doit être modélisé comme actif avant matérialisation des textes officiels pertinents et double revue juridique/conformité."
   - "Le statut NON_ABROGE observé pour l'entrée 2016 du registre AMF-UMOA est conservé comme fait de registre et ne vaut pas conclusion sur l'effet juridique de la révision adoptée en 2022."
-  - "La recherche publique du 2026-08-08 n'a pas identifié de binaire officiel stable exploitable ; les copies tierces restent exclues du corpus normatif."
+  - "La voie API actuelle a remplacé le précédent constat de route binaire publique non identifiée pour la Décision 2016 ; le binaire détail est en cours de matérialisation."
