@@ -1,0 +1,38 @@
+source_id: CIRCULAIRE_09_CREPMF_2022
+source_type: CIRCULAR
+authority: CREPMF_AMF_UMOA
+reference: "Circulaire n°09/CREPMF/2022"
+title: "Relative aux informations à fournir au Conseil Régional"
+jurisdiction: UMOA
+source_origin:
+  authority_api: AMF_UMOA
+  actualite_id: 1000137
+  binary_identity: API_OBJECT_REFERENCE_MATCH_AND_BASE64_PDF_MAGIC_CONFIRMED
+materialization:
+  pdf: regulatory/sources/amf-umoa-2022-circulars/CIRCULAIRE_09_AMF_UMOA_2022.pdf
+  text: regulatory/sources/amf-umoa-2022-circulars/CIRCULAIRE_09_AMF_UMOA_2022.txt
+  metadata: regulatory/sources/amf-umoa-2022-circulars/CIRCULAIRE_09_AMF_UMOA_2022.metadata.json
+  sha256: 86f676cbc99a752b4d5e1e7a18ba79dbdfef39aa1d19508498fd09cdd9ab2a31
+  byte_size: 415595
+  page_count: 6
+  extraction_method: OCR_TESSERACT_FRA_FALLBACK
+legal_metadata:
+  effective_clause: "La présente Circulaire prend effet à compter de sa publication."
+  current_legal_status: TO_VERIFY
+instruction_66_relationship:
+  dependency_id: INST066_ART036_DEP_CIRC_01
+  article_number: 36
+  relationship: EXPLICIT_IMPLEMENTING_CIRCULAR
+  documentary_dependency_resolution: CONFIRMED
+  evidence: >-
+    The circular expressly defines Instruction as Instruction n°66/CREPMF/2021
+    and specifies reporting to the Council Regional on principal markets,
+    instruments and related information, matching Article 36's delegated reporting scope.
+review:
+  legal_review_required: true
+  legal_review_status: PENDING
+  compliance_review_required: true
+  compliance_review_status: PENDING
+safety:
+  automatic_requirement_activation_allowed: false
+  ready_for_submission_must_remain_false: true
