@@ -1,0 +1,39 @@
+source_id: CIRCULAIRE_12_CREPMF_2022
+source_type: CIRCULAR
+authority: CREPMF_AMF_UMOA
+reference: "Circulaire n°12/CREPMF/2022"
+title: "Relative à l'évaluation des OPC et de leurs actifs"
+jurisdiction: UMOA
+source_origin:
+  authority_api: AMF_UMOA
+  actualite_id: 1000140
+  binary_identity: API_OBJECT_REFERENCE_MATCH_AND_BASE64_PDF_MAGIC_CONFIRMED
+materialization:
+  pdf: regulatory/sources/amf-umoa-2022-circulars/CIRCULAIRE_12_AMF_UMOA_2022.pdf
+  text: regulatory/sources/amf-umoa-2022-circulars/CIRCULAIRE_12_AMF_UMOA_2022.txt
+  metadata: regulatory/sources/amf-umoa-2022-circulars/CIRCULAIRE_12_AMF_UMOA_2022.metadata.json
+  sha256: bc3c012d57a8ca1466e3d7dcdc89ad071033526f82d35f045be2a08e63c7404c
+  byte_size: 454202
+  page_count: 5
+  extraction_method: OCR_TESSERACT_FRA_FALLBACK
+legal_metadata:
+  current_legal_status: TO_VERIFY
+instruction_66_relationship:
+  dependency_id: INST066_ART013_DEP_CIRC_01
+  article_number: 13
+  relationship: EXPLICIT_IMPLEMENTING_CIRCULAR
+  evidence: >-
+    The circular expressly defines Instruction as Instruction n°66/CREPMF/2021
+    and repeats the three delegated Article 13 subjects: correct asset/NAV
+    valuation procedures, professional guarantees of the external valuer and
+    valuation frequency for open-ended OPC.
+  documentary_dependency_resolution: CONFIRMED
+  regulatory_requirement_activation: FORBIDDEN_PENDING_HUMAN_REVIEW
+review:
+  legal_review_required: true
+  legal_review_status: PENDING
+  compliance_review_required: true
+  compliance_review_status: PENDING
+safety:
+  automatic_requirement_activation_allowed: false
+  ready_for_submission_must_remain_false: true
