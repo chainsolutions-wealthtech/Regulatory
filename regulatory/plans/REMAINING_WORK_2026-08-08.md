@@ -12,22 +12,44 @@ Ce document est une photographie opérationnelle du reste à faire après la com
 - Crosswalk Instruction 58 : `18` liens vers CIRC005 et `9` liens vers INST066.
 - Toutes les exigences INST066 et INST058 restent `FORBIDDEN`, avec revue juridique et conformité `PENDING`.
 - Le produit exécutable, le modèle canonique, PostgreSQL/RLS, le workflow de revue, le DOCX déterministe et les principales CI existent déjà.
+- La dépendance de la Décision n° `CM/SJ/O01/03/2016` est enregistrée.
+- L'adoption officielle d'un dispositif révisé des sanctions le `2022-06-24` est confirmée par le communiqué du Conseil des Ministres publié par la BCEAO.
+- La référence de la décision 2022 est enregistrée comme `CM/10/06/2022`, avec statut `CORROBORATED_PENDING_OFFICIAL_BINARY` : son binaire normatif officiel n'est pas encore matérialisé.
+- La CI ne peut plus écraser automatiquement `NEXT_ACTION.md` : le générateur PostgreSQL n'écrit plus ce fichier et le workflow vérifie son intégrité avant/après la génération des preuves.
 
 ## Reste réglementaire prioritaire
 
-### R1 — Décision sanctions CM/SJ/O01/03/2016
+### R1 — Régime de sanctions 2016 ↔ 2022
 
-État : `IN_PROGRESS`.
+État : `IN_PROGRESS_OFFICIAL_BINARIES_AND_LEGAL_RELATIONSHIP_PENDING`.
+
+#### Décision 2016 — `CM/SJ/O01/03/2016`
 
 - registre officiel AMF-UMOA identifié ;
-- statut observé : `NON_ABROGE` ;
+- statut de registre observé : `NON_ABROGE` ;
 - dépendance enregistrée dans `regulatory/sources/DECISION_CM_SJ_001_03_2016.yaml` ;
 - PDF binaire officiel stable : `TO_IDENTIFY` ;
 - SHA-256, taille, pagination et index : à produire ;
-- atomisation : à produire ;
-- barèmes/montants : strictement interdits avant matérialisation et double revue.
+- atomisation : à produire.
 
-Cette source est nécessaire pour fermer les dépendances de `INST058_ART031_REQ001` et `INST058_ART032_REQ001`.
+#### Décision 2022 — `CM/10/06/2022`
+
+- adoption du dispositif révisé le `2022-06-24` : `OFFICIALLY_CONFIRMED` ;
+- dépendance enregistrée dans `regulatory/sources/DECISION_CM_10_06_2022.yaml` ;
+- référence et intitulé : `CORROBORATED_PENDING_OFFICIAL_BINARY` ;
+- PDF binaire officiel stable : `TO_IDENTIFY` ;
+- statut juridique courant : à établir à partir des sources officielles ;
+- SHA-256, taille, pagination et index : à produire après matérialisation ;
+- atomisation : interdite tant que le binaire officiel n'est pas matérialisé.
+
+#### Relation juridique 2016 ↔ 2022
+
+- l'existence d'un dispositif révisé en 2022 est établie ;
+- le fait que l'entrée 2016 soit encore affichée `NON_ABROGE` dans le registre AMF-UMOA est conservé comme observation de registre ;
+- aucune conclusion automatique n'est autorisée quant à une abrogation, un remplacement, une modification partielle ou une coexistence ;
+- cette relation doit être établie par comparaison des deux textes officiels et revue juridique.
+
+Les décisions de sanctions sont nécessaires pour fermer les dépendances de `INST058_ART031_REQ001` et `INST058_ART032_REQ001`. Les barèmes, montants, catégories de manquements et calculs de sanctions restent strictement interdits avant matérialisation des textes applicables et double revue juridique/conformité.
 
 ### R2 — Métadonnées juridiques Instruction 58
 
@@ -74,6 +96,7 @@ Aucune obligation ne doit être inventée à partir d'un thème si aucun texte s
 - revue conformité des `111` candidats INST066 ;
 - revue juridique des `32` candidats INST058 ;
 - revue conformité des `32` candidats INST058 ;
+- revue juridique/conformité du régime sanctions 2016 ↔ 2022 après matérialisation ;
 - revue fiscale des clauses et champs fiscaux ;
 - validation des clauses juridiques avant passage éventuel à `APPROVED/ACTIVE`.
 
@@ -117,10 +140,11 @@ Tant que ces revues ne sont pas terminées :
 
 ## Ordre recommandé
 
-1. matérialiser la Décision CM/SJ/O01/03/2016 ;
-2. fermer les métadonnées juridiques de l'Instruction 58 ;
-3. inventorier et matérialiser les autres textes OPC complémentaires ;
-4. lancer la double revue humaine INST066/INST058 ;
-5. activer uniquement les règles explicitement approuvées ;
-6. terminer l'infrastructure réelle et la recette ;
-7. seulement ensuite préparer une version réellement prête pour dépôt.
+1. identifier et matérialiser les binaires officiels des Décisions `CM/SJ/O01/03/2016` et `CM/10/06/2022` ;
+2. comparer 2016 ↔ 2022 et faire établir juridiquement le régime applicable ;
+3. fermer les métadonnées juridiques de l'Instruction 58 ;
+4. inventorier et matérialiser les autres textes OPC complémentaires ;
+5. lancer la double revue humaine INST066/INST058 et la revue du régime de sanctions ;
+6. activer uniquement les règles explicitement approuvées ;
+7. terminer l'infrastructure réelle et la recette ;
+8. seulement ensuite préparer une version réellement prête pour dépôt.
