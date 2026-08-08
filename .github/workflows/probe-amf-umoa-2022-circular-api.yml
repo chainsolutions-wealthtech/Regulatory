@@ -1,0 +1,50 @@
+name: Probe AMF-UMOA 2022 Circular API
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'scripts/probe_amf_umoa_2022_circular_api.py'
+      - '.github/workflows/probe-amf-umoa-2022-circular-api.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  probe:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - name: Probe witness-validated official API
+        run: python3 scripts/probe_amf_umoa_2022_circular_api.py
+      - name: Validate API registry safety
+        run: |
+          python3 - <<'PY'
+          import json
+          from pathlib import Path
+          r=json.loads(Path('regulatory/registries/AMF_UMOA_2022_CIRCULAR_API_REGISTRY_V0_1.json').read_text())
+          v=json.loads(Path('regulatory/validation/AMF_UMOA_2022_CIRCULAR_API_REGISTRY_VALIDATION_V0_1.json').read_text())
+          assert v['result']=='PASS'
+          assert v['checks']['known010WitnessMatches']
+          assert v['checks']['known013WitnessMatches']
+          assert r['boundary']['automaticDependencyResolutionAllowed'] is False
+          assert r['boundary']['automaticRequirementActivationAllowed'] is False
+          assert r['boundary']['readyForSubmissionMustRemainFalse'] is True
+          print('AMF-UMOA API witness and safety validation: PASS')
+          PY
+      - name: Commit API discovery artifacts
+        run: |
+          if git status --porcelain -- regulatory/registries/AMF_UMOA_2022_CIRCULAR_API_REGISTRY_V0_1.json regulatory/validation/AMF_UMOA_2022_CIRCULAR_API_REGISTRY_VALIDATION_V0_1.json regulatory/sources/amf-umoa-2022-circulars-api | grep -q .; then
+            git config user.name 'github-actions[bot]'
+            git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+            git add regulatory/registries/AMF_UMOA_2022_CIRCULAR_API_REGISTRY_V0_1.json regulatory/validation/AMF_UMOA_2022_CIRCULAR_API_REGISTRY_VALIDATION_V0_1.json
+            git add regulatory/sources/amf-umoa-2022-circulars-api 2>/dev/null || true
+            git commit -m 'regulatory: discover AMF-UMOA 2022 circulars from official API'
+            git pull --rebase origin main
+            git push origin HEAD:main
+          else
+            echo 'No API discovery changes to commit.'
+          fi
