@@ -1,0 +1,40 @@
+source_id: CIRCULAIRE_010_AMF_UMOA_2022
+instrument_type: CIRCULAR
+authority: AMF_UMOA
+reference: "Circulaire n°10/AMF-UMOA/2022"
+title: "Relative aux modalités de calcul des frais généraux pour la détermination du niveau de capitaux propres d'une Société de Gestion d'OPC"
+status: OFFICIAL_PAGE_IDENTIFIED_INDIVIDUAL_BINARY_NOT_YET_MATERIALIZED
+
+official_publication:
+  page_url: "https://www.crepmf.org/actuality-details?actualiteId=1000138"
+  page_observed_on: 2026-08-08
+  page_evidence:
+    - "CIRCULAIRE N°010-2022"
+    - "RELATIVE AUX MODALITES DE CALCUL DES FRAIS GENERAUX POUR LA DETERMINATION DU NIVEAU DE CAPITAUX PROPRES D’UNE SOCIETE DE GESTION D’OPC"
+    - "publication page date shown: 12 sept. 2023"
+  note: >-
+    La page institutionnelle AMF-UMOA/CREPMF identifie la circulaire et son objet.
+    La date affichée sur la page est une date de publication du site et ne doit pas
+    être assimilée à la date d'adoption ou d'effet sans lecture du binaire propre.
+
+inst066_candidate_mapping:
+  - dependency_id: INST066_ART005_DEP_CIRC_01
+    source_context: "frais généraux servant au calcul du plancher de fonds propres"
+    match_level: STRONG_OFFICIAL_TITLE_MATCH_BINARY_COMPARISON_PENDING
+    resolved: false
+
+binary:
+  official_binary_url: TO_DISCOVER_FROM_OFFICIAL_PAGE_OR_REPORT
+  repository_copy: null
+  sha256: null
+  byte_size: null
+  page_count: null
+
+safety:
+  official_title_match_is_resolution: false
+  automatic_dependency_resolution_allowed: false
+  automatic_rule_reconstruction_allowed: false
+  automatic_requirement_activation_allowed: false
+  human_legal_review_required: true
+  human_compliance_review_required: true
+  ready_for_submission_must_remain_false: true
