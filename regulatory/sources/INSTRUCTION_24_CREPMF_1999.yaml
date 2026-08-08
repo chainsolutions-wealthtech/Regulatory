@@ -1,0 +1,57 @@
+source_id: INSTRUCTION_24_CREPMF_1999
+source_family: INSTRUCTION
+reference: "Instruction n°24/99"
+title: "Instruction relative à la note d'information des Organismes de Placement Collectif en Valeurs Mobilières (OPCVM)"
+jurisdiction: UMOA
+authority_at_adoption: CREPMF
+current_authority_name: AMF-UMOA
+document_type: INSTRUCTION
+language: fr
+historical_status: EXPLICITLY_ABROGATED_BY_INSTRUCTION_66_ARTICLE_92
+
+source_integrity:
+  official_binary_url: TO_IDENTIFY_FROM_OFFICIAL_SOURCE
+  repository_copy: null
+  sha256: null
+  byte_size: null
+  page_count: null
+  copy_status: OFFICIAL_REFERENCE_AND_TITLE_CORROBORATED_BINARY_NOT_MATERIALIZED
+
+historical_evidence:
+  primary_abrogation_source:
+    source_id: INSTRUCTION_66_CREPMF_2021
+    article: 92
+    status: VISUALLY_OBSERVED_FROM_HASHED_OFFICIAL_PDF
+  corroborating_official_act:
+    reference: "Décision n° PCR/DA/2018/165"
+    source_page: https://www.brvm.org/fr/crepmf-agrement-du-fonds-commun-de-placement-fcp-nsia-fonds-diversifie-en-qualite-dopcvm-sur-le
+    repository_copy: regulatory/review-evidence/INST066_HISTORICAL_CROSSCHECK/corroborating/DECISION_PCR_DA_2018_165_NSIA_FONDS_DIVERSIFIE.pdf
+    sha256: 282b603d99e80699203c4ca75abc683dee8e550f2a8f6f79eccd7e937b0c7337
+    evidence_text: >-
+      Le visa de la décision officielle cite l'Instruction n°24/99 relative à la
+      note d'information des Organismes de Placement Collectif en Valeurs Mobilières
+      (OPCVM).
+    evidence_scope: REFERENCE_AND_TITLE_CORROBORATED_ONLY
+  crosscheck_evidence: regulatory/review-evidence/INST066_HISTORICAL_CROSSCHECK/OFFICIAL_SOURCE_SEARCH_2026-08-08.yaml
+
+legal_metadata:
+  act_date: PENDING_OFFICIAL_BINARY_REVIEW
+  effective_from: PENDING_OFFICIAL_BINARY_REVIEW
+  amendments_and_rectifications: TO_COMPLETE
+  current_legal_status: ABROGATED_BY_INSTRUCTION_66_EFFECTIVE_2022_01_01
+  historical_binary_status: OFFICIAL_BINARY_NOT_MATERIALIZED
+  activation_allowed: false
+
+safety:
+  requirement_activation_allowed: false
+  historical_rule_reactivation_allowed: false
+  automatic_rule_reconstruction_allowed: false
+  automatic_migration_inference_allowed: false
+  human_legal_review_required: true
+  human_compliance_review_required: true
+
+notes:
+  - "La référence et l'intitulé sont corroborés par deux sources officielles distinctes : l'article 92 de l'Instruction 66 et une décision d'agrément CREPMF/BRVM de 2018."
+  - "L'acte 2018 est une preuve corroborante et ne remplace pas le binaire normatif de l'Instruction 24/99."
+  - "Aucune date issue d'une copie tierce n'est promue dans cette fiche."
+  - "Aucune obligation historique ne doit être reconstruite ou réactivée avant matérialisation du texte officiel et revue humaine."
