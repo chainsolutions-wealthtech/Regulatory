@@ -1,0 +1,24 @@
+{
+  "schemaVersion": "AMF_UMOA_REGULATORY_CATEGORY_API_VALIDATION_V0_1",
+  "result": "PASS",
+  "checks": {
+    "circularWitness010": true,
+    "circularWitness013": true,
+    "instructionListReturned": true,
+    "decisionListReturned": true,
+    "automaticResolutionForbidden": true
+  },
+  "counts": {
+    "Circulaire": 39,
+    "Instruction": 77,
+    "Instruction_abroge_true": 77,
+    "Decision": 10,
+    "Decision_abroge_true": 10
+  },
+  "findingCounts": {
+    "instruction61_2020": 1,
+    "instruction64_2020": 1,
+    "sanctions_2016": 1,
+    "decision_2022": 4
+  }
+}
