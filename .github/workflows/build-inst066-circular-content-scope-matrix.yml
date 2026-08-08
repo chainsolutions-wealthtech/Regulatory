@@ -25,6 +25,7 @@ jobs:
         run: python3 scripts/build_inst066_circular_content_scope_matrix.py
       - name: Validate non-resolution boundary
         run: |
+          cat regulatory/validation/INST066_TO_AMF_UMOA_2022_CIRCULAR_CONTENT_SCOPE_MATRIX_VALIDATION_V0_1.json
           python3 - <<'PY'
           import json
           from pathlib import Path
