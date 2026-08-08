@@ -1,0 +1,20 @@
+{
+  "validationId": "INST066_TAIL_DEPENDENCY_RESEARCH_BRIEF_VALIDATION_V0_1",
+  "status": "PASS",
+  "checks": {
+    "allFourTargetArticlesPresent": true,
+    "allHaveDependencies": true,
+    "allResearchPrioritiesTailReview": true,
+    "allActivationForbidden": true,
+    "automaticResolutionForbidden": true,
+    "readyForSubmissionFalse": true
+  },
+  "metrics": {
+    "articleCount": 4,
+    "dependencyOccurrenceCount": 6,
+    "unresolvedOccurrenceCount": 6
+  },
+  "outputs": [
+    "regulatory/registries/INST066_TAIL_DEPENDENCY_RESEARCH_BRIEF_V0_1.json"
+  ]
+}

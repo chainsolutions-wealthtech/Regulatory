@@ -1,0 +1,126 @@
+{
+  "schemaVersion": "INST066_TAIL_DEPENDENCY_RESEARCH_BRIEF_V0_1",
+  "sourceId": "INSTRUCTION_66_CREPMF_2021",
+  "sourceSha256": "3f964f2f6ab9ce9eb16912ccda13f34b5023a188dfb18fcba7065590c770d396",
+  "status": "READY_FOR_OFFICIAL_SOURCE_RESEARCH",
+  "targetArticles": [
+    74,
+    75,
+    76,
+    80
+  ],
+  "articles": [
+    {
+      "articleNumber": 74,
+      "articleTitle": "Caractéristiques des Organismes de Placement Collectif d’Epargne",
+      "dependencyOccurrenceCount": 3,
+      "unresolvedOccurrenceCount": 3,
+      "countsByKind": {
+        "COUNCIL_CIRCULAR": 3
+      },
+      "researchPriority": "NEXT_TAIL_REVIEW",
+      "dependencies": [
+        {
+          "dependencyId": "INST066_ART074_DEP_CIRC_01",
+          "dependencyKind": "COUNCIL_CIRCULAR",
+          "referenceStatus": "REFERENCE_NOT_YET_IDENTIFIED",
+          "officialReference": null,
+          "sourceWording": "une Circulaire du Conseil Régional",
+          "sourceContext": "… essement, de participation ou un plan d'épargne d’entreprise au sein d’un groupe constitué par des entreprises juridiquement indépendantes, mais ayant établi entre elles des liens financiers et économiques. Les salariés et anciens salariés sont par nature des investisseurs non qualifiés. Un FCPE ou une SICAVAS peut être formé d’un seul ou de plusieurs compartiments. Chaque compartiment est considéré comme un OPCR distinct et requiert un enregistrement dans les conditions mentionnées au premier alinéa de l’article 19 de la présente Instruction. Un OPCR peut également offrir des classes de parts différentes dans Les conditions déterminées dans une Circulaire du Conseil Régional. Un OPCVM ne peut être formé que d’un seul compartiment. Un OPCVM peut offrir des classes de parts où d'actions différentes dans Les conditions déterminées dans une Circulaire du Conseil Régional Les FCPE et Les SICAVAS investissent dans les actifs mentionnés aux dispositions de l’article 39. Avenue Joseph ANOMA TEL.: (225) 27 20 21 57 42 / 20 31 56 20 01 B.P. 1878 Abidjan 01/Côte d’ivoire 57 _æ Fax: (225) 27 20 33 23 04 Site web : http://www.crepmf.org presidence@crepmf.org Les FCPE et Les SICAVAS respectent les conditions mentionnées aux articles 41 à 46 et A7 alinéa 2 à 53 ainsi que Les chapitres 3 et 4 du titre II. Par dérogation aux ali …",
+          "activation": "FORBIDDEN_PENDING_OFFICIAL_SOURCE_IDENTIFICATION_AND_REVIEW"
+        },
+        {
+          "dependencyId": "INST066_ART074_DEP_CIRC_02",
+          "dependencyKind": "COUNCIL_CIRCULAR",
+          "referenceStatus": "REFERENCE_NOT_YET_IDENTIFIED",
+          "officialReference": null,
+          "sourceWording": "une Circulaire du Conseil Régional",
+          "sourceContext": "… onomiques. Les salariés et anciens salariés sont par nature des investisseurs non qualifiés. Un FCPE ou une SICAVAS peut être formé d’un seul ou de plusieurs compartiments. Chaque compartiment est considéré comme un OPCR distinct et requiert un enregistrement dans les conditions mentionnées au premier alinéa de l’article 19 de la présente Instruction. Un OPCR peut également offrir des classes de parts différentes dans Les conditions déterminées dans une Circulaire du Conseil Régional. Un OPCVM ne peut être formé que d’un seul compartiment. Un OPCVM peut offrir des classes de parts où d'actions différentes dans Les conditions déterminées dans une Circulaire du Conseil Régional Les FCPE et Les SICAVAS investissent dans les actifs mentionnés aux dispositions de l’article 39. Avenue Joseph ANOMA TEL.: (225) 27 20 21 57 42 / 20 31 56 20 01 B.P. 1878 Abidjan 01/Côte d’ivoire 57 _æ Fax: (225) 27 20 33 23 04 Site web : http://www.crepmf.org presidence@crepmf.org Les FCPE et Les SICAVAS respectent les conditions mentionnées aux articles 41 à 46 et A7 alinéa 2 à 53 ainsi que Les chapitres 3 et 4 du titre II. Par dérogation aux alinéas 3 et 4 du présent article, Les FCPE et Les SICAVAS peuvent détenir, sans limitation, des valeurs mobilières émises par l’entreprise ou par toute entreprise qui lui est liée par un accord d’in …",
+          "activation": "FORBIDDEN_PENDING_OFFICIAL_SOURCE_IDENTIFICATION_AND_REVIEW"
+        },
+        {
+          "dependencyId": "INST066_ART074_DEP_CIRC_03",
+          "dependencyKind": "COUNCIL_CIRCULAR",
+          "referenceStatus": "REFERENCE_NOT_YET_IDENTIFIED",
+          "officialReference": null,
+          "sourceWording": "Une circulaire du Conseil Régional",
+          "sourceContext": "… reprise ou de toute entreprise qui lui est liée. Pour les entreprises admises à La cote de La Bourse Régionale des Valeurs Mobilières, le ratio mentionné à l’alinéa 6 du présent article est d’au moins 30 %. Par dérogation aux alinéas 3 et 4 du présent article, les articles 41, 42, 44 et 45 ne sont pas applicables aux FCPE et SICAVAS mentionnés à l’alinéa 6 du présent article. 10. Par dérogation à l’alinéa 4 du présent article, les FCPE et Les SICAVAS peuvent être autorisés à investir au moins 85 % de leurs actifs dans des parts d’un autre OPCVM dénommés OPCVM maître. Dans ce cas, les FCPE et SICAVAS sont considérés comme des OPC nourriciers. Une circulaire du Conseil Régional précise les conditions d'informations et Les modalités de fonctionnement de la structure maître nourricier. 11. Le montant cumulé des liquidités constatées Lors de l'établissement de chacune des valeurs liquidatives de l'année en cours ne peut excéder Le cinquième de la somme des actifs nets de la même période, Le Conseil Régional peut décider d'apporter à cette règle, des dérogations exceptionnelles.",
+          "activation": "FORBIDDEN_PENDING_OFFICIAL_SOURCE_IDENTIFICATION_AND_REVIEW"
+        }
+      ]
+    },
+    {
+      "articleNumber": 75,
+      "articleTitle": "Constitution d’un FCPE",
+      "dependencyOccurrenceCount": 1,
+      "unresolvedOccurrenceCount": 1,
+      "countsByKind": {
+        "COUNCIL_CIRCULAR": 1
+      },
+      "researchPriority": "NEXT_TAIL_REVIEW",
+      "dependencies": [
+        {
+          "dependencyId": "INST066_ART075_DEP_CIRC_01",
+          "dependencyKind": "COUNCIL_CIRCULAR",
+          "referenceStatus": "REFERENCE_NOT_YET_IDENTIFIED",
+          "officialReference": null,
+          "sourceWording": "une Circulaire du Conseil Régional",
+          "sourceContext": "… de la gestion financière, administrative et comptable. IL peut demander à entendre la Société de Gestion, le Dépositaire et le Commissaire aux Comptes du Fonds qui sont tenus de déférer à sa convocation. IL décide des fusions, scissions ou liquidations. Le Règlement du Fonds précise quelles sont les modifications du Règlement qui ne peuvent être décidées sans l’accord du Conseil de Surveillance. Le Conseil de Surveillance peut ester en justice pour défendre ou faire valoir Les droits ou intérêts des porteurs. Le Conseil de Surveillance adopte un rapport annuel mis à la disposition de chaque porteur de parts et dont le contenu est précisé par une Circulaire du Conseil Régional. Le Règlement du Fonds peut prévoir que les produits des actifs du Fonds sont réinvestis dans celui-ci. À cette fin, les documents constitutifs ou Règlements peuvent prévoir des classes de parts différentes. En complément du cas mentionné à l’alinéa 2, le Règlement du Fonds peut prévoir différentes catégories de parts afin de permettre de couvrir Le risque de change. Le Règlement du Fonds précise les considérations sociales, environnementales ou éthiques ainsi que celles tenant aux types d’entreprises financées que doit respecter la Société de Gestion dans l’achat ou la vente des parts ou titres ainsi que dans l'exercice des droits qui leur …",
+          "activation": "FORBIDDEN_PENDING_OFFICIAL_SOURCE_IDENTIFICATION_AND_REVIEW"
+        }
+      ]
+    },
+    {
+      "articleNumber": 76,
+      "articleTitle": "Constitution d’une SICAVAS",
+      "dependencyOccurrenceCount": 1,
+      "unresolvedOccurrenceCount": 1,
+      "countsByKind": {
+        "COUNCIL_CIRCULAR": 1
+      },
+      "researchPriority": "NEXT_TAIL_REVIEW",
+      "dependencies": [
+        {
+          "dependencyId": "INST066_ART076_DEP_CIRC_01",
+          "dependencyKind": "COUNCIL_CIRCULAR",
+          "referenceStatus": "REFERENCE_NOT_YET_IDENTIFIED",
+          "officialReference": null,
+          "sourceWording": "une Circulaire du Conseil Régional",
+          "sourceContext": "… entendre la Société de Gestion ou le Conseil d'administration de la Société d’Investissement, Le Dépositaire et Le Commissaire aux Comptes de la société qui sont tenus de déférer à sa convocation. Il décide des fusions, scissions ou liquidations. Les statuts de La société précisent quelles sont Les modifications des statuts qui ne peuvent être décidées sans l’accord du Conseil de Surveillance. Le Conseil de Surveillance peut agir en justice pour défendre ou faire valoir Les droits ou intérêts des porteurs. Le Conseil de Surveillance adopte un rapport annuel mis à La disposition de chaque actionnaire salarié et dont le contenu est précisé par une Circulaire du Conseil Régional. 5. Les statuts de la Société d’Investissement précisent Les considérations sociales, environnementales ou éthiques ainsi que celles tenant aux types d’entreprises financées que doit respecter la Société de Gestion dans l’achat ou la vente des parts ou titres ainsi que dans l’exercice des droits qui leur sont attachés.",
+          "activation": "FORBIDDEN_PENDING_OFFICIAL_SOURCE_IDENTIFICATION_AND_REVIEW"
+        }
+      ]
+    },
+    {
+      "articleNumber": 80,
+      "articleTitle": "OPCR à compartiment",
+      "dependencyOccurrenceCount": 1,
+      "unresolvedOccurrenceCount": 1,
+      "countsByKind": {
+        "COUNCIL_CIRCULAR": 1
+      },
+      "researchPriority": "NEXT_TAIL_REVIEW",
+      "dependencies": [
+        {
+          "dependencyId": "INST066_ART080_DEP_CIRC_01",
+          "dependencyKind": "COUNCIL_CIRCULAR",
+          "referenceStatus": "REFERENCE_NOT_YET_IDENTIFIED",
+          "officialReference": null,
+          "sourceWording": "une Circulaire du Conseil Régional",
+          "sourceContext": "Un OPCR peut être formé d’un seul où de plusieurs compartiments. Chaque compartiment est considéré comme un OPCR distinct et requiert un enregistrement dans les conditions mentionnées au premier alinéa de l’article 19 de la présente Instruction. Un OPCR peut également offrir des classes de parts différentes dans Les conditions déterminées dans une Circulaire du Conseil Régional.",
+          "activation": "FORBIDDEN_PENDING_OFFICIAL_SOURCE_IDENTIFICATION_AND_REVIEW"
+        }
+      ]
+    }
+  ],
+  "researchBoundary": "Search terms must be derived from articleTitle/sourceContext. No implementing-instrument number or title may be guessed from the article number alone.",
+  "safety": {
+    "groupingImpliesSameInstrument": false,
+    "automaticReferenceInferenceAllowed": false,
+    "automaticDependencyResolutionAllowed": false,
+    "automaticRequirementActivationAllowed": false,
+    "humanLegalReviewRequired": true,
+    "humanComplianceReviewRequired": true,
+    "readyForSubmissionMustRemainFalse": true
+  }
+}
