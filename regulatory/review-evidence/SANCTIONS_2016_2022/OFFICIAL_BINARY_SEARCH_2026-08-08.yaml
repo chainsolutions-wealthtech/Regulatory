@@ -48,6 +48,7 @@ sources_checked:
   - authority: BCEAO
     source_type: OFFICIAL_COUNCIL_OF_MINISTERS_COMMUNIQUE
     url: https://www.bceao.int/fr/communique-presse/communique-de-presse-de-la-session-ordinaire-du-conseil-des-ministres-de-lunion-5
+    checked_on: 2026-08-08
     observations:
       - "La session officielle s'est tenue le 24 juin 2022."
       - >-
@@ -70,15 +71,59 @@ sources_checked:
         Conseil des Ministres de l'Union Monétaire Ouest Africaine relative à la
         mise en œuvre du dispositif des sanctions pécuniaires applicables sur le
         marché financier régional de l'UMOA.
+      - >-
+        Des miroirs institutionnels du même portail CENTIF (site.centif.sn et
+        jokoo.centif.sn) exposent la même référence et le même intitulé.
     binary_identified: false
     evidence_scope: EXACT_REFERENCE_AND_TITLE_CONFIRMED_BY_PUBLIC_AUTHORITY
+
+  - authority: AMF_UMOA
+    source_type: OFFICIAL_ANNUAL_REPORT_INDEX
+    url: https://www.crepmf.org/publication/rapport
+    checked_on: 2026-08-08
+    observations:
+      - "Le portail officiel liste RAPPORT ANNUEL 2022 AMF-UMOA, publié le 21 septembre 2023."
+    evidence_scope: OFFICIAL_REPORT_EXISTENCE_CONFIRMED
+
+  - authority: AMF_UMOA
+    source_type: OFFICIAL_ANNUAL_REPORT_2022_CONTENT_CORROBORATION
+    checked_on: 2026-08-08
+    observations:
+      - >-
+        Le rapport annuel 2022 de l'AMF-UMOA identifie la Décision n°CM/10/06/2022
+        comme texte adopté par le Conseil des Ministres de l'Union relatif à la mise
+        en œuvre du dispositif des sanctions pécuniaires sur le Marché Financier Régional.
+      - >-
+        Il indique que la Décision de 2016 a été révisée lors de la session ordinaire
+        du 24 juin 2022 pour l'aligner sur la Loi Uniforme relative aux infractions
+        boursières et l'adapter à l'évolution des manquements selon leur gravité.
+    evidence_scope: OFFICIAL_ISSUER_REPORT_CONFIRMS_REVISION_AND_EXACT_DECISION_REFERENCE
+    binary_identified: false
+    note: >-
+      Le rapport annuel corrobore la relation de révision mais ne remplace pas le
+      binaire propre de CM/10/06/2022 pour les effets juridiques, dates d'effet,
+      clauses d'abrogation ou quantums.
+
+  - authority: UEMOA_EDOCUCENTER
+    source_type: OFFICIAL_INSTITUTIONAL_PUBLICATION
+    url: https://e-docucenter.uemoa.int/fr/114-une-monnaie-commune-et-un-ecosysteme-financier-de-plus-en-plus-dynamique
+    checked_on: 2026-08-08
+    observations:
+      - >-
+        L'E-DOCUCENTER de l'UEMOA confirme qu'en juin 2022 le Conseil des Ministres
+        a révisé le dispositif des sanctions pécuniaires applicables sur le marché
+        financier régional pour le mettre en cohérence avec les textes récemment adoptés.
+    evidence_scope: OFFICIAL_INSTITUTIONAL_REVISION_CORROBORATION
+    binary_identified: false
 
   - authority: LEXTENSO
     source_type: SECONDARY_SPECIALIST_LEGAL_PUBLICATION
     url: https://www.labase-lextenso.fr/lessentiel-droits-africains-des-affaires/DAA201j5
+    checked_on: 2026-08-08
     observations:
       - "Identifie la Décision n° CM/10/06/2022 du 24 juin 2022 sous le même objet."
       - "Décrit une catégorisation des manquements en quatre catégories et des quantums en annexes."
+      - "Indique l'existence d'une annexe 1 de classification et d'une annexe 2 de quantums."
     evidence_scope: SEARCH_CORROBORATION_ONLY_NOT_NORMATIVE_SOURCE
     normative_use_allowed: false
 
@@ -97,6 +142,8 @@ search_result:
     adopted_on: 2022-06-24
     official_adoption_of_revised_device: CONFIRMED_BY_BCEAO
     exact_reference_and_title: CONFIRMED_BY_CENTIF_SENEGAL
+    issuer_annual_report_confirmation: CONFIRMED_BY_AMF_UMOA_2022_REPORT
+    uemoa_institutional_revision_confirmation: CONFIRMED_BY_EDOCUCENTER
     current_amf_decision_table_entry: NOT_PRESENT_IN_CURRENT_10_ROW_TABLE_OBSERVED_2026_08_08
     current_amf_api_decision_category_entry: NOT_IDENTIFIED_IN_CURRENT_10_OBJECT_CATEGORY_LIST
     official_binary_status: OFFICIAL_BINARY_NOT_MATERIALIZED
@@ -104,11 +151,13 @@ search_result:
 relationship_status:
   value: REVISED_DEVICE_CONFIRMED_RELATIONSHIP_NOT_LEGALLY_CONCLUDED
   reason: >-
-    La décision 2016 est désormais acquise intégralement. Le texte 2022 reste absent
-    du corpus binaire. Le terme "dispositif révisé" et l'existence d'une nouvelle
-    décision de même objet ne suffisent pas à déterminer sans le texte propre s'il
-    s'agit d'un remplacement, d'une modification, d'une abrogation totale ou
-    partielle, ou d'un régime comportant des dispositions transitoires.
+    La décision 2016 est désormais acquise intégralement. Plusieurs sources
+    institutionnelles indépendantes confirment que son dispositif a été révisé
+    par CM/10/06/2022 le 24 juin 2022. Le texte 2022 reste absent du corpus binaire.
+    Le terme "révisé" et l'existence d'une nouvelle décision de même objet ne
+    suffisent pas à déterminer sans le texte propre s'il s'agit d'un remplacement,
+    d'une modification, d'une abrogation totale ou partielle, ou d'un régime
+    comportant des dispositions transitoires.
   prohibited_inferences:
     - DO_NOT_INFER_TOTAL_ABROGATION
     - DO_NOT_INFER_PARTIAL_ABROGATION
@@ -127,9 +176,13 @@ relationship_status:
 current_search_boundary:
   amf_current_decision_index_checked: true
   amf_current_decision_api_category_checked: true
+  amf_official_annual_report_index_checked: true
+  amf_annual_report_2022_revision_confirmation: true
   bceao_official_adoption_communique_checked: true
   centif_public_authority_reference_checked: true
+  uemoa_edocucenter_revision_confirmation: true
   official_member_state_journal_search_performed: true
+  additional_exact_title_and_filetype_search_2026_08_08: true
   publicly_indexed_pdf_found: false
   next_priority: RECOVER_DOCUMENT_LINK_OR_BINARY_FROM_CENTIF_OR_OTHER_OFFICIAL_ARCHIVE
 
@@ -148,8 +201,9 @@ safety:
   ready_for_submission_must_remain_false: true
 
 conclusion: >-
-  La recherche du 2026-08-08 a désormais fermé l'acquisition documentaire de la
-  Décision 2016 et confirmé par deux sources institutionnelles distinctes l'adoption,
-  la date, la référence et l'objet de la Décision 2022. Le seul verrou documentaire
-  principal de R1 est maintenant le binaire de CM/10/06/2022. Tant qu'il manque, la
-  relation juridique 2016↔2022 et les barèmes de sanctions restent inactifs.
+  La recherche du 2026-08-08 a fermé l'acquisition documentaire de la Décision 2016
+  et confirmé par la BCEAO, la CENTIF Sénégal, l'AMF-UMOA et l'E-DOCUCENTER UEMOA
+  l'adoption, la date, la référence, l'objet et la réalité d'une révision en 2022.
+  Le verrou documentaire principal de R1 reste le binaire propre de CM/10/06/2022.
+  Tant qu'il manque, la relation juridique 2016↔2022 et les barèmes de sanctions
+  restent inactifs.
