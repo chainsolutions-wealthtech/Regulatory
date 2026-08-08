@@ -3,6 +3,7 @@ import hashlib
 import html
 import json
 import re
+import shutil
 import subprocess
 import sys
 from pathlib import Path
@@ -43,61 +44,112 @@ def hrefs(raw: str, base: str):
     return out
 
 
+def render_dom(url: str) -> str | None:
+    chrome = shutil.which("google-chrome") or shutil.which("google-chrome-stable") or shutil.which("chromium") or shutil.which("chromium-browser")
+    if not chrome:
+        return None
+    try:
+        p = subprocess.run(
+            [chrome, "--headless=new", "--disable-gpu", "--no-sandbox", "--disable-dev-shm-usage", "--virtual-time-budget=12000", "--dump-dom", url],
+            check=True,
+            stdout=subprocess.PIPE,
+            stderr=subprocess.PIPE,
+            text=True,
+            timeout=35,
+        )
+        return p.stdout
+    except Exception:
+        return None
+
+
+def candidate_links(raw: str, base: str):
+    positions = [m.start() for m in re.finditer(r'RAPPORT\s+ANNUEL\s+2022', raw, re.I)]
+    links = hrefs(raw, base)
+    candidates = []
+    for p in positions:
+        for lp, u in links:
+            dist = abs(lp - p)
+            if dist > 12000:
+                continue
+            score = 0
+            lu = u.lower()
+            if ".pdf" in lu:
+                score += 100
+            if "actuality-details" in lu or "actualite" in lu:
+                score += 50
+            if "2022" in lu:
+                score += 20
+            score += max(0, 40 - dist // 250)
+            candidates.append((score, dist, u))
+    # Also allow rendered rows where the PDF link itself is near generic report wording.
+    for lp, u in links:
+        if ".pdf" not in u.lower():
+            continue
+        ctx = raw[max(0, lp - 3500):lp + 3500]
+        if re.search(r'RAPPORT\s+ANNUEL\s+2022|2022.*RAPPORT|RAPPORT.*2022', ctx, re.I | re.S):
+            candidates.append((90, 0, u))
+    dedup = {}
+    for score, dist, u in candidates:
+        old = dedup.get(u)
+        if old is None or score > old[0]:
+            dedup[u] = (score, dist, u)
+    return sorted(dedup.values(), reverse=True)
+
+
+def try_candidate(candidate: str):
+    cb = fetch(candidate)
+    if cb.startswith(b"%PDF"):
+        return candidate, cb
+    craw = cb.decode("utf-8", errors="ignore")
+    rendered = render_dom(candidate)
+    variants = [craw] + ([rendered] if rendered else [])
+    for raw in variants:
+        for _, u in hrefs(raw, candidate):
+            if ".pdf" not in u.lower():
+                continue
+            try:
+                pb = fetch(u)
+            except Exception:
+                continue
+            if pb.startswith(b"%PDF"):
+                return u, pb
+    return None
+
+
 def discover_report_2022():
     attempts = []
     for index_url in INDEX_URLS:
+        variants = []
         try:
             b = fetch(index_url)
             raw = b.decode("utf-8", errors="ignore")
-            attempts.append({"url": index_url, "status": "FETCHED", "sha256": hashlib.sha256(b).hexdigest(), "bytes": len(b)})
+            attempts.append({"url": index_url, "mode": "HTTP", "status": "FETCHED", "sha256": hashlib.sha256(b).hexdigest(), "bytes": len(b)})
+            variants.append(("HTTP", raw))
         except Exception as e:
-            attempts.append({"url": index_url, "status": "FAILED", "error": str(e)})
-            continue
-        positions = [m.start() for m in re.finditer(r'RAPPORT\s+ANNUEL\s+2022', raw, re.I)]
-        links = hrefs(raw, index_url)
-        candidates = []
-        for p in positions:
-            for lp, u in links:
-                dist = abs(lp - p)
-                if dist <= 8000:
-                    score = 0
-                    lu = u.lower()
-                    if ".pdf" in lu:
-                        score += 100
-                    if "actuality-details" in lu or "actualite" in lu:
-                        score += 50
-                    score += max(0, 40 - dist // 200)
-                    candidates.append((score, dist, u))
-        for _, _, candidate in sorted(candidates, reverse=True):
-            try:
-                cb = fetch(candidate)
-            except Exception:
-                continue
-            if cb.startswith(b"%PDF"):
-                return candidate, cb, index_url, attempts
-            craw = cb.decode("utf-8", errors="ignore")
-            for _, u in hrefs(craw, candidate):
-                if ".pdf" not in u.lower():
+            attempts.append({"url": index_url, "mode": "HTTP", "status": "FAILED", "error": str(e)})
+        rendered = render_dom(index_url)
+        if rendered:
+            attempts.append({"url": index_url, "mode": "HEADLESS_CHROME", "status": "RENDERED", "sha256": hashlib.sha256(rendered.encode()).hexdigest(), "chars": len(rendered)})
+            variants.append(("HEADLESS_CHROME", rendered))
+        else:
+            attempts.append({"url": index_url, "mode": "HEADLESS_CHROME", "status": "UNAVAILABLE_OR_FAILED"})
+
+        seen = set()
+        for mode, raw in variants:
+            for _, _, candidate in candidate_links(raw, index_url):
+                if candidate in seen:
                     continue
+                seen.add(candidate)
                 try:
-                    pb = fetch(u)
-                except Exception:
+                    hit = try_candidate(candidate)
+                except Exception as e:
+                    attempts.append({"url": candidate, "mode": f"CANDIDATE_FROM_{mode}", "status": "FAILED", "error": str(e)})
                     continue
-                if pb.startswith(b"%PDF"):
-                    return u, pb, candidate, attempts
-        # fallback: scan any PDF link whose nearby HTML mentions 2022/report
-        for lp, u in links:
-            if ".pdf" not in u.lower():
-                continue
-            ctx = raw[max(0, lp-2000):lp+2000]
-            if re.search(r'RAPPORT\s+ANNUEL\s+2022|2022.*RAPPORT|RAPPORT.*2022', ctx, re.I | re.S):
-                try:
-                    pb = fetch(u)
-                except Exception:
-                    continue
-                if pb.startswith(b"%PDF"):
-                    return u, pb, index_url, attempts
-    raise RuntimeError("Official AMF-UMOA 2022 annual report PDF not discovered from official report index")
+                if hit:
+                    pdf_url, pdf = hit
+                    attempts.append({"url": pdf_url, "mode": f"CANDIDATE_FROM_{mode}", "status": "PDF_DISCOVERED", "bytes": len(pdf)})
+                    return pdf_url, pdf, index_url, attempts
+    raise RuntimeError("Official AMF-UMOA 2022 annual report PDF not discovered from official report index after HTTP and rendered-DOM discovery")
 
 
 def normalize_text(s: str) -> str:
@@ -106,7 +158,6 @@ def normalize_text(s: str) -> str:
 
 def extract_circulars(text: str):
     flat = normalize_text(text)
-    # Capture each 2022 AMF-UMOA circular up to the next circular/reference bullet.
     pat = re.compile(
         r'(?:la\s+)?Circulaire\s+n[°ºo]?\s*(\d{1,2})\s*/\s*AMF[-\s]?UMOA\s*/\s*2022\s+(.*?)(?=(?:la\s+)?Circulaire\s+n[°ºo]?\s*\d{1,2}\s*/\s*AMF[-\s]?UMOA\s*/\s*2022|Instruction\s+n[°ºo]?|Décision\s+n[°ºo]?|$)',
         re.I | re.S,
@@ -116,7 +167,6 @@ def extract_circulars(text: str):
         n = int(num)
         if not 1 <= n <= 16:
             continue
-        # Trim common report prose after a semicolon/bullet boundary where possible.
         t = title
         for stop in [" ; ", " • ", "  ", " RAPPORT ANNUEL 2022 "]:
             if stop in t:
@@ -136,10 +186,7 @@ def main():
     pdf_path.write_bytes(pdf)
     sha = hashlib.sha256(pdf).hexdigest()
 
-    try:
-        subprocess.run(["pdftotext", "-layout", str(pdf_path), str(txt_path)], check=True)
-    except Exception as e:
-        raise RuntimeError(f"pdftotext failed: {e}")
+    subprocess.run(["pdftotext", "-layout", str(pdf_path), str(txt_path)], check=True)
     text = txt_path.read_text(encoding="utf-8", errors="ignore")
     if "RAPPORT ANNUEL 2022" not in text.upper() or "AMF-UMOA" not in text.upper():
         raise RuntimeError("Downloaded PDF identity check failed")
