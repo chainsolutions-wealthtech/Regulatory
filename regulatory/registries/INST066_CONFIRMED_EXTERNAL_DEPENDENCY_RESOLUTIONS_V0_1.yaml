@@ -1,0 +1,72 @@
+schema_version: INST066_CONFIRMED_EXTERNAL_DEPENDENCY_RESOLUTIONS_V0_1
+source_instruction: INSTRUCTION_66_CREPMF_2021
+source_instruction_sha256: 3f964f2f6ab9ce9eb16912ccda13f34b5023a188dfb18fcba7065590c770d396
+status: DOCUMENTARY_RESOLUTIONS_CONFIRMED_HUMAN_LEGAL_AND_COMPLIANCE_REVIEW_PENDING
+resolution_count: 5
+resolutions:
+  - dependency_id: INST066_ART005_DEP_CIRC_01
+    article_number: 5
+    resolved_source_id: CIRCULAIRE_10_CREPMF_2022
+    official_reference: "Circulaire n°10/CREPMF/2022"
+    resolution_basis: EXPLICIT_ARTICLE_5_CROSS_REFERENCE_AND_EXACT_SCOPE
+    evidence_file: regulatory/review-evidence/INST066_EXTERNAL_DEPENDENCIES/ART005_CIRCULAIRE_010_2022_SCOPE_RESOLUTION_2026-08-08.yaml
+    documentary_status: RESOLVED
+    current_legal_status: TO_VERIFY
+    legal_review_status: PENDING
+    compliance_review_status: PENDING
+    activation: FORBIDDEN
+
+  - dependency_id: INST066_ART013_DEP_CIRC_01
+    article_number: 13
+    resolved_source_id: CIRCULAIRE_12_CREPMF_2022
+    official_reference: "Circulaire n°12/CREPMF/2022"
+    resolution_basis: EXPLICIT_INSTRUCTION_66_REFERENCE_AND_EXACT_THREE_PART_SCOPE
+    documentary_status: RESOLVED
+    current_legal_status: TO_VERIFY
+    legal_review_status: PENDING
+    compliance_review_status: PENDING
+    activation: FORBIDDEN
+
+  - dependency_id: INST066_ART032_DEP_CIRC_01
+    article_number: 32
+    resolved_source_id: CIRCULAIRE_07_CREPMF_2022
+    official_reference: "Circulaire n°07/CREPMF/2022"
+    resolution_basis: EXACT_COMMUNICATIONS_PUBLICITAIRES_SCOPE
+    documentary_status: RESOLVED
+    current_legal_status: TO_VERIFY
+    legal_review_status: PENDING
+    compliance_review_status: PENDING
+    activation: FORBIDDEN
+
+  - dependency_id: INST066_ART012_DEP_CIRC_01
+    article_number: 12
+    resolved_source_id: CIRCULAIRE_14_CREPMF_2022
+    official_reference: "Circulaire n°14/CREPMF/2022"
+    resolution_basis: EXPLICIT_INSTRUCTION_66_REFERENCE_AND_LIQUIDITY_STRESS_TOOLS_SCOPE
+    documentary_status: RESOLVED
+    current_legal_status: TO_VERIFY
+    legal_review_status: PENDING
+    compliance_review_status: PENDING
+    activation: FORBIDDEN
+
+  - dependency_id: INST066_ART047_DEP_CIRC_01
+    article_number: 47
+    resolved_source_id: CIRCULAIRE_14_CREPMF_2022
+    official_reference: "Circulaire n°14/CREPMF/2022"
+    resolution_basis: EXPLICIT_INSTRUCTION_66_REFERENCE_AND_TEMPORARY_REDEMPTION_SUSPENSION_SCOPE
+    documentary_status: RESOLVED
+    current_legal_status: TO_VERIFY
+    legal_review_status: PENDING
+    compliance_review_status: PENDING
+    activation: FORBIDDEN
+boundary:
+  raw_inventory_mutated: false
+  documentary_resolution_is_requirement_activation: false
+  automatic_requirement_activation_allowed: false
+  human_legal_review_required: true
+  human_compliance_review_required: true
+  ready_for_submission_must_remain_false: true
+next_actions:
+  - verify_current_legal_status_of_each_resolved_circular_from_official_registry_or_later_amendments
+  - consume_this_override_registry_in_future_derived_research_queue_generation
+  - continue_exact_scope_review_of_remaining_2022_circular_candidates
