@@ -3,19 +3,26 @@ instrument_type: CIRCULAR
 authority: AMF_UMOA
 reference: "Circulaire n°13/AMF-UMOA/2022"
 title: "Relative aux classes de parts / actions"
-status: OFFICIAL_PAGE_IDENTIFIED_INDIVIDUAL_BINARY_NOT_YET_MATERIALIZED
+status: OFFICIAL_API_OBJECT_CONFIRMED_BINARY_MATERIALIZATION_IN_PROGRESS
 
 official_publication:
-  page_url: "https://www.crepmf.org/actuality-details?actualiteId=1000141"
-  page_observed_on: 2026-08-08
-  page_evidence:
-    - "CIRCULAIRE N°013-2022"
-    - "RELATIVE AUX CLASSES DE PARTS / ACTIONS"
-    - "publication page date shown: 12 sept. 2023"
+  legacy_page_url: "https://www.crepmf.org/actuality-details?actualiteId=1000141"
+  current_api_url: "https://www.amf-umoa.org/service/api/elastic/actualite?id=1000141&langue=fr"
+  actualite_id: 1000141
+  api_raw_sha256: "272bb1c2d6d6696100cf62a3923781d2a543a3b718de74647a680b8bb8a18563"
+  document_url_field: "AC-CIRCULAIRE-2023-9A05D31B-7FA9-4D98-9CF7-47D3CE2D7287.pdf"
+  api_document_field: BASE64_PDF_PRESENT
+  observed_on: 2026-08-08
+  evidence:
+    - "titre = CIRCULAIRE N°013-2022"
+    - "resume/texte = RELATIVE AUX CLASSES DE PARTS / ACTIONS"
+    - "categorie = Circulaire"
   note: >-
-    La page institutionnelle AMF-UMOA/CREPMF identifie la circulaire et son objet.
-    La date affichée est une date de publication du site, pas une date d'adoption ou
-    d'effet tant que le binaire propre n'a pas été lu.
+    L'identité de la circulaire est corroborée à la fois par l'ancienne page
+    institutionnelle CREPMF indexée et par l'API publique actuelle du frontend
+    AMF-UMOA. Le champ doc de l'API contient un PDF encodé en Base64. La date
+    affichée sur l'ancienne page (12 septembre 2023) demeure une date de publication
+    du site et ne doit pas être assimilée à la date d'adoption ou d'effet.
 
 inst066_candidate_mapping:
   - dependency_id: INST066_ART074_DEP_CIRC_01
@@ -32,11 +39,12 @@ inst066_candidate_mapping:
     resolved: false
 
 binary:
-  official_binary_url: TO_DISCOVER_FROM_OFFICIAL_PAGE_OR_REPORT
+  source_transport: AMF_UMOA_API_BASE64_DOC
   repository_copy: null
   sha256: null
   byte_size: null
   page_count: null
+  materialization_workflow: .github/workflows/materialize-amf-umoa-2022-circular-binaries.yml
 
 safety:
   official_title_match_is_resolution: false
