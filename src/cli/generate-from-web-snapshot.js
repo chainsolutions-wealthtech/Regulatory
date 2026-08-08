@@ -67,35 +67,38 @@ const validationOutput = await runPython("scripts/validate_docx.py", [
 const docxValidation = parseLastJsonObject(validationOutput.stdout);
 await writeJson(docxValidationPath, docxValidation);
 
-const packageOutput = await runPython("scripts/generate_pdf_review_package.py", [
-  "--docx",
-  docxPath,
-  "--generation-manifest",
-  generationManifestPath,
-  "--output-pdf",
-  pdfPath,
-  "--pdf-manifest",
-  pdfManifestPath,
-  "--package-zip",
-  packageZipPath,
-  "--package-manifest",
-  packageManifestPath,
-  ...[
-    "canonical-snapshot.json",
-    "canonical-data.json",
-    "questionnaire-state.json",
-    "control-report.json",
-    "concordance.json",
-    "document-model.json",
-    "answer-log.json",
-    "prospectus-draft.md",
-    "docx-manifest.json",
-    "docx-validation.json",
-  ].flatMap((fileName) => ["--include", path.join(outputDirectory, fileName)]),
-]);
-const packageValidation = parseLastJsonObject(packageOutput.stdout);
-if (packageValidation.status !== "PASS" || packageValidation.ready_for_submission !== false) {
-  throw new Error("PDF_REVIEW_PACKAGE_VALIDATION_FAILED");
+let packageValidation = null;
+if (args.reviewPackageMode === "enabled") {
+  const packageOutput = await runPython("scripts/generate_pdf_review_package.py", [
+    "--docx",
+    docxPath,
+    "--generation-manifest",
+    generationManifestPath,
+    "--output-pdf",
+    pdfPath,
+    "--pdf-manifest",
+    pdfManifestPath,
+    "--package-zip",
+    packageZipPath,
+    "--package-manifest",
+    packageManifestPath,
+    ...[
+      "canonical-snapshot.json",
+      "canonical-data.json",
+      "questionnaire-state.json",
+      "control-report.json",
+      "concordance.json",
+      "document-model.json",
+      "answer-log.json",
+      "prospectus-draft.md",
+      "docx-manifest.json",
+      "docx-validation.json",
+    ].flatMap((fileName) => ["--include", path.join(outputDirectory, fileName)]),
+  ]);
+  packageValidation = parseLastJsonObject(packageOutput.stdout);
+  if (packageValidation.status !== "PASS" || packageValidation.ready_for_submission !== false) {
+    throw new Error("PDF_REVIEW_PACKAGE_VALIDATION_FAILED");
+  }
 }
 
 const result = {
@@ -113,9 +116,10 @@ const result = {
   ready_for_compliance_review: generation.manifest.ready_for_compliance_review,
   ready_for_submission: false,
   docx_validation_status: docxValidation.status,
-  pdf_validation_status: packageValidation.status,
-  pdf_sha256: packageValidation.pdf_sha256,
-  review_package_sha256: packageValidation.package_sha256,
+  review_package_mode: args.reviewPackageMode,
+  pdf_validation_status: packageValidation?.status ?? "NOT_REQUESTED",
+  pdf_sha256: packageValidation?.pdf_sha256 ?? null,
+  review_package_sha256: packageValidation?.package_sha256 ?? null,
 };
 console.log(JSON.stringify(result, null, 2));
 
@@ -140,10 +144,15 @@ function parseArgs(argv) {
   }
   if (!values.snapshot) throw new Error("Argument obligatoire manquant: --snapshot");
   if (!values.output) throw new Error("Argument obligatoire manquant: --output");
+  const reviewPackageMode = values["review-package-mode"] ?? "enabled";
+  if (!new Set(["enabled", "disabled"]).has(reviewPackageMode)) {
+    throw new Error(`Mode package de revue invalide: ${reviewPackageMode}`);
+  }
   return {
     snapshot: values.snapshot,
     output: values.output,
     generatedAt: values["generated-at"],
+    reviewPackageMode,
   };
 }
 
