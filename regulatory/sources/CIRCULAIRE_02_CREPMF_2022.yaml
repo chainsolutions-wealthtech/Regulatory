@@ -1,0 +1,42 @@
+source_id: CIRCULAIRE_02_CREPMF_2022
+source_type: CIRCULAR
+authority: CREPMF_AMF_UMOA
+reference: "Circulaire n°02/CREPMF/2022"
+title: >-
+  Relative au processus d'agrément, à la modification des conditions initiales
+  d'agrément et au retrait d'agrément des Sociétés de Gestion d'Organismes de
+  Placement Collectif
+jurisdiction: UMOA
+source_origin:
+  authority_api: AMF_UMOA
+  actualite_id: 1000130
+  binary_identity: API_OBJECT_REFERENCE_MATCH_AND_BASE64_PDF_MAGIC_CONFIRMED
+materialization:
+  pdf: regulatory/sources/amf-umoa-2022-circulars/CIRCULAIRE_02_AMF_UMOA_2022.pdf
+  text: regulatory/sources/amf-umoa-2022-circulars/CIRCULAIRE_02_AMF_UMOA_2022.txt
+  metadata: regulatory/sources/amf-umoa-2022-circulars/CIRCULAIRE_02_AMF_UMOA_2022.metadata.json
+  sha256: 6848d0682f832c312674d173de83594de1ed65b219883b6ac2638466dbf17582
+  byte_size: 2188888
+  page_count: 26
+  extraction_method: OCR_TESSERACT_FRA_FALLBACK
+legal_metadata:
+  current_legal_status: TO_VERIFY
+instruction_66_relationship:
+  dependency_id: INST066_ART005_DEP_CIRC_02
+  article_number: 5
+  relationship: EXPLICIT_IMPLEMENTING_CIRCULAR
+  evidence: >-
+    The circular expressly defines Instruction as Instruction n°66/CREPMF/2021,
+    states that it specifies the documents and information for SGO approval and
+    the content and form of the activity programme, and expressly identifies the
+    Article 5 approval file.
+  documentary_dependency_resolution: CONFIRMED
+  regulatory_requirement_activation: FORBIDDEN_PENDING_HUMAN_REVIEW
+review:
+  legal_review_required: true
+  legal_review_status: PENDING
+  compliance_review_required: true
+  compliance_review_status: PENDING
+safety:
+  automatic_requirement_activation_allowed: false
+  ready_for_submission_must_remain_false: true
