@@ -1,0 +1,42 @@
+evidence_id: INST066_ART032_ADVERTISING_CIRCULAR_SEARCH_2026_08_08
+review_date: 2026-08-08
+source_id: INSTRUCTION_66_CREPMF_2021
+source_article: 32
+dependency_kind: COUNCIL_CIRCULAR
+subject: "communications publicitaires des OPC et présentation/transmission au format électronique"
+
+research_scope:
+  official_domains_checked:
+    - amf-umoa.org
+    - brvm.org
+    - crepmf.org
+  query_concepts:
+    - "communications publicitaires"
+    - "publicité OPCVM"
+    - "format électronique"
+    - "Société de Gestion d'OPC"
+    - "circulaire Conseil Régional"
+  result: OFFICIAL_PUBLIC_REFERENCE_NOT_IDENTIFIED
+
+interpretation_boundary: >-
+  Aucune fiche, référence numérotée ou route binaire institutionnelle publiquement
+  indexée n'a été identifiée permettant de rattacher sans ambiguïté une circulaire
+  précise au renvoi de l'article 32. Cette recherche négative ne prouve pas l'absence
+  juridique ou historique de la circulaire.
+
+prohibited_inferences:
+  - DO_NOT_INFER_CIRCULAR_NUMBER
+  - DO_NOT_INFER_CIRCULAR_TITLE
+  - DO_NOT_RECONSTRUCT_ADVERTISING_FORMAT_RULES_FROM_THIRD_PARTY_COPIES
+  - DO_NOT_MARK_DEPENDENCY_RESOLVED
+
+status:
+  dependency_resolution: OPEN_OFFICIAL_REFERENCE_NOT_IDENTIFIED
+  activation: FORBIDDEN_PENDING_OFFICIAL_SOURCE_IDENTIFICATION_AND_REVIEW
+  legal_review: PENDING
+  compliance_review: PENDING
+  ready_for_submission: false
+
+resume_condition: >-
+  Reprendre si une fiche AMF-UMOA/BRVM, un bulletin officiel, une archive CREPMF
+  institutionnelle ou un binaire officiel identifiant cette circulaire devient disponible.
