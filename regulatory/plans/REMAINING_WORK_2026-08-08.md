@@ -9,6 +9,9 @@ Ce document est une photographie opérationnelle du reste à faire après la com
 - Circulaire n°05/CREPMF/2022 : `62` exigences V1 structurées pour le parcours FCP/SGO.
 - Instruction n°66/CREPMF/2021 : PDF officiel matérialisé, SHA-256 calculé, `65` pages, articles `1–92` indexés, `92` atomes structuraux et `111` exigences candidates détaillées compilées.
 - Instruction n°58/CREPMF/2019 : PDF officiel matérialisé, SHA-256 `38258d7cae5518a6bea6b195facbb717e4a98c1eb734b30bc5e7de91917d0c57`, `17` pages, articles `1–35` indexés, `35` blocs, `35` atomes et `32` exigences candidates détaillées compilées.
+- Instruction 58 : article 34 relu et enregistré comme abrogeant/remplaçant notamment l'Instruction n°31/2005 du 7 juin 2005.
+- Instruction 58 : article 35 relu ; entrée en vigueur à la date de signature ; date de signature enregistrée au `2019-07-24` à partir du bloc final de la source officielle matérialisée.
+- Instruction 58 : étape CI séparée ajoutée pour enrichir les métadonnées juridiques relues sans transformer l'OCR en décision juridique automatique.
 - Crosswalk Instruction 58 : `18` liens vers CIRC005 et `9` liens vers INST066.
 - Toutes les exigences INST066 et INST058 restent `FORBIDDEN`, avec revue juridique et conformité `PENDING`.
 - Le produit exécutable, le modèle canonique, PostgreSQL/RLS, le workflow de revue, le DOCX déterministe et les principales CI existent déjà.
@@ -53,13 +56,23 @@ Les décisions de sanctions sont nécessaires pour fermer les dépendances de `I
 
 ### R2 — Métadonnées juridiques Instruction 58
 
-État : `OPEN`.
+État : `PARTIALLY_CLOSED_CURRENT_STATUS_AND_LATER_TEXTS_PENDING`.
 
-- confirmer visuellement la date exacte de signature sur le PDF officiel ;
-- confirmer la date d'effet ;
-- vérifier le prédécesseur et la portée de l'abrogation de l'Instruction n°31/2005 ;
-- rechercher modificatifs, rectificatifs ou textes postérieurs ;
-- vérifier le statut actuel directement dans le registre dynamique AMF-UMOA.
+Terminé sur source officielle matérialisée :
+
+- date de signature : `2019-07-24` ;
+- règle d'entrée en vigueur : article 35, à compter de la date de signature ;
+- date d'effet enregistrée : `2019-07-24` ;
+- prédécesseur explicitement cité : Instruction n°31/2005 du `2005-06-07` ;
+- relation : article 34, `EXPLICITLY_ABROGATED_AND_REPLACED` ;
+- chaîne de matérialisation enrichie pour conserver ces faits dans le YAML, le `metadata.json` et la validation CI tout en maintenant l'activation interdite.
+
+Reste ouvert :
+
+- vérifier le statut actuel directement dans une source officielle dynamique AMF-UMOA suffisamment probante ;
+- rechercher exhaustivement modificatifs, rectificatifs, décisions d'application ou textes postérieurs ;
+- effectuer une relecture visuelle humaine du bloc de signature, l'OCR de cette zone étant dégradé ;
+- matérialiser l'Instruction n°31/2005 seulement si son contenu est nécessaire à l'historique ou à l'analyse d'impact, sans la réactiver.
 
 ### R3 — Métadonnées et historique complet Instruction 66
 
@@ -142,9 +155,10 @@ Tant que ces revues ne sont pas terminées :
 
 1. identifier et matérialiser les binaires officiels des Décisions `CM/SJ/O01/03/2016` et `CM/10/06/2022` ;
 2. comparer 2016 ↔ 2022 et faire établir juridiquement le régime applicable ;
-3. fermer les métadonnées juridiques de l'Instruction 58 ;
-4. inventorier et matérialiser les autres textes OPC complémentaires ;
-5. lancer la double revue humaine INST066/INST058 et la revue du régime de sanctions ;
-6. activer uniquement les règles explicitement approuvées ;
-7. terminer l'infrastructure réelle et la recette ;
-8. seulement ensuite préparer une version réellement prête pour dépôt.
+3. terminer R2 par la vérification du statut courant et des éventuels textes postérieurs de l'Instruction 58 ;
+4. fermer les métadonnées et l'historique de l'Instruction 66 ;
+5. inventorier et matérialiser les autres textes OPC complémentaires ;
+6. lancer la double revue humaine INST066/INST058 et la revue du régime de sanctions ;
+7. activer uniquement les règles explicitement approuvées ;
+8. terminer l'infrastructure réelle et la recette ;
+9. seulement ensuite préparer une version réellement prête pour dépôt.
