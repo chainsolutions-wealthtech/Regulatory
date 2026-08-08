@@ -65,7 +65,7 @@ L’adaptateur est testé sur PostgreSQL éphémère avec une identité fixe exc
 - transaction réponse → version → snapshot → collections → audit : \`PASS\` ;
 - génération → snapshot → documents → audit : \`PASS\` ;
 - activation par défaut : \`FORBIDDEN\` ;
-- prochaine tranche : \`AUTHENTICATION_RBAC_AND_REVIEW_WORKFLOW\`.
+- prochaine tranche historique de cette preuve : \`AUTHENTICATION_RBAC_AND_REVIEW_WORKFLOW\`.
 
 ${evidence}`,
 
@@ -169,45 +169,17 @@ for (const [file, markdown] of Object.entries(blocks)) {
   await upsertBlock(file, "LOOP-DEV-001-POSTGRES-REPOSITORY-V1", markdown);
 }
 
-await writeFile(
-  path.join(repoRoot, "NEXT_ACTION.md"),
-  `# NEXT_ACTION — Action unique immédiatement exécutable
-
-> **Statut :** \`READY\`
-> **Boucle :** \`LOOP-DEV-001\`
-
-## Action
-
-Construire le socle d’authentification, de RBAC et de workflow de revue sans choisir fictivement un fournisseur d’identité : définir les politiques machine-readable, les autorisations par action, les transitions d’état, les décisions et les tests, puis conserver l’intégration fournisseur derrière un port explicitement non configuré.
-
-## Résultat attendu
-
-- modèle des rôles Administrateur, Produit, Risques, Conformité, Juridique, Fiscal, Opérations, Audit et Lecteur ;
-- matrice action × rôle × ressource ;
-- vérification serveur de chaque action sensible ;
-- transitions de workflow déterministes ;
-- demandes de revue, commentaires, changements demandés, approbations et rejets ;
-- aucune auto-approbation ;
-- séparation entre gel interne, approbation interne et décision du régulateur ;
-- tests positifs et négatifs multi-rôles ;
-- port du fournisseur d’identité non configuré en production ;
-- \`ready_for_submission=false\` maintenu.
-
-## Condition d’arrêt
-
-Ne pas simuler une connexion, un SSO ou une signature. L’activation d’un fournisseur d’identité et des sessions nécessite des paramètres réels, des secrets hors dépôt et une revue de sécurité.
-`,
-  "utf8",
-);
+// NEXT_ACTION.md is a human/loop-control document. Evidence refreshes must never
+// replace a more recent canonical priority decided outside this historical slice.
 
 console.log(
   JSON.stringify(
     {
-      updatedDocuments: Object.keys(blocks).length + 1,
+      updatedDocuments: Object.keys(blocks).length,
       status: validation.status,
       projectVersions: validation.metrics.projectVersions,
       auditEvents: validation.metrics.auditEvents,
-      nextAction: "AUTHENTICATION_RBAC_AND_REVIEW_WORKFLOW",
+      nextActionOwnership: "PRESERVED_FROM_CANONICAL_LOOP_CONTROL",
     },
     null,
     2,
