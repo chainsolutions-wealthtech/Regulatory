@@ -215,6 +215,7 @@ jobs:
 
       - name: Update Loop Engineering evidence
         run: |
+          node scripts/protect-next-action-ownership.mjs
           next_action_before="$(sha256sum NEXT_ACTION.md | awk '{print $1}')"
           node scripts/update-loop-dev-docs.mjs
           node scripts/update-docx-loop-docs.mjs
@@ -340,6 +341,12 @@ jobs:
             docs/ARCHITECTURE.md docs/PROSPECTUS_ENGINE_SPEC.md \
             docs/04-development/NEXTJS_ATOMIC_DESIGN.md apps/web/README.md \
             apps/web/package-lock.json \
+            scripts/update-loop-dev-docs.mjs \
+            scripts/update-docx-loop-docs.mjs \
+            scripts/update-nextjs-docs.mjs \
+            scripts/update-regulatory-catalog-docs.mjs \
+            scripts/update-structured-share-class-docs.mjs \
+            scripts/update-canonical-schema-docs.mjs \
             regulatory/validation/CIRC005_WEB_CATALOG_VALIDATION.json \
             regulatory/validation/CIRC005_WEB_API_INTEGRATION_VALIDATION.json \
             regulatory/validation/POSTGRESQL_CORE_VALIDATION.json \
