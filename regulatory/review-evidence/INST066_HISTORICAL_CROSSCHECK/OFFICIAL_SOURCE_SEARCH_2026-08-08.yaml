@@ -3,9 +3,9 @@ review_date: 2026-08-08
 source_id: INSTRUCTION_66_CREPMF_2021
 source_article: 92
 purpose: >-
-  Identifier des publications ou binaires institutionnels pour les sept textes
-  explicitement abrogés par l'article 92 de l'Instruction n°66/CREPMF/2021, afin
-  de constituer une chaîne historique vérifiable sans réactiver les anciennes règles.
+  Identifier des publications, binaires ou preuves institutionnelles pour les sept
+  textes explicitement abrogés par l'article 92 de l'Instruction n°66/CREPMF/2021,
+  afin de constituer une chaîne historique vérifiable sans réactiver les anciennes règles.
 
 primary_source_basis:
   inventory: regulatory/registries/INST066_ABROGATED_TEXTS_INVENTORY_V0_1.yaml
@@ -20,28 +20,44 @@ institutional_routes_checked:
       Bibliothèque paginée « Instructions, circulaires et autres textes publiés par
       l'AMF-UMOA », pages historiques 6 à 9 examinées jusqu'aux publications de 1999.
     result: >-
-      Une publication institutionnelle distincte de l'Instruction n°46/2011 révisée
-      a été identifiée via la BRVM. Les anciennes Instructions CREPMF n°21/99,
+      La publication institutionnelle de l'Instruction n°46/2011 révisée a été
+      identifiée puis son binaire matérialisé. Les anciennes Instructions n°21/99,
       n°22/99, n°23/99, n°24/99 et n°45/2011 ainsi que la Décision n°2012-119
-      n'ont pas été identifiées sous ces références dans les pages historiques parcourues.
+      n'ont pas été identifiées sous leurs propres références dans ces pages.
     interpretation_boundary: >-
-      L'absence de ces références dans la bibliothèque BRVM parcourue n'est pas une
-      preuve de non-publication ou d'absence juridique ; elle signifie uniquement
-      qu'aucune route exploitable n'a été identifiée dans ce périmètre.
+      L'absence de leurs actes propres dans la bibliothèque parcourue n'est pas une
+      preuve de non-publication ou d'absence juridique.
 
   - authority: BRVM_AND_AMF_UMOA
     scope: EXACT_REFERENCE_AND_TITLE_SEARCHES
     result: >-
-      Des recherches ciblées sur les numéros et intitulés complets des six références
-      restantes n'ont pas fourni de route institutionnelle publique exploitable dans
-      le périmètre indexé contrôlé le 2026-08-08.
+      Des recherches ciblées sur les numéros et intitulés complets n'ont pas fourni
+      de binaire propre exploitable pour les six références restant à matérialiser.
+
+  - authority: CREPMF_VIA_BRVM
+    route: https://www.brvm.org/fr/crepmf-agrement-du-fonds-commun-de-placement-fcp-nsia-fonds-diversifie-en-qualite-dopcvm-sur-le
+    evidence_role: OFFICIAL_ADMINISTRATIVE_CORROBORATION_ONLY_NOT_NORMATIVE_SUBSTITUTE
+    decision_reference: "PCR/DA/2018/165"
+    repository_copy: regulatory/review-evidence/INST066_HISTORICAL_CROSSCHECK/corroborating/DECISION_PCR_DA_2018_165_NSIA_FONDS_DIVERSIFIE.pdf
+    sha256: 282b603d99e80699203c4ca75abc683dee8e550f2a8f6f79eccd7e937b0c7337
+    page_count: 4
+    observations:
+      - "Le visa cite explicitement l'Instruction n°24/99 et son objet relatif à la note d'information des OPCVM."
+      - "Le visa cite explicitement l'Instruction n°45/2011 et son objet relatif à l'organisation, au fonctionnement et à la gestion des OPCVM."
+      - "Le visa cite explicitement l'Instruction n°46/2011 et son objet relatif à la classification et aux règles d'allocation d'actifs."
+      - "La Décision n°2012-119 et les Instructions n°23/99, n°22/99 et n°21/99 ne sont pas observées dans cet acte."
+    interpretation_boundary: >-
+      Cette décision officielle postérieure corrobore les références et intitulés des
+      textes qu'elle cite mais ne remplace pas leurs actes normatifs et ne permet pas
+      de reconstruire automatiquement leurs obligations, dates ou versions.
 
 crosscheck_results:
   - seq: 1
     reference: "Décision n°2012-119"
-    result: OFFICIAL_PUBLIC_ROUTE_NOT_IDENTIFIED
+    result: ARTICLE_92_OFFICIAL_SOURCE_ONLY
     source_record: null
     binary_status: NOT_MATERIALIZED
+    official_public_route_status: NOT_IDENTIFIED_2026_08_08
     note: >-
       L'article 92 de l'Instruction 66 constitue la preuve officielle de son abrogation.
       Aucun contenu, date ou effet modificatif détaillé n'est promu sans source officielle.
@@ -61,39 +77,56 @@ crosscheck_results:
 
   - seq: 3
     reference: "Instruction n°45/2011"
-    result: OFFICIAL_PUBLIC_ROUTE_NOT_IDENTIFIED
-    source_record: null
-    binary_status: NOT_MATERIALIZED
+    result: TWO_DISTINCT_OFFICIAL_ACTS_REFERENCE_AND_TITLE_CORROBORATED
+    source_record: regulatory/sources/INSTRUCTION_45_CREPMF_2011.yaml
+    own_binary_status: NOT_MATERIALIZED
+    own_official_public_route_status: NOT_IDENTIFIED_2026_08_08
+    corroborating_act: regulatory/review-evidence/INST066_HISTORICAL_CROSSCHECK/corroborating/DECISION_PCR_DA_2018_165_NSIA_FONDS_DIVERSIFIE.pdf
+    prohibited_promotions:
+      - ACT_DATE_FROM_THIRD_PARTY_SOURCE
+      - EFFECTIVE_DATE_WITHOUT_OWN_OFFICIAL_ACT
+      - HISTORICAL_RULE_RECONSTRUCTION
 
   - seq: 4
     reference: "Instruction n°24/99"
-    result: OFFICIAL_PUBLIC_ROUTE_NOT_IDENTIFIED
-    source_record: null
-    binary_status: NOT_MATERIALIZED
+    result: TWO_DISTINCT_OFFICIAL_ACTS_REFERENCE_AND_TITLE_CORROBORATED
+    source_record: regulatory/sources/INSTRUCTION_24_CREPMF_1999.yaml
+    own_binary_status: NOT_MATERIALIZED
+    own_official_public_route_status: NOT_IDENTIFIED_2026_08_08
+    corroborating_act: regulatory/review-evidence/INST066_HISTORICAL_CROSSCHECK/corroborating/DECISION_PCR_DA_2018_165_NSIA_FONDS_DIVERSIFIE.pdf
+    prohibited_promotions:
+      - ACT_DATE_FROM_THIRD_PARTY_SOURCE
+      - EFFECTIVE_DATE_WITHOUT_OWN_OFFICIAL_ACT
+      - HISTORICAL_RULE_RECONSTRUCTION
 
   - seq: 5
     reference: "Instruction n°23/99"
-    result: OFFICIAL_PUBLIC_ROUTE_NOT_IDENTIFIED
+    result: ARTICLE_92_OFFICIAL_SOURCE_ONLY
     source_record: null
     binary_status: NOT_MATERIALIZED
+    official_public_route_status: NOT_IDENTIFIED_2026_08_08
 
   - seq: 6
     reference: "Instruction n°22/99"
-    result: OFFICIAL_PUBLIC_ROUTE_NOT_IDENTIFIED
+    result: ARTICLE_92_OFFICIAL_SOURCE_ONLY
     source_record: null
     binary_status: NOT_MATERIALIZED
+    official_public_route_status: NOT_IDENTIFIED_2026_08_08
 
   - seq: 7
     reference: "Instruction n°21/99"
-    result: OFFICIAL_PUBLIC_ROUTE_NOT_IDENTIFIED
+    result: ARTICLE_92_OFFICIAL_SOURCE_ONLY
     source_record: null
     binary_status: NOT_MATERIALIZED
+    official_public_route_status: NOT_IDENTIFIED_2026_08_08
 
 progress:
   total_historical_references: 7
-  officially_materialized: 1
-  official_public_route_not_identified: 6
-  crosscheck_status: IN_PROGRESS_1_OF_7_MATERIALIZED
+  normative_binaries_materialized: 1
+  reference_and_title_officially_corroborated_without_own_binary: 2
+  article_92_official_source_only: 4
+  own_historical_binaries_still_missing: 6
+  crosscheck_status: IN_PROGRESS_1_BINARY_2_CORROBORATED_4_ARTICLE92_ONLY
 
 third_party_source_policy:
   normative_use_allowed: false
@@ -111,8 +144,9 @@ safety:
   ready_for_submission_must_remain_false: true
 
 next_actions:
+  - LOCATE_OWN_OFFICIAL_BINARY_INSTRUCTION_45_2011
+  - LOCATE_OWN_OFFICIAL_BINARY_INSTRUCTION_24_1999
   - LOCATE_OFFICIAL_DECISION_2012_119
-  - LOCATE_OFFICIAL_INSTRUCTION_45_2011
-  - LOCATE_OFFICIAL_INSTRUCTIONS_21_22_23_24_1999
+  - LOCATE_OFFICIAL_INSTRUCTIONS_21_22_23_1999
   - MATERIALIZE_EACH_OFFICIAL_BINARY_WHEN_IDENTIFIED
   - COMPARE_HISTORICAL_RULES_ONLY_FOR_REGULATORY_MIGRATION_ANALYSIS
