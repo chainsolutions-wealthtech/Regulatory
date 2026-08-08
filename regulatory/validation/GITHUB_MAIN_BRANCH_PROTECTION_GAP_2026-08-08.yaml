@@ -1,0 +1,32 @@
+validation_id: GITHUB_MAIN_BRANCH_PROTECTION_GAP_2026_08_08
+checked_on: 2026-08-08
+repository: chainsolutions-wealthtech/Regulatory
+branch: main
+observed_head: 0df461f99704551ba8cc3b73b2cbe12678a6d5a7
+source: GITHUB_BRANCH_API
+observed:
+  protected: false
+  protection_enabled: false
+  required_status_checks_enforcement: off
+  required_status_checks: []
+classification: PRODUCTION_GOVERNANCE_GAP
+code_regression_proven: false
+production_deployment_allowed: false
+recommended_resolution_after_ci_restoration:
+  - enable_branch_protection_or_repository_ruleset_for_main
+  - require_regulatory_ci
+  - require_security_and_review_policy_ci
+  - prevent_force_pushes
+  - prevent_deletions
+  - require_reviewed_change_path_consistent_with_repository_governance
+  - verify_connected_github_actor_permissions_before_enforcement
+sequencing_reason: >-
+  GitHub Actions is currently failing before runner steps start. Enabling strict
+  required checks while the checks are externally unavailable could block the
+  only active delivery path before the repository can be revalidated. The gap is
+  therefore recorded as a mandatory deployment gate and must be closed once the
+  CI billing/runner blocker is resolved and both required workflows can pass.
+safety:
+  direct_production_deployment_allowed: false
+  ready_for_submission_must_remain_false: true
+  automatic_rule_activation_allowed: false
