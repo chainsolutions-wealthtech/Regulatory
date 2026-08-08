@@ -6,6 +6,7 @@ import type { GenerationSnapshot } from "@/domain/types";
 import { buildCanonicalSnapshot } from "@/server/canonical-snapshot";
 import { createFixedTestIdentityProvider } from "@/server/security/verified-identity";
 import { createFileSystemArtifactStore } from "@/server/storage/artifact-store";
+import { createPostgresGenerationArtifactRepository } from "@/server/storage/generation-artifact-repository";
 import { createPostgresProjectRepository } from "@/server/storage/postgres-project-repository";
 
 const databaseUrl = process.env.DATABASE_URL;
@@ -54,15 +55,27 @@ try {
   );
 
   const artifactStore = createFileSystemArtifactStore(artifactRoot);
+  const identityProviderA = createFixedTestIdentityProvider(tenantA);
+  const identityProviderB = createFixedTestIdentityProvider(tenantB);
   const repositoryA = createPostgresProjectRepository({
     pool,
     artifactStore,
-    identityProvider: createFixedTestIdentityProvider(tenantA),
+    identityProvider: identityProviderA,
   });
   const repositoryB = createPostgresProjectRepository({
     pool,
     artifactStore,
-    identityProvider: createFixedTestIdentityProvider(tenantB),
+    identityProvider: identityProviderB,
+  });
+  const artifactRepositoryA = createPostgresGenerationArtifactRepository({
+    pool,
+    artifactStore,
+    identityProvider: identityProviderA,
+  });
+  const artifactRepositoryB = createPostgresGenerationArtifactRepository({
+    pool,
+    artifactStore,
+    identityProvider: identityProviderB,
   });
 
   const projectA = await repositoryA.createProject({
@@ -223,6 +236,48 @@ try {
     "Generation must move to pre-compliance review.",
   );
 
+  const listedArtifacts = await artifactRepositoryA.list(projectA.id, generation.generationId);
+  assert(listedArtifacts.length === 2, "Tenant A must list exactly two generated artifacts.");
+  assert(
+    listedArtifacts.some((artifact) => artifact.fileName === "prospectus-draft.md"),
+    "The persisted prospectus must be listed.",
+  );
+  const prospectusArtifact = await artifactRepositoryA.read(
+    projectA.id,
+    generation.generationId,
+    "prospectus-draft.md",
+  );
+  assert(prospectusArtifact !== null, "Tenant A must read its generated artifact.");
+  assert(
+    prospectusArtifact.content.toString("utf8") === "# PostgreSQL integration prospectus\n",
+    "The generated artifact content must be preserved.",
+  );
+  assert(
+    (await artifactRepositoryB.list(projectA.id, generation.generationId)).length === 0,
+    "Tenant B must not list tenant A artifacts.",
+  );
+  assert(
+    (await artifactRepositoryB.read(projectA.id, generation.generationId, "prospectus-draft.md")) === null,
+    "Tenant B must not read tenant A artifacts.",
+  );
+
+  const persistedProspectusPath = path.join(
+    artifactRoot,
+    tenantA.organizationId,
+    projectA.id,
+    generation.generationId,
+    "prospectus-draft.md",
+  );
+  await access(persistedProspectusPath);
+  await writeFile(persistedProspectusPath, "tampered\n", "utf8");
+  let integrityMismatchDetected = false;
+  try {
+    await artifactRepositoryA.read(projectA.id, generation.generationId, "prospectus-draft.md");
+  } catch (error) {
+    integrityMismatchDetected = String(error).includes("GENERATED_ARTIFACT_INTEGRITY_MISMATCH");
+  }
+  assert(integrityMismatchDetected, "Tampered artifact content must fail integrity verification.");
+
   const databaseChecks = await adminPool.query<{
     project_versions: string;
     snapshots: string;
@@ -266,16 +321,6 @@ try {
   assert(Number(checks.audit_events) >= 5, "The audit chain must contain all major writes.");
   assert(Number(checks.broken_audit_links) === 0, "The audit hash chain must not be broken.");
 
-  await access(
-    path.join(
-      artifactRoot,
-      tenantA.organizationId,
-      projectA.id,
-      generation.generationId,
-      "prospectus-draft.md",
-    ),
-  );
-
   const validation = {
     validationId: "POSTGRESQL_PROJECT_REPOSITORY_VALIDATION_V1",
     status: "PASS",
@@ -292,6 +337,9 @@ try {
       normalizedValuationMethods: true,
       generatedDocumentMetadata: true,
       stagedArtifactCommit: true,
+      generatedArtifactListingTenantScoped: true,
+      generatedArtifactReadTenantScoped: true,
+      generatedArtifactIntegrityVerification: true,
       auditInsertPolicy: true,
       auditHashChain: true,
       readyForSubmissionRemainsFalse: true,
