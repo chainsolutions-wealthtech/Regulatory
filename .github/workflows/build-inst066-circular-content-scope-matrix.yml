@@ -41,13 +41,14 @@ jobs:
           assert m['boundary']['automaticRequirementActivationAllowed'] is False
           print('INST066 circular content-scope matrix invariants: PASS')
           PY
-      - name: Commit content-scope matrix
+      - name: Persist content-scope matrix and validation diagnostics
+        if: ${{ always() }}
         run: |
           if git status --porcelain -- regulatory/registries/INST066_TO_AMF_UMOA_2022_CIRCULAR_CONTENT_SCOPE_MATRIX_V0_1.json regulatory/validation/INST066_TO_AMF_UMOA_2022_CIRCULAR_CONTENT_SCOPE_MATRIX_VALIDATION_V0_1.json | grep -q .; then
             git config user.name 'github-actions[bot]'
             git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
             git add regulatory/registries/INST066_TO_AMF_UMOA_2022_CIRCULAR_CONTENT_SCOPE_MATRIX_V0_1.json regulatory/validation/INST066_TO_AMF_UMOA_2022_CIRCULAR_CONTENT_SCOPE_MATRIX_VALIDATION_V0_1.json
-            git commit -m 'regulatory: build INST066 circular content-scope matrix'
+            git commit -m 'regulatory: persist INST066 circular content-scope diagnostics'
             git pull --rebase origin main
             git push origin HEAD:main
           fi
