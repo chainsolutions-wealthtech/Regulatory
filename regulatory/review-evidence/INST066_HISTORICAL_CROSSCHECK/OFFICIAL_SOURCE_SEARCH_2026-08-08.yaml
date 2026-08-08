@@ -51,6 +51,23 @@ institutional_routes_checked:
       textes qu'elle cite mais ne remplace pas leurs actes normatifs et ne permet pas
       de reconstruire automatiquement leurs obligations, dates ou versions.
 
+  - authority: CREPMF_VIA_BRVM
+    route: https://www.brvm.org/fr/decision-crepmf-ndeg-pcr-da-2017-121-agrement-du-fcp-liquidite-optimum-en-qualite-dopcvm
+    evidence_role: OFFICIAL_ADMINISTRATIVE_CORROBORATION_ONLY_NOT_NORMATIVE_SUBSTITUTE
+    decision_reference: "PCR/DA/2017/121"
+    repository_copy: regulatory/review-evidence/INST066_HISTORICAL_CROSSCHECK/corroborating/DECISION_PCR_DA_2017_121_FCP_LIQUIDITE_OPTIMUM.pdf
+    sha256: b33a03daf3416dd2710c65f23d7652d4732f8bca7d5b0f4e6b719e65bc1755b8
+    byte_size: 62044
+    page_count: 3
+    observations:
+      - "Le visa cite explicitement l'Instruction n°24/99 et son objet relatif à la note d'information des OPCVM."
+      - "Le visa cite explicitement l'Instruction n°45/2011 et son objet relatif à l'organisation, au fonctionnement et à la gestion des OPCVM."
+      - "Le visa cite explicitement l'Instruction n°46/2011 et son objet relatif à la classification et aux règles d'allocation d'actifs."
+      - "La Décision n°2012-119 et les Instructions n°23/99, n°22/99 et n°21/99 ne sont pas observées dans cet acte."
+    interpretation_boundary: >-
+      Comme la décision 2018, cet acte corrobore uniquement les références réellement
+      citées. L'absence d'une référence dans ce visa ne prouve pas son absence juridique historique.
+
 crosscheck_results:
   - seq: 1
     reference: "Décision n°2012-119"
@@ -58,6 +75,11 @@ crosscheck_results:
     source_record: regulatory/sources/DECISION_CREPMF_2012_119.yaml
     binary_status: NOT_MATERIALIZED
     official_public_route_status: NOT_IDENTIFIED_2026_08_08
+    corroboration_checks:
+      - act: PCR/DA/2018/165
+        result: NOT_OBSERVED
+      - act: PCR/DA/2017/121
+        result: NOT_OBSERVED
     note: >-
       L'article 92 de l'Instruction 66 constitue la preuve officielle de son abrogation.
       Aucun contenu, date ou effet modificatif détaillé n'est promu sans source officielle.
@@ -77,11 +99,13 @@ crosscheck_results:
 
   - seq: 3
     reference: "Instruction n°45/2011"
-    result: TWO_DISTINCT_OFFICIAL_ACTS_REFERENCE_AND_TITLE_CORROBORATED
+    result: MULTIPLE_OFFICIAL_ACTS_REFERENCE_AND_TITLE_CORROBORATED
     source_record: regulatory/sources/INSTRUCTION_45_CREPMF_2011.yaml
     own_binary_status: NOT_MATERIALIZED
     own_official_public_route_status: NOT_IDENTIFIED_2026_08_08
-    corroborating_act: regulatory/review-evidence/INST066_HISTORICAL_CROSSCHECK/corroborating/DECISION_PCR_DA_2018_165_NSIA_FONDS_DIVERSIFIE.pdf
+    corroborating_acts:
+      - regulatory/review-evidence/INST066_HISTORICAL_CROSSCHECK/corroborating/DECISION_PCR_DA_2018_165_NSIA_FONDS_DIVERSIFIE.pdf
+      - regulatory/review-evidence/INST066_HISTORICAL_CROSSCHECK/corroborating/DECISION_PCR_DA_2017_121_FCP_LIQUIDITE_OPTIMUM.pdf
     prohibited_promotions:
       - ACT_DATE_FROM_THIRD_PARTY_SOURCE
       - EFFECTIVE_DATE_WITHOUT_OWN_OFFICIAL_ACT
@@ -89,11 +113,13 @@ crosscheck_results:
 
   - seq: 4
     reference: "Instruction n°24/99"
-    result: TWO_DISTINCT_OFFICIAL_ACTS_REFERENCE_AND_TITLE_CORROBORATED
+    result: MULTIPLE_OFFICIAL_ACTS_REFERENCE_AND_TITLE_CORROBORATED
     source_record: regulatory/sources/INSTRUCTION_24_CREPMF_1999.yaml
     own_binary_status: NOT_MATERIALIZED
     own_official_public_route_status: NOT_IDENTIFIED_2026_08_08
-    corroborating_act: regulatory/review-evidence/INST066_HISTORICAL_CROSSCHECK/corroborating/DECISION_PCR_DA_2018_165_NSIA_FONDS_DIVERSIFIE.pdf
+    corroborating_acts:
+      - regulatory/review-evidence/INST066_HISTORICAL_CROSSCHECK/corroborating/DECISION_PCR_DA_2018_165_NSIA_FONDS_DIVERSIFIE.pdf
+      - regulatory/review-evidence/INST066_HISTORICAL_CROSSCHECK/corroborating/DECISION_PCR_DA_2017_121_FCP_LIQUIDITE_OPTIMUM.pdf
     prohibited_promotions:
       - ACT_DATE_FROM_THIRD_PARTY_SOURCE
       - EFFECTIVE_DATE_WITHOUT_OWN_OFFICIAL_ACT
@@ -105,6 +131,12 @@ crosscheck_results:
     source_record: regulatory/sources/INSTRUCTION_23_CREPMF_1999.yaml
     binary_status: NOT_MATERIALIZED
     official_public_route_status: NOT_IDENTIFIED_2026_08_08
+    corroboration_checks:
+      - act: PCR/DA/2018/165
+        result: NOT_OBSERVED
+      - act: PCR/DA/2017/121
+        result: NOT_OBSERVED
+    corroboration_search_status: CURRENT_CHECKED_OFFICIAL_ACTS_EXHAUSTED_WITHOUT_SECOND_REFERENCE
 
   - seq: 6
     reference: "Instruction n°22/99"
@@ -112,6 +144,11 @@ crosscheck_results:
     source_record: regulatory/sources/INSTRUCTION_22_CREPMF_1999.yaml
     binary_status: NOT_MATERIALIZED
     official_public_route_status: NOT_IDENTIFIED_2026_08_08
+    corroboration_checks:
+      - act: PCR/DA/2018/165
+        result: NOT_OBSERVED
+      - act: PCR/DA/2017/121
+        result: NOT_OBSERVED
 
   - seq: 7
     reference: "Instruction n°21/99"
@@ -119,6 +156,11 @@ crosscheck_results:
     source_record: regulatory/sources/INSTRUCTION_21_CREPMF_1999.yaml
     binary_status: NOT_MATERIALIZED
     official_public_route_status: NOT_IDENTIFIED_2026_08_08
+    corroboration_checks:
+      - act: PCR/DA/2018/165
+        result: NOT_OBSERVED
+      - act: PCR/DA/2017/121
+        result: NOT_OBSERVED
 
 progress:
   total_historical_references: 7
@@ -127,8 +169,9 @@ progress:
   reference_and_title_officially_corroborated_without_own_binary: 2
   article_92_official_source_only: 4
   own_historical_binaries_still_missing: 6
+  official_corroborating_acts_materialized: 2
   source_record_coverage: COMPLETE_7_OF_7
-  crosscheck_status: IN_PROGRESS_7_SOURCE_RECORDS_1_BINARY_2_CORROBORATED_4_ARTICLE92_ONLY
+  crosscheck_status: IN_PROGRESS_7_SOURCE_RECORDS_1_BINARY_2_MULTI_OFFICIAL_CORROBORATED_4_ARTICLE92_ONLY
 
 third_party_source_policy:
   normative_use_allowed: false
@@ -146,9 +189,9 @@ safety:
   ready_for_submission_must_remain_false: true
 
 next_actions:
-  - LOCATE_OWN_OFFICIAL_BINARY_INSTRUCTION_23_1999
   - LOCATE_OWN_OFFICIAL_BINARY_INSTRUCTION_22_1999
   - LOCATE_OWN_OFFICIAL_BINARY_INSTRUCTION_21_1999
+  - LOCATE_OWN_OFFICIAL_BINARY_INSTRUCTION_23_1999_IF_NEW_ARCHIVE_ROUTE_APPEARS
   - LOCATE_OWN_OFFICIAL_BINARY_INSTRUCTION_45_2011
   - LOCATE_OWN_OFFICIAL_BINARY_INSTRUCTION_24_1999
   - LOCATE_OFFICIAL_DECISION_2012_119
