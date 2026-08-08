@@ -1,0 +1,57 @@
+schema_version: INST066_CONFIRMED_INSTRUCTION_DEPENDENCY_RESOLUTIONS_V0_1
+source_instruction: INSTRUCTION_66_CREPMF_2021
+source_instruction_sha256: 3f964f2f6ab9ce9eb16912ccda13f34b5023a188dfb18fcba7065590c770d396
+status: DOCUMENTARY_RESOLUTIONS_CONFIRMED_HUMAN_LEGAL_AND_COMPLIANCE_REVIEW_PENDING
+resolution_count: 3
+resolutions:
+  - dependency_id: INST066_ART005_DEP_INST_01
+    article_number: 5
+    resolved_source_id: INSTRUCTION_64_CREPMF_2020
+    official_reference: "Instruction n°64/CREPMF/2020"
+    resolution_basis: EXPLICIT_SGO_SCOPE_AND_MAXIMUM_DECISION_DELAY
+    evidence_file: regulatory/review-evidence/INST066_EXTERNAL_DEPENDENCIES/INSTRUCTION_64_CONFIRMED_DOCUMENTARY_RESOLUTIONS_2026-08-08.yaml
+    documentary_status: RESOLVED
+    current_legal_status: NON_ABROGE_AS_LISTED_ON_2026_08_08_PENDING_FULL_LEGAL_REVIEW
+    legal_review_status: PENDING
+    compliance_review_status: PENDING
+    activation: FORBIDDEN
+
+  - dependency_id: INST066_ART005_DEP_INST_02
+    article_number: 5
+    resolved_source_id: INSTRUCTION_64_CREPMF_2020
+    official_reference: "Instruction n°64/CREPMF/2020"
+    resolution_basis: EXACT_FOUR_STAGE_APPROVAL_PROCESS_SCOPE
+    evidence_file: regulatory/review-evidence/INST066_EXTERNAL_DEPENDENCIES/INSTRUCTION_64_CONFIRMED_DOCUMENTARY_RESOLUTIONS_2026-08-08.yaml
+    documentary_status: RESOLVED
+    current_legal_status: NON_ABROGE_AS_LISTED_ON_2026_08_08_PENDING_FULL_LEGAL_REVIEW
+    legal_review_status: PENDING
+    compliance_review_status: PENDING
+    activation: FORBIDDEN
+
+  - dependency_id: INST066_ART017_DEP_INST_02
+    article_number: 17
+    resolved_source_id: INSTRUCTION_64_CREPMF_2020
+    official_reference: "Instruction n°64/CREPMF/2020"
+    resolution_basis: EXACT_COMPLEMENT_DEADLINE_AND_CLOSURE_MECHANISM
+    evidence_file: regulatory/review-evidence/INST066_EXTERNAL_DEPENDENCIES/INSTRUCTION_64_CONFIRMED_DOCUMENTARY_RESOLUTIONS_2026-08-08.yaml
+    documentary_status: RESOLVED
+    current_legal_status: NON_ABROGE_AS_LISTED_ON_2026_08_08_PENDING_FULL_LEGAL_REVIEW
+    legal_review_status: PENDING
+    compliance_review_status: PENDING
+    activation: FORBIDDEN
+explicitly_open_instruction_dependencies:
+  - dependency_id: INST066_ART005_DEP_INST_03
+    reason: NO_FEE_PAYMENT_DEADLINE_FOUND_IN_INSTRUCTION64
+  - dependency_id: INST066_ART017_DEP_INST_01
+    reason: SPECIFIC_POST_DECISION_NOTIFICATION_DELAY_NOT_EXACTLY_IDENTIFIED
+  - dependency_id: INST066_ART021_DEP_INST_01
+    reason: VALUE_CALCULATION_CONTROL_PROCEDURES_REQUIRE_SEPARATE_INSTRUCTION_IDENTIFICATION
+  - dependency_id: INST066_ART025_DEP_INST_01
+    reason: SOCIETE_D_INVESTISSEMENT_SPECIFIC_SCOPE_REQUIRES_ADDITIONAL_LEGAL_CONFIRMATION
+boundary:
+  documentary_resolution_is_requirement_activation: false
+  automatic_dependency_resolution_allowed: false
+  automatic_requirement_activation_allowed: false
+  human_legal_review_required: true
+  human_compliance_review_required: true
+  ready_for_submission_must_remain_false: true
