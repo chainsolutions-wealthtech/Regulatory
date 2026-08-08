@@ -2,7 +2,7 @@ schema_version: INST066_CONFIRMED_INSTRUCTION_DEPENDENCY_RESOLUTIONS_V0_1
 source_instruction: INSTRUCTION_66_CREPMF_2021
 source_instruction_sha256: 3f964f2f6ab9ce9eb16912ccda13f34b5023a188dfb18fcba7065590c770d396
 status: DOCUMENTARY_RESOLUTIONS_CONFIRMED_HUMAN_LEGAL_AND_COMPLIANCE_REVIEW_PENDING
-resolution_count: 3
+resolution_count: 4
 resolutions:
   - dependency_id: INST066_ART005_DEP_INST_01
     article_number: 5
@@ -24,6 +24,18 @@ resolutions:
     evidence_file: regulatory/review-evidence/INST066_EXTERNAL_DEPENDENCIES/INSTRUCTION_64_CONFIRMED_DOCUMENTARY_RESOLUTIONS_2026-08-08.yaml
     documentary_status: RESOLVED
     current_legal_status: NON_ABROGE_AS_LISTED_ON_2026_08_08_PENDING_FULL_LEGAL_REVIEW
+    legal_review_status: PENDING
+    compliance_review_status: PENDING
+    activation: FORBIDDEN
+
+  - dependency_id: INST066_ART011_DEP_NAMED_INST_01
+    article_number: 11
+    resolved_source_id: INSTRUCTION_61_CREPMF_2020
+    official_reference: "Instruction n°61/CREPMF/2020"
+    resolution_basis: EXPLICIT_NUMBER_TITLE_AND_INTERNAL_CONTROL_SCOPE_IN_INSTRUCTION_66
+    evidence_file: regulatory/sources/INSTRUCTION_61_CREPMF_2020.yaml
+    documentary_status: RESOLVED
+    current_legal_status: PENDING_COMPLETE_CURRENT_LEGAL_STATUS_REVIEW
     legal_review_status: PENDING
     compliance_review_status: PENDING
     activation: FORBIDDEN
