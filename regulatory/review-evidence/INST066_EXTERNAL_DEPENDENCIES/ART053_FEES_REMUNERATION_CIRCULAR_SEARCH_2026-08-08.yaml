@@ -1,0 +1,64 @@
+evidence_id: INST066_ART053_FEES_REMUNERATION_CIRCULAR_SEARCH_2026_08_08
+review_date: 2026-08-08
+source_id: INSTRUCTION_66_CREPMF_2021
+source_article: 53
+scope: >-
+  Recherche des textes d'application explicitement appelés par l'article 53 de
+  l'Instruction 66 pour les rémunérations, frais et commissions supportés par les
+  OPC et leurs porteurs, ainsi que les modalités ou méthodes de calcul associées.
+
+dependency_groups:
+  - subject: "rémunérations et frais supportés par l'OPC"
+    dependency_kind: COUNCIL_CIRCULAR
+    search_result: OFFICIAL_PUBLIC_REFERENCE_NOT_IDENTIFIED
+    activation: FORBIDDEN_PENDING_OFFICIAL_SOURCE_IDENTIFICATION_AND_REVIEW
+
+  - subject: "commissions, frais ou rémunérations applicables aux opérations et services"
+    dependency_kind: COUNCIL_CIRCULAR
+    search_result: OFFICIAL_PUBLIC_REFERENCE_NOT_IDENTIFIED
+    activation: FORBIDDEN_PENDING_OFFICIAL_SOURCE_IDENTIFICATION_AND_REVIEW
+
+  - subject: "méthode ou modalités de calcul des frais, rémunérations ou commissions"
+    dependency_kind: COUNCIL_CIRCULAR
+    search_result: OFFICIAL_PUBLIC_REFERENCE_NOT_IDENTIFIED
+    activation: FORBIDDEN_PENDING_OFFICIAL_SOURCE_IDENTIFICATION_AND_REVIEW
+
+research_scope:
+  official_domains_checked:
+    - amf-umoa.org
+    - brvm.org
+    - crepmf.org
+  query_concepts:
+    - "rémunérations OPCVM"
+    - "frais OPCVM"
+    - "frais et commissions OPCVM"
+    - "commission de souscription OPCVM"
+    - "commission de rachat OPCVM"
+    - "frais Société de Gestion d'OPC"
+    - "méthode de calcul frais OPCVM"
+    - "circulaire Conseil Régional"
+  result: >-
+    Aucune fiche, référence numérotée ou route binaire institutionnelle publiquement
+    indexée n'a été identifiée permettant de rattacher sans ambiguïté une circulaire
+    précise à chacun des renvois de l'article 53. Les résultats de recherche ne sont
+    pas suffisants pour conclure qu'un instrument unique couvre l'ensemble de ces sujets.
+
+interpretation_boundaries:
+  - DO_NOT_INFER_CIRCULAR_NUMBERS
+  - DO_NOT_ASSUME_ONE_CIRCULAR_COVERS_ALL_ARTICLE_53_REFERENCES
+  - DO_NOT_INFER_FEE_RATES_OR_CAPS
+  - DO_NOT_INFER_SUBSCRIPTION_OR_REDEMPTION_COMMISSION_METHODS
+  - DO_NOT_RECONSTRUCT_REMUNERATION_RULES_FROM_THIRD_PARTY_COPIES
+  - DO_NOT_MARK_DEPENDENCIES_RESOLVED
+
+status:
+  dependency_resolution: OPEN_OFFICIAL_REFERENCES_NOT_IDENTIFIED
+  activation_allowed: false
+  legal_review: PENDING
+  compliance_review: PENDING
+  ready_for_submission: false
+
+resume_conditions:
+  - OFFICIAL_AMF_BRVM_OR_CREPMF_CIRCULAR_REFERENCE_IDENTIFIED
+  - OFFICIAL_CIRCULAR_BINARY_AVAILABLE
+  - DIRECT_REGULATOR_CONFIRMATION_OF_ARTICLE_53_IMPLEMENTING_INSTRUMENTS
