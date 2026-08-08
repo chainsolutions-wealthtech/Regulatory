@@ -10,11 +10,14 @@ source_evidence:
   - regulatory/review-evidence/INST066_LEGAL_METADATA/page-64.png
   - regulatory/review-evidence/INST066_LEGAL_METADATA/page-65.png
 crosscheck_search_evidence: regulatory/review-evidence/INST066_HISTORICAL_CROSSCHECK/OFFICIAL_SOURCE_SEARCH_2026-08-08.yaml
+corroborating_official_evidence:
+  - regulatory/review-evidence/INST066_HISTORICAL_CROSSCHECK/corroborating/DECISION_PCR_DA_2018_165_NSIA_FONDS_DIVERSIFIE.pdf
 reference_count: 7
 crosscheck_progress:
   officially_materialized_count: 1
-  official_public_route_not_identified_count: 6
-  remaining_count: 6
+  official_reference_title_corroborated_count: 2
+  article_92_only_count: 4
+  historical_binaries_still_missing_count: 6
 references:
 - seq: 1
   reference: Décision n°2012-119
@@ -24,6 +27,7 @@ references:
     placement collectif sur le marché financier régional de l'UMOA
   evidence_page: 64
   source_text_status: VISUALLY_OBSERVED
+  evidence_grade: ARTICLE_92_OFFICIAL_SOURCE_ONLY
   historical_registry_status: OFFICIAL_PUBLIC_ROUTE_NOT_IDENTIFIED_2026_08_08
   binary_materialization_status: NOT_MATERIALIZED
 - seq: 2
@@ -34,6 +38,7 @@ references:
     financier régional de l'UMOA
   evidence_page: 64
   source_text_status: VISUALLY_OBSERVED
+  evidence_grade: OFFICIAL_NORMATIVE_BINARY_MATERIALIZED
   historical_registry_status: OFFICIAL_BRVM_SOURCE_MATERIALIZED_HASHED_AND_INDEXED
   source_record: regulatory/sources/INSTRUCTION_46_CREPMF_2011_REVISEE.yaml
   official_publication_page: https://www.brvm.org/fr/instruction-ndeg46-2011-revisee
@@ -55,7 +60,11 @@ references:
     marché financier régional de l'UMOA
   evidence_page: 64
   source_text_status: VISUALLY_OBSERVED
-  historical_registry_status: OFFICIAL_PUBLIC_ROUTE_NOT_IDENTIFIED_2026_08_08
+  evidence_grade: TWO_DISTINCT_OFFICIAL_ACTS_REFERENCE_AND_TITLE_CORROBORATED
+  historical_registry_status: OFFICIAL_REFERENCE_AND_TITLE_CORROBORATED_BINARY_NOT_MATERIALIZED
+  source_record: regulatory/sources/INSTRUCTION_45_CREPMF_2011.yaml
+  corroborating_act: regulatory/review-evidence/INST066_HISTORICAL_CROSSCHECK/corroborating/DECISION_PCR_DA_2018_165_NSIA_FONDS_DIVERSIFIE.pdf
+  corroborating_act_sha256: 282b603d99e80699203c4ca75abc683dee8e550f2a8f6f79eccd7e937b0c7337
   binary_materialization_status: NOT_MATERIALIZED
 - seq: 4
   reference: Instruction n°24/99
@@ -64,7 +73,11 @@ references:
     Placement Collectif en Valeurs Mobilières
   evidence_page: 64
   source_text_status: VISUALLY_OBSERVED
-  historical_registry_status: OFFICIAL_PUBLIC_ROUTE_NOT_IDENTIFIED_2026_08_08
+  evidence_grade: TWO_DISTINCT_OFFICIAL_ACTS_REFERENCE_AND_TITLE_CORROBORATED
+  historical_registry_status: OFFICIAL_REFERENCE_AND_TITLE_CORROBORATED_BINARY_NOT_MATERIALIZED
+  source_record: regulatory/sources/INSTRUCTION_24_CREPMF_1999.yaml
+  corroborating_act: regulatory/review-evidence/INST066_HISTORICAL_CROSSCHECK/corroborating/DECISION_PCR_DA_2018_165_NSIA_FONDS_DIVERSIFIE.pdf
+  corroborating_act_sha256: 282b603d99e80699203c4ca75abc683dee8e550f2a8f6f79eccd7e937b0c7337
   binary_materialization_status: NOT_MATERIALIZED
 - seq: 5
   reference: Instruction n°23/99
@@ -73,6 +86,7 @@ references:
     Placement Collectif en Valeurs Mobilières
   evidence_page: 64
   source_text_status: VISUALLY_OBSERVED
+  evidence_grade: ARTICLE_92_OFFICIAL_SOURCE_ONLY
   historical_registry_status: OFFICIAL_PUBLIC_ROUTE_NOT_IDENTIFIED_2026_08_08
   binary_materialization_status: NOT_MATERIALIZED
 - seq: 6
@@ -82,6 +96,7 @@ references:
     Collectif en Valeurs Mobilières et à l'information du public
   evidence_page: 65
   source_text_status: VISUALLY_OBSERVED
+  evidence_grade: ARTICLE_92_OFFICIAL_SOURCE_ONLY
   historical_registry_status: OFFICIAL_PUBLIC_ROUTE_NOT_IDENTIFIED_2026_08_08
   binary_materialization_status: NOT_MATERIALIZED
 - seq: 7
@@ -91,12 +106,13 @@ references:
     Collectif en Valeurs Mobilières
   evidence_page: 65
   source_text_status: VISUALLY_OBSERVED
+  evidence_grade: ARTICLE_92_OFFICIAL_SOURCE_ONLY
   historical_registry_status: OFFICIAL_PUBLIC_ROUTE_NOT_IDENTIFIED_2026_08_08
   binary_materialization_status: NOT_MATERIALIZED
 review_boundaries:
   source_text_observation_complete: true
   historical_registry_crosscheck_complete: false
-  historical_registry_crosscheck_progress: 1_OF_7_MATERIALIZED
+  historical_registry_crosscheck_progress: 1_BINARY_MATERIALIZED_2_OFFICIALLY_CORROBORATED_4_ARTICLE92_ONLY
   legal_review_status: PENDING
   compliance_review_status: PENDING
   amendments_rectifications_inventory_status: TO_COMPLETE
