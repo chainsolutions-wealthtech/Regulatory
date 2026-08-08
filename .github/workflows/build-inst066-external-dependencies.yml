@@ -1,0 +1,93 @@
+name: Build INST066 External Dependencies
+
+on:
+  push:
+    branches:
+      - main
+    paths:
+      - .github/workflows/build-inst066-external-dependencies.yml
+      - scripts/build_inst066_external_implementing_texts_inventory.py
+      - regulatory/requirements/INST066_ARTICLE_BLOCKS_V0_1.json
+      - regulatory/sources/INSTRUCTION_66_CREPMF_2021.yaml
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: inst066-external-dependencies-main
+  cancel-in-progress: true
+
+jobs:
+  derive-and-validate:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Derive explicit external implementing-text references
+        run: python3 scripts/build_inst066_external_implementing_texts_inventory.py
+
+      - name: Validate dependency inventory boundaries
+        run: |
+          python3 - <<'PY'
+          import json
+          from pathlib import Path
+
+          inventory = json.loads(Path(
+              'regulatory/registries/INST066_EXTERNAL_IMPLEMENTING_TEXTS_INVENTORY_V0_1.json'
+          ).read_text(encoding='utf-8'))
+          validation = json.loads(Path(
+              'regulatory/validation/INST066_EXTERNAL_IMPLEMENTING_TEXTS_VALIDATION_V0_1.json'
+          ).read_text(encoding='utf-8'))
+
+          assert validation['status'] == 'PASS', validation
+          assert inventory['sourceId'] == 'INSTRUCTION_66_CREPMF_2021'
+          assert inventory['sourceArticleCount'] == 92
+          assert inventory['summary']['dependencyOccurrenceCount'] > 0
+          assert inventory['summary']['unresolvedReferenceCount'] > 0
+          assert inventory['summary']['countsByKind']['COUNCIL_CIRCULAR'] > 0
+          assert inventory['summary']['countsByKind']['SPECIFIC_ACCOUNTING_REGULATION'] > 0
+          assert inventory['summary']['countsByKind']['COUNCIL_INSTRUCTION'] > 0
+          assert inventory['summary']['countsByKind']['EXPLICIT_NAMED_INSTRUCTION_58'] > 0
+          assert inventory['safety']['missingReferenceInferenceAllowed'] is False
+          assert inventory['safety']['automaticRuleReconstructionAllowed'] is False
+          assert inventory['safety']['automaticRequirementActivationAllowed'] is False
+          assert inventory['safety']['humanLegalReviewRequired'] is True
+          assert inventory['safety']['humanComplianceReviewRequired'] is True
+          assert inventory['safety']['readyForSubmissionMustRemainFalse'] is True
+          for dep in inventory['dependencies']:
+              if dep['referenceStatus'] == 'REFERENCE_NOT_YET_IDENTIFIED':
+                  assert dep['activation'] == 'FORBIDDEN_PENDING_OFFICIAL_SOURCE_IDENTIFICATION_AND_REVIEW'
+              else:
+                  assert dep['resolvedSourceId'] == 'INSTRUCTION_58_CREPMF_2019'
+          PY
+
+      - name: Upload dependency inventory
+        uses: actions/upload-artifact@v4
+        with:
+          name: inst066-external-implementing-texts-inventory
+          retention-days: 30
+          if-no-files-found: error
+          path: |
+            regulatory/registries/INST066_EXTERNAL_IMPLEMENTING_TEXTS_INVENTORY_V0_1.json
+            regulatory/validation/INST066_EXTERNAL_IMPLEMENTING_TEXTS_VALIDATION_V0_1.json
+
+      - name: Commit deterministic dependency inventory
+        if: github.actor != 'github-actions[bot]'
+        run: |
+          git config user.name 'regulatory-source-bot'
+          git config user.email 'regulatory-source-bot@users.noreply.github.com'
+          git add \
+            regulatory/registries/INST066_EXTERNAL_IMPLEMENTING_TEXTS_INVENTORY_V0_1.json \
+            regulatory/validation/INST066_EXTERNAL_IMPLEMENTING_TEXTS_VALIDATION_V0_1.json
+          if git diff --cached --quiet; then
+            echo 'No external dependency inventory changes to commit.'
+          else
+            git commit -m 'regulatory: derive Instruction 66 external dependencies'
+            git pull --rebase origin main
+            git push origin HEAD:main
+          fi
