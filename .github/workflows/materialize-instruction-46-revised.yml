@@ -7,6 +7,7 @@ on:
     paths:
       - .github/workflows/materialize-instruction-46-revised.yml
       - scripts/materialize_instruction_46_revised.py
+      - scripts/stabilize_instruction_46_materialization_metadata.py
       - scripts/enrich_instruction_46_revised_legal_metadata.py
       - scripts/enrich_instruction_46_revised_legal_metadata_v2.py
       - regulatory/sources/INSTRUCTION_46_CREPMF_2011_REVISEE.yaml
@@ -40,6 +41,9 @@ jobs:
 
       - name: Download hash and extract historical official PDF
         run: python3 scripts/materialize_instruction_46_revised.py
+
+      - name: Preserve first retrieval timestamp for identical binary
+        run: python3 scripts/stabilize_instruction_46_materialization_metadata.py
 
       - name: Curate legal metadata, article index and safety boundaries
         run: python3 scripts/enrich_instruction_46_revised_legal_metadata_v2.py
@@ -105,6 +109,13 @@ jobs:
           assert 'human_compliance_review_required: true' in source
           PY
 
+      - name: Verify rematerialization is stable when the binary is unchanged
+        run: |
+          python3 scripts/materialize_instruction_46_revised.py
+          python3 scripts/stabilize_instruction_46_materialization_metadata.py
+          python3 scripts/enrich_instruction_46_revised_legal_metadata_v2.py
+          git diff --check
+
       - name: Upload historical source evidence
         if: always()
         uses: actions/upload-artifact@v4
@@ -120,7 +131,7 @@ jobs:
           if-no-files-found: warn
           retention-days: 30
 
-      - name: Commit historical official source
+      - name: Commit historical official source only if evidence changed
         run: |
           git config user.name "regulatory-source-bot"
           git config user.email "regulatory-source-bot@users.noreply.github.com"
