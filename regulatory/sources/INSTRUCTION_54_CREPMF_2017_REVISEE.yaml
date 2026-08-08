@@ -1,0 +1,76 @@
+source_id: INSTRUCTION_54_CREPMF_2017_REVISEE
+source_family: INSTRUCTION
+reference: "Instruction n°54/2017 révisée"
+title: "Instruction relative aux modalités de facturation, de paiement et de recouvrement des redevances, frais et commissions perçus par le Conseil Régional de l'Épargne Publique et des Marchés Financiers"
+jurisdiction: UMOA
+authority_at_adoption: CREPMF
+current_authority_name: AMF-UMOA
+document_type: INSTRUCTION
+language: fr
+
+official_api:
+  endpoint: https://www.amf-umoa.org/service/api/elastic/actualite
+  actualite_id: 1000098
+  detail_url: "https://www.amf-umoa.org/service/api/elastic/actualite?id=1000098&langue=fr"
+  document_url_field: "AC-INSTRUCTION-2023-A269C448-2C84-4B37-9256-3EAEF537D482.pdf"
+  title_observed: "Instruction N°54/2017 (REVISEE)"
+  summary_observed: >-
+    RELATIVE AUX MODALITÉS DE FACTURATION, DE PAIEMENT ET DE RECOUVREMENT DES
+    REDEVANCES, FRAIS ET COMMISSIONS PERÇUS PAR LE CONSEIL RÉGIONAL DE L’ÉPARGNE
+    PUBLIQUE ET DES MARCHÉS FINANCIERS
+  portal_date_observed: 2023-08-24
+  portal_date_is_adoption_or_effective_date: false
+  observed_on: 2026-08-08
+  route_status: OFFICIAL_DETAIL_ROUTE_IDENTIFIED
+
+source_integrity:
+  official_binary_transport: AMF_UMOA_DETAIL_API_DOC_EXPECTED
+  repository_copy: null
+  sha256: null
+  byte_size: null
+  page_count: null
+  copy_status: OFFICIAL_ROUTE_IDENTIFIED_MATERIALIZATION_BLOCKED_BY_GITHUB_ACTIONS_BILLING
+
+inst066_candidate_relationships:
+  - dependency_id: INST066_ART005_DEP_INST_03
+    inst066_subject: "délais de règlement des frais d'agrément après agrément de la Société de Gestion d'OPC"
+    rationale: >-
+      L'objet officiel de l'Instruction 54/2017 révisée porte précisément sur les
+      modalités de facturation, paiement et recouvrement des redevances, frais et
+      commissions perçus par le Conseil Régional. Cette proximité en fait le candidat
+      prioritaire pour le délai de règlement visé par l'article 5 de l'Instruction 66.
+    match_status: STRONG_TITLE_SCOPE_CANDIDATE_OWN_BINARY_REVIEW_REQUIRED
+    resolved: false
+
+related_tariff_source_candidate:
+  reference: "Décision n° CM/13/12/2011"
+  title: "Décision portant fixation des tarifs du Conseil Régional de l'Épargne Publique et des Marchés Financiers"
+  relationship_to_inst066_article5: >-
+    L'article 5 de l'Instruction 66 distingue les montants des frais, précisés dans
+    une Décision du Conseil des Ministres, et leurs délais de règlement, fixés par
+    une Instruction du Conseil Régional. La Décision 2011 est donc une pièce
+    complémentaire candidate pour les montants, sans préjuger de sa version courante.
+  relationship_status: TO_MATERIALIZE_AND_COMPARE
+
+legal_metadata:
+  act_date: PENDING_OFFICIAL_BINARY_REVIEW
+  effective_from: PENDING_OFFICIAL_BINARY_REVIEW
+  current_legal_status: PENDING_DIRECT_BINARY_AND_LEGAL_REVIEW
+  amendments_and_rectifications: TO_COMPLETE
+
+next_steps:
+  - MATERIALIZE_DETAIL_API_BINARY_AFTER_GITHUB_ACTIONS_RECOVERY
+  - SEARCH_TEXT_FOR_AGREMENT_AND_SPECIFIC_PAYMENT_DEADLINES
+  - IDENTIFY_EFFECTIVE_DATE_AND_REVISION_CLAUSES
+  - MATERIALIZE_AND_COMPARE_CM_13_12_2011_TARIFF_DECISION
+  - HUMAN_LEGAL_AND_COMPLIANCE_REVIEW
+
+safety:
+  title_match_is_resolution: false
+  candidate_match_is_resolution: false
+  automatic_dependency_resolution_allowed: false
+  automatic_requirement_activation_allowed: false
+  automatic_fee_amount_activation_allowed: false
+  human_legal_review_required: true
+  human_compliance_review_required: true
+  ready_for_submission_must_remain_false: true
