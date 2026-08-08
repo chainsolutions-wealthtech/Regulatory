@@ -1,0 +1,47 @@
+name: Build AMF-UMOA 2022 Circular Metadata Catalog
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'scripts/build_amf_umoa_2022_circular_metadata_catalog.py'
+      - '.github/workflows/build-amf-umoa-2022-circular-metadata-catalog.yml'
+      - 'regulatory/registries/AMF_UMOA_2022_CIRCULAR_API_REGISTRY_V0_1.json'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - name: Build compact official metadata catalog
+        run: python3 scripts/build_amf_umoa_2022_circular_metadata_catalog.py
+      - name: Validate compact metadata catalog
+        run: |
+          python3 - <<'PY'
+          import json
+          from pathlib import Path
+          c=json.loads(Path('regulatory/registries/AMF_UMOA_2022_CIRCULAR_METADATA_CATALOG_V0_1.json').read_text())
+          v=json.loads(Path('regulatory/validation/AMF_UMOA_2022_CIRCULAR_METADATA_CATALOG_VALIDATION_V0_1.json').read_text())
+          assert v['result']=='PASS'
+          assert c['entryCount']==16
+          assert [e['number'] for e in c['entries']]==list(range(1,17))
+          assert all('doc' not in e['fields'] for e in c['entries'])
+          assert c['boundary']['automaticDependencyResolutionAllowed'] is False
+          print('AMF-UMOA 2022 compact metadata catalog: PASS')
+          PY
+      - name: Commit compact catalog
+        run: |
+          if git status --porcelain -- regulatory/registries/AMF_UMOA_2022_CIRCULAR_METADATA_CATALOG_V0_1.json regulatory/validation/AMF_UMOA_2022_CIRCULAR_METADATA_CATALOG_VALIDATION_V0_1.json | grep -q .; then
+            git config user.name 'github-actions[bot]'
+            git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+            git add regulatory/registries/AMF_UMOA_2022_CIRCULAR_METADATA_CATALOG_V0_1.json regulatory/validation/AMF_UMOA_2022_CIRCULAR_METADATA_CATALOG_VALIDATION_V0_1.json
+            git commit -m 'regulatory: build AMF-UMOA 2022 circular metadata catalog'
+            git pull --rebase origin main
+            git push origin HEAD:main
+          fi
