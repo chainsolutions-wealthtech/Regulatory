@@ -1,0 +1,39 @@
+source_id: CIRCULAIRE_04_CREPMF_2022
+source_type: CIRCULAR
+authority: CREPMF_AMF_UMOA
+reference: "Circulaire n°04/CREPMF/2022"
+title: "Relative au contrat et missions du Dépositaire"
+jurisdiction: UMOA
+source_origin:
+  authority_api: AMF_UMOA
+  actualite_id: 1000132
+  binary_identity: API_OBJECT_REFERENCE_MATCH_AND_BASE64_PDF_MAGIC_CONFIRMED
+materialization:
+  pdf: regulatory/sources/amf-umoa-2022-circulars/CIRCULAIRE_04_AMF_UMOA_2022.pdf
+  text: regulatory/sources/amf-umoa-2022-circulars/CIRCULAIRE_04_AMF_UMOA_2022.txt
+  metadata: regulatory/sources/amf-umoa-2022-circulars/CIRCULAIRE_04_AMF_UMOA_2022.metadata.json
+  sha256: b82101842dde8782b7e44f31f53cf274f31401e5bf8b1b0d56583094c58c4d30
+  byte_size: 1519987
+  page_count: 17
+  extraction_method: OCR_TESSERACT_FRA_FALLBACK
+legal_metadata:
+  current_legal_status: TO_VERIFY
+instruction_66_relationships:
+  - dependency_id: INST066_ART021_DEP_CIRC_02
+    article_number: 21
+    relationship: EXPLICIT_IMPLEMENTING_CIRCULAR
+    documentary_dependency_resolution: CONFIRMED
+  evidence: >-
+    The circular expressly defines Instruction as Instruction n°66/CREPMF/2021,
+    specifies the details of the depositary contract and detailed execution of the
+    depositary duties referred to by Articles 20 and 21. The separate Article 21
+    annual-report dependency is intentionally not resolved by this source record
+    until its exact reporting scope is confirmed.
+review:
+  legal_review_required: true
+  legal_review_status: PENDING
+  compliance_review_required: true
+  compliance_review_status: PENDING
+safety:
+  automatic_requirement_activation_allowed: false
+  ready_for_submission_must_remain_false: true
