@@ -2,84 +2,49 @@ export type ProjectStatus =
   | "DRAFT"
   | "QUESTIONNAIRE_IN_PROGRESS"
   | "PRE_COMPLIANCE_REVIEW"
-  | "COMPLIANCE_REVIEW"
-  | "LEGAL_REVIEW"
-  | "READY_FOR_INTERNAL_APPROVAL";
+  | "INTERNAL_REVIEW"
+  | "APPROVED_INTERNAL";
 
-export type CoverageStatus =
-  | "IN_PROSPECTUS"
-  | "IN_ATTACHED_REGULATION"
-  | "IN_ATTACHED_CONSTITUTIVE_DOCUMENT"
-  | "NOT_APPLICABLE"
-  | "PENDING_REVIEW"
-  | "MISSING"
-  | "SYSTEM_METADATA";
-
-export type StructuredCollectionQuestionType =
-  | "SHARE_CLASS_COLLECTION"
-  | "ASSET_RANGE_COLLECTION"
-  | "FEE_COLLECTION"
-  | "VALUATION_METHOD_COLLECTION"
-  | "PARTY_COLLECTION"
-  | "RISK_COLLECTION"
-  | "COUNTRY_ARRANGEMENT_COLLECTION"
-  | "EVIDENCE_COLLECTION";
-
-export type QuestionType =
-  | "TEXT"
-  | "TEXTAREA"
-  | "BOOLEAN"
-  | "SELECT"
-  | "MULTISELECT"
-  | "DATE"
-  | "TIME"
-  | "PERCENTAGE"
-  | "AMOUNT"
-  | "COUNTRY"
-  | "FILE"
-  | StructuredCollectionQuestionType;
-
-export type QuestionSourceKind =
-  | "REGULATORY_MATRIX"
-  | "APPLICATION"
-  | "PENDING_REGULATORY_MAPPING";
-
-export type QuestionOption = {
-  value: string;
-  label: string;
-  description?: string;
-};
-
-export type DisplayCondition = {
-  questionId: string;
-  operator: "EQUALS" | "NOT_EQUALS" | "INCLUDES";
-  value: string | boolean;
-};
-
-export type ReviewStatus = "UNREVIEWED" | "PENDING_REVIEW" | "CONFIRMED";
 export type DataVerificationStatus =
-  | "USER_PROVIDED_PENDING_REVIEW"
+  | "UNVERIFIED"
   | "PREFILLED_PENDING_CONFIRMATION"
   | "VERIFIED";
 
+export type ReviewStatus = "UNREVIEWED" | "PENDING_REVIEW" | "CONFIRMED" | "REJECTED";
+
+export type QuestionType =
+  | "text"
+  | "textarea"
+  | "date"
+  | "boolean"
+  | "select"
+  | "multi-select"
+  | "number"
+  | "structured-collection";
+
 export type ShareClassInput = {
   class_id: string;
+  name: string;
   currency: string;
-  income_policy: "CAPITALIZED" | "DISTRIBUTED";
-  initial_nav: number;
-  initial_subscription_minimum: {
-    display: string;
-  };
-  decimalization: {
-    display: string;
-  };
+  income_policy: "CAPITALISATION" | "DISTRIBUTION" | "MIXED";
+  investor_category: string;
+  initial_price?: number;
+  minimum_subscription?: number;
+  subscription_cutoff?: string;
+  redemption_cutoff?: string;
+  settlement_days?: number;
+  entry_fee_max_percent?: number;
+  exit_fee_max_percent?: number;
+  management_fee_max_percent?: number;
+  performance_fee_rule?: string;
+  review_status: ReviewStatus;
 };
 
 export type AssetClassRangeInput = {
   range_id: string;
   asset_class: string;
   minimum_percent: number;
-  target_percent: number;
+  target_percent?: number;
   maximum_percent: number;
   review_status: ReviewStatus;
 };
@@ -90,23 +55,21 @@ export type FeeInput = {
     | "SUBSCRIPTION"
     | "REDEMPTION"
     | "MANAGEMENT"
+    | "PERFORMANCE"
     | "DEPOSITARY"
     | "AUDIT"
-    | "DISTRIBUTION"
     | "TRANSACTION"
     | "OTHER";
-  label: string;
-  payer_type: "HOLDER" | "FUND_ASSETS";
-  beneficiary: string;
-  basis: string;
-  rate_type: "PERCENTAGE" | "PER_MILLE" | "FIXED" | "NONE" | "OTHER";
+  level: "FUND" | "SHARE_CLASS";
+  share_class_id?: string;
   rate_percent?: number;
-  rate_per_mille?: number;
   amount?: number;
   currency?: string;
-  frequency: string;
-  cap?: string;
-  tax_display?: string;
+  calculation_basis?: string;
+  accrual_frequency?: string;
+  payment_frequency?: string;
+  recipient?: string;
+  description?: string;
   review_status: ReviewStatus;
 };
 
@@ -115,9 +78,9 @@ export type ValuationMethodInput = {
   asset_class: string;
   primary_method: string;
   price_source: string;
-  fallback_method: string;
+  fallback_method?: string;
   frequency: string;
-  exception_process: string;
+  exception_process?: string;
   review_status: ReviewStatus;
 };
 
@@ -218,53 +181,36 @@ export type ProspectusQuestion = {
   example?: string;
   type: QuestionType;
   required: boolean;
-  interactive?: boolean;
-  fieldPath: string;
-  canonicalFieldPaths?: string[];
+  interactive: boolean;
+  options?: Array<{ value: string; label: string }>;
+  canonicalFieldPaths: string[];
   requirementIds: string[];
-  options?: QuestionOption[];
-  displayCondition?: DisplayCondition;
   reviewRoles: string[];
-  sourceKind: QuestionSourceKind;
-  sourceMatrix?: string;
-  sourceReference?: string;
-  originalQuestionType?: string;
-  implementationStatus?: string;
-  applicability?: string;
-  effects?: string[];
-  controls?: string[];
-  evidenceTypes?: string[];
-  clauseGroupId?: string;
-  outputSectionId?: string;
-  uiFallback?: boolean;
+  displayCondition?: {
+    questionId: string;
+    equals?: unknown;
+    includes?: unknown;
+  };
+  structuredCollection?: {
+    collectionType:
+      | "SHARE_CLASSES"
+      | "ASSET_CLASS_RANGES"
+      | "FEES"
+      | "VALUATION_METHODS"
+      | "PARTIES"
+      | "RISKS"
+      | "COUNTRY_ARRANGEMENTS"
+      | "EVIDENCE";
+    minimumRows?: number;
+  };
 };
 
 export type QuestionGroup = {
   id: string;
-  sequence: number;
   title: string;
   description: string;
-  sourceKind?: QuestionSourceKind;
-  regulatoryRequirementCount?: number;
-  interactiveQuestionCount?: number;
-};
-
-export type QuestionGroupWithQuestions = QuestionGroup & {
+  sequence: number;
   questions: ProspectusQuestion[];
-};
-
-export type CatalogMetadata = {
-  schemaVersion: string;
-  rulePack: string;
-  sourceId: string;
-  registryVersion: string;
-  registryStatus: string;
-  scope: string;
-  catalogDigest: string;
-  requirementCount: number;
-  interactiveQuestionCount: number;
-  systemQuestionCount: number;
-  systemMetadataRequirementCount: number;
 };
 
 export type ProjectAnswer = {
@@ -276,15 +222,37 @@ export type ProjectAnswer = {
   reviewStatus: ReviewStatus;
 };
 
-export type CoverageSummary = Record<CoverageStatus, number>;
+export type CoverageStatus =
+  | "IN_PROSPECTUS"
+  | "IN_ATTACHED_REGULATION"
+  | "IN_ATTACHED_CONSTITUTIVE_DOCUMENT"
+  | "NOT_APPLICABLE"
+  | "PENDING_REVIEW"
+  | "MISSING"
+  | "SYSTEM_METADATA";
+
+export type CoverageEntry = {
+  requirementId: string;
+  source: string;
+  status: CoverageStatus;
+  sectionId?: string;
+  justification?: string;
+  reviewedBy?: string;
+  reviewedAt?: string;
+};
+
+export type CoverageSummary = {
+  entries: CoverageEntry[];
+  counts: Record<CoverageStatus, number>;
+};
 
 export type ValidationFinding = {
   id: string;
-  severity: "BLOCKER" | "WARNING" | "INFO";
-  title: string;
+  severity: "INFO" | "WARNING" | "BLOCKER";
   message: string;
-  questionIds: string[];
   remediation: string;
+  questionId?: string;
+  requirementId?: string;
 };
 
 export type CanonicalAnswerRecord = {
@@ -293,9 +261,9 @@ export type CanonicalAnswerRecord = {
   canonicalFieldPaths: string[];
   value: unknown;
   source: ProjectAnswer["source"];
-  reviewStatus: ProjectAnswer["reviewStatus"];
-  sourceKind: QuestionSourceKind;
-  sourceReference?: string;
+  reviewStatus: ReviewStatus;
+  updatedAt: string;
+  updatedBy: string;
 };
 
 export type CanonicalSnapshot = {
@@ -325,6 +293,8 @@ export type GenerationSnapshot = {
   artifactDirectoryPath?: string;
   markdownPath?: string;
   docxPath?: string;
+  pdfPath?: string;
+  reviewPackagePath?: string;
   previewPath?: string;
   canonicalSnapshotPath?: string;
   canonicalDataPath?: string;
@@ -336,6 +306,8 @@ export type GenerationSnapshot = {
   generationManifestPath?: string;
   docxManifestPath?: string;
   docxValidationPath?: string;
+  pdfManifestPath?: string;
+  reviewPackageManifestPath?: string;
   catalogDigest?: string;
   requirementCount?: number;
   questionCount?: number;
