@@ -55,7 +55,7 @@ crosscheck_results:
   - seq: 1
     reference: "Décision n°2012-119"
     result: ARTICLE_92_OFFICIAL_SOURCE_ONLY
-    source_record: null
+    source_record: regulatory/sources/DECISION_CREPMF_2012_119.yaml
     binary_status: NOT_MATERIALIZED
     official_public_route_status: NOT_IDENTIFIED_2026_08_08
     note: >-
@@ -102,31 +102,33 @@ crosscheck_results:
   - seq: 5
     reference: "Instruction n°23/99"
     result: ARTICLE_92_OFFICIAL_SOURCE_ONLY
-    source_record: null
+    source_record: regulatory/sources/INSTRUCTION_23_CREPMF_1999.yaml
     binary_status: NOT_MATERIALIZED
     official_public_route_status: NOT_IDENTIFIED_2026_08_08
 
   - seq: 6
     reference: "Instruction n°22/99"
     result: ARTICLE_92_OFFICIAL_SOURCE_ONLY
-    source_record: null
+    source_record: regulatory/sources/INSTRUCTION_22_CREPMF_1999.yaml
     binary_status: NOT_MATERIALIZED
     official_public_route_status: NOT_IDENTIFIED_2026_08_08
 
   - seq: 7
     reference: "Instruction n°21/99"
     result: ARTICLE_92_OFFICIAL_SOURCE_ONLY
-    source_record: null
+    source_record: regulatory/sources/INSTRUCTION_21_CREPMF_1999.yaml
     binary_status: NOT_MATERIALIZED
     official_public_route_status: NOT_IDENTIFIED_2026_08_08
 
 progress:
   total_historical_references: 7
+  source_records_created: 7
   normative_binaries_materialized: 1
   reference_and_title_officially_corroborated_without_own_binary: 2
   article_92_official_source_only: 4
   own_historical_binaries_still_missing: 6
-  crosscheck_status: IN_PROGRESS_1_BINARY_2_CORROBORATED_4_ARTICLE92_ONLY
+  source_record_coverage: COMPLETE_7_OF_7
+  crosscheck_status: IN_PROGRESS_7_SOURCE_RECORDS_1_BINARY_2_CORROBORATED_4_ARTICLE92_ONLY
 
 third_party_source_policy:
   normative_use_allowed: false
@@ -144,9 +146,11 @@ safety:
   ready_for_submission_must_remain_false: true
 
 next_actions:
+  - LOCATE_OWN_OFFICIAL_BINARY_INSTRUCTION_23_1999
+  - LOCATE_OWN_OFFICIAL_BINARY_INSTRUCTION_22_1999
+  - LOCATE_OWN_OFFICIAL_BINARY_INSTRUCTION_21_1999
   - LOCATE_OWN_OFFICIAL_BINARY_INSTRUCTION_45_2011
   - LOCATE_OWN_OFFICIAL_BINARY_INSTRUCTION_24_1999
   - LOCATE_OFFICIAL_DECISION_2012_119
-  - LOCATE_OFFICIAL_INSTRUCTIONS_21_22_23_1999
   - MATERIALIZE_EACH_OFFICIAL_BINARY_WHEN_IDENTIFIED
   - COMPARE_HISTORICAL_RULES_ONLY_FOR_REGULATORY_MIGRATION_ANALYSIS
