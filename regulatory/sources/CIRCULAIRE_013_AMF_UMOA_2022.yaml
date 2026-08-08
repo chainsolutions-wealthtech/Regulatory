@@ -1,0 +1,48 @@
+source_id: CIRCULAIRE_013_AMF_UMOA_2022
+instrument_type: CIRCULAR
+authority: AMF_UMOA
+reference: "Circulaire n°13/AMF-UMOA/2022"
+title: "Relative aux classes de parts / actions"
+status: OFFICIAL_PAGE_IDENTIFIED_INDIVIDUAL_BINARY_NOT_YET_MATERIALIZED
+
+official_publication:
+  page_url: "https://www.crepmf.org/actuality-details?actualiteId=1000141"
+  page_observed_on: 2026-08-08
+  page_evidence:
+    - "CIRCULAIRE N°013-2022"
+    - "RELATIVE AUX CLASSES DE PARTS / ACTIONS"
+    - "publication page date shown: 12 sept. 2023"
+  note: >-
+    La page institutionnelle AMF-UMOA/CREPMF identifie la circulaire et son objet.
+    La date affichée est une date de publication du site, pas une date d'adoption ou
+    d'effet tant que le binaire propre n'a pas été lu.
+
+inst066_candidate_mapping:
+  - dependency_id: INST066_ART074_DEP_CIRC_01
+    source_context: "classes de parts différentes d'un OPCR"
+    match_level: STRONG_OFFICIAL_TITLE_MATCH_BINARY_COMPARISON_PENDING
+    resolved: false
+  - dependency_id: INST066_ART074_DEP_CIRC_02
+    source_context: "classes de parts ou d'actions différentes d'un OPCVM"
+    match_level: STRONG_OFFICIAL_TITLE_MATCH_BINARY_COMPARISON_PENDING
+    resolved: false
+  - dependency_id: INST066_ART080_DEP_CIRC_01
+    source_context: "classes de parts différentes d'un OPCR à compartiments"
+    match_level: STRONG_OFFICIAL_TITLE_MATCH_BINARY_COMPARISON_PENDING
+    resolved: false
+
+binary:
+  official_binary_url: TO_DISCOVER_FROM_OFFICIAL_PAGE_OR_REPORT
+  repository_copy: null
+  sha256: null
+  byte_size: null
+  page_count: null
+
+safety:
+  official_title_match_is_resolution: false
+  automatic_dependency_resolution_allowed: false
+  automatic_rule_reconstruction_allowed: false
+  automatic_requirement_activation_allowed: false
+  human_legal_review_required: true
+  human_compliance_review_required: true
+  ready_for_submission_must_remain_false: true
