@@ -21,64 +21,73 @@ official_api:
   actualite_id: 1000110
   detail_url: "https://www.amf-umoa.org/service/api/elastic/actualite?id=1000110&langue=fr"
   document_url_field: "AC-INSTRUCTION-2023-4509A4B9-A83F-4EEE-B4D5-BF492750CB30.pdf"
+  api_raw_sha256: 0b2b9b7aec9203d40f628762ab24a792569c353d5c70a76099d384b30b16476f
   title_observed: "Instruction N°64/2020"
-  summary_observed: "INSTRUCTION N° 64 2020 CREPMF RELATIVE AUX CONDITIONS DE TRAITEMENT DES DOSSIERS DE DEMANDE D'AGREMENT OU D'APPROBATION"
   portal_date_observed: 2023-08-24
   portal_date_is_adoption_or_effective_date: false
   observed_on: 2026-08-08
-  acquisition_status: OFFICIAL_DETAIL_ROUTE_IDENTIFIED_BINARY_MATERIALIZATION_IN_PROGRESS
+  acquisition_status: OFFICIAL_DETAIL_API_AND_BINARY_MATERIALIZED
 
 source_integrity:
-  official_binary_transport: AMF_UMOA_DETAIL_API_DOC_BASE64_EXPECTED
+  official_binary_transport: AMF_UMOA_DETAIL_API_DOC_BASE64
   official_detail_api_id: 1000110
-  repository_copy: null
-  sha256: null
-  byte_size: null
-  page_count: null
-  copy_status: OFFICIAL_API_DETAIL_IDENTIFIED_BINARY_MATERIALIZATION_IN_PROGRESS
+  repository_copy: regulatory/sources/amf-umoa-priority-api-documents/INSTRUCTION_64_CREPMF_2020.pdf
+  repository_text: regulatory/sources/amf-umoa-priority-api-documents/INSTRUCTION_64_CREPMF_2020.txt
+  sha256: db5091c4388e5c050c22b028e7494522e36d6b5b041ba265cf96ccedada24469
+  byte_size: 18083424
+  page_count: 97
+  text_extraction_method: PDFTOTEXT
+  useful_text_chars: 92519
+  copy_status: OFFICIAL_BINARY_MATERIALIZED_AND_HASHED
   acquisition_search_evidence: regulatory/review-evidence/INST066_EXTERNAL_DEPENDENCIES/ART005_APPROVAL_PROCESS_DEPENDENCIES_SEARCH_2026-08-08.yaml
-  acquisition_status: PREVIOUS_PUBLIC_ROUTES_NEGATIVE_CURRENT_OFFICIAL_API_ROUTE_NOW_IDENTIFIED
+  acquisition_status: PREVIOUS_PUBLIC_ROUTES_NEGATIVE_CURRENT_OFFICIAL_API_BINARY_NOW_MATERIALIZED
 
 legal_metadata:
-  act_date: PENDING_OFFICIAL_BINARY_REVIEW
-  effective_from: PENDING_OFFICIAL_BINARY_REVIEW
+  deliberation_observed: "41e session extraordinaire du 17 septembre 2020"
+  signed_at: Abidjan
+  act_date: 2020-12-10
+  effective_from: 2021-01-01
+  final_clause:
+    article: 17
+    effect: "abroge toutes dispositions antérieures et contraires"
   amendments_and_rectifications: TO_COMPLETE
-  current_legal_status: NON_ABROGE_AS_LISTED_ON_2026_08_08
+  current_legal_status: NON_ABROGE_AS_LISTED_ON_2026_08_08_PENDING_FULL_LEGAL_REVIEW
   legal_review_status: PENDING
   compliance_review_status: PENDING
   requirement_activation_allowed: false
 
 inst066_candidate_relationships:
-  status: CANDIDATE_MATCH_REQUIRES_OWN_BINARY_COMPARISON
-  rationale: >-
-    L'objet officiel de l'Instruction n°64/2020 correspond aux renvois de
-    l'Instruction n°66/2021 concernant les délais et le traitement des dossiers
-    d'agrément ou d'approbation. Cette proximité d'objet ne suffit pas à résoudre
-    automatiquement les dépendances tant que le texte officiel de l'Instruction 64
-    n'a pas été matérialisé et comparé.
-  candidate_articles:
-    - article: 5
-      subject: "Conditions d'agrément de la Société de Gestion d'OPC"
-      possible_scope: "délai/processus de traitement de la demande"
-    - article: 17
-      subject: "Agrément de l'OPCVM"
-      possible_scope: "délais et clôture du dossier en l'absence de compléments"
+  status: OWN_BINARY_REVIEWED_TARGETED_SCOPE_MATCHES_DOCUMENTED
+  evidence: regulatory/review-evidence/INST066_EXTERNAL_DEPENDENCIES/INSTRUCTION_64_SCOPE_MATCH_2026-08-08.yaml
+  mappings:
+    - dependency_id: INST066_ART005_DEP_INST_01
+      match_status: STRONG_IMPLEMENTING_SCOPE_MATCH_PENDING_LEGAL_REVIEW
+      resolved: false
+    - dependency_id: INST066_ART005_DEP_INST_02
+      match_status: EXACT_SCOPE_MATCH_PENDING_LEGAL_REVIEW
+      resolved: false
+    - dependency_id: INST066_ART005_DEP_INST_03
+      match_status: NO_MATCH_REMAINS_UNRESOLVED
+      resolved: false
+    - dependency_id: INST066_ART017_DEP_INST_01
+      match_status: RELATED_STRONG_SCOPE_NOT_EXACT_NOTIFICATION_DELAY
+      resolved: false
+    - dependency_id: INST066_ART017_DEP_INST_02
+      match_status: STRONG_IMPLEMENTING_SCOPE_MATCH_PENDING_LEGAL_REVIEW
+      resolved: false
   explicit_non_resolution: true
 
 materialization_plan:
-  status: OFFICIAL_DETAIL_API_FOUND_MATERIALIZATION_WORKFLOW_RUNNING
-  workflow: .github/workflows/materialize-amf-umoa-priority-api-documents.yml
+  status: COMPLETE_BINARY_MATERIALIZED_SCOPE_REVIEW_PARTIAL
   next_steps:
-    - DECODE_DETAIL_API_DOC_BASE64
-    - VERIFY_PDF_MAGIC
-    - COMPUTE_SHA256_AND_BYTE_SIZE
-    - VERIFY_PAGE_COUNT
-    - EXTRACT_TEXT_OR_OCR_IF_REQUIRED
-    - COMPARE_SCOPE_TO_INST066_ARTICLES_005_AND_017
-    - REVIEW_AMENDMENTS_AND_CURRENT_STATUS
+    - COMPLETE_LEGAL_REVIEW_OF_TARGETED_SCOPE_MATCHES
+    - SEARCH_SEPARATE_INSTRUCTION_FOR_FEE_PAYMENT_DEADLINE
+    - VERIFY_ANY_AMENDMENTS_OR_RECTIFICATIONS
+    - DO_NOT_ACTIVATE_REQUIREMENTS_UNTIL_HUMAN_REVIEWS
 
 safety:
   candidate_match_is_resolution: false
+  content_match_is_resolution: false
   portal_metadata_is_sole_legal_status_proof: false
   requirement_activation_allowed: false
   automatic_dependency_resolution_allowed: false
@@ -88,7 +97,7 @@ safety:
   human_compliance_review_required: true
 
 notes:
-  - "Le statut NON_ABROGE et l'intitulé sont issus du registre officiel AMF-UMOA contrôlé le 2026-08-08."
-  - "L'API officielle actuelle fournit désormais une route de détail et un identifiant documentaire pour l'Instruction 64/2020."
-  - "La date 2023-08-24 du portail n'est pas promue en date d'adoption ou d'effet."
-  - "Les dépendances INST066 concernées restent non résolues tant que la comparaison du texte propre n'est pas effectuée."
+  - "La date de signature du 10 décembre 2020 et l'entrée en vigueur au 1er janvier 2021 sont lues dans l'article 17 du binaire officiel matérialisé."
+  - "L'article 3 définit quatre étapes : dépôt, analyse de conformité, instruction, décision."
+  - "Les articles 8 et 13 fixent à vingt jours ouvrés les délais de transmission des compléments dans les cas visés et prévoient la clôture."
+  - "Aucune occurrence de 'frais' ou 'frais d'agrément' n'a été trouvée dans le texte matérialisé ; le renvoi INST066 sur les délais de règlement des frais reste ouvert."
