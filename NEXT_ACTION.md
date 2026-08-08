@@ -5,78 +5,122 @@
 
 ## Action
 
-Poursuivre **R4 — textes d'application explicitement appelés par l'Instruction n°66/CREPMF/2021**, en traitant maintenant le bloc **Article 5 — conditions d'agrément de la Société de Gestion d'OPC**.
+Poursuivre **R4 — textes d'application explicitement appelés par l'Instruction n°66/CREPMF/2021** en exploitant désormais la **série officielle des Circulaires AMF-UMOA n°01 à 16/2022**, découverte directement via l'API publique utilisée par le frontend actuel de l'AMF-UMOA.
 
-La priorité de cette tranche est d'identifier et, si possible, matérialiser le **binaire officiel de l'Instruction n°64/CREPMF/2020**, puis de comparer son texte aux renvois procéduraux de l'article 5 et de l'article 17 avant tout rapprochement définitif.
+La priorité immédiate est :
 
-État de référence :
+1. terminer la matérialisation des `16/16` binaires depuis le champ API `doc` encodé en Base64 ;
+2. vérifier `%PDF`, SHA-256, taille, pagination et extraction texte/OCR de chaque circulaire ;
+3. comparer le contenu de chaque circulaire aux `34` occurrences `COUNCIL_CIRCULAR` de l'Instruction 66 ;
+4. transformer uniquement les correspondances textuellement démontrées en **candidats juridiquement documentés** ;
+5. conserver `resolved=false` tant que la portée exacte, la date d'effet, les éventuelles clauses modificatives/abrogatoires et la revue juridique/conformité ne sont pas fermées ;
+6. ne jamais utiliser une circulaire pour résoudre automatiquement une dépendance explicitement qualifiée d'`Instruction du Conseil Régional` ou de `réglementation comptable spécifique`.
 
-- `regulatory/registries/INST066_EXTERNAL_IMPLEMENTING_TEXTS_INVENTORY_V0_1.json` ;
-- `regulatory/validation/INST066_EXTERNAL_IMPLEMENTING_TEXTS_VALIDATION_V0_1.json` ;
-- `regulatory/sources/INSTRUCTION_64_CREPMF_2020.yaml` ;
-- `regulatory/sources/INSTRUCTION_61_CREPMF_2020.yaml` ;
-- `regulatory/registries/INST066_SPECIFIC_ACCOUNTING_REGULATION_DEPENDENCY_V0_1.yaml` ;
-- `regulatory/review-evidence/INST066_EXTERNAL_DEPENDENCIES/ART004_AUXILIARY_SERVICES_CIRCULAR_SEARCH_2026-08-08.yaml`.
+## Nouvelle source institutionnelle canonique
 
-## État R4 actuel
+Le frontend actuel `https://www.amf-umoa.org` expose le service :
 
-L'inventaire déterministe issu du PDF officiel hashé de l'Instruction 66 contient :
+`GET /service/api/elastic/actualite?id=<actualiteId>&langue=fr`
+
+Le code du frontend montre que `JupiterPortailService.fetchActualities()` utilise ce service pour `actuality-details`.
+
+Le probe déterministe a validé deux témoins connus avant tout scan :
+
+- `actualiteId=1000138` → `CIRCULAIRE N°010-2022` ;
+- `actualiteId=1000141` → `CIRCULAIRE N°013-2022`.
+
+Le scan borné témoin-validé a ensuite retrouvé exactement :
+
+- `16` circulaires ;
+- numéros `01` à `16` sans manque ;
+- `0` doublon ;
+- un champ `doc` contenant un PDF Base64 pour les objets contrôlés ;
+- un champ `documentUrl` ;
+- `valide=true` et `abroge=false` dans les métadonnées API observées au `2026-08-08`.
+
+Attention : les champs `date=2023-09-12` / `createdDate` de l'API sont des métadonnées de publication/enregistrement du portail et **ne doivent pas être assimilés à la date d'adoption ou d'effet** des textes référencés `2022`.
+
+## Catalogue officiel 01–16
+
+Le catalogue de métadonnées officiel identifie :
+
+1. `01/2022` — annulation de la Circulaire n°01-2018 relative à la scission des FCP / transformation en SICAV ;
+2. `02/2022` — processus d'agrément, modification des conditions initiales et retrait d'agrément des Sociétés de Gestion d'OPC ;
+3. `03/2022` — documents et informations à joindre à la demande d'agrément d'un OPC et modalités de dépôt des demandes d'enregistrement ;
+4. `04/2022` — contrat et missions du Dépositaire ;
+5. `05/2022` — contenu du prospectus des OPC ;
+6. `06/2022` — document d'informations clés à fournir à l'investisseur d'un OPC ;
+7. `07/2022` — exigences en matière de communications publicitaires ;
+8. `08/2022` — rapports périodiques des OPC ;
+9. `09/2022` — informations à fournir au Conseil Régional ;
+10. `10/2022` — modalités de calcul des frais généraux pour la détermination du niveau de capitaux propres d'une Société de Gestion d'OPC ;
+11. `11/2022` — frais de l'OPC ;
+12. `12/2022` — évaluation des OPC et de leurs actifs ;
+13. `13/2022` — classes de parts / actions ;
+14. `14/2022` — outils de gestion de la liquidité ;
+15. `15/2022` — gestion des risques des OPC ;
+16. `16/2022` — règles applicables aux OPC en matière de conflits d'intérêts et règles de conduite.
+
+## État R4 de référence
+
+Inventaire déterministe Instruction 66 :
 
 - `49` occurrences de dépendances externes ;
-- `47` occurrences non résolues ;
+- `47` occurrences initialement non résolues ;
 - `26` articles concernés ;
 - `34` renvois à des circulaires du Conseil Régional ;
 - `7` renvois génériques à des instructions du Conseil Régional ;
 - `5` renvois à la réglementation comptable spécifique ;
-- `2` occurrences explicitement reliées à l'Instruction 58 matérialisée ;
-- `1` dépendance explicitement nommée supplémentaire : Instruction n°61/CREPMF/2020.
+- `2` occurrences explicitement reliées à l'Instruction 58 ;
+- Instruction n°61/CREPMF/2020 explicitement nommée dans l'Instruction 66.
 
-L'article 4 a atteint sa condition d'arrêt pour le périmètre public contrôlé : aucune référence officielle de la circulaire sur les limites de fourniture des services auxiliaires par les SGO n'a été identifiée. Aucun numéro n'a été inventé.
+Fichiers de pilotage :
 
-## Article 5 — dépendances à résoudre
+- `regulatory/registries/INST066_EXTERNAL_DEPENDENCY_RESEARCH_QUEUE_V0_1.json` ;
+- `regulatory/registries/AMF_UMOA_2022_CIRCULAR_API_REGISTRY_V0_1.json` ;
+- `regulatory/registries/AMF_UMOA_2022_CIRCULAR_METADATA_CATALOG_V0_1.json` ;
+- `regulatory/registries/INST066_TO_AMF_UMOA_2022_CIRCULAR_CANDIDATE_MATRIX_V0_1.json` ;
+- `regulatory/sources/CIRCULAIRE_010_AMF_UMOA_2022.yaml` ;
+- `regulatory/sources/CIRCULAIRE_013_AMF_UMOA_2022.yaml`.
 
-L'Instruction 66 renvoie distinctement à :
+## Correspondances déjà fortes mais non résolues
 
-1. une circulaire définissant les frais généraux servant au calcul du plancher de fonds propres ;
-2. une circulaire précisant la liste des documents et le contenu/forme du programme d'activité ;
-3. une instruction précisant le délai de notification des pièces manquantes ;
-4. une instruction précisant les étapes du processus de traitement de la demande ;
-5. une instruction précisant le délai d'acquittement des frais d'agrément.
+À confirmer sur le texte binaire propre :
 
-Le registre officiel AMF-UMOA confirme actuellement :
+- Article 5 — frais généraux → forte correspondance avec `10/2022` ;
+- publicité → `07/2022` ;
+- rapports périodiques → `08/2022` ;
+- frais OPC → `11/2022` ;
+- évaluation / valorisation → `12/2022` ;
+- classes de parts/actions → `13/2022` ;
+- liquidité → `14/2022` ;
+- gestion des risques → `15/2022` ;
+- conflits d'intérêts / règles de conduite → `16/2022`.
 
-- référence : `Instruction N°64/2020` ;
-- intitulé : `Instruction relative aux conditions de traitement des dossiers de demande d'agrément ou d'approbation` ;
-- statut observé au `2026-08-08` : `NON_ABROGE`.
+Ne pas assimiler une similitude lexicale à une résolution. Exemple : le renvoi Article 5 sur le programme d'activité d'une **Société de Gestion** ne doit pas être automatiquement attribué à la Circulaire `03/2022`, dont l'intitulé porte sur le dossier d'agrément d'un **OPC**.
 
-Cette correspondance d'objet fait de l'Instruction 64 un candidat officiel fort pour une partie des renvois procéduraux des articles 5 et 17, mais **elle n'est pas encore une résolution** : son propre texte officiel doit être matérialisé et comparé.
+## Instruction 64/2020
 
-Les recherches publiques par objet exact sur les circulaires « frais généraux » et « programme d'activité » n'ont pas encore donné de référence institutionnelle exploitable.
+Le registre AMF-UMOA confirme toujours :
 
-## Résultat attendu
+- `Instruction N°64/2020` ;
+- objet : conditions de traitement des dossiers de demande d'agrément ou d'approbation ;
+- statut observé : `NON_ABROGE`.
 
-Pour l'Instruction 64 :
+Son binaire officiel propre reste à matérialiser. Elle demeure un candidat distinct pour les renvois procéduraux qualifiés d'**Instruction du Conseil Régional** et ne doit pas être remplacée par les Circulaires 02/2022 ou 03/2022 sans comparaison normative.
 
-- identifier une route binaire officielle AMF-UMOA, ancien CREPMF ou BRVM ;
-- télécharger uniquement le binaire officiel ;
-- vérifier `%PDF`, calculer SHA-256 et taille, confirmer la pagination ;
-- extraire le texte avec OCR uniquement si nécessaire ;
-- relever date d'acte, date d'effet, clauses d'abrogation/modification et statut documentaire ;
-- comparer son périmètre mot à mot aux dépendances génériques des articles 5 et 17 ;
-- ne passer une dépendance à `RESOLVED` que si le texte propre confirme la correspondance ;
-- conserver les renvois non couverts en `REFERENCE_NOT_YET_IDENTIFIED`.
+## R1 sanctions — blocage prioritaire conservé
 
-Si aucun binaire officiel de l'Instruction 64 n'est trouvé dans les routes institutionnelles publiques contrôlables, documenter `OFFICIAL_BINARY_NOT_MATERIALIZED` et poursuivre les deux circulaires de l'article 5 sans utiliser de copie tierce comme norme.
-
-## R1 sanctions — blocage conservé
-
-Le régime de sanctions 2016 ↔ 2022 reste prioritaire juridiquement mais bloqué par l'absence des binaires officiels nécessaires. Reprendre immédiatement R1 si un binaire officiel 2016 ou 2022 devient disponible.
+Le régime sanctions `2016 ↔ 2022` reste prioritaire juridiquement mais bloqué par l'absence des binaires officiels nécessaires. Reprendre immédiatement R1 dès qu'un binaire officiel des décisions sanctions devient accessible.
 
 ## Invariants
 
-- `candidate_match_is_resolution=false` tant que le binaire de l'Instruction 64 n'est pas comparé ;
+- `candidate_match_is_resolution=false` ;
+- `metadata_match_is_resolution=false` ;
+- `binary_materialization_is_resolution=false` ;
 - `automatic_dependency_resolution_allowed=false` ;
 - `automatic_rule_reconstruction_allowed=false` ;
-- `requirement_activation_allowed=false` pour tout candidat non validé ;
+- `automatic_requirement_activation_allowed=false` ;
+- aucune substitution d'un type d'instrument par un autre ;
 - revue juridique et conformité humaines obligatoires ;
 - `ready_for_submission=false`.
