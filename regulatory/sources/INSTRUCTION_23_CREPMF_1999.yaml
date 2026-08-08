@@ -9,13 +9,26 @@ document_type: INSTRUCTION
 language: fr
 historical_status: EXPLICITLY_ABROGATED_BY_INSTRUCTION_66_ARTICLE_92
 
+official_api:
+  endpoint: https://www.amf-umoa.org/service/api/elastic/actualite
+  actualite_id: 1000069
+  detail_url: "https://www.amf-umoa.org/service/api/elastic/actualite?id=1000069&langue=fr"
+  document_url_field: "AC-INSTRUCTION-2023-23C4F331-24F1-48EC-985C-6A191EC1357A.pdf"
+  title_observed: "Instruction N°23/99"
+  summary_observed: "RELATIVE AUX ACTIFS GERES PAR LES ORGANISMES DE PLACEMENT COLLECTIF EN VALEURS MOBILIERES"
+  portal_abroge_observed: false
+  portal_abroge_is_legal_status_proof: false
+  observed_on: 2026-08-08
+  route_status: OFFICIAL_DETAIL_ROUTE_IDENTIFIED
+
 source_integrity:
-  official_binary_url: TO_IDENTIFY_FROM_OFFICIAL_SOURCE
+  official_binary_transport: AMF_UMOA_DETAIL_API_DOC_EXPECTED
+  official_binary_url: "https://www.amf-umoa.org/service/api/elastic/actualite?id=1000069&langue=fr"
   repository_copy: null
   sha256: null
   byte_size: null
   page_count: null
-  copy_status: OFFICIAL_ARTICLE92_REFERENCE_ONLY_BINARY_NOT_MATERIALIZED
+  copy_status: OFFICIAL_ROUTE_IDENTIFIED_MATERIALIZATION_BLOCKED_BY_GITHUB_ACTIONS_BILLING
 
 historical_evidence:
   primary_abrogation_source:
@@ -25,41 +38,39 @@ historical_evidence:
     source_pdf: regulatory/materialized/INSTRUCTION_66_CREPMF_2021.pdf
     source_sha256: 3f964f2f6ab9ce9eb16912ccda13f34b5023a188dfb18fcba7065590c770d396
     status: VISUALLY_OBSERVED_FROM_HASHED_OFFICIAL_PDF
-  crosscheck_evidence: regulatory/review-evidence/INST066_HISTORICAL_CROSSCHECK/OFFICIAL_SOURCE_SEARCH_2026-08-08.yaml
-  corroboration_search:
+    legal_priority_over_portal_metadata: true
+  previous_public_search_evidence: regulatory/review-evidence/INST066_HISTORICAL_CROSSCHECK/OFFICIAL_SOURCE_SEARCH_2026-08-08.yaml
+  previous_corroboration_search:
     checked_official_acts:
       - reference: "Décision n° PCR/DA/2018/165"
-        repository_copy: regulatory/review-evidence/INST066_HISTORICAL_CROSSCHECK/corroborating/DECISION_PCR_DA_2018_165_NSIA_FONDS_DIVERSIFIE.pdf
-        sha256: 282b603d99e80699203c4ca75abc683dee8e550f2a8f6f79eccd7e937b0c7337
         result: NOT_OBSERVED_IN_THIS_ACT
       - reference: "Décision n° PCR/DA/2017/121"
-        repository_copy: regulatory/review-evidence/INST066_HISTORICAL_CROSSCHECK/corroborating/DECISION_PCR_DA_2017_121_FCP_LIQUIDITE_OPTIMUM.pdf
-        sha256: b33a03daf3416dd2710c65f23d7652d4732f8bca7d5b0f4e6b719e65bc1755b8
         result: NOT_OBSERVED_IN_THIS_ACT
-    status: TWO_OFFICIAL_CORROBORATING_ACTS_CHECKED_REFERENCE_NOT_OBSERVED
-    interpretation_boundary: >-
-      L'absence de l'Instruction n°23/99 dans ces deux décisions d'agrément ne prouve
-      ni son absence juridique historique ni son contenu. Elle ferme uniquement cette
-      piste de corroboration pour les deux actes contrôlés.
+    interpretation: >-
+      Ces résultats négatifs restent valides pour les deux actes contrôlés, mais
+      l'API AMF-UMOA fournit désormais directement la route documentaire 23/99.
 
 legal_metadata:
   act_date: PENDING_OFFICIAL_BINARY_REVIEW
   effective_from: PENDING_OFFICIAL_BINARY_REVIEW
   amendments_and_rectifications: TO_COMPLETE
   current_legal_status: ABROGATED_BY_INSTRUCTION_66_EFFECTIVE_2022_01_01
-  historical_binary_status: OFFICIAL_BINARY_NOT_MATERIALIZED
+  legal_status_source: INSTRUCTION_66_ARTICLE_92
+  portal_abroge_false_ignored_for_reactivation: true
+  historical_binary_status: OFFICIAL_ROUTE_IDENTIFIED_BINARY_NOT_YET_MATERIALIZED
   activation_allowed: false
 
 safety:
+  portal_metadata_may_override_article92_abrogation: false
   requirement_activation_allowed: false
   historical_rule_reactivation_allowed: false
   automatic_rule_reconstruction_allowed: false
   automatic_migration_inference_allowed: false
   human_legal_review_required: true
   human_compliance_review_required: true
+  ready_for_submission_must_remain_false: true
 
 notes:
-  - "La référence, l'intitulé et l'abrogation sont établis par l'article 92 de l'Instruction 66 officielle matérialisée."
-  - "Le binaire propre de l'Instruction 23/99 n'a pas été identifié dans les routes institutionnelles publiques contrôlées le 2026-08-08."
-  - "Deux décisions d'agrément CREPMF/BRVM officielles de 2017 et 2018 ont été matérialisées et analysées ; aucune ne cite l'Instruction n°23/99."
-  - "Une copie tierce éventuellement accessible ne doit pas être importée comme source normative ni utilisée pour reconstruire ses ratios, seuils ou obligations."
+  - "La route propre 23/99 est désormais identifiée dans l'API officielle AMF-UMOA."
+  - "Le binaire n'est pas déclaré matérialisé tant que le détail API n'a pas été décodé et hashé."
+  - "L'abrogation par l'article 92 reste impérative malgré abroge=false dans la métadonnée du portail."
