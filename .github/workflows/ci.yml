@@ -215,6 +215,7 @@ jobs:
 
       - name: Update Loop Engineering evidence
         run: |
+          next_action_before="$(sha256sum NEXT_ACTION.md | awk '{print $1}')"
           node scripts/update-loop-dev-docs.mjs
           node scripts/update-docx-loop-docs.mjs
           node scripts/update-visual-qa-docs.mjs
@@ -223,6 +224,12 @@ jobs:
           node scripts/update-structured-share-class-docs.mjs
           node scripts/update-canonical-schema-docs.mjs
           node scripts/update-postgres-repository-docs.mjs
+          next_action_after="$(sha256sum NEXT_ACTION.md | awk '{print $1}')"
+          if [ "$next_action_before" != "$next_action_after" ]; then
+            echo 'Generated evidence must not mutate NEXT_ACTION.md.' >&2
+            git diff -- NEXT_ACTION.md || true
+            exit 1
+          fi
 
       - name: Validate generated invariants
         run: |
@@ -329,7 +336,7 @@ jobs:
           git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
           git add \
             README.md IMPLEMENTATION.md STATUS.md LOOP_STATE.md CURRENT_ITERATION.md \
-            WORK_LOG.md SUIVI.md TODO.md CHANGELOG.md HANDOFF.md NEXT_ACTION.md \
+            WORK_LOG.md SUIVI.md TODO.md CHANGELOG.md HANDOFF.md \
             docs/ARCHITECTURE.md docs/PROSPECTUS_ENGINE_SPEC.md \
             docs/04-development/NEXTJS_ATOMIC_DESIGN.md apps/web/README.md \
             apps/web/package-lock.json \
