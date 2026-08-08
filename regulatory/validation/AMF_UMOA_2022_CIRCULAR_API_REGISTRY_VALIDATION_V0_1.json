@@ -1,0 +1,13 @@
+{
+  "schemaVersion": "AMF_UMOA_2022_CIRCULAR_API_REGISTRY_VALIDATION_V0_1",
+  "result": "PASS",
+  "checks": {
+    "known010WitnessMatches": true,
+    "known013WitnessMatches": true,
+    "officialHttpsEndpoint": true,
+    "coverageComplete01To16": true,
+    "automaticResolutionForbidden": true
+  },
+  "discoveredCount": 16,
+  "missingNumbers": []
+}

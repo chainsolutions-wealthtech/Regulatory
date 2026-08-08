@@ -1,0 +1,752 @@
+{
+  "schemaVersion": "AMF_UMOA_2022_CIRCULAR_API_REGISTRY_V0_1",
+  "authority": "AMF-UMOA",
+  "apiEndpoint": "https://www.amf-umoa.org/service/api/elastic/actualite",
+  "method": "OFFICIAL_FRONTEND_API_WITNESS_VALIDATED_BOUNDED_ID_SCAN",
+  "knownWitnesses": {
+    "1000138": {
+      "expectedNumber": 10,
+      "result": {
+        "number": 10,
+        "reference": "Circulaire n°10/AMF-UMOA/2022",
+        "actualiteId": 1000138,
+        "apiUrl": "https://www.amf-umoa.org/service/api/elastic/actualite?id=1000138&langue=fr",
+        "apiRawSha256": "5a163201e11ee28059d9484428ba027c360b83dbd4d9826646c9c4657357710e",
+        "evidenceStrings": [
+          {
+            "jsonPath": "$[0].doc",
+            "value": "JVBERi0xLjQKJeLjz9MNCjEgMCBvYmoKPDwgCi9DcmVhdG9yIChDYW5vbiBpUi1BRFYgQzM1MjUgSUlJICBQREYpCi9DcmVhdGlvbkRhdGUgKEQ6MjAyMjAxMTIxNjQyNDcrMDEnMDAnKQovUHJvZHVjZXIgKFwzNzZcMzc3XDAwMEFcMDAwZFwwMDBvXDAwMGJcMDAwZVwwMDAgXDAwMFBcMDAwU1wwMDBMXDAwMCBcMDAwMVwwMDAuXDAwMFwKM1wwMDBlXDAwMCBcMDAwZlwwMDBvXDAwMHJcMDAwIFwwMDBDXDAwMGFcMDAwblwwMDBvXDAwMG5cMDAwXDAwMCkKPj4gCmVuZG9iagoyIDAgb2JqCjw8IAovUGFnZXMgMyAwIFIgCi9UeXBlIC9DYXRhbG9nIAovT3V0cHV0SW50ZW50cyAxMiAwIFIgCi9NZXRhZGF0YSAxMyAwIFIgCj4+IAplbmRvYmoKNCAwIG9iago8PCAvVHlwZSAvWE9iamVjdCAvU3VidHlwZSAvSW1hZ2UgL1dpZHRoIDEyNDAgL0hlaWdodCAxNzUzIC9CaXRzUGVyQ29tcG9uZW50IDggCi9Db2xvclNwYWNlIC9EZXZpY2VSR0IgL0ZpbHRlciBbIC9GbGF0ZURlY29kZSAvRENURGVjb2RlIF0gL0xlbmd0aCA1NjE4MCA+PiAKc3RyZWFtDQp4AaS9eVxTZ7c2vBNAFHGiG4u1iqipCT55BAeqqBC1UQgiSUBt44DF2oZaam1Fiy0GrNYaFTRGRCkSY0CoA9VGbbWKWmerQMQJ21JHEAdUEARC+K51B2uf3/f98f3e95wjJ9Pe+x7Wvda1rjW09Vrr31xXxfjw8ZxAKOAy8L9cq4PrMu79T+d92if809kc/qf1BjeOc+3Zs0/PPv379OkfNLD/wKBpI4OCRk5bsGza2GnLFmxbl6rTpa7bVrrn5OaTe0qvnWxoOHntr+qH1X85Wlsdt1tvV1ffpJsI/q9vcpTr1r7ddddrLoK+nLCbwKWbAKN1xxg5rvUE58txAjcB+x/2Ef4IhC6ubu3c23fw6Igf7OvKCQUuLkJXFzc3V1eOEyQLhC6cazc3L7/AMe1eU73v3nc+Pzh13db2/cbuOeatLn3Sf0jc50s7eHR/3afHG6K3Bogl/kOHBb09fETwuHfk4yeEhSuiYyZP"
+          },
+          {
+            "jsonPath": "$[0].documentUrl",
+            "value": "AC-CIRCULAIRE-2023-5CF0603D-3683-4DD5-87B8-B82E7BD27615.pdf"
+          },
+          {
+            "jsonPath": "$[0].resume",
+            "value": "RELATIVE AUX MODALITES DE CALCUL DES FRAIS GENERAUX POUR LA DETERMINATION DU NIVEAU DE CAPITAUX PROPRES D’UNE SOCIETE DE GESTION D’OPC"
+          },
+          {
+            "jsonPath": "$[0].titre",
+            "value": "CIRCULAIRE N°010-2022"
+          },
+          {
+            "jsonPath": "$[0].texte",
+            "value": "RELATIVE AUX MODALITES DE CALCUL DES FRAIS GENERAUX POUR LA DETERMINATION DU NIVEAU DE CAPITAUX PROPRES D’UNE SOCIETE DE GESTION D’OPC"
+          },
+          {
+            "jsonPath": "$[0].categorie",
+            "value": "Circulaire"
+          },
+          {
+            "jsonPath": "$[0].tags[0]",
+            "value": "Circulaire"
+          }
+        ],
+        "attachmentCandidates": [],
+        "materializedBinary": null,
+        "attachmentAttempts": [],
+        "automaticDependencyResolutionAllowed": false
+      },
+      "rawStatus": "OK",
+      "error": null
+    },
+    "1000141": {
+      "expectedNumber": 13,
+      "result": {
+        "number": 13,
+        "reference": "Circulaire n°13/AMF-UMOA/2022",
+        "actualiteId": 1000141,
+        "apiUrl": "https://www.amf-umoa.org/service/api/elastic/actualite?id=1000141&langue=fr",
+        "apiRawSha256": "272bb1c2d6d6696100cf62a3923781d2a543a3b718de74647a680b8bb8a18563",
+        "evidenceStrings": [
+          {
+            "jsonPath": "$[0].doc",
+            "value": "JVBERi0xLjQKJeLjz9MNCjEgMCBvYmoKPDwgCi9DcmVhdG9yIChDYW5vbiBpUi1BRFYgQzM1MjUgSUlJICBQREYpCi9DcmVhdGlvbkRhdGUgKEQ6MjAyMjAxMTIxNjQ1MTArMDEnMDAnKQovUHJvZHVjZXIgKFwzNzZcMzc3XDAwMEFcMDAwZFwwMDBvXDAwMGJcMDAwZVwwMDAgXDAwMFBcMDAwU1wwMDBMXDAwMCBcMDAwMVwwMDAuXDAwMFwKM1wwMDBlXDAwMCBcMDAwZlwwMDBvXDAwMHJcMDAwIFwwMDBDXDAwMGFcMDAwblwwMDBvXDAwMG5cMDAwXDAwMCkKPj4gCmVuZG9iagoyIDAgb2JqCjw8IAovUGFnZXMgMyAwIFIgCi9UeXBlIC9DYXRhbG9nIAovT3V0cHV0SW50ZW50cyAxMyAwIFIgCi9NZXRhZGF0YSAxNCAwIFIgCj4+IAplbmRvYmoKNCAwIG9iago8PCAvVHlwZSAvWE9iamVjdCAvU3VidHlwZSAvSW1hZ2UgL1dpZHRoIDEyNDAgL0hlaWdodCAxNzUzIC9CaXRzUGVyQ29tcG9uZW50IDggCi9Db2xvclNwYWNlIC9EZXZpY2VSR0IgL0ZpbHRlciBbIC9GbGF0ZURlY29kZSAvRENURGVjb2RlIF0gL0xlbmd0aCA0NTQzNyA+PiAKc3RyZWFtDQp4AaS9CVyU5fr//wybSrjRYGqZK/oMRomWFaWM2iQMLjC41FSuxxPoMU8lp4MnBUztOJkLjoSagiMguMSpxjonLcxcyjJl0Qor29zQcgFXtt/7up9BPd/X9//6/17/f+eAM896L9fyuT7Xdd80fdv0k9bO/mTck5rJz6Rl8z+tqVFrO2zyC7Ne6Bb3wlSN/5qOacO0gLvv7nZ3t17duvUa2LdX34HPPDZw4GPPzF7wzNBnFszeuCIzPT1zxcayd/eu2ftu2bd7r17d++2P1eeqf2xsamr8tenX6uqf5SGm/98P2aW1bxn0XcC3/qYeml97k397E61tQRs1rWmP1lXTTIEm9Z86xC+Tn39AYFCLlq2C7+CC7e00P5O/v1+Af2BgQICmmeaa/Py1gPaBod2jhgTdmTi5RY8Xzf0zV2xo2XPou5+GOcou9Bow5aX5rYI73NWxU+fw3n10S8SDDw18+JFHo4c9YXtyeGyc"
+          },
+          {
+            "jsonPath": "$[0].documentUrl",
+            "value": "AC-CIRCULAIRE-2023-9A05D31B-7FA9-4D98-9CF7-47D3CE2D7287.pdf"
+          },
+          {
+            "jsonPath": "$[0].resume",
+            "value": "RELATIVE AUX CLASSES DE PARTS / ACTIONS"
+          },
+          {
+            "jsonPath": "$[0].titre",
+            "value": "CIRCULAIRE N°013-2022"
+          },
+          {
+            "jsonPath": "$[0].texte",
+            "value": "RELATIVE AUX CLASSES DE PARTS / ACTIONS"
+          },
+          {
+            "jsonPath": "$[0].categorie",
+            "value": "Circulaire"
+          },
+          {
+            "jsonPath": "$[0].tags[0]",
+            "value": "Circulaire"
+          }
+        ],
+        "attachmentCandidates": [],
+        "materializedBinary": null,
+        "attachmentAttempts": [],
+        "automaticDependencyResolutionAllowed": false
+      },
+      "rawStatus": "OK",
+      "error": null
+    }
+  },
+  "scanIdRange": [
+    1000120,
+    1000160
+  ],
+  "status": "COMPLETE_01_TO_16",
+  "discoveredCount": 16,
+  "missingNumbers": [],
+  "duplicates": [],
+  "entries": [
+    {
+      "number": 1,
+      "reference": "Circulaire n°01/AMF-UMOA/2022",
+      "actualiteId": 1000129,
+      "apiUrl": "https://www.amf-umoa.org/service/api/elastic/actualite?id=1000129&langue=fr",
+      "apiRawSha256": "20049d94f3b4e5c35f9c95ded334177d6b5a3b675085ce4ba7b67fda1b81f494",
+      "evidenceStrings": [
+        {
+          "jsonPath": "$[0].doc",
+          "value": "JVBERi0xLjQKJeLjz9MNCjEgMCBvYmoKPDwgCi9DcmVhdG9yIChDYW5vbiBpUi1BRFYgQzM1MjUgSUlJICBQREYpCi9DcmVhdGlvbkRhdGUgKEQ6MjAyMjAxMTIxOTI4MTErMDEnMDAnKQovUHJvZHVjZXIgKFwzNzZcMzc3XDAwMEFcMDAwZFwwMDBvXDAwMGJcMDAwZVwwMDAgXDAwMFBcMDAwU1wwMDBMXDAwMCBcMDAwMVwwMDAuXDAwMFwKM1wwMDBlXDAwMCBcMDAwZlwwMDBvXDAwMHJcMDAwIFwwMDBDXDAwMGFcMDAwblwwMDBvXDAwMG5cMDAwXDAwMCkKPj4gCmVuZG9iagoyIDAgb2JqCjw8IAovUGFnZXMgMyAwIFIgCi9UeXBlIC9DYXRhbG9nIAovT3V0cHV0SW50ZW50cyAxMSAwIFIgCi9NZXRhZGF0YSAxMiAwIFIgCj4+IAplbmRvYmoKNCAwIG9iago8PCAvVHlwZSAvWE9iamVjdCAvU3VidHlwZSAvSW1hZ2UgL1dpZHRoIDEyNDAgL0hlaWdodCAxNzUzIC9CaXRzUGVyQ29tcG9uZW50IDggCi9Db2xvclNwYWNlIC9EZXZpY2VSR0IgL0ZpbHRlciBbIC9GbGF0ZURlY29kZSAvRENURGVjb2RlIF0gL0xlbmd0aCAzOTA2OCA+PiAKc3RyZWFtDQp4AaS9CVhTV9cGesIsDigNSrWKVtEEPqo4oKICYqMSREhwjNYJraBF64AWWkjQ2ta0ikbEgSoxBhAHqBqcFWsVZxkVxYEqKoIDKsgUCPdd+4Dt99373OcO3/8Hk5yTc/Zeew3vetfap813m//mOkrH+o3lBGYCLgH/xzWbOLsxc5csXdLTb0kIh/813+fGcBbduvXs1rNPz559PFz7uHrMGOHhMWLGyh9n+M74ceXezbFKZezmvXmHL+28dDjv7qXa2kt3H1W8qnhkam42lTaXVlQ8posI/n9f5DzXycbqnsVdc8HnnFkngXknAUZrjTFyXPNFzonjBJYC9j/2Ff4IzMwtLK2sbdrYtsUJmR05M4G5uZmFuaWlhQXHCaIFZuacRSdL+17uo60+kc21/nyZcGDs5j02vX0P/+kgz3vbZ9C85Wva2Hbu4vhpV+e+/URil8FDPIYOG+455kvJ2HHj/aTBkyZPmTptuiJk"
+        },
+        {
+          "jsonPath": "$[0].documentUrl",
+          "value": "AC-CIRCULAIRE-2023-A28C7465-94EB-433A-B265-F427C9AD5402.pdf"
+        },
+        {
+          "jsonPath": "$[0].resume",
+          "value": "PORTANT ANNULATION DE LA CIRCULAIRE N°01-2018 RELATIVE AUX MODALITES DE SCISSION DES FONDS COMMUNS DE PLACEMENT OU DE LEUR TRANSFORMATION EN SOCIETE D'INVESTISSEMENT A CAPITAL VARIABLE"
+        },
+        {
+          "jsonPath": "$[0].titre",
+          "value": "CIRCULAIRE N°001-2022"
+        },
+        {
+          "jsonPath": "$[0].texte",
+          "value": "PORTANT ANNULATION DE LA CIRCULAIRE N°01-2018 RELATIVE AUX MODALITES DE SCISSION DES FONDS COMMUNS DE PLACEMENT OU DE LEUR TRANSFORMATION EN SOCIETE D'INVESTISSEMENT A CAPITAL VARIABLE"
+        },
+        {
+          "jsonPath": "$[0].categorie",
+          "value": "Circulaire"
+        },
+        {
+          "jsonPath": "$[0].tags[0]",
+          "value": "Circulaire"
+        }
+      ],
+      "attachmentCandidates": [],
+      "materializedBinary": null,
+      "attachmentAttempts": [],
+      "automaticDependencyResolutionAllowed": false
+    },
+    {
+      "number": 2,
+      "reference": "Circulaire n°02/AMF-UMOA/2022",
+      "actualiteId": 1000130,
+      "apiUrl": "https://www.amf-umoa.org/service/api/elastic/actualite?id=1000130&langue=fr",
+      "apiRawSha256": "95f83f8726741b6b04102e0a5ad1b85439d4c132ce0a6cd0373c7f4eb157fc8c",
+      "evidenceStrings": [
+        {
+          "jsonPath": "$[0].doc",
+          "value": "JVBERi0xLjQKJeLjz9MNCjEgMCBvYmoKPDwgCi9DcmVhdG9yIChDYW5vbiBpUi1BRFYgQzM1MjUgSUlJICBQREYpCi9DcmVhdGlvbkRhdGUgKEQ6MjAyMjAxMTIxOTMxMzMrMDEnMDAnKQovUHJvZHVjZXIgKFwzNzZcMzc3XDAwMEFcMDAwZFwwMDBvXDAwMGJcMDAwZVwwMDAgXDAwMFBcMDAwU1wwMDBMXDAwMCBcMDAwMVwwMDAuXDAwMFwKM1wwMDBlXDAwMCBcMDAwZlwwMDBvXDAwMHJcMDAwIFwwMDBDXDAwMGFcMDAwblwwMDBvXDAwMG5cMDAwXDAwMCkKPj4gCmVuZG9iagoyIDAgb2JqCjw8IAovUGFnZXMgMyAwIFIgCi9UeXBlIC9DYXRhbG9nIAovT3V0cHV0SW50ZW50cyAxMCAwIFIgCi9NZXRhZGF0YSAxMSAwIFIgCj4+IAplbmRvYmoKNCAwIG9iago8PCAvVHlwZSAvWE9iamVjdCAvU3VidHlwZSAvSW1hZ2UgL1dpZHRoIDEyNDAgL0hlaWdodCAxNzUzIC9CaXRzUGVyQ29tcG9uZW50IDggCi9Db2xvclNwYWNlIC9EZXZpY2VSR0IgL0ZpbHRlciBbIC9GbGF0ZURlY29kZSAvRENURGVjb2RlIF0gL0xlbmd0aCAzNTk4MiA+PiAKc3RyZWFtDQp4Aay9e1yM+fs/fs9M5xDtRI4VYoYNOYSoBjtqZqKaEOOQw6LQOua0MhNajEMHyWlpjKmEsuzksA5hVQ5LR6ywOUcklNJp+j6ve8q+39/H+4/f4/f7vT+f2W3uuQ+v1+s6Pa/ndb3ubfq76SnTVjpWMpbhcDlMAv6PaTIwNmNm/bT4J0fJT3MY/K/pETOGMenc2bGzY09Hx55ufXv2dZs6ws1txNQVm6aOnrppxZHYSKUyMvZI/qms/Vmn8v/OqqnJ+vufsvdl/xiamgwvml6UlT2jm3D+P9/kCtPOwuyhyd88TneG247Da8fBaM0xRoZpus44MAzHlMP+jz2Ef3C4PBNTM3MLSytrnJDRluFyeDyuCc/U1MSEYTgRHC6PMWlnauvkOsrsu4BZ5t2X8gdGxh626DH61FU7ef7HnoNmL9tgadW+g33HTs69eguEfQYPcRs6bLj7mB/EY719JNLACRMnBU2eopjz49x5"
+        },
+        {
+          "jsonPath": "$[0].documentUrl",
+          "value": "AC-CIRCULAIRE-2023-B0A56A25-B32D-4C77-988D-7E9F4A04F043.pdf"
+        },
+        {
+          "jsonPath": "$[0].titre",
+          "value": "CIRCULAIRE N°002-2022"
+        },
+        {
+          "jsonPath": "$[0].categorie",
+          "value": "Circulaire"
+        },
+        {
+          "jsonPath": "$[0].tags[0]",
+          "value": "Circulaire"
+        }
+      ],
+      "attachmentCandidates": [],
+      "materializedBinary": null,
+      "attachmentAttempts": [],
+      "automaticDependencyResolutionAllowed": false
+    },
+    {
+      "number": 3,
+      "reference": "Circulaire n°03/AMF-UMOA/2022",
+      "actualiteId": 1000131,
+      "apiUrl": "https://www.amf-umoa.org/service/api/elastic/actualite?id=1000131&langue=fr",
+      "apiRawSha256": "5d2244dd4db93fc57c6149a13038f41eba7a1e80cdccdfaa7dd78f5d436a6771",
+      "evidenceStrings": [
+        {
+          "jsonPath": "$[0].doc",
+          "value": "JVBERi0xLjQKJeLjz9MNCjEgMCBvYmoKPDwgCi9DcmVhdG9yIChDYW5vbiBpUi1BRFYgQzM1MjUgSUlJICBQREYpCi9DcmVhdGlvbkRhdGUgKEQ6MjAyMjAxMTIxOTM1NTArMDEnMDAnKQovUHJvZHVjZXIgKFwzNzZcMzc3XDAwMEFcMDAwZFwwMDBvXDAwMGJcMDAwZVwwMDAgXDAwMFBcMDAwU1wwMDBMXDAwMCBcMDAwMVwwMDAuXDAwMFwKM1wwMDBlXDAwMCBcMDAwZlwwMDBvXDAwMHJcMDAwIFwwMDBDXDAwMGFcMDAwblwwMDBvXDAwMG5cMDAwXDAwMCkKPj4gCmVuZG9iagoyIDAgb2JqCjw8IAovUGFnZXMgMyAwIFIgCi9UeXBlIC9DYXRhbG9nIAovT3V0cHV0SW50ZW50cyAxMCAwIFIgCi9NZXRhZGF0YSAxMSAwIFIgCj4+IAplbmRvYmoKNCAwIG9iago8PCAvVHlwZSAvWE9iamVjdCAvU3VidHlwZSAvSW1hZ2UgL1dpZHRoIDEyNDAgL0hlaWdodCAxNzUzIC9CaXRzUGVyQ29tcG9uZW50IDggCi9Db2xvclNwYWNlIC9EZXZpY2VSR0IgL0ZpbHRlciBbIC9GbGF0ZURlY29kZSAvRENURGVjb2RlIF0gL0xlbmd0aCAzNzMyMSA+PiAKc3RyZWFtDQp4AaS9B1xT2dY2fkJoIooyQbFiQxIYRmzooBAskaZCAoiigl2QwY4OOBCwjrGgiNhGiEhVkVFjL1FHRBmliWLHgoKgovQa/s86Acd57/3e3//3fffeg8nJOfvsvfbaaz3rWWuf2/q49RXTxXmS0ySGo8FhYvBfplXFGEyYu3TZ0n5OS+cz+E/rM2YCo9mrV79e/Qb16zfI2mKQhfXMMdbWY2au3jhz/MyNq4/ujpBKI3YfzTuVcTDjVN7jjLq6jMcvyz6WvVS1tqretr4tK3tNjXD+nxu5znTV1X6i+ZjLGcBodOVwu3LQWx30kWFabzEmDMPR4rD/YU/hD0eDq6mlraPbQa8jLjjbhdHgcLkamlwtLU1NhuGEcjS4jGZXLcP+Q8dp/yCeqzNgBW9YxO4jugPHn7phJMn7Mmj4vJXrO+h1627co6fpYDO+wHzESOtRo3+2mTBRNMnB0cnZ3cNzmtf0Gd7zFyxctNjP"
+        },
+        {
+          "jsonPath": "$[0].documentUrl",
+          "value": "AC-CIRCULAIRE-2023-07DFE88D-3EF3-4A41-9A25-9B462CE42E40.pdf"
+        },
+        {
+          "jsonPath": "$[0].resume",
+          "value": "RELATIVE AUX DOCUMENTS ET INFORMATIONS A JOINDRE A LA DEMANDE D’AGREMENT D’UN OPC ET AUX MODALITES DE DEPOT DES DEMANDES D’ENREGISTREMENT"
+        },
+        {
+          "jsonPath": "$[0].titre",
+          "value": "CIRCULAIRE N°003-2022"
+        },
+        {
+          "jsonPath": "$[0].texte",
+          "value": "RELATIVE AUX DOCUMENTS ET INFORMATIONS A JOINDRE A LA DEMANDE D’AGREMENT D’UN OPC ET AUX MODALITES DE DEPOT DES DEMANDES D’ENREGISTREMENT"
+        },
+        {
+          "jsonPath": "$[0].categorie",
+          "value": "Circulaire"
+        },
+        {
+          "jsonPath": "$[0].tags[0]",
+          "value": "Circulaire"
+        }
+      ],
+      "attachmentCandidates": [],
+      "materializedBinary": null,
+      "attachmentAttempts": [],
+      "automaticDependencyResolutionAllowed": false
+    },
+    {
+      "number": 4,
+      "reference": "Circulaire n°04/AMF-UMOA/2022",
+      "actualiteId": 1000132,
+      "apiUrl": "https://www.amf-umoa.org/service/api/elastic/actualite?id=1000132&langue=fr",
+      "apiRawSha256": "2ba6cd7cdcd7f5314e589b7ee8c6d4297e0ae01745eda1d7bdc0d069bc31254c",
+      "evidenceStrings": [
+        {
+          "jsonPath": "$[0].doc",
+          "value": "JVBERi0xLjQKJeLjz9MNCjEgMCBvYmoKPDwgCi9DcmVhdG9yIChDYW5vbiBpUi1BRFYgQzM1MjUgSUlJICBQREYpCi9DcmVhdGlvbkRhdGUgKEQ6MjAyMjAxMTIxOTM3NTArMDEnMDAnKQovUHJvZHVjZXIgKFwzNzZcMzc3XDAwMEFcMDAwZFwwMDBvXDAwMGJcMDAwZVwwMDAgXDAwMFBcMDAwU1wwMDBMXDAwMCBcMDAwMVwwMDAuXDAwMFwKM1wwMDBlXDAwMCBcMDAwZlwwMDBvXDAwMHJcMDAwIFwwMDBDXDAwMGFcMDAwblwwMDBvXDAwMG5cMDAwXDAwMCkKPj4gCmVuZG9iagoyIDAgb2JqCjw8IAovUGFnZXMgMyAwIFIgCi9UeXBlIC9DYXRhbG9nIAovT3V0cHV0SW50ZW50cyAxMyAwIFIgCi9NZXRhZGF0YSAxNCAwIFIgCj4+IAplbmRvYmoKNCAwIG9iago8PCAvVHlwZSAvWE9iamVjdCAvU3VidHlwZSAvSW1hZ2UgL1dpZHRoIDEyNDAgL0hlaWdodCAxNzUzIC9CaXRzUGVyQ29tcG9uZW50IDggCi9Db2xvclNwYWNlIC9EZXZpY2VSR0IgL0ZpbHRlciBbIC9GbGF0ZURlY29kZSAvRENURGVjb2RlIF0gL0xlbmd0aCAzMTg2MCA+PiAKc3RyZWFtDQp4AaS9CVgT59oGPAmriGsHS7WKW3QGD0dxwRYVIpoqBJUEXBoXXFpL9FDrUbRqMWDF1rghRtyqxJiguHHUoG3VotYVW5HFpdgWWxcUtVRBEYHw3887QW2/813/d/1/z5mYZCYz7/Is93M/z/vScL3hJtcy4r3w9ziZXMal439cg4NrMWTKx7M+7hj+8TQO/zXc4IZwru3adWzXsWvHjl2DenTtETR+QFDQgPFzl44PG7907o61yQZD8todBQfObD5zoOD6merqM9d/LX9Y/qujocFxq+FWeflvdBPZ/++bnOBaebr/5HrdRdaZk7eSubSSobUeaCPHNZzm/DhO5iZj/7Gv8CKTu7i6uXt4NvFqigtyWnJymYuL3NXFzc3VleNkiTK5C+fayq11p8DB7m9opnh0ns33Tl673bNL2IGTPtqCP7v2mfrvJU282rzp+1ZbRbfugujft19Q/3feDR4yVPXesOHhEdExo8eM"
+        },
+        {
+          "jsonPath": "$[0].documentUrl",
+          "value": "AC-CIRCULAIRE-2023-52ABDA43-61C8-4E8A-92E4-F926D7366864.pdf"
+        },
+        {
+          "jsonPath": "$[0].titre",
+          "value": "CIRCULAIRE N°004-2022"
+        },
+        {
+          "jsonPath": "$[0].categorie",
+          "value": "Circulaire"
+        },
+        {
+          "jsonPath": "$[0].tags[0]",
+          "value": "Circulaire"
+        }
+      ],
+      "attachmentCandidates": [],
+      "materializedBinary": null,
+      "attachmentAttempts": [],
+      "automaticDependencyResolutionAllowed": false
+    },
+    {
+      "number": 5,
+      "reference": "Circulaire n°05/AMF-UMOA/2022",
+      "actualiteId": 1000133,
+      "apiUrl": "https://www.amf-umoa.org/service/api/elastic/actualite?id=1000133&langue=fr",
+      "apiRawSha256": "6c0b507ebce70da90548da7656edc330b0c4195986cbfd4323da5abfa911bf78",
+      "evidenceStrings": [
+        {
+          "jsonPath": "$[0].doc",
+          "value": "JVBERi0xLjQKJeLjz9MNCjEgMCBvYmoKPDwgCi9DcmVhdG9yIChDYW5vbiBpUi1BRFYgQzM1MjUgSUlJICBQREYpCi9DcmVhdGlvbkRhdGUgKEQ6MjAyMjAxMTIxNjMxMzYrMDEnMDAnKQovUHJvZHVjZXIgKFwzNzZcMzc3XDAwMEFcMDAwZFwwMDBvXDAwMGJcMDAwZVwwMDAgXDAwMFBcMDAwU1wwMDBMXDAwMCBcMDAwMVwwMDAuXDAwMFwKM1wwMDBlXDAwMCBcMDAwZlwwMDBvXDAwMHJcMDAwIFwwMDBDXDAwMGFcMDAwblwwMDBvXDAwMG5cMDAwXDAwMCkKPj4gCmVuZG9iagoyIDAgb2JqCjw8IAovUGFnZXMgMyAwIFIgCi9UeXBlIC9DYXRhbG9nIAovT3V0cHV0SW50ZW50cyAxNSAwIFIgCi9NZXRhZGF0YSAxNiAwIFIgCj4+IAplbmRvYmoKNCAwIG9iago8PCAvVHlwZSAvWE9iamVjdCAvU3VidHlwZSAvSW1hZ2UgL1dpZHRoIDEyNDAgL0hlaWdodCAxNzUzIC9CaXRzUGVyQ29tcG9uZW50IDggCi9Db2xvclNwYWNlIC9EZXZpY2VSR0IgL0ZpbHRlciBbIC9GbGF0ZURlY29kZSAvRENURGVjb2RlIF0gL0xlbmd0aCA0MDQ0MyA+PiAKc3RyZWFtDQp4AaS9CVyUZdv/fQ3gRubWRVmWaDk5o83jUlqZCmpjAi4wuBSVuLSARrZRaTcOmLaMlooTWt4K4gxuqXd1WVkaZi5lGYJbYUWmiWLmAi4IDO/3OK8B7/v5PM/7/3/e936esWGua87rXI7ld/yO4zyn/qf637U2sUNjhmqWEIuWw/9p9QGt9ZCJz057tlPMs5M1/ld/RBuihXXo0KlDpy6dOnXp271L976PPtC37wOPvjT70cGPzn5p5cIstztr4crij3Z+sPOj4p92Xr6886ffKv6q+C1QXx84Vn+souKoNGL5/93INq1t86Y/h/0UarldC2lrCW1robfN6KOm1e/QIjXN0sSi/qc+4h9LSGhYk6bNmrcIv44bNrXRQiyhoSFhoU2ahIVpmiXDEhKqhbVt0q5zr0FNb0iY2Oz25/XeWQtXNL9j8EdfR7iKz3W5e9ILs1qE33hT+5tvsd7Z1Wbvdk+fvvfed3+/IQ86"
+        },
+        {
+          "jsonPath": "$[0].documentUrl",
+          "value": "AC-CIRCULAIRE-2023-3C46D9D5-65D4-47E4-AD46-6383E54A4539.pdf"
+        },
+        {
+          "jsonPath": "$[0].resume",
+          "value": "RELATIVE AU CONTENU DU PROSPECTUS DES OPC"
+        },
+        {
+          "jsonPath": "$[0].titre",
+          "value": "CIRCULAIRE N°005-2022"
+        },
+        {
+          "jsonPath": "$[0].texte",
+          "value": "RELATIVE AU CONTENU DU PROSPECTUS DES OPC"
+        },
+        {
+          "jsonPath": "$[0].categorie",
+          "value": "Circulaire"
+        },
+        {
+          "jsonPath": "$[0].tags[0]",
+          "value": "Circulaire"
+        }
+      ],
+      "attachmentCandidates": [],
+      "materializedBinary": null,
+      "attachmentAttempts": [],
+      "automaticDependencyResolutionAllowed": false
+    },
+    {
+      "number": 6,
+      "reference": "Circulaire n°06/AMF-UMOA/2022",
+      "actualiteId": 1000134,
+      "apiUrl": "https://www.amf-umoa.org/service/api/elastic/actualite?id=1000134&langue=fr",
+      "apiRawSha256": "3a34afafa082c21c36f57393b090c551cdd3c7f0711554286aab248dc20ae855",
+      "evidenceStrings": [
+        {
+          "jsonPath": "$[0].doc",
+          "value": "JVBERi0xLjQKJeLjz9MNCjEgMCBvYmoKPDwgCi9DcmVhdG9yIChDYW5vbiBpUi1BRFYgQzM1MjUgSUlJICBQREYpCi9DcmVhdGlvbkRhdGUgKEQ6MjAyMjAxMTIxNjM2MTgrMDEnMDAnKQovUHJvZHVjZXIgKFwzNzZcMzc3XDAwMEFcMDAwZFwwMDBvXDAwMGJcMDAwZVwwMDAgXDAwMFBcMDAwU1wwMDBMXDAwMCBcMDAwMVwwMDAuXDAwMFwKM1wwMDBlXDAwMCBcMDAwZlwwMDBvXDAwMHJcMDAwIFwwMDBDXDAwMGFcMDAwblwwMDBvXDAwMG5cMDAwXDAwMCkKPj4gCmVuZG9iagoyIDAgb2JqCjw8IAovUGFnZXMgMyAwIFIgCi9UeXBlIC9DYXRhbG9nIAovT3V0cHV0SW50ZW50cyAxMCAwIFIgCi9NZXRhZGF0YSAxMSAwIFIgCj4+IAplbmRvYmoKNCAwIG9iago8PCAvVHlwZSAvWE9iamVjdCAvU3VidHlwZSAvSW1hZ2UgL1dpZHRoIDEyNDAgL0hlaWdodCAxNzUzIC9CaXRzUGVyQ29tcG9uZW50IDggCi9Db2xvclNwYWNlIC9EZXZpY2VSR0IgL0ZpbHRlciBbIC9GbGF0ZURlY29kZSAvRENURGVjb2RlIF0gL0xlbmd0aCAzMDU4MiA+PiAKc3RyZWFtDQp4Aby9CXhUVbrvvVMZgIBMXcE4QJhKq6CjgBg1CimgI6TCkKoQwFIBsdUEGmdEUKgEQaVAgVCESUgoMjKYRgtFBUOjgGIjGUAU0KCIgSAgEqYMle/3rl0J9Ln3nHuf73uer88prGHvtdd6x/87rJXG7xuPa+1tDyc8rAUZgrQs/k9r9Gvthjzx7HPPdk149kmN/zUe1YZoIbfd1vW2rj27du0Z07tn75hHH4yJefDRl+c+OvjRuS+vX5LhcmUsWV+2Zfeq3VvKvt995cru73+q/r36J39jo/9E44nq6p9lkKD/z4Ps1Dq0DPsh5PvgoO6aoUNQcIcgZtuCOWpa45dalKYFhQap/6mv+CfIEBwSGtaiZavw1lywtb1mCAoONoQEh4aGhGha0KwgQ7AW0iG0Y7e+g8L+Yn+iRfcXjP0ylqxr2WPwln9FOMr+6HnPpBfntArvdHPkLbea7rjTbOnV/96Y++5/IHbI3+If"
+        },
+        {
+          "jsonPath": "$[0].documentUrl",
+          "value": "AC-CIRCULAIRE-2023-676BC896-67DE-4E96-B1E4-0FBE994A0C14.pdf"
+        },
+        {
+          "jsonPath": "$[0].resume",
+          "value": "RELATIVE AU DOCUMENT D’INFORMATIONS CLES A FOURNIR A L’INVESTISSEUR D’UN OPC"
+        },
+        {
+          "jsonPath": "$[0].titre",
+          "value": "CIRCULAIRE N°006-2022"
+        },
+        {
+          "jsonPath": "$[0].texte",
+          "value": "RELATIVE AU DOCUMENT D’INFORMATIONS CLES A FOURNIR A L’INVESTISSEUR D’UN OPC"
+        },
+        {
+          "jsonPath": "$[0].categorie",
+          "value": "Circulaire"
+        },
+        {
+          "jsonPath": "$[0].tags[0]",
+          "value": "Circulaire"
+        }
+      ],
+      "attachmentCandidates": [],
+      "materializedBinary": null,
+      "attachmentAttempts": [],
+      "automaticDependencyResolutionAllowed": false
+    },
+    {
+      "number": 7,
+      "reference": "Circulaire n°07/AMF-UMOA/2022",
+      "actualiteId": 1000135,
+      "apiUrl": "https://www.amf-umoa.org/service/api/elastic/actualite?id=1000135&langue=fr",
+      "apiRawSha256": "0c99135fe56737974e7c5a0140612d31e73c5666295429d417c0c1f039908c52",
+      "evidenceStrings": [
+        {
+          "jsonPath": "$[0].doc",
+          "value": "JVBERi0xLjQKJeLjz9MNCjEgMCBvYmoKPDwgCi9DcmVhdG9yIChDYW5vbiBpUi1BRFYgQzM1MjUgSUlJICBQREYpCi9DcmVhdGlvbkRhdGUgKEQ6MjAyMjAxMTIxNjM3MTIrMDEnMDAnKQovUHJvZHVjZXIgKFwzNzZcMzc3XDAwMEFcMDAwZFwwMDBvXDAwMGJcMDAwZVwwMDAgXDAwMFBcMDAwU1wwMDBMXDAwMCBcMDAwMVwwMDAuXDAwMFwKM1wwMDBlXDAwMCBcMDAwZlwwMDBvXDAwMHJcMDAwIFwwMDBDXDAwMGFcMDAwblwwMDBvXDAwMG5cMDAwXDAwMCkKPj4gCmVuZG9iagoyIDAgb2JqCjw8IAovUGFnZXMgMyAwIFIgCi9UeXBlIC9DYXRhbG9nIAovT3V0cHV0SW50ZW50cyAxMiAwIFIgCi9NZXRhZGF0YSAxMyAwIFIgCj4+IAplbmRvYmoKNCAwIG9iago8PCAvVHlwZSAvWE9iamVjdCAvU3VidHlwZSAvSW1hZ2UgL1dpZHRoIDEyNDAgL0hlaWdodCAxNzUzIC9CaXRzUGVyQ29tcG9uZW50IDggCi9Db2xvclNwYWNlIC9EZXZpY2VSR0IgL0ZpbHRlciBbIC9GbGF0ZURlY29kZSAvRENURGVjb2RlIF0gL0xlbmd0aCAzMTQxOSA+PiAKc3RyZWFtDQp4AaS9CVyU5fr//8ywqEhpNpbpcZec0UOKGZaljMuogAszuNRUmtoCdsi0PKalA6aVo7ngiBoqhCxqqacajy0mtqhlKbKkhSepLFHcUlBEYPi9r/sZ1L7n+3v9/6///3y/Y7M8z/3cy7V8rs913TcNPzb8orWMGRY9TDMYDVoa/6c1+LQWQya/MP2FTtEvTNX4X8NxbYgW2K5dp3adunXq1C2yZ7eekY8/HBn58OMvL3x88OMLX960MsXlSlm5qfCDfe/s+6Dwx33V1ft+PFFxruKEr6HBd7LhZEXFr9KI4f93I3u1O5oG/xT4Y4Chi2a8wxBwh4HeNqGPmtbwtdZR0wxBBvU/9RX/GIwBgUHBTZo2C2nOBTtbakZDQIAxMCAoKDBQ0wzzDMYALfCOoFadIwYF32mf3KTLDFOflJXvNu06+IMvWjsK/+x2/5SZC5qF3HV3m3vaht3b3Wzp0feByH4PPtR/yFDbsOEj"
+        },
+        {
+          "jsonPath": "$[0].documentUrl",
+          "value": "AC-CIRCULAIRE-2023-BDDD0EDD-8ABC-4CD5-9AB3-EAFF4803AB1E.pdf"
+        },
+        {
+          "jsonPath": "$[0].resume",
+          "value": "RELATIVE AUX EXIGENCES EN MATIERE DE COMMUNICATIONS PUBLICITAIRES"
+        },
+        {
+          "jsonPath": "$[0].titre",
+          "value": "CIRCULAIRE N°007-2022"
+        },
+        {
+          "jsonPath": "$[0].texte",
+          "value": "RELATIVE AUX EXIGENCES EN MATIERE DE COMMUNICATIONS PUBLICITAIRES"
+        },
+        {
+          "jsonPath": "$[0].categorie",
+          "value": "Circulaire"
+        },
+        {
+          "jsonPath": "$[0].tags[0]",
+          "value": "Circulaire"
+        }
+      ],
+      "attachmentCandidates": [],
+      "materializedBinary": null,
+      "attachmentAttempts": [],
+      "automaticDependencyResolutionAllowed": false
+    },
+    {
+      "number": 8,
+      "reference": "Circulaire n°08/AMF-UMOA/2022",
+      "actualiteId": 1000136,
+      "apiUrl": "https://www.amf-umoa.org/service/api/elastic/actualite?id=1000136&langue=fr",
+      "apiRawSha256": "acf5ab061dcf757870818093ec50230198ed73a71225d80055095ee08533a1ce",
+      "evidenceStrings": [
+        {
+          "jsonPath": "$[0].doc",
+          "value": "JVBERi0xLjQKJeLjz9MNCjEgMCBvYmoKPDwgCi9DcmVhdG9yIChDYW5vbiBpUi1BRFYgQzM1MjUgSUlJICBQREYpCi9DcmVhdGlvbkRhdGUgKEQ6MjAyMjAxMTIxNjM4NTMrMDEnMDAnKQovUHJvZHVjZXIgKFwzNzZcMzc3XDAwMEFcMDAwZFwwMDBvXDAwMGJcMDAwZVwwMDAgXDAwMFBcMDAwU1wwMDBMXDAwMCBcMDAwMVwwMDAuXDAwMFwKM1wwMDBlXDAwMCBcMDAwZlwwMDBvXDAwMHJcMDAwIFwwMDBDXDAwMGFcMDAwblwwMDBvXDAwMG5cMDAwXDAwMCkKPj4gCmVuZG9iagoyIDAgb2JqCjw8IAovUGFnZXMgMyAwIFIgCi9UeXBlIC9DYXRhbG9nIAovT3V0cHV0SW50ZW50cyAxMSAwIFIgCi9NZXRhZGF0YSAxMiAwIFIgCj4+IAplbmRvYmoKNCAwIG9iago8PCAvVHlwZSAvWE9iamVjdCAvU3VidHlwZSAvSW1hZ2UgL1dpZHRoIDEyNDAgL0hlaWdodCAxNzUzIC9CaXRzUGVyQ29tcG9uZW50IDggCi9Db2xvclNwYWNlIC9EZXZpY2VSR0IgL0ZpbHRlciBbIC9GbGF0ZURlY29kZSAvRENURGVjb2RlIF0gL0xlbmd0aCAzMDQzMSA+PiAKc3RyZWFtDQp4AaS9C1xU1fr/v2cAL2hpNpRdzEuRMxopmlZ4AbVRB1Bg8FJkaloJdsiszCOFA6aVk4bSiKYpiAOipnYZy8rEPN6yTEDM0ozKC15SU1DkNvzfz9qD2vn2+/++r/+/czbu2bP32ms967l8nsta0/BTw29a68jBtsGawWjQsvif1uDVWg16+oUpL3SwvTBR47+GI9ogzf+uuzrc1eG+Dh3u6931vq69n+zTu3efJ1+Z/eTAJ2e/smphusORvnBV8cc7l+78uPinnVVVO3/69cyfZ371NjR4jzUcO3Pmd2nE8P+7kW3aLc2a/Oz/k5+hk2a8xeB3i4HeNqWPmtawQ2uvaYYAg/pPXeKPwejnH9CkabPmgS24YVNrzWjw8zP6+wUE+PtrmiHVYPTT/G8JaNMxdECTW+OebtppqqlH+sKVze4d+PE3Qfbiv+7rOeGlWc0Db7u97R13Bt/f2Wzp8lCv3g8/8mjYoMesg4cM"
+        },
+        {
+          "jsonPath": "$[0].documentUrl",
+          "value": "AC-CIRCULAIRE-2023-2B7AF72A-ADA5-4B10-B184-576C32DC507F.pdf"
+        },
+        {
+          "jsonPath": "$[0].resume",
+          "value": "RELATIVE AUX RAPPORTS PERIODIQUES DES OPC"
+        },
+        {
+          "jsonPath": "$[0].titre",
+          "value": "CIRCULAIRE N°008-2022"
+        },
+        {
+          "jsonPath": "$[0].texte",
+          "value": "RELATIVE AUX RAPPORTS PERIODIQUES DES OPC"
+        },
+        {
+          "jsonPath": "$[0].categorie",
+          "value": "Circulaire"
+        },
+        {
+          "jsonPath": "$[0].tags[0]",
+          "value": "Circulaire"
+        }
+      ],
+      "attachmentCandidates": [],
+      "materializedBinary": null,
+      "attachmentAttempts": [],
+      "automaticDependencyResolutionAllowed": false
+    },
+    {
+      "number": 9,
+      "reference": "Circulaire n°09/AMF-UMOA/2022",
+      "actualiteId": 1000137,
+      "apiUrl": "https://www.amf-umoa.org/service/api/elastic/actualite?id=1000137&langue=fr",
+      "apiRawSha256": "a3a524b1b0e0ba60b9e7eb71fb48ee16bdc0cc59c9461b1cd28ce400c3f677dd",
+      "evidenceStrings": [
+        {
+          "jsonPath": "$[0].doc",
+          "value": "JVBERi0xLjQKJeLjz9MNCjEgMCBvYmoKPDwgCi9DcmVhdG9yIChDYW5vbiBpUi1BRFYgQzM1MjUgSUlJICBQREYpCi9DcmVhdGlvbkRhdGUgKEQ6MjAyMjAxMTIxNjQxNDQrMDEnMDAnKQovUHJvZHVjZXIgKFwzNzZcMzc3XDAwMEFcMDAwZFwwMDBvXDAwMGJcMDAwZVwwMDAgXDAwMFBcMDAwU1wwMDBMXDAwMCBcMDAwMVwwMDAuXDAwMFwKM1wwMDBlXDAwMCBcMDAwZlwwMDBvXDAwMHJcMDAwIFwwMDBDXDAwMGFcMDAwblwwMDBvXDAwMG5cMDAwXDAwMCkKPj4gCmVuZG9iagoyIDAgb2JqCjw8IAovUGFnZXMgMyAwIFIgCi9UeXBlIC9DYXRhbG9nIAovT3V0cHV0SW50ZW50cyAxNCAwIFIgCi9NZXRhZGF0YSAxNSAwIFIgCj4+IAplbmRvYmoKNCAwIG9iago8PCAvVHlwZSAvWE9iamVjdCAvU3VidHlwZSAvSW1hZ2UgL1dpZHRoIDEyNDAgL0hlaWdodCAxNzUzIC9CaXRzUGVyQ29tcG9uZW50IDggCi9Db2xvclNwYWNlIC9EZXZpY2VSR0IgL0ZpbHRlciBbIC9GbGF0ZURlY29kZSAvRENURGVjb2RlIF0gL0xlbmd0aCAzOTE1OCA+PiAKc3RyZWFtDQp4AaS9CUATV9s/OklYFLAuHaytFdx4TfSligttaZWIjZLEJRNc2rjg2oLWrW6FFhOsdIkLihGtVokxQXDjU+NuxVr31gJxq2hF64LiggqICIT7e84E9F2+e//33r7v6Mxk5sw5z3mW37OcY92fdde5Zpr+6v6cRCrh0vE/rs7NNe03btr0aW3V0yZw+K/uCteP82rdum3rth3btu0Y3qVjl/CRH4SHfzBy9sKRUSMXzt64PNloTF6+sWDH8TXHdxT8ebyy8vif10oelFxz19W5b9bdLCm5QY1I/n83coRr3sjnstefMkl7TtpcImsuQW990UeOqzvGBXOcxFvC/mO38IdEKvPy9vFt1NjPHw/sbsZJJTKZ1Evm7e3lxXGSJIlUxnk1927RLqyvz+vCON/2M/nuycs3NOoQteOXQH3B4449xn+xoLFfyzdavflWyD86yRWde/YKf/e99yP6faTqPyBarYkZOmz4iI8/"
+        },
+        {
+          "jsonPath": "$[0].documentUrl",
+          "value": "AC-CIRCULAIRE-2023-017E526D-5401-45D1-B2A8-63BF910E98BE.pdf"
+        },
+        {
+          "jsonPath": "$[0].titre",
+          "value": "CIRCULAIRE N°009-2022"
+        },
+        {
+          "jsonPath": "$[0].categorie",
+          "value": "Circulaire"
+        },
+        {
+          "jsonPath": "$[0].tags[0]",
+          "value": "Circulaire"
+        }
+      ],
+      "attachmentCandidates": [],
+      "materializedBinary": null,
+      "attachmentAttempts": [],
+      "automaticDependencyResolutionAllowed": false
+    },
+    {
+      "number": 10,
+      "reference": "Circulaire n°10/AMF-UMOA/2022",
+      "actualiteId": 1000138,
+      "apiUrl": "https://www.amf-umoa.org/service/api/elastic/actualite?id=1000138&langue=fr",
+      "apiRawSha256": "5a163201e11ee28059d9484428ba027c360b83dbd4d9826646c9c4657357710e",
+      "evidenceStrings": [
+        {
+          "jsonPath": "$[0].doc",
+          "value": "JVBERi0xLjQKJeLjz9MNCjEgMCBvYmoKPDwgCi9DcmVhdG9yIChDYW5vbiBpUi1BRFYgQzM1MjUgSUlJICBQREYpCi9DcmVhdGlvbkRhdGUgKEQ6MjAyMjAxMTIxNjQyNDcrMDEnMDAnKQovUHJvZHVjZXIgKFwzNzZcMzc3XDAwMEFcMDAwZFwwMDBvXDAwMGJcMDAwZVwwMDAgXDAwMFBcMDAwU1wwMDBMXDAwMCBcMDAwMVwwMDAuXDAwMFwKM1wwMDBlXDAwMCBcMDAwZlwwMDBvXDAwMHJcMDAwIFwwMDBDXDAwMGFcMDAwblwwMDBvXDAwMG5cMDAwXDAwMCkKPj4gCmVuZG9iagoyIDAgb2JqCjw8IAovUGFnZXMgMyAwIFIgCi9UeXBlIC9DYXRhbG9nIAovT3V0cHV0SW50ZW50cyAxMiAwIFIgCi9NZXRhZGF0YSAxMyAwIFIgCj4+IAplbmRvYmoKNCAwIG9iago8PCAvVHlwZSAvWE9iamVjdCAvU3VidHlwZSAvSW1hZ2UgL1dpZHRoIDEyNDAgL0hlaWdodCAxNzUzIC9CaXRzUGVyQ29tcG9uZW50IDggCi9Db2xvclNwYWNlIC9EZXZpY2VSR0IgL0ZpbHRlciBbIC9GbGF0ZURlY29kZSAvRENURGVjb2RlIF0gL0xlbmd0aCA1NjE4MCA+PiAKc3RyZWFtDQp4AaS9eVxTZ7c2vBNAFHGiG4u1iqipCT55BAeqqBC1UQgiSUBt44DF2oZaam1Fiy0GrNYaFTRGRCkSY0CoA9VGbbWKWmerQMQJ21JHEAdUEARC+K51B2uf3/f98f3e95wjJ9Pe+x7Wvda1rjW09Vrr31xXxfjw8ZxAKOAy8L9cq4PrMu79T+d92if809kc/qf1BjeOc+3Zs0/PPv379OkfNLD/wKBpI4OCRk5bsGza2GnLFmxbl6rTpa7bVrrn5OaTe0qvnWxoOHntr+qH1X85Wlsdt1tvV1ffpJsI/q9vcpTr1r7ddddrLoK+nLCbwKWbAKN1xxg5rvUE58txAjcB+x/2Ef4IhC6ubu3c23fw6Igf7OvKCQUuLkJXFzc3V1eOEyQLhC6cazc3L7/AMe1eU73v3nc+Pzh13db2/cbuOeatLn3Sf0jc50s7eHR/3afHG6K3Bogl/kOHBb09fETwuHfk4yeEhSuiYyZP"
+        },
+        {
+          "jsonPath": "$[0].documentUrl",
+          "value": "AC-CIRCULAIRE-2023-5CF0603D-3683-4DD5-87B8-B82E7BD27615.pdf"
+        },
+        {
+          "jsonPath": "$[0].resume",
+          "value": "RELATIVE AUX MODALITES DE CALCUL DES FRAIS GENERAUX POUR LA DETERMINATION DU NIVEAU DE CAPITAUX PROPRES D’UNE SOCIETE DE GESTION D’OPC"
+        },
+        {
+          "jsonPath": "$[0].titre",
+          "value": "CIRCULAIRE N°010-2022"
+        },
+        {
+          "jsonPath": "$[0].texte",
+          "value": "RELATIVE AUX MODALITES DE CALCUL DES FRAIS GENERAUX POUR LA DETERMINATION DU NIVEAU DE CAPITAUX PROPRES D’UNE SOCIETE DE GESTION D’OPC"
+        },
+        {
+          "jsonPath": "$[0].categorie",
+          "value": "Circulaire"
+        },
+        {
+          "jsonPath": "$[0].tags[0]",
+          "value": "Circulaire"
+        }
+      ],
+      "attachmentCandidates": [],
+      "materializedBinary": null,
+      "attachmentAttempts": [],
+      "automaticDependencyResolutionAllowed": false
+    },
+    {
+      "number": 11,
+      "reference": "Circulaire n°11/AMF-UMOA/2022",
+      "actualiteId": 1000139,
+      "apiUrl": "https://www.amf-umoa.org/service/api/elastic/actualite?id=1000139&langue=fr",
+      "apiRawSha256": "f3fd991f9a2f77f8aafae39f0dfe8586d551157d8e5e2f7bcf0f17b95b2777a5",
+      "evidenceStrings": [
+        {
+          "jsonPath": "$[0].doc",
+          "value": "JVBERi0xLjQKJeLjz9MNCjEgMCBvYmoKPDwgCi9DcmVhdG9yIChDYW5vbiBpUi1BRFYgQzM1MjUgSUlJICBQREYpCi9DcmVhdGlvbkRhdGUgKEQ6MjAyMjAxMTIxNjQzMzcrMDEnMDAnKQovUHJvZHVjZXIgKFwzNzZcMzc3XDAwMEFcMDAwZFwwMDBvXDAwMGJcMDAwZVwwMDAgXDAwMFBcMDAwU1wwMDBMXDAwMCBcMDAwMVwwMDAuXDAwMFwKM1wwMDBlXDAwMCBcMDAwZlwwMDBvXDAwMHJcMDAwIFwwMDBDXDAwMGFcMDAwblwwMDBvXDAwMG5cMDAwXDAwMCkKPj4gCmVuZG9iagoyIDAgb2JqCjw8IAovUGFnZXMgMyAwIFIgCi9UeXBlIC9DYXRhbG9nIAovT3V0cHV0SW50ZW50cyAxMSAwIFIgCi9NZXRhZGF0YSAxMiAwIFIgCj4+IAplbmRvYmoKNCAwIG9iago8PCAvVHlwZSAvWE9iamVjdCAvU3VidHlwZSAvSW1hZ2UgL1dpZHRoIDEyNDAgL0hlaWdodCAxNzUzIC9CaXRzUGVyQ29tcG9uZW50IDggCi9Db2xvclNwYWNlIC9EZXZpY2VSR0IgL0ZpbHRlciBbIC9GbGF0ZURlY29kZSAvRENURGVjb2RlIF0gL0xlbmd0aCAyOTMzOCA+PiAKc3RyZWFtDQp4AaS9CXxTVfr/f5M2gAUFOimCCmXreAPffllExkGgAYyQFmwTNo3KOmgLg6gjKsyUtAouAVliiAhqa2kLBZFBg7iAZRBQcZS2bFJ0qgNSKCCyFeiS/t/PuWnB+c53fr/X7+/MLcldzj3nOc/yeZZz0vBtww9am+R7nfdqJrNJC/I/rSGstR42+bFZj3V2PjZV47+GI9owLfrWWzvf2rl7587d+/fs3rP/g3f373/3g0/Nf3Dog/OfWr0s2+vNXra6dNOulbs2lX676/LlXd/+o+p01T/CDQ3how1Hq6p+lEZM/78b2a61bdHscPS3UaaumrmtKaqtid42p4+a1rBTi9c0k8Wk/lOn+GMyR0VbmjVvcUNMS27Y3EYzm6KizNFRFkt0tKaZMk3mKC26rSW2S58hzX7jmty86xPWvtnL3m7Rbeimv8W5S3/pfseUJ5+7Iabdze073JLw29t1W49+d/b/3V2/HzDsHse9"
+        },
+        {
+          "jsonPath": "$[0].documentUrl",
+          "value": "AC-CIRCULAIRE-2023-9CCBB157-AE80-4C1E-BF25-08658D2DB7E5.pdf"
+        },
+        {
+          "jsonPath": "$[0].resume",
+          "value": "RELATIVE AUX FRAIS DE L’OPC"
+        },
+        {
+          "jsonPath": "$[0].titre",
+          "value": "CIRCULAIRE N°011-2022"
+        },
+        {
+          "jsonPath": "$[0].texte",
+          "value": "RELATIVE AUX FRAIS DE L’OPC"
+        },
+        {
+          "jsonPath": "$[0].categorie",
+          "value": "Circulaire"
+        },
+        {
+          "jsonPath": "$[0].tags[0]",
+          "value": "Circulaire"
+        }
+      ],
+      "attachmentCandidates": [],
+      "materializedBinary": null,
+      "attachmentAttempts": [],
+      "automaticDependencyResolutionAllowed": false
+    },
+    {
+      "number": 12,
+      "reference": "Circulaire n°12/AMF-UMOA/2022",
+      "actualiteId": 1000140,
+      "apiUrl": "https://www.amf-umoa.org/service/api/elastic/actualite?id=1000140&langue=fr",
+      "apiRawSha256": "560c24dca15199d28451a48f907cbe6a9ff559cd67d04b5e4e9bb71f85633fd6",
+      "evidenceStrings": [
+        {
+          "jsonPath": "$[0].doc",
+          "value": "JVBERi0xLjQKJeLjz9MNCjEgMCBvYmoKPDwgCi9DcmVhdG9yIChDYW5vbiBpUi1BRFYgQzM1MjUgSUlJICBQREYpCi9DcmVhdGlvbkRhdGUgKEQ6MjAyMjAxMTIxNjQ0MzQrMDEnMDAnKQovUHJvZHVjZXIgKFwzNzZcMzc3XDAwMEFcMDAwZFwwMDBvXDAwMGJcMDAwZVwwMDAgXDAwMFBcMDAwU1wwMDBMXDAwMCBcMDAwMVwwMDAuXDAwMFwKM1wwMDBlXDAwMCBcMDAwZlwwMDBvXDAwMHJcMDAwIFwwMDBDXDAwMGFcMDAwblwwMDBvXDAwMG5cMDAwXDAwMCkKPj4gCmVuZG9iagoyIDAgb2JqCjw8IAovUGFnZXMgMyAwIFIgCi9UeXBlIC9DYXRhbG9nIAovT3V0cHV0SW50ZW50cyAxMSAwIFIgCi9NZXRhZGF0YSAxMiAwIFIgCj4+IAplbmRvYmoKNCAwIG9iago8PCAvVHlwZSAvWE9iamVjdCAvU3VidHlwZSAvSW1hZ2UgL1dpZHRoIDEyNDAgL0hlaWdodCAxNzUzIC9CaXRzUGVyQ29tcG9uZW50IDggCi9Db2xvclNwYWNlIC9EZXZpY2VSR0IgL0ZpbHRlciBbIC9GbGF0ZURlY29kZSAvRENURGVjb2RlIF0gL0xlbmd0aCAzMjA5OSA+PiAKc3RyZWFtDQp4AaS9CXiTZfb//XShQNlrQJDBFrGSlMlA2dQiNMBESFqgTVk0KiiLNjAVt47KDCRlQCSChRIKgtga0payiGgAB5EiyiKK0AXQolZFBYqIUqB0fz/nTln8/X//63qv93UmJU2e5X7u+yzf8z3n3G36qul7raP1QcuDWlBwkJbN/7SmRq3DyCeenv10lOXpaRr/NZ3SRmqh3btHdY+6Oyrq7sF97u4z+JEhgwcPeeSFBY+MeGTBC+uXZzidGcvXF2/bv2b/tuKv9ldX7//qu8pfK79rbGpqPN10urLyB7lI0P/vi+zVOrUK+zr0q5Cgu7TgTkEhnYIYbUvGqGlNn2qRmhbUIkj9pz7iR1BwSGiLsJatWoe34YDtHbXgoJCQ4NCQFi1CQzUtaG5QcIgW2qlFRM/Y4WG3JT/R8q5ndf0zlr/dqteIbR93thX/fveAqc/Nbx3e5fau3e6Ivqe33hAzcNDge++7P27k380P"
+        },
+        {
+          "jsonPath": "$[0].documentUrl",
+          "value": "AC-CIRCULAIRE-2023-EF7E23A9-222F-41E8-80AB-91805B9FAC79.pdf"
+        },
+        {
+          "jsonPath": "$[0].resume",
+          "value": "RELATIVE A L’EVALUATION DES OPC ET DE LEURS ACTIFS"
+        },
+        {
+          "jsonPath": "$[0].titre",
+          "value": "CIRCULAIRE N°012-2022"
+        },
+        {
+          "jsonPath": "$[0].texte",
+          "value": "RELATIVE A L’EVALUATION DES OPC ET DE LEURS ACTIFS"
+        },
+        {
+          "jsonPath": "$[0].categorie",
+          "value": "Circulaire"
+        },
+        {
+          "jsonPath": "$[0].tags[0]",
+          "value": "Circulaire"
+        }
+      ],
+      "attachmentCandidates": [],
+      "materializedBinary": null,
+      "attachmentAttempts": [],
+      "automaticDependencyResolutionAllowed": false
+    },
+    {
+      "number": 13,
+      "reference": "Circulaire n°13/AMF-UMOA/2022",
+      "actualiteId": 1000141,
+      "apiUrl": "https://www.amf-umoa.org/service/api/elastic/actualite?id=1000141&langue=fr",
+      "apiRawSha256": "272bb1c2d6d6696100cf62a3923781d2a543a3b718de74647a680b8bb8a18563",
+      "evidenceStrings": [
+        {
+          "jsonPath": "$[0].doc",
+          "value": "JVBERi0xLjQKJeLjz9MNCjEgMCBvYmoKPDwgCi9DcmVhdG9yIChDYW5vbiBpUi1BRFYgQzM1MjUgSUlJICBQREYpCi9DcmVhdGlvbkRhdGUgKEQ6MjAyMjAxMTIxNjQ1MTArMDEnMDAnKQovUHJvZHVjZXIgKFwzNzZcMzc3XDAwMEFcMDAwZFwwMDBvXDAwMGJcMDAwZVwwMDAgXDAwMFBcMDAwU1wwMDBMXDAwMCBcMDAwMVwwMDAuXDAwMFwKM1wwMDBlXDAwMCBcMDAwZlwwMDBvXDAwMHJcMDAwIFwwMDBDXDAwMGFcMDAwblwwMDBvXDAwMG5cMDAwXDAwMCkKPj4gCmVuZG9iagoyIDAgb2JqCjw8IAovUGFnZXMgMyAwIFIgCi9UeXBlIC9DYXRhbG9nIAovT3V0cHV0SW50ZW50cyAxMyAwIFIgCi9NZXRhZGF0YSAxNCAwIFIgCj4+IAplbmRvYmoKNCAwIG9iago8PCAvVHlwZSAvWE9iamVjdCAvU3VidHlwZSAvSW1hZ2UgL1dpZHRoIDEyNDAgL0hlaWdodCAxNzUzIC9CaXRzUGVyQ29tcG9uZW50IDggCi9Db2xvclNwYWNlIC9EZXZpY2VSR0IgL0ZpbHRlciBbIC9GbGF0ZURlY29kZSAvRENURGVjb2RlIF0gL0xlbmd0aCA0NTQzNyA+PiAKc3RyZWFtDQp4AaS9CVyU5fr//wybSrjRYGqZK/oMRomWFaWM2iQMLjC41FSuxxPoMU8lp4MnBUztOJkLjoSagiMguMSpxjonLcxcyjJl0Qor29zQcgFXtt/7up9BPd/X9//6/17/f+eAM896L9fyuT7Xdd80fdv0k9bO/mTck5rJz6Rl8z+tqVFrO2zyC7Ne6Bb3wlSN/5qOacO0gLvv7nZ3t17duvUa2LdX34HPPDZw4GPPzF7wzNBnFszeuCIzPT1zxcayd/eu2ftu2bd7r17d++2P1eeqf2xsamr8tenX6uqf5SGm/98P2aW1bxn0XcC3/qYeml97k397E61tQRs1rWmP1lXTTIEm9Z86xC+Tn39AYFCLlq2C7+CC7e00P5O/v1+Af2BgQICmmeaa/Py1gPaBod2jhgTdmTi5RY8Xzf0zV2xo2XPou5+GOcou9Bow5aX5rYI73NWxU+fw3n10S8SDDw18+JFHo4c9YXtyeGyc"
+        },
+        {
+          "jsonPath": "$[0].documentUrl",
+          "value": "AC-CIRCULAIRE-2023-9A05D31B-7FA9-4D98-9CF7-47D3CE2D7287.pdf"
+        },
+        {
+          "jsonPath": "$[0].resume",
+          "value": "RELATIVE AUX CLASSES DE PARTS / ACTIONS"
+        },
+        {
+          "jsonPath": "$[0].titre",
+          "value": "CIRCULAIRE N°013-2022"
+        },
+        {
+          "jsonPath": "$[0].texte",
+          "value": "RELATIVE AUX CLASSES DE PARTS / ACTIONS"
+        },
+        {
+          "jsonPath": "$[0].categorie",
+          "value": "Circulaire"
+        },
+        {
+          "jsonPath": "$[0].tags[0]",
+          "value": "Circulaire"
+        }
+      ],
+      "attachmentCandidates": [],
+      "materializedBinary": null,
+      "attachmentAttempts": [],
+      "automaticDependencyResolutionAllowed": false
+    },
+    {
+      "number": 14,
+      "reference": "Circulaire n°14/AMF-UMOA/2022",
+      "actualiteId": 1000142,
+      "apiUrl": "https://www.amf-umoa.org/service/api/elastic/actualite?id=1000142&langue=fr",
+      "apiRawSha256": "8056f7a54fe301349d8c8ca41686075ed03b9e2054b8e75efa0b2edfa18e3a89",
+      "evidenceStrings": [
+        {
+          "jsonPath": "$[0].doc",
+          "value": "JVBERi0xLjQKJeLjz9MNCjEgMCBvYmoKPDwgCi9DcmVhdG9yIChDYW5vbiBpUi1BRFYgQzM1MjUgSUlJICBQREYpCi9DcmVhdGlvbkRhdGUgKEQ6MjAyMjAxMTIxNjQ1NTUrMDEnMDAnKQovUHJvZHVjZXIgKFwzNzZcMzc3XDAwMEFcMDAwZFwwMDBvXDAwMGJcMDAwZVwwMDAgXDAwMFBcMDAwU1wwMDBMXDAwMCBcMDAwMVwwMDAuXDAwMFwKM1wwMDBlXDAwMCBcMDAwZlwwMDBvXDAwMHJcMDAwIFwwMDBDXDAwMGFcMDAwblwwMDBvXDAwMG5cMDAwXDAwMCkKPj4gCmVuZG9iagoyIDAgb2JqCjw8IAovUGFnZXMgMyAwIFIgCi9UeXBlIC9DYXRhbG9nIAovT3V0cHV0SW50ZW50cyAxMSAwIFIgCi9NZXRhZGF0YSAxMiAwIFIgCj4+IAplbmRvYmoKNCAwIG9iago8PCAvVHlwZSAvWE9iamVjdCAvU3VidHlwZSAvSW1hZ2UgL1dpZHRoIDEyNDAgL0hlaWdodCAxNzUzIC9CaXRzUGVyQ29tcG9uZW50IDggCi9Db2xvclNwYWNlIC9EZXZpY2VSR0IgL0ZpbHRlciBbIC9GbGF0ZURlY29kZSAvRENURGVjb2RlIF0gL0xlbmd0aCAzMTM3MyA+PiAKc3RyZWFtDQp4AaS9CVzU5dr//x1gXNByaTDN4x45o4dcMipSQW1SwAUGl5pKXLJAM9vMtHCG0pbJQnHELWUcBwQ3jjUudVLM41KWKYhaWlFaoZiSoiICw+993TNo5zzn93s9r///PM/YLN/l/l73tXyuz3XdN/Xf1f+stYx7NPZRTRek07L4P63ep7UYMvH5Gc93jn1+ssb/6k9pQ7SQ9u07t+98d+fOd0f2vLtn5BMPR0Y+/MQr854Y/MS8V9YuSrfZ0hetLdqyb8W+LUXf7auq2vfdT+V/lP/kq6/3nak/U17+i1xE9//7Iru1Vk0afR/yXbCuqxbUShfcSsdoGzNGTavfq3XSNJ1ep/6nvuIfXVBwiL5R4yZNQ5txwNaWWpAuODgoJFivDwnRNF2aLihYC2mlb92lz6BGdyRObNz1RUPf9EVrmnQbvOWLMEvRn3ffN+mlN5uGtrmzbbu7wu/pbjT16Hd/5AMPPhQ15BHzo0OH"
+        },
+        {
+          "jsonPath": "$[0].documentUrl",
+          "value": "AC-CIRCULAIRE-2023-B232884D-C617-4772-A0DF-0CFB9FC62843.pdf"
+        },
+        {
+          "jsonPath": "$[0].resume",
+          "value": "RELATIVE AUX OUTILS DE GESTION DE LA LIQUIDITE"
+        },
+        {
+          "jsonPath": "$[0].titre",
+          "value": "CIRCULAIRE N°014-2022"
+        },
+        {
+          "jsonPath": "$[0].texte",
+          "value": "RELATIVE AUX OUTILS DE GESTION DE LA LIQUIDITE"
+        },
+        {
+          "jsonPath": "$[0].categorie",
+          "value": "Circulaire"
+        },
+        {
+          "jsonPath": "$[0].tags[0]",
+          "value": "Circulaire"
+        }
+      ],
+      "attachmentCandidates": [],
+      "materializedBinary": null,
+      "attachmentAttempts": [],
+      "automaticDependencyResolutionAllowed": false
+    },
+    {
+      "number": 15,
+      "reference": "Circulaire n°15/AMF-UMOA/2022",
+      "actualiteId": 1000143,
+      "apiUrl": "https://www.amf-umoa.org/service/api/elastic/actualite?id=1000143&langue=fr",
+      "apiRawSha256": "76922dd3bf34aa330cbb7463fc14e7ac31777878c54ce6199c2173a21e233a5d",
+      "evidenceStrings": [
+        {
+          "jsonPath": "$[0].doc",
+          "value": "JVBERi0xLjQKJeLjz9MNCjEgMCBvYmoKPDwgCi9DcmVhdG9yIChDYW5vbiBpUi1BRFYgQzM1MjUgSUlJICBQREYpCi9DcmVhdGlvbkRhdGUgKEQ6MjAyMjAxMTIxNjQ3MTErMDEnMDAnKQovUHJvZHVjZXIgKFwzNzZcMzc3XDAwMEFcMDAwZFwwMDBvXDAwMGJcMDAwZVwwMDAgXDAwMFBcMDAwU1wwMDBMXDAwMCBcMDAwMVwwMDAuXDAwMFwKM1wwMDBlXDAwMCBcMDAwZlwwMDBvXDAwMHJcMDAwIFwwMDBDXDAwMGFcMDAwblwwMDBvXDAwMG5cMDAwXDAwMCkKPj4gCmVuZG9iagoyIDAgb2JqCjw8IAovUGFnZXMgMyAwIFIgCi9UeXBlIC9DYXRhbG9nIAovT3V0cHV0SW50ZW50cyAxMSAwIFIgCi9NZXRhZGF0YSAxMiAwIFIgCj4+IAplbmRvYmoKNCAwIG9iago8PCAvVHlwZSAvWE9iamVjdCAvU3VidHlwZSAvSW1hZ2UgL1dpZHRoIDEyNDAgL0hlaWdodCAxNzUzIC9CaXRzUGVyQ29tcG9uZW50IDggCi9Db2xvclNwYWNlIC9EZXZpY2VSR0IgL0ZpbHRlciBbIC9GbGF0ZURlY29kZSAvRENURGVjb2RlIF0gL0xlbmd0aCAzMTAyOCA+PiAKc3RyZWFtDQp4AaS9CXiT1db3fXdiKAjICYqilCmSwIlQRNAytIARmgJNUwaNCggiLR5A1OopCmkRHAIK1lARhNaYlEngqEEc0AIyKCp0QNEiVkEsg4jQQumUvr+17xT1eZ73vZ7r+zznLhnuYQ9r+K//Wnun8bvGn7R2trsT79bCwsO0XP6nNQa1tiMenD1ndpfE2dM0/ms8qo3QIjt16tKpS48uXXoM6N2j94D7Bg0YMOi+JxbdN/y+RU+89Uq2y5X9ylvF7+xdtfed4u/2Vlfv/e7HM7+d+THY2Bg80XjizJmf5SZh/79vslO7tkWz7yO/iwjrpoVfGxZxbRitbU4bNa1xjxajaWFRYeo/9RF/wsIjIqOaNW/RMroVJ2xrp4WHRUSER0ZERUVGalrY/LDwCC3y2qj2XWOHNftHyoPNu8019Mt+5c0W3Ye/s6uDo/iPHrdNfWxhy+jrru94w43GW3qazL363z5g4B13xo24y3r3"
+        },
+        {
+          "jsonPath": "$[0].documentUrl",
+          "value": "AC-CIRCULAIRE-2023-BC35F9F6-2DB0-43C9-8C2A-B858FB2A37F4.pdf"
+        },
+        {
+          "jsonPath": "$[0].resume",
+          "value": "RELATIVE A LA GESTION DES RISQUES DES OPC"
+        },
+        {
+          "jsonPath": "$[0].titre",
+          "value": "CIRCULAIRE N°015-2022"
+        },
+        {
+          "jsonPath": "$[0].texte",
+          "value": "RELATIVE A LA GESTION DES RISQUES DES OPC"
+        },
+        {
+          "jsonPath": "$[0].categorie",
+          "value": "Circulaire"
+        },
+        {
+          "jsonPath": "$[0].tags[0]",
+          "value": "Circulaire"
+        }
+      ],
+      "attachmentCandidates": [],
+      "materializedBinary": null,
+      "attachmentAttempts": [],
+      "automaticDependencyResolutionAllowed": false
+    },
+    {
+      "number": 16,
+      "reference": "Circulaire n°16/AMF-UMOA/2022",
+      "actualiteId": 1000144,
+      "apiUrl": "https://www.amf-umoa.org/service/api/elastic/actualite?id=1000144&langue=fr",
+      "apiRawSha256": "818f3c5673e60d29212101d3fd0b9fb0d8c29b1009dc1801f803b016fe730591",
+      "evidenceStrings": [
+        {
+          "jsonPath": "$[0].doc",
+          "value": "JVBERi0xLjQNJeLjz9MNCjI4IDAgb2JqDTw8L0xpbmVhcml6ZWQgMS9MIDE5MTcxNjkvTyAzMC9FIDI2MDQ4Ny9OIDcvVCAxOTE2NDg5L0ggWyA0MzYgMTYwXT4+DWVuZG9iag0gICAgICAgICAgICAgDQp4cmVmDQoyOCA3DQowMDAwMDAwMDE2IDAwMDAwIG4NCjAwMDAwMDA1OTYgMDAwMDAgbg0KMDAwMDAwMDY1OSAwMDAwMCBuDQowMDAwMDAwNzg5IDAwMDAwIG4NCjAwMDAwMDA4NTQgMDAwMDAgbg0KMDAwMDAwMDk4MiAwMDAwMCBuDQowMDAwMDAwNDM2IDAwMDAwIG4NCnRyYWlsZXINCjw8L1NpemUgMzUvUm9vdCAyOSAwIFIvSW5mbyAyNyAwIFIvSURbPENGRTE0NjQyNDk3NkNCNEVBQ0UwOUNGMjE2M0RCOUE4PjxDRkUxNDY0MjQ5NzZDQjRFQUNFMDlDRjIxNjNEQjlBOD5dL1ByZXYgMTkxNjQ3OD4+DQpzdGFydHhyZWYNCjANCiUlRU9GDQogICAgICAgICAgICANCjM0IDAgb2JqDTw8L0ZpbHRlci9GbGF0ZURlY29kZS9JIDEwMC9MZW5ndGggODAvUyA2Nj4+c3RyZWFtDQpo3mJgYGBhYGD8zMDAwMw7iUGQAQEgbBYGjpKNAapbr1xt8soOdV/BwIDGRQIsUMzA4MggxCDgAGT8/1oA4kszyNr6AWlGIA4ACDAAYAwS0g0KZW5kc3RyZWFtDWVuZG9iag0yOSAwIG9iag08PC9NZXRhZGF0YSAyNiAwIFIvUGFnZXMgMjUgMCBSL1R5cGUvQ2F0YWxvZz4+DWVuZG9iag0zMCAwIG9iag08PC9Db250ZW50cyAzMiAwIFIvQ3JvcEJveFswIDAgNTk1IDg0Ml0vTWVkaWFCb3hbMCAwIDU5NSA4NDJdL1BhcmVudCAyNSAwIFIvUmVzb3VyY2VzIDMxIDAgUi9Sb3RhdGUgMC9UeXBlL1BhZ2U+Pg1lbmRvYmoNMzEgMCBvYmoNPDwvUHJvY1NldFsvUERGL0ltYWdlQl0vWE9iamVjdDw8L0ltMSAzMyAwIFI+Pj4+DWVuZG9iag0zMiAwIG9iag08PC9GaWx0ZXIvRmxhdGVEZWNvZGUvTGVuZ3RoIDU5Pj5zdHJl"
+        },
+        {
+          "jsonPath": "$[0].documentUrl",
+          "value": "AC-CIRCULAIRE-2023-0C7FF7FE-5B0C-4677-9FAE-8DE959A75E05.pdf"
+        },
+        {
+          "jsonPath": "$[0].resume",
+          "value": "RELATIVE AUX REGLES APPLICABLES AUX OPC EN MATIERE DE CONFLITS D’INTERETS ET REGLES DE CONDUITE"
+        },
+        {
+          "jsonPath": "$[0].titre",
+          "value": "CIRCULAIRE N°016-2022"
+        },
+        {
+          "jsonPath": "$[0].texte",
+          "value": "RELATIVE AUX REGLES APPLICABLES AUX OPC EN MATIERE DE CONFLITS D’INTERETS ET REGLES DE CONDUITE"
+        },
+        {
+          "jsonPath": "$[0].categorie",
+          "value": "Circulaire"
+        },
+        {
+          "jsonPath": "$[0].tags[0]",
+          "value": "Circulaire"
+        }
+      ],
+      "attachmentCandidates": [],
+      "materializedBinary": null,
+      "attachmentAttempts": [],
+      "automaticDependencyResolutionAllowed": false
+    }
+  ],
+  "boundary": {
+    "apiWitnessValidationRequired": true,
+    "apiObjectIsIndividualNormativeBinary": false,
+    "pdfMagicIsFullLegalValidation": false,
+    "automaticDependencyResolutionAllowed": false,
+    "automaticRequirementActivationAllowed": false,
+    "humanLegalReviewRequired": true,
+    "humanComplianceReviewRequired": true,
+    "readyForSubmissionMustRemainFalse": true
+  }
+}
