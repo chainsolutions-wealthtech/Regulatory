@@ -179,6 +179,10 @@ export async function persistGenerationArtifacts(input: {
     docxPath: artifactRelativePath(artifactPaths, "prospectus-draft.docx"),
     docxManifestPath: artifactRelativePath(artifactPaths, "docx-manifest.json"),
     docxValidationPath: artifactRelativePath(artifactPaths, "docx-validation.json"),
+    pdfPath: artifactRelativePath(artifactPaths, "prospectus-draft.pdf"),
+    pdfManifestPath: artifactRelativePath(artifactPaths, "pdf-manifest.json"),
+    reviewPackageManifestPath: artifactRelativePath(artifactPaths, "review-package-manifest.json"),
+    reviewPackagePath: artifactRelativePath(artifactPaths, "review-package.zip"),
   };
   project.updatedAt = new Date().toISOString();
   project.version += 1;
