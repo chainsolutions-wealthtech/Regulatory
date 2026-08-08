@@ -10,7 +10,8 @@ import type { CanonicalSnapshot, ProspectusProject } from "@/domain/types";
 import { buildCanonicalSnapshot } from "@/server/canonical-snapshot";
 
 const execFileAsync = promisify(execFile);
-const GENERATED_ARTIFACT_NAMES = [
+const BASE_ARTIFACT_NAMES = [
+  "canonical-snapshot.json",
   "prospectus-draft.md",
   "canonical-data.json",
   "questionnaire-state.json",
@@ -23,6 +24,20 @@ const GENERATED_ARTIFACT_NAMES = [
   "docx-manifest.json",
   "docx-validation.json",
 ] as const;
+const REVIEW_PACKAGE_ARTIFACT_NAMES = [
+  "prospectus-draft.pdf",
+  "pdf-manifest.json",
+  "review-package-manifest.json",
+  "review-package.zip",
+] as const;
+const GENERATED_ARTIFACT_NAMES = [
+  ...BASE_ARTIFACT_NAMES,
+  ...REVIEW_PACKAGE_ARTIFACT_NAMES,
+] as const;
+
+type BuildBundleOptions = {
+  includeReviewPackage?: boolean;
+};
 
 export type ProspectusPreviewSection = {
   id: string;
@@ -54,7 +69,9 @@ export type ProspectusGenerationBundle = {
 
 export async function buildProspectusBundle(
   project: ProspectusProject,
+  options: BuildBundleOptions = {},
 ): Promise<ProspectusGenerationBundle> {
+  const includeReviewPackage = options.includeReviewPackage ?? true;
   const canonicalSnapshot = buildCanonicalSnapshot(project);
   const temporaryRoot = await mkdtemp(path.join(tmpdir(), "regulatory-web-generation-"));
   const snapshotPath = path.join(temporaryRoot, "canonical-snapshot.json");
@@ -73,6 +90,8 @@ export async function buildProspectusBundle(
         outputDirectory,
         "--generated-at",
         canonicalSnapshot.snapshotCreatedAt,
+        "--review-package-mode",
+        includeReviewPackage ? "enabled" : "disabled",
       ],
       {
         cwd: repoRoot,
@@ -85,12 +104,15 @@ export async function buildProspectusBundle(
       readFile(path.join(outputDirectory, "prospectus-draft.md"), "utf8"),
       readFile(path.join(outputDirectory, "generation-manifest.json"), "utf8"),
     ]);
+    const artifactNames = includeReviewPackage
+      ? GENERATED_ARTIFACT_NAMES
+      : BASE_ARTIFACT_NAMES;
     const artifactContents = await Promise.all(
-      GENERATED_ARTIFACT_NAMES.map((fileName) => readFile(path.join(outputDirectory, fileName))),
+      artifactNames.map((fileName) => readFile(path.join(outputDirectory, fileName))),
     );
     const manifest = JSON.parse(manifestRaw) as Record<string, unknown>;
     const preview = previewFromMarkdown({ markdown, manifest, canonicalSnapshot });
-    const artifacts: GeneratedProspectusArtifact[] = GENERATED_ARTIFACT_NAMES.map(
+    const artifacts: GeneratedProspectusArtifact[] = artifactNames.map(
       (fileName, index) => ({
         fileName,
         content: artifactContents[index],
@@ -103,7 +125,7 @@ export async function buildProspectusBundle(
 }
 
 export async function buildProspectusPreview(project: ProspectusProject): Promise<ProspectusPreview> {
-  return (await buildProspectusBundle(project)).preview;
+  return (await buildProspectusBundle(project, { includeReviewPackage: false })).preview;
 }
 
 function previewFromMarkdown(input: {
