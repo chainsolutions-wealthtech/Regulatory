@@ -12,7 +12,8 @@ adoption_evidence:
     url: "https://www.bceao.int/fr/communique-presse/communique-de-presse-de-la-session-ordinaire-du-conseil-des-ministres-de-lunion-5"
     observed_on: 2026-08-08
     evidence: "Le communiqué officiel de la session du 24 juin 2022 indique que le Conseil des Ministres a adopté le dispositif révisé des sanctions pécuniaires applicables sur le marché financier régional de l'UMOA."
-    evidence_scope: ADOPTION_OF_REVISED_DEVICE_CONFIRMED
+    revision_purpose: "Alignement, pour les mêmes agissements, sur la Loi Uniforme relative aux infractions boursières et adaptation aux évolutions nécessaires du cadre de régulation."
+    evidence_scope: ADOPTION_OF_REVISED_DEVICE_AND_PURPOSE_CONFIRMED
   corroborating_sources:
     - authority: CENTIF_SENEGAL
       url: "https://www.centif.sn/reglementation/fr/reglcommu"
@@ -30,6 +31,8 @@ source_integrity:
   byte_size: null
   page_count: null
   copy_status: OFFICIAL_ADOPTION_CONFIRMED_BINARY_NOT_MATERIALIZED
+  acquisition_search_evidence: regulatory/review-evidence/SANCTIONS_2016_2022/OFFICIAL_BINARY_SEARCH_2026-08-08.yaml
+  acquisition_status: PUBLIC_OFFICIAL_ROUTES_CHECKED_BINARY_NOT_IDENTIFIED
 
 legal_metadata:
   adopted_on: 2022-06-24
@@ -63,3 +66,4 @@ notes:
   - "Cette entrée enregistre une dépendance documentaire et juridique ; elle ne constitue pas l'atomisation normative de la décision."
   - "Aucun montant, barème, seuil, catégorie de manquement ou sanction ne doit être modélisé comme actif avant matérialisation du texte officiel et double revue juridique/conformité."
   - "Les sources de corroboration ne remplacent pas le binaire officiel normatif."
+  - "La recherche publique du 2026-08-08 n'a pas identifié de binaire officiel stable exploitable ; les copies tierces restent exclues du corpus normatif."
