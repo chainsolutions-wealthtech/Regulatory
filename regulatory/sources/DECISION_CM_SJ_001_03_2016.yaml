@@ -16,6 +16,8 @@ source_integrity:
   byte_size: null
   page_count: null
   copy_status: OFFICIAL_REGISTRY_VERIFIED_BINARY_NOT_MATERIALIZED
+  acquisition_search_evidence: regulatory/review-evidence/SANCTIONS_2016_2022/OFFICIAL_BINARY_SEARCH_2026-08-08.yaml
+  acquisition_status: PUBLIC_OFFICIAL_ROUTES_CHECKED_BINARY_NOT_IDENTIFIED
 legal_metadata:
   signed_on: PENDING_OFFICIAL_BINARY_REVIEW
   effective_from: PENDING_OFFICIAL_BINARY_REVIEW
@@ -36,9 +38,11 @@ safety:
   requirement_activation_allowed: false
   sanction_amount_calculation_allowed: false
   automatic_enforcement_allowed: false
+  official_binary_required_before_atomization: true
   human_legal_review_required: true
   human_compliance_review_required: true
 notes:
   - "Les articles 31 et 32 de l'Instruction 58 renvoient au régime de sanctions ; la relation entre les décisions de 2016 et 2022 doit être établie avant toute activation."
   - "Aucun montant, barème, seuil ou qualification de sanction ne doit être modélisé comme actif avant matérialisation des textes officiels pertinents et double revue juridique/conformité."
   - "Le statut NON_ABROGE observé pour l'entrée 2016 du registre AMF-UMOA est conservé comme fait de registre et ne vaut pas conclusion sur l'effet juridique de la révision adoptée en 2022."
+  - "La recherche publique du 2026-08-08 n'a pas identifié de binaire officiel stable exploitable ; les copies tierces restent exclues du corpus normatif."
