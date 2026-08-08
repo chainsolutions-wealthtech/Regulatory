@@ -1,0 +1,38 @@
+source_id: CIRCULAIRE_16_CREPMF_2022
+source_type: CIRCULAR
+authority: CREPMF_AMF_UMOA
+reference: "Circulaire n°16/CREPMF/2022"
+title: "Relative aux règles applicables aux OPC en matière de conflits d'intérêts et règles de conduite"
+jurisdiction: UMOA
+source_origin:
+  authority_api: AMF_UMOA
+  actualite_id: 1000144
+  binary_identity: API_OBJECT_REFERENCE_MATCH_AND_BASE64_PDF_MAGIC_CONFIRMED
+materialization:
+  pdf: regulatory/sources/amf-umoa-2022-circulars/CIRCULAIRE_16_AMF_UMOA_2022.pdf
+  text: regulatory/sources/amf-umoa-2022-circulars/CIRCULAIRE_16_AMF_UMOA_2022.txt
+  metadata: regulatory/sources/amf-umoa-2022-circulars/CIRCULAIRE_16_AMF_UMOA_2022.metadata.json
+  sha256: 30bf5888ee6be37170e84a560e8800f558e2a6e1f0d5a437a60a2830a08dcbda
+  byte_size: 1917169
+  page_count: 7
+  extraction_method: OCR_TESSERACT_FRA_FALLBACK
+legal_metadata:
+  current_legal_status: TO_VERIFY
+instruction_66_relationship:
+  dependency_id: INST066_ART009_DEP_CIRC_01
+  article_number: 9
+  relationship: EXPLICIT_IMPLEMENTING_CIRCULAR
+  documentary_dependency_resolution: CONFIRMED
+  evidence: >-
+    The circular expressly defines Instruction as Instruction n°66/CREPMF/2021 and
+    states that it specifies the execution measures for rules of conduct, alongside
+    conflict-of-interest procedures. This matches Article 9's delegated execution
+    measures for rules of conduct.
+review:
+  legal_review_required: true
+  legal_review_status: PENDING
+  compliance_review_required: true
+  compliance_review_status: PENDING
+safety:
+  automatic_requirement_activation_allowed: false
+  ready_for_submission_must_remain_false: true
