@@ -1,0 +1,81 @@
+evidence_id: SANCTIONS_NORMATIVE_CHAIN_2016_2021_2022_2026_08_08
+review_date: 2026-08-08
+status: CHAIN_EXISTENCE_CONFIRMED_2022_RELATIONSHIP_STILL_PENDING_BINARY
+
+chain:
+  - seq: 1
+    source_id: DECISION_CM_SJ_001_03_2016
+    reference: "Décision n° CM/SJ/O01/03/2016"
+    role: ORIGINAL_2016_SANCTIONS_DEVICE
+    official_binary_status: MATERIALIZED_HASHED_AND_TEXT_EXTRACTED
+    sha256: 888b971071f32a6453647b979f3f9cc551d686e1bc7135d6a659e8907aa9dbe2
+    signed_on: 2016-03-24
+    effective_from: 2017-01-01
+
+  - seq: 2
+    source_id: DECISION_CM_07_09_2021_UNIFORM_SECURITIES_OFFENCES_LAW
+    reference: "Décision n° CM/07/09/2021"
+    title: "Décision portant adoption de la Loi uniforme relative aux infractions boursières sur le marché financier régional de l'UMOA"
+    role: UNIFORM_SECURITIES_OFFENCES_LAW_ADOPTION
+    institutional_sources:
+      - authority: AMF_UMOA
+        url: https://www.amf-umoa.org/actuality-details?actualiteId=1000182
+        observed_on: 2026-08-08
+        evidence_scope: REFERENCE_TITLE_AND_PUBLICATION_CONFIRMED
+      - authority: CENTIF_SENEGAL
+        url: https://www.centif.sn/reglementation/fr/reglcommu
+        observed_on: 2026-08-08
+        evidence_scope: REFERENCE_AND_TITLE_CORROBORATED_BY_PUBLIC_AUTHORITY
+    official_binary_status: NOT_MATERIALIZED_IN_REPOSITORY
+
+  - seq: 3
+    source_id: DECISION_CM_10_06_2022
+    reference: "Décision n° CM/10/06/2022"
+    role: REVISED_SANCTIONS_DEVICE
+    adopted_on: 2022-06-24
+    institutional_sources:
+      - authority: BCEAO
+        evidence_scope: ADOPTION_AND_REVISION_PURPOSE_CONFIRMED
+      - authority: CENTIF_SENEGAL
+        evidence_scope: EXACT_REFERENCE_AND_TITLE_CONFIRMED
+    official_binary_status: NOT_MATERIALIZED
+
+bceao_revision_link:
+  observation: >-
+    Le communiqué officiel BCEAO de la session du 24 juin 2022 indique que la
+    révision du dispositif des sanctions pécuniaires vise notamment l'alignement,
+    pour les mêmes agissements, sur la Loi Uniforme relative aux infractions
+    boursières et l'adaptation aux évolutions du cadre de régulation.
+  implication: >-
+    La Décision 2021 est donc une pièce normative de contexte nécessaire à la
+    comparaison 2016↔2022. Elle ne permet toutefois pas de déduire seule les effets
+    juridiques précis de la Décision 2022 sur le dispositif 2016.
+
+portal_view_discrepancy:
+  observed_on: 2026-08-08
+  public_decision_page_now_includes:
+    - CM/07/09/2021
+    - CM/05/09/2021
+  prior_api_snapshot_note: >-
+    Le snapshot de catégorie API conservé dans le dépôt présentait une composition
+    différente de la liste courante rendue par la page publique. Cela confirme que
+    les vues du portail peuvent évoluer ou différer selon l'endpoint et ne doivent
+    jamais être traitées comme une source exhaustive immuable du statut juridique.
+  engine_rule: SEPARATE_PORTAL_SNAPSHOT_FROM_NORMATIVE_LEGAL_EFFECT
+
+remaining_required_evidence:
+  - OFFICIAL_OR_INSTITUTIONAL_BINARY_CM_10_06_2022
+  - 2022_EFFECTIVE_DATE
+  - 2022_ABROGATION_MODIFICATION_REPLACEMENT_CLAUSES
+  - 2022_TRANSITIONAL_PROVISIONS
+  - 2022_ANNEX_CLASSIFICATION_AND_QUANTA
+  - HUMAN_LEGAL_COMPARISON_2016_2021_2022
+  - HUMAN_COMPLIANCE_REVIEW
+
+safety:
+  chain_context_is_legal_relationship_resolution: false
+  sanction_amount_calculation_allowed: false
+  automatic_enforcement_allowed: false
+  automatic_dependency_resolution_allowed: false
+  automatic_requirement_activation_allowed: false
+  ready_for_submission_must_remain_false: true
