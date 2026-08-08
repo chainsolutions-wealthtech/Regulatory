@@ -9,6 +9,11 @@ import type {
   ProspectusPreview,
 } from "@/server/generation-adapter";
 
+export type {
+  GenerationArtifactContent,
+  GenerationArtifactSummary,
+} from "@/server/storage/generation-artifact-repository";
+
 export type CreateProjectInput = {
   name: string;
   category: ProspectusProject["category"];
