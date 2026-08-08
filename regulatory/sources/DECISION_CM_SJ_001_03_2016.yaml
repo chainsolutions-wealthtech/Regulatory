@@ -21,9 +21,14 @@ legal_metadata:
   effective_from: PENDING_OFFICIAL_BINARY_REVIEW
   predecessor: TO_IDENTIFY
   amendments_and_rectifications: TO_COMPLETE
-  current_legal_status: NON_ABROGE_REGISTRY_OBSERVED_PENDING_BINARY_REVIEW
+  current_legal_status: REGISTRY_NON_ABROGE_2022_REVISED_DEVICE_RELATIONSHIP_PENDING_REVIEW
+  later_related_source:
+    source_id: DECISION_CM_10_06_2022
+    relationship_status: REVISED_DEVICE_CONFIRMED_RELATIONSHIP_NOT_LEGALLY_CONCLUDED
+    note: "Le Conseil des Ministres a officiellement adopté un dispositif révisé des sanctions pécuniaires le 24 juin 2022. Le texte binaire officiel de la Décision n° CM/10/06/2022 doit être matérialisé avant de conclure à une modification, un remplacement ou une abrogation de la décision de 2016."
 linked_sources:
   - INSTRUCTION_58_CREPMF_2019
+  - DECISION_CM_10_06_2022
 linked_requirements:
   - INST058_ART031_REQ001
   - INST058_ART032_REQ001
@@ -34,5 +39,6 @@ safety:
   human_legal_review_required: true
   human_compliance_review_required: true
 notes:
-  - "Les articles 31 et 32 de l'Instruction 58 renvoient à cette décision pour le régime de sanctions."
-  - "Aucun montant, barème, seuil ou qualification de sanction ne doit être modélisé comme actif avant matérialisation du texte officiel et double revue juridique/conformité."
+  - "Les articles 31 et 32 de l'Instruction 58 renvoient au régime de sanctions ; la relation entre les décisions de 2016 et 2022 doit être établie avant toute activation."
+  - "Aucun montant, barème, seuil ou qualification de sanction ne doit être modélisé comme actif avant matérialisation des textes officiels pertinents et double revue juridique/conformité."
+  - "Le statut NON_ABROGE observé pour l'entrée 2016 du registre AMF-UMOA est conservé comme fait de registre et ne vaut pas conclusion sur l'effet juridique de la révision adoptée en 2022."
