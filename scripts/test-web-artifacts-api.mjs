@@ -15,8 +15,20 @@ assert(candidate, "Le projet généré par le test d’intégration principal do
 
 const projectResponse = await jsonRequest(`/api/projects/${encodeURIComponent(candidate.id)}`);
 assert(projectResponse.response.status === 200, "Le projet doit être lisible.");
-const generationId = projectResponse.body.project.generation?.generationId;
+const generation = projectResponse.body.project.generation;
+const generationId = generation?.generationId;
 assert(typeof generationId === "string" && generationId.length > 0, "Une génération persistée est requise.");
+for (const field of [
+  "pdfPath",
+  "pdfManifestPath",
+  "reviewPackageManifestPath",
+  "reviewPackagePath",
+]) {
+  assert(
+    typeof generation?.[field] === "string" && generation[field].length > 0,
+    `Le chemin d’artefact ${field} doit être conservé dans le snapshot local.`,
+  );
+}
 
 const listing = await jsonRequest(
   `/api/projects/${encodeURIComponent(candidate.id)}/artifacts/${encodeURIComponent(generationId)}`,
@@ -69,7 +81,7 @@ const traversal = await fetch(
 assert(traversal.status >= 400, "Une tentative de traversal doit être rejetée.");
 
 const validation = {
-  validationId: "WEB_GENERATION_ARTIFACT_API_VALIDATION_V1",
+  validationId: "WEB_GENERATION_ARTIFACT_API_VALIDATION_V2",
   status: "PASS",
   projectId: candidate.id,
   generationId,
@@ -80,6 +92,7 @@ const validation = {
     docxPersisted: true,
     normalizedPdfPersisted: true,
     deterministicReviewPackagePersisted: true,
+    generationPdfAndPackagePathsPersisted: true,
     pdfMagicValid: true,
     downloadShaMatchesInventory: true,
     readyForSubmissionRemainsFalse: true,
