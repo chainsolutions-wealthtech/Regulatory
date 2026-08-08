@@ -5,13 +5,13 @@
 
 ## Action
 
-Poursuivre le **cross-check historique de l'article 92 de l'Instruction n°66/CREPMF/2021**, en recherchant maintenant en priorité une source officielle propre ou une seconde corroboration officielle pour l'**Instruction n°22/99**, relative à l'agrément des Organismes de Placement Collectif en Valeurs Mobilières et à l'information du public.
+Poursuivre le **cross-check historique de l'article 92 de l'Instruction n°66/CREPMF/2021**, en recherchant maintenant une source officielle propre ou une seconde corroboration officielle pour l'**Instruction n°21/99**, relative à la classification des Organismes de Placement Collectif en Valeurs Mobilières.
 
 L'état de référence est enregistré dans :
 
 - `regulatory/registries/INST066_ABROGATED_TEXTS_INVENTORY_V0_1.yaml` ;
 - `regulatory/review-evidence/INST066_HISTORICAL_CROSSCHECK/OFFICIAL_SOURCE_SEARCH_2026-08-08.yaml` ;
-- `regulatory/sources/INSTRUCTION_22_CREPMF_1999.yaml`.
+- `regulatory/sources/INSTRUCTION_21_CREPMF_1999.yaml`.
 
 Le référentiel historique de l'article 92 couvre `7/7` sources distinctes :
 
@@ -19,14 +19,9 @@ Le référentiel historique de l'article 92 couvre `7/7` sources distinctes :
 - `2/7` — Instructions n°45/2011 et n°24/99 — sont corroborées par plusieurs actes officiels distincts, sans binaire propre ;
 - `4/7` restent au niveau de preuve de l'article 92 officiel : Décision n°2012-119 et Instructions n°23/99, n°22/99 et n°21/99.
 
-L'Instruction n°23/99 a atteint sa condition d'arrêt pour le périmètre public contrôlé le 2026-08-08 :
+Les Instructions n°23/99 et n°22/99 ont atteint leur condition d'arrêt pour le périmètre public contrôlé le 2026-08-08 : leurs binaires propres n'ont pas été identifiés, les recherches institutionnelles sont documentées, et les décisions officielles `PCR/DA/2017/121` et `PCR/DA/2018/165` ne les citent pas.
 
-- aucune route institutionnelle vers son propre binaire n'a été identifiée ;
-- les décisions CREPMF/BRVM `PCR/DA/2018/165` et `PCR/DA/2017/121` ont toutes deux été matérialisées et analysées ;
-- aucune de ces deux décisions ne cite l'Instruction n°23/99 ;
-- cette absence ne vaut pas preuve d'inexistence ou d'inapplicabilité historique ; elle ferme seulement ces deux pistes de corroboration.
-
-L'Instruction n°23/99 devra être reprise immédiatement si une archive institutionnelle, un binaire propre ou un nouvel acte officiel pertinent devient disponible.
+Cette absence ne vaut pas preuve d'inexistence historique ; ces textes devront être repris si une archive institutionnelle, un binaire propre ou un nouvel acte officiel pertinent devient disponible.
 
 ## R1 sanctions — blocage conservé
 
@@ -38,17 +33,17 @@ R1 doit être repris immédiatement si un binaire officiel 2016 ou 2022 devient 
 
 ## Résultat attendu de l'action courante
 
-Pour l'Instruction n°22/99 :
+Pour l'Instruction n°21/99 :
 
 - rechercher les routes institutionnelles AMF-UMOA, ancien CREPMF, BRVM et archives officielles disponibles ;
-- rechercher aussi des actes administratifs officiels qui la citent explicitement dans leurs visas ;
-- exploiter les décisions officielles 2017 et 2018 déjà matérialisées comme preuves négatives de périmètre : elles ne citent pas 22/99 ;
+- rechercher des actes administratifs officiels susceptibles de la citer explicitement dans leurs visas ;
+- tenir compte du fait que les décisions officielles 2017 et 2018 déjà matérialisées ne citent pas 21/99 ;
 - distinguer strictement une preuve corroborante de l'acte normatif propre ;
 - si un binaire officiel propre est identifié : vérifier `%PDF`, calculer SHA-256 et taille, confirmer la pagination, extraire le texte avec OCR uniquement si nécessaire et matérialiser la source ;
 - si un nouvel acte officiel de corroboration est trouvé : l'archiver séparément et ne promouvoir que les éléments réellement observés ;
 - conserver le statut historique abrogé par l'article 92 de l'Instruction 66 ;
-- ne reconstruire ni règle, ni condition d'agrément, ni obligation d'information depuis une copie tierce ;
-- si aucune nouvelle route officielle n'est trouvée, documenter la recherche négative puis passer à l'Instruction n°21/99.
+- ne reconstruire aucune classification historique depuis une copie tierce ;
+- si aucune nouvelle route officielle n'est trouvée, documenter la condition d'arrêt et clôturer la première passe publique sur les sept textes de l'article 92.
 
 ## Invariants
 
