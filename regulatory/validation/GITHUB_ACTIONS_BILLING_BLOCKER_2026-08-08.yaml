@@ -1,0 +1,47 @@
+blocker_id: GITHUB_ACTIONS_BILLING_BLOCKER_2026_08_08
+observed_on: 2026-08-08
+repository: chainsolutions-wealthtech/Regulatory
+status: ACTIVE_EXTERNAL_CI_BLOCKER
+
+observed_check_run:
+  check_run_id: 93138748433
+  workflow: .github/workflows/build-inst066-circular-content-scope-matrix.yml
+  execution_state:
+    runner_id: 0
+    steps: []
+    conclusion: failure
+  github_annotation: >-
+    The job was not started because recent account payments have failed or your
+    spending limit needs to be increased. Please check the 'Billing & plans' section
+    in your settings.
+
+interpretation:
+  repository_code_failure_proven: false
+  regulatory_content_validation_failure_proven: false
+  runner_started: false
+  cause: GITHUB_ACCOUNT_BILLING_OR_SPENDING_LIMIT
+  note: >-
+    Le check n'a pas exécuté le générateur ni la validation de la matrice. Il ne doit
+    donc jamais être cité comme un échec de contenu réglementaire ou de code.
+
+impacted_validation:
+  - workflow: .github/workflows/build-inst066-circular-content-scope-matrix.yml
+    intended_output: regulatory/registries/INST066_TO_AMF_UMOA_2022_CIRCULAR_CONTENT_SCOPE_MATRIX_V0_1.json
+    curated_review_available: regulatory/review-evidence/INST066_EXTERNAL_DEPENDENCIES/CIRCULAR_2022_CONTENT_SCOPE_REVIEW_2026-08-08.yaml
+    machine_validation_status: NOT_EXECUTED_DUE_TO_BILLING
+
+required_recovery:
+  - RESTORE_GITHUB_ACTIONS_BILLING_OR_SPENDING_LIMIT
+  - RERUN_CONTENT_SCOPE_MATRIX_WORKFLOW
+  - VERIFY_EXPECTED_COUNTS_34_26_2_6
+  - VERIFY_ALL_RESOLVED_FALSE
+  - VERIFY_ALL_REQUIREMENT_ACTIVATION_FALSE
+  - RUN_REGULATORY_CI
+  - RUN_SECURITY_AND_REVIEW_POLICY_CI
+
+safety:
+  do_not_mark_blocked_workflow_as_passed: true
+  do_not_mark_blocked_workflow_as_code_failure: true
+  automatic_dependency_resolution_allowed: false
+  automatic_requirement_activation_allowed: false
+  ready_for_submission_must_remain_false: true
