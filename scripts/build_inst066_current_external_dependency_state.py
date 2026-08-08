@@ -13,12 +13,13 @@ from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
 INVENTORY_PATH = ROOT / "regulatory/registries/INST066_EXTERNAL_IMPLEMENTING_TEXTS_INVENTORY_V0_1.json"
-RESOLUTION_PATH = ROOT / "regulatory/registries/INST066_CONFIRMED_EXTERNAL_DEPENDENCY_RESOLUTIONS_V0_1.yaml"
+CIRCULAR_RESOLUTION_PATH = ROOT / "regulatory/registries/INST066_CONFIRMED_EXTERNAL_DEPENDENCY_RESOLUTIONS_V0_1.yaml"
+INSTRUCTION_RESOLUTION_PATH = ROOT / "regulatory/registries/INST066_CONFIRMED_INSTRUCTION_DEPENDENCY_RESOLUTIONS_V0_1.yaml"
 OUTPUT_PATH = ROOT / "regulatory/registries/INST066_CURRENT_EXTERNAL_DEPENDENCY_STATE_V0_1.json"
 VALIDATION_PATH = ROOT / "regulatory/validation/INST066_CURRENT_EXTERNAL_DEPENDENCY_STATE_VALIDATION_V0_1.json"
 
 BLOCK_RE = re.compile(
-    r"(?ms)^  - dependency_id:\s*(\S+)\s*\n(.*?)(?=^  - dependency_id:|^boundary:|\Z)"
+    r"(?ms)^  - dependency_id:\s*(\S+)\s*\n(.*?)(?=^  - dependency_id:|^boundary:|^explicitly_|\Z)"
 )
 FIELD_RE_TEMPLATE = r"(?m)^    {field}:\s*(.+?)\s*$"
 
@@ -30,15 +31,16 @@ def field(block: str, name: str) -> str | None:
     return match.group(1).strip().strip('"')
 
 
-def parse_resolution_overlay(text: str) -> tuple[int, dict[str, dict[str, str]]]:
+def parse_resolution_overlay(path_value: Path) -> tuple[int, dict[str, dict[str, str]]]:
+    text = path_value.read_text(encoding="utf-8")
     count_match = re.search(r"(?m)^resolution_count:\s*(\d+)\s*$", text)
     if not count_match:
-        raise RuntimeError("resolution_count missing from confirmed resolution registry")
+        raise RuntimeError(f"resolution_count missing from {path_value.name}")
     declared_count = int(count_match.group(1))
     resolutions: dict[str, dict[str, str]] = {}
     for dependency_id, block in BLOCK_RE.findall(text):
         if dependency_id in resolutions:
-            raise RuntimeError(f"duplicate dependency_id in overlay: {dependency_id}")
+            raise RuntimeError(f"duplicate dependency_id in {path_value.name}: {dependency_id}")
         source_id = field(block, "resolved_source_id")
         official_reference = field(block, "official_reference")
         documentary_status = field(block, "documentary_status")
@@ -56,19 +58,26 @@ def parse_resolution_overlay(text: str) -> tuple[int, dict[str, dict[str, str]]]
             "officialReference": official_reference or "",
             "documentaryStatus": documentary_status,
             "activation": activation,
+            "overlayRegistry": str(path_value.relative_to(ROOT)),
         }
     if declared_count != len(resolutions):
         raise RuntimeError(
-            f"resolution_count mismatch: declared={declared_count} parsed={len(resolutions)}"
+            f"resolution_count mismatch in {path_value.name}: declared={declared_count} parsed={len(resolutions)}"
         )
     return declared_count, resolutions
 
 
 def main() -> None:
     inventory = json.loads(INVENTORY_PATH.read_text(encoding="utf-8"))
-    declared_overlay_count, overlay = parse_resolution_overlay(
-        RESOLUTION_PATH.read_text(encoding="utf-8")
-    )
+    circular_count, circular_overlay = parse_resolution_overlay(CIRCULAR_RESOLUTION_PATH)
+    instruction_count, instruction_overlay = parse_resolution_overlay(INSTRUCTION_RESOLUTION_PATH)
+
+    overlap = sorted(set(circular_overlay) & set(instruction_overlay))
+    if overlap:
+        raise RuntimeError(f"dependency IDs duplicated across resolution overlays: {overlap}")
+    overlay = {**circular_overlay, **instruction_overlay}
+    declared_overlay_count = circular_count + instruction_count
+
     dependencies = inventory.get("dependencies")
     if not isinstance(dependencies, list):
         raise RuntimeError("raw inventory dependencies missing")
@@ -89,9 +98,7 @@ def main() -> None:
         raw_source = raw.get("resolvedSourceId")
         raw_is_resolved = isinstance(raw_source, str) and bool(raw_source.strip())
         overlay_resolution = overlay.get(dependency_id)
-        effective_source = (
-            overlay_resolution["resolvedSourceId"] if overlay_resolution else raw_source
-        )
+        effective_source = overlay_resolution["resolvedSourceId"] if overlay_resolution else raw_source
         is_resolved = isinstance(effective_source, str) and bool(effective_source.strip())
         resolution_origin = (
             "CONFIRMED_RESOLUTION_OVERLAY"
@@ -116,6 +123,9 @@ def main() -> None:
                 else raw.get("officialReference")
             ),
             "resolutionOrigin": resolution_origin,
+            "resolutionOverlayRegistry": (
+                overlay_resolution.get("overlayRegistry") if overlay_resolution else None
+            ),
             "activation": "FORBIDDEN",
             "legalReviewStatus": "PENDING",
             "complianceReviewStatus": "PENDING",
@@ -132,10 +142,14 @@ def main() -> None:
         raise RuntimeError(f"raw occurrence count mismatch: {total} != {raw_expected}")
 
     circular = counts_by_kind.get("COUNCIL_CIRCULAR", {})
+    instruction = counts_by_kind.get("COUNCIL_INSTRUCTION", {})
     output = {
         "schemaVersion": "INST066_CURRENT_EXTERNAL_DEPENDENCY_STATE_V0_1",
         "sourceInventory": str(INVENTORY_PATH.relative_to(ROOT)),
-        "confirmedResolutionOverlay": str(RESOLUTION_PATH.relative_to(ROOT)),
+        "confirmedResolutionOverlays": [
+            str(CIRCULAR_RESOLUTION_PATH.relative_to(ROOT)),
+            str(INSTRUCTION_RESOLUTION_PATH.relative_to(ROOT)),
+        ],
         "sourceInstructionSha256": inventory.get("sourceSha256"),
         "status": "CURRENT_DOCUMENTARY_STATE_HUMAN_LEGAL_AND_COMPLIANCE_REVIEW_PENDING",
         "summary": {
@@ -143,9 +157,14 @@ def main() -> None:
             "resolvedDocumentaryCount": len(resolved),
             "unresolvedDocumentaryCount": len(unresolved),
             "confirmedOverlayResolutionCount": declared_overlay_count,
+            "confirmedCircularOverlayResolutionCount": circular_count,
+            "confirmedInstructionOverlayResolutionCount": instruction_count,
             "circularOccurrenceCount": circular.get("total", 0),
             "resolvedCircularCount": circular.get("resolved", 0),
             "unresolvedCircularCount": circular.get("unresolved", 0),
+            "instructionOccurrenceCount": instruction.get("total", 0),
+            "resolvedInstructionCount": instruction.get("resolved", 0),
+            "unresolvedInstructionCount": instruction.get("unresolved", 0),
             "countsByKind": counts_by_kind,
         },
         "unresolvedDependencies": unresolved,
@@ -163,20 +182,24 @@ def main() -> None:
 
     expected_summary = {
         "dependencyOccurrenceCount": 49,
-        "resolvedDocumentaryCount": 27,
-        "unresolvedDocumentaryCount": 22,
-        "confirmedOverlayResolutionCount": 25,
+        "resolvedDocumentaryCount": 30,
+        "unresolvedDocumentaryCount": 19,
+        "confirmedOverlayResolutionCount": 28,
+        "confirmedCircularOverlayResolutionCount": 25,
+        "confirmedInstructionOverlayResolutionCount": 3,
         "circularOccurrenceCount": 34,
         "resolvedCircularCount": 25,
         "unresolvedCircularCount": 9,
+        "instructionOccurrenceCount": 7,
+        "resolvedInstructionCount": 3,
+        "unresolvedInstructionCount": 4,
     }
     actual_summary = output["summary"]
-    checks = {
-        key: actual_summary[key] == expected for key, expected in expected_summary.items()
-    }
+    checks = {key: actual_summary[key] == expected for key, expected in expected_summary.items()}
     checks.update(
         {
             "overlayIdsAllExistInRawInventory": not unknown_overlay_ids,
+            "overlayRegistriesDoNotOverlap": not overlap,
             "allEffectiveActivationsForbidden": all(item["activation"] == "FORBIDDEN" for item in effective),
             "rawInventoryUnmodifiedByDesign": True,
             "readyForSubmissionFalse": True,
