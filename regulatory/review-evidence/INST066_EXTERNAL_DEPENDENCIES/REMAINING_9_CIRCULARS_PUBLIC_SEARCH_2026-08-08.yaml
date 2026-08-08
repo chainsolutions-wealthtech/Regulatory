@@ -1,0 +1,65 @@
+evidence_id: INST066_REMAINING_9_CIRCULARS_PUBLIC_SEARCH_2026_08_08
+review_date: 2026-08-08
+scope: >-
+  Public institutional search for the nine remaining Instruction 66 dependencies
+  of kind COUNCIL_CIRCULAR after 25/34 documentary mappings were confirmed.
+remaining_dependency_ids:
+  - INST066_ART004_DEP_CIRC_01
+  - INST066_ART014_DEP_CIRC_01
+  - INST066_ART021_DEP_CIRC_01
+  - INST066_ART023_DEP_CIRC_01
+  - INST066_ART023_DEP_CIRC_02
+  - INST066_ART059_DEP_CIRC_01
+  - INST066_ART074_DEP_CIRC_03
+  - INST066_ART075_DEP_CIRC_01
+  - INST066_ART076_DEP_CIRC_01
+official_public_sources_checked:
+  - https://www.amf-umoa.org/reglementation/circulaire
+  - https://www.amf-umoa.org/actualities
+  - https://www.crepmf.org/reglementation/circulaire
+search_families:
+  - auxiliary_services_limits_sgo
+  - delegation_letter_box_sgo
+  - depositary_annual_report_content
+  - sicav_regulated_market_admission
+  - sicav_global_portfolio_delegation
+  - merger_investor_information_content_form_delivery
+  - master_feeder_information_and_operation
+  - fcpe_supervisory_council_annual_report
+  - sicavas_supervisory_council_annual_report
+observations:
+  - >-
+    The current AMF-UMOA public portal exposes a Circulaires & Avis register and
+    the public site category count observed on 2026-08-08 reports 39 circulars.
+  - >-
+    Exact and close public web searches did not identify an official indexed text
+    whose title/content can safely close any of the nine residual dependencies.
+  - >-
+    The materialized 2022 corpus contains 16 circulars and has already resolved
+    25 of the 34 circular occurrences through exact content comparison.
+  - >-
+    Circular 08 is not automatically mapped to Articles 75 and 76 because those
+    provisions concern annual reports adopted by employee-savings supervisory
+    councils, a distinct object from general OPC periodic reporting.
+  - >-
+    Circular 04 is not automatically mapped to INST066_ART021_DEP_CIRC_01 because
+    its detailed depositary duties do not establish the exact content of the annual
+    depositary report referred to by that dependency.
+  - >-
+    Search results from French/EU law or third-party copies were deliberately not
+    used as normative evidence for UMOA dependency resolution.
+next_research_step:
+  method: OFFICIAL_AMF_UMOA_MULTI_YEAR_API_CATALOG
+  script: scripts/build_amf_umoa_circular_api_catalog.py
+  workflow: .github/workflows/build-amf-umoa-circular-api-catalog.yml
+  reason: >-
+    Public text search is insufficient. The official API catalog must be scanned
+    across earlier publication years, then the nine residual contexts compared
+    against official object titles/content.
+status: NINE_CIRCULAR_DEPENDENCIES_REMAIN_OPEN_PENDING_MULTI_YEAR_API_CATALOG
+safety:
+  automatic_dependency_resolution_allowed: false
+  automatic_requirement_activation_allowed: false
+  legal_review_required: true
+  compliance_review_required: true
+  ready_for_submission_must_remain_false: true
