@@ -1,0 +1,45 @@
+source_id: CIRCULAIRE_14_CREPMF_2022
+source_type: CIRCULAR
+authority: CREPMF_AMF_UMOA
+reference: "Circulaire n°14/CREPMF/2022"
+title: "Relative aux outils de gestion de la liquidité"
+jurisdiction: UMOA
+source_origin:
+  authority_api: AMF_UMOA
+  actualite_id: 1000142
+  binary_identity: API_OBJECT_REFERENCE_MATCH_AND_BASE64_PDF_MAGIC_CONFIRMED
+materialization:
+  pdf: regulatory/sources/amf-umoa-2022-circulars/CIRCULAIRE_14_AMF_UMOA_2022.pdf
+  text: regulatory/sources/amf-umoa-2022-circulars/CIRCULAIRE_14_AMF_UMOA_2022.txt
+  metadata: regulatory/sources/amf-umoa-2022-circulars/CIRCULAIRE_14_AMF_UMOA_2022.metadata.json
+  sha256: b1a5e21280f6bf6d81dd51d44b7210b1de8ef57b2de754942395ef3995cb0e11
+  byte_size: 513969
+  page_count: 6
+  extraction_method: OCR_TESSERACT_FRA_FALLBACK
+legal_metadata:
+  effective_clause: "La présente Circulaire prend effet à compter de sa publication."
+  signature_date: PENDING_VISUAL_OR_OFFICIAL_METADATA_CONFIRMATION
+  current_legal_status: TO_VERIFY
+instruction_66_relationships:
+  - dependency_id: INST066_ART012_DEP_CIRC_01
+    article_number: 12
+    relationship: EXPLICIT_IMPLEMENTING_CIRCULAR
+    documentary_dependency_resolution: CONFIRMED
+  - dependency_id: INST066_ART047_DEP_CIRC_01
+    article_number: 47
+    relationship: EXPLICIT_IMPLEMENTING_CIRCULAR
+    documentary_dependency_resolution: CONFIRMED
+  evidence: >-
+    The circular expressly defines Instruction as Instruction n°66/CREPMF/2021.
+    Its opening scope covers liquidity-management systems and procedures, stress
+    testing modalities and liquidity tools. It also expressly covers methods for
+    temporary suspension of redemption and the conditions to be met after such a
+    suspension, matching Articles 12 and 47 respectively.
+review:
+  legal_review_required: true
+  legal_review_status: PENDING
+  compliance_review_required: true
+  compliance_review_status: PENDING
+safety:
+  automatic_requirement_activation_allowed: false
+  ready_for_submission_must_remain_false: true
