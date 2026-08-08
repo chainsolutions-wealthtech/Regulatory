@@ -1,0 +1,75 @@
+source_id: INSTRUCTION_64_CREPMF_2020
+source_family: INSTRUCTION
+reference: "Instruction n°64/CREPMF/2020"
+title: "Instruction relative aux conditions de traitement des dossiers de demande d'agrément ou d'approbation"
+jurisdiction: UMOA
+authority_at_adoption: CREPMF
+current_authority_name: AMF-UMOA
+document_type: INSTRUCTION
+language: fr
+
+registry:
+  official_index_url: https://www.amf-umoa.org/reglementation/instruction
+  registry_checked_on: 2026-08-08
+  listed_reference: "Instruction N°64/2020"
+  listed_title: "Instruction relative aux conditions de traitement des dossiers de demande d'agrément ou d'approbation"
+  listed_status: NON_ABROGE
+  verification_status: OFFICIAL_CURRENT_REGISTRY_CONFIRMED
+
+source_integrity:
+  official_binary_url: TO_IDENTIFY_FROM_OFFICIAL_SOURCE
+  repository_copy: null
+  sha256: null
+  byte_size: null
+  page_count: null
+  copy_status: OFFICIAL_REGISTRY_REFERENCE_CONFIRMED_BINARY_NOT_MATERIALIZED
+
+legal_metadata:
+  act_date: PENDING_OFFICIAL_BINARY_REVIEW
+  effective_from: PENDING_OFFICIAL_BINARY_REVIEW
+  amendments_and_rectifications: TO_COMPLETE
+  current_legal_status: NON_ABROGE_AS_LISTED_ON_2026_08_08
+  legal_review_status: PENDING
+  compliance_review_status: PENDING
+  requirement_activation_allowed: false
+
+inst066_candidate_relationships:
+  status: CANDIDATE_MATCH_REQUIRES_OWN_BINARY_COMPARISON
+  rationale: >-
+    L'objet officiel de l'Instruction n°64/2020 correspond aux renvois de
+    l'Instruction n°66/2021 concernant les délais et le traitement des dossiers
+    d'agrément ou d'approbation. Cette proximité d'objet ne suffit pas à résoudre
+    automatiquement les dépendances tant que le texte officiel de l'Instruction 64
+    n'a pas été matérialisé et comparé.
+  candidate_articles:
+    - article: 5
+      subject: "Conditions d'agrément de la Société de Gestion d'OPC"
+      possible_scope: "délai/processus de traitement de la demande"
+    - article: 17
+      subject: "Agrément de l'OPCVM"
+      possible_scope: "délais et clôture du dossier en l'absence de compléments"
+  explicit_non_resolution: true
+
+materialization_plan:
+  status: OFFICIAL_BINARY_TO_IDENTIFY
+  next_steps:
+    - LOCATE_OFFICIAL_AMF_OR_BRVM_BINARY
+    - VERIFY_PDF_MAGIC
+    - COMPUTE_SHA256_AND_BYTE_SIZE
+    - VERIFY_PAGE_COUNT
+    - EXTRACT_TEXT_OR_OCR_IF_REQUIRED
+    - COMPARE_SCOPE_TO_INST066_ARTICLES_005_AND_017
+    - REVIEW_AMENDMENTS_AND_CURRENT_STATUS
+
+safety:
+  candidate_match_is_resolution: false
+  requirement_activation_allowed: false
+  automatic_dependency_resolution_allowed: false
+  automatic_rule_reconstruction_allowed: false
+  human_legal_review_required: true
+  human_compliance_review_required: true
+
+notes:
+  - "Le statut NON_ABROGE et l'intitulé sont issus du registre officiel AMF-UMOA contrôlé le 2026-08-08."
+  - "Aucune date d'acte ou d'effet n'est promue sans le binaire officiel."
+  - "Les dépendances INST066 concernées restent REFERENCE_NOT_YET_IDENTIFIED tant que la comparaison de texte n'est pas effectuée."
