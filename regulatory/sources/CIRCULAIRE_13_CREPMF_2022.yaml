@@ -32,11 +32,15 @@ instruction_66_relationships:
     article_number: 74
     relationship: EXPLICIT_ARTICLE_CITATION
     documentary_dependency_resolution: CONFIRMED
+  - dependency_id: INST066_ART080_DEP_CIRC_01
+    article_number: 80
+    relationship: EXPLICIT_ARTICLE_CITATION
+    documentary_dependency_resolution: CONFIRMED
   evidence: >-
     The circular states that it specifies the conditions under which an OPC may offer
     different classes of units/shares and expressly cites Articles 38, 74 and 80 of
-    Instruction n°66/CREPMF/2021. The Article 80 dependency will be added only after
-    its exact dependency identifier is recovered from the source inventory.
+    Instruction n°66/CREPMF/2021. Article 80 itself delegates the conditions for
+    different OPCR share classes to a Council Circular.
 review:
   legal_review_required: true
   legal_review_status: PENDING
