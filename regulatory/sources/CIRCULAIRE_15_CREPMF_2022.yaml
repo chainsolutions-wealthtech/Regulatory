@@ -1,0 +1,49 @@
+source_id: CIRCULAIRE_15_CREPMF_2022
+source_type: CIRCULAR
+authority: CREPMF_AMF_UMOA
+reference: "Circulaire n°15/CREPMF/2022"
+title: "Relative à la gestion des risques des OPC"
+jurisdiction: UMOA
+source_origin:
+  authority_api: AMF_UMOA
+  actualite_id: 1000143
+  binary_identity: API_OBJECT_REFERENCE_MATCH_AND_BASE64_PDF_MAGIC_CONFIRMED
+materialization:
+  pdf: regulatory/sources/amf-umoa-2022-circulars/CIRCULAIRE_15_AMF_UMOA_2022.pdf
+  text: regulatory/sources/amf-umoa-2022-circulars/CIRCULAIRE_15_AMF_UMOA_2022.txt
+  metadata: regulatory/sources/amf-umoa-2022-circulars/CIRCULAIRE_15_AMF_UMOA_2022.metadata.json
+  sha256: 64ec8aa27d1a8bc688a7015655714476e26e005febcf0b0ed2ecfc587384c9c9
+  byte_size: 395557
+  page_count: 5
+  extraction_method: OCR_TESSERACT_FRA_FALLBACK
+legal_metadata:
+  effective_clause: "La présente Circulaire prend effet à compter de sa publication."
+  current_legal_status: TO_VERIFY
+instruction_66_relationships:
+  - dependency_id: INST066_ART011_DEP_CIRC_01
+    article_number: 11
+    relationship: EXPLICIT_IMPLEMENTING_CIRCULAR
+    documentary_dependency_resolution: CONFIRMED
+  - dependency_id: INST066_ART040_DEP_CIRC_01
+    article_number: 40
+    relationship: EXACT_METHOD_BRUTE_SCOPE
+    documentary_dependency_resolution: CONFIRMED
+  - dependency_id: INST066_ART040_DEP_CIRC_02
+    article_number: 40
+    relationship: EXACT_OTC_DERIVATIVE_VALUATION_AND_REPORTING_SCOPE
+    documentary_dependency_resolution: CONFIRMED
+  evidence: >-
+    The circular expressly defines Instruction as Instruction n°66/CREPMF/2021.
+    It specifies risk-management systems and review frequency, gives the gross
+    method used to calculate exposure/global risk, requires independent fair-value
+    procedures for OTC derivatives and specifies annual derivative reporting to the
+    Council Regional. These scopes match the Article 11 and both Article 40 circular
+    delegations.
+review:
+  legal_review_required: true
+  legal_review_status: PENDING
+  compliance_review_required: true
+  compliance_review_status: PENDING
+safety:
+  automatic_requirement_activation_allowed: false
+  ready_for_submission_must_remain_false: true
