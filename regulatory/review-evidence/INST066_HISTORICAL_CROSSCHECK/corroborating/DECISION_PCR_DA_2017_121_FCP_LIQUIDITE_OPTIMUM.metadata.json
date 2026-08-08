@@ -1,0 +1,95 @@
+{
+  "schemaVersion": "REGULATORY_CORROBORATING_EVIDENCE_V1",
+  "evidenceId": "INST066_HISTORICAL_CORROBORATION_LIQUIDITE_OPTIMUM_2017_121",
+  "evidenceRole": "OFFICIAL_ADMINISTRATIVE_CORROBORATION_ONLY_NOT_NORMATIVE_SUBSTITUTE",
+  "sourcePage": "https://www.brvm.org/fr/decision-crepmf-ndeg-pcr-da-2017-121-agrement-du-fcp-liquidite-optimum-en-qualite-dopcvm",
+  "sourceUrl": "https://www.brvm.org/sites/default/files/201709126-_decision_crepmf_ndeg_pcr-da-2017-121-_portant_agrement_du_fcp_liquidite_optimum_en_qualite_dopcvm_sur_le_marche_financier_regional_de_lumoa.pdf",
+  "retrievedAt": "2026-08-08T10:45:10+00:00",
+  "repositoryCopy": "regulatory/review-evidence/INST066_HISTORICAL_CROSSCHECK/corroborating/DECISION_PCR_DA_2017_121_FCP_LIQUIDITE_OPTIMUM.pdf",
+  "extractedText": "regulatory/review-evidence/INST066_HISTORICAL_CROSSCHECK/corroborating/DECISION_PCR_DA_2017_121_FCP_LIQUIDITE_OPTIMUM.txt",
+  "sha256": "b33a03daf3416dd2710c65f23d7652d4732f8bca7d5b0f4e6b719e65bc1755b8",
+  "byteSize": 62044,
+  "pageCount": 3,
+  "pdfInfo": {
+    "Title": "",
+    "Subject": "",
+    "Author": "",
+    "Creator": "",
+    "Producer": "",
+    "CreationDate": "",
+    "ModDate": "Tue Sep 26 17:11:52 2017 UTC",
+    "Custom Metadata": "yes",
+    "Metadata Stream": "yes",
+    "Tagged": "no",
+    "UserProperties": "no",
+    "Suspects": "no",
+    "Form": "AcroForm",
+    "JavaScript": "no",
+    "Pages": "3",
+    "Encrypted": "no",
+    "Page size": "596 x 841 pts (A4)",
+    "Page rot": "0",
+    "File size": "62044 bytes",
+    "Optimized": "no",
+    "PDF version": "1.6"
+  },
+  "extraction": {
+    "method": "French OCR derivative via OCRmyPDF then pdftotext",
+    "ocrUsed": true,
+    "ocrLanguage": "fra"
+  },
+  "historicalReferenceObservations": {
+    "INSTRUCTION_45_2011": {
+      "observed": true,
+      "matchCount": 2,
+      "snippets": [
+        "hé Financier Régional de l'UMOA ; Vu l'instruction n°24/99 relative à la note d’information des Organismes de Placement Collectif en Valeurs Mobilières (OPCVM) ; Vu lInstruction n°45/2011 relative à l’organisation, au fonctionnement et La gestion des Organismes de Placement Collectif en Valeurs Mobilières sur Le marché financier régional de l’UMOA ; Vu l'instruction n°46/2011 relative à la classification et aux règles d’all",
+        "ntrôle du Marché Financier Régional de l'UMOA ; Vu l'instruction n°24/99 relative à la note d’information des Organismes de Placement Collectif en Valeurs Mobilières (OPCVM) ; Vu lInstruction n°45/2011 relative à l’organisation, au fonctionnement et La gestion des Organismes de Placement Collectif en Valeurs Mobilières sur Le marché financier régional de l’UMOA ; Vu l'instruction n°46/2011 relative à la classification et aux règles d’all"
+      ],
+      "status": "OFFICIAL_CORROBORATING_ACT_OBSERVED"
+    },
+    "INSTRUCTION_46_2011": {
+      "observed": true,
+      "matchCount": 2,
+      "snippets": [
+        "ative à l’organisation, au fonctionnement et La gestion des Organismes de Placement Collectif en Valeurs Mobilières sur Le marché financier régional de l’UMOA ; Vu l'instruction n°46/2011 relative à la classification et aux règles d’allocation d'actifs des Organismes de Placement Collectif sur Le marché financier régional de l’UMOA ; Vu La Décision n°R-77/P-CREPMF/39-2002 du 29 novembre 2002 portant délégation de pouvoirs d",
+        "n°45/2011 relative à l’organisation, au fonctionnement et La gestion des Organismes de Placement Collectif en Valeurs Mobilières sur Le marché financier régional de l’UMOA ; Vu l'instruction n°46/2011 relative à la classification et aux règles d’allocation d'actifs des Organismes de Placement Collectif sur Le marché financier régional de l’UMOA ; Vu La Décision n°R-77/P-CREPMF/39-2002 du 29 novembre 2002 portant délégation de pouvoirs d"
+      ],
+      "status": "OFFICIAL_CORROBORATING_ACT_OBSERVED"
+    },
+    "INSTRUCTION_24_99": {
+      "observed": true,
+      "matchCount": 2,
+      "snippets": [
+        "et son Annexe ; Vu le Règlement Général du 28 novembre 1997 relatif à l'Organisation, au Fonctionnement et au Contrôle du Marché Financier Régional de l'UMOA ; Vu l'instruction n°24/99 relative à la note d’information des Organismes de Placement Collectif en Valeurs Mobilières (OPCVM) ; Vu lInstruction n°45/2011 relative à l’organisation, au fonctionnement et La gestion des Organismes de Placement Collectif en Valeurs Mo",
+        "eil Régional\") et son Annexe ; Vu le Règlement Général du 28 novembre 1997 relatif à l'Organisation, au Fonctionnement et au Contrôle du Marché Financier Régional de l'UMOA ; Vu l'instruction n°24/99 relative à la note d’information des Organismes de Placement Collectif en Valeurs Mobilières (OPCVM) ; Vu lInstruction n°45/2011 relative à l’organisation, au fonctionnement et La gestion des Organismes de Placement Collectif en Valeurs Mo"
+      ],
+      "status": "OFFICIAL_CORROBORATING_ACT_OBSERVED"
+    },
+    "INSTRUCTION_23_99": {
+      "observed": false,
+      "matchCount": 0,
+      "snippets": [],
+      "status": "NOT_OBSERVED_IN_THIS_ACT"
+    },
+    "INSTRUCTION_22_99": {
+      "observed": false,
+      "matchCount": 0,
+      "snippets": [],
+      "status": "NOT_OBSERVED_IN_THIS_ACT"
+    },
+    "INSTRUCTION_21_99": {
+      "observed": false,
+      "matchCount": 0,
+      "snippets": [],
+      "status": "NOT_OBSERVED_IN_THIS_ACT"
+    },
+    "DECISION_2012_119": {
+      "observed": false,
+      "matchCount": 0,
+      "snippets": [],
+      "status": "NOT_OBSERVED_IN_THIS_ACT"
+    }
+  },
+  "interpretationBoundary": "A citation in this later approval decision corroborates a historical reference only. It does not replace the historical act, prove its full content, or authorize rule reconstruction."
+}

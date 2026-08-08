@@ -1,0 +1,27 @@
+{
+  "validationId": "INST066_HISTORICAL_CORROBORATION_LIQUIDITE_OPTIMUM_2017_121_V1",
+  "status": "PASS",
+  "checks": {
+    "officialBrvmPdfDownloaded": true,
+    "pdfMagicConfirmed": true,
+    "sha256Computed": true,
+    "byteSizePositive": true,
+    "expectedPageCount": true,
+    "textExtracted": true,
+    "evidenceRoleNonNormative": true,
+    "historicalRuleReactivationForbidden": true,
+    "requirementActivationAllowed": false
+  },
+  "metrics": {
+    "byteSize": 62044,
+    "pageCount": 3,
+    "usableTextCharacterCount": 4635,
+    "observedHistoricalReferenceCount": 3
+  },
+  "outputs": [
+    "regulatory/review-evidence/INST066_HISTORICAL_CROSSCHECK/corroborating/DECISION_PCR_DA_2017_121_FCP_LIQUIDITE_OPTIMUM.pdf",
+    "regulatory/review-evidence/INST066_HISTORICAL_CROSSCHECK/corroborating/DECISION_PCR_DA_2017_121_FCP_LIQUIDITE_OPTIMUM.txt",
+    "regulatory/review-evidence/INST066_HISTORICAL_CROSSCHECK/corroborating/DECISION_PCR_DA_2017_121_FCP_LIQUIDITE_OPTIMUM.metadata.json"
+  ],
+  "caveat": "This is corroborating evidence, not the normative historical source."
+}
