@@ -23,6 +23,8 @@ source_integrity:
   byte_size: null
   page_count: null
   copy_status: OFFICIAL_REGISTRY_REFERENCE_CONFIRMED_BINARY_NOT_MATERIALIZED
+  acquisition_search_evidence: regulatory/review-evidence/INST066_EXTERNAL_DEPENDENCIES/ART005_APPROVAL_PROCESS_DEPENDENCIES_SEARCH_2026-08-08.yaml
+  acquisition_status: PUBLIC_OFFICIAL_ROUTES_CHECKED_BINARY_NOT_IDENTIFIED
 
 legal_metadata:
   act_date: PENDING_OFFICIAL_BINARY_REVIEW
@@ -51,9 +53,9 @@ inst066_candidate_relationships:
   explicit_non_resolution: true
 
 materialization_plan:
-  status: OFFICIAL_BINARY_TO_IDENTIFY
+  status: OFFICIAL_BINARY_NOT_MATERIALIZED_PUBLIC_SEARCH_PASS_COMPLETE
   next_steps:
-    - LOCATE_OFFICIAL_AMF_OR_BRVM_BINARY
+    - RESUME_IF_OFFICIAL_AMF_OR_BRVM_BINARY_APPEARS
     - VERIFY_PDF_MAGIC
     - COMPUTE_SHA256_AND_BYTE_SIZE
     - VERIFY_PAGE_COUNT
@@ -66,10 +68,12 @@ safety:
   requirement_activation_allowed: false
   automatic_dependency_resolution_allowed: false
   automatic_rule_reconstruction_allowed: false
+  secondary_source_content_promotion_allowed: false
   human_legal_review_required: true
   human_compliance_review_required: true
 
 notes:
   - "Le statut NON_ABROGE et l'intitulé sont issus du registre officiel AMF-UMOA contrôlé le 2026-08-08."
-  - "Aucune date d'acte ou d'effet n'est promue sans le binaire officiel."
+  - "La première passe de recherche publique n'a pas identifié de binaire officiel stable pour l'Instruction 64/2020."
+  - "Des reproductions secondaires corroborent son existence et suggèrent des détails de date/contenu, mais aucun de ces éléments n'est promu sans le binaire officiel propre."
   - "Les dépendances INST066 concernées restent REFERENCE_NOT_YET_IDENTIFIED tant que la comparaison de texte n'est pas effectuée."
