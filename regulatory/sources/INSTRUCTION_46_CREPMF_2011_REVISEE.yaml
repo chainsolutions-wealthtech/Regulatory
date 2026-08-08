@@ -51,3 +51,16 @@ materialization_plan:
     - REVIEW_RELATIONSHIP_TO_DECISION_2012_119
     - COMPLETE_HISTORICAL_CROSSCHECK
     - HUMAN_LEGAL_AND_COMPLIANCE_REVIEW
+
+safety:
+  requirement_activation_allowed: false
+  historical_rule_reactivation_allowed: false
+  automatic_rule_reconstruction_allowed: false
+  automatic_migration_inference_allowed: false
+  human_legal_review_required: true
+  human_compliance_review_required: true
+
+notes:
+  - "Le PDF BRVM officiel est matérialisé, hashé et validé sur 9 pages ; l'OCR reste un dérivé d'extraction non normatif."
+  - "L'Instruction 66 article 92 abroge explicitement cette Instruction ; son contenu historique ne doit pas être réactivé."
+  - "La relation précise avec la Décision n°2012-119 reste en attente du binaire officiel propre de cette décision."
