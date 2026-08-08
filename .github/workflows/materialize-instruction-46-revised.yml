@@ -8,6 +8,7 @@ on:
       - .github/workflows/materialize-instruction-46-revised.yml
       - scripts/materialize_instruction_46_revised.py
       - scripts/enrich_instruction_46_revised_legal_metadata.py
+      - scripts/enrich_instruction_46_revised_legal_metadata_v2.py
       - regulatory/sources/INSTRUCTION_46_CREPMF_2011_REVISEE.yaml
   workflow_dispatch:
 
@@ -40,8 +41,8 @@ jobs:
       - name: Download hash and extract historical official PDF
         run: python3 scripts/materialize_instruction_46_revised.py
 
-      - name: Curate legal metadata and article index
-        run: python3 scripts/enrich_instruction_46_revised_legal_metadata.py
+      - name: Curate legal metadata, article index and safety boundaries
+        run: python3 scripts/enrich_instruction_46_revised_legal_metadata_v2.py
 
       - name: Validate historical source evidence
         run: |
@@ -96,7 +97,12 @@ jobs:
           assert "effective_from: '2018-07-30'" in source
           assert 'article_count: 21' in index
           assert 'historical_rule_reactivation_allowed: false' in index
-          assert 'activation_allowed: false' in source
+          assert 'requirement_activation_allowed: false' in source
+          assert 'historical_rule_reactivation_allowed: false' in source
+          assert 'automatic_rule_reconstruction_allowed: false' in source
+          assert 'automatic_migration_inference_allowed: false' in source
+          assert 'human_legal_review_required: true' in source
+          assert 'human_compliance_review_required: true' in source
           PY
 
       - name: Upload historical source evidence
