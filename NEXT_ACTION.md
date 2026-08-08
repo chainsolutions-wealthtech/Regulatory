@@ -1,30 +1,25 @@
 # NEXT_ACTION — Action unique immédiatement exécutable
 
 > **Statut :** `READY`
-> **Boucle :** `LOOP-REG-001`
+> **Boucle :** `LOOP-DEV-001`
 
 ## Action
 
-Matérialiser la **Décision n° CM/SJ/O01/03/2016** relative au dispositif des sanctions pécuniaires à partir d'une source binaire officielle, puis l'indexer et l'atomiser sous un préfixe propre sans activer aucun barème ni aucune sanction.
-
-La dépendance est déjà enregistrée dans :
-
-`regulatory/sources/DECISION_CM_SJ_001_03_2016.yaml`
-
-Le registre officiel AMF-UMOA a été observé avec le statut `NON_ABROGE`, mais le PDF binaire officiel, son SHA-256, sa pagination et son texte structuré ne sont pas encore matérialisés dans le dépôt.
+Construire le socle d’authentification, de RBAC et de workflow de revue sans choisir fictivement un fournisseur d’identité : définir les politiques machine-readable, les autorisations par action, les transitions d’état, les décisions et les tests, puis conserver l’intégration fournisseur derrière un port explicitement non configuré.
 
 ## Résultat attendu
 
-- identifier une URL binaire officielle stable ;
-- télécharger le PDF officiel et vérifier son magic PDF ;
-- calculer SHA-256, taille et pagination ;
-- extraire le texte avec OCR uniquement si nécessaire ;
-- produire un index machine-readable des articles ;
-- créer des blocs/atomes de source séparés de `INST058_*` ;
-- relier les dispositions pertinentes à `INST058_ART031_REQ001` et `INST058_ART032_REQ001` ;
-- conserver toute interprétation, tout montant et tout barème en `PENDING_LEGAL_AND_COMPLIANCE_REVIEW` ;
-- maintenir `activation=FORBIDDEN` et `ready_for_submission=false`.
+- modèle des rôles Administrateur, Produit, Risques, Conformité, Juridique, Fiscal, Opérations, Audit et Lecteur ;
+- matrice action × rôle × ressource ;
+- vérification serveur de chaque action sensible ;
+- transitions de workflow déterministes ;
+- demandes de revue, commentaires, changements demandés, approbations et rejets ;
+- aucune auto-approbation ;
+- séparation entre gel interne, approbation interne et décision du régulateur ;
+- tests positifs et négatifs multi-rôles ;
+- port du fournisseur d’identité non configuré en production ;
+- `ready_for_submission=false` maintenu.
 
-## Condition d'arrêt
+## Condition d’arrêt
 
-Si aucune URL binaire officielle n'est obtenue, ne pas utiliser une copie Scribd ou une copie tierce comme source normative. Conserver la décision comme dépendance officielle vérifiée dans le registre AMF-UMOA et documenter le blocage `OFFICIAL_BINARY_NOT_MATERIALIZED`.
+Ne pas simuler une connexion, un SSO ou une signature. L’activation d’un fournisseur d’identité et des sessions nécessite des paramètres réels, des secrets hors dépôt et une revue de sécurité.
