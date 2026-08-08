@@ -14,17 +14,30 @@ registry:
   listed_reference: "Instruction N°64/2020"
   listed_title: "Instruction relative aux conditions de traitement des dossiers de demande d'agrément ou d'approbation"
   listed_status: NON_ABROGE
-  verification_status: OFFICIAL_CURRENT_REGISTRY_CONFIRMED
+  verification_status: OFFICIAL_CURRENT_REGISTRY_AND_API_ENTRY_CONFIRMED
+
+official_api:
+  endpoint: https://www.amf-umoa.org/service/api/elastic/actualite
+  actualite_id: 1000110
+  detail_url: "https://www.amf-umoa.org/service/api/elastic/actualite?id=1000110&langue=fr"
+  document_url_field: "AC-INSTRUCTION-2023-4509A4B9-A83F-4EEE-B4D5-BF492750CB30.pdf"
+  title_observed: "Instruction N°64/2020"
+  summary_observed: "INSTRUCTION N° 64 2020 CREPMF RELATIVE AUX CONDITIONS DE TRAITEMENT DES DOSSIERS DE DEMANDE D'AGREMENT OU D'APPROBATION"
+  portal_date_observed: 2023-08-24
+  portal_date_is_adoption_or_effective_date: false
+  observed_on: 2026-08-08
+  acquisition_status: OFFICIAL_DETAIL_ROUTE_IDENTIFIED_BINARY_MATERIALIZATION_IN_PROGRESS
 
 source_integrity:
-  official_binary_url: TO_IDENTIFY_FROM_OFFICIAL_SOURCE
+  official_binary_transport: AMF_UMOA_DETAIL_API_DOC_BASE64_EXPECTED
+  official_detail_api_id: 1000110
   repository_copy: null
   sha256: null
   byte_size: null
   page_count: null
-  copy_status: OFFICIAL_REGISTRY_REFERENCE_CONFIRMED_BINARY_NOT_MATERIALIZED
+  copy_status: OFFICIAL_API_DETAIL_IDENTIFIED_BINARY_MATERIALIZATION_IN_PROGRESS
   acquisition_search_evidence: regulatory/review-evidence/INST066_EXTERNAL_DEPENDENCIES/ART005_APPROVAL_PROCESS_DEPENDENCIES_SEARCH_2026-08-08.yaml
-  acquisition_status: PUBLIC_OFFICIAL_ROUTES_CHECKED_BINARY_NOT_IDENTIFIED
+  acquisition_status: PREVIOUS_PUBLIC_ROUTES_NEGATIVE_CURRENT_OFFICIAL_API_ROUTE_NOW_IDENTIFIED
 
 legal_metadata:
   act_date: PENDING_OFFICIAL_BINARY_REVIEW
@@ -53,9 +66,10 @@ inst066_candidate_relationships:
   explicit_non_resolution: true
 
 materialization_plan:
-  status: OFFICIAL_BINARY_NOT_MATERIALIZED_PUBLIC_SEARCH_PASS_COMPLETE
+  status: OFFICIAL_DETAIL_API_FOUND_MATERIALIZATION_WORKFLOW_RUNNING
+  workflow: .github/workflows/materialize-amf-umoa-priority-api-documents.yml
   next_steps:
-    - RESUME_IF_OFFICIAL_AMF_OR_BRVM_BINARY_APPEARS
+    - DECODE_DETAIL_API_DOC_BASE64
     - VERIFY_PDF_MAGIC
     - COMPUTE_SHA256_AND_BYTE_SIZE
     - VERIFY_PAGE_COUNT
@@ -65,6 +79,7 @@ materialization_plan:
 
 safety:
   candidate_match_is_resolution: false
+  portal_metadata_is_sole_legal_status_proof: false
   requirement_activation_allowed: false
   automatic_dependency_resolution_allowed: false
   automatic_rule_reconstruction_allowed: false
@@ -74,6 +89,6 @@ safety:
 
 notes:
   - "Le statut NON_ABROGE et l'intitulé sont issus du registre officiel AMF-UMOA contrôlé le 2026-08-08."
-  - "La première passe de recherche publique n'a pas identifié de binaire officiel stable pour l'Instruction 64/2020."
-  - "Des reproductions secondaires corroborent son existence et suggèrent des détails de date/contenu, mais aucun de ces éléments n'est promu sans le binaire officiel propre."
-  - "Les dépendances INST066 concernées restent REFERENCE_NOT_YET_IDENTIFIED tant que la comparaison de texte n'est pas effectuée."
+  - "L'API officielle actuelle fournit désormais une route de détail et un identifiant documentaire pour l'Instruction 64/2020."
+  - "La date 2023-08-24 du portail n'est pas promue en date d'adoption ou d'effet."
+  - "Les dépendances INST066 concernées restent non résolues tant que la comparaison du texte propre n'est pas effectuée."
