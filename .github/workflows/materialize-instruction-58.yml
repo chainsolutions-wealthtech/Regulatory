@@ -8,6 +8,7 @@ on:
       - .github/workflows/materialize-instruction-58.yml
       - scripts/materialize_instruction_58.py
       - scripts/index_instruction_58_articles.py
+      - scripts/enrich_instruction_58_legal_metadata.py
       - scripts/sync_instruction_58_source.py
       - regulatory/sources/INSTRUCTION_58_CREPMF_2019.yaml
   workflow_dispatch:
@@ -39,6 +40,8 @@ jobs:
         run: python3 scripts/materialize_instruction_58.py
       - name: Rebuild strict continuous article index
         run: python3 scripts/index_instruction_58_articles.py
+      - name: Enrich curated legal metadata from reviewed source text
+        run: python3 scripts/enrich_instruction_58_legal_metadata.py
       - name: Synchronize source record from actual bytes
         run: python3 scripts/sync_instruction_58_source.py
       - name: Validate generated source evidence
@@ -70,21 +73,32 @@ jobs:
           assert metadata['lastIndexedArticle'] == 35, metadata['lastIndexedArticle']
           assert metadata['missingArticleNumbers'] == [], metadata['missingArticleNumbers']
           assert metadata['articleIndexRepair']['status'] == 'STRICT_REINDEX_PASS'
-          assert metadata['legalMetadata']['exactSignedDate'] is None
-          assert metadata['legalMetadata']['effectiveFrom'] is None
+          assert metadata['legalMetadata']['exactSignedDate'] == '2019-07-24'
+          assert metadata['legalMetadata']['effectiveFrom'] == '2019-07-24'
+          assert metadata['legalMetadata']['effectiveDateRule'] == 'ARTICLE_35_EFFECTIVE_ON_SIGNATURE_DATE'
+          assert metadata['legalMetadata']['predecessorReplaced']['reference'] == 'Instruction n°31/2005'
+          assert metadata['legalMetadata']['predecessorReplaced']['datedOn'] == '2005-06-07'
+          assert metadata['legalMetadata']['predecessorReplaced']['relationship'] == 'EXPLICITLY_ABROGATED_AND_REPLACED'
           assert metadata['legalMetadata']['currentRegistryStatus'].startswith('TO_VERIFY')
           assert validation['checks']['articlePremierIndexed'] is True
           assert validation['checks']['articleNumberRangeContinuous'] is True
           assert validation['checks']['articleIndexStillUnverified'] is True
+          assert validation['checks']['curatedLegalMetadataEnriched'] is True
+          assert validation['checks']['article34PredecessorRelationshipCaptured'] is True
+          assert validation['checks']['article35EffectiveDateRuleCaptured'] is True
           assert validation['checks']['currentStatusNotInvented'] is True
           assert validation['checks']['requirementsNotActivated'] is True
           assert validation['checks']['humanReviewStillRequired'] is True
+          assert validation['reviewFlags']['signatureAndEffectiveDatesStillPending'] is False
+          assert validation['reviewFlags']['currentRegistryStatusStillPending'] is True
           assert 'status: EXTRACTED_UNVERIFIED_REVIEW_PENDING' in index
           assert 'requirement_activation: FORBIDDEN_PENDING_REVIEW' in index
           assert 'review_status: PENDING_LEGAL_AND_COMPLIANCE_REVIEW' in index
           assert '- id: INST058_ARTICLE_029' in index
           assert 'article_count: 35' in index
           assert 'copy_status: MATERIALIZED_HASHED_AND_PAGE_VALIDATED' in source
+          assert "exact_signed_date: '2019-07-24'" in source
+          assert "effective_from: '2019-07-24'" in source
           assert 'current_legal_status: PENDING_OFFICIAL_REGISTRY_CONFIRMATION' in source
           assert 'requirement_activation_allowed: false' in source
           PY
