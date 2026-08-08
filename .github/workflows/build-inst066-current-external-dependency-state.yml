@@ -1,0 +1,77 @@
+name: Build INST066 Current External Dependency State
+
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: inst066-current-external-dependency-state
+  cancel-in-progress: false
+
+jobs:
+  build-current-state:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Configure Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      - name: Overlay confirmed documentary resolutions
+        run: python3 scripts/build_inst066_current_external_dependency_state.py
+
+      - name: Validate safety and expected counters
+        run: |
+          python3 - <<'PY'
+          import json
+          from pathlib import Path
+
+          state = json.loads(Path('regulatory/registries/INST066_CURRENT_EXTERNAL_DEPENDENCY_STATE_V0_1.json').read_text(encoding='utf-8'))
+          validation = json.loads(Path('regulatory/validation/INST066_CURRENT_EXTERNAL_DEPENDENCY_STATE_VALIDATION_V0_1.json').read_text(encoding='utf-8'))
+          if validation['result'] != 'PASS':
+              raise SystemExit('current dependency state validation failed')
+          expected = {
+              'dependencyOccurrenceCount': 49,
+              'resolvedDocumentaryCount': 27,
+              'unresolvedDocumentaryCount': 22,
+              'circularOccurrenceCount': 34,
+              'resolvedCircularCount': 25,
+              'unresolvedCircularCount': 9,
+          }
+          for key, value in expected.items():
+              if state['summary'][key] != value:
+                  raise SystemExit(f'{key}: expected {value}, got {state["summary"][key]}')
+          boundary = state['boundary']
+          if boundary['automaticDependencyResolutionAllowed'] is not False:
+              raise SystemExit('automatic dependency resolution must remain false')
+          if boundary['automaticRequirementActivationAllowed'] is not False:
+              raise SystemExit('automatic requirement activation must remain false')
+          if boundary['readyForSubmissionMustRemainFalse'] is not True:
+              raise SystemExit('ready_for_submission boundary missing')
+          PY
+
+      - name: Check textual integrity
+        run: git diff --check
+
+      - name: Commit generated current state
+        if: github.actor != 'github-actions[bot]'
+        run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add \
+            regulatory/registries/INST066_CURRENT_EXTERNAL_DEPENDENCY_STATE_V0_1.json \
+            regulatory/validation/INST066_CURRENT_EXTERNAL_DEPENDENCY_STATE_VALIDATION_V0_1.json
+          if git diff --cached --quiet; then
+            echo 'No current dependency state changes to commit.'
+          else
+            git commit -m 'chore: refresh current Instruction 66 external dependency state'
+            git push origin HEAD:main
+          fi
