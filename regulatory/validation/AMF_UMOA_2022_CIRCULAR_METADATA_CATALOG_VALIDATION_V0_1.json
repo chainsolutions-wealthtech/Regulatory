@@ -1,0 +1,11 @@
+{
+  "schemaVersion": "AMF_UMOA_2022_CIRCULAR_METADATA_CATALOG_VALIDATION_V0_1",
+  "result": "PASS",
+  "checks": {
+    "exactly16": true,
+    "numbers01To16": true,
+    "noDocBase64Stored": true,
+    "automaticResolutionForbidden": true
+  },
+  "failures": []
+}

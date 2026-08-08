@@ -1,0 +1,513 @@
+{
+  "schemaVersion": "AMF_UMOA_2022_CIRCULAR_METADATA_CATALOG_V0_1",
+  "authority": "AMF-UMOA",
+  "sourceApi": "https://www.amf-umoa.org/service/api/elastic/actualite",
+  "status": "COMPLETE_16_METADATA_OBJECTS",
+  "entryCount": 16,
+  "failures": [],
+  "entries": [
+    {
+      "number": 1,
+      "reference": "Circulaire n°01/AMF-UMOA/2022",
+      "actualiteId": 1000129,
+      "apiUrl": "https://www.amf-umoa.org/service/api/elastic/actualite?id=1000129&langue=fr",
+      "apiRawSha256": "20049d94f3b4e5c35f9c95ded334177d6b5a3b675085ce4ba7b67fda1b81f494",
+      "fields": {
+        "createdBy": "olympiat",
+        "createdDate": "2023-09-12T17:03:50.523Z",
+        "lastModifiedBy": "serge.konseiga",
+        "lastModifiedDate": "2023-09-19T09:36:03.517Z",
+        "jpVersion": 2,
+        "id": 1000129,
+        "photoHomePageUrl": "AC-X-2023-C9813C29-5F58-4C03-A2F9-C2525605E403",
+        "photoActualiteHomePageUrl": "AC-X-2023-169AF9EB-7622-4694-9DF8-A2A71D72ED13",
+        "photoActualiteUrl": "AC-X-2023-82A95FF1-85D0-4B21-879F-D1D6EA11F4E0",
+        "documentUrl": "AC-CIRCULAIRE-2023-A28C7465-94EB-433A-B265-F427C9AD5402.pdf",
+        "resume": "PORTANT ANNULATION DE LA CIRCULAIRE N°01-2018 RELATIVE AUX MODALITES DE SCISSION DES FONDS COMMUNS DE PLACEMENT OU DE LEUR TRANSFORMATION EN SOCIETE D'INVESTISSEMENT A CAPITAL VARIABLE",
+        "titre": "CIRCULAIRE N°001-2022",
+        "texte": "PORTANT ANNULATION DE LA CIRCULAIRE N°01-2018 RELATIVE AUX MODALITES DE SCISSION DES FONDS COMMUNS DE PLACEMENT OU DE LEUR TRANSFORMATION EN SOCIETE D'INVESTISSEMENT A CAPITAL VARIABLE",
+        "date": "2023-09-12",
+        "valide": true,
+        "alaUne": false,
+        "categorie": "Circulaire",
+        "tags": [
+          "Circulaire"
+        ],
+        "langue": "fr",
+        "abroge": false
+      }
+    },
+    {
+      "number": 2,
+      "reference": "Circulaire n°02/AMF-UMOA/2022",
+      "actualiteId": 1000130,
+      "apiUrl": "https://www.amf-umoa.org/service/api/elastic/actualite?id=1000130&langue=fr",
+      "apiRawSha256": "95f83f8726741b6b04102e0a5ad1b85439d4c132ce0a6cd0373c7f4eb157fc8c",
+      "fields": {
+        "createdBy": "olympiat",
+        "createdDate": "2023-09-12T17:04:49.050Z",
+        "lastModifiedBy": "serge.konseiga",
+        "lastModifiedDate": "2023-09-19T09:38:32.048Z",
+        "jpVersion": 2,
+        "id": 1000130,
+        "photoHomePageUrl": "AC-X-2023-CC73A31C-DFD6-4F1F-A20F-32C04FBE3DC7",
+        "photoActualiteHomePageUrl": "AC-X-2023-28693D4B-DF94-4F2D-8C77-D1F7D15899FE",
+        "photoActualiteUrl": "AC-X-2023-188C3888-D7AD-4691-BEB6-C66575941B06",
+        "documentUrl": "AC-CIRCULAIRE-2023-B0A56A25-B32D-4C77-988D-7E9F4A04F043.pdf",
+        "resume": "RELATIVE AU PROCESSUS D’AGREMENT, A LA MODIFICATION DES CONDITIONS INITIALES D’AGREMENT ET AU RETRAIT D’AGREMENT DES SOCIETES DE GESTION D’ORGANISMES DE PLACEMENT COLLECTIF",
+        "titre": "CIRCULAIRE N°002-2022",
+        "texte": "RELATIVE AU PROCESSUS D’AGREMENT, A LA MODIFICATION DES CONDITIONS INITIALES D’AGREMENT ET AU RETRAIT D’AGREMENT DES SOCIETES DE GESTION D’ORGANISMES DE PLACEMENT COLLECTIF",
+        "date": "2023-09-12",
+        "valide": true,
+        "alaUne": false,
+        "categorie": "Circulaire",
+        "tags": [
+          "Circulaire"
+        ],
+        "langue": "fr",
+        "abroge": false
+      }
+    },
+    {
+      "number": 3,
+      "reference": "Circulaire n°03/AMF-UMOA/2022",
+      "actualiteId": 1000131,
+      "apiUrl": "https://www.amf-umoa.org/service/api/elastic/actualite?id=1000131&langue=fr",
+      "apiRawSha256": "5d2244dd4db93fc57c6149a13038f41eba7a1e80cdccdfaa7dd78f5d436a6771",
+      "fields": {
+        "createdBy": "olympiat",
+        "createdDate": "2023-09-12T17:06:04.429Z",
+        "lastModifiedBy": "serge.konseiga",
+        "lastModifiedDate": "2023-09-19T09:38:38.857Z",
+        "jpVersion": 2,
+        "id": 1000131,
+        "photoHomePageUrl": "AC-X-2023-98096E7A-EC3A-4F2A-AAF4-B0545B7D4D24",
+        "photoActualiteHomePageUrl": "AC-X-2023-96F6F1EA-D8C2-428A-9EFA-3E4BC393EB2E",
+        "photoActualiteUrl": "AC-X-2023-FE0F8DF7-EEB0-4044-BAC7-207C636B4F1E",
+        "documentUrl": "AC-CIRCULAIRE-2023-07DFE88D-3EF3-4A41-9A25-9B462CE42E40.pdf",
+        "resume": "RELATIVE AUX DOCUMENTS ET INFORMATIONS A JOINDRE A LA DEMANDE D’AGREMENT D’UN OPC ET AUX MODALITES DE DEPOT DES DEMANDES D’ENREGISTREMENT",
+        "titre": "CIRCULAIRE N°003-2022",
+        "texte": "RELATIVE AUX DOCUMENTS ET INFORMATIONS A JOINDRE A LA DEMANDE D’AGREMENT D’UN OPC ET AUX MODALITES DE DEPOT DES DEMANDES D’ENREGISTREMENT",
+        "date": "2023-09-12",
+        "valide": true,
+        "alaUne": false,
+        "categorie": "Circulaire",
+        "tags": [
+          "Circulaire"
+        ],
+        "langue": "fr",
+        "abroge": false
+      }
+    },
+    {
+      "number": 4,
+      "reference": "Circulaire n°04/AMF-UMOA/2022",
+      "actualiteId": 1000132,
+      "apiUrl": "https://www.amf-umoa.org/service/api/elastic/actualite?id=1000132&langue=fr",
+      "apiRawSha256": "2ba6cd7cdcd7f5314e589b7ee8c6d4297e0ae01745eda1d7bdc0d069bc31254c",
+      "fields": {
+        "createdBy": "olympiat",
+        "createdDate": "2023-09-12T17:06:57.015Z",
+        "lastModifiedBy": "serge.konseiga",
+        "lastModifiedDate": "2023-09-19T09:37:30.718Z",
+        "jpVersion": 2,
+        "id": 1000132,
+        "photoHomePageUrl": "AC-X-2023-85B1F9CD-B68F-43F9-B908-EB12D44863C9",
+        "photoActualiteHomePageUrl": "AC-X-2023-490C8345-1876-42C5-97D3-27FCE9AF3DB4",
+        "photoActualiteUrl": "AC-X-2023-2217E3A1-DBDA-408F-BED8-E3C097DA74B1",
+        "documentUrl": "AC-CIRCULAIRE-2023-52ABDA43-61C8-4E8A-92E4-F926D7366864.pdf",
+        "resume": "RELATIVE AU CONTRAT ET MISSIONS DU DEPOSITAIRE",
+        "titre": "CIRCULAIRE N°004-2022",
+        "texte": "RELATIVE AU CONTRAT ET MISSIONS DU DEPOSITAIRE",
+        "date": "2023-09-12",
+        "valide": true,
+        "alaUne": false,
+        "categorie": "Circulaire",
+        "tags": [
+          "Circulaire"
+        ],
+        "langue": "fr",
+        "abroge": false
+      }
+    },
+    {
+      "number": 5,
+      "reference": "Circulaire n°05/AMF-UMOA/2022",
+      "actualiteId": 1000133,
+      "apiUrl": "https://www.amf-umoa.org/service/api/elastic/actualite?id=1000133&langue=fr",
+      "apiRawSha256": "6c0b507ebce70da90548da7656edc330b0c4195986cbfd4323da5abfa911bf78",
+      "fields": {
+        "createdBy": "olympiat",
+        "createdDate": "2023-09-12T17:08:12.231Z",
+        "lastModifiedBy": "serge.konseiga",
+        "lastModifiedDate": "2023-09-19T09:39:02.864Z",
+        "jpVersion": 2,
+        "id": 1000133,
+        "photoHomePageUrl": "AC-X-2023-67BDF156-B92B-4530-965C-0220A82CB43D",
+        "photoActualiteHomePageUrl": "AC-X-2023-BBE62B2C-2997-4410-B8FD-1A57D382EB14",
+        "photoActualiteUrl": "AC-X-2023-E88C2F98-ACD2-4297-99EF-82D5B548B2DB",
+        "documentUrl": "AC-CIRCULAIRE-2023-3C46D9D5-65D4-47E4-AD46-6383E54A4539.pdf",
+        "resume": "RELATIVE AU CONTENU DU PROSPECTUS DES OPC",
+        "titre": "CIRCULAIRE N°005-2022",
+        "texte": "RELATIVE AU CONTENU DU PROSPECTUS DES OPC",
+        "date": "2023-09-12",
+        "valide": true,
+        "alaUne": false,
+        "categorie": "Circulaire",
+        "tags": [
+          "Circulaire"
+        ],
+        "langue": "fr",
+        "abroge": false
+      }
+    },
+    {
+      "number": 6,
+      "reference": "Circulaire n°06/AMF-UMOA/2022",
+      "actualiteId": 1000134,
+      "apiUrl": "https://www.amf-umoa.org/service/api/elastic/actualite?id=1000134&langue=fr",
+      "apiRawSha256": "3a34afafa082c21c36f57393b090c551cdd3c7f0711554286aab248dc20ae855",
+      "fields": {
+        "createdBy": "olympiat",
+        "createdDate": "2023-09-12T17:08:52.217Z",
+        "lastModifiedBy": "serge.konseiga",
+        "lastModifiedDate": "2023-09-19T09:35:43.100Z",
+        "jpVersion": 2,
+        "id": 1000134,
+        "photoHomePageUrl": "AC-X-2023-CB0FA7FB-09CD-4339-8CD5-E986DE7A050F",
+        "photoActualiteHomePageUrl": "AC-X-2023-3B6C0806-694A-4621-BF9A-6909AAAF8307",
+        "photoActualiteUrl": "AC-X-2023-068B97DB-673D-4D93-8FC5-C1E46F5BBF14",
+        "documentUrl": "AC-CIRCULAIRE-2023-676BC896-67DE-4E96-B1E4-0FBE994A0C14.pdf",
+        "resume": "RELATIVE AU DOCUMENT D’INFORMATIONS CLES A FOURNIR A L’INVESTISSEUR D’UN OPC",
+        "titre": "CIRCULAIRE N°006-2022",
+        "texte": "RELATIVE AU DOCUMENT D’INFORMATIONS CLES A FOURNIR A L’INVESTISSEUR D’UN OPC",
+        "date": "2023-09-12",
+        "valide": true,
+        "alaUne": false,
+        "categorie": "Circulaire",
+        "tags": [
+          "Circulaire"
+        ],
+        "langue": "fr",
+        "abroge": false
+      }
+    },
+    {
+      "number": 7,
+      "reference": "Circulaire n°07/AMF-UMOA/2022",
+      "actualiteId": 1000135,
+      "apiUrl": "https://www.amf-umoa.org/service/api/elastic/actualite?id=1000135&langue=fr",
+      "apiRawSha256": "0c99135fe56737974e7c5a0140612d31e73c5666295429d417c0c1f039908c52",
+      "fields": {
+        "createdBy": "olympiat",
+        "createdDate": "2023-09-12T17:09:53.577Z",
+        "lastModifiedBy": "serge.konseiga",
+        "lastModifiedDate": "2023-09-19T09:35:49.219Z",
+        "jpVersion": 2,
+        "id": 1000135,
+        "photoHomePageUrl": "AC-X-2023-41A143EF-C36E-4CD7-9493-6A35D51DC207",
+        "photoActualiteHomePageUrl": "AC-X-2023-DFF2380E-52C5-48F1-976E-7C08AE953F8B",
+        "photoActualiteUrl": "AC-X-2023-654C900A-39F4-4EBE-B201-8EB1BDC118EF",
+        "documentUrl": "AC-CIRCULAIRE-2023-BDDD0EDD-8ABC-4CD5-9AB3-EAFF4803AB1E.pdf",
+        "resume": "RELATIVE AUX EXIGENCES EN MATIERE DE COMMUNICATIONS PUBLICITAIRES",
+        "titre": "CIRCULAIRE N°007-2022",
+        "texte": "RELATIVE AUX EXIGENCES EN MATIERE DE COMMUNICATIONS PUBLICITAIRES",
+        "date": "2023-09-12",
+        "valide": true,
+        "alaUne": false,
+        "categorie": "Circulaire",
+        "tags": [
+          "Circulaire"
+        ],
+        "langue": "fr",
+        "abroge": false
+      }
+    },
+    {
+      "number": 8,
+      "reference": "Circulaire n°08/AMF-UMOA/2022",
+      "actualiteId": 1000136,
+      "apiUrl": "https://www.amf-umoa.org/service/api/elastic/actualite?id=1000136&langue=fr",
+      "apiRawSha256": "acf5ab061dcf757870818093ec50230198ed73a71225d80055095ee08533a1ce",
+      "fields": {
+        "createdBy": "olympiat",
+        "createdDate": "2023-09-12T17:10:40.313Z",
+        "lastModifiedBy": "serge.konseiga",
+        "lastModifiedDate": "2023-09-19T09:36:42.521Z",
+        "jpVersion": 2,
+        "id": 1000136,
+        "photoHomePageUrl": "AC-X-2023-23F59C48-BC03-4B9E-B3D3-3B89FD245984",
+        "photoActualiteHomePageUrl": "AC-X-2023-9F0CB042-992B-4828-8F29-4AC9061FD352",
+        "photoActualiteUrl": "AC-X-2023-E7A508E9-B3BD-42FD-85A6-CB4055EA3C1E",
+        "documentUrl": "AC-CIRCULAIRE-2023-2B7AF72A-ADA5-4B10-B184-576C32DC507F.pdf",
+        "resume": "RELATIVE AUX RAPPORTS PERIODIQUES DES OPC",
+        "titre": "CIRCULAIRE N°008-2022",
+        "texte": "RELATIVE AUX RAPPORTS PERIODIQUES DES OPC",
+        "date": "2023-09-12",
+        "valide": true,
+        "alaUne": false,
+        "categorie": "Circulaire",
+        "tags": [
+          "Circulaire"
+        ],
+        "langue": "fr",
+        "abroge": false
+      }
+    },
+    {
+      "number": 9,
+      "reference": "Circulaire n°09/AMF-UMOA/2022",
+      "actualiteId": 1000137,
+      "apiUrl": "https://www.amf-umoa.org/service/api/elastic/actualite?id=1000137&langue=fr",
+      "apiRawSha256": "a3a524b1b0e0ba60b9e7eb71fb48ee16bdc0cc59c9461b1cd28ce400c3f677dd",
+      "fields": {
+        "createdBy": "olympiat",
+        "createdDate": "2023-09-12T17:12:02.955Z",
+        "lastModifiedBy": "serge.konseiga",
+        "lastModifiedDate": "2023-09-19T09:38:18.438Z",
+        "jpVersion": 2,
+        "id": 1000137,
+        "photoHomePageUrl": "AC-X-2023-F80248A8-B97C-4FA0-A07B-A703439E0FDF",
+        "photoActualiteHomePageUrl": "AC-X-2023-47EFCAD7-3C84-475C-950B-43385AA2342E",
+        "photoActualiteUrl": "AC-X-2023-FFB9ED06-5807-4C35-B70D-068A7713D322",
+        "documentUrl": "AC-CIRCULAIRE-2023-017E526D-5401-45D1-B2A8-63BF910E98BE.pdf",
+        "resume": "RELATIVE AUX INFORMATIONS A FOUNIR AU CONSEIL REGIONAL",
+        "titre": "CIRCULAIRE N°009-2022",
+        "texte": "RELATIVE AUX INFORMATIONS A FOUNIR AU CONSEIL REGIONAL",
+        "date": "2023-09-12",
+        "valide": true,
+        "alaUne": false,
+        "categorie": "Circulaire",
+        "tags": [
+          "Circulaire"
+        ],
+        "langue": "fr",
+        "abroge": false
+      }
+    },
+    {
+      "number": 10,
+      "reference": "Circulaire n°10/AMF-UMOA/2022",
+      "actualiteId": 1000138,
+      "apiUrl": "https://www.amf-umoa.org/service/api/elastic/actualite?id=1000138&langue=fr",
+      "apiRawSha256": "5a163201e11ee28059d9484428ba027c360b83dbd4d9826646c9c4657357710e",
+      "fields": {
+        "createdBy": "olympiat",
+        "createdDate": "2023-09-12T17:13:29.663Z",
+        "lastModifiedBy": "serge.konseiga",
+        "lastModifiedDate": "2023-09-19T09:38:24.224Z",
+        "jpVersion": 2,
+        "id": 1000138,
+        "photoHomePageUrl": "AC-X-2023-98405329-1A2A-4D7B-B796-EFE04B078272",
+        "photoActualiteHomePageUrl": "AC-X-2023-AC389A7B-73B4-40D4-838A-8E194A2590D1",
+        "photoActualiteUrl": "AC-X-2023-607BC4C9-BFBB-4BCF-B503-6B2F6776DFA9",
+        "documentUrl": "AC-CIRCULAIRE-2023-5CF0603D-3683-4DD5-87B8-B82E7BD27615.pdf",
+        "resume": "RELATIVE AUX MODALITES DE CALCUL DES FRAIS GENERAUX POUR LA DETERMINATION DU NIVEAU DE CAPITAUX PROPRES D’UNE SOCIETE DE GESTION D’OPC",
+        "titre": "CIRCULAIRE N°010-2022",
+        "texte": "RELATIVE AUX MODALITES DE CALCUL DES FRAIS GENERAUX POUR LA DETERMINATION DU NIVEAU DE CAPITAUX PROPRES D’UNE SOCIETE DE GESTION D’OPC",
+        "date": "2023-09-12",
+        "valide": true,
+        "alaUne": false,
+        "categorie": "Circulaire",
+        "tags": [
+          "Circulaire"
+        ],
+        "langue": "fr",
+        "abroge": false
+      }
+    },
+    {
+      "number": 11,
+      "reference": "Circulaire n°11/AMF-UMOA/2022",
+      "actualiteId": 1000139,
+      "apiUrl": "https://www.amf-umoa.org/service/api/elastic/actualite?id=1000139&langue=fr",
+      "apiRawSha256": "f3fd991f9a2f77f8aafae39f0dfe8586d551157d8e5e2f7bcf0f17b95b2777a5",
+      "fields": {
+        "createdBy": "olympiat",
+        "createdDate": "2023-09-12T17:14:48.398Z",
+        "lastModifiedBy": "serge.konseiga",
+        "lastModifiedDate": "2023-09-19T09:37:03.402Z",
+        "jpVersion": 2,
+        "id": 1000139,
+        "photoHomePageUrl": "AC-X-2023-A54B9419-E1D8-4CE9-AE32-DB78E96B0D02",
+        "photoActualiteHomePageUrl": "AC-X-2023-F2A29458-12C4-4F56-BB5D-921FE2D96245",
+        "photoActualiteUrl": "AC-X-2023-0636DB2D-9CCE-4C72-BC3C-068DBF98BF5C",
+        "documentUrl": "AC-CIRCULAIRE-2023-9CCBB157-AE80-4C1E-BF25-08658D2DB7E5.pdf",
+        "resume": "RELATIVE AUX FRAIS DE L’OPC",
+        "titre": "CIRCULAIRE N°011-2022",
+        "texte": "RELATIVE AUX FRAIS DE L’OPC",
+        "date": "2023-09-12",
+        "valide": true,
+        "alaUne": false,
+        "categorie": "Circulaire",
+        "tags": [
+          "Circulaire"
+        ],
+        "langue": "fr",
+        "abroge": false
+      }
+    },
+    {
+      "number": 12,
+      "reference": "Circulaire n°12/AMF-UMOA/2022",
+      "actualiteId": 1000140,
+      "apiUrl": "https://www.amf-umoa.org/service/api/elastic/actualite?id=1000140&langue=fr",
+      "apiRawSha256": "560c24dca15199d28451a48f907cbe6a9ff559cd67d04b5e4e9bb71f85633fd6",
+      "fields": {
+        "createdBy": "olympiat",
+        "createdDate": "2023-09-12T17:16:24.280Z",
+        "lastModifiedBy": "serge.konseiga",
+        "lastModifiedDate": "2023-09-19T09:37:37.947Z",
+        "jpVersion": 2,
+        "id": 1000140,
+        "photoHomePageUrl": "AC-X-2023-69EEE385-5A52-41FA-897C-D074F0F287BD",
+        "photoActualiteHomePageUrl": "AC-X-2023-6EC8D7FD-3901-4B6C-8FAE-CADAB83312F7",
+        "photoActualiteUrl": "AC-X-2023-E523B574-6ACD-456A-9F8B-2C65EFF613F3",
+        "documentUrl": "AC-CIRCULAIRE-2023-EF7E23A9-222F-41E8-80AB-91805B9FAC79.pdf",
+        "resume": "RELATIVE A L’EVALUATION DES OPC ET DE LEURS ACTIFS",
+        "titre": "CIRCULAIRE N°012-2022",
+        "texte": "RELATIVE A L’EVALUATION DES OPC ET DE LEURS ACTIFS",
+        "date": "2023-09-12",
+        "valide": true,
+        "alaUne": false,
+        "categorie": "Circulaire",
+        "tags": [
+          "Circulaire"
+        ],
+        "langue": "fr",
+        "abroge": false
+      }
+    },
+    {
+      "number": 13,
+      "reference": "Circulaire n°13/AMF-UMOA/2022",
+      "actualiteId": 1000141,
+      "apiUrl": "https://www.amf-umoa.org/service/api/elastic/actualite?id=1000141&langue=fr",
+      "apiRawSha256": "272bb1c2d6d6696100cf62a3923781d2a543a3b718de74647a680b8bb8a18563",
+      "fields": {
+        "createdBy": "olympiat",
+        "createdDate": "2023-09-12T17:18:39.919Z",
+        "lastModifiedBy": "serge.konseiga",
+        "lastModifiedDate": "2023-09-19T09:37:13.024Z",
+        "jpVersion": 2,
+        "id": 1000141,
+        "photoHomePageUrl": "AC-X-2023-EFFE5C98-15AE-435C-BB52-CEB6A95AE37F",
+        "photoActualiteHomePageUrl": "AC-X-2023-398BEE05-CB02-4E52-8952-667E284BBF27",
+        "photoActualiteUrl": "AC-X-2023-581A5385-7596-4D86-B6E5-3680A857A022",
+        "documentUrl": "AC-CIRCULAIRE-2023-9A05D31B-7FA9-4D98-9CF7-47D3CE2D7287.pdf",
+        "resume": "RELATIVE AUX CLASSES DE PARTS / ACTIONS",
+        "titre": "CIRCULAIRE N°013-2022",
+        "texte": "RELATIVE AUX CLASSES DE PARTS / ACTIONS",
+        "date": "2023-09-12",
+        "valide": true,
+        "alaUne": false,
+        "categorie": "Circulaire",
+        "tags": [
+          "Circulaire"
+        ],
+        "langue": "fr",
+        "abroge": false
+      }
+    },
+    {
+      "number": 14,
+      "reference": "Circulaire n°14/AMF-UMOA/2022",
+      "actualiteId": 1000142,
+      "apiUrl": "https://www.amf-umoa.org/service/api/elastic/actualite?id=1000142&langue=fr",
+      "apiRawSha256": "8056f7a54fe301349d8c8ca41686075ed03b9e2054b8e75efa0b2edfa18e3a89",
+      "fields": {
+        "createdBy": "olympiat",
+        "createdDate": "2023-09-12T17:27:13.722Z",
+        "lastModifiedBy": "serge.konseiga",
+        "lastModifiedDate": "2023-09-19T09:39:46.601Z",
+        "jpVersion": 2,
+        "id": 1000142,
+        "photoHomePageUrl": "AC-X-2023-02A5A112-8BC6-43F1-A875-24107665E533",
+        "photoActualiteHomePageUrl": "AC-X-2023-4A4D8B04-CA70-4D2A-AA79-7708267E0062",
+        "photoActualiteUrl": "AC-X-2023-855CAF2D-2B5F-41B1-B7D1-072D846372C4",
+        "documentUrl": "AC-CIRCULAIRE-2023-B232884D-C617-4772-A0DF-0CFB9FC62843.pdf",
+        "resume": "RELATIVE AUX OUTILS DE GESTION DE LA LIQUIDITE",
+        "titre": "CIRCULAIRE N°014-2022",
+        "texte": "RELATIVE AUX OUTILS DE GESTION DE LA LIQUIDITE",
+        "date": "2023-09-12",
+        "valide": true,
+        "alaUne": false,
+        "categorie": "Circulaire",
+        "tags": [
+          "Circulaire"
+        ],
+        "langue": "fr",
+        "abroge": false
+      }
+    },
+    {
+      "number": 15,
+      "reference": "Circulaire n°15/AMF-UMOA/2022",
+      "actualiteId": 1000143,
+      "apiUrl": "https://www.amf-umoa.org/service/api/elastic/actualite?id=1000143&langue=fr",
+      "apiRawSha256": "76922dd3bf34aa330cbb7463fc14e7ac31777878c54ce6199c2173a21e233a5d",
+      "fields": {
+        "createdBy": "olympiat",
+        "createdDate": "2023-09-12T17:28:03.692Z",
+        "lastModifiedBy": "serge.konseiga",
+        "lastModifiedDate": "2023-09-19T09:39:40.235Z",
+        "jpVersion": 2,
+        "id": 1000143,
+        "photoHomePageUrl": "AC-X-2023-A365670A-E4CA-459A-B1D8-1DC15C08A23C",
+        "photoActualiteHomePageUrl": "AC-X-2023-3FED1671-1C97-48F8-B9F7-89C2022BD5F7",
+        "photoActualiteUrl": "AC-X-2023-E801897C-5259-4616-878F-A506FF536F2B",
+        "documentUrl": "AC-CIRCULAIRE-2023-BC35F9F6-2DB0-43C9-8C2A-B858FB2A37F4.pdf",
+        "resume": "RELATIVE A LA GESTION DES RISQUES DES OPC",
+        "titre": "CIRCULAIRE N°015-2022",
+        "texte": "RELATIVE A LA GESTION DES RISQUES DES OPC",
+        "date": "2023-09-12",
+        "valide": true,
+        "alaUne": false,
+        "categorie": "Circulaire",
+        "tags": [
+          "Circulaire"
+        ],
+        "langue": "fr",
+        "abroge": false
+      }
+    },
+    {
+      "number": 16,
+      "reference": "Circulaire n°16/AMF-UMOA/2022",
+      "actualiteId": 1000144,
+      "apiUrl": "https://www.amf-umoa.org/service/api/elastic/actualite?id=1000144&langue=fr",
+      "apiRawSha256": "818f3c5673e60d29212101d3fd0b9fb0d8c29b1009dc1801f803b016fe730591",
+      "fields": {
+        "createdBy": "olympiat",
+        "createdDate": "2023-09-12T17:29:13.398Z",
+        "lastModifiedBy": "serge.konseiga",
+        "lastModifiedDate": "2023-09-19T09:39:17.635Z",
+        "jpVersion": 2,
+        "id": 1000144,
+        "photoHomePageUrl": "AC-X-2023-2071FC3C-778B-479E-8B4D-4681A7E799C2",
+        "photoActualiteHomePageUrl": "AC-X-2023-4810B968-9A51-49BA-A0AF-CEF0EC827D6A",
+        "photoActualiteUrl": "AC-X-2023-BC85248A-0873-4A46-A5D2-74D2F4F1AD8B",
+        "documentUrl": "AC-CIRCULAIRE-2023-0C7FF7FE-5B0C-4677-9FAE-8DE959A75E05.pdf",
+        "resume": "RELATIVE AUX REGLES APPLICABLES AUX OPC EN MATIERE DE CONFLITS D’INTERETS ET REGLES DE CONDUITE",
+        "titre": "CIRCULAIRE N°016-2022",
+        "texte": "RELATIVE AUX REGLES APPLICABLES AUX OPC EN MATIERE DE CONFLITS D’INTERETS ET REGLES DE CONDUITE",
+        "date": "2023-09-12",
+        "valide": true,
+        "alaUne": false,
+        "categorie": "Circulaire",
+        "tags": [
+          "Circulaire"
+        ],
+        "langue": "fr",
+        "abroge": false
+      }
+    }
+  ],
+  "boundary": {
+    "metadataIsNormativeContent": false,
+    "automaticDependencyResolutionAllowed": false,
+    "automaticRequirementActivationAllowed": false,
+    "humanLegalReviewRequired": true,
+    "humanComplianceReviewRequired": true
+  }
+}
