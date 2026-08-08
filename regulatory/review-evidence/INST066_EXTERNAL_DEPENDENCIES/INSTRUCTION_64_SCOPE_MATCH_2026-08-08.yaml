@@ -43,12 +43,15 @@ inst066_mapping_review:
   - dependency_id: INST066_ART005_DEP_INST_01
     inst066_subject: "délai maximal pour l'octroi d'agrément d'une Société de Gestion d'OPC"
     source_support:
+      - instruction64_article: 2
+        relevance: "le champ d'application inclut expressément les Sociétés de Gestion d'OPC"
       - instruction64_article: 3
         relevance: "la décision intervient dans un délai maximum de trois mois à compter du dépôt"
       - instruction64_article: 14
         relevance: "le Conseil Régional dispose d'un délai maximum de trois mois à compter du dépôt pour se prononcer"
     match_status: STRONG_IMPLEMENTING_SCOPE_MATCH_PENDING_LEGAL_REVIEW
     resolved: false
+
   - dependency_id: INST066_ART005_DEP_INST_02
     inst066_subject: "étapes du processus d'agrément"
     source_support:
@@ -56,6 +59,7 @@ inst066_mapping_review:
         relevance: "énumère exactement dépôt, analyse de conformité, instruction, décision"
     match_status: EXACT_SCOPE_MATCH_PENDING_LEGAL_REVIEW
     resolved: false
+
   - dependency_id: INST066_ART005_DEP_INST_03
     inst066_subject: "délais de règlement des frais d'agrément"
     source_support: []
@@ -65,6 +69,7 @@ inst066_mapping_review:
     search_result: NO_OCCURRENCE_IN_MATERIALIZED_INSTRUCTION64_TEXT
     match_status: NO_MATCH_REMAINS_UNRESOLVED
     resolved: false
+
   - dependency_id: INST066_ART017_DEP_INST_01
     inst066_subject: "délai d'information de l'octroi ou du refus de l'agrément du FCP"
     source_support:
@@ -75,6 +80,7 @@ inst066_mapping_review:
     limitation: "aucun délai spécifique de notification post-décision n'a été identifié dans les dispositions ciblées"
     match_status: RELATED_STRONG_SCOPE_NOT_EXACT_NOTIFICATION_DELAY
     resolved: false
+
   - dependency_id: INST066_ART017_DEP_INST_02
     inst066_subject: "délai de transmission des informations/documents complémentaires et clôture du dossier"
     source_support:
@@ -84,6 +90,33 @@ inst066_mapping_review:
         relevance: "20 jours ouvrés, puis clôture motivée pendant l'instruction"
     match_status: STRONG_IMPLEMENTING_SCOPE_MATCH_PENDING_LEGAL_REVIEW
     resolved: false
+
+  - dependency_id: INST066_ART025_DEP_INST_01
+    inst066_subject: "délai dans lequel le Conseil Régional accorde ou refuse l'agrément de la Société d'Investissement"
+    source_support:
+      - instruction64_article: 1
+        relevance: "fixe les règles du processus d'agrément et d'approbation des acteurs du marché financier régional"
+      - instruction64_article: 2
+        relevance: "le champ d'application inclut expressément les Organismes de Placement Collectif et toute autre entité devant être agréée ou approuvée"
+      - instruction64_article: 3
+        relevance: "la décision intervient dans un délai maximum de trois mois à compter du dépôt du dossier"
+      - instruction64_article: 14
+        relevance: "réaffirme le délai maximum de trois mois pour se prononcer"
+    limitation: >-
+      Le texte 64 emploie la catégorie générale OPC et non, dans les passages ciblés,
+      le terme spécifique Société d'Investissement. Le rattachement est donc fort au
+      niveau du champ réglementaire mais reste soumis à la revue juridique du lien
+      entre la catégorie OPC et la forme Société d'Investissement visée par l'article 25.
+    match_status: STRONG_IMPLEMENTING_SCOPE_MATCH_PENDING_LEGAL_REVIEW
+    resolved: false
+
+unresolved_generic_instruction_dependencies_after_review:
+  - dependency_id: INST066_ART005_DEP_INST_03
+    reason: NO_FEE_PAYMENT_DEADLINE_FOUND_IN_INSTRUCTION64
+  - dependency_id: INST066_ART021_DEP_INST_01
+    reason: VALUE_CALCULATION_CONTROL_PROCEDURES_REQUIRE_SEPARATE_INSTRUCTION_IDENTIFICATION
+  - dependency_id: INST066_ART017_DEP_INST_01
+    reason: SPECIFIC_POST_DECISION_NOTIFICATION_DELAY_NOT_EXACTLY_IDENTIFIED
 
 boundaries:
   content_match_is_legal_resolution: false
