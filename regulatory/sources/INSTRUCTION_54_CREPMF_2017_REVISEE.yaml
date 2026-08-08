@@ -43,14 +43,19 @@ inst066_candidate_relationships:
     resolved: false
 
 related_tariff_source_candidate:
+  source_id: DECISION_CM_13_12_2011_TARIFS
   reference: "Décision n° CM/13/12/2011"
+  actualite_id: 1000178
+  detail_url: "https://www.amf-umoa.org/service/api/elastic/actualite?id=1000178&langue=fr"
+  document_url_field: "AC-DECISION-2025-F85A41EA-3271-458A-B2AF-7777802F18FB.pdf"
   title: "Décision portant fixation des tarifs du Conseil Régional de l'Épargne Publique et des Marchés Financiers"
   relationship_to_inst066_article5: >-
     L'article 5 de l'Instruction 66 distingue les montants des frais, précisés dans
     une Décision du Conseil des Ministres, et leurs délais de règlement, fixés par
-    une Instruction du Conseil Régional. La Décision 2011 est donc une pièce
-    complémentaire candidate pour les montants, sans préjuger de sa version courante.
-  relationship_status: TO_MATERIALIZE_AND_COMPARE
+    une Instruction du Conseil Régional. La Décision 2011 est donc la candidate
+    institutionnelle pour le volet tarifaire, tandis que l'Instruction 54 est la
+    candidate pour facturation/paiement/recouvrement.
+  relationship_status: OFFICIAL_PAIR_IDENTIFIED_BOTH_BINARIES_TO_MATERIALIZE_AND_COMPARE
 
 legal_metadata:
   act_date: PENDING_OFFICIAL_BINARY_REVIEW
@@ -62,7 +67,8 @@ next_steps:
   - MATERIALIZE_DETAIL_API_BINARY_AFTER_GITHUB_ACTIONS_RECOVERY
   - SEARCH_TEXT_FOR_AGREMENT_AND_SPECIFIC_PAYMENT_DEADLINES
   - IDENTIFY_EFFECTIVE_DATE_AND_REVISION_CLAUSES
-  - MATERIALIZE_AND_COMPARE_CM_13_12_2011_TARIFF_DECISION
+  - MATERIALIZE_AND_COMPARE_DECISION_CM_13_12_2011_TARIFS
+  - CHECK_LATER_TARIFF_OR_PAYMENT_REVISIONS
   - HUMAN_LEGAL_AND_COMPLIANCE_REVIEW
 
 safety:
