@@ -1,0 +1,94 @@
+source_id: INSTRUCTION_61_CREPMF_2020
+source_family: INSTRUCTION
+reference: "Instruction n°61/CREPMF/2020"
+title: "Instruction relative à l'organisation du système de contrôle interne des acteurs agréés du marché financier régional de l'UMOA"
+jurisdiction: UMOA
+authority_at_adoption: CREPMF
+current_authority_name: AMF-UMOA
+document_type: INSTRUCTION
+language: fr
+
+primary_evidence:
+  source_id: INSTRUCTION_66_CREPMF_2021
+  source_pdf: regulatory/materialized/INSTRUCTION_66_CREPMF_2021.pdf
+  source_sha256: 3f964f2f6ab9ce9eb16912ccda13f34b5023a188dfb18fcba7065590c770d396
+  article: 11
+  evidence_status: EXPLICIT_REFERENCE_AND_TITLE_OBSERVED_IN_HASHED_OFFICIAL_SOURCE
+  wording_summary: >-
+    L'article 11 de l'Instruction 66 renvoie explicitement à l'Instruction
+    61/CREPMF/2020 relative à l'organisation du système de contrôle interne des
+    acteurs agréés du marché financier régional de l'UMOA et y renvoie de nouveau
+    pour les missions de la fonction de contrôle interne.
+
+secondary_research_evidence:
+  - source: ABIDJAN_NET_DOCUMENTS
+    url: https://news.abidjan.net/document/19694/index
+    published_on: 2020-03-26
+    observed_on: 2026-08-08
+    evidence_scope: EXISTENCE_REFERENCE_AND_TITLE_CORROBORATION_ONLY
+    normative_use_allowed: false
+  - source: FINANCIAL_AFRIK
+    url: https://www.financialafrik.com/2020/04/06/umoa-le-crepmf-fixe-les-regles-de-controle-interne-aux-acteurs-du-marche-financier/
+    observed_on: 2026-08-08
+    evidence_scope: SEARCH_CLUE_ONLY
+    normative_use_allowed: false
+
+registry:
+  official_index_url: https://www.amf-umoa.org/reglementation/instruction
+  registry_checked_on: 2026-08-08
+  listed_reference: TO_VERIFY_IN_COMPLETE_DYNAMIC_OFFICIAL_REGISTRY
+  listed_status: TO_VERIFY_IN_COMPLETE_DYNAMIC_OFFICIAL_REGISTRY
+  verification_status: PENDING_DIRECT_OFFICIAL_REGISTRY_CONFIRMATION
+  note: >-
+    La portion du registre publiquement indexée lors du contrôle affiche notamment
+    les Instructions 64/2020 et suivantes mais n'a pas permis de retrouver directement
+    l'entrée 61/2020. Cette absence d'indexation ne constitue pas une conclusion sur
+    le statut juridique courant.
+
+source_integrity:
+  official_binary_url: TO_IDENTIFY_FROM_OFFICIAL_SOURCE
+  repository_copy: null
+  sha256: null
+  byte_size: null
+  page_count: null
+  copy_status: EXPLICITLY_REFERENCED_BY_OFFICIAL_INST066_BINARY_OWN_BINARY_NOT_MATERIALIZED
+
+legal_metadata:
+  act_date: PENDING_OWN_OFFICIAL_BINARY_REVIEW
+  effective_from: PENDING_OWN_OFFICIAL_BINARY_REVIEW
+  amendments_and_rectifications: TO_COMPLETE
+  current_legal_status: PENDING_DIRECT_OFFICIAL_REGISTRY_AND_BINARY_REVIEW
+  legal_review_status: PENDING
+  compliance_review_status: PENDING
+  requirement_activation_allowed: false
+
+inst066_relationships:
+  - article: 11
+    relationship: EXPLICITLY_REFERENCED_FOR_INTERNAL_CONTROL_FUNCTION_ORGANISATION
+    inventory: regulatory/registries/INST066_EXTERNAL_IMPLEMENTING_TEXTS_INVENTORY_V0_1.json
+    activation: FORBIDDEN_PENDING_OFFICIAL_SOURCE_IDENTIFICATION_AND_REVIEW
+
+materialization_plan:
+  status: OFFICIAL_BINARY_TO_IDENTIFY
+  next_steps:
+    - LOCATE_OFFICIAL_AMF_UMOA_OR_BRVM_BINARY
+    - VERIFY_PDF_MAGIC
+    - COMPUTE_SHA256_AND_BYTE_SIZE
+    - VERIFY_PAGE_COUNT
+    - EXTRACT_TEXT_OR_OCR_IF_REQUIRED
+    - VERIFY_SIGNATURE_EFFECTIVE_DATE_AND_CURRENT_STATUS
+    - COMPARE_ARTICLE_11_DEPENDENCY_SCOPE
+
+safety:
+  secondary_sources_normative_use_allowed: false
+  automatic_dependency_resolution_allowed: false
+  automatic_rule_reconstruction_allowed: false
+  requirement_activation_allowed: false
+  human_legal_review_required: true
+  human_compliance_review_required: true
+  ready_for_submission_must_remain_false: true
+
+notes:
+  - "Le numéro, l'année et l'intitulé proviennent directement de l'Instruction 66 officielle matérialisée et hashée."
+  - "Aucun statut NON ABROGE, aucune date d'acte ni aucune date d'effet n'est déduite de publications secondaires."
+  - "L'Instruction 61 reste une dépendance explicitement nommée mais non résolue tant que son propre texte officiel n'est pas matérialisé et son statut courant confirmé."
