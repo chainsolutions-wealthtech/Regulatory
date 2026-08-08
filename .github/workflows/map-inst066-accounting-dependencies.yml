@@ -1,0 +1,87 @@
+name: Map INST066 Accounting Dependencies
+
+on:
+  push:
+    branches:
+      - main
+    paths:
+      - .github/workflows/map-inst066-accounting-dependencies.yml
+      - scripts/map_inst066_accounting_dependencies.py
+      - regulatory/materialized/REGLEMENT_09_2006_CM_UEMOA_ACCOUNTING.metadata.json
+      - regulatory/validation/REGLEMENT_09_2006_ACCOUNTING_MATERIALIZATION_VALIDATION_V0_1.json
+      - regulatory/sources/REGLEMENT_09_2006_CM_UEMOA_ACCOUNTING.yaml
+      - regulatory/registries/INST066_EXTERNAL_IMPLEMENTING_TEXTS_INVENTORY_V0_1.json
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: inst066-accounting-dependency-mapping-main
+  cancel-in-progress: true
+
+jobs:
+  map-and-validate:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Map five accounting dependencies to materialized candidate
+        run: python3 scripts/map_inst066_accounting_dependencies.py
+
+      - name: Validate mapping remains non-resolving
+        run: |
+          python3 - <<'PY'
+          import json
+          from pathlib import Path
+
+          mapping = json.loads(Path(
+              'regulatory/registries/INST066_ACCOUNTING_DEPENDENCY_MAPPING_V0_1.json'
+          ).read_text(encoding='utf-8'))
+          validation = json.loads(Path(
+              'regulatory/validation/INST066_ACCOUNTING_DEPENDENCY_MAPPING_VALIDATION_V0_1.json'
+          ).read_text(encoding='utf-8'))
+
+          assert validation['status'] == 'PASS', validation
+          assert mapping['dependencyCount'] == 5
+          assert len(mapping['articleNumbers']) > 0
+          assert mapping['currentVersionStatus'] == 'PENDING_CURRENT_VERSION_AND_AMENDMENTS_REVIEW'
+          assert mapping['resolutionBoundary']['candidateMaterializationIsResolution'] is False
+          assert mapping['resolutionBoundary']['mustIdentifyCurrentAccountingVersion'] is True
+          assert mapping['safety']['automaticDependencyResolutionAllowed'] is False
+          assert mapping['safety']['automaticRuleReconstructionAllowed'] is False
+          assert mapping['safety']['requirementActivationAllowed'] is False
+          assert mapping['safety']['readyForSubmissionMustRemainFalse'] is True
+          assert all(item['resolutionStatus'].startswith('NOT_RESOLVED_') for item in mapping['mappings'])
+          assert all(item['activation'].startswith('FORBIDDEN_') for item in mapping['mappings'])
+          PY
+
+      - name: Upload mapping evidence
+        uses: actions/upload-artifact@v4
+        with:
+          name: inst066-accounting-dependency-mapping
+          retention-days: 30
+          if-no-files-found: error
+          path: |
+            regulatory/registries/INST066_ACCOUNTING_DEPENDENCY_MAPPING_V0_1.json
+            regulatory/validation/INST066_ACCOUNTING_DEPENDENCY_MAPPING_VALIDATION_V0_1.json
+
+      - name: Commit deterministic mapping evidence
+        if: github.actor != 'github-actions[bot]'
+        run: |
+          git config user.name 'regulatory-source-bot'
+          git config user.email 'regulatory-source-bot@users.noreply.github.com'
+          git add \
+            regulatory/registries/INST066_ACCOUNTING_DEPENDENCY_MAPPING_V0_1.json \
+            regulatory/validation/INST066_ACCOUNTING_DEPENDENCY_MAPPING_VALIDATION_V0_1.json
+          if git diff --cached --quiet; then
+            echo 'No accounting mapping changes to commit.'
+          else
+            git commit -m 'regulatory: map Instruction 66 accounting dependencies'
+            git pull --rebase origin main
+            git push origin HEAD:main
+          fi
