@@ -143,6 +143,7 @@ def main() -> None:
 
     circular = counts_by_kind.get("COUNCIL_CIRCULAR", {})
     instruction = counts_by_kind.get("COUNCIL_INSTRUCTION", {})
+    named_instruction = counts_by_kind.get("EXPLICIT_NAMED_CREPMF_INSTRUCTION", {})
     output = {
         "schemaVersion": "INST066_CURRENT_EXTERNAL_DEPENDENCY_STATE_V0_1",
         "sourceInventory": str(INVENTORY_PATH.relative_to(ROOT)),
@@ -158,13 +159,16 @@ def main() -> None:
             "unresolvedDocumentaryCount": len(unresolved),
             "confirmedOverlayResolutionCount": declared_overlay_count,
             "confirmedCircularOverlayResolutionCount": circular_count,
-            "confirmedInstructionOverlayResolutionCount": instruction_count,
+            "confirmedInstructionFamilyOverlayResolutionCount": instruction_count,
             "circularOccurrenceCount": circular.get("total", 0),
             "resolvedCircularCount": circular.get("resolved", 0),
             "unresolvedCircularCount": circular.get("unresolved", 0),
             "instructionOccurrenceCount": instruction.get("total", 0),
             "resolvedInstructionCount": instruction.get("resolved", 0),
             "unresolvedInstructionCount": instruction.get("unresolved", 0),
+            "namedInstructionOccurrenceCount": named_instruction.get("total", 0),
+            "resolvedNamedInstructionCount": named_instruction.get("resolved", 0),
+            "unresolvedNamedInstructionCount": named_instruction.get("unresolved", 0),
             "countsByKind": counts_by_kind,
         },
         "unresolvedDependencies": unresolved,
@@ -182,17 +186,20 @@ def main() -> None:
 
     expected_summary = {
         "dependencyOccurrenceCount": 49,
-        "resolvedDocumentaryCount": 30,
-        "unresolvedDocumentaryCount": 19,
-        "confirmedOverlayResolutionCount": 28,
+        "resolvedDocumentaryCount": 31,
+        "unresolvedDocumentaryCount": 18,
+        "confirmedOverlayResolutionCount": 29,
         "confirmedCircularOverlayResolutionCount": 25,
-        "confirmedInstructionOverlayResolutionCount": 3,
+        "confirmedInstructionFamilyOverlayResolutionCount": 4,
         "circularOccurrenceCount": 34,
         "resolvedCircularCount": 25,
         "unresolvedCircularCount": 9,
         "instructionOccurrenceCount": 7,
         "resolvedInstructionCount": 3,
         "unresolvedInstructionCount": 4,
+        "namedInstructionOccurrenceCount": 1,
+        "resolvedNamedInstructionCount": 1,
+        "unresolvedNamedInstructionCount": 0,
     }
     actual_summary = output["summary"]
     checks = {key: actual_summary[key] == expected for key, expected in expected_summary.items()}
