@@ -1,0 +1,176 @@
+evidence_id: INST066_CIRCULAR_2022_CONTENT_SCOPE_REVIEW_2026_08_08
+review_date: 2026-08-08
+source_instruction: INSTRUCTION_66_CREPMF_2021
+source_dependency_digest: regulatory/registries/INST066_CIRCULAR_DEPENDENCY_REVIEW_DIGEST_V0_1.json
+official_circular_catalog: regulatory/registries/AMF_UMOA_2022_CIRCULAR_CATALOG_V0_1.json
+candidate_matrix: regulatory/registries/INST066_TO_AMF_UMOA_2022_CIRCULAR_CANDIDATE_MATRIX_V0_1.json
+machine_validation_workflow: .github/workflows/build-inst066-circular-content-scope-matrix.yml
+status: CURATED_OWN_BINARY_SCOPE_REVIEW_COMPLETE_MACHINE_REVALIDATION_BLOCKED
+
+ci_state:
+  validation_status: BLOCKED_BY_GITHUB_ACTIONS_BILLING
+  observed_on: 2026-08-08
+  github_annotation: >-
+    The job was not started because recent account payments have failed or the
+    spending limit needs to be increased. This is an infrastructure/account blocker,
+    not a regulatory-content validation failure.
+  machine_pass_claimed: false
+  retry_required_after_billing_restoration: true
+
+summary:
+  circular_dependency_count: 34
+  strong_or_exact_content_scope_matches: 26
+  related_only_matches: 2
+  no_confirmed_match_in_reviewed_2022_series: 6
+  resolved_dependencies: 0
+  activated_requirements: 0
+
+strong_or_exact_matches:
+  - dependency_id: INST066_ART005_DEP_CIRC_01
+    circular: 10
+    status: EXACT_IMPLEMENTING_SCOPE_MATCH
+    evidence: "La Circulaire 10 indique que les frais généraux définis sont ceux visés à l'article 5 de l'Instruction 66."
+  - dependency_id: INST066_ART005_DEP_CIRC_02
+    circular: 2
+    status: EXACT_IMPLEMENTING_SCOPE_MATCH
+    evidence: "La Circulaire 02 précise la liste des documents/informations d'une demande d'agrément de SGO ainsi que le contenu et la forme du programme d'activités et renvoie à l'article 5."
+  - dependency_id: INST066_ART009_DEP_CIRC_01
+    circular: 16
+    status: STRONG_IMPLEMENTING_SCOPE_MATCH
+    evidence: "Conflits d'intérêts et règles de conduite des OPC."
+  - dependency_id: INST066_ART011_DEP_CIRC_01
+    circular: 15
+    status: STRONG_IMPLEMENTING_SCOPE_MATCH
+    evidence: "Organisation de la gestion des risques ; renvoi au cadre de l'article 11."
+  - dependency_id: INST066_ART012_DEP_CIRC_01
+    circular: 14
+    status: EXACT_IMPLEMENTING_SCOPE_MATCH
+    evidence: "Systèmes/procédures de gestion de la liquidité, simulations de crise et outils de liquidité."
+  - dependency_id: INST066_ART013_DEP_CIRC_01
+    circular: 12
+    status: EXACT_IMPLEMENTING_SCOPE_MATCH
+    evidence: "Procédures d'évaluation/VNI, expert externe et fréquence d'évaluation ; renvoi à l'article 13."
+  - dependency_id: INST066_ART017_DEP_CIRC_01
+    circular: 3
+    status: EXACT_IMPLEMENTING_SCOPE_MATCH
+    evidence: "La Circulaire 03 déclare préciser les modalités d'application des articles 17, 25 et 55."
+  - dependency_id: INST066_ART021_DEP_CIRC_01
+    circular: 4
+    status: STRONG_IMPLEMENTING_SCOPE_MATCH_WITH_REPORTING_LIMITATION
+    evidence: "La Circulaire 04 fixe les fonctions/obligations du Dépositaire visées à l'article 21, mais le texte extrait ne contient pas une règle autonome intitulée rapport annuel."
+  - dependency_id: INST066_ART021_DEP_CIRC_02
+    circular: 4
+    status: EXACT_IMPLEMENTING_SCOPE_MATCH
+    evidence: "Contrat de Dépositaire, garde, surveillance, ségrégation et fonctions ; renvoi à l'article 21."
+  - dependency_id: INST066_ART025_DEP_CIRC_01
+    circular: 3
+    status: EXACT_IMPLEMENTING_SCOPE_MATCH
+    evidence: "La Circulaire 03 déclare préciser les modalités d'application de l'article 25."
+  - dependency_id: INST066_ART028_DEP_CIRC_01
+    circular: 5
+    status: EXACT_IMPLEMENTING_SCOPE_MATCH
+    evidence: "Contenu du prospectus des OPC."
+  - dependency_id: INST066_ART032_DEP_CIRC_01
+    circular: 7
+    status: EXACT_IMPLEMENTING_SCOPE_MATCH
+    evidence: "Exigences en matière de communications publicitaires ; communication claire, exacte et non trompeuse."
+  - dependency_id: INST066_ART033_DEP_CIRC_01
+    circular: 6
+    status: EXACT_IMPLEMENTING_SCOPE_MATCH
+    evidence: "Document d'informations clés à fournir à l'investisseur d'un OPC."
+  - dependency_id: INST066_ART036_DEP_CIRC_01
+    circular: 9
+    status: STRONG_IMPLEMENTING_SCOPE_MATCH
+    evidence: "Informations/comptes rendus des SGO et Sociétés d'investissement à fournir au Conseil Régional."
+  - dependency_id: INST066_ART037_DEP_CIRC_01
+    circular: 8
+    status: EXACT_IMPLEMENTING_SCOPE_MATCH
+    evidence: "Rapports périodiques ; le rapport annuel reprend les renseignements de l'annexe et ceux de l'article 37 alinéa 2."
+  - dependency_id: INST066_ART037_DEP_CIRC_02
+    circular: 8
+    status: EXACT_IMPLEMENTING_SCOPE_MATCH
+    evidence: "Même instrument de reporting périodique, lien textuel direct à l'article 37."
+  - dependency_id: INST066_ART038_DEP_CIRC_01
+    circular: 13
+    status: EXACT_IMPLEMENTING_SCOPE_MATCH
+    evidence: "La Circulaire 13 cite l'article 38 et fixe les conditions des classes de parts/actions."
+  - dependency_id: INST066_ART040_DEP_CIRC_01
+    circular: 15
+    status: STRONG_IMPLEMENTING_SCOPE_MATCH
+    evidence: "Risque global, levier et instruments dérivés."
+  - dependency_id: INST066_ART040_DEP_CIRC_02
+    circular: 15
+    status: STRONG_IMPLEMENTING_SCOPE_MATCH
+    evidence: "Gestion des risques liés aux dérivés et expositions OTC."
+  - dependency_id: INST066_ART047_DEP_CIRC_01
+    circular: 14
+    status: EXACT_IMPLEMENTING_SCOPE_MATCH
+    evidence: "Outils de liquidité incluant la suspension temporaire des rachats/remboursements."
+  - dependency_id: INST066_ART053_DEP_CIRC_01
+    circular: 11
+    status: EXACT_IMPLEMENTING_SCOPE_MATCH
+    evidence: "Rémunérations/frais/commissions et méthodes de calcul."
+  - dependency_id: INST066_ART053_DEP_CIRC_02
+    circular: 11
+    status: EXACT_IMPLEMENTING_SCOPE_MATCH
+    evidence: "Frais de l'OPC et présentation dans le prospectus."
+  - dependency_id: INST066_ART055_DEP_CIRC_01
+    circular: 3
+    status: EXACT_IMPLEMENTING_SCOPE_MATCH
+    evidence: "La Circulaire 03 déclare préciser les modalités d'application de l'article 55 et comporte des dossiers relatifs aux opérations de fusion/scission/transformation."
+  - dependency_id: INST066_ART074_DEP_CIRC_01
+    circular: 13
+    status: EXACT_IMPLEMENTING_SCOPE_MATCH
+    evidence: "La Circulaire 13 cite l'article 74 et traite les classes de parts/actions."
+  - dependency_id: INST066_ART074_DEP_CIRC_02
+    circular: 13
+    status: EXACT_IMPLEMENTING_SCOPE_MATCH
+    evidence: "Même renvoi article 74 pour les classes OPCVM/OPCR."
+  - dependency_id: INST066_ART080_DEP_CIRC_01
+    circular: 13
+    status: EXACT_IMPLEMENTING_SCOPE_MATCH
+    evidence: "La Circulaire 13 cite explicitement l'article 80 et traite les classes de parts."
+
+related_only_matches:
+  - dependency_id: INST066_ART059_DEP_CIRC_01
+    circular: 3
+    status: RELATED_ONLY_NOT_EXACT_IMPLEMENTING_MATCH
+    evidence: "La Circulaire 03 couvre des opérations de fusion et l'information des porteurs lors de modifications, mais le texte contrôlé ne cite pas explicitement l'article 59 ni toutes ses informations détaillées."
+  - dependency_id: INST066_ART074_DEP_CIRC_03
+    circular: 6
+    status: RELATED_INFORMATION_ONLY_OPERATING_MODALITIES_NOT_ESTABLISHED
+    evidence: "La Circulaire 06 traite l'information DICI des structures maître/nourricier, mais ne démontre pas à elle seule toutes les modalités de fonctionnement exigées par le renvoi de l'article 74."
+
+no_confirmed_match_in_reviewed_2022_series:
+  - dependency_id: INST066_ART004_DEP_CIRC_01
+    reason: AUXILIARY_SERVICES_LIMITS_NOT_IDENTIFIED_IN_2022_SERIES
+  - dependency_id: INST066_ART014_DEP_CIRC_01
+    reason: DELEGATION_BOX_LETTER_IMPLEMENTING_CIRCULAR_NOT_IDENTIFIED_IN_2022_SERIES
+  - dependency_id: INST066_ART023_DEP_CIRC_01
+    reason: SICAV_MARKET_ADMISSION_CIRCULAR_NOT_IDENTIFIED_IN_2022_SERIES
+  - dependency_id: INST066_ART023_DEP_CIRC_02
+    reason: SICAV_GLOBAL_PORTFOLIO_DELEGATION_CIRCULAR_NOT_IDENTIFIED_IN_2022_SERIES
+  - dependency_id: INST066_ART075_DEP_CIRC_01
+    reason: FCPE_SUPERVISORY_COUNCIL_ANNUAL_REPORT_CONTENT_NOT_IDENTIFIED_IN_2022_SERIES
+  - dependency_id: INST066_ART076_DEP_CIRC_01
+    reason: SICAVAS_SUPERVISORY_COUNCIL_ANNUAL_REPORT_CONTENT_NOT_IDENTIFIED_IN_2022_SERIES
+
+interpretation_boundaries:
+  content_scope_match_is_legal_resolution: false
+  related_only_may_be_promoted_automatically: false
+  no_confirmed_match_means_instrument_does_not_exist: false
+  binary_materialization_is_resolution: false
+  automatic_dependency_resolution_allowed: false
+  automatic_rule_reconstruction_allowed: false
+  automatic_requirement_activation_allowed: false
+  human_legal_review_required: true
+  human_compliance_review_required: true
+  ready_for_submission_must_remain_false: true
+
+next_steps:
+  - RESTORE_GITHUB_ACTIONS_BILLING_AND_RERUN_CONTENT_SCOPE_MATRIX_WORKFLOW
+  - COMPARE_MACHINE_ANCHORS_TO_THIS_CURATED_REVIEW
+  - COMPLETE_LEGAL_REVIEW_OF_26_STRONG_OR_EXACT_MATCHES
+  - SEARCH_OUTSIDE_2022_SERIES_FOR_6_NO_CONFIRMED_MATCH_DEPENDENCIES
+  - INVESTIGATE_2_RELATED_ONLY_DEPENDENCIES_WITH_ADDITIONAL_OFFICIAL_TEXTS
+  - KEEP_ALL_DEPENDENCIES_RESOLVED_FALSE_UNTIL_HUMAN_REVIEWS
