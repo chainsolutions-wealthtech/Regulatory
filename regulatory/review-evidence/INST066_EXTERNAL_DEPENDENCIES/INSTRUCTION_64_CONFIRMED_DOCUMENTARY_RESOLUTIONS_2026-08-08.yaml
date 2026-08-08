@@ -1,0 +1,61 @@
+evidence_id: INSTRUCTION_64_CONFIRMED_DOCUMENTARY_RESOLUTIONS_2026_08_08
+review_date: 2026-08-08
+source:
+  source_id: INSTRUCTION_64_CREPMF_2020
+  reference: "Instruction n°64/CREPMF/2020"
+  official_registry_status_observed: NON_ABROGE
+  official_binary: regulatory/sources/amf-umoa-priority-api-documents/INSTRUCTION_64_CREPMF_2020.pdf
+  official_text: regulatory/sources/amf-umoa-priority-api-documents/INSTRUCTION_64_CREPMF_2020.txt
+  sha256: db5091c4388e5c050c22b028e7494522e36d6b5b041ba265cf96ccedada24469
+  page_count: 97
+  effective_from_observed_in_binary: 2021-01-01
+confirmed_documentary_resolutions:
+  - dependency_id: INST066_ART005_DEP_INST_01
+    article_number: 5
+    inst066_subject: "délai maximal pour l'octroi d'agrément d'une Société de Gestion d'OPC"
+    source_support:
+      - instruction64_article: 2
+        relevance: "champ d'application incluant expressément les Sociétés de Gestion d'OPC"
+      - instruction64_article: 14
+        relevance: "délai maximum de trois mois à compter du dépôt pour que le Conseil Régional se prononce"
+    resolution_basis: EXPLICIT_SGO_SCOPE_AND_MAXIMUM_DECISION_DELAY
+    documentary_status: RESOLVED
+
+  - dependency_id: INST066_ART005_DEP_INST_02
+    article_number: 5
+    inst066_subject: "étapes du processus d'agrément"
+    source_support:
+      - instruction64_article: 3
+        relevance: "énumère dépôt, analyse de conformité, instruction du dossier et décision"
+    resolution_basis: EXACT_FOUR_STAGE_APPROVAL_PROCESS_SCOPE
+    documentary_status: RESOLVED
+
+  - dependency_id: INST066_ART017_DEP_INST_02
+    article_number: 17
+    inst066_subject: "délai de transmission des informations/documents complémentaires et clôture du dossier"
+    source_support:
+      - instruction64_article: 8
+        relevance: "20 jours ouvrés pour transmettre les compléments durant l'analyse de conformité, puis clôture"
+      - instruction64_article: 13
+        relevance: "20 jours ouvrés durant l'instruction, puis clôture motivée"
+    resolution_basis: EXACT_COMPLEMENT_DEADLINE_AND_CLOSURE_MECHANISM
+    documentary_status: RESOLVED
+explicitly_not_resolved:
+  - dependency_id: INST066_ART005_DEP_INST_03
+    reason: NO_FEE_PAYMENT_DEADLINE_FOUND_IN_INSTRUCTION64
+  - dependency_id: INST066_ART017_DEP_INST_01
+    reason: SPECIFIC_POST_DECISION_NOTIFICATION_DELAY_NOT_EXACTLY_IDENTIFIED
+  - dependency_id: INST066_ART021_DEP_INST_01
+    reason: VALUE_CALCULATION_CONTROL_PROCEDURES_REQUIRE_SEPARATE_INSTRUCTION_IDENTIFICATION
+  - dependency_id: INST066_ART025_DEP_INST_01
+    reason: >-
+      Instruction 64 has a strong general approval-scope match, but the targeted
+      passages do not expressly isolate the Société d'Investissement form. Keep
+      documentary resolution pending a specific legal-scope confirmation.
+boundary:
+  documentary_resolution_is_requirement_activation: false
+  automatic_dependency_resolution_allowed: false
+  automatic_requirement_activation_allowed: false
+  legal_review_required: true
+  compliance_review_required: true
+  ready_for_submission_must_remain_false: true
