@@ -1,0 +1,69 @@
+evidence_id: AMF_UMOA_ABROGATION_METADATA_CONFLICT_2026_08_08
+observed_on: 2026-08-08
+authority: AMF_UMOA
+status: PORTAL_METADATA_NOT_SAFE_AS_SOLE_LEGAL_STATUS_SOURCE
+
+public_instruction_page:
+  url: https://www.amf-umoa.org/reglementation/instruction
+  public_statement:
+    adopted_instructions: 70
+    abrogated_instructions: 7
+    currently_in_force_instructions: 41
+  evidence_scope: PUBLIC_REGULATORY_PAGE_SUMMARY
+
+api_registry:
+  source: regulatory/registries/AMF_UMOA_REGULATORY_CATEGORY_API_REGISTRY_V0_1.json
+  instruction_objects_returned: 77
+  interpretation: >-
+    L'API Elastic actuelle fonctionne comme référentiel documentaire du portail et
+    retourne davantage d'objets que le nombre d'Instructions présenté dans le résumé
+    juridique de la page publique. Elle ne doit pas être assimilée à un registre de
+    statut juridique autonome.
+
+confirmed_conflict_examples:
+  controlling_legal_source:
+    source_id: INSTRUCTION_66_CREPMF_2021
+    article: 92
+    effect: EXPLICIT_ABROGATION
+    effective_from: 2022-01-01
+  historical_texts_explicitly_abrogated_but_api_abroge_false:
+    - reference: Instruction n°45/2011
+      actualite_id: 1000090
+    - reference: Instruction n°24/99
+      actualite_id: 1000070
+    - reference: Instruction n°23/99
+      actualite_id: 1000069
+    - reference: Instruction n°22/99
+      actualite_id: 1000068
+    - reference: Instruction n°21/99
+      actualite_id: 1000067
+  note: >-
+    Ces cinq textes figurent dans l'article 92 de l'Instruction 66 parmi les textes
+    abrogés. Le champ API abroge=false observé pour leurs objets documentaires est
+    donc incompatible avec une interprétation juridique littérale de ce champ.
+
+legal_resolution_rule:
+  source_priority:
+    - EXPLICIT_ABROGATION_OR_EFFECT_CLAUSE_IN_OFFICIAL_NORMATIVE_BINARY
+    - CURRENT_OFFICIAL_REGULATORY_PAGE_WITH_SPECIFIC_TEXT_STATUS
+    - HUMAN_LEGAL_REVIEW_OF_AMENDMENTS_AND_SUCCESSORS
+    - PORTAL_DOCUMENT_METADATA_ONLY_AS_CORROBORATION
+  api_abroge_field_may_activate_text: false
+  api_valide_field_may_activate_text: false
+  portal_date_may_be_assumed_act_date: false
+  portal_date_may_be_assumed_effective_date: false
+
+implementation_guardrails:
+  derive_active_rule_from_api_abroge_false: FORBIDDEN
+  override_article92_from_api_metadata: FORBIDDEN
+  automatic_historical_reactivation: FORBIDDEN
+  require_normative_provenance_for_status_transition: true
+  require_human_legal_review_for_conflicts: true
+  require_human_compliance_review_for_activation: true
+  ready_for_submission_must_remain_false: true
+
+recommended_engine_rule: >-
+  Le futur moteur de statut doit séparer strictement documentAvailabilityStatus et
+  legalEffectStatus. Le champ abroge du portail peut alimenter une observation de
+  métadonnée de publication, mais jamais legalEffectStatus sans contrôle contre les
+  clauses normatives d'abrogation, de remplacement, de modification et d'entrée en vigueur.
