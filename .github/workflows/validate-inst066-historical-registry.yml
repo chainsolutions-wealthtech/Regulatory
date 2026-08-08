@@ -1,0 +1,81 @@
+name: Validate INST066 Historical Registry
+
+on:
+  push:
+    branches:
+      - main
+    paths:
+      - .github/workflows/validate-inst066-historical-registry.yml
+      - scripts/validate_inst066_historical_source_registry.py
+      - regulatory/sources/DECISION_CREPMF_2012_119.yaml
+      - regulatory/sources/INSTRUCTION_46_CREPMF_2011_REVISEE.yaml
+      - regulatory/sources/INSTRUCTION_45_CREPMF_2011.yaml
+      - regulatory/sources/INSTRUCTION_24_CREPMF_1999.yaml
+      - regulatory/sources/INSTRUCTION_23_CREPMF_1999.yaml
+      - regulatory/sources/INSTRUCTION_22_CREPMF_1999.yaml
+      - regulatory/sources/INSTRUCTION_21_CREPMF_1999.yaml
+      - regulatory/registries/INST066_ABROGATED_TEXTS_INVENTORY_V0_1.yaml
+      - regulatory/review-evidence/INST066_HISTORICAL_CROSSCHECK/OFFICIAL_SOURCE_SEARCH_2026-08-08.yaml
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: inst066-historical-registry-main
+  cancel-in-progress: true
+
+jobs:
+  validate-registry:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Validate seven historical source records and safety boundaries
+        run: python3 scripts/validate_inst066_historical_source_registry.py
+
+      - name: Validate expected registry metrics
+        run: |
+          python3 - <<'PY'
+          import json
+          from pathlib import Path
+          path = Path('regulatory/validation/INST066_HISTORICAL_SOURCE_REGISTRY_VALIDATION_V0_1.json')
+          data = json.loads(path.read_text(encoding='utf-8'))
+          assert data['status'] == 'PASS', data
+          assert data['metrics']['expectedHistoricalSourceRecords'] == 7
+          assert data['metrics']['sourceRecordsObserved'] == 7
+          assert data['metrics']['ownHistoricalBinariesMaterialized'] == 1
+          assert data['metrics']['ownHistoricalBinariesMissing'] == 6
+          assert data['checks']['instruction46OwnBinaryMaterialized'] is True
+          assert data['safety']['historicalRuleReactivationAllowed'] is False
+          assert data['safety']['automaticRuleReconstructionAllowedForMissingBinaries'] is False
+          assert data['safety']['automaticMigrationInferenceAllowed'] is False
+          assert data['safety']['humanLegalReviewRequired'] is True
+          assert data['safety']['humanComplianceReviewRequired'] is True
+          PY
+
+      - name: Upload validation evidence
+        uses: actions/upload-artifact@v4
+        with:
+          name: inst066-historical-source-registry-validation
+          retention-days: 30
+          if-no-files-found: error
+          path: regulatory/validation/INST066_HISTORICAL_SOURCE_REGISTRY_VALIDATION_V0_1.json
+
+      - name: Commit validation evidence
+        if: github.actor != 'github-actions[bot]'
+        run: |
+          git config user.name 'regulatory-source-bot'
+          git config user.email 'regulatory-source-bot@users.noreply.github.com'
+          git add regulatory/validation/INST066_HISTORICAL_SOURCE_REGISTRY_VALIDATION_V0_1.json
+          if git diff --cached --quiet; then
+            echo 'No historical registry validation changes to commit.'
+          else
+            git commit -m 'regulatory: validate complete Instruction 66 historical registry'
+            git pull --rebase origin main
+            git push origin HEAD:main
+          fi
