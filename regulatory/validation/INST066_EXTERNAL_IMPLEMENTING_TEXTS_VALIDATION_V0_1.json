@@ -1,0 +1,62 @@
+{
+  "validationId": "INST066_EXTERNAL_IMPLEMENTING_TEXTS_VALIDATION_V0_1",
+  "status": "PASS",
+  "sourceId": "INSTRUCTION_66_CREPMF_2021",
+  "sourceSha256": "3f964f2f6ab9ce9eb16912ccda13f34b5023a188dfb18fcba7065590c770d396",
+  "checks": {
+    "sourcePdfHashMatches": true,
+    "articleBlocksHashMatches": true,
+    "articleBlocksCount92": true,
+    "circularReferencesDetected": true,
+    "accountingRegulationReferencesDetected": true,
+    "instructionReferencesDetected": true,
+    "instruction58ReferencesDetected": true,
+    "unresolvedReferencesRemainInactive": true,
+    "resolvedInstruction58StillPendingHumanReview": true,
+    "allDependenciesRequireHumanReview": true
+  },
+  "metrics": {
+    "dependencyOccurrenceCount": 48,
+    "unresolvedReferenceCount": 46,
+    "resolvedReferenceOccurrenceCount": 2,
+    "articleCountWithExternalDependencies": 26,
+    "articleNumbersWithExternalDependencies": [
+      4,
+      5,
+      9,
+      11,
+      12,
+      13,
+      14,
+      17,
+      21,
+      23,
+      25,
+      28,
+      32,
+      33,
+      36,
+      37,
+      38,
+      40,
+      47,
+      53,
+      55,
+      59,
+      74,
+      75,
+      76,
+      80
+    ],
+    "countsByKind": {
+      "COUNCIL_CIRCULAR": 34,
+      "COUNCIL_INSTRUCTION": 7,
+      "EXPLICIT_NAMED_INSTRUCTION_58": 2,
+      "SPECIFIC_ACCOUNTING_REGULATION": 5
+    }
+  },
+  "outputs": [
+    "regulatory/registries/INST066_EXTERNAL_IMPLEMENTING_TEXTS_INVENTORY_V0_1.json"
+  ],
+  "caveat": "PASS validates deterministic discovery of explicit external-text references only. It does not identify the unresolved instruments, validate their legal status, or activate any requirement."
+}
