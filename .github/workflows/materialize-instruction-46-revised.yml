@@ -7,6 +7,7 @@ on:
     paths:
       - .github/workflows/materialize-instruction-46-revised.yml
       - scripts/materialize_instruction_46_revised.py
+      - scripts/enrich_instruction_46_revised_legal_metadata.py
       - regulatory/sources/INSTRUCTION_46_CREPMF_2011_REVISEE.yaml
   workflow_dispatch:
 
@@ -39,6 +40,9 @@ jobs:
       - name: Download hash and extract historical official PDF
         run: python3 scripts/materialize_instruction_46_revised.py
 
+      - name: Curate legal metadata and article index
+        run: python3 scripts/enrich_instruction_46_revised_legal_metadata.py
+
       - name: Validate historical source evidence
         run: |
           python3 - <<'PY'
@@ -54,6 +58,9 @@ jobs:
           source = Path(
               'regulatory/sources/INSTRUCTION_46_CREPMF_2011_REVISEE.yaml'
           ).read_text(encoding='utf-8')
+          index = Path(
+              'regulatory/requirements/INST046_REVISED_ARTICLE_INDEX_V0_1.yaml'
+          ).read_text(encoding='utf-8')
 
           assert validation['status'] == 'PASS', validation
           assert metadata['sourceId'] == 'INSTRUCTION_46_CREPMF_2011_REVISEE'
@@ -61,18 +68,34 @@ jobs:
           assert metadata['byteSize'] > 10000, metadata['byteSize']
           assert len(metadata['sha256']) == 64, metadata['sha256']
           assert metadata['historicalStatus'] == 'EXPLICITLY_ABROGATED_BY_INSTRUCTION_66_ARTICLE_92'
+          assert metadata['legalMetadata']['revisionDate'] == '2018-07-30'
+          assert metadata['legalMetadata']['effectiveFrom'] == '2018-07-30'
+          assert metadata['legalMetadata']['effectiveDateRule'] == 'ARTICLE_21_EFFECTIVE_ON_SIGNATURE_DATE'
+          assert metadata['legalMetadata']['transitionalRule']['compliancePeriodMonths'] == 6
           assert metadata['legalMetadata']['currentLegalStatus'] == 'ABROGATED_BY_INSTRUCTION_66_EFFECTIVE_2022_01_01'
+          assert metadata['articleIndexCount'] == 21
+          assert metadata['firstIndexedArticle'] == 1
+          assert metadata['lastIndexedArticle'] == 21
+          assert metadata['missingArticleNumbers'] == []
           assert validation['checks']['officialBrvmPdfDownloaded'] is True
           assert validation['checks']['pdfMagicConfirmed'] is True
           assert validation['checks']['expectedPageCount'] is True
           assert validation['checks']['textExtracted'] is True
+          assert validation['checks']['curatedLegalMetadataEnriched'] is True
+          assert validation['checks']['article20TransitionalRuleCaptured'] is True
+          assert validation['checks']['article21EffectiveDateRuleCaptured'] is True
+          assert validation['checks']['articleSequenceContinuous1To21'] is True
           assert validation['checks']['historicalAbrogationPreserved'] is True
           assert validation['checks']['historicalRuleReactivationForbidden'] is True
           assert validation['checks']['requirementActivationAllowed'] is False
           assert validation['checks']['humanLegalReviewRequired'] is True
           assert validation['checks']['humanComplianceReviewRequired'] is True
           assert 'copy_status: MATERIALIZED_HASHED_AND_PAGE_VALIDATED' in source
-          assert 'binary_acquisition_status: MATERIALIZED_FROM_OFFICIAL_BRVM_URL' in source
+          assert 'binary_acquisition_status: MATERIALIZED_HASHED_AND_PAGE_VALIDATED' in source
+          assert "revision_date: '2018-07-30'" in source
+          assert "effective_from: '2018-07-30'" in source
+          assert 'article_count: 21' in index
+          assert 'historical_rule_reactivation_allowed: false' in index
           assert 'activation_allowed: false' in source
           PY
 
@@ -85,6 +108,7 @@ jobs:
             regulatory/materialized/INSTRUCTION_46_CREPMF_2011_REVISEE.pdf
             regulatory/materialized/INSTRUCTION_46_CREPMF_2011_REVISEE.txt
             regulatory/materialized/INSTRUCTION_46_CREPMF_2011_REVISEE.metadata.json
+            regulatory/requirements/INST046_REVISED_ARTICLE_INDEX_V0_1.yaml
             regulatory/validation/INST046_REVISED_MATERIALIZATION_VALIDATION_V0_1.json
             regulatory/sources/INSTRUCTION_46_CREPMF_2011_REVISEE.yaml
           if-no-files-found: warn
@@ -98,12 +122,13 @@ jobs:
             regulatory/materialized/INSTRUCTION_46_CREPMF_2011_REVISEE.pdf \
             regulatory/materialized/INSTRUCTION_46_CREPMF_2011_REVISEE.txt \
             regulatory/materialized/INSTRUCTION_46_CREPMF_2011_REVISEE.metadata.json \
+            regulatory/requirements/INST046_REVISED_ARTICLE_INDEX_V0_1.yaml \
             regulatory/validation/INST046_REVISED_MATERIALIZATION_VALIDATION_V0_1.json \
             regulatory/sources/INSTRUCTION_46_CREPMF_2011_REVISEE.yaml
           if git diff --cached --quiet; then
             echo "No Instruction 46 revised materialization changes to commit."
             exit 0
           fi
-          git commit -m "regulatory: materialize official historical Instruction 46 revised"
+          git commit -m "regulatory: curate official historical Instruction 46 revised"
           git pull --rebase origin main
           git push origin HEAD:main
