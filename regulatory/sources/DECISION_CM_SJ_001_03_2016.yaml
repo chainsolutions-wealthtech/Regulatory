@@ -1,0 +1,38 @@
+source_id: DECISION_CM_SJ_001_03_2016
+source_family: DECISION
+reference: "DECISION N° CM/SJ/O01/03/2016"
+title: "Décision relative à la mise en œuvre du dispositif des sanctions pécuniaires applicables sur le Marché Financier Régional de l'UMOA"
+issuing_authority: "Conseil des Ministres de l'UMOA"
+official_registry:
+  url: "https://www.amf-umoa.org/reglementation/decision"
+  detail_url: "https://www.amf-umoa.org/actuality-details?actualiteId=1000179"
+  status_observed: NON_ABROGE
+  status_observed_on: 2026-08-08
+  displayed_date: 2016-03-24
+source_integrity:
+  official_binary_url: TO_IDENTIFY_FROM_OFFICIAL_SOURCE
+  repository_copy: null
+  sha256: null
+  byte_size: null
+  page_count: null
+  copy_status: OFFICIAL_REGISTRY_VERIFIED_BINARY_NOT_MATERIALIZED
+legal_metadata:
+  signed_on: PENDING_OFFICIAL_BINARY_REVIEW
+  effective_from: PENDING_OFFICIAL_BINARY_REVIEW
+  predecessor: TO_IDENTIFY
+  amendments_and_rectifications: TO_COMPLETE
+  current_legal_status: NON_ABROGE_REGISTRY_OBSERVED_PENDING_BINARY_REVIEW
+linked_sources:
+  - INSTRUCTION_58_CREPMF_2019
+linked_requirements:
+  - INST058_ART031_REQ001
+  - INST058_ART032_REQ001
+safety:
+  requirement_activation_allowed: false
+  sanction_amount_calculation_allowed: false
+  automatic_enforcement_allowed: false
+  human_legal_review_required: true
+  human_compliance_review_required: true
+notes:
+  - "Les articles 31 et 32 de l'Instruction 58 renvoient à cette décision pour le régime de sanctions."
+  - "Aucun montant, barème, seuil ou qualification de sanction ne doit être modélisé comme actif avant matérialisation du texte officiel et double revue juridique/conformité."
