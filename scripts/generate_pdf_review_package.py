@@ -24,7 +24,7 @@ from datetime import datetime, timezone
 from zipfile import ZIP_DEFLATED, ZipFile, ZipInfo
 
 FIXED_ZIP_TIME = (1980, 1, 1, 0, 0, 0)
-PDF_DATE_PATTERN = re.compile(rb"/(CreationDate|ModDate)\s*\((D:[^)]*)\)")
+PDF_DATE_PATTERN = re.compile(rb"/(?:CreationDate|ModDate)\s*\((D:[^)]*)\)")
 ISO_DATE_PATTERN = re.compile(
     rb"20\d{2}-\d{2}-\d{2}T\d{2}:\d{2}:\d{2}(?:\.\d+)?(?:Z|[+-]\d{2}:?\d{2})?"
 )
@@ -205,7 +205,9 @@ def render_docx_to_pdf(docx: Path, temp: Path, run_number: int) -> Path:
 
 def normalize_pdf_bytes(data: bytes, generated_at: datetime, deterministic_seed: str) -> bytes:
     normalized = PDF_DATE_PATTERN.sub(
-        lambda match: b"/" + match.group(1) + b" (" + normalize_pdf_date(match.group(2), generated_at) + b")",
+        lambda match: replace_group_same_length(
+            match.group(0), match.group(1), normalize_pdf_date(match.group(1), generated_at)
+        ),
         data,
     )
     normalized = ISO_DATE_PATTERN.sub(
@@ -213,14 +215,25 @@ def normalize_pdf_bytes(data: bytes, generated_at: datetime, deterministic_seed:
         normalized,
     )
     normalized = PDF_ID_PATTERN.sub(
-        lambda match: normalize_pdf_id(match, deterministic_seed),
+        lambda match: normalize_pdf_id_preserving_layout(match, deterministic_seed),
         normalized,
     )
     normalized = UUID_PATTERN.sub(
         lambda match: deterministic_uuid_bytes(match.group(0), deterministic_seed),
         normalized,
     )
+    if len(normalized) != len(data):
+        raise SystemExit("PDF_NORMALIZATION_CHANGED_BYTE_LENGTH")
     return normalized
+
+
+def replace_group_same_length(container: bytes, original: bytes, replacement: bytes) -> bytes:
+    if len(original) != len(replacement):
+        raise SystemExit("PDF_NORMALIZATION_REPLACEMENT_LENGTH_MISMATCH")
+    updated = container.replace(original, replacement, 1)
+    if len(updated) != len(container):
+        raise SystemExit("PDF_NORMALIZATION_CHANGED_BYTE_LENGTH")
+    return updated
 
 
 def normalize_pdf_date(original: bytes, generated_at: datetime) -> bytes:
@@ -243,10 +256,12 @@ def replace_digits_preserving_length(original: bytes, digits: str) -> bytes:
     return bytes(output)
 
 
-def normalize_pdf_id(match: re.Match[bytes], deterministic_seed: str) -> bytes:
+def normalize_pdf_id_preserving_layout(match: re.Match[bytes], deterministic_seed: str) -> bytes:
     first = deterministic_hex(deterministic_seed + "|pdf-id-1", len(match.group(1)))
     second = deterministic_hex(deterministic_seed + "|pdf-id-2", len(match.group(2)))
-    return b"/ID [<" + first + b"><" + second + b">]"
+    updated = replace_group_same_length(match.group(0), match.group(1), first)
+    updated = replace_group_same_length(updated, match.group(2), second)
+    return updated
 
 
 def deterministic_uuid_bytes(original: bytes, deterministic_seed: str) -> bytes:
