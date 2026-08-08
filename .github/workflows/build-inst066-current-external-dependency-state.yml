@@ -40,17 +40,20 @@ jobs:
               raise SystemExit('current dependency state validation failed')
           expected = {
               'dependencyOccurrenceCount': 49,
-              'resolvedDocumentaryCount': 30,
-              'unresolvedDocumentaryCount': 19,
-              'confirmedOverlayResolutionCount': 28,
+              'resolvedDocumentaryCount': 31,
+              'unresolvedDocumentaryCount': 18,
+              'confirmedOverlayResolutionCount': 29,
               'confirmedCircularOverlayResolutionCount': 25,
-              'confirmedInstructionOverlayResolutionCount': 3,
+              'confirmedInstructionFamilyOverlayResolutionCount': 4,
               'circularOccurrenceCount': 34,
               'resolvedCircularCount': 25,
               'unresolvedCircularCount': 9,
               'instructionOccurrenceCount': 7,
               'resolvedInstructionCount': 3,
               'unresolvedInstructionCount': 4,
+              'namedInstructionOccurrenceCount': 1,
+              'resolvedNamedInstructionCount': 1,
+              'unresolvedNamedInstructionCount': 0,
           }
           for key, value in expected.items():
               if state['summary'][key] != value:
