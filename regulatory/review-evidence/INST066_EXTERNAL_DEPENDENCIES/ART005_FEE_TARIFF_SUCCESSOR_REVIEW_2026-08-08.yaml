@@ -1,0 +1,103 @@
+evidence_id: ART005_FEE_TARIFF_SUCCESSOR_REVIEW_2026_08_08
+review_date: 2026-08-08
+status: FEE_FAMILIES_DISTINGUISHED_CURRENT_VERSION_REVIEW_PENDING
+source_instruction: INSTRUCTION_66_CREPMF_2021
+source_article: 5
+
+inst066_structure:
+  amount_source_type: DECISION_OF_COUNCIL_OF_MINISTERS
+  payment_deadline_source_type: INSTRUCTION_OF_COUNCIL_REGIONAL
+  interpretation: >-
+    L'article 5 distingue la source du montant des frais d'agrément et la source de
+    leur délai de règlement. Ces deux dimensions doivent être modélisées séparément.
+
+candidate_initial_approval_tariff:
+  source_id: DECISION_CM_13_12_2011_TARIFS
+  reference: "Décision n° CM/13/12/2011"
+  official_registry_status_observed: NON_ABROGE
+  official_registry_observed_on: 2026-08-08
+  object: "fixation des tarifs du Conseil Régional"
+  binary_status: OFFICIAL_ROUTE_IDENTIFIED_NOT_MATERIALIZED
+  role: INITIAL_OR_GENERAL_TARIFF_SOURCE_CANDIDATE
+  current_applicability: TO_VERIFY_AGAINST_LATER_TEXTS
+
+candidate_payment_rules:
+  source_id: INSTRUCTION_54_CREPMF_2017_REVISEE
+  reference: "Instruction n°54/2017 révisée"
+  object: >-
+    modalités de facturation, de paiement et de recouvrement des redevances, frais
+    et commissions perçus par le Conseil Régional
+  binary_status: OFFICIAL_ROUTE_IDENTIFIED_NOT_MATERIALIZED
+  role: PAYMENT_BILLING_RECOVERY_RULES_CANDIDATE
+  current_applicability: TO_VERIFY_FROM_OWN_BINARY_AND_REVISIONS
+
+later_fee_decisions_observed:
+  - reference: "Décision n° CREPMF-2020/027"
+    authority: CREPMF
+    public_page: https://www.amf-umoa.org/actuality-details?actualiteId=1000151
+    observed_terms:
+      - "commission de 0,5% du montant de l'opération de prise ferme ou de placement garanti"
+      - "frais de contrôle de l'activité de teneur de marché : 1 000 000 FCFA"
+      - "frais de contrôle des opérations de conseil : 500 000 FCFA"
+    fee_family: SGI_SPECIFIC_COMMISSIONS_AND_CONTROL_FEES
+    supersedes_2011_approval_tariff_proven: false
+
+  - reference: "Décision n° CREPMF-2020/029"
+    authority: CREPMF
+    public_page: https://www.amf-umoa.org/actuality-details?actualiteId=1000153
+    observed_terms:
+      - "redevance annuelle fixe de 500 000 FCFA"
+      - "250 000 FCFA par compartiment d'OPC géré"
+      - "redevance annuelle recouvrable par semestre"
+    fee_family: SGO_ANNUAL_FEES_AND_RELATED_CONTROL_FEES
+    supersedes_2011_approval_tariff_proven: false
+
+current_public_operational_page:
+  authority: AMF_UMOA
+  page: https://www.amf-umoa.org/intervenant
+  observed_on: 2026-08-08
+  observations:
+    - "la page publique présente 3 000 000 FCFA pour l'agrément d'une Société de Gestion de Patrimoine / d'OPCVM / de FCTC"
+    - "la page publique présente également des redevances annuelles distinctes"
+  evidence_scope: CURRENT_OPERATIONAL_CORROBORATION_NOT_SUBSTITUTE_FOR_NORMATIVE_BINARY
+
+fee_taxonomy_required_for_engine:
+  - INITIAL_APPROVAL_FEE
+  - DOSSIER_REVIEW_OR_PROCESSING_FEE
+  - ANNUAL_FIXED_FEE
+  - ANNUAL_PER_FUND_OR_COMPARTMENT_FEE
+  - CONTROL_FEE
+  - TRANSACTION_COMMISSION
+  - MARKET_MAKER_FEE
+  - ADVISORY_OPERATION_FEE
+  - OTHER_REGULATORY_FEE
+
+prohibited_merge_rule: >-
+  Ne jamais fusionner un frais initial d'agrément, une redevance annuelle, une
+  commission transactionnelle et un frais de contrôle dans un même champ de tarif
+  sous prétexte qu'ils sont tous perçus par l'autorité de marché.
+
+current_conclusion: >-
+  La Décision CM/13/12/2011 reste un candidat officiel pour le tarif/montant visé à
+  l'article 5, tandis que l'Instruction 54/2017 révisée est le candidat prioritaire
+  pour les modalités/délais de paiement. Les décisions CREPMF 2020/027 et 2020/029
+  démontrent l'existence de familles de frais postérieures distinctes, mais aucune
+  preuve examinée ne permet de conclure qu'elles abrogent ou remplacent le tarif
+  d'agrément de 2011.
+
+next_steps:
+  - MATERIALIZE_CM_13_12_2011_BINARY
+  - MATERIALIZE_INSTRUCTION_54_2017_REVISED_BINARY
+  - MATERIALIZE_AND_REVIEW_CREPMF_2020_027_AND_2020_029_IF_NEEDED
+  - IDENTIFY_EXACT_APPROVAL_FEE_LINES_AND_PAYMENT_DEADLINES
+  - CHECK_AMENDMENTS_AND_LATER_TARIFF_DECISIONS
+  - HUMAN_LEGAL_AND_COMPLIANCE_REVIEW
+
+safety:
+  current_public_amount_is_normative_activation: false
+  registry_non_abroge_is_sole_current_applicability_proof: false
+  automatic_fee_merging_allowed: false
+  automatic_tariff_activation_allowed: false
+  automatic_dependency_resolution_allowed: false
+  automatic_requirement_activation_allowed: false
+  ready_for_submission_must_remain_false: true
