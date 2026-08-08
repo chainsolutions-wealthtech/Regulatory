@@ -21,6 +21,26 @@ Les huit étapes doivent être `DONE` avec preuves :
 7. livrables DOCX/PDF/package de revue validés et reproductibles ;
 8. E2E, sécurité, accessibilité, sauvegarde/restauration et recette exploitation passés.
 
+## Gate GitHub obligatoire avant production
+
+La branche `main` doit être protégée par une protection de branche ou un ruleset équivalent avant toute production.
+
+Exigences minimales :
+
+- protection/ruleset actif sur `main` ;
+- `Regulatory CI` requis et vert sur le SHA déployé ;
+- `Security and Review Policy CI` requis et vert sur le SHA déployé ;
+- force-push interdit ;
+- suppression de `main` interdite ;
+- chemin de revue cohérent avec la gouvernance du dépôt ;
+- vérification des permissions du compte/app GitHub utilisé pour les opérations de maintenance.
+
+État observé le `2026-08-08` : `main` n'est pas protégée et les required status checks sont désactivés. Cet écart est enregistré dans :
+
+`regulatory/validation/GITHUB_MAIN_BRANCH_PROTECTION_GAP_2026-08-08.yaml`.
+
+La protection stricte ne doit pas être activée à l'aveugle tant que le blocage externe GitHub Actions empêche les jobs requis de démarrer, afin de ne pas verrouiller le seul chemin de travail avant revalidation. Elle devient toutefois **obligatoire** avant ouverture du gate de production.
+
 ## Interdictions avant ouverture du gate
 
 - aucun déploiement de production ;
@@ -29,7 +49,8 @@ Les huit étapes doivent être `DONE` avec preuves :
 - aucune soumission AMF-UMOA ;
 - aucun `ready_for_submission=true` ;
 - aucune activation automatique des règles candidates ;
-- aucun barème sanctions calculé sans fermeture de R1 2016↔2022.
+- aucun barème sanctions calculé sans fermeture de R1 2016↔2022 ;
+- aucun déploiement depuis une branche `main` non protégée.
 
 ## Phase autorisée avant le gate
 
@@ -49,5 +70,7 @@ Le déploiement ne devient `READY_FOR_DEPLOYMENT` que lorsqu'un rapport de clôt
 - `all_8_master_steps_done=true` ;
 - `regulatory_ci_pass=true` ;
 - `security_ci_pass=true` ;
+- `main_branch_protection_enabled=true` ;
+- `required_status_checks_enforced=true` ;
 - `production_readiness_review_pass=true` ;
 - `ready_for_submission` reste géré séparément et ne découle jamais du simple déploiement technique.
