@@ -1,0 +1,66 @@
+source_id: INSTRUCTION_46_CREPMF_2011_REVISEE
+source_family: INSTRUCTION
+reference: "Instruction n°46/2011 révisée"
+title: "Instruction relative à la classification et aux règles d'allocation d'actifs des Organismes de Placement Collectif sur le Marché Financier Régional de l'UMOA"
+jurisdiction: UMOA
+authority_at_adoption: CREPMF
+current_authority_name: AMF-UMOA
+document_type: INSTRUCTION
+language: fr
+historical_status: EXPLICITLY_ABROGATED_BY_INSTRUCTION_66_ARTICLE_92
+
+publication:
+  authority: BRVM
+  page_url: https://www.brvm.org/fr/instruction-ndeg46-2011-revisee
+  published_on: 2018-08-22
+  publication_title: "Instruction N°46-2011 (REVISEE)"
+  verification_status: OFFICIAL_BRVM_PUBLICATION_CONFIRMED
+
+source_artifact:
+  pdf_url: https://www.brvm.org/sites/default/files/20180822-instruction_ndeg46-2011_revisee-classification_et_aux_regles_d.pdf
+  page_count_observed_from_public_reader: 9
+  repository_copy: null
+  sha256: null
+  byte_size: null
+  copy_status: OFFICIAL_BINARY_URL_IDENTIFIED_NOT_MATERIALIZED
+  first_page_visual_identity_status: CONFIRMED
+
+historical_evidence:
+  abrogating_source_id: INSTRUCTION_66_CREPMF_2021
+  abrogating_article: 92
+  abrogation_status: EXPLICITLY_LISTED_AS_ABROGATED
+  inventory_path: regulatory/registries/INST066_ABROGATED_TEXTS_INVENTORY_V0_1.yaml
+  source_text_status: VISUALLY_OBSERVED_FROM_HASHED_INSTRUCTION_66_SOURCE
+
+legal_metadata:
+  original_2011_act_date: PENDING_HISTORICAL_OFFICIAL_SOURCE_REVIEW
+  revision_date: PENDING_OFFICIAL_BINARY_END_PAGE_REVIEW
+  effective_from: PENDING_OFFICIAL_BINARY_REVIEW
+  relationship_to_decision_2012_119: PENDING_HISTORICAL_OFFICIAL_SOURCE_REVIEW
+  current_legal_status: ABROGATED_BY_INSTRUCTION_66_EFFECTIVE_2022_01_01
+  activation_allowed: false
+
+materialization_plan:
+  binary_acquisition_status: OFFICIAL_URL_READY_FOR_MATERIALIZATION
+  next_steps:
+    - DOWNLOAD_OFFICIAL_PDF
+    - VERIFY_PDF_MAGIC
+    - COMPUTE_SHA256_AND_BYTE_SIZE
+    - VERIFY_PAGE_COUNT
+    - EXTRACT_TEXT_OR_OCR_IF_REQUIRED
+    - VERIFY_SIGNATURE_AND_EFFECTIVE_DATE
+    - INDEX_ARTICLES
+    - LINK_HISTORICAL_MIGRATION_TO_INSTRUCTION_66
+
+safety:
+  requirement_activation_allowed: false
+  historical_rule_reactivation_allowed: false
+  automatic_migration_inference_allowed: false
+  human_legal_review_required: true
+  human_compliance_review_required: true
+
+notes:
+  - "La fiche BRVM institutionnelle et le lien PDF direct sont identifiés et vérifiés publiquement."
+  - "Le PDF n'est pas encore matérialisé dans le dépôt ; aucune empreinte SHA-256 ni taille n'est inventée."
+  - "L'Instruction 66 article 92 abroge explicitement cette Instruction ; son contenu historique ne doit pas être réactivé."
+  - "Cette source est utile pour l'analyse de migration réglementaire et la traçabilité historique du corpus OPC."
