@@ -1,0 +1,96 @@
+evidence_id: INSTRUCTION_64_SCOPE_MATCH_2026_08_08
+source_id: INSTRUCTION_64_CREPMF_2020
+source_binary: regulatory/sources/amf-umoa-priority-api-documents/INSTRUCTION_64_CREPMF_2020.pdf
+source_text: regulatory/sources/amf-umoa-priority-api-documents/INSTRUCTION_64_CREPMF_2020.txt
+source_sha256: db5091c4388e5c050c22b028e7494522e36d6b5b041ba265cf96ccedada24469
+page_count: 97
+text_extraction_method: PDFTOTEXT
+review_date: 2026-08-08
+status: CONTENT_SCOPE_REVIEW_COMPLETE_FOR_TARGETED_INST066_DEPENDENCIES_LEGAL_REVIEW_PENDING
+
+source_legal_metadata_observed:
+  scope:
+    article: 2
+    includes:
+      - Organisme de Placement Collectif (OPC)
+      - Société de Gestion d'OPC
+      - other actors subject to approval
+  procedure_steps:
+    article: 3
+    steps:
+      - dépôt du dossier
+      - analyse de conformité
+      - instruction du dossier
+      - décision du Conseil Régional
+  conformity_review:
+    article_5_receivability_days: 2_WORKING_DAYS
+    article_7_max_conformity_analysis_days: 10_WORKING_DAYS
+    article_8_missing_supplements_max_days: 20_WORKING_DAYS
+  instruction_phase:
+    article_10_max_instruction_days: 20_WORKING_DAYS
+    article_12_suspension_for_supplements: true
+    article_13_missing_supplements_max_days: 20_WORKING_DAYS_AND_CLOSURE
+  final_decision:
+    article_14_max_from_filing: 3_MONTHS
+  signature_and_effect:
+    signed_at: Abidjan
+    signed_on: 2020-12-10
+    effective_from: 2021-01-01
+    article: 17
+    clause: "abroge toutes dispositions antérieures et contraires"
+
+inst066_mapping_review:
+  - dependency_id: INST066_ART005_DEP_INST_01
+    inst066_subject: "délai maximal pour l'octroi d'agrément d'une Société de Gestion d'OPC"
+    source_support:
+      - instruction64_article: 3
+        relevance: "la décision intervient dans un délai maximum de trois mois à compter du dépôt"
+      - instruction64_article: 14
+        relevance: "le Conseil Régional dispose d'un délai maximum de trois mois à compter du dépôt pour se prononcer"
+    match_status: STRONG_IMPLEMENTING_SCOPE_MATCH_PENDING_LEGAL_REVIEW
+    resolved: false
+  - dependency_id: INST066_ART005_DEP_INST_02
+    inst066_subject: "étapes du processus d'agrément"
+    source_support:
+      - instruction64_article: 3
+        relevance: "énumère exactement dépôt, analyse de conformité, instruction, décision"
+    match_status: EXACT_SCOPE_MATCH_PENDING_LEGAL_REVIEW
+    resolved: false
+  - dependency_id: INST066_ART005_DEP_INST_03
+    inst066_subject: "délais de règlement des frais d'agrément"
+    source_support: []
+    search_performed:
+      - "frais"
+      - "frais d'agrément"
+    search_result: NO_OCCURRENCE_IN_MATERIALIZED_INSTRUCTION64_TEXT
+    match_status: NO_MATCH_REMAINS_UNRESOLVED
+    resolved: false
+  - dependency_id: INST066_ART017_DEP_INST_01
+    inst066_subject: "délai d'information de l'octroi ou du refus de l'agrément du FCP"
+    source_support:
+      - instruction64_article: 14
+        relevance: "fixe le délai maximal de décision à trois mois"
+      - instruction64_article: 15
+        relevance: "prévoit la notification des décisions"
+    limitation: "aucun délai spécifique de notification post-décision n'a été identifié dans les dispositions ciblées"
+    match_status: RELATED_STRONG_SCOPE_NOT_EXACT_NOTIFICATION_DELAY
+    resolved: false
+  - dependency_id: INST066_ART017_DEP_INST_02
+    inst066_subject: "délai de transmission des informations/documents complémentaires et clôture du dossier"
+    source_support:
+      - instruction64_article: 8
+        relevance: "20 jours ouvrés, puis clôture/non-consistance après compléments demandés durant la conformité"
+      - instruction64_article: 13
+        relevance: "20 jours ouvrés, puis clôture motivée pendant l'instruction"
+    match_status: STRONG_IMPLEMENTING_SCOPE_MATCH_PENDING_LEGAL_REVIEW
+    resolved: false
+
+boundaries:
+  content_match_is_legal_resolution: false
+  effective_date_observed_in_binary_is_automatic_requirement_activation: false
+  automatic_dependency_resolution_allowed: false
+  automatic_rule_reconstruction_allowed: false
+  automatic_requirement_activation_allowed: false
+  human_legal_review_required: true
+  human_compliance_review_required: true
+  ready_for_submission_must_remain_false: true
