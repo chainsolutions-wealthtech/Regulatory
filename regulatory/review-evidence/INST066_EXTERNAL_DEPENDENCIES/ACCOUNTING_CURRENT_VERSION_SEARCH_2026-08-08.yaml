@@ -18,6 +18,21 @@ established_official_facts:
     depuis plus de dix ans et qu'un chantier de révision avait été engagé afin de
     prendre en compte les évolutions réglementaires, institutionnelles et comptables.
 
+current_repository_state_checked_on_2026_08_08:
+  source_record: PRESENT
+  materializer_script: PRESENT
+  materialization_workflow: PRESENT
+  official_government_binary_url_identified: true
+  repository_pdf: ABSENT_ON_MAIN
+  repository_text: ABSENT_ON_MAIN
+  repository_metadata: ABSENT_ON_MAIN
+  derived_mapping_registry: ABSENT_ON_MAIN
+  explanation: >-
+    The source record and materialization workflow are ready, but the materialization
+    outputs are not present on the current main HEAD. GitHub Actions is currently
+    failing before runner steps start, so the workflow has not produced/committed
+    the expected PDF, text, metadata and validation outputs on this HEAD.
+
 current_version_search:
   official_domains_checked:
     - amf-umoa.org
@@ -33,6 +48,10 @@ current_version_search:
     - "règles comptables spécifiques intervenants agréés"
     - "révision référentiel comptable"
     - "adoption référentiel comptable révisé"
+  official_revision_fact: >-
+    The AMF-UMOA public notice concerning the March 2023 workshop describes
+    validation work on a provisional report for a revised accounting framework;
+    it does not establish adoption or entry into force of a replacement regulation.
   result: NO_POST_2006_OFFICIAL_REPLACEMENT_OR_REVISED_ADOPTION_IDENTIFIED_IN_CHECKED_PUBLIC_INDEXES
 
 interpretation_boundary: >-
@@ -43,13 +62,14 @@ interpretation_boundary: >-
 
 mapping_evidence:
   dependency_inventory: regulatory/registries/INST066_EXTERNAL_IMPLEMENTING_TEXTS_INVENTORY_V0_1.json
-  candidate_mapping: regulatory/registries/INST066_ACCOUNTING_DEPENDENCY_MAPPING_V0_1.json
   occurrence_count: 5
-  mapping_status: CANDIDATE_SOURCE_MATERIALIZED_CURRENT_VERSION_PENDING
-  resolution_status: NOT_RESOLVED_CURRENT_VERSION_AND_SCOPE_REVIEW_PENDING
+  mapping_status: CANDIDATE_REFERENCE_IDENTIFIED_MATERIALIZATION_PENDING_ON_CURRENT_HEAD
+  resolution_status: NOT_RESOLVED_BINARY_AND_CURRENT_VERSION_REVIEW_PENDING
+  derived_mapping_registry_status: NOT_PRESENT_ON_CURRENT_HEAD_DO_NOT_REFERENCE_AS_CURRENT_EVIDENCE
 
 status:
   current_accounting_version: PENDING_CURRENT_VERSION_AND_AMENDMENTS_REVIEW
+  materialization: PENDING_WORKFLOW_EXECUTION
   automatic_dependency_resolution_allowed: false
   requirement_activation_allowed: false
   legal_review: PENDING
@@ -57,6 +77,8 @@ status:
   ready_for_submission: false
 
 resume_conditions:
+  - MATERIALIZE_OFFICIAL_SGG_MALI_BINARY_AND_COMMIT_HASHED_OUTPUTS
+  - VERIFY_OPC_AND_VALUATION_REPORTING_SCOPE_IN_MATERIALIZED_TEXT
   - OFFICIAL_AMF_UEMOA_BCEAO_OR_MEMBER_STATE_ACT_IDENTIFIES_AMENDMENT_OR_REPLACEMENT
   - OFFICIAL_REVISED_REFERENTIAL_ADOPTION_FOUND
   - DIRECT_REGULATOR_CONFIRMATION_OF_CURRENT_ACCOUNTING_VERSION
