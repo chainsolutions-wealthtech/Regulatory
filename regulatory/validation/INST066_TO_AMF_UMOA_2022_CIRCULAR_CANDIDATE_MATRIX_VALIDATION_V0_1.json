@@ -1,0 +1,12 @@
+{
+  "schemaVersion": "INST066_TO_AMF_UMOA_2022_CIRCULAR_CANDIDATE_MATRIX_VALIDATION_V0_1",
+  "result": "PASS",
+  "checks": {
+    "all49DependenciesPreserved": true,
+    "circularDependencyCountPreserved": true,
+    "nonCircularRowsHaveNoCircularCandidates": true,
+    "allCandidatesMarkedCandidateOnly": true,
+    "noResolvedStatusIntroduced": true,
+    "automaticResolutionForbidden": true
+  }
+}
