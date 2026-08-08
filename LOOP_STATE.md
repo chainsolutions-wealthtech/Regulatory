@@ -214,7 +214,7 @@ La boucle réglementaire sera reprise après la tranche de couverture standard o
 - transaction réponse → version → snapshot → collections → audit : `PASS` ;
 - génération → snapshot → documents → audit : `PASS` ;
 - activation par défaut : `FORBIDDEN` ;
-- prochaine tranche : `AUTHENTICATION_RBAC_AND_REVIEW_WORKFLOW`.
+- prochaine tranche historique de cette preuve : `AUTHENTICATION_RBAC_AND_REVIEW_WORKFLOW`.
 
 - dépôt PostgreSQL : `IMPLEMENTED_AND_TESTED` ;
 - identité serveur vérifiée exigée : `true` ;

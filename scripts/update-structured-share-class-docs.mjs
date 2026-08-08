@@ -176,40 +176,12 @@ for (const [file, markdown] of Object.entries(blocks)) {
   await upsertBlock(file, "LOOP-DEV-001-STRUCTURED-COLLECTIONS-V1", markdown);
 }
 
-await writeFile(
-  path.join(repoRoot, "NEXT_ACTION.md"),
-  `# NEXT_ACTION — Action unique immédiatement exécutable
 
-> **Statut :** \`READY\`
-> **Boucle :** \`LOOP-DEV-001\`
-
-## Action
-
-Formaliser le modèle canonique V1 sous forme de JSON Schema et de schéma PostgreSQL versionné, puis introduire une interface de persistance transactionnelle sans déployer ni remplacer prématurément le stockage local de démonstration.
-
-## Résultat attendu
-
-- \`schemas/canonical/PROSPECTUS_CANONICAL_MODEL_V1.schema.json\` ;
-- dictionnaire de données reliant objet, champ, type, cardinalité, unité, sensibilité, source et validations ;
-- migration PostgreSQL initiale avec organisations, utilisateurs, projets, versions, réponses, snapshots, preuves, revues, approbations, documents générés et audit ;
-- contraintes d’unicité et de cohérence pour les collections structurées ;
-- politique de compatibilité et migrations de schéma ;
-- abstraction de stockage utilisable par le stockage JSON local puis PostgreSQL ;
-- tests de validation du schéma et de la migration ;
-- aucune donnée de production, aucun secret et aucun déploiement ;
-- \`ready_for_submission = false\` maintenu.
-
-## Condition d’arrêt
-
-Ne pas présenter le schéma technique comme une certification de sécurité ou de conformité. L’activation de PostgreSQL, de l’authentification et du multi-tenant exigera une revue d’architecture, de sécurité et d’exploitation.
-`,
-  "utf8",
-);
 
 console.log(
   JSON.stringify(
     {
-      updatedDocuments: Object.keys(blocks).length + 1,
+      updatedDocuments: Object.keys(blocks).length,
       structuredCollections: validation.structuredCollectionCount,
       integrationStatus: validation.status,
       nextAction: "CANONICAL_SCHEMA_AND_POSTGRESQL",
