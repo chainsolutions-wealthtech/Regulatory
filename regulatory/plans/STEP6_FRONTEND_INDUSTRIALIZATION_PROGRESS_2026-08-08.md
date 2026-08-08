@@ -24,25 +24,30 @@ La page utilise directement :
 - `REGULATORY_REQUIREMENTS` ;
 - le catalogue généré déjà consommé par le questionnaire et le moteur documentaire.
 
-Fonctions :
+Fonctions : statistiques du pack, groupes, exigences, références source, couverture, revue, implémentation et rôles de revue.
 
-- statistiques du pack actif ;
-- nombre d'exigences et questions ;
-- groupes réglementaires ;
-- exigences détaillées ;
-- référence source ;
-- statut de couverture ;
-- statut de revue ;
-- statut d'implémentation ;
-- rôles de revue.
+Garde-fous : lecture seule, aucune approbation, aucune activation automatique, aucune duplication des règles.
 
-Garde-fous :
+### Catalogue de clauses dérivé du compositeur
 
-- lecture seule ;
-- aucune approbation depuis cet écran ;
-- aucune activation automatique ;
-- aucune duplication des règles dans le frontend ;
-- les statuts affichés ne valent pas validation juridique.
+Source canonique : `src/catalog/clause-catalog.js`.
+
+Ajouts :
+
+- `scripts/generate-web-clause-catalog.mjs` ;
+- `apps/web/src/domain/clause-catalog.ts` ;
+- `apps/web/src/app/api/regulatory/clauses/route.ts` ;
+- génération ajoutée à `predev`, `pretypecheck` et `prebuild`.
+
+La bibliothèque réglementaire affiche désormais les clauses réellement utilisées par le compositeur : identifiant, version, catégorie, section, wording, exigences, champs et statut.
+
+Invariants du générateur :
+
+- identifiants uniques ;
+- chaque clause liée à au moins une exigence et un champ ;
+- toutes les clauses restent `DRAFT_LEGAL_REVIEW_REQUIRED` ;
+- `automaticActivationAllowed=false` ;
+- digest déterministe du catalogue.
 
 ### Paramètres / préparation opérationnelle V1
 
@@ -51,20 +56,43 @@ Fichiers :
 - `apps/web/src/components/templates/SettingsReadinessTemplate.tsx` ;
 - `apps/web/src/app/settings/page.tsx`.
 
-Fonctions :
+Fonctions : driver actif, présence non secrète de la configuration DB/artefacts/OIDC, état des gates production.
 
-- driver actif `local-json` / `postgresql` ;
-- présence de `DATABASE_URL` sans affichage de sa valeur ;
-- présence de `REGULATORY_ARTIFACT_ROOT` ;
-- présence de la configuration OIDC (`OIDC_ISSUER`, `OIDC_AUDIENCE`, `OIDC_JWKS_URI`) ;
-- état non secret des gates de production.
+Garde-fous : aucune valeur secrète rendue, stockage filesystem distingué du stockage objet final, antivirus/backup/recette non simulés, soumission fermée.
 
-Garde-fous :
+### Lecture sécurisée des artefacts générés
 
-- aucun secret rendu au client ;
-- stockage filesystem explicitement distingué du stockage objet de production ;
-- antivirus, backup/restore et recette restent affichés comme non validés ;
-- production et soumission restent fermées.
+Architecture ajoutée :
+
+- `apps/web/src/server/storage/generation-artifact-types.ts` ;
+- `apps/web/src/server/storage/generation-artifact-repository.ts` ;
+- `ArtifactStore.read(storageReference)` avec confinement filesystem ;
+- wiring dans `apps/web/src/server/storage/index.ts` ;
+- API de listing : `/api/projects/[projectId]/artifacts/[generationId]` ;
+- API de téléchargement : `/api/projects/[projectId]/artifacts/[generationId]/[fileName]` ;
+- panneau `GenerationArtifactsPanel` dans l'aperçu projet.
+
+PostgreSQL :
+
+- identité OIDC vérifiée ;
+- membership organisation ;
+- transaction avec contexte tenant/RLS ;
+- résolution du document uniquement par projet + génération + nom serveur ;
+- aucune `storage_reference` fournie par l'utilisateur ;
+- SHA-256 et taille recalculés après lecture ;
+- altération physique => `GENERATED_ARTIFACT_INTEGRITY_MISMATCH`.
+
+Test PostgreSQL enrichi avec isolation tenant, lecture et corruption volontaire.
+
+### Distinction aperçu / génération persistée
+
+La page `/projects/[projectId]/preview` distingue désormais :
+
+- aperçu courant reconstruit depuis le snapshot ;
+- dernière génération réellement persistée ;
+- téléchargements uniquement depuis les artefacts persistés.
+
+Une simple consultation de l'aperçu ne génère pas le package PDF/ZIP.
 
 ## Validation
 
@@ -72,18 +100,20 @@ Les changements sont implémentés sur `main` mais **ne doivent pas être décla
 
 Après rétablissement GitHub Actions :
 
-1. `npm run web:typecheck` ;
-2. `npm run web:build` ;
-3. tests API HTTP ;
-4. Regulatory CI ;
-5. Security and Review Policy CI ;
-6. inspection navigateur des pages `/regulatory-library` et `/settings`.
+1. génération du catalogue de clauses et validation ;
+2. `npm run web:typecheck` ;
+3. `npm run web:build` ;
+4. tests PostgreSQL, y compris isolation/lecture/intégrité des artefacts ;
+5. tests API HTTP ;
+6. Regulatory CI ;
+7. Security and Review Policy CI ;
+8. inspection navigateur `/regulatory-library`, `/settings`, `/projects/.../preview`.
 
 ## Reste de l'étape 6
 
-- bibliothèque des sources réglementaires et versions, au-delà du seul catalogue CIRC005 ;
-- administration des clauses et versions ;
-- vues de citations / preuves / analyses d'impact ;
+- bibliothèque complète des sources réglementaires/versions/citations au-delà des catalogues actuellement projetés ;
+- workflow d'administration/approbation des clauses après l'étape 4, sans bypass de revue ;
+- vues de preuves / analyses d'impact ;
 - authentification OIDC réelle ;
 - organisation / tenant réel ;
 - activation PostgreSQL runtime ;
