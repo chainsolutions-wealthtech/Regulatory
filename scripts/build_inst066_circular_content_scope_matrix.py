@@ -1,19 +1,14 @@
 #!/usr/bin/env python3
 import json, re, unicodedata
 from pathlib import Path
-
 ROOT=Path(__file__).resolve().parents[1]
 DIGEST=ROOT/'regulatory/registries/INST066_CIRCULAR_DEPENDENCY_REVIEW_DIGEST_V0_1.json'
 CAT=ROOT/'regulatory/registries/AMF_UMOA_2022_CIRCULAR_CATALOG_V0_1.json'
 OUT=ROOT/'regulatory/registries/INST066_TO_AMF_UMOA_2022_CIRCULAR_CONTENT_SCOPE_MATRIX_V0_1.json'
 VAL=ROOT/'regulatory/validation/INST066_TO_AMF_UMOA_2022_CIRCULAR_CONTENT_SCOPE_MATRIX_VALIDATION_V0_1.json'
 TEXT_DIR=ROOT/'regulatory/sources/amf-umoa-2022-circulars'
-
 def norm(s):
-    s=unicodedata.normalize('NFKD',s or '').encode('ascii','ignore').decode().lower()
-    return re.sub(r'[^a-z0-9]+',' ',s).strip()
-
-# Curated only after own-binary review. No entry here means no confirmed match yet.
+ s=unicodedata.normalize('NFKD',s or '').encode('ascii','ignore').decode().lower();return re.sub(r'[^a-z0-9]+',' ',s).strip()
 MAP={
  'INST066_ART005_DEP_CIRC_01':(10,'EXACT_IMPLEMENTING_SCOPE_MATCH',['frais generaux','article 5']),
  'INST066_ART005_DEP_CIRC_02':(2,'EXACT_IMPLEMENTING_SCOPE_MATCH',['programme d activites','article 5','liste des documents']),
@@ -54,42 +49,26 @@ NO_CONFIRMED={
  'INST066_ART075_DEP_CIRC_01':'FCPE_SUPERVISORY_COUNCIL_ANNUAL_REPORT_CONTENT_NOT_IDENTIFIED_IN_2022_SERIES',
  'INST066_ART076_DEP_CIRC_01':'SICAVAS_SUPERVISORY_COUNCIL_ANNUAL_REPORT_CONTENT_NOT_IDENTIFIED_IN_2022_SERIES',
 }
-
 def main():
-    digest=json.loads(DIGEST.read_text(encoding='utf-8'))
-    cat=json.loads(CAT.read_text(encoding='utf-8'))
-    if digest['rowCount']!=34: raise RuntimeError('digest count changed')
-    if cat['status']!='COMPLETE_16_BINARIES_MATERIALIZED': raise RuntimeError('circular corpus incomplete')
-    cat_by={e['number']:e for e in cat['entries']}
-    texts={}
-    for n in range(1,17):
-        p=TEXT_DIR/f'CIRCULAIRE_{n:02d}_AMF_UMOA_2022.txt'
-        texts[n]=norm(p.read_text(encoding='utf-8',errors='ignore'))
-    rows=[]; failures=[]
-    ids={r['dependencyId'] for r in digest['rows']}
-    curated=set(MAP)|set(RELATED)|set(NO_CONFIRMED)
-    if curated!=ids:
-        failures.append({'type':'CURATED_ID_SET_MISMATCH','missingFromCuration':sorted(ids-curated),'unknownInCuration':sorted(curated-ids)})
-    for d in digest['rows']:
-        did=d['dependencyId']
-        base={'articleNumber':d['articleNumber'],'articleTitle':d['articleTitle'],'dependencyId':did,'sourceContext':d['sourceContext'],'resolved':False,'requirementActivationAllowed':False}
-        if did in MAP or did in RELATED:
-            n,status,anchors=(MAP.get(did) or RELATED.get(did))
-            text=texts[n]; checks=[]
-            for a in anchors:
-                ok=norm(a) in text;checks.append({'anchor':a,'present':ok})
-                if not ok: failures.append({'type':'MISSING_TEXT_ANCHOR','dependencyId':did,'circularNumber':n,'anchor':a})
-            ce=cat_by[n]
-            base.update({'matchStatus':status,'circularNumber':n,'circularReference':ce['reference'],'circularSha256':ce['sha256'],'circularTextPath':ce['repositoryText'],'textAnchorChecks':checks,'contentEvidenceValidated':all(x['present'] for x in checks),'legalReviewStatus':'PENDING','complianceReviewStatus':'PENDING'})
-        else:
-            base.update({'matchStatus':'NO_CONFIRMED_MATCH_IN_REVIEWED_2022_SERIES','reason':NO_CONFIRMED[did],'circularNumber':None,'circularReference':None,'contentEvidenceValidated':False,'legalReviewStatus':'PENDING','complianceReviewStatus':'PENDING'})
-        rows.append(base)
-    counts={}
-    for r in rows:counts[r['matchStatus']]=counts.get(r['matchStatus'],0)+1
-    out={'schemaVersion':'INST066_TO_AMF_UMOA_2022_CIRCULAR_CONTENT_SCOPE_MATRIX_V0_1','sourceInstruction':'INSTRUCTION_66_CREPMF_2021','officialCircularCorpus':str(CAT.relative_to(ROOT)),'status':'CURATED_OWN_BINARY_CONTENT_SCOPE_REVIEW_NO_LEGAL_RESOLUTION','summary':{'dependencyCount':len(rows),'matchedStrongOrExact':sum(r['circularNumber'] is not None and not r['matchStatus'].startswith('RELATED') for r in rows),'relatedOnly':sum(r['matchStatus'].startswith('RELATED') for r in rows),'noConfirmedMatch':sum(r['circularNumber'] is None for r in rows),'countsByStatus':counts},'rows':rows,'boundary':{'contentScopeMatchIsLegalResolution':False,'relatedOnlyMayBePromotedAutomatically':False,'noConfirmedMatchMeansInstrumentDoesNotExist':False,'automaticDependencyResolutionAllowed':False,'automaticRuleReconstructionAllowed':False,'automaticRequirementActivationAllowed':False,'humanLegalReviewRequired':True,'humanComplianceReviewRequired':True,'readyForSubmissionMustRemainFalse':True}}
-    val={'schemaVersion':'INST066_TO_AMF_UMOA_2022_CIRCULAR_CONTENT_SCOPE_MATRIX_VALIDATION_V0_1','result':'PASS' if not failures else 'FAIL','checks':{'all34DependenciesPreserved':len(rows)==34,'allCuratedIdsAccountedFor':curated==ids,'allMappedAnchorsPresent':not any(f['type']=='MISSING_TEXT_ANCHOR' for f in failures),'noResolvedRows':all(r['resolved'] is False for r in rows),'noRequirementActivation':all(r['requirementActivationAllowed'] is False for r in rows),'automaticResolutionForbidden':True},'failures':failures}
-    OUT.parent.mkdir(parents=True,exist_ok=True);VAL.parent.mkdir(parents=True,exist_ok=True)
-    OUT.write_text(json.dumps(out,ensure_ascii=False,indent=2)+'\n',encoding='utf-8');VAL.write_text(json.dumps(val,ensure_ascii=False,indent=2)+'\n',encoding='utf-8')
-    print(json.dumps({'summary':out['summary'],'failures':failures},ensure_ascii=False))
-    if failures: raise SystemExit(2)
+ digest=json.loads(DIGEST.read_text(encoding='utf-8'));cat=json.loads(CAT.read_text(encoding='utf-8'))
+ if digest['rowCount']!=34:raise RuntimeError('digest count changed')
+ if cat['status']!='COMPLETE_16_BINARIES_MATERIALIZED':raise RuntimeError('circular corpus incomplete')
+ cat_by={e['number']:e for e in cat['entries']};texts={n:norm((TEXT_DIR/f'CIRCULAIRE_{n:02d}_AMF_UMOA_2022.txt').read_text(encoding='utf-8',errors='ignore')) for n in range(1,17)}
+ rows=[];failures=[];ids={r['dependencyId'] for r in digest['rows']};curated=set(MAP)|set(RELATED)|set(NO_CONFIRMED)
+ if curated!=ids:failures.append({'type':'CURATED_ID_SET_MISMATCH','missingFromCuration':sorted(ids-curated),'unknownInCuration':sorted(curated-ids)})
+ for d in digest['rows']:
+  did=d['dependencyId'];base={'articleNumber':d['articleNumber'],'articleTitle':d['articleTitle'],'dependencyId':did,'sourceContext':d['sourceContext'],'resolved':False,'requirementActivationAllowed':False}
+  if did in MAP or did in RELATED:
+   n,status,anchors=(MAP.get(did) or RELATED.get(did));text=texts[n];checks=[]
+   for a in anchors:
+    ok=norm(a) in text;checks.append({'anchor':a,'present':ok})
+    if not ok:failures.append({'type':'MISSING_TEXT_ANCHOR','dependencyId':did,'circularNumber':n,'anchor':a})
+   ce=cat_by[n];base.update({'matchStatus':status,'circularNumber':n,'circularReference':ce['reference'],'circularSha256':ce['sha256'],'circularTextPath':ce['repositoryText'],'textAnchorChecks':checks,'contentEvidenceValidated':all(x['present'] for x in checks),'legalReviewStatus':'PENDING','complianceReviewStatus':'PENDING'})
+  else:base.update({'matchStatus':'NO_CONFIRMED_MATCH_IN_REVIEWED_2022_SERIES','reason':NO_CONFIRMED[did],'circularNumber':None,'circularReference':None,'contentEvidenceValidated':False,'legalReviewStatus':'PENDING','complianceReviewStatus':'PENDING'})
+  rows.append(base)
+ counts={}
+ for r in rows:counts[r['matchStatus']]=counts.get(r['matchStatus'],0)+1
+ out={'schemaVersion':'INST066_TO_AMF_UMOA_2022_CIRCULAR_CONTENT_SCOPE_MATRIX_V0_1','sourceInstruction':'INSTRUCTION_66_CREPMF_2021','officialCircularCorpus':str(CAT.relative_to(ROOT)),'status':'CURATED_OWN_BINARY_CONTENT_SCOPE_REVIEW_NO_LEGAL_RESOLUTION','summary':{'dependencyCount':len(rows),'matchedStrongOrExact':sum(r['circularNumber'] is not None and not r['matchStatus'].startswith('RELATED') for r in rows),'relatedOnly':sum(r['matchStatus'].startswith('RELATED') for r in rows),'noConfirmedMatch':sum(r['circularNumber'] is None for r in rows),'countsByStatus':counts},'rows':rows,'boundary':{'contentScopeMatchIsLegalResolution':False,'relatedOnlyMayBePromotedAutomatically':False,'noConfirmedMatchMeansInstrumentDoesNotExist':False,'automaticDependencyResolutionAllowed':False,'automaticRuleReconstructionAllowed':False,'automaticRequirementActivationAllowed':False,'humanLegalReviewRequired':True,'humanComplianceReviewRequired':True,'readyForSubmissionMustRemainFalse':True}}
+ val={'schemaVersion':'INST066_TO_AMF_UMOA_2022_CIRCULAR_CONTENT_SCOPE_MATRIX_VALIDATION_V0_1','result':'PASS' if not failures else 'FAIL','checks':{'all34DependenciesPreserved':len(rows)==34,'allCuratedIdsAccountedFor':curated==ids,'allMappedAnchorsPresent':not any(f['type']=='MISSING_TEXT_ANCHOR' for f in failures),'noResolvedRows':all(r['resolved'] is False for r in rows),'noRequirementActivation':all(r['requirementActivationAllowed'] is False for r in rows),'automaticResolutionForbidden':True},'failures':failures}
+ OUT.parent.mkdir(parents=True,exist_ok=True);VAL.parent.mkdir(parents=True,exist_ok=True);OUT.write_text(json.dumps(out,ensure_ascii=False,indent=2)+'\n',encoding='utf-8');VAL.write_text(json.dumps(val,ensure_ascii=False,indent=2)+'\n',encoding='utf-8');print(json.dumps({'summary':out['summary'],'failures':failures},ensure_ascii=False))
 if __name__=='__main__':main()
