@@ -1,0 +1,51 @@
+name: Materialize AMF-UMOA Priority API Documents
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'scripts/materialize_amf_umoa_priority_api_documents.py'
+      - '.github/workflows/materialize-amf-umoa-priority-api-documents.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  materialize:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - name: Install PDF/OCR tools
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y poppler-utils tesseract-ocr tesseract-ocr-fra
+      - name: Materialize priority official API documents
+        run: python3 scripts/materialize_amf_umoa_priority_api_documents.py
+      - name: Validate strict acquisition boundary
+        run: |
+          python3 - <<'PY'
+          import json
+          from pathlib import Path
+          r=json.loads(Path('regulatory/registries/AMF_UMOA_PRIORITY_API_DOCUMENTS_V0_1.json').read_text())
+          v=json.loads(Path('regulatory/validation/AMF_UMOA_PRIORITY_API_DOCUMENTS_VALIDATION_V0_1.json').read_text())
+          assert v['result']=='PASS'
+          assert r['status']=='COMPLETE_3_OF_3'
+          assert {x['sourceId'] for x in r['documents']}=={'INSTRUCTION_61_CREPMF_2020','INSTRUCTION_64_CREPMF_2020','DECISION_SANCTIONS_2016'}
+          assert r['boundary']['automaticDependencyResolutionAllowed'] is False
+          assert r['boundary']['automaticRequirementActivationAllowed'] is False
+          assert r['boundary']['readyForSubmissionMustRemainFalse'] is True
+          print('Priority AMF-UMOA API document acquisition: PASS')
+          PY
+      - name: Commit materialized priority documents
+        run: |
+          if git status --porcelain -- regulatory/sources/amf-umoa-priority-api-documents regulatory/registries/AMF_UMOA_PRIORITY_API_DOCUMENTS_V0_1.json regulatory/validation/AMF_UMOA_PRIORITY_API_DOCUMENTS_VALIDATION_V0_1.json | grep -q .; then
+            git config user.name 'github-actions[bot]'
+            git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+            git add regulatory/sources/amf-umoa-priority-api-documents regulatory/registries/AMF_UMOA_PRIORITY_API_DOCUMENTS_V0_1.json regulatory/validation/AMF_UMOA_PRIORITY_API_DOCUMENTS_VALIDATION_V0_1.json
+            git commit -m 'regulatory: materialize priority AMF-UMOA API documents'
+            git pull --rebase origin main
+            git push origin HEAD:main
+          fi
