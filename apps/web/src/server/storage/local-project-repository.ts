@@ -3,8 +3,10 @@ import "server-only";
 import {
   createProject,
   getProject,
+  listGenerationArtifacts,
   listProjects,
   persistGenerationArtifacts,
+  readGenerationArtifact,
   saveAnswer,
 } from "@/server/project-store";
 import type { ProjectRepository } from "@/server/storage/project-repository";
@@ -26,6 +28,8 @@ export const localProjectRepository: ProjectRepository = {
     assertExpectedVersion(input.expectedVersion, current.version);
     return persistGenerationArtifacts(input);
   },
+  listGenerationArtifacts,
+  readGenerationArtifact,
 };
 
 function assertExpectedVersion(expected: number | undefined, actual: number): void {
