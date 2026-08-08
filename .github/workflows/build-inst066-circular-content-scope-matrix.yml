@@ -23,7 +23,8 @@ jobs:
           fetch-depth: 0
       - name: Build curated content-scope matrix
         run: python3 scripts/build_inst066_circular_content_scope_matrix.py
-      - name: Validate non-resolution boundary
+      - name: Diagnostic validation
+        continue-on-error: true
         run: |
           cat regulatory/validation/INST066_TO_AMF_UMOA_2022_CIRCULAR_CONTENT_SCOPE_MATRIX_VALIDATION_V0_1.json
           python3 - <<'PY'
@@ -39,10 +40,8 @@ jobs:
           assert all(r['resolved'] is False for r in m['rows'])
           assert m['boundary']['automaticDependencyResolutionAllowed'] is False
           assert m['boundary']['automaticRequirementActivationAllowed'] is False
-          print('INST066 circular content-scope matrix invariants: PASS')
           PY
-      - name: Persist content-scope matrix and validation diagnostics
-        if: ${{ always() }}
+      - name: Persist content-scope diagnostics
         run: |
           if git status --porcelain -- regulatory/registries/INST066_TO_AMF_UMOA_2022_CIRCULAR_CONTENT_SCOPE_MATRIX_V0_1.json regulatory/validation/INST066_TO_AMF_UMOA_2022_CIRCULAR_CONTENT_SCOPE_MATRIX_VALIDATION_V0_1.json | grep -q .; then
             git config user.name 'github-actions[bot]'
@@ -52,3 +51,13 @@ jobs:
             git pull --rebase origin main
             git push origin HEAD:main
           fi
+      - name: Enforce validation result
+        run: |
+          python3 - <<'PY'
+          import json
+          from pathlib import Path
+          v=json.loads(Path('regulatory/validation/INST066_TO_AMF_UMOA_2022_CIRCULAR_CONTENT_SCOPE_MATRIX_VALIDATION_V0_1.json').read_text())
+          if v['result']!='PASS':
+              raise SystemExit('Content-scope matrix validation is FAIL; inspect persisted diagnostics.')
+          print('INST066 circular content-scope matrix: PASS')
+          PY
