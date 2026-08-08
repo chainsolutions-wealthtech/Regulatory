@@ -1,0 +1,54 @@
+{
+  "validationId": "INST066_EXTERNAL_DEPENDENCY_RESEARCH_QUEUE_VALIDATION_V0_1",
+  "status": "PASS",
+  "checks": {
+    "articleCountMatchesInventory": true,
+    "dependencyCountMatchesInventory": true,
+    "unresolvedCountMatchesInventory": true,
+    "resolvedCountMatchesInventory": true,
+    "allDependenciesPreserved": true,
+    "allActivationStillForbidden": true,
+    "groupingDoesNotResolve": true,
+    "readyForSubmissionRemainsFalse": true
+  },
+  "metrics": {
+    "articleCount": 26,
+    "dependencyOccurrenceCount": 49,
+    "unresolvedOccurrenceCount": 47,
+    "resolvedOccurrenceCount": 2,
+    "articlesWithOnlyUnresolvedDependencies": [
+      4,
+      5,
+      9,
+      11,
+      12,
+      13,
+      14,
+      17,
+      21,
+      23,
+      25,
+      28,
+      32,
+      33,
+      36,
+      38,
+      40,
+      47,
+      53,
+      55,
+      59,
+      74,
+      75,
+      76,
+      80
+    ],
+    "articlesWithMixedResolvedAndUnresolvedDependencies": [
+      37
+    ]
+  },
+  "outputs": [
+    "regulatory/registries/INST066_EXTERNAL_DEPENDENCY_RESEARCH_QUEUE_V0_1.json"
+  ],
+  "caveat": "PASS validates research-queue completeness only; it does not identify or resolve implementing instruments."
+}
