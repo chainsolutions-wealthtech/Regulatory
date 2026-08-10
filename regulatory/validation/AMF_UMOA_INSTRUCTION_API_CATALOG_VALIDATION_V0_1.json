@@ -1,0 +1,34 @@
+{
+  "schemaVersion": "AMF_UMOA_INSTRUCTION_API_CATALOG_VALIDATION_V0_1",
+  "result": "PASS",
+  "checks": {
+    "knownWitnessesRecovered": true,
+    "atLeastCurrentPublicInstructionCountRecovered": true,
+    "scanIsBounded": true,
+    "automaticResolutionForbidden": true,
+    "automaticRequirementActivationForbidden": true,
+    "automaticRuleReconstructionForbidden": true,
+    "readyForSubmissionFalse": true
+  },
+  "instructionCount": 65,
+  "expectedMinimum": 41,
+  "witnessChecks": [
+    {
+      "actualiteId": 1000106,
+      "expectedNumber": 61,
+      "expectedYear": 2020,
+      "found": true,
+      "numberMatches": true,
+      "yearMatches": true
+    },
+    {
+      "actualiteId": 1000110,
+      "expectedNumber": 64,
+      "expectedYear": 2020,
+      "found": true,
+      "numberMatches": true,
+      "yearMatches": true
+    }
+  ],
+  "nextActionIfIncomplete": "Review missing witnesses/count and expand the bounded official API scan deliberately; do not infer missing Instruction references."
+}
