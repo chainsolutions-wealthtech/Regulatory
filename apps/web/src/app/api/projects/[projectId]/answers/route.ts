@@ -30,7 +30,8 @@ export async function POST(
     if (!existingProject) {
       return NextResponse.json({ error: "Projet introuvable." }, { status: 404 });
     }
-    const normalizedValue = normalizeQuestionValueForPersistence(body.questionId, body.value, {
+    const upgradedValue = upgradeLegacyStructuredAnswer(body.questionId, body.value);
+    const normalizedValue = normalizeQuestionValueForPersistence(body.questionId, upgradedValue, {
       currency: existingProject.fund.currency,
       countryCode: existingProject.fund.countryCode,
     });
@@ -46,6 +47,27 @@ export async function POST(
     const status = message.startsWith("PROJECT_VERSION_CONFLICT") ? 409 : 400;
     return NextResponse.json({ error: message }, { status });
   }
+}
+
+function upgradeLegacyStructuredAnswer(questionId: string, value: unknown): unknown {
+  if (questionId !== "Q_SHARE_CLASSES_COUNT" || !Array.isArray(value)) return value;
+  return value.map((entry) => {
+    if (!entry || typeof entry !== "object" || Array.isArray(entry)) return entry;
+    const record = entry as Record<string, unknown>;
+    const upgraded = { ...record };
+    if (upgraded.class_id === undefined && typeof record.row_id === "string") {
+      upgraded.class_id = record.row_id;
+    }
+    if (upgraded.income_policy === undefined && typeof record.distribution_policy === "string") {
+      upgraded.income_policy = record.distribution_policy;
+    }
+    if (upgraded.initial_subscription_minimum === undefined && record.minimum_subscription !== undefined) {
+      upgraded.initial_subscription_minimum = {
+        display: String(record.minimum_subscription),
+      };
+    }
+    return upgraded;
+  });
 }
 
 function parseOptionalVersion(value: unknown): number | undefined {
