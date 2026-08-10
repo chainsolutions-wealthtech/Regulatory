@@ -1,0 +1,52 @@
+{
+  "schemaVersion": "AMF_UMOA_CIRCULAR_API_CATALOG_VALIDATION_V0_1",
+  "result": "PASS",
+  "checks": {
+    "knownWitnessesRecovered": true,
+    "atLeastCurrentPublicCircularCountRecovered": true,
+    "officialCategoryListAttempted": true,
+    "fallbackScanIsBoundedWhenUsed": true,
+    "automaticResolutionForbidden": true,
+    "automaticRequirementActivationForbidden": true,
+    "readyForSubmissionFalse": true
+  },
+  "circularCount": 39,
+  "expectedMinimum": 39,
+  "categoryListCount": 39,
+  "fallbackCircularCount": 0,
+  "witnessChecks": [
+    {
+      "actualiteId": 1000051,
+      "expectedNumber": 1,
+      "expectedYear": 2010,
+      "found": true,
+      "numberMatches": true,
+      "yearMatches": true
+    },
+    {
+      "actualiteId": 1000119,
+      "expectedNumber": 1,
+      "expectedYear": 2019,
+      "found": true,
+      "numberMatches": true,
+      "yearMatches": true
+    },
+    {
+      "actualiteId": 1000129,
+      "expectedNumber": 1,
+      "expectedYear": 2022,
+      "found": true,
+      "numberMatches": true,
+      "yearMatches": true
+    },
+    {
+      "actualiteId": 1000144,
+      "expectedNumber": 16,
+      "expectedYear": 2022,
+      "found": true,
+      "numberMatches": true,
+      "yearMatches": true
+    }
+  ],
+  "nextActionIfIncomplete": "Inspect the official category-list payload/headers before expanding the bounded fallback; do not infer missing circulars."
+}
