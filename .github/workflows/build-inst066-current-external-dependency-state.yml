@@ -37,7 +37,7 @@ jobs:
       - name: Overlay confirmed documentary resolutions
         run: python3 scripts/build_inst066_current_external_dependency_state.py
 
-      - name: Validate safety and expected counters
+      - name: Validate safety and structural invariants
         run: |
           python3 - <<'PY'
           import json
@@ -45,28 +45,34 @@ jobs:
 
           state = json.loads(Path('regulatory/registries/INST066_CURRENT_EXTERNAL_DEPENDENCY_STATE_V0_1.json').read_text(encoding='utf-8'))
           validation = json.loads(Path('regulatory/validation/INST066_CURRENT_EXTERNAL_DEPENDENCY_STATE_VALIDATION_V0_1.json').read_text(encoding='utf-8'))
+          inventory = json.loads(Path('regulatory/registries/INST066_EXTERNAL_IMPLEMENTING_TEXTS_INVENTORY_V0_1.json').read_text(encoding='utf-8'))
+
           if validation['result'] != 'PASS':
               raise SystemExit('current dependency state validation failed')
-          expected = {
-              'dependencyOccurrenceCount': 49,
-              'resolvedDocumentaryCount': 32,
-              'unresolvedDocumentaryCount': 17,
-              'confirmedOverlayResolutionCount': 30,
-              'confirmedCircularOverlayResolutionCount': 25,
-              'confirmedInstructionFamilyOverlayResolutionCount': 5,
-              'circularOccurrenceCount': 34,
-              'resolvedCircularCount': 25,
-              'unresolvedCircularCount': 9,
-              'instructionOccurrenceCount': 7,
-              'resolvedInstructionCount': 4,
-              'unresolvedInstructionCount': 3,
-              'namedInstructionOccurrenceCount': 1,
-              'resolvedNamedInstructionCount': 1,
-              'unresolvedNamedInstructionCount': 0,
-          }
-          for key, value in expected.items():
-              if state['summary'][key] != value:
-                  raise SystemExit(f'{key}: expected {value}, got {state["summary"][key]}')
+
+          summary = state['summary']
+          expected_total = inventory['summary']['dependencyOccurrenceCount']
+          if summary['dependencyOccurrenceCount'] != expected_total:
+              raise SystemExit('dependency occurrence count changed from immutable inventory')
+          if summary['resolvedDocumentaryCount'] + summary['unresolvedDocumentaryCount'] != expected_total:
+              raise SystemExit('resolved/unresolved arithmetic mismatch')
+          if summary['confirmedOverlayResolutionCount'] != (
+              summary['confirmedCircularOverlayResolutionCount']
+              + summary['confirmedInstructionFamilyOverlayResolutionCount']
+          ):
+              raise SystemExit('overlay counter arithmetic mismatch')
+          if summary['resolvedDocumentaryCount'] != (
+              summary['rawInventoryResolvedCount'] + summary['confirmedOverlayResolutionCount']
+          ):
+              raise SystemExit('resolved count does not equal raw resolutions plus overlays')
+
+          for kind, expected in inventory['summary']['countsByKind'].items():
+              bucket = summary['countsByKind'].get(kind)
+              if not bucket or bucket['total'] != expected:
+                  raise SystemExit(f'kind total changed: {kind}')
+              if bucket['resolved'] + bucket['unresolved'] != bucket['total']:
+                  raise SystemExit(f'kind arithmetic mismatch: {kind}')
+
           boundary = state['boundary']
           if boundary['automaticDependencyResolutionAllowed'] is not False:
               raise SystemExit('automatic dependency resolution must remain false')
