@@ -1,0 +1,233 @@
+evidence_id: REMAINING_CIRCULAR_DEPENDENCIES_FULL_CATALOG_CROSSCHECK_2026_08_10
+review_date: 2026-08-10
+source_instruction: INSTRUCTION_66_CREPMF_2021
+scope: NINE_REMAINING_COUNCIL_CIRCULAR_DEPENDENCIES
+
+catalog_evidence:
+  authority: AMF-UMOA
+  endpoint: https://www.amf-umoa.org/service/api/elastic/actualite
+  request: "categorie=Circulaire&page=0&size=100&langue=fr"
+  catalog: regulatory/registries/AMF_UMOA_CIRCULAR_API_CATALOG_V0_1.json
+  validation: regulatory/validation/AMF_UMOA_CIRCULAR_API_CATALOG_VALIDATION_V0_1.json
+  workflow: .github/workflows/build-amf-umoa-circular-api-catalog.yml
+  workflow_run_id: 31423423377
+  workflow_result: SUCCESS
+  method: OFFICIAL_FRONTEND_CATEGORY_LIST
+  response_x_total_count: 39
+  normalized_circular_count: 39
+  raw_response_sha256: 9f1fb98e53c8b6a6ecfb0b2a0adc931dd0458ae31b711179cad471c8b5c7f01c
+  fallback_id_scan_used: false
+  witnesses:
+    - actualite_id: 1000051
+      reference: Circulaire n°01/2010
+      match: true
+    - actualite_id: 1000119
+      reference: Circulaire n°01/2019
+      match: true
+    - actualite_id: 1000129
+      reference: Circulaire n°01/2022
+      match: true
+    - actualite_id: 1000144
+      reference: Circulaire n°16/2022
+      match: true
+
+catalog_level_observations:
+  metadata_keyword_results:
+    services_auxiliaires: NO_MATCH
+    delegation: NO_MATCH
+    boite_aux_lettres: NO_MATCH
+    fusion: NO_MATCH
+    maitre_nourricier: NO_MATCH
+    FCPE: NO_MATCH
+    SICAVAS: NO_MATCH
+    SICAV: NO_MATCH
+    depositaire:
+      matches:
+        - reference: Circulaire n°04/2022
+          subject: CONTRAT_ET_MISSIONS_DU_DEPOSITAIRE
+    rapport:
+      matches:
+        - reference: Circulaire n°08/2022
+          subject: RAPPORTS_PERIODIQUES_DES_OPC
+    non_2022_sgo_specific_metadata:
+      - reference: Circulaire n°01/2019
+        subject: >-
+          Exigences fonctionnelles minimales des logiciels de gestion et sécurité du
+          système d'information des SGI, BTCC, SGO et SG-FCTC.
+        relevance_to_remaining_dependencies: NO_SCOPE_MATCH
+  interpretation: >-
+    Les métadonnées des 39 objets ne suffisent jamais, à elles seules, à prouver
+    l'absence d'un contenu dans un binaire. Elles permettent toutefois d'identifier
+    les candidats plausibles à lire en priorité. Les textes 2022 matérialisés ont donc
+    été contrôlés directement pour les correspondances les plus proches.
+
+full_text_crosschecks:
+  circulaire_04_2022:
+    repository_text: regulatory/sources/amf-umoa-2022-circulars/CIRCULAIRE_04_AMF_UMOA_2022.txt
+    subject: CONTRAT_ET_MISSIONS_DU_DEPOSITAIRE
+    instruction_66_reference: true
+    contains_rapport_annuel_phrase: false
+    result_for_art021_annual_report: NO_EXACT_MATCH
+    note: >-
+      Le texte détaille contrat, garde, suivi des liquidités, surveillance, délégation
+      de conservation, ségrégation, responsabilité et indépendance du Dépositaire,
+      mais le contrôle du texte n'identifie pas le contenu du rapport annuel du
+      Dépositaire visé séparément par l'article 21 de l'Instruction 66.
+  circulaire_08_2022:
+    repository_text: regulatory/sources/amf-umoa-2022-circulars/CIRCULAIRE_08_AMF_UMOA_2022.txt
+    subject: RAPPORTS_PERIODIQUES_DES_OPC
+    instruction_66_article_37_cross_reference: true
+    contains_conseil_de_surveillance_phrase: false
+    result_for_art075_art076_supervisory_board_reports: NO_EXACT_MATCH
+    note: >-
+      La Circulaire 08 précise les rapports annuels, semestriels et trimestriels de
+      l'OPC, avec renvoi explicite à l'article 37. Elle ne précise pas le rapport annuel
+      du Conseil de Surveillance des FCPE/SICAVAS visé aux articles 75 et 76.
+  circulaire_03_2022:
+    repository_text: regulatory/sources/amf-umoa-2022-circulars/CIRCULAIRE_03_AMF_UMOA_2022.txt
+    subject: AGREMENT_MODIFICATION_ENREGISTREMENT_OPC
+    explicit_instruction_66_articles: [17, 25, 55]
+    fusion_dossier_present: true
+    general_holder_information_section_present: true
+    annex_iv_subject: INFORMATIONS_A_FOURNIR_LORS_D_UNE_FUSION_TO_REGULATOR
+    annex_vi_subject: MODIFICATIONS_REQUIRING_INFORMATION_TO_HOLDERS_AND_FEE_FREE_EXIT
+    explicit_article_59_cross_reference: false
+    exact_article_59_investor_information_content_form_mode: false
+    result_for_art059: RELATED_NOT_EXACT
+    note: >-
+      C03 traite le dossier de fusion soumis au Conseil Régional et indique les formes
+      générales d'information des porteurs en cas de modification. L'article 59 de
+      l'Instruction 66 délègue toutefois le contenu détaillé, la forme et le mode de
+      fourniture des informations propres à la fusion aux investisseurs. C03 ne se
+      présente pas comme le texte d'application de l'article 59 et ne doit pas être
+      promue automatiquement pour ce renvoi.
+  circulaire_02_2022:
+    repository_text: regulatory/sources/amf-umoa-2022-circulars/CIRCULAIRE_02_AMF_UMOA_2022.txt
+    subject: AGREMENT_MODIFICATION_RETRAIT_AGREMENT_SGO
+    contains_services_auxiliaires_phrase: false
+    exact_auxiliary_services_limits: false
+    result_for_art004: NO_EXACT_MATCH
+    note: >-
+      Le programme d'activités décrit les services et activités de la SGO, mais ne fixe
+      pas les limites dans lesquelles les services auxiliaires de l'article 4 peuvent
+      être fournis.
+  circulaire_16_2022:
+    repository_text: regulatory/sources/amf-umoa-2022-circulars/CIRCULAIRE_16_AMF_UMOA_2022.txt
+    subject: CONFLITS_D_INTERETS_ET_REGLES_DE_CONDUITE
+    contains_delegation_phrase: false
+    contains_boite_aux_lettres_phrase: false
+    result_for_art014: NO_EXACT_MATCH
+    note: >-
+      Le texte contient des obligations de conduite et de gestion des relations avec
+      des tiers mais n'énonce pas les conditions de délégation de l'article 14 ni le
+      critère de société « boîte aux lettres ».
+
+remaining_dependencies:
+  - dependency_id: INST066_ART004_DEP_CIRC_01
+    article_number: 4
+    subject: LIMITES_DES_SERVICES_AUXILIAIRES_DES_SGO
+    closest_checked_source: CIRCULAIRE_02_CREPMF_2022
+    result: UNRESOLVED
+    reason: NO_CATALOG_OR_FULL_TEXT_EXACT_MATCH
+    resolution_condition: OFFICIAL_CIRCULAR_OR_REGULATOR_CONFIRMATION_FIXING_AUXILIARY_SERVICE_LIMITS
+
+  - dependency_id: INST066_ART014_DEP_CIRC_01
+    article_number: 14
+    subject: DELEGATION_CONDITIONS_AND_LETTER_BOX_THRESHOLD
+    closest_checked_sources:
+      - CIRCULAIRE_02_CREPMF_2022
+      - CIRCULAIRE_16_CREPMF_2022
+    result: UNRESOLVED
+    reason: NO_EXACT_DELEGATION_OR_LETTER_BOX_IMPLEMENTING_TEXT_IDENTIFIED
+    resolution_condition: OFFICIAL_CIRCULAR_OR_REGULATOR_CONFIRMATION_COVERING_ARTICLE14_SCOPE
+
+  - dependency_id: INST066_ART021_DEP_CIRC_01
+    article_number: 21
+    subject: CONTENU_DU_RAPPORT_ANNUEL_DU_DEPOSITAIRE
+    closest_checked_sources:
+      - CIRCULAIRE_04_CREPMF_2022
+      - CIRCULAIRE_08_CREPMF_2022
+    result: UNRESOLVED
+    reason: >-
+      C04 détaille les missions du Dépositaire sans identifier le contenu de son
+      rapport annuel ; C08 vise les rapports périodiques de l'OPC et l'article 37.
+    resolution_condition: OFFICIAL_CIRCULAR_OR_REGULATOR_CONFIRMATION_DEFINING_DEPOSITARY_ANNUAL_REPORT_CONTENT
+
+  - dependency_id: INST066_ART023_DEP_CIRC_01
+    article_number: 23
+    subject: CONDITIONS_D_ADMISSION_DES_ACTIONS_DE_SICAV_SUR_UN_MARCHE_REGLEMENTE
+    closest_checked_source: CIRCULAIRE_03_CREPMF_2022
+    result: UNRESOLVED
+    reason: NO_2022_TEXT_OR_39_OBJECT_METADATA_MATCH_FOR_SICAV_MARKET_ADMISSION
+    resolution_condition: OFFICIAL_CIRCULAR_OR_REGULATOR_CONFIRMATION_FOR_SICAV_MARKET_ADMISSION
+
+  - dependency_id: INST066_ART023_DEP_CIRC_02
+    article_number: 23
+    subject: CONDITIONS_DE_DELEGATION_GLOBALE_DU_PORTEFEUILLE_D_UNE_SICAV
+    closest_checked_sources:
+      - CIRCULAIRE_02_CREPMF_2022
+      - CIRCULAIRE_16_CREPMF_2022
+    result: UNRESOLVED
+    reason: NO_EXACT_SICAV_GLOBAL_PORTFOLIO_DELEGATION_SCOPE_IDENTIFIED
+    resolution_condition: OFFICIAL_CIRCULAR_OR_REGULATOR_CONFIRMATION_FOR_SICAV_GLOBAL_DELEGATION
+
+  - dependency_id: INST066_ART059_DEP_CIRC_01
+    article_number: 59
+    subject: FUSION_INFORMATION_TO_INVESTORS_CONTENT_FORM_AND_DELIVERY
+    closest_checked_source: CIRCULAIRE_03_CREPMF_2022
+    result: UNRESOLVED_RELATED_SOURCE_IDENTIFIED
+    reason: >-
+      C03 encadre le dossier de fusion et l'information générale des porteurs en cas
+      de modification, mais ne démontre pas le contenu détaillé/form/mode délégué
+      par l'article 59.
+    resolution_condition: OFFICIAL_TEXT_OR_REGULATOR_CONFIRMATION_EXPLICITLY_IMPLEMENTING_ARTICLE59_INFORMATION_SCOPE
+
+  - dependency_id: INST066_ART074_DEP_CIRC_03
+    article_number: 74
+    subject: MASTER_FEEDER_INFORMATION_AND_OPERATING_CONDITIONS
+    result: UNRESOLVED
+    reason: NO_MAITRE_NOURRICIER_OBJECT_OR_EXACT_2022_TEXT_IDENTIFIED
+    resolution_condition: OFFICIAL_CIRCULAR_OR_REGULATOR_CONFIRMATION_FOR_MASTER_FEEDER_STRUCTURE
+
+  - dependency_id: INST066_ART075_DEP_CIRC_01
+    article_number: 75
+    subject: CONTENU_DU_RAPPORT_ANNUEL_DU_CONSEIL_DE_SURVEILLANCE_DU_FCPE
+    closest_checked_source: CIRCULAIRE_08_CREPMF_2022
+    result: UNRESOLVED
+    reason: C08_HAS_NO_CONSEIL_DE_SURVEILLANCE_SCOPE_AND_IS_ARTICLE37_PERIODIC_REPORT_TEXT
+    resolution_condition: OFFICIAL_CIRCULAR_OR_REGULATOR_CONFIRMATION_FOR_FCPE_SUPERVISORY_BOARD_ANNUAL_REPORT
+
+  - dependency_id: INST066_ART076_DEP_CIRC_01
+    article_number: 76
+    subject: CONTENU_DU_RAPPORT_ANNUEL_DU_CONSEIL_DE_SURVEILLANCE_D_UNE_SICAVAS
+    closest_checked_source: CIRCULAIRE_08_CREPMF_2022
+    result: UNRESOLVED
+    reason: C08_HAS_NO_CONSEIL_DE_SURVEILLANCE_SCOPE_AND_IS_ARTICLE37_PERIODIC_REPORT_TEXT
+    resolution_condition: OFFICIAL_CIRCULAR_OR_REGULATOR_CONFIRMATION_FOR_SICAVAS_SUPERVISORY_BOARD_ANNUAL_REPORT
+
+conclusion:
+  residual_circular_dependency_count: 9
+  newly_resolved_by_this_crosscheck: 0
+  status: NINE_REMAIN_OPEN_WITH_EXHAUSTIVE_CURRENT_PUBLIC_CATALOG_BOUNDARY
+  interpretation: >-
+    La requête de catégorie officielle couvre les 39 objets Circulaire que le portail
+    AMF-UMOA compte actuellement. L'absence d'une correspondance exacte dans ce
+    catalogue et dans les textes 2022 directement contrôlés ne prouve pas qu'aucun
+    texte historique, non indexé, non publié ou juridiquement substitué n'existe.
+    Elle établit toutefois qu'aucune résolution documentaire courante ne peut être
+    faite de manière sûre à partir du corpus public contrôlé.
+
+next_routes:
+  - DIRECT_AMF_UMOA_REGULATOR_CONFIRMATION_FOR_THE_NINE_RESIDUAL_REFERENCES
+  - LEGACY_CREPMF_ARCHIVE_OR_OFFICIAL_MEMBER_STATE_ARCHIVE_IF_REFERENCE_IS_PROVIDED
+  - HUMAN_LEGAL_REVIEW_OF_ARTICLE59_VS_CIRCULAR03_RELATED_SCOPE
+  - DO_NOT_REPEAT_BLIND_PUBLIC_SEARCH_WITHOUT_NEW_REFERENCE_OR_ARCHIVE_ROUTE
+
+safety:
+  catalog_absence_is_proof_of_legal_nonexistence: false
+  related_scope_is_resolution: false
+  automatic_dependency_resolution_allowed: false
+  automatic_requirement_activation_allowed: false
+  human_legal_review_required: true
+  human_compliance_review_required: true
+  ready_for_submission_must_remain_false: true
