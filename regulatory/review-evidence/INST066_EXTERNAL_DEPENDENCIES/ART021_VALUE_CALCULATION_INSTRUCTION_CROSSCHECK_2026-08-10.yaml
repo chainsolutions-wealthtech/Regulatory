@@ -1,0 +1,90 @@
+evidence_id: ART021_VALUE_CALCULATION_INSTRUCTION_CROSSCHECK_2026_08_10
+review_date: 2026-08-10
+source_instruction: INSTRUCTION_66_CREPMF_2021
+dependency_id: INST066_ART021_DEP_INST_01
+article_number: 21
+dependency_kind: COUNCIL_INSTRUCTION
+
+source_scope:
+  subject: >-
+    Le Dépositaire s'assure que le calcul de la valeur des parts ou actions de l'OPC
+    est effectué conformément au droit de l'Union, aux documents de l'OPC et aux
+    procédures fixées dans une instruction du Conseil Régional.
+  required_instrument_type_in_source_wording: INSTRUCTION
+
+current_official_api_catalog_crosscheck:
+  catalog: regulatory/registries/AMF_UMOA_INSTRUCTION_API_CATALOG_V0_1.json
+  validation: regulatory/validation/AMF_UMOA_INSTRUCTION_API_CATALOG_VALIDATION_V0_1.json
+  workflow: .github/workflows/build-amf-umoa-instruction-api-catalog.yml
+  workflow_run_id: 31421767303
+  result: PASS
+  scan_id_range: [1000040, 1000120]
+  instruction_objects_recovered: 65
+  current_public_in_force_count_context: 41
+  relevant_opc_metadata_candidates:
+    - reference: Instruction n°22/99
+      object: "agrément des OPCVM et information du public"
+      current_use_boundary: HISTORICAL_ABROGATED_BY_INSTRUCTION_66_ARTICLE_92
+    - reference: Instruction n°45/2011
+      object: "organisation, fonctionnement et gestion des OPCVM"
+      current_use_boundary: HISTORICAL_ABROGATED_BY_INSTRUCTION_66_ARTICLE_92
+    - reference: Instruction n°46/2011 révisée
+      object: "classification et règles d'allocation d'actifs des OPC"
+      current_use_boundary: HISTORICAL_ABROGATED_BY_INSTRUCTION_66_ARTICLE_92
+    - reference: Instruction n°64/2020
+      object: "conditions de traitement des dossiers de demande d'agrément ou d'approbation"
+      match_to_value_calculation_scope: NO_MATCH
+    - reference: Instruction n°66/2021
+      object: "OPC et leurs Sociétés de Gestion"
+      match_to_external_dependency: SOURCE_INSTRUCTION_ITSELF_NOT_SEPARATE_IMPLEMENTING_TEXT
+    - reference: Instruction n°69/2023
+      object: "OPC conformes aux principes et règles de la finance islamique"
+      match_to_generic_value_calculation_scope: NO_GENERIC_IMPLEMENTING_MATCH_IDENTIFIED
+  metadata_search_result: >-
+    Aucun objet Instruction du catalogue officiel contrôlé n'a un intitulé ou un résumé
+    identifiant un texte courant dédié aux procédures de calcul, de validation ou de
+    contrôle de la valeur liquidative des OPC correspondant explicitement au renvoi de
+    l'article 21.
+
+historical_lineage:
+  source_id: INSTRUCTION_45_CREPMF_2011
+  repository_text: regulatory/sources/amf-umoa-pending-api-backfill/INSTRUCTION_45_CREPMF_2011.txt
+  observed_content:
+    - "valorisation des portefeuilles"
+    - "validation et publication de la valeur liquidative"
+    - "rapprochements espèces, titres et nombre de parts ou d'actions"
+  legal_boundary: >-
+    Instruction 45 est expressément abrogée par l'article 92 de l'Instruction 66 et
+    ne peut être réactivée comme texte d'application courant.
+
+current_circular_comparator:
+  source_id: CIRCULAIRE_12_CREPMF_2022
+  role: CURRENT_VALUATION_IMPLEMENTING_TEXT_FOR_INSTRUCTION_66_ARTICLE_13
+  relevance: >-
+    La Circulaire 12/2022 traite directement de l'évaluation des OPC et de leurs actifs
+    et résout le renvoi circulaire de l'article 13. Elle constitue une preuve qu'un texte
+    courant de valorisation existe, mais son type juridique est CIRCULAIRE, alors que
+    l'article 21 vise explicitement une INSTRUCTION.
+  automatic_type_substitution_allowed: false
+
+conclusion:
+  documentary_status: UNRESOLVED
+  reason: >-
+    Aucun texte courant de type Instruction correspondant exactement à la procédure
+    de calcul/contrôle visée n'est identifié. Le précédent historique Instruction 45
+    est abrogé et la Circulaire 12 ne peut pas être substituée automatiquement à un
+    renvoi qualifié d'Instruction.
+  possible_explanations_requiring_human_review:
+    - MISSING_OR_UNINDEXED_CURRENT_INSTRUCTION
+    - DRAFTING_OR_INSTRUMENT_TYPE_CROSS_REFERENCE_INCONSISTENCY
+    - INTENDED_REFERENCE_TO_A_SEPARATE_PROCEDURE_NOT_YET_IDENTIFIED
+  regulator_or_legal_confirmation_required: true
+
+safety:
+  historical_instruction_reactivation_allowed: false
+  circular_for_instruction_substitution_allowed: false
+  automatic_dependency_resolution_allowed: false
+  automatic_requirement_activation_allowed: false
+  human_legal_review_required: true
+  human_compliance_review_required: true
+  ready_for_submission_must_remain_false: true
