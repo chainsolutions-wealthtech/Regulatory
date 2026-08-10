@@ -23,7 +23,11 @@ CATALOG = ROOT / "regulatory/registries/AMF_UMOA_CIRCULAR_API_CATALOG_V0_1.json"
 VALIDATION = ROOT / "regulatory/validation/AMF_UMOA_CIRCULAR_API_CATALOG_VALIDATION_V0_1.json"
 UA = "Mozilla/5.0 RegulatoryCorpusBot/1.0"
 DEFAULT_START_ID = 1000040
-DEFAULT_END_ID = 1000160
+# The first bounded pass stopped at 1000160 and recovered 37/39 circulars.
+# The public AMF portal contains later actuality objects (including 2024 IDs >1000200),
+# so extend the bounded research window while preserving the same official API and
+# witness/safety checks. This is still a finite, auditable range—not an open-ended crawl.
+DEFAULT_END_ID = 1000220
 EXPECTED_PUBLIC_CIRCULAR_COUNT = 39
 KNOWN_WITNESSES = {
     1000051: (1, 2010),
@@ -163,7 +167,6 @@ def main() -> None:
             }
         )
 
-    duplicate_references: dict[str, list[int]] = {}
     reference_ids: dict[str, list[int]] = {}
     for item in circulars:
         reference = str(item.get("reference") or f"UNPARSED:{item['actualiteId']}")
