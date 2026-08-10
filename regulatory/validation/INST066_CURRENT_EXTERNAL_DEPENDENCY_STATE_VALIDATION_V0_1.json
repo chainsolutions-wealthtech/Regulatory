@@ -3,18 +3,18 @@
   "result": "PASS",
   "computedSummary": {
     "dependencyOccurrenceCount": 49,
-    "resolvedDocumentaryCount": 32,
-    "unresolvedDocumentaryCount": 17,
-    "confirmedOverlayResolutionCount": 30,
+    "resolvedDocumentaryCount": 33,
+    "unresolvedDocumentaryCount": 16,
+    "confirmedOverlayResolutionCount": 31,
     "confirmedCircularOverlayResolutionCount": 25,
-    "confirmedInstructionFamilyOverlayResolutionCount": 5,
+    "confirmedInstructionFamilyOverlayResolutionCount": 6,
     "rawInventoryResolvedCount": 2,
     "circularOccurrenceCount": 34,
     "resolvedCircularCount": 25,
     "unresolvedCircularCount": 9,
     "instructionOccurrenceCount": 7,
-    "resolvedInstructionCount": 4,
-    "unresolvedInstructionCount": 3,
+    "resolvedInstructionCount": 5,
+    "unresolvedInstructionCount": 2,
     "namedInstructionOccurrenceCount": 1,
     "resolvedNamedInstructionCount": 1,
     "unresolvedNamedInstructionCount": 0,
@@ -26,8 +26,8 @@
       },
       "COUNCIL_INSTRUCTION": {
         "total": 7,
-        "resolved": 4,
-        "unresolved": 3
+        "resolved": 5,
+        "unresolved": 2
       },
       "EXPLICIT_NAMED_CREPMF_INSTRUCTION": {
         "total": 1,
