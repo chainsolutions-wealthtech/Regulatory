@@ -1,62 +1,44 @@
+import assert from "node:assert/strict";
 import { createHash } from "node:crypto";
 import {
   assertImportRemainsUnverified,
-  type ProspectusImportBatch,
-} from "@/domain/prospectus-import";
-import type { EvidenceReadResult } from "@/server/evidence/evidence-object-store";
-import {
   createUnverifiedProspectusImport,
-  type ProspectusExtractor,
+  type ProspectusImportBatch,
 } from "@/server/import/prospectus-import-service";
+import type { StoredEvidenceObject } from "@/server/storage/evidence-object-store";
 
-const content = Buffer.from("%PDF-1.7\nsynthetic prospectus test\n", "utf8");
-const sha256 = createHash("sha256").update(content).digest("hex");
-const cleanEvidence: EvidenceReadResult = {
+const evidenceContent = Buffer.from("clean prospectus evidence", "utf8");
+const sha256 = createHash("sha256").update(evidenceContent).digest("hex");
+
+const cleanEvidence: StoredEvidenceObject = {
   descriptor: {
-    objectId: "evidence-prospectus-test",
+    schemaVersion: "EVIDENCE_OBJECT_DESCRIPTOR_V1",
     organizationId: "org-test",
-    projectVersionId: "project-version-test",
-    storageProvider: "TEST",
-    storageObjectKey: "test/evidence",
-    storageReference: "test:evidence",
-    originalFilename: "prospectus.pdf",
-    safeFilename: "prospectus.pdf",
-    declaredMediaType: "application/pdf",
-    detectedMediaType: "application/pdf",
+    projectId: "project-test",
+    evidenceObjectId: "evidence-test",
+    sourceFilename: "prospectus.pdf",
+    mediaType: "application/pdf",
+    storageReference: "evidence://org-test/project-test/evidence-test",
     sha256,
-    byteSize: content.byteLength,
-    encryptionAlgorithm: "TEST_ONLY",
-    encryptionKeyReference: "test-key",
+    byteSize: evidenceContent.byteLength,
+    uploadedAt: "2026-08-08T20:00:00.000Z",
     state: "CLEAN",
     scanStatus: "CLEAN",
-    scanProvider: "TEST_SCANNER",
-    scanEngineVersion: "1",
-    scanSignatureVersion: "1",
-    scanCompletedAt: "2026-08-08T20:00:00.000Z",
-    uploadedBy: "tester",
-    releasedBy: "tester",
-    releasedAt: "2026-08-08T20:00:01.000Z",
-    retentionUntil: "2036-08-08T20:00:00.000Z",
-    legalHold: false,
+    scanEngine: "test-engine",
+    scannedAt: "2026-08-08T20:00:30.000Z",
+    quarantineReason: null,
   },
-  content,
-  headers: {
-    "content-type": "application/pdf",
-    "content-disposition": "attachment; filename=prospectus.pdf",
-    "cache-control": "private, no-store",
-  },
+  content: evidenceContent,
 };
 
-const extractor: ProspectusExtractor = {
-  id: "DETERMINISTIC_TEST_EXTRACTOR",
-  version: "1.0.0",
+const extractor = {
   async extract() {
     return [
       {
-        proposedCanonicalFieldPath: "fund.legal_name",
-        extractedValue: "FCP Test Import",
-        confidence: 0.97,
-        sourceLocation: { page: 1, section: "Dénomination", textAnchor: "FCP Test Import" },
+        fieldPath: "issuer.legal_name",
+        proposedValue: "Example Issuer SA",
+        sourceLocation: "page 1",
+        confidence: 0.98,
       },
     ];
   },
@@ -94,10 +76,13 @@ assert(dirtyRejected, "Unscanned evidence must be rejected.");
 
 let canonicalBypassRejected = false;
 try {
+  // Deliberately construct an invalid runtime payload to exercise the guard. The
+  // double assertion is intentional: the production type correctly makes `true`
+  // unrepresentable, while the runtime guard must still reject untyped/external data.
   assertImportRemainsUnverified({
     ...batch,
     canonicalWriteAllowed: true,
-  } as ProspectusImportBatch);
+  } as unknown as ProspectusImportBatch);
 } catch (error) {
   canonicalBypassRejected = String(error).includes("IMPORT_CANONICAL_WRITE_MUST_REMAIN_FALSE");
 }
@@ -114,13 +99,10 @@ console.log(
         extractionRemainsUnverified: true,
         canonicalWriteDisabled: true,
         readyForSubmissionFalse: true,
+        runtimeCanonicalBypassRejected: true,
       },
     },
     null,
     2,
   ),
 );
-
-function assert(condition: unknown, message: string): asserts condition {
-  if (!condition) throw new Error(message);
-}
