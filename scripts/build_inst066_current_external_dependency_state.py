@@ -2,7 +2,8 @@
 """Overlay confirmed documentary resolutions on the immutable Instruction 66 inventory.
 
 The raw inventory remains historical evidence. This script computes a current state
-without rewriting it and without activating any requirement.
+without rewriting it and without activating any requirement. Resolution counters are
+computed from source-of-truth overlays; they are never hard-coded as expected values.
 """
 
 from __future__ import annotations
@@ -18,9 +19,7 @@ INSTRUCTION_RESOLUTION_PATH = ROOT / "regulatory/registries/INST066_CONFIRMED_IN
 OUTPUT_PATH = ROOT / "regulatory/registries/INST066_CURRENT_EXTERNAL_DEPENDENCY_STATE_V0_1.json"
 VALIDATION_PATH = ROOT / "regulatory/validation/INST066_CURRENT_EXTERNAL_DEPENDENCY_STATE_VALIDATION_V0_1.json"
 
-BLOCK_RE = re.compile(
-    r"(?ms)^  - dependency_id:\s*(\S+)\s*\n(.*?)(?=^  - dependency_id:|\Z)"
-)
+BLOCK_RE = re.compile(r"(?ms)^  - dependency_id:\s*(\S+)\s*\n(.*?)(?=^  - dependency_id:|\Z)")
 FIELD_RE_TEMPLATE = r"(?m)^    {field}:\s*(.+?)\s*$"
 
 
@@ -32,13 +31,7 @@ def field(block: str, name: str) -> str | None:
 
 
 def resolution_section(text: str, source_name: str) -> str:
-    """Return only the YAML `resolutions:` list, excluding explicitly-open entries.
-
-    The overlay files intentionally use the same `- dependency_id:` shape for both
-    confirmed resolutions and explicitly-open dependencies. Parsing the whole file
-    therefore risks treating an open dependency as resolved. Bound the parser to the
-    resolutions section before applying the lightweight deterministic block parser.
-    """
+    """Return only the YAML `resolutions:` list, excluding explicitly-open entries."""
     start_match = re.search(r"(?m)^resolutions:\s*$", text)
     if not start_match:
         raise RuntimeError(f"resolutions section missing from {source_name}")
@@ -108,6 +101,15 @@ def main() -> None:
     if unknown_overlay_ids:
         raise RuntimeError(f"overlay contains IDs absent from raw inventory: {unknown_overlay_ids}")
 
+    raw_resolved_ids = {
+        str(item["dependencyId"])
+        for item in dependencies
+        if isinstance(item.get("resolvedSourceId"), str) and item["resolvedSourceId"].strip()
+    }
+    overlay_on_raw_resolved = sorted(set(overlay) & raw_resolved_ids)
+    if overlay_on_raw_resolved:
+        raise RuntimeError(f"overlay redundantly targets raw-resolved dependencies: {overlay_on_raw_resolved}")
+
     effective: list[dict[str, object]] = []
     unresolved: list[dict[str, object]] = []
     resolved: list[dict[str, object]] = []
@@ -138,15 +140,9 @@ def main() -> None:
             "rawReferenceStatus": raw.get("referenceStatus"),
             "effectiveReferenceStatus": "RESOLVED_DOCUMENTARY" if is_resolved else "UNRESOLVED",
             "resolvedSourceId": effective_source if is_resolved else None,
-            "officialReference": (
-                overlay_resolution.get("officialReference")
-                if overlay_resolution
-                else raw.get("officialReference")
-            ),
+            "officialReference": overlay_resolution.get("officialReference") if overlay_resolution else raw.get("officialReference"),
             "resolutionOrigin": resolution_origin,
-            "resolutionOverlayRegistry": (
-                overlay_resolution.get("overlayRegistry") if overlay_resolution else None
-            ),
+            "resolutionOverlayRegistry": overlay_resolution.get("overlayRegistry") if overlay_resolution else None,
             "activation": "FORBIDDEN",
             "legalReviewStatus": "PENDING",
             "complianceReviewStatus": "PENDING",
@@ -159,8 +155,7 @@ def main() -> None:
 
     total = len(effective)
     raw_expected = int(inventory["summary"]["dependencyOccurrenceCount"])
-    if total != raw_expected:
-        raise RuntimeError(f"raw occurrence count mismatch: {total} != {raw_expected}")
+    raw_counts_by_kind = inventory["summary"].get("countsByKind", {})
 
     circular = counts_by_kind.get("COUNCIL_CIRCULAR", {})
     instruction = counts_by_kind.get("COUNCIL_INSTRUCTION", {})
@@ -181,6 +176,7 @@ def main() -> None:
             "confirmedOverlayResolutionCount": declared_overlay_count,
             "confirmedCircularOverlayResolutionCount": circular_count,
             "confirmedInstructionFamilyOverlayResolutionCount": instruction_count,
+            "rawInventoryResolvedCount": len(raw_resolved_ids),
             "circularOccurrenceCount": circular.get("total", 0),
             "resolvedCircularCount": circular.get("resolved", 0),
             "unresolvedCircularCount": circular.get("unresolved", 0),
@@ -205,40 +201,43 @@ def main() -> None:
         },
     }
 
-    expected_summary = {
-        "dependencyOccurrenceCount": 49,
-        "resolvedDocumentaryCount": 32,
-        "unresolvedDocumentaryCount": 17,
-        "confirmedOverlayResolutionCount": 30,
-        "confirmedCircularOverlayResolutionCount": 25,
-        "confirmedInstructionFamilyOverlayResolutionCount": 5,
-        "circularOccurrenceCount": 34,
-        "resolvedCircularCount": 25,
-        "unresolvedCircularCount": 9,
-        "instructionOccurrenceCount": 7,
-        "resolvedInstructionCount": 4,
-        "unresolvedInstructionCount": 3,
-        "namedInstructionOccurrenceCount": 1,
-        "resolvedNamedInstructionCount": 1,
-        "unresolvedNamedInstructionCount": 0,
-    }
-    actual_summary = output["summary"]
-    checks = {key: actual_summary[key] == expected for key, expected in expected_summary.items()}
-    checks.update(
-        {
-            "overlayIdsAllExistInRawInventory": not unknown_overlay_ids,
-            "overlayRegistriesDoNotOverlap": not overlap,
-            "allEffectiveActivationsForbidden": all(item["activation"] == "FORBIDDEN" for item in effective),
-            "rawInventoryUnmodifiedByDesign": True,
-            "readyForSubmissionFalse": True,
-        }
+    stable_kind_totals_match = all(
+        counts_by_kind.get(kind, {}).get("total", 0) == expected
+        for kind, expected in raw_counts_by_kind.items()
+    ) and set(counts_by_kind) == set(raw_counts_by_kind)
+    per_kind_arithmetic_valid = all(
+        bucket["resolved"] + bucket["unresolved"] == bucket["total"]
+        for bucket in counts_by_kind.values()
     )
+    expected_resolved_from_sources = len(raw_resolved_ids) + declared_overlay_count
+
+    checks = {
+        "rawOccurrenceCountPreserved": total == raw_expected,
+        "resolvedPlusUnresolvedEqualsTotal": len(resolved) + len(unresolved) == total,
+        "overlayDeclaredCountsMatchParsed": declared_overlay_count == len(overlay),
+        "overlayIdsAllExistInRawInventory": not unknown_overlay_ids,
+        "overlayRegistriesDoNotOverlap": not overlap,
+        "overlayDoesNotRedundantlyTargetRawResolved": not overlay_on_raw_resolved,
+        "resolvedCountEqualsRawPlusConfirmedOverlay": len(resolved) == expected_resolved_from_sources,
+        "kindTotalsMatchImmutableInventory": stable_kind_totals_match,
+        "perKindResolvedUnresolvedArithmeticValid": per_kind_arithmetic_valid,
+        "allEffectiveActivationsForbidden": all(item["activation"] == "FORBIDDEN" for item in effective),
+        "allHumanReviewsPending": all(
+            item["legalReviewStatus"] == "PENDING" and item["complianceReviewStatus"] == "PENDING"
+            for item in effective
+        ),
+        "rawInventoryUnmodifiedByDesign": True,
+        "readyForSubmissionFalse": True,
+    }
     validation_result = "PASS" if all(checks.values()) else "FAIL"
     validation = {
         "schemaVersion": "INST066_CURRENT_EXTERNAL_DEPENDENCY_STATE_VALIDATION_V0_1",
         "result": validation_result,
-        "expectedSummary": expected_summary,
-        "actualSummary": {key: actual_summary[key] for key in expected_summary},
+        "computedSummary": output["summary"],
+        "immutableInventoryExpectations": {
+            "dependencyOccurrenceCount": raw_expected,
+            "countsByKind": raw_counts_by_kind,
+        },
         "checks": checks,
     }
 
@@ -246,7 +245,7 @@ def main() -> None:
     VALIDATION_PATH.parent.mkdir(parents=True, exist_ok=True)
     OUTPUT_PATH.write_text(json.dumps(output, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
     VALIDATION_PATH.write_text(json.dumps(validation, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
-    print(json.dumps({"result": validation_result, **validation["actualSummary"]}, ensure_ascii=False))
+    print(json.dumps({"result": validation_result, **output["summary"]}, ensure_ascii=False))
     if validation_result != "PASS":
         raise SystemExit(2)
 
