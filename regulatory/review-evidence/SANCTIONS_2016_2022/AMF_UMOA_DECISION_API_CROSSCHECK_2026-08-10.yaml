@@ -1,0 +1,77 @@
+evidence_id: AMF_UMOA_DECISION_API_CROSSCHECK_2026_08_10
+review_date: 2026-08-10
+scope: DECISION_CM_10_06_2022_CURRENT_AMF_UMOA_API_DISCOVERY
+
+source:
+  authority: AMF-UMOA
+  api_endpoint: https://www.amf-umoa.org/service/api/elastic/actualite
+  catalog: regulatory/registries/AMF_UMOA_DECISION_API_CATALOG_V0_1.json
+  validation: regulatory/validation/AMF_UMOA_DECISION_API_CATALOG_VALIDATION_V0_1.json
+  workflow: .github/workflows/build-amf-umoa-decision-api-catalog.yml
+  workflow_run_id: 31420962177
+  workflow_result: SUCCESS
+  method: OFFICIAL_FRONTEND_API_BOUNDED_MULTI_YEAR_SCAN
+  scan_id_range: [1000160, 1000210]
+
+validation_witnesses:
+  - actualite_id: 1000178
+    expected_reference: CM/13/12/2011
+    found: true
+    reference_matches: true
+  - actualite_id: 1000179
+    expected_reference: CM/SJ/O01/03/2016
+    found: true
+    reference_matches: true
+  - actualite_id: 1000182
+    expected_reference: CM/07/09/2021
+    found: true
+    reference_matches: true
+
+results:
+  current_public_decision_count_observed: 10
+  api_decision_count_recovered: 10
+  exact_cm_10_06_2022_reference_match_count: 0
+  sanctions_subject_match_count: 1
+  sanctions_subject_matches:
+    - actualite_id: 1000179
+      reference: CM/SJ/O01/03/2016
+      subject: "mise en oeuvre du dispositif des sanctions pécuniaires applicables sur le marché financier régional de l'UMOA"
+  conclusion: >-
+    Le scan borné de l'API officielle AMF-UMOA retrouve exactement dix objets de
+    catégorie Décision, soit le même nombre que le registre public courant, et valide
+    trois témoins connus. Aucun objet ne porte la référence CM/10/06/2022. Le seul
+    objet dont l'intitulé porte sur les sanctions pécuniaires est la Décision 2016.
+
+institutional_cross_evidence:
+  bceao_2022_adoption: >-
+    La BCEAO confirme que le Conseil des Ministres a adopté le 24 juin 2022 un
+    dispositif révisé des sanctions pécuniaires applicables au marché financier régional.
+  centif_exact_reference: >-
+    La CENTIF Sénégal référence explicitement la Décision n° CM/10/06/2022 relative
+    à la mise en œuvre du dispositif des sanctions pécuniaires.
+  combined_interpretation: >-
+    L'absence de la Décision CM/10/06/2022 dans le catalogue API courant ne vaut pas
+    preuve d'inexistence, d'abrogation ou d'inapplicabilité, car son adoption et sa
+    référence sont attestées par d'autres autorités publiques. Elle établit seulement
+    que le binaire n'est pas exposé comme l'un des dix objets Décision de l'API
+    officielle actuelle dans la plage contrôlée.
+
+recovery_boundary:
+  blind_current_amf_api_search_exhausted_for_scanned_range: true
+  preferred_next_routes:
+    - CENTIF_SENEGAL_DOCUMENT_LINK_OR_ARCHIVE
+    - BCEAO_OR_UMOA_COUNCIL_ARCHIVE
+    - MEMBER_STATE_OFFICIAL_JOURNAL_OR_GOVERNMENT_ARCHIVE
+    - AMF_UMOA_UNINDEXED_OR_LEGACY_ARCHIVE_OUTSIDE_CURRENT_DECISION_CATALOG
+  infer_binary_content_from_secondary_source: false
+  infer_2016_2022_legal_relationship: false
+  infer_sanction_amounts: false
+
+safety:
+  official_or_institutional_binary_required_before_active_atomization: true
+  automatic_relationship_inference_allowed: false
+  automatic_sanction_rule_activation_allowed: false
+  automatic_sanction_amount_activation_allowed: false
+  human_legal_review_required: true
+  human_compliance_review_required: true
+  ready_for_submission_must_remain_false: true
