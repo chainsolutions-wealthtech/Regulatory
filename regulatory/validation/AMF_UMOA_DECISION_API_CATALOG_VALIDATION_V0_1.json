@@ -1,0 +1,36 @@
+{
+  "schemaVersion": "AMF_UMOA_DECISION_API_CATALOG_VALIDATION_V0_1",
+  "result": "PASS",
+  "checks": {
+    "knownWitnessesRecovered": true,
+    "atLeastCurrentPublicDecisionCountRecovered": true,
+    "scanIsBounded": true,
+    "automaticSanctionActivationForbidden": true,
+    "readyForSubmissionFalse": true
+  },
+  "decisionCount": 10,
+  "expectedMinimum": 10,
+  "sanctions2022ExactReferenceMatchCount": 0,
+  "sanctionsSubjectMatchCount": 1,
+  "witnessChecks": [
+    {
+      "actualiteId": 1000178,
+      "expectedReference": "CM/13/12/2011",
+      "found": true,
+      "referenceMatches": true
+    },
+    {
+      "actualiteId": 1000179,
+      "expectedReference": "CM/SJ/O01/03/2016",
+      "found": true,
+      "referenceMatches": true
+    },
+    {
+      "actualiteId": 1000182,
+      "expectedReference": "CM/07/09/2021",
+      "found": true,
+      "referenceMatches": true
+    }
+  ],
+  "nextAction": "If CM/10/06/2022 is found, materialize its own official API binary and compare it to the 2016 source. If not found, preserve the institutional non-indexed recovery boundary and do not infer its contents."
+}
