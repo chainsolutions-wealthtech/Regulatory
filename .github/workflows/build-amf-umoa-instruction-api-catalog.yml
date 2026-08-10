@@ -1,6 +1,12 @@
 name: Build AMF-UMOA Instruction API Catalog
 
 on:
+  push:
+    branches:
+      - main
+    paths:
+      - .github/workflows/build-amf-umoa-instruction-api-catalog.yml
+      - scripts/build_amf_umoa_instruction_api_catalog.py
   workflow_dispatch:
 
 permissions:
@@ -66,5 +72,6 @@ jobs:
             echo 'No catalog changes to commit.'
           else
             git commit -m 'chore: refresh official AMF-UMOA Instruction API catalog'
+            git pull --rebase origin main
             git push origin HEAD:main
           fi
