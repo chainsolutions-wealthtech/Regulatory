@@ -1,0 +1,73 @@
+evidence_id: INSTRUCTION_64_ART025_INVESTMENT_COMPANY_DEADLINE_RESOLUTION_2026_08_10
+review_date: 2026-08-10
+source_instruction: INSTRUCTION_66_CREPMF_2021
+dependency_id: INST066_ART025_DEP_INST_01
+article_number: 25
+dependency_kind: COUNCIL_INSTRUCTION
+
+instruction_66_delegated_scope:
+  article_title: "Conditions d’agrément des Sociétés d’Investissement"
+  subject: "délais applicables à l'agrément d'une Société d'Investissement"
+  source_wording: "une Instruction du Conseil Régional précise les délais"
+
+instruction_66_definition_link:
+  article: 1
+  definition_opc: >-
+    Un Organisme de Placement Collectif (OPC) peut être en forme contractuelle de
+    Fonds Commun de Placement ou en forme de Société d’Investissement.
+  definition_investment_company: "Société d’Investissement : des OPC dotés de la personnalité morale."
+  conclusion: SOCIETE_D_INVESTISSEMENT_IS_EXPLICITLY_AN_OPC_UNDER_INSTRUCTION_66
+
+resolved_documentary_source:
+  source_id: INSTRUCTION_64_CREPMF_2020
+  reference: "Instruction n°64/CREPMF/2020"
+  repository_pdf: regulatory/sources/amf-umoa-priority-api-documents/INSTRUCTION_64_CREPMF_2020.pdf
+  repository_text: regulatory/sources/amf-umoa-priority-api-documents/INSTRUCTION_64_CREPMF_2020.txt
+  sha256: db5091c4388e5c050c22b028e7494522e36d6b5b041ba265cf96ccedada24469
+  page_count: 97
+
+scope_comparison:
+  instruction_64_article_1: >-
+    L'Instruction fixe les règles en matière de processus d'agrément et d'approbation
+    des acteurs du marché financier régional.
+  instruction_64_article_2: >-
+    Le champ d'application inclut expressément les Organismes de Placement Collectif
+    (OPC), ainsi que toute autre entité devant être agréée ou approuvée par le Conseil Régional.
+  instruction_64_article_3: >-
+    La décision du Conseil Régional intervient dans un délai maximum de trois (3) mois
+    à compter de la date de dépôt du dossier.
+  instruction_64_article_14: >-
+    Le Conseil Régional dispose d'un délai maximum de trois (3) mois à compter du
+    dépôt de la demande pour se prononcer sur la demande d'agrément et rendre sa décision.
+  comparison_result: EXACT_IMPLEMENTING_SCOPE_MATCH
+  rationale: >-
+    L'article 25 de l'Instruction 66 renvoie à une Instruction pour les délais
+    d'agrément des Sociétés d'Investissement. L'article 1 de l'Instruction 66 qualifie
+    expressément ces Sociétés d'Investissement d'OPC. Instruction 64 s'applique
+    expressément aux OPC et fixe le délai maximal de décision d'agrément. Il n'est
+    donc pas nécessaire d'inférer une extension de catégorie : le rattachement OPC
+    provient du texte source lui-même.
+
+resolution:
+  documentary_status: RESOLVED
+  resolved_source_id: INSTRUCTION_64_CREPMF_2020
+  resolution_basis: EXPLICIT_INVESTMENT_COMPANY_IS_OPC_DEFINITION_PLUS_INSTRUCTION64_OPC_SCOPE_AND_ARTICLE14_DEADLINE
+  current_legal_status: NON_ABROGE_AS_LISTED_ON_2026_08_08_PENDING_FULL_LEGAL_REVIEW
+  legal_review_status: PENDING
+  compliance_review_status: PENDING
+  activation: FORBIDDEN
+
+preserved_open_distinction:
+  dependency_id: INST066_ART017_DEP_INST_01
+  reason: >-
+    Instruction 64 fixe un délai maximal de décision et prévoit la notification des
+    décisions, mais n'identifie pas un délai post-décision distinct pour cette notification.
+    Cette dépendance reste ouverte et n'est pas assimilée à la présente résolution.
+
+boundary:
+  documentary_resolution_is_requirement_activation: false
+  automatic_dependency_resolution_allowed: false
+  automatic_requirement_activation_allowed: false
+  human_legal_review_required: true
+  human_compliance_review_required: true
+  ready_for_submission_must_remain_false: true
