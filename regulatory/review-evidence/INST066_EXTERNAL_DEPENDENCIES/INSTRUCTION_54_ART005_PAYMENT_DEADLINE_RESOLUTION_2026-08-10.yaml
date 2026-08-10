@@ -1,0 +1,70 @@
+evidence_id: INSTRUCTION_54_ART005_PAYMENT_DEADLINE_RESOLUTION_2026_08_10
+review_date: 2026-08-10
+source_instruction: INSTRUCTION_66_CREPMF_2021
+dependency_id: INST066_ART005_DEP_INST_03
+article_number: 5
+dependency_kind: COUNCIL_INSTRUCTION
+
+instruction_66_delegated_scope:
+  subject: "délais de règlement des frais d'agrément après agrément de la Société de Gestion d'OPC"
+  structure: >-
+    L'article 5 distingue expressément les montants des frais d'agrément, renvoyés à
+    une Décision du Conseil des Ministres de l'UMOA, et les délais de règlement,
+    renvoyés à une Instruction du Conseil Régional.
+
+resolved_documentary_source:
+  source_id: INSTRUCTION_54_CREPMF_2017_REVISEE
+  reference: "Instruction n°54/CREPMF/2017 révisée"
+  official_actualite_id: 1000098
+  repository_pdf: regulatory/sources/amf-umoa-pending-api-backfill/INSTRUCTION_54_CREPMF_2017_REVISEE.pdf
+  repository_text: regulatory/sources/amf-umoa-pending-api-backfill/INSTRUCTION_54_CREPMF_2017_REVISEE.txt
+  repository_metadata: regulatory/sources/amf-umoa-pending-api-backfill/INSTRUCTION_54_CREPMF_2017_REVISEE.metadata.json
+  sha256: 2d2d1c130579c99dc5898b166d0c252d4a07f7a6a0b02c0058e953cf838596a9
+  byte_size: 1635759
+  page_count: 9
+  extraction_method: OCR_TESSERACT_FRA_FALLBACK
+  useful_text_chars: 13724
+
+scope_comparison:
+  instruction_54_title_scope: >-
+    Modalités de facturation, de paiement et de recouvrement des redevances, frais
+    et commissions perçus par le Conseil Régional.
+  implementing_section: "TITRE VI : FRAIS POUR HABILITATION, AGRÉMENT ET APPROBATION"
+  article_18_effect: >-
+    Les frais pour habilitation, agrément et approbation sont dus au titre de la
+    délivrance des habilitations, agréments ou approbations. Ils sont exigibles dans
+    un délai de quinze (15) jours calendaires à compter de la date d'envoi de la facture.
+  article_19_effect: >-
+    Les redevables disposent d'un délai maximum de quinze (15) jours calendaires à
+    compter de la date d'envoi de leur facture pour effectuer le paiement de ces frais.
+  comparison_result: EXACT_IMPLEMENTING_SCOPE_MATCH
+  rationale: >-
+    Le renvoi de l'Instruction 66 porte précisément sur le délai de règlement des
+    frais d'agrément. Les articles 18 et 19 de l'Instruction 54 révisée portent sur la
+    même catégorie de frais et déterminent précisément ce délai. Le volet montant
+    tarifaire demeure distinct et relève de la Décision du Conseil des Ministres.
+
+separate_tariff_role:
+  source_id: DECISION_CM_13_12_2011_TARIFS
+  repository_pdf: regulatory/sources/amf-umoa-pending-api-backfill/DECISION_CM_13_12_2011_TARIFS.pdf
+  role: AMOUNT_OR_TARIFF_REVIEW_SEPARATE_FROM_PAYMENT_DEADLINE
+  automatic_amount_activation_allowed: false
+
+resolution:
+  documentary_status: RESOLVED
+  resolved_source_id: INSTRUCTION_54_CREPMF_2017_REVISEE
+  resolution_basis: EXACT_ARTICLE_5_PAYMENT_DEADLINE_SCOPE_AND_INSTRUCTION_54_TITLE_VI_ARTICLES_18_19
+  current_legal_status: PENDING_COMPLETE_CURRENT_LEGAL_STATUS_AND_LATER_AMENDMENTS_REVIEW
+  legal_review_status: PENDING
+  compliance_review_status: PENDING
+  activation: FORBIDDEN
+
+boundary:
+  portal_abroge_metadata_is_legal_status_proof: false
+  documentary_resolution_is_requirement_activation: false
+  automatic_dependency_resolution_allowed: false
+  automatic_requirement_activation_allowed: false
+  automatic_fee_amount_activation_allowed: false
+  human_legal_review_required: true
+  human_compliance_review_required: true
+  ready_for_submission_must_remain_false: true
