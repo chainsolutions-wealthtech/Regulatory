@@ -20,27 +20,38 @@ official_api:
     PUBLIQUE ET DES MARCHÉS FINANCIERS
   portal_date_observed: 2023-08-24
   portal_date_is_adoption_or_effective_date: false
-  observed_on: 2026-08-08
-  route_status: OFFICIAL_DETAIL_ROUTE_IDENTIFIED
+  portal_valide_observed: true
+  portal_abroge_observed: false
+  portal_abroge_is_legal_status_proof: false
+  observed_on: 2026-08-10
+  route_status: OFFICIAL_DETAIL_ROUTE_MATERIALIZED
 
 source_integrity:
-  official_binary_transport: AMF_UMOA_DETAIL_API_DOC_EXPECTED
-  repository_copy: null
-  sha256: null
-  byte_size: null
-  page_count: null
-  copy_status: OFFICIAL_ROUTE_IDENTIFIED_MATERIALIZATION_BLOCKED_BY_GITHUB_ACTIONS_BILLING
+  official_binary_transport: AMF_UMOA_DETAIL_API_DOC_BASE64
+  repository_copy: regulatory/sources/amf-umoa-pending-api-backfill/INSTRUCTION_54_CREPMF_2017_REVISEE.pdf
+  extracted_text_copy: regulatory/sources/amf-umoa-pending-api-backfill/INSTRUCTION_54_CREPMF_2017_REVISEE.txt
+  metadata_copy: regulatory/sources/amf-umoa-pending-api-backfill/INSTRUCTION_54_CREPMF_2017_REVISEE.metadata.json
+  sha256: 2d2d1c130579c99dc5898b166d0c252d4a07f7a6a0b02c0058e953cf838596a9
+  byte_size: 1635759
+  page_count: 9
+  text_extraction_method: OCR_TESSERACT_FRA_FALLBACK
+  useful_text_chars: 13724
+  copy_status: MATERIALIZED_FROM_OFFICIAL_AMF_UMOA_API_AND_IDENTITY_VALIDATED
 
 inst066_candidate_relationships:
   - dependency_id: INST066_ART005_DEP_INST_03
     inst066_subject: "délais de règlement des frais d'agrément après agrément de la Société de Gestion d'OPC"
     rationale: >-
-      L'objet officiel de l'Instruction 54/2017 révisée porte précisément sur les
-      modalités de facturation, paiement et recouvrement des redevances, frais et
-      commissions perçus par le Conseil Régional. Cette proximité en fait le candidat
-      prioritaire pour le délai de règlement visé par l'article 5 de l'Instruction 66.
-    match_status: STRONG_TITLE_SCOPE_CANDIDATE_OWN_BINARY_REVIEW_REQUIRED
-    resolved: false
+      L'article 5 de l'Instruction 66 distingue les montants des frais d'agrément,
+      fixés par une Décision du Conseil des Ministres, et leurs délais de règlement,
+      fixés par une Instruction du Conseil Régional. Le Titre VI de l'Instruction
+      54/CREPMF/2017 révisée traite spécifiquement des frais pour habilitation,
+      agrément et approbation. Ses articles 18 et 19 fixent l'exigibilité et le délai
+      maximal de paiement à quinze (15) jours calendaires à compter de l'envoi de la
+      facture. La portée déléguée et la portée du texte d'application correspondent.
+    match_status: EXACT_DOCUMENTARY_IMPLEMENTING_MATCH_PENDING_LEGAL_AND_COMPLIANCE_REVIEW
+    resolved_documentary_level: true
+    requirement_activation_allowed: false
 
 related_tariff_source_candidate:
   source_id: DECISION_CM_13_12_2011_TARIFS
@@ -49,31 +60,35 @@ related_tariff_source_candidate:
   detail_url: "https://www.amf-umoa.org/service/api/elastic/actualite?id=1000178&langue=fr"
   document_url_field: "AC-DECISION-2025-F85A41EA-3271-458A-B2AF-7777802F18FB.pdf"
   title: "Décision portant fixation des tarifs du Conseil Régional de l'Épargne Publique et des Marchés Financiers"
+  materialized_binary: regulatory/sources/amf-umoa-pending-api-backfill/DECISION_CM_13_12_2011_TARIFS.pdf
   relationship_to_inst066_article5: >-
     L'article 5 de l'Instruction 66 distingue les montants des frais, précisés dans
     une Décision du Conseil des Ministres, et leurs délais de règlement, fixés par
-    une Instruction du Conseil Régional. La Décision 2011 est donc la candidate
-    institutionnelle pour le volet tarifaire, tandis que l'Instruction 54 est la
-    candidate pour facturation/paiement/recouvrement.
-  relationship_status: OFFICIAL_PAIR_IDENTIFIED_BOTH_BINARIES_TO_MATERIALIZE_AND_COMPARE
+    une Instruction du Conseil Régional. La Décision 2011 est donc la source
+    institutionnelle à analyser séparément pour le volet tarifaire. La résolution
+    documentaire du délai vers Instruction 54 n'active aucun montant tarifaire.
+  relationship_status: OFFICIAL_PAIR_MATERIALIZED_SEPARATE_AMOUNT_AND_PAYMENT_ROLES
 
 legal_metadata:
-  act_date: PENDING_OFFICIAL_BINARY_REVIEW
-  effective_from: PENDING_OFFICIAL_BINARY_REVIEW
-  current_legal_status: PENDING_DIRECT_BINARY_AND_LEGAL_REVIEW
+  original_instruction_date: 2017-12-18
+  revision_deliberation_reference: "52e session extraordinaire du 21 décembre 2021"
+  act_date: PENDING_EXACT_SIGNATURE_DATE_REVIEW_FROM_BINARY
+  effective_from: PENDING_FINAL_CLAUSE_REVIEW
+  current_legal_status: PENDING_COMPLETE_CURRENT_LEGAL_STATUS_AND_LATER_AMENDMENTS_REVIEW
   amendments_and_rectifications: TO_COMPLETE
+  legal_review_status: PENDING
+  compliance_review_status: PENDING
 
 next_steps:
-  - MATERIALIZE_DETAIL_API_BINARY_AFTER_GITHUB_ACTIONS_RECOVERY
-  - SEARCH_TEXT_FOR_AGREMENT_AND_SPECIFIC_PAYMENT_DEADLINES
-  - IDENTIFY_EFFECTIVE_DATE_AND_REVISION_CLAUSES
-  - MATERIALIZE_AND_COMPARE_DECISION_CM_13_12_2011_TARIFS
-  - CHECK_LATER_TARIFF_OR_PAYMENT_REVISIONS
-  - HUMAN_LEGAL_AND_COMPLIANCE_REVIEW
+  - VERIFY_EXACT_SIGNATURE_AND_EFFECTIVE_DATE_FROM_FINAL_BINARY_PAGES
+  - CHECK_LATER_AMF_UMOA_AMENDMENTS_OR_REPLACEMENT
+  - REVIEW_MATERIALIZED_DECISION_CM_13_12_2011_FOR_TARIFF_ROLE_ONLY
+  - HUMAN_LEGAL_AND_COMPLIANCE_REVIEW_BEFORE_ANY_ACTIVATION
 
 safety:
   title_match_is_resolution: false
-  candidate_match_is_resolution: false
+  binary_materialization_is_requirement_activation: false
+  documentary_resolution_is_requirement_activation: false
   automatic_dependency_resolution_allowed: false
   automatic_requirement_activation_allowed: false
   automatic_fee_amount_activation_allowed: false
