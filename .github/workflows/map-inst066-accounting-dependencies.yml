@@ -7,6 +7,8 @@ on:
     paths:
       - .github/workflows/map-inst066-accounting-dependencies.yml
       - scripts/map_inst066_accounting_dependencies.py
+      - regulatory/materialized/REGLEMENT_09_2006_CM_UEMOA_ACCOUNTING.pdf
+      - regulatory/materialized/REGLEMENT_09_2006_CM_UEMOA_ACCOUNTING.txt
       - regulatory/materialized/REGLEMENT_09_2006_CM_UEMOA_ACCOUNTING.metadata.json
       - regulatory/validation/REGLEMENT_09_2006_ACCOUNTING_MATERIALIZATION_VALIDATION_V0_1.json
       - regulatory/sources/REGLEMENT_09_2006_CM_UEMOA_ACCOUNTING.yaml
