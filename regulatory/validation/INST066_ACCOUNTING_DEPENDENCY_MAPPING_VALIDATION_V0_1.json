@@ -1,0 +1,30 @@
+{
+  "validationId": "INST066_ACCOUNTING_DEPENDENCY_MAPPING_VALIDATION_V0_1",
+  "status": "PASS",
+  "checks": {
+    "sourceMaterializationPass": true,
+    "candidateSourceMaterialized": true,
+    "exactlyFiveAccountingDependencies": true,
+    "allMappingsUseSameHash": true,
+    "referenceDetectedInCandidateBinary": true,
+    "accountingTitleDetectedInCandidateBinary": true,
+    "currentVersionRemainsPending": true,
+    "noDependencyMarkedResolved": true,
+    "allActivationForbidden": true,
+    "automaticResolutionForbidden": true,
+    "readyForSubmissionRemainsFalse": true
+  },
+  "metrics": {
+    "dependencyCount": 5,
+    "articleNumbers": [
+      13,
+      37
+    ],
+    "candidateSha256": "c16e59041607556b2c740d0d2c703574aa3369d78bdbbbea61444db25997619f",
+    "opcvmTextHitPageCount": 31
+  },
+  "outputs": [
+    "regulatory/registries/INST066_ACCOUNTING_DEPENDENCY_MAPPING_V0_1.json"
+  ],
+  "caveat": "PASS validates deterministic mapping to a materialized 2006 candidate only. It does not establish the currently applicable accounting referential or resolve any dependency."
+}
