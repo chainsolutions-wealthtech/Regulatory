@@ -40,7 +40,7 @@ adoption_evidence:
 
 current_amf_umoa_state:
   decision_index_url: https://www.amf-umoa.org/reglementation/decision
-  checked_on: 2026-08-08
+  checked_on: 2026-08-10
   current_decision_count_observed: 10
   decision_2016_present: true
   decision_2016_status_observed: NON_ABROGE
@@ -50,10 +50,27 @@ current_amf_umoa_state:
     - CM/17/09/2022
     - CM/15/09/2022
     - CM/13/09/2022
+  api_catalog_crosscheck:
+    catalog: regulatory/registries/AMF_UMOA_DECISION_API_CATALOG_V0_1.json
+    validation: regulatory/validation/AMF_UMOA_DECISION_API_CATALOG_VALIDATION_V0_1.json
+    evidence: regulatory/review-evidence/SANCTIONS_2016_2022/AMF_UMOA_DECISION_API_CROSSCHECK_2026-08-10.yaml
+    workflow_run_id: 31420962177
+    result: PASS
+    scan_id_range: [1000160, 1000210]
+    api_decision_count_recovered: 10
+    exact_cm_10_06_2022_match_count: 0
+    sanctions_subject_match_count: 1
+    sanctions_subject_only_reference: CM/SJ/O01/03/2016
+    witness_references_confirmed:
+      - CM/13/12/2011
+      - CM/SJ/O01/03/2016
+      - CM/07/09/2021
   interpretation_boundary: >-
-    L'absence de CM/10/06/2022 de la table et de la catégorie Decision de l'API
-    actuelle ne vaut pas preuve d'inexistence ou d'inapplicabilité, puisque la BCEAO
-    confirme son adoption et la CENTIF en confirme la référence et l'objet.
+    L'absence de CM/10/06/2022 de la table et du catalogue borné de la catégorie
+    Decision de l'API actuelle ne vaut pas preuve d'inexistence ou d'inapplicabilité,
+    puisque la BCEAO confirme son adoption et la CENTIF en confirme la référence et
+    l'objet. Le scan API établit seulement que cette Décision n'est pas exposée comme
+    l'un des dix objets Decision de l'API officielle actuelle dans la plage contrôlée.
 
 source_integrity:
   official_or_institutional_binary_url: TO_IDENTIFY
@@ -61,14 +78,15 @@ source_integrity:
     - CENTIF_SENEGAL_DOCUMENT_LINK_OR_ARCHIVE
     - BCEAO_OR_UMOA_COUNCIL_ARCHIVE
     - MEMBER_STATE_OFFICIAL_JOURNAL_OR_GOVERNMENT_ARCHIVE
-    - AMF_UMOA_UNINDEXED_ARCHIVE
+    - AMF_UMOA_UNINDEXED_OR_LEGACY_ARCHIVE_OUTSIDE_CURRENT_DECISION_CATALOG
   repository_copy: null
   sha256: null
   byte_size: null
   page_count: null
   copy_status: OFFICIAL_OR_INSTITUTIONAL_BINARY_NOT_MATERIALIZED
   acquisition_search_evidence: regulatory/review-evidence/SANCTIONS_2016_2022/OFFICIAL_BINARY_SEARCH_2026-08-08.yaml
-  acquisition_status: REFERENCE_ADOPTION_AND_TITLE_CONFIRMED_BINARY_NOT_IDENTIFIED
+  current_api_crosscheck_evidence: regulatory/review-evidence/SANCTIONS_2016_2022/AMF_UMOA_DECISION_API_CROSSCHECK_2026-08-10.yaml
+  acquisition_status: REFERENCE_ADOPTION_AND_TITLE_CONFIRMED_CURRENT_AMF_API_EXHAUSTED_BINARY_NOT_IDENTIFIED
 
 legal_metadata:
   adopted_on: 2022-06-24
@@ -119,5 +137,6 @@ safety:
 
 notes:
   - "La Décision 2022 est institutionnellement attestée ; seul son binaire reste à acquérir."
-  - "Les quatre Décisions 2022 actuellement visibles dans la table AMF concernent d'autres objets et ne doivent pas être confondues avec CM/10/06/2022."
+  - "Le scan API officiel borné récupère exactement les dix Décisions actuellement exposées et ne contient pas CM/10/06/2022."
+  - "Les quatre Décisions de septembre 2022 visibles dans la table AMF concernent d'autres objets et ne doivent pas être confondues avec CM/10/06/2022."
   - "Aucun montant, barème, seuil, catégorie de manquement ou effet juridique ne doit être activé avant lecture du binaire et comparaison 2016↔2022."
