@@ -1,0 +1,34 @@
+{
+  "validationId": "REGLEMENT_09_2006_ACCOUNTING_MATERIALIZATION_VALIDATION_V0_1",
+  "status": "PASS",
+  "sourceId": "REGLEMENT_09_2006_CM_UEMOA_ACCOUNTING",
+  "checks": {
+    "officialGovernmentPdfDownloaded": true,
+    "pdfMagicConfirmed": true,
+    "sha256Computed": true,
+    "byteSizePositive": true,
+    "pageCountPositive": true,
+    "textExtracted": true,
+    "regulationReferenceDetected": true,
+    "accountingTitleTermsDetected": true,
+    "referencePageLocated": true,
+    "currentVersionNotInferred": true,
+    "requirementActivationAllowed": false,
+    "humanLegalReviewRequired": true,
+    "humanComplianceReviewRequired": true
+  },
+  "metrics": {
+    "byteSize": 362526,
+    "pageCount": 137,
+    "usableTextCharacterCount": 157744,
+    "referencePageCount": 2,
+    "accountingTitlePageCount": 136,
+    "opcvmTextHitPageCount": 31
+  },
+  "outputs": [
+    "regulatory/materialized/REGLEMENT_09_2006_CM_UEMOA_ACCOUNTING.pdf",
+    "regulatory/materialized/REGLEMENT_09_2006_CM_UEMOA_ACCOUNTING.txt",
+    "regulatory/materialized/REGLEMENT_09_2006_CM_UEMOA_ACCOUNTING.metadata.json"
+  ],
+  "caveat": "PASS validates the official archive binary and identity of Regulation 09/2006 only. It does not establish that the 2006 accounting referential is still the current version, nor does it automatically resolve the five Instruction 66 accounting dependencies."
+}

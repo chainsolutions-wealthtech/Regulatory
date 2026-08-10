@@ -27,13 +27,13 @@ official_identification:
 source_integrity:
   official_binary_url: "https://sgg-mali.ml/txts-droit-reg/UEMOA-Reglement-2006-09-intervenants-agrees-marche-financier-regional.pdf"
   binary_provenance: OFFICIAL_MEMBER_STATE_GOVERNMENT_ARCHIVE_COPY
-  repository_copy: null
-  extracted_text_copy: null
-  metadata_copy: null
-  sha256: null
-  byte_size: null
-  page_count: null
-  copy_status: OFFICIAL_GOVERNMENT_BINARY_URL_IDENTIFIED_NOT_MATERIALIZED
+  repository_copy: regulatory/materialized/REGLEMENT_09_2006_CM_UEMOA_ACCOUNTING.pdf
+  extracted_text_copy: regulatory/materialized/REGLEMENT_09_2006_CM_UEMOA_ACCOUNTING.txt
+  metadata_copy: regulatory/materialized/REGLEMENT_09_2006_CM_UEMOA_ACCOUNTING.metadata.json
+  sha256: c16e59041607556b2c740d0d2c703574aa3369d78bdbbbea61444db25997619f
+  byte_size: 362526
+  page_count: 137
+  copy_status: MATERIALIZED_HASHED_AND_IDENTITY_VALIDATED
 
 legal_metadata:
   adopted_on: 2006-06-29
@@ -66,7 +66,7 @@ inst066_relationships:
     version juridiquement applicable.
 
 materialization_plan:
-  status: OFFICIAL_GOVERNMENT_BINARY_READY_FOR_MATERIALIZATION
+  status: MATERIALIZED_FROM_OFFICIAL_MEMBER_STATE_GOVERNMENT_ARCHIVE
   next_steps:
     - DOWNLOAD_OFFICIAL_SGG_MALI_PDF
     - VERIFY_PDF_MAGIC
