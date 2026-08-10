@@ -1,5 +1,5 @@
 evidence_id: INST066_ACCOUNTING_CURRENT_VERSION_SEARCH_2026_08_08
-review_date: 2026-08-08
+review_date: 2026-08-10
 source_id: INSTRUCTION_66_CREPMF_2021
 dependency_family: SPECIFIC_ACCOUNTING_REGULATION
 candidate_source: regulatory/sources/REGLEMENT_09_2006_CM_UEMOA_ACCOUNTING.yaml
@@ -14,24 +14,51 @@ established_official_facts:
     La BCEAO confirme officiellement que le Conseil des Ministres a adopté le
     29 juin 2006 les règles comptables spécifiques applicables aux intervenants agréés.
   - >-
+    Le communiqué BCEAO du 23 septembre 2021 décrit encore la révision des règles
+    comptables spécifiques comme un chantier de réforme en cours.
+  - >-
     L'AMF-UMOA a indiqué en 2023 qu'un référentiel comptable spécifique existait
     depuis plus de dix ans et qu'un chantier de révision avait été engagé afin de
     prendre en compte les évolutions réglementaires, institutionnelles et comptables.
+  - >-
+    L'atelier AMF-UMOA de mars 2023 concernait la validation d'un rapport provisoire
+    du plan comptable révisé. Cette formulation ne constitue pas une adoption ni une
+    entrée en vigueur d'un texte de remplacement.
 
-current_repository_state_checked_on_2026_08_08:
+current_repository_state_checked_on_2026_08_10:
   source_record: PRESENT
-  materializer_script: PRESENT
+  materializer_v1_script: PRESENT
+  materializer_v2_first_party_context_script: PRESENT
   materialization_workflow: PRESENT
   official_government_binary_url_identified: true
-  repository_pdf: ABSENT_ON_MAIN
-  repository_text: ABSENT_ON_MAIN
-  repository_metadata: ABSENT_ON_MAIN
-  derived_mapping_registry: ABSENT_ON_MAIN
+  repository_pdf: PRESENT
+  repository_text: PRESENT
+  repository_metadata: PRESENT
+  materialization_validation: PASS
+  derived_mapping_registry: PRESENT
+  derived_mapping_validation: PASS
+  materialization_commit: 4405692cb4e0e66c71c19fa700f0ed00ecc0da31
+  mapping_commit: a270271776de956f7998102db2c3ba829104d4c1
+  materialized_binary:
+    sha256: c16e59041607556b2c740d0d2c703574aa3369d78bdbbbea61444db25997619f
+    byte_size: 362526
+    page_count: 137
+    useful_text_characters: 157744
+    extraction_method: "pdftotext -layout -enc UTF-8"
+    reference_detected: true
+    reference_pages: [1, 4]
+  acquisition_history:
+    v1_run_id: 31254475099
+    v1_result: FAILED_HTTP_403_DIRECT_HOTLINK
+    v2_run_id: 31420435349
+    v2_result: PASS_FIRST_PARTY_CONTEXT_ACQUISITION_AND_FULL_VALIDATION
   explanation: >-
-    The source record and materialization workflow are ready, but the materialization
-    outputs are not present on the current main HEAD. GitHub Actions is currently
-    failing before runner steps start, so the workflow has not produced/committed
-    the expected PDF, text, metadata and validation outputs on this HEAD.
+    Le premier téléchargement direct depuis GitHub Actions avait été refusé par le
+    serveur SGG Mali avec HTTP 403. Le matérialiseur V2 ouvre d'abord la page
+    officielle UEMOA du SGG Mali, conserve le contexte first-party/cookies, envoie
+    le Referer officiel, refuse tout redirect hors domaine SGG Mali et conserve la
+    validation TLS par défaut. Cette stratégie a permis la matérialisation sans
+    source tierce ni désactivation de sécurité.
 
 current_version_search:
   official_domains_checked:
@@ -40,36 +67,49 @@ current_version_search:
     - brvm.org
     - uemoa.int
     - sgg-mali.ml
-  date_scope: "2006-08-08/2026-08-08"
-  focused_post_revision_scope: "2023-01-01/2026-08-08"
+  date_scope: "2006-06-29/2026-08-10"
+  focused_post_revision_scope: "2021-01-01/2026-08-10"
   searched_concepts:
     - "Règlement n°09/2006/CM/UEMOA"
     - "référentiel comptable acteurs du marché financier"
     - "règles comptables spécifiques intervenants agréés"
     - "révision référentiel comptable"
     - "adoption référentiel comptable révisé"
-  official_revision_fact: >-
-    The AMF-UMOA public notice concerning the March 2023 workshop describes
-    validation work on a provisional report for a revised accounting framework;
-    it does not establish adoption or entry into force of a replacement regulation.
-  result: NO_POST_2006_OFFICIAL_REPLACEMENT_OR_REVISED_ADOPTION_IDENTIFIED_IN_CHECKED_PUBLIC_INDEXES
+    - "remplacement règlement 09/2006"
+  official_revision_2021_fact: >-
+    La BCEAO mentionne, dans le communiqué du Conseil des Ministres du 23 septembre
+    2021, la révision des règles comptables spécifiques parmi les chantiers de réforme
+    en cours et demande la poursuite des réformes.
+  official_revision_2023_fact: >-
+    La publication AMF-UMOA relative à l'atelier des 28 au 30 mars 2023 décrit la
+    validation d'un rapport provisoire pour un référentiel comptable révisé ; elle ne
+    documente ni acte d'adoption définitif ni date d'entrée en vigueur.
+  current_public_register_check: >-
+    La recherche dans les textes et publications officielles publiquement accessibles
+    jusqu'au 10 août 2026 n'a pas identifié un règlement, une décision ou une
+    instruction adoptant formellement un référentiel de remplacement.
+  result: NO_POST_2006_OFFICIAL_REPLACEMENT_OR_REVISED_ADOPTION_IDENTIFIED_IN_CHECKED_PUBLIC_OFFICIAL_SOURCES
 
 interpretation_boundary: >-
-  L'absence d'un acte postérieur dans les sources publiquement indexées contrôlées
-  ne prouve pas que le Règlement 09/2006 n'a jamais été modifié, remplacé ou complété.
-  Le chantier de révision annoncé par l'AMF-UMOA en 2023 ne constitue pas, à lui seul,
-  une preuve d'adoption d'une nouvelle version. Le statut courant demeure donc ouvert.
+  L'absence d'un acte postérieur dans les sources officielles publiques contrôlées ne
+  prouve pas que le Règlement 09/2006 n'a jamais été modifié, remplacé ou complété.
+  La matérialisation du texte 2006 et l'absence de remplacement public identifié ne
+  suffisent donc pas à déclarer juridiquement la version courante. Une confirmation
+  officielle directe ou un acte de remplacement/amendement reste requis avant toute
+  résolution finale et toute activation.
 
 mapping_evidence:
   dependency_inventory: regulatory/registries/INST066_EXTERNAL_IMPLEMENTING_TEXTS_INVENTORY_V0_1.json
   occurrence_count: 5
-  mapping_status: CANDIDATE_REFERENCE_IDENTIFIED_MATERIALIZATION_PENDING_ON_CURRENT_HEAD
-  resolution_status: NOT_RESOLVED_BINARY_AND_CURRENT_VERSION_REVIEW_PENDING
-  derived_mapping_registry_status: NOT_PRESENT_ON_CURRENT_HEAD_DO_NOT_REFERENCE_AS_CURRENT_EVIDENCE
+  mapping_registry: regulatory/registries/INST066_ACCOUNTING_DEPENDENCY_MAPPING_V0_1.json
+  mapping_validation: regulatory/validation/INST066_ACCOUNTING_DEPENDENCY_MAPPING_VALIDATION_V0_1.json
+  mapping_status: CANDIDATE_MATERIALIZED_SCOPE_MAPPED_CURRENT_VERSION_REVIEW_PENDING
+  resolution_status: NOT_RESOLVED_CURRENT_VERSION_AND_AMENDMENTS_REVIEW_PENDING
 
 status:
   current_accounting_version: PENDING_CURRENT_VERSION_AND_AMENDMENTS_REVIEW
-  materialization: PENDING_WORKFLOW_EXECUTION
+  materialization: PASS
+  mapping: PASS_NON_RESOLVING
   automatic_dependency_resolution_allowed: false
   requirement_activation_allowed: false
   legal_review: PENDING
@@ -77,8 +117,8 @@ status:
   ready_for_submission: false
 
 resume_conditions:
-  - MATERIALIZE_OFFICIAL_SGG_MALI_BINARY_AND_COMMIT_HASHED_OUTPUTS
-  - VERIFY_OPC_AND_VALUATION_REPORTING_SCOPE_IN_MATERIALIZED_TEXT
   - OFFICIAL_AMF_UEMOA_BCEAO_OR_MEMBER_STATE_ACT_IDENTIFIES_AMENDMENT_OR_REPLACEMENT
   - OFFICIAL_REVISED_REFERENTIAL_ADOPTION_FOUND
   - DIRECT_REGULATOR_CONFIRMATION_OF_CURRENT_ACCOUNTING_VERSION
+  - HUMAN_LEGAL_REVIEW
+  - HUMAN_COMPLIANCE_REVIEW
