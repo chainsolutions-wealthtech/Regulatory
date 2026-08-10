@@ -2,43 +2,63 @@ import assert from "node:assert/strict";
 import { createHash } from "node:crypto";
 import {
   assertImportRemainsUnverified,
-  createUnverifiedProspectusImport,
   type ProspectusImportBatch,
+} from "@/domain/prospectus-import";
+import type { EvidenceReadResult } from "@/server/evidence/evidence-object-store";
+import {
+  createUnverifiedProspectusImport,
+  type ProspectusExtractor,
 } from "@/server/import/prospectus-import-service";
-import type { StoredEvidenceObject } from "@/server/storage/evidence-object-store";
 
 const evidenceContent = Buffer.from("clean prospectus evidence", "utf8");
 const sha256 = createHash("sha256").update(evidenceContent).digest("hex");
 
-const cleanEvidence: StoredEvidenceObject = {
+const cleanEvidence: EvidenceReadResult = {
   descriptor: {
-    schemaVersion: "EVIDENCE_OBJECT_DESCRIPTOR_V1",
+    objectId: "evidence-test",
     organizationId: "org-test",
-    projectId: "project-test",
-    evidenceObjectId: "evidence-test",
-    sourceFilename: "prospectus.pdf",
-    mediaType: "application/pdf",
+    projectVersionId: "project-version-test",
+    storageProvider: "test",
+    storageObjectKey: "org-test/project-test/evidence-test/prospectus.pdf",
     storageReference: "evidence://org-test/project-test/evidence-test",
+    originalFilename: "prospectus.pdf",
+    safeFilename: "prospectus.pdf",
+    declaredMediaType: "application/pdf",
+    detectedMediaType: "application/pdf",
     sha256,
     byteSize: evidenceContent.byteLength,
-    uploadedAt: "2026-08-08T20:00:00.000Z",
+    encryptionAlgorithm: "AES-256-GCM",
+    encryptionKeyReference: "test-key-reference",
     state: "CLEAN",
     scanStatus: "CLEAN",
-    scanEngine: "test-engine",
-    scannedAt: "2026-08-08T20:00:30.000Z",
-    quarantineReason: null,
+    scanProvider: "test-provider",
+    scanEngineVersion: "1.0.0",
+    scanSignatureVersion: "test-signature-v1",
+    scanCompletedAt: "2026-08-08T20:00:30.000Z",
+    uploadedBy: "user-test",
+    releasedBy: "reviewer-test",
+    releasedAt: "2026-08-08T20:00:45.000Z",
+    retentionUntil: "2036-08-08T20:00:00.000Z",
+    legalHold: false,
   },
   content: evidenceContent,
+  headers: {
+    "content-type": "application/pdf",
+    "content-disposition": "attachment; filename=prospectus.pdf",
+    "cache-control": "private, no-store",
+  },
 };
 
-const extractor = {
+const extractor: ProspectusExtractor = {
+  id: "test-extractor",
+  version: "1.0.0",
   async extract() {
     return [
       {
-        fieldPath: "issuer.legal_name",
-        proposedValue: "Example Issuer SA",
-        sourceLocation: "page 1",
+        proposedCanonicalFieldPath: "issuer.legal_name",
+        extractedValue: "Example Issuer SA",
         confidence: 0.98,
+        sourceLocation: { page: 1, textAnchor: "Example Issuer SA" },
       },
     ];
   },
@@ -57,6 +77,8 @@ assert(batch.readyForSubmission === false, "Submission must remain disabled.");
 assert(batch.values.length === 1, "One proposed value is expected.");
 assert(batch.values[0].reviewStatus === "EXTRACTED_UNVERIFIED", "The value must require human review.");
 assert(batch.values[0].evidenceSha256 === sha256, "Evidence provenance must preserve the digest.");
+assert(batch.values[0].proposedCanonicalFieldPath === "issuer.legal_name", "Canonical field proposal must be preserved.");
+assert(batch.extractorId === "test-extractor" && batch.extractorVersion === "1.0.0", "Extractor provenance must be preserved.");
 
 let dirtyRejected = false;
 try {
@@ -72,7 +94,7 @@ try {
 } catch (error) {
   dirtyRejected = String(error).includes("IMPORT_CLEAN_EVIDENCE_REQUIRED");
 }
-assert(dirtyRejected, "Unscanned evidence must be rejected.");
+assert(dirtyRejected, "Unscanned or quarantined evidence must be rejected.");
 
 let canonicalBypassRejected = false;
 try {
@@ -96,6 +118,7 @@ console.log(
       checks: {
         cleanEvidenceRequired: true,
         sourceProvenancePreserved: true,
+        extractorProvenancePreserved: true,
         extractionRemainsUnverified: true,
         canonicalWriteDisabled: true,
         readyForSubmissionFalse: true,
