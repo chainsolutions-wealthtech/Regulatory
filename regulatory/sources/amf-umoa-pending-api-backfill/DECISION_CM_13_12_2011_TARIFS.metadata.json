@@ -1,0 +1,31 @@
+{
+  "sourceId": "DECISION_CM_13_12_2011_TARIFS",
+  "legalRole": "ART005_TARIFF_AMOUNT_CANDIDATE",
+  "actualiteId": 1000178,
+  "apiUrl": "https://www.amf-umoa.org/service/api/elastic/actualite?id=1000178&langue=fr",
+  "apiRawSha256": "1f463decd9df7cd271579222b8bd60478e8da9528c10d47631eaf11233536600",
+  "titreFromApi": "DECISION N° CM/13/12/2011",
+  "resumeFromApi": "DECISION N° CM/13/12/2011 PORTANT FIXATION DES TARIFS DU CONSEIL REGIONAL DE L'EPARGNE PUBLIQUE ET DES MARCHES FINANCIERS",
+  "texteFromApi": "DECISION N° CM/13/12/2011 PORTANT FIXATION DES TARIFS DU CONSEIL REGIONAL DE L'EPARGNE PUBLIQUE ET DES MARCHES FINANCIERS",
+  "documentUrlFromApi": "AC-DECISION-2025-F85A41EA-3271-458A-B2AF-7777802F18FB.pdf",
+  "portalDateMetadata": "2011-12-13",
+  "portalValideMetadata": true,
+  "portalAbrogeMetadata": false,
+  "repositoryPdf": "regulatory/sources/amf-umoa-pending-api-backfill/DECISION_CM_13_12_2011_TARIFS.pdf",
+  "repositoryText": "regulatory/sources/amf-umoa-pending-api-backfill/DECISION_CM_13_12_2011_TARIFS.txt",
+  "sha256": "969976be1da4a5b36363810280071a5ee75bee7a32d60943438a75bc09da16bd",
+  "byteSize": 327347,
+  "pageCount": 4,
+  "textExtractionMethod": "OCR_TESSERACT_FRA_FALLBACK",
+  "usefulTextChars": 5677,
+  "legalBoundary": {
+    "portalDateIsAdoptionDate": false,
+    "portalAbrogeIsLegalStatusProof": false,
+    "binaryMaterializationIsRuleActivation": false,
+    "historicalArticle92TextsRemainAbrogated": false,
+    "automaticDependencyResolutionAllowed": false,
+    "automaticRequirementActivationAllowed": false,
+    "humanLegalReviewRequired": true,
+    "humanComplianceReviewRequired": true
+  }
+}

@@ -1,0 +1,31 @@
+{
+  "sourceId": "INSTRUCTION_23_CREPMF_1999",
+  "legalRole": "HISTORICAL_ARTICLE92_ABROGATED_SOURCE",
+  "actualiteId": 1000069,
+  "apiUrl": "https://www.amf-umoa.org/service/api/elastic/actualite?id=1000069&langue=fr",
+  "apiRawSha256": "5d0584e80218b40be4e6efa7ba2380f622a2457706f72068110863d5baf6c718",
+  "titreFromApi": "Instruction N°23/99",
+  "resumeFromApi": "RELATIVE AUX ACTIFS GERES PAR LES ORGANISMES DE PLACEMENT COLLECTIF EN VALEURS MOBILIERES",
+  "texteFromApi": "RELATIVE AUX ACTIFS GERES PAR LES ORGANISMES DE PLACEMENT COLLECTIF EN VALEURS MOBILIERES",
+  "documentUrlFromApi": "AC-INSTRUCTION-2023-23C4F331-24F1-48EC-985C-6A191EC1357A.pdf",
+  "portalDateMetadata": "2023-08-24",
+  "portalValideMetadata": true,
+  "portalAbrogeMetadata": false,
+  "repositoryPdf": "regulatory/sources/amf-umoa-pending-api-backfill/INSTRUCTION_23_CREPMF_1999.pdf",
+  "repositoryText": "regulatory/sources/amf-umoa-pending-api-backfill/INSTRUCTION_23_CREPMF_1999.txt",
+  "sha256": "61460c26924ac32693aae26b4c63afd2ddf2e78838c8569ad1757756bc2cfe93",
+  "byteSize": 39340,
+  "pageCount": 3,
+  "textExtractionMethod": "PDFTOTEXT",
+  "usefulTextChars": 3059,
+  "legalBoundary": {
+    "portalDateIsAdoptionDate": false,
+    "portalAbrogeIsLegalStatusProof": false,
+    "binaryMaterializationIsRuleActivation": false,
+    "historicalArticle92TextsRemainAbrogated": true,
+    "automaticDependencyResolutionAllowed": false,
+    "automaticRequirementActivationAllowed": false,
+    "humanLegalReviewRequired": true,
+    "humanComplianceReviewRequired": true
+  }
+}

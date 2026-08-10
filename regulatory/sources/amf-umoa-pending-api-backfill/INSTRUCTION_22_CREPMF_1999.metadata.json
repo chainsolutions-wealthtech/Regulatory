@@ -1,0 +1,31 @@
+{
+  "sourceId": "INSTRUCTION_22_CREPMF_1999",
+  "legalRole": "HISTORICAL_ARTICLE92_ABROGATED_SOURCE",
+  "actualiteId": 1000068,
+  "apiUrl": "https://www.amf-umoa.org/service/api/elastic/actualite?id=1000068&langue=fr",
+  "apiRawSha256": "c55ccbadc61eeb9dd787eb52b2d59a12afd4030cfce9db9f60d4808cb86aa4e9",
+  "titreFromApi": "Instruction N°22/99",
+  "resumeFromApi": "RELATIVE A L’AGREMENT DES ORGANISMES DE PLACEMENT COLLECTIF EN VALEURS MOBILIERES ET A L’INFORMATION DU PUBLIC",
+  "texteFromApi": "RELATIVE A L’AGREMENT DES ORGANISMES DE PLACEMENT COLLECTIF EN VALEURS MOBILIERES ET A L’INFORMATION DU PUBLIC",
+  "documentUrlFromApi": "AC-INSTRUCTION-2023-CC8CB320-D22C-48E4-84A0-51A0D0A4A7EB.pdf",
+  "portalDateMetadata": "2023-08-24",
+  "portalValideMetadata": true,
+  "portalAbrogeMetadata": false,
+  "repositoryPdf": "regulatory/sources/amf-umoa-pending-api-backfill/INSTRUCTION_22_CREPMF_1999.pdf",
+  "repositoryText": "regulatory/sources/amf-umoa-pending-api-backfill/INSTRUCTION_22_CREPMF_1999.txt",
+  "sha256": "58e453d96356356163e71497efcb7dfb181bf60ad0e22367fc67dfb67ad76ecc",
+  "byteSize": 63275,
+  "pageCount": 5,
+  "textExtractionMethod": "PDFTOTEXT",
+  "usefulTextChars": 8052,
+  "legalBoundary": {
+    "portalDateIsAdoptionDate": false,
+    "portalAbrogeIsLegalStatusProof": false,
+    "binaryMaterializationIsRuleActivation": false,
+    "historicalArticle92TextsRemainAbrogated": true,
+    "automaticDependencyResolutionAllowed": false,
+    "automaticRequirementActivationAllowed": false,
+    "humanLegalReviewRequired": true,
+    "humanComplianceReviewRequired": true
+  }
+}

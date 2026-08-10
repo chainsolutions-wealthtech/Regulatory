@@ -1,0 +1,31 @@
+{
+  "sourceId": "INSTRUCTION_45_CREPMF_2011",
+  "legalRole": "HISTORICAL_ARTICLE92_ABROGATED_SOURCE",
+  "actualiteId": 1000090,
+  "apiUrl": "https://www.amf-umoa.org/service/api/elastic/actualite?id=1000090&langue=fr",
+  "apiRawSha256": "be24c192b4c036a462364695e45bd0919968eddecd2a6baf4177167c3a4d00b9",
+  "titreFromApi": "Instruction N°45 /2011",
+  "resumeFromApi": "RELATIVE A L'ORGANISATION, AU FONCTIONNEMENT ET LA GESTION DES ORGANISMES DE PLACEMENT COLLECTIF EN VALEURS MOBILIERES SUR LE",
+  "texteFromApi": "RELATIVE A L'ORGANISATION, AU FONCTIONNEMENT ET LA GESTION DES ORGANISMES DE PLACEMENT COLLECTIF EN VALEURS MOBILIERES SUR LE",
+  "documentUrlFromApi": "AC-INSTRUCTION-2023-32CC8108-179B-44B7-A629-AC7EAF531DD5.pdf",
+  "portalDateMetadata": "2023-08-24",
+  "portalValideMetadata": true,
+  "portalAbrogeMetadata": false,
+  "repositoryPdf": "regulatory/sources/amf-umoa-pending-api-backfill/INSTRUCTION_45_CREPMF_2011.pdf",
+  "repositoryText": "regulatory/sources/amf-umoa-pending-api-backfill/INSTRUCTION_45_CREPMF_2011.txt",
+  "sha256": "1e564572516fa662423cf0a30f35436d36cfadcc39a83200b5b1cb9df093576e",
+  "byteSize": 1298074,
+  "pageCount": 19,
+  "textExtractionMethod": "OCR_TESSERACT_FRA_FALLBACK",
+  "usefulTextChars": 25864,
+  "legalBoundary": {
+    "portalDateIsAdoptionDate": false,
+    "portalAbrogeIsLegalStatusProof": false,
+    "binaryMaterializationIsRuleActivation": false,
+    "historicalArticle92TextsRemainAbrogated": true,
+    "automaticDependencyResolutionAllowed": false,
+    "automaticRequirementActivationAllowed": false,
+    "humanLegalReviewRequired": true,
+    "humanComplianceReviewRequired": true
+  }
+}

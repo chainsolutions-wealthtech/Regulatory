@@ -1,0 +1,12 @@
+{
+  "schemaVersion": "AMF_UMOA_PENDING_API_BACKFILL_VALIDATION_V0_1",
+  "result": "PASS",
+  "checks": {
+    "exactly8Documents": true,
+    "noFailures": true,
+    "allPdfMagicAndReferenceValidated": true,
+    "historicalReactivationForbidden": true,
+    "automaticResolutionForbidden": true
+  },
+  "failures": []
+}

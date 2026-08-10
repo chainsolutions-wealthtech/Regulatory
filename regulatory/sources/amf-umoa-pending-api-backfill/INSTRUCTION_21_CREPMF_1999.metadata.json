@@ -1,0 +1,31 @@
+{
+  "sourceId": "INSTRUCTION_21_CREPMF_1999",
+  "legalRole": "HISTORICAL_ARTICLE92_ABROGATED_SOURCE",
+  "actualiteId": 1000067,
+  "apiUrl": "https://www.amf-umoa.org/service/api/elastic/actualite?id=1000067&langue=fr",
+  "apiRawSha256": "aa0d8d25211c168ffd9152ec2019f07d1bd6fc6dc848eb55039e5da1d737406b",
+  "titreFromApi": "Instruction N°21/99",
+  "resumeFromApi": "RELATIVE A LA CLASSIFICATION DES ORGANISMES DE PLACEMENT COLLECTIF EN VALEURS MOBILIERES",
+  "texteFromApi": "RELATIVE A LA CLASSIFICATION DES ORGANISMES DE PLACEMENT COLLECTIF EN VALEURS MOBILIERES",
+  "documentUrlFromApi": "AC-INSTRUCTION-2023-CBE701CC-FCE9-45C4-BE12-ED102D8865B4.pdf",
+  "portalDateMetadata": "2023-08-24",
+  "portalValideMetadata": true,
+  "portalAbrogeMetadata": false,
+  "repositoryPdf": "regulatory/sources/amf-umoa-pending-api-backfill/INSTRUCTION_21_CREPMF_1999.pdf",
+  "repositoryText": "regulatory/sources/amf-umoa-pending-api-backfill/INSTRUCTION_21_CREPMF_1999.txt",
+  "sha256": "e26932db5fa21ed2d74d56003f74fd3bb5da77be1edd17ec45aa89bebb747336",
+  "byteSize": 67005,
+  "pageCount": 6,
+  "textExtractionMethod": "PDFTOTEXT",
+  "usefulTextChars": 7817,
+  "legalBoundary": {
+    "portalDateIsAdoptionDate": false,
+    "portalAbrogeIsLegalStatusProof": false,
+    "binaryMaterializationIsRuleActivation": false,
+    "historicalArticle92TextsRemainAbrogated": true,
+    "automaticDependencyResolutionAllowed": false,
+    "automaticRequirementActivationAllowed": false,
+    "humanLegalReviewRequired": true,
+    "humanComplianceReviewRequired": true
+  }
+}

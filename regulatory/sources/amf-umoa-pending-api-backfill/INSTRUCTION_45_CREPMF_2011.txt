@@ -1,0 +1,851 @@
+Union Monétaire Quest Africaine ‘
+CRE
+Conseil Régional de l'Epargne Publique
+et des Marchés Financiers
+INSTRUCTION N°45 / 2011
+RELATIVE À L'ORGANISATION, AU FONCTIONNEMENT ET LA GESTION
+DES ORGANISMES DE PLACEMENT COLLECTIF EN VALEURS MOBILIERES
+SUR LE MARCHE FINANCIER REGIONAL DE L’UMOA
+Le Conseil Régional de l’Epargne Publique et des Marchés Financiers,
+
+Vu la Convention du 3 juillet 1996 portant création du Conseil Régional de
+l'Epargne Publique et des Marchés Financiers (ci-après Le "Conseil Régional");
+
+Vu l'Annexe à La Convention portant composition, organisation, fonctionnement
+et attributions du Conseil Régional, notamment en son article 18 ;
+
+Vu le Règlement Général relatif à l'Organisation, au Fonctionnement et au
+Contrôle du Marché Financier Régional de l'UMOA, notamment en ses articles
+72 et suivants ;
+
+Vu le Règlement n°9/2006/CM/UEMOA du Conseil des Ministres du
+29 juin 2006 portant adoption des Règles Comptables Spécifiques applicables
+aux intervenants agréés du marché financier régional,
+
+Vu la Décision n° CM/11/09/2009 en date du 25 septembre 2009 du Conseil des
+Ministres de l'UEMOA portant nomination du Président du Conseil Régional ;
+
+Vu les délibérations du Conseil Régional en sa session du 09 septembre 2011
+tenue à Dakar au Sénégal ;
+
+ARRETE
+TITRE 1 : DISPOSITIONS GENERALES RELATIVES AUX ORGANISMES
+DE PLACEMENT COLLECTIF EN VALEURS MOBILIÈRES
+
+Article 1°: Définition
+
+Pour l'application de la présente Instruction, on entend par :
+
+1. Organismes de Placement Collectif en Valeurs Mobilières (OPCVM) : tout
+produit d'épargne agréé par Le Conseil Régional de l’Epargne Publique et des
+Marchés Financiers (CREPMF) et destiné aux investisseurs particuliers et
+
+À institutionnels dans Le cadre de la gestion collective. eZ
+
+‘Avenue Joseph ANOMA 01 B. P. :1878 Abidjan 01/Côte d'ivoire TEL.: (225) 20215742/20215179 Fax: 20221657
+presidence®crenmf.org Www.crepmf.org
+
+
+instruction n°45 / 2011 :
+
+2. Sociétés d'investissement à Capital Variable (SICAV) : Un OPCVM ayant la
+personnalité juridique (société) et qui émet des actions.
+
+3. Fonds Communs de Placement (FCP): un OPCVM n'ayant pas de
+personnalité juridique et émettant des parts.
+
+4. Société de Gestion : une société assurant, à titre exclusif, La gestion d’un
+OPCVM pour Le compte des porteurs de parts ou des actionnaires.
+
+5, Dépositaire: une Société de Gestion et d'intermédiation (5GI) ou une
+Banque agréée en qualité de Teneur de Compte / Conservateur (BTCC)
+chargée de la conservation des titres et du contrôle de la régularité des
+décisions de gestion prises pour Le compte de l’OPCVM.
+
+6. Parties liées : une partie est liée à une entité dans Les cas suivants :
+
+a) directement ou indirectement par le biais d’un ou de plusieurs
+intermédiaires, la partie :
+i, contrôle l'entité, est contrôlée par elle, ou est soumise à un
+contrôle conjoint au même titre que l'entité ;
+ji. détient dans l'entité une participation qui lui permet d'exercer
+une influence notable sur elle ; ou
+ji. exerce un contrôle conjoint sur l’entité ;
+b) la partie fait partie des principaux dirigeants de l'entité ou de sa
+société-mère.
+
+7. Parts : valeurs mobilières représentant les droits des copropriétaires d’un
+FCP et dont la propriété résulte de l'inscription sur une liste tenue par la
+société de gestion : chaque part correspond à une même fraction de l'actif
+du FCP.
+
+8. Règlement Général: Règlement Général relatif à l'Organisation, au
+Fonctionnement et au Contrôle du Marché Financier Régional.
+
+Article 2: Création
+
+Peuvent créer un OPCVM, les Sociétés de Gestion et d’Intermédiation (SGl), les
+
+Sociétés de Gestion d'OPCVM, les banques, les compagnies d’assurance, les
+
+sociétés anonymes, les entreprises publiques à caractère commercial, les groupes
+
+de salariés et toute autre entité expressément habilitée à cet effet par le Conseil
+
+Régional,
+
+L’habilitation doit être préalable au dépôt du dossier d'agrément de l'OPCVM.
+Rs
+enue Joseph ANOMA 01 B. F. :1878 Abidjan 01/Côte d'ivoire TEL: (225) 20215742/20215179 Fax: 20221657
+
+presidence@crepmf.ors Wwww.creprmf.org
+
+Page 2 sur 13
+
+
+instruction n°45 / 2017
+
+Article 3: Forme juridique
+
+3.1 Le FCP est une copropriété d’actifs. Le montant minimum des valeurs
+mobilières et des dépôts d'espèces que tout FCP doit réunir lors de sa
+constitution est fixé à cent millions (100 000 000) de FCFA. La valeur des
+apports en valeurs mobilières à l’actif du FCP est vérifiée par Le Commissaire
+aux Comptes qui établit, à cet effet, un rapport sous sa responsabilité.
+
+3.2 La SICAV est constituée avec un capital minimum et entièrement libéré de
+deux cent cinquante millions (250 000 000) de FCFA, sous forme de société
+anonyme régie par les dispositions applicables à l’Appel Public à Epargne et
+celles de l’Acte Uniforme relatif au droit des sociétés commerciales et du
+GIE du Traité de l’OHADA.
+
+3.3 La Société de Gestion d’un OPCVM doit être constituée sous la forme de
+société anonyme avec Un capital minimum et entièrement libéré de
+cinquante millions (50 000 000) de FCFA.
+
+3.4 Par dérogation aux dispositions des alinéas qui précèdent, les Fonds
+Communs de Placement d'Entreprise (FCPE) peuvent se constituer avec un
+actif minimum de cinquante millions (50 000 000} de FCFA et les SICAV
+d'Actionnariat Salarié (SICAVAS), avec un capital minimum de cent cinquante
+millions {150 000 000) de FCFA.
+
+Article 4 : Demande d’agrément de la Société de Gestion
+
+Les Sociétés de Gestion doivent obtenir l'agrément du Conseil Régional avant le
+
+début de leurs activités.
+
+La demande d’agrément doit comporter Les éléments suivants :
+
+- une lettre de demande ;
+
+- Les statuts de la société ;
+
+- Les justificatifs de l’accomplissement des formalités d’immatriculation au
+Registre du Commerce et du Crédit Mobilier et d'insertion légale ;
+
+- Les procès-verbaux des Assemblées Générales nommant les administrateurs
+et les Commissaires aux Comptes titulaire et suppléant en fonction ;
+
+- Les procès-verbaux du Conseil d'Administration nommant le Président du
+Conseil d'Administration et Le Directeur Général en fonction ;
+
+-_ Les extraits de casiers judiciaires datant de moins de trois mois et curriculum
+vitae des mandataires sociaux et des principaux dirigeants faisant apparaître
+leur expérience en matière financière, les autres activités exercées
+notamment auprès de l’établissement dépositaire ;
+
+À
+
+presidence@crepmf.ore Wwww.crepmf.org
+
+Page 3 sur 13
+
+
+Instruction n° 45 / 2011 _
+- un document de présentation comportant les éléments d’information
+ci-après :
+o la répartition du capital social,
+© la situation financière des trois dernières années de chacun des
+actionnaires, personnes morales, détenant au moins du 10 % du
+capital social de la société,
+o les moyens humains affectés à La Société de Gestion :
+
+“ nombre et niveau hiérarchique des personnes exerçant des
+responsabilités dans La Société de Gestion ainsi que les
+personnes collaborant à La gestion de l’OPCVM sans être
+employées par la Société de Gestion, en mentionnant
+l'organisme dont elles relèvent,
+
+# organigramme détaillé,
+
+s modalités de rémunération des salariés et collaborateurs
+exerçant une responsabilité,
+
+“ code de déontologie applicable aux dirigeants et aux salariés,
+
+o Moyens techniques :
+
+s liste du matériel utilisé par la Société de Gestion en distinguant
+celui qui lui est propre de celui utilisé conjointement avec
+d’autres sociétés,
+
+= description détaillée des fonctionnalités du logiciel de gestion
+de portefeuille et son manuel d’exploitation ainsi que les
+mesures envisagées pour la sécurité des données ;
+
+- un plan d’affaires comportant les prévisions financières et les états
+financiers prévisionnels sur cinq ans.
+Article 5: Approbation des OPCVM
+La constitution, la transformation, la fusion, la scission ou La liquidation d’un
+OPCVM est soumise à l'approbation préalable du Conseil Régional.
+5,1 La demande d'agrément de l’OPCVM doit comporter les éléments suivants :
+- une lettre de demande ;
+- la situation financière des trois dernières années de chacun des promoteurs ;
+- le projet de note d’information ;
+- La convention de Dépositaire ;
+- les états financiers certifiés des trois dernières années de la Société de
+Gestion et du Dépositaire ;
+- une projection sur cinq (05) ans de l’évolution du nombre de titres et de
+l'actif de l'OPCVM ;
+- Les lettres d'engagement conformes aux articles 76 et 77 du Règlement
+L Général. {
+/ Avenue Joseph ANOMA O1 B. P. :1878 Abidjan D1/Côte d'ivoire TEL: (225) 20215742/20215179 Fax: 20221657
+presidence@crepmf.org Www.crepmf.org
+Page 4 sur 13
+
+
+instruction n°45 / 2011
+
+S'il s’agit d’un FCP, le dossier comporte également :
+
+- Le Règlement établi à l'initiative conjointe de la Société de Gestion et du
+Dépositaire et dont le contenu est précisé par Instruction du Conseil
+Régional ;
+
+- le mandat de gestion ;
+
+- les procès-verbaux du Conseil d'Administration de la Société de Gestion
+nommant les Commissaires aux Comptes titulaire et suppléant ;
+
+S'il s’agit d’une SICAV, Le dossier comporte en outre :
+
+- les statuts établis conformément aux dispositions du Règlement Général et
+de l’Acte Uniforme de L’OHADA relatif au droit des sociétés commerciales et
+du G.LE. ;
+
+- les justificatifs de l’accomplissement des formalités d’immatriculation au
+Registre du Commerce et du Crédit Mobilier et d'insertion légale ;
+
+- les procès-verbaux des Assemblées Générales de la SICAV nommant les
+administrateurs et les Commissaires aux Comptes titulaire et suppléant en
+fonction ;
+
+- les procès-verbaux du Conseil d'Administration de La SICAV nommant le
+Président du Conseil d'Administration et le Directeur Général en fonction ;
+
+- Les casiers judiciaires datant de moins de trois mois des mandataires sociaux
+et des principaux dirigeants ;
+
+- le mandat de gestion et les procès-verbaux du Conseil d'Administration de la
+Société de Gestion nommant les Commissaires aux Comptes titulaire et
+suppléant lorsque la gestion de la SICAV est déléguée à une Société de
+Gestion.
+
+Pour la SICAV autogérée, les curriculum vitae des mandataires sociaux et des
+
+principaux dirigeants faisant apparaître leur expérience en matière financière et un
+
+document de présentation comportant les éléments d’information définis à
+
+l'article 4 ci-dessus doivent être joints à la demande d’agrément.
+
+5.2 La transformation d’un OPCVM par suite notamment d’un changement de
+catégorie nécessite un nouvel agrément et tant que Le nouvel agrément n’est
+pas octroyé, l'OPCVM demeure soumis à l'ensemble de ses engagements
+initiaux et des garanties accordées aux souscripteurs.
+
+Toute modification des statuts d'une SICAV ou du Règlement d'un FCP est
+subordonnée à l’approbation préalable du Conseil Régional.
+
+Avenue Joseph ANOMA OT B, P. :1878 Abidjan 0t/Côte d'Ivoire TEL: (225) 20215/42/20215179 Fax: AIT TA
+
+presidence@crepmf.org www.crepmf.org
+
+Page 5 sur 13
+
+
+instruction n°45 / 2011
+5.3 La demande d'approbation de tout projet de fusion ou de scission concernant
+un ou plusieurs OPCVM présentée par la Société de Gestion ou par chacune des
+SICAV concernées, selon le cas, est accompagnée d'un dossier comprenant :
+- tes procès-verbaux des Conseils d'Administration des SICAV ou des Sociétés
+de Gestion des FCP concernés ;
+- un rapport sur Les modalités de réalisation de l’opération ;
+- un rapport du Commissaire aux Comptes de chaque OPCVM sur Les modalités
+de réalisation de l’opération ;
+- Les projets de statuts des SICAV ou de Règlements des FCP tels qu'ils seront
+modifiés consécutivement à l’opération ;
+- les projets de notes d’information modifiées des OPCVM.
+Les OPCVM résultant d’une scission doivent présenter Les mêmes caractéristiques
+que L'OPCVM initial. De même, ne peuvent fusionner que des OPCVM présentant
+des caractéristiques similaires.
+Article 6: Note d’information
+Préalablement à l'émission d'actions où parts, la note d’information de l'OPCVM
+doit faire l’objet d’un visa par Le Conseil Régional.
+Le contenu de cette note d’information est précisé par Instruction du Conseil
+Régional.
+TITRE 2 : ORGANISATION DES OPCVM
+Article 7: Principe
+L'OPCVM ou la société chargée de sa gestion doit disposer, en permanence, de
+moyens organisationnels et humains nécessaires à l'exercice de son activité. IL doit
+présenter des garanties suffisantes notamment en ce qui concerne son
+organisation, ses moyens techniques et financiers ainsi que l'expérience de ses
+dirigeants,
+Article 8: Moyens organisationnels
+8.1 L’organigramme de l'OPCVM ou de la société chargée de la gestion doit être
+détaillé, faisant apparaître Les responsables des activités exercées ainsi que
+l’organisation hiérarchique de La société.
+‘Avenue Joseph ANOMA 01 8. P. :1878 Abidjan UI/Cote d'ivoire  TEL.: (225) 20215742/20215179 Fax: 20221657
+presidence@crepmf.org www.crepmf.org
+Page 6 sur 13
+
+
+instruction n°45 / 2011 .
+
+8.2 L'organisation de l’'OPCVM ou de la société chargée de la gestion doit
+permettre l’exercice de l’activité dans le respect des bonnes pratiques
+professionnelles.
+
+Elle doit être conçue en particulier de manière à permettre :
+
+- d'exercer les activités avec diligence et impartialité dans l’intérêt
+exclusif des porteurs de parts et des actionnaires ;
+
+- de prévenir Les conflits d'intérêt ;
+
+-_ d'assurer l’autonomie des gestionnaires de portefeuille et la séparation
+des métiers notamment entre les différents services, en précisant les
+responsabilités, Les prérogatives et Le champ d'action de chacun ;
+
+- d'assurer la confidentialité des informations relatives aux porteurs de
+parts et actionnaires ;
+
+- de retrouver les transactions sur valeurs mobilières effectuées par la
+SICAV ou La Société de Gestion quel que soit Le Dépositaire des actifs ;
+
+-  d’assurer la transparence sur les transactions avec les parties liées et
+notamment qu’elles fassent l’objet d’une publication idoine.
+
+8.3  L'OPCVM ou la société chargée de la gestion doit établir et mettre en œuvre
+un manuel de procédures comprenant au minimum les procédures relatives
+aux aspects suivants :
+
+-__ la prise de décision d’investissement ;
+
+- le traitement des opérations d’achat et vente de valeurs mobilières sur
+les marchés ;
+
+-_ l'établissement de la situation de trésorerie ;
+
+-__ le traitement des opérations d'achat et de vente de titres ;
+
+- la gestion de la trésorerie de l'OPCVM ;
+
+- La gestion de la trésorerie de la Société de Gestion ;
+
+- Le traitement des opérations de souscription et de rachat ;
+
+- l'établissement des rapprochements espèces, titres, et nombre de parts
+ou d'actions ;
+
+- La fréquence des inventaires ;
+
+-__ la valorisation des portefeuilles ;
+
+- La validation et la publication de La valeur liquidative ;
+
+- les règles d’arrondis ;
+
+-__ l'affectation des ordres groupés.
+
+8.4  L'OPCVM ou la société chargée de la gestion doit mettre en place un Comité
+d'investissement composé de trois personnes au moins, possédant la
+
+k compétence et l’expérience requises pour cette fonction.
+Avenue Joseph ANOMA 01 8, P. :1878 Abidjan 01/Côte d'ivoire TEL: (225) 20215742/20215379 Fax: 20221657
+presidence@crepmf.ora Www,crepmf.org
+Page 7 sur 13
+
+
+Y instruction n°45 { 2011 oo
+
+Article 9: Moyens humains
+
+9,1 L’'OPCVM ou la société chargée de la gestion doit être dirigé par des
+personnes possédant l'honorabitité et la compétence nécessaires, ainsi que
+l'expérience adaptée à leurs fonctions.
+
+L'une au moins de ces personnes doit être un mandataire social habilité à
+
+représenter la société dans ses rapports avec les tiers et exerçant son
+
+activité à temps plein au sein de la société.
+
+9.2  L'OPCVM ou la société chargée de la gestion doit disposer de collaborateurs
+dont Les compétences sont adaptées à ses activités et sont régulièrement
+mises à jour pour suivre le développement du marché.
+
+L’effectif de l'OPCVM ou de la société chargée de la gestion doit être
+
+compatible avec son niveau d'activité (nombre d’OPCVM et volumes gérés
+
+notamment) et avec ses perspectives de développement.
+
+9.3  L'OPCVM ou la société chargée de la gestion doit disposer au minimum de
+l'effectif suivant :
+
+- un dirigeant tel que défini par Les textes en vigueur ;
+
+- un gestionnaire de portefeuille possédant les compétences requises pour
+gérer les actifs dont il a la charge ;
+
+- un contrôleur interne. Ce dernier doit exercer ses fonctions
+indépendamment des autres fonctions et ne peut cumuler d’autres
+fonctions ;
+
+- une personne affectée à la gestion administrative, informatique et
+comptable.
+
+La gestion administrative, informatique et comptable peut être assurée par
+
+des organismes extérieurs après autorisation du Conseil régional. À cet effet,
+
+L’OPCVM ou la Société de Gestion lui communique les contrats de prestation
+
+de services avec une présentation des prestataires, la description des tâches
+
+par eux exécutées et les moyens à mettre en œuvre.
+
+9.4 La fonction de gestionnaire de portefeuille doit être indépendante des
+autres fonctions de la société, notamment de celles du dirigeant. Un
+gestionnaire de portefeuille ne peut gérer plus de trois (3) fonds.
+
+9,5 L'organisation doit être mise en place de manière à assurer La continuité du
+service même en cas d’absence de la personne en charge de la fonction.
+Ainsi, un système de remplacement doit être prévu pour toutes Les fonctions
+indispensables listées au point 9.3 ci-dessus.
+
+PE
+
+Avenue Joseph ANOMA 01 B. P. :1878 Abidjan 01/Côte d'ivoire TEL,: (225) 20215742/20215179 Fax: 20221657
+
+presidence@crepmnf.org Www.crepmf.org
+
+Page 8 sur 13
+
+
+instruction n°45 / 2011 .
+
+Article 10 : Locaux professionnels
+
+10.1 L'organisation des Locaux de L’OPCVM ou de la Société de Gestion doit être
+mise en place de manière à faciliter La transmission de l'information entre
+ses différents services.
+
+40.2 Le local et les moyens techniques de La Société de Gestion doivent lui être
+dédiés exclusivement et ne peuvent être partagés avec aucune autre
+structure. Leur accès doit être sécurisé. Les bureaux des gestionnaires de
+portefeuille et du contrôleur interne doivent être physiquement séparés des
+autres fonctions internes.
+
+Article 11: Moyens techniques
+
+11.1 Les différents services de l'OPCVM ou de la Société chargée de la gestion
+doivent être équipés de logiciels professionnels ou applications fiables
+dédiés et utiles à l’accomplissement de leurs activités.
+
+11.2 L'OPCVM ou la Société chargée de la gestion est tenu de procéder à
+l'entretien et au renouvellement régulier du matériel et des applications
+informatiques afin d'assurer leur fiabilité et leur compatibilité avec les
+exigences réglementaires et Les meilleures pratiques du marché.
+
+11.3 L'OPCVM ou la Société chargée de la gestion doit disposer d’un système de
+sauvegarde matérialisé par au moins deux serveurs. Le second doit assurer
+une sauvegarde régulière des données du premier.
+
+TITRE 3 : FONCTIONNEMENT ET GESTION DES OPCVM
+
+Article 12 : Gestion des OPCVM
+
+Une Société de Gestion peut gérer tout type d’'OPCVM.
+
+Une SICAV s’autogère ou peut déléguer sa gestion à une Société de Gestion agréée
+
+par le Conseil Régional.
+
+Article 13 : Stratégie de placement
+
+Tout OPCVM est tenu d’élaborer une stratégie de placement,
+
+La stratégie de placement d’un OPCVM est déterminée par son gestionnaire ou ses
+
+promoteurs. Elle est décrite dans le Règlement de l'OPCVM et dans sa note
+
+d’information. Cette stratégie définit la façon dont l'OPCVM sera géré afin de
+répondre aux objectifs de gestion annoncés aux investisseurs,
+k_ Joseph ANOMA O1 B. P. :1878 Abidjan 01/Côte d'Ivoire TEL: (225) 20245742/20215179 Fax: 20221657
+" presidence@crepmf.org Wwww.crepmf.org
+Page 9 sur 13
+
+
+Instruction n°45 / 2011
+
+En particulier, une stratégie de placement est définie par la sélection d’une
+
+combinaison de choix déterminants pour la gestion du portefeuille de l'OPCVM,
+
+sous réserve des dispositions réglementaires en vigueur. Les choix peuvent porter
+notamment sur Les paramètres suivants :
+
+- un horizon de placement,
+
+- un profil de risque,
+
+- une pondération entre les différentes classes d'actifs,
+
+- un indicateur de référence,
+
+- une fourchette de sensibilité,
+
+- les secteurs d’activité,
+
+- un mécanisme de garantie ou de protection.
+
+Article 14: Comité d’Investissement
+
+14.1 Toute décision d'investissement doit préalablement être approuvée par le
+Comité d’Investissement de L’'OPCVM.
+
+14.2 Le Comité d'investissement comprend au minimum :
+
+- 4e Directeur Général de l'OPCVM ou de la Société de Gestion de
+portefeuille,
+
+- Le gestionnaire de portefeuille,
+
+- une personne externe à la gestion directe de l'OPCVM et possédant la
+compétence et l'expérience requises pour cette fonction.
+
+La composition du Comité d’Investissement doit être approuvée par le
+
+Conseil d'Administration de Ll'OPCVM ou de la Société de Gestion.
+
+14.3 Les réunions du Comité d’Investissement doivent être sanctionnées par des
+procès-verbaux signés par tous Les membres présents.
+
+En cas de consultation écrite ou de participation à une réunion d’un membre
+par voie de vidéoconférence, il en est fait mention dans le procès-verbal,
+auquel sont annexées Les réponses obtenues et confirmées par écrit.
+
+Article 15: Règles de gestion et de conservation des actifs
+
+15.1 Tout OPCVM devra respecter en permanence les règles de gestion
+correspondant à sa catégorie.
+
+15.2 En sus des règles correspondant à sa catégorie, tout OPCVM devra en
+permanence respecter les conditions définies par l’Instruction relative aux
+règles d’allocation des actifs et les autres conditions qui seront fixées dans
+son Règlement et dans sa note d’information relativement à sa stratégie
+
+À d’investissement. us
+Avenue Joseph ANOMA OT 8, P. :1878 Abidjan Ot/Côte d'ivoire TEL.: (225) 20215742/20215179 Fax: 20221657
+presidence®crepmf.org VW, crepmf.org
+Page 10 sur 19
+
+
+instruction n°45 / 2011 ;
+
+15.3 Les actifs des OPCVM doivent être conservés par un Dépositaire unique,
+distinct de la Société de Gestion de l'OPCVM. Ce Dépositaire doit avoir son
+siège social dans un Etat de l’Union.
+
+15.4 L'OPCVM peut déléguer au Dépositaire, tout ou partie des tâches de gestion
+des souscriptions et des rachats ainsi que la gestion du passif qui porte sur
+Pensemble des prestations de teneur de compte et notamment la
+vérification du nombre des titres en circulation, Le règlement du dividende,
+ta création et l’annulation des titres suite aux souscriptions et rachats.
+
+Article 16: Exercice des droîts attachés aux titres détenus par les OPCVM
+
+La Société de Gestion doit exercer les droits attachés aux valeurs mobilières
+
+comprises dans l'OPCVM qu’elle gère. L'exercice de ces droits s'effectue dans
+
+l'intérêt des porteurs de parts ou des actionnaires de l’OPCVM.
+
+La Société de Gestion rend compte de ses activités relatives à l’utilisation de ces
+
+droits dans le rapport annuel qu’elle adresse à l'OPCVM.
+
+Dans l'exercice de leurs droits de vote, les SICAV sont soumises, lorsqu'elles
+
+s’autogèrent, aux mêmes obligations.
+
+Article 17: Rachat de titres
+
+Les titres d’un OPCVM sont émis et rachetés à tout moment par l'OPCVM ou sa
+
+Société de Gestion à la demande des porteurs de parts ou des actionnaires et à La
+
+valeur liquidative majorée ou diminuée, selon Le cas, des frais et commissions.
+
+L’actif en dessous duquel il ne peut être procédé aux rachats de titres est fixé à
+
+cinquante millions (50 000 000) de FCFA pour les FCP et à cent vingt-cinq millions
+
+(125 000 000) de FCFA pour Les SICAV.
+
+Le rachat par l'OPCVM, comme l'émission de titres nouveaux, peut être suspendu,
+
+à titre provisoire, quand des circonstances exceptionnelles l’exigent et si l'intérêt
+
+des porteurs le commande dans des conditions fixées par les statuts ou le
+
+règlement de l'OPCVM.
+
+Le Conseil Régional qui est informé préalablement de toute décision de suspension
+
+ou de report de droit de rachat, peut s’y opposer.
+
+Article 18: Normes prudentielles
+
+En conformité avec Les Règles Comptables Spécifiques applicables aux intervenants
+
+agréés, les OPCVM et leurs Sociétés de Gestion doivent respecter en permanence
+
+les normes prudentielles définies par une Instruction du Conseil Régional.
+h_ Joseph ANOMA D1 B. P. :1878 Abidjan 01/Côte d'Ivoire TEL: (228) 20218742120215179 Fac 20221657
+presidence@crepmf.ors Www.crepmf.org
+Page 11 sur 13
+
+
+instruction n°45 / 201
+
+Article 19 : Commissaires aux comptes des OPCVM
+
+Le Conseil d'Administration de la SICAV ou de la Société de Gestion lorsqu'il s'agit
+d'un FCP, désigne Le Commissaire aux Comptes après approbation préalable du
+Conseil Régional.
+
+Les dispositions de L’Instruction n°31/2005 relative à l'exercice du Commissariat
+aux Comptes auprès des structures agréées et des sociétés cotées sur Le marché
+financier régional de l’'UMOA lui sont applicables.
+
+Article 20: Transmission d'informations du Conseil Régional
+
+L'OPCVM et/ou la Société de gestion transmettent au Conseil Régional les
+documents suivants :
+
+20.1 Dans les trente (30) jours qui suivent la date de tenue de l’Assemblée
+
+Générale Ordinaire appelée à approuver les comptes de l'exercice
+
+- les états financiers annuels de l'OPCVM et/ou de la Société de Gestion,
+établis conformément aux dispositions des Règles Comptables Spécifiques
+applicables aux intervenants agréés du marché financier régional de
+l'UMOA et certifiés par le Commissaire aux Comptes ;
+
+- Les rapports de certification du Commissaire aux Comptes établi
+conformément aux dispositions de l'instruction n°31/2005 relative à
+l'exercice du commissariat aux comptes auprès des structures agréées et
+des sociétés cotées sur Le marché financier régional de l'UMOA ;
+
+- Les rapports spéciaux des Commissaires aux Comptes établis
+conformément aux dispositions de l’Acte Uniforme du Traité de l'OHADA
+relatif au droit des sociétés commerciales et du GIE ;
+
+- Les procès-verbaux des Assemblées Générales Ordinaires ayant
+respectivement approuvé les comptes de la Société de Gestion et de la
+SICAV ;
+
+- le procès-verbal du Conseil d'Administration de La Société de Gestion
+ayant arrêté les comptes du FCP.
+
+Par ailleurs, une fiche de renseignements généraux dont le modèle est joint en
+annexe doit être transmise au Conseil Régional dans Les quarante cinq (45) jours de
+la clôture de l'exercice.
+
+20.2 Dans les 30 jours calendaires qui suivent la fin de chaque trimestre
+
+- Les états financiers trimestriels de l’OPCVM et/ou de la Société de
+Gestion, établis conformément aux dispositions des Règles Comptables
+Spécifiques applicables aux intervenants agréés du marché financier
+régional de l'UMOA ;
+
+Avenue Joseph ANOMA 01 B. P. :1878 Abidjan 01/Côte d'Ivoire TEL.: (225) 20215742/20215170 Fax: 20221657
+presidence@crepmf,ora www,crepmf.org
+: Page 12 sur 13
+
+
+instruction n°45/ 2011
+-_ la composition détaillée des actifs de l’'OPCVM à La date du dernier jour
+de bourse du trimestre considéré, certifiée par le Commissaire aux
+Comptes ;
+- une fiche de renseignements commerciaux dont le modèle est joint en
+annexe.
+Par ailleurs, en ce qui concerne l'OPCVM, ces informations, à l'exception de la
+fiche de renseignements commerciaux, doivent être rendues publiques dans Les 30
+jours calendaires qui suivent la fin de chaque trimestre.
+Passé ce délai, toute personne, qui en fait la demande, a Le droit d’avoir accès à
+ces informations au siège de l’OPCVM ou de la Société de Gestion.
+TITRE 4: DISPOSITIONS TRANSITOIRES ET FINALES
+Article 21: Dispositions transitoires
+Les OPCVM et leurs Sociétés de Gestion agréées avant la publication de la présente
+instruction disposent, à compter de cette date, d’un délai de deux (02) ans pour se
+mettre en conformité avec Les dispositions de la présente instruction.
+Article 22 : Entrée en vigueur
+La présente Instruction, qui abroge toutes dispositions antérieures contraires,
+prend effet à compter de sa date de signature. Elle sera publiée partout où besoin
+sera.
+Fait à Dokar, le vendredi 09 septembre 2011
+Le Président
+|
+Ê È > :
+Léné SEBGO
+À
+Avenue Joseph ANOMA 01 B. P. :1878 Abidjan D1/Côte d'Ivoire TEL.: (225) 20215742/20215179 Fax: 20221657
+presidence@crepmf.ora WWW, CrepmMf. org
+Page 13 sur 13
+
+
+ANNEXE À : FICHE DE RENSEIGNEMENTS GÉNÉRAUX
+À. Renseignements sur la Société de Gestion (et la SICAV)
+1. Informations générales
+Nom de la société TT de
+Forme juridique |
+Siège Social |
+Date de création |
+Numéro RCCM |
+Date d'agrément |
+Numéro d'agrément |
+Téléphone |
+Fax l
+adresse e-mail |
+Site WEB |
+2. Dirigeants sociaux
+. us un | Peer haute ps
+Président du Conseil
+d'Administration
+3. Composition du Conseil d'Administration
+TDi |. | Daed (|Duéedu) Adresse BPVile, |
+—— | SE
+SD
+— _ SE
+RE
+“Avenue Joseph ANOMA 01 B. P. :1878 Abidjan 01/Côte d'Ivoire TEL: (25) 20215742/20215179 Fax: 20221657
+presidence@crepmf.ora WWWw,.crepmf.org
+
+
+4, Commissaires aux Comptes
+= Nom | prénom | Resconsabilié| Nationalité | P2T-S6 | Durée du | d'approbation.
+LS PS ES
+AE ES HS
+A CL
+ee ss
+5. Répartition de l’actionnariat
+. Nom | Prénom | Nétionalté | Activité | Adresse (BP, Vile Pays) | Monent |
+EE RS
+6, Système d'information
+RS ee
+A ee | sigee) eidé …
+Logiciel de |
+gestion |
+Avenue Joseph ANOMA 01 B. P, :1878 Abidjan C1/Côte d'ivoire TEL: (225) 20215742/20215179 Fax: 20221657
+presidence@crepmf.org www.crepmf.org
+
+
+7, Evolution de l'activité
+[1 JExercieN  [Exerien1 |
+Nombre d'OPCVM | SE
+Portefeuille propre | D
+| ELU CS ES D
+…—.CRig8tons non cotées À [ nn erero
+ AUTTES TES
+Opérations pour compte propre... À |  _
+Volume sur le marché secondaire | À
+nn MOP@PE nn
+
+- Nombre de transactions
+
+B. Renseignements sur l’OPCVM
+Informations générales
+Nom
+Forme juridique
+Siège Social
+Date de création
+Numéro RCCM
+Date d'agrément
+Numéro d'agrément
+Classe
+Visa note d'information
+Valeur liquidative d'origine
+Téléphone
+Fax
+adresse e-mail
+Site MEB
+Gestion de l'OPCVM
+Société gestionnaire |
+Dépositaire |
+
+À g
+“Menue Joseph ANOMA OTE, P. :1878 Abidjan 01/Côte d'ivoire TEL.: (225) 20215/42/20215179 Fax: 20221657
+presidence@crepmf.org WWW.crepmf.org
+
+
+Composition du Comité d'investissement
+dd D ou
+5 Re Re Ro | © (omaton |. (durée) à
+RS RS LLC CCS RS
+Re LE RS DRE
+D RS LL
+Evolution de l'activité
+[Libellés [Exercice N_| Exercice N1_ |
+Nombre d'actions ou de parts/ particuliers |
+Nombre d'actions ou de parts/ institutionnels..." À ÀV
+CU ON meneur tonne]...
+LAGtIf net |
+Valeur liquidative. À À
+Performance (A définir) À À
+POrÉRUte Global ee
+a DPGTONS fn
+et OPOVM nf
+- Autres litres er
+|
+présidence@crepmr.org Www.crepmf.org
+
+
+ANNEXE 2 : FICHE DE RENSEIGNEMENTS COMMERCIAUX
+4. Transactions significatives des clients
+Indiquer toute souscription ou tout rachat dépassant 10 % de l’actif net de chaque OPCVM
+2. Opérations pour compte propre de la société de gestion
+3. Transaction avec les parties liées
+À g
+Avenue Joseph ANOMA 01 B. P. :1878 Abidjan 01/Côte d’ivoire TEL.: (225) 20215742/20215779 Fax: 20221657
+presidence@crepmf.ors www. crepmf.org
+
+
+4, Evolution de l'activité de chaque OPCVM
+
+Libellés Trimestre N
+| Nombre total d'actions ou de parts" À À
+Nombre d'actions ou de paris/ particuliers re D
+[Nombre d'actions ou de parts/ institutionnels À À
+Montant des rachats... LL .
+LAGHE Et onu
+Valeur liquidative... | |.
+Frais de gestion [ D
+P@FOrmange
+= Autres titres |
+
+presidence®crepmf.org WWW.crepmf.org

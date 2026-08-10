@@ -1,0 +1,31 @@
+{
+  "sourceId": "DECISION_CM_07_09_2021_UNIFORM_SECURITIES_OFFENCES_LAW",
+  "legalRole": "SANCTIONS_2021_NORMATIVE_CONTEXT",
+  "actualiteId": 1000182,
+  "apiUrl": "https://www.amf-umoa.org/service/api/elastic/actualite?id=1000182&langue=fr",
+  "apiRawSha256": "77d855f7de0e25db474773a796d17a9ebf7d8663966a6c718f96cf828548ae59",
+  "titreFromApi": "DECISION N° CM/07/09/2021",
+  "resumeFromApi": "DECISION N° CM/07/09/2021 PORTANT ADOPTION DE LA LOI UNIFORME RELATIVE AUX INFRACTIONS BOURSIÈRES SUR LE MARCHÉ FINANCIER RÉGIONAL",
+  "texteFromApi": "DECISION N° CM/07/09/2021 PORTANT ADOPTION DE LA LOI UNIFORME RELATIVE AUX INFRACTIONS BOURSIÈRES SUR LE MARCHÉ FINANCIER RÉGIONAL",
+  "documentUrlFromApi": "AC-DECISION-2023-54CE8685-63EE-4316-B9E5-E5E8E1C8A1C6.pdf",
+  "portalDateMetadata": "2021-09-23",
+  "portalValideMetadata": true,
+  "portalAbrogeMetadata": false,
+  "repositoryPdf": "regulatory/sources/amf-umoa-pending-api-backfill/DECISION_CM_07_09_2021_UNIFORM_SECURITIES_OFFENCES_LAW.pdf",
+  "repositoryText": "regulatory/sources/amf-umoa-pending-api-backfill/DECISION_CM_07_09_2021_UNIFORM_SECURITIES_OFFENCES_LAW.txt",
+  "sha256": "74d72deb539c3ec35cd83eb5f2ab9b1fec712a87d0c30113b794f95c240e9f83",
+  "byteSize": 5456564,
+  "pageCount": 19,
+  "textExtractionMethod": "PDFTOTEXT",
+  "usefulTextChars": 34410,
+  "legalBoundary": {
+    "portalDateIsAdoptionDate": false,
+    "portalAbrogeIsLegalStatusProof": false,
+    "binaryMaterializationIsRuleActivation": false,
+    "historicalArticle92TextsRemainAbrogated": false,
+    "automaticDependencyResolutionAllowed": false,
+    "automaticRequirementActivationAllowed": false,
+    "humanLegalReviewRequired": true,
+    "humanComplianceReviewRequired": true
+  }
+}

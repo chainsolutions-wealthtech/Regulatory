@@ -1,0 +1,785 @@
+     UNION MONETAIRE OUEST AFRICAINE
+
+
+          CONSEIL DES MINISTRES
+
+
+                LE PRESIDENT
+
+
+      DECISION N ° CM/ 0 7 709/2021 PORTANT ADOPTION DE LA LOI UNIFORME
+     RELATIVE AUX INFRACTIONS BOURSIÈRES SUR LE MARCHÉ FINANCIER RÉGIONAL
+
+
+
+
+        Le Conseil des Ministres de l'Union Monétaire Ouest Africaine,
+
+
+Vu      le Traité de l'Union Monétaire Ouest Africaine (UMOA) du 20 janvier 2007 ;
+
+
+Vu      la Convention portant création du Conseil Régional de l'Épargne Publique et des
+        Marchés Financiers (CREPMF) du 3 juillet 1996 et son Annexe portant composition,
+        organisation, fonctionnement et attributions du Conseil Régional de ['Épargne
+        Publique et des Marchés Financiers ;
+
+
+Vu      l'Acte Uniforme relatif au droit des sociétés commerciales et du groupement
+        d'intérêt économique révisé le 30 janvier 2014, de l'Organisation pour
+        l'Harmonisation en Afrique du Droit des Affaires créée par le Traité relatif à
+        l'harmonisation du droit des affaires en Afrique du 17 octobre 1993 ;
+
+
+Vu      la Note du Conseil Régional de l'Épargne Publique et des Marchés Financiers sur le
+        projet de loi uniforme relative aux infractions boursières sur le marché financier
+        régional de l'UMOA, présentée au Conseil des Ministres en sa session ordinaire du
+        23 septembre 2021 ;
+
+
+Vu      les Délibérations du Conseil des Ministres en sa session ordinaire du 23 septembre
+        2021 ;
+
+
+
+
+                                               DECIDE
+
+
+                                                                                        1
+Article premier
+La loi uniforme relative aux infractions boursières sur le marché financier de l'Union
+Monétaire Ouest Africaine, annexée à la présente Décision dont elle fait partie
+intégrante, est adoptée.
+
+Article 2
+Dans un délai de six (6) mois à compter de la signature de la présente Décision, les Etats
+membres de l'UMOA prennent les dispositions nécessaires en vue de l'insertion de la loi
+visée à l'article premier dans leur ordre juridique interne.
+
+Article 3
+Le Président du Conseil Régional de l'Épargne Publique et des Marchés Financiers est
+chargé du suivi de la mise en oeuvre de la présente Décision.
+
+Article 4
+La présente Décision abroge et remplace toutes dispositions antérieures contraires
+traitant du même objet. Elle entre en vigueur à compter de la date de sa signature et
+est publiée partout où besoin sera.
+
+
+
+                                       Fait à Lomé, le 23 septembre 2021
+
+
+
+                                       Pour le Conseil des Ministres de l'UMOA,
+
+                                                     Le Président
+
+
+
+
+                                                      Sani YA A
+
+
+
+
+                                                                                        2
+ANNEXE À LA DECISION N° CM/ 0 109/2021 PORTANT ADOPTION DE LA LOI
+    UNIFORME RELATIVE AUX INFRACTIONS BOURSIÈRES SUR LE MARCHÉ
+                          FINANCIER RÉGIONAL
+
+
+
+
+                                                                    3
+      LOI UNIFORME RELATIVE AUX INFRACTIONS BOURSIERES SUR LE MARCHE
+                           FINANCIER DE L'UMOA
+
+TITRE PRÉLIMINAIRE - TERMINOLOGIE
+Article premier : définitions
+
+ 1. Au sens de la présente Loi, l'on entend par : Activité réglementée : activité dont
+    l'exercice est subordonné à l'obtention préalable d'une habilitation ou faisant
+    l'objet de conditions d'exercice établies par le Règlement Général du CREPMF. Il
+    s'agit, notamment, des activités de structures de marché telle que la Bourse
+    Régionale des Valeurs Mobilières (BRVM), le Dépositaire Central / Banque de
+    Règlement (DC/BR), des intervenants commerciaux, tels que les sociétés de gestion
+    et d'intermédiation (SGI), les sociétés de gestion, les conseils en investissements
+    boursiers, les apporteurs d'affaires, les démarcheurs et sociétés de gestion des OPC
+    sur le marché financier, ainsi que toutes autres activités réglementées ;
+
+ 2. Annexe : l'Annexe à la Convention portant création du Conseil Régional de l'Épargne
+    Publique et des Marchés Financiers du 3 juillet 1996, portant composition,
+    organisation, fonctionnement et attributions du Conseil Régional de l'Épargne
+    Publique et des Marchés Financiers ;
+ 3. Appel public à l'épargne : appel public à l'épargne tel que défini par les textes en
+    vigueur sur le marché financier régional de l'Union ;
+4. BRVM : Bourse Régionale des Valeurs Mobilières ;
+5. Communication : le fait, pour tout initié et par tout moyen, de porter une
+   information privilégiée à la connaissance de tout tiers en dehors du cadre normal de
+   sa profession ou de ses fonctions ;
+6. Conseil Régional : Conseil Régional de l'Épargne Publique et des Marchés Financiers
+   (CREPMF) ;
+7. CREPMF : Conseil Régional de l'Épargne Publique et des Marchés Financiers
+   (CREPMF) ;
+8. FCP : Fonds Commun de Placement ;
+9. Indice de référence : tout outil - taux, outil, nombre - disponible au public, calculé
+   régulièrement ou périodiquement à partir d'une moyenne pondérée, permettant de
+   mesurer la performance d'un acteur ou un instrument financier et d'en déterminer
+   la valeur ;
+10. Information : tout renseignement aisément compris par le public ;
+11. Information non publique : toute information qui n'a pas été rendue accessible au
+    public par un moyen garantissant l'égal accès à l'information ;
+
+12. Information particulière : toute information portant sur les perspectives ou la
+    situation d'une entité faisant appel public à l'épargne ou d'un actif ou produit émis
+    par cette entité et négocié sur un marché financier ;
+
+                                                                                       4
+13. Information précise : toute information portant sur un fait dont la survenance ou
+   la non-survenance est prévisible, étant précisé que le caractère précis d'une
+   information n'impose pas la certitude de celle-ci ;
+
+14. Information privilégiée : Information telle que définie à l'Annexe à la Convention
+   portant composition, organisation, fonctionnement et attributions du Conseil
+   Régional de l'Epargne Publique et des Marchés Financiers ;
+
+15. Information trompeuse : toute information de nature à induire le public en erreur,
+   notamment par son caractère ambigu, imprécis ou incomplet ;
+
+16. Initié : toute personne qui a connaissance d'une ou plusieurs informations
+   privilégiées, étant précisé que tout président-directeur général, président du
+   conseil d'administration, directeur général, administrateur général, directeur
+   général adjoint, toute personne physique ou morale exerçant chez l'entité faisant
+   appel public à l'épargne les fonctions d'administrateur, ainsi que tout représentant
+   permanent d'une personne morale qui exerce ces fonctions, de même que toute
+   autre personne qui a, d'une part, au sein de l'entité susvisée, te pouvoir de prendre
+   des décisions de gestion concernant son évolution et sa stratégie et/ou d'autre part,
+   un accès régulier à des informations privilégiées concernant directement ou
+   indirectement cette entité, est présumé(e) connaître les informations privilégiées
+   en raison des fonctions qu'il ou elle exerce au sein de l'entité ;
+
+17. Jour de bourse : jour d'ouverture de la BRVM ;
+18.Manipulation de cours : la manipulation de cours est l'infraction prévue à l'article
+   27 de la présente Loi, notamment caractérisée lorsque l'agissement a pour objet ou
+   pour résultat l'un des faits suivants :
+      1.   Réaliser une transaction fictive ;
+      2.   Donner ou accepter un ordre dont l'exécution n'apporte aucun changement
+           réel de propriétaire ;
+      3.   Créer une apparence d'activité fausse ou trompeuse ou un cours artificiel
+           sur un titre ;
+      4.   Effectuer des séries d'achats ou des séries de ventes sur un même titre dans
+           te but d'influencer indûment ou abusivement le cours du titre ;
+
+      5.   Effectuer seul ou de concert avec une ou plusieurs personnes, une série de
+           transactions sur un titre afin de créer une activité réelle ou apparente ou
+           d'en élever ou abaisser le cours.
+
+19. Manoeuvre : ensemble de moyens frauduleux, artifices, manigances, ne relevant pas
+    du fonctionnement habituel du marché, mais employés pour obtenir un résultat ;
+
+20.Marché financier : le marché financier régional de l'UMOA ainsi que tout marché
+   financier nouveau ;
+
+                                                                                      5
+ 21 . OPC : Organisme de Placement Collectif
+
+ 22. OPCVM : Organisme de Placement Collectif en Valeurs Mobilières ;
+
+ 23. Opération hors marché : transaction effectuée en dehors d'un marché réglementé ;
+
+ 24. Règlement Général : Règlement Général relatif à l'organisation, au fonctionnement
+     et au contrôle du marché financier régional ;
+
+ 25. SGI : Société de Gestion et d'intermédiation ;
+
+ 26. SICAV : Société d'Investissement à Capital Variable ;
+
+ 27. Société de Gestion de Patrimoine : société de gestion de portefeuille ;
+
+ 28. UMOA : Union Monétaire Ouest Africaine.
+
+
+TITRE I - DISPOSITIONS GÉNÉRALES
+
+Article 2 : objet
+
+La présente loi a pour objet :
+
+    1- de définir les règles et les pratiques susceptibles de garantir la transparence et la
+       sécurité des transactions sur le marché financier régional ;
+    2- d'incriminer les actions et les pratiques frauduleuses qui compromettent la
+       transparence et ta sécurité des transactions sur le marché financier régional ;
+    3- de fixer les peines applicables aux auteurs et complices des infractions ainsi
+       définies ;
+    4- de traiter de la coopération entre le Conseil Régional et les autorités judiciaires
+       dans le cadre de la procédure pénale en vue de la répression des infractions
+       boursières.
+Article 3 : champ d'application
+
+La présente loi s'applique :
+   1- aux transactions qui ont cours sur le marché financier régional quel que soit leur
+    lieu de négociation ;
+   2- aux comportements en rapport avec les indices de référence.
+Toutefois, elle ne s'applique pas aux :
+        a) transactions sur actions propres effectuées dans le cadre de programmes de
+              rachat » ;
+        b) mesures de stabilisation d'un instrument financier ;
+
+
+
+
+                                                                                          6
+   c)     aux transactions, ordres ou comportements qui interviennent dans le cadre de
+          ta mise en oeuvre de la politique monétaire, de change ou de gestion de la
+          dette publique et émanant d'une Administration publique d'un Etat membre
+          de l'UMOA, d'une agence ou d'une entité ad hoc d'un ou de plusieurs États
+          membres ou d'une personne, agissant pour le compte et l'intérêt de ceux-ci.
+Article 4 : tentative, association et entente
+
+Dans les cas des infractions prévues dans la présente loi, la tentative est punie comme
+le délit consommé. Il en est de même de l'entente ou de l'association formée en vue de
+commettre l'une de ces infractions.
+Article 5 : complicité
+
+La complicité par fourniture, en connaissance de cause, de moyens, de conseils ou par
+assistance ou aide pour la commission de l'une des infractions prévues dans la présente
+loi, est punie des mêmes peines que la commission du délit.
+
+TITRE II - PRÉVENTION DES ATTEINTES À LA TRANSPARENCE DU MARCHÉ
+
+Chapitre I : Opérations suspectes
+
+Article 6 : déclaration d'opérations suspectes
+
+Tout intervenant sur le marché ou structure de gestion du marché agréé ou habilité
+conformément à l'Annexe est tenu de déclarer sans délai au Conseil Régional, par écrit
+et selon les formes prévues par la réglementation, toute opération effectuée pour son
+propre compte ou pour le compte d'un tiers, sur un actif ou un produit négocié sur un
+marché financier, dont il a des raisons de suspecter qu'elle pourrait constituer une
+infraction au sens de la présente loi.
+Article 7 : moyens de détection des opérations suspectes
+Toute personne tenue à la déclaration prévue à l'article 6 met en place des procédures
+internes dont l'objet est, notamment, d'établir et de mettre à jour une typologie des
+opérations afin de déceler celles devant être déclarées.
+
+Elle met également en place, au profit de son personnel, un programme de formation et
+de sensibilisation en matière de détection et de déclaration des opérations suspectes.
+
+Chapitre II : Informations privilégiées
+
+Article 8 : déclaration d'informations privilégiées
+Toute entité faisant appel public à l'épargne est tenue, sans délai, de porter à la
+connaissance du Conseil Régional et du public toute information privilégiée qui la
+concerne directement.
+
+
+
+
+                                                                                     7
+Article 9 : conditions de report de la déclaration d'information privilégiée
+
+L'entité faisant appel public à l'épargne peut différer la publication d'une information
+privilégiée afin de ne pas porter atteinte à ses intérêts légitimes, sous réserve que le
+défaut de publication n'induise pas le public en erreur et que l'entité soit en mesure
+d'en assurer la confidentialité en contrôlant l'accès, notamment en :
+   1. mettant en place des procédures internes efficaces empêchant l'accès à cette
+      information aux personnes autres que celles qui en ont besoin dans le cadre de
+      leurs fonctions au sein de l'entité faisant appel public à l'épargne ;
+   2. prenant les mesures nécessaires pour veiller à ce que toute personne ayant accès
+      à cette information connaisse les obligations liées à cet accès et soit avertie des
+      sanctions prévues en cas d'utilisation ou de diffusion indue de cette
+      information ;
+   3. mettant en place les dispositions permettant une publication immédiate de
+      l'information privilégiée dans le cas où elle n'aurait pas été en mesure d'en
+      assurer la confidentialité.
+Article 10 : intérêts légitimes
+Les intérêts légitimes mentionnés à l'article 9 peuvent notamment concerner les
+situations suivantes :
+      1. lorsque le fait de rendre publique l'information privilégiée risquerait d'affecter
+         l'issue ou le cours normal de négociations en cours, en particulier en cas de
+         danger grave et imminent menaçant la viabilité financière de l'entité faisant
+         appel public à l'épargne ;
+      2. lorsque l'information porte sur une décision prise ou un contrat passé par
+         l'organe de direction de l'entité faisant appel public à l'épargne, nécessitant,
+         le cas échéant, l'approbation d'un autre organe de cette entité pour devenir
+         effectif, si la publication de l'information, combinée à l'annonce simultanée
+         que cette approbation n'a pas encore été donnée, est de nature à fausser leur
+         correcte appréciation par le public.
+Article 11 : diffusion de l'information privilégiée
+Lorsqu'une entité faisant appel public à l'épargne ou une personne agissant au nom et
+pour le compte de celle-ci, communique une information privilégiée à un tiers dans
+l'exercice normal de ses activités, de sa profession ou de ses fonctions, elle en assure
+une diffusion selon les modalités fixées à l'article 8, soit simultanément en cas de
+communication intentionnelle, soit dans les plus brefs délais en cas de communication
+non intentionnelle.
+Les dispositions de l'alinéa précédent ne s'appliquent pas lorsque la personne qui reçoit
+['information est tenue par une obligation de confidentialité, que le fondement de
+celle-ci soit législatif, réglementaire, statutaire ou contractuel.
+
+
+
+                                                                                         8
+Article 12 : intégrité de l'information privilégiée
+
+L'entité faisant appel public à l'épargne s'abstient de combiner, d'une manière
+susceptible d'induire le public en erreur, la fourniture d'informations privilégiées et les
+éléments publicitaires ou commerciaux relatifs à ses activités.
+Article 13 : divulgation des changements relatifs à l'information privilégiée
+
+Tout changement significatif concernant des informations privilégiées déjà rendues
+publiques est divulgué selon les mêmes modalités que celles utilisées lors de leur
+diffusion initiale.
+
+Chapitre III : Communication d'opérations de bourse
+
+Article 14 : obligation de déclaration des opérations de bourse
+
+Sont communiquées au Conseil Régional, dans les cinq jours de bourse suivant la
+réalisation de l'opération concernée, toutes informations relatives à toute acquisition,
+cession, souscription ou tout échange d'actif ou produit émis par une entité faisant appel
+public à l'épargne, négocié sur un marché financier, lorsqu'une tette opération est
+réalisée par :
+   1.     le Président-Directeur Général, Président du Conseil d'Administration,
+          Directeur Général, Administrateur Général, Administrateur, Directeur Général
+          Adjoint ou tout autre Représentant Légal ;
+   2.     toute autre personne qui a, d'une part, au sein de l'entité mentionnée au
+          présent article, le pouvoir de prendre des décisions de gestion concernant
+          l'évolution et la stratégie de celle-ci et, d'autre part, un accès régulier à des
+          informations privilégiées concernant directement ou indirectement cette
+          entité ;
+   3.    toute personne ayant, avec toute personne mentionnée aux points 1 et 2, des
+         liens personnels étroits de conjoint non séparé de corps, de parenté ou
+         d'alliance se traduisant par une résidence commune depuis au moins un an à
+         la date de la transaction concernée ;
+   4.    toute personne morale ou entité dont ta direction, l'administration ou ta
+         gestion est assurée par l'une des personnes mentionnées aux points 1 et 2 ou
+         par l'une des personnes mentionnées au point 3 agissant dans l'intérêt d'une
+         ou plusieurs personnes mentionnées aux points 1 et 2 ;
+   5.    toute personne morale ou entité contrôlée, directement ou indirectement, par
+         l'une des personnes mentionnées aux points 1, 2 et 3 ;
+   6.    toute personne morale ou entité qui est constituée au bénéfice d'une des
+         personnes mentionnées aux points 1, 2 et 3 ;
+   7.    toute personne morale ou entité pour laquelle l'une des personnes
+         mentionnées aux points 1, 2 ou 3 bénéficie au moins de la majorité des
+         avantages économiques.
+
+                                                                                         9
+Article 15 : obligation de fournir copie de la communication
+
+L'obligation de déclaration prévue à l'article 14 pèse sur les personnes mentionnées aux
+points 1 à 6 dudit article qui sont tenues, lors de la communication au Conseil Régional,
+de fournir à l'entité faisant appel public à l'épargne, visée au même article, une copie
+de cette communication.
+Article 16 : personnes ayant accès à l'information privilégiée
+
+Toute entité faisant appel public à l'épargne qui a émis des actifs ou produits négociés
+sur un marché financier, ou pour lesquels une demande d'admission aux négociations sur
+un tel marché a été présentée, est tenue d'établir, de mettre à jour, et de communiquer
+au Conseil Régional, à sa demande, et sans délai, une liste des personnes travaillant en
+son sein et ayant accès à des informations privilégiées concernant directement cette
+entité.
+L'entité établit, met à jour et communique au Conseil Régional, dans tes mêmes
+conditions, la liste des tiers agissant en son nom ou pour son compte ayant accès à des
+informations privilégiées dans le cadre de leurs relations professionnelles avec celle-ci.
+Dans les mêmes conditions, tout tiers agissant au nom et pour le compte de toute entité
+faisant appel public à l'épargne est tenu d'établir, de mettre à jour et, à sa demande,
+de communiquer au Conseil Régional une liste des personnes travaillant en son sein et
+ayant accès à des informations privilégiées concernant directement ou indirectement
+l'entité faisant appel public à l'épargne mentionnée au premier alinéa, ainsi qu'une liste
+des personnes agissant en son nom ou pour son compte, ayant accès aux mêmes
+informations dans le cadre de leurs relations professionnelles avec lui.
+
+Article 17 : contenu de la liste
+
+Les listes mentionnées à l'article 16 comportent :
+   1. le nom ou la dénomination sociale des personnes devant y figurer ;
+   2. le motif d'inscription des personnes devant y figurer ;
+   3. le rapport de droit entre ces personnes et l'entité faisant la déclaration.
+Article 18 : information des personnes figurant sur la liste
+Toute personne ou entité tenue d'établir la liste prévue à l'article 16 informe, par écrit
+et dans les plus brefs délais, les personnes figurant sur celle-ci. Cette information
+comporte la mention de leur inscription sur la liste, le rappel des règles applicables à la
+détention, à la communication et à l'exploitation d'une information privilégiée ainsi que
+les sanctions qui s'attachent à leur méconnaissance.
+
+
+
+
+                                                                                        10
+TITRE III - RÉPRESSION DES ATTEINTES À LA TRANSPARENCE DU MARCHÉ
+
+Chapitre I : Répression des infractions de bourse
+
+Article 19 : violation de l'obligation de déclaration
+
+Est punie d'une amende d'un million (1.000.000) à vingt millions (20.000.000) de Francs
+CFA, toute personne qui contrevient sciemment à toute obligation de déclaration lui
+incombant aux termes du chapitre précédent, de quelle que nature qu'elle soit.
+Article 20 : défaut de déclaration des opérations de bourse
+
+Est punie d'une amende d'un million (1.000.000) à vingt millions (20.000.000) de Francs
+CFA, toute personne visée à l'article 14 qui contrevient sciemment à l'obligation de
+déclaration lui incombant aux termes dudit article.
+Article 21 : défaut de publication d'information privilégiée
+
+Est punie d'une amende d'un million (1.000.000) à vingt millions (20.000.000) de Francs
+CFA, toute entité faisant appel public à l'épargne qui contrevient sciemment à
+l'obligation de déclaration lui incombant aux termes de l'article 8 de la présente loi.
+Article 22 : non-déclaration de franchissement de seuil
+
+Est punie d'une amende d'un million (1.000.000) à vingt millions (20.000.000) de Francs
+CFA, toute personne physique ou morale qui s'abstient de remplir les obligations
+d'informations auxquelles elle est tenue, en application des dispositions du Règlement
+Général relatives aux déclarations de franchissement de seuil.
+Article 23 : délit d'initié
+Est puni d'un emprisonnement d'un (01) an à cinq (05) ans et d'une amende de cinq
+millions (5.000.000) à cinquante millions (50.000.000) de Francs CFA, ce montant pouvant
+être porté jusqu'au décuple du montant de l'avantage tiré du délit, sans que l'amende ne
+puisse être inférieure à cet avantage, tout initié détenteur d'une information privilégiée
+sur la situation d'un émetteur ou les perspectives d'évolution des valeurs mobilières de
+l'émetteur et qui, en connaissance de cause, réalise ou permet de réaliser, directement
+ou indirectement, une ou plusieurs opérations sur un marché financier avant que
+l'information ne soit accessible au public.
+En cas de récidive, le maximum de l'amende est prononcé, que l'auteur ait tiré ou non
+un profit de l'infraction.
+Les personnes morales déclarées pénalement responsables du délit d'initié sont punies
+d'une amende de vingt-cinq millions (25.000.000) à deux cent cinquante millions
+(250.000.000) de Francs CFA, ce montant pouvant être porté jusqu'au décuple du
+montant de l'avantage tiré du délit, sans que l'amende ne puisse être inférieure à cet
+avantage.
+
+
+
+
+                                                                                       11
+Par dérogation, le Conseil Régional peut, ponctuellement et spécifiquement, autoriser
+tes pratiques suivantes, à la demande de l'entité faisant appel public à l'épargne qui a
+émis les actifs ou produits négociés sur un marché financier auxquels se rapporte
+l'information privilégiée :
+   1. les achats et les ventes de titres dans te cadre du fonctionnement d'un contrat de
+      liquidité ;
+   2. les achats et les ventes réalisés dans le cadre d'un programme assorti d'un
+      calendrier précis.
+
+Article 24 : incitation ou recommandation d'information privilégiée
+Est puni d'un emprisonnement d'un (01) an à cinq (05) ans et d'une amende de cinq
+millions (5.000.000) à cinquante millions (50.000.000) de Francs CFA, ce montant pouvant
+être porté jusqu'au décuple du montant de l'avantage tiré du délit, sans que l'amende
+puisse être inférieure à cet avantage, tout initié détenteur d'une information privilégiée
+qui, intentionnellement, recommande à un tiers d'acquérir ou de céder, ou de faire
+acquérir ou de céder par une autre personne, le ou les actifs ou produits négociés sur un
+marché financier auxquels se rapporte cette information, ou incite la réalisation de telles
+opérations sur le fondement de cette information privilégiée.
+Les personnes morales déclarées pénalement responsables du délit d'incitation ou de
+recommandation à un tiers d'une information privilégiée, sont punies d'une amende de
+vingt-cinq millions (25.000.000) à deux cent cinquante millions (250.000.000) de Francs
+CFA, ce montant pouvant être porté jusqu'au décuple du montant de l'avantage tiré du
+délit, sans que l'amende puisse être inférieure à cet avantage.
+En cas de récidive, le maximum de l'amende est prononcé, que l'auteur ait tiré ou non
+un profit de l'infraction.
+Article 25 : communication d'information privilégiée
+Est puni d'un emprisonnement d'un (01) an à cinq (05) ans et d'une amende de cinq
+millions (5.000.000) à cinquante millions (50.000.000) de Francs CFA, ce montant pouvant
+être porté jusqu'au décuple du montant de l'avantage tiré du délit, sans que l'amende
+puisse être inférieure à cet avantage, tout initié qui communique sciemment une
+information privilégiée à un tiers en dehors du cadre normal de sa profession ou de ses
+fonctions.
+Les personnes morales déclarées pénalement responsables du délit de communication
+d'information privilégiée sont punies d'une amende de vingt-cinq millions (25.000.000) à
+deux cent cinquante millions (250.000.000) de Francs CFA, ce montant pouvant être porté
+jusqu'au décuple du montant de l'avantage tiré du délit, sans que l'amende puisse être
+inférieure à cet avantage.
+En cas de récidive, le maximum de l'amende sera prononcé, que l'auteur ait tiré ou non
+un profit de l'infraction.
+
+
+
+
+                                                                                        12
+Article 26 : diffusion d'information fausse ou trompeuse
+Est punie d'un emprisonnement d'un (01) an à cinq (05) ans et dune amende de cinq
+millions (5.000.000) à cinquante millions (50.000.000) de Francs CFA, ce montant pouvant
+être porté jusqu'au décuple du montant de L'avantage tiré du délit, sans que l'amende
+puisse être inférieure à cet avantage, toute personne qui, en connaissance de cause,
+répand dans le public par tout moyen, toute information fausse ou trompeuse sur les
+perspectives ou la situation d'une entité faisant appel public à l'épargne ou sur les
+perspectives d'évolution d'un actif ou d'un produit négocié sur un marché financier, de
+nature à agir sur les cours.
+Les personnes morales déclarées pénalement responsables du délit de diffusion
+d'information fausse ou trompeuse sont punies d'une amende de vingt-cinq millions
+(25.000.000) à deux cent cinquante millions (250.000.000) de Francs CFA, ce montant
+pouvant être porté jusqu'au décuple du montant de l'avantage tiré du délit, sans que
+l'amende puisse être inférieure à cet avantage.
+En cas de récidive, le maximum de l'amende sera prononcé, selon que l'auteur ait tiré
+ou non un profit de l'infraction.
+Article 27 : manipulation de cours
+Est punie d'un emprisonnement d'un (01) an à cinq (05) ans et d'une amende de cinq
+millions (5.000.000) à cinquante millions (50.000.000) de Francs CFA, ce montant pouvant
+être porté jusqu'au décuple du montant de l'avantage tiré du délit, sans que l'amende
+puisse être inférieure à cet avantage, toute personne qui, en connaissance de cause,
+agissant seule ou de concert avec une ou plusieurs autres personnes, exerce directement
+ou par personne interposée, une manoeuvre ayant pour objet d'entraver le
+fonctionnement régulier d'un marché financier en induisant autrui en erreur, en ce sens
+qu'elle est de nature à inciter une ou plusieurs tierces personnes à acquérir ou à céder
+un actif ou un produit négocié sur un marché financier.
+Les personnes morales déclarées pénalement responsables du délit de manipulation de
+cours sont punies d'une amende de vingt-cinq millions (25.000.000) à deux cent
+cinquante millions (250.000.000) de Francs CFA, ce montant pouvant être porté jusqu'au
+décuple du montant de l'avantage retiré du délit, sans que l'amende puisse être inférieure
+à cet avantage.
+En cas de récidive, le maximum de l'amende sera prononcé, que l'auteur ait tiré ou non
+un profit de l'infraction.
+Article 28 : manipulation d'indice de référence
+Est punie d'un emprisonnement d'un (01) an à cinq (05) ans et dune amende de cinq
+millions (5.000.000) à cinquante millions (50.000.000) de Francs CFA, ce montant pouvant
+être porté jusqu'au décuple du montant de l'avantage tiré du délit, sans que l'amende
+puisse être inférieure à cet avantage, toute personne qui, en connaissance de cause,
+agissant seule ou de concert avec une ou plusieurs autres personnes :
+   1. fournit ou transmet des informations fausses ou trompeuses, utilisées pour calculer
+       un indice de référence ou des informations de nature à fausser le cours d'un
+       instrument financier ou d'actif auquel est lié un tel indice ;
+
+                                                                                       13
+   2. adopte une attitude conduisant à la manipulation du calcul d'un tel indice.
+Les personnes morales déclarées pénalement responsables du délit de manipulation
+d'indice de référence sont punies d'une amende de vingt-cinq millions (25.000.000) à
+deux cent cinquante millions (250.000.000) de Francs CFA, ce montant pouvant être porté
+jusqu'au décuple du montant de l'avantage retiré du délit, sans que l'amende puisse être
+inférieure à cet avantage.
+En cas de récidive, le maximum de l'amende sera prononcé, selon que l'auteur ait tiré
+ou non un profit de l'infraction.
+
+Chapitre Il : Sanction de l'exercice illégal d'une activité réglementée
+Article 29 : exercice illégal d'une activité réglementée
+Est puni d'un emprisonnement de six (06) mois à deux (02) ans et d'une amende de cinq
+millions (5.000.000) à vingt millions (20.000.000) de Francs CFA, ce montant pouvant être
+porté au quintuple de l'avantage retiré de l'infraction, quiconque sciemment :
+   1. exerce une activité réglementée sur le marché financier régional sans habilitation
+      préalable du Conseil Régional ;
+   2. ne respecte pas la restriction, la suspension, ou l'interdiction d'activité
+      professionnelle qui lui est notifiée par le Conseil Régional.
+Article 30 : appel public à l'épargne frauduleux réalisé par les dirigeants
+Est puni d'un emprisonnement d'un (01) an à cinq (05) ans et d'une amende d'un million
+(1.000.000) à vingt millions (20.000.000) de Francs CFA, ce montant pouvant être porté
+au quintuple de l'avantage tiré de l'infraction, tout dirigeant d'une entité qui,
+sciemment, réalise un appel public à l'épargne sans y être autorisé.
+Article 31 : appel public à l'épargne frauduleux réalisé par une entité
+Est punie d'une amende de cinq millions (5.000.000) à vingt millions (20.000.000) de
+Francs CFA, sans préjudice des poursuites contre les personnes physiques, toute entité
+qui sciemment réalise un appel public à l'épargne sans autorisation préalable du Conseil
+Régional, dans les conditions de son Règlement Général.
+Article 32 : extension de la sanction aux entités étrangères
+L'article 31 ci-dessus, s'applique également aux entités non-résidentes faisant appel
+public à l'épargne sur le marché régional en infraction aux dispositions du Règlement
+Général.
+Article 33 : défaut de communication d'une information sincère et exacte ou d'un
+contrat écrit
+Est puni d'un emprisonnement d'un (01) an à cinq (05) ans et d'une amende d'un million
+(1.000.000) à vingt millions (20.000.000) de Francs CFA, tout intervenant habilité :
+
+
+
+                                                                                      14
+    1. n'ayant pas communiqué à ses clients une information sincère et exacte sur les
+       opérations envisagées ;
+    2. exerçant une opération pour le compte d'un client sans avoir, au préalable, conclu
+       un contrat écrit avec ce dernier.
+S'il s'agit d'une personne morale, seule la peine d'amende est appliquée.
+Article 34 : violation du monopôle de négociation en Bourse
+
+Est punie d'un emprisonnement d'un (01) an à cinq (05) ans et d'une amende d'un million
+(1.000.000) à vingt millions (20.000.000) de Francs CFA, toute personne qui enfreint les
+monopoles de négociation en bourse et de tenue de comptes titres dévolus aux sociétés
+de gestion et d'intermédiation. S'il s'agit d'une personne morale, seule la peine
+d'amende est appliquée.
+Relativement à la tenue de comptes titres, les dispositions de l'alinéa précédent ne
+s'appliquent pas aux banques autorisées par le Conseil Régional à exercer les fonctions
+de tenue de comptes titres et de conservation.
+Article 35 : violation des formalités d'information du public à l'émission de valeurs
+
+Est puni d'un emprisonnement de trois (03) mois à douze (12) mois et d'une amende de
+deux millions (2.000.000) à cinq millions (5.000.000) de Francs CFA, tout président,
+administrateur, directeur général de société, qui a émis des valeurs mobilières offertes
+au public sans :
+      1- qu'une notice soit insérée dans un journal habilité à recevoir les annonces
+         légales, préalablement à toute mesure de publicité ;
+      2- que les prospectus et circulaires reproduisent les énonciations de la notice
+         prévue au paragraphe ter du présent article, et contiennent la mention de
+         l'insertion de cette notice au journal habilité à recevoir les annonces légales
+         avec référence au numéro dans lequel elle a été publiée ;
+      3- que les affiches et les annonces dans les journaux reproduisent les mêmes
+         énonciations, ou tout au moins un extrait de ces énonciations avec référence
+         à ladite notice, et indications du numéro du journal habilité à recevoir les
+         annonces légales dans lequel elle a été publiée ;
+      4- que les affiches, les prospectus et les circulaires mentionnent la signature de
+         la personne ou du représentant de la société dont l'offre émane et précise si
+         les valeurs offertes sont cotées ou non et, dans l'affirmative, à quelle bourse.
+Les mêmes peines sont applicables aux personnes qui ont servi d'intermédiaires à
+l'occasion de la cession de valeurs mobilières en violation des prescriptions du présent
+article.
+
+
+
+
+                                                                                      15
+Chapitre III : Sanction des atteintes à la gestion collective
+
+Article 36 : souscription frauduleuse de parts
+
+Est puni d'un emprisonnement d'un (01) an à cinq (05) ans et d'une amende d'un million
+(1.000.000) à vingt millions (20.000.000) de Francs CFA, laquelle, en cas de récidive,
+peut être portée à cinquante millions (50.000.000) de Francs CFA, tout dirigeant d'une
+SICAV, de la société de gestion d'un FCP, ou de tout autre organisme de placement
+collectif, qui exerce des activités de souscription et d'émission des parts ou actions des
+OPCVM, sans l'agrément préalable du Conseil Régional, ou sans l'obtention du visa du
+Conseil Régional sur la note d'information ou la diffusion de celle-ci auprès du public.
+Article 37 : violation des opérations d'emprunt irrégulières
+
+Est puni d'une amende d'un million (1.000.000) à vingt millions (20.000.000) de Francs
+CFA, tout dirigeant d'une SICAV, d'une société de gestion d'un FCP ou de tout autre
+organisme de placement collectif qui :
+
+   1. procède à des emprunts de sommes d'argent pour le compte d'un OPCVM, que
+      dans les conditions autres que celles prévues dans le Règlement Général du
+      CREPMF ;
+   2. au nom de la SICAV ou du FCP, se livre à des opérations autres que celles prévues
+      dans le Règlement Général du CREPMF.
+
+Article 38 : perception de commission au-delà du seuil
+
+Est puni d'une amende d'un million (1.000.000) à vingt millions (20.000.000) de Francs
+CFA, tout dirigeant d'une SICAV, d'une société de gestion d'un FCP, et de l'établissement
+dépositaire d'une SICAV, d'un FCP ou de tout autre organisme de placement collectif qui
+a sciemment permis le prélèvement de commissions ou de frais de gestion excédant les
+niveaux indiqués dans la note d'information visée par le Conseil Régional.
+Article 39 : défaut de désignation d'un commissaire aux comptes
+
+Est puni d'une amende d'un million (1.000.000) à vingt millions (20.000.000) de Francs
+CFA, tout dirigeant d'une SICAV ou d'une société de gestion d'un FCP ou de toute autre
+forme d'organisme de placement collectif qui, sciemment, n'a pas procédé à la
+désignation d'un commissaire aux comptes approuvé par le Conseil Régional ou ne l'aura
+pas convoqué aux assemblées générales de la SICAV ou de la société de gestion d'un FCP.
+Article 40 : obstruction aux opérations du commissaire aux comptes
+Est puni d'une amende d'un million (1.000.000) à vingt millions (20.000.000) de Francs
+CFA, tout dirigeant d'une SICAV ou d'une société de gestion d'un FCP ou de tout autre
+organisme de placement collectif et de l'établissement dépositaire d'un FCP d'une SICAV
+ou tout autre intervenant du marché ainsi que toutes les personnes placées sous son
+autorité, qui a sciemment fait obstacle aux vérifications ou aux contrôles du commissaire
+aux comptes, ou qui lui a refusé la communication sur place de toutes les pièces utiles à
+l'exercice de sa mission.
+
+
+                                                                                      16
+Chapitre IV : Sanction des atteintes à la gestion sous mandat
+
+Article 41 : abus contre la clientèle
+
+Est puni d'une peine d'emprisonnement de six (06) mois à deux (02) ans et d'une amende
+de cinq millions (5.000.000) à vingt millions (20.000.000) de Francs CFA, tout membre
+des organes d'administration, de direction ou de gestion ou du personnel d'une SGI ou
+d'une SGP qui, sciemment, réalise des opérations au détriment de l'intérêt de la
+clientèle.
+Article 42 : réalisation d'opérations liées
+
+Est puni d'un emprisonnement de six (06) mois à deux (02) ans et d'une amende d'un
+million (1.000.000) à vingt millions (20.000.000) de Francs CFA, tout membre des organes
+d'administration, de direction, de gestion ou du personnel d'une SGP ou d'une SGI qui,
+sciemment, réalise ou fait réaliser des opérations hors marché entre les clients gérés et
+les sociétés avec lesquelles cette personne entretient des liens juridiques directs ou
+indirects.
+Article 43 : obstructions aux missions d'enquête ou de contrôle du Conseil Régional
+
+Est punie d'une peine d'emprisonnement d'un (01) an à cinq (05) ans et d'une amende
+d'un million (1.000.000) à vingt millions (20.000.000) de Francs CFA, toute personne qui
+a sciemment empêché une mission de contrôle ou d'enquête du Conseil Régional, ou qui
+lui a communiqué des informations inexactes.
+
+
+TITRE IV : COOPÉRATION ENTRE LE CONSEIL RÉGIONAL ET LES AUTORITÉS JUDICIAIRES
+DANS LE CADRE DE LA PROCÉDURE PÉNALE
+
+Article 44 : compétence territoriale
+Au sens de la présente loi, est compétent pour poursuivre les infractions, le procureur de
+la République du lieu de commission des infractions.
+Le procureur est saisi sur rapport du Conseil Régional, sur plainte d'un acteur du marché,
+ou encore sur dénonciation.
+Il peut également s'autosaisir lorsqu'il a connaissance de la commission d'une des
+infractions prévues par la présente Loi uniforme.
+Dans tous les cas de saisines autres que sur rapport du Conseil Régional, y compris le cas
+d'auto-saisine, le procureur saisit le Conseil Régional aux fins d'enquête.
+Le Conseil Régional dresse un rapport auquel sont annexés tous les renseignements,
+procès-verbaux et actes y afférents, qu'il transmet au Procureur, lequel met en
+mouvement l'action publique, s'il y échet.
+
+
+
+
+                                                                                       17
+Article 45 : saisine du parquet sur rapport d'enquête du Conseil Régional
+Lorsque, dans le cadre de ses attributions, le Conseil Régional a connaissance de faits
+susceptibles d'être constitutifs d'une infraction prévue par la présente loi, il procède à
+une enquête et dresse un rapport qu'il transmet au parquet compétent aux fins de
+poursuites judiciaires. Il est annexé au rapport tous les renseignements, procès-verbaux
+et actes y afférents.
+Lorsqu'il est saisi par le Conseil Régional, le Procureur, sans délai, met en mouvement
+l'action publique.
+Article 46 : mise en mouvement de l'action publique par la victime
+Tout acteur du marché qui s'estime lésé par un acte relevant des infractions prévues par
+la présente Loi uniforme, peut mettre directement en mouvement l'action publique,
+selon les modalités prévues par le droit de l'Etat où l'infraction a été commise.
+Article 47 : constitution de partie civile par le Conseil Régional
+Lorsque des poursuites pénales sont engagées sur le fondement de la présente toi, le
+Conseil Régional peut exercer les droits de la partie civile.
+Article 48 : saisine du Conseil Régional pour avis
+Les autorités judiciaires saisies sur le fondement de la présente loi, pourront, à tout
+stade de la procédure, requérir le Conseil Régional, pour avis simple, sur toute question
+entrant dans son champ de compétence.
+Article 49 : prérogatives du Conseil Régional
+Dans tous les cas, le Conseil Régional conserve la faculté de mettre en oeuvre les
+sanctions administratives et disciplinaires prévues à l'Annexe.
+A toute époque, le Conseil Régional peut prendre toutes mesures conservatoires qu'il
+jugera opportunes, lorsque les faits objets des poursuites présentent une réelle menace
+à l'intégrité du système, à la protection des investisseurs ou à la stabilité du marché,
+jusqu'à l'intervention d'une décision définitive sur l'action publique ou sur les poursuites
+qu'il a engagées sur le fondement de l'Annexe.
+Article 50 : prescription de l'action publique
+L'action publique pour la répression des infractions prévues à la présente loi se prescrit
+par trois années révolues si, dans cet intervalle, il n'a été fait aucun acte de poursuite
+ou d'instruction.
+S'il en a été effectué dans cet intervalle, elle ne se prescrit qu'après trois années
+révolues à compter du dernier acte. Il en est ainsi même à l'égard des personnes qui ne
+sont pas impliquées dans cet acte d'instruction ou de poursuite.
+
+
+
+
+                                                                                         18
+La prescription est suspendue par tout obstacle de droit ou de fait empêchant l'exercice
+de l'action publique.
+Elle est également suspendue par la notification de griefs par le Conseil Régional.
+Le délai de prescription prévu à l'alinéa ter court à compter du jour où l'infraction a été
+découverte.
+
+Article 51 : transaction
+L'action publique est également éteinte par la transaction intervenue entre le Conseil
+Régional et ta personne poursuivie et, le cas échéant, avec la victime de l'infraction.
+La victime qui n'a pas transigé avec la personne poursuivie conserve son droit à
+réparation devant les juridictions civiles.
+En cas de transaction avec une personne poursuivie, le Conseil Régional en informe le
+Procureur.
+
+
+TITRE V : DISPOSITIONS FINALES
+Article 52 : dispositions abrogatoires
+Sont abrogées, toutes les dispositions antérieures contraires traitant du même objet.
+Article 53 : exécution
+La présente loi sera publiée au Journal Officiel de chaque Etat et exécutée comme loi de
+l'État.
+
+
+
+
+                                                                                        19
+
