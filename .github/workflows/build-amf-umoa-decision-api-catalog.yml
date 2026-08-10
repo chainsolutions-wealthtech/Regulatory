@@ -1,0 +1,89 @@
+name: Build AMF-UMOA Decision API Catalog
+
+on:
+  push:
+    branches:
+      - main
+    paths:
+      - .github/workflows/build-amf-umoa-decision-api-catalog.yml
+      - scripts/build_amf_umoa_decision_api_catalog.py
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: amf-umoa-decision-api-catalog-main
+  cancel-in-progress: false
+
+jobs:
+  build-catalog:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Configure Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      - name: Build bounded official Decision API catalog
+        run: python3 scripts/build_amf_umoa_decision_api_catalog.py
+
+      - name: Validate safety boundary
+        run: |
+          python3 - <<'PY'
+          import json
+          from pathlib import Path
+
+          catalog = json.loads(Path(
+              'regulatory/registries/AMF_UMOA_DECISION_API_CATALOG_V0_1.json'
+          ).read_text(encoding='utf-8'))
+          validation = json.loads(Path(
+              'regulatory/validation/AMF_UMOA_DECISION_API_CATALOG_VALIDATION_V0_1.json'
+          ).read_text(encoding='utf-8'))
+          assert catalog['result'] == 'PASS', catalog
+          assert validation['result'] == 'PASS', validation
+          assert catalog['decisionCount'] >= 10
+          assert validation['checks']['knownWitnessesRecovered'] is True
+          assert validation['checks']['automaticSanctionActivationForbidden'] is True
+          boundary = catalog['boundary']
+          assert boundary['catalogDiscoveryIsLegalStatusProof'] is False
+          assert boundary['portalAbrogeMetadataIsLegalStatusProof'] is False
+          assert boundary['automaticDependencyResolutionAllowed'] is False
+          assert boundary['automaticSanctionRuleActivationAllowed'] is False
+          assert boundary['automaticSanctionAmountActivationAllowed'] is False
+          assert boundary['readyForSubmissionMustRemainFalse'] is True
+          PY
+
+      - name: Check textual integrity
+        run: git diff --check
+
+      - name: Upload catalog evidence
+        uses: actions/upload-artifact@v4
+        with:
+          name: amf-umoa-decision-api-catalog
+          retention-days: 30
+          if-no-files-found: error
+          path: |
+            regulatory/registries/AMF_UMOA_DECISION_API_CATALOG_V0_1.json
+            regulatory/validation/AMF_UMOA_DECISION_API_CATALOG_VALIDATION_V0_1.json
+
+      - name: Commit generated research catalog
+        run: |
+          git config user.name 'regulatory-source-bot'
+          git config user.email 'regulatory-source-bot@users.noreply.github.com'
+          git add \
+            regulatory/registries/AMF_UMOA_DECISION_API_CATALOG_V0_1.json \
+            regulatory/validation/AMF_UMOA_DECISION_API_CATALOG_VALIDATION_V0_1.json
+          if git diff --cached --quiet; then
+            echo 'No Decision catalog changes to commit.'
+          else
+            git commit -m 'chore: refresh official AMF-UMOA Decision API catalog'
+            git pull --rebase origin main
+            git push origin HEAD:main
+          fi
