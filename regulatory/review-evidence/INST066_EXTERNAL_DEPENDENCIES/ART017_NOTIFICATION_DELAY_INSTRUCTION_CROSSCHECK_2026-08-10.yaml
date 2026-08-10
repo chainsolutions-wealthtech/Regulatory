@@ -1,0 +1,85 @@
+evidence_id: ART017_NOTIFICATION_DELAY_INSTRUCTION_CROSSCHECK_2026_08_10
+review_date: 2026-08-10
+source_instruction: INSTRUCTION_66_CREPMF_2021
+dependency_id: INST066_ART017_DEP_INST_01
+article_number: 17
+dependency_kind: COUNCIL_INSTRUCTION
+
+source_scope:
+  subject: >-
+    La Société de Gestion d'OPC est informée, dans un délai précisé par une
+    Instruction du Conseil Régional, de l'octroi ou du refus de l'agrément du FCP.
+  required_fact: DEADLINE_FOR_INFORMATION_OR_NOTIFICATION_OF_GRANT_OR_REFUSAL
+
+closest_current_candidate:
+  source_id: INSTRUCTION_64_CREPMF_2020
+  reference: "Instruction n°64/CREPMF/2020"
+  repository_text: regulatory/sources/amf-umoa-priority-api-documents/INSTRUCTION_64_CREPMF_2020.txt
+  sha256: db5091c4388e5c050c22b028e7494522e36d6b5b041ba265cf96ccedada24469
+  scope:
+    article_2: "champ incluant expressément les OPC"
+    article_14: >-
+      Le Conseil Régional dispose d'un délai maximum de trois (3) mois à compter du
+      dépôt de la demande pour se prononcer sur la demande d'agrément et rendre sa décision.
+    article_15: >-
+      Les décisions d'agrément/approbation, d'ajournement ou de rejet/refus font
+      l'objet d'une notification au requérant selon les modalités décrites.
+  limitation: >-
+    L'article 14 fixe le délai maximal pour prendre/rendre la décision. L'article 15
+    impose la notification mais ne fixe pas de délai distinct entre la décision et sa
+    notification. Le renvoi de l'article 17 de l'Instruction 66 est formulé comme un
+    délai dans lequel la Société de Gestion est informée de l'octroi ou du refus.
+    Assimiler automatiquement le délai de décision au délai d'information irait au-delà
+    du texte explicite.
+  match_status: RELATED_STRONG_SCOPE_NOT_EXACT_NOTIFICATION_DEADLINE
+
+current_official_api_catalog_crosscheck:
+  catalog: regulatory/registries/AMF_UMOA_INSTRUCTION_API_CATALOG_V0_1.json
+  validation: regulatory/validation/AMF_UMOA_INSTRUCTION_API_CATALOG_VALIDATION_V0_1.json
+  workflow_run_id: 31421767303
+  result: PASS
+  instruction_objects_recovered: 65
+  relevant_opc_approval_candidates:
+    - reference: Instruction n°22/99
+      object: "agrément des OPCVM et information du public"
+      legal_boundary: HISTORICAL_ABROGATED_BY_INSTRUCTION_66_ARTICLE_92
+    - reference: Instruction n°64/2020
+      object: "conditions de traitement des dossiers de demande d'agrément ou d'approbation"
+      legal_boundary: CURRENT_CANDIDATE_BUT_NO_DISTINCT_NOTIFICATION_DEADLINE_IDENTIFIED
+    - reference: Instruction n°66/2021
+      object: SOURCE_INSTRUCTION
+  result_summary: >-
+    Aucun autre objet Instruction courant identifié dans le catalogue officiel borné
+    ne fournit, par son objet ou les textes déjà matérialisés, un délai distinct de
+    notification de l'octroi/refus d'agrément du FCP.
+
+historical_lineage:
+  source_id: INSTRUCTION_22_CREPMF_1999
+  repository_text: regulatory/sources/amf-umoa-pending-api-backfill/INSTRUCTION_22_CREPMF_1999.txt
+  observed_article_12: >-
+    La publication de la décision d'agrément devait intervenir au plus tard 90 jours
+    après sa notification par le Conseil Régional.
+  relevance: >-
+    Ce texte historique distingue bien notification et publication, mais ne fournit pas
+    le délai de notification recherché. Il est en outre abrogé par l'article 92 de
+    l'Instruction 66 et ne peut être réactivé.
+
+conclusion:
+  documentary_status: UNRESOLVED
+  reason: >-
+    Instruction 64 établit le délai de décision et l'obligation de notification mais pas
+    un délai distinct d'information/notification. Aucun texte courant plus précis n'est
+    identifié dans le catalogue officiel contrôlé.
+  next_resolution_conditions:
+    - OFFICIAL_TEXT_FIXING_NOTIFICATION_OR_INFORMATION_DEADLINE
+    - REGULATOR_CONFIRMATION_THAT_INSTRUCTION64_ARTICLE14_IS_THE_INTENDED_ARTICLE17_DEADLINE
+    - HUMAN_LEGAL_REVIEW_OF_DECISION_VS_NOTIFICATION_INTERPRETATION
+
+safety:
+  decision_deadline_equals_notification_deadline_inference_allowed: false
+  historical_instruction_reactivation_allowed: false
+  automatic_dependency_resolution_allowed: false
+  automatic_requirement_activation_allowed: false
+  human_legal_review_required: true
+  human_compliance_review_required: true
+  ready_for_submission_must_remain_false: true
