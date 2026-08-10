@@ -19,7 +19,7 @@ OUTPUT_PATH = ROOT / "regulatory/registries/INST066_CURRENT_EXTERNAL_DEPENDENCY_
 VALIDATION_PATH = ROOT / "regulatory/validation/INST066_CURRENT_EXTERNAL_DEPENDENCY_STATE_VALIDATION_V0_1.json"
 
 BLOCK_RE = re.compile(
-    r"(?ms)^  - dependency_id:\s*(\S+)\s*\n(.*?)(?=^  - dependency_id:|^boundary:|^explicitly_|\Z)"
+    r"(?ms)^  - dependency_id:\s*(\S+)\s*\n(.*?)(?=^  - dependency_id:|\Z)"
 )
 FIELD_RE_TEMPLATE = r"(?m)^    {field}:\s*(.+?)\s*$"
 
@@ -31,14 +31,35 @@ def field(block: str, name: str) -> str | None:
     return match.group(1).strip().strip('"')
 
 
+def resolution_section(text: str, source_name: str) -> str:
+    """Return only the YAML `resolutions:` list, excluding explicitly-open entries.
+
+    The overlay files intentionally use the same `- dependency_id:` shape for both
+    confirmed resolutions and explicitly-open dependencies. Parsing the whole file
+    therefore risks treating an open dependency as resolved. Bound the parser to the
+    resolutions section before applying the lightweight deterministic block parser.
+    """
+    start_match = re.search(r"(?m)^resolutions:\s*$", text)
+    if not start_match:
+        raise RuntimeError(f"resolutions section missing from {source_name}")
+    start = start_match.end()
+    end_match = re.search(r"(?m)^(?:explicitly_[A-Za-z0-9_]+|boundary):\s*", text[start:])
+    end = start + end_match.start() if end_match else len(text)
+    section = text[start:end]
+    if not section.strip():
+        raise RuntimeError(f"resolutions section empty in {source_name}")
+    return section
+
+
 def parse_resolution_overlay(path_value: Path) -> tuple[int, dict[str, dict[str, str]]]:
     text = path_value.read_text(encoding="utf-8")
     count_match = re.search(r"(?m)^resolution_count:\s*(\d+)\s*$", text)
     if not count_match:
         raise RuntimeError(f"resolution_count missing from {path_value.name}")
     declared_count = int(count_match.group(1))
+    section = resolution_section(text, path_value.name)
     resolutions: dict[str, dict[str, str]] = {}
-    for dependency_id, block in BLOCK_RE.findall(text):
+    for dependency_id, block in BLOCK_RE.findall(section):
         if dependency_id in resolutions:
             raise RuntimeError(f"duplicate dependency_id in {path_value.name}: {dependency_id}")
         source_id = field(block, "resolved_source_id")
