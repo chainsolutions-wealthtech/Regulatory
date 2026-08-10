@@ -1,6 +1,15 @@
 name: Build INST066 Current External Dependency State
 
 on:
+  push:
+    branches:
+      - main
+    paths:
+      - .github/workflows/build-inst066-current-external-dependency-state.yml
+      - scripts/build_inst066_current_external_dependency_state.py
+      - regulatory/registries/INST066_EXTERNAL_IMPLEMENTING_TEXTS_INVENTORY_V0_1.json
+      - regulatory/registries/INST066_CONFIRMED_EXTERNAL_DEPENDENCY_RESOLUTIONS_V0_1.yaml
+      - regulatory/registries/INST066_CONFIRMED_INSTRUCTION_DEPENDENCY_RESOLUTIONS_V0_1.yaml
   workflow_dispatch:
 
 permissions:
@@ -40,17 +49,17 @@ jobs:
               raise SystemExit('current dependency state validation failed')
           expected = {
               'dependencyOccurrenceCount': 49,
-              'resolvedDocumentaryCount': 31,
-              'unresolvedDocumentaryCount': 18,
-              'confirmedOverlayResolutionCount': 29,
+              'resolvedDocumentaryCount': 32,
+              'unresolvedDocumentaryCount': 17,
+              'confirmedOverlayResolutionCount': 30,
               'confirmedCircularOverlayResolutionCount': 25,
-              'confirmedInstructionFamilyOverlayResolutionCount': 4,
+              'confirmedInstructionFamilyOverlayResolutionCount': 5,
               'circularOccurrenceCount': 34,
               'resolvedCircularCount': 25,
               'unresolvedCircularCount': 9,
               'instructionOccurrenceCount': 7,
-              'resolvedInstructionCount': 3,
-              'unresolvedInstructionCount': 4,
+              'resolvedInstructionCount': 4,
+              'unresolvedInstructionCount': 3,
               'namedInstructionOccurrenceCount': 1,
               'resolvedNamedInstructionCount': 1,
               'unresolvedNamedInstructionCount': 0,
@@ -82,5 +91,6 @@ jobs:
             echo 'No current dependency state changes to commit.'
           else
             git commit -m 'chore: refresh current Instruction 66 external dependency state'
+            git pull --rebase origin main
             git push origin HEAD:main
           fi
