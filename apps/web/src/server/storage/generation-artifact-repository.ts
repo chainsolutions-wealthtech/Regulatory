@@ -17,6 +17,10 @@ import {
   type VerifiedIdentityProvider,
 } from "@/server/security/verified-identity";
 
+// Public repository consumers (preview page and artifact panel) need the summary
+// contract, while the source of truth for the shape remains generation-artifact-types.
+export type { GenerationArtifactSummary };
+
 export interface GenerationArtifactRepository {
   readonly driver: "local-json" | "postgresql";
   list(projectId: string, generationId: string): Promise<GenerationArtifactSummary[]>;
