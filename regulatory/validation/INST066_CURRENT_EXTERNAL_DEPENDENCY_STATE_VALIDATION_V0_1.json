@@ -1,13 +1,14 @@
 {
   "schemaVersion": "INST066_CURRENT_EXTERNAL_DEPENDENCY_STATE_VALIDATION_V0_1",
   "result": "PASS",
-  "expectedSummary": {
+  "computedSummary": {
     "dependencyOccurrenceCount": 49,
     "resolvedDocumentaryCount": 32,
     "unresolvedDocumentaryCount": 17,
     "confirmedOverlayResolutionCount": 30,
     "confirmedCircularOverlayResolutionCount": 25,
     "confirmedInstructionFamilyOverlayResolutionCount": 5,
+    "rawInventoryResolvedCount": 2,
     "circularOccurrenceCount": 34,
     "resolvedCircularCount": 25,
     "unresolvedCircularCount": 9,
@@ -16,44 +17,57 @@
     "unresolvedInstructionCount": 3,
     "namedInstructionOccurrenceCount": 1,
     "resolvedNamedInstructionCount": 1,
-    "unresolvedNamedInstructionCount": 0
+    "unresolvedNamedInstructionCount": 0,
+    "countsByKind": {
+      "COUNCIL_CIRCULAR": {
+        "total": 34,
+        "resolved": 25,
+        "unresolved": 9
+      },
+      "COUNCIL_INSTRUCTION": {
+        "total": 7,
+        "resolved": 4,
+        "unresolved": 3
+      },
+      "EXPLICIT_NAMED_CREPMF_INSTRUCTION": {
+        "total": 1,
+        "resolved": 1,
+        "unresolved": 0
+      },
+      "SPECIFIC_ACCOUNTING_REGULATION": {
+        "total": 5,
+        "resolved": 0,
+        "unresolved": 5
+      },
+      "EXPLICIT_NAMED_INSTRUCTION_58": {
+        "total": 2,
+        "resolved": 2,
+        "unresolved": 0
+      }
+    }
   },
-  "actualSummary": {
+  "immutableInventoryExpectations": {
     "dependencyOccurrenceCount": 49,
-    "resolvedDocumentaryCount": 32,
-    "unresolvedDocumentaryCount": 17,
-    "confirmedOverlayResolutionCount": 30,
-    "confirmedCircularOverlayResolutionCount": 25,
-    "confirmedInstructionFamilyOverlayResolutionCount": 5,
-    "circularOccurrenceCount": 34,
-    "resolvedCircularCount": 25,
-    "unresolvedCircularCount": 9,
-    "instructionOccurrenceCount": 7,
-    "resolvedInstructionCount": 4,
-    "unresolvedInstructionCount": 3,
-    "namedInstructionOccurrenceCount": 1,
-    "resolvedNamedInstructionCount": 1,
-    "unresolvedNamedInstructionCount": 0
+    "countsByKind": {
+      "COUNCIL_CIRCULAR": 34,
+      "COUNCIL_INSTRUCTION": 7,
+      "EXPLICIT_NAMED_CREPMF_INSTRUCTION": 1,
+      "EXPLICIT_NAMED_INSTRUCTION_58": 2,
+      "SPECIFIC_ACCOUNTING_REGULATION": 5
+    }
   },
   "checks": {
-    "dependencyOccurrenceCount": true,
-    "resolvedDocumentaryCount": true,
-    "unresolvedDocumentaryCount": true,
-    "confirmedOverlayResolutionCount": true,
-    "confirmedCircularOverlayResolutionCount": true,
-    "confirmedInstructionFamilyOverlayResolutionCount": true,
-    "circularOccurrenceCount": true,
-    "resolvedCircularCount": true,
-    "unresolvedCircularCount": true,
-    "instructionOccurrenceCount": true,
-    "resolvedInstructionCount": true,
-    "unresolvedInstructionCount": true,
-    "namedInstructionOccurrenceCount": true,
-    "resolvedNamedInstructionCount": true,
-    "unresolvedNamedInstructionCount": true,
+    "rawOccurrenceCountPreserved": true,
+    "resolvedPlusUnresolvedEqualsTotal": true,
+    "overlayDeclaredCountsMatchParsed": true,
     "overlayIdsAllExistInRawInventory": true,
     "overlayRegistriesDoNotOverlap": true,
+    "overlayDoesNotRedundantlyTargetRawResolved": true,
+    "resolvedCountEqualsRawPlusConfirmedOverlay": true,
+    "kindTotalsMatchImmutableInventory": true,
+    "perKindResolvedUnresolvedArithmeticValid": true,
     "allEffectiveActivationsForbidden": true,
+    "allHumanReviewsPending": true,
     "rawInventoryUnmodifiedByDesign": true,
     "readyForSubmissionFalse": true
   }

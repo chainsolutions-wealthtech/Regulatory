@@ -14,6 +14,7 @@
     "confirmedOverlayResolutionCount": 30,
     "confirmedCircularOverlayResolutionCount": 25,
     "confirmedInstructionFamilyOverlayResolutionCount": 5,
+    "rawInventoryResolvedCount": 2,
     "circularOccurrenceCount": 34,
     "resolvedCircularCount": 25,
     "unresolvedCircularCount": 9,
