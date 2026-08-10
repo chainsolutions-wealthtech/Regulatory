@@ -57,37 +57,53 @@ legal_metadata:
   requirement_activation_allowed: false
 
 inst066_candidate_relationships:
-  status: OWN_BINARY_REVIEWED_TARGETED_SCOPE_MATCHES_DOCUMENTED
-  evidence: regulatory/review-evidence/INST066_EXTERNAL_DEPENDENCIES/INSTRUCTION_64_SCOPE_MATCH_2026-08-08.yaml
+  status: OWN_BINARY_REVIEWED_TARGETED_SCOPE_MATCHES_DOCUMENTED_WITH_SEPARATE_RESOLUTION_OVERLAY
+  authoritative_resolution_overlay: regulatory/registries/INST066_CONFIRMED_INSTRUCTION_DEPENDENCY_RESOLUTIONS_V0_1.yaml
   mappings:
     - dependency_id: INST066_ART005_DEP_INST_01
       match_status: STRONG_IMPLEMENTING_SCOPE_MATCH_PENDING_LEGAL_REVIEW
-      resolved: false
+      documentary_resolution_status: RESOLVED_IN_CONFIRMED_OVERLAY
+      evidence: regulatory/review-evidence/INST066_EXTERNAL_DEPENDENCIES/INSTRUCTION_64_CONFIRMED_DOCUMENTARY_RESOLUTIONS_2026-08-08.yaml
+      activation: FORBIDDEN
     - dependency_id: INST066_ART005_DEP_INST_02
       match_status: EXACT_SCOPE_MATCH_PENDING_LEGAL_REVIEW
-      resolved: false
+      documentary_resolution_status: RESOLVED_IN_CONFIRMED_OVERLAY
+      evidence: regulatory/review-evidence/INST066_EXTERNAL_DEPENDENCIES/INSTRUCTION_64_CONFIRMED_DOCUMENTARY_RESOLUTIONS_2026-08-08.yaml
+      activation: FORBIDDEN
     - dependency_id: INST066_ART005_DEP_INST_03
-      match_status: NO_MATCH_REMAINS_UNRESOLVED
-      resolved: false
+      match_status: NO_MATCH
+      documentary_resolution_status: RESOLVED_TO_SEPARATE_SOURCE_INSTRUCTION_54
+      resolved_source_id: INSTRUCTION_54_CREPMF_2017_REVISEE
+      evidence: regulatory/review-evidence/INST066_EXTERNAL_DEPENDENCIES/INSTRUCTION_54_ART005_PAYMENT_DEADLINE_RESOLUTION_2026-08-10.yaml
+      activation: FORBIDDEN
     - dependency_id: INST066_ART017_DEP_INST_01
-      match_status: RELATED_STRONG_SCOPE_NOT_EXACT_NOTIFICATION_DELAY
-      resolved: false
+      match_status: RELATED_STRONG_SCOPE_NOT_EXACT_NOTIFICATION_DEADLINE
+      documentary_resolution_status: UNRESOLVED
+      evidence: regulatory/review-evidence/INST066_EXTERNAL_DEPENDENCIES/ART017_NOTIFICATION_DELAY_INSTRUCTION_CROSSCHECK_2026-08-10.yaml
+      activation: FORBIDDEN
     - dependency_id: INST066_ART017_DEP_INST_02
       match_status: STRONG_IMPLEMENTING_SCOPE_MATCH_PENDING_LEGAL_REVIEW
-      resolved: false
-  explicit_non_resolution: true
+      documentary_resolution_status: RESOLVED_IN_CONFIRMED_OVERLAY
+      evidence: regulatory/review-evidence/INST066_EXTERNAL_DEPENDENCIES/INSTRUCTION_64_CONFIRMED_DOCUMENTARY_RESOLUTIONS_2026-08-08.yaml
+      activation: FORBIDDEN
+    - dependency_id: INST066_ART025_DEP_INST_01
+      match_status: EXACT_SCOPE_MATCH_VIA_EXPLICIT_SOCIETE_D_INVESTISSEMENT_IS_OPC_DEFINITION
+      documentary_resolution_status: RESOLVED_IN_CONFIRMED_OVERLAY
+      evidence: regulatory/review-evidence/INST066_EXTERNAL_DEPENDENCIES/INSTRUCTION_64_ART025_INVESTMENT_COMPANY_DEADLINE_RESOLUTION_2026-08-10.yaml
+      activation: FORBIDDEN
 
 materialization_plan:
-  status: COMPLETE_BINARY_MATERIALIZED_SCOPE_REVIEW_PARTIAL
+  status: COMPLETE_BINARY_MATERIALIZED_SCOPE_REVIEW_ADVANCED
   next_steps:
-    - COMPLETE_LEGAL_REVIEW_OF_TARGETED_SCOPE_MATCHES
-    - SEARCH_SEPARATE_INSTRUCTION_FOR_FEE_PAYMENT_DEADLINE
+    - COMPLETE_HUMAN_LEGAL_REVIEW_OF_RESOLVED_DOCUMENTARY_MAPPINGS
+    - KEEP_ART017_NOTIFICATION_DELAY_OPEN_UNTIL_EXACT_TEXT_OR_REGULATOR_CONFIRMATION
     - VERIFY_ANY_AMENDMENTS_OR_RECTIFICATIONS
     - DO_NOT_ACTIVATE_REQUIREMENTS_UNTIL_HUMAN_REVIEWS
 
 safety:
   candidate_match_is_resolution: false
   content_match_is_resolution: false
+  documentary_resolution_is_requirement_activation: false
   portal_metadata_is_sole_legal_status_proof: false
   requirement_activation_allowed: false
   automatic_dependency_resolution_allowed: false
@@ -95,9 +111,12 @@ safety:
   secondary_source_content_promotion_allowed: false
   human_legal_review_required: true
   human_compliance_review_required: true
+  ready_for_submission_must_remain_false: true
 
 notes:
   - "La date de signature du 10 décembre 2020 et l'entrée en vigueur au 1er janvier 2021 sont lues dans l'article 17 du binaire officiel matérialisé."
   - "L'article 3 définit quatre étapes : dépôt, analyse de conformité, instruction, décision."
   - "Les articles 8 et 13 fixent à vingt jours ouvrés les délais de transmission des compléments dans les cas visés et prévoient la clôture."
-  - "Aucune occurrence de 'frais' ou 'frais d'agrément' n'a été trouvée dans le texte matérialisé ; le renvoi INST066 sur les délais de règlement des frais reste ouvert."
+  - "L'article 14 fixe à trois mois maximum le délai pour se prononcer sur une demande d'agrément et rendre la décision."
+  - "L'article 15 prévoit la notification des décisions mais ne fixe pas de délai post-décision distinct ; ART017_DEP_INST_01 reste donc ouvert."
+  - "Instruction 66 définit expressément la Société d'Investissement comme un OPC ; le délai d'Instruction 64 s'applique donc documentairement à ART025_DEP_INST_01."
