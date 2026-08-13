@@ -215,6 +215,7 @@ jobs:
 
       - name: Update Loop Engineering evidence
         run: |
+          node scripts/update-governance-reconciliation-docs.mjs
           node scripts/protect-next-action-ownership.mjs
           next_action_before="$(sha256sum NEXT_ACTION.md | awk '{print $1}')"
           node scripts/update-loop-dev-docs.mjs
@@ -336,11 +337,14 @@ jobs:
           git config user.name 'github-actions[bot]'
           git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
           git add \
+            AGENTS.md NEXT_ACTION.md .github/copilot-instructions.md \
             README.md IMPLEMENTATION.md STATUS.md LOOP_STATE.md CURRENT_ITERATION.md \
             WORK_LOG.md SUIVI.md TODO.md CHANGELOG.md HANDOFF.md \
             docs/ARCHITECTURE.md docs/PROSPECTUS_ENGINE_SPEC.md \
+            docs/09-loop/LOOP-GOV-002-GOVERNANCE-RECONCILIATION-2026-08-13.md \
             docs/04-development/NEXTJS_ATOMIC_DESIGN.md apps/web/README.md \
             apps/web/package-lock.json \
+            scripts/update-governance-reconciliation-docs.mjs \
             scripts/update-loop-dev-docs.mjs \
             scripts/update-docx-loop-docs.mjs \
             scripts/update-nextjs-docs.mjs \
@@ -364,6 +368,6 @@ jobs:
           if git diff --cached --quiet; then
             echo 'No generated changes to commit.'
           else
-            git commit -m 'chore: refresh PostgreSQL repository and generation evidence'
+            git commit -m 'chore: refresh validation evidence and loop state'
             git push origin HEAD:main
           fi
