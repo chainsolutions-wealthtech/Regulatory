@@ -1,5 +1,25 @@
 # AGENTS.md — Règles obligatoires pour tout agent connecté
 
+<!-- AUTO:LOOP-GOV-002-GOVERNANCE-RECONCILIATION:START -->
+## Contrat canonique des agents — réconciliation 2026-08-13
+
+```text
+CANONICAL_WORK_BRANCH = main
+ONE_PROJECT_ONE_CANONICAL_WORK_BRANCH = TRUE
+NEW_BRANCH_CREATION = FORBIDDEN
+NORMAL_WORK_PR = NOT_REQUIRED
+FORCE_PUSH = FORBIDDEN
+IMPROVEMENT_ONLY = REQUIRED
+ZERO_REGRESSION = REQUIRED
+READ_EXISTING_BEFORE_CREATE = REQUIRED
+DOCUMENT_ROLE_ANALYSIS = REQUIRED
+PERSISTENT_MEMORY = REQUIRED
+LOOP_ENGINEERING = REQUIRED
+```
+
+Toute règle historique du présent fichier reste applicable. Ce bloc rend explicite la branche canonique et renforce la règle : lire, réutiliser, corriger, renforcer et étendre l’existant sans perte d’information ni régression.
+<!-- AUTO:LOOP-GOV-002-GOVERNANCE-RECONCILIATION:END -->
+
 Ce fichier s’applique à l’ensemble du dépôt `chainsolutions-wealthtech/Regulatory`.
 
 Il doit être lu et respecté par toute personne, assistant, agent IA, outil de développement, automatisation ou connecteur intervenant sur le dépôt.

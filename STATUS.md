@@ -1,5 +1,29 @@
 # STATUS — État courant du projet
 
+<!-- AUTO:LOOP-GOV-002-GOVERNANCE-RECONCILIATION:START -->
+## Réconciliation courante — gouvernance, non-régression et preuves 2026-08-13
+
+Le dépôt est désormais explicitement gouverné en mode **une branche canonique : `main`**, sans création de branche par les agents et sans PR de travail normale. La réconciliation n’a supprimé ni remplacé les documents historiques : les photographies anciennes restent des preuves datées et le présent bloc porte l’état courant de contrôle.
+
+- branche canonique : `main` ;
+- HEAD source vérifié par la boucle : `6ab56d356cbf77caae1a5bc3f226113d86ab6a38` ;
+- date du HEAD source : `2026-08-13` ;
+- run Regulatory CI : `31663043558` ;
+- validation API CIRC005 : `PASS` ;
+- compatibilité descendante des 10 collections structurées : `PASS` ;
+- persistance canonique des anciens payloads : `PASS` ;
+- reproductibilité PDF après normalisation fixe des métadonnées LibreOffice, dont `/DocChecksum` : `PASS` ;
+- dépôt PostgreSQL transactionnel : `PASS` ;
+- `ready_for_submission` : `false` ;
+- dépendances externes Instruction 66 : `49` occurrences, `33` résolues documentairement, `16` non résolues ;
+- circulaires : `34` total, `25` résolues, `9` non résolues ;
+- instructions génériques : `7` total, `5` résolues, `2` non résolues ;
+- activation réglementaire automatique : `FORBIDDEN` ;
+- revues juridique et conformité : `PENDING`.
+
+La défaillance CI préexistante observée au HEAD initial `6eb645fc...` a été isolée puis corrigée sans supprimer de couverture : routes HTTP fantômes retirées du test général, test dédié de compatibilité legacy ajouté, et non-déterminisme PDF attribué au champ LibreOffice `/DocChecksum` puis normalisé sans modifier les longueurs/offsets. La comparaison PDF reste byte-for-byte après normalisation.
+<!-- AUTO:LOOP-GOV-002-GOVERNANCE-RECONCILIATION:END -->
+
 > **Date de référence :** 2026-08-07  
 > **Branche :** `main`  
 > **Boucles actives :** `LOOP-DEV-001` + `LOOP-REG-001`  

@@ -1,5 +1,22 @@
 # GitHub Copilot / agent instructions
 
+<!-- AUTO:LOOP-GOV-002-GOVERNANCE-RECONCILIATION:START -->
+## Contrat canonique Copilot — réconciliation 2026-08-13
+
+Copilot est un adaptateur d’agent et n’introduit aucune politique concurrente.
+
+```text
+CANONICAL_WORK_BRANCH = main
+NEW_BRANCH_CREATION = FORBIDDEN
+NORMAL_WORK_PR = NOT_REQUIRED
+FORCE_PUSH = FORBIDDEN
+IMPROVEMENT_ONLY = REQUIRED
+ZERO_REGRESSION = REQUIRED
+```
+
+Lire d’abord `00_START_HERE.md`, `GOVERNANCE.md`, `AGENTS.md` et `SOURCE_OF_TRUTH.md`. Lire tout document pertinent avant de conclure qu’il est redondant. Préserver identifiants, API, formats historiques, décisions, preuves et artefacts réglementaires.
+<!-- AUTO:LOOP-GOV-002-GOVERNANCE-RECONCILIATION:END -->
+
 > **Statut :** `APPLICABLE`  
 > **Nature :** adaptateur vers les règles canoniques, enrichi sans supprimer les instructions historiques.  
 > **Autorité :** `00_START_HERE.md`, puis `AGENTS.md` et `SOURCE_OF_TRUTH.md`.

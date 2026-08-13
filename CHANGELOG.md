@@ -221,3 +221,34 @@ L’activation du driver PostgreSQL échoue explicitement tant qu’aucun adapta
 
 Les routes d’écriture peuvent transmettre `expectedVersion` et répondent par un conflit explicite lorsque le snapshot utilisateur est obsolète.
 <!-- AUTO:LOOP-DEV-001-POSTGRES-REPOSITORY-V1:END -->
+
+<!-- AUTO:LOOP-GOV-002-GOVERNANCE-RECONCILIATION:START -->
+## [Unreleased] — Gouvernance et non-régression — 2026-08-13
+
+### Added
+
+- contrat transversal `GOVERNANCE.md` ;
+- ADR-0009 pour la branche canonique et la politique improvement-only ;
+- boucle `LOOP-GOV-002` ;
+- test HTTP dédié de compatibilité descendante des collections structurées ;
+- diagnostic permanent de reproductibilité PDF byte-for-byte.
+
+### Changed
+
+- agents et points d’entrée alignés sur `main` ;
+- mémoire documentaire consolidée sans suppression ;
+- test HTTP général réaligné sur les routes réellement implémentées ;
+- normalisation PDF étendue au champ LibreOffice `/DocChecksum` en conservant les longueurs et offsets.
+
+### Fixed
+
+- défaillance CI préexistante causée d’abord par des routes de test inexistantes puis par une métadonnée PDF volatile non normalisée.
+
+### Preserved
+
+- compatibilité descendante des payloads historiques ;
+- égalité PDF byte-for-byte après normalisation ;
+- `ready_for_submission=false` ;
+- prochaine action réglementaire `CM/10/06/2022` ;
+- historiques, décisions, preuves et artefacts existants.
+<!-- AUTO:LOOP-GOV-002-GOVERNANCE-RECONCILIATION:END -->

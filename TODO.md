@@ -1,5 +1,46 @@
 # TODO.md
 
+<!-- AUTO:LOOP-GOV-002-GOVERNANCE-RECONCILIATION:START -->
+## Overlay courant — réconciliation 2026-08-13
+
+### Gouvernance et non-régression
+
+- [x] Déclarer `main` comme branche canonique unique de travail.
+- [x] Interdire explicitement aux agents toute nouvelle branche, PR normale et force-push.
+- [x] Créer `GOVERNANCE.md` sans remplacer les documents canoniques existants.
+- [x] Aligner les points d’entrée et adaptateurs agents.
+- [x] Conserver tous les documents et informations historiques.
+- [x] Identifier la CI en échec comme défaillance préexistante avant modifications fonctionnelles.
+- [x] Restaurer le contrat HTTP réel sans supprimer la compatibilité legacy.
+- [x] Ajouter un test dédié des 10 familles de payloads hérités vers leur persistance canonique.
+- [x] Diagnostiquer le non-déterminisme PDF au niveau octet.
+- [x] Normaliser le `/DocChecksum` volatile sans changer la longueur ni affaiblir l’égalité byte-for-byte.
+- [x] Revalider PostgreSQL, Next.js, API, moteurs, DOCX, PDF et invariants dans la CI.
+- [ ] Confirmer avec le propriétaire si la visibilité GitHub `public` est intentionnelle.
+
+### Reprise réglementaire après la boucle de contrôle
+
+- [ ] Conserver comme action prioritaire : obtenir le binaire officiel ou institutionnel non indexé de la Décision `CM/10/06/2022` du 24 juin 2022.
+- [ ] Comparer ensuite ses clauses avec la décision sanctions 2016 déjà matérialisée.
+- [ ] Ne jamais activer automatiquement montant, sanction, exigence ou dépendance sans les revues humaines prévues.
+
+- branche canonique : `main` ;
+- HEAD source vérifié par la boucle : `6ab56d356cbf77caae1a5bc3f226113d86ab6a38` ;
+- date du HEAD source : `2026-08-13` ;
+- run Regulatory CI : `31663043558` ;
+- validation API CIRC005 : `PASS` ;
+- compatibilité descendante des 10 collections structurées : `PASS` ;
+- persistance canonique des anciens payloads : `PASS` ;
+- reproductibilité PDF après normalisation fixe des métadonnées LibreOffice, dont `/DocChecksum` : `PASS` ;
+- dépôt PostgreSQL transactionnel : `PASS` ;
+- `ready_for_submission` : `false` ;
+- dépendances externes Instruction 66 : `49` occurrences, `33` résolues documentairement, `16` non résolues ;
+- circulaires : `34` total, `25` résolues, `9` non résolues ;
+- instructions génériques : `7` total, `5` résolues, `2` non résolues ;
+- activation réglementaire automatique : `FORBIDDEN` ;
+- revues juridique et conformité : `PENDING`.
+<!-- AUTO:LOOP-GOV-002-GOVERNANCE-RECONCILIATION:END -->
+
 Feuille de route opérationnelle du projet `Regulatory`.
 
 Légende :

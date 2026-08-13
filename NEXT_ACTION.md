@@ -1,5 +1,29 @@
 # NEXT_ACTION — Action unique immédiatement exécutable
 
+<!-- AUTO:LOOP-GOV-002-GOVERNANCE-RECONCILIATION:START -->
+## Réconciliation canonique de la prochaine action — 2026-08-13
+
+`CONTROL_LOOP = LOOP-GOV-002`
+
+`NEXT_REGULATORY_ACTION_OWNER = LOOP-REG-001`
+
+`CANONICAL_WORK_BRANCH = main`
+
+La prochaine action réglementaire définie par le propriétaire et déjà présente dans ce document est **préservée** : obtenir le binaire officiel ou institutionnel non indexé de la Décision `CM/10/06/2022` du 24 juin 2022, puis le comparer à la décision sanctions 2016 déjà matérialisée.
+
+L’ancien blocage GitHub Actions lié à la facturation reste conservé plus bas comme preuve historique, mais **il n’est plus le blocage courant** : des workflows Regulatory CI et Security ont effectivement été exécutés en août 2026. Aucune réussite future ne doit être déduite de cette phrase ; chaque nouveau SHA doit être vérifié séparément.
+
+État documentaire Instruction 66 actuellement réconcilié :
+
+- occurrences externes : `49` ;
+- résolues documentairement : `33` ;
+- non résolues : `16` ;
+- circulaires : `25/34` résolues, `9` non résolues ;
+- instructions génériques : `5/7` résolues, `2` non résolues ;
+- activation automatique : `FORBIDDEN` ;
+- revues juridique/conformité : `PENDING`.
+<!-- AUTO:LOOP-GOV-002-GOVERNANCE-RECONCILIATION:END -->
+
 > **Statut :** `READY_WITH_EXTERNAL_CI_BLOCKER`  
 > **Boucles :** `LOOP-DEV-001` + `LOOP-REG-001`  
 > **État produit :** `FUNCTIONAL_PRE_COMPLIANCE_PLATFORM_REGULATORY_REVIEW_IN_PROGRESS`  

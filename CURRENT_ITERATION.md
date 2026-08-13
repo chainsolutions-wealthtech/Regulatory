@@ -1,5 +1,37 @@
 # CURRENT_ITERATION — LOOP-DEV-001
 
+<!-- AUTO:LOOP-GOV-002-GOVERNANCE-RECONCILIATION:START -->
+## Overlay courant — LOOP-GOV-002
+
+Objectif : consolider la gouvernance et synchroniser la mémoire persistante sans réécrire la baseline historique de `LOOP-DEV-001` ni les travaux de `LOOP-REG-001`.
+
+Résultats atteints :
+
+- gouvernance transversale `GOVERNANCE.md` ;
+- `main` explicitement désignée branche canonique ;
+- adaptateurs agents alignés ;
+- CI préexistante en échec diagnostiquée et réparée ;
+- compatibilité descendante legacy conservée et testée ;
+- reproductibilité PDF renforcée sans affaiblissement du contrôle byte-for-byte ;
+- prochaine action réglementaire propriétaire conservée.
+
+- branche canonique : `main` ;
+- HEAD source vérifié par la boucle : `6ab56d356cbf77caae1a5bc3f226113d86ab6a38` ;
+- date du HEAD source : `2026-08-13` ;
+- run Regulatory CI : `31663043558` ;
+- validation API CIRC005 : `PASS` ;
+- compatibilité descendante des 10 collections structurées : `PASS` ;
+- persistance canonique des anciens payloads : `PASS` ;
+- reproductibilité PDF après normalisation fixe des métadonnées LibreOffice, dont `/DocChecksum` : `PASS` ;
+- dépôt PostgreSQL transactionnel : `PASS` ;
+- `ready_for_submission` : `false` ;
+- dépendances externes Instruction 66 : `49` occurrences, `33` résolues documentairement, `16` non résolues ;
+- circulaires : `34` total, `25` résolues, `9` non résolues ;
+- instructions génériques : `7` total, `5` résolues, `2` non résolues ;
+- activation réglementaire automatique : `FORBIDDEN` ;
+- revues juridique et conformité : `PENDING`.
+<!-- AUTO:LOOP-GOV-002-GOVERNANCE-RECONCILIATION:END -->
+
 > **Statut :** `IN_PROGRESS`  
 > **Ouverte le :** 2026-08-05
 

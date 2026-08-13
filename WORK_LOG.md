@@ -315,3 +315,34 @@ Aucun déploiement, aucune nouvelle branche, aucun force-push et aucune activati
 - événements d’audit : `5` ;
 - `ready_for_submission` : `false`.
 <!-- AUTO:LOOP-DEV-001-POSTGRES-REPOSITORY-V1:END -->
+
+<!-- AUTO:LOOP-GOV-002-GOVERNANCE-RECONCILIATION:START -->
+## 2026-08-13 — LOOP-GOV-002 : gouvernance, compatibilité et réparation CI
+
+1. Audit Git read-only : une seule branche `main`, HEAD initial `6eb645fc...`.
+2. Lecture et conservation de l’architecture documentaire Loop Engineering existante.
+3. Ajout de `GOVERNANCE.md` et ADR-0009 sans suppression documentaire.
+4. Alignement des points d’entrée et adaptateurs agents.
+5. Identification d’une Regulatory CI préexistante en échec avant les écritures fonctionnelles.
+6. Isolation des routes HTTP inexistantes introduites uniquement dans un test.
+7. Conservation et test séparé de la compatibilité descendante des payloads structurés historiques.
+8. Diagnostic binaire de deux rendus PDF : premier octet divergent dans `/DocChecksum`.
+9. Normalisation fixe et déterministe du checksum LibreOffice sans modification de longueur.
+10. Revalidation de la chaîne CI avant réconciliation documentaire.
+
+- branche canonique : `main` ;
+- HEAD source vérifié par la boucle : `6ab56d356cbf77caae1a5bc3f226113d86ab6a38` ;
+- date du HEAD source : `2026-08-13` ;
+- run Regulatory CI : `31663043558` ;
+- validation API CIRC005 : `PASS` ;
+- compatibilité descendante des 10 collections structurées : `PASS` ;
+- persistance canonique des anciens payloads : `PASS` ;
+- reproductibilité PDF après normalisation fixe des métadonnées LibreOffice, dont `/DocChecksum` : `PASS` ;
+- dépôt PostgreSQL transactionnel : `PASS` ;
+- `ready_for_submission` : `false` ;
+- dépendances externes Instruction 66 : `49` occurrences, `33` résolues documentairement, `16` non résolues ;
+- circulaires : `34` total, `25` résolues, `9` non résolues ;
+- instructions génériques : `7` total, `5` résolues, `2` non résolues ;
+- activation réglementaire automatique : `FORBIDDEN` ;
+- revues juridique et conformité : `PENDING`.
+<!-- AUTO:LOOP-GOV-002-GOVERNANCE-RECONCILIATION:END -->
