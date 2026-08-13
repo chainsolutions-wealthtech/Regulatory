@@ -130,7 +130,7 @@ La défaillance CI préexistante observée au HEAD initial \`6eb645fc...\` a ét
 
   "LOOP_STATE.md": `## LOOP-GOV-002 — Réconciliation de gouvernance et non-régression
 
-- statut : \`VALIDATION_PASSED_CONTINUING_RECONCILIATION\` ;
+- statut : \`CLOSED_OBJECTIVE_COMPLETE\` ;
 - branche : \`main\` ;
 - branche créée : \`NO\` ;
 - PR de travail créée : \`NO\` ;
@@ -143,7 +143,9 @@ ${stateEvidence}`,
 
   "CURRENT_ITERATION.md": `## Overlay courant — LOOP-GOV-002
 
-Objectif : consolider la gouvernance et synchroniser la mémoire persistante sans réécrire la baseline historique de \`LOOP-DEV-001\` ni les travaux de \`LOOP-REG-001\`.
+Statut de \`LOOP-GOV-002\` : \`CLOSED_OBJECTIVE_COMPLETE\`.
+
+Objectif atteint : consolider la gouvernance et synchroniser la mémoire persistante sans réécrire la baseline historique de \`LOOP-DEV-001\` ni les travaux de \`LOOP-REG-001\`.
 
 Résultats atteints :
 
@@ -172,11 +174,11 @@ ${stateEvidence}`,
 - [x] Diagnostiquer le non-déterminisme PDF au niveau octet.
 - [x] Normaliser le \`/DocChecksum\` volatile sans changer la longueur ni affaiblir l’égalité byte-for-byte.
 - [x] Revalider PostgreSQL, Next.js, API, moteurs, DOCX, PDF et invariants dans la CI.
-- [ ] Confirmer avec le propriétaire si la visibilité GitHub \`public\` est intentionnelle.
+- [ ] Confirmer avec le propriétaire si la visibilité GitHub \`public\` est intentionnelle — question non bloquante, sans changement automatique de visibilité.
 
 ### Reprise réglementaire après la boucle de contrôle
 
-- [ ] Conserver comme action prioritaire : obtenir le binaire officiel ou institutionnel non indexé de la Décision \`CM/10/06/2022\` du 24 juin 2022.
+- [ ] Obtenir le binaire officiel ou institutionnel non indexé de la Décision \`CM/10/06/2022\` du 24 juin 2022.
 - [ ] Comparer ensuite ses clauses avec la décision sanctions 2016 déjà matérialisée.
 - [ ] Ne jamais activer automatiquement montant, sanction, exigence ou dépendance sans les revues humaines prévues.
 
@@ -184,11 +186,13 @@ ${stateEvidence}`,
 
   "NEXT_ACTION.md": `## Réconciliation canonique de la prochaine action — 2026-08-13
 
-\`CONTROL_LOOP = LOOP-GOV-002\`
+\`CONTROL_LOOP = LOOP-GOV-002 (CLOSED)\`
 
 \`NEXT_REGULATORY_ACTION_OWNER = LOOP-REG-001\`
 
 \`CANONICAL_WORK_BRANCH = main\`
+
+\`POINT_DE_REPRISE_EXACT = RECOVER_OFFICIAL_OR_INSTITUTIONAL_BINARY_CM_10_06_2022_THEN_COMPARE_2016_2022\`
 
 La prochaine action réglementaire définie par le propriétaire et déjà présente dans ce document est **préservée** : obtenir le binaire officiel ou institutionnel non indexé de la Décision \`CM/10/06/2022\` du 24 juin 2022, puis le comparer à la décision sanctions 2016 déjà matérialisée.
 
@@ -206,13 +210,15 @@ L’ancien blocage GitHub Actions lié à la facturation reste conservé plus ba
 
   "HANDOFF.md": `## Handoff courant — réconciliation 2026-08-13
 
+\`LOOP-GOV-002\` est clôturée avec le statut \`CLOSED_OBJECTIVE_COMPLETE\`.
+
 Un nouvel agent doit reprendre depuis \`00_START_HERE.md\` et \`GOVERNANCE.md\`, rester sur \`main\`, vérifier le HEAD et les CI du SHA qu’il traite, puis continuer sans créer de branche.
 
 Ce chantier a renforcé la gouvernance **et** réparé une dette CI préexistante sans retirer les capacités legacy ni affaiblir le déterminisme PDF.
 
 ${stateEvidence}
 
-Prochaine action métier/réglementaire à préserver : acquisition institutionnelle non indexée de \`CM/10/06/2022\`, puis comparaison 2016 ↔ 2022.`,
+Point de reprise exact : acquisition institutionnelle non indexée de \`CM/10/06/2022\`, puis comparaison 2016 ↔ 2022.`,
 
   "WORK_LOG.md": `## 2026-08-13 — LOOP-GOV-002 : gouvernance, compatibilité et réparation CI
 
@@ -225,7 +231,10 @@ Prochaine action métier/réglementaire à préserver : acquisition institutionn
 7. Conservation et test séparé de la compatibilité descendante des payloads structurés historiques.
 8. Diagnostic binaire de deux rendus PDF : premier octet divergent dans \`/DocChecksum\`.
 9. Normalisation fixe et déterministe du checksum LibreOffice sans modification de longueur.
-10. Revalidation de la chaîne CI avant réconciliation documentaire.
+10. Revalidation de la chaîne CI et de la CI sécurité.
+11. Réconciliation additive des documents d’état via blocs \`AUTO\` idempotents.
+12. Vérification du HEAD distant et confirmation qu’une seule branche \`main\` existe.
+13. Clôture de \`LOOP-GOV-002\` et transmission à \`LOOP-REG-001\`.
 
 ${stateEvidence}`,
 
@@ -237,7 +246,7 @@ Une défaillance CI antérieure au chantier a été traitée selon la boucle \`B
 
 ${stateEvidence}
 
-La reprise réglementaire reste l’acquisition du binaire institutionnel \`CM/10/06/2022\`, sans activation automatique d’une règle ou sanction.`,
+\`LOOP-GOV-002\` est clôturée. Le point de reprise exact est l’acquisition du binaire institutionnel \`CM/10/06/2022\`, sans activation automatique d’une règle ou sanction.`,
 
   "CHANGELOG.md": `## [Unreleased] — Gouvernance et non-régression — 2026-08-13
 
@@ -266,15 +275,22 @@ La reprise réglementaire reste l’acquisition du binaire institutionnel \`CM/1
 - égalité PDF byte-for-byte après normalisation ;
 - \`ready_for_submission=false\` ;
 - prochaine action réglementaire \`CM/10/06/2022\` ;
-- historiques, décisions, preuves et artefacts existants.`,
+- historiques, décisions, preuves et artefacts existants.
+
+### Loop status
+
+- \`LOOP-GOV-002 = CLOSED_OBJECTIVE_COMPLETE\` ;
+- reprise : \`LOOP-REG-001 / CM/10/06/2022\`.`,
 
   "docs/09-loop/LOOP-GOV-002-GOVERNANCE-RECONCILIATION-2026-08-13.md": `## Mise à jour automatique de preuve
 
-Statut de la boucle : \`VALIDATION_PASSED_CONTINUING_RECONCILIATION\`.
+Statut de la boucle : \`CLOSED_OBJECTIVE_COMPLETE\`.
 
 ${stateEvidence}
 
-La clôture définitive exige encore la vérification du HEAD distant après le commit automatique de preuves et la confirmation qu’aucune branche n’a été créée. La visibilité GitHub souhaitée reste une question propriétaire distincte et ne bloque pas la conservation de l’état actuel.`,
+Les critères de sortie sont satisfaits : gouvernance active, agents alignés, mémoire réconciliée sans suppression, CI fonctionnelle et sécurité validées, HEAD distant vérifié et une seule branche \`main\` confirmée. La visibilité GitHub souhaitée reste une question propriétaire distincte et non bloquante ; aucune modification automatique de visibilité n’a été effectuée.
+
+\`POINT_DE_REPRISE_EXACT = RECOVER_OFFICIAL_OR_INSTITUTIONAL_BINARY_CM_10_06_2022_THEN_COMPARE_2016_2022\`.`,
 };
 
 const topPlacement = new Set([
@@ -300,12 +316,13 @@ for (const [file, markdown] of Object.entries(blocks)) {
 console.log(
   JSON.stringify(
     {
-      status: "PASS",
+      status: "OBJECTIVE_COMPLETE",
       branch,
       sourceHead,
       runId,
       updatedDocuments: Object.keys(blocks).length,
       nextRegulatoryAction: "CM/10/06/2022",
+      pointDeRepriseExact: "RECOVER_OFFICIAL_OR_INSTITUTIONAL_BINARY_CM_10_06_2022_THEN_COMPARE_2016_2022",
       externalDependencies: summary.dependencyOccurrenceCount,
       unresolvedExternalDependencies: summary.unresolvedDocumentaryCount,
       readyForSubmission: false,
