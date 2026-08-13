@@ -2,9 +2,9 @@
 """Generate a reproducible PDF and deterministic pre-compliance review ZIP.
 
 The DOCX remains the composition source. LibreOffice renders the same DOCX twice
-with isolated profiles. Mutable PDF dates/IDs are normalized in-place without
-changing byte lengths. The two normalized byte streams MUST be identical or the
-pipeline fails. The ZIP uses fixed entry timestamps, permissions and ordering.
+with isolated profiles. Mutable PDF dates/IDs/checksums are normalized in-place
+without changing byte lengths. The two normalized byte streams MUST be identical
+or the pipeline fails. The ZIP uses fixed entry timestamps, permissions and ordering.
 
 This pipeline never changes ready_for_submission to true.
 """
@@ -31,6 +31,7 @@ ISO_DATE_PATTERN = re.compile(
 PDF_ID_PATTERN = re.compile(
     rb"/ID\s*\[\s*<([0-9A-Fa-f]+)>\s*<([0-9A-Fa-f]+)>\s*\]"
 )
+PDF_DOC_CHECKSUM_PATTERN = re.compile(rb"/DocChecksum\s*/([0-9A-Fa-f]{32})")
 UUID_PATTERN = re.compile(rb"uuid:[0-9A-Fa-f-]{36}")
 
 
@@ -101,7 +102,7 @@ def main() -> None:
         "pdf_size_bytes": output_pdf.stat().st_size,
         "page_count": page_count,
         "renderer": "LibreOffice Writer headless",
-        "normalization": "Python fixed-length PDF date/ID normalization",
+        "normalization": "Python fixed-length PDF date/ID/DocChecksum normalization",
         "reproducibility_check": "TWO_ISOLATED_RENDER_RUNS_BYTE_IDENTICAL_AFTER_NORMALIZATION",
         "document_status": "DRAFT_PRE_COMPLIANCE_REVIEW",
         "ready_for_submission": False,
@@ -218,6 +219,10 @@ def normalize_pdf_bytes(data: bytes, generated_at: datetime, deterministic_seed:
         lambda match: normalize_pdf_id_preserving_layout(match, deterministic_seed),
         normalized,
     )
+    normalized = PDF_DOC_CHECKSUM_PATTERN.sub(
+        lambda match: normalize_pdf_doc_checksum_preserving_layout(match, deterministic_seed),
+        normalized,
+    )
     normalized = UUID_PATTERN.sub(
         lambda match: deterministic_uuid_bytes(match.group(0), deterministic_seed),
         normalized,
@@ -262,6 +267,15 @@ def normalize_pdf_id_preserving_layout(match: re.Match[bytes], deterministic_see
     updated = replace_group_same_length(match.group(0), match.group(1), first)
     updated = replace_group_same_length(updated, match.group(2), second)
     return updated
+
+
+def normalize_pdf_doc_checksum_preserving_layout(
+    match: re.Match[bytes], deterministic_seed: str
+) -> bytes:
+    checksum = deterministic_hex(
+        deterministic_seed + "|pdf-doc-checksum", len(match.group(1))
+    ).upper()
+    return replace_group_same_length(match.group(0), match.group(1), checksum)
 
 
 def deterministic_uuid_bytes(original: bytes, deterministic_seed: str) -> bytes:
