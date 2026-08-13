@@ -184,8 +184,10 @@ ${stateEvidence}`,
 
   "NEXT_ACTION.md": `## Réconciliation canonique de la prochaine action — 2026-08-13
 
-\`CONTROL_LOOP = LOOP-GOV-002\`  
-\`NEXT_REGULATORY_ACTION_OWNER = LOOP-REG-001\`  
+\`CONTROL_LOOP = LOOP-GOV-002\`
+
+\`NEXT_REGULATORY_ACTION_OWNER = LOOP-REG-001\`
+
 \`CANONICAL_WORK_BRANCH = main\`
 
 La prochaine action réglementaire définie par le propriétaire et déjà présente dans ce document est **préservée** : obtenir le binaire officiel ou institutionnel non indexé de la Décision \`CM/10/06/2022\` du 24 juin 2022, puis le comparer à la décision sanctions 2016 déjà matérialisée.
