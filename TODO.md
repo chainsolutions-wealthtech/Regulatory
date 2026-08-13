@@ -16,18 +16,18 @@
 - [x] Diagnostiquer le non-déterminisme PDF au niveau octet.
 - [x] Normaliser le `/DocChecksum` volatile sans changer la longueur ni affaiblir l’égalité byte-for-byte.
 - [x] Revalider PostgreSQL, Next.js, API, moteurs, DOCX, PDF et invariants dans la CI.
-- [ ] Confirmer avec le propriétaire si la visibilité GitHub `public` est intentionnelle.
+- [ ] Confirmer avec le propriétaire si la visibilité GitHub `public` est intentionnelle — question non bloquante, sans changement automatique de visibilité.
 
 ### Reprise réglementaire après la boucle de contrôle
 
-- [ ] Conserver comme action prioritaire : obtenir le binaire officiel ou institutionnel non indexé de la Décision `CM/10/06/2022` du 24 juin 2022.
+- [ ] Obtenir le binaire officiel ou institutionnel non indexé de la Décision `CM/10/06/2022` du 24 juin 2022.
 - [ ] Comparer ensuite ses clauses avec la décision sanctions 2016 déjà matérialisée.
 - [ ] Ne jamais activer automatiquement montant, sanction, exigence ou dépendance sans les revues humaines prévues.
 
 - branche canonique : `main` ;
-- HEAD source vérifié par la boucle : `6ab56d356cbf77caae1a5bc3f226113d86ab6a38` ;
+- HEAD source vérifié par la boucle : `3a3ea434fb3f1d217ffde66f1838b8d96a9d1be5` ;
 - date du HEAD source : `2026-08-13` ;
-- run Regulatory CI : `31663043558` ;
+- run Regulatory CI : `31663287685` ;
 - validation API CIRC005 : `PASS` ;
 - compatibilité descendante des 10 collections structurées : `PASS` ;
 - persistance canonique des anciens payloads : `PASS` ;

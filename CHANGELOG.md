@@ -251,4 +251,9 @@ Les routes d’écriture peuvent transmettre `expectedVersion` et répondent par
 - `ready_for_submission=false` ;
 - prochaine action réglementaire `CM/10/06/2022` ;
 - historiques, décisions, preuves et artefacts existants.
+
+### Loop status
+
+- `LOOP-GOV-002 = CLOSED_OBJECTIVE_COMPLETE` ;
+- reprise : `LOOP-REG-001 / CM/10/06/2022`.
 <!-- AUTO:LOOP-GOV-002-GOVERNANCE-RECONCILIATION:END -->

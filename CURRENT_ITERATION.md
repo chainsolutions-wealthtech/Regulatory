@@ -3,7 +3,9 @@
 <!-- AUTO:LOOP-GOV-002-GOVERNANCE-RECONCILIATION:START -->
 ## Overlay courant — LOOP-GOV-002
 
-Objectif : consolider la gouvernance et synchroniser la mémoire persistante sans réécrire la baseline historique de `LOOP-DEV-001` ni les travaux de `LOOP-REG-001`.
+Statut de `LOOP-GOV-002` : `CLOSED_OBJECTIVE_COMPLETE`.
+
+Objectif atteint : consolider la gouvernance et synchroniser la mémoire persistante sans réécrire la baseline historique de `LOOP-DEV-001` ni les travaux de `LOOP-REG-001`.
 
 Résultats atteints :
 
@@ -16,9 +18,9 @@ Résultats atteints :
 - prochaine action réglementaire propriétaire conservée.
 
 - branche canonique : `main` ;
-- HEAD source vérifié par la boucle : `6ab56d356cbf77caae1a5bc3f226113d86ab6a38` ;
+- HEAD source vérifié par la boucle : `3a3ea434fb3f1d217ffde66f1838b8d96a9d1be5` ;
 - date du HEAD source : `2026-08-13` ;
-- run Regulatory CI : `31663043558` ;
+- run Regulatory CI : `31663287685` ;
 - validation API CIRC005 : `PASS` ;
 - compatibilité descendante des 10 collections structurées : `PASS` ;
 - persistance canonique des anciens payloads : `PASS` ;

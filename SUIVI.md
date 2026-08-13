@@ -696,9 +696,9 @@ La méthode de travail du dépôt est consolidée : `main` est la branche canoni
 Une défaillance CI antérieure au chantier a été traitée selon la boucle `BASELINE → DIAGNOSTIC → CORRECTION CIBLÉE → VÉRIFICATION`. La compatibilité descendante des structures historiques a été conservée, tandis que le déterminisme PDF a été renforcé par la normalisation du seul champ volatile prouvé `/DocChecksum`.
 
 - branche canonique : `main` ;
-- HEAD source vérifié par la boucle : `6ab56d356cbf77caae1a5bc3f226113d86ab6a38` ;
+- HEAD source vérifié par la boucle : `3a3ea434fb3f1d217ffde66f1838b8d96a9d1be5` ;
 - date du HEAD source : `2026-08-13` ;
-- run Regulatory CI : `31663043558` ;
+- run Regulatory CI : `31663287685` ;
 - validation API CIRC005 : `PASS` ;
 - compatibilité descendante des 10 collections structurées : `PASS` ;
 - persistance canonique des anciens payloads : `PASS` ;
@@ -711,5 +711,5 @@ Une défaillance CI antérieure au chantier a été traitée selon la boucle `BA
 - activation réglementaire automatique : `FORBIDDEN` ;
 - revues juridique et conformité : `PENDING`.
 
-La reprise réglementaire reste l’acquisition du binaire institutionnel `CM/10/06/2022`, sans activation automatique d’une règle ou sanction.
+`LOOP-GOV-002` est clôturée. Le point de reprise exact est l’acquisition du binaire institutionnel `CM/10/06/2022`, sans activation automatique d’une règle ou sanction.
 <!-- AUTO:LOOP-GOV-002-GOVERNANCE-RECONCILIATION:END -->

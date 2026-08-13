@@ -3,14 +3,16 @@
 <!-- AUTO:LOOP-GOV-002-GOVERNANCE-RECONCILIATION:START -->
 ## Handoff courant — réconciliation 2026-08-13
 
+`LOOP-GOV-002` est clôturée avec le statut `CLOSED_OBJECTIVE_COMPLETE`.
+
 Un nouvel agent doit reprendre depuis `00_START_HERE.md` et `GOVERNANCE.md`, rester sur `main`, vérifier le HEAD et les CI du SHA qu’il traite, puis continuer sans créer de branche.
 
 Ce chantier a renforcé la gouvernance **et** réparé une dette CI préexistante sans retirer les capacités legacy ni affaiblir le déterminisme PDF.
 
 - branche canonique : `main` ;
-- HEAD source vérifié par la boucle : `6ab56d356cbf77caae1a5bc3f226113d86ab6a38` ;
+- HEAD source vérifié par la boucle : `3a3ea434fb3f1d217ffde66f1838b8d96a9d1be5` ;
 - date du HEAD source : `2026-08-13` ;
-- run Regulatory CI : `31663043558` ;
+- run Regulatory CI : `31663287685` ;
 - validation API CIRC005 : `PASS` ;
 - compatibilité descendante des 10 collections structurées : `PASS` ;
 - persistance canonique des anciens payloads : `PASS` ;
@@ -23,7 +25,7 @@ Ce chantier a renforcé la gouvernance **et** réparé une dette CI préexistant
 - activation réglementaire automatique : `FORBIDDEN` ;
 - revues juridique et conformité : `PENDING`.
 
-Prochaine action métier/réglementaire à préserver : acquisition institutionnelle non indexée de `CM/10/06/2022`, puis comparaison 2016 ↔ 2022.
+Point de reprise exact : acquisition institutionnelle non indexée de `CM/10/06/2022`, puis comparaison 2016 ↔ 2022.
 <!-- AUTO:LOOP-GOV-002-GOVERNANCE-RECONCILIATION:END -->
 
 > **Statut :** `READY_FOR_CONTINUATION`  

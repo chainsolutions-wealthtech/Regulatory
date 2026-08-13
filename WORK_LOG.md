@@ -328,12 +328,15 @@ Aucun déploiement, aucune nouvelle branche, aucun force-push et aucune activati
 7. Conservation et test séparé de la compatibilité descendante des payloads structurés historiques.
 8. Diagnostic binaire de deux rendus PDF : premier octet divergent dans `/DocChecksum`.
 9. Normalisation fixe et déterministe du checksum LibreOffice sans modification de longueur.
-10. Revalidation de la chaîne CI avant réconciliation documentaire.
+10. Revalidation de la chaîne CI et de la CI sécurité.
+11. Réconciliation additive des documents d’état via blocs `AUTO` idempotents.
+12. Vérification du HEAD distant et confirmation qu’une seule branche `main` existe.
+13. Clôture de `LOOP-GOV-002` et transmission à `LOOP-REG-001`.
 
 - branche canonique : `main` ;
-- HEAD source vérifié par la boucle : `6ab56d356cbf77caae1a5bc3f226113d86ab6a38` ;
+- HEAD source vérifié par la boucle : `3a3ea434fb3f1d217ffde66f1838b8d96a9d1be5` ;
 - date du HEAD source : `2026-08-13` ;
-- run Regulatory CI : `31663043558` ;
+- run Regulatory CI : `31663287685` ;
 - validation API CIRC005 : `PASS` ;
 - compatibilité descendante des 10 collections structurées : `PASS` ;
 - persistance canonique des anciens payloads : `PASS` ;

@@ -136,7 +136,23 @@ La prochaine action appartient à `LOOP-REG-001` : obtenir le binaire officiel o
 
 Statut de la boucle : `CLOSED_OBJECTIVE_COMPLETE`.
 
-La prochaine Regulatory CI mettra à jour ici le HEAD source, le run et les preuves machine-readable sans réécrire l'historique.
+- branche canonique : `main` ;
+- HEAD source vérifié par la boucle : `3a3ea434fb3f1d217ffde66f1838b8d96a9d1be5` ;
+- date du HEAD source : `2026-08-13` ;
+- run Regulatory CI : `31663287685` ;
+- validation API CIRC005 : `PASS` ;
+- compatibilité descendante des 10 collections structurées : `PASS` ;
+- persistance canonique des anciens payloads : `PASS` ;
+- reproductibilité PDF après normalisation fixe des métadonnées LibreOffice, dont `/DocChecksum` : `PASS` ;
+- dépôt PostgreSQL transactionnel : `PASS` ;
+- `ready_for_submission` : `false` ;
+- dépendances externes Instruction 66 : `49` occurrences, `33` résolues documentairement, `16` non résolues ;
+- circulaires : `34` total, `25` résolues, `9` non résolues ;
+- instructions génériques : `7` total, `5` résolues, `2` non résolues ;
+- activation réglementaire automatique : `FORBIDDEN` ;
+- revues juridique et conformité : `PENDING`.
+
+Les critères de sortie sont satisfaits : gouvernance active, agents alignés, mémoire réconciliée sans suppression, CI fonctionnelle et sécurité validées, HEAD distant vérifié et une seule branche `main` confirmée. La visibilité GitHub souhaitée reste une question propriétaire distincte et non bloquante ; aucune modification automatique de visibilité n’a été effectuée.
 
 `POINT_DE_REPRISE_EXACT = RECOVER_OFFICIAL_OR_INSTITUTIONAL_BINARY_CM_10_06_2022_THEN_COMPARE_2016_2022`.
 <!-- AUTO:LOOP-GOV-002-GOVERNANCE-RECONCILIATION:END -->

@@ -3,7 +3,7 @@
 <!-- AUTO:LOOP-GOV-002-GOVERNANCE-RECONCILIATION:START -->
 ## LOOP-GOV-002 — Réconciliation de gouvernance et non-régression
 
-- statut : `VALIDATION_PASSED_CONTINUING_RECONCILIATION` ;
+- statut : `CLOSED_OBJECTIVE_COMPLETE` ;
 - branche : `main` ;
 - branche créée : `NO` ;
 - PR de travail créée : `NO` ;
@@ -13,9 +13,9 @@
 - visibilité GitHub actuellement observée : `public`, visibilité souhaitée par le propriétaire : `TO_VERIFY`.
 
 - branche canonique : `main` ;
-- HEAD source vérifié par la boucle : `6ab56d356cbf77caae1a5bc3f226113d86ab6a38` ;
+- HEAD source vérifié par la boucle : `3a3ea434fb3f1d217ffde66f1838b8d96a9d1be5` ;
 - date du HEAD source : `2026-08-13` ;
-- run Regulatory CI : `31663043558` ;
+- run Regulatory CI : `31663287685` ;
 - validation API CIRC005 : `PASS` ;
 - compatibilité descendante des 10 collections structurées : `PASS` ;
 - persistance canonique des anciens payloads : `PASS` ;
