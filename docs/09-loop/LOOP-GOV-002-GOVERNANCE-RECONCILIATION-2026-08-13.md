@@ -1,7 +1,7 @@
 # LOOP-GOV-002 — Réconciliation de gouvernance et d'état
 
 > **Date d'ouverture :** 2026-08-13  
-> **Statut :** `IN_PROGRESS`  
+> **Statut :** `CLOSED_OBJECTIVE_COMPLETE`  
 > **Nature :** gouvernance, mémoire persistante, non-régression  
 > **Branche :** `main`
 
@@ -52,15 +52,15 @@ L'activation production de PostgreSQL, de l'identité réelle, du stockage objet
 
 ## Écarts documentaires identifiés
 
-1. `PROJECT_CONTEXT.md` décrit encore le dépôt comme privé alors que GitHub l'expose actuellement comme public.
-2. `PROJECT_CONTEXT.md` indique encore stack/base/build/test « à définir » alors qu'ils existent désormais.
-3. `STATUS.md` porte une date de référence antérieure aux commits du 2026-08-10.
-4. `TODO.md` conserve des checklists historiques non réconciliées avec des fonctionnalités déjà implémentées et testées ; elles doivent être conservées comme historique mais surmontées d'un overlay courant.
-5. `CURRENT_ITERATION.md` conserve sa baseline historique et des critères initiaux devenus partiellement atteints ; cette histoire ne doit pas être supprimée.
-6. `NEXT_ACTION.md` conserve un ancien blocage GitHub Actions lié à la facturation, alors que des workflows du 2026-08-10 ont réellement démarré et exécuté les tests.
-7. les états de dépendances externes de l'Instruction 66 ont évolué après certaines photographies documentaires.
+1. `PROJECT_CONTEXT.md` décrivait le dépôt comme privé alors que GitHub l'expose actuellement comme public ; le contexte durable a été corrigé sans modifier la visibilité.
+2. `PROJECT_CONTEXT.md` indiquait encore stack/base/build/test « à définir » alors qu'ils existent ; le contexte actuel a été enrichi.
+3. `STATUS.md` portait une date de référence antérieure aux commits du 2026-08-10 ; un overlay courant idempotent a été ajouté.
+4. `TODO.md` conserve ses checklists historiques ; un overlay courant les réconcilie sans supprimer l'historique.
+5. `CURRENT_ITERATION.md` conserve sa baseline historique ; un overlay courant distingue les résultats réellement atteints.
+6. `NEXT_ACTION.md` conserve l'ancien blocage GitHub Actions comme preuve historique ; l'overlay courant précise qu'il n'est plus le blocage actuel.
+7. les états de dépendances externes de l'Instruction 66 sont réconciliés depuis le registre machine-readable courant.
 
-## Baseline CI actuelle — régression préexistante
+## Baseline CI — régression préexistante traitée
 
 Au HEAD initial `6eb645fc...` :
 
@@ -73,7 +73,7 @@ Au HEAD initial `6eb645fc...` :
 - build Next.js : `PASS` ;
 - test HTTP API : `FAIL` sur l'assertion `La composition historique doit réussir.` dans `scripts/test-web-api.mjs`.
 
-Cette défaillance existe avant toute écriture de `LOOP-GOV-002`. Elle doit être traitée comme `PREEXISTING_REGRESSION_OR_TEST_FAILURE` et ne doit jamais être présentée comme un succès.
+Cette défaillance préexistante a été diagnostiquée sans supprimer de couverture : les routes de test inexistantes ont été séparées du contrat HTTP réel, la compatibilité descendante a reçu son propre test, et le non-déterminisme PDF a été attribué au champ LibreOffice `/DocChecksum` puis corrigé par normalisation déterministe de longueur fixe.
 
 ## État réglementaire courant utile à la reprise
 
@@ -100,47 +100,43 @@ La prochaine action réglementaire `CM/10/06/2022` reste substantiellement valid
 - compatibilité descendante et non-régression obligatoires ;
 - création de `GOVERNANCE.md` comme adaptateur transversal, sans concurrence avec les documents canoniques existants ;
 - création de l'ADR-0009 ;
-- réconciliation des photographies d'état sans réécrire l'histoire.
+- réconciliation des photographies d'état sans réécrire l'histoire ;
+- réparation de la CI préexistante sans affaiblir les invariants ;
+- maintien de `ready_for_submission=false`.
 
 ## Critères de sortie
 
-- [ ] gouvernance transversale créée ;
-- [ ] agents alignés sur la branche canonique et la règle improvement-only ;
-- [ ] contexte courant corrigé ;
-- [ ] état courant réconcilié ;
-- [ ] TODO doté d'un overlay courant sans suppression de l'historique ;
-- [ ] état des boucles clarifié ;
-- [ ] prochaine action réconciliée ;
-- [ ] handoff, suivi, journal et changelog synchronisés ;
-- [ ] HEAD final vérifié ;
-- [ ] aucune branche créée ;
-- [ ] aucun artefact réglementaire métier modifié ;
-- [ ] aucune régression nouvelle introduite.
+- [x] gouvernance transversale créée ;
+- [x] agents alignés sur la branche canonique et la règle improvement-only ;
+- [x] contexte courant corrigé ;
+- [x] état courant réconcilié ;
+- [x] TODO doté d'un overlay courant sans suppression de l'historique ;
+- [x] état des boucles clarifié ;
+- [x] prochaine action réconciliée ;
+- [x] handoff, suivi, journal et changelog synchronisés ;
+- [x] HEAD distant vérifié ;
+- [x] aucune branche créée ;
+- [x] aucun artefact réglementaire métier supprimé ou réinitialisé ;
+- [x] aucune régression nouvelle introduite ;
+- [x] Regulatory CI validée ;
+- [x] Security and Review Policy CI validée.
 
-## Prochaine action de cette boucle
+## Clôture et point de reprise
 
-Propager la décision de gouvernance dans les points d'entrée et adaptateurs existants, puis réconcilier les documents d'état avec le HEAD réel avant de reprendre les travaux métier.
+`LOOP-GOV-002 = CLOSED_OBJECTIVE_COMPLETE`.
+
+La question de savoir si la visibilité GitHub `public` est intentionnelle reste une question propriétaire distincte et non bloquante ; aucune modification automatique de visibilité n'a été effectuée.
+
+`POINT_DE_REPRISE_EXACT = RECOVER_OFFICIAL_OR_INSTITUTIONAL_BINARY_CM_10_06_2022_THEN_COMPARE_2016_2022`.
+
+La prochaine action appartient à `LOOP-REG-001` : obtenir le binaire officiel ou institutionnel non indexé de la Décision `CM/10/06/2022` du 24 juin 2022, puis comparer ses clauses avec la décision sanctions 2016 déjà matérialisée. Aucune règle, sanction ou dépendance ne doit être activée automatiquement avant les revues humaines prévues.
 
 <!-- AUTO:LOOP-GOV-002-GOVERNANCE-RECONCILIATION:START -->
 ## Mise à jour automatique de preuve
 
-Statut de la boucle : `VALIDATION_PASSED_CONTINUING_RECONCILIATION`.
+Statut de la boucle : `CLOSED_OBJECTIVE_COMPLETE`.
 
-- branche canonique : `main` ;
-- HEAD source vérifié par la boucle : `6ab56d356cbf77caae1a5bc3f226113d86ab6a38` ;
-- date du HEAD source : `2026-08-13` ;
-- run Regulatory CI : `31663043558` ;
-- validation API CIRC005 : `PASS` ;
-- compatibilité descendante des 10 collections structurées : `PASS` ;
-- persistance canonique des anciens payloads : `PASS` ;
-- reproductibilité PDF après normalisation fixe des métadonnées LibreOffice, dont `/DocChecksum` : `PASS` ;
-- dépôt PostgreSQL transactionnel : `PASS` ;
-- `ready_for_submission` : `false` ;
-- dépendances externes Instruction 66 : `49` occurrences, `33` résolues documentairement, `16` non résolues ;
-- circulaires : `34` total, `25` résolues, `9` non résolues ;
-- instructions génériques : `7` total, `5` résolues, `2` non résolues ;
-- activation réglementaire automatique : `FORBIDDEN` ;
-- revues juridique et conformité : `PENDING`.
+La prochaine Regulatory CI mettra à jour ici le HEAD source, le run et les preuves machine-readable sans réécrire l'historique.
 
-La clôture définitive exige encore la vérification du HEAD distant après le commit automatique de preuves et la confirmation qu’aucune branche n’a été créée. La visibilité GitHub souhaitée reste une question propriétaire distincte et ne bloque pas la conservation de l’état actuel.
+`POINT_DE_REPRISE_EXACT = RECOVER_OFFICIAL_OR_INSTITUTIONAL_BINARY_CM_10_06_2022_THEN_COMPARE_2016_2022`.
 <!-- AUTO:LOOP-GOV-002-GOVERNANCE-RECONCILIATION:END -->
