@@ -7,7 +7,7 @@
 
 ## Projet
 
-Dépôt `chainsolutions-wealthtech/Regulatory`. GitHub expose actuellement le dépôt comme `public` au 2026-08-13. La visibilité attendue ou souhaitée par le propriétaire n’est pas déduite de cet état et reste `À DÉFINIR — information non fournie ou non vérifiée à ce stade du projet.`
+Dépôt `chainsolutions-wealthtech/Regulatory`. GitHub expose actuellement le dépôt comme `public` au 2026-08-13 et le propriétaire a explicitement confirmé le 2026-08-13 que cette visibilité `public` est volontaire et doit être conservée.
 
 Le projet construit une plateforme de connaissance réglementaire et de génération assistée de prospectus OPCVM/FCP UMOA.
 
@@ -58,6 +58,7 @@ Les commandes principales sont déclarées dans `package.json`, notamment `npm t
 ## Contraintes permanentes
 
 - `CANONICAL_WORK_BRANCH = main` ;
+- `REPOSITORY_VISIBILITY = public` ;
 - aucune création ou permutation de branche pour le travail normal ;
 - aucune réécriture d’historique ;
 - amélioration compatible uniquement, aucune régression ;
