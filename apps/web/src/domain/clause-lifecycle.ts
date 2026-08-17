@@ -1,5 +1,6 @@
 import {
   authorize,
+  rolesForAction,
   type AuthorizationDecision,
   type AuthorizationResource,
   type AuthorizationSubject,
@@ -35,13 +36,23 @@ export type ClauseTransitionDecision = {
   readyForSubmission: false;
 };
 
-const transitions: Record<
-  ClauseLifecycleEvent,
-  {
-    from: ClauseLifecycleStatus;
-    to: ClauseLifecycleStatus;
-    action: ProspectusAction;
-  }
+export const CLAUSE_LIFECYCLE_STATUSES: readonly ClauseLifecycleStatus[] = [
+  "DRAFT",
+  "DRAFT_LEGAL_REVIEW_REQUIRED",
+  "APPROVED",
+  "ACTIVE",
+  "RETIRED",
+] as const;
+
+export const CLAUSE_LIFECYCLE_TRANSITIONS: Readonly<
+  Record<
+    ClauseLifecycleEvent,
+    {
+      from: ClauseLifecycleStatus;
+      to: ClauseLifecycleStatus;
+      action: ProspectusAction;
+    }
+  >
 > = {
   REQUEST_LEGAL_REVIEW: {
     from: "DRAFT",
@@ -74,7 +85,7 @@ export function evaluateClauseTransition(
   context: ClauseLifecycleContext,
   mode: ClauseTransitionMode = "HUMAN",
 ): ClauseTransitionDecision {
-  const transition = transitions[event];
+  const transition = CLAUSE_LIFECYCLE_TRANSITIONS[event];
 
   if (mode !== "HUMAN") {
     return denied(
@@ -131,6 +142,29 @@ export function assertClauseTransitionAllowed(
     throw new Error(`CLAUSE_TRANSITION_DENIED:${event}:${currentStatus}:${decision.reason}`);
   }
   return decision.nextStatus;
+}
+
+export function clauseLifecyclePublicMetadata() {
+  const activationRoles = rolesForAction("CLAUSE_ACTIVATE");
+  return {
+    statuses: [...CLAUSE_LIFECYCLE_STATUSES],
+    transitions: Object.fromEntries(
+      Object.entries(CLAUSE_LIFECYCLE_TRANSITIONS).map(([event, transition]) => [
+        event,
+        {
+          from: transition.from,
+          to: transition.to,
+          requiredAction: transition.action,
+        },
+      ]),
+    ),
+    humanOnly: true,
+    automaticTransitionsAllowed: false,
+    activationAllowed: activationRoles.length > 0,
+    activationGrantCount: activationRoles.length,
+    activationRoles,
+    readyForSubmission: false,
+  };
 }
 
 function denied(

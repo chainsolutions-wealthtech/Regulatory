@@ -112,6 +112,20 @@ export function actionsForRoles(roles: ProspectusRole[]): ProspectusAction[] {
   return [...actions].toSorted();
 }
 
+/**
+ * Retourne uniquement les rôles explicitement capables d'exécuter une action
+ * avec la politique courante. Les actions désactivées retournent toujours une
+ * liste vide. Cette fonction permet aux surfaces read-only de publier l'état
+ * réel d'un gate RBAC sans dupliquer les grants dans l'API ou la documentation.
+ */
+export function rolesForAction(action: ProspectusAction): ProspectusRole[] {
+  if (!allActions.includes(action)) throw new Error(`RBAC_ACTION_UNKNOWN:${action}`);
+  if (actionPolicies[action].disabled === true) return [];
+  return allRoles
+    .filter((role) => actionsForRoles([role]).includes(action))
+    .toSorted();
+}
+
 export function roleCanDecideReview(role: ProspectusRole, reviewRole: ProspectusRole): boolean {
   const action = `REVIEW_DECIDE_${reviewRole}` as ProspectusAction;
   return allActions.includes(action) && actionsForRoles([role]).includes(action);
