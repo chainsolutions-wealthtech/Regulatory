@@ -19,6 +19,7 @@
     "source1AutomaticReconstructionForbidden": true,
     "source1InventoryLinksRecord": true,
     "source1CrosscheckLinksRecord": true,
+    "source1DeclaredBinaryExists": true,
     "source1BinaryStateConsistent": true,
     "source2RecordExists": true,
     "source2IdMatches": true,
@@ -28,6 +29,7 @@
     "source2AutomaticReconstructionForbidden": true,
     "source2InventoryLinksRecord": true,
     "source2CrosscheckLinksRecord": true,
+    "source2DeclaredBinaryExists": true,
     "source2BinaryStateConsistent": true,
     "source3RecordExists": true,
     "source3IdMatches": true,
@@ -37,6 +39,7 @@
     "source3AutomaticReconstructionForbidden": true,
     "source3InventoryLinksRecord": true,
     "source3CrosscheckLinksRecord": true,
+    "source3DeclaredBinaryExists": true,
     "source3BinaryStateConsistent": true,
     "source4RecordExists": true,
     "source4IdMatches": true,
@@ -46,6 +49,7 @@
     "source4AutomaticReconstructionForbidden": true,
     "source4InventoryLinksRecord": true,
     "source4CrosscheckLinksRecord": true,
+    "source4DeclaredBinaryExists": true,
     "source4BinaryStateConsistent": true,
     "source5RecordExists": true,
     "source5IdMatches": true,
@@ -55,6 +59,7 @@
     "source5AutomaticReconstructionForbidden": true,
     "source5InventoryLinksRecord": true,
     "source5CrosscheckLinksRecord": true,
+    "source5DeclaredBinaryExists": true,
     "source5BinaryStateConsistent": true,
     "source6RecordExists": true,
     "source6IdMatches": true,
@@ -64,6 +69,7 @@
     "source6AutomaticReconstructionForbidden": true,
     "source6InventoryLinksRecord": true,
     "source6CrosscheckLinksRecord": true,
+    "source6DeclaredBinaryExists": true,
     "source6BinaryStateConsistent": true,
     "source7RecordExists": true,
     "source7IdMatches": true,
@@ -73,15 +79,18 @@
     "source7AutomaticReconstructionForbidden": true,
     "source7InventoryLinksRecord": true,
     "source7CrosscheckLinksRecord": true,
+    "source7DeclaredBinaryExists": true,
     "source7BinaryStateConsistent": true,
-    "exactlyOneOwnHistoricalBinaryCurrentlyMaterialized": true,
+    "progressiveHistoricalBinaryAcquisitionAllowed": true,
+    "requiredHistoricalBinariesMaterialized": true,
+    "materializedAndMissingCountsReconcile": true,
     "instruction46OwnBinaryMaterialized": true
   },
   "metrics": {
     "expectedHistoricalSourceRecords": 7,
     "sourceRecordsObserved": 7,
-    "ownHistoricalBinariesMaterialized": 1,
-    "ownHistoricalBinariesMissing": 6
+    "ownHistoricalBinariesMaterialized": 6,
+    "ownHistoricalBinariesMissing": 1
   },
   "records": [
     {
@@ -90,6 +99,7 @@
       "record": "regulatory/sources/DECISION_CREPMF_2012_119.yaml",
       "expectedEvidenceGrade": "ARTICLE_92_OFFICIAL_SOURCE_ONLY",
       "binaryRequiredNow": false,
+      "binaryDeclared": false,
       "binaryMaterialized": false,
       "repositoryCopy": "null"
     },
@@ -99,6 +109,7 @@
       "record": "regulatory/sources/INSTRUCTION_46_CREPMF_2011_REVISEE.yaml",
       "expectedEvidenceGrade": "OFFICIAL_NORMATIVE_BINARY_MATERIALIZED",
       "binaryRequiredNow": true,
+      "binaryDeclared": true,
       "binaryMaterialized": true,
       "repositoryCopy": "regulatory/materialized/INSTRUCTION_46_CREPMF_2011_REVISEE.pdf"
     },
@@ -108,8 +119,9 @@
       "record": "regulatory/sources/INSTRUCTION_45_CREPMF_2011.yaml",
       "expectedEvidenceGrade": "TWO_DISTINCT_OFFICIAL_ACTS_REFERENCE_AND_TITLE_CORROBORATED",
       "binaryRequiredNow": false,
-      "binaryMaterialized": false,
-      "repositoryCopy": "null"
+      "binaryDeclared": true,
+      "binaryMaterialized": true,
+      "repositoryCopy": "regulatory/sources/amf-umoa-pending-api-backfill/INSTRUCTION_45_CREPMF_2011.pdf"
     },
     {
       "seq": 4,
@@ -117,8 +129,9 @@
       "record": "regulatory/sources/INSTRUCTION_24_CREPMF_1999.yaml",
       "expectedEvidenceGrade": "TWO_DISTINCT_OFFICIAL_ACTS_REFERENCE_AND_TITLE_CORROBORATED",
       "binaryRequiredNow": false,
-      "binaryMaterialized": false,
-      "repositoryCopy": "null"
+      "binaryDeclared": true,
+      "binaryMaterialized": true,
+      "repositoryCopy": "regulatory/sources/amf-umoa-pending-api-backfill/INSTRUCTION_24_CREPMF_1999.pdf"
     },
     {
       "seq": 5,
@@ -126,8 +139,9 @@
       "record": "regulatory/sources/INSTRUCTION_23_CREPMF_1999.yaml",
       "expectedEvidenceGrade": "ARTICLE_92_OFFICIAL_SOURCE_ONLY",
       "binaryRequiredNow": false,
-      "binaryMaterialized": false,
-      "repositoryCopy": "null"
+      "binaryDeclared": true,
+      "binaryMaterialized": true,
+      "repositoryCopy": "regulatory/sources/amf-umoa-pending-api-backfill/INSTRUCTION_23_CREPMF_1999.pdf"
     },
     {
       "seq": 6,
@@ -135,8 +149,9 @@
       "record": "regulatory/sources/INSTRUCTION_22_CREPMF_1999.yaml",
       "expectedEvidenceGrade": "ARTICLE_92_OFFICIAL_SOURCE_ONLY",
       "binaryRequiredNow": false,
-      "binaryMaterialized": false,
-      "repositoryCopy": "null"
+      "binaryDeclared": true,
+      "binaryMaterialized": true,
+      "repositoryCopy": "regulatory/sources/amf-umoa-pending-api-backfill/INSTRUCTION_22_CREPMF_1999.pdf"
     },
     {
       "seq": 7,
@@ -144,8 +159,9 @@
       "record": "regulatory/sources/INSTRUCTION_21_CREPMF_1999.yaml",
       "expectedEvidenceGrade": "ARTICLE_92_OFFICIAL_SOURCE_ONLY",
       "binaryRequiredNow": false,
-      "binaryMaterialized": false,
-      "repositoryCopy": "null"
+      "binaryDeclared": true,
+      "binaryMaterialized": true,
+      "repositoryCopy": "regulatory/sources/amf-umoa-pending-api-backfill/INSTRUCTION_21_CREPMF_1999.pdf"
     }
   ],
   "safety": {
@@ -155,5 +171,5 @@
     "humanLegalReviewRequired": true,
     "humanComplianceReviewRequired": true
   },
-  "caveat": "PASS validates registry completeness and safety boundaries only. It does not validate the legal content of historical acts whose own official binaries are not materialized."
+  "caveat": "PASS validates registry completeness, declared binary existence and safety boundaries only. Materializing an additional historical binary never reactivates an abrogated rule and does not validate its legal interpretation."
 }
