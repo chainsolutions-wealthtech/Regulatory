@@ -1,3 +1,4 @@
+import Link from "next/link";
 import { notFound } from "next/navigation";
 import { ProjectWorkspaceTemplate } from "@/components/templates/ProjectWorkspaceTemplate";
 import type { ImportStagingSummary } from "@/server/import/import-staging-query-repository";
@@ -39,22 +40,10 @@ export default async function ProjectImportsPage({
             </div>
           </div>
           <dl className="detail-list">
-            <div>
-              <dt>Batches visibles</dt>
-              <dd>{imports.length}</dd>
-            </div>
-            <div>
-              <dt>Écriture canonique automatique</dt>
-              <dd>Interdite</dd>
-            </div>
-            <div>
-              <dt>Soumission</dt>
-              <dd>Verrouillée</dd>
-            </div>
-            <div>
-              <dt>Runtime</dt>
-              <dd>{unavailable ? "PostgreSQL + OIDC requis" : "PostgreSQL gouverné"}</dd>
-            </div>
+            <div><dt>Batches visibles</dt><dd>{imports.length}</dd></div>
+            <div><dt>Écriture canonique automatique</dt><dd>Interdite</dd></div>
+            <div><dt>Soumission</dt><dd>Verrouillée</dd></div>
+            <div><dt>Runtime</dt><dd>{unavailable ? "PostgreSQL + OIDC requis" : "PostgreSQL gouverné"}</dd></div>
           </dl>
         </section>
 
@@ -86,17 +75,14 @@ export default async function ProjectImportsPage({
                 <div className="next-action-card" key={item.importId}>
                   <div>
                     <strong>{item.sourceFilename}</strong>
-                    <p>
-                      Version projet {item.projectVersion} · {item.status} · {item.valueCount} valeur(s)
-                    </p>
-                    <p>
-                      {item.pendingCount} en attente · {item.confirmedCount} confirmée(s) · {item.rejectedCount} rejetée(s)
-                    </p>
-                    <p>
-                      SHA-256 {item.evidenceSha256.slice(0, 16)}… · extracteur {item.extractorId} {item.extractorVersion}
-                    </p>
+                    <p>Version projet {item.projectVersion} · {item.status} · {item.valueCount} valeur(s)</p>
+                    <p>{item.pendingCount} en attente · {item.confirmedCount} confirmée(s) · {item.rejectedCount} rejetée(s)</p>
+                    <p>SHA-256 {item.evidenceSha256.slice(0, 16)}… · extracteur {item.extractorId} {item.extractorVersion}</p>
                   </div>
-                  <a href={`/api/projects/${project.id}/imports/${item.importId}`}>Batch JSON</a>
+                  <div className="button-row">
+                    <Link href={`/projects/${project.id}/imports/${item.importId}`}>Ouvrir la revue</Link>
+                    <a href={`/api/projects/${project.id}/imports/${item.importId}`}>Batch JSON</a>
+                  </div>
                 </div>
               ))}
               {imports.length === 0 ? <p>Aucun import persisté pour ce projet.</p> : null}
