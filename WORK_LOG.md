@@ -287,33 +287,30 @@ Aucune nouvelle branche, aucun force-push, aucune approbation juridique simulée
 <!-- AUTO:LOOP-DEV-001-CANONICAL-SCHEMA-POSTGRES-V1:END -->
 
 <!-- AUTO:LOOP-DEV-001-POSTGRES-REPOSITORY-V1:START -->
-## 2026-08-05 — Adaptateur PostgreSQL transactionnel
+## 2026-08-17 — Staging PostgreSQL des imports prospectus
 
-1. Ajout du pool PostgreSQL et des contrats d’identité vérifiée.
-2. Ajout d’un stockage d’artefacts staged pour les tests et le développement.
-3. Implémentation de la création, lecture, liste, réponse et génération.
-4. Création d’une nouvelle version à chaque réponse.
-5. Verrouillage `FOR UPDATE` et contrôle `expectedVersion`.
-6. Synchronisation des snapshots et collections normalisées.
-7. Chaîne d’audit SHA-256 avec lien vers l’événement précédent.
-8. Test de deux organisations et de la concurrence réelle.
-9. Propagation de la précondition de version dans les routes et l’interface.
+1. Spécification RED du repository de staging.
+2. Observation du RED au typecheck sur le module absent.
+3. Ajout de `0006_import_staging.sql`.
+4. Ajout de `PostgresImportStagingRepository`.
+5. Ajout des contraintes base `canonical_write_allowed=false` et `ready_for_submission=false`.
+6. Ajout des contrôles de portée projet/version/preuve CLEAN/SHA.
+7. Ajout RLS sur batches et valeurs importées.
+8. Persistance de la décision humaine, du reviewer et de l’horodatage.
+9. Refus d’une seconde décision et de la mutation de la source extraite.
+10. Validation PostgreSQL 17, Security CI et Regulatory CI.
 
-- dépôt PostgreSQL : `IMPLEMENTED_AND_TESTED` ;
-- identité serveur vérifiée exigée : `true` ;
-- appartenance à l’organisation exigée : `true` ;
-- isolation de deux tenants : `PASS` ;
-- version créée à chaque écriture : `PASS` ;
-- conflit de concurrence optimiste : `PASS` ;
-- snapshot canonique par version : `PASS` ;
-- collections normalisées synchronisées : `PASS` ;
-- métadonnées documentaires persistées : `PASS` ;
-- artefacts staged puis commit : `PASS` ;
-- chaîne d’audit SHA-256 : `PASS` ;
-- versions observées dans le test : `4` ;
-- snapshots observés : `5` ;
-- événements d’audit : `5` ;
-- `ready_for_submission` : `false`.
+- migration : `database/migrations/0006_import_staging.sql` ;
+- staging PostgreSQL tenant-scopé : `IMPLEMENTED_AND_TESTED` ;
+- preuve source CLEAN exigée : `PASS` ;
+- liaison projet/version/preuve/SHA : `PASS` ;
+- RLS tenant : `PASS` ;
+- réutilisation cross-tenant d’une preuve : `REJECTED` ;
+- revue humaine persistée avec identité : `PASS` ;
+- seconde décision sur une valeur revue : `REJECTED` ;
+- source extraite après staging : `IMMUTABLE` ;
+- `canonical_write_allowed` : `false` verrouillé en base ;
+- `ready_for_submission` : `false` verrouillé en base.
 <!-- AUTO:LOOP-DEV-001-POSTGRES-REPOSITORY-V1:END -->
 
 <!-- AUTO:LOOP-GOV-002-GOVERNANCE-RECONCILIATION:START -->
@@ -334,9 +331,9 @@ Aucune nouvelle branche, aucun force-push, aucune approbation juridique simulée
 13. Clôture de `LOOP-GOV-002` et transmission à `LOOP-REG-001`.
 
 - branche canonique : `main` ;
-- HEAD source vérifié par la boucle : `554fccdc6a37b1bb2965dddd7a55f61680adff37` ;
+- HEAD source vérifié par la boucle : `0370c9e23939e57f3672c9cf7c8d46ff7c0199d5` ;
 - date du HEAD source : `2026-08-17` ;
-- run Regulatory CI : `32060434442` ;
+- run Regulatory CI : `32060810757` ;
 - validation API CIRC005 : `PASS` ;
 - compatibilité descendante des 10 collections structurées : `PASS` ;
 - persistance canonique des anciens payloads : `PASS` ;

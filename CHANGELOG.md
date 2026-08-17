@@ -213,22 +213,24 @@ L’activation du driver PostgreSQL échoue explicitement tant qu’aucun adapta
 <!-- AUTO:LOOP-DEV-001-CANONICAL-SCHEMA-POSTGRES-V1:END -->
 
 <!-- AUTO:LOOP-DEV-001-POSTGRES-REPOSITORY-V1:START -->
-## [Unreleased] — PostgreSQL repository V1 — 2026-08-05
+## [Unreleased] — Import staging PostgreSQL — 2026-08-17
 
 ### Added
 
-- adaptateur PostgreSQL transactionnel ;
-- fournisseur d’identité vérifiée injecté ;
-- stockage staged des artefacts ;
-- versionnement par écriture ;
-- contrôle optimiste de concurrence ;
-- synchronisation des collections ;
-- chaîne d’audit SHA-256 ;
-- test d’intégration multi-tenant et concurrence.
+- migration `0006_import_staging.sql` ;
+- tables `prospectus_import_batches` et `prospectus_import_values` ;
+- RLS tenant sur le staging d’import ;
+- repository PostgreSQL transactionnel de staging ;
+- revue humaine persistée et traçable ;
+- validation `POSTGRESQL_IMPORT_STAGING_VALIDATION_V1`.
 
-### Changed
+### Security
 
-Les routes d’écriture peuvent transmettre `expectedVersion` et répondent par un conflit explicite lorsque le snapshot utilisateur est obsolète.
+- preuve CLEAN exigée ;
+- SHA et portée projet/version contrôlés ;
+- source extraite immuable ;
+- double décision refusée ;
+- écriture canonique et soumission verrouillées à `false` par PostgreSQL.
 <!-- AUTO:LOOP-DEV-001-POSTGRES-REPOSITORY-V1:END -->
 
 <!-- AUTO:LOOP-GOV-002-GOVERNANCE-RECONCILIATION:START -->

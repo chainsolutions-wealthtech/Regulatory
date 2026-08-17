@@ -6,9 +6,9 @@
 Le dépôt est désormais explicitement gouverné en mode **une branche canonique : `main`**, sans création de branche par les agents et sans PR de travail normale. La réconciliation n’a supprimé ni remplacé les documents historiques : les photographies anciennes restent des preuves datées et le présent bloc porte l’état courant de contrôle.
 
 - branche canonique : `main` ;
-- HEAD source vérifié par la boucle : `554fccdc6a37b1bb2965dddd7a55f61680adff37` ;
+- HEAD source vérifié par la boucle : `0370c9e23939e57f3672c9cf7c8d46ff7c0199d5` ;
 - date du HEAD source : `2026-08-17` ;
-- run Regulatory CI : `32060434442` ;
+- run Regulatory CI : `32060810757` ;
 - validation API CIRC005 : `PASS` ;
 - compatibilité descendante des 10 collections structurées : `PASS` ;
 - persistance canonique des anciens payloads : `PASS` ;
@@ -318,23 +318,31 @@ Le schéma transactionnel est testé mais non déployé. L’application utilise
 <!-- AUTO:LOOP-DEV-001-CANONICAL-SCHEMA-POSTGRES-V1:END -->
 
 <!-- AUTO:LOOP-DEV-001-POSTGRES-REPOSITORY-V1:START -->
-## Dépôt PostgreSQL transactionnel — V1
+## PostgreSQL transactionnel et staging d’import — état 2026-08-17
 
-- dépôt PostgreSQL : `IMPLEMENTED_AND_TESTED` ;
-- identité serveur vérifiée exigée : `true` ;
-- appartenance à l’organisation exigée : `true` ;
-- isolation de deux tenants : `PASS` ;
-- version créée à chaque écriture : `PASS` ;
-- conflit de concurrence optimiste : `PASS` ;
-- snapshot canonique par version : `PASS` ;
-- collections normalisées synchronisées : `PASS` ;
-- métadonnées documentaires persistées : `PASS` ;
-- artefacts staged puis commit : `PASS` ;
+- dépôt PostgreSQL projet : `IMPLEMENTED_AND_TESTED` ;
+- identité serveur vérifiée : `REQUIRED` ;
+- appartenance organisation : `REQUIRED` ;
+- isolation multi-tenant : `PASS` ;
+- version par écriture : `PASS` ;
+- concurrence optimiste : `PASS` ;
+- snapshot canonique : `PASS` ;
 - chaîne d’audit SHA-256 : `PASS` ;
-- versions observées dans le test : `4` ;
-- snapshots observés : `5` ;
-- événements d’audit : `5` ;
 - `ready_for_submission` : `false`.
 
-L’adaptateur est testé sur PostgreSQL éphémère avec une identité fixe exclusivement réservée à la CI. Le driver actif de l’application reste `local-json` tant qu’un fournisseur d’identité réel, un stockage d’artefacts sécurisé et une revue d’exploitation ne sont pas configurés.
+### Import prospectus
+
+- migration : `database/migrations/0006_import_staging.sql` ;
+- staging PostgreSQL tenant-scopé : `IMPLEMENTED_AND_TESTED` ;
+- preuve source CLEAN exigée : `PASS` ;
+- liaison projet/version/preuve/SHA : `PASS` ;
+- RLS tenant : `PASS` ;
+- réutilisation cross-tenant d’une preuve : `REJECTED` ;
+- revue humaine persistée avec identité : `PASS` ;
+- seconde décision sur une valeur revue : `REJECTED` ;
+- source extraite après staging : `IMMUTABLE` ;
+- `canonical_write_allowed` : `false` verrouillé en base ;
+- `ready_for_submission` : `false` verrouillé en base.
+
+La confirmation humaine d’une valeur extraite ne constitue **jamais** une écriture dans le modèle canonique. Le passage vers une réponse projet devra rester une commande distincte, versionnée, autorisée et auditée.
 <!-- AUTO:LOOP-DEV-001-POSTGRES-REPOSITORY-V1:END -->

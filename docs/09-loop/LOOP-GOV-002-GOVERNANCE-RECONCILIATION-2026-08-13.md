@@ -137,9 +137,9 @@ La prochaine action appartient à `LOOP-REG-001` : obtenir le binaire officiel o
 Statut de la boucle : `CLOSED_OBJECTIVE_COMPLETE`.
 
 - branche canonique : `main` ;
-- HEAD source vérifié par la boucle : `554fccdc6a37b1bb2965dddd7a55f61680adff37` ;
+- HEAD source vérifié par la boucle : `0370c9e23939e57f3672c9cf7c8d46ff7c0199d5` ;
 - date du HEAD source : `2026-08-17` ;
-- run Regulatory CI : `32060434442` ;
+- run Regulatory CI : `32060810757` ;
 - validation API CIRC005 : `PASS` ;
 - compatibilité descendante des 10 collections structurées : `PASS` ;
 - persistance canonique des anciens payloads : `PASS` ;

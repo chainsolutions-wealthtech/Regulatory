@@ -10,9 +10,9 @@ Un nouvel agent doit reprendre depuis `00_START_HERE.md` et `GOVERNANCE.md`, res
 Ce chantier a renforcé la gouvernance **et** réparé une dette CI préexistante sans retirer les capacités legacy ni affaiblir le déterminisme PDF.
 
 - branche canonique : `main` ;
-- HEAD source vérifié par la boucle : `554fccdc6a37b1bb2965dddd7a55f61680adff37` ;
+- HEAD source vérifié par la boucle : `0370c9e23939e57f3672c9cf7c8d46ff7c0199d5` ;
 - date du HEAD source : `2026-08-17` ;
-- run Regulatory CI : `32060434442` ;
+- run Regulatory CI : `32060810757` ;
 - validation API CIRC005 : `PASS` ;
 - compatibilité descendante des 10 collections structurées : `PASS` ;
 - persistance canonique des anciens payloads : `PASS` ;
@@ -272,31 +272,28 @@ Ne pas sélectionner `REGULATORY_STORAGE_DRIVER=postgresql` avant l’implément
 <!-- AUTO:LOOP-DEV-001-CANONICAL-SCHEMA-POSTGRES-V1:END -->
 
 <!-- AUTO:LOOP-DEV-001-POSTGRES-REPOSITORY-V1:START -->
-## Transmission — PostgreSQL repository V1
-
-- dépôt PostgreSQL : `IMPLEMENTED_AND_TESTED` ;
-- identité serveur vérifiée exigée : `true` ;
-- appartenance à l’organisation exigée : `true` ;
-- isolation de deux tenants : `PASS` ;
-- version créée à chaque écriture : `PASS` ;
-- conflit de concurrence optimiste : `PASS` ;
-- snapshot canonique par version : `PASS` ;
-- collections normalisées synchronisées : `PASS` ;
-- métadonnées documentaires persistées : `PASS` ;
-- artefacts staged puis commit : `PASS` ;
-- chaîne d’audit SHA-256 : `PASS` ;
-- versions observées dans le test : `4` ;
-- snapshots observés : `5` ;
-- événements d’audit : `5` ;
-- `ready_for_submission` : `false`.
+## Transmission — staging PostgreSQL import prospectus
 
 Fichiers prioritaires :
 
-- `apps/web/src/server/storage/postgres-project-repository.ts` ;
-- `apps/web/src/server/storage/postgres-project-repository.integration.ts` ;
-- `apps/web/src/server/security/verified-identity.ts` ;
-- `apps/web/src/server/storage/artifact-store.ts` ;
-- `regulatory/validation/POSTGRESQL_REPOSITORY_VALIDATION.json`.
+- `database/migrations/0006_import_staging.sql` ;
+- `apps/web/src/server/import/postgres-import-staging-repository.ts` ;
+- `apps/web/src/server/import/postgres-import-staging-repository.integration.ts` ;
+- `apps/web/src/domain/prospectus-import.ts` ;
+- `apps/web/src/domain/prospectus-import-review.integration.ts` ;
+- `docs/04-development/PROSPECTUS_IMPORT_STAGING.md`.
 
-Le driver PostgreSQL ne doit pas être sélectionné tant que l’identité réelle et les secrets d’infrastructure ne sont pas configurés.
+- migration : `database/migrations/0006_import_staging.sql` ;
+- staging PostgreSQL tenant-scopé : `IMPLEMENTED_AND_TESTED` ;
+- preuve source CLEAN exigée : `PASS` ;
+- liaison projet/version/preuve/SHA : `PASS` ;
+- RLS tenant : `PASS` ;
+- réutilisation cross-tenant d’une preuve : `REJECTED` ;
+- revue humaine persistée avec identité : `PASS` ;
+- seconde décision sur une valeur revue : `REJECTED` ;
+- source extraite après staging : `IMMUTABLE` ;
+- `canonical_write_allowed` : `false` verrouillé en base ;
+- `ready_for_submission` : `false` verrouillé en base.
+
+Ne jamais transformer une confirmation d’extraction en écriture canonique implicite.
 <!-- AUTO:LOOP-DEV-001-POSTGRES-REPOSITORY-V1:END -->

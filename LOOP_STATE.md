@@ -13,9 +13,9 @@
 - visibilité GitHub actuellement observée : `public`, visibilité souhaitée par le propriétaire : `TO_VERIFY`.
 
 - branche canonique : `main` ;
-- HEAD source vérifié par la boucle : `554fccdc6a37b1bb2965dddd7a55f61680adff37` ;
+- HEAD source vérifié par la boucle : `0370c9e23939e57f3672c9cf7c8d46ff7c0199d5` ;
 - date du HEAD source : `2026-08-17` ;
-- run Regulatory CI : `32060434442` ;
+- run Regulatory CI : `32060810757` ;
 - validation API CIRC005 : `PASS` ;
 - compatibilité descendante des 10 collections structurées : `PASS` ;
 - persistance canonique des anciens payloads : `PASS` ;
@@ -239,30 +239,31 @@ La boucle réglementaire sera reprise après la tranche de couverture standard o
 <!-- AUTO:LOOP-DEV-001-CANONICAL-SCHEMA-POSTGRES-V1:END -->
 
 <!-- AUTO:LOOP-DEV-001-POSTGRES-REPOSITORY-V1:START -->
-## LOOP-DEV-001 — Dépôt PostgreSQL V1
+## LOOP-DEV-001 — PostgreSQL projet + staging import
 
-- interface `ProjectRepository` : `STABLE_V1` ;
-- adaptateur PostgreSQL : `IMPLEMENTED_AND_TESTED` ;
-- verrouillage de projet : `FOR UPDATE` ;
-- concurrence : `OPTIMISTIC_VERSION_CHECK` ;
-- transaction réponse → version → snapshot → collections → audit : `PASS` ;
-- génération → snapshot → documents → audit : `PASS` ;
-- activation par défaut : `FORBIDDEN` ;
-- prochaine tranche historique de cette preuve : `AUTHENTICATION_RBAC_AND_REVIEW_WORKFLOW`.
-
-- dépôt PostgreSQL : `IMPLEMENTED_AND_TESTED` ;
-- identité serveur vérifiée exigée : `true` ;
-- appartenance à l’organisation exigée : `true` ;
-- isolation de deux tenants : `PASS` ;
-- version créée à chaque écriture : `PASS` ;
-- conflit de concurrence optimiste : `PASS` ;
-- snapshot canonique par version : `PASS` ;
-- collections normalisées synchronisées : `PASS` ;
-- métadonnées documentaires persistées : `PASS` ;
-- artefacts staged puis commit : `PASS` ;
+- dépôt PostgreSQL projet : `IMPLEMENTED_AND_TESTED` ;
+- identité serveur vérifiée : `REQUIRED` ;
+- appartenance organisation : `REQUIRED` ;
+- isolation multi-tenant : `PASS` ;
+- version par écriture : `PASS` ;
+- concurrence optimiste : `PASS` ;
+- snapshot canonique : `PASS` ;
 - chaîne d’audit SHA-256 : `PASS` ;
-- versions observées dans le test : `4` ;
-- snapshots observés : `5` ;
-- événements d’audit : `5` ;
 - `ready_for_submission` : `false`.
+
+- migration : `database/migrations/0006_import_staging.sql` ;
+- staging PostgreSQL tenant-scopé : `IMPLEMENTED_AND_TESTED` ;
+- preuve source CLEAN exigée : `PASS` ;
+- liaison projet/version/preuve/SHA : `PASS` ;
+- RLS tenant : `PASS` ;
+- réutilisation cross-tenant d’une preuve : `REJECTED` ;
+- revue humaine persistée avec identité : `PASS` ;
+- seconde décision sur une valeur revue : `REJECTED` ;
+- source extraite après staging : `IMMUTABLE` ;
+- `canonical_write_allowed` : `false` verrouillé en base ;
+- `ready_for_submission` : `false` verrouillé en base.
+
+- activation automatique de données extraites : `FORBIDDEN` ;
+- copie automatique vers les réponses projet : `FORBIDDEN` ;
+- soumission : `DISABLED`.
 <!-- AUTO:LOOP-DEV-001-POSTGRES-REPOSITORY-V1:END -->

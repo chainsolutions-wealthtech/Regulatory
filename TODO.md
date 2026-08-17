@@ -25,9 +25,9 @@
 - [ ] Ne jamais activer automatiquement montant, sanction, exigence ou dépendance sans les revues humaines prévues.
 
 - branche canonique : `main` ;
-- HEAD source vérifié par la boucle : `554fccdc6a37b1bb2965dddd7a55f61680adff37` ;
+- HEAD source vérifié par la boucle : `0370c9e23939e57f3672c9cf7c8d46ff7c0199d5` ;
 - date du HEAD source : `2026-08-17` ;
-- run Regulatory CI : `32060434442` ;
+- run Regulatory CI : `32060810757` ;
 - validation API CIRC005 : `PASS` ;
 - compatibilité descendante des 10 collections structurées : `PASS` ;
 - persistance canonique des anciens payloads : `PASS` ;
@@ -478,23 +478,19 @@ Légende :
 <!-- AUTO:LOOP-DEV-001-CANONICAL-SCHEMA-POSTGRES-V1:END -->
 
 <!-- AUTO:LOOP-DEV-001-POSTGRES-REPOSITORY-V1:START -->
-## Dépôt PostgreSQL — état V1
+## Import prospectus — état courant
 
-- [x] Créer le port `ProjectRepository`.
-- [x] Implémenter le dépôt PostgreSQL.
-- [x] Exiger une identité serveur vérifiée.
-- [x] Contrôler l’appartenance tenant.
-- [x] Créer une version à chaque réponse.
-- [x] Ajouter le contrôle optimiste de version.
-- [x] Synchroniser snapshot et tables normalisées.
-- [x] Persister les métadonnées des documents.
-- [x] Ajouter la chaîne d’audit.
-- [x] Tester deux tenants et une écriture concurrente.
-- [ ] Choisir et intégrer le fournisseur d’identité.
-- [ ] Implémenter le RBAC par action et objet.
-- [ ] Construire les écrans et transitions de revue.
-- [ ] Remplacer le stockage fichiers de test par un stockage objet sécurisé.
-- [ ] Ajouter analyse antivirus, quarantaine, chiffrement et rétention.
-- [ ] Ajouter gestion du pool, secrets, sauvegardes et observabilité de production.
-- [ ] Réaliser les revues sécurité et exploitation avant activation.
+- [x] Accepter uniquement une preuve CLEAN et un média PDF/DOCX supporté.
+- [x] Produire des propositions `EXTRACTED_UNVERIFIED` avec provenance.
+- [x] Implémenter confirmation/rejet humain sans écriture canonique.
+- [x] Ajouter le staging PostgreSQL tenant-scopé.
+- [x] Ajouter RLS et contrôles de portée projet/version/preuve.
+- [x] Verrouiller `canonical_write_allowed=false` en base.
+- [x] Verrouiller `ready_for_submission=false` en base.
+- [x] Refuser la double revue et la mutation de la source extraite.
+- [ ] Exposer le staging via le factory runtime et une API gouvernée.
+- [ ] Construire l’écran de revue des propositions importées.
+- [ ] Brancher un extracteur PDF/DOCX réel derrière quarantaine et antivirus réels.
+- [ ] Concevoir la commande explicite de copie d’une valeur confirmée vers une réponse projet avec `ANSWER_WRITE`, `expectedVersion` et audit de provenance.
+- [ ] Configurer stockage objet, antivirus, KMS/secrets et rétention sur l’infrastructure cible.
 <!-- AUTO:LOOP-DEV-001-POSTGRES-REPOSITORY-V1:END -->

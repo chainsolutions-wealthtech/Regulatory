@@ -666,27 +666,23 @@ Aucune base de production, authentification ou certification de sécurité n’e
 <!-- AUTO:LOOP-DEV-001-CANONICAL-SCHEMA-POSTGRES-V1:END -->
 
 <!-- AUTO:LOOP-DEV-001-POSTGRES-REPOSITORY-V1:START -->
-## 2026-08-05 — Persistance transactionnelle testée
+## 2026-08-17 — Import prospectus : staging transactionnel
 
-Le moteur n’est plus limité conceptuellement au stockage JSON : un adaptateur PostgreSQL complet est disponible derrière le même port de domaine et validé sur une base éphémère.
+Le service d’extraction `EXTRACTED_UNVERIFIED` dispose désormais d’un staging PostgreSQL auditable. Les propositions et décisions humaines peuvent être persistées sans contourner le modèle canonique.
 
-- dépôt PostgreSQL : `IMPLEMENTED_AND_TESTED` ;
-- identité serveur vérifiée exigée : `true` ;
-- appartenance à l’organisation exigée : `true` ;
-- isolation de deux tenants : `PASS` ;
-- version créée à chaque écriture : `PASS` ;
-- conflit de concurrence optimiste : `PASS` ;
-- snapshot canonique par version : `PASS` ;
-- collections normalisées synchronisées : `PASS` ;
-- métadonnées documentaires persistées : `PASS` ;
-- artefacts staged puis commit : `PASS` ;
-- chaîne d’audit SHA-256 : `PASS` ;
-- versions observées dans le test : `4` ;
-- snapshots observés : `5` ;
-- événements d’audit : `5` ;
-- `ready_for_submission` : `false`.
+- migration : `database/migrations/0006_import_staging.sql` ;
+- staging PostgreSQL tenant-scopé : `IMPLEMENTED_AND_TESTED` ;
+- preuve source CLEAN exigée : `PASS` ;
+- liaison projet/version/preuve/SHA : `PASS` ;
+- RLS tenant : `PASS` ;
+- réutilisation cross-tenant d’une preuve : `REJECTED` ;
+- revue humaine persistée avec identité : `PASS` ;
+- seconde décision sur une valeur revue : `REJECTED` ;
+- source extraite après staging : `IMMUTABLE` ;
+- `canonical_write_allowed` : `false` verrouillé en base ;
+- `ready_for_submission` : `false` verrouillé en base.
 
-L’identité fixe du test ne doit jamais être utilisée en production.
+La prochaine évolution doit conserver la séparation : extraction → staging → revue humaine → éventuelle commande explicite de copie vers une réponse projet.
 <!-- AUTO:LOOP-DEV-001-POSTGRES-REPOSITORY-V1:END -->
 
 <!-- AUTO:LOOP-GOV-002-GOVERNANCE-RECONCILIATION:START -->
@@ -697,9 +693,9 @@ La méthode de travail du dépôt est consolidée : `main` est la branche canoni
 Une défaillance CI antérieure au chantier a été traitée selon la boucle `BASELINE → DIAGNOSTIC → CORRECTION CIBLÉE → VÉRIFICATION`. La compatibilité descendante des structures historiques a été conservée, tandis que le déterminisme PDF a été renforcé par la normalisation du seul champ volatile prouvé `/DocChecksum`.
 
 - branche canonique : `main` ;
-- HEAD source vérifié par la boucle : `554fccdc6a37b1bb2965dddd7a55f61680adff37` ;
+- HEAD source vérifié par la boucle : `0370c9e23939e57f3672c9cf7c8d46ff7c0199d5` ;
 - date du HEAD source : `2026-08-17` ;
-- run Regulatory CI : `32060434442` ;
+- run Regulatory CI : `32060810757` ;
 - validation API CIRC005 : `PASS` ;
 - compatibilité descendante des 10 collections structurées : `PASS` ;
 - persistance canonique des anciens payloads : `PASS` ;
