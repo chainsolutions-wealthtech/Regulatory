@@ -15,6 +15,11 @@ import {
 import { localProjectRepository } from "@/server/storage/local-project-repository";
 import { createPostgresProjectRepository } from "@/server/storage/postgres-project-repository";
 import type { ProjectRepository } from "@/server/storage/project-repository";
+import {
+  createPostgresProjectVersionRepository,
+  localProjectVersionRepository,
+  type ProjectVersionRepository,
+} from "@/server/storage/project-version-repository";
 
 export type RegulatoryStorageDriver = "local-json" | "postgresql";
 
@@ -80,6 +85,14 @@ export function getProjectRepository(): ProjectRepository {
   });
 }
 
+export function getProjectVersionRepository(): ProjectVersionRepository {
+  if (regulatoryStorageDriver === "local-json") return localProjectVersionRepository;
+  return createPostgresProjectVersionRepository({
+    pool: getRuntimePostgresPool(),
+    identityProvider: getRuntimeIdentityProvider(),
+  });
+}
+
 export function getGenerationArtifactRepository(): GenerationArtifactRepository {
   if (regulatoryStorageDriver === "local-json") return localGenerationArtifactRepository;
   return createPostgresGenerationArtifactRepository({
@@ -90,6 +103,7 @@ export function getGenerationArtifactRepository(): GenerationArtifactRepository 
 }
 
 export const projectRepository = getProjectRepository();
+export const projectVersionRepository = getProjectVersionRepository();
 export const generationArtifactRepository = getGenerationArtifactRepository();
 
 function resolveStorageDriver(): RegulatoryStorageDriver {
