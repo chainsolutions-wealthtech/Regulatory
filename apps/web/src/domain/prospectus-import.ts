@@ -9,6 +9,14 @@ export type ImportedSourceLocation = {
   textAnchor?: string;
 };
 
+export type ImportedValuePromotion = {
+  promotionId: string;
+  questionId: string;
+  projectVersion: number;
+  promotedBy: string;
+  promotedAt: string;
+};
+
 export type ImportedProspectusValue = {
   importValueId: string;
   proposedCanonicalFieldPath: string;
@@ -20,6 +28,7 @@ export type ImportedProspectusValue = {
   reviewStatus: ImportedValueReviewStatus;
   reviewedBy?: string;
   reviewedAt?: string;
+  promotion?: ImportedValuePromotion;
 };
 
 export type ProspectusImportBatch = {
@@ -68,6 +77,21 @@ export function assertImportRemainsUnverified(batch: ProspectusImportBatch): voi
       if (value.reviewedBy || value.reviewedAt) throw new Error("IMPORT_UNVERIFIED_VALUE_HAS_REVIEW_PROVENANCE");
     } else if (!value.reviewedBy || !value.reviewedAt) {
       throw new Error("IMPORT_REVIEW_PROVENANCE_REQUIRED");
+    }
+    if (value.promotion) {
+      if (value.reviewStatus !== "CONFIRMED_BY_HUMAN") {
+        throw new Error("IMPORT_PROMOTION_REQUIRES_CONFIRMED_VALUE");
+      }
+      if (
+        !value.promotion.promotionId ||
+        !value.promotion.questionId.trim() ||
+        !Number.isInteger(value.promotion.projectVersion) ||
+        value.promotion.projectVersion < 1 ||
+        !value.promotion.promotedBy ||
+        Number.isNaN(Date.parse(value.promotion.promotedAt))
+      ) {
+        throw new Error("IMPORT_PROMOTION_PROVENANCE_INVALID");
+      }
     }
   }
 }

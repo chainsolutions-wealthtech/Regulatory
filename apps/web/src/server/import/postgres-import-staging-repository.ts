@@ -264,13 +264,23 @@ async function readBatchNullable(
     review_status: ImportedProspectusValue["reviewStatus"];
     reviewed_by: string | null;
     reviewed_at: Date | string | null;
+    promotion_id: string | null;
+    promoted_question_id: string | null;
+    promoted_project_version: number | null;
+    promoted_by_user_id: string | null;
+    promoted_at: Date | string | null;
   }>(
-    `select id, proposed_canonical_field_path, extracted_value, confidence,
-            source_location, evidence_object_id, evidence_sha256,
-            review_status, reviewed_by, reviewed_at
-       from regulatory.prospectus_import_values
-      where import_batch_id = $1
-      order by created_at, id`,
+    `select v.id, v.proposed_canonical_field_path, v.extracted_value, v.confidence,
+            v.source_location, v.evidence_object_id, v.evidence_sha256,
+            v.review_status, v.reviewed_by, v.reviewed_at,
+            p.id as promotion_id, p.question_id as promoted_question_id,
+            ppv.version_number as promoted_project_version,
+            p.promoted_by_user_id, p.promoted_at
+       from regulatory.prospectus_import_values v
+       left join regulatory.import_value_promotions p on p.import_value_id = v.id
+       left join regulatory.project_versions ppv on ppv.id = p.project_version_id
+      where v.import_batch_id = $1
+      order by v.created_at, v.id`,
     [importId],
   );
 
@@ -286,6 +296,21 @@ async function readBatchNullable(
     reviewStatus: value.review_status,
     ...(value.reviewed_by ? { reviewedBy: value.reviewed_by } : {}),
     ...(value.reviewed_at ? { reviewedAt: toIso(value.reviewed_at) } : {}),
+    ...(value.promotion_id &&
+    value.promoted_question_id &&
+    value.promoted_project_version &&
+    value.promoted_by_user_id &&
+    value.promoted_at
+      ? {
+          promotion: {
+            promotionId: value.promotion_id,
+            questionId: value.promoted_question_id,
+            projectVersion: value.promoted_project_version,
+            promotedBy: value.promoted_by_user_id,
+            promotedAt: toIso(value.promoted_at),
+          },
+        }
+      : {}),
   }));
 
   const batch: ProspectusImportBatch = {
