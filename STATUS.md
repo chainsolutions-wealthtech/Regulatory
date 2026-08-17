@@ -6,9 +6,9 @@
 Le dépôt est désormais explicitement gouverné en mode **une branche canonique : `main`**, sans création de branche par les agents et sans PR de travail normale. La réconciliation n’a supprimé ni remplacé les documents historiques : les photographies anciennes restent des preuves datées et le présent bloc porte l’état courant de contrôle.
 
 - branche canonique : `main` ;
-- HEAD source vérifié par la boucle : `ac63bb4981a963b750fddaba3b560f44bc1db125` ;
+- HEAD source vérifié par la boucle : `66dac285498f868cf38c1bfb8efa0525f033af21` ;
 - date du HEAD source : `2026-08-17` ;
-- run Regulatory CI : `32061073784` ;
+- run Regulatory CI : `32061607838` ;
 - validation API CIRC005 : `PASS` ;
 - compatibilité descendante des 10 collections structurées : `PASS` ;
 - persistance canonique des anciens payloads : `PASS` ;
