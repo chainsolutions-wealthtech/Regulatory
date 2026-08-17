@@ -42,7 +42,7 @@ assert.equal(pdfByPath.get("fund.legal_name")?.sourceLocation.page, 1);
 assert.equal(pdfByPath.get("accounting.financial_year_end_display")?.sourceLocation.page, 2);
 
 await assert.rejects(
-  () => docxExtractor.extract({ fileName: "x.txt", mediaType: "text/plain", content: new Uint8Array() }),
+  () => docxExtractor.extract({ fileName: "x.txt", mediaType: "text/plain", content: new Uint8Array([1]) }),
   /IMPORT_UNSUPPORTED_MEDIA_TYPE/,
 );
 
