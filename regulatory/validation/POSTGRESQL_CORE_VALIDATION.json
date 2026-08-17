@@ -9,7 +9,8 @@
     "database/migrations/0004_review_workflow.sql",
     "database/migrations/0005_secure_evidence_storage.sql",
     "database/migrations/0006_import_staging.sql",
-    "database/migrations/0007_import_promotion_audit.sql"
+    "database/migrations/0007_import_promotion_audit.sql",
+    "database/migrations/0008_clause_proposals.sql"
   ],
   "testScript": "database/tests/0001_regulatory_core_test.sql",
   "checks": {
