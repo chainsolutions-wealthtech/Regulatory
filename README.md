@@ -499,19 +499,26 @@ Le PDF et les images de pages générés dans la CI servent uniquement à l’in
 <!-- AUTO:LOOP-DEV-001-DOCX:END -->
 
 <!-- AUTO:LOOP-DEV-001-NEXTJS-ATOMIC-DESIGN:START -->
-## 18. Application Next.js en Atomic Design — 2026-08-05
+## 18. Application Next.js de pré-conformité — état 2026-08-17
 
-Une application exécutable est désormais disponible dans `apps/web`. Elle fournit le tableau de bord, la création d’un projet, un questionnaire dynamique en 18 groupes, l’auto-sauvegarde locale versionnée, les contrôles, la couverture CIRC005 et l’aperçu du prospectus.
+L'application exécutable `apps/web` couvre désormais le cycle de préparation d'un prospectus OPCVM/FCP UMOA : projets, questionnaire réglementaire structuré, contrôles, prévisualisation, revues humaines, génération documentaire et historique de versions.
 
-L’architecture suit Atomic Design :
+L'architecture conserve Atomic Design et App Router. Les Server Components restent le choix par défaut ; les interactions client sont limitées aux écrans qui en ont réellement besoin.
 
-- `atoms` : primitives d’interface ;
-- `molecules` : questions, alertes, statistiques et lignes de projet ;
-- `organisms` : shell, navigation, wizard, contrôles et aperçu ;
-- `templates` : compositions de pages ;
-- `app` : routes App Router et API locale.
+Capacités vérifiées :
 
-La documentation détaillée se trouve dans `docs/04-development/NEXTJS_ATOMIC_DESIGN.md`. La persistance JSON est locale et réservée au prototype. Aucune authentification, aucun multi-tenant, aucun déploiement et aucune soumission réglementaire ne sont activés.
+- catalogue CIRC005 et questionnaire structuré ;
+- persistance locale versionnée et repository PostgreSQL transactionnel ;
+- RLS multi-tenant et contrôle de concurrence optimiste ;
+- fournisseur OIDC générique exigeant une configuration réelle ;
+- RBAC, séparation des tâches et workflow de revue ;
+- génération déterministe Markdown/JSON/DOCX/PDF ;
+- package ZIP de revue et API d'artefacts avec SHA-256 ;
+- stockage de preuves en quarantaine et import sécurisé `EXTRACTED_UNVERIFIED` ;
+- historique de versions et diff read-only ;
+- `ready_for_submission=false` maintenu par les invariants.
+
+La plateforme reste un système de **pré-conformité**. Les validations juridique, conformité et fiscale, l'infrastructure de production, l'antivirus réel, le stockage objet réel, les secrets et l'autorisation de mise en production restent des gates externes/humains.
 <!-- AUTO:LOOP-DEV-001-NEXTJS-ATOMIC-DESIGN:END -->
 
 <!-- AUTO:LOOP-DEV-001-REGULATORY-CATALOG:START -->

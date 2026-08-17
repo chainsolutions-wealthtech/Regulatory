@@ -25,9 +25,9 @@
 - [ ] Ne jamais activer automatiquement montant, sanction, exigence ou dépendance sans les revues humaines prévues.
 
 - branche canonique : `main` ;
-- HEAD source vérifié par la boucle : `56201f017807e0eecfbc588f3233b26c39662743` ;
+- HEAD source vérifié par la boucle : `5f9ea3bd8928de4025a312a8ed777f1a5c14f7fb` ;
 - date du HEAD source : `2026-08-17` ;
-- run Regulatory CI : `32058011833` ;
+- run Regulatory CI : `32058237434` ;
 - validation API CIRC005 : `PASS` ;
 - compatibilité descendante des 10 collections structurées : `PASS` ;
 - persistance canonique des anciens payloads : `PASS` ;
@@ -372,24 +372,31 @@ Légende :
 <!-- AUTO:LOOP-DEV-001-DOCX-VISUAL-QA:END -->
 
 <!-- AUTO:LOOP-DEV-001-NEXTJS-ATOMIC-DESIGN:START -->
-## Mise à jour opérationnelle — Next.js / Atomic Design
+## Mise à jour opérationnelle — Application Next.js / 2026-08-17
 
-- [x] Créer l’application Next.js App Router.
-- [x] Structurer les composants selon Atomic Design.
-- [x] Créer le tableau de bord et les projets.
-- [x] Créer le questionnaire en 18 groupes.
-- [x] Ajouter la persistance locale versionnée et l’audit.
-- [x] Ajouter les Route Handlers projets, questions, réponses et génération.
-- [x] Ajouter les contrôles et l’aperçu.
-- [x] Ajouter le typecheck et le build Next.js à la CI.
-- [ ] Générer le catalogue web directement depuis les matrices réglementaires.
-- [ ] Généraliser le moteur documentaire à tous les projets.
-- [ ] Brancher l’export DOCX sur les projets créés dans l’interface.
-- [ ] Ajouter les tests d’intégration des API.
-- [ ] Ajouter PostgreSQL et les migrations.
-- [ ] Ajouter authentification, RBAC et séparation tenant.
-- [ ] Effectuer la recette navigateur desktop et mobile.
-- [ ] Reprendre l’atomisation de l’Instruction n°66/2021.
+- [x] Créer l'application Next.js App Router et Atomic Design.
+- [x] Générer le catalogue web depuis les matrices réglementaires.
+- [x] Structurer les collections répétables dans le modèle canonique.
+- [x] Brancher la génération DOCX aux projets applicatifs.
+- [x] Générer et valider le PDF déterministe.
+- [x] Générer le package ZIP de revue.
+- [x] Ajouter les tests HTTP d'intégration API.
+- [x] Ajouter PostgreSQL et les migrations.
+- [x] Implémenter le repository PostgreSQL transactionnel.
+- [x] Ajouter RLS multi-tenant et concurrence optimiste.
+- [x] Implémenter OIDC derrière configuration réelle.
+- [x] Implémenter RBAC et séparation des tâches.
+- [x] Implémenter les revues humaines et le gel interne gouverné.
+- [x] Ajouter le stockage de preuves sécurisé en quarantaine.
+- [x] Ajouter le service d'import sécurisé `EXTRACTED_UNVERIFIED`.
+- [x] Ajouter l'historique de versions et le diff read-only.
+- [ ] Construire l'administration gouvernée des clauses et sources sans activation automatique.
+- [ ] Brancher un extracteur PDF/DOCX réel derrière quarantaine/antivirus et confirmation humaine.
+- [ ] Effectuer la recette navigateur desktop/mobile et accessibilité.
+- [ ] Configurer stockage objet, antivirus, secrets, sauvegarde et restauration sur infrastructure réelle.
+- [ ] Configurer le fournisseur OIDC réel de l'environnement cible.
+- [!] Obtenir les revues juridique, conformité et fiscale nécessaires.
+- [!] Maintenir la production et la soumission désactivées jusqu'à décision explicite.
 <!-- AUTO:LOOP-DEV-001-NEXTJS-ATOMIC-DESIGN:END -->
 
 <!-- AUTO:LOOP-DEV-001-REGULATORY-CATALOG:START -->

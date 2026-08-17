@@ -10,9 +10,9 @@ Un nouvel agent doit reprendre depuis `00_START_HERE.md` et `GOVERNANCE.md`, res
 Ce chantier a renforcé la gouvernance **et** réparé une dette CI préexistante sans retirer les capacités legacy ni affaiblir le déterminisme PDF.
 
 - branche canonique : `main` ;
-- HEAD source vérifié par la boucle : `56201f017807e0eecfbc588f3233b26c39662743` ;
+- HEAD source vérifié par la boucle : `5f9ea3bd8928de4025a312a8ed777f1a5c14f7fb` ;
 - date du HEAD source : `2026-08-17` ;
-- run Regulatory CI : `32058011833` ;
+- run Regulatory CI : `32058237434` ;
 - validation API CIRC005 : `PASS` ;
 - compatibilité descendante des 10 collections structurées : `PASS` ;
 - persistance canonique des anciens payloads : `PASS` ;
@@ -160,24 +160,25 @@ Le rendu PDF/PNG est un outil de contrôle, non le moteur PDF final.
 <!-- AUTO:LOOP-DEV-001-DOCX-VISUAL-QA:END -->
 
 <!-- AUTO:LOOP-DEV-001-NEXTJS-ATOMIC-DESIGN:START -->
-## Transmission — Application Next.js V0.1
+## Transmission — Application de pré-conformité / état 2026-08-17
 
-### Entrées principales
+### Entrées applicatives principales
 
 - `apps/web/src/app` ;
 - `apps/web/src/components` ;
 - `apps/web/src/domain` ;
 - `apps/web/src/server` ;
-- `docs/04-development/NEXTJS_ATOMIC_DESIGN.md` ;
-- `docs/adr/ADR-0008-nextjs-atomic-design-frontend.md`.
+- `apps/web/src/server/storage/project-version-repository.ts` ;
+- `apps/web/src/server/project-version-diff.ts` ;
+- `docs/04-development/PROJECT_VERSION_HISTORY.md`.
 
-### Commandes
+### Vérifications obligatoires avant reprise
 
-`npm run web:install`, `npm run web:dev`, `npm run web:typecheck` et `npm run web:build`.
+Exécuter les gates Regulatory CI et Security/Review Policy CI. Ne considérer aucun service externe de production comme disponible sans configuration et preuve runtime réelles.
 
 ### Limite de reprise
 
-Ne pas déployer ou présenter l’application comme sécurisée avant la base transactionnelle, l’authentification, le RBAC, la séparation tenant, les tests d’intégration et la revue sécurité.
+Ne pas activer de clause, ne pas marquer un dossier prêt pour soumission, ne pas simuler une validation juridique/conformité/fiscale et ne pas déployer sans recette et autorisation humaines explicites.
 <!-- AUTO:LOOP-DEV-001-NEXTJS-ATOMIC-DESIGN:END -->
 
 <!-- AUTO:LOOP-DEV-001-REGULATORY-CATALOG:START -->

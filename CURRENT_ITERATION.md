@@ -18,9 +18,9 @@ Résultats atteints :
 - prochaine action réglementaire propriétaire conservée.
 
 - branche canonique : `main` ;
-- HEAD source vérifié par la boucle : `56201f017807e0eecfbc588f3233b26c39662743` ;
+- HEAD source vérifié par la boucle : `5f9ea3bd8928de4025a312a8ed777f1a5c14f7fb` ;
 - date du HEAD source : `2026-08-17` ;
-- run Regulatory CI : `32058011833` ;
+- run Regulatory CI : `32058237434` ;
 - validation API CIRC005 : `PASS` ;
 - compatibilité descendante des 10 collections structurées : `PASS` ;
 - persistance canonique des anciens payloads : `PASS` ;
@@ -149,28 +149,32 @@ Le modèle documentaire est désormais consommable sous forme de fichier bureaut
 <!-- AUTO:LOOP-DEV-001-DOCX-VISUAL-QA:END -->
 
 <!-- AUTO:LOOP-DEV-001-NEXTJS-ATOMIC-DESIGN:START -->
-## Résultat de l’itération Next.js
+## Résultat courant — Application de pré-conformité
 
-La première tranche applicative est implémentée : création de projet, questionnaire guidé, sauvegarde, contrôles et aperçu. Le moteur historique reste la source de vérité réglementaire ; l’application utilise des adaptateurs et ne duplique pas les identifiants CIRC005.
+La tranche applicative couvre désormais le questionnaire, les contrôles, la génération déterministe, les revues humaines, PostgreSQL/RLS, la sécurité des preuves et l'historique de versions.
 
 ### Critères atteints
 
-- structure Atomic Design ;
-- App Router ;
+- App Router / Atomic Design ;
 - Server Components par défaut ;
-- interactions limitées aux Client Components nécessaires ;
-- persistance locale versionnée ;
-- API locale ;
-- build de production dans la CI.
+- catalogue réglementaire structuré ;
+- persistance locale et PostgreSQL ;
+- RLS, OIDC, RBAC et séparation des tâches ;
+- DOCX/PDF/ZIP déterministes ;
+- API HTTP testée ;
+- import sécurisé non vérifié ;
+- versions et diff read-only ;
+- CI Regulatory et Security actives.
 
-### Critères non atteints
+### Gates restant externes ou humains
 
-- PostgreSQL ;
-- authentification et RBAC ;
-- multi-tenant ;
-- tests navigateur ;
-- export DOCX générique ;
-- validation juridique, conformité et fiscale.
+- fournisseur OIDC réellement configuré ;
+- stockage objet et antivirus réels ;
+- sauvegarde/restauration ;
+- recette navigateur/accessibilité/sécurité d'exploitation ;
+- validation juridique, conformité et fiscale ;
+- décision de production ;
+- soumission réglementaire, toujours désactivée.
 <!-- AUTO:LOOP-DEV-001-NEXTJS-ATOMIC-DESIGN:END -->
 
 <!-- AUTO:LOOP-DEV-001-REGULATORY-CATALOG:START -->

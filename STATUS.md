@@ -6,9 +6,9 @@
 Le dépôt est désormais explicitement gouverné en mode **une branche canonique : `main`**, sans création de branche par les agents et sans PR de travail normale. La réconciliation n’a supprimé ni remplacé les documents historiques : les photographies anciennes restent des preuves datées et le présent bloc porte l’état courant de contrôle.
 
 - branche canonique : `main` ;
-- HEAD source vérifié par la boucle : `56201f017807e0eecfbc588f3233b26c39662743` ;
+- HEAD source vérifié par la boucle : `5f9ea3bd8928de4025a312a8ed777f1a5c14f7fb` ;
 - date du HEAD source : `2026-08-17` ;
-- run Regulatory CI : `32058011833` ;
+- run Regulatory CI : `32058237434` ;
 - validation API CIRC005 : `PASS` ;
 - compatibilité descendante des 10 collections structurées : `PASS` ;
 - persistance canonique des anciens payloads : `PASS` ;
@@ -233,20 +233,28 @@ Le DOCX reste un document de pré-conformité. Les exigences `PENDING_REVIEW` et
 <!-- AUTO:LOOP-DEV-001-DOCX-VISUAL-QA:END -->
 
 <!-- AUTO:LOOP-DEV-001-NEXTJS-ATOMIC-DESIGN:START -->
-## Mise à jour LOOP-DEV-001 — Next.js et Atomic Design
+## Mise à jour LOOP-DEV-001 — Application Next.js / état 2026-08-17
 
 - application : `apps/web` ;
 - framework : Next.js App Router + React + TypeScript ;
 - architecture UI : Atomic Design ;
-- groupes de questionnaire : `18` ;
-- API locale : projets, questions, réponses et génération ;
-- persistance : JSON local versionné avec audit NDJSON ;
-- build : vérifié par GitHub Actions ;
-- authentification : non implémentée ;
-- production : interdite ;
-- soumission réglementaire : interdite.
+- catalogue et questionnaire CIRC005 : `IMPLEMENTED` ;
+- driver JSON local versionné : `IMPLEMENTED_PROTOTYPE` ;
+- repository PostgreSQL transactionnel : `IMPLEMENTED_AND_TESTED` ;
+- isolation RLS multi-tenant : `PASS_CI` ;
+- OIDC : `IMPLEMENTED_REQUIRES_REAL_CONFIGURATION` ;
+- RBAC et séparation des tâches : `IMPLEMENTED_AND_TESTED` ;
+- revues humaines : `IMPLEMENTED_WORKFLOW` ;
+- DOCX déterministe : `PASS_CI` ;
+- PDF déterministe normalisé : `PASS_CI` ;
+- package ZIP de revue : `PASS_CI` ;
+- import sécurisé : `IMPLEMENTED_STAGING_EXTRACTED_UNVERIFIED` ;
+- historique + diff de versions : `IMPLEMENTED_READ_ONLY` ;
+- production : `NOT_AUTHORIZED` ;
+- soumission réglementaire : `DISABLED` ;
+- `ready_for_submission` : `false`.
 
-La prochaine étape porte sur la connexion exhaustive du catalogue web au moteur réglementaire, la généralisation de la génération DOCX et les tests d’intégration.
+Les travaux autonomes restants concernent notamment l'administration gouvernée des clauses/sources, l'industrialisation de l'import et les tests navigateur/accessibilité. Les activations réglementaires, validations juridiques/conformité/fiscales et la production restent soumises aux gates humains et externes.
 <!-- AUTO:LOOP-DEV-001-NEXTJS-ATOMIC-DESIGN:END -->
 
 <!-- AUTO:LOOP-DEV-001-REGULATORY-CATALOG:START -->

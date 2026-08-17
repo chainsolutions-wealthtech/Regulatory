@@ -120,21 +120,30 @@ Le DOCX affiche qu’il s’agit d’un document de pré-conformité non visé, 
 <!-- AUTO:LOOP-DEV-001-DOCX-VISUAL-QA:END -->
 
 <!-- AUTO:LOOP-DEV-001-NEXTJS-ATOMIC-DESIGN:START -->
-## [Unreleased] — Application Next.js / Atomic Design — 2026-08-05
+## [Unreleased] — Consolidation applicative — 2026-08-17
 
 ### Added
 
-- application `apps/web` avec Next.js App Router ;
-- composants Atomic Design ;
-- tableau de bord, projets, questionnaire, contrôles et aperçu ;
-- API locale et persistance JSON versionnée ;
-- catalogue initial de questions couvrant 18 groupes ;
-- validation TypeScript et build Next.js en CI ;
-- ADR-0008 et documentation d’architecture front-end.
+- repository PostgreSQL transactionnel et isolation tenant ;
+- identité OIDC vérifiée derrière configuration runtime ;
+- RBAC, séparation des tâches et workflow de revue ;
+- stockage de preuves sécurisé et import en quarantaine ;
+- génération PDF déterministe et package ZIP de revue ;
+- API d'artefacts avec SHA-256 et protections de chemin ;
+- historique de versions local/PostgreSQL ;
+- API et workspace de comparaison de versions en lecture seule.
+
+### Changed
+
+- documentation applicative réconciliée avec l'état réellement validé en CI ;
+- les anciennes mentions « PostgreSQL/authentification/DOCX à faire » ne sont plus réinjectées par le générateur documentaire.
 
 ### Security
 
-L’application est explicitement locale. Aucune authentification fictive n’est présentée comme sécurisée et aucun déploiement n’est autorisé dans cette tranche.
+- `ready_for_submission=false` demeure invariant ;
+- aucune action de soumission n'est autorisée ;
+- aucune activation automatique de clause n'est introduite ;
+- les services de production non configurés ne sont jamais présentés comme opérationnels.
 <!-- AUTO:LOOP-DEV-001-NEXTJS-ATOMIC-DESIGN:END -->
 
 <!-- AUTO:LOOP-DEV-001-REGULATORY-CATALOG:START -->

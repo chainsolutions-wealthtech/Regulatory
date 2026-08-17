@@ -551,27 +551,28 @@ Transformer le modèle documentaire traçable en fichier DOCX de pré-conformit�
 <!-- AUTO:LOOP-DEV-001-DOCX-VISUAL-QA:END -->
 
 <!-- AUTO:LOOP-DEV-001-NEXTJS-ATOMIC-DESIGN:START -->
-## 2026-08-05 — Première application Next.js en Atomic Design
+## 2026-08-17 — Réconciliation applicative Next.js
 
-### Réalisé
+### Capacités consolidées
 
-- création de `apps/web` ;
 - App Router et TypeScript strict ;
-- composants répartis en atoms, molecules, organisms et templates ;
-- tableau de bord et liste des projets ;
-- création d’un projet ;
-- questionnaire adaptatif en 18 groupes ;
-- sauvegarde locale versionnée ;
-- journal d’audit ;
-- contrôles de complétude et de cohérence ;
-- couverture CIRC005 ;
-- aperçu du prospectus ;
-- API locale ;
-- vérification TypeScript et build de production dans la CI.
+- Atomic Design ;
+- questionnaire réglementaire structuré ;
+- stockage JSON local versionné ;
+- PostgreSQL transactionnel et RLS multi-tenant ;
+- identité OIDC côté serveur derrière configuration réelle ;
+- RBAC et séparation des tâches ;
+- workflow de revue humaine ;
+- génération déterministe DOCX et PDF ;
+- package ZIP de revue ;
+- API de téléchargement d'artefacts avec vérification SHA-256 ;
+- import sécurisé en statut `EXTRACTED_UNVERIFIED` ;
+- historique de versions local/PostgreSQL et diff read-only ;
+- gates de soumission maintenus fermés.
 
-### Limites
+### Frontières maintenues
 
-La persistance n’est pas transactionnelle, l’authentification et le RBAC ne sont pas présents, et le catalogue de questions TypeScript est encore un adaptateur provisoire. L’application reste un prototype local de pré-conformité.
+Aucun déploiement de production, aucune identité fictive, aucun secret inventé, aucune approbation juridique simulée et aucune activation automatique de clause réglementaire. `ready_for_submission` reste `false`.
 <!-- AUTO:LOOP-DEV-001-NEXTJS-ATOMIC-DESIGN:END -->
 
 <!-- AUTO:LOOP-DEV-001-REGULATORY-CATALOG:START -->
@@ -696,9 +697,9 @@ La méthode de travail du dépôt est consolidée : `main` est la branche canoni
 Une défaillance CI antérieure au chantier a été traitée selon la boucle `BASELINE → DIAGNOSTIC → CORRECTION CIBLÉE → VÉRIFICATION`. La compatibilité descendante des structures historiques a été conservée, tandis que le déterminisme PDF a été renforcé par la normalisation du seul champ volatile prouvé `/DocChecksum`.
 
 - branche canonique : `main` ;
-- HEAD source vérifié par la boucle : `56201f017807e0eecfbc588f3233b26c39662743` ;
+- HEAD source vérifié par la boucle : `5f9ea3bd8928de4025a312a8ed777f1a5c14f7fb` ;
 - date du HEAD source : `2026-08-17` ;
-- run Regulatory CI : `32058011833` ;
+- run Regulatory CI : `32058237434` ;
 - validation API CIRC005 : `PASS` ;
 - compatibilité descendante des 10 collections structurées : `PASS` ;
 - persistance canonique des anciens payloads : `PASS` ;

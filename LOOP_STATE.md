@@ -13,9 +13,9 @@
 - visibilité GitHub actuellement observée : `public`, visibilité souhaitée par le propriétaire : `TO_VERIFY`.
 
 - branche canonique : `main` ;
-- HEAD source vérifié par la boucle : `56201f017807e0eecfbc588f3233b26c39662743` ;
+- HEAD source vérifié par la boucle : `5f9ea3bd8928de4025a312a8ed777f1a5c14f7fb` ;
 - date du HEAD source : `2026-08-17` ;
-- run Regulatory CI : `32058011833` ;
+- run Regulatory CI : `32058237434` ;
 - validation API CIRC005 : `PASS` ;
 - compatibilité descendante des 10 collections structurées : `PASS` ;
 - persistance canonique des anciens payloads : `PASS` ;
@@ -129,16 +129,21 @@ La boucle réglementaire sera reprise après la tranche de couverture standard o
 <!-- AUTO:LOOP-DEV-001-DOCX:END -->
 
 <!-- AUTO:LOOP-DEV-001-NEXTJS-ATOMIC-DESIGN:START -->
-## État applicatif de LOOP-DEV-001
+## État applicatif de LOOP-DEV-001 — 2026-08-17
 
 - Next.js App Router : `IMPLEMENTED` ;
 - Atomic Design : `IMPLEMENTED` ;
-- questionnaire local : `IMPLEMENTED_V0_1` ;
-- API locale : `IMPLEMENTED_V0_1` ;
-- persistance locale : `IMPLEMENTED_PROTOTYPE` ;
-- build CI : `ENABLED` ;
-- production : `FORBIDDEN` ;
-- prochaine tranche : intégration moteur, tests API et DOCX générique.
+- catalogue/questionnaire : `IMPLEMENTED` ;
+- PostgreSQL transactionnel : `IMPLEMENTED_AND_TESTED` ;
+- RLS multi-tenant : `PASS_CI` ;
+- OIDC : `IMPLEMENTED_CONFIGURATION_REQUIRED` ;
+- RBAC/workflow : `PASS_CI` ;
+- DOCX/PDF/ZIP : `PASS_CI` ;
+- import sécurisé : `IMPLEMENTED_GATED` ;
+- historique/diff : `IMPLEMENTED_READ_ONLY` ;
+- production : `NOT_AUTHORIZED` ;
+- soumission : `DISABLED` ;
+- prochaine tranche autonome : administration gouvernée des clauses/sources et industrialisation contrôlée de l'import.
 <!-- AUTO:LOOP-DEV-001-NEXTJS-ATOMIC-DESIGN:END -->
 
 <!-- AUTO:LOOP-DEV-001-REGULATORY-CATALOG:START -->

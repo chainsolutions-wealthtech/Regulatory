@@ -162,20 +162,20 @@ Aucune mention de conformité finale, d’agrément ou d’approbation n’a ét
 <!-- AUTO:LOOP-DEV-001-DOCX-VISUAL-QA:END -->
 
 <!-- AUTO:LOOP-DEV-001-NEXTJS-ATOMIC-DESIGN:START -->
-## 2026-08-05 — LOOP-DEV-001 — Next.js et Atomic Design
+## 2026-08-17 — LOOP-DEV-001 — Consolidation applicative
 
-1. Audit du dépôt, de la branche et des derniers commits.
-2. Conservation de l’unique branche `main`.
-3. Création de l’application sous `apps/web`.
-4. Décomposition Atomic Design.
-5. Implémentation de 18 groupes de questionnaire et de leurs conditions.
-6. Implémentation de la persistance JSON versionnée et du journal d’audit.
-7. Implémentation de six Route Handlers locaux.
-8. Implémentation des contrôles, de la couverture et de l’aperçu.
-9. Ajout du build Next.js à la CI.
-10. Création de l’ADR et de la documentation.
+1. Réconciliation du produit réel avec les anciens TODO.
+2. Confirmation des capacités PostgreSQL, RLS, OIDC, RBAC et revue.
+3. Confirmation de la génération DOCX/PDF et du package ZIP déterministes.
+4. Confirmation du service d'import sécurisé sans écriture canonique automatique.
+5. Ajout en TDD de l'historique de versions et du diff read-only.
+6. Ajout du repository historique pour JSON local et PostgreSQL en transaction `READ ONLY`.
+7. Ajout des routes HTTP d'historique et de comparaison.
+8. Ajout du workspace projet « Versions » en Server Component.
+9. Maintien des gates `ready_for_submission=false`, soumission désactivée et activation réglementaire non automatique.
+10. Réconciliation du générateur de documentation pour empêcher le retour d'états obsolètes.
 
-Aucun déploiement, aucune nouvelle branche, aucun force-push et aucune activation de clause juridique n’ont été réalisés.
+Aucune nouvelle branche, aucun force-push, aucune approbation juridique simulée et aucune activation réglementaire automatique.
 <!-- AUTO:LOOP-DEV-001-NEXTJS-ATOMIC-DESIGN:END -->
 
 <!-- AUTO:LOOP-DEV-001-REGULATORY-CATALOG:START -->
@@ -334,9 +334,9 @@ Aucun déploiement, aucune nouvelle branche, aucun force-push et aucune activati
 13. Clôture de `LOOP-GOV-002` et transmission à `LOOP-REG-001`.
 
 - branche canonique : `main` ;
-- HEAD source vérifié par la boucle : `56201f017807e0eecfbc588f3233b26c39662743` ;
+- HEAD source vérifié par la boucle : `5f9ea3bd8928de4025a312a8ed777f1a5c14f7fb` ;
 - date du HEAD source : `2026-08-17` ;
-- run Regulatory CI : `32058011833` ;
+- run Regulatory CI : `32058237434` ;
 - validation API CIRC005 : `PASS` ;
 - compatibilité descendante des 10 collections structurées : `PASS` ;
 - persistance canonique des anciens payloads : `PASS` ;
