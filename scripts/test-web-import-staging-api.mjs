@@ -18,6 +18,25 @@ assert(
   "Le listing doit expliquer que PostgreSQL + OIDC sont requis.",
 );
 
+const extraction = await fetch(
+  `${baseUrl}/api/projects/${encodeURIComponent(projectId)}/imports`,
+  {
+    method: "POST",
+    headers: { "content-type": "application/json" },
+    body: JSON.stringify({
+      projectVersion: 1,
+      projectVersionId: "40000000-0000-0000-0000-000000000001",
+      evidenceObjectId: "50000000-0000-0000-0000-000000000001",
+    }),
+  },
+);
+assert(extraction.status === 503, "L'extraction import doit rester indisponible en local-json.");
+const extractionBody = await extraction.json();
+assert(
+  String(extractionBody.error ?? "").startsWith("IMPORT_INGESTION_SERVICE_UNAVAILABLE"),
+  "Le POST d'extraction ne doit jamais simuler un store de preuves ni une identité locale.",
+);
+
 const read = await fetch(
   `${baseUrl}/api/projects/${encodeURIComponent(projectId)}/imports/${encodeURIComponent(importId)}`,
 );
@@ -70,14 +89,17 @@ const stagingValidation = {
   status: "PASS",
   checks: {
     localJsonListUnavailable: true,
+    localJsonExtractionUnavailable: true,
     localJsonReadUnavailable: true,
     localJsonReviewUnavailable: true,
     fakeLocalIdentityAvoided: true,
-    postgresqlOidcRequired: true,
+    rawFileUploadNotAcceptedByExtractionRoute: true,
+    cleanEvidenceReferenceRequiredByIngestionContract: true,
+    postgresqlOidcAndEvidenceStoreRequired: true,
     readyForSubmissionRemainsFalse: true,
   },
   caveat:
-    "Ce test valide le gate runtime local-json. Les opérations réelles de staging/revue PostgreSQL sont validées séparément sur PostgreSQL 17.",
+    "Ce test valide les gates runtime local-json. L'extraction réelle exige une preuve CLEAN et un store privé explicitement configuré ; aucun upload brut n'est accepté par cette route.",
 };
 
 const promotionValidation = {
