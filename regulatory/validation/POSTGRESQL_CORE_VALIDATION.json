@@ -7,7 +7,8 @@
     "database/migrations/0002_audit_insert_policy.sql",
     "database/migrations/0003_review_roles_and_states.sql",
     "database/migrations/0004_review_workflow.sql",
-    "database/migrations/0005_secure_evidence_storage.sql"
+    "database/migrations/0005_secure_evidence_storage.sql",
+    "database/migrations/0006_import_staging.sql"
   ],
   "testScript": "database/tests/0001_regulatory_core_test.sql",
   "checks": {
