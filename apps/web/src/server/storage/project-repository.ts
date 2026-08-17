@@ -39,35 +39,17 @@ export type PersistGenerationInput = {
   expectedVersion?: number;
 };
 
-export type ProjectVersionSummary = {
-  version: number;
-  createdAt: string;
-  status: ProspectusProject["status"];
-  answerCount: number;
-  frozen: boolean;
-};
-
 /**
- * Port de persistance du domaine projet.
+ * Port de persistance transactionnelle du domaine projet courant.
  *
- * Une implémentation transactionnelle doit garantir qu'une réponse, la version
- * du projet, le snapshot, les collections normalisées et l'événement d'audit
- * sont cohérents dans une même transaction. Les écritures peuvent fournir une
- * précondition de version afin de rejeter une mise à jour concurrente.
- *
- * L'historique est strictement en lecture seule : lister ou relire une version
- * ne doit ni restaurer, ni activer, ni approuver automatiquement un état passé.
- *
- * La lecture des documents générés relève du port séparé
- * `GenerationArtifactRepository`, afin de pouvoir substituer un stockage objet
- * au filesystem sans élargir le repository métier projet.
+ * L'historique des versions est volontairement exposé par un port séparé afin
+ * de garantir une frontière read-only et d'éviter qu'une consultation du passé
+ * ne puisse devenir implicitement une restauration ou une approbation.
  */
 export interface ProjectRepository {
   readonly driver: "local-json" | "postgresql";
   listProjects(): Promise<ProjectSummary[]>;
   getProject(projectId: string): Promise<ProspectusProject | null>;
-  listProjectVersions(projectId: string): Promise<ProjectVersionSummary[]>;
-  getProjectVersion(projectId: string, version: number): Promise<ProspectusProject | null>;
   createProject(input: CreateProjectInput): Promise<ProspectusProject>;
   saveAnswer(input: SaveAnswerInput): Promise<ProspectusProject>;
   persistGenerationArtifacts(input: PersistGenerationInput): Promise<ProspectusProject>;
