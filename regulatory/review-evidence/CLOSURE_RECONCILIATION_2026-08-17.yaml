@@ -77,6 +77,15 @@ already_implemented_product_capabilities_not_to_rebuild:
   - DETERMINISTIC_DOCX_AND_VISUAL_QA
   - INSTRUCTION_66_OFFICIAL_BINARY_AND_ARTICLE_INDEX
   - INSTRUCTION_66_111_CANDIDATE_REQUIREMENTS
+  - READ_ONLY_REGULATORY_LIBRARY_UI
+  - REGULATORY_CATALOG_API
+  - CLAUSE_CATALOG_API
+  - PROSPECTUS_IMPORT_DOMAIN_MODEL
+  - PROSPECTUS_IMPORT_SERVICE_FOR_CLEAN_EVIDENCE
+  - IMPORT_RESULTS_FORCED_TO_EXTRACTED_UNVERIFIED
+  - IMPORT_CANONICAL_WRITE_FORCED_FALSE
+  - IMPORT_INTEGRATION_TEST_COVERAGE_IN_SECURITY_CI
+  - REVIEW_COMMENTS_DECISIONS_APPROVALS_AND_WORKFLOW_APIS
 
 remaining_human_or_environment_gates:
   regulatory_review:
@@ -94,9 +103,10 @@ remaining_human_or_environment_gates:
     - OBSERVABILITY_AND_ALERTING
     - TARGET_ENVIRONMENTS_AND_CONTROLLED_DEPLOYMENT
   final_product_gates:
-    - ADMINISTRABLE_REGULATORY_LIBRARY
-    - ADMINISTRABLE_CLAUSE_LIFECYCLE
-    - DOCX_PDF_IMPORT_AS_EXTRACTED_UNVERIFIED
+    - WRITE_CAPABLE_REGULATORY_ADMINISTRATION_WITH_HUMAN_APPROVAL_GATES
+    - WRITE_CAPABLE_CLAUSE_LIFECYCLE_WITH_SEPARATION_OF_DUTIES
+    - REAL_DOCX_PDF_EXTRACTOR_AND_IMPORT_UI_OVER_CLEAN_EVIDENCE
+    - EXPLICIT_HUMAN_CONFIRMATION_BEFORE_ANY_IMPORTED_CANONICAL_WRITE
     - VERSION_DIFF_USER_EXPERIENCE
     - FINAL_REGULATORY_PDF_AND_REVIEW_PACKAGE
     - BROWSER_E2E
@@ -105,15 +115,25 @@ remaining_human_or_environment_gates:
     - PERFORMANCE_AND_RECOVERY_TESTS
     - BUSINESS_AND_REGULATORY_ACCEPTANCE
 
-ci_observation_after_first_reconciliation_commit:
-  head: b66749a921b22c3e7d1df2657910ff7b7421267f
-  security_and_review_policy_ci:
-    run_id: 32052507418
-    conclusion: SUCCESS
-  regulatory_ci:
-    run_id: 32052507161
-    state_when_recorded: IN_PROGRESS
-    conclusion: TO_RECHECK_ON_FINAL_HEAD
+ci_observation:
+  first_reconciliation_head: b66749a921b22c3e7d1df2657910ff7b7421267f
+  first_security_run_id: 32052507418
+  first_security_conclusion: SUCCESS
+  evidence_commit_head: 1d054219a720d45377d7e6fbcbbf96b0a7cf9b27
+  evidence_security_run_id: 32052625189
+  evidence_security_conclusion: SUCCESS
+  evidence_regulatory_run_id: 32052625323
+  evidence_regulatory_state_when_recorded: IN_PROGRESS
+  final_head_regulatory_conclusion: TO_RECHECK
+
+public_source_research_boundary_2026_08_17:
+  decision_cm_10_06_2022:
+    reference_and_subject_confirmed_by_centif: true
+    adoption_on_2022_06_24_confirmed_by_bceao: true
+    official_public_binary_found: false
+  decision_2012_119:
+    exact_title_from_instruction_66_repository_evidence: true
+    official_public_binary_found: false
 
 closure_rule: >-
   Autonomous work may close only when repository evidence and CI support it. Missing
