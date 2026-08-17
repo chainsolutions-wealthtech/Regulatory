@@ -1,5 +1,4 @@
 import assert from "node:assert/strict";
-import type { ProspectusImportBatch } from "@/domain/prospectus-import";
 import type { EvidenceObjectStore, EvidenceReadResult } from "@/server/evidence/evidence-object-store";
 import type { ImportStagingRepository } from "@/server/import/import-staging-repository";
 import type { ProspectusExtractor } from "@/server/import/prospectus-import-service";
@@ -11,7 +10,6 @@ const userId = "20000000-0000-0000-0000-000000000001";
 const projectVersionId = "40000000-0000-0000-0000-000000000001";
 const evidenceObjectId = "50000000-0000-0000-0000-000000000001";
 let readCleanCalls = 0;
-let stagedBatch: ProspectusImportBatch | null = null;
 
 const cleanEvidence: EvidenceReadResult = {
   descriptor: {
@@ -64,7 +62,8 @@ const evidenceStore = {
 const stagingRepository: ImportStagingRepository = {
   async createBatch(input) {
     assert.equal(input.projectVersionId, projectVersionId);
-    stagedBatch = input.batch;
+    assert.equal(input.batch.canonicalWriteAllowed, false);
+    assert.equal(input.batch.readyForSubmission, false);
     return input.batch;
   },
   async getBatch() { return null; },
@@ -105,7 +104,6 @@ const batch = await service.extractAndStage({
   evidenceObjectId,
 });
 assert.equal(readCleanCalls, 1);
-assert.equal(stagedBatch?.importId, batch.importId);
 assert.equal(batch.status, "EXTRACTED_UNVERIFIED");
 assert.equal(batch.values[0]?.reviewStatus, "EXTRACTED_UNVERIFIED");
 assert.equal(batch.canonicalWriteAllowed, false);
