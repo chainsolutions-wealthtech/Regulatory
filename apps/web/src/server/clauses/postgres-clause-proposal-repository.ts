@@ -231,7 +231,7 @@ async function readProposal(client: PoolClient, proposalId: string): Promise<Cla
       order by version_number`,
     [proposalId],
   );
-  if (versionResult.rowCount < 1) throw new Error("CLAUSE_PROPOSAL_VERSION_NOT_FOUND");
+  if ((versionResult.rowCount ?? 0) < 1) throw new Error("CLAUSE_PROPOSAL_VERSION_NOT_FOUND");
 
   const proposal = proposalResult.rows[0];
   const versions: ClauseProposalVersion[] = versionResult.rows.map((version) => ({
