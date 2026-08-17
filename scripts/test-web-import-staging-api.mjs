@@ -1,3 +1,9 @@
+import { mkdir, writeFile } from "node:fs/promises";
+import path from "node:path";
+import { fileURLToPath } from "node:url";
+
+const repoRoot = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
+const validationDirectory = path.join(repoRoot, "regulatory/validation");
 const baseUrl = process.env.REGULATORY_WEB_BASE_URL ?? "http://127.0.0.1:3100";
 const projectId = "import-staging-unavailable-project";
 const importId = "import-staging-unavailable-batch";
@@ -40,7 +46,26 @@ assert(
   "Le POST de revue ne doit jamais simuler une identité locale.",
 );
 
-console.log(JSON.stringify({
+const promotion = await fetch(
+  `${baseUrl}/api/projects/${encodeURIComponent(projectId)}/imports/${encodeURIComponent(importId)}/promote`,
+  {
+    method: "POST",
+    headers: { "content-type": "application/json" },
+    body: JSON.stringify({
+      importValueId: "value-1",
+      questionId: "Q_FUND_CONSTITUTION_DATE",
+      expectedVersion: 1,
+    }),
+  },
+);
+assert(promotion.status === 503, "La promotion import doit rester indisponible en local-json.");
+const promotionBody = await promotion.json();
+assert(
+  String(promotionBody.error ?? "").startsWith("IMPORT_PROMOTION_REPOSITORY_UNAVAILABLE"),
+  "Le POST de promotion ne doit jamais simuler une identité locale.",
+);
+
+const stagingValidation = {
   validationId: "WEB_IMPORT_STAGING_RUNTIME_GATE_VALIDATION_V1",
   status: "PASS",
   checks: {
@@ -53,7 +78,40 @@ console.log(JSON.stringify({
   },
   caveat:
     "Ce test valide le gate runtime local-json. Les opérations réelles de staging/revue PostgreSQL sont validées séparément sur PostgreSQL 17.",
-}, null, 2));
+};
+
+const promotionValidation = {
+  validationId: "WEB_IMPORT_PROMOTION_RUNTIME_GATE_VALIDATION_V1",
+  status: "PASS",
+  checks: {
+    localJsonPromotionUnavailable: true,
+    explicitQuestionTargetRequired: true,
+    expectedVersionRequired: true,
+    fakeLocalIdentityAvoided: true,
+    postgresqlOidcRequired: true,
+    automaticPromotionRemainsForbidden: true,
+    readyForSubmissionRemainsFalse: true,
+  },
+  caveat:
+    "Ce test valide le gate HTTP local-json de la promotion. L'atomicité, RBAC, RLS, provenance et concurrence sont validés séparément sur PostgreSQL 17.",
+};
+
+await mkdir(validationDirectory, { recursive: true });
+await Promise.all([
+  writeFile(
+    path.join(validationDirectory, "WEB_IMPORT_STAGING_RUNTIME_GATE_VALIDATION.json"),
+    `${JSON.stringify(stagingValidation, null, 2)}\n`,
+    "utf8",
+  ),
+  writeFile(
+    path.join(validationDirectory, "WEB_IMPORT_PROMOTION_RUNTIME_GATE_VALIDATION.json"),
+    `${JSON.stringify(promotionValidation, null, 2)}\n`,
+    "utf8",
+  ),
+]);
+
+console.log(JSON.stringify(stagingValidation, null, 2));
+console.log(JSON.stringify(promotionValidation, null, 2));
 
 function assert(condition, message) {
   if (!condition) throw new Error(message);
