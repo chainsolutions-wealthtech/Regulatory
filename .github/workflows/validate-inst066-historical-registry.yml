@@ -45,11 +45,16 @@ jobs:
           from pathlib import Path
           path = Path('regulatory/validation/INST066_HISTORICAL_SOURCE_REGISTRY_VALIDATION_V0_1.json')
           data = json.loads(path.read_text(encoding='utf-8'))
+          materialized = data['metrics']['ownHistoricalBinariesMaterialized']
+          missing = data['metrics']['ownHistoricalBinariesMissing']
           assert data['status'] == 'PASS', data
           assert data['metrics']['expectedHistoricalSourceRecords'] == 7
           assert data['metrics']['sourceRecordsObserved'] == 7
-          assert data['metrics']['ownHistoricalBinariesMaterialized'] == 1
-          assert data['metrics']['ownHistoricalBinariesMissing'] == 6
+          assert 1 <= materialized <= 7
+          assert materialized + missing == 7
+          assert data['checks']['progressiveHistoricalBinaryAcquisitionAllowed'] is True
+          assert data['checks']['requiredHistoricalBinariesMaterialized'] is True
+          assert data['checks']['materializedAndMissingCountsReconcile'] is True
           assert data['checks']['instruction46OwnBinaryMaterialized'] is True
           assert data['safety']['historicalRuleReactivationAllowed'] is False
           assert data['safety']['automaticRuleReconstructionAllowedForMissingBinaries'] is False
