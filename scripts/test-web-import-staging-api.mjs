@@ -2,6 +2,16 @@ const baseUrl = process.env.REGULATORY_WEB_BASE_URL ?? "http://127.0.0.1:3100";
 const projectId = "import-staging-unavailable-project";
 const importId = "import-staging-unavailable-batch";
 
+const list = await fetch(
+  `${baseUrl}/api/projects/${encodeURIComponent(projectId)}/imports`,
+);
+assert(list.status === 503, "Le listing de staging import doit rester indisponible en local-json.");
+const listBody = await list.json();
+assert(
+  String(listBody.error ?? "").startsWith("IMPORT_STAGING_QUERY_UNAVAILABLE"),
+  "Le listing doit expliquer que PostgreSQL + OIDC sont requis.",
+);
+
 const read = await fetch(
   `${baseUrl}/api/projects/${encodeURIComponent(projectId)}/imports/${encodeURIComponent(importId)}`,
 );
@@ -34,6 +44,7 @@ console.log(JSON.stringify({
   validationId: "WEB_IMPORT_STAGING_RUNTIME_GATE_VALIDATION_V1",
   status: "PASS",
   checks: {
+    localJsonListUnavailable: true,
     localJsonReadUnavailable: true,
     localJsonReviewUnavailable: true,
     fakeLocalIdentityAvoided: true,
