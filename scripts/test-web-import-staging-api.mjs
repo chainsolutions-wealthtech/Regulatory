@@ -8,98 +8,80 @@ const baseUrl = process.env.REGULATORY_WEB_BASE_URL ?? "http://127.0.0.1:3100";
 const projectId = "import-staging-unavailable-project";
 const importId = "import-staging-unavailable-batch";
 
-const list = await fetch(
-  `${baseUrl}/api/projects/${encodeURIComponent(projectId)}/imports`,
-);
+const list = await fetch(`${baseUrl}/api/projects/${encodeURIComponent(projectId)}/imports`);
 assert(list.status === 503, "Le listing de staging import doit rester indisponible en local-json.");
 const listBody = await list.json();
+assert(String(listBody.error ?? "").startsWith("IMPORT_STAGING_QUERY_UNAVAILABLE"), "Le listing doit expliquer que PostgreSQL + OIDC sont requis.");
+
+const evidenceUploadForm = new FormData();
+evidenceUploadForm.set("projectVersionId", "40000000-0000-0000-0000-000000000001");
+evidenceUploadForm.set("file", new File([new Uint8Array([0x25, 0x50, 0x44, 0x46])], "prospectus.pdf", { type: "application/pdf" }));
+const evidenceUpload = await fetch(`${baseUrl}/api/evidence`, {
+  method: "POST",
+  body: evidenceUploadForm,
+});
+assert(evidenceUpload.status === 503, "L'upload de preuve doit rester indisponible en local-json.");
+const evidenceUploadBody = await evidenceUpload.json();
 assert(
-  String(listBody.error ?? "").startsWith("IMPORT_STAGING_QUERY_UNAVAILABLE"),
-  "Le listing doit expliquer que PostgreSQL + OIDC sont requis.",
+  String(evidenceUploadBody.error ?? "").startsWith("EVIDENCE_INGESTION_SERVICE_UNAVAILABLE"),
+  "L'upload ne doit jamais simuler un store privé, un KMS ou une identité locale.",
 );
 
-const extraction = await fetch(
-  `${baseUrl}/api/projects/${encodeURIComponent(projectId)}/imports`,
-  {
-    method: "POST",
-    headers: { "content-type": "application/json" },
-    body: JSON.stringify({
-      projectVersion: 1,
-      projectVersionId: "40000000-0000-0000-0000-000000000001",
-      evidenceObjectId: "50000000-0000-0000-0000-000000000001",
-    }),
-  },
-);
+const extraction = await fetch(`${baseUrl}/api/projects/${encodeURIComponent(projectId)}/imports`, {
+  method: "POST",
+  headers: { "content-type": "application/json" },
+  body: JSON.stringify({
+    projectVersion: 1,
+    projectVersionId: "40000000-0000-0000-0000-000000000001",
+    evidenceObjectId: "50000000-0000-0000-0000-000000000001",
+  }),
+});
 assert(extraction.status === 503, "L'extraction import doit rester indisponible en local-json.");
 const extractionBody = await extraction.json();
-assert(
-  String(extractionBody.error ?? "").startsWith("IMPORT_INGESTION_SERVICE_UNAVAILABLE"),
-  "Le POST d'extraction ne doit jamais simuler un store de preuves ni une identité locale.",
-);
+assert(String(extractionBody.error ?? "").startsWith("IMPORT_INGESTION_SERVICE_UNAVAILABLE"), "Le POST d'extraction ne doit jamais simuler un store de preuves ni une identité locale.");
 
-const read = await fetch(
-  `${baseUrl}/api/projects/${encodeURIComponent(projectId)}/imports/${encodeURIComponent(importId)}`,
-);
+const read = await fetch(`${baseUrl}/api/projects/${encodeURIComponent(projectId)}/imports/${encodeURIComponent(importId)}`);
 assert(read.status === 503, "Le staging import doit rester indisponible en local-json.");
 const readBody = await read.json();
-assert(
-  String(readBody.error ?? "").startsWith("IMPORT_STAGING_REPOSITORY_UNAVAILABLE"),
-  "Le GET doit expliquer que PostgreSQL + OIDC sont requis.",
-);
+assert(String(readBody.error ?? "").startsWith("IMPORT_STAGING_REPOSITORY_UNAVAILABLE"), "Le GET doit expliquer que PostgreSQL + OIDC sont requis.");
 
-const review = await fetch(
-  `${baseUrl}/api/projects/${encodeURIComponent(projectId)}/imports/${encodeURIComponent(importId)}/review`,
-  {
-    method: "POST",
-    headers: { "content-type": "application/json" },
-    body: JSON.stringify({
-      importValueId: "value-1",
-      decision: "CONFIRMED_BY_HUMAN",
-    }),
-  },
-);
+const review = await fetch(`${baseUrl}/api/projects/${encodeURIComponent(projectId)}/imports/${encodeURIComponent(importId)}/review`, {
+  method: "POST",
+  headers: { "content-type": "application/json" },
+  body: JSON.stringify({ importValueId: "value-1", decision: "CONFIRMED_BY_HUMAN" }),
+});
 assert(review.status === 503, "La revue import doit rester indisponible en local-json.");
 const reviewBody = await review.json();
-assert(
-  String(reviewBody.error ?? "").startsWith("IMPORT_STAGING_REPOSITORY_UNAVAILABLE"),
-  "Le POST de revue ne doit jamais simuler une identité locale.",
-);
+assert(String(reviewBody.error ?? "").startsWith("IMPORT_STAGING_REPOSITORY_UNAVAILABLE"), "Le POST de revue ne doit jamais simuler une identité locale.");
 
-const promotion = await fetch(
-  `${baseUrl}/api/projects/${encodeURIComponent(projectId)}/imports/${encodeURIComponent(importId)}/promote`,
-  {
-    method: "POST",
-    headers: { "content-type": "application/json" },
-    body: JSON.stringify({
-      importValueId: "value-1",
-      questionId: "Q_FUND_CONSTITUTION_DATE",
-      expectedVersion: 1,
-    }),
-  },
-);
+const promotion = await fetch(`${baseUrl}/api/projects/${encodeURIComponent(projectId)}/imports/${encodeURIComponent(importId)}/promote`, {
+  method: "POST",
+  headers: { "content-type": "application/json" },
+  body: JSON.stringify({ importValueId: "value-1", questionId: "Q_FUND_CONSTITUTION_DATE", expectedVersion: 1 }),
+});
 assert(promotion.status === 503, "La promotion import doit rester indisponible en local-json.");
 const promotionBody = await promotion.json();
-assert(
-  String(promotionBody.error ?? "").startsWith("IMPORT_PROMOTION_REPOSITORY_UNAVAILABLE"),
-  "Le POST de promotion ne doit jamais simuler une identité locale.",
-);
+assert(String(promotionBody.error ?? "").startsWith("IMPORT_PROMOTION_REPOSITORY_UNAVAILABLE"), "Le POST de promotion ne doit jamais simuler une identité locale.");
 
 const stagingValidation = {
   validationId: "WEB_IMPORT_STAGING_RUNTIME_GATE_VALIDATION_V1",
   status: "PASS",
   checks: {
     localJsonListUnavailable: true,
+    localJsonEvidenceUploadUnavailable: true,
     localJsonExtractionUnavailable: true,
     localJsonReadUnavailable: true,
     localJsonReviewUnavailable: true,
     fakeLocalIdentityAvoided: true,
-    rawFileUploadNotAcceptedByExtractionRoute: true,
+    fakeEvidenceStoreAvoided: true,
+    fakeScannerAndKmsAvoided: true,
+    rawFileUploadSeparatedFromExtractionRoute: true,
     cleanEvidenceReferenceRequiredByIngestionContract: true,
     postgresqlOidcAndEvidenceStoreRequired: true,
+    uploadRemainsQuarantineOnlyByContract: true,
     readyForSubmissionRemainsFalse: true,
   },
-  caveat:
-    "Ce test valide les gates runtime local-json. L'extraction réelle exige une preuve CLEAN et un store privé explicitement configuré ; aucun upload brut n'est accepté par cette route.",
+  caveat: "Ce test valide les gates runtime local-json. L'upload réel ne fait que mettre en quarantaine ; le scan et la libération CLEAN restent des étapes séparées et non simulées.",
 };
 
 const promotionValidation = {
@@ -114,22 +96,13 @@ const promotionValidation = {
     automaticPromotionRemainsForbidden: true,
     readyForSubmissionRemainsFalse: true,
   },
-  caveat:
-    "Ce test valide le gate HTTP local-json de la promotion. L'atomicité, RBAC, RLS, provenance et concurrence sont validés séparément sur PostgreSQL 17.",
+  caveat: "Ce test valide le gate HTTP local-json de la promotion. L'atomicité, RBAC, RLS, provenance et concurrence sont validés séparément sur PostgreSQL 17.",
 };
 
 await mkdir(validationDirectory, { recursive: true });
 await Promise.all([
-  writeFile(
-    path.join(validationDirectory, "WEB_IMPORT_STAGING_RUNTIME_GATE_VALIDATION.json"),
-    `${JSON.stringify(stagingValidation, null, 2)}\n`,
-    "utf8",
-  ),
-  writeFile(
-    path.join(validationDirectory, "WEB_IMPORT_PROMOTION_RUNTIME_GATE_VALIDATION.json"),
-    `${JSON.stringify(promotionValidation, null, 2)}\n`,
-    "utf8",
-  ),
+  writeFile(path.join(validationDirectory, "WEB_IMPORT_STAGING_RUNTIME_GATE_VALIDATION.json"), `${JSON.stringify(stagingValidation, null, 2)}\n`, "utf8"),
+  writeFile(path.join(validationDirectory, "WEB_IMPORT_PROMOTION_RUNTIME_GATE_VALIDATION.json"), `${JSON.stringify(promotionValidation, null, 2)}\n`, "utf8"),
 ]);
 
 console.log(JSON.stringify(stagingValidation, null, 2));
