@@ -19,14 +19,11 @@ on:
   workflow_dispatch:
 
 permissions:
-  contents: write
+  contents: read
 
-# Regulatory CI and this workflow both write generated evidence back to main.
-# They must share one serialization group so neither bot can invalidate the
-# other's fast-forward push while preserving the single-branch governance.
 concurrency:
-  group: regulatory-ci-main
-  cancel-in-progress: false
+  group: inst066-historical-registry-main
+  cancel-in-progress: true
 
 jobs:
   validate-registry:
@@ -73,17 +70,3 @@ jobs:
           retention-days: 30
           if-no-files-found: error
           path: regulatory/validation/INST066_HISTORICAL_SOURCE_REGISTRY_VALIDATION_V0_1.json
-
-      - name: Commit validation evidence
-        if: github.actor != 'github-actions[bot]'
-        run: |
-          git config user.name 'regulatory-source-bot'
-          git config user.email 'regulatory-source-bot@users.noreply.github.com'
-          git add regulatory/validation/INST066_HISTORICAL_SOURCE_REGISTRY_VALIDATION_V0_1.json
-          if git diff --cached --quiet; then
-            echo 'No historical registry validation changes to commit.'
-          else
-            git commit -m 'regulatory: validate complete Instruction 66 historical registry'
-            git pull --rebase origin main
-            git push origin HEAD:main
-          fi
