@@ -1,0 +1,106 @@
+progress_id: AUTONOMOUS_BUILD_PROGRESS_2026_08_17
+repository: chainsolutions-wealthtech/Regulatory
+canonical_branch: main
+recorded_on: 2026-08-17
+baseline_head: f86853c3ec511ff21a45caee580c78ab8a8288d8
+purpose: >-
+  Current additive product-construction record after the governed import promotion
+  workspace and runtime project RBAC boundary were implemented and verified. Older
+  plans remain historical evidence; this file records the current executable reality.
+
+verified_ci:
+  import_promotion_workspace:
+    source_head: 637f4f39e81e357f6c2463dfbd9c94a64079c2cd
+    security_run: 32067523372
+    security_conclusion: SUCCESS
+    regulatory_run: 32067523311
+    regulatory_conclusion: SUCCESS
+  project_repository_rbac_boundary:
+    red_head: 4b892bee39d450a5362a322d217ceb6a78d74837
+    red_security_run: 32067898834
+    red_expected_failure: MISSING_AUTHORIZED_PROJECT_REPOSITORY_MODULE
+    green_head: e4e14b2f433b45c2ec3c8c97517835f194115bab
+    green_security_run: 32068217067
+    green_security_conclusion: SUCCESS
+    green_regulatory_run: 32068218089
+    green_regulatory_conclusion: SUCCESS
+
+newly_verified_capabilities:
+  - GOVERNED_IMPORT_PROMOTION_POSTGRESQL_ATOMIC
+  - IMPORT_PROMOTION_REQUIRES_CONFIRMED_HUMAN_VALUE
+  - IMPORT_PROMOTION_REQUIRES_EXPLICIT_QUESTION_TARGET
+  - IMPORT_PROMOTION_REQUIRES_EXPECTED_PROJECT_VERSION
+  - IMPORT_PROMOTION_REQUIRES_ANSWER_WRITE
+  - IMPORT_PROMOTION_APPEND_ONLY_PROVENANCE_RECEIPT
+  - IMPORT_PROMOTION_TENANT_ISOLATED
+  - IMPORT_PROMOTION_UI_HAS_NO_DEFAULT_TARGET
+  - IMPORT_PROMOTION_UI_PERSISTS_AND_READS_PROMOTION_RECEIPT
+  - IMPORT_PROMOTION_LOCAL_JSON_GATE_RETURNS_UNAVAILABLE_INSTEAD_OF_FAKE_IDENTITY
+  - PROJECT_RUNTIME_POSTGRESQL_REPOSITORY_ACTION_RBAC
+  - PROJECT_LIST_REQUIRES_PROJECT_LIST
+  - PROJECT_READ_REQUIRES_PROJECT_READ
+  - PROJECT_CREATE_REQUIRES_PROJECT_CREATE
+  - PROJECT_ANSWER_WRITE_REQUIRES_ANSWER_WRITE
+  - PROJECT_GENERATION_REQUIRES_GENERATION_RUN
+  - DENIED_PROJECT_ACTIONS_DO_NOT_REACH_PERSISTENCE_DELEGATE
+
+already_complete_not_to_rebuild:
+  - CIRC005_62_REQUIREMENTS_ZERO_MISSING
+  - VERSION_HISTORY_AND_READ_ONLY_DIFF_API_UI
+  - DETERMINISTIC_DOCX
+  - DETERMINISTIC_PDF
+  - DETERMINISTIC_REVIEW_ZIP
+  - POSTGRESQL_17_TRANSACTIONAL_MULTI_TENANT_CORE
+  - OIDC_RUNTIME_ADAPTER_BEHIND_REAL_CONFIGURATION
+  - RBAC_AND_SEPARATION_OF_DUTIES_ENGINE
+  - REVIEW_WORKFLOW_APIS
+  - SECURE_EVIDENCE_QUARANTINE_MODEL
+  - IMPORT_STAGING_AND_HUMAN_REVIEW
+  - EXPLICIT_GOVERNED_IMPORT_PROMOTION
+  - READ_ONLY_REGULATORY_LIBRARY
+  - READ_ONLY_CLAUSE_CATALOG
+
+remaining_autonomous_product_work:
+  - WRITE_CAPABLE_CLAUSE_ADMINISTRATION_WITH_HUMAN_ONLY_TRANSITIONS
+  - WRITE_CAPABLE_REGULATORY_SOURCE_ADMINISTRATION_WITH_HUMAN_GATES
+  - REAL_PDF_DOCX_TEXT_EXTRACTOR_ADAPTER_OVER_CLEAN_EVIDENCE
+  - BROWSER_E2E_TESTS
+  - ACCESSIBILITY_AUTOMATION
+  - APPLICATION_SECURITY_HARDENING_AND_TESTS
+  - PERFORMANCE_AND_RECOVERY_TEST_HARNESSES
+  - OPERATIONAL_OBSERVABILITY_ADAPTERS
+
+external_or_human_blockers_to_total_completion:
+  official_sources:
+    - DECISION_CM_10_06_2022_OFFICIAL_OR_INSTITUTIONAL_BINARY
+    - DECISION_CREPMF_2012_119_OFFICIAL_BINARY_OR_ROUTE
+  human_reviews:
+    - LEGAL
+    - COMPLIANCE
+    - TAX_WHEN_APPLICABLE
+    - RISK_WHEN_APPLICABLE
+    - PRODUCT_ACCEPTANCE
+  production_environment:
+    - REAL_POSTGRESQL_SERVICE_AND_CONTROLLED_MIGRATION
+    - REAL_OIDC_IDENTITY_PROVIDER_AND_CREDENTIALS
+    - REAL_OBJECT_STORAGE
+    - REAL_ANTIVIRUS_SERVICE
+    - KMS_AND_SECRET_MANAGEMENT
+    - BACKUP_RESTORE_INFRASTRUCTURE
+    - OBSERVABILITY_AND_ALERTING_INFRASTRUCTURE
+    - TARGET_ENVIRONMENT_DEPLOYMENT_AND_ACCEPTANCE
+
+invariants:
+  automatic_legal_activation_allowed: false
+  automatic_clause_activation_allowed: false
+  automatic_import_promotion_allowed: false
+  fake_identity_allowed: false
+  submission_enabled: false
+  ready_for_submission: false
+  force_push_allowed: false
+  work_branch_creation_allowed: false
+
+completion_rule: >-
+  The application must not be declared totally finished while an autonomous product
+  gap, official-source gap, required human review, or real target-environment gate
+  remains unresolved. Missing external facts or infrastructure must never be simulated.
