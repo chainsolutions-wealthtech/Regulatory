@@ -1,0 +1,121 @@
+reconciliation_id: CLOSURE_RECONCILIATION_2026_08_17
+repository: chainsolutions-wealthtech/Regulatory
+canonical_branch: main
+observed_baseline_head: 49fc88370189995cdaf67cbd7e328de6ba859338
+first_reconciliation_commit: b66749a921b22c3e7d1df2657910ff7b7421267f
+observed_on: 2026-08-17
+purpose: >-
+  Reconcile the executable closure plan with artifacts already present on main.
+  Historical plans and TODO snapshots are preserved, but a task is not considered open
+  merely because an older checklist still contains an unchecked item.
+
+invariants:
+  new_work_branch_allowed: false
+  force_push_allowed: false
+  automatic_requirement_activation_allowed: false
+  automatic_dependency_resolution_allowed: false
+  sanction_amount_activation_allowed: false
+  human_legal_review_required: true
+  human_compliance_review_required: true
+  human_fiscal_review_required_when_applicable: true
+  ready_for_submission_must_remain_false: true
+
+materialized_official_backfill_already_present_on_main:
+  - source_id: DECISION_CM_07_09_2021_UNIFORM_SECURITIES_OFFENCES_LAW
+    binary_path: regulatory/sources/amf-umoa-pending-api-backfill/DECISION_CM_07_09_2021_UNIFORM_SECURITIES_OFFENCES_LAW.pdf
+    status: MATERIALIZED
+  - source_id: DECISION_CM_13_12_2011_TARIFS
+    binary_path: regulatory/sources/amf-umoa-pending-api-backfill/DECISION_CM_13_12_2011_TARIFS.pdf
+    metadata_path: regulatory/sources/amf-umoa-pending-api-backfill/DECISION_CM_13_12_2011_TARIFS.metadata.json
+    sha256: 969976be1da4a5b36363810280071a5ee75bee7a32d60943438a75bc09da16bd
+    byte_size: 327347
+    page_count: 4
+    status: MATERIALIZED_AND_SOURCE_REGISTRY_RECONCILED
+  - source_id: INSTRUCTION_21_CREPMF_1999
+    binary_path: regulatory/sources/amf-umoa-pending-api-backfill/INSTRUCTION_21_CREPMF_1999.pdf
+    status: MATERIALIZED
+  - source_id: INSTRUCTION_22_CREPMF_1999
+    binary_path: regulatory/sources/amf-umoa-pending-api-backfill/INSTRUCTION_22_CREPMF_1999.pdf
+    status: MATERIALIZED
+  - source_id: INSTRUCTION_23_CREPMF_1999
+    binary_path: regulatory/sources/amf-umoa-pending-api-backfill/INSTRUCTION_23_CREPMF_1999.pdf
+    status: MATERIALIZED
+  - source_id: INSTRUCTION_24_CREPMF_1999
+    binary_path: regulatory/sources/amf-umoa-pending-api-backfill/INSTRUCTION_24_CREPMF_1999.pdf
+    status: MATERIALIZED
+  - source_id: INSTRUCTION_45_CREPMF_2011
+    binary_path: regulatory/sources/amf-umoa-pending-api-backfill/INSTRUCTION_45_CREPMF_2011.pdf
+    status: MATERIALIZED
+  - source_id: INSTRUCTION_54_CREPMF_2017_REVISEE
+    binary_path: regulatory/sources/amf-umoa-pending-api-backfill/INSTRUCTION_54_CREPMF_2017_REVISEE.pdf
+    status: MATERIALIZED
+
+still_genuinely_open_external_binary_gaps:
+  - source_id: DECISION_CM_10_06_2022
+    reference: "Décision n° CM/10/06/2022 du 24 juin 2022"
+    status: REFERENCE_CONFIRMED_BINARY_NOT_MATERIALIZED
+    required_next_action: RECOVER_OFFICIAL_OR_INSTITUTIONAL_BINARY_THEN_COMPARE_2016_2022
+    automatic_sanction_use_allowed: false
+  - source_id: DECISION_CREPMF_2012_119
+    status: OFFICIAL_BINARY_ROUTE_NOT_IDENTIFIED
+    normative_current_use_allowed: false
+    note: >-
+      This historical decision is explicitly treated as abrogated by Instruction 66
+      Article 92 in the repository model; acquisition remains relevant for historical
+      traceability, not for silent reactivation.
+
+already_implemented_product_capabilities_not_to_rebuild:
+  - CIRC005_62_REQUIREMENTS_WITH_ZERO_MISSING
+  - DETERMINISTIC_REGULATORY_ENGINE
+  - NEXTJS_APP_ROUTER_REACT_TYPESCRIPT_ATOMIC_DESIGN
+  - VERSIONED_PROJECTS_AND_DYNAMIC_QUESTIONNAIRE
+  - TEN_STRUCTURED_CANONICAL_COLLECTIONS
+  - JSON_SCHEMA_CANONICAL_MODEL_V1
+  - POSTGRESQL_TRANSACTIONAL_MULTI_TENANT_REPOSITORY_IMPLEMENTED_AND_TESTED
+  - OIDC_RBAC_SERVER_SIDE_ADAPTER_IMPLEMENTED_BEHIND_REAL_CONFIGURATION
+  - EVIDENCE_QUARANTINE_POLICY_IMPLEMENTED_BEHIND_REAL_INFRASTRUCTURE
+  - DETERMINISTIC_DOCX_AND_VISUAL_QA
+  - INSTRUCTION_66_OFFICIAL_BINARY_AND_ARTICLE_INDEX
+  - INSTRUCTION_66_111_CANDIDATE_REQUIREMENTS
+
+remaining_human_or_environment_gates:
+  regulatory_review:
+    - LEGAL_REVIEW
+    - COMPLIANCE_REVIEW
+    - FISCAL_REVIEW_WHEN_APPLICABLE
+  production_configuration:
+    - REAL_POSTGRESQL_RUNTIME_AND_MIGRATION
+    - REAL_OIDC_IDENTITY_PROVIDER
+    - REAL_ORGANIZATION_TENANCY_CONFIGURATION
+    - REAL_OBJECT_STORAGE
+    - REAL_ANTIVIRUS_SERVICE
+    - ENCRYPTION_AND_SECRET_MANAGEMENT
+    - BACKUP_AND_RESTORE
+    - OBSERVABILITY_AND_ALERTING
+    - TARGET_ENVIRONMENTS_AND_CONTROLLED_DEPLOYMENT
+  final_product_gates:
+    - ADMINISTRABLE_REGULATORY_LIBRARY
+    - ADMINISTRABLE_CLAUSE_LIFECYCLE
+    - DOCX_PDF_IMPORT_AS_EXTRACTED_UNVERIFIED
+    - VERSION_DIFF_USER_EXPERIENCE
+    - FINAL_REGULATORY_PDF_AND_REVIEW_PACKAGE
+    - BROWSER_E2E
+    - ACCESSIBILITY
+    - APPLICATION_SECURITY
+    - PERFORMANCE_AND_RECOVERY_TESTS
+    - BUSINESS_AND_REGULATORY_ACCEPTANCE
+
+ci_observation_after_first_reconciliation_commit:
+  head: b66749a921b22c3e7d1df2657910ff7b7421267f
+  security_and_review_policy_ci:
+    run_id: 32052507418
+    conclusion: SUCCESS
+  regulatory_ci:
+    run_id: 32052507161
+    state_when_recorded: IN_PROGRESS
+    conclusion: TO_RECHECK_ON_FINAL_HEAD
+
+closure_rule: >-
+  Autonomous work may close only when repository evidence and CI support it. Missing
+  institutional binaries, human regulatory approvals, credentials, secrets and target
+  infrastructure must remain explicit blockers and must never be simulated or inferred.
