@@ -2,7 +2,7 @@ import "server-only";
 
 import { randomUUID } from "node:crypto";
 import type { Pool, PoolClient } from "pg";
-import { assertAuthorized } from "@/domain/authorization";
+import { assertAuthorized, type ProspectusRole } from "@/domain/authorization";
 import type { ImportPromotionReceipt, ImportPromotionRepository } from "@/server/import/import-promotion-repository";
 import {
   assertVerifiedIdentity,
@@ -28,7 +28,15 @@ export function createPostgresImportPromotionRepository(input: {
       try {
         await client.query("begin");
         await establishTenantContext(client, identity);
-        assertAuthorized(identity, "ANSWER_WRITE", { organizationId: identity.organizationId });
+        assertAuthorized(
+          {
+            userId: identity.userId,
+            organizationId: identity.organizationId,
+            roles: identity.roles as ProspectusRole[],
+          },
+          "ANSWER_WRITE",
+          { organizationId: identity.organizationId },
+        );
 
         const staged = await client.query<{
           project_id: string;
