@@ -7,6 +7,7 @@ import {
   createFileSystemArtifactStore,
   type ArtifactStore,
 } from "@/server/storage/artifact-store";
+import { createAuthorizedProjectRepository } from "@/server/storage/authorized-project-repository";
 import {
   createPostgresGenerationArtifactRepository,
   localGenerationArtifactRepository,
@@ -78,10 +79,14 @@ export function getRuntimeArtifactStore(): ArtifactStore {
 
 export function getProjectRepository(): ProjectRepository {
   if (regulatoryStorageDriver === "local-json") return localProjectRepository;
-  return createPostgresProjectRepository({
-    pool: getRuntimePostgresPool(),
-    identityProvider: getRuntimeIdentityProvider(),
-    artifactStore: getRuntimeArtifactStore(),
+  const identityProvider = getRuntimeIdentityProvider();
+  return createAuthorizedProjectRepository({
+    delegate: createPostgresProjectRepository({
+      pool: getRuntimePostgresPool(),
+      identityProvider,
+      artifactStore: getRuntimeArtifactStore(),
+    }),
+    identityProvider,
   });
 }
 
