@@ -6,173 +6,221 @@ const repoRoot = path.resolve(path.dirname(fileURLToPath(import.meta.url)), ".."
 const blockId = "LOOP-DEV-001-NEXTJS-ATOMIC-DESIGN";
 
 const blocks = {
-  "README.md": `## 18. Application Next.js en Atomic Design — 2026-08-05
+  "README.md": `## 18. Application Next.js de pré-conformité — état 2026-08-17
 
-Une application exécutable est désormais disponible dans \`apps/web\`. Elle fournit le tableau de bord, la création d’un projet, un questionnaire dynamique en 18 groupes, l’auto-sauvegarde locale versionnée, les contrôles, la couverture CIRC005 et l’aperçu du prospectus.
+L'application exécutable \`apps/web\` couvre désormais le cycle de préparation d'un prospectus OPCVM/FCP UMOA : projets, questionnaire réglementaire structuré, contrôles, prévisualisation, revues humaines, génération documentaire et historique de versions.
 
-L’architecture suit Atomic Design :
+L'architecture conserve Atomic Design et App Router. Les Server Components restent le choix par défaut ; les interactions client sont limitées aux écrans qui en ont réellement besoin.
 
-- \`atoms\` : primitives d’interface ;
-- \`molecules\` : questions, alertes, statistiques et lignes de projet ;
-- \`organisms\` : shell, navigation, wizard, contrôles et aperçu ;
-- \`templates\` : compositions de pages ;
-- \`app\` : routes App Router et API locale.
+Capacités vérifiées :
 
-La documentation détaillée se trouve dans \`docs/04-development/NEXTJS_ATOMIC_DESIGN.md\`. La persistance JSON est locale et réservée au prototype. Aucune authentification, aucun multi-tenant, aucun déploiement et aucune soumission réglementaire ne sont activés.`,
+- catalogue CIRC005 et questionnaire structuré ;
+- persistance locale versionnée et repository PostgreSQL transactionnel ;
+- RLS multi-tenant et contrôle de concurrence optimiste ;
+- fournisseur OIDC générique exigeant une configuration réelle ;
+- RBAC, séparation des tâches et workflow de revue ;
+- génération déterministe Markdown/JSON/DOCX/PDF ;
+- package ZIP de revue et API d'artefacts avec SHA-256 ;
+- stockage de preuves en quarantaine et import sécurisé \`EXTRACTED_UNVERIFIED\` ;
+- historique de versions et diff read-only ;
+- \`ready_for_submission=false\` maintenu par les invariants.
 
-  "STATUS.md": `## Mise à jour LOOP-DEV-001 — Next.js et Atomic Design
+La plateforme reste un système de **pré-conformité**. Les validations juridique, conformité et fiscale, l'infrastructure de production, l'antivirus réel, le stockage objet réel, les secrets et l'autorisation de mise en production restent des gates externes/humains.`,
+
+  "STATUS.md": `## Mise à jour LOOP-DEV-001 — Application Next.js / état 2026-08-17
 
 - application : \`apps/web\` ;
 - framework : Next.js App Router + React + TypeScript ;
 - architecture UI : Atomic Design ;
-- groupes de questionnaire : \`18\` ;
-- API locale : projets, questions, réponses et génération ;
-- persistance : JSON local versionné avec audit NDJSON ;
-- build : vérifié par GitHub Actions ;
-- authentification : non implémentée ;
-- production : interdite ;
-- soumission réglementaire : interdite.
+- catalogue et questionnaire CIRC005 : \`IMPLEMENTED\` ;
+- driver JSON local versionné : \`IMPLEMENTED_PROTOTYPE\` ;
+- repository PostgreSQL transactionnel : \`IMPLEMENTED_AND_TESTED\` ;
+- isolation RLS multi-tenant : \`PASS_CI\` ;
+- OIDC : \`IMPLEMENTED_REQUIRES_REAL_CONFIGURATION\` ;
+- RBAC et séparation des tâches : \`IMPLEMENTED_AND_TESTED\` ;
+- revues humaines : \`IMPLEMENTED_WORKFLOW\` ;
+- DOCX déterministe : \`PASS_CI\` ;
+- PDF déterministe normalisé : \`PASS_CI\` ;
+- package ZIP de revue : \`PASS_CI\` ;
+- import sécurisé : \`IMPLEMENTED_STAGING_EXTRACTED_UNVERIFIED\` ;
+- historique + diff de versions : \`IMPLEMENTED_READ_ONLY\` ;
+- production : \`NOT_AUTHORIZED\` ;
+- soumission réglementaire : \`DISABLED\` ;
+- \`ready_for_submission\` : \`false\`.
 
-La prochaine étape porte sur la connexion exhaustive du catalogue web au moteur réglementaire, la généralisation de la génération DOCX et les tests d’intégration.`,
+Les travaux autonomes restants concernent notamment l'administration gouvernée des clauses/sources, l'industrialisation de l'import et les tests navigateur/accessibilité. Les activations réglementaires, validations juridiques/conformité/fiscales et la production restent soumises aux gates humains et externes.`,
 
-  "SUIVI.md": `## 2026-08-05 — Première application Next.js en Atomic Design
+  "SUIVI.md": `## 2026-08-17 — Réconciliation applicative Next.js
 
-### Réalisé
+### Capacités consolidées
 
-- création de \`apps/web\` ;
 - App Router et TypeScript strict ;
-- composants répartis en atoms, molecules, organisms et templates ;
-- tableau de bord et liste des projets ;
-- création d’un projet ;
-- questionnaire adaptatif en 18 groupes ;
-- sauvegarde locale versionnée ;
-- journal d’audit ;
-- contrôles de complétude et de cohérence ;
-- couverture CIRC005 ;
-- aperçu du prospectus ;
-- API locale ;
-- vérification TypeScript et build de production dans la CI.
+- Atomic Design ;
+- questionnaire réglementaire structuré ;
+- stockage JSON local versionné ;
+- PostgreSQL transactionnel et RLS multi-tenant ;
+- identité OIDC côté serveur derrière configuration réelle ;
+- RBAC et séparation des tâches ;
+- workflow de revue humaine ;
+- génération déterministe DOCX et PDF ;
+- package ZIP de revue ;
+- API de téléchargement d'artefacts avec vérification SHA-256 ;
+- import sécurisé en statut \`EXTRACTED_UNVERIFIED\` ;
+- historique de versions local/PostgreSQL et diff read-only ;
+- gates de soumission maintenus fermés.
 
-### Limites
+### Frontières maintenues
 
-La persistance n’est pas transactionnelle, l’authentification et le RBAC ne sont pas présents, et le catalogue de questions TypeScript est encore un adaptateur provisoire. L’application reste un prototype local de pré-conformité.`,
+Aucun déploiement de production, aucune identité fictive, aucun secret inventé, aucune approbation juridique simulée et aucune activation automatique de clause réglementaire. \`ready_for_submission\` reste \`false\`.`,
 
-  "TODO.md": `## Mise à jour opérationnelle — Next.js / Atomic Design
+  "TODO.md": `## Mise à jour opérationnelle — Application Next.js / 2026-08-17
 
-- [x] Créer l’application Next.js App Router.
-- [x] Structurer les composants selon Atomic Design.
-- [x] Créer le tableau de bord et les projets.
-- [x] Créer le questionnaire en 18 groupes.
-- [x] Ajouter la persistance locale versionnée et l’audit.
-- [x] Ajouter les Route Handlers projets, questions, réponses et génération.
-- [x] Ajouter les contrôles et l’aperçu.
-- [x] Ajouter le typecheck et le build Next.js à la CI.
-- [ ] Générer le catalogue web directement depuis les matrices réglementaires.
-- [ ] Généraliser le moteur documentaire à tous les projets.
-- [ ] Brancher l’export DOCX sur les projets créés dans l’interface.
-- [ ] Ajouter les tests d’intégration des API.
-- [ ] Ajouter PostgreSQL et les migrations.
-- [ ] Ajouter authentification, RBAC et séparation tenant.
-- [ ] Effectuer la recette navigateur desktop et mobile.
-- [ ] Reprendre l’atomisation de l’Instruction n°66/2021.`,
+- [x] Créer l'application Next.js App Router et Atomic Design.
+- [x] Générer le catalogue web depuis les matrices réglementaires.
+- [x] Structurer les collections répétables dans le modèle canonique.
+- [x] Brancher la génération DOCX aux projets applicatifs.
+- [x] Générer et valider le PDF déterministe.
+- [x] Générer le package ZIP de revue.
+- [x] Ajouter les tests HTTP d'intégration API.
+- [x] Ajouter PostgreSQL et les migrations.
+- [x] Implémenter le repository PostgreSQL transactionnel.
+- [x] Ajouter RLS multi-tenant et concurrence optimiste.
+- [x] Implémenter OIDC derrière configuration réelle.
+- [x] Implémenter RBAC et séparation des tâches.
+- [x] Implémenter les revues humaines et le gel interne gouverné.
+- [x] Ajouter le stockage de preuves sécurisé en quarantaine.
+- [x] Ajouter le service d'import sécurisé \`EXTRACTED_UNVERIFIED\`.
+- [x] Ajouter l'historique de versions et le diff read-only.
+- [ ] Construire l'administration gouvernée des clauses et sources sans activation automatique.
+- [ ] Brancher un extracteur PDF/DOCX réel derrière quarantaine/antivirus et confirmation humaine.
+- [ ] Effectuer la recette navigateur desktop/mobile et accessibilité.
+- [ ] Configurer stockage objet, antivirus, secrets, sauvegarde et restauration sur infrastructure réelle.
+- [ ] Configurer le fournisseur OIDC réel de l'environnement cible.
+- [!] Obtenir les revues juridique, conformité et fiscale nécessaires.
+- [!] Maintenir la production et la soumission désactivées jusqu'à décision explicite.`,
 
-  "CHANGELOG.md": `## [Unreleased] — Application Next.js / Atomic Design — 2026-08-05
+  "CHANGELOG.md": `## [Unreleased] — Consolidation applicative — 2026-08-17
 
 ### Added
 
-- application \`apps/web\` avec Next.js App Router ;
-- composants Atomic Design ;
-- tableau de bord, projets, questionnaire, contrôles et aperçu ;
-- API locale et persistance JSON versionnée ;
-- catalogue initial de questions couvrant 18 groupes ;
-- validation TypeScript et build Next.js en CI ;
-- ADR-0008 et documentation d’architecture front-end.
+- repository PostgreSQL transactionnel et isolation tenant ;
+- identité OIDC vérifiée derrière configuration runtime ;
+- RBAC, séparation des tâches et workflow de revue ;
+- stockage de preuves sécurisé et import en quarantaine ;
+- génération PDF déterministe et package ZIP de revue ;
+- API d'artefacts avec SHA-256 et protections de chemin ;
+- historique de versions local/PostgreSQL ;
+- API et workspace de comparaison de versions en lecture seule.
+
+### Changed
+
+- documentation applicative réconciliée avec l'état réellement validé en CI ;
+- les anciennes mentions « PostgreSQL/authentification/DOCX à faire » ne sont plus réinjectées par le générateur documentaire.
 
 ### Security
 
-L’application est explicitement locale. Aucune authentification fictive n’est présentée comme sécurisée et aucun déploiement n’est autorisé dans cette tranche.`,
+- \`ready_for_submission=false\` demeure invariant ;
+- aucune action de soumission n'est autorisée ;
+- aucune activation automatique de clause n'est introduite ;
+- les services de production non configurés ne sont jamais présentés comme opérationnels.`,
 
-  "CURRENT_ITERATION.md": `## Résultat de l’itération Next.js
+  "CURRENT_ITERATION.md": `## Résultat courant — Application de pré-conformité
 
-La première tranche applicative est implémentée : création de projet, questionnaire guidé, sauvegarde, contrôles et aperçu. Le moteur historique reste la source de vérité réglementaire ; l’application utilise des adaptateurs et ne duplique pas les identifiants CIRC005.
+La tranche applicative couvre désormais le questionnaire, les contrôles, la génération déterministe, les revues humaines, PostgreSQL/RLS, la sécurité des preuves et l'historique de versions.
 
 ### Critères atteints
 
-- structure Atomic Design ;
-- App Router ;
+- App Router / Atomic Design ;
 - Server Components par défaut ;
-- interactions limitées aux Client Components nécessaires ;
-- persistance locale versionnée ;
-- API locale ;
-- build de production dans la CI.
+- catalogue réglementaire structuré ;
+- persistance locale et PostgreSQL ;
+- RLS, OIDC, RBAC et séparation des tâches ;
+- DOCX/PDF/ZIP déterministes ;
+- API HTTP testée ;
+- import sécurisé non vérifié ;
+- versions et diff read-only ;
+- CI Regulatory et Security actives.
 
-### Critères non atteints
+### Gates restant externes ou humains
 
-- PostgreSQL ;
-- authentification et RBAC ;
-- multi-tenant ;
-- tests navigateur ;
-- export DOCX générique ;
-- validation juridique, conformité et fiscale.`,
+- fournisseur OIDC réellement configuré ;
+- stockage objet et antivirus réels ;
+- sauvegarde/restauration ;
+- recette navigateur/accessibilité/sécurité d'exploitation ;
+- validation juridique, conformité et fiscale ;
+- décision de production ;
+- soumission réglementaire, toujours désactivée.`,
 
-  "LOOP_STATE.md": `## État applicatif de LOOP-DEV-001
+  "LOOP_STATE.md": `## État applicatif de LOOP-DEV-001 — 2026-08-17
 
 - Next.js App Router : \`IMPLEMENTED\` ;
 - Atomic Design : \`IMPLEMENTED\` ;
-- questionnaire local : \`IMPLEMENTED_V0_1\` ;
-- API locale : \`IMPLEMENTED_V0_1\` ;
-- persistance locale : \`IMPLEMENTED_PROTOTYPE\` ;
-- build CI : \`ENABLED\` ;
-- production : \`FORBIDDEN\` ;
-- prochaine tranche : intégration moteur, tests API et DOCX générique.`,
+- catalogue/questionnaire : \`IMPLEMENTED\` ;
+- PostgreSQL transactionnel : \`IMPLEMENTED_AND_TESTED\` ;
+- RLS multi-tenant : \`PASS_CI\` ;
+- OIDC : \`IMPLEMENTED_CONFIGURATION_REQUIRED\` ;
+- RBAC/workflow : \`PASS_CI\` ;
+- DOCX/PDF/ZIP : \`PASS_CI\` ;
+- import sécurisé : \`IMPLEMENTED_GATED\` ;
+- historique/diff : \`IMPLEMENTED_READ_ONLY\` ;
+- production : \`NOT_AUTHORIZED\` ;
+- soumission : \`DISABLED\` ;
+- prochaine tranche autonome : administration gouvernée des clauses/sources et industrialisation contrôlée de l'import.`,
 
-  "WORK_LOG.md": `## 2026-08-05 — LOOP-DEV-001 — Next.js et Atomic Design
+  "WORK_LOG.md": `## 2026-08-17 — LOOP-DEV-001 — Consolidation applicative
 
-1. Audit du dépôt, de la branche et des derniers commits.
-2. Conservation de l’unique branche \`main\`.
-3. Création de l’application sous \`apps/web\`.
-4. Décomposition Atomic Design.
-5. Implémentation de 18 groupes de questionnaire et de leurs conditions.
-6. Implémentation de la persistance JSON versionnée et du journal d’audit.
-7. Implémentation de six Route Handlers locaux.
-8. Implémentation des contrôles, de la couverture et de l’aperçu.
-9. Ajout du build Next.js à la CI.
-10. Création de l’ADR et de la documentation.
+1. Réconciliation du produit réel avec les anciens TODO.
+2. Confirmation des capacités PostgreSQL, RLS, OIDC, RBAC et revue.
+3. Confirmation de la génération DOCX/PDF et du package ZIP déterministes.
+4. Confirmation du service d'import sécurisé sans écriture canonique automatique.
+5. Ajout en TDD de l'historique de versions et du diff read-only.
+6. Ajout du repository historique pour JSON local et PostgreSQL en transaction \`READ ONLY\`.
+7. Ajout des routes HTTP d'historique et de comparaison.
+8. Ajout du workspace projet « Versions » en Server Component.
+9. Maintien des gates \`ready_for_submission=false\`, soumission désactivée et activation réglementaire non automatique.
+10. Réconciliation du générateur de documentation pour empêcher le retour d'états obsolètes.
 
-Aucun déploiement, aucune nouvelle branche, aucun force-push et aucune activation de clause juridique n’ont été réalisés.`,
+Aucune nouvelle branche, aucun force-push, aucune approbation juridique simulée et aucune activation réglementaire automatique.`,
 
-  "HANDOFF.md": `## Transmission — Application Next.js V0.1
+  "HANDOFF.md": `## Transmission — Application de pré-conformité / état 2026-08-17
 
-### Entrées principales
+### Entrées applicatives principales
 
 - \`apps/web/src/app\` ;
 - \`apps/web/src/components\` ;
 - \`apps/web/src/domain\` ;
 - \`apps/web/src/server\` ;
-- \`docs/04-development/NEXTJS_ATOMIC_DESIGN.md\` ;
-- \`docs/adr/ADR-0008-nextjs-atomic-design-frontend.md\`.
+- \`apps/web/src/server/storage/project-version-repository.ts\` ;
+- \`apps/web/src/server/project-version-diff.ts\` ;
+- \`docs/04-development/PROJECT_VERSION_HISTORY.md\`.
 
-### Commandes
+### Vérifications obligatoires avant reprise
 
-\`npm run web:install\`, \`npm run web:dev\`, \`npm run web:typecheck\` et \`npm run web:build\`.
+Exécuter les gates Regulatory CI et Security/Review Policy CI. Ne considérer aucun service externe de production comme disponible sans configuration et preuve runtime réelles.
 
 ### Limite de reprise
 
-Ne pas déployer ou présenter l’application comme sécurisée avant la base transactionnelle, l’authentification, le RBAC, la séparation tenant, les tests d’intégration et la revue sécurité.`,
+Ne pas activer de clause, ne pas marquer un dossier prêt pour soumission, ne pas simuler une validation juridique/conformité/fiscale et ne pas déployer sans recette et autorisation humaines explicites.`,
 };
 
 for (const [file, markdown] of Object.entries(blocks)) {
   await upsertBlock(file, blockId, markdown);
 }
 
-
-
-console.log(JSON.stringify({
-  updated_documents: Object.keys(blocks).length,
-  application: "apps/web",
-  architecture: "NEXTJS_ATOMIC_DESIGN",
-  next_action: "CONNECT_CANONICAL_REGULATORY_CATALOG",
-}, null, 2));
+console.log(
+  JSON.stringify(
+    {
+      updated_documents: Object.keys(blocks).length,
+      application: "apps/web",
+      architecture: "NEXTJS_ATOMIC_DESIGN",
+      history: "IMPLEMENTED_READ_ONLY",
+      ready_for_submission: false,
+      next_action: "GOVERNED_CLAUSE_SOURCE_ADMINISTRATION",
+    },
+    null,
+    2,
+  ),
+);
 
 async function upsertBlock(relativePath, id, markdown) {
   const filePath = path.join(repoRoot, relativePath);
