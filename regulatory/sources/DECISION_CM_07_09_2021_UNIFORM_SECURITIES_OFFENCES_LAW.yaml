@@ -22,12 +22,16 @@ official_publication:
 source_integrity:
   official_detail_route: "https://www.amf-umoa.org/actuality-details?actualiteId=1000182"
   official_api_detail: "https://www.amf-umoa.org/service/api/elastic/actualite?id=1000182&langue=fr"
-  repository_copy: null
-  sha256: null
-  byte_size: null
-  page_count: null
-  copy_status: OFFICIAL_ROUTE_IDENTIFIED_BINARY_NOT_MATERIALIZED
-  materialization_blocker: GITHUB_ACTIONS_BILLING_OR_DIRECT_API_ACCESS_REQUIRED
+  official_binary_transport: AMF_UMOA_DETAIL_API_DOC_BASE64
+  repository_copy: regulatory/sources/amf-umoa-pending-api-backfill/DECISION_CM_07_09_2021_UNIFORM_SECURITIES_OFFENCES_LAW.pdf
+  extracted_text_copy: regulatory/sources/amf-umoa-pending-api-backfill/DECISION_CM_07_09_2021_UNIFORM_SECURITIES_OFFENCES_LAW.txt
+  metadata_copy: regulatory/sources/amf-umoa-pending-api-backfill/DECISION_CM_07_09_2021_UNIFORM_SECURITIES_OFFENCES_LAW.metadata.json
+  sha256: 74d72deb539c3ec35cd83eb5f2ab9b1fec712a87d0c30113b794f95c240e9f83
+  byte_size: 5456564
+  page_count: 19
+  text_extraction_method: PDFTOTEXT
+  useful_text_chars: 34410
+  copy_status: MATERIALIZED_FROM_OFFICIAL_AMF_UMOA_API
 
 sanctions_chain_relationship:
   predecessor_context:
@@ -43,24 +47,30 @@ sanctions_chain_relationship:
   relationship_status: NORMATIVE_CONTEXT_CONFIRMED_2022_EFFECT_NOT_YET_RESOLVED
 
 legal_metadata:
-  act_date: PENDING_OWN_BINARY_REVIEW
-  effective_from: PENDING_OWN_BINARY_REVIEW
+  portal_date_observed: 2021-09-23
+  portal_date_is_adoption_date: false
+  act_date: PENDING_OWN_BINARY_LEGAL_REVIEW
+  effective_from: PENDING_OWN_BINARY_LEGAL_REVIEW
   amendments_and_rectifications: TO_COMPLETE
-  current_legal_status: PENDING_BINARY_AND_LEGAL_REVIEW
+  current_legal_status: PENDING_LEGAL_REVIEW
 
 next_steps:
-  - MATERIALIZE_OWN_OFFICIAL_BINARY
-  - VERIFY_SIGNATURE_AND_EFFECTIVE_DATE
+  - REVIEW_OWN_OFFICIAL_BINARY_SIGNATURE_AND_EFFECTIVE_DATE
   - IDENTIFY_UNIFORM_LAW_ATTACHMENT_OR_TEXT
   - MAP_RELEVANT_SECURITIES_OFFENCES_TO_2022_SANCTIONS_REVISION_CONTEXT
   - DO_NOT_INFER_2022_SANCTION_QUANTA_FROM_THIS_SOURCE
   - HUMAN_LEGAL_AND_COMPLIANCE_REVIEW
 
 safety:
+  portal_date_is_adoption_date: false
+  portal_abroge_is_legal_status_proof: false
+  binary_materialization_is_rule_activation: false
   contextual_link_is_legal_relationship_resolution: false
   automatic_sanction_rule_reconstruction_allowed: false
   sanction_amount_calculation_allowed: false
   automatic_enforcement_allowed: false
   automatic_dependency_resolution_allowed: false
   automatic_requirement_activation_allowed: false
+  human_legal_review_required: true
+  human_compliance_review_required: true
   ready_for_submission_must_remain_false: true
