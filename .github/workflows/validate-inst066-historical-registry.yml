@@ -21,9 +21,12 @@ on:
 permissions:
   contents: write
 
+# Regulatory CI and this workflow both write generated evidence back to main.
+# They must share one serialization group so neither bot can invalidate the
+# other's fast-forward push while preserving the single-branch governance.
 concurrency:
-  group: inst066-historical-registry-main
-  cancel-in-progress: true
+  group: regulatory-ci-main
+  cancel-in-progress: false
 
 jobs:
   validate-registry:
