@@ -39,6 +39,13 @@ export type ProspectusImportBatch = {
   readyForSubmission: false;
 };
 
+export type ImportedProspectusReviewInput = {
+  importValueId: string;
+  decision: "CONFIRM" | "REJECT";
+  reviewedBy: string;
+  reviewedAt?: string;
+};
+
 export function assertImportRemainsUnverified(batch: ProspectusImportBatch): void {
   if (batch.canonicalWriteAllowed !== false) throw new Error("IMPORT_CANONICAL_WRITE_MUST_REMAIN_FALSE");
   if (batch.readyForSubmission !== false) throw new Error("IMPORT_READY_FOR_SUBMISSION_MUST_REMAIN_FALSE");
@@ -57,5 +64,64 @@ export function assertImportRemainsUnverified(batch: ProspectusImportBatch): voi
     if (value.confidence !== undefined && (value.confidence < 0 || value.confidence > 1)) {
       throw new Error("IMPORT_CONFIDENCE_OUT_OF_RANGE");
     }
+    if (value.reviewStatus === "EXTRACTED_UNVERIFIED") {
+      if (value.reviewedBy || value.reviewedAt) throw new Error("IMPORT_UNVERIFIED_VALUE_HAS_REVIEW_PROVENANCE");
+    } else if (!value.reviewedBy || !value.reviewedAt) {
+      throw new Error("IMPORT_REVIEW_PROVENANCE_REQUIRED");
+    }
   }
+}
+
+/**
+ * Applique une décision humaine à une proposition extraite sans écrire dans le
+ * modèle canonique. La confirmation signifie uniquement "la proposition a été
+ * revue par un humain" ; elle n'est ni une approbation juridique globale, ni
+ * une autorisation de soumission, ni une opération de persistance projet.
+ */
+export function reviewImportedProspectusValue(
+  batch: ProspectusImportBatch,
+  input: ImportedProspectusReviewInput,
+): ProspectusImportBatch {
+  assertImportRemainsUnverified(batch);
+  if (!input.reviewedBy.trim()) throw new Error("IMPORT_REVIEWER_REQUIRED");
+  const reviewedAt = input.reviewedAt ?? new Date().toISOString();
+  if (Number.isNaN(Date.parse(reviewedAt))) throw new Error("IMPORT_REVIEW_TIMESTAMP_INVALID");
+
+  const index = batch.values.findIndex((value) => value.importValueId === input.importValueId);
+  if (index < 0) throw new Error("IMPORT_VALUE_NOT_FOUND");
+  if (batch.values[index].reviewStatus !== "EXTRACTED_UNVERIFIED") {
+    throw new Error("IMPORT_VALUE_ALREADY_REVIEWED");
+  }
+
+  const values = batch.values.map((value, valueIndex) =>
+    valueIndex === index
+      ? {
+          ...value,
+          reviewStatus:
+            input.decision === "CONFIRM"
+              ? ("CONFIRMED_BY_HUMAN" as const)
+              : ("REJECTED_BY_HUMAN" as const),
+          reviewedBy: input.reviewedBy,
+          reviewedAt,
+        }
+      : { ...value },
+  );
+
+  const reviewedCount = values.filter((value) => value.reviewStatus !== "EXTRACTED_UNVERIFIED").length;
+  const status: ProspectusImportBatch["status"] =
+    reviewedCount === values.length
+      ? "REVIEWED"
+      : reviewedCount > 0
+        ? "HUMAN_REVIEW_IN_PROGRESS"
+        : "EXTRACTED_UNVERIFIED";
+
+  const reviewedBatch: ProspectusImportBatch = {
+    ...batch,
+    status,
+    values,
+    canonicalWriteAllowed: false,
+    readyForSubmission: false,
+  };
+  assertImportRemainsUnverified(reviewedBatch);
+  return reviewedBatch;
 }
