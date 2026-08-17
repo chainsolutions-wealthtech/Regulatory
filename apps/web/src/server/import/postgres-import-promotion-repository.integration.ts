@@ -25,6 +25,10 @@ const tenantA: VerifiedIdentityContext = {
   provider: "CI_FIXED_TEST_IDENTITY",
   verifiedAt: "2026-08-17T20:20:00.000Z",
 };
+const tenantAReadOnly: VerifiedIdentityContext = {
+  ...tenantA,
+  roles: ["COMPLIANCE"],
+};
 const tenantB: VerifiedIdentityContext = {
   organizationId: "71000000-0000-0000-0000-000000000002",
   userId: "72000000-0000-0000-0000-000000000002",
@@ -36,79 +40,125 @@ const tenantB: VerifiedIdentityContext = {
 
 const projectId = "73000000-0000-0000-0000-000000000001";
 const importId = "76000000-0000-0000-0000-000000000001";
-const importValueId = "77000000-0000-0000-0000-000000000001";
-const questionId = "Q_FUND_NAME";
+const promotedValueId = "77000000-0000-0000-0000-000000000088";
+const staleValueId = "77000000-0000-0000-0000-000000000089";
+const unreviewedValueId = "77000000-0000-0000-0000-000000000099";
+const questionId = "Q_FUND_CONSTITUTION_DATE";
 
 try {
+  await seedPromotionValue(promotedValueId, "CONFIRMED_BY_HUMAN");
+  await seedPromotionValue(staleValueId, "CONFIRMED_BY_HUMAN");
+  await seedPromotionValue(unreviewedValueId, "EXTRACTED_UNVERIFIED");
+
   const repositoryA = createPostgresImportPromotionRepository({
     pool,
     identityProvider: createFixedTestIdentityProvider(tenantA),
+  });
+  const repositoryAReadOnly = createPostgresImportPromotionRepository({
+    pool,
+    identityProvider: createFixedTestIdentityProvider(tenantAReadOnly),
   });
   const repositoryB = createPostgresImportPromotionRepository({
     pool,
     identityProvider: createFixedTestIdentityProvider(tenantB),
   });
 
-  const before = await readProjectVersion(projectId);
-  assert.equal(before, 1, "The staging seed must start promotion from project version 1.");
+  assert.equal(await readProjectVersion(projectId), 1, "Promotion seed must start at project version 1.");
+
+  await assertRejects(
+    () => repositoryAReadOnly.promoteConfirmedValue({
+      projectId,
+      importId,
+      importValueId: promotedValueId,
+      questionId,
+      expectedVersion: 1,
+    }),
+    "AUTHORIZATION_DENIED:ANSWER_WRITE",
+  );
+  assert.equal(await readProjectVersion(projectId), 1, "Denied RBAC attempt must not create a version.");
 
   const receipt = await repositoryA.promoteConfirmedValue({
     projectId,
     importId,
-    importValueId,
+    importValueId: promotedValueId,
     questionId,
     expectedVersion: 1,
   });
 
   assert.equal(receipt.projectId, projectId);
   assert.equal(receipt.importId, importId);
-  assert.equal(receipt.importValueId, importValueId);
+  assert.equal(receipt.importValueId, promotedValueId);
   assert.equal(receipt.questionId, questionId);
   assert.equal(receipt.projectVersion, 2);
   assert.equal(receipt.sourceSha256, "a".repeat(64));
   assert.equal(receipt.reviewedByUserId, tenantA.userId);
   assert.equal(receipt.promotedByUserId, tenantA.userId);
   assert.equal(receipt.readyForSubmission, false);
-
-  assert.equal(await readProjectVersion(projectId), 2, "Promotion must create exactly one new project version.");
-  assert.equal(await readAnswer(projectId, questionId), "Alpha Import SA");
-  assert.equal(await promotionCount(importValueId), 1, "Exactly one immutable promotion receipt is expected.");
+  assert.equal(await readProjectVersion(projectId), 2, "Promotion must create exactly one project version.");
+  assert.equal(await readAnswer(projectId, questionId), "2026-08-05");
+  assert.equal(await promotionCount(promotedValueId), 1, "Exactly one immutable promotion receipt is expected.");
 
   await assertRejects(
     () => repositoryA.promoteConfirmedValue({
       projectId,
       importId,
-      importValueId,
+      importValueId: promotedValueId,
       questionId,
-      expectedVersion: 1,
+      expectedVersion: 2,
     }),
     "IMPORT_VALUE_ALREADY_PROMOTED",
   );
   assert.equal(await readProjectVersion(projectId), 2, "Duplicate promotion must not create a version.");
 
   await assertRejects(
+    () => repositoryA.promoteConfirmedValue({
+      projectId,
+      importId,
+      importValueId: staleValueId,
+      questionId,
+      expectedVersion: 1,
+    }),
+    "PROJECT_VERSION_CONFLICT",
+  );
+  assert.equal(await promotionCount(staleValueId), 0, "Stale version must not create a receipt.");
+  assert.equal(await readProjectVersion(projectId), 2, "Stale version must not mutate the project.");
+
+  await assertRejects(
     () => repositoryB.promoteConfirmedValue({
       projectId,
       importId,
-      importValueId,
+      importValueId: staleValueId,
       questionId,
       expectedVersion: 2,
     }),
     "IMPORT_PROMOTION_SCOPE_MISMATCH",
   );
-  assert.equal(await readProjectVersion(projectId), 2, "Cross-tenant attempts must not mutate the project.");
+  assert.equal(await readProjectVersion(projectId), 2, "Cross-tenant attempt must not mutate the project.");
 
-  await seedUnreviewedValue();
   await assertRejects(
     () => repositoryA.promoteConfirmedValue({
       projectId,
       importId,
-      importValueId: "77000000-0000-0000-0000-000000000099",
-      questionId: "Q_FUND_LEGAL_FORM",
+      importValueId: unreviewedValueId,
+      questionId,
       expectedVersion: 2,
     }),
     "IMPORT_VALUE_NOT_HUMAN_CONFIRMED",
   );
+  assert.equal(await promotionCount(unreviewedValueId), 0, "Unreviewed value must not create a receipt.");
+
+  await assertRejects(
+    () => repositoryA.promoteConfirmedValue({
+      projectId,
+      importId,
+      importValueId: staleValueId,
+      questionId: " ",
+      expectedVersion: 2,
+    }),
+    "IMPORT_PROMOTION_QUESTION_ID_REQUIRED",
+  );
+
+  await assertAppendOnlyReceipt(promotedValueId);
 
   const validation = {
     validationId: "POSTGRESQL_IMPORT_PROMOTION_VALIDATION_V1",
@@ -123,6 +173,7 @@ try {
       exactlyOneProjectVersionCreated: true,
       immutableSourceProvenancePersisted: true,
       reviewerAndPromoterIdentityPersisted: true,
+      appendOnlyPromotionReceipt: true,
       readyForSubmissionRemainsFalse: true,
     },
     caveat:
@@ -136,24 +187,50 @@ try {
   await adminPool.end();
 }
 
+async function seedPromotionValue(
+  importValueId: string,
+  reviewStatus: "CONFIRMED_BY_HUMAN" | "EXTRACTED_UNVERIFIED",
+): Promise<void> {
+  const reviewed = reviewStatus === "CONFIRMED_BY_HUMAN";
+  await adminPool.query(
+    `insert into regulatory.prospectus_import_values (
+       id, organization_id, import_batch_id, proposed_canonical_field_path,
+       extracted_value, confidence, source_location, evidence_object_id,
+       evidence_sha256, review_status, reviewed_by, reviewed_at
+     )
+     select $1, organization_id, id, 'fund.constitution_date',
+            to_jsonb('2026-08-05'::text), 0.97, '{"page":2,"textAnchor":"2026-08-05"}'::jsonb,
+            evidence_object_id, evidence_sha256, $3,
+            case when $4 then $5::uuid else null end,
+            case when $4 then '2026-08-17T20:19:00.000Z'::timestamptz else null end
+       from regulatory.prospectus_import_batches
+      where id=$2
+     on conflict (id) do nothing`,
+    [importValueId, importId, reviewStatus, reviewed, tenantA.userId],
+  );
+}
+
 async function readProjectVersion(id: string): Promise<number> {
   const result = await adminPool.query(
-    "select current_version from regulatory.projects where id=$1",
+    `select coalesce(max(version_number), 0)::int as version
+       from regulatory.project_versions
+      where project_id=$1`,
     [id],
   );
-  return Number(result.rows[0]?.current_version ?? 0);
+  return Number(result.rows[0]?.version ?? 0);
 }
 
 async function readAnswer(id: string, targetQuestionId: string): Promise<unknown> {
   const result = await adminPool.query(
-    `select answer_value
-       from regulatory.project_answers
-      where project_id=$1 and question_id=$2
-      order by updated_at desc
+    `select a.value
+       from regulatory.project_answers a
+       join regulatory.project_versions pv on pv.id = a.project_version_id
+      where pv.project_id=$1 and a.question_id=$2
+      order by pv.version_number desc
       limit 1`,
     [id, targetQuestionId],
   );
-  return result.rows[0]?.answer_value;
+  return result.rows[0]?.value;
 }
 
 async function promotionCount(valueId: string): Promise<number> {
@@ -164,19 +241,22 @@ async function promotionCount(valueId: string): Promise<number> {
   return Number(result.rows[0]?.count ?? 0);
 }
 
-async function seedUnreviewedValue(): Promise<void> {
-  await adminPool.query(
-    `insert into regulatory.prospectus_import_values (
-       id, organization_id, import_batch_id, proposed_canonical_field_path,
-       extracted_value, confidence, source_location, evidence_object_id,
-       evidence_sha256, review_status
-     )
-     select $1, organization_id, id, 'fund.legal_form', 'SICAV', 0.90,
-            '{"page":2}'::jsonb, evidence_object_id, evidence_sha256, 'EXTRACTED_UNVERIFIED'
-       from regulatory.prospectus_import_batches
-      where id=$2
-     on conflict (id) do nothing`,
-    ["77000000-0000-0000-0000-000000000099", importId],
+async function assertAppendOnlyReceipt(valueId: string): Promise<void> {
+  await assertRejects(
+    () => adminPool.query(
+      `update regulatory.import_value_promotions
+          set question_id='Q_FUND_LEGAL_FORM'
+        where import_value_id=$1`,
+      [valueId],
+    ),
+    "IMPORT_PROMOTION_APPEND_ONLY",
+  );
+  await assertRejects(
+    () => adminPool.query(
+      "delete from regulatory.import_value_promotions where import_value_id=$1",
+      [valueId],
+    ),
+    "IMPORT_PROMOTION_APPEND_ONLY",
   );
 }
 
