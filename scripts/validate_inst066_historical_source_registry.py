@@ -1,8 +1,9 @@
 #!/usr/bin/env python3
 """Validate the seven historical source records explicitly abrogated by INST066 article 92.
 
-This validator is intentionally conservative. It checks source-object coverage and safety
-boundaries only; it does not infer dates, contents, or legal effects from missing binaries.
+This validator is intentionally conservative. It checks source-object coverage, declared
+binary provenance and safety boundaries only; it does not infer dates, contents, legal
+effects or reactivation from a newly materialized historical binary.
 """
 
 from __future__ import annotations
@@ -102,7 +103,9 @@ def main() -> int:
         checks[f"{prefix}CrosscheckLinksRecord"] = spec["path"] in crosscheck
 
         binary_path = extract_scalar(text, "repository_copy")
-        binary_materialized = bool(binary_path and binary_path != "null" and (ROOT / binary_path).exists())
+        binary_declared = bool(binary_path and binary_path != "null")
+        binary_materialized = bool(binary_declared and (ROOT / binary_path).is_file())
+        checks[f"{prefix}DeclaredBinaryExists"] = (not binary_declared) or binary_materialized
         checks[f"{prefix}BinaryStateConsistent"] = binary_materialized if spec["binary_required_now"] else True
 
         records.append(
@@ -112,13 +115,22 @@ def main() -> int:
                 "record": spec["path"],
                 "expectedEvidenceGrade": spec["expected_grade"],
                 "binaryRequiredNow": spec["binary_required_now"],
+                "binaryDeclared": binary_declared,
                 "binaryMaterialized": binary_materialized,
                 "repositoryCopy": binary_path,
             }
         )
 
     materialized = sum(1 for record in records if record["binaryMaterialized"])
-    checks["exactlyOneOwnHistoricalBinaryCurrentlyMaterialized"] = materialized == 1
+    missing = len(records) - materialized
+    required_materialized = all(
+        record["binaryMaterialized"]
+        for record in records
+        if record["binaryRequiredNow"]
+    )
+    checks["progressiveHistoricalBinaryAcquisitionAllowed"] = 1 <= materialized <= len(records)
+    checks["requiredHistoricalBinariesMaterialized"] = required_materialized
+    checks["materializedAndMissingCountsReconcile"] = materialized + missing == len(records)
     checks["instruction46OwnBinaryMaterialized"] = records[1]["binaryMaterialized"] is True
 
     status = "PASS" if all(checks.values()) else "FAIL"
@@ -129,10 +141,10 @@ def main() -> int:
         "sourceArticle": 92,
         "checks": checks,
         "metrics": {
-            "expectedHistoricalSourceRecords": 7,
+            "expectedHistoricalSourceRecords": len(records),
             "sourceRecordsObserved": sum(1 for record in records if (ROOT / record["record"]).exists()),
             "ownHistoricalBinariesMaterialized": materialized,
-            "ownHistoricalBinariesMissing": 7 - materialized,
+            "ownHistoricalBinariesMissing": missing,
         },
         "records": records,
         "safety": {
@@ -143,8 +155,9 @@ def main() -> int:
             "humanComplianceReviewRequired": True,
         },
         "caveat": (
-            "PASS validates registry completeness and safety boundaries only. It does not validate the legal content "
-            "of historical acts whose own official binaries are not materialized."
+            "PASS validates registry completeness, declared binary existence and safety boundaries only. "
+            "Materializing an additional historical binary never reactivates an abrogated rule and does not "
+            "validate its legal interpretation."
         ),
     }
 
