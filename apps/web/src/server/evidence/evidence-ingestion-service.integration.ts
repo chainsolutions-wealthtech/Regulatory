@@ -7,14 +7,15 @@ const organizationId = "10000000-0000-0000-0000-000000000001";
 const userId = "20000000-0000-0000-0000-000000000001";
 const projectVersionId = "40000000-0000-0000-0000-000000000001";
 let stageCalls = 0;
-let lastStage: StageEvidenceInput | null = null;
 
 const store = {
   provider: "test",
   productionReady: false,
   async stage(input: StageEvidenceInput) {
     stageCalls += 1;
-    lastStage = input;
+    assert.equal(input.organizationId, organizationId);
+    assert.equal(input.uploadedBy, userId);
+    assert.equal(input.encryptionKeyReference, "development-key-reference");
     return {
       objectId: "50000000-0000-0000-0000-000000000001",
       organizationId: input.organizationId,
@@ -58,9 +59,6 @@ const descriptor = await service.stageEvidence({
   content: new Uint8Array([0x25, 0x50, 0x44, 0x46]),
 });
 assert.equal(stageCalls, 1);
-assert.equal(lastStage?.organizationId, organizationId);
-assert.equal(lastStage?.uploadedBy, userId);
-assert.equal(lastStage?.encryptionKeyReference, "development-key-reference");
 assert.equal(descriptor.state, "QUARANTINED");
 assert.equal(descriptor.scanStatus, "PENDING");
 
