@@ -15,7 +15,7 @@
     "build": "next build",
     "start": "next start",
     "test:postgres-repository": "NODE_OPTIONS=--conditions=react-server tsx src/server/storage/postgres-project-repository.integration.ts",
-    "test:authorization-workflow": "npm run security:generate && tsx src/domain/authorization-workflow.integration.ts",
+    "test:authorization-workflow": "npm run security:generate && tsx src/domain/authorization-workflow.integration.ts && tsx src/domain/clause-lifecycle.integration.ts",
     "test:evidence-store": "npm run security:generate && NODE_OPTIONS=--conditions=react-server tsx src/server/evidence/evidence-object-store.integration.ts && NODE_OPTIONS=--conditions=react-server tsx src/server/import/prospectus-import-service.integration.ts"
   },
   "dependencies": {
