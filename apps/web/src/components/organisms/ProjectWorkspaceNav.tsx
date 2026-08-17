@@ -6,7 +6,8 @@ export type ProjectWorkspaceSection =
   | "questionnaire"
   | "controls"
   | "preview"
-  | "reviews";
+  | "reviews"
+  | "versions";
 
 const items: Array<{
   segment: string;
@@ -19,6 +20,7 @@ const items: Array<{
   { segment: "/controls", key: "controls", label: "Contrôles", icon: "shield" },
   { segment: "/preview", key: "preview", label: "Aperçu", icon: "folder" },
   { segment: "/reviews", key: "reviews", label: "Revues", icon: "shield" },
+  { segment: "/versions", key: "versions", label: "Versions", icon: "document" },
 ];
 
 export function ProjectWorkspaceNav({
