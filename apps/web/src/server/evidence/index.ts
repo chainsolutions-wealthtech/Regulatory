@@ -4,18 +4,22 @@ import type { EvidenceObjectStore } from "@/server/evidence/evidence-object-stor
 import { createEvidenceDescriptorService } from "@/server/evidence/evidence-descriptor-service";
 import { createDevelopmentFilesystemEvidenceStore } from "@/server/evidence/filesystem-evidence-object-store";
 import { createEvidenceIngestionService } from "@/server/evidence/evidence-ingestion-service";
+import { createPostgresTrackedEvidenceStore } from "@/server/evidence/postgres-tracked-evidence-store";
 import { createEvidenceReleaseService } from "@/server/evidence/evidence-scan-release-service";
 import {
   getRuntimeIdentityProvider,
+  getRuntimePostgresPool,
   regulatoryStorageDriver,
 } from "@/server/storage";
 
+let runtimeBinaryEvidenceStore: EvidenceObjectStore | undefined;
 let runtimeEvidenceObjectStore: EvidenceObjectStore | undefined;
 
 export function getRuntimeEvidenceObjectStore(): EvidenceObjectStore {
   if (regulatoryStorageDriver !== "postgresql") {
     throw new Error("EVIDENCE_RUNTIME_REQUIRES_POSTGRESQL_DRIVER");
   }
+  if (runtimeEvidenceObjectStore) return runtimeEvidenceObjectStore;
 
   const driver = process.env.REGULATORY_EVIDENCE_DRIVER?.trim();
   if (!driver) throw new Error("RUNTIME_CONFIGURATION_MISSING:REGULATORY_EVIDENCE_DRIVER");
@@ -26,7 +30,12 @@ export function getRuntimeEvidenceObjectStore(): EvidenceObjectStore {
     }
     const root = process.env.REGULATORY_EVIDENCE_ROOT?.trim();
     if (!root) throw new Error("RUNTIME_CONFIGURATION_MISSING:REGULATORY_EVIDENCE_ROOT");
-    runtimeEvidenceObjectStore ??= createDevelopmentFilesystemEvidenceStore(root);
+    runtimeBinaryEvidenceStore ??= createDevelopmentFilesystemEvidenceStore(root);
+    runtimeEvidenceObjectStore = createPostgresTrackedEvidenceStore({
+      pool: getRuntimePostgresPool(),
+      identityProvider: getRuntimeIdentityProvider(),
+      binaryStore: runtimeBinaryEvidenceStore,
+    });
     return runtimeEvidenceObjectStore;
   }
 
