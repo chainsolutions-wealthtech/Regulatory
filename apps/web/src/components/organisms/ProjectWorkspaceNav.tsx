@@ -7,6 +7,7 @@ export type ProjectWorkspaceSection =
   | "controls"
   | "preview"
   | "reviews"
+  | "evidence"
   | "imports"
   | "versions";
 
@@ -21,6 +22,7 @@ const items: Array<{
   { segment: "/controls", key: "controls", label: "Contrôles", icon: "shield" },
   { segment: "/preview", key: "preview", label: "Aperçu", icon: "folder" },
   { segment: "/reviews", key: "reviews", label: "Revues", icon: "shield" },
+  { segment: "/evidence", key: "evidence", label: "Preuves", icon: "shield" },
   { segment: "/imports", key: "imports", label: "Imports", icon: "folder" },
   { segment: "/versions", key: "versions", label: "Versions", icon: "document" },
 ];
