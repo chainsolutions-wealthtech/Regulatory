@@ -31,14 +31,14 @@ const descriptor: EvidenceObjectDescriptor = {
 };
 
 let scanCalls = 0;
-let recordedScan: RecordEvidenceScanInput | null = null;
 let releaseCalls = 0;
 
 const store = {
   provider: "test",
   productionReady: false,
   async recordScan(input: RecordEvidenceScanInput) {
-    recordedScan = input;
+    assert.equal(input.trustedServerResult, true);
+    assert.equal(input.expectedSha256, descriptor.sha256);
     return {
       ...descriptor,
       detectedMediaType: input.detectedMediaType,
@@ -86,8 +86,6 @@ const scanner: TrustedEvidenceScanner = {
 const scanService = createTrustedEvidenceScanService({ evidenceStore: store, scanner });
 const scanned = await scanService.scanQuarantined(descriptor);
 assert.equal(scanCalls, 1);
-assert.equal(recordedScan?.trustedServerResult, true);
-assert.equal(recordedScan?.expectedSha256, descriptor.sha256);
 assert.equal(scanned.scanStatus, "CLEAN");
 assert.equal(scanned.state, "QUARANTINED");
 
