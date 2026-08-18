@@ -1,8 +1,10 @@
 import "server-only";
 
 import type { EvidenceObjectStore } from "@/server/evidence/evidence-object-store";
+import { createEvidenceDescriptorService } from "@/server/evidence/evidence-descriptor-service";
 import { createDevelopmentFilesystemEvidenceStore } from "@/server/evidence/filesystem-evidence-object-store";
 import { createEvidenceIngestionService } from "@/server/evidence/evidence-ingestion-service";
+import { createEvidenceReleaseService } from "@/server/evidence/evidence-scan-release-service";
 import {
   getRuntimeIdentityProvider,
   regulatoryStorageDriver,
@@ -50,5 +52,36 @@ export function getRuntimeEvidenceIngestionService() {
     evidenceStore: getRuntimeEvidenceObjectStore(),
     identityProvider: getRuntimeIdentityProvider(),
     encryptionKeyReference,
+  });
+}
+
+export function getRuntimeEvidenceDescriptorService() {
+  if (regulatoryStorageDriver !== "postgresql") {
+    return {
+      async readMetadata(): Promise<never> {
+        throw new Error("EVIDENCE_DESCRIPTOR_SERVICE_UNAVAILABLE: configure PostgreSQL, OIDC and a private evidence store.");
+      },
+      async readForVerification(): Promise<never> {
+        throw new Error("EVIDENCE_DESCRIPTOR_SERVICE_UNAVAILABLE: configure PostgreSQL, OIDC and a private evidence store.");
+      },
+    };
+  }
+  return createEvidenceDescriptorService({
+    evidenceStore: getRuntimeEvidenceObjectStore(),
+    identityProvider: getRuntimeIdentityProvider(),
+  });
+}
+
+export function getRuntimeEvidenceReleaseService() {
+  if (regulatoryStorageDriver !== "postgresql") {
+    return {
+      async releaseCleanScan(): Promise<never> {
+        throw new Error("EVIDENCE_RELEASE_SERVICE_UNAVAILABLE: configure PostgreSQL, OIDC and a private evidence store.");
+      },
+    };
+  }
+  return createEvidenceReleaseService({
+    evidenceStore: getRuntimeEvidenceObjectStore(),
+    identityProvider: getRuntimeIdentityProvider(),
   });
 }

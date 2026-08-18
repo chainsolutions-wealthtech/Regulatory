@@ -77,6 +77,8 @@ export type ReadEvidenceInput = {
   authorizationDecisionId: string;
 };
 
+export type ReadEvidenceDescriptorInput = ReadEvidenceInput;
+
 export type EvidenceReadResult = {
   descriptor: EvidenceObjectDescriptor;
   content: Uint8Array;
@@ -94,6 +96,7 @@ export interface EvidenceObjectStore {
   recordScan(input: RecordEvidenceScanInput): Promise<EvidenceObjectDescriptor>;
   release(input: ReleaseEvidenceInput): Promise<EvidenceObjectDescriptor>;
   readClean(input: ReadEvidenceInput): Promise<EvidenceReadResult>;
+  readDescriptor?(input: ReadEvidenceDescriptorInput): Promise<EvidenceObjectDescriptor>;
   setLegalHold(objectId: string, legalHold: boolean, actorId: string): Promise<EvidenceObjectDescriptor>;
   requestDeletion(objectId: string, actorId: string): Promise<EvidenceObjectDescriptor>;
 }

@@ -11,6 +11,7 @@ import {
   type EvidenceObjectDescriptor,
   type EvidenceObjectStore,
   type EvidenceReadResult,
+  type ReadEvidenceDescriptorInput,
   type ReadEvidenceInput,
   type RecordEvidenceScanInput,
   type ReleaseEvidenceInput,
@@ -38,7 +39,6 @@ export function createDevelopmentFilesystemEvidenceStore(rootDirectory: string):
       const objectId = randomUUID();
       const content = Buffer.from(input.content);
       const sha256 = createHash("sha256").update(content).digest("hex");
-      const now = new Date().toISOString();
       const descriptor: EvidenceObjectDescriptor = {
         objectId,
         organizationId: input.organizationId,
@@ -66,7 +66,7 @@ export function createDevelopmentFilesystemEvidenceStore(rootDirectory: string):
 
     async recordScan(input: RecordEvidenceScanInput): Promise<EvidenceObjectDescriptor> {
       assertTrustedScanResult(input);
-      const descriptor = await readDescriptor(input.objectId);
+      const descriptor = await loadDescriptor(input.objectId);
       assertMutableQuarantineState(descriptor);
       if (descriptor.sha256 !== input.expectedSha256) throw new Error("EVIDENCE_SCAN_DIGEST_MISMATCH");
       const content = await readFile(binaryPath(quarantineDirectory, descriptor.objectId));
@@ -93,7 +93,7 @@ export function createDevelopmentFilesystemEvidenceStore(rootDirectory: string):
     },
 
     async release(input: ReleaseEvidenceInput): Promise<EvidenceObjectDescriptor> {
-      const descriptor = await readDescriptor(input.objectId);
+      const descriptor = await loadDescriptor(input.objectId);
       if (descriptor.state !== "QUARANTINED" || descriptor.scanStatus !== "CLEAN") {
         throw new Error("EVIDENCE_CLEAN_SCAN_REQUIRED_BEFORE_RELEASE");
       }
@@ -127,7 +127,7 @@ export function createDevelopmentFilesystemEvidenceStore(rootDirectory: string):
       if (!input.requestedBy.trim() || !input.authorizationDecisionId.trim()) {
         throw new Error("EVIDENCE_READ_AUTHORIZATION_REQUIRED");
       }
-      const descriptor = await readDescriptor(input.objectId);
+      const descriptor = await loadDescriptor(input.objectId);
       if (descriptor.organizationId !== input.organizationId) throw new Error("EVIDENCE_TENANT_MISMATCH");
       if (descriptor.state !== "CLEAN" || descriptor.scanStatus !== "CLEAN") {
         throw new Error("EVIDENCE_OBJECT_NOT_RELEASED");
@@ -147,9 +147,18 @@ export function createDevelopmentFilesystemEvidenceStore(rootDirectory: string):
       };
     },
 
+    async readDescriptor(input: ReadEvidenceDescriptorInput): Promise<EvidenceObjectDescriptor> {
+      if (!input.requestedBy.trim() || !input.authorizationDecisionId.trim()) {
+        throw new Error("EVIDENCE_DESCRIPTOR_AUTHORIZATION_REQUIRED");
+      }
+      const descriptor = await loadDescriptor(input.objectId);
+      if (descriptor.organizationId !== input.organizationId) throw new Error("EVIDENCE_TENANT_MISMATCH");
+      return descriptor;
+    },
+
     async setLegalHold(objectId: string, legalHold: boolean, actorId: string) {
       if (!actorId.trim()) throw new Error("EVIDENCE_LEGAL_HOLD_ACTOR_REQUIRED");
-      const descriptor = await readDescriptor(objectId);
+      const descriptor = await loadDescriptor(objectId);
       if (descriptor.state === "DELETED") throw new Error("EVIDENCE_OBJECT_ALREADY_DELETED");
       const next = { ...descriptor, legalHold };
       await writeDescriptor(next);
@@ -158,7 +167,7 @@ export function createDevelopmentFilesystemEvidenceStore(rootDirectory: string):
 
     async requestDeletion(objectId: string, actorId: string) {
       if (!actorId.trim()) throw new Error("EVIDENCE_DELETION_ACTOR_REQUIRED");
-      const descriptor = await readDescriptor(objectId);
+      const descriptor = await loadDescriptor(objectId);
       if (descriptor.legalHold) throw new Error("EVIDENCE_LEGAL_HOLD_PREVENTS_DELETION");
       if (descriptor.state === "DELETED") return descriptor;
       await rm(binaryPath(quarantineDirectory, objectId), { force: true });
@@ -177,7 +186,7 @@ export function createDevelopmentFilesystemEvidenceStore(rootDirectory: string):
     ]);
   }
 
-  async function readDescriptor(objectId: string): Promise<EvidenceObjectDescriptor> {
+  async function loadDescriptor(objectId: string): Promise<EvidenceObjectDescriptor> {
     assertObjectId(objectId);
     const raw = await readFile(path.join(metadataDirectory, `${objectId}.json`), "utf8").catch(() => {
       throw new Error("EVIDENCE_OBJECT_NOT_FOUND");
