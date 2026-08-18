@@ -1,6 +1,8 @@
 import { NextResponse } from "next/server";
+import { getRuntimeProjectVersionIdResolver } from "@/server/evidence";
 import { getProspectusImportIngestionService } from "@/server/import";
 import { importStagingQueryRepository } from "@/server/import/queries";
+import { projectRepository, regulatoryStorageDriver } from "@/server/storage";
 
 export const runtime = "nodejs";
 
@@ -30,16 +32,35 @@ export async function POST(
   try {
     const body = await request.json() as {
       projectVersion?: unknown;
-      projectVersionId?: unknown;
       evidenceObjectId?: unknown;
     };
-    const projectVersion = Number(body.projectVersion);
-    const projectVersionId = typeof body.projectVersionId === "string" ? body.projectVersionId : "";
-    const evidenceObjectId = typeof body.evidenceObjectId === "string" ? body.evidenceObjectId : "";
+    const evidenceObjectId = typeof body.evidenceObjectId === "string" ? body.evidenceObjectId.trim() : "";
+    if (!evidenceObjectId) throw new Error("IMPORT_EVIDENCE_OBJECT_ID_REQUIRED");
+
+    if (regulatoryStorageDriver !== "postgresql") {
+      await getProspectusImportIngestionService().extractAndStage({
+        projectId,
+        projectVersion: Number(body.projectVersion),
+        projectVersionId: "",
+        evidenceObjectId,
+      });
+      throw new Error("IMPORT_INGESTION_SERVICE_UNAVAILABLE");
+    }
+
+    const project = await projectRepository.getProject(projectId);
+    if (!project) throw new Error("PROJECT_NOT_FOUND");
+    const requestedVersion = body.projectVersion === undefined ? project.version : Number(body.projectVersion);
+    if (!Number.isInteger(requestedVersion) || requestedVersion < 1) {
+      throw new Error("IMPORT_PROJECT_VERSION_INVALID");
+    }
+    if (requestedVersion !== project.version) {
+      throw new Error(`PROJECT_VERSION_CONFLICT:${project.version}`);
+    }
+    const projectVersionId = await getRuntimeProjectVersionIdResolver().resolve(projectId, project.version);
 
     const batch = await getProspectusImportIngestionService().extractAndStage({
       projectId,
-      projectVersion,
+      projectVersion: project.version,
       projectVersionId,
       evidenceObjectId,
     });
@@ -59,6 +80,7 @@ function importErrorResponse(error: unknown, fallback: string) {
   if (
     message.startsWith("IMPORT_STAGING_QUERY_UNAVAILABLE") ||
     message.startsWith("IMPORT_INGESTION_SERVICE_UNAVAILABLE") ||
+    message.startsWith("PROJECT_VERSION_ID_RESOLVER_UNAVAILABLE") ||
     message.startsWith("EVIDENCE_RUNTIME_") ||
     message.startsWith("EVIDENCE_DEVELOPMENT_DRIVER_") ||
     message.startsWith("RUNTIME_CONFIGURATION_MISSING:REGULATORY_EVIDENCE_")
@@ -76,6 +98,12 @@ function importErrorResponse(error: unknown, fallback: string) {
   }
   if (message.includes("NOT_FOUND")) {
     return NextResponse.json({ error: message }, { status: 404 });
+  }
+  if (message.startsWith("PROJECT_VERSION_CONFLICT")) {
+    return NextResponse.json({ error: message }, { status: 409 });
+  }
+  if (message.includes("INVALID") || message.includes("REQUIRED")) {
+    return NextResponse.json({ error: message }, { status: 422 });
   }
   return NextResponse.json({ error: message }, { status: 400 });
 }

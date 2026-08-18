@@ -4,7 +4,9 @@ import type { EvidenceObjectStore } from "@/server/evidence/evidence-object-stor
 import { createEvidenceDescriptorService } from "@/server/evidence/evidence-descriptor-service";
 import { createDevelopmentFilesystemEvidenceStore } from "@/server/evidence/filesystem-evidence-object-store";
 import { createEvidenceIngestionService } from "@/server/evidence/evidence-ingestion-service";
+import { createPostgresEvidenceProjectQueryRepository } from "@/server/evidence/postgres-evidence-project-query-repository";
 import { createPostgresTrackedEvidenceStore } from "@/server/evidence/postgres-tracked-evidence-store";
+import { createPostgresProjectVersionIdResolver } from "@/server/evidence/project-version-id-resolver";
 import { createEvidenceReleaseService } from "@/server/evidence/evidence-scan-release-service";
 import {
   getRuntimeIdentityProvider,
@@ -91,6 +93,34 @@ export function getRuntimeEvidenceReleaseService() {
   }
   return createEvidenceReleaseService({
     evidenceStore: getRuntimeEvidenceObjectStore(),
+    identityProvider: getRuntimeIdentityProvider(),
+  });
+}
+
+export function getRuntimeProjectVersionIdResolver() {
+  if (regulatoryStorageDriver !== "postgresql") {
+    return {
+      async resolve(): Promise<never> {
+        throw new Error("PROJECT_VERSION_ID_RESOLVER_UNAVAILABLE: PostgreSQL + OIDC requis.");
+      },
+    };
+  }
+  return createPostgresProjectVersionIdResolver({
+    pool: getRuntimePostgresPool(),
+    identityProvider: getRuntimeIdentityProvider(),
+  });
+}
+
+export function getRuntimeEvidenceProjectQueryRepository() {
+  if (regulatoryStorageDriver !== "postgresql") {
+    return {
+      async listProjectEvidence(): Promise<never> {
+        throw new Error("EVIDENCE_PROJECT_QUERY_UNAVAILABLE: PostgreSQL + OIDC requis.");
+      },
+    };
+  }
+  return createPostgresEvidenceProjectQueryRepository({
+    pool: getRuntimePostgresPool(),
     identityProvider: getRuntimeIdentityProvider(),
   });
 }

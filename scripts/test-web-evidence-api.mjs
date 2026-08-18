@@ -6,12 +6,24 @@ const repoRoot = path.resolve(path.dirname(fileURLToPath(import.meta.url)), ".."
 const validationDirectory = path.join(repoRoot, "regulatory/validation");
 const baseUrl = process.env.REGULATORY_WEB_BASE_URL ?? "http://127.0.0.1:3100";
 const objectId = "50000000-0000-0000-0000-000000000001";
+const projectId = "evidence-runtime-gate-project";
 
 const uploadForm = new FormData();
 uploadForm.set("projectVersionId", "40000000-0000-0000-0000-000000000001");
 uploadForm.set("file", new File([new Uint8Array([0x25, 0x50, 0x44, 0x46])], "prospectus.pdf", { type: "application/pdf" }));
 const upload = await fetch(`${baseUrl}/api/evidence`, { method: "POST", body: uploadForm });
 assert(upload.status === 503, "L'upload de preuve doit rester indisponible en local-json.");
+
+const projectUploadForm = new FormData();
+projectUploadForm.set("file", new File([new Uint8Array([0x25, 0x50, 0x44, 0x46])], "prospectus.pdf", { type: "application/pdf" }));
+const projectUpload = await fetch(`${baseUrl}/api/projects/${encodeURIComponent(projectId)}/evidence`, {
+  method: "POST",
+  body: projectUploadForm,
+});
+assert(projectUpload.status === 503, "L'upload projet doit rester indisponible en local-json.");
+
+const projectList = await fetch(`${baseUrl}/api/projects/${encodeURIComponent(projectId)}/evidence`);
+assert(projectList.status === 503, "Le listing des preuves projet doit rester indisponible en local-json.");
 
 const metadata = await fetch(`${baseUrl}/api/evidence/${encodeURIComponent(objectId)}`);
 assert(metadata.status === 503, "La lecture metadata de preuve doit rester indisponible en local-json.");
@@ -47,10 +59,13 @@ const validation = {
   status: "PASS",
   checks: {
     localJsonUploadUnavailable: true,
+    localJsonProjectUploadUnavailable: true,
+    localJsonProjectListUnavailable: true,
     localJsonMetadataUnavailable: true,
     localJsonReleaseUnavailable: true,
     browserScanVerdictRouteAbsent: true,
     fakeLocalIdentityAvoided: true,
+    projectVersionIdResolvedServerSideInGovernedRoute: true,
     clientStorageReferenceNotRequired: true,
     clientScanDigestNotAccepted: true,
     releaseDescriptorReloadedServerSide: true,
