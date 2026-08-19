@@ -11,7 +11,10 @@ export function createEvidenceDescriptorService(input: {
   evidenceStore: EvidenceObjectStore;
   identityProvider: VerifiedIdentityProvider;
 }) {
-  async function readAuthorized(objectId: string, action: Extract<ProspectusAction, "EVIDENCE_READ" | "EVIDENCE_VERIFY">): Promise<EvidenceObjectDescriptor> {
+  async function readAuthorized(
+    objectId: string,
+    action: Extract<ProspectusAction, "EVIDENCE_READ" | "EVIDENCE_SCAN" | "EVIDENCE_VERIFY">,
+  ): Promise<EvidenceObjectDescriptor> {
     if (!objectId.trim()) throw new Error("EVIDENCE_OBJECT_ID_REQUIRED");
     const identity = assertVerifiedIdentity(await input.identityProvider.getVerifiedIdentity());
     assertAuthorized(
@@ -41,6 +44,9 @@ export function createEvidenceDescriptorService(input: {
   return {
     readMetadata(objectId: string) {
       return readAuthorized(objectId, "EVIDENCE_READ");
+    },
+    readForScanning(objectId: string) {
+      return readAuthorized(objectId, "EVIDENCE_SCAN");
     },
     readForVerification(objectId: string) {
       return readAuthorized(objectId, "EVIDENCE_VERIFY");
