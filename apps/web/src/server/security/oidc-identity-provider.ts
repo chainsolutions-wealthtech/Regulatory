@@ -16,30 +16,45 @@ let cachedJwks:
 export function createNextOidcIdentityProvider(): VerifiedIdentityProvider {
   return {
     async getVerifiedIdentity(): Promise<VerifiedIdentityContext> {
-      const config = oidcConfiguration();
       const requestHeaders = await headers();
       const authorization = requestHeaders.get("authorization");
       if (!authorization?.startsWith("Bearer ")) {
         throw new Error("OIDC_BEARER_TOKEN_REQUIRED");
       }
-      const token = authorization.slice("Bearer ".length).trim();
-      if (!token) throw new Error("OIDC_BEARER_TOKEN_REQUIRED");
-
-      const keySet = remoteKeySet(config.jwksUri);
-      const result = await jwtVerify(token, keySet, {
-        issuer: config.issuer,
-        audience: config.audience,
-        algorithms: config.algorithms,
-        clockTolerance: config.clockToleranceSeconds,
-      });
-      return mapOidcClaimsToIdentity(result.payload, {
-        provider: config.providerLabel,
-        organizationClaim: config.organizationClaim,
-        rolesClaim: config.rolesClaim,
-        userIdClaim: config.userIdClaim,
-      });
+      return verifyOidcBearerToken(authorization.slice("Bearer ".length));
     },
   };
+}
+
+export function createBearerOidcIdentityProvider(input: {
+  token: string;
+  verifyToken?: (token: string) => Promise<VerifiedIdentityContext>;
+}): VerifiedIdentityProvider {
+  const token = requiredBearer(input.token);
+  const verifyToken = input.verifyToken ?? verifyOidcBearerToken;
+  return {
+    getVerifiedIdentity() {
+      return verifyToken(token);
+    },
+  };
+}
+
+export async function verifyOidcBearerToken(tokenInput: string): Promise<VerifiedIdentityContext> {
+  const token = requiredBearer(tokenInput);
+  const config = oidcConfiguration();
+  const keySet = remoteKeySet(config.jwksUri);
+  const result = await jwtVerify(token, keySet, {
+    issuer: config.issuer,
+    audience: config.audience,
+    algorithms: config.algorithms,
+    clockTolerance: config.clockToleranceSeconds,
+  });
+  return mapOidcClaimsToIdentity(result.payload, {
+    provider: config.providerLabel,
+    organizationClaim: config.organizationClaim,
+    rolesClaim: config.rolesClaim,
+    userIdClaim: config.userIdClaim,
+  });
 }
 
 export function mapOidcClaimsToIdentity(
@@ -127,6 +142,12 @@ function normalizeRoles(value: unknown): ProspectusRole[] {
     .filter((role) => allowed.has(role));
   if (roles.length === 0) throw new Error("OIDC_VALID_ROLE_REQUIRED");
   return [...new Set(roles)];
+}
+
+function requiredBearer(value: string): string {
+  const token = value.trim();
+  if (!token) throw new Error("OIDC_BEARER_TOKEN_REQUIRED");
+  return token;
 }
 
 function requiredEnvironment(name: string): string {
