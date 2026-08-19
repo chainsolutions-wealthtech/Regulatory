@@ -148,6 +148,75 @@ jobs:
           NODE_ENV: test
         run: npm --prefix apps/web run test:postgres-repository
 
+      - name: Backup and restore PostgreSQL CI database
+        env:
+          PGHOST: 127.0.0.1
+          PGPORT: '5432'
+          PGUSER: postgres
+          PGPASSWORD: postgres
+        run: |
+          set -euo pipefail
+          backup_dir="$RUNNER_TEMP/regulatory-backup"
+          backup_file="$backup_dir/regulatory_test.dump"
+          mkdir -p "$backup_dir" regulatory/validation
+          pg_dump -Fc -d regulatory_test -f "$backup_file"
+          dropdb --if-exists regulatory_restore_test
+          createdb regulatory_restore_test
+          pg_restore --exit-on-error -d regulatory_restore_test "$backup_file"
+          psql -v ON_ERROR_STOP=1 -d regulatory_restore_test <<'SQL'
+          do $$
+          begin
+            if not exists (
+              select 1 from information_schema.tables
+              where table_schema='regulatory' and table_name='projects'
+            ) then raise exception 'RESTORE_PROJECTS_TABLE_MISSING'; end if;
+            if not exists (
+              select 1 from information_schema.tables
+              where table_schema='regulatory' and table_name='evidence_objects'
+            ) then raise exception 'RESTORE_EVIDENCE_OBJECTS_TABLE_MISSING'; end if;
+            if not exists (
+              select 1 from information_schema.tables
+              where table_schema='regulatory' and table_name='prospectus_import_batches'
+            ) then raise exception 'RESTORE_IMPORT_BATCHES_TABLE_MISSING'; end if;
+            if not exists (
+              select 1 from pg_policies
+              where schemaname='regulatory' and tablename='evidence_objects'
+            ) then raise exception 'RESTORE_EVIDENCE_RLS_POLICY_MISSING'; end if;
+            if not exists (
+              select 1 from pg_constraint c
+              join pg_class t on t.oid=c.conrelid
+              join pg_namespace n on n.oid=t.relnamespace
+              where n.nspname='regulatory'
+                and t.relname='canonical_snapshots'
+                and pg_get_constraintdef(c.oid) ilike '%ready_for_submission%false%'
+            ) then raise exception 'RESTORE_READY_FALSE_CONSTRAINT_MISSING'; end if;
+          end;
+          $$;
+          SQL
+          python3 - <<'PY'
+          import json
+          from pathlib import Path
+          validation = {
+              'validationId': 'POSTGRESQL_BACKUP_RESTORE_VALIDATION_V1',
+              'status': 'PASS',
+              'checks': {
+                  'customFormatDumpCreated': True,
+                  'restoreDatabaseCreated': True,
+                  'coreTablesRestored': True,
+                  'evidenceTablesRestored': True,
+                  'importTablesRestored': True,
+                  'rowLevelSecurityPoliciesRestored': True,
+                  'readyForSubmissionConstraintRestored': True,
+              },
+              'caveat': 'Drill sur PostgreSQL éphémère de CI. Il ne remplace pas un test de restauration sur l’infrastructure cible, avec stockage de sauvegarde, chiffrement, rétention et RTO/RPO réels.'
+          }
+          Path('regulatory/validation/POSTGRESQL_BACKUP_RESTORE_VALIDATION.json').write_text(
+              json.dumps(validation, ensure_ascii=False, indent=2) + '\n',
+              encoding='utf-8'
+          )
+          PY
+          dropdb regulatory_restore_test
+
       - name: Build Next.js application
         run: npm run web:build
         env:
@@ -251,6 +320,7 @@ jobs:
           const importQuery = await readJson('regulatory/validation/POSTGRESQL_IMPORT_STAGING_QUERY_VALIDATION.json');
           const importPromotion = await readJson('regulatory/validation/POSTGRESQL_IMPORT_PROMOTION_VALIDATION.json');
           const evidenceStore = await readJson('regulatory/validation/POSTGRESQL_EVIDENCE_OBJECT_STORE_VALIDATION.json');
+          const backupRestore = await readJson('regulatory/validation/POSTGRESQL_BACKUP_RESTORE_VALIDATION.json');
           const schema = await readJson('schemas/canonical/PROSPECTUS_CANONICAL_MODEL_V1.schema.json');
 
           const assertValidation = (validation, id, checks) => {
@@ -352,11 +422,22 @@ jobs:
             'quarantinedPendingPersisted',
             'cleanScanDoesNotAutoRelease',
             'explicitReleasePersisted',
+            'releaseRecoversAfterBinaryCommitGap',
+            'releaseRetryIdempotent',
             'releasedBinaryDigestPreserved',
             'metadataReadTenantScoped',
             'crossTenantReadBlockedByRls',
             'importStagingCleanEvidenceCompatible',
             'productionReadinessNotClaimed',
+          ]);
+          assertValidation(backupRestore, 'POSTGRESQL_BACKUP_RESTORE_VALIDATION_V1', [
+            'customFormatDumpCreated',
+            'restoreDatabaseCreated',
+            'coreTablesRestored',
+            'evidenceTablesRestored',
+            'importTablesRestored',
+            'rowLevelSecurityPoliciesRestored',
+            'readyForSubmissionConstraintRestored',
           ]);
 
           if (schema.$defs.regulatoryContext.properties.ready_for_submission.const !== false) {
@@ -389,6 +470,7 @@ jobs:
             regulatory/validation/POSTGRESQL_IMPORT_STAGING_QUERY_VALIDATION.json
             regulatory/validation/POSTGRESQL_IMPORT_PROMOTION_VALIDATION.json
             regulatory/validation/POSTGRESQL_EVIDENCE_OBJECT_STORE_VALIDATION.json
+            regulatory/validation/POSTGRESQL_BACKUP_RESTORE_VALIDATION.json
             schemas/canonical/PROSPECTUS_CANONICAL_MODEL_V1.schema.json
             database/migrations/*.sql
             database/tests/*.sql
@@ -422,6 +504,7 @@ jobs:
             regulatory/validation/POSTGRESQL_IMPORT_STAGING_QUERY_VALIDATION.json \
             regulatory/validation/POSTGRESQL_IMPORT_PROMOTION_VALIDATION.json \
             regulatory/validation/POSTGRESQL_EVIDENCE_OBJECT_STORE_VALIDATION.json \
+            regulatory/validation/POSTGRESQL_BACKUP_RESTORE_VALIDATION.json \
             examples/generated/united-capital-diamond/prospectus-draft.md \
             examples/generated/united-capital-diamond/canonical-data.json \
             examples/generated/united-capital-diamond/questionnaire-state.json \
