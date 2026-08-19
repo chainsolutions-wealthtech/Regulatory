@@ -11,6 +11,18 @@ const baseEnv = {
   REGULATORY_EVIDENCE_ENCRYPTION_KEY_REFERENCE: "test-key-reference",
 };
 
+const productionS3Env = {
+  DATABASE_URL: "postgresql://redacted",
+  OIDC_ISSUER: "https://issuer.example.test",
+  OIDC_AUDIENCE: "regulatory",
+  OIDC_JWKS_URI: "https://issuer.example.test/.well-known/jwks.json",
+  REGULATORY_EVIDENCE_DRIVER: "s3-private",
+  REGULATORY_EVIDENCE_S3_BUCKET: "private-evidence",
+  REGULATORY_EVIDENCE_S3_REGION: "eu-west-3",
+  REGULATORY_EVIDENCE_S3_KMS_KEY_ID: "kms-key-redacted",
+  REGULATORY_EVIDENCE_ENCRYPTION_KEY_REFERENCE: "kms-reference-redacted",
+};
+
 const local = await evaluateRuntimeReadiness({
   storageDriver: "local-json",
   nodeEnv: "development",
@@ -36,6 +48,7 @@ assert.equal(development.productionReady, false);
 assert.equal(development.dependencies.postgresql, "READY");
 assert.equal(development.dependencies.oidc, "CONFIGURED");
 assert.equal(development.dependencies.evidence, "DEVELOPMENT_ONLY");
+assert.equal(development.dependencies.scanner, "NOT_CONFIGURED");
 assert.equal(probeCalls, 1);
 
 const productionFilesystem = await evaluateRuntimeReadiness({
@@ -47,6 +60,51 @@ const productionFilesystem = await evaluateRuntimeReadiness({
 assert.equal(productionFilesystem.ready, false);
 assert.equal(productionFilesystem.productionReady, false);
 assert(productionFilesystem.blockers.includes("PRODUCTION_EVIDENCE_DRIVER_REQUIRED"));
+assert(productionFilesystem.blockers.includes("PRODUCTION_SCANNER_REQUIRED"));
+
+const productionS3WithoutScanner = await evaluateRuntimeReadiness({
+  storageDriver: "postgresql",
+  nodeEnv: "production",
+  environment: productionS3Env,
+  databaseProbe: async () => undefined,
+});
+assert.equal(productionS3WithoutScanner.ready, false);
+assert.equal(productionS3WithoutScanner.productionReady, false);
+assert.equal(productionS3WithoutScanner.dependencies.evidence, "CONFIGURED");
+assert.equal(productionS3WithoutScanner.dependencies.scanner, "NOT_CONFIGURED");
+assert(productionS3WithoutScanner.blockers.includes("PRODUCTION_SCANNER_REQUIRED"));
+
+const productionReady = await evaluateRuntimeReadiness({
+  storageDriver: "postgresql",
+  nodeEnv: "production",
+  environment: {
+    ...productionS3Env,
+    REGULATORY_EVIDENCE_SCANNER_DRIVER: "http-attestation",
+    REGULATORY_EVIDENCE_SCANNER_URL: "https://scanner.example.test/v1/scan",
+    REGULATORY_EVIDENCE_SCANNER_TOKEN: "scanner-token-redacted",
+  },
+  databaseProbe: async () => undefined,
+});
+assert.equal(productionReady.ready, true);
+assert.equal(productionReady.productionReady, true);
+assert.equal(productionReady.dependencies.evidence, "CONFIGURED");
+assert.equal(productionReady.dependencies.scanner, "CONFIGURED");
+assert.equal(JSON.stringify(productionReady).includes("scanner-token-redacted"), false);
+assert.equal(JSON.stringify(productionReady).includes("kms-key-redacted"), false);
+
+const insecureScanner = await evaluateRuntimeReadiness({
+  storageDriver: "postgresql",
+  nodeEnv: "production",
+  environment: {
+    ...productionS3Env,
+    REGULATORY_EVIDENCE_SCANNER_DRIVER: "http-attestation",
+    REGULATORY_EVIDENCE_SCANNER_URL: "http://scanner.internal/v1/scan",
+    REGULATORY_EVIDENCE_SCANNER_TOKEN: "redacted",
+  },
+  databaseProbe: async () => undefined,
+});
+assert.equal(insecureScanner.ready, false);
+assert(insecureScanner.blockers.includes("SCANNER_HTTPS_REQUIRED_IN_PRODUCTION"));
 
 const missingOidc = await evaluateRuntimeReadiness({
   storageDriver: "postgresql",
