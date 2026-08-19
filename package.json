@@ -19,7 +19,7 @@
     "web:typecheck": "npm run typecheck --prefix apps/web",
     "web:build": "npm run build --prefix apps/web",
     "web:start": "npm run start --prefix apps/web",
-    "web:test:api": "python3 scripts/test-pdf-determinism.py && node scripts/test-web-legacy-structured-api.mjs && node scripts/test-web-api.mjs && node scripts/test-web-artifacts-api.mjs && node scripts/test-web-versions-api.mjs && node scripts/test-web-clauses-api.mjs && node scripts/test-web-import-staging-api.mjs && node scripts/test-web-clause-proposals-api.mjs && node scripts/test-web-evidence-api.mjs && node scripts/test-web-health-api.mjs",
+    "web:test:api": "python3 scripts/test-pdf-determinism.py && node scripts/test-web-legacy-structured-api.mjs && node scripts/test-web-api.mjs && node scripts/test-web-artifacts-api.mjs && node scripts/test-web-versions-api.mjs && node scripts/test-web-clauses-api.mjs && node scripts/test-web-import-staging-api.mjs && node scripts/test-web-clause-proposals-api.mjs && node scripts/test-web-evidence-api.mjs && node scripts/test-web-health-api.mjs && node scripts/test-web-security-headers.mjs",
     "check:web": "npm run generate:web-catalog && npm run web:typecheck && npm run web:build",
     "check": "npm test && npm run document && npm run check:web"
   }
