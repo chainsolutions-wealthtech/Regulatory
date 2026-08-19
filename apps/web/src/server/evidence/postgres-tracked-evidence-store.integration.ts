@@ -101,6 +101,57 @@ try {
   });
   assert.equal(metadata?.state, "CLEAN");
 
+  const recoveryContent = new TextEncoder().encode("%PDF-1.7\nrelease recovery evidence\n");
+  const recoveryStaged = await store.stage({
+    organizationId,
+    projectVersionId,
+    originalFilename: "recovery.pdf",
+    declaredMediaType: "application/pdf",
+    content: recoveryContent,
+    uploadedBy: userId,
+    encryptionKeyReference: "development-test-key",
+  });
+  await store.recordScan({
+    objectId: recoveryStaged.objectId,
+    expectedSha256: recoveryStaged.sha256,
+    detectedMediaType: "application/pdf",
+    status: "CLEAN",
+    scanProvider: "CI_TRUSTED_SCANNER",
+    scanEngineVersion: "1.0.0",
+    scanSignatureVersion: "2026-08-18",
+    scanCompletedAt: "2026-08-18T18:33:00.000Z",
+    trustedServerResult: true,
+  });
+  const recoveryCommand = {
+    objectId: recoveryStaged.objectId,
+    releasedBy: userId,
+    releasedAt: "2026-08-18T18:34:00.000Z",
+  };
+
+  const binaryReleasedBeforeDatabaseCommit = await binaryStore.release(recoveryCommand);
+  assert.equal(binaryReleasedBeforeDatabaseCommit.state, "CLEAN");
+  const recoveryDbBefore = await adminPool.query<{ state: string; scan_status: string }>(
+    `select state::text, scan_status::text from regulatory.evidence_objects where id = $1`,
+    [recoveryStaged.objectId],
+  );
+  assert.equal(recoveryDbBefore.rows[0].state, "QUARANTINED");
+  assert.equal(recoveryDbBefore.rows[0].scan_status, "CLEAN");
+
+  const recovered = await store.release(recoveryCommand);
+  assert.equal(recovered.state, "CLEAN", "Retry must reconcile PostgreSQL after binary release already succeeded.");
+  assert.equal(recovered.releasedBy, userId);
+  const retried = await store.release(recoveryCommand);
+  assert.equal(retried.state, "CLEAN", "Repeated release with the same actor must be idempotent.");
+  assert.equal(retried.releasedAt, recoveryCommand.releasedAt);
+
+  const recoveryRead = await store.readClean({
+    objectId: recoveryStaged.objectId,
+    organizationId,
+    requestedBy: userId,
+    authorizationDecisionId: "ci-evidence-recovery-read",
+  });
+  assert.deepEqual(Buffer.from(recoveryRead.content), Buffer.from(recoveryContent));
+
   const otherStore = createPostgresTrackedEvidenceStore({
     pool,
     binaryStore,
@@ -139,6 +190,8 @@ try {
       quarantinedPendingPersisted: true,
       cleanScanDoesNotAutoRelease: true,
       explicitReleasePersisted: true,
+      releaseRecoversAfterBinaryCommitGap: true,
+      releaseRetryIdempotent: true,
       releasedBinaryDigestPreserved: true,
       metadataReadTenantScoped: true,
       crossTenantReadBlockedByRls: true,
