@@ -1,4 +1,6 @@
 import assert from "node:assert/strict";
+import { mkdir, writeFile } from "node:fs/promises";
+import path from "node:path";
 import { Pool } from "pg";
 import { createFixedTestIdentityProvider, type VerifiedIdentityContext } from "@/server/security/verified-identity";
 import { createPostgresImportStagingQueryRepository } from "@/server/import/postgres-import-staging-query-repository";
@@ -7,6 +9,10 @@ const databaseUrl = process.env.DATABASE_URL;
 if (!databaseUrl) throw new Error("DATABASE_URL_REQUIRED_FOR_IMPORT_STAGING_QUERY_TEST");
 
 const pool = new Pool({ connectionString: databaseUrl, max: 2 });
+const validationPath = path.resolve(
+  process.cwd(),
+  "../../regulatory/validation/POSTGRESQL_IMPORT_STAGING_QUERY_VALIDATION.json",
+);
 const tenantA: VerifiedIdentityContext = {
   organizationId: "71000000-0000-0000-0000-000000000001",
   userId: "72000000-0000-0000-0000-000000000001",
@@ -47,7 +53,7 @@ try {
   const crossTenant = await queryB.listProjectImports("73000000-0000-0000-0000-000000000001");
   assert.equal(crossTenant.length, 0, "Tenant B must not list tenant A imports.");
 
-  console.log(JSON.stringify({
+  const validation = {
     validationId: "POSTGRESQL_IMPORT_STAGING_QUERY_VALIDATION_V1",
     status: "PASS",
     checks: {
@@ -57,7 +63,12 @@ try {
       canonicalWriteRemainsFalse: true,
       readyForSubmissionRemainsFalse: true,
     },
-  }, null, 2));
+    caveat:
+      "Listing read-only tenant-scoped uniquement. Cette validation ne crée aucune donnée canonique et ne rend jamais le dossier prêt pour soumission.",
+  };
+  await mkdir(path.dirname(validationPath), { recursive: true });
+  await writeFile(validationPath, `${JSON.stringify(validation, null, 2)}\n`, "utf8");
+  console.log(JSON.stringify(validation, null, 2));
 } finally {
   await pool.end();
 }
