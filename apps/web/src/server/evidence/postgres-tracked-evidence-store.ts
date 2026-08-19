@@ -2,7 +2,7 @@ import "server-only";
 
 import { createHash, randomUUID } from "node:crypto";
 import type { Pool, PoolClient, QueryResultRow } from "pg";
-import type { EvidenceBinaryStore } from "@/server/evidence/evidence-binary-store";
+import type { EvidenceBinaryLocation, EvidenceBinaryStore } from "@/server/evidence/evidence-binary-store";
 import {
   assertDetectedMediaTypeMayBeReleased,
   assertEvidenceIngestionAllowed,
@@ -168,7 +168,6 @@ export function createPostgresTrackedEvidenceStore(input: {
       if (!existing.detectedMediaType) throw new Error("EVIDENCE_DETECTED_MEDIA_TYPE_REQUIRED");
       assertDetectedMediaTypeMayBeReleased(existing.detectedMediaType);
 
-      let alreadyPromoted = false;
       try {
         const quarantined = await input.binaryStore.readQuarantined({
           objectId: existing.objectId,
@@ -178,28 +177,40 @@ export function createPostgresTrackedEvidenceStore(input: {
       } catch (error) {
         if (!isQuarantineMissing(error)) throw error;
         await assertBinaryClean(input.binaryStore, existing);
-        alreadyPromoted = true;
       }
 
-      if (!alreadyPromoted) {
-        await input.binaryStore.promoteToClean({
-          objectId: existing.objectId,
-          organizationId: identity.organizationId,
-        });
-        await assertBinaryClean(input.binaryStore, existing);
-      }
+      const cleanLocation = await input.binaryStore.promoteToClean({
+        objectId: existing.objectId,
+        organizationId: identity.organizationId,
+      });
+      await assertBinaryClean(input.binaryStore, existing);
 
       return withTenant(input.pool, identity, async (client) => {
         const result = await client.query(
           `update regulatory.evidence_objects
-              set state = 'CLEAN', released_by = $2, released_at = $3
+              set state = 'CLEAN',
+                  released_by = $2,
+                  released_at = $3,
+                  storage_provider = $4,
+                  storage_object_key = $5,
+                  storage_reference = $6,
+                  encryption_algorithm = $7
             where id = $1 and state = 'QUARANTINED' and scan_status = 'CLEAN'`,
-          [command.objectId, command.releasedBy, command.releasedAt],
+          [
+            command.objectId,
+            command.releasedBy,
+            command.releasedAt,
+            cleanLocation.storageProvider,
+            cleanLocation.storageObjectKey,
+            cleanLocation.storageReference,
+            cleanLocation.encryptionAlgorithm,
+          ],
         );
         if (result.rowCount !== 1) {
           const concurrent = await readDescriptorRow(client, command.objectId);
           if (concurrent.state === "CLEAN" && concurrent.scanStatus === "CLEAN") {
             assertSameRelease(concurrent, command);
+            assertLocationMatches(concurrent, cleanLocation);
             return concurrent;
           }
           throw new Error("EVIDENCE_RELEASE_STATE_CONFLICT");
@@ -398,6 +409,15 @@ function assertSameRelease(descriptor: EvidenceObjectDescriptor, command: Releas
   if (descriptor.releasedBy !== command.releasedBy || descriptor.releasedAt !== command.releasedAt) {
     throw new Error("EVIDENCE_RELEASE_STATE_CONFLICT");
   }
+}
+
+function assertLocationMatches(descriptor: EvidenceObjectDescriptor, location: EvidenceBinaryLocation): void {
+  if (
+    descriptor.storageProvider !== location.storageProvider ||
+    descriptor.storageObjectKey !== location.storageObjectKey ||
+    descriptor.storageReference !== location.storageReference ||
+    descriptor.encryptionAlgorithm !== location.encryptionAlgorithm
+  ) throw new Error("EVIDENCE_RELEASE_STORAGE_LOCATION_CONFLICT");
 }
 
 function isQuarantineMissing(error: unknown): boolean {
