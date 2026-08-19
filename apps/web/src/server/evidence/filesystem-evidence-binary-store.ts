@@ -4,6 +4,7 @@ import { randomUUID } from "node:crypto";
 import { mkdir, readFile, rename, rm, stat, writeFile } from "node:fs/promises";
 import path from "node:path";
 import type {
+  EvidenceBinaryLocation,
   EvidenceBinaryObjectKey,
   EvidenceBinaryStore,
   StageEvidenceBinaryInput,
@@ -32,12 +33,7 @@ export function createDevelopmentFilesystemEvidenceBinaryStore(rootDirectory: st
       }
       await mkdir(path.dirname(quarantinePath), { recursive: true, mode: 0o700 });
       await atomicWrite(quarantinePath, Buffer.from(input.content));
-      return {
-        storageProvider: "FILESYSTEM_DEVELOPMENT_ONLY",
-        storageObjectKey: `evidence/${input.organizationId}/${input.objectId}`,
-        storageReference: `filesystem-private:${input.organizationId}:${input.objectId}`,
-        encryptionAlgorithm: "NONE_DEVELOPMENT_ONLY",
-      };
+      return filesystemLocation(input, "QUARANTINE");
     },
 
     async readQuarantined(input: EvidenceBinaryObjectKey) {
@@ -53,10 +49,11 @@ export function createDevelopmentFilesystemEvidenceBinaryStore(rootDirectory: st
       assertBinaryKey(input);
       const quarantinePath = binaryPath(quarantineRoot, input);
       const cleanPath = binaryPath(cleanRoot, input);
-      if (await exists(cleanPath)) return;
+      if (await exists(cleanPath)) return filesystemLocation(input, "CLEAN");
       if (!(await exists(quarantinePath))) throw new Error("EVIDENCE_BINARY_OBJECT_NOT_FOUND");
       await mkdir(path.dirname(cleanPath), { recursive: true, mode: 0o700 });
       await rename(quarantinePath, cleanPath);
+      return filesystemLocation(input, "CLEAN");
     },
 
     async readClean(input: EvidenceBinaryObjectKey) {
@@ -75,6 +72,19 @@ export function createDevelopmentFilesystemEvidenceBinaryStore(rootDirectory: st
         rm(binaryPath(cleanRoot, input), { force: true }),
       ]);
     },
+  };
+}
+
+function filesystemLocation(
+  input: EvidenceBinaryObjectKey,
+  location: "QUARANTINE" | "CLEAN",
+): EvidenceBinaryLocation {
+  const segment = location === "QUARANTINE" ? "quarantine" : "clean";
+  return {
+    storageProvider: "FILESYSTEM_DEVELOPMENT_ONLY",
+    storageObjectKey: `${segment}/${input.organizationId}/${input.objectId}`,
+    storageReference: `filesystem-private:${segment}:${input.organizationId}:${input.objectId}`,
+    encryptionAlgorithm: "NONE_DEVELOPMENT_ONLY",
   };
 }
 

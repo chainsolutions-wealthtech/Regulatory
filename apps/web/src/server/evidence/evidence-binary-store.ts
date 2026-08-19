@@ -21,7 +21,7 @@ export interface EvidenceBinaryStore {
   readonly productionReady: boolean;
   stage(input: StageEvidenceBinaryInput): Promise<EvidenceBinaryLocation>;
   readQuarantined(input: EvidenceBinaryObjectKey): Promise<Uint8Array>;
-  promoteToClean(input: EvidenceBinaryObjectKey): Promise<void>;
+  promoteToClean(input: EvidenceBinaryObjectKey): Promise<EvidenceBinaryLocation>;
   readClean(input: EvidenceBinaryObjectKey): Promise<Uint8Array>;
   delete(input: EvidenceBinaryObjectKey): Promise<void>;
 }
@@ -53,12 +53,7 @@ export function createMemoryEvidenceBinaryStore(): EvidenceBinaryStore {
         content: Uint8Array.from(input.content),
         location: "QUARANTINE",
       });
-      return {
-        storageProvider: "MEMORY_TEST_ONLY",
-        storageObjectKey: `evidence/${input.organizationId}/${input.objectId}`,
-        storageReference: `memory-private:${input.organizationId}:${input.objectId}`,
-        encryptionAlgorithm: "NONE_TEST_ONLY",
-      };
+      return memoryLocation(input, "QUARANTINE");
     },
 
     async readQuarantined(input) {
@@ -71,8 +66,8 @@ export function createMemoryEvidenceBinaryStore(): EvidenceBinaryStore {
 
     async promoteToClean(input) {
       const object = resolveObject(objects, input);
-      if (object.location === "CLEAN") return;
       object.location = "CLEAN";
+      return memoryLocation(input, "CLEAN");
     },
 
     async readClean(input) {
@@ -88,6 +83,19 @@ export function createMemoryEvidenceBinaryStore(): EvidenceBinaryStore {
       if (object.organizationId !== input.organizationId) throw new Error("EVIDENCE_BINARY_OBJECT_NOT_FOUND");
       objects.delete(input.objectId);
     },
+  };
+}
+
+function memoryLocation(
+  input: EvidenceBinaryObjectKey,
+  location: "QUARANTINE" | "CLEAN",
+): EvidenceBinaryLocation {
+  const segment = location === "QUARANTINE" ? "quarantine" : "clean";
+  return {
+    storageProvider: "MEMORY_TEST_ONLY",
+    storageObjectKey: `${segment}/${input.organizationId}/${input.objectId}`,
+    storageReference: `memory-private:${segment}:${input.organizationId}:${input.objectId}`,
+    encryptionAlgorithm: "NONE_TEST_ONLY",
   };
 }
 
