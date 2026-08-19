@@ -161,9 +161,11 @@ function configureScanner(
 
   const url = input.environment.REGULATORY_EVIDENCE_SCANNER_URL?.trim();
   const token = input.environment.REGULATORY_EVIDENCE_SCANNER_TOKEN?.trim();
+  const serviceBearer = input.environment.REGULATORY_EVIDENCE_SCANNER_SERVICE_BEARER_TOKEN?.trim();
   if (!url) missingConfiguration.push("REGULATORY_EVIDENCE_SCANNER_URL");
   if (!token) missingConfiguration.push("REGULATORY_EVIDENCE_SCANNER_TOKEN");
-  dependencies.scanner = url && token ? "CONFIGURED" : "NOT_CONFIGURED";
+  if (!serviceBearer) missingConfiguration.push("REGULATORY_EVIDENCE_SCANNER_SERVICE_BEARER_TOKEN");
+  dependencies.scanner = url && token && serviceBearer ? "CONFIGURED" : "NOT_CONFIGURED";
 
   if (input.nodeEnv === "production" && url && !url.startsWith("https://")) {
     blockers.push("SCANNER_HTTPS_REQUIRED_IN_PRODUCTION");
