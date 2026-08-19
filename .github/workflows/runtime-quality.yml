@@ -1,0 +1,143 @@
+name: Runtime Quality CI
+
+on:
+  push:
+    branches:
+      - main
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: regulatory-runtime-quality-main
+  cancel-in-progress: true
+
+jobs:
+  runtime-quality:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Configure Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+
+      - name: Install web dependencies
+        run: npm run web:install
+
+      - name: Generate catalog and typecheck
+        run: |
+          npm run generate:web-catalog
+          npm run web:typecheck
+
+      - name: Build Next.js application
+        run: npm run web:build
+        env:
+          NEXT_TELEMETRY_DISABLED: '1'
+          REGULATORY_STORAGE_DRIVER: local-json
+
+      - name: Start fail-closed local runtime
+        run: |
+          export REGULATORY_LOCAL_DATA_ROOT="$RUNNER_TEMP/regulatory-web-data"
+          export REGULATORY_WEB_BASE_URL='http://127.0.0.1:3100'
+          export REGULATORY_STORAGE_DRIVER='local-json'
+          export NEXT_TELEMETRY_DISABLED='1'
+          npm --prefix apps/web run start -- --hostname 127.0.0.1 --port 3100 > "$RUNNER_TEMP/regulatory-runtime-quality.log" 2>&1 &
+          echo $! > "$RUNNER_TEMP/regulatory-runtime-quality.pid"
+          for attempt in $(seq 1 40); do
+            if curl --fail --silent http://127.0.0.1:3100/api/health/live >/dev/null; then
+              exit 0
+            fi
+            sleep 1
+          done
+          cat "$RUNNER_TEMP/regulatory-runtime-quality.log"
+          exit 1
+
+      - name: Validate health, security headers and performance smoke
+        env:
+          REGULATORY_WEB_BASE_URL: http://127.0.0.1:3100
+        run: |
+          node scripts/test-web-health-api.mjs
+          node scripts/test-web-security-headers.mjs
+          node scripts/test-web-performance-smoke.mjs
+
+      - name: Gate persisted runtime-quality evidence
+        run: |
+          node --input-type=module <<'NODE'
+          import { readFile } from 'node:fs/promises';
+
+          const validations = [
+            {
+              file: 'regulatory/validation/WEB_RUNTIME_HEALTH_API_VALIDATION.json',
+              id: 'WEB_RUNTIME_HEALTH_API_VALIDATION_V1',
+              checks: [
+                'livenessReturns200',
+                'readinessFailsClosedInLocalJson',
+                'noStoreCaching',
+                'noSensitiveRuntimeValuesExposed',
+                'readyForSubmissionRemainsFalse',
+              ],
+            },
+            {
+              file: 'regulatory/validation/WEB_SECURITY_HEADERS_VALIDATION.json',
+              id: 'WEB_SECURITY_HEADERS_VALIDATION_V1',
+              checks: [
+                'nosniff',
+                'clickjackingDenied',
+                'restrictiveReferrerPolicy',
+                'permissionsPolicy',
+                'contentSecurityPolicyBaseline',
+                'hstsOnProductionServer',
+                'poweredByDisabled',
+              ],
+            },
+            {
+              file: 'regulatory/validation/WEB_PERFORMANCE_SMOKE_VALIDATION.json',
+              id: 'WEB_PERFORMANCE_SMOKE_VALIDATION_V1',
+              checks: [
+                'healthRequestsSuccessful',
+                'dashboardRequestsSuccessful',
+                'healthP95WithinCiSmokeBudget',
+                'dashboardP95WithinCiSmokeBudget',
+              ],
+            },
+          ];
+
+          for (const expected of validations) {
+            const validation = JSON.parse(await readFile(expected.file, 'utf8'));
+            if (validation.validationId !== expected.id || validation.status !== 'PASS') {
+              throw new Error(`RUNTIME_QUALITY_VALIDATION_FAILED:${expected.id}`);
+            }
+            for (const check of expected.checks) {
+              if (validation.checks?.[check] !== true) {
+                throw new Error(`RUNTIME_QUALITY_CHECK_FAILED:${expected.id}:${check}`);
+              }
+            }
+          }
+          NODE
+
+      - name: Check textual integrity
+        run: git diff --check
+
+      - name: Upload runtime-quality evidence
+        uses: actions/upload-artifact@v4
+        with:
+          name: regulatory-runtime-quality-evidence
+          if-no-files-found: error
+          retention-days: 14
+          path: |
+            regulatory/validation/WEB_RUNTIME_HEALTH_API_VALIDATION.json
+            regulatory/validation/WEB_SECURITY_HEADERS_VALIDATION.json
+            regulatory/validation/WEB_PERFORMANCE_SMOKE_VALIDATION.json
+
+      - name: Stop local runtime
+        if: always()
+        run: |
+          if [ -f "$RUNNER_TEMP/regulatory-runtime-quality.pid" ]; then
+            kill "$(cat "$RUNNER_TEMP/regulatory-runtime-quality.pid")" 2>/dev/null || true
+          fi
