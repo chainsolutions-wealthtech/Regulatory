@@ -127,11 +127,29 @@ export function createPostgresTrackedEvidenceStore(input: {
       const existing = await withTenant(input.pool, identity, (client) =>
         readDescriptorRow(client, command.objectId),
       );
+
+      if (existing.state === "CLEAN" && existing.scanStatus === "CLEAN") {
+        assertSameRelease(existing, command);
+        await assertBinaryClean(input.binaryStore, existing, identity);
+        return existing;
+      }
       if (existing.state !== "QUARANTINED" || existing.scanStatus !== "CLEAN") {
         throw new Error("EVIDENCE_CLEAN_SCAN_REQUIRED_BEFORE_RELEASE");
       }
-      const binaryResult = await input.binaryStore.release(command);
+
+      let binaryResult: EvidenceObjectDescriptor;
+      try {
+        binaryResult = await input.binaryStore.release(command);
+      } catch (error) {
+        if (!isAlreadyReleasedBinaryError(error)) throw error;
+        binaryResult = await assertBinaryClean(input.binaryStore, existing, identity);
+        assertSameRelease(binaryResult, command);
+      }
       if (binaryResult.sha256 !== existing.sha256) throw new Error("EVIDENCE_BINARY_METADATA_DIGEST_MISMATCH");
+      if (binaryResult.state !== "CLEAN" || binaryResult.scanStatus !== "CLEAN") {
+        throw new Error("EVIDENCE_BINARY_RELEASE_STATE_INVALID");
+      }
+
       return withTenant(input.pool, identity, async (client) => {
         const result = await client.query(
           `update regulatory.evidence_objects
@@ -139,7 +157,14 @@ export function createPostgresTrackedEvidenceStore(input: {
             where id = $1 and state = 'QUARANTINED' and scan_status = 'CLEAN'`,
           [command.objectId, command.releasedBy, command.releasedAt],
         );
-        if (result.rowCount !== 1) throw new Error("EVIDENCE_RELEASE_STATE_CONFLICT");
+        if (result.rowCount !== 1) {
+          const concurrent = await readDescriptorRow(client, command.objectId);
+          if (concurrent.state === "CLEAN" && concurrent.scanStatus === "CLEAN") {
+            assertSameRelease(concurrent, command);
+            return concurrent;
+          }
+          throw new Error("EVIDENCE_RELEASE_STATE_CONFLICT");
+        }
         return readDescriptorRow(client, command.objectId);
       });
     },
@@ -303,6 +328,36 @@ async function withTenant<T>(
   } finally {
     client.release();
   }
+}
+
+async function assertBinaryClean(
+  binaryStore: EvidenceObjectStore,
+  existing: EvidenceObjectDescriptor,
+  identity: VerifiedIdentityContext,
+): Promise<EvidenceObjectDescriptor> {
+  const read = await binaryStore.readClean({
+    objectId: existing.objectId,
+    organizationId: identity.organizationId,
+    requestedBy: identity.userId,
+    authorizationDecisionId: `EVIDENCE_RELEASE_RECOVERY:${identity.userId}:${existing.objectId}`,
+  });
+  if (read.descriptor.sha256 !== existing.sha256) {
+    throw new Error("EVIDENCE_BINARY_METADATA_DIGEST_MISMATCH");
+  }
+  if (read.descriptor.state !== "CLEAN" || read.descriptor.scanStatus !== "CLEAN") {
+    throw new Error("EVIDENCE_BINARY_RELEASE_STATE_INVALID");
+  }
+  return read.descriptor;
+}
+
+function assertSameRelease(descriptor: EvidenceObjectDescriptor, command: ReleaseEvidenceInput): void {
+  if (descriptor.releasedBy !== command.releasedBy || descriptor.releasedAt !== command.releasedAt) {
+    throw new Error("EVIDENCE_RELEASE_STATE_CONFLICT");
+  }
+}
+
+function isAlreadyReleasedBinaryError(error: unknown): boolean {
+  return error instanceof Error && error.message === "EVIDENCE_CLEAN_SCAN_REQUIRED_BEFORE_RELEASE";
 }
 
 async function resolveIdentity(provider: VerifiedIdentityProvider): Promise<VerifiedIdentityContext> {
