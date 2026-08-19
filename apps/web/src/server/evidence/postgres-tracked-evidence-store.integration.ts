@@ -1,10 +1,9 @@
 import assert from "node:assert/strict";
-import { mkdtemp, rm, writeFile } from "node:fs/promises";
-import { tmpdir } from "node:os";
+import { writeFile } from "node:fs/promises";
 import path from "node:path";
 import { Pool } from "pg";
+import { createMemoryEvidenceBinaryStore } from "@/server/evidence/evidence-binary-store";
 import { createFixedTestIdentityProvider } from "@/server/security/verified-identity";
-import { createDevelopmentFilesystemEvidenceStore } from "@/server/evidence/filesystem-evidence-object-store";
 import { createPostgresTrackedEvidenceStore } from "@/server/evidence/postgres-tracked-evidence-store";
 
 const databaseUrl = process.env.DATABASE_URL;
@@ -13,7 +12,6 @@ if (!databaseUrl || !adminDatabaseUrl) throw new Error("POSTGRESQL_EVIDENCE_TEST
 
 const pool = new Pool({ connectionString: databaseUrl, max: 4 });
 const adminPool = new Pool({ connectionString: adminDatabaseUrl, max: 2 });
-const root = await mkdtemp(path.join(tmpdir(), "regulatory-postgres-evidence-"));
 const organizationId = "71000000-0000-0000-0000-000000000001";
 const otherOrganizationId = "71000000-0000-0000-0000-000000000002";
 const userId = "72000000-0000-0000-0000-000000000001";
@@ -23,7 +21,7 @@ const projectVersionId = "74000000-0000-0000-0000-000000000001";
 
 try {
   await seed();
-  const binaryStore = createDevelopmentFilesystemEvidenceStore(root);
+  const binaryStore = createMemoryEvidenceBinaryStore();
   const identityProvider = createFixedTestIdentityProvider({
     subject: "postgres-evidence-user",
     userId,
@@ -46,6 +44,8 @@ try {
   });
   assert.equal(staged.state, "QUARANTINED");
   assert.equal(staged.scanStatus, "PENDING");
+  assert.equal(staged.storageProvider, "MEMORY_TEST_ONLY");
+  assert.equal(staged.storageObjectKey, `evidence/${organizationId}/${staged.objectId}`);
   const stagedDb = await adminPool.query<{ state: string; scan_status: string; sha256: string }>(
     `select state::text, scan_status::text, sha256 from regulatory.evidence_objects where id = $1`,
     [staged.objectId],
@@ -128,8 +128,11 @@ try {
     releasedAt: "2026-08-18T18:34:00.000Z",
   };
 
-  const binaryReleasedBeforeDatabaseCommit = await binaryStore.release(recoveryCommand);
-  assert.equal(binaryReleasedBeforeDatabaseCommit.state, "CLEAN");
+  await binaryStore.promoteToClean({ objectId: recoveryStaged.objectId, organizationId });
+  assert.deepEqual(
+    Buffer.from(await binaryStore.readClean({ objectId: recoveryStaged.objectId, organizationId })),
+    Buffer.from(recoveryContent),
+  );
   const recoveryDbBefore = await adminPool.query<{ state: string; scan_status: string }>(
     `select state::text, scan_status::text from regulatory.evidence_objects where id = $1`,
     [recoveryStaged.objectId],
@@ -187,6 +190,7 @@ try {
     status: "PASS",
     checks: {
       binaryAndMetadataTrackedTogether: true,
+      binaryStoreContainsNoRegulatoryDescriptor: true,
       quarantinedPendingPersisted: true,
       cleanScanDoesNotAutoRelease: true,
       explicitReleasePersisted: true,
@@ -198,7 +202,7 @@ try {
       importStagingCleanEvidenceCompatible: true,
       productionReadinessNotClaimed: true,
     },
-    caveat: "Validation PostgreSQL 17 avec filesystem de développement pour les octets. Aucun stockage objet, KMS ou antivirus de production n'est déclaré opérationnel.",
+    caveat: "Validation PostgreSQL 17 avec binary store mémoire sans métadonnées réglementaires. Aucun stockage objet, KMS ou antivirus de production n'est déclaré opérationnel.",
   };
   await writeFile(
     path.resolve(process.cwd(), "../../regulatory/validation/POSTGRESQL_EVIDENCE_OBJECT_STORE_VALIDATION.json"),
@@ -209,7 +213,6 @@ try {
 } finally {
   await pool.end();
   await adminPool.end();
-  await rm(root, { recursive: true, force: true });
 }
 
 async function seed() {
