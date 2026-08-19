@@ -23,6 +23,12 @@ const productionS3Env = {
   REGULATORY_EVIDENCE_ENCRYPTION_KEY_REFERENCE: "kms-reference-redacted",
 };
 
+const scannerEnv = {
+  REGULATORY_EVIDENCE_SCANNER_DRIVER: "http-attestation",
+  REGULATORY_EVIDENCE_SCANNER_URL: "https://scanner.example.test/v1/scan",
+  REGULATORY_EVIDENCE_SCANNER_TOKEN: "scanner-token-redacted",
+};
+
 const local = await evaluateRuntimeReadiness({
   storageDriver: "local-json",
   nodeEnv: "development",
@@ -74,14 +80,23 @@ assert.equal(productionS3WithoutScanner.dependencies.evidence, "CONFIGURED");
 assert.equal(productionS3WithoutScanner.dependencies.scanner, "NOT_CONFIGURED");
 assert(productionS3WithoutScanner.blockers.includes("PRODUCTION_SCANNER_REQUIRED"));
 
+const scannerWithoutServiceIdentity = await evaluateRuntimeReadiness({
+  storageDriver: "postgresql",
+  nodeEnv: "production",
+  environment: { ...productionS3Env, ...scannerEnv },
+  databaseProbe: async () => undefined,
+});
+assert.equal(scannerWithoutServiceIdentity.ready, false);
+assert.equal(scannerWithoutServiceIdentity.productionReady, false);
+assert(scannerWithoutServiceIdentity.missingConfiguration.includes("REGULATORY_EVIDENCE_SCANNER_SERVICE_BEARER_TOKEN"));
+
 const productionReady = await evaluateRuntimeReadiness({
   storageDriver: "postgresql",
   nodeEnv: "production",
   environment: {
     ...productionS3Env,
-    REGULATORY_EVIDENCE_SCANNER_DRIVER: "http-attestation",
-    REGULATORY_EVIDENCE_SCANNER_URL: "https://scanner.example.test/v1/scan",
-    REGULATORY_EVIDENCE_SCANNER_TOKEN: "scanner-token-redacted",
+    ...scannerEnv,
+    REGULATORY_EVIDENCE_SCANNER_SERVICE_BEARER_TOKEN: "service-oidc-token-redacted",
   },
   databaseProbe: async () => undefined,
 });
@@ -90,6 +105,7 @@ assert.equal(productionReady.productionReady, true);
 assert.equal(productionReady.dependencies.evidence, "CONFIGURED");
 assert.equal(productionReady.dependencies.scanner, "CONFIGURED");
 assert.equal(JSON.stringify(productionReady).includes("scanner-token-redacted"), false);
+assert.equal(JSON.stringify(productionReady).includes("service-oidc-token-redacted"), false);
 assert.equal(JSON.stringify(productionReady).includes("kms-key-redacted"), false);
 
 const insecureScanner = await evaluateRuntimeReadiness({
@@ -97,9 +113,9 @@ const insecureScanner = await evaluateRuntimeReadiness({
   nodeEnv: "production",
   environment: {
     ...productionS3Env,
-    REGULATORY_EVIDENCE_SCANNER_DRIVER: "http-attestation",
+    ...scannerEnv,
     REGULATORY_EVIDENCE_SCANNER_URL: "http://scanner.internal/v1/scan",
-    REGULATORY_EVIDENCE_SCANNER_TOKEN: "redacted",
+    REGULATORY_EVIDENCE_SCANNER_SERVICE_BEARER_TOKEN: "redacted",
   },
   databaseProbe: async () => undefined,
 });
