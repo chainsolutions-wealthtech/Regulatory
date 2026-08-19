@@ -8,6 +8,8 @@ import { createEvidenceIngestionService } from "@/server/evidence/evidence-inges
 import { createPostgresEvidenceProjectQueryRepository } from "@/server/evidence/postgres-evidence-project-query-repository";
 import { createPostgresTrackedEvidenceStore } from "@/server/evidence/postgres-tracked-evidence-store";
 import { createPostgresProjectVersionIdResolver } from "@/server/evidence/project-version-id-resolver";
+import { createS3EvidenceBinaryStore } from "@/server/evidence/s3-evidence-binary-store";
+import { readS3EvidenceRuntimeConfiguration } from "@/server/evidence/s3-evidence-runtime-config";
 import { createEvidenceReleaseService } from "@/server/evidence/evidence-scan-release-service";
 import {
   getRuntimeIdentityProvider,
@@ -34,15 +36,29 @@ export function getRuntimeEvidenceObjectStore(): EvidenceObjectStore {
     const root = process.env.REGULATORY_EVIDENCE_ROOT?.trim();
     if (!root) throw new Error("RUNTIME_CONFIGURATION_MISSING:REGULATORY_EVIDENCE_ROOT");
     runtimeBinaryEvidenceStore ??= createDevelopmentFilesystemEvidenceBinaryStore(root);
-    runtimeEvidenceObjectStore = createPostgresTrackedEvidenceStore({
-      pool: getRuntimePostgresPool(),
-      identityProvider: getRuntimeIdentityProvider(),
-      binaryStore: runtimeBinaryEvidenceStore,
-    });
-    return runtimeEvidenceObjectStore;
+    return trackedStore(runtimeBinaryEvidenceStore);
+  }
+
+  if (driver === "s3-private") {
+    runtimeBinaryEvidenceStore ??= createS3EvidenceBinaryStore(
+      readS3EvidenceRuntimeConfiguration({
+        environment: process.env,
+        nodeEnv: process.env.NODE_ENV,
+      }),
+    );
+    return trackedStore(runtimeBinaryEvidenceStore);
   }
 
   throw new Error(`EVIDENCE_RUNTIME_DRIVER_UNSUPPORTED:${driver}`);
+}
+
+function trackedStore(binaryStore: EvidenceBinaryStore): EvidenceObjectStore {
+  runtimeEvidenceObjectStore ??= createPostgresTrackedEvidenceStore({
+    pool: getRuntimePostgresPool(),
+    identityProvider: getRuntimeIdentityProvider(),
+    binaryStore,
+  });
+  return runtimeEvidenceObjectStore;
 }
 
 export function getRuntimeEvidenceIngestionService() {
