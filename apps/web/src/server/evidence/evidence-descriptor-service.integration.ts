@@ -31,11 +31,13 @@ const descriptor: EvidenceObjectDescriptor = {
 };
 
 let metadataReads = 0;
+let lastAuthorizationDecisionId = "";
 const store = {
   provider: "test",
   productionReady: false,
   async readDescriptor(input: { objectId: string; organizationId: string; requestedBy: string; authorizationDecisionId: string }) {
     metadataReads += 1;
+    lastAuthorizationDecisionId = input.authorizationDecisionId;
     assert.equal(input.objectId, objectId);
     assert.equal(input.organizationId, organizationId);
     assert.ok(input.requestedBy);
@@ -57,6 +59,7 @@ const reader = createEvidenceDescriptorService({
 });
 const loaded = await reader.readMetadata(objectId);
 assert.equal(loaded.objectId, objectId);
+assert.match(lastAuthorizationDecisionId, /^EVIDENCE_READ:/u);
 assert.equal(metadataReads, 1);
 
 const verifier = createEvidenceDescriptorService({
@@ -72,7 +75,28 @@ const verifier = createEvidenceDescriptorService({
 });
 const forVerification = await verifier.readForVerification(objectId);
 assert.equal(forVerification.scanStatus, "CLEAN");
+assert.match(lastAuthorizationDecisionId, /^EVIDENCE_VERIFY:/u);
 assert.equal(metadataReads, 2);
+await assert.rejects(() => verifier.readForScanning(objectId), /AUTHORIZATION_DENIED:EVIDENCE_SCAN/);
+assert.equal(metadataReads, 2);
+
+const scanner = createEvidenceDescriptorService({
+  evidenceStore: store,
+  identityProvider: createFixedTestIdentityProvider({
+    subject: "subject-security-scanner",
+    userId: "20000000-0000-0000-0000-000000000005",
+    organizationId,
+    roles: ["SECURITY"],
+    verifiedAt: "2026-08-18T18:01:00.000Z",
+    provider: "test",
+  }),
+});
+const forScanning = await scanner.readForScanning(objectId);
+assert.equal(forScanning.objectId, objectId);
+assert.match(lastAuthorizationDecisionId, /^EVIDENCE_SCAN:/u);
+assert.equal(metadataReads, 3);
+await assert.rejects(() => scanner.readForVerification(objectId), /AUTHORIZATION_DENIED:EVIDENCE_VERIFY/);
+assert.equal(metadataReads, 3);
 
 const product = createEvidenceDescriptorService({
   evidenceStore: store,
@@ -87,6 +111,7 @@ const product = createEvidenceDescriptorService({
 });
 const readsBeforeDenied = metadataReads;
 await assert.rejects(() => product.readForVerification(objectId), /AUTHORIZATION_DENIED:EVIDENCE_VERIFY/);
+await assert.rejects(() => product.readForScanning(objectId), /AUTHORIZATION_DENIED:EVIDENCE_SCAN/);
 assert.equal(metadataReads, readsBeforeDenied);
 
 console.log("EVIDENCE_DESCRIPTOR_SERVICE_PASS");
