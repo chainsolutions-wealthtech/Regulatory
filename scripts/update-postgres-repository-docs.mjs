@@ -5,44 +5,90 @@ import { fileURLToPath } from "node:url";
 const repoRoot = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
 const projectValidation = await readValidation("POSTGRESQL_REPOSITORY_VALIDATION.json");
 const importValidation = await readValidation("POSTGRESQL_IMPORT_STAGING_VALIDATION.json");
-
-const projectChecks = [
-  "verifiedIdentityRequired",
-  "organizationMembershipRequired",
-  "tenantAIsolation",
-  "tenantBIsolation",
-  "versionPerWrite",
-  "optimisticConcurrencyConflict",
-  "canonicalSnapshotPerVersion",
-  "normalizedAssetRanges",
-  "normalizedValuationMethods",
-  "generatedDocumentMetadata",
-  "stagedArtifactCommit",
-  "auditHashChain",
-  "readyForSubmissionRemainsFalse",
-];
-const importChecks = [
-  "cleanEvidenceRequired",
-  "tenantIsolation",
-  "crossTenantEvidenceRejected",
-  "reviewerIdentityPersisted",
-  "doubleReviewRejected",
-  "canonicalWriteLockedFalse",
-  "readyForSubmissionLockedFalse",
-  "sourceDigestPreserved",
-];
+const importQueryValidation = await readValidation("POSTGRESQL_IMPORT_STAGING_QUERY_VALIDATION.json");
+const promotionValidation = await readValidation("POSTGRESQL_IMPORT_PROMOTION_VALIDATION.json");
+const evidenceValidation = await readValidation("POSTGRESQL_EVIDENCE_OBJECT_STORE_VALIDATION.json");
 
 assertValidation(
   projectValidation,
   "POSTGRESQL_PROJECT_REPOSITORY_VALIDATION_V1",
-  projectChecks,
+  [
+    "verifiedIdentityRequired",
+    "organizationMembershipRequired",
+    "tenantAIsolation",
+    "tenantBIsolation",
+    "versionPerWrite",
+    "optimisticConcurrencyConflict",
+    "canonicalSnapshotPerVersion",
+    "normalizedAssetRanges",
+    "normalizedValuationMethods",
+    "generatedDocumentMetadata",
+    "stagedArtifactCommit",
+    "auditHashChain",
+    "readyForSubmissionRemainsFalse",
+  ],
   "La preuve du dépôt PostgreSQL transactionnel est incomplète.",
 );
 assertValidation(
   importValidation,
   "POSTGRESQL_IMPORT_STAGING_VALIDATION_V1",
-  importChecks,
+  [
+    "cleanEvidenceRequired",
+    "tenantIsolation",
+    "crossTenantEvidenceRejected",
+    "reviewerIdentityPersisted",
+    "doubleReviewRejected",
+    "canonicalWriteLockedFalse",
+    "readyForSubmissionLockedFalse",
+    "sourceDigestPreserved",
+  ],
   "La preuve du staging PostgreSQL des imports est incomplète.",
+);
+assertValidation(
+  importQueryValidation,
+  "POSTGRESQL_IMPORT_STAGING_QUERY_VALIDATION_V1",
+  [
+    "readOnlyProjectListing",
+    "reviewCounters",
+    "tenantIsolation",
+    "canonicalWriteRemainsFalse",
+    "readyForSubmissionRemainsFalse",
+  ],
+  "La preuve du listing read-only du staging est incomplète.",
+);
+assertValidation(
+  promotionValidation,
+  "POSTGRESQL_IMPORT_PROMOTION_VALIDATION_V1",
+  [
+    "answerWriteAuthorizationRequired",
+    "explicitQuestionTargetRequired",
+    "humanConfirmationRequired",
+    "optimisticConcurrencyRequired",
+    "tenantIsolation",
+    "duplicatePromotionRejected",
+    "exactlyOneProjectVersionCreated",
+    "immutableSourceProvenancePersisted",
+    "reviewerAndPromoterIdentityPersisted",
+    "appendOnlyPromotionReceipt",
+    "readyForSubmissionRemainsFalse",
+  ],
+  "La preuve de promotion explicite vers le canonique est incomplète.",
+);
+assertValidation(
+  evidenceValidation,
+  "POSTGRESQL_EVIDENCE_OBJECT_STORE_VALIDATION_V1",
+  [
+    "binaryAndMetadataTrackedTogether",
+    "quarantinedPendingPersisted",
+    "cleanScanDoesNotAutoRelease",
+    "explicitReleasePersisted",
+    "releasedBinaryDigestPreserved",
+    "metadataReadTenantScoped",
+    "crossTenantReadBlockedByRls",
+    "importStagingCleanEvidenceCompatible",
+    "productionReadinessNotClaimed",
+  ],
+  "La preuve du store d'evidence PostgreSQL est incomplète.",
 );
 
 const projectEvidence = `- dépôt PostgreSQL projet : \`IMPLEMENTED_AND_TESTED\` ;
@@ -55,20 +101,33 @@ const projectEvidence = `- dépôt PostgreSQL projet : \`IMPLEMENTED_AND_TESTED\
 - chaîne d’audit SHA-256 : \`PASS\` ;
 - \`ready_for_submission\` : \`false\`.`;
 
-const importEvidence = `- migration : \`database/migrations/0006_import_staging.sql\` ;
-- staging PostgreSQL tenant-scopé : \`IMPLEMENTED_AND_TESTED\` ;
+const importEvidence = `- staging PostgreSQL tenant-scopé : \`IMPLEMENTED_AND_TESTED\` ;
+- listing read-only tenant-scopé : \`PASS\` ;
 - preuve source CLEAN exigée : \`PASS\` ;
 - liaison projet/version/preuve/SHA : \`PASS\` ;
-- RLS tenant : \`PASS\` ;
-- réutilisation cross-tenant d’une preuve : \`REJECTED\` ;
 - revue humaine persistée avec identité : \`PASS\` ;
 - seconde décision sur une valeur revue : \`REJECTED\` ;
-- source extraite après staging : \`IMMUTABLE\` ;
-- \`canonical_write_allowed\` : \`false\` verrouillé en base ;
-- \`ready_for_submission\` : \`false\` verrouillé en base.`;
+- promotion canonique : \`EXPLICIT_ONLY\` ;
+- rôle \`ANSWER_WRITE\` requis : \`PASS\` ;
+- cible de question choisie explicitement : \`PASS\` ;
+- concurrence optimiste \`expectedVersion\` : \`PASS\` ;
+- reçu de promotion : \`APPEND_ONLY\` ;
+- promotion automatique : \`FORBIDDEN\` ;
+- \`ready_for_submission\` : \`false\`.`;
+
+const evidenceEvidence = `- upload : \`QUARANTINE_ONLY\` ;
+- métadonnées : PostgreSQL + RLS tenant ;
+- octets : store binaire privé derrière abstraction ;
+- scan CLEAN : ne libère jamais automatiquement ;
+- release : acte séparé et explicite ;
+- lecture metadata : tenant-scopée ;
+- compatibilité avec le staging import : \`PASS\` ;
+- verdict antivirus fourni par navigateur : \`FORBIDDEN\` ;
+- stockage objet/KMS/antivirus de production : \`NOT_PROVISIONED\` ;
+- prétention production-ready : \`FORBIDDEN\`.`;
 
 const blocks = {
-  "STATUS.md": `## PostgreSQL transactionnel et staging d’import — état 2026-08-17
+  "STATUS.md": `## PostgreSQL, preuves et import gouverné — état 2026-08-19
 
 ${projectEvidence}
 
@@ -76,114 +135,138 @@ ${projectEvidence}
 
 ${importEvidence}
 
-La confirmation humaine d’une valeur extraite ne constitue **jamais** une écriture dans le modèle canonique. Le passage vers une réponse projet devra rester une commande distincte, versionnée, autorisée et auditée.`,
+### Preuves documentaires
 
-  "LOOP_STATE.md": `## LOOP-DEV-001 — PostgreSQL projet + staging import
+${evidenceEvidence}
+
+Le flux applicatif est désormais : upload en quarantaine → scan serveur de confiance → release explicite → extraction vers staging non vérifié → revue humaine → promotion canonique explicite et versionnée. Aucune étape ne rend le dossier prêt pour soumission.`,
+
+  "LOOP_STATE.md": `## LOOP-DEV-001 — Persistance, preuves et import gouverné
 
 ${projectEvidence}
 
 ${importEvidence}
+
+${evidenceEvidence}
 
 - activation automatique de données extraites : \`FORBIDDEN\` ;
-- copie automatique vers les réponses projet : \`FORBIDDEN\` ;
-- soumission : \`DISABLED\`.` ,
+- promotion automatique vers les réponses projet : \`FORBIDDEN\` ;
+- soumission : \`DISABLED\`.`,
 
-  "CURRENT_ITERATION.md": `## Résultat — persistance PostgreSQL et import gouverné
+  "CURRENT_ITERATION.md": `## Résultat — chaîne preuve → staging → revue → promotion
 
-Le repository projet et le staging d’import sont tous deux validés sur PostgreSQL 17 en CI.
+Les repositories projet, preuves et import sont validés sur PostgreSQL 17 en CI, avec séparation explicite des responsabilités et RLS tenant.
 
 ${projectEvidence}
 
 ${importEvidence}
 
-Prochaine tranche autonome : exposer le staging via un port runtime/API gouverné puis une interface de revue, sans écrire automatiquement dans le canonique.`,
+${evidenceEvidence}
 
-  "WORK_LOG.md": `## 2026-08-17 — Staging PostgreSQL des imports prospectus
+Prochaine tranche autonome : durcir l’idempotence des transitions de preuve, enrichir les validations E2E/accessibilité et poursuivre les adaptateurs d’infrastructure sans jamais simuler les services de production absents.`,
 
-1. Spécification RED du repository de staging.
-2. Observation du RED au typecheck sur le module absent.
-3. Ajout de \`0006_import_staging.sql\`.
-4. Ajout de \`PostgresImportStagingRepository\`.
-5. Ajout des contraintes base \`canonical_write_allowed=false\` et \`ready_for_submission=false\`.
-6. Ajout des contrôles de portée projet/version/preuve CLEAN/SHA.
-7. Ajout RLS sur batches et valeurs importées.
-8. Persistance de la décision humaine, du reviewer et de l’horodatage.
-9. Refus d’une seconde décision et de la mutation de la source extraite.
-10. Validation PostgreSQL 17, Security CI et Regulatory CI.
+  "WORK_LOG.md": `## 2026-08-19 — Fermeture de la chaîne preuve/import
+
+1. Persistance du listing read-only import dans une validation machine.
+2. Store preuve PostgreSQL synchronisé avec le store binaire.
+3. Métadonnées de preuve tenant-scopées et non sensibles côté API.
+4. Release explicite séparée du scan CLEAN.
+5. API projet sans UUID technique fourni par le navigateur.
+6. Workspace Preuves : upload, états, release et extraction.
+7. Promotion canonique explicite avec \`ANSWER_WRITE\`, cible humaine et \`expectedVersion\`.
+8. Promotion automatique et soumission maintenues interdites.
+
+${evidenceEvidence}
 
 ${importEvidence}`,
 
-  "SUIVI.md": `## 2026-08-17 — Import prospectus : staging transactionnel
+  "SUIVI.md": `## 2026-08-19 — Chaîne preuve/import gouvernée
 
-Le service d’extraction \`EXTRACTED_UNVERIFIED\` dispose désormais d’un staging PostgreSQL auditable. Les propositions et décisions humaines peuvent être persistées sans contourner le modèle canonique.
+Le parcours applicatif de preuve et d’import est maintenant relié de bout en bout au runtime PostgreSQL sans contourner le canonique.
+
+${evidenceEvidence}
 
 ${importEvidence}
 
-La prochaine évolution doit conserver la séparation : extraction → staging → revue humaine → éventuelle commande explicite de copie vers une réponse projet.`,
+Les dépendances production (stockage objet, KMS/secrets, antivirus réel, OIDC réel, observabilité et sauvegarde/restauration cible) restent explicitement externes et ne doivent jamais être simulées comme opérationnelles.`,
 
-  "TODO.md": `## Import prospectus — état courant
+  "TODO.md": `## Import et preuves — état courant
 
-- [x] Accepter uniquement une preuve CLEAN et un média PDF/DOCX supporté.
-- [x] Produire des propositions \`EXTRACTED_UNVERIFIED\` avec provenance.
-- [x] Implémenter confirmation/rejet humain sans écriture canonique.
-- [x] Ajouter le staging PostgreSQL tenant-scopé.
-- [x] Ajouter RLS et contrôles de portée projet/version/preuve.
-- [x] Verrouiller \`canonical_write_allowed=false\` en base.
-- [x] Verrouiller \`ready_for_submission=false\` en base.
-- [x] Refuser la double revue et la mutation de la source extraite.
-- [ ] Exposer le staging via le factory runtime et une API gouvernée.
-- [ ] Construire l’écran de revue des propositions importées.
-- [ ] Brancher un extracteur PDF/DOCX réel derrière quarantaine et antivirus réels.
-- [ ] Concevoir la commande explicite de copie d’une valeur confirmée vers une réponse projet avec \`ANSWER_WRITE\`, \`expectedVersion\` et audit de provenance.
-- [ ] Configurer stockage objet, antivirus, KMS/secrets et rétention sur l’infrastructure cible.`,
+- [x] Upload PDF/DOCX uniquement en quarantaine.
+- [x] Métadonnées de preuve persistées en PostgreSQL sous RLS.
+- [x] Interdire tout verdict antivirus fourni par le navigateur.
+- [x] Exiger un scan CLEAN avant release.
+- [x] Séparer scan CLEAN et release explicite.
+- [x] Lire les métadonnées sans exposer références de stockage/KMS.
+- [x] Exposer le staging via factory runtime et API gouvernée.
+- [x] Construire l’écran de revue des propositions importées.
+- [x] Construire l’espace projet Preuves.
+- [x] Ajouter le listing read-only tenant-scopé des imports.
+- [x] Promouvoir une valeur confirmée uniquement par commande explicite \`ANSWER_WRITE\` + cible + \`expectedVersion\`.
+- [x] Persister un reçu de promotion append-only.
+- [ ] Durcir l’idempotence/recovery de la release en cas de panne entre store binaire et commit PostgreSQL.
+- [ ] Ajouter des E2E navigateur et contrôles d’accessibilité.
+- [ ] Configurer stockage objet privé de production.
+- [ ] Configurer antivirus réel et workflow de scan serveur.
+- [ ] Configurer KMS/secrets/chiffrement de production.
+- [ ] Configurer OIDC réel, monitoring et sauvegarde/restauration de la cible.`,
 
-  "CHANGELOG.md": `## [Unreleased] — Import staging PostgreSQL — 2026-08-17
+  "CHANGELOG.md": `## [Unreleased] — Chaîne preuve/import gouvernée — 2026-08-19
 
 ### Added
 
-- migration \`0006_import_staging.sql\` ;
-- tables \`prospectus_import_batches\` et \`prospectus_import_values\` ;
-- RLS tenant sur le staging d’import ;
-- repository PostgreSQL transactionnel de staging ;
-- revue humaine persistée et traçable ;
-- validation \`POSTGRESQL_IMPORT_STAGING_VALIDATION_V1\`.
+- store de preuve suivi en PostgreSQL ;
+- lecture metadata tenant-scopée ;
+- API de release explicite ;
+- API projet de preuves sans UUID de version client ;
+- workspace projet Preuves ;
+- validation persistée du listing import ;
+- promotion explicite vers une réponse avec reçu append-only.
 
 ### Security
 
-- preuve CLEAN exigée ;
-- SHA et portée projet/version contrôlés ;
-- source extraite immuable ;
-- double décision refusée ;
-- écriture canonique et soumission verrouillées à \`false\` par PostgreSQL.`,
+- aucun verdict antivirus navigateur ;
+- aucune référence de stockage/KMS exposée par l’API metadata ;
+- scan CLEAN distinct de la release ;
+- RLS tenant sur preuves/imports ;
+- promotion automatique interdite ;
+- \`ready_for_submission=false\` maintenu.`,
 
-  "HANDOFF.md": `## Transmission — staging PostgreSQL import prospectus
+  "HANDOFF.md": `## Transmission — chaîne preuve/import gouvernée
 
 Fichiers prioritaires :
 
-- \`database/migrations/0006_import_staging.sql\` ;
+- \`apps/web/src/server/evidence/postgres-tracked-evidence-store.ts\` ;
+- \`apps/web/src/server/evidence/postgres-tracked-evidence-store.integration.ts\` ;
+- \`apps/web/src/server/evidence/evidence-descriptor-service.ts\` ;
 - \`apps/web/src/server/import/postgres-import-staging-repository.ts\` ;
-- \`apps/web/src/server/import/postgres-import-staging-repository.integration.ts\` ;
-- \`apps/web/src/domain/prospectus-import.ts\` ;
-- \`apps/web/src/domain/prospectus-import-review.integration.ts\` ;
-- \`docs/04-development/PROSPECTUS_IMPORT_STAGING.md\`.
+- \`apps/web/src/server/import/postgres-import-promotion-repository.ts\` ;
+- \`apps/web/src/components/organisms/EvidenceWorkspacePanel.tsx\` ;
+- \`apps/web/src/components/organisms/ImportStagingReviewPanel.tsx\`.
+
+${evidenceEvidence}
 
 ${importEvidence}
 
-Ne jamais transformer une confirmation d’extraction en écriture canonique implicite.`,
+Ne jamais transformer une confirmation d’extraction ou un scan CLEAN en activation, promotion ou soumission implicite.`,
 
-  "docs/ARCHITECTURE.md": `## Staging PostgreSQL des imports prospectus
+  "docs/ARCHITECTURE.md": `## Chaîne preuve et import prospectus
 
-La chaîne d’import est séparée du repository canonique : une preuve CLEAN est extraite vers des propositions non vérifiées, persistée dans un staging RLS, puis chaque proposition reçoit éventuellement une décision humaine. Même après confirmation humaine, aucune donnée n’est copiée automatiquement vers \`project_answers\`.
+La preuve binaire et ses métadonnées sont séparées : le store binaire conserve les octets privés tandis que PostgreSQL porte les métadonnées, la portée tenant, le SHA et les états de cycle de vie. Le staging import n’accepte qu’une preuve réellement CLEAN. Les valeurs extraites restent non vérifiées jusqu’à revue humaine et la promotion vers le canonique reste une commande distincte, autorisée, versionnée et auditée.
+
+${evidenceEvidence}
 
 ${importEvidence}`,
 
-  "apps/web/README.md": `## Staging PostgreSQL des imports
+  "apps/web/README.md": `## Preuves et imports gouvernés
 
-\`createPostgresImportStagingRepository\` persiste des batches d’extraction et leurs décisions humaines sous identité serveur vérifiée et contexte tenant.
+Le runtime PostgreSQL expose un store de preuve tenant-scopé, un staging import, un listing read-only, une revue humaine et une promotion explicite.
+
+${evidenceEvidence}
 
 ${importEvidence}
 
-Ce repository n’expose aucune opération de copie vers le modèle canonique.`,
+Le mode local-json ne simule ni OIDC, ni scanner, ni KMS, ni object store de production.`,
 };
 
 for (const [file, markdown] of Object.entries(blocks)) {
@@ -194,6 +277,9 @@ console.log(JSON.stringify({
   updatedDocuments: Object.keys(blocks).length,
   projectRepository: projectValidation.status,
   importStaging: importValidation.status,
+  importListing: importQueryValidation.status,
+  importPromotion: promotionValidation.status,
+  evidenceStore: evidenceValidation.status,
   readyForSubmission: false,
   nextActionOwnership: "PRESERVED_FROM_CANONICAL_LOOP_CONTROL",
 }, null, 2));
