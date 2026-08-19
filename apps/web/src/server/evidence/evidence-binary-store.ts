@@ -9,10 +9,17 @@ export type StageEvidenceBinaryInput = EvidenceBinaryObjectKey & {
   content: Uint8Array;
 };
 
+export type EvidenceBinaryLocation = {
+  storageProvider: string;
+  storageObjectKey: string;
+  storageReference: string;
+  encryptionAlgorithm: string;
+};
+
 export interface EvidenceBinaryStore {
   readonly provider: string;
   readonly productionReady: boolean;
-  stage(input: StageEvidenceBinaryInput): Promise<void>;
+  stage(input: StageEvidenceBinaryInput): Promise<EvidenceBinaryLocation>;
   readQuarantined(input: EvidenceBinaryObjectKey): Promise<Uint8Array>;
   promoteToClean(input: EvidenceBinaryObjectKey): Promise<void>;
   readClean(input: EvidenceBinaryObjectKey): Promise<Uint8Array>;
@@ -46,6 +53,12 @@ export function createMemoryEvidenceBinaryStore(): EvidenceBinaryStore {
         content: Uint8Array.from(input.content),
         location: "QUARANTINE",
       });
+      return {
+        storageProvider: "MEMORY_TEST_ONLY",
+        storageObjectKey: `evidence/${input.organizationId}/${input.objectId}`,
+        storageReference: `memory-private:${input.organizationId}:${input.objectId}`,
+        encryptionAlgorithm: "NONE_TEST_ONLY",
+      };
     },
 
     async readQuarantined(input) {
