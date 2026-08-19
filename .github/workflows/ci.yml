@@ -238,15 +238,30 @@ jobs:
           node --input-type=module <<'NODE'
           import { readFile } from 'node:fs/promises';
           const root = 'examples/generated/united-capital-diamond';
-          const manifest = JSON.parse(await readFile(`${root}/generation-manifest.json`, 'utf8'));
-          const concordance = JSON.parse(await readFile(`${root}/concordance.json`, 'utf8'));
-          const docx = JSON.parse(await readFile(`${root}/docx-manifest.json`, 'utf8'));
-          const render = JSON.parse(await readFile(`${root}/render-manifest.json`, 'utf8'));
-          const catalog = JSON.parse(await readFile('regulatory/validation/CIRC005_WEB_CATALOG_VALIDATION.json', 'utf8'));
-          const api = JSON.parse(await readFile('regulatory/validation/CIRC005_WEB_API_INTEGRATION_VALIDATION.json', 'utf8'));
-          const postgres = JSON.parse(await readFile('regulatory/validation/POSTGRESQL_CORE_VALIDATION.json', 'utf8'));
-          const repository = JSON.parse(await readFile('regulatory/validation/POSTGRESQL_REPOSITORY_VALIDATION.json', 'utf8'));
-          const schema = JSON.parse(await readFile('schemas/canonical/PROSPECTUS_CANONICAL_MODEL_V1.schema.json', 'utf8'));
+          const readJson = async (file) => JSON.parse(await readFile(file, 'utf8'));
+          const manifest = await readJson(`${root}/generation-manifest.json`);
+          const concordance = await readJson(`${root}/concordance.json`);
+          const docx = await readJson(`${root}/docx-manifest.json`);
+          const render = await readJson(`${root}/render-manifest.json`);
+          const catalog = await readJson('regulatory/validation/CIRC005_WEB_CATALOG_VALIDATION.json');
+          const api = await readJson('regulatory/validation/CIRC005_WEB_API_INTEGRATION_VALIDATION.json');
+          const postgres = await readJson('regulatory/validation/POSTGRESQL_CORE_VALIDATION.json');
+          const repository = await readJson('regulatory/validation/POSTGRESQL_REPOSITORY_VALIDATION.json');
+          const importStaging = await readJson('regulatory/validation/POSTGRESQL_IMPORT_STAGING_VALIDATION.json');
+          const importQuery = await readJson('regulatory/validation/POSTGRESQL_IMPORT_STAGING_QUERY_VALIDATION.json');
+          const importPromotion = await readJson('regulatory/validation/POSTGRESQL_IMPORT_PROMOTION_VALIDATION.json');
+          const evidenceStore = await readJson('regulatory/validation/POSTGRESQL_EVIDENCE_OBJECT_STORE_VALIDATION.json');
+          const schema = await readJson('schemas/canonical/PROSPECTUS_CANONICAL_MODEL_V1.schema.json');
+
+          const assertValidation = (validation, id, checks) => {
+            if (validation.status !== 'PASS' || validation.validationId !== id) {
+              throw new Error(`Validation failed: ${id}`);
+            }
+            for (const check of checks) {
+              if (validation.checks?.[check] !== true) throw new Error(`Validation check failed: ${id}:${check}`);
+            }
+          };
+
           if (concordance.length !== 62) throw new Error(`Expected 62 requirements, got ${concordance.length}`);
           if (manifest.coverage_counts.MISSING !== 0) throw new Error(`Expected MISSING=0, got ${manifest.coverage_counts.MISSING}`);
           if (manifest.ready_for_submission !== false || docx.ready_for_submission !== false) {
@@ -301,6 +316,49 @@ jobs:
           ) {
             throw new Error('PostgreSQL project repository validation failed');
           }
+
+          assertValidation(importStaging, 'POSTGRESQL_IMPORT_STAGING_VALIDATION_V1', [
+            'cleanEvidenceRequired',
+            'tenantIsolation',
+            'crossTenantEvidenceRejected',
+            'reviewerIdentityPersisted',
+            'doubleReviewRejected',
+            'canonicalWriteLockedFalse',
+            'readyForSubmissionLockedFalse',
+            'sourceDigestPreserved',
+          ]);
+          assertValidation(importQuery, 'POSTGRESQL_IMPORT_STAGING_QUERY_VALIDATION_V1', [
+            'readOnlyProjectListing',
+            'reviewCounters',
+            'tenantIsolation',
+            'canonicalWriteRemainsFalse',
+            'readyForSubmissionRemainsFalse',
+          ]);
+          assertValidation(importPromotion, 'POSTGRESQL_IMPORT_PROMOTION_VALIDATION_V1', [
+            'answerWriteAuthorizationRequired',
+            'explicitQuestionTargetRequired',
+            'humanConfirmationRequired',
+            'optimisticConcurrencyRequired',
+            'tenantIsolation',
+            'duplicatePromotionRejected',
+            'exactlyOneProjectVersionCreated',
+            'immutableSourceProvenancePersisted',
+            'reviewerAndPromoterIdentityPersisted',
+            'appendOnlyPromotionReceipt',
+            'readyForSubmissionRemainsFalse',
+          ]);
+          assertValidation(evidenceStore, 'POSTGRESQL_EVIDENCE_OBJECT_STORE_VALIDATION_V1', [
+            'binaryAndMetadataTrackedTogether',
+            'quarantinedPendingPersisted',
+            'cleanScanDoesNotAutoRelease',
+            'explicitReleasePersisted',
+            'releasedBinaryDigestPreserved',
+            'metadataReadTenantScoped',
+            'crossTenantReadBlockedByRls',
+            'importStagingCleanEvidenceCompatible',
+            'productionReadinessNotClaimed',
+          ]);
+
           if (schema.$defs.regulatoryContext.properties.ready_for_submission.const !== false) {
             throw new Error('Canonical schema must lock ready_for_submission to false');
           }
@@ -327,6 +385,10 @@ jobs:
             regulatory/validation/CIRC005_WEB_API_INTEGRATION_VALIDATION.json
             regulatory/validation/POSTGRESQL_CORE_VALIDATION.json
             regulatory/validation/POSTGRESQL_REPOSITORY_VALIDATION.json
+            regulatory/validation/POSTGRESQL_IMPORT_STAGING_VALIDATION.json
+            regulatory/validation/POSTGRESQL_IMPORT_STAGING_QUERY_VALIDATION.json
+            regulatory/validation/POSTGRESQL_IMPORT_PROMOTION_VALIDATION.json
+            regulatory/validation/POSTGRESQL_EVIDENCE_OBJECT_STORE_VALIDATION.json
             schemas/canonical/PROSPECTUS_CANONICAL_MODEL_V1.schema.json
             database/migrations/*.sql
             database/tests/*.sql
@@ -351,10 +413,15 @@ jobs:
             scripts/update-regulatory-catalog-docs.mjs \
             scripts/update-structured-share-class-docs.mjs \
             scripts/update-canonical-schema-docs.mjs \
+            scripts/update-postgres-repository-docs.mjs \
             regulatory/validation/CIRC005_WEB_CATALOG_VALIDATION.json \
             regulatory/validation/CIRC005_WEB_API_INTEGRATION_VALIDATION.json \
             regulatory/validation/POSTGRESQL_CORE_VALIDATION.json \
             regulatory/validation/POSTGRESQL_REPOSITORY_VALIDATION.json \
+            regulatory/validation/POSTGRESQL_IMPORT_STAGING_VALIDATION.json \
+            regulatory/validation/POSTGRESQL_IMPORT_STAGING_QUERY_VALIDATION.json \
+            regulatory/validation/POSTGRESQL_IMPORT_PROMOTION_VALIDATION.json \
+            regulatory/validation/POSTGRESQL_EVIDENCE_OBJECT_STORE_VALIDATION.json \
             examples/generated/united-capital-diamond/prospectus-draft.md \
             examples/generated/united-capital-diamond/canonical-data.json \
             examples/generated/united-capital-diamond/questionnaire-state.json \
