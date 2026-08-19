@@ -82,6 +82,8 @@ assertValidation(
     "quarantinedPendingPersisted",
     "cleanScanDoesNotAutoRelease",
     "explicitReleasePersisted",
+    "releaseRecoversAfterBinaryCommitGap",
+    "releaseRetryIdempotent",
     "releasedBinaryDigestPreserved",
     "metadataReadTenantScoped",
     "crossTenantReadBlockedByRls",
@@ -120,6 +122,8 @@ const evidenceEvidence = `- upload : \`QUARANTINE_ONLY\` ;
 - octets : store binaire privé derrière abstraction ;
 - scan CLEAN : ne libère jamais automatiquement ;
 - release : acte séparé et explicite ;
+- recovery binaire CLEAN / commit PostgreSQL manquant : \`PASS\` ;
+- retry de release : \`IDEMPOTENT\` ;
 - lecture metadata : tenant-scopée ;
 - compatibilité avec le staging import : \`PASS\` ;
 - verdict antivirus fourni par navigateur : \`FORBIDDEN\` ;
@@ -163,7 +167,7 @@ ${importEvidence}
 
 ${evidenceEvidence}
 
-Prochaine tranche autonome : durcir l’idempotence des transitions de preuve, enrichir les validations E2E/accessibilité et poursuivre les adaptateurs d’infrastructure sans jamais simuler les services de production absents.`,
+Prochaine tranche autonome : enrichir les validations E2E/accessibilité et poursuivre les adaptateurs d’infrastructure sans jamais simuler les services de production absents.`,
 
   "WORK_LOG.md": `## 2026-08-19 — Fermeture de la chaîne preuve/import
 
@@ -171,10 +175,12 @@ Prochaine tranche autonome : durcir l’idempotence des transitions de preuve, e
 2. Store preuve PostgreSQL synchronisé avec le store binaire.
 3. Métadonnées de preuve tenant-scopées et non sensibles côté API.
 4. Release explicite séparée du scan CLEAN.
-5. API projet sans UUID technique fourni par le navigateur.
-6. Workspace Preuves : upload, états, release et extraction.
-7. Promotion canonique explicite avec \`ANSWER_WRITE\`, cible humaine et \`expectedVersion\`.
-8. Promotion automatique et soumission maintenues interdites.
+5. Recovery après succès binaire et commit PostgreSQL manquant.
+6. Retry de release idempotent après contrôle d’identité/RBAC.
+7. API projet sans UUID technique fourni par le navigateur.
+8. Workspace Preuves : upload, états, release et extraction.
+9. Promotion canonique explicite avec \`ANSWER_WRITE\`, cible humaine et \`expectedVersion\`.
+10. Promotion automatique et soumission maintenues interdites.
 
 ${evidenceEvidence}
 
@@ -197,6 +203,8 @@ Les dépendances production (stockage objet, KMS/secrets, antivirus réel, OIDC 
 - [x] Interdire tout verdict antivirus fourni par le navigateur.
 - [x] Exiger un scan CLEAN avant release.
 - [x] Séparer scan CLEAN et release explicite.
+- [x] Récupérer une release après succès binaire et échec avant commit PostgreSQL.
+- [x] Rendre les retries de release idempotents.
 - [x] Lire les métadonnées sans exposer références de stockage/KMS.
 - [x] Exposer le staging via factory runtime et API gouvernée.
 - [x] Construire l’écran de revue des propositions importées.
@@ -204,7 +212,6 @@ Les dépendances production (stockage objet, KMS/secrets, antivirus réel, OIDC 
 - [x] Ajouter le listing read-only tenant-scopé des imports.
 - [x] Promouvoir une valeur confirmée uniquement par commande explicite \`ANSWER_WRITE\` + cible + \`expectedVersion\`.
 - [x] Persister un reçu de promotion append-only.
-- [ ] Durcir l’idempotence/recovery de la release en cas de panne entre store binaire et commit PostgreSQL.
 - [ ] Ajouter des E2E navigateur et contrôles d’accessibilité.
 - [ ] Configurer stockage objet privé de production.
 - [ ] Configurer antivirus réel et workflow de scan serveur.
@@ -217,7 +224,8 @@ Les dépendances production (stockage objet, KMS/secrets, antivirus réel, OIDC 
 
 - store de preuve suivi en PostgreSQL ;
 - lecture metadata tenant-scopée ;
-- API de release explicite ;
+- API de release explicite et idempotente ;
+- recovery de release entre store binaire et PostgreSQL ;
 - API projet de preuves sans UUID de version client ;
 - workspace projet Preuves ;
 - validation persistée du listing import ;
@@ -238,6 +246,7 @@ Fichiers prioritaires :
 
 - \`apps/web/src/server/evidence/postgres-tracked-evidence-store.ts\` ;
 - \`apps/web/src/server/evidence/postgres-tracked-evidence-store.integration.ts\` ;
+- \`apps/web/src/server/evidence/evidence-scan-release-service.ts\` ;
 - \`apps/web/src/server/evidence/evidence-descriptor-service.ts\` ;
 - \`apps/web/src/server/import/postgres-import-staging-repository.ts\` ;
 - \`apps/web/src/server/import/postgres-import-promotion-repository.ts\` ;
@@ -252,7 +261,7 @@ Ne jamais transformer une confirmation d’extraction ou un scan CLEAN en activa
 
   "docs/ARCHITECTURE.md": `## Chaîne preuve et import prospectus
 
-La preuve binaire et ses métadonnées sont séparées : le store binaire conserve les octets privés tandis que PostgreSQL porte les métadonnées, la portée tenant, le SHA et les états de cycle de vie. Le staging import n’accepte qu’une preuve réellement CLEAN. Les valeurs extraites restent non vérifiées jusqu’à revue humaine et la promotion vers le canonique reste une commande distincte, autorisée, versionnée et auditée.
+La preuve binaire et ses métadonnées sont séparées : le store binaire conserve les octets privés tandis que PostgreSQL porte les métadonnées, la portée tenant, le SHA et les états de cycle de vie. Le staging import n’accepte qu’une preuve réellement CLEAN. Les valeurs extraites restent non vérifiées jusqu’à revue humaine et la promotion vers le canonique reste une commande distincte, autorisée, versionnée et auditée. La release est récupérable après un succès binaire sans commit PostgreSQL et les retries applicatifs sont idempotents.
 
 ${evidenceEvidence}
 
