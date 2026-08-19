@@ -1,8 +1,9 @@
 import "server-only";
 
+import type { EvidenceBinaryStore } from "@/server/evidence/evidence-binary-store";
 import type { EvidenceObjectStore } from "@/server/evidence/evidence-object-store";
 import { createEvidenceDescriptorService } from "@/server/evidence/evidence-descriptor-service";
-import { createDevelopmentFilesystemEvidenceStore } from "@/server/evidence/filesystem-evidence-object-store";
+import { createDevelopmentFilesystemEvidenceBinaryStore } from "@/server/evidence/filesystem-evidence-binary-store";
 import { createEvidenceIngestionService } from "@/server/evidence/evidence-ingestion-service";
 import { createPostgresEvidenceProjectQueryRepository } from "@/server/evidence/postgres-evidence-project-query-repository";
 import { createPostgresTrackedEvidenceStore } from "@/server/evidence/postgres-tracked-evidence-store";
@@ -14,7 +15,7 @@ import {
   regulatoryStorageDriver,
 } from "@/server/storage";
 
-let runtimeBinaryEvidenceStore: EvidenceObjectStore | undefined;
+let runtimeBinaryEvidenceStore: EvidenceBinaryStore | undefined;
 let runtimeEvidenceObjectStore: EvidenceObjectStore | undefined;
 
 export function getRuntimeEvidenceObjectStore(): EvidenceObjectStore {
@@ -32,7 +33,7 @@ export function getRuntimeEvidenceObjectStore(): EvidenceObjectStore {
     }
     const root = process.env.REGULATORY_EVIDENCE_ROOT?.trim();
     if (!root) throw new Error("RUNTIME_CONFIGURATION_MISSING:REGULATORY_EVIDENCE_ROOT");
-    runtimeBinaryEvidenceStore ??= createDevelopmentFilesystemEvidenceStore(root);
+    runtimeBinaryEvidenceStore ??= createDevelopmentFilesystemEvidenceBinaryStore(root);
     runtimeEvidenceObjectStore = createPostgresTrackedEvidenceStore({
       pool: getRuntimePostgresPool(),
       identityProvider: getRuntimeIdentityProvider(),

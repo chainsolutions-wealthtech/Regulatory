@@ -1,15 +1,21 @@
 import "server-only";
 
+import { createHash, randomUUID } from "node:crypto";
 import type { Pool, PoolClient, QueryResultRow } from "pg";
-import type {
-  EvidenceObjectDescriptor,
-  EvidenceObjectStore,
-  EvidenceReadResult,
-  ReadEvidenceDescriptorInput,
-  ReadEvidenceInput,
-  RecordEvidenceScanInput,
-  ReleaseEvidenceInput,
-  StageEvidenceInput,
+import type { EvidenceBinaryStore } from "@/server/evidence/evidence-binary-store";
+import {
+  assertDetectedMediaTypeMayBeReleased,
+  assertEvidenceIngestionAllowed,
+  assertTrustedScanResult,
+  safeEvidenceFilename,
+  type EvidenceObjectDescriptor,
+  type EvidenceObjectStore,
+  type EvidenceReadResult,
+  type ReadEvidenceDescriptorInput,
+  type ReadEvidenceInput,
+  type RecordEvidenceScanInput,
+  type ReleaseEvidenceInput,
+  type StageEvidenceInput,
 } from "@/server/evidence/evidence-object-store";
 import {
   assertVerifiedIdentity,
@@ -18,23 +24,34 @@ import {
 } from "@/server/security/verified-identity";
 
 /**
- * Couple un stockage binaire privé avec la table PostgreSQL gouvernée
- * regulatory.evidence_objects. PostgreSQL est la source de vérité des
- * métadonnées et le delegate reste responsable des octets.
+ * PostgreSQL est la source de vérité de toutes les métadonnées réglementaires
+ * et de cycle de vie. Le binary store ne gère que les octets privés et leur
+ * localisation technique.
  */
 export function createPostgresTrackedEvidenceStore(input: {
   pool: Pool;
   identityProvider: VerifiedIdentityProvider;
-  binaryStore: EvidenceObjectStore;
+  binaryStore: EvidenceBinaryStore;
 }): EvidenceObjectStore {
   return {
     provider: `POSTGRESQL_TRACKED:${input.binaryStore.provider}`,
     productionReady: input.binaryStore.productionReady,
 
     async stage(command: StageEvidenceInput) {
+      assertEvidenceIngestionAllowed(command);
       const identity = await resolveIdentity(input.identityProvider);
       assertCallerScope(identity, command.organizationId, command.uploadedBy);
-      const descriptor = await input.binaryStore.stage(command);
+
+      const objectId = randomUUID();
+      const content = Buffer.from(command.content);
+      const sha256 = createHash("sha256").update(content).digest("hex");
+      const location = await input.binaryStore.stage({
+        objectId,
+        organizationId: identity.organizationId,
+        content,
+      });
+      const retentionUntil = new Date(Date.now() + 3650 * 24 * 60 * 60 * 1000).toISOString();
+
       try {
         return await withTenant(input.pool, identity, async (client) => {
           await client.query(
@@ -47,50 +64,58 @@ export function createPostgresTrackedEvidenceStore(input: {
                scan_completed_at, uploaded_by, retention_until, legal_hold
              ) values (
                $1,$2,$3,$4,$5,$6,$7,$8,$9,$10,$11,$12,$13,$14,
-               $15,$16,$17,$18,$19,$20,$21,$22,$23
+               'QUARANTINED','PENDING',null,null,null,null,$15,$16,false
              )`,
             [
-              descriptor.objectId,
+              objectId,
               identity.organizationId,
-              descriptor.projectVersionId,
-              descriptor.storageProvider,
-              descriptor.storageObjectKey,
-              descriptor.storageReference,
-              descriptor.originalFilename,
-              descriptor.safeFilename,
-              descriptor.declaredMediaType ?? null,
-              descriptor.detectedMediaType ?? null,
-              descriptor.sha256,
-              descriptor.byteSize,
-              descriptor.encryptionAlgorithm,
-              descriptor.encryptionKeyReference,
-              descriptor.state,
-              descriptor.scanStatus,
-              descriptor.scanProvider ?? null,
-              descriptor.scanEngineVersion ?? null,
-              descriptor.scanSignatureVersion ?? null,
-              descriptor.scanCompletedAt ?? null,
-              descriptor.uploadedBy,
-              descriptor.retentionUntil,
-              descriptor.legalHold,
+              command.projectVersionId,
+              location.storageProvider,
+              location.storageObjectKey,
+              location.storageReference,
+              command.originalFilename,
+              safeEvidenceFilename(command.originalFilename),
+              command.declaredMediaType ?? null,
+              null,
+              sha256,
+              content.byteLength,
+              location.encryptionAlgorithm,
+              command.encryptionKeyReference,
+              command.uploadedBy,
+              retentionUntil,
             ],
           );
-          return readDescriptorRow(client, descriptor.objectId);
+          return readDescriptorRow(client, objectId);
         });
       } catch (error) {
-        await input.binaryStore.requestDeletion(descriptor.objectId, identity.userId).catch(() => undefined);
+        await input.binaryStore.delete({ objectId, organizationId: identity.organizationId }).catch(() => undefined);
         throw error;
       }
     },
 
     async recordScan(command: RecordEvidenceScanInput) {
+      assertTrustedScanResult(command);
       const identity = await resolveIdentity(input.identityProvider);
       const existing = await withTenant(input.pool, identity, (client) =>
         readDescriptorRow(client, command.objectId),
       );
       if (existing.sha256 !== command.expectedSha256) throw new Error("EVIDENCE_SCAN_DIGEST_MISMATCH");
-      const binaryResult = await input.binaryStore.recordScan(command);
-      if (binaryResult.sha256 !== existing.sha256) throw new Error("EVIDENCE_BINARY_METADATA_DIGEST_MISMATCH");
+      if (existing.state !== "QUARANTINED" && existing.state !== "SCANNING") {
+        throw new Error(`EVIDENCE_SCAN_STATE_INVALID:${existing.state}`);
+      }
+
+      const binary = await input.binaryStore.readQuarantined({
+        objectId: existing.objectId,
+        organizationId: identity.organizationId,
+      });
+      assertDigest(binary, existing.sha256, "EVIDENCE_QUARANTINE_DIGEST_MISMATCH");
+
+      const nextState = command.status === "CLEAN"
+        ? "QUARANTINED"
+        : command.status === "INFECTED"
+          ? "INFECTED"
+          : "REJECTED";
+
       return withTenant(input.pool, identity, async (client) => {
         const result = await client.query(
           `update regulatory.evidence_objects
@@ -112,7 +137,7 @@ export function createPostgresTrackedEvidenceStore(input: {
             command.scanSignatureVersion,
             command.scanCompletedAt,
             JSON.stringify(command.details ?? {}),
-            binaryResult.state,
+            nextState,
             command.expectedSha256,
           ],
         );
@@ -124,30 +149,44 @@ export function createPostgresTrackedEvidenceStore(input: {
     async release(command: ReleaseEvidenceInput) {
       const identity = await resolveIdentity(input.identityProvider);
       if (command.releasedBy !== identity.userId) throw new Error("EVIDENCE_RELEASE_ACTOR_MISMATCH");
+      if (!command.releasedAt.trim() || Number.isNaN(Date.parse(command.releasedAt))) {
+        throw new Error("EVIDENCE_RELEASE_TIMESTAMP_INVALID");
+      }
+
       const existing = await withTenant(input.pool, identity, (client) =>
         readDescriptorRow(client, command.objectId),
       );
 
       if (existing.state === "CLEAN" && existing.scanStatus === "CLEAN") {
         assertSameRelease(existing, command);
-        await assertBinaryClean(input.binaryStore, existing, identity);
+        await assertBinaryClean(input.binaryStore, existing);
         return existing;
       }
       if (existing.state !== "QUARANTINED" || existing.scanStatus !== "CLEAN") {
         throw new Error("EVIDENCE_CLEAN_SCAN_REQUIRED_BEFORE_RELEASE");
       }
+      if (!existing.detectedMediaType) throw new Error("EVIDENCE_DETECTED_MEDIA_TYPE_REQUIRED");
+      assertDetectedMediaTypeMayBeReleased(existing.detectedMediaType);
 
-      let binaryResult: EvidenceObjectDescriptor;
+      let alreadyPromoted = false;
       try {
-        binaryResult = await input.binaryStore.release(command);
+        const quarantined = await input.binaryStore.readQuarantined({
+          objectId: existing.objectId,
+          organizationId: identity.organizationId,
+        });
+        assertDigest(quarantined, existing.sha256, "EVIDENCE_RELEASE_DIGEST_MISMATCH");
       } catch (error) {
-        if (!isAlreadyReleasedBinaryError(error)) throw error;
-        binaryResult = await assertBinaryClean(input.binaryStore, existing, identity);
-        assertSameRelease(binaryResult, command);
+        if (!isQuarantineMissing(error)) throw error;
+        await assertBinaryClean(input.binaryStore, existing);
+        alreadyPromoted = true;
       }
-      if (binaryResult.sha256 !== existing.sha256) throw new Error("EVIDENCE_BINARY_METADATA_DIGEST_MISMATCH");
-      if (binaryResult.state !== "CLEAN" || binaryResult.scanStatus !== "CLEAN") {
-        throw new Error("EVIDENCE_BINARY_RELEASE_STATE_INVALID");
+
+      if (!alreadyPromoted) {
+        await input.binaryStore.promoteToClean({
+          objectId: existing.objectId,
+          organizationId: identity.organizationId,
+        });
+        await assertBinaryClean(input.binaryStore, existing);
       }
 
       return withTenant(input.pool, identity, async (client) => {
@@ -178,11 +217,22 @@ export function createPostgresTrackedEvidenceStore(input: {
       if (descriptor.state !== "CLEAN" || descriptor.scanStatus !== "CLEAN") {
         throw new Error("EVIDENCE_OBJECT_NOT_RELEASED");
       }
-      const binary = await input.binaryStore.readClean(command);
-      if (binary.descriptor.sha256 !== descriptor.sha256) {
-        throw new Error("EVIDENCE_BINARY_METADATA_DIGEST_MISMATCH");
-      }
-      return { ...binary, descriptor };
+      if (!descriptor.detectedMediaType) throw new Error("EVIDENCE_DETECTED_MEDIA_TYPE_REQUIRED");
+
+      const content = await input.binaryStore.readClean({
+        objectId: descriptor.objectId,
+        organizationId: identity.organizationId,
+      });
+      assertDigest(content, descriptor.sha256, "EVIDENCE_READ_DIGEST_MISMATCH");
+      return {
+        descriptor,
+        content,
+        headers: {
+          "content-type": descriptor.detectedMediaType,
+          "content-disposition": `attachment; filename="${descriptor.safeFilename}"`,
+          "cache-control": "private, no-store",
+        },
+      };
     },
 
     async readDescriptor(command: ReadEvidenceDescriptorInput) {
@@ -194,16 +244,13 @@ export function createPostgresTrackedEvidenceStore(input: {
     async setLegalHold(objectId: string, legalHold: boolean, actorId: string) {
       const identity = await resolveIdentity(input.identityProvider);
       if (actorId !== identity.userId) throw new Error("EVIDENCE_LEGAL_HOLD_ACTOR_MISMATCH");
-      const binaryResult = await input.binaryStore.setLegalHold(objectId, legalHold, actorId);
       return withTenant(input.pool, identity, async (client) => {
         const result = await client.query(
           `update regulatory.evidence_objects set legal_hold = $2 where id = $1 and state <> 'DELETED'`,
           [objectId, legalHold],
         );
         if (result.rowCount !== 1) throw new Error("EVIDENCE_OBJECT_NOT_FOUND");
-        const descriptor = await readDescriptorRow(client, objectId);
-        if (descriptor.sha256 !== binaryResult.sha256) throw new Error("EVIDENCE_BINARY_METADATA_DIGEST_MISMATCH");
-        return descriptor;
+        return readDescriptorRow(client, objectId);
       });
     },
 
@@ -212,7 +259,8 @@ export function createPostgresTrackedEvidenceStore(input: {
       if (actorId !== identity.userId) throw new Error("EVIDENCE_DELETION_ACTOR_MISMATCH");
       const existing = await withTenant(input.pool, identity, (client) => readDescriptorRow(client, objectId));
       if (existing.legalHold) throw new Error("EVIDENCE_LEGAL_HOLD_PREVENTS_DELETION");
-      await input.binaryStore.requestDeletion(objectId, actorId);
+
+      await input.binaryStore.delete({ objectId, organizationId: identity.organizationId });
       const now = new Date().toISOString();
       return withTenant(input.pool, identity, async (client) => {
         const result = await client.query(
@@ -331,23 +379,19 @@ async function withTenant<T>(
 }
 
 async function assertBinaryClean(
-  binaryStore: EvidenceObjectStore,
+  binaryStore: EvidenceBinaryStore,
   existing: EvidenceObjectDescriptor,
-  identity: VerifiedIdentityContext,
-): Promise<EvidenceObjectDescriptor> {
-  const read = await binaryStore.readClean({
+): Promise<void> {
+  const content = await binaryStore.readClean({
     objectId: existing.objectId,
-    organizationId: identity.organizationId,
-    requestedBy: identity.userId,
-    authorizationDecisionId: `EVIDENCE_RELEASE_RECOVERY:${identity.userId}:${existing.objectId}`,
+    organizationId: existing.organizationId,
   });
-  if (read.descriptor.sha256 !== existing.sha256) {
-    throw new Error("EVIDENCE_BINARY_METADATA_DIGEST_MISMATCH");
-  }
-  if (read.descriptor.state !== "CLEAN" || read.descriptor.scanStatus !== "CLEAN") {
-    throw new Error("EVIDENCE_BINARY_RELEASE_STATE_INVALID");
-  }
-  return read.descriptor;
+  assertDigest(content, existing.sha256, "EVIDENCE_BINARY_METADATA_DIGEST_MISMATCH");
+}
+
+function assertDigest(content: Uint8Array, expectedSha256: string, errorCode: string): void {
+  const actual = createHash("sha256").update(content).digest("hex");
+  if (actual !== expectedSha256) throw new Error(errorCode);
 }
 
 function assertSameRelease(descriptor: EvidenceObjectDescriptor, command: ReleaseEvidenceInput): void {
@@ -356,8 +400,11 @@ function assertSameRelease(descriptor: EvidenceObjectDescriptor, command: Releas
   }
 }
 
-function isAlreadyReleasedBinaryError(error: unknown): boolean {
-  return error instanceof Error && error.message === "EVIDENCE_CLEAN_SCAN_REQUIRED_BEFORE_RELEASE";
+function isQuarantineMissing(error: unknown): boolean {
+  return error instanceof Error && (
+    error.message === "EVIDENCE_BINARY_QUARANTINE_OBJECT_NOT_FOUND" ||
+    error.message === "EVIDENCE_BINARY_OBJECT_NOT_FOUND"
+  );
 }
 
 async function resolveIdentity(provider: VerifiedIdentityProvider): Promise<VerifiedIdentityContext> {
