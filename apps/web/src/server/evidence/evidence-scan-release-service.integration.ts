@@ -107,6 +107,14 @@ const released = await releaseService.releaseCleanScan({
 assert.equal(released.state, "CLEAN");
 assert.equal(releaseCalls, 1);
 
+const idempotentRetry = await releaseService.releaseCleanScan({
+  descriptor: released,
+  releasedAt: "2026-08-17T21:05:00.000Z",
+});
+assert.equal(idempotentRetry.state, "CLEAN");
+assert.equal(idempotentRetry.releasedAt, "2026-08-17T21:02:00.000Z");
+assert.equal(releaseCalls, 1, "Already CLEAN evidence must not invoke the store release again.");
+
 const deniedRelease = createEvidenceReleaseService({
   evidenceStore: store,
   identityProvider: createFixedTestIdentityProvider({
@@ -121,6 +129,11 @@ const deniedRelease = createEvidenceReleaseService({
 const releaseCallsBeforeDenied = releaseCalls;
 await assert.rejects(
   () => deniedRelease.releaseCleanScan({ descriptor: scanned, releasedAt: "2026-08-17T21:03:00.000Z" }),
+  /AUTHORIZATION_DENIED:EVIDENCE_VERIFY/,
+);
+assert.equal(releaseCalls, releaseCallsBeforeDenied);
+await assert.rejects(
+  () => deniedRelease.releaseCleanScan({ descriptor: released, releasedAt: "2026-08-17T21:06:00.000Z" }),
   /AUTHORIZATION_DENIED:EVIDENCE_VERIFY/,
 );
 assert.equal(releaseCalls, releaseCallsBeforeDenied);
