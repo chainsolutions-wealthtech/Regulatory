@@ -1,7 +1,7 @@
 import { mkdir, writeFile } from "node:fs/promises";
 import path from "node:path";
 import AxeBuilder from "@axe-core/playwright";
-import { expect, test } from "@playwright/test";
+import { expect, test, type Page } from "@playwright/test";
 
 const validationPath = path.resolve(
   process.cwd(),
@@ -14,12 +14,12 @@ const routes = [
   { path: "/regulatory-library", label: "regulatory library" },
 ] as const;
 
-async function assertAccessible(page: Parameters<typeof test>[0] extends never ? never : any, label: string) {
+async function assertAccessible(page: Page, label: string) {
   const scan = await new AxeBuilder({ page }).withTags(wcagTags).analyze();
   expect(scan.violations, `${label} accessibility violations`).toEqual([]);
 }
 
-async function assertNoHorizontalOverflow(page: Parameters<typeof test>[0] extends never ? never : any, label: string) {
+async function assertNoHorizontalOverflow(page: Page, label: string) {
   const dimensions = await page.evaluate(() => ({
     scrollWidth: document.documentElement.scrollWidth,
     clientWidth: document.documentElement.clientWidth,
