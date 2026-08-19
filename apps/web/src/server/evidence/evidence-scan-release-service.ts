@@ -91,13 +91,6 @@ export function createEvidenceReleaseService(input: {
       descriptor: EvidenceObjectDescriptor;
       releasedAt: string;
     }) {
-      if (command.descriptor.state !== "QUARANTINED" || command.descriptor.scanStatus !== "CLEAN") {
-        throw new Error("EVIDENCE_RELEASE_REQUIRES_CLEAN_SCAN");
-      }
-      if (!command.releasedAt.trim() || Number.isNaN(Date.parse(command.releasedAt))) {
-        throw new Error("EVIDENCE_RELEASE_TIMESTAMP_INVALID");
-      }
-
       const identity = assertVerifiedIdentity(await input.identityProvider.getVerifiedIdentity());
       if (command.descriptor.organizationId !== identity.organizationId) {
         throw new Error("EVIDENCE_RELEASE_ORGANIZATION_MISMATCH");
@@ -111,6 +104,19 @@ export function createEvidenceReleaseService(input: {
         "EVIDENCE_VERIFY",
         { organizationId: identity.organizationId },
       );
+
+      if (command.descriptor.state === "CLEAN" && command.descriptor.scanStatus === "CLEAN") {
+        if (!command.descriptor.releasedBy || !command.descriptor.releasedAt) {
+          throw new Error("EVIDENCE_RELEASE_AUDIT_METADATA_REQUIRED");
+        }
+        return command.descriptor;
+      }
+      if (command.descriptor.state !== "QUARANTINED" || command.descriptor.scanStatus !== "CLEAN") {
+        throw new Error("EVIDENCE_RELEASE_REQUIRES_CLEAN_SCAN");
+      }
+      if (!command.releasedAt.trim() || Number.isNaN(Date.parse(command.releasedAt))) {
+        throw new Error("EVIDENCE_RELEASE_TIMESTAMP_INVALID");
+      }
 
       const released = await input.evidenceStore.release({
         objectId: command.descriptor.objectId,
