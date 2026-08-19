@@ -45,15 +45,16 @@ try {
   assert.equal(staged.state, "QUARANTINED");
   assert.equal(staged.scanStatus, "PENDING");
   assert.equal(staged.storageProvider, "MEMORY_TEST_ONLY");
-  assert.equal(staged.storageObjectKey, `evidence/${organizationId}/${staged.objectId}`);
-  const stagedDb = await adminPool.query<{ state: string; scan_status: string; sha256: string }>(
-    `select state::text, scan_status::text, sha256 from regulatory.evidence_objects where id = $1`,
+  assert.equal(staged.storageObjectKey, `quarantine/${organizationId}/${staged.objectId}`);
+  const stagedDb = await adminPool.query<{ state: string; scan_status: string; sha256: string; storage_object_key: string }>(
+    `select state::text, scan_status::text, sha256, storage_object_key from regulatory.evidence_objects where id = $1`,
     [staged.objectId],
   );
   assert.equal(stagedDb.rowCount, 1);
   assert.equal(stagedDb.rows[0].state, "QUARANTINED");
   assert.equal(stagedDb.rows[0].scan_status, "PENDING");
   assert.equal(stagedDb.rows[0].sha256, staged.sha256);
+  assert.equal(stagedDb.rows[0].storage_object_key, `quarantine/${organizationId}/${staged.objectId}`);
 
   const scanned = await store.recordScan({
     objectId: staged.objectId,
@@ -76,13 +77,15 @@ try {
   });
   assert.equal(released.state, "CLEAN");
   assert.equal(released.scanStatus, "CLEAN");
-  const releasedDb = await adminPool.query<{ state: string; scan_status: string; released_by: string }>(
-    `select state::text, scan_status::text, released_by::text from regulatory.evidence_objects where id = $1`,
+  assert.equal(released.storageObjectKey, `clean/${organizationId}/${staged.objectId}`);
+  const releasedDb = await adminPool.query<{ state: string; scan_status: string; released_by: string; storage_object_key: string }>(
+    `select state::text, scan_status::text, released_by::text, storage_object_key from regulatory.evidence_objects where id = $1`,
     [staged.objectId],
   );
   assert.equal(releasedDb.rows[0].state, "CLEAN");
   assert.equal(releasedDb.rows[0].scan_status, "CLEAN");
   assert.equal(releasedDb.rows[0].released_by, userId);
+  assert.equal(releasedDb.rows[0].storage_object_key, `clean/${organizationId}/${staged.objectId}`);
 
   const read = await store.readClean({
     objectId: staged.objectId,
@@ -100,6 +103,7 @@ try {
     authorizationDecisionId: "ci-evidence-metadata",
   });
   assert.equal(metadata?.state, "CLEAN");
+  assert.equal(metadata?.storageObjectKey, `clean/${organizationId}/${staged.objectId}`);
 
   const recoveryContent = new TextEncoder().encode("%PDF-1.7\nrelease recovery evidence\n");
   const recoveryStaged = await store.stage({
@@ -128,24 +132,28 @@ try {
     releasedAt: "2026-08-18T18:34:00.000Z",
   };
 
-  await binaryStore.promoteToClean({ objectId: recoveryStaged.objectId, organizationId });
+  const recoveredBinaryLocation = await binaryStore.promoteToClean({ objectId: recoveryStaged.objectId, organizationId });
+  assert.equal(recoveredBinaryLocation.storageObjectKey, `clean/${organizationId}/${recoveryStaged.objectId}`);
   assert.deepEqual(
     Buffer.from(await binaryStore.readClean({ objectId: recoveryStaged.objectId, organizationId })),
     Buffer.from(recoveryContent),
   );
-  const recoveryDbBefore = await adminPool.query<{ state: string; scan_status: string }>(
-    `select state::text, scan_status::text from regulatory.evidence_objects where id = $1`,
+  const recoveryDbBefore = await adminPool.query<{ state: string; scan_status: string; storage_object_key: string }>(
+    `select state::text, scan_status::text, storage_object_key from regulatory.evidence_objects where id = $1`,
     [recoveryStaged.objectId],
   );
   assert.equal(recoveryDbBefore.rows[0].state, "QUARANTINED");
   assert.equal(recoveryDbBefore.rows[0].scan_status, "CLEAN");
+  assert.equal(recoveryDbBefore.rows[0].storage_object_key, `quarantine/${organizationId}/${recoveryStaged.objectId}`);
 
   const recovered = await store.release(recoveryCommand);
   assert.equal(recovered.state, "CLEAN", "Retry must reconcile PostgreSQL after binary release already succeeded.");
   assert.equal(recovered.releasedBy, userId);
+  assert.equal(recovered.storageObjectKey, `clean/${organizationId}/${recoveryStaged.objectId}`);
   const retried = await store.release(recoveryCommand);
   assert.equal(retried.state, "CLEAN", "Repeated release with the same actor must be idempotent.");
   assert.equal(retried.releasedAt, recoveryCommand.releasedAt);
+  assert.equal(retried.storageObjectKey, `clean/${organizationId}/${recoveryStaged.objectId}`);
 
   const recoveryRead = await store.readClean({
     objectId: recoveryStaged.objectId,
@@ -191,6 +199,7 @@ try {
     checks: {
       binaryAndMetadataTrackedTogether: true,
       binaryStoreContainsNoRegulatoryDescriptor: true,
+      binaryLocationPromotedWithRelease: true,
       quarantinedPendingPersisted: true,
       cleanScanDoesNotAutoRelease: true,
       explicitReleasePersisted: true,
