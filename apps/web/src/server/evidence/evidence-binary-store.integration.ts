@@ -6,7 +6,11 @@ const organizationId = "10000000-0000-0000-0000-000000000001";
 const objectId = "50000000-0000-0000-0000-000000000001";
 const content = new TextEncoder().encode("binary evidence fixture");
 
-await store.stage({ objectId, organizationId, content });
+const location = await store.stage({ objectId, organizationId, content });
+assert.equal(location.storageProvider, "MEMORY_TEST_ONLY");
+assert.equal(location.storageObjectKey, `evidence/${organizationId}/${objectId}`);
+assert.equal(location.storageReference, `memory-private:${organizationId}:${objectId}`);
+assert.equal(location.encryptionAlgorithm, "NONE_TEST_ONLY");
 assert.deepEqual(Buffer.from(await store.readQuarantined({ objectId, organizationId })), Buffer.from(content));
 await assert.rejects(
   () => store.readClean({ objectId, organizationId }),
