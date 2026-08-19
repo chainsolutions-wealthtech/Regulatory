@@ -27,6 +27,11 @@ const compliance: AuthorizationSubject = {
   organizationId,
   roles: ["COMPLIANCE"],
 };
+const security: AuthorizationSubject = {
+  userId: "72000000-0000-0000-0000-000000000008",
+  organizationId,
+  roles: ["SECURITY"],
+};
 const reader: AuthorizationSubject = {
   userId: "72000000-0000-0000-0000-000000000003",
   organizationId,
@@ -42,6 +47,26 @@ assert(
 assert(
   !authorize(compliance, "SUBMISSION_SEND", { organizationId }).allowed,
   "Submission must remain disabled for all roles.",
+);
+assert(
+  authorize(security, "EVIDENCE_SCAN", { organizationId }).allowed,
+  "Security service identity must be allowed to run trusted evidence scanning.",
+);
+assert(
+  !authorize(security, "EVIDENCE_VERIFY", { organizationId }).allowed,
+  "Security scanning must not grant human evidence release authority.",
+);
+assert(
+  authorize(compliance, "EVIDENCE_VERIFY", { organizationId }).allowed,
+  "Compliance must retain human evidence verification authority.",
+);
+assert(
+  !authorize(compliance, "EVIDENCE_SCAN", { organizationId }).allowed,
+  "Compliance verification must not implicitly become a scanner service privilege.",
+);
+assert(
+  !authorize(product, "EVIDENCE_SCAN", { organizationId }).allowed,
+  "Product must not run trusted evidence scanning.",
 );
 assert(
   !authorize(
@@ -137,6 +162,7 @@ const validation = {
     readerCannotWrite: true,
     tenantMismatchDenied: true,
     submissionDisabled: true,
+    scannerPrivilegeSeparatedFromHumanVerification: true,
     complianceSelfApprovalDenied: true,
     roleSpecificReviewDecision: true,
     blockerStopsPreCompliance: true,
