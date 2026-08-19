@@ -40,7 +40,7 @@
     },
     "SECURITY": {
       "label": "Sécurité",
-      "description": "Revoit sécurité, accès, stockage, rétention et événements sensibles.",
+      "description": "Revoit sécurité, accès, stockage, rétention et événements sensibles, et porte l’identité technique autorisée à déclencher le scanning de preuves.",
       "inherits": ["READER"]
     },
     "AUDIT": {
@@ -64,6 +64,7 @@
     "ANSWER_WRITE": { "resource": "answer", "sensitive": true },
     "EVIDENCE_READ": { "resource": "evidence", "sensitive": true },
     "EVIDENCE_WRITE": { "resource": "evidence", "sensitive": true },
+    "EVIDENCE_SCAN": { "resource": "evidence", "sensitive": true },
     "EVIDENCE_VERIFY": { "resource": "evidence", "sensitive": true },
     "GENERATION_RUN": { "resource": "generated_document", "sensitive": true },
     "GENERATION_READ": { "resource": "generated_document", "sensitive": false },
@@ -123,7 +124,7 @@
       "REVIEW_COMMENT", "REVIEW_DECIDE_OPERATIONS", "WORKFLOW_TRANSITION", "CLAUSE_READ"
     ],
     "SECURITY": [
-      "PROJECT_LIST", "PROJECT_READ", "EVIDENCE_READ", "REVIEW_COMMENT",
+      "PROJECT_LIST", "PROJECT_READ", "EVIDENCE_READ", "EVIDENCE_SCAN", "REVIEW_COMMENT",
       "REVIEW_DECIDE_SECURITY", "AUDIT_READ"
     ],
     "AUDIT": [
@@ -144,6 +145,11 @@
       "id": "PRODUCT_CANNOT_SELF_APPROVE_COMPLIANCE",
       "description": "Le contributeur produit ne peut pas rendre la décision conformité pour son propre travail.",
       "actions": ["ANSWER_WRITE", "REVIEW_DECIDE_COMPLIANCE"]
+    },
+    {
+      "id": "EVIDENCE_SCAN_SEPARATE_FROM_RELEASE",
+      "description": "Le rôle sécurité peut déclencher le scanning de confiance mais ne reçoit pas l'autorité humaine de libération EVIDENCE_VERIFY.",
+      "actions": ["EVIDENCE_SCAN", "EVIDENCE_VERIFY"]
     },
     {
       "id": "SUBMISSION_DISABLED_V1",
