@@ -8,6 +8,7 @@ const importValidation = await readValidation("POSTGRESQL_IMPORT_STAGING_VALIDAT
 const importQueryValidation = await readValidation("POSTGRESQL_IMPORT_STAGING_QUERY_VALIDATION.json");
 const promotionValidation = await readValidation("POSTGRESQL_IMPORT_PROMOTION_VALIDATION.json");
 const evidenceValidation = await readValidation("POSTGRESQL_EVIDENCE_OBJECT_STORE_VALIDATION.json");
+const scanQueueValidation = await readValidation("POSTGRESQL_EVIDENCE_SCAN_QUEUE_VALIDATION.json");
 
 assertValidation(
   projectValidation,
@@ -79,6 +80,7 @@ assertValidation(
   "POSTGRESQL_EVIDENCE_OBJECT_STORE_VALIDATION_V1",
   [
     "binaryAndMetadataTrackedTogether",
+    "binaryStoreContainsNoRegulatoryDescriptor",
     "quarantinedPendingPersisted",
     "cleanScanDoesNotAutoRelease",
     "explicitReleasePersisted",
@@ -91,6 +93,23 @@ assertValidation(
     "productionReadinessNotClaimed",
   ],
   "La preuve du store d'evidence PostgreSQL est incomplète.",
+);
+assertValidation(
+  scanQueueValidation,
+  "POSTGRESQL_EVIDENCE_SCAN_QUEUE_VALIDATION_V1",
+  [
+    "securityRoleRequired",
+    "pendingClaimTransitionsToScanning",
+    "scanStartedRecorded",
+    "leaseRecorded",
+    "activeClaimNotDuplicated",
+    "expiredLeaseRecoverable",
+    "attemptCountIncremented",
+    "tenantIsolationEnforced",
+    "noBrowserScanVerdictIntroduced",
+    "readyForSubmissionRemainsFalse",
+  ],
+  "La preuve de la file PostgreSQL du scanner serveur est incomplète.",
 );
 
 const projectEvidence = `- dépôt PostgreSQL projet : \`IMPLEMENTED_AND_TESTED\` ;
@@ -118,20 +137,28 @@ const importEvidence = `- staging PostgreSQL tenant-scopé : \`IMPLEMENTED_AND_T
 - \`ready_for_submission\` : \`false\`.`;
 
 const evidenceEvidence = `- upload : \`QUARANTINE_ONLY\` ;
-- métadonnées : PostgreSQL + RLS tenant ;
-- octets : store binaire privé derrière abstraction ;
+- métadonnées réglementaires : PostgreSQL + RLS tenant, source de vérité unique ;
+- octets : store binaire privé derrière abstraction binary-only ;
+- adaptateur filesystem : \`DEVELOPMENT_ONLY\` ;
+- adaptateur S3/S3-compatible SSE-KMS : \`IMPLEMENTED_AND_TESTED\`, environnement cible non attesté ;
+- scanner HTTP d’attestation server-to-server : \`IMPLEMENTED_AND_TESTED\` ;
+- identité worker scanner : bearer OIDC vérifié, rôle \`SECURITY\` ;
+- file PostgreSQL : \`FOR UPDATE SKIP LOCKED\` + lease récupérable + compteur d’essais ;
+- séparation RBAC : \`SECURITY=EVIDENCE_SCAN\`, \`COMPLIANCE=EVIDENCE_VERIFY\` ;
 - scan CLEAN : ne libère jamais automatiquement ;
-- release : acte séparé et explicite ;
+- release : acte conformité séparé et explicite ;
 - recovery binaire CLEAN / commit PostgreSQL manquant : \`PASS\` ;
 - retry de release : \`IDEMPOTENT\` ;
-- lecture metadata : tenant-scopée ;
-- compatibilité avec le staging import : \`PASS\` ;
 - verdict antivirus fourni par navigateur : \`FORBIDDEN\` ;
-- stockage objet/KMS/antivirus de production : \`NOT_PROVISIONED\` ;
-- prétention production-ready : \`FORBIDDEN\`.`;
+- commande worker serveur : \`IMPLEMENTED\` ;
+- scheduler/cron de l'environnement cible : \`NOT_PROVISIONED\` ;
+- bucket/KMS/scanner/OIDC cibles : \`NOT_ATTESTED\` ;
+- prétention production-ready par simple configuration : \`FORBIDDEN\` ;
+- acceptation production : \`REQUIRED_EXTERNAL_BLOCKER\` ;
+- \`ready_for_submission\` : \`false\`.`;
 
 const blocks = {
-  "STATUS.md": `## PostgreSQL, preuves et import gouverné — état 2026-08-19
+  "STATUS.md": `## PostgreSQL, preuves et import gouverné — état 2026-08-20
 
 ${projectEvidence}
 
@@ -139,11 +166,11 @@ ${projectEvidence}
 
 ${importEvidence}
 
-### Preuves documentaires
+### Preuves documentaires et scanner serveur
 
 ${evidenceEvidence}
 
-Le flux applicatif est désormais : upload en quarantaine → scan serveur de confiance → release explicite → extraction vers staging non vérifié → revue humaine → promotion canonique explicite et versionnée. Aucune étape ne rend le dossier prêt pour soumission.`,
+Le flux applicatif est désormais : upload en quarantaine → claim serveur avec lease → scan SECURITY attesté → release COMPLIANCE explicite → extraction vers staging non vérifié → revue humaine → promotion canonique explicite et versionnée. Aucune étape ne rend le dossier prêt pour soumission, et aucune configuration seule ne rend l'environnement production-ready.`,
 
   "LOOP_STATE.md": `## LOOP-DEV-001 — Persistance, preuves et import gouverné
 
@@ -155,11 +182,12 @@ ${evidenceEvidence}
 
 - activation automatique de données extraites : \`FORBIDDEN\` ;
 - promotion automatique vers les réponses projet : \`FORBIDDEN\` ;
-- soumission : \`DISABLED\`.`,
+- soumission : \`DISABLED\` ;
+- production readiness sans acceptation cible : \`FORBIDDEN\`.`,
 
-  "CURRENT_ITERATION.md": `## Résultat — chaîne preuve → staging → revue → promotion
+  "CURRENT_ITERATION.md": `## Résultat — chaîne preuve → scan → staging → revue → promotion
 
-Les repositories projet, preuves et import sont validés sur PostgreSQL 17 en CI, avec séparation explicite des responsabilités et RLS tenant.
+Les repositories projet, preuves, queue scanner et import sont validés sur PostgreSQL 17 en CI, avec séparation explicite des responsabilités et RLS tenant.
 
 ${projectEvidence}
 
@@ -167,115 +195,125 @@ ${importEvidence}
 
 ${evidenceEvidence}
 
-Prochaine tranche autonome : enrichir les validations E2E/accessibilité et poursuivre les adaptateurs d’infrastructure sans jamais simuler les services de production absents.`,
+Les E2E navigateur, contrôles WCAG automatisés, health/readiness, headers de sécurité, smoke performance et drill PostgreSQL dump/restore disposent désormais de harnesses CI. Les prochaines actions ne doivent pas simuler les services cibles : elles concernent l'attestation/provisioning d'infrastructure et les validations humaines/réglementaires externes.`,
 
-  "WORK_LOG.md": `## 2026-08-19 — Fermeture de la chaîne preuve/import
+  "WORK_LOG.md": `## 2026-08-20 — Fermeture autonome de la chaîne preuve/scanner/import
 
-1. Persistance du listing read-only import dans une validation machine.
-2. Store preuve PostgreSQL synchronisé avec le store binaire.
-3. Métadonnées de preuve tenant-scopées et non sensibles côté API.
-4. Release explicite séparée du scan CLEAN.
-5. Recovery après succès binaire et commit PostgreSQL manquant.
-6. Retry de release idempotent après contrôle d’identité/RBAC.
-7. API projet sans UUID technique fourni par le navigateur.
-8. Workspace Preuves : upload, états, release et extraction.
-9. Promotion canonique explicite avec \`ANSWER_WRITE\`, cible humaine et \`expectedVersion\`.
-10. Promotion automatique et soumission maintenues interdites.
+1. Séparation définitive PostgreSQL metadata / object store binaire.
+2. Adaptateur S3 privé SSE-KMS et configuration fail-closed.
+3. Scanner HTTP serveur attesté sans route navigateur de verdict.
+4. Séparation RBAC \`EVIDENCE_SCAN\` SECURITY / \`EVIDENCE_VERIFY\` COMPLIANCE.
+5. Identité SECURITY de service via bearer OIDC vérifié.
+6. Queue PostgreSQL tenant-scopée avec \`SKIP LOCKED\`, lease et recovery.
+7. Batch worker server-only résilient aux erreurs par objet.
+8. Release humaine distincte, récupérable et idempotente.
+9. Readiness fail-closed : configuration production ≠ acceptation production.
+10. \`ready_for_submission=false\` maintenu partout.
 
 ${evidenceEvidence}
 
 ${importEvidence}`,
 
-  "SUIVI.md": `## 2026-08-19 — Chaîne preuve/import gouvernée
+  "SUIVI.md": `## 2026-08-20 — Chaîne preuve/scanner/import gouvernée
 
-Le parcours applicatif de preuve et d’import est maintenant relié de bout en bout au runtime PostgreSQL sans contourner le canonique.
+Le parcours applicatif autonome de preuve, scan et import est maintenant relié de bout en bout au runtime PostgreSQL sans contourner le canonique ni la conformité.
 
 ${evidenceEvidence}
 
 ${importEvidence}
 
-Les dépendances production (stockage objet, KMS/secrets, antivirus réel, OIDC réel, observabilité et sauvegarde/restauration cible) restent explicitement externes et ne doivent jamais être simulées comme opérationnelles.`,
+Restent externes et non simulés : provisioning du bucket/KMS/scanner/OIDC cibles, scheduling du worker, observabilité/backup-restore de la cible, acceptation de déploiement, sources réglementaires officielles manquantes et décisions humaines.`,
 
-  "TODO.md": `## Import et preuves — état courant
+  "TODO.md": `## Import, preuves et scanner — état courant
 
 - [x] Upload PDF/DOCX uniquement en quarantaine.
 - [x] Métadonnées de preuve persistées en PostgreSQL sous RLS.
+- [x] Séparer strictement métadonnées réglementaires et stockage binaire.
+- [x] Ajouter un adaptateur S3 privé SSE-KMS sans credentials codées en dur.
 - [x] Interdire tout verdict antivirus fourni par le navigateur.
+- [x] Ajouter un scanner HTTP server-to-server avec attestation stricte.
+- [x] Séparer \`EVIDENCE_SCAN\` (SECURITY) et \`EVIDENCE_VERIFY\` (COMPLIANCE).
+- [x] Ajouter une identité OIDC SECURITY de service vérifiée.
+- [x] Ajouter une queue PostgreSQL tenant-scopée avec lease et recovery.
+- [x] Ajouter un batch worker et une commande server-only.
 - [x] Exiger un scan CLEAN avant release.
 - [x] Séparer scan CLEAN et release explicite.
 - [x] Récupérer une release après succès binaire et échec avant commit PostgreSQL.
 - [x] Rendre les retries de release idempotents.
-- [x] Lire les métadonnées sans exposer références de stockage/KMS.
-- [x] Exposer le staging via factory runtime et API gouvernée.
-- [x] Construire l’écran de revue des propositions importées.
-- [x] Construire l’espace projet Preuves.
-- [x] Ajouter le listing read-only tenant-scopé des imports.
-- [x] Promouvoir une valeur confirmée uniquement par commande explicite \`ANSWER_WRITE\` + cible + \`expectedVersion\`.
-- [x] Persister un reçu de promotion append-only.
-- [ ] Ajouter des E2E navigateur et contrôles d’accessibilité.
-- [ ] Configurer stockage objet privé de production.
-- [ ] Configurer antivirus réel et workflow de scan serveur.
-- [ ] Configurer KMS/secrets/chiffrement de production.
-- [ ] Configurer OIDC réel, monitoring et sauvegarde/restauration de la cible.`,
+- [x] Construire l’espace projet Preuves et la revue import.
+- [x] Ajouter E2E navigateur, responsive et WCAG automatisé.
+- [x] Ajouter health/readiness fail-closed, headers sécurité et smoke performance.
+- [x] Ajouter un drill PostgreSQL dump/restore en CI.
+- [ ] Provisionner et attester le stockage objet/KMS de production.
+- [ ] Provisionner et attester le scanner antivirus réel.
+- [ ] Déployer/scheduler le worker scanner sur l'environnement cible.
+- [ ] Configurer et attester OIDC, monitoring, sauvegarde/restauration et alerting de la cible.
+- [ ] Exécuter l'acceptation production de bout en bout sur l'environnement cible.
+- [ ] Résoudre les sources réglementaires officielles encore manquantes et terminer les revues humaines.`,
 
-  "CHANGELOG.md": `## [Unreleased] — Chaîne preuve/import gouvernée — 2026-08-19
+  "CHANGELOG.md": `## [Unreleased] — Chaîne preuve/scanner/import gouvernée — 2026-08-20
 
 ### Added
 
-- store de preuve suivi en PostgreSQL ;
-- lecture metadata tenant-scopée ;
-- API de release explicite et idempotente ;
-- recovery de release entre store binaire et PostgreSQL ;
-- API projet de preuves sans UUID de version client ;
-- workspace projet Preuves ;
-- validation persistée du listing import ;
-- promotion explicite vers une réponse avec reçu append-only.
+- contrat de stockage evidence binary-only ;
+- adaptateur S3 privé SSE-KMS ;
+- scanner HTTP d’attestation server-to-server ;
+- action RBAC \`EVIDENCE_SCAN\` séparée de \`EVIDENCE_VERIFY\` ;
+- provider bearer OIDC pour identité SECURITY de service ;
+- queue PostgreSQL de scan avec lease récupérable ;
+- batch worker server-only ;
+- validation machine de la queue scanner ;
+- readiness bloquée jusqu'à acceptation réelle de production.
 
 ### Security
 
 - aucun verdict antivirus navigateur ;
+- aucun rôle de conformité utilisé comme identité technique du scanner ;
 - aucune référence de stockage/KMS exposée par l’API metadata ;
 - scan CLEAN distinct de la release ;
 - RLS tenant sur preuves/imports ;
-- promotion automatique interdite ;
+- production readiness par simple configuration interdite ;
+- promotion automatique et soumission interdites ;
 - \`ready_for_submission=false\` maintenu.`,
 
-  "HANDOFF.md": `## Transmission — chaîne preuve/import gouvernée
+  "HANDOFF.md": `## Transmission — chaîne preuve/scanner/import gouvernée
 
 Fichiers prioritaires :
 
 - \`apps/web/src/server/evidence/postgres-tracked-evidence-store.ts\` ;
-- \`apps/web/src/server/evidence/postgres-tracked-evidence-store.integration.ts\` ;
+- \`apps/web/src/server/evidence/evidence-binary-store.ts\` ;
+- \`apps/web/src/server/evidence/s3-evidence-binary-store.ts\` ;
+- \`apps/web/src/server/evidence/postgres-evidence-scan-queue.ts\` ;
+- \`apps/web/src/server/evidence/evidence-scan-queue-worker.ts\` ;
+- \`apps/web/src/server/evidence/http-attestation-scanner.ts\` ;
 - \`apps/web/src/server/evidence/evidence-scan-release-service.ts\` ;
-- \`apps/web/src/server/evidence/evidence-descriptor-service.ts\` ;
-- \`apps/web/src/server/import/postgres-import-staging-repository.ts\` ;
-- \`apps/web/src/server/import/postgres-import-promotion-repository.ts\` ;
-- \`apps/web/src/components/organisms/EvidenceWorkspacePanel.tsx\` ;
-- \`apps/web/src/components/organisms/ImportStagingReviewPanel.tsx\`.
+- \`apps/web/src/server/security/oidc-identity-provider.ts\` ;
+- \`database/migrations/0009_evidence_scan_leases.sql\` ;
+- \`database/tests/0003_evidence_scan_lease_test.sql\`.
 
 ${evidenceEvidence}
 
 ${importEvidence}
 
-Ne jamais transformer une confirmation d’extraction ou un scan CLEAN en activation, promotion ou soumission implicite.`,
+Ne jamais transformer un scan CLEAN, une confirmation d’extraction, une configuration d'infrastructure ou une preuve CI locale en release, promotion, production readiness ou soumission implicite.`,
 
-  "docs/ARCHITECTURE.md": `## Chaîne preuve et import prospectus
+  "docs/ARCHITECTURE.md": `## Chaîne preuve, scanner et import prospectus
 
-La preuve binaire et ses métadonnées sont séparées : le store binaire conserve les octets privés tandis que PostgreSQL porte les métadonnées, la portée tenant, le SHA et les états de cycle de vie. Le staging import n’accepte qu’une preuve réellement CLEAN. Les valeurs extraites restent non vérifiées jusqu’à revue humaine et la promotion vers le canonique reste une commande distincte, autorisée, versionnée et auditée. La release est récupérable après un succès binaire sans commit PostgreSQL et les retries applicatifs sont idempotents.
+PostgreSQL est la source de vérité des métadonnées réglementaires et du cycle de vie. Le store binaire ne conserve que les octets privés et une localisation technique. Le scanner automatique s'exécute sous une identité SECURITY distincte de COMPLIANCE et consomme une queue PostgreSQL à lease. Un résultat CLEAN reste en quarantaine jusqu'à une release explicite COMPLIANCE. Le staging import n’accepte qu’une preuve réellement CLEAN. Les valeurs extraites restent non vérifiées jusqu’à revue humaine et la promotion vers le canonique reste une commande distincte, autorisée, versionnée et auditée.
 
 ${evidenceEvidence}
 
 ${importEvidence}`,
 
-  "apps/web/README.md": `## Preuves et imports gouvernés
+  "apps/web/README.md": `## Preuves, scanner et imports gouvernés
 
-Le runtime PostgreSQL expose un store de preuve tenant-scopé, un staging import, un listing read-only, une revue humaine et une promotion explicite.
+Le runtime PostgreSQL expose un store de preuve tenant-scopé, un backend binaire privé, une queue de scanner server-only, un staging import, un listing read-only, une revue humaine et une promotion explicite.
 
 ${evidenceEvidence}
 
 ${importEvidence}
 
-Le mode local-json ne simule ni OIDC, ni scanner, ni KMS, ni object store de production.`,
+Le mode local-json ne simule ni OIDC, ni scanner, ni KMS, ni object store de production. La présence de variables d'environnement production ne vaut jamais attestation opérationnelle.`,
 };
 
 for (const [file, markdown] of Object.entries(blocks)) {
@@ -289,6 +327,8 @@ console.log(JSON.stringify({
   importListing: importQueryValidation.status,
   importPromotion: promotionValidation.status,
   evidenceStore: evidenceValidation.status,
+  evidenceScanQueue: scanQueueValidation.status,
+  productionAcceptance: "EXTERNAL_REQUIRED",
   readyForSubmission: false,
   nextActionOwnership: "PRESERVED_FROM_CANONICAL_LOOP_CONTROL",
 }, null, 2));
