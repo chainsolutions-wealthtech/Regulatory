@@ -9,6 +9,7 @@ const importQueryValidation = await readValidation("POSTGRESQL_IMPORT_STAGING_QU
 const promotionValidation = await readValidation("POSTGRESQL_IMPORT_PROMOTION_VALIDATION.json");
 const evidenceValidation = await readValidation("POSTGRESQL_EVIDENCE_OBJECT_STORE_VALIDATION.json");
 const scanQueueValidation = await readValidation("POSTGRESQL_EVIDENCE_SCAN_QUEUE_VALIDATION.json");
+const scanRetryValidation = await readValidation("POSTGRESQL_EVIDENCE_SCAN_RETRY_VALIDATION.json");
 
 assertValidation(
   projectValidation,
@@ -91,6 +92,9 @@ assertValidation(
     "crossTenantReadBlockedByRls",
     "importStagingCleanEvidenceCompatible",
     "productionReadinessNotClaimed",
+    "serverScanQueueRetryBudgetBounded",
+    "serverScanRetryExhaustionTerminalized",
+    "serverScanRetryExhaustionDoesNotFabricateMalwareVerdict",
   ],
   "La preuve du store d'evidence PostgreSQL est incomplète.",
 );
@@ -110,6 +114,22 @@ assertValidation(
     "readyForSubmissionRemainsFalse",
   ],
   "La preuve de la file PostgreSQL du scanner serveur est incomplète.",
+);
+assertValidation(
+  scanRetryValidation,
+  "POSTGRESQL_EVIDENCE_SCAN_RETRY_VALIDATION_V1",
+  [
+    "retryBudgetBounded",
+    "expiredLeaseReclaimedWithinBudget",
+    "retryExhaustionTerminalized",
+    "technicalExhaustionMarkedError",
+    "exhaustedClaimNotRequeued",
+    "leaseClearedAfterTerminalization",
+    "technicalFailureDoesNotFabricateMalwareVerdict",
+    "invalidRetryBudgetRejected",
+    "readyForSubmissionRemainsFalse",
+  ],
+  "La preuve du budget borné de retry scanner est incomplète.",
 );
 
 const projectEvidence = `- dépôt PostgreSQL projet : \`IMPLEMENTED_AND_TESTED\` ;
@@ -144,6 +164,8 @@ const evidenceEvidence = `- upload : \`QUARANTINE_ONLY\` ;
 - scanner HTTP d’attestation server-to-server : \`IMPLEMENTED_AND_TESTED\` ;
 - identité worker scanner : bearer OIDC vérifié, rôle \`SECURITY\` ;
 - file PostgreSQL : \`FOR UPDATE SKIP LOCKED\` + lease récupérable + compteur d’essais ;
+- budget de retries scanner : \`BOUNDED_AND_TESTED\` ;
+- épuisement du budget : \`REJECTED/ERROR\`, jamais faux verdict malware ;
 - séparation RBAC : \`SECURITY=EVIDENCE_SCAN\`, \`COMPLIANCE=EVIDENCE_VERIFY\` ;
 - scan CLEAN : ne libère jamais automatiquement ;
 - release : acte conformité séparé et explicite ;
@@ -205,10 +227,11 @@ Les E2E navigateur, contrôles WCAG automatisés, health/readiness, headers de s
 4. Séparation RBAC \`EVIDENCE_SCAN\` SECURITY / \`EVIDENCE_VERIFY\` COMPLIANCE.
 5. Identité SECURITY de service via bearer OIDC vérifié.
 6. Queue PostgreSQL tenant-scopée avec \`SKIP LOCKED\`, lease et recovery.
-7. Batch worker server-only résilient aux erreurs par objet.
-8. Release humaine distincte, récupérable et idempotente.
-9. Readiness fail-closed : configuration production ≠ acceptation production.
-10. \`ready_for_submission=false\` maintenu partout.
+7. Budget de retries borné avec terminalisation technique sans faux verdict malware.
+8. Batch worker server-only résilient aux erreurs par objet.
+9. Release humaine distincte, récupérable et idempotente.
+10. Readiness fail-closed : configuration production ≠ acceptation production.
+11. \`ready_for_submission=false\` maintenu partout.
 
 ${evidenceEvidence}
 
@@ -235,6 +258,7 @@ Restent externes et non simulés : provisioning du bucket/KMS/scanner/OIDC cible
 - [x] Séparer \`EVIDENCE_SCAN\` (SECURITY) et \`EVIDENCE_VERIFY\` (COMPLIANCE).
 - [x] Ajouter une identité OIDC SECURITY de service vérifiée.
 - [x] Ajouter une queue PostgreSQL tenant-scopée avec lease et recovery.
+- [x] Borner les retries scanner et terminaliser les échecs techniques sans faux verdict malware.
 - [x] Ajouter un batch worker et une commande server-only.
 - [x] Exiger un scan CLEAN avant release.
 - [x] Séparer scan CLEAN et release explicite.
@@ -261,6 +285,7 @@ Restent externes et non simulés : provisioning du bucket/KMS/scanner/OIDC cible
 - action RBAC \`EVIDENCE_SCAN\` séparée de \`EVIDENCE_VERIFY\` ;
 - provider bearer OIDC pour identité SECURITY de service ;
 - queue PostgreSQL de scan avec lease récupérable ;
+- budget de retries borné et preuve machine dédiée ;
 - batch worker server-only ;
 - validation machine de la queue scanner ;
 - readiness bloquée jusqu'à acceptation réelle de production.
@@ -271,6 +296,7 @@ Restent externes et non simulés : provisioning du bucket/KMS/scanner/OIDC cible
 - aucun rôle de conformité utilisé comme identité technique du scanner ;
 - aucune référence de stockage/KMS exposée par l’API metadata ;
 - scan CLEAN distinct de la release ;
+- épuisement technique des retries distinct d'un verdict malware ;
 - RLS tenant sur preuves/imports ;
 - production readiness par simple configuration interdite ;
 - promotion automatique et soumission interdites ;
@@ -299,7 +325,7 @@ Ne jamais transformer un scan CLEAN, une confirmation d’extraction, une config
 
   "docs/ARCHITECTURE.md": `## Chaîne preuve, scanner et import prospectus
 
-PostgreSQL est la source de vérité des métadonnées réglementaires et du cycle de vie. Le store binaire ne conserve que les octets privés et une localisation technique. Le scanner automatique s'exécute sous une identité SECURITY distincte de COMPLIANCE et consomme une queue PostgreSQL à lease. Un résultat CLEAN reste en quarantaine jusqu'à une release explicite COMPLIANCE. Le staging import n’accepte qu’une preuve réellement CLEAN. Les valeurs extraites restent non vérifiées jusqu’à revue humaine et la promotion vers le canonique reste une commande distincte, autorisée, versionnée et auditée.
+PostgreSQL est la source de vérité des métadonnées réglementaires et du cycle de vie. Le store binaire ne conserve que les octets privés et une localisation technique. Le scanner automatique s'exécute sous une identité SECURITY distincte de COMPLIANCE et consomme une queue PostgreSQL à lease. Les retries sont bornés et l'épuisement technique termine l'objet en erreur sans fabriquer de verdict malware. Un résultat CLEAN reste en quarantaine jusqu'à une release explicite COMPLIANCE. Le staging import n’accepte qu’une preuve réellement CLEAN. Les valeurs extraites restent non vérifiées jusqu’à revue humaine et la promotion vers le canonique reste une commande distincte, autorisée, versionnée et auditée.
 
 ${evidenceEvidence}
 
@@ -307,7 +333,7 @@ ${importEvidence}`,
 
   "apps/web/README.md": `## Preuves, scanner et imports gouvernés
 
-Le runtime PostgreSQL expose un store de preuve tenant-scopé, un backend binaire privé, une queue de scanner server-only, un staging import, un listing read-only, une revue humaine et une promotion explicite.
+Le runtime PostgreSQL expose un store de preuve tenant-scopé, un backend binaire privé, une queue de scanner server-only à retries bornés, un staging import, un listing read-only, une revue humaine et une promotion explicite.
 
 ${evidenceEvidence}
 
@@ -328,6 +354,7 @@ console.log(JSON.stringify({
   importPromotion: promotionValidation.status,
   evidenceStore: evidenceValidation.status,
   evidenceScanQueue: scanQueueValidation.status,
+  evidenceScanRetry: scanRetryValidation.status,
   productionAcceptance: "EXTERNAL_REQUIRED",
   readyForSubmission: false,
   nextActionOwnership: "PRESERVED_FROM_CANONICAL_LOOP_CONTROL",
