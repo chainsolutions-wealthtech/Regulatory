@@ -57,7 +57,7 @@ const profiles = [];
   input.seedData.fund.classification = "SYNTHETIC_CONSERVATIVE_TEST_ONLY";
   replaceAnswer(input.answers, "Q_FUND_LEGAL_NAME", { "fund.legal_name": "Synthetic Conservative Debt Test Fund" });
   replaceAnswer(input.answers, "Q_MANAGEMENT_STYLE", {
-    "investment.management_style": "PASSIVE_OR_RULE_BASED",
+    "investment.management_style": "PASSIVE",
     "investment.selection_process": "Synthetic deterministic test process",
   });
   replaceAnswer(input.answers, "Q_ASSET_EXPOSURE_MATRIX", {
