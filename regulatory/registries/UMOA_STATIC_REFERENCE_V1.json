@@ -1,0 +1,57 @@
+{
+  "registry_id": "UMOA_STATIC_REFERENCE_V1",
+  "version": "1.0.0",
+  "as_of_date": "2026-08-20",
+  "status": "SOURCE_VERIFIED_BASELINE",
+  "scope": "Static identity baseline only; not a holiday, settlement or market calendar.",
+  "sources": [
+    {
+      "source_id": "BCEAO_UMOA_MEMBER_STATES",
+      "authority": "BCEAO",
+      "url": "https://www.bceao.int/fr/etats-membres/",
+      "verified_on": "2026-08-20",
+      "supports": ["member_states"]
+    },
+    {
+      "source_id": "BCEAO_FRANC_CFA_HISTORY",
+      "authority": "BCEAO",
+      "url": "https://www.bceao.int/fr/content/histoire-du-franc-cfa",
+      "verified_on": "2026-08-20",
+      "supports": ["common_currency", "issuing_institution"]
+    },
+    {
+      "source_id": "ISO_4217_STANDARD",
+      "authority": "ISO",
+      "url": "https://www.iso.org/fr/iso-4217-currency-codes.html",
+      "verified_on": "2026-08-20",
+      "supports": ["currency_code_standard"]
+    }
+  ],
+  "member_states": [
+    { "iso_alpha2": "BJ", "canonical_name_fr": "Bénin", "bceao_label": "Bénin" },
+    { "iso_alpha2": "BF", "canonical_name_fr": "Burkina Faso", "bceao_label": "Burkina" },
+    { "iso_alpha2": "CI", "canonical_name_fr": "Côte d’Ivoire", "bceao_label": "Côte d’Ivoire" },
+    { "iso_alpha2": "GW", "canonical_name_fr": "Guinée-Bissau", "bceao_label": "Guinée-Bissau" },
+    { "iso_alpha2": "ML", "canonical_name_fr": "Mali", "bceao_label": "Mali" },
+    { "iso_alpha2": "NE", "canonical_name_fr": "Niger", "bceao_label": "Niger" },
+    { "iso_alpha2": "SN", "canonical_name_fr": "Sénégal", "bceao_label": "Sénégal" },
+    { "iso_alpha2": "TG", "canonical_name_fr": "Togo", "bceao_label": "Togo" }
+  ],
+  "common_currency": {
+    "canonical_code": "XOF",
+    "name_fr": "Franc CFA de la Communauté Financière Africaine",
+    "display_label": "FCFA",
+    "issuing_institution": "BCEAO",
+    "member_state_scope": ["BJ", "BF", "CI", "GW", "ML", "NE", "SN", "TG"],
+    "code_standard": "ISO 4217"
+  },
+  "calendars": {
+    "status": "NOT_MATERIALIZED",
+    "reason": "Holiday, settlement and market calendars are time-dependent operational data and require year-specific authoritative sources. No calendar is inferred from the static member-state registry."
+  },
+  "governance": {
+    "automatic_regulatory_activation": false,
+    "ready_for_submission": false,
+    "update_policy": "Reverify institutional membership and currency identity before changing this registry. Version time-dependent calendars separately."
+  }
+}
