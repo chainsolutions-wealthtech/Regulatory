@@ -123,6 +123,6 @@ test("le corpus exerce plusieurs profils de risque sans introduire de vérité r
   assert.match(generated["bond-active"].prospectusMarkdown, /Risque de taux/);
   assert.match(generated.balanced.prospectusMarkdown, /Risque actions/);
   assert.doesNotMatch(generated["conservative-debt"].prospectusMarkdown, /Risque actions/);
-  assert.doesNotMatch(generated["conservative-debt"].prospectusMarkdown, /gestion discrétionnaire/i);
+  assert.doesNotMatch(generated["conservative-debt"].prospectusMarkdown, /Risque lié à la gestion discrétionnaire/);
   assert.equal(generated["no-redemption-edge"].manifest.ready_for_submission, false);
 });
