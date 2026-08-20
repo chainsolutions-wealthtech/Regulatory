@@ -63,6 +63,7 @@ jobs:
             psql -v ON_ERROR_STOP=1 -f "$migration"
           done
           psql -v ON_ERROR_STOP=1 -f database/tests/0002_secure_evidence_storage_test.sql
+          psql -v ON_ERROR_STOP=1 -f database/tests/0003_evidence_scan_lease_test.sql
           psql -v ON_ERROR_STOP=1 <<'SQL'
           select 1 from pg_type where typname = 'review_role';
           select 1 from pg_type where typname = 'project_status';
@@ -95,10 +96,19 @@ jobs:
                 and tablename = 'evidence_objects'
                 and policyname = 'evidence_objects_tenant_policy'
             ) then raise exception 'EVIDENCE_OBJECT_POLICY_MISSING'; end if;
+            if not exists (
+              select 1 from information_schema.columns
+              where table_schema = 'regulatory' and table_name = 'evidence_objects'
+                and column_name = 'scan_lease_expires_at'
+            ) then raise exception 'EVIDENCE_SCAN_LEASE_MISSING'; end if;
+            if not exists (
+              select 1 from pg_indexes
+              where schemaname = 'regulatory' and indexname = 'evidence_objects_scan_queue_idx'
+            ) then raise exception 'EVIDENCE_SCAN_QUEUE_INDEX_MISSING'; end if;
           end;
           $$;
           SQL
-      - name: Ensure submission and public evidence access stay disabled
+      - name: Ensure submission and evidence privilege separation stay enforced
         run: |
           node --input-type=module <<'NODE'
           import { readFile } from 'node:fs/promises';
@@ -107,6 +117,13 @@ jobs:
           const evidence = JSON.parse(await readFile('policies/evidence/SECURE_EVIDENCE_STORAGE_V1.json', 'utf8'));
           if (rbac.actions.SUBMISSION_SEND.disabled !== true) throw new Error('SUBMISSION_SEND must be disabled');
           if (rbac.actions.SUBMISSION_MARK_READY.disabled !== true) throw new Error('SUBMISSION_MARK_READY must be disabled');
+          if (!rbac.grants.SECURITY.includes('EVIDENCE_SCAN')) throw new Error('SECURITY must own EVIDENCE_SCAN');
+          if (rbac.grants.SECURITY.includes('EVIDENCE_VERIFY')) throw new Error('SECURITY must not own EVIDENCE_VERIFY');
+          if (!rbac.grants.COMPLIANCE.includes('EVIDENCE_VERIFY')) throw new Error('COMPLIANCE must own EVIDENCE_VERIFY');
+          if (rbac.grants.COMPLIANCE.includes('EVIDENCE_SCAN')) throw new Error('COMPLIANCE must not own EVIDENCE_SCAN');
+          if (rbac.grants.PRODUCT.includes('EVIDENCE_SCAN') || rbac.grants.PRODUCT.includes('EVIDENCE_VERIFY')) {
+            throw new Error('PRODUCT must not scan or verify evidence');
+          }
           if (workflow.submission.enabled !== false || workflow.submission.readyFlag !== false) {
             throw new Error('Workflow submission must remain disabled');
           }
