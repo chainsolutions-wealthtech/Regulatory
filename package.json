@@ -8,7 +8,7 @@
     "node": ">=22"
   },
   "scripts": {
-    "test": "node --test",
+    "test": "node --test && node scripts/generate-multi-profile-corpus-validation.mjs",
     "generate:sample": "node src/cli/generate-sample.js",
     "generate:docx": "python3 scripts/generate_docx.py && python3 scripts/optimize_docx_layout.py",
     "validate:docx": "python3 scripts/validate_docx.py",
