@@ -1,4 +1,6 @@
 import assert from "node:assert/strict";
+import { writeFile } from "node:fs/promises";
+import path from "node:path";
 import { Pool } from "pg";
 import { createPostgresEvidenceScanQueue } from "@/server/evidence/postgres-evidence-scan-queue";
 import { createFixedTestIdentityProvider } from "@/server/security/verified-identity";
@@ -104,7 +106,7 @@ try {
     /AUTHORIZATION_DENIED:EVIDENCE_SCAN/,
   );
 
-  console.log(JSON.stringify({
+  const validation = {
     validationId: "POSTGRESQL_EVIDENCE_SCAN_QUEUE_VALIDATION_V1",
     status: "PASS",
     checks: {
@@ -117,8 +119,17 @@ try {
       attemptCountIncremented: true,
       tenantIsolationEnforced: true,
       noBrowserScanVerdictIntroduced: true,
+      readyForSubmissionRemainsFalse: true,
     },
-  }, null, 2));
+    caveat:
+      "Validation PostgreSQL 17 de la file de scan serveur avec lease récupérable. Elle ne constitue ni une attestation d'un scanner de production, ni une acceptation de l'environnement cible.",
+  };
+  const validationPath = path.resolve(
+    process.cwd(),
+    "../../regulatory/validation/POSTGRESQL_EVIDENCE_SCAN_QUEUE_VALIDATION.json",
+  );
+  await writeFile(validationPath, `${JSON.stringify(validation, null, 2)}\n`, "utf8");
+  console.log(JSON.stringify(validation, null, 2));
 } finally {
   await pool.end();
   await adminPool.end();
@@ -176,7 +187,8 @@ async function insertEvidence(objectId: string, orgId: string, versionId: string
      ) values ($1,$2,$3,'TEST_PRIVATE',$4,$5,$6,$6,'application/pdf',$7,32,'TEST_ONLY','test-key',$8)
      on conflict (id) do update set
        state='QUARANTINED', scan_status='PENDING', scan_started_at=null, scan_completed_at=null,
-       scan_provider=null, scan_engine_version=null, scan_signature_version=null`,
+       scan_provider=null, scan_engine_version=null, scan_signature_version=null,
+       scan_claimed_by=null, scan_lease_expires_at=null, scan_attempt_count=0`,
     [objectId, orgId, versionId, `evidence/${orgId}/quarantine/${suffix}`, `test-private:${orgId}:${suffix}`,
      `scan-${suffix}.pdf`, suffix.repeat(64).slice(0, 64).replace(/[^0-9a-f]/g, "a"), uploadedBy],
   );
