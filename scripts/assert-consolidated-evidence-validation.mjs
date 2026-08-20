@@ -26,6 +26,12 @@ for (const check of [
   "serverScanQueueTenantIsolation",
   "serverScanQueueBrowserVerdictForbidden",
   "serverScanQueueReadyForSubmissionFalse",
+  "serverScanRetryBounded",
+  "serverScanRetryExhaustionRejected",
+  "serverScanRetryLeaseCleared",
+  "serverScanRetryAttemptHistoryPreserved",
+  "serverScanRetryNoMalwareVerdictFabricated",
+  "serverScanRetryReadyForSubmissionFalse",
 ]) {
   if (evidence.checks?.[check] !== true) throw new Error(`CONSOLIDATED_EVIDENCE_CHECK_FAILED:${check}`);
 }
@@ -33,9 +39,14 @@ for (const check of [
 if (evidence.relatedValidations?.evidenceScanQueue !== "POSTGRESQL_EVIDENCE_SCAN_QUEUE_VALIDATION_V1") {
   throw new Error("CONSOLIDATED_EVIDENCE_QUEUE_LINK_MISSING");
 }
+if (evidence.relatedValidations?.evidenceScanRetry !== "POSTGRESQL_EVIDENCE_SCAN_RETRY_VALIDATION_V1") {
+  throw new Error("CONSOLIDATED_EVIDENCE_RETRY_LINK_MISSING");
+}
 
 console.log(JSON.stringify({
   validationId: "CONSOLIDATED_EVIDENCE_VALIDATION_GATE_V1",
   status: "PASS",
+  boundedScanRetries: true,
+  malwareVerdictFabricationForbidden: true,
   readyForSubmission: false,
 }, null, 2));
