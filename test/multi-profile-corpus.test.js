@@ -61,7 +61,7 @@ async function corpus() {
   conservative.seedData.fund.classification = "SYNTHETIC_CONSERVATIVE_TEST_ONLY";
   answer(conservative.answers, "Q_FUND_LEGAL_NAME", { "fund.legal_name": "Synthetic Conservative Debt Test Fund" });
   answer(conservative.answers, "Q_MANAGEMENT_STYLE", {
-    "investment.management_style": "PASSIVE_OR_RULE_BASED",
+    "investment.management_style": "PASSIVE",
     "investment.selection_process": "Synthetic deterministic test process",
   });
   answer(conservative.answers, "Q_ASSET_EXPOSURE_MATRIX", {
