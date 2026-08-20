@@ -20,8 +20,9 @@ export function createPostgresEvidenceScanQueue(input: {
   identityProvider: VerifiedIdentityProvider;
 }) {
   return {
-    async claimNext(command: { leaseSeconds: number }): Promise<EvidenceScanClaim | null> {
+    async claimNext(command: { leaseSeconds: number; maxAttempts?: number }): Promise<EvidenceScanClaim | null> {
       const leaseSeconds = normalizeLeaseSeconds(command.leaseSeconds);
+      const maxAttempts = normalizeMaxAttempts(command.maxAttempts ?? 5);
       const identity = assertVerifiedIdentity(await input.identityProvider.getVerifiedIdentity());
       assertAuthorized(
         {
@@ -34,11 +35,30 @@ export function createPostgresEvidenceScanQueue(input: {
       );
 
       return withTenant(input.pool, identity, async (client) => {
+        // A worker crash may leave an item SCANNING until its lease expires.
+        // Once the bounded retry budget is exhausted, terminalize it as a
+        // technical processing error. This is deliberately not a malware
+        // verdict and cannot make the evidence releasable.
+        await client.query(
+          `update regulatory.evidence_objects
+              set state = 'REJECTED',
+                  scan_status = 'ERROR',
+                  scan_completed_at = now(),
+                  scan_details = coalesce(scan_details, '{}'::jsonb)
+                    || jsonb_build_object('worker_error_code', 'EVIDENCE_SCAN_RETRY_EXHAUSTED')
+            where scan_status = 'PENDING'
+              and state = 'SCANNING'
+              and scan_lease_expires_at < now()
+              and scan_attempt_count >= $1`,
+          [maxAttempts],
+        );
+
         const result = await client.query<ClaimRow>(
           `with candidate as (
              select id
                from regulatory.evidence_objects
               where scan_status = 'PENDING'
+                and scan_attempt_count < $3
                 and (
                   state = 'QUARANTINED'
                   or (state = 'SCANNING' and scan_lease_expires_at < now())
@@ -59,7 +79,7 @@ export function createPostgresEvidenceScanQueue(input: {
                      object.organization_id,
                      object.scan_attempt_count,
                      object.scan_lease_expires_at`,
-          [identity.userId, leaseSeconds],
+          [identity.userId, leaseSeconds, maxAttempts],
         );
         if (result.rowCount === 0) return null;
         const row = result.rows[0];
@@ -84,6 +104,13 @@ type ClaimRow = QueryResultRow & {
 function normalizeLeaseSeconds(value: number): number {
   if (!Number.isInteger(value) || value < 10 || value > 3600) {
     throw new Error("EVIDENCE_SCAN_LEASE_SECONDS_INVALID");
+  }
+  return value;
+}
+
+function normalizeMaxAttempts(value: number): number {
+  if (!Number.isInteger(value) || value < 1 || value > 20) {
+    throw new Error("EVIDENCE_SCAN_MAX_ATTEMPTS_INVALID");
   }
   return value;
 }
