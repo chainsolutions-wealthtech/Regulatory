@@ -90,7 +90,7 @@ assert.equal(scannerWithoutServiceIdentity.ready, false);
 assert.equal(scannerWithoutServiceIdentity.productionReady, false);
 assert(scannerWithoutServiceIdentity.missingConfiguration.includes("REGULATORY_EVIDENCE_SCANNER_SERVICE_BEARER_TOKEN"));
 
-const productionReady = await evaluateRuntimeReadiness({
+const fullyConfiguredProduction = await evaluateRuntimeReadiness({
   storageDriver: "postgresql",
   nodeEnv: "production",
   environment: {
@@ -100,13 +100,14 @@ const productionReady = await evaluateRuntimeReadiness({
   },
   databaseProbe: async () => undefined,
 });
-assert.equal(productionReady.ready, true);
-assert.equal(productionReady.productionReady, true);
-assert.equal(productionReady.dependencies.evidence, "CONFIGURED");
-assert.equal(productionReady.dependencies.scanner, "CONFIGURED");
-assert.equal(JSON.stringify(productionReady).includes("scanner-token-redacted"), false);
-assert.equal(JSON.stringify(productionReady).includes("service-oidc-token-redacted"), false);
-assert.equal(JSON.stringify(productionReady).includes("kms-key-redacted"), false);
+assert.equal(fullyConfiguredProduction.ready, false, "Configuration alone must never attest production readiness.");
+assert.equal(fullyConfiguredProduction.productionReady, false);
+assert.equal(fullyConfiguredProduction.dependencies.evidence, "CONFIGURED");
+assert.equal(fullyConfiguredProduction.dependencies.scanner, "CONFIGURED");
+assert(fullyConfiguredProduction.blockers.includes("PRODUCTION_ACCEPTANCE_REQUIRED"));
+assert.equal(JSON.stringify(fullyConfiguredProduction).includes("scanner-token-redacted"), false);
+assert.equal(JSON.stringify(fullyConfiguredProduction).includes("service-oidc-token-redacted"), false);
+assert.equal(JSON.stringify(fullyConfiguredProduction).includes("kms-key-redacted"), false);
 
 const insecureScanner = await evaluateRuntimeReadiness({
   storageDriver: "postgresql",
@@ -121,6 +122,7 @@ const insecureScanner = await evaluateRuntimeReadiness({
 });
 assert.equal(insecureScanner.ready, false);
 assert(insecureScanner.blockers.includes("SCANNER_HTTPS_REQUIRED_IN_PRODUCTION"));
+assert(insecureScanner.blockers.includes("PRODUCTION_ACCEPTANCE_REQUIRED"));
 
 const missingOidc = await evaluateRuntimeReadiness({
   storageDriver: "postgresql",
