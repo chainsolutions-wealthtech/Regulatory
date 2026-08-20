@@ -47,7 +47,11 @@ const store = createS3EvidenceBinaryStore({
   kmsKeyId: "arn:aws:kms:eu-west-3:123456789012:key/example",
   keyPrefix: "regulatory",
 });
-assert.equal(store.productionReady, true);
+assert.equal(
+  store.productionReady,
+  false,
+  "A configured adapter with a fake client must not attest an operational production object store.",
+);
 
 const staged = await store.stage({ objectId, organizationId, content });
 assert.equal(staged.storageProvider, "S3_PRIVATE_KMS");
