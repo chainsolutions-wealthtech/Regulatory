@@ -6,9 +6,14 @@ import { fileURLToPath } from "node:url";
 
 const repoRoot = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
 const registryPath = path.join(repoRoot, "regulatory", "registries", "UMOA_STATIC_REFERENCE_V1.json");
+const schemaPath = path.join(repoRoot, "schemas", "canonical", "PROSPECTUS_CANONICAL_MODEL_V1.schema.json");
 
 async function loadRegistry() {
   return JSON.parse(await readFile(registryPath, "utf8"));
+}
+
+async function loadSchema() {
+  return JSON.parse(await readFile(schemaPath, "utf8"));
 }
 
 test("le référentiel UMOA statique contient exactement les huit Etats sourcés", async () => {
@@ -22,6 +27,16 @@ test("le référentiel UMOA statique contient exactement les huit Etats sourcés
   assert.equal(new Set(codes).size, 8);
   assert.equal(registry.governance.automatic_regulatory_activation, false);
   assert.equal(registry.governance.ready_for_submission, false);
+});
+
+test("le registre institutionnel et l'enum pays du schéma canonique restent identiques", async () => {
+  const registry = await loadRegistry();
+  const schema = await loadSchema();
+  const registryCodes = registry.member_states.map((state) => state.iso_alpha2).sort();
+  const schemaCodes = [...schema.$defs.countryCode.enum].sort();
+
+  assert.deepEqual(schemaCodes, registryCodes);
+  assert.equal(new Set(schemaCodes).size, schemaCodes.length);
 });
 
 test("la monnaie commune et son périmètre restent cohérents avec les Etats membres", async () => {
