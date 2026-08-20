@@ -1,4 +1,6 @@
 import assert from "node:assert/strict";
+import { writeFile } from "node:fs/promises";
+import path from "node:path";
 import { Pool } from "pg";
 import { createPostgresEvidenceScanQueue } from "@/server/evidence/postgres-evidence-scan-queue";
 import { createFixedTestIdentityProvider } from "@/server/security/verified-identity";
@@ -74,7 +76,29 @@ try {
     /EVIDENCE_SCAN_MAX_ATTEMPTS_INVALID/,
   );
 
-  console.log("POSTGRESQL_EVIDENCE_SCAN_RETRY_BUDGET_PASS");
+  const validation = {
+    validationId: "POSTGRESQL_EVIDENCE_SCAN_RETRY_VALIDATION_V1",
+    status: "PASS",
+    checks: {
+      retryBudgetBounded: true,
+      expiredLeaseReclaimedUnderBudget: true,
+      exhaustedItemNotReclaimed: true,
+      exhaustionTransitionsToRejectedError: true,
+      leaseOwnershipClearedOnExhaustion: true,
+      attemptHistoryPreserved: true,
+      genericWorkerErrorPersisted: true,
+      malwareVerdictNotFabricated: true,
+      readyForSubmissionRemainsFalse: true,
+    },
+    caveat:
+      "Validation PostgreSQL 17 du budget de retry du scanner serveur. ERROR/REJECTED exprime un échec technique du traitement et ne constitue jamais un verdict malware ni une preuve d'exploitation production.",
+  };
+  await writeFile(
+    path.resolve(process.cwd(), "../../regulatory/validation/POSTGRESQL_EVIDENCE_SCAN_RETRY_VALIDATION.json"),
+    `${JSON.stringify(validation, null, 2)}\n`,
+    "utf8",
+  );
+  console.log(JSON.stringify(validation, null, 2));
 } finally {
   await pool.end();
   await adminPool.end();
