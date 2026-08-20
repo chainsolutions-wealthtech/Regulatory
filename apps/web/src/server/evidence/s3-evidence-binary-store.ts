@@ -33,6 +33,10 @@ export type S3EvidenceBinaryStoreConfiguration = {
  * Binary-only private S3/S3-compatible store.
  * PostgreSQL remains the sole source of truth for regulatory metadata,
  * scan status, release state, legal hold and audit data.
+ *
+ * This adapter is production-capable, but configuration alone is not an
+ * operational production attestation. `productionReady` therefore remains
+ * false until a separate target-environment acceptance mechanism exists.
  */
 export function createS3EvidenceBinaryStore(
   configuration: S3EvidenceBinaryStoreConfiguration,
@@ -51,7 +55,7 @@ export function createS3EvidenceBinaryStore(
 
   return {
     provider: "S3_PRIVATE_KMS",
-    productionReady: true,
+    productionReady: false,
 
     async stage(input: StageEvidenceBinaryInput) {
       assertBinaryKey(input);
