@@ -62,9 +62,17 @@ export async function evaluateRuntimeReadiness(input: {
     }
   }
 
+  const isProduction = input.nodeEnv === "production";
+  if (isProduction) {
+    // Configuration is not an environment attestation. Until S3/KMS, OIDC,
+    // scanner reachability, backup/restore, monitoring and deployment
+    // acceptance are verified against the target environment, readiness must
+    // remain fail-closed. No self-declared environment flag can bypass this.
+    blockers.push("PRODUCTION_ACCEPTANCE_REQUIRED");
+  }
+
   if (missingConfiguration.length > 0) blockers.push("CONFIGURATION_MISSING");
 
-  const isProduction = input.nodeEnv === "production";
   const evidenceOperational = isProduction
     ? dependencies.evidence === "CONFIGURED"
     : dependencies.evidence === "DEVELOPMENT_ONLY" || dependencies.evidence === "CONFIGURED";
@@ -80,13 +88,7 @@ export async function evaluateRuntimeReadiness(input: {
     evidenceOperational &&
     scannerOperational;
 
-  const productionReady =
-    ready &&
-    isProduction &&
-    dependencies.evidence === "CONFIGURED" &&
-    dependencies.scanner === "CONFIGURED";
-
-  return result(ready, productionReady, dependencies, missingConfiguration, blockers);
+  return result(ready, false, dependencies, missingConfiguration, blockers);
 }
 
 function configureEvidence(
