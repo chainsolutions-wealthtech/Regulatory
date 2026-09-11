@@ -183,3 +183,35 @@ test("les règles de visibilité rachats et conseiller couvrent états masqué e
     ],
   );
 });
+
+
+test("les racines structurées historiques sont autorisées uniquement par extension explicite", () => {
+  const result = applyQuestionnaireAnswers({
+    seedData: {},
+    questionCatalog: [
+      {
+        question_id: "Q_TRANSACTION_FEES",
+        requirement_id: "REQ_FEES",
+        canonical_fields: ["fees.transaction"],
+      },
+      {
+        question_id: "Q_HOME_STATE_ARRANGEMENTS",
+        requirement_id: "REQ_COUNTRIES",
+        canonical_fields: ["distribution_countries.country_code"],
+      },
+    ],
+    answers: [
+      {
+        question_id: "Q_TRANSACTION_FEES",
+        field_values: { fees: [{ label: "Frais test" }] },
+      },
+      {
+        question_id: "Q_HOME_STATE_ARRANGEMENTS",
+        field_values: { distribution_countries: [{ country_code: "CI" }] },
+      },
+    ],
+  });
+
+  assert.deepEqual(result.data.fees, [{ label: "Frais test" }]);
+  assert.deepEqual(result.data.distribution_countries, [{ country_code: "CI" }]);
+});

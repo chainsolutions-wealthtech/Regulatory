@@ -4,6 +4,8 @@ const EXECUTABLE_FIELD_EXTENSIONS = {
   Q_REDEMPTION_ALLOWED: ["redemption.allowed"],
   Q_FINANCIAL_OBJECTIVE: ["investment.objective.summary"],
   Q_TARGET_INVESTOR_PROFILE: ["target_investor.summary"],
+  Q_TRANSACTION_FEES: ["fees"],
+  Q_HOME_STATE_ARRANGEMENTS: ["distribution_countries"],
 };
 
 const VISIBILITY_RULES = {
