@@ -517,6 +517,7 @@ jobs:
             regulatory/validation/ENGINE_BRANCH_COVERAGE_VALIDATION.json
             regulatory/validation/MULTI_PROFILE_REGRESSION_CORPUS_VALIDATION.json
             regulatory/validation/CURRENT_STATE_RECONCILIATION.json
+            regulatory/catalogs/CLAUSE_CATALOG_V0_1.json
             schemas/canonical/PROSPECTUS_CANONICAL_MODEL_V1.schema.json
             database/migrations/*.sql
             database/tests/*.sql
@@ -542,6 +543,8 @@ jobs:
             scripts/update-structured-share-class-docs.mjs \
             scripts/update-canonical-schema-docs.mjs \
             scripts/update-postgres-repository-docs.mjs \
+            scripts/materialize-clause-registry.mjs \
+            regulatory/catalogs/CLAUSE_CATALOG_V0_1.json \
             regulatory/validation/CIRC005_WEB_CATALOG_VALIDATION.json \
             regulatory/validation/CIRC005_WEB_API_INTEGRATION_VALIDATION.json \
             regulatory/validation/POSTGRESQL_CORE_VALIDATION.json \
