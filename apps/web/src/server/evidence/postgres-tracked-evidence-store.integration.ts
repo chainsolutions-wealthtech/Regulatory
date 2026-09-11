@@ -56,6 +56,7 @@ try {
   assert.equal(stagedDb.rows[0].sha256, staged.sha256);
   assert.equal(stagedDb.rows[0].storage_object_key, `quarantine/${organizationId}/${staged.objectId}`);
 
+  const scanCompletedAt = new Date().toISOString();
   const scanned = await store.recordScan({
     objectId: staged.objectId,
     expectedSha256: staged.sha256,
@@ -64,16 +65,17 @@ try {
     scanProvider: "CI_TRUSTED_SCANNER",
     scanEngineVersion: "1.0.0",
     scanSignatureVersion: "2026-08-18",
-    scanCompletedAt: "2026-08-18T18:31:00.000Z",
+    scanCompletedAt,
     trustedServerResult: true,
   });
   assert.equal(scanned.state, "QUARANTINED");
   assert.equal(scanned.scanStatus, "CLEAN");
 
+  const releasedAt = new Date().toISOString();
   const released = await store.release({
     objectId: staged.objectId,
     releasedBy: userId,
-    releasedAt: "2026-08-18T18:32:00.000Z",
+    releasedAt,
   });
   assert.equal(released.state, "CLEAN");
   assert.equal(released.scanStatus, "CLEAN");
@@ -115,6 +117,7 @@ try {
     uploadedBy: userId,
     encryptionKeyReference: "development-test-key",
   });
+  const recoveryScanCompletedAt = new Date().toISOString();
   await store.recordScan({
     objectId: recoveryStaged.objectId,
     expectedSha256: recoveryStaged.sha256,
@@ -123,13 +126,13 @@ try {
     scanProvider: "CI_TRUSTED_SCANNER",
     scanEngineVersion: "1.0.0",
     scanSignatureVersion: "2026-08-18",
-    scanCompletedAt: "2026-08-18T18:33:00.000Z",
+    scanCompletedAt: recoveryScanCompletedAt,
     trustedServerResult: true,
   });
   const recoveryCommand = {
     objectId: recoveryStaged.objectId,
     releasedBy: userId,
-    releasedAt: "2026-08-18T18:34:00.000Z",
+    releasedAt: new Date().toISOString(),
   };
 
   const recoveredBinaryLocation = await binaryStore.promoteToClean({ objectId: recoveryStaged.objectId, organizationId });
