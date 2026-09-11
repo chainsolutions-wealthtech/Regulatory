@@ -159,11 +159,13 @@ jobs:
           backup_dir="$RUNNER_TEMP/regulatory-backup"
           backup_file="$backup_dir/regulatory_test.dump"
           mkdir -p "$backup_dir" regulatory/validation
-          pg_dump -Fc -d regulatory_test -f "$backup_file"
-          dropdb --if-exists regulatory_restore_test
-          createdb regulatory_restore_test
-          pg_restore --exit-on-error -d regulatory_restore_test "$backup_file"
-          psql -v ON_ERROR_STOP=1 -d regulatory_restore_test <<'SQL'
+          db_container="$(docker ps --filter ancestor=postgres:17 --format '{{.ID}}' | head -n1)"
+          test -n "$db_container"
+          docker exec "$db_container" pg_dump -U postgres -Fc -d regulatory_test > "$backup_file"
+          docker exec "$db_container" dropdb -U postgres --if-exists regulatory_restore_test
+          docker exec "$db_container" createdb -U postgres regulatory_restore_test
+          cat "$backup_file" | docker exec -i "$db_container" pg_restore -U postgres --exit-on-error -d regulatory_restore_test
+          docker exec -i "$db_container" psql -U postgres -v ON_ERROR_STOP=1 -d regulatory_restore_test <<'SQL'
           do $$
           begin
             if not exists (
@@ -215,7 +217,7 @@ jobs:
               encoding='utf-8'
           )
           PY
-          dropdb regulatory_restore_test
+          docker exec "$db_container" dropdb -U postgres regulatory_restore_test
 
       - name: Build Next.js application
         run: npm run web:build
