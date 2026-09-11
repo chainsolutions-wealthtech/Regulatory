@@ -297,6 +297,7 @@ jobs:
           node scripts/update-structured-share-class-docs.mjs
           node scripts/update-canonical-schema-docs.mjs
           node scripts/update-postgres-repository-docs.mjs
+          node scripts/update-current-state-reconciliation.mjs
           next_action_after="$(sha256sum NEXT_ACTION.md | awk '{print $1}')"
           if [ "$next_action_before" != "$next_action_after" ]; then
             echo 'Generated evidence must not mutate NEXT_ACTION.md.' >&2
@@ -324,6 +325,7 @@ jobs:
           const evidenceStore = await readJson('regulatory/validation/POSTGRESQL_EVIDENCE_OBJECT_STORE_VALIDATION.json');
           const backupRestore = await readJson('regulatory/validation/POSTGRESQL_BACKUP_RESTORE_VALIDATION.json');
           const engineBranches = await readJson('regulatory/validation/ENGINE_BRANCH_COVERAGE_VALIDATION.json');
+          const currentState = await readJson('regulatory/validation/CURRENT_STATE_RECONCILIATION.json');
           const schema = await readJson('schemas/canonical/PROSPECTUS_CANONICAL_MODEL_V1.schema.json');
 
           const assertValidation = (validation, id, checks) => {
@@ -462,6 +464,24 @@ jobs:
             'warningsRemainNonBlocking',
             'readyForSubmissionRemainsFalse',
           ]);
+          assertValidation(currentState, 'CURRENT_STATE_RECONCILIATION_V1', [
+            'circ005RequirementCount62',
+            'circ005MissingZero',
+            'canonicalSchemaBoundToDictionary',
+            'apiIntegrationPass',
+            'postgresCorePass',
+            'postgresRepositoryPass',
+            'importStagingAndPromotionPass',
+            'evidenceLifecyclePass',
+            'backupRestoreHarnessPass',
+            'engineBranchCoveragePass',
+            'multiProfileGoldenValidationPass',
+            'staticUmoaBaselinePresent',
+            'dynamicCalendarsNotFabricated',
+            'clauseCatalogRemainsDraftReviewRequired',
+            'nextRegulatoryActionPreserved',
+            'readyForSubmissionRemainsFalse',
+          ]);
 
           if (schema.$defs.regulatoryContext.properties.ready_for_submission.const !== false) {
             throw new Error('Canonical schema must lock ready_for_submission to false');
@@ -495,6 +515,8 @@ jobs:
             regulatory/validation/POSTGRESQL_EVIDENCE_OBJECT_STORE_VALIDATION.json
             regulatory/validation/POSTGRESQL_BACKUP_RESTORE_VALIDATION.json
             regulatory/validation/ENGINE_BRANCH_COVERAGE_VALIDATION.json
+            regulatory/validation/MULTI_PROFILE_REGRESSION_CORPUS_VALIDATION.json
+            regulatory/validation/CURRENT_STATE_RECONCILIATION.json
             schemas/canonical/PROSPECTUS_CANONICAL_MODEL_V1.schema.json
             database/migrations/*.sql
             database/tests/*.sql
@@ -530,6 +552,8 @@ jobs:
             regulatory/validation/POSTGRESQL_EVIDENCE_OBJECT_STORE_VALIDATION.json \
             regulatory/validation/POSTGRESQL_BACKUP_RESTORE_VALIDATION.json \
             regulatory/validation/ENGINE_BRANCH_COVERAGE_VALIDATION.json \
+            regulatory/validation/MULTI_PROFILE_REGRESSION_CORPUS_VALIDATION.json \
+            regulatory/validation/CURRENT_STATE_RECONCILIATION.json \
             examples/generated/united-capital-diamond/prospectus-draft.md \
             examples/generated/united-capital-diamond/canonical-data.json \
             examples/generated/united-capital-diamond/questionnaire-state.json \
