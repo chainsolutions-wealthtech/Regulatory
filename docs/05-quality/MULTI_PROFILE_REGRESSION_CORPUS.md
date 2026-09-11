@@ -28,15 +28,13 @@ Le fichier `test/submission-invariant-mutations.test.js` ajoute des mutations n�
 
 ## Golden masters
 
-Le dépôt protège actuellement le déterminisme par comparaison répétée du même snapshot et par invariants sémantiques. Il ne fige pas encore de hashes multi-profils comme vérité durable tant qu'un run CI réussi n'a pas produit et attesté ces valeurs. Cette règle évite d'inventer des golden hashes sans exécution réelle.
+Les golden masters sont désormais persistés dans `test/fixtures/MULTI_PROFILE_GOLDEN_MASTERS_V1.json`.
 
-Une future promotion vers des golden masters persistés devra :
+Ils proviennent exclusivement du run Regulatory CI `34631652716`, conclu `success` sur le HEAD source `0ef950c1cf446c78bf902672631fda8b7c8ed384`. Le commit de preuve généré `32693f802fe3bb598ed53ebe3b209247805d99f7` est un enfant direct de ce HEAD. Le SHA Git source lie cryptographiquement le code, les fixtures et les entrées ayant produit les valeurs figées.
 
-- provenir d'un run CI réussi sur le HEAD exact ;
-- conserver la fixture comme synthétique ;
-- inclure le hash du snapshot d'entrée, le `generation_id`, le hash documentaire et la version du moteur/catalogue ;
-- échouer sur toute dérive non explicitement approuvée ;
-- ne jamais modifier `ready_for_submission=false`.
+Pour chaque profil, la recette compare désormais le `generation_id` et le SHA-256 Markdown aux valeurs attestées. Elle conserve aussi `requirement_count=62` et `ready_for_submission=false`.
+
+Une mise à jour de golden master est interdite comme mécanisme automatique de réparation. Elle n'est recevable qu'après un changement intentionnel, une nouvelle exécution CI réussie du HEAD exact et une mise à jour gouvernée de la preuve. Les golden masters restent strictement synthétiques et ne deviennent jamais une vérité réglementaire.
 
 ## Limites
 

@@ -14,6 +14,7 @@ const requiredChecks = [
   "circ005ConcordanceRemains62",
   "readyForSubmissionRemainsFalse",
   "noRegulatoryTruthIntroduced",
+  "goldenMastersMatchAttestedCi",
 ];
 if (
   validation.status !== "PASS" ||
@@ -40,19 +41,19 @@ Validation : \`${validation.validationId}\` = \`PASS\`.
 | --- | --- | --- | --- |
 ${profileTable}
 
-Invariants : déterminisme intra-profil \`PASS\`, unicité inter-profils \`PASS\`, concordance CIRC005 = \`62\` pour chaque profil, \`ready_for_submission=false\` pour chaque profil. Les fixtures sont strictement synthétiques et ne constituent aucune vérité réglementaire, approbation juridique ou acceptation production.`;
+Invariants : déterminisme intra-profil \`PASS\`, unicité inter-profils \`PASS\`, concordance CIRC005 = \`62\` pour chaque profil, \`ready_for_submission=false\` pour chaque profil. Golden masters : \`PASS\`, issus du run CI attesté \`${validation.goldenMasterSource.attestedCiRunId}\` sur le HEAD source \`${validation.goldenMasterSource.attestedSourceHead}\`. Les fixtures sont strictement synthétiques et ne constituent aucune vérité réglementaire, approbation juridique ou acceptation production.`;
 
 await upsertBlock("STATUS.md", "LOOP-DEV-001-MULTI-PROFILE-CORPUS", evidence);
 await upsertBlock("SUIVI.md", "LOOP-DEV-001-MULTI-PROFILE-CORPUS", evidence);
 await upsertBlock(
   "TODO.md",
   "LOOP-DEV-001-MULTI-PROFILE-CORPUS",
-  `## Recette multi-profils — état courant\n\n- [x] Ajouter au moins quatre profils synthétiques distincts.\n- [x] Vérifier le déterminisme des generation IDs.\n- [x] Vérifier le déterminisme des hashes documentaires.\n- [x] Vérifier l’unicité inter-profils.\n- [x] Conserver les 62 exigences CIRC005 dans chaque concordance.\n- [x] Mutation-tester l’invariant \`ready_for_submission=false\`.\n- [x] Générer la preuve machine depuis le runtime qui exécute les tests.\n- [x] Persister les hashes exécutés dans les documents de gouvernance.\n- [ ] Promouvoir des hashes en golden masters immuables uniquement après un run CI attesté du HEAD exact.`,
+  `## Recette multi-profils — état courant\n\n- [x] Ajouter au moins quatre profils synthétiques distincts.\n- [x] Vérifier le déterminisme des generation IDs.\n- [x] Vérifier le déterminisme des hashes documentaires.\n- [x] Vérifier l’unicité inter-profils.\n- [x] Conserver les 62 exigences CIRC005 dans chaque concordance.\n- [x] Mutation-tester l’invariant \`ready_for_submission=false\`.\n- [x] Générer la preuve machine depuis le runtime qui exécute les tests.\n- [x] Persister les hashes exécutés dans les documents de gouvernance.\n- [x] Promouvoir les hashes issus du run CI attesté en golden masters immuables.\n- [x] Faire échouer la recette si un generation ID ou hash documentaire dérive du golden master sans changement explicitement gouverné.`,
 );
 await upsertBlock(
   "CHANGELOG.md",
   "LOOP-DEV-001-MULTI-PROFILE-CORPUS",
-  `## [Unreleased] — Corpus de régression multi-profils\n\n### Added\n\n- quatre profils de test synthétiques ;\n- tests de déterminisme et unicité des sorties ;\n- mutation tests contre l’activation implicite de la soumission ;\n- preuve machine avec hashes calculés à l’exécution ;\n- persistance documentaire des hashes exécutés.\n\n### Safety\n\n- aucune fixture synthétique n’est une donnée réglementaire ;\n- aucun hash n’est inventé à la main ;\n- \`ready_for_submission=false\` reste obligatoire.`,
+  `## [Unreleased] — Corpus de régression multi-profils\n\n### Added\n\n- quatre profils de test synthétiques ;\n- tests de déterminisme et unicité des sorties ;\n- mutation tests contre l’activation implicite de la soumission ;\n- preuve machine avec hashes calculés à l’exécution ;\n- persistance documentaire des hashes exécutés ;\n- golden masters immuables issus d’un run CI attesté, vérifiés à chaque recette.\n\n### Safety\n\n- aucune fixture synthétique n’est une donnée réglementaire ;\n- aucun hash n’est inventé à la main ;\n- \`ready_for_submission=false\` reste obligatoire.`,
 );
 
 console.log(JSON.stringify({

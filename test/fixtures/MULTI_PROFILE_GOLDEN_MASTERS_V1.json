@@ -1,0 +1,40 @@
+{
+  "schemaVersion": "MULTI_PROFILE_GOLDEN_MASTERS_V1",
+  "syntheticFixtureOnly": true,
+  "generatedAt": "2026-08-20T20:00:00.000Z",
+  "source": {
+    "attestedSourceHead": "0ef950c1cf446c78bf902672631fda8b7c8ed384",
+    "attestedCiRunId": 34631652716,
+    "attestedCiConclusion": "success",
+    "generatedEvidenceCommit": "32693f802fe3bb598ed53ebe3b209247805d99f7",
+    "validationId": "MULTI_PROFILE_REGRESSION_CORPUS_VALIDATION_V1",
+    "fixtureSourceHead": "0ef950c1cf446c78bf902672631fda8b7c8ed384"
+  },
+  "profiles": {
+    "bond-active": {
+      "generation_id": "GEN-9D37DEB56AB76F4B",
+      "prospectus_markdown_sha256": "4748b9cf667bfc5d6c6c58d862054577c321b99475924994c70aa863da2b4728",
+      "requirement_count": 62,
+      "ready_for_submission": false
+    },
+    "balanced": {
+      "generation_id": "GEN-9E03D9626497A633",
+      "prospectus_markdown_sha256": "75268cb17c2cf412cecd5e0cb94f1fd65dc13e52e9445eeb330cd04b9c22b301",
+      "requirement_count": 62,
+      "ready_for_submission": false
+    },
+    "conservative-debt": {
+      "generation_id": "GEN-ACA62B0D4C39C5A7",
+      "prospectus_markdown_sha256": "9dd546e5a8dcdba08f7d956afe9e7a2a8d849a48e3970781ed5e713517b8983c",
+      "requirement_count": 62,
+      "ready_for_submission": false
+    },
+    "no-redemption-edge": {
+      "generation_id": "GEN-E9ED38E5FDB56B87",
+      "prospectus_markdown_sha256": "0dbf61194d2284983222ad9d17ca50c48db1ace8e895851881a4e10a6a6d1c95",
+      "requirement_count": 62,
+      "ready_for_submission": false
+    }
+  },
+  "caveat": "Golden masters issus exclusivement du run CI attesté indiqué ci-dessus. Fixtures synthétiques uniquement : aucune vérité réglementaire, approbation juridique, acceptation production ou autorisation de soumission."
+}

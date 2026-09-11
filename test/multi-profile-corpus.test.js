@@ -8,6 +8,9 @@ import { generateProspectusDraft } from "../src/core/generation-service.js";
 
 const repoRoot = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
 const generatedAt = "2026-08-20T20:00:00.000Z";
+const goldenMasters = JSON.parse(
+  await readFile(path.join(repoRoot, "test", "fixtures", "MULTI_PROFILE_GOLDEN_MASTERS_V1.json"), "utf8"),
+);
 
 async function baseFixture() {
   const example = path.join(repoRoot, "examples", "united-capital-diamond");
@@ -104,6 +107,16 @@ test("le corpus synthétique multi-profils reste déterministe et non soumission
     assert.equal(first.manifest.generation_id, second.manifest.generation_id, `${profileName}: generation id drift`);
     assert.equal(first.manifest.prospectus_markdown_sha256, second.manifest.prospectus_markdown_sha256, `${profileName}: document hash drift`);
     assert.equal(first.prospectusMarkdown, second.prospectusMarkdown, `${profileName}: markdown drift`);
+    const golden = goldenMasters.profiles?.[profileName];
+    assert.ok(golden, `${profileName}: golden master missing`);
+    assert.equal(first.manifest.generation_id, golden.generation_id, `${profileName}: golden generation id drift`);
+    assert.equal(
+      first.manifest.prospectus_markdown_sha256,
+      golden.prospectus_markdown_sha256,
+      `${profileName}: golden document hash drift`,
+    );
+    assert.equal(golden.requirement_count, 62, `${profileName}: golden requirement count drift`);
+    assert.equal(golden.ready_for_submission, false, `${profileName}: golden submission invariant drift`);
     assert.match(first.prospectusMarkdown, /Synthetic .* Test Fund/);
 
     generationIds.add(first.manifest.generation_id);
@@ -112,6 +125,10 @@ test("le corpus synthétique multi-profils reste déterministe et non soumission
 
   assert.equal(generationIds.size, profiles.length, "Distinct synthetic profiles must not collapse to one generation id.");
   assert.equal(documentHashes.size, profiles.length, "Distinct synthetic profiles must not collapse to one document hash.");
+  assert.equal(goldenMasters.schemaVersion, "MULTI_PROFILE_GOLDEN_MASTERS_V1");
+  assert.equal(goldenMasters.syntheticFixtureOnly, true);
+  assert.equal(goldenMasters.generatedAt, generatedAt);
+  assert.equal(Object.keys(goldenMasters.profiles ?? {}).length, profiles.length);
 });
 
 test("le corpus exerce plusieurs profils de risque sans introduire de vérité réglementaire", async () => {
