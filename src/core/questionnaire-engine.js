@@ -115,7 +115,7 @@ export function listApplicableQuestions(questionCatalog, data) {
  */
 function isAllowedPath(path, allowed) {
   for (const candidate of allowed) {
-    if (path === candidate || path.startsWith(`${candidate}.`) || candidate.startsWith(`${path}.`)) {
+    if (path === candidate || path.startsWith(`${candidate}.`)) {
       return true;
     }
   }
