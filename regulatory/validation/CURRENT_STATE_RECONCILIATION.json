@@ -1,0 +1,58 @@
+{
+  "validationId": "CURRENT_STATE_RECONCILIATION_V1",
+  "status": "PASS",
+  "projectState": "FUNCTIONAL_PRE_COMPLIANCE_PLATFORM_EXTERNAL_AND_HUMAN_BLOCKERS_REMAIN",
+  "implementedAndTested": [
+    "CIRC005_62_REQUIREMENTS_MISSING_ZERO",
+    "CANONICAL_SCHEMA_AND_DATA_DICTIONARY",
+    "QUESTIONNAIRE_AND_ENGINE_BRANCH_COVERAGE",
+    "DETERMINISTIC_DOCUMENT_PIPELINE",
+    "NEXTJS_ATOMIC_DESIGN_AND_HTTP_API",
+    "POSTGRESQL_RLS_VERSIONING_AUDIT_AND_BACKUP_RESTORE",
+    "EVIDENCE_QUARANTINE_SCAN_QUEUE_RETRY_AND_RELEASE_SEPARATION",
+    "IMPORT_STAGING_HUMAN_REVIEW_AND_EXPLICIT_PROMOTION",
+    "MULTI_PROFILE_GOLDEN_MASTERS",
+    "UMOA_STATIC_MEMBER_STATE_AND_XOF_BASELINE"
+  ],
+  "partialOrReviewRequired": [
+    {
+      "item": "CLAUSE_LIBRARY",
+      "state": "VERSIONED_EXECUTABLE_DRAFTS_AND_GOVERNED_PROPOSAL_LIFECYCLE; SOURCE_CATALOG_STILL_CODE; LEGAL_REVIEW_REQUIRED"
+    },
+    {
+      "item": "UMOA_REFERENCE_DATA",
+      "state": "STATIC_MEMBER_STATE_AND_CURRENCY_BASELINE_ONLY; DYNAMIC_ACTORS_AND_CALENDARS_NOT_MATERIALIZED"
+    },
+    {
+      "item": "INSTRUCTION_66",
+      "state": "MATERIALIZED_AND_ATOMIZED; HUMAN_LEGAL_AND_COMPLIANCE_REVIEW_PENDING"
+    }
+  ],
+  "externalBlockers": [
+    "RECOVER_OFFICIAL_OR_INSTITUTIONAL_BINARY_CM_10_06_2022",
+    "PROVISION_AND_ATTEST_TARGET_INFRASTRUCTURE_AND_IDENTITY",
+    "RUN_TARGET_BACKUP_RESTORE_AND_PRODUCTION_ACCEPTANCE",
+    "COMPLETE_LEGAL_COMPLIANCE_TAX_RISK_PRODUCT_REVIEWS",
+    "COMPLETE_MANUAL_ACCESSIBILITY_REVIEW",
+    "OWNER_DECISION_ON_GITHUB_PUBLIC_VISIBILITY"
+  ],
+  "checks": {
+    "circ005RequirementCount62": true,
+    "circ005MissingZero": true,
+    "canonicalSchemaBoundToDictionary": true,
+    "apiIntegrationPass": true,
+    "postgresCorePass": true,
+    "postgresRepositoryPass": true,
+    "importStagingAndPromotionPass": true,
+    "evidenceLifecyclePass": true,
+    "backupRestoreHarnessPass": true,
+    "engineBranchCoveragePass": true,
+    "multiProfileGoldenValidationPass": true,
+    "staticUmoaBaselinePresent": true,
+    "dynamicCalendarsNotFabricated": true,
+    "clauseCatalogRemainsDraftReviewRequired": true,
+    "nextRegulatoryActionPreserved": true,
+    "readyForSubmissionRemainsFalse": true
+  },
+  "caveat": "Cette réconciliation décrit uniquement l’état technique prouvé du dépôt. Les éléments PARTIAL et EXTERNAL_BLOCKER ne sont ni simulés ni promus automatiquement en terminé."
+}

@@ -25,9 +25,9 @@
 - [ ] Ne jamais activer automatiquement montant, sanction, exigence ou dépendance sans les revues humaines prévues.
 
 - branche canonique : `main` ;
-- HEAD source vérifié par la boucle : `b07c3dcdab7dd75ead19655f1244551f0787e154` ;
+- HEAD source vérifié par la boucle : `2141087382e15d2721a77971e0c49892b58caa02` ;
 - date du HEAD source : `2026-09-11` ;
-- run Regulatory CI : `34633747935` ;
+- run Regulatory CI : `34634536719` ;
 - validation API CIRC005 : `PASS` ;
 - compatibilité descendante des 10 collections structurées : `PASS` ;
 - persistance canonique des anciens payloads : `PASS` ;
@@ -537,3 +537,37 @@ Légende :
 - [x] Maintenir `ready_for_submission=false`.
 - [ ] Poursuivre l’exhaustivité réglementaire uniquement depuis des sources officielles et revues humaines.
 <!-- AUTO:LOOP-DEV-001-ENGINE-BRANCH-COVERAGE-V1:END -->
+
+<!-- AUTO:CURRENT-STATE-RECONCILIATION-V1:START -->
+## Réconciliation actuelle — ne pas confondre avec les checklists historiques
+
+### `IMPLEMENTED_AND_TESTED`
+
+- [x] 62 exigences CIRC005 conservées et `MISSING=0` sur le cas standard.
+- [x] JSON Schema canonique V1 et dictionnaire de données liés.
+- [x] Questionnaire exécutable, visibilité conditionnelle et couverture machine des branches.
+- [x] Génération déterministe Markdown/DOCX et pipeline PDF normalisé contrôlé.
+- [x] Application Next.js / Atomic Design et API HTTP.
+- [x] PostgreSQL 17, RLS tenant, versions, audit, concurrence et drill backup/restore CI.
+- [x] Preuves : quarantaine, scan serveur, queue/lease/retry, séparation scan/release.
+- [x] Import : extraction non vérifiée, staging, revue humaine et promotion canonique explicite.
+- [x] Golden masters multi-profils issus d’une CI attestée.
+- [x] Référentiel statique UMOA : 8 États + XOF/BCEAO, sans calendrier inventé.
+
+### `PARTIAL/REVIEW_REQUIRED`
+
+- [~] Clauses : catalogue exécutable versionné + cycle de propositions gouverné, mais source catalogue encore en code et clauses toujours `DRAFT_LEGAL_REVIEW_REQUIRED`.
+- [~] Référentiels : socle États/devise seulement ; acteurs agréés et calendriers dynamiques restent à sourcer/versionner.
+- [~] Instruction 66 : matérialisée et atomisée, mais revues juridique/conformité encore requises.
+
+### `EXTERNAL_BLOCKER`
+
+- [ ] Obtenir le binaire officiel/institutionnel `CM/10/06/2022` puis comparer 2016 ↔ 2022.
+- [ ] Provisionner et attester l’infrastructure et l’identité de production.
+- [ ] Exécuter backup/restore et acceptation sur la cible réelle.
+- [ ] Terminer les validations humaines Legal/Compliance/Tax/Risk/Product.
+- [ ] Effectuer la revue manuelle d’accessibilité complémentaire aux tests automatisés.
+- [ ] Confirmer avec le propriétaire si la visibilité GitHub `public` est intentionnelle.
+
+Les anciennes cases non cochées plus bas sont conservées comme historique ; elles ne doivent plus être utilisées seules pour déduire l’état courant.
+<!-- AUTO:CURRENT-STATE-RECONCILIATION-V1:END -->
