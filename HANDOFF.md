@@ -10,9 +10,9 @@ Un nouvel agent doit reprendre depuis `00_START_HERE.md` et `GOVERNANCE.md`, res
 Ce chantier a renforcé la gouvernance **et** réparé une dette CI préexistante sans retirer les capacités legacy ni affaiblir le déterminisme PDF.
 
 - branche canonique : `main` ;
-- HEAD source vérifié par la boucle : `dbd7095951569ec69ffe1716b1a41d9214ca800d` ;
-- date du HEAD source : `2026-08-17` ;
-- run Regulatory CI : `32072488695` ;
+- HEAD source vérifié par la boucle : `0ef950c1cf446c78bf902672631fda8b7c8ed384` ;
+- date du HEAD source : `2026-09-11` ;
+- run Regulatory CI : `34631652716` ;
 - validation API CIRC005 : `PASS` ;
 - compatibilité descendante des 10 collections structurées : `PASS` ;
 - persistance canonique des anciens payloads : `PASS` ;
@@ -272,28 +272,57 @@ Ne pas sélectionner `REGULATORY_STORAGE_DRIVER=postgresql` avant l’implément
 <!-- AUTO:LOOP-DEV-001-CANONICAL-SCHEMA-POSTGRES-V1:END -->
 
 <!-- AUTO:LOOP-DEV-001-POSTGRES-REPOSITORY-V1:START -->
-## Transmission — staging PostgreSQL import prospectus
+## Transmission — chaîne preuve/scanner/import gouvernée
 
 Fichiers prioritaires :
 
-- `database/migrations/0006_import_staging.sql` ;
-- `apps/web/src/server/import/postgres-import-staging-repository.ts` ;
-- `apps/web/src/server/import/postgres-import-staging-repository.integration.ts` ;
-- `apps/web/src/domain/prospectus-import.ts` ;
-- `apps/web/src/domain/prospectus-import-review.integration.ts` ;
-- `docs/04-development/PROSPECTUS_IMPORT_STAGING.md`.
+- `apps/web/src/server/evidence/postgres-tracked-evidence-store.ts` ;
+- `apps/web/src/server/evidence/evidence-binary-store.ts` ;
+- `apps/web/src/server/evidence/s3-evidence-binary-store.ts` ;
+- `apps/web/src/server/evidence/postgres-evidence-scan-queue.ts` ;
+- `apps/web/src/server/evidence/evidence-scan-queue-worker.ts` ;
+- `apps/web/src/server/evidence/http-attestation-scanner.ts` ;
+- `apps/web/src/server/evidence/evidence-scan-release-service.ts` ;
+- `apps/web/src/server/security/oidc-identity-provider.ts` ;
+- `database/migrations/0009_evidence_scan_leases.sql` ;
+- `database/tests/0003_evidence_scan_lease_test.sql`.
 
-- migration : `database/migrations/0006_import_staging.sql` ;
+- upload : `QUARANTINE_ONLY` ;
+- métadonnées réglementaires : PostgreSQL + RLS tenant, source de vérité unique ;
+- octets : store binaire privé derrière abstraction binary-only ;
+- adaptateur filesystem : `DEVELOPMENT_ONLY` ;
+- adaptateur S3/S3-compatible SSE-KMS : `IMPLEMENTED_AND_TESTED`, environnement cible non attesté ;
+- scanner HTTP d’attestation server-to-server : `IMPLEMENTED_AND_TESTED` ;
+- identité worker scanner : bearer OIDC vérifié, rôle `SECURITY` ;
+- file PostgreSQL : `FOR UPDATE SKIP LOCKED` + lease récupérable + compteur d’essais ;
+- budget de retries scanner : `BOUNDED_AND_TESTED` ;
+- épuisement du budget : `REJECTED/ERROR`, jamais faux verdict malware ;
+- séparation RBAC : `SECURITY=EVIDENCE_SCAN`, `COMPLIANCE=EVIDENCE_VERIFY` ;
+- scan CLEAN : ne libère jamais automatiquement ;
+- release : acte conformité séparé et explicite ;
+- recovery binaire CLEAN / commit PostgreSQL manquant : `PASS` ;
+- retry de release : `IDEMPOTENT` ;
+- verdict antivirus fourni par navigateur : `FORBIDDEN` ;
+- commande worker serveur : `IMPLEMENTED` ;
+- scheduler/cron de l'environnement cible : `NOT_PROVISIONED` ;
+- bucket/KMS/scanner/OIDC cibles : `NOT_ATTESTED` ;
+- prétention production-ready par simple configuration : `FORBIDDEN` ;
+- acceptation production : `REQUIRED_EXTERNAL_BLOCKER` ;
+- `ready_for_submission` : `false`.
+
 - staging PostgreSQL tenant-scopé : `IMPLEMENTED_AND_TESTED` ;
+- listing read-only tenant-scopé : `PASS` ;
 - preuve source CLEAN exigée : `PASS` ;
 - liaison projet/version/preuve/SHA : `PASS` ;
-- RLS tenant : `PASS` ;
-- réutilisation cross-tenant d’une preuve : `REJECTED` ;
 - revue humaine persistée avec identité : `PASS` ;
 - seconde décision sur une valeur revue : `REJECTED` ;
-- source extraite après staging : `IMMUTABLE` ;
-- `canonical_write_allowed` : `false` verrouillé en base ;
-- `ready_for_submission` : `false` verrouillé en base.
+- promotion canonique : `EXPLICIT_ONLY` ;
+- rôle `ANSWER_WRITE` requis : `PASS` ;
+- cible de question choisie explicitement : `PASS` ;
+- concurrence optimiste `expectedVersion` : `PASS` ;
+- reçu de promotion : `APPEND_ONLY` ;
+- promotion automatique : `FORBIDDEN` ;
+- `ready_for_submission` : `false`.
 
-Ne jamais transformer une confirmation d’extraction en écriture canonique implicite.
+Ne jamais transformer un scan CLEAN, une confirmation d’extraction, une configuration d'infrastructure ou une preuve CI locale en release, promotion, production readiness ou soumission implicite.
 <!-- AUTO:LOOP-DEV-001-POSTGRES-REPOSITORY-V1:END -->

@@ -18,9 +18,9 @@ Résultats atteints :
 - prochaine action réglementaire propriétaire conservée.
 
 - branche canonique : `main` ;
-- HEAD source vérifié par la boucle : `dbd7095951569ec69ffe1716b1a41d9214ca800d` ;
-- date du HEAD source : `2026-08-17` ;
-- run Regulatory CI : `32072488695` ;
+- HEAD source vérifié par la boucle : `0ef950c1cf446c78bf902672631fda8b7c8ed384` ;
+- date du HEAD source : `2026-09-11` ;
+- run Regulatory CI : `34631652716` ;
 - validation API CIRC005 : `PASS` ;
 - compatibilité descendante des 10 collections structurées : `PASS` ;
 - persistance canonique des anciens payloads : `PASS` ;
@@ -254,9 +254,9 @@ La migration vérifie l’intégrité des fourchettes, l’unicité de l’État
 <!-- AUTO:LOOP-DEV-001-CANONICAL-SCHEMA-POSTGRES-V1:END -->
 
 <!-- AUTO:LOOP-DEV-001-POSTGRES-REPOSITORY-V1:START -->
-## Résultat — persistance PostgreSQL et import gouverné
+## Résultat — chaîne preuve → scan → staging → revue → promotion
 
-Le repository projet et le staging d’import sont tous deux validés sur PostgreSQL 17 en CI.
+Les repositories projet, preuves, queue scanner et import sont validés sur PostgreSQL 17 en CI, avec séparation explicite des responsabilités et RLS tenant.
 
 - dépôt PostgreSQL projet : `IMPLEMENTED_AND_TESTED` ;
 - identité serveur vérifiée : `REQUIRED` ;
@@ -268,17 +268,42 @@ Le repository projet et le staging d’import sont tous deux validés sur Postgr
 - chaîne d’audit SHA-256 : `PASS` ;
 - `ready_for_submission` : `false`.
 
-- migration : `database/migrations/0006_import_staging.sql` ;
 - staging PostgreSQL tenant-scopé : `IMPLEMENTED_AND_TESTED` ;
+- listing read-only tenant-scopé : `PASS` ;
 - preuve source CLEAN exigée : `PASS` ;
 - liaison projet/version/preuve/SHA : `PASS` ;
-- RLS tenant : `PASS` ;
-- réutilisation cross-tenant d’une preuve : `REJECTED` ;
 - revue humaine persistée avec identité : `PASS` ;
 - seconde décision sur une valeur revue : `REJECTED` ;
-- source extraite après staging : `IMMUTABLE` ;
-- `canonical_write_allowed` : `false` verrouillé en base ;
-- `ready_for_submission` : `false` verrouillé en base.
+- promotion canonique : `EXPLICIT_ONLY` ;
+- rôle `ANSWER_WRITE` requis : `PASS` ;
+- cible de question choisie explicitement : `PASS` ;
+- concurrence optimiste `expectedVersion` : `PASS` ;
+- reçu de promotion : `APPEND_ONLY` ;
+- promotion automatique : `FORBIDDEN` ;
+- `ready_for_submission` : `false`.
 
-Prochaine tranche autonome : exposer le staging via un port runtime/API gouverné puis une interface de revue, sans écrire automatiquement dans le canonique.
+- upload : `QUARANTINE_ONLY` ;
+- métadonnées réglementaires : PostgreSQL + RLS tenant, source de vérité unique ;
+- octets : store binaire privé derrière abstraction binary-only ;
+- adaptateur filesystem : `DEVELOPMENT_ONLY` ;
+- adaptateur S3/S3-compatible SSE-KMS : `IMPLEMENTED_AND_TESTED`, environnement cible non attesté ;
+- scanner HTTP d’attestation server-to-server : `IMPLEMENTED_AND_TESTED` ;
+- identité worker scanner : bearer OIDC vérifié, rôle `SECURITY` ;
+- file PostgreSQL : `FOR UPDATE SKIP LOCKED` + lease récupérable + compteur d’essais ;
+- budget de retries scanner : `BOUNDED_AND_TESTED` ;
+- épuisement du budget : `REJECTED/ERROR`, jamais faux verdict malware ;
+- séparation RBAC : `SECURITY=EVIDENCE_SCAN`, `COMPLIANCE=EVIDENCE_VERIFY` ;
+- scan CLEAN : ne libère jamais automatiquement ;
+- release : acte conformité séparé et explicite ;
+- recovery binaire CLEAN / commit PostgreSQL manquant : `PASS` ;
+- retry de release : `IDEMPOTENT` ;
+- verdict antivirus fourni par navigateur : `FORBIDDEN` ;
+- commande worker serveur : `IMPLEMENTED` ;
+- scheduler/cron de l'environnement cible : `NOT_PROVISIONED` ;
+- bucket/KMS/scanner/OIDC cibles : `NOT_ATTESTED` ;
+- prétention production-ready par simple configuration : `FORBIDDEN` ;
+- acceptation production : `REQUIRED_EXTERNAL_BLOCKER` ;
+- `ready_for_submission` : `false`.
+
+Les E2E navigateur, contrôles WCAG automatisés, health/readiness, headers de sécurité, smoke performance et drill PostgreSQL dump/restore disposent désormais de harnesses CI. Les prochaines actions ne doivent pas simuler les services cibles : elles concernent l'attestation/provisioning d'infrastructure et les validations humaines/réglementaires externes.
 <!-- AUTO:LOOP-DEV-001-POSTGRES-REPOSITORY-V1:END -->

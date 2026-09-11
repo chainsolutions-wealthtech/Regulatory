@@ -1,0 +1,18 @@
+{
+  "validationId": "POSTGRESQL_IMPORT_PROMOTION_VALIDATION_V1",
+  "status": "PASS",
+  "checks": {
+    "answerWriteAuthorizationRequired": true,
+    "explicitQuestionTargetRequired": true,
+    "humanConfirmationRequired": true,
+    "optimisticConcurrencyRequired": true,
+    "tenantIsolation": true,
+    "duplicatePromotionRejected": true,
+    "exactlyOneProjectVersionCreated": true,
+    "immutableSourceProvenancePersisted": true,
+    "reviewerAndPromoterIdentityPersisted": true,
+    "appendOnlyPromotionReceipt": true,
+    "readyForSubmissionRemainsFalse": true
+  },
+  "caveat": "Promotion unitaire explicite uniquement. Aucune déduction de questionId, aucune promotion automatique et aucune autorisation de soumission."
+}

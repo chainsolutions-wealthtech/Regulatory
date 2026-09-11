@@ -601,19 +601,44 @@ La RLS complète les contrôles d’autorisation applicatifs ; elle ne les rempl
 <!-- AUTO:LOOP-DEV-001-CANONICAL-SCHEMA-POSTGRES-V1:END -->
 
 <!-- AUTO:LOOP-DEV-001-POSTGRES-REPOSITORY-V1:START -->
-## Staging PostgreSQL des imports prospectus
+## Chaîne preuve, scanner et import prospectus
 
-La chaîne d’import est séparée du repository canonique : une preuve CLEAN est extraite vers des propositions non vérifiées, persistée dans un staging RLS, puis chaque proposition reçoit éventuellement une décision humaine. Même après confirmation humaine, aucune donnée n’est copiée automatiquement vers `project_answers`.
+PostgreSQL est la source de vérité des métadonnées réglementaires et du cycle de vie. Le store binaire ne conserve que les octets privés et une localisation technique. Le scanner automatique s'exécute sous une identité SECURITY distincte de COMPLIANCE et consomme une queue PostgreSQL à lease. Les retries sont bornés et l'épuisement technique termine l'objet en erreur sans fabriquer de verdict malware. Un résultat CLEAN reste en quarantaine jusqu'à une release explicite COMPLIANCE. Le staging import n’accepte qu’une preuve réellement CLEAN. Les valeurs extraites restent non vérifiées jusqu’à revue humaine et la promotion vers le canonique reste une commande distincte, autorisée, versionnée et auditée.
 
-- migration : `database/migrations/0006_import_staging.sql` ;
+- upload : `QUARANTINE_ONLY` ;
+- métadonnées réglementaires : PostgreSQL + RLS tenant, source de vérité unique ;
+- octets : store binaire privé derrière abstraction binary-only ;
+- adaptateur filesystem : `DEVELOPMENT_ONLY` ;
+- adaptateur S3/S3-compatible SSE-KMS : `IMPLEMENTED_AND_TESTED`, environnement cible non attesté ;
+- scanner HTTP d’attestation server-to-server : `IMPLEMENTED_AND_TESTED` ;
+- identité worker scanner : bearer OIDC vérifié, rôle `SECURITY` ;
+- file PostgreSQL : `FOR UPDATE SKIP LOCKED` + lease récupérable + compteur d’essais ;
+- budget de retries scanner : `BOUNDED_AND_TESTED` ;
+- épuisement du budget : `REJECTED/ERROR`, jamais faux verdict malware ;
+- séparation RBAC : `SECURITY=EVIDENCE_SCAN`, `COMPLIANCE=EVIDENCE_VERIFY` ;
+- scan CLEAN : ne libère jamais automatiquement ;
+- release : acte conformité séparé et explicite ;
+- recovery binaire CLEAN / commit PostgreSQL manquant : `PASS` ;
+- retry de release : `IDEMPOTENT` ;
+- verdict antivirus fourni par navigateur : `FORBIDDEN` ;
+- commande worker serveur : `IMPLEMENTED` ;
+- scheduler/cron de l'environnement cible : `NOT_PROVISIONED` ;
+- bucket/KMS/scanner/OIDC cibles : `NOT_ATTESTED` ;
+- prétention production-ready par simple configuration : `FORBIDDEN` ;
+- acceptation production : `REQUIRED_EXTERNAL_BLOCKER` ;
+- `ready_for_submission` : `false`.
+
 - staging PostgreSQL tenant-scopé : `IMPLEMENTED_AND_TESTED` ;
+- listing read-only tenant-scopé : `PASS` ;
 - preuve source CLEAN exigée : `PASS` ;
 - liaison projet/version/preuve/SHA : `PASS` ;
-- RLS tenant : `PASS` ;
-- réutilisation cross-tenant d’une preuve : `REJECTED` ;
 - revue humaine persistée avec identité : `PASS` ;
 - seconde décision sur une valeur revue : `REJECTED` ;
-- source extraite après staging : `IMMUTABLE` ;
-- `canonical_write_allowed` : `false` verrouillé en base ;
-- `ready_for_submission` : `false` verrouillé en base.
+- promotion canonique : `EXPLICIT_ONLY` ;
+- rôle `ANSWER_WRITE` requis : `PASS` ;
+- cible de question choisie explicitement : `PASS` ;
+- concurrence optimiste `expectedVersion` : `PASS` ;
+- reçu de promotion : `APPEND_ONLY` ;
+- promotion automatique : `FORBIDDEN` ;
+- `ready_for_submission` : `false`.
 <!-- AUTO:LOOP-DEV-001-POSTGRES-REPOSITORY-V1:END -->

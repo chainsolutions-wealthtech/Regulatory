@@ -1,0 +1,12 @@
+{
+  "validationId": "POSTGRESQL_IMPORT_STAGING_QUERY_VALIDATION_V1",
+  "status": "PASS",
+  "checks": {
+    "readOnlyProjectListing": true,
+    "reviewCounters": true,
+    "tenantIsolation": true,
+    "canonicalWriteRemainsFalse": true,
+    "readyForSubmissionRemainsFalse": true
+  },
+  "caveat": "Listing read-only tenant-scoped uniquement. Cette validation ne crée aucune donnée canonique et ne rend jamais le dossier prêt pour soumission."
+}

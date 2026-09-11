@@ -1,0 +1,15 @@
+{
+  "validationId": "POSTGRESQL_IMPORT_STAGING_VALIDATION_V1",
+  "status": "PASS",
+  "checks": {
+    "cleanEvidenceRequired": true,
+    "tenantIsolation": true,
+    "crossTenantEvidenceRejected": true,
+    "reviewerIdentityPersisted": true,
+    "doubleReviewRejected": true,
+    "canonicalWriteLockedFalse": true,
+    "readyForSubmissionLockedFalse": true,
+    "sourceDigestPreserved": true
+  },
+  "caveat": "Staging tenant-scoped et revue humaine uniquement. Une confirmation d'import ne constitue jamais une écriture canonique ni une autorisation de soumission."
+}

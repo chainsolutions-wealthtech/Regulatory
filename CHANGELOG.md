@@ -213,24 +213,32 @@ L’activation du driver PostgreSQL échoue explicitement tant qu’aucun adapta
 <!-- AUTO:LOOP-DEV-001-CANONICAL-SCHEMA-POSTGRES-V1:END -->
 
 <!-- AUTO:LOOP-DEV-001-POSTGRES-REPOSITORY-V1:START -->
-## [Unreleased] — Import staging PostgreSQL — 2026-08-17
+## [Unreleased] — Chaîne preuve/scanner/import gouvernée — 2026-08-20
 
 ### Added
 
-- migration `0006_import_staging.sql` ;
-- tables `prospectus_import_batches` et `prospectus_import_values` ;
-- RLS tenant sur le staging d’import ;
-- repository PostgreSQL transactionnel de staging ;
-- revue humaine persistée et traçable ;
-- validation `POSTGRESQL_IMPORT_STAGING_VALIDATION_V1`.
+- contrat de stockage evidence binary-only ;
+- adaptateur S3 privé SSE-KMS ;
+- scanner HTTP d’attestation server-to-server ;
+- action RBAC `EVIDENCE_SCAN` séparée de `EVIDENCE_VERIFY` ;
+- provider bearer OIDC pour identité SECURITY de service ;
+- queue PostgreSQL de scan avec lease récupérable ;
+- budget de retries borné et preuve machine dédiée ;
+- batch worker server-only ;
+- validation machine de la queue scanner ;
+- readiness bloquée jusqu'à acceptation réelle de production.
 
 ### Security
 
-- preuve CLEAN exigée ;
-- SHA et portée projet/version contrôlés ;
-- source extraite immuable ;
-- double décision refusée ;
-- écriture canonique et soumission verrouillées à `false` par PostgreSQL.
+- aucun verdict antivirus navigateur ;
+- aucun rôle de conformité utilisé comme identité technique du scanner ;
+- aucune référence de stockage/KMS exposée par l’API metadata ;
+- scan CLEAN distinct de la release ;
+- épuisement technique des retries distinct d'un verdict malware ;
+- RLS tenant sur preuves/imports ;
+- production readiness par simple configuration interdite ;
+- promotion automatique et soumission interdites ;
+- `ready_for_submission=false` maintenu.
 <!-- AUTO:LOOP-DEV-001-POSTGRES-REPOSITORY-V1:END -->
 
 <!-- AUTO:LOOP-GOV-002-GOVERNANCE-RECONCILIATION:START -->
@@ -268,3 +276,21 @@ L’activation du driver PostgreSQL échoue explicitement tant qu’aucun adapta
 - `LOOP-GOV-002 = CLOSED_OBJECTIVE_COMPLETE` ;
 - reprise : `LOOP-REG-001 / CM/10/06/2022`.
 <!-- AUTO:LOOP-GOV-002-GOVERNANCE-RECONCILIATION:END -->
+
+<!-- AUTO:LOOP-DEV-001-MULTI-PROFILE-CORPUS:START -->
+## [Unreleased] — Corpus de régression multi-profils
+
+### Added
+
+- quatre profils de test synthétiques ;
+- tests de déterminisme et unicité des sorties ;
+- mutation tests contre l’activation implicite de la soumission ;
+- preuve machine avec hashes calculés à l’exécution ;
+- persistance documentaire des hashes exécutés.
+
+### Safety
+
+- aucune fixture synthétique n’est une donnée réglementaire ;
+- aucun hash n’est inventé à la main ;
+- `ready_for_submission=false` reste obligatoire.
+<!-- AUTO:LOOP-DEV-001-MULTI-PROFILE-CORPUS:END -->

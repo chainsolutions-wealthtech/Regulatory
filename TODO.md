@@ -25,9 +25,9 @@
 - [ ] Ne jamais activer automatiquement montant, sanction, exigence ou dépendance sans les revues humaines prévues.
 
 - branche canonique : `main` ;
-- HEAD source vérifié par la boucle : `dbd7095951569ec69ffe1716b1a41d9214ca800d` ;
-- date du HEAD source : `2026-08-17` ;
-- run Regulatory CI : `32072488695` ;
+- HEAD source vérifié par la boucle : `0ef950c1cf446c78bf902672631fda8b7c8ed384` ;
+- date du HEAD source : `2026-09-11` ;
+- run Regulatory CI : `34631652716` ;
 - validation API CIRC005 : `PASS` ;
 - compatibilité descendante des 10 collections structurées : `PASS` ;
 - persistance canonique des anciens payloads : `PASS` ;
@@ -478,19 +478,45 @@ Légende :
 <!-- AUTO:LOOP-DEV-001-CANONICAL-SCHEMA-POSTGRES-V1:END -->
 
 <!-- AUTO:LOOP-DEV-001-POSTGRES-REPOSITORY-V1:START -->
-## Import prospectus — état courant
+## Import, preuves et scanner — état courant
 
-- [x] Accepter uniquement une preuve CLEAN et un média PDF/DOCX supporté.
-- [x] Produire des propositions `EXTRACTED_UNVERIFIED` avec provenance.
-- [x] Implémenter confirmation/rejet humain sans écriture canonique.
-- [x] Ajouter le staging PostgreSQL tenant-scopé.
-- [x] Ajouter RLS et contrôles de portée projet/version/preuve.
-- [x] Verrouiller `canonical_write_allowed=false` en base.
-- [x] Verrouiller `ready_for_submission=false` en base.
-- [x] Refuser la double revue et la mutation de la source extraite.
-- [ ] Exposer le staging via le factory runtime et une API gouvernée.
-- [ ] Construire l’écran de revue des propositions importées.
-- [ ] Brancher un extracteur PDF/DOCX réel derrière quarantaine et antivirus réels.
-- [ ] Concevoir la commande explicite de copie d’une valeur confirmée vers une réponse projet avec `ANSWER_WRITE`, `expectedVersion` et audit de provenance.
-- [ ] Configurer stockage objet, antivirus, KMS/secrets et rétention sur l’infrastructure cible.
+- [x] Upload PDF/DOCX uniquement en quarantaine.
+- [x] Métadonnées de preuve persistées en PostgreSQL sous RLS.
+- [x] Séparer strictement métadonnées réglementaires et stockage binaire.
+- [x] Ajouter un adaptateur S3 privé SSE-KMS sans credentials codées en dur.
+- [x] Interdire tout verdict antivirus fourni par le navigateur.
+- [x] Ajouter un scanner HTTP server-to-server avec attestation stricte.
+- [x] Séparer `EVIDENCE_SCAN` (SECURITY) et `EVIDENCE_VERIFY` (COMPLIANCE).
+- [x] Ajouter une identité OIDC SECURITY de service vérifiée.
+- [x] Ajouter une queue PostgreSQL tenant-scopée avec lease et recovery.
+- [x] Borner les retries scanner et terminaliser les échecs techniques sans faux verdict malware.
+- [x] Ajouter un batch worker et une commande server-only.
+- [x] Exiger un scan CLEAN avant release.
+- [x] Séparer scan CLEAN et release explicite.
+- [x] Récupérer une release après succès binaire et échec avant commit PostgreSQL.
+- [x] Rendre les retries de release idempotents.
+- [x] Construire l’espace projet Preuves et la revue import.
+- [x] Ajouter E2E navigateur, responsive et WCAG automatisé.
+- [x] Ajouter health/readiness fail-closed, headers sécurité et smoke performance.
+- [x] Ajouter un drill PostgreSQL dump/restore en CI.
+- [ ] Provisionner et attester le stockage objet/KMS de production.
+- [ ] Provisionner et attester le scanner antivirus réel.
+- [ ] Déployer/scheduler le worker scanner sur l'environnement cible.
+- [ ] Configurer et attester OIDC, monitoring, sauvegarde/restauration et alerting de la cible.
+- [ ] Exécuter l'acceptation production de bout en bout sur l'environnement cible.
+- [ ] Résoudre les sources réglementaires officielles encore manquantes et terminer les revues humaines.
 <!-- AUTO:LOOP-DEV-001-POSTGRES-REPOSITORY-V1:END -->
+
+<!-- AUTO:LOOP-DEV-001-MULTI-PROFILE-CORPUS:START -->
+## Recette multi-profils — état courant
+
+- [x] Ajouter au moins quatre profils synthétiques distincts.
+- [x] Vérifier le déterminisme des generation IDs.
+- [x] Vérifier le déterminisme des hashes documentaires.
+- [x] Vérifier l’unicité inter-profils.
+- [x] Conserver les 62 exigences CIRC005 dans chaque concordance.
+- [x] Mutation-tester l’invariant `ready_for_submission=false`.
+- [x] Générer la preuve machine depuis le runtime qui exécute les tests.
+- [x] Persister les hashes exécutés dans les documents de gouvernance.
+- [ ] Promouvoir des hashes en golden masters immuables uniquement après un run CI attesté du HEAD exact.
+<!-- AUTO:LOOP-DEV-001-MULTI-PROFILE-CORPUS:END -->

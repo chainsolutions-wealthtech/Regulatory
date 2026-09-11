@@ -83,21 +83,46 @@ Les routes et pages utilisent l’interface `ProjectRepository`. `REGULATORY_STO
 <!-- AUTO:LOOP-DEV-001-CANONICAL-SCHEMA-POSTGRES-V1:END -->
 
 <!-- AUTO:LOOP-DEV-001-POSTGRES-REPOSITORY-V1:START -->
-## Staging PostgreSQL des imports
+## Preuves, scanner et imports gouvernés
 
-`createPostgresImportStagingRepository` persiste des batches d’extraction et leurs décisions humaines sous identité serveur vérifiée et contexte tenant.
+Le runtime PostgreSQL expose un store de preuve tenant-scopé, un backend binaire privé, une queue de scanner server-only à retries bornés, un staging import, un listing read-only, une revue humaine et une promotion explicite.
 
-- migration : `database/migrations/0006_import_staging.sql` ;
+- upload : `QUARANTINE_ONLY` ;
+- métadonnées réglementaires : PostgreSQL + RLS tenant, source de vérité unique ;
+- octets : store binaire privé derrière abstraction binary-only ;
+- adaptateur filesystem : `DEVELOPMENT_ONLY` ;
+- adaptateur S3/S3-compatible SSE-KMS : `IMPLEMENTED_AND_TESTED`, environnement cible non attesté ;
+- scanner HTTP d’attestation server-to-server : `IMPLEMENTED_AND_TESTED` ;
+- identité worker scanner : bearer OIDC vérifié, rôle `SECURITY` ;
+- file PostgreSQL : `FOR UPDATE SKIP LOCKED` + lease récupérable + compteur d’essais ;
+- budget de retries scanner : `BOUNDED_AND_TESTED` ;
+- épuisement du budget : `REJECTED/ERROR`, jamais faux verdict malware ;
+- séparation RBAC : `SECURITY=EVIDENCE_SCAN`, `COMPLIANCE=EVIDENCE_VERIFY` ;
+- scan CLEAN : ne libère jamais automatiquement ;
+- release : acte conformité séparé et explicite ;
+- recovery binaire CLEAN / commit PostgreSQL manquant : `PASS` ;
+- retry de release : `IDEMPOTENT` ;
+- verdict antivirus fourni par navigateur : `FORBIDDEN` ;
+- commande worker serveur : `IMPLEMENTED` ;
+- scheduler/cron de l'environnement cible : `NOT_PROVISIONED` ;
+- bucket/KMS/scanner/OIDC cibles : `NOT_ATTESTED` ;
+- prétention production-ready par simple configuration : `FORBIDDEN` ;
+- acceptation production : `REQUIRED_EXTERNAL_BLOCKER` ;
+- `ready_for_submission` : `false`.
+
 - staging PostgreSQL tenant-scopé : `IMPLEMENTED_AND_TESTED` ;
+- listing read-only tenant-scopé : `PASS` ;
 - preuve source CLEAN exigée : `PASS` ;
 - liaison projet/version/preuve/SHA : `PASS` ;
-- RLS tenant : `PASS` ;
-- réutilisation cross-tenant d’une preuve : `REJECTED` ;
 - revue humaine persistée avec identité : `PASS` ;
 - seconde décision sur une valeur revue : `REJECTED` ;
-- source extraite après staging : `IMMUTABLE` ;
-- `canonical_write_allowed` : `false` verrouillé en base ;
-- `ready_for_submission` : `false` verrouillé en base.
+- promotion canonique : `EXPLICIT_ONLY` ;
+- rôle `ANSWER_WRITE` requis : `PASS` ;
+- cible de question choisie explicitement : `PASS` ;
+- concurrence optimiste `expectedVersion` : `PASS` ;
+- reçu de promotion : `APPEND_ONLY` ;
+- promotion automatique : `FORBIDDEN` ;
+- `ready_for_submission` : `false`.
 
-Ce repository n’expose aucune opération de copie vers le modèle canonique.
+Le mode local-json ne simule ni OIDC, ni scanner, ni KMS, ni object store de production. La présence de variables d'environnement production ne vaut jamais attestation opérationnelle.
 <!-- AUTO:LOOP-DEV-001-POSTGRES-REPOSITORY-V1:END -->

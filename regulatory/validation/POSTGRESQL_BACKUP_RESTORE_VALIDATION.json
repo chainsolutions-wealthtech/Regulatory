@@ -1,0 +1,14 @@
+{
+  "validationId": "POSTGRESQL_BACKUP_RESTORE_VALIDATION_V1",
+  "status": "PASS",
+  "checks": {
+    "customFormatDumpCreated": true,
+    "restoreDatabaseCreated": true,
+    "coreTablesRestored": true,
+    "evidenceTablesRestored": true,
+    "importTablesRestored": true,
+    "rowLevelSecurityPoliciesRestored": true,
+    "readyForSubmissionConstraintRestored": true
+  },
+  "caveat": "Drill sur PostgreSQL éphémère de CI. Il ne remplace pas un test de restauration sur l’infrastructure cible, avec stockage de sauvegarde, chiffrement, rétention et RTO/RPO réels."
+}

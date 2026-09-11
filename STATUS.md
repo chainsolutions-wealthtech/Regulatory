@@ -6,9 +6,9 @@
 Le dépôt est désormais explicitement gouverné en mode **une branche canonique : `main`**, sans création de branche par les agents et sans PR de travail normale. La réconciliation n’a supprimé ni remplacé les documents historiques : les photographies anciennes restent des preuves datées et le présent bloc porte l’état courant de contrôle.
 
 - branche canonique : `main` ;
-- HEAD source vérifié par la boucle : `dbd7095951569ec69ffe1716b1a41d9214ca800d` ;
-- date du HEAD source : `2026-08-17` ;
-- run Regulatory CI : `32072488695` ;
+- HEAD source vérifié par la boucle : `0ef950c1cf446c78bf902672631fda8b7c8ed384` ;
+- date du HEAD source : `2026-09-11` ;
+- run Regulatory CI : `34631652716` ;
 - validation API CIRC005 : `PASS` ;
 - compatibilité descendante des 10 collections structurées : `PASS` ;
 - persistance canonique des anciens payloads : `PASS` ;
@@ -318,7 +318,7 @@ Le schéma transactionnel est testé mais non déployé. L’application utilise
 <!-- AUTO:LOOP-DEV-001-CANONICAL-SCHEMA-POSTGRES-V1:END -->
 
 <!-- AUTO:LOOP-DEV-001-POSTGRES-REPOSITORY-V1:START -->
-## PostgreSQL transactionnel et staging d’import — état 2026-08-17
+## PostgreSQL, preuves et import gouverné — état 2026-08-20
 
 - dépôt PostgreSQL projet : `IMPLEMENTED_AND_TESTED` ;
 - identité serveur vérifiée : `REQUIRED` ;
@@ -332,17 +332,59 @@ Le schéma transactionnel est testé mais non déployé. L’application utilise
 
 ### Import prospectus
 
-- migration : `database/migrations/0006_import_staging.sql` ;
 - staging PostgreSQL tenant-scopé : `IMPLEMENTED_AND_TESTED` ;
+- listing read-only tenant-scopé : `PASS` ;
 - preuve source CLEAN exigée : `PASS` ;
 - liaison projet/version/preuve/SHA : `PASS` ;
-- RLS tenant : `PASS` ;
-- réutilisation cross-tenant d’une preuve : `REJECTED` ;
 - revue humaine persistée avec identité : `PASS` ;
 - seconde décision sur une valeur revue : `REJECTED` ;
-- source extraite après staging : `IMMUTABLE` ;
-- `canonical_write_allowed` : `false` verrouillé en base ;
-- `ready_for_submission` : `false` verrouillé en base.
+- promotion canonique : `EXPLICIT_ONLY` ;
+- rôle `ANSWER_WRITE` requis : `PASS` ;
+- cible de question choisie explicitement : `PASS` ;
+- concurrence optimiste `expectedVersion` : `PASS` ;
+- reçu de promotion : `APPEND_ONLY` ;
+- promotion automatique : `FORBIDDEN` ;
+- `ready_for_submission` : `false`.
 
-La confirmation humaine d’une valeur extraite ne constitue **jamais** une écriture dans le modèle canonique. Le passage vers une réponse projet devra rester une commande distincte, versionnée, autorisée et auditée.
+### Preuves documentaires et scanner serveur
+
+- upload : `QUARANTINE_ONLY` ;
+- métadonnées réglementaires : PostgreSQL + RLS tenant, source de vérité unique ;
+- octets : store binaire privé derrière abstraction binary-only ;
+- adaptateur filesystem : `DEVELOPMENT_ONLY` ;
+- adaptateur S3/S3-compatible SSE-KMS : `IMPLEMENTED_AND_TESTED`, environnement cible non attesté ;
+- scanner HTTP d’attestation server-to-server : `IMPLEMENTED_AND_TESTED` ;
+- identité worker scanner : bearer OIDC vérifié, rôle `SECURITY` ;
+- file PostgreSQL : `FOR UPDATE SKIP LOCKED` + lease récupérable + compteur d’essais ;
+- budget de retries scanner : `BOUNDED_AND_TESTED` ;
+- épuisement du budget : `REJECTED/ERROR`, jamais faux verdict malware ;
+- séparation RBAC : `SECURITY=EVIDENCE_SCAN`, `COMPLIANCE=EVIDENCE_VERIFY` ;
+- scan CLEAN : ne libère jamais automatiquement ;
+- release : acte conformité séparé et explicite ;
+- recovery binaire CLEAN / commit PostgreSQL manquant : `PASS` ;
+- retry de release : `IDEMPOTENT` ;
+- verdict antivirus fourni par navigateur : `FORBIDDEN` ;
+- commande worker serveur : `IMPLEMENTED` ;
+- scheduler/cron de l'environnement cible : `NOT_PROVISIONED` ;
+- bucket/KMS/scanner/OIDC cibles : `NOT_ATTESTED` ;
+- prétention production-ready par simple configuration : `FORBIDDEN` ;
+- acceptation production : `REQUIRED_EXTERNAL_BLOCKER` ;
+- `ready_for_submission` : `false`.
+
+Le flux applicatif est désormais : upload en quarantaine → claim serveur avec lease → scan SECURITY attesté → release COMPLIANCE explicite → extraction vers staging non vérifié → revue humaine → promotion canonique explicite et versionnée. Aucune étape ne rend le dossier prêt pour soumission, et aucune configuration seule ne rend l'environnement production-ready.
 <!-- AUTO:LOOP-DEV-001-POSTGRES-REPOSITORY-V1:END -->
+
+<!-- AUTO:LOOP-DEV-001-MULTI-PROFILE-CORPUS:START -->
+## Corpus de régression multi-profils — preuve exécutée
+
+Validation : `MULTI_PROFILE_REGRESSION_CORPUS_VALIDATION_V1` = `PASS`.
+
+| Profil synthétique | generation_id | SHA-256 Markdown | ready_for_submission |
+| --- | --- | --- | --- |
+| `bond-active` | `GEN-9D37DEB56AB76F4B` | `4748b9cf667bfc5d6c6c58d862054577c321b99475924994c70aa863da2b4728` | `false` |
+| `balanced` | `GEN-9E03D9626497A633` | `75268cb17c2cf412cecd5e0cb94f1fd65dc13e52e9445eeb330cd04b9c22b301` | `false` |
+| `conservative-debt` | `GEN-ACA62B0D4C39C5A7` | `9dd546e5a8dcdba08f7d956afe9e7a2a8d849a48e3970781ed5e713517b8983c` | `false` |
+| `no-redemption-edge` | `GEN-E9ED38E5FDB56B87` | `0dbf61194d2284983222ad9d17ca50c48db1ace8e895851881a4e10a6a6d1c95` | `false` |
+
+Invariants : déterminisme intra-profil `PASS`, unicité inter-profils `PASS`, concordance CIRC005 = `62` pour chaque profil, `ready_for_submission=false` pour chaque profil. Les fixtures sont strictement synthétiques et ne constituent aucune vérité réglementaire, approbation juridique ou acceptation production.
+<!-- AUTO:LOOP-DEV-001-MULTI-PROFILE-CORPUS:END -->

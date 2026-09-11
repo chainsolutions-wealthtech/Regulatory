@@ -1,0 +1,37 @@
+{
+  "validationId": "POSTGRESQL_EVIDENCE_OBJECT_STORE_VALIDATION_V1",
+  "status": "PASS",
+  "checks": {
+    "binaryAndMetadataTrackedTogether": true,
+    "binaryStoreContainsNoRegulatoryDescriptor": true,
+    "binaryLocationPromotedWithRelease": true,
+    "quarantinedPendingPersisted": true,
+    "cleanScanDoesNotAutoRelease": true,
+    "explicitReleasePersisted": true,
+    "releaseRecoversAfterBinaryCommitGap": true,
+    "releaseRetryIdempotent": true,
+    "releasedBinaryDigestPreserved": true,
+    "metadataReadTenantScoped": true,
+    "crossTenantReadBlockedByRls": true,
+    "importStagingCleanEvidenceCompatible": true,
+    "productionReadinessNotClaimed": true,
+    "serverScanQueueSecurityRoleRequired": true,
+    "serverScanQueueLeased": true,
+    "serverScanQueueActiveClaimNotDuplicated": true,
+    "serverScanQueueExpiredLeaseRecoverable": true,
+    "serverScanQueueTenantIsolation": true,
+    "serverScanQueueBrowserVerdictForbidden": true,
+    "serverScanQueueReadyForSubmissionFalse": true,
+    "serverScanRetryBounded": true,
+    "serverScanRetryExhaustionRejected": true,
+    "serverScanRetryLeaseCleared": true,
+    "serverScanRetryAttemptHistoryPreserved": true,
+    "serverScanRetryNoMalwareVerdictFabricated": true,
+    "serverScanRetryReadyForSubmissionFalse": true
+  },
+  "caveat": "Validation PostgreSQL 17 avec binary store mémoire sans métadonnées réglementaires. Aucun stockage objet, KMS ou antivirus de production n'est déclaré opérationnel. La file scanner et son budget de retry sont validés en PostgreSQL CI; l'épuisement devient REJECTED/ERROR sans fabriquer de verdict malware. Cela n'atteste pas un scanner ni un scheduler de production.",
+  "relatedValidations": {
+    "evidenceScanQueue": "POSTGRESQL_EVIDENCE_SCAN_QUEUE_VALIDATION_V1",
+    "evidenceScanRetry": "POSTGRESQL_EVIDENCE_SCAN_RETRY_VALIDATION_V1"
+  }
+}
