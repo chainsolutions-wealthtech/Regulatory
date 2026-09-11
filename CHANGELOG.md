@@ -286,7 +286,8 @@ L’activation du driver PostgreSQL échoue explicitement tant qu’aucun adapta
 - tests de déterminisme et unicité des sorties ;
 - mutation tests contre l’activation implicite de la soumission ;
 - preuve machine avec hashes calculés à l’exécution ;
-- persistance documentaire des hashes exécutés.
+- persistance documentaire des hashes exécutés ;
+- golden masters immuables issus d’un run CI attesté, vérifiés à chaque recette.
 
 ### Safety
 

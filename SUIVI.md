@@ -718,9 +718,9 @@ La méthode de travail du dépôt est consolidée : `main` est la branche canoni
 Une défaillance CI antérieure au chantier a été traitée selon la boucle `BASELINE → DIAGNOSTIC → CORRECTION CIBLÉE → VÉRIFICATION`. La compatibilité descendante des structures historiques a été conservée, tandis que le déterminisme PDF a été renforcé par la normalisation du seul champ volatile prouvé `/DocChecksum`.
 
 - branche canonique : `main` ;
-- HEAD source vérifié par la boucle : `0ef950c1cf446c78bf902672631fda8b7c8ed384` ;
+- HEAD source vérifié par la boucle : `e17cdd7a8325052b7c46bcfadd52921f2695a808` ;
 - date du HEAD source : `2026-09-11` ;
-- run Regulatory CI : `34631652716` ;
+- run Regulatory CI : `34632158433` ;
 - validation API CIRC005 : `PASS` ;
 - compatibilité descendante des 10 collections structurées : `PASS` ;
 - persistance canonique des anciens payloads : `PASS` ;
@@ -748,5 +748,5 @@ Validation : `MULTI_PROFILE_REGRESSION_CORPUS_VALIDATION_V1` = `PASS`.
 | `conservative-debt` | `GEN-ACA62B0D4C39C5A7` | `9dd546e5a8dcdba08f7d956afe9e7a2a8d849a48e3970781ed5e713517b8983c` | `false` |
 | `no-redemption-edge` | `GEN-E9ED38E5FDB56B87` | `0dbf61194d2284983222ad9d17ca50c48db1ace8e895851881a4e10a6a6d1c95` | `false` |
 
-Invariants : déterminisme intra-profil `PASS`, unicité inter-profils `PASS`, concordance CIRC005 = `62` pour chaque profil, `ready_for_submission=false` pour chaque profil. Les fixtures sont strictement synthétiques et ne constituent aucune vérité réglementaire, approbation juridique ou acceptation production.
+Invariants : déterminisme intra-profil `PASS`, unicité inter-profils `PASS`, concordance CIRC005 = `62` pour chaque profil, `ready_for_submission=false` pour chaque profil. Golden masters : `PASS`, issus du run CI attesté `34631652716` sur le HEAD source `0ef950c1cf446c78bf902672631fda8b7c8ed384`. Les fixtures sont strictement synthétiques et ne constituent aucune vérité réglementaire, approbation juridique ou acceptation production.
 <!-- AUTO:LOOP-DEV-001-MULTI-PROFILE-CORPUS:END -->

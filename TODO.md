@@ -25,9 +25,9 @@
 - [ ] Ne jamais activer automatiquement montant, sanction, exigence ou dépendance sans les revues humaines prévues.
 
 - branche canonique : `main` ;
-- HEAD source vérifié par la boucle : `0ef950c1cf446c78bf902672631fda8b7c8ed384` ;
+- HEAD source vérifié par la boucle : `e17cdd7a8325052b7c46bcfadd52921f2695a808` ;
 - date du HEAD source : `2026-09-11` ;
-- run Regulatory CI : `34631652716` ;
+- run Regulatory CI : `34632158433` ;
 - validation API CIRC005 : `PASS` ;
 - compatibilité descendante des 10 collections structurées : `PASS` ;
 - persistance canonique des anciens payloads : `PASS` ;
@@ -518,5 +518,6 @@ Légende :
 - [x] Mutation-tester l’invariant `ready_for_submission=false`.
 - [x] Générer la preuve machine depuis le runtime qui exécute les tests.
 - [x] Persister les hashes exécutés dans les documents de gouvernance.
-- [ ] Promouvoir des hashes en golden masters immuables uniquement après un run CI attesté du HEAD exact.
+- [x] Promouvoir les hashes issus du run CI attesté en golden masters immuables.
+- [x] Faire échouer la recette si un generation ID ou hash documentaire dérive du golden master sans changement explicitement gouverné.
 <!-- AUTO:LOOP-DEV-001-MULTI-PROFILE-CORPUS:END -->
