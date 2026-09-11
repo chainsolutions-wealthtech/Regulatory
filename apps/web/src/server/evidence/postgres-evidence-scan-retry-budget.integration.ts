@@ -88,6 +88,7 @@ try {
       attemptHistoryPreserved: true,
       genericWorkerErrorPersisted: true,
       malwareVerdictNotFabricated: true,
+      invalidRetryBudgetRejected: true,
       readyForSubmissionRemainsFalse: true,
     },
     caveat:
