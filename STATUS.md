@@ -6,9 +6,9 @@
 Le dépôt est désormais explicitement gouverné en mode **une branche canonique : `main`**, sans création de branche par les agents et sans PR de travail normale. La réconciliation n’a supprimé ni remplacé les documents historiques : les photographies anciennes restent des preuves datées et le présent bloc porte l’état courant de contrôle.
 
 - branche canonique : `main` ;
-- HEAD source vérifié par la boucle : `f231069f28206e65c6b5fdc9ed6b2369ee809513` ;
+- HEAD source vérifié par la boucle : `b07c3dcdab7dd75ead19655f1244551f0787e154` ;
 - date du HEAD source : `2026-09-11` ;
-- run Regulatory CI : `34632921209` ;
+- run Regulatory CI : `34633747935` ;
 - validation API CIRC005 : `PASS` ;
 - compatibilité descendante des 10 collections structurées : `PASS` ;
 - persistance canonique des anciens payloads : `PASS` ;
@@ -388,3 +388,23 @@ Validation : `MULTI_PROFILE_REGRESSION_CORPUS_VALIDATION_V1` = `PASS`.
 
 Invariants : déterminisme intra-profil `PASS`, unicité inter-profils `PASS`, concordance CIRC005 = `62` pour chaque profil, `ready_for_submission=false` pour chaque profil. Golden masters : `PASS`, issus du run CI attesté `34631652716` sur le HEAD source `0ef950c1cf446c78bf902672631fda8b7c8ed384`. Les fixtures sont strictement synthétiques et ne constituent aucune vérité réglementaire, approbation juridique ou acceptation production.
 <!-- AUTO:LOOP-DEV-001-MULTI-PROFILE-CORPUS:END -->
+
+<!-- AUTO:LOOP-DEV-001-ENGINE-BRANCH-COVERAGE-V1:START -->
+## Couverture des branches des moteurs — état courant
+
+Validation : `ENGINE_BRANCH_COVERAGE_VALIDATION_V1` = `PASS`.
+
+- catalogue interactif : `60` questions ;
+- réponses du cas historique rejouées : `30` ;
+- combinateurs/opérateurs conditionnels : `PASS` ;
+- visibilité conditionnelle : `PASS` ;
+- rejet des questions inconnues : `PASS` ;
+- escalade d’écriture vers un chemin parent : `REJECTED` ;
+- racines structurées historiques explicitement autorisées : `PASS` ;
+- statuts `PASSED / PASSED_WITH_WARNINGS / VALIDATION_FAILED` : `PASS` ;
+- branches allocation/rachat/suspension/frais : `PASS` ;
+- warnings non bloquants : `PASS` ;
+- `ready_for_submission=false` : `PASS`.
+
+Cette preuve porte sur les branches logicielles déterministes ; elle ne remplace aucune revue juridique, conformité ou fiscale.
+<!-- AUTO:LOOP-DEV-001-ENGINE-BRANCH-COVERAGE-V1:END -->

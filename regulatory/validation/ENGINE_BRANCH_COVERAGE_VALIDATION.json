@@ -1,0 +1,27 @@
+{
+  "validationId": "ENGINE_BRANCH_COVERAGE_VALIDATION_V1",
+  "status": "PASS",
+  "questionCatalogCount": 60,
+  "exampleAnswerCount": 30,
+  "checks": {
+    "conditionCombinatorsCovered": true,
+    "conditionOperatorsCovered": true,
+    "unsupportedConditionRejected": true,
+    "systemQuestionsExcludedFromInteractiveCatalog": true,
+    "unknownQuestionRejected": true,
+    "parentPathEscalationRejected": true,
+    "explicitStructuredRootCompatibilityPreserved": true,
+    "historicalExampleAnswersCompatible": true,
+    "visibilityHiddenAndVisibleBranchesCovered": true,
+    "validationPassedBranchCovered": true,
+    "validationWarningBranchCovered": true,
+    "validationFailedBranchCovered": true,
+    "allocationBranchCovered": true,
+    "redemptionBranchCovered": true,
+    "suspensionBranchCovered": true,
+    "feeBranchCovered": true,
+    "warningsRemainNonBlocking": true,
+    "readyForSubmissionRemainsFalse": true
+  },
+  "caveat": "Preuve de couverture des branches logicielles déterministes uniquement. Elle ne constitue ni une validation réglementaire exhaustive, ni une approbation humaine, ni une autorisation de soumission."
+}

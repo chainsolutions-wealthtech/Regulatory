@@ -295,3 +295,24 @@ L’activation du driver PostgreSQL échoue explicitement tant qu’aucun adapta
 - aucun hash n’est inventé à la main ;
 - `ready_for_submission=false` reste obligatoire.
 <!-- AUTO:LOOP-DEV-001-MULTI-PROFILE-CORPUS:END -->
+
+<!-- AUTO:LOOP-DEV-001-ENGINE-BRANCH-COVERAGE-V1:START -->
+## [Unreleased] — Couverture branches moteurs
+
+### Added
+
+- validation machine `ENGINE_BRANCH_COVERAGE_VALIDATION_V1` ;
+- couverture condition engine, questionnaire et rule engine ;
+- replay des 30 réponses historiques.
+
+### Fixed
+
+- suppression de l’autorisation générique permettant d’écrire un objet parent à partir d’un champ enfant autorisé ;
+- conservation des seules racines structurées historiques explicitement nécessaires.
+
+### Safety
+
+- aucun droit RBAC élargi ;
+- aucune règle réglementaire nouvelle activée ;
+- `ready_for_submission=false` maintenu.
+<!-- AUTO:LOOP-DEV-001-ENGINE-BRANCH-COVERAGE-V1:END -->

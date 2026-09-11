@@ -25,9 +25,9 @@
 - [ ] Ne jamais activer automatiquement montant, sanction, exigence ou dépendance sans les revues humaines prévues.
 
 - branche canonique : `main` ;
-- HEAD source vérifié par la boucle : `f231069f28206e65c6b5fdc9ed6b2369ee809513` ;
+- HEAD source vérifié par la boucle : `b07c3dcdab7dd75ead19655f1244551f0787e154` ;
 - date du HEAD source : `2026-09-11` ;
-- run Regulatory CI : `34632921209` ;
+- run Regulatory CI : `34633747935` ;
 - validation API CIRC005 : `PASS` ;
 - compatibilité descendante des 10 collections structurées : `PASS` ;
 - persistance canonique des anciens payloads : `PASS` ;
@@ -521,3 +521,19 @@ Légende :
 - [x] Promouvoir les hashes issus du run CI attesté en golden masters immuables.
 - [x] Faire échouer la recette si un generation ID ou hash documentaire dérive du golden master sans changement explicitement gouverné.
 <!-- AUTO:LOOP-DEV-001-MULTI-PROFILE-CORPUS:END -->
+
+<!-- AUTO:LOOP-DEV-001-ENGINE-BRANCH-COVERAGE-V1:START -->
+## Couverture moteur — état courant
+
+- [x] Couvrir les combinateurs et opérateurs du moteur conditionnel.
+- [x] Couvrir les branches de visibilité du questionnaire.
+- [x] Rejeter les questions inconnues.
+- [x] Empêcher une question limitée à un champ enfant d’écrire son objet parent.
+- [x] Préserver explicitement les deux écritures structurées historiques nécessaires.
+- [x] Rejouer les 30 réponses du cas de référence contre le catalogue courant.
+- [x] Couvrir les trois statuts du rule engine.
+- [x] Couvrir les principales branches allocation, valorisation, rachat, suspension, frais et warnings.
+- [x] Produire une preuve machine versionnée.
+- [x] Maintenir `ready_for_submission=false`.
+- [ ] Poursuivre l’exhaustivité réglementaire uniquement depuis des sources officielles et revues humaines.
+<!-- AUTO:LOOP-DEV-001-ENGINE-BRANCH-COVERAGE-V1:END -->
