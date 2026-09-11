@@ -52,7 +52,7 @@ const reader = createEvidenceDescriptorService({
     subject: "subject-reader",
     userId: "20000000-0000-0000-0000-000000000002",
     organizationId,
-    roles: ["READER"],
+    roles: ["AUDIT"],
     verifiedAt: "2026-08-18T18:01:00.000Z",
     provider: "test",
   }),
