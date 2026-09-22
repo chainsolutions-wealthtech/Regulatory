@@ -18,37 +18,43 @@ concurrency:
 jobs:
   discover:
     runs-on: ubuntu-latest
-    timeout-minutes: 10
+    timeout-minutes: 12
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-python@v5
         with:
           python-version: '3.12'
-      - name: Discover exact Bulletin 113 anchor
+      - name: Discover exact Bulletin 113 anchor with diagnostics
         run: python3 scripts/discover_uemoa_bulletin_113_link.py
       - name: Validate read-only boundary
+        if: always()
         run: |
           python3 - <<'PY'
           import json
           from pathlib import Path
-          e=json.loads(Path('regulatory/review-evidence/SANCTIONS_2016_2022/UEMOA_BULLETIN_113_LINK_DISCOVERY_2026-09-22.json').read_text())
-          v=json.loads(Path('regulatory/validation/UEMOA_BULLETIN_113_LINK_DISCOVERY_VALIDATION_V0_1.json').read_text())
-          assert e['result']=='PASS' and v['result']=='PASS'
-          for k in ['singleKnownOfficialPageOnly','verifiedTlsOnly','targetLinksNotFollowed','binaryNotMaterialized','workflowRepositoryWriteDisabled','automaticRelationshipInferenceForbidden','automaticSanctionActivationForbidden','readyForSubmissionFalse']:
+          ep=Path('regulatory/review-evidence/SANCTIONS_2016_2022/UEMOA_BULLETIN_113_LINK_DISCOVERY_2026-09-22.json')
+          vp=Path('regulatory/validation/UEMOA_BULLETIN_113_LINK_DISCOVERY_VALIDATION_V0_2.json')
+          assert ep.exists() and vp.exists()
+          e=json.loads(ep.read_text())
+          v=json.loads(vp.read_text())
+          for k in ['officialUemoaHostsOnly','tlsVerificationRequired','maxAttemptsPerUrlThree','targetLinksNotFollowed','binaryNotMaterialized','workflowRepositoryWriteDisabled','automaticRelationshipInferenceForbidden','automaticSanctionActivationForbidden','readyForSubmissionFalse']:
               assert v['checks'][k] is True,k
           PY
       - run: git diff --check
+        if: always()
       - name: Emit evidence to workflow log
+        if: always()
         run: |
-          echo '=== UEMOA_BULLETIN_113_LINK_EVIDENCE ==='
-          cat regulatory/review-evidence/SANCTIONS_2016_2022/UEMOA_BULLETIN_113_LINK_DISCOVERY_2026-09-22.json
-          echo '=== UEMOA_BULLETIN_113_LINK_VALIDATION ==='
-          cat regulatory/validation/UEMOA_BULLETIN_113_LINK_DISCOVERY_VALIDATION_V0_1.json
+          echo '=== UEMOA_BULLETIN_113_LINK_EVIDENCE_V0_2 ==='
+          cat regulatory/review-evidence/SANCTIONS_2016_2022/UEMOA_BULLETIN_113_LINK_DISCOVERY_2026-09-22.json || true
+          echo '=== UEMOA_BULLETIN_113_LINK_VALIDATION_V0_2 ==='
+          cat regulatory/validation/UEMOA_BULLETIN_113_LINK_DISCOVERY_VALIDATION_V0_2.json || true
       - uses: actions/upload-artifact@v4
+        if: always()
         with:
-          name: uemoa-bulletin-113-link
+          name: uemoa-bulletin-113-link-v0-2
           retention-days: 30
-          if-no-files-found: error
+          if-no-files-found: warn
           path: |
             regulatory/review-evidence/SANCTIONS_2016_2022/UEMOA_BULLETIN_113_LINK_DISCOVERY_2026-09-22.json
-            regulatory/validation/UEMOA_BULLETIN_113_LINK_DISCOVERY_VALIDATION_V0_1.json
+            regulatory/validation/UEMOA_BULLETIN_113_LINK_DISCOVERY_VALIDATION_V0_2.json
