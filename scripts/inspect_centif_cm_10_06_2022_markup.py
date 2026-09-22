@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """Inspect CENTIF CM/10/06/2022 markup with fully verified repaired TLS.
 
-V0.2 extends issuer recovery to DER/PEM X.509 and PKCS#7 AIA bundles.
+V0.3 extends issuer recovery with a strictly pinned issuer fallback when the leaf omits AIA.
 Security invariants:
 - never disables TLS certificate verification;
 - never disables hostname verification;
@@ -28,9 +28,13 @@ from urllib.request import Request, urlopen
 
 ROOT = Path(__file__).resolve().parents[1]
 OUT = ROOT / "regulatory/review-evidence/SANCTIONS_2016_2022/CENTIF_TARGET_MARKUP_VERIFIED_TLS_2026-09-23.json"
-VAL = ROOT / "regulatory/validation/CENTIF_TARGET_MARKUP_VERIFIED_TLS_VALIDATION_V0_2.json"
+VAL = ROOT / "regulatory/validation/CENTIF_TARGET_MARKUP_VERIFIED_TLS_VALIDATION_V0_3.json"
 SYSTEM_CA = Path("/etc/ssl/certs/ca-certificates.crt")
 UA = "Mozilla/5.0 RegulatoryCorpusBot/1.0"
+
+PINNED_ISSUER_DN = "issuer=C = GB, O = Sectigo Limited, CN = Sectigo Public Server Authentication CA DV R36"
+PINNED_INTERMEDIATE_URL = "http://crt.sectigo.com/SectigoPublicServerAuthenticationCADVR36.crt"
+PINNED_INTERMEDIATE_SHA256 = "8c54c334b66ba4e426772af4a3f9136c19a1aec729fdb28c535c07a5a4ef22e0"
 
 PAGES = [
     "https://www.centif.sn/reglementation/fr/reglcommu",
@@ -231,6 +235,54 @@ def build_verified_context(host: str, work: Path) -> tuple[ssl.SSLContext, dict[
                 fetched_records.append(rec)
         frontier = next_frontier
 
+    # CENTIF currently omits AIA entirely while presenting a leaf issued by the
+    # exact same Sectigo DV R36 intermediate previously recovered and verified
+    # during the official UEMOA Bulletin 113 TLS repair. Use that issuer only
+    # when the leaf issuer DN is an exact match, and pin the intermediate bytes.
+    issuer_fallback: dict[str, object] | None = None
+    leaf_meta = cert_metadata(leaf)
+    if not intermediates and PINNED_ISSUER_DN in str(leaf_meta.get("text") or ""):
+        issuer_fallback = {
+            "reason": "LEAF_OMITS_AIA_EXACT_ISSUER_DN_MATCH",
+            "issuerDn": PINNED_ISSUER_DN,
+            "url": PINNED_INTERMEDIATE_URL,
+            "expectedSha256": PINNED_INTERMEDIATE_SHA256,
+        }
+        try:
+            raw, final_url, content_type = fetch_bytes(PINNED_INTERMEDIATE_URL, context=None, timeout=30)
+            actual_sha = hashlib.sha256(raw).hexdigest()
+            issuer_fallback.update({
+                "fetchStatus": "FETCHED",
+                "finalUrl": final_url,
+                "contentType": content_type,
+                "byteSize": len(raw),
+                "actualSha256": actual_sha,
+                "sha256PinnedMatch": actual_sha == PINNED_INTERMEDIATE_SHA256,
+            })
+            if actual_sha != PINNED_INTERMEDIATE_SHA256:
+                raise RuntimeError(
+                    f"Pinned Sectigo intermediate SHA mismatch: {actual_sha}"
+                )
+            paths, parse_info = parse_aia_certificates(raw, work, f"{host}-pinned-issuer")
+            issuer_fallback["parse"] = parse_info
+            if len(paths) != 1:
+                raise RuntimeError(
+                    f"Expected exactly one pinned Sectigo intermediate, got {len(paths)}"
+                )
+            issuer_meta = cert_metadata(paths[0])
+            issuer_fallback["certificateMetadata"] = issuer_meta
+            expected_subject = "subject=C = GB, O = Sectigo Limited, CN = Sectigo Public Server Authentication CA DV R36"
+            if expected_subject not in str(issuer_meta.get("text") or ""):
+                raise RuntimeError("Pinned intermediate subject DN mismatch")
+            fp = certificate_fingerprint(paths[0])
+            if fp not in seen_cert_fingerprints:
+                seen_cert_fingerprints.add(fp)
+                intermediates.append(paths[0])
+            issuer_fallback["accepted"] = True
+        except Exception as exc:  # noqa: BLE001
+            issuer_fallback["accepted"] = False
+            issuer_fallback["error"] = str(exc)
+
     chain_path = work / f"{host}-intermediates.pem"
     chain_path.write_text(
         "".join(p.read_text(encoding="utf-8") for p in intermediates),
@@ -253,6 +305,7 @@ def build_verified_context(host: str, work: Path) -> tuple[ssl.SSLContext, dict[
         "presentedCertificateCount": len(presented_paths),
         "leaf": cert_metadata(leaf),
         "fetchedAiaObjects": fetched_records,
+        "pinnedIssuerFallback": issuer_fallback,
         "intermediateCount": len(intermediates),
         "chainVerification": {
             "returncode": verify.returncode,
@@ -442,10 +495,10 @@ def main() -> None:
     result = "PASS" if verified_pages else "INCOMPLETE"
 
     evidence = {
-        "schemaVersion": "CENTIF_TARGET_MARKUP_VERIFIED_TLS_V0_2",
+        "schemaVersion": "CENTIF_TARGET_MARKUP_VERIFIED_TLS_V0_3",
         "sourceId": "DECISION_CM_10_06_2022",
         "reference": "CM/10/06/2022",
-        "method": "AIA_X509_PKCS7_REPAIRED_TLS_RAW_MARKUP_INSPECTION",
+        "method": "AIA_X509_PKCS7_OR_PINNED_EXACT_ISSUER_TLS_RAW_MARKUP_INSPECTION",
         "result": result,
         "targetStatus": target_status,
         "pageCount": len(PAGES),
@@ -459,6 +512,7 @@ def main() -> None:
             "tlsVerificationDisabled": False,
             "hostnameVerificationDisabled": False,
             "aiaUsedOnlyForCertificateChainRepair": True,
+            "pinnedIssuerFallbackRestrictedByExactDnAndSha256": True,
             "candidateLocatorsFollowed": False,
             "binaryMaterialized": False,
             "workflowRepositoryWriteAllowed": False,
@@ -473,13 +527,14 @@ def main() -> None:
     }
 
     validation = {
-        "schemaVersion": "CENTIF_TARGET_MARKUP_VERIFIED_TLS_VALIDATION_V0_2",
+        "schemaVersion": "CENTIF_TARGET_MARKUP_VERIFIED_TLS_VALIDATION_V0_3",
         "result": result,
         "checks": {
             "knownCentifPagesOnly": True,
             "tlsVerificationNeverDisabled": True,
             "hostnameVerificationNeverDisabled": True,
             "aiaRestrictedToCertificateChainRepair": True,
+            "pinnedIssuerFallbackRestrictedByExactDnAndSha256": True,
             "candidateLocatorsNotFollowed": True,
             "binaryNotMaterialized": True,
             "workflowRepositoryWriteDisabled": True,

@@ -25,7 +25,7 @@ jobs:
         with:
           python-version: '3.12'
 
-      - name: Inspect target markup with X509/PKCS7 AIA chain repair
+      - name: Inspect target markup with X509/PKCS7 AIA or pinned exact-issuer chain repair
         run: python3 scripts/inspect_centif_cm_10_06_2022_markup.py
 
       - name: Validate fail-closed boundary
@@ -35,13 +35,13 @@ jobs:
           import json
           from pathlib import Path
           ep=Path('regulatory/review-evidence/SANCTIONS_2016_2022/CENTIF_TARGET_MARKUP_VERIFIED_TLS_2026-09-23.json')
-          vp=Path('regulatory/validation/CENTIF_TARGET_MARKUP_VERIFIED_TLS_VALIDATION_V0_2.json')
+          vp=Path('regulatory/validation/CENTIF_TARGET_MARKUP_VERIFIED_TLS_VALIDATION_V0_3.json')
           assert ep.exists() and vp.exists()
           e=json.loads(ep.read_text())
           v=json.loads(vp.read_text())
           for key in [
               'knownCentifPagesOnly','tlsVerificationNeverDisabled','hostnameVerificationNeverDisabled',
-              'aiaRestrictedToCertificateChainRepair','candidateLocatorsNotFollowed','binaryNotMaterialized',
+              'aiaRestrictedToCertificateChainRepair','pinnedIssuerFallbackRestrictedByExactDnAndSha256','candidateLocatorsNotFollowed','binaryNotMaterialized',
               'workflowRepositoryWriteDisabled','automaticRelationshipInferenceForbidden',
               'automaticSanctionActivationForbidden','readyForSubmissionFalse'
           ]:
@@ -54,15 +54,15 @@ jobs:
       - name: Emit CENTIF evidence
         if: always()
         run: |
-          echo '=== CENTIF_TARGET_MARKUP_EVIDENCE_V0_2 ==='
+          echo '=== CENTIF_TARGET_MARKUP_EVIDENCE_V0_3 ==='
           cat regulatory/review-evidence/SANCTIONS_2016_2022/CENTIF_TARGET_MARKUP_VERIFIED_TLS_2026-09-23.json || true
-          echo '=== CENTIF_TARGET_MARKUP_VALIDATION_V0_2 ==='
-          cat regulatory/validation/CENTIF_TARGET_MARKUP_VERIFIED_TLS_VALIDATION_V0_2.json || true
+          echo '=== CENTIF_TARGET_MARKUP_VALIDATION_V0_3 ==='
+          cat regulatory/validation/CENTIF_TARGET_MARKUP_VERIFIED_TLS_VALIDATION_V0_3.json || true
 
       - uses: actions/upload-artifact@v4
         if: always()
         with:
-          name: centif-cm-10-06-2022-markup-v0-2
+          name: centif-cm-10-06-2022-markup-v0-3
           retention-days: 30
           if-no-files-found: warn
           path: |
