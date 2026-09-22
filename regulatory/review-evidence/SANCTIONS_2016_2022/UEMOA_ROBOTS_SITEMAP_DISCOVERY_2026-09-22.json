@@ -1,0 +1,33 @@
+{
+  "schemaVersion": "UEMOA_ROBOTS_SITEMAP_DISCOVERY_V0_1",
+  "sourceId": "DECISION_CM_10_06_2022",
+  "method": "ROBOTS_DECLARED_SITEMAP_DISCOVERY",
+  "result": "PASS",
+  "robots": {
+    "status": "OK",
+    "url": "https://e-docucenter.uemoa.int/robots.txt",
+    "finalUrl": "https://e-docucenter.uemoa.int/robots.txt",
+    "contentType": "text/plain",
+    "contentEncoding": null,
+    "byteSize": 1706,
+    "sha256": "2a787f20489a257692bad5f16ae5ceb28876cd38d8d9cde9c84a2d3835e30bab",
+    "tlsVerified": true
+  },
+  "declaredSitemaps": [],
+  "inspectedSitemaps": [],
+  "childSitemaps": [],
+  "candidateUrls": [],
+  "targetStatus": "NO_SITEMAP_DECLARED_IN_ROBOTS",
+  "boundary": {
+    "robotsOnlyEntryPoint": true,
+    "declaredSitemapsOnly": true,
+    "maxDeclaredSitemapsFive": true,
+    "childSitemapsFetched": false,
+    "linkedDocumentsFetched": false,
+    "binaryMaterialized": false,
+    "automaticRelationshipInferenceAllowed": false,
+    "automaticSanctionActivationAllowed": false,
+    "readyForSubmissionMustRemainFalse": true
+  },
+  "nextAction": "If a sitemap index exposes child sitemaps, select and inspect them in a separate bounded step; do not bulk crawl."
+}

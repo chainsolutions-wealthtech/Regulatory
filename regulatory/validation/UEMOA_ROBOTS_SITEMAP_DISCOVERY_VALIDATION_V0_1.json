@@ -1,0 +1,19 @@
+{
+  "schemaVersion": "UEMOA_ROBOTS_SITEMAP_DISCOVERY_VALIDATION_V0_1",
+  "result": "PASS",
+  "checks": {
+    "robotsOnlyEntryPoint": true,
+    "declaredSitemapsOnly": true,
+    "maxDeclaredSitemapsFive": true,
+    "childSitemapsNotFetched": true,
+    "linkedDocumentsNotFetched": true,
+    "binaryNotMaterialized": true,
+    "automaticRelationshipInferenceForbidden": true,
+    "automaticSanctionActivationForbidden": true,
+    "readyForSubmissionFalse": true
+  },
+  "targetStatus": "NO_SITEMAP_DECLARED_IN_ROBOTS",
+  "declaredSitemapCount": 0,
+  "childSitemapCount": 0,
+  "candidateUrlCount": 0
+}
