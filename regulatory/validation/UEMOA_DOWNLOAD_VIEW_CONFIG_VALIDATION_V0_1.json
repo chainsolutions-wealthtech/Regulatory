@@ -1,0 +1,16 @@
+{
+  "schemaVersion": "UEMOA_DOWNLOAD_VIEW_CONFIG_VALIDATION_V0_1",
+  "result": "PASS",
+  "checks": {
+    "singleKnownPortalPageOnly": true,
+    "verifiedTlsOnly": true,
+    "ajaxNotInvoked": true,
+    "paginationNotPerformed": true,
+    "linkedDocumentsNotFetched": true,
+    "binaryNotMaterialized": true,
+    "automaticRelationshipInferenceForbidden": true,
+    "automaticSanctionActivationForbidden": true,
+    "readyForSubmissionFalse": true
+  },
+  "configurationSignalPresent": true
+}

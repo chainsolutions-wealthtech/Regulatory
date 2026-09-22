@@ -1,0 +1,219 @@
+{
+  "schemaVersion": "UEMOA_DOWNLOAD_VIEW_CONFIG_V0_1",
+  "sourceId": "DECISION_CM_10_06_2022",
+  "portalUrl": "https://e-docucenter.uemoa.int/fr/telecharger-documents",
+  "method": "AUTHORITATIVE_PORTAL_STATIC_DRUPAL_VIEW_CONFIG_EXTRACTION",
+  "result": "PASS",
+  "fetch": {
+    "status": "OK",
+    "finalUrl": "https://e-docucenter.uemoa.int/fr/telecharger-documents",
+    "contentType": "text/html; charset=UTF-8",
+    "byteSize": 40704,
+    "sha256": "3cdc8dffec5dae49bb4cc96a887db2dbc0ee7eceec8776e265b11064bc55b09e",
+    "tlsVerified": true
+  },
+  "config": {
+    "viewName": [],
+    "viewDisplayId": [],
+    "viewArgs": [],
+    "viewPath": [],
+    "viewDomId": [],
+    "pagerElement": [],
+    "ajaxUrls": [
+      "\\/fr\\/custom\\/gavias_hook\\/ajax_view",
+      "gavias_load_ajax_view"
+    ],
+    "viewClassTokens": [
+      "view-dom-id-1f160d6a379c8afb8e71e646395c31ea15b9481849cc28ce8491b2bc8ac6e08a",
+      "view-mode-full"
+    ]
+  },
+  "attributeMatches": [
+    {
+      "tag": "meta",
+      "attributes": {
+        "name": "viewport"
+      }
+    },
+    {
+      "tag": "div",
+      "attributes": {
+        "class": "views-element-container block block-views block-views-blockliste-des-livres-sidebar-block-1 no-title",
+        "id": "block-views-block-liste-des-livres-sidebar-block-1"
+      }
+    },
+    {
+      "tag": "div",
+      "attributes": {
+        "class": "js-view-dom-id-1f160d6a379c8afb8e71e646395c31ea15b9481849cc28ce8491b2bc8ac6e08a"
+      }
+    },
+    {
+      "tag": "div",
+      "attributes": {
+        "class": "views-field views-field-field-image-book"
+      }
+    },
+    {
+      "tag": "div",
+      "attributes": {
+        "class": "views-field views-field-field-image-book"
+      }
+    },
+    {
+      "tag": "div",
+      "attributes": {
+        "class": "views-field views-field-field-image-book"
+      }
+    },
+    {
+      "tag": "div",
+      "attributes": {
+        "class": "views-field views-field-field-image-book"
+      }
+    },
+    {
+      "tag": "div",
+      "attributes": {
+        "class": "views-field views-field-field-image-book"
+      }
+    },
+    {
+      "tag": "div",
+      "attributes": {
+        "class": "views-field views-field-field-image-book"
+      }
+    },
+    {
+      "tag": "div",
+      "attributes": {
+        "class": "views-field views-field-field-image-book"
+      }
+    },
+    {
+      "tag": "div",
+      "attributes": {
+        "class": "views-field views-field-field-image-book"
+      }
+    },
+    {
+      "tag": "div",
+      "attributes": {
+        "class": "views-field views-field-field-image-book"
+      }
+    },
+    {
+      "tag": "div",
+      "attributes": {
+        "class": "views-field views-field-field-image-book"
+      }
+    },
+    {
+      "tag": "div",
+      "attributes": {
+        "class": "views-field views-field-field-image-book"
+      }
+    },
+    {
+      "tag": "div",
+      "attributes": {
+        "class": "views-field views-field-field-image-book"
+      }
+    },
+    {
+      "tag": "div",
+      "attributes": {
+        "class": "views-field views-field-field-image-book"
+      }
+    },
+    {
+      "tag": "div",
+      "attributes": {
+        "class": "views-field views-field-field-image-book"
+      }
+    },
+    {
+      "tag": "div",
+      "attributes": {
+        "class": "views-field views-field-field-image-book"
+      }
+    },
+    {
+      "tag": "div",
+      "attributes": {
+        "class": "views-field views-field-field-image-book"
+      }
+    },
+    {
+      "tag": "div",
+      "attributes": {
+        "class": "views-field views-field-field-image-book"
+      }
+    },
+    {
+      "tag": "div",
+      "attributes": {
+        "class": "views-field views-field-field-image-book"
+      }
+    },
+    {
+      "tag": "div",
+      "attributes": {
+        "class": "views-field views-field-field-image-book"
+      }
+    },
+    {
+      "tag": "div",
+      "attributes": {
+        "class": "views-field views-field-field-image-book"
+      }
+    },
+    {
+      "tag": "article",
+      "attributes": {
+        "class": "node node--type-page node--view-mode-full clearfix block"
+      }
+    }
+  ],
+  "inlineViewScriptCount": 1,
+  "ajaxViewSnippets": [
+    "entLanguage\":\"fr\"},\"pluralDelimiter\":\"\\u0003\",\"suppressDeprecationErrors\":true,\"google_analytics\":{\"account\":\"G-SK96LHW7Y0\",\"trackOutbound\":true,\"trackMailto\":true,\"trackTel\":true,\"trackDownload\":true,\"trackDownloadExtensions\":\"7z|aac|arc|arj|asf|asx|avi|bin|csv|doc(x|m)?|dot(x|m)?|exe|flv|gif|gz|gzip|hqx|jar|jpe?g|js|mp(2|3|4|e?g)|mov(ie)?|msi|msp|pdf|phps|png|ppt(x|m)?|pot(x|m)?|pps(x|m)?|ppam|sld(x|m)?|thmx|qtm?|ra(m|r)?|sea|sit|tar|tgz|torrent|txt|wav|wma|wmv|wpd|xls(x|m|b)?|xlt(x|m)|xlam|xml|z|zip\",\"trackUrlFragments\":true},\"statistics\":{\"data\":{\"nid\":\"330\"},\"url\":\"\\/core\\/modules\\/statistics\\/statistics.php\"},\"ajaxTrustedUrl\":{\"\\/fr\\/search\\/node\":true},\"layzy_load\":\"off\",\"gavias_load_ajax_view\":\"\\/fr\\/custom\\/gavias_hook\\/ajax_view\",\"user\":{\"uid\":0,\"permissionsHash\":\"a6b89c979eaf04a07000e5e579ea078b2397d986f9c902f85f669824bb1a5387\"}}</script>\n<script src=\"/sites/default/files/js/js_s9Rc7sJpGhca_wr3PUTInb8Tb9BG4oiHlZB8Ie0XakM.js\"></script>\n\n    \n    \n\n    <link rel=\"stylesheet\" href=\"https://e-docucenter.uemoa.int/themes/gavias_batiz/css/custom.css\" media=\"screen\" />\n    <link rel=\"stylesheet\" href=\"https://e-docucenter.uemoa.int/themes/gavias_batiz/css/update.css\" media=\"screen\" />\n    \n    \n\n          <style class=\"customize\"> </style>\n    \n          <style type=\"text/css\">\n        *, ::before, ::after {box-sizing: border-box;padding: 0;margin: 0;}a, a:hover, a:focus{color: unse",
+    "u0003\",\"suppressDeprecationErrors\":true,\"google_analytics\":{\"account\":\"G-SK96LHW7Y0\",\"trackOutbound\":true,\"trackMailto\":true,\"trackTel\":true,\"trackDownload\":true,\"trackDownloadExtensions\":\"7z|aac|arc|arj|asf|asx|avi|bin|csv|doc(x|m)?|dot(x|m)?|exe|flv|gif|gz|gzip|hqx|jar|jpe?g|js|mp(2|3|4|e?g)|mov(ie)?|msi|msp|pdf|phps|png|ppt(x|m)?|pot(x|m)?|pps(x|m)?|ppam|sld(x|m)?|thmx|qtm?|ra(m|r)?|sea|sit|tar|tgz|torrent|txt|wav|wma|wmv|wpd|xls(x|m|b)?|xlt(x|m)|xlam|xml|z|zip\",\"trackUrlFragments\":true},\"statistics\":{\"data\":{\"nid\":\"330\"},\"url\":\"\\/core\\/modules\\/statistics\\/statistics.php\"},\"ajaxTrustedUrl\":{\"\\/fr\\/search\\/node\":true},\"layzy_load\":\"off\",\"gavias_load_ajax_view\":\"\\/fr\\/custom\\/gavias_hook\\/ajax_view\",\"user\":{\"uid\":0,\"permissionsHash\":\"a6b89c979eaf04a07000e5e579ea078b2397d986f9c902f85f669824bb1a5387\"}}</script>\n<script src=\"/sites/default/files/js/js_s9Rc7sJpGhca_wr3PUTInb8Tb9BG4oiHlZB8Ie0XakM.js\"></script>\n\n    \n    \n\n    <link rel=\"stylesheet\" href=\"https://e-docucenter.uemoa.int/themes/gavias_batiz/css/custom.css\" media=\"screen\" />\n    <link rel=\"stylesheet\" href=\"https://e-docucenter.uemoa.int/themes/gavias_batiz/css/update.css\" media=\"screen\" />\n    \n    \n\n          <style class=\"customize\"> </style>\n    \n          <style type=\"text/css\">\n        *, ::before, ::after {box-sizing: border-box;padding: 0;margin: 0;}a, a:hover, a:focus{color: unset;text-decoration: none;}ul.menu > li {"
+  ],
+  "drupalSettingsSnippets": [],
+  "viewsSnippets": [
+    "a94c;color: #ffffff;font-weight: normal;}#block-booknavigation .ul-0>li:nth-last-child(1)>ul.ul-1>li>ul.ul-2>li.menu-item.menu-item--active-trail{color: #ffffff;font-weight: normal;}.titreAnnexe .node__content h3 {color: #2eaa4d;}#block-booknavigation ul.ul-2 li>a:before{content: '\\f105';font-family: 'FontAwesome';margin-right: 5px;}#footer{font-family: \"Roboto\", Arial, sans-serif;}.node__content p>em>strong{ color: #277bc3; }.livreAccueil .item-columns{padding-bottom: 20px;}.tg.tbdownload td a{color: #0b5ca8;}@media (min-width: 992px) {body.path-flipbook #page-main-content.main-content.col-md-9.col-xs-9 {width: 100%;}}.pdfcontainer {height: 85vh;width: 100%;margin: 20px auto;border: none;}.views-row.row.clearfix{padding-bottom: 5px;}.field--name-field-fichier-a-telecharger a{ background: #2d4b9a;color: #fff;font-size: 12px;font-weight: 700;text-transform: uppercase;padding: 8px 15px;border: none;}.field--name-field-fichier-a-telecharger{ margin-left: 20px;}\n      </style>\n      \n\n  </head>\n    <body class=\"gavias-content-builder layout-no-sidebars not-preloader layout-page- body-background-dark path-node node--type-page\">\n    \n      <div class=\"dialog-off-canvas-main-canvas\" data-off-canvas-main-canvas>\n    <div class=\"body-page\">\n\t       <header id=\"header\" class=\"header-v2\">\n  \n  <div class=\"topbar\">\n  <div class=\"container\">\n    <div class=\"row\">\n      \n      <div class=\"topbar-",
+    "div>\n            </div>  \n                  </div>  \n      </div>\n    </div>\n  </div>     \n</div>\n<div data-drupal-messages-fallback class=\"hidden\"></div>\n\n  </div>\n\n      </div>\n    </div>    \n  </div>\n \n\n\n<div class=\"clearfix\"></div>\n\n\n<div class=\"clearfix\"></div>\n\n\t<div role=\"main\" class=\"main main-page\">\t\n\t\t<div id=\"content\" class=\"content content-full\">\n\t\t\t<div class=\"container\">\t\n\t\t\t\t\n<div class=\"content-main-inner\">\n\t<div class=\"row\">\n\t\t\n\t\t<!-- Sidebar Left -->\n\t\t\t\t<!-- End Sidebar Left -->\n\n\t\t<!-- Sidebar Right -->\n\t\t\t\t\t\n\t\t\t\t\t\t\t \n\n\t\t\t<div class=\"col-lg-3 col-md-3 col-sm-3 col-xs-3 sidebar sidebar-right theiaStickySidebar\">\n\t\t\t\t<div class=\"sidebar-inner\">\n\t\t\t\t\t  <div>\n    <div class=\"views-element-container block block-views block-views-blockliste-des-livres-sidebar-block-1 no-title\" id=\"block-views-block-liste-des-livres-sidebar-block-1\">\n  \n    \n      <div class=\"content block-content\">\n      <div><div class=\"js-view-dom-id-1f160d6a379c8afb8e71e646395c31ea15b9481849cc28ce8491b2bc8ac6e08a\">\n  \n  \n  \n\n  \n  \n  \n\n  <div class=\"owl-carousel init-carousel-owl\" data-items=\"1\" data-items_lg=\"1\" data-items_md=\"1\" data-items_sm=\"1\" data-items_xs=\"1\" data-loop=\"1\" data-speed=\"10000\" data-auto_play=\"1\" data-auto_play_speed=\"1000\" data-auto_play_timeout=\"5000\" data-auto_play_hover=\"0\" data-navigation=\"1\" data-rewind_nav=\"0\" data-pagination=\"0\" data-mouse_drag=\"1\" data-touch_drag=\"1\">\n  ",
+    "        </div>  \n      </div>\n    </div>\n  </div>     \n</div>\n<div data-drupal-messages-fallback class=\"hidden\"></div>\n\n  </div>\n\n      </div>\n    </div>    \n  </div>\n \n\n\n<div class=\"clearfix\"></div>\n\n\n<div class=\"clearfix\"></div>\n\n\t<div role=\"main\" class=\"main main-page\">\t\n\t\t<div id=\"content\" class=\"content content-full\">\n\t\t\t<div class=\"container\">\t\n\t\t\t\t\n<div class=\"content-main-inner\">\n\t<div class=\"row\">\n\t\t\n\t\t<!-- Sidebar Left -->\n\t\t\t\t<!-- End Sidebar Left -->\n\n\t\t<!-- Sidebar Right -->\n\t\t\t\t\t\n\t\t\t\t\t\t\t \n\n\t\t\t<div class=\"col-lg-3 col-md-3 col-sm-3 col-xs-3 sidebar sidebar-right theiaStickySidebar\">\n\t\t\t\t<div class=\"sidebar-inner\">\n\t\t\t\t\t  <div>\n    <div class=\"views-element-container block block-views block-views-blockliste-des-livres-sidebar-block-1 no-title\" id=\"block-views-block-liste-des-livres-sidebar-block-1\">\n  \n    \n      <div class=\"content block-content\">\n      <div><div class=\"js-view-dom-id-1f160d6a379c8afb8e71e646395c31ea15b9481849cc28ce8491b2bc8ac6e08a\">\n  \n  \n  \n\n  \n  \n  \n\n  <div class=\"owl-carousel init-carousel-owl\" data-items=\"1\" data-items_lg=\"1\" data-items_md=\"1\" data-items_sm=\"1\" data-items_xs=\"1\" data-loop=\"1\" data-speed=\"10000\" data-auto_play=\"1\" data-auto_play_speed=\"1000\" data-auto_play_timeout=\"5000\" data-auto_play_hover=\"0\" data-navigation=\"1\" data-rewind_nav=\"0\" data-pagination=\"0\" data-mouse_drag=\"1\" data-touch_drag=\"1\">\n   \n   \n             <div class=\"item\"",
+    "v>  \n      </div>\n    </div>\n  </div>     \n</div>\n<div data-drupal-messages-fallback class=\"hidden\"></div>\n\n  </div>\n\n      </div>\n    </div>    \n  </div>\n \n\n\n<div class=\"clearfix\"></div>\n\n\n<div class=\"clearfix\"></div>\n\n\t<div role=\"main\" class=\"main main-page\">\t\n\t\t<div id=\"content\" class=\"content content-full\">\n\t\t\t<div class=\"container\">\t\n\t\t\t\t\n<div class=\"content-main-inner\">\n\t<div class=\"row\">\n\t\t\n\t\t<!-- Sidebar Left -->\n\t\t\t\t<!-- End Sidebar Left -->\n\n\t\t<!-- Sidebar Right -->\n\t\t\t\t\t\n\t\t\t\t\t\t\t \n\n\t\t\t<div class=\"col-lg-3 col-md-3 col-sm-3 col-xs-3 sidebar sidebar-right theiaStickySidebar\">\n\t\t\t\t<div class=\"sidebar-inner\">\n\t\t\t\t\t  <div>\n    <div class=\"views-element-container block block-views block-views-blockliste-des-livres-sidebar-block-1 no-title\" id=\"block-views-block-liste-des-livres-sidebar-block-1\">\n  \n    \n      <div class=\"content block-content\">\n      <div><div class=\"js-view-dom-id-1f160d6a379c8afb8e71e646395c31ea15b9481849cc28ce8491b2bc8ac6e08a\">\n  \n  \n  \n\n  \n  \n  \n\n  <div class=\"owl-carousel init-carousel-owl\" data-items=\"1\" data-items_lg=\"1\" data-items_md=\"1\" data-items_sm=\"1\" data-items_xs=\"1\" data-loop=\"1\" data-speed=\"10000\" data-auto_play=\"1\" data-auto_play_speed=\"1000\" data-auto_play_timeout=\"5000\" data-auto_play_hover=\"0\" data-navigation=\"1\" data-rewind_nav=\"0\" data-pagination=\"0\" data-mouse_drag=\"1\" data-touch_drag=\"1\">\n   \n   \n             <div class=\"item\">\n          ",
+    "al-messages-fallback class=\"hidden\"></div>\n\n  </div>\n\n      </div>\n    </div>    \n  </div>\n \n\n\n<div class=\"clearfix\"></div>\n\n\n<div class=\"clearfix\"></div>\n\n\t<div role=\"main\" class=\"main main-page\">\t\n\t\t<div id=\"content\" class=\"content content-full\">\n\t\t\t<div class=\"container\">\t\n\t\t\t\t\n<div class=\"content-main-inner\">\n\t<div class=\"row\">\n\t\t\n\t\t<!-- Sidebar Left -->\n\t\t\t\t<!-- End Sidebar Left -->\n\n\t\t<!-- Sidebar Right -->\n\t\t\t\t\t\n\t\t\t\t\t\t\t \n\n\t\t\t<div class=\"col-lg-3 col-md-3 col-sm-3 col-xs-3 sidebar sidebar-right theiaStickySidebar\">\n\t\t\t\t<div class=\"sidebar-inner\">\n\t\t\t\t\t  <div>\n    <div class=\"views-element-container block block-views block-views-blockliste-des-livres-sidebar-block-1 no-title\" id=\"block-views-block-liste-des-livres-sidebar-block-1\">\n  \n    \n      <div class=\"content block-content\">\n      <div><div class=\"js-view-dom-id-1f160d6a379c8afb8e71e646395c31ea15b9481849cc28ce8491b2bc8ac6e08a\">\n  \n  \n  \n\n  \n  \n  \n\n  <div class=\"owl-carousel init-carousel-owl\" data-items=\"1\" data-items_lg=\"1\" data-items_md=\"1\" data-items_sm=\"1\" data-items_xs=\"1\" data-loop=\"1\" data-speed=\"10000\" data-auto_play=\"1\" data-auto_play_speed=\"1000\" data-auto_play_timeout=\"5000\" data-auto_play_hover=\"0\" data-navigation=\"1\" data-rewind_nav=\"0\" data-pagination=\"0\" data-mouse_drag=\"1\" data-touch_drag=\"1\">\n   \n   \n             <div class=\"item\">\n            <div><div class=\"views-field views-field-field-image-book\"><di",
+    "res-sidebar-block-1 no-title\" id=\"block-views-block-liste-des-livres-sidebar-block-1\">\n  \n    \n      <div class=\"content block-content\">\n      <div><div class=\"js-view-dom-id-1f160d6a379c8afb8e71e646395c31ea15b9481849cc28ce8491b2bc8ac6e08a\">\n  \n  \n  \n\n  \n  \n  \n\n  <div class=\"owl-carousel init-carousel-owl\" data-items=\"1\" data-items_lg=\"1\" data-items_md=\"1\" data-items_sm=\"1\" data-items_xs=\"1\" data-loop=\"1\" data-speed=\"10000\" data-auto_play=\"1\" data-auto_play_speed=\"1000\" data-auto_play_timeout=\"5000\" data-auto_play_hover=\"0\" data-navigation=\"1\" data-rewind_nav=\"0\" data-pagination=\"0\" data-mouse_drag=\"1\" data-touch_drag=\"1\">\n   \n   \n             <div class=\"item\">\n            <div><div class=\"views-field views-field-field-image-book\"><div class=\"field-content couvertureLivre\">  <a href=\"/fr/guide-de-controle-juridictionnel-lusage-des-juridictions-financieres-de-lespace-uemoa\" hreflang=\"fr\"><img loading=\"lazy\" src=\"/sites/default/files/styles/height/public/2026-08/UEMOA_GUIDE%20JURIDICTIONNEL.jpg?itok=W76lpu5P\" alt=\"UEMOA_GUIDE JURIDICTIONNEL\" />\n\n</a>\n</div></div></div>\n         </div>\n             <div class=\"item\">\n            <div><div class=\"views-field views-field-field-image-book\"><div class=\"field-content couvertureLivre\">  <a href=\"/fr/guide-daudit-de-conformite-lusage-des-juridictions-financieres-de-lespace-uemoa\" hreflang=\"fr\"><img loading=\"lazy\" src=\"/sites/default/files/st",
+    "block-1 no-title\" id=\"block-views-block-liste-des-livres-sidebar-block-1\">\n  \n    \n      <div class=\"content block-content\">\n      <div><div class=\"js-view-dom-id-1f160d6a379c8afb8e71e646395c31ea15b9481849cc28ce8491b2bc8ac6e08a\">\n  \n  \n  \n\n  \n  \n  \n\n  <div class=\"owl-carousel init-carousel-owl\" data-items=\"1\" data-items_lg=\"1\" data-items_md=\"1\" data-items_sm=\"1\" data-items_xs=\"1\" data-loop=\"1\" data-speed=\"10000\" data-auto_play=\"1\" data-auto_play_speed=\"1000\" data-auto_play_timeout=\"5000\" data-auto_play_hover=\"0\" data-navigation=\"1\" data-rewind_nav=\"0\" data-pagination=\"0\" data-mouse_drag=\"1\" data-touch_drag=\"1\">\n   \n   \n             <div class=\"item\">\n            <div><div class=\"views-field views-field-field-image-book\"><div class=\"field-content couvertureLivre\">  <a href=\"/fr/guide-de-controle-juridictionnel-lusage-des-juridictions-financieres-de-lespace-uemoa\" hreflang=\"fr\"><img loading=\"lazy\" src=\"/sites/default/files/styles/height/public/2026-08/UEMOA_GUIDE%20JURIDICTIONNEL.jpg?itok=W76lpu5P\" alt=\"UEMOA_GUIDE JURIDICTIONNEL\" />\n\n</a>\n</div></div></div>\n         </div>\n             <div class=\"item\">\n            <div><div class=\"views-field views-field-field-image-book\"><div class=\"field-content couvertureLivre\">  <a href=\"/fr/guide-daudit-de-conformite-lusage-des-juridictions-financieres-de-lespace-uemoa\" hreflang=\"fr\"><img loading=\"lazy\" src=\"/sites/default/files/styles/height/",
+    "speed=\"1000\" data-auto_play_timeout=\"5000\" data-auto_play_hover=\"0\" data-navigation=\"1\" data-rewind_nav=\"0\" data-pagination=\"0\" data-mouse_drag=\"1\" data-touch_drag=\"1\">\n   \n   \n             <div class=\"item\">\n            <div><div class=\"views-field views-field-field-image-book\"><div class=\"field-content couvertureLivre\">  <a href=\"/fr/guide-de-controle-juridictionnel-lusage-des-juridictions-financieres-de-lespace-uemoa\" hreflang=\"fr\"><img loading=\"lazy\" src=\"/sites/default/files/styles/height/public/2026-08/UEMOA_GUIDE%20JURIDICTIONNEL.jpg?itok=W76lpu5P\" alt=\"UEMOA_GUIDE JURIDICTIONNEL\" />\n\n</a>\n</div></div></div>\n         </div>\n             <div class=\"item\">\n            <div><div class=\"views-field views-field-field-image-book\"><div class=\"field-content couvertureLivre\">  <a href=\"/fr/guide-daudit-de-conformite-lusage-des-juridictions-financieres-de-lespace-uemoa\" hreflang=\"fr\"><img loading=\"lazy\" src=\"/sites/default/files/styles/height/public/2026-09/UEMOA_GUIDE%20AUDIT%20DE%20CONFORMIT%C3%89.jpg?itok=yL7jeq2u\" alt=\"GUIDE D’AUDIT DE CONFORMITÉ À L’USAGE DES JURIDICTIONS FINANCIÈRES DE L’ESPACE UEMOA\" />\n\n</a>\n</div></div></div>\n         </div>\n             <div class=\"item\">\n            <div><div class=\"views-field views-field-field-image-book\"><div class=\"field-content couvertureLivre\">  <a href=\"/fr/guide-daudit-de-performance-lusage-des-juridictions-financieres-de-lespace-ue",
+    " data-auto_play_timeout=\"5000\" data-auto_play_hover=\"0\" data-navigation=\"1\" data-rewind_nav=\"0\" data-pagination=\"0\" data-mouse_drag=\"1\" data-touch_drag=\"1\">\n   \n   \n             <div class=\"item\">\n            <div><div class=\"views-field views-field-field-image-book\"><div class=\"field-content couvertureLivre\">  <a href=\"/fr/guide-de-controle-juridictionnel-lusage-des-juridictions-financieres-de-lespace-uemoa\" hreflang=\"fr\"><img loading=\"lazy\" src=\"/sites/default/files/styles/height/public/2026-08/UEMOA_GUIDE%20JURIDICTIONNEL.jpg?itok=W76lpu5P\" alt=\"UEMOA_GUIDE JURIDICTIONNEL\" />\n\n</a>\n</div></div></div>\n         </div>\n             <div class=\"item\">\n            <div><div class=\"views-field views-field-field-image-book\"><div class=\"field-content couvertureLivre\">  <a href=\"/fr/guide-daudit-de-conformite-lusage-des-juridictions-financieres-de-lespace-uemoa\" hreflang=\"fr\"><img loading=\"lazy\" src=\"/sites/default/files/styles/height/public/2026-09/UEMOA_GUIDE%20AUDIT%20DE%20CONFORMIT%C3%89.jpg?itok=yL7jeq2u\" alt=\"GUIDE D’AUDIT DE CONFORMITÉ À L’USAGE DES JURIDICTIONS FINANCIÈRES DE L’ESPACE UEMOA\" />\n\n</a>\n</div></div></div>\n         </div>\n             <div class=\"item\">\n            <div><div class=\"views-field views-field-field-image-book\"><div class=\"field-content couvertureLivre\">  <a href=\"/fr/guide-daudit-de-performance-lusage-des-juridictions-financieres-de-lespace-uemoa\" hreflan",
+    "JURIDICTIONNEL.jpg?itok=W76lpu5P\" alt=\"UEMOA_GUIDE JURIDICTIONNEL\" />\n\n</a>\n</div></div></div>\n         </div>\n             <div class=\"item\">\n            <div><div class=\"views-field views-field-field-image-book\"><div class=\"field-content couvertureLivre\">  <a href=\"/fr/guide-daudit-de-conformite-lusage-des-juridictions-financieres-de-lespace-uemoa\" hreflang=\"fr\"><img loading=\"lazy\" src=\"/sites/default/files/styles/height/public/2026-09/UEMOA_GUIDE%20AUDIT%20DE%20CONFORMIT%C3%89.jpg?itok=yL7jeq2u\" alt=\"GUIDE D’AUDIT DE CONFORMITÉ À L’USAGE DES JURIDICTIONS FINANCIÈRES DE L’ESPACE UEMOA\" />\n\n</a>\n</div></div></div>\n         </div>\n             <div class=\"item\">\n            <div><div class=\"views-field views-field-field-image-book\"><div class=\"field-content couvertureLivre\">  <a href=\"/fr/guide-daudit-de-performance-lusage-des-juridictions-financieres-de-lespace-uemoa\" hreflang=\"fr\"><img loading=\"lazy\" src=\"/sites/default/files/styles/height/public/2026-09/UEMOA_GUIDE%20AUDIT%20PERFORMANCE.jpg?itok=z334nQVj\" alt=\"UEMOA_GUIDE AUDIT PERFORMANCE\" />\n\n</a>\n</div></div></div>\n         </div>\n             <div class=\"item\">\n            <div><div class=\"views-field views-field-field-image-book\"><div class=\"field-content couvertureLivre\">  <a href=\"/fr/guide-daudit-financier-lusage-des-juridictions-financieres-de-lespace-uemoa-0\" hreflang=\"fr\"><img loading=\"lazy\" src=\"/sites/default/files/s",
+    "EL.jpg?itok=W76lpu5P\" alt=\"UEMOA_GUIDE JURIDICTIONNEL\" />\n\n</a>\n</div></div></div>\n         </div>\n             <div class=\"item\">\n            <div><div class=\"views-field views-field-field-image-book\"><div class=\"field-content couvertureLivre\">  <a href=\"/fr/guide-daudit-de-conformite-lusage-des-juridictions-financieres-de-lespace-uemoa\" hreflang=\"fr\"><img loading=\"lazy\" src=\"/sites/default/files/styles/height/public/2026-09/UEMOA_GUIDE%20AUDIT%20DE%20CONFORMIT%C3%89.jpg?itok=yL7jeq2u\" alt=\"GUIDE D’AUDIT DE CONFORMITÉ À L’USAGE DES JURIDICTIONS FINANCIÈRES DE L’ESPACE UEMOA\" />\n\n</a>\n</div></div></div>\n         </div>\n             <div class=\"item\">\n            <div><div class=\"views-field views-field-field-image-book\"><div class=\"field-content couvertureLivre\">  <a href=\"/fr/guide-daudit-de-performance-lusage-des-juridictions-financieres-de-lespace-uemoa\" hreflang=\"fr\"><img loading=\"lazy\" src=\"/sites/default/files/styles/height/public/2026-09/UEMOA_GUIDE%20AUDIT%20PERFORMANCE.jpg?itok=z334nQVj\" alt=\"UEMOA_GUIDE AUDIT PERFORMANCE\" />\n\n</a>\n</div></div></div>\n         </div>\n             <div class=\"item\">\n            <div><div class=\"views-field views-field-field-image-book\"><div class=\"field-content couvertureLivre\">  <a href=\"/fr/guide-daudit-financier-lusage-des-juridictions-financieres-de-lespace-uemoa-0\" hreflang=\"fr\"><img loading=\"lazy\" src=\"/sites/default/files/styles/height",
+    "E%20CONFORMIT%C3%89.jpg?itok=yL7jeq2u\" alt=\"GUIDE D’AUDIT DE CONFORMITÉ À L’USAGE DES JURIDICTIONS FINANCIÈRES DE L’ESPACE UEMOA\" />\n\n</a>\n</div></div></div>\n         </div>\n             <div class=\"item\">\n            <div><div class=\"views-field views-field-field-image-book\"><div class=\"field-content couvertureLivre\">  <a href=\"/fr/guide-daudit-de-performance-lusage-des-juridictions-financieres-de-lespace-uemoa\" hreflang=\"fr\"><img loading=\"lazy\" src=\"/sites/default/files/styles/height/public/2026-09/UEMOA_GUIDE%20AUDIT%20PERFORMANCE.jpg?itok=z334nQVj\" alt=\"UEMOA_GUIDE AUDIT PERFORMANCE\" />\n\n</a>\n</div></div></div>\n         </div>\n             <div class=\"item\">\n            <div><div class=\"views-field views-field-field-image-book\"><div class=\"field-content couvertureLivre\">  <a href=\"/fr/guide-daudit-financier-lusage-des-juridictions-financieres-de-lespace-uemoa-0\" hreflang=\"fr\"><img loading=\"lazy\" src=\"/sites/default/files/styles/height/public/2026-08/UEMOA_Guide%20audit%20financier.jpeg?itok=ZRDp3DXh\" alt=\"GUIDE D&#039;AUDIT FINANCIER À L&#039;USAGE DES JURIDICTIONS FINANCIÈRES DE L&#039;ESPACE UEMOA\" />\n\n</a>\n</div></div></div>\n         </div>\n             <div class=\"item\">\n            <div><div class=\"views-field views-field-field-image-book\"><div class=\"field-content couvertureLivre\">  <a href=\"/fr/vision-prospective-uemoa-2040\" hreflang=\"fr\"><img loading=\"lazy\" src=\"/sites/d",
+    "T%C3%89.jpg?itok=yL7jeq2u\" alt=\"GUIDE D’AUDIT DE CONFORMITÉ À L’USAGE DES JURIDICTIONS FINANCIÈRES DE L’ESPACE UEMOA\" />\n\n</a>\n</div></div></div>\n         </div>\n             <div class=\"item\">\n            <div><div class=\"views-field views-field-field-image-book\"><div class=\"field-content couvertureLivre\">  <a href=\"/fr/guide-daudit-de-performance-lusage-des-juridictions-financieres-de-lespace-uemoa\" hreflang=\"fr\"><img loading=\"lazy\" src=\"/sites/default/files/styles/height/public/2026-09/UEMOA_GUIDE%20AUDIT%20PERFORMANCE.jpg?itok=z334nQVj\" alt=\"UEMOA_GUIDE AUDIT PERFORMANCE\" />\n\n</a>\n</div></div></div>\n         </div>\n             <div class=\"item\">\n            <div><div class=\"views-field views-field-field-image-book\"><div class=\"field-content couvertureLivre\">  <a href=\"/fr/guide-daudit-financier-lusage-des-juridictions-financieres-de-lespace-uemoa-0\" hreflang=\"fr\"><img loading=\"lazy\" src=\"/sites/default/files/styles/height/public/2026-08/UEMOA_Guide%20audit%20financier.jpeg?itok=ZRDp3DXh\" alt=\"GUIDE D&#039;AUDIT FINANCIER À L&#039;USAGE DES JURIDICTIONS FINANCIÈRES DE L&#039;ESPACE UEMOA\" />\n\n</a>\n</div></div></div>\n         </div>\n             <div class=\"item\">\n            <div><div class=\"views-field views-field-field-image-book\"><div class=\"field-content couvertureLivre\">  <a href=\"/fr/vision-prospective-uemoa-2040\" hreflang=\"fr\"><img loading=\"lazy\" src=\"/sites/default/files",
+    "0PERFORMANCE.jpg?itok=z334nQVj\" alt=\"UEMOA_GUIDE AUDIT PERFORMANCE\" />\n\n</a>\n</div></div></div>\n         </div>\n             <div class=\"item\">\n            <div><div class=\"views-field views-field-field-image-book\"><div class=\"field-content couvertureLivre\">  <a href=\"/fr/guide-daudit-financier-lusage-des-juridictions-financieres-de-lespace-uemoa-0\" hreflang=\"fr\"><img loading=\"lazy\" src=\"/sites/default/files/styles/height/public/2026-08/UEMOA_Guide%20audit%20financier.jpeg?itok=ZRDp3DXh\" alt=\"GUIDE D&#039;AUDIT FINANCIER À L&#039;USAGE DES JURIDICTIONS FINANCIÈRES DE L&#039;ESPACE UEMOA\" />\n\n</a>\n</div></div></div>\n         </div>\n             <div class=\"item\">\n            <div><div class=\"views-field views-field-field-image-book\"><div class=\"field-content couvertureLivre\">  <a href=\"/fr/vision-prospective-uemoa-2040\" hreflang=\"fr\"><img loading=\"lazy\" src=\"/sites/default/files/styles/height/public/2025-10/UEMOA_Vision2040_0.jpg?itok=FbPOFfI3\" alt=\"VISION PROSPECTIVE UEMOA 2040\" />\n\n</a>\n</div></div></div>\n         </div>\n             <div class=\"item\">\n            <div><div class=\"views-field views-field-field-image-book\"><div class=\"field-content couvertureLivre\">  <a href=\"/fr/impact-2030-plan-strategique-2025-2030-de-la-commission-de-luemoa\" hreflang=\"fr\"><img loading=\"lazy\" src=\"/sites/default/files/styles/height/public/2025-01/IMPACT-2030.jpg?itok=9ApdFQxG\" alt=\"IMPACT 2030\" /",
+    ".jpg?itok=z334nQVj\" alt=\"UEMOA_GUIDE AUDIT PERFORMANCE\" />\n\n</a>\n</div></div></div>\n         </div>\n             <div class=\"item\">\n            <div><div class=\"views-field views-field-field-image-book\"><div class=\"field-content couvertureLivre\">  <a href=\"/fr/guide-daudit-financier-lusage-des-juridictions-financieres-de-lespace-uemoa-0\" hreflang=\"fr\"><img loading=\"lazy\" src=\"/sites/default/files/styles/height/public/2026-08/UEMOA_Guide%20audit%20financier.jpeg?itok=ZRDp3DXh\" alt=\"GUIDE D&#039;AUDIT FINANCIER À L&#039;USAGE DES JURIDICTIONS FINANCIÈRES DE L&#039;ESPACE UEMOA\" />\n\n</a>\n</div></div></div>\n         </div>\n             <div class=\"item\">\n            <div><div class=\"views-field views-field-field-image-book\"><div class=\"field-content couvertureLivre\">  <a href=\"/fr/vision-prospective-uemoa-2040\" hreflang=\"fr\"><img loading=\"lazy\" src=\"/sites/default/files/styles/height/public/2025-10/UEMOA_Vision2040_0.jpg?itok=FbPOFfI3\" alt=\"VISION PROSPECTIVE UEMOA 2040\" />\n\n</a>\n</div></div></div>\n         </div>\n             <div class=\"item\">\n            <div><div class=\"views-field views-field-field-image-book\"><div class=\"field-content couvertureLivre\">  <a href=\"/fr/impact-2030-plan-strategique-2025-2030-de-la-commission-de-luemoa\" hreflang=\"fr\"><img loading=\"lazy\" src=\"/sites/default/files/styles/height/public/2025-01/IMPACT-2030.jpg?itok=9ApdFQxG\" alt=\"IMPACT 2030\" />\n\n</a>\n</di",
+    "efault/files/styles/height/public/2026-08/UEMOA_Guide%20audit%20financier.jpeg?itok=ZRDp3DXh\" alt=\"GUIDE D&#039;AUDIT FINANCIER À L&#039;USAGE DES JURIDICTIONS FINANCIÈRES DE L&#039;ESPACE UEMOA\" />\n\n</a>\n</div></div></div>\n         </div>\n             <div class=\"item\">\n            <div><div class=\"views-field views-field-field-image-book\"><div class=\"field-content couvertureLivre\">  <a href=\"/fr/vision-prospective-uemoa-2040\" hreflang=\"fr\"><img loading=\"lazy\" src=\"/sites/default/files/styles/height/public/2025-10/UEMOA_Vision2040_0.jpg?itok=FbPOFfI3\" alt=\"VISION PROSPECTIVE UEMOA 2040\" />\n\n</a>\n</div></div></div>\n         </div>\n             <div class=\"item\">\n            <div><div class=\"views-field views-field-field-image-book\"><div class=\"field-content couvertureLivre\">  <a href=\"/fr/impact-2030-plan-strategique-2025-2030-de-la-commission-de-luemoa\" hreflang=\"fr\"><img loading=\"lazy\" src=\"/sites/default/files/styles/height/public/2025-01/IMPACT-2030.jpg?itok=9ApdFQxG\" alt=\"IMPACT 2030\" />\n\n</a>\n</div></div></div>\n         </div>\n             <div class=\"item\">\n            <div><div class=\"views-field views-field-field-image-book\"><div class=\"field-content couvertureLivre\">  <a href=\"/fr/livre-blanc-des-acquis-du-parci\" hreflang=\"fr\"><img loading=\"lazy\" src=\"/sites/default/files/styles/height/public/2024-12/Livre_Blanc_UEMOA.jpg?itok=ob9ti-IS\" alt=\"Livre Blanc UEMOA\" />\n\n</a>\n</d",
+    "/styles/height/public/2026-08/UEMOA_Guide%20audit%20financier.jpeg?itok=ZRDp3DXh\" alt=\"GUIDE D&#039;AUDIT FINANCIER À L&#039;USAGE DES JURIDICTIONS FINANCIÈRES DE L&#039;ESPACE UEMOA\" />\n\n</a>\n</div></div></div>\n         </div>\n             <div class=\"item\">\n            <div><div class=\"views-field views-field-field-image-book\"><div class=\"field-content couvertureLivre\">  <a href=\"/fr/vision-prospective-uemoa-2040\" hreflang=\"fr\"><img loading=\"lazy\" src=\"/sites/default/files/styles/height/public/2025-10/UEMOA_Vision2040_0.jpg?itok=FbPOFfI3\" alt=\"VISION PROSPECTIVE UEMOA 2040\" />\n\n</a>\n</div></div></div>\n         </div>\n             <div class=\"item\">\n            <div><div class=\"views-field views-field-field-image-book\"><div class=\"field-content couvertureLivre\">  <a href=\"/fr/impact-2030-plan-strategique-2025-2030-de-la-commission-de-luemoa\" hreflang=\"fr\"><img loading=\"lazy\" src=\"/sites/default/files/styles/height/public/2025-01/IMPACT-2030.jpg?itok=9ApdFQxG\" alt=\"IMPACT 2030\" />\n\n</a>\n</div></div></div>\n         </div>\n             <div class=\"item\">\n            <div><div class=\"views-field views-field-field-image-book\"><div class=\"field-content couvertureLivre\">  <a href=\"/fr/livre-blanc-des-acquis-du-parci\" hreflang=\"fr\"><img loading=\"lazy\" src=\"/sites/default/files/styles/height/public/2024-12/Livre_Blanc_UEMOA.jpg?itok=ob9ti-IS\" alt=\"Livre Blanc UEMOA\" />\n\n</a>\n</div></div></d",
+    "ospective-uemoa-2040\" hreflang=\"fr\"><img loading=\"lazy\" src=\"/sites/default/files/styles/height/public/2025-10/UEMOA_Vision2040_0.jpg?itok=FbPOFfI3\" alt=\"VISION PROSPECTIVE UEMOA 2040\" />\n\n</a>\n</div></div></div>\n         </div>\n             <div class=\"item\">\n            <div><div class=\"views-field views-field-field-image-book\"><div class=\"field-content couvertureLivre\">  <a href=\"/fr/impact-2030-plan-strategique-2025-2030-de-la-commission-de-luemoa\" hreflang=\"fr\"><img loading=\"lazy\" src=\"/sites/default/files/styles/height/public/2025-01/IMPACT-2030.jpg?itok=9ApdFQxG\" alt=\"IMPACT 2030\" />\n\n</a>\n</div></div></div>\n         </div>\n             <div class=\"item\">\n            <div><div class=\"views-field views-field-field-image-book\"><div class=\"field-content couvertureLivre\">  <a href=\"/fr/livre-blanc-des-acquis-du-parci\" hreflang=\"fr\"><img loading=\"lazy\" src=\"/sites/default/files/styles/height/public/2024-12/Livre_Blanc_UEMOA.jpg?itok=ob9ti-IS\" alt=\"Livre Blanc UEMOA\" />\n\n</a>\n</div></div></div>\n         </div>\n             <div class=\"item\">\n            <div><div class=\"views-field views-field-field-image-book\"><div class=\"field-content couvertureLivre\">  <a href=\"/fr/tarif-exterieur-commun-nomenclature\" hreflang=\"fr\"><img loading=\"lazy\" src=\"/sites/default/files/styles/height/public/2024-09/Tarif-Exterieur-Commun-edocu.jpg?itok=lZQnN2jy\" alt=\"Tarif-Exterieur-Commun-edocu\" />\n\n</a>",
+    "moa-2040\" hreflang=\"fr\"><img loading=\"lazy\" src=\"/sites/default/files/styles/height/public/2025-10/UEMOA_Vision2040_0.jpg?itok=FbPOFfI3\" alt=\"VISION PROSPECTIVE UEMOA 2040\" />\n\n</a>\n</div></div></div>\n         </div>\n             <div class=\"item\">\n            <div><div class=\"views-field views-field-field-image-book\"><div class=\"field-content couvertureLivre\">  <a href=\"/fr/impact-2030-plan-strategique-2025-2030-de-la-commission-de-luemoa\" hreflang=\"fr\"><img loading=\"lazy\" src=\"/sites/default/files/styles/height/public/2025-01/IMPACT-2030.jpg?itok=9ApdFQxG\" alt=\"IMPACT 2030\" />\n\n</a>\n</div></div></div>\n         </div>\n             <div class=\"item\">\n            <div><div class=\"views-field views-field-field-image-book\"><div class=\"field-content couvertureLivre\">  <a href=\"/fr/livre-blanc-des-acquis-du-parci\" hreflang=\"fr\"><img loading=\"lazy\" src=\"/sites/default/files/styles/height/public/2024-12/Livre_Blanc_UEMOA.jpg?itok=ob9ti-IS\" alt=\"Livre Blanc UEMOA\" />\n\n</a>\n</div></div></div>\n         </div>\n             <div class=\"item\">\n            <div><div class=\"views-field views-field-field-image-book\"><div class=\"field-content couvertureLivre\">  <a href=\"/fr/tarif-exterieur-commun-nomenclature\" hreflang=\"fr\"><img loading=\"lazy\" src=\"/sites/default/files/styles/height/public/2024-09/Tarif-Exterieur-Commun-edocu.jpg?itok=lZQnN2jy\" alt=\"Tarif-Exterieur-Commun-edocu\" />\n\n</a>\n</div></div",
+    "r/impact-2030-plan-strategique-2025-2030-de-la-commission-de-luemoa\" hreflang=\"fr\"><img loading=\"lazy\" src=\"/sites/default/files/styles/height/public/2025-01/IMPACT-2030.jpg?itok=9ApdFQxG\" alt=\"IMPACT 2030\" />\n\n</a>\n</div></div></div>\n         </div>\n             <div class=\"item\">\n            <div><div class=\"views-field views-field-field-image-book\"><div class=\"field-content couvertureLivre\">  <a href=\"/fr/livre-blanc-des-acquis-du-parci\" hreflang=\"fr\"><img loading=\"lazy\" src=\"/sites/default/files/styles/height/public/2024-12/Livre_Blanc_UEMOA.jpg?itok=ob9ti-IS\" alt=\"Livre Blanc UEMOA\" />\n\n</a>\n</div></div></div>\n         </div>\n             <div class=\"item\">\n            <div><div class=\"views-field views-field-field-image-book\"><div class=\"field-content couvertureLivre\">  <a href=\"/fr/tarif-exterieur-commun-nomenclature\" hreflang=\"fr\"><img loading=\"lazy\" src=\"/sites/default/files/styles/height/public/2024-09/Tarif-Exterieur-Commun-edocu.jpg?itok=lZQnN2jy\" alt=\"Tarif-Exterieur-Commun-edocu\" />\n\n</a>\n</div></div></div>\n         </div>\n             <div class=\"item\">\n            <div><div class=\"views-field views-field-field-image-book\"><div class=\"field-content couvertureLivre\">  <a href=\"/fr/guide-de-legistique\" hreflang=\"fr\"><img loading=\"lazy\" src=\"/sites/default/files/styles/height/public/2024-08/Guide-legistique.jpg?itok=Y5XhTCKg\" alt=\"GUIDE DE LÉGISTIQUE \" />\n\n</a>\n</div></d"
+  ],
+  "configurationSignalPresent": true,
+  "boundary": {
+    "singleKnownPortalPageOnly": true,
+    "verifiedTlsOnly": true,
+    "ajaxInvoked": false,
+    "paginationPerformed": false,
+    "linkedDocumentsFetched": false,
+    "binaryMaterialized": false,
+    "automaticRelationshipInferenceAllowed": false,
+    "automaticSanctionActivationAllowed": false,
+    "readyForSubmissionMustRemainFalse": true
+  },
+  "nextAction": "Use only configuration explicitly extracted here to design a later bounded AJAX/view query; do not guess parameters."
+}
