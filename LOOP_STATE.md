@@ -374,3 +374,19 @@ Regulatory CI run `35780822213` :
 - force-push : `FORBIDDEN` ;
 - `ready_for_submission=false`.
 <!-- AUTO:LOOP-REG-001-CI-AUTOSTASH-CENTIF-RESULT-2026-09-22:END -->
+
+<!-- AUTO:LOOP-REG-001-BCEAO-UEMOA-ARCHIVE-DISCOVERY-2026-09-22:START -->
+## Sous-boucle BCEAO/UEMOA archive discovery
+
+- baseline : `main@3c8fd13fd5db4c026decbe0895e9a7f66edf9b1c` ;
+- Regulatory CI corrective : `35781341993 = SUCCESS` ;
+- objectif : détecter un lien documentaire institutionnel exposé par les pages déjà attestées ;
+- scope : `3` pages autoritatives connues ;
+- crawl libre : `NO` ;
+- TLS : `VERIFIED_ONLY` ;
+- linked document fetch : `NO` ;
+- binary materialization : `NO` ;
+- automatic legal inference : `FORBIDDEN` ;
+- sanction activation : `FORBIDDEN` ;
+- `ready_for_submission=false`.
+<!-- AUTO:LOOP-REG-001-BCEAO-UEMOA-ARCHIVE-DISCOVERY-2026-09-22:END -->

@@ -1,0 +1,82 @@
+name: Discover BCEAO-UEMOA CM-10-06-2022 Archive Links
+
+on:
+  push:
+    branches:
+      - main
+    paths:
+      - .github/workflows/discover-bceao-uemoa-cm-10-06-2022.yml
+      - scripts/discover_bceao_uemoa_cm_10_06_2022_links.py
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: bceao-uemoa-cm-10-06-2022-main
+  cancel-in-progress: false
+
+jobs:
+  discover:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Configure Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      - name: Inspect known BCEAO and UEMOA pages
+        run: python3 scripts/discover_bceao_uemoa_cm_10_06_2022_links.py
+
+      - name: Validate safety boundary
+        run: |
+          python3 - <<'PY'
+          import json
+          from pathlib import Path
+          evidence = json.loads(Path(
+              'regulatory/review-evidence/SANCTIONS_2016_2022/BCEAO_UEMOA_TARGETED_ARCHIVE_DISCOVERY_2026-09-22.json'
+          ).read_text(encoding='utf-8'))
+          validation = json.loads(Path(
+              'regulatory/validation/BCEAO_UEMOA_TARGETED_ARCHIVE_DISCOVERY_VALIDATION_V0_1.json'
+          ).read_text(encoding='utf-8'))
+          assert evidence['result'] == 'PASS'
+          assert validation['result'] == 'PASS'
+          for key in [
+              'knownPagesOnly', 'verifiedTlsOnly', 'linkedDocumentsNotFetched',
+              'binaryNotMaterialized', 'automaticRelationshipInferenceForbidden',
+              'automaticSanctionActivationForbidden', 'readyForSubmissionFalse'
+          ]:
+              assert validation['checks'][key] is True, key
+          PY
+
+      - name: Check textual integrity
+        run: git diff --check
+
+      - name: Upload discovery evidence
+        uses: actions/upload-artifact@v4
+        with:
+          name: bceao-uemoa-cm-10-06-2022-archive-links
+          retention-days: 30
+          if-no-files-found: error
+          path: |
+            regulatory/review-evidence/SANCTIONS_2016_2022/BCEAO_UEMOA_TARGETED_ARCHIVE_DISCOVERY_2026-09-22.json
+            regulatory/validation/BCEAO_UEMOA_TARGETED_ARCHIVE_DISCOVERY_VALIDATION_V0_1.json
+
+      - name: Commit generated discovery evidence
+        run: |
+          git config user.name 'regulatory-source-bot'
+          git config user.email 'regulatory-source-bot@users.noreply.github.com'
+          git add             regulatory/review-evidence/SANCTIONS_2016_2022/BCEAO_UEMOA_TARGETED_ARCHIVE_DISCOVERY_2026-09-22.json             regulatory/validation/BCEAO_UEMOA_TARGETED_ARCHIVE_DISCOVERY_VALIDATION_V0_1.json
+          if git diff --cached --quiet; then
+            echo 'No BCEAO/UEMOA discovery evidence changes to commit.'
+          else
+            git commit -m 'chore: persist BCEAO-UEMOA sanctions archive discovery'
+            git pull --rebase --autostash origin main
+            git push origin HEAD:main
+          fi

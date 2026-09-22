@@ -274,3 +274,18 @@ CI :
 
 Après validation de cette correction, la prochaine route documentaire reste une archive institutionnelle différente : BCEAO/Conseil des Ministres ou UEMOA/archives, en exploitant l'empreinte intégrale déjà connue.
 <!-- AUTO:LOOP-REG-001-CI-AUTOSTASH-CENTIF-RESULT-2026-09-22:END -->
+
+<!-- AUTO:LOOP-REG-001-BCEAO-UEMOA-ARCHIVE-DISCOVERY-2026-09-22:START -->
+## Route institutionnelle suivante — BCEAO / UEMOA
+
+Après fermeture des routes AMF API et CENTIF attachment, l'action sélectionnée est :
+
+`DISCOVER_DOCUMENT_LINKS_ON_KNOWN_BCEAO_AND_UEMOA_AUTHORITATIVE_PAGES`
+
+Périmètre strict :
+- communiqué BCEAO du Conseil des Ministres du 24 juin 2022 ;
+- page E-DOCUCENTER UEMOA « principales réalisations » ;
+- page E-DOCUCENTER UEMOA relative à l'écosystème financier.
+
+Le scanner ne suit aucun lien, ne matérialise aucun binaire et n'infère aucun effet juridique. Il inventorie uniquement les liens documentaires exposés par ces pages avec TLS vérifié.
+<!-- AUTO:LOOP-REG-001-BCEAO-UEMOA-ARCHIVE-DISCOVERY-2026-09-22:END -->

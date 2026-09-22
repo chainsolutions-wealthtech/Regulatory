@@ -392,3 +392,24 @@ Statut : `PENDING_CENTIF_DISCOVERY_CI`.
 - le retry de persistance Regulatory CI utilise désormais `git pull --rebase --autostash` afin de supporter les sorties de génération non indexées ;
 - aucun force-push et aucune perte de worktree.
 <!-- AUTO:LOOP-REG-001-CI-AUTOSTASH-CENTIF-RESULT-2026-09-22:END -->
+
+<!-- AUTO:LOOP-REG-001-BCEAO-UEMOA-ARCHIVE-DISCOVERY-2026-09-22:START -->
+## [Unreleased] — BCEAO/UEMOA targeted archive discovery — 2026-09-22
+
+### Added
+
+- scanner de liens documentaires sur trois pages institutionnelles connues ;
+- workflow de preuve machine avec TLS vérifié uniquement.
+
+### Verified
+
+- Regulatory CI race-safe/autostash : `35781341993 SUCCESS` ;
+- Security, Browser/Accessibility et Runtime Quality également GREEN.
+
+### Safety
+
+- aucun crawl libre ;
+- aucun binaire suivi ou matérialisé ;
+- aucune activation réglementaire ;
+- `ready_for_submission=false`.
+<!-- AUTO:LOOP-REG-001-BCEAO-UEMOA-ARCHIVE-DISCOVERY-2026-09-22:END -->

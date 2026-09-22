@@ -851,3 +851,11 @@ Les trois miroirs institutionnels CENTIF exposent bien `CM/10/06/2022` dans leur
 
 La première correction de concurrence CI a identifié un second cas : un rebase de retry est bloqué par les modifications de rendu encore présentes dans le worktree. L'ajout de `--autostash` corrige ce point sans force-push, sans suppression de preuve et sans affaiblissement des tests.
 <!-- AUTO:LOOP-REG-001-CI-AUTOSTASH-CENTIF-RESULT-2026-09-22:END -->
+
+<!-- AUTO:LOOP-REG-001-BCEAO-UEMOA-ARCHIVE-DISCOVERY-2026-09-22:START -->
+## 2026-09-22 — Passage à la route BCEAO/UEMOA
+
+Les hypothèses « objet AMF mal catégorisé » et « pièce jointe CENTIF directement exposée » sont désormais fermées par preuve machine. La correction de concurrence CI est également validée par une exécution complète GREEN.
+
+La boucle sélectionne donc une route institutionnelle distincte : inventaire ciblé des liens des pages BCEAO/Conseil des Ministres et E-DOCUCENTER UEMOA déjà reliées à la révision de juin 2022.
+<!-- AUTO:LOOP-REG-001-BCEAO-UEMOA-ARCHIVE-DISCOVERY-2026-09-22:END -->

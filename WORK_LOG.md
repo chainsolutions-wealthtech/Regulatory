@@ -431,3 +431,11 @@ Le scanner CENTIF V0.2 a récupéré les trois pages connues grâce à un fallba
 
 Le retry de Regulatory CI a correctement détecté la course de push, mais `git pull --rebase` a été refusé car le worktree conservait des modifications de génération non indexées. La correction suivante utilise `git pull --rebase --autostash`, ce qui protège ces modifications tout en conservant un rebase non destructif. Aucun contrôle n'est supprimé ou contourné.
 <!-- AUTO:LOOP-REG-001-CI-AUTOSTASH-CENTIF-RESULT-2026-09-22:END -->
+
+<!-- AUTO:LOOP-REG-001-BCEAO-UEMOA-ARCHIVE-DISCOVERY-2026-09-22:START -->
+## 2026-09-22 — Sélection BCEAO/UEMOA après fermeture CENTIF
+
+La page CENTIF ne contenant aucun lien attaché à la référence, la recherche change matériellement de route. Un scanner borné est ajouté pour les pages BCEAO/UEMOA qui confirment déjà la révision de juin 2022. Il inventorie seulement les liens documentaires affichés dans leur HTML et ne suit aucun candidat dans cette étape.
+
+La correction de persistance Regulatory CI avec `--autostash` a été validée par le run `35781341993` : SUCCESS. Les quatre CI du commit correctif sont GREEN.
+<!-- AUTO:LOOP-REG-001-BCEAO-UEMOA-ARCHIVE-DISCOVERY-2026-09-22:END -->

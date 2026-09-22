@@ -638,3 +638,16 @@ Statut : `PENDING_CENTIF_DISCOVERY_CI`.
 - [ ] Obtenir Regulatory CI GREEN avec écriture concurrente.
 - [ ] Passer à une route institutionnelle distincte BCEAO/UEMOA.
 <!-- AUTO:LOOP-REG-001-CI-AUTOSTASH-CENTIF-RESULT-2026-09-22:END -->
+
+<!-- AUTO:LOOP-REG-001-BCEAO-UEMOA-ARCHIVE-DISCOVERY-2026-09-22:START -->
+## BCEAO / UEMOA archive discovery
+
+- [x] Valider la correction Regulatory CI race-safe/autostash.
+- [x] Définir un périmètre limité aux pages institutionnelles déjà attestées.
+- [x] Préparer un scanner TLS vérifié uniquement.
+- [x] Interdire tout crawl ou téléchargement de candidat dans cette étape.
+- [ ] Exécuter le workflow.
+- [ ] Examiner les liens documentaires candidats.
+- [ ] Si un candidat exact existe, le valider et le matérialiser dans une étape séparée.
+- [ ] Sinon, conserver le verrou institutionnel non indexé et sélectionner une autre hypothèse vérifiable.
+<!-- AUTO:LOOP-REG-001-BCEAO-UEMOA-ARCHIVE-DISCOVERY-2026-09-22:END -->
