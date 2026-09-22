@@ -1,0 +1,17 @@
+{
+  "schemaVersion": "CENTIF_TARGET_LINK_DISCOVERY_VALIDATION_V0_1",
+  "result": "PASS",
+  "checks": {
+    "scopeIsRestrictedToKnownCentifPages": true,
+    "onlyTargetAnchorsFollowed": true,
+    "binaryNotMaterialized": true,
+    "automaticRelationshipInferenceForbidden": true,
+    "automaticSanctionActivationForbidden": true,
+    "readyForSubmissionFalse": true
+  },
+  "targetStatus": "REFERENCE_NOT_RETRIEVED_FROM_LIVE_PAGES",
+  "reachablePageCount": 0,
+  "referencePageCount": 0,
+  "targetAnchorCount": 0,
+  "institutionalPdfLinkCount": 0
+}

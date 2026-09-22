@@ -1,0 +1,42 @@
+{
+  "schemaVersion": "CENTIF_TARGET_LINK_DISCOVERY_V0_1",
+  "sourceId": "DECISION_CM_10_06_2022",
+  "reference": "CM/10/06/2022",
+  "method": "TARGETED_INSTITUTIONAL_PAGE_AND_ANCHOR_DISCOVERY",
+  "result": "PASS",
+  "targetStatus": "REFERENCE_NOT_RETRIEVED_FROM_LIVE_PAGES",
+  "pages": [
+    {
+      "status": "FETCH_ERROR",
+      "url": "https://www.centif.sn/reglementation/fr/reglcommu",
+      "error": "<urlopen error [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: unable to get local issuer certificate (_ssl.c:1010)>"
+    },
+    {
+      "status": "FETCH_ERROR",
+      "url": "https://site.centif.sn/reglementation/fr/reglcommu",
+      "error": "<urlopen error [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: unable to get local issuer certificate (_ssl.c:1010)>"
+    },
+    {
+      "status": "FETCH_ERROR",
+      "url": "https://jokoo.centif.sn/reglementation/fr/reglcommu",
+      "error": "<urlopen error [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: unable to get local issuer certificate (_ssl.c:1010)>"
+    }
+  ],
+  "targetAnchors": [],
+  "linkedResponses": [],
+  "institutionalPdfLinkCount": 0,
+  "boundary": {
+    "onlyKnownCentifPagesFetched": true,
+    "onlyTargetAnchorsFollowed": true,
+    "nonCentifTargetLinksFollowed": false,
+    "binaryMaterializedInRepository": false,
+    "discoveryIsLegalStatusProof": false,
+    "automaticRelationshipInferenceAllowed": false,
+    "automaticSanctionRuleActivationAllowed": false,
+    "automaticSanctionAmountActivationAllowed": false,
+    "humanLegalReviewRequired": true,
+    "humanComplianceReviewRequired": true,
+    "readyForSubmissionMustRemainFalse": true
+  },
+  "nextAction": "If an institutional PDF link is found, materialize and validate it in a separate governed step. If the reference is present without an anchor, preserve the non-indexed institutional recovery boundary."
+}
