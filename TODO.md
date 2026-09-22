@@ -589,13 +589,24 @@ Les anciennes cases non cochées plus bas sont conservées comme historique ; el
 <!-- AUTO:LOOP-REG-001-CROSS-CATEGORY-SCAN-2026-09-22:START -->
 ## CM/10/06/2022 — scan API cross-category
 
-- [x] Identifier le blind spot du filtre `Decision` du scanner historique.
-- [x] Ajouter un scanner indépendant toutes catégories.
-- [x] Borner la plage à `1000000..1000300`.
-- [x] Ajouter les témoins `1000179`, `1000182`, `1000184`.
-- [x] Interdire la matérialisation et l'activation dans cette étape.
-- [ ] Exécuter le workflow de découverte.
-- [ ] Examiner la preuve machine et les candidats.
-- [ ] Si cible exacte trouvée : matérialiser le binaire officiel dans une étape séparée.
-- [ ] Sinon : conserver la récupération institutionnelle non indexée comme prochaine action.
+- [x] Identifier le blind spot du filtre `Decision`.
+- [x] Ajouter le scanner toutes catégories.
+- [x] Scanner `1000000..1000300`.
+- [x] Valider les témoins `1000179`, `1000182`, `1000184`.
+- [x] Obtenir `301/301` réponses contrôlées avec `0` erreur.
+- [x] Confirmer `exactReferenceMatchCount=0`.
+- [x] Confirmer que le seul objet sanctions est la Décision 2016.
+- [x] Persister la preuve machine.
+- [ ] Inspecter le lien réel exposé par les pages institutionnelles CENTIF.
 <!-- AUTO:LOOP-REG-001-CROSS-CATEGORY-SCAN-2026-09-22:END -->
+
+<!-- AUTO:LOOP-REG-001-CENTIF-TARGET-LINK-DISCOVERY-2026-09-22:START -->
+## Route CENTIF ciblée — 2026-09-22
+
+Un scanner institutionnel strictement borné est préparé pour les trois pages CENTIF connues :
+`www.centif.sn`, `site.centif.sn`, `jokoo.centif.sn`.
+
+Il recherche uniquement la référence `CM/10/06/2022`, extrait l'ancre correspondante et ne suit que les URLs cible hébergées sous `*.centif.sn`. Il inspecte le type de contenu et la signature PDF sans commiter de binaire.
+
+Statut : `PENDING_CENTIF_DISCOVERY_CI`.
+<!-- AUTO:LOOP-REG-001-CENTIF-TARGET-LINK-DISCOVERY-2026-09-22:END -->

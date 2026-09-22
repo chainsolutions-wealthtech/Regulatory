@@ -1,0 +1,91 @@
+name: Discover CENTIF CM-10-06-2022 Target Link
+
+on:
+  push:
+    branches:
+      - main
+    paths:
+      - .github/workflows/discover-centif-cm-10-06-2022.yml
+      - scripts/discover_centif_cm_10_06_2022_attachment.py
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: centif-cm-10-06-2022-target-link-main
+  cancel-in-progress: false
+
+jobs:
+  discover:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Configure Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      - name: Inspect known CENTIF institutional pages
+        run: python3 scripts/discover_centif_cm_10_06_2022_attachment.py
+
+      - name: Validate safety boundary
+        run: |
+          python3 - <<'PY'
+          import json
+          from pathlib import Path
+
+          evidence = json.loads(Path(
+              'regulatory/review-evidence/SANCTIONS_2016_2022/CENTIF_TARGET_LINK_DISCOVERY_2026-09-22.json'
+          ).read_text(encoding='utf-8'))
+          validation = json.loads(Path(
+              'regulatory/validation/CENTIF_TARGET_LINK_DISCOVERY_VALIDATION_V0_1.json'
+          ).read_text(encoding='utf-8'))
+
+          assert evidence['result'] == 'PASS'
+          assert validation['result'] == 'PASS'
+          assert validation['checks']['scopeIsRestrictedToKnownCentifPages'] is True
+          assert validation['checks']['onlyTargetAnchorsFollowed'] is True
+          assert validation['checks']['binaryNotMaterialized'] is True
+          assert validation['checks']['automaticRelationshipInferenceForbidden'] is True
+          assert validation['checks']['automaticSanctionActivationForbidden'] is True
+          assert validation['checks']['readyForSubmissionFalse'] is True
+
+          boundary = evidence['boundary']
+          assert boundary['onlyKnownCentifPagesFetched'] is True
+          assert boundary['onlyTargetAnchorsFollowed'] is True
+          assert boundary['binaryMaterializedInRepository'] is False
+          assert boundary['automaticRelationshipInferenceAllowed'] is False
+          assert boundary['automaticSanctionAmountActivationAllowed'] is False
+          PY
+
+      - name: Check textual integrity
+        run: git diff --check
+
+      - name: Upload CENTIF discovery evidence
+        uses: actions/upload-artifact@v4
+        with:
+          name: centif-cm-10-06-2022-target-link
+          retention-days: 30
+          if-no-files-found: error
+          path: |
+            regulatory/review-evidence/SANCTIONS_2016_2022/CENTIF_TARGET_LINK_DISCOVERY_2026-09-22.json
+            regulatory/validation/CENTIF_TARGET_LINK_DISCOVERY_VALIDATION_V0_1.json
+
+      - name: Commit generated discovery evidence
+        run: |
+          git config user.name 'regulatory-source-bot'
+          git config user.email 'regulatory-source-bot@users.noreply.github.com'
+          git add             regulatory/review-evidence/SANCTIONS_2016_2022/CENTIF_TARGET_LINK_DISCOVERY_2026-09-22.json             regulatory/validation/CENTIF_TARGET_LINK_DISCOVERY_VALIDATION_V0_1.json
+          if git diff --cached --quiet; then
+            echo 'No CENTIF discovery evidence changes to commit.'
+          else
+            git commit -m 'chore: persist CENTIF sanctions decision link discovery'
+            git pull --rebase origin main
+            git push origin HEAD:main
+          fi

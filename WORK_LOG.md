@@ -390,14 +390,26 @@ Aucun code, schéma, règle active, montant de sanction ou statut de soumission 
 <!-- AUTO:LOOP-REG-001-SECONDARY-FULL-TEXT-RECOVERY-2026-09-22:END -->
 
 <!-- AUTO:LOOP-REG-001-CROSS-CATEGORY-SCAN-2026-09-22:START -->
-## 2026-09-22 — Préparation du scan AMF-UMOA cross-category
+## 2026-09-22 — Résultat du scan AMF-UMOA cross-category
 
-1. Baseline distante vérifiée à `888d37815e8d104cae35f1c54bcb3c343357e59a`.
-2. Le commit automatique précédent a uniquement réconcilié le SHA et le run Regulatory CI.
-3. Le catalogue Decision historique filtre les objets avec `is_decision()` avant la recherche de la référence cible.
-4. Ce filtre peut masquer un objet legacy mal catégorisé ou exposé sous une autre catégorie.
-5. Ajout d'un scanner séparé, borné, cross-category sur `1000000..1000300`.
-6. Ajout de témoins connus pour prouver la validité de la plage et du endpoint.
-7. Aucune matérialisation, aucune activation et aucune inférence juridique n'est autorisée dans cette étape.
-8. Un workflow dédié produit et persiste la preuve machine si le scan est valide.
+Le workflow `Discover AMF-UMOA Sanctions 2022 Cross-Category` a terminé `SUCCESS`.
+
+Résultat machine : 301 IDs contrôlés, 202 objets récupérés, 99 entrées vides, 0 erreur. Les trois témoins connus sont retrouvés et correctement identifiés. Aucune occurrence exacte de `CM/10/06/2022` n'est présente. Le seul objet contenant le sujet des sanctions pécuniaires est `actualiteId=1000179`, Décision 2016.
+
+La preuve est enregistrée dans :
+- `regulatory/review-evidence/SANCTIONS_2016_2022/AMF_UMOA_CROSS_CATEGORY_SCAN_2026-09-22.json` ;
+- `regulatory/validation/AMF_UMOA_SANCTIONS_2022_CROSS_CATEGORY_SCAN_VALIDATION_V0_1.json`.
+
+Aucune conclusion juridique ou activation n'en est déduite.
 <!-- AUTO:LOOP-REG-001-CROSS-CATEGORY-SCAN-2026-09-22:END -->
+
+<!-- AUTO:LOOP-REG-001-CENTIF-TARGET-LINK-DISCOVERY-2026-09-22:START -->
+## Route CENTIF ciblée — 2026-09-22
+
+Un scanner institutionnel strictement borné est préparé pour les trois pages CENTIF connues :
+`www.centif.sn`, `site.centif.sn`, `jokoo.centif.sn`.
+
+Il recherche uniquement la référence `CM/10/06/2022`, extrait l'ancre correspondante et ne suit que les URLs cible hébergées sous `*.centif.sn`. Il inspecte le type de contenu et la signature PDF sans commiter de binaire.
+
+Statut : `PENDING_CENTIF_DISCOVERY_CI`.
+<!-- AUTO:LOOP-REG-001-CENTIF-TARGET-LINK-DISCOVERY-2026-09-22:END -->

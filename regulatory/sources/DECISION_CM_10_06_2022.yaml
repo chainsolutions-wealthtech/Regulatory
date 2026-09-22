@@ -169,3 +169,22 @@ secondary_full_text_mirror_discovery:
     human_compliance_review_required: true
     ready_for_submission_must_remain_false: true
   evidence_file: regulatory/review-evidence/SANCTIONS_2016_2022/SECONDARY_FULL_TEXT_MIRROR_DISCOVERY_2026-09-22.yaml
+
+cross_category_api_scan_2026_09_22:
+  method: OFFICIAL_FRONTEND_API_BOUNDED_CROSS_CATEGORY_SCAN
+  scan_id_range: [1000000, 1000300]
+  request_count: 301
+  object_count: 202
+  error_count: 0
+  witness_checks: PASS
+  exact_cm_10_06_2022_match_count: 0
+  sanctions_subject_match_count: 1
+  sanctions_subject_only_reference: CM/SJ/O01/03/2016
+  result: PASS
+  target_status: NOT_FOUND_IN_SCAN_RANGE
+  evidence: regulatory/review-evidence/SANCTIONS_2016_2022/AMF_UMOA_CROSS_CATEGORY_SCAN_2026-09-22.json
+  validation: regulatory/validation/AMF_UMOA_SANCTIONS_2022_CROSS_CATEGORY_SCAN_VALIDATION_V0_1.json
+  interpretation_boundary: >-
+    L'absence de la référence dans cette plage toutes catégories confondues ferme
+    l'hypothèse d'un objet mal catégorisé dans ce périmètre. Elle ne prouve ni
+    l'inexistence du texte, ni son absence d'une archive institutionnelle distincte.

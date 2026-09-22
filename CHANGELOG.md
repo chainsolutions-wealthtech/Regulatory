@@ -336,18 +336,29 @@ L’activation du driver PostgreSQL échoue explicitement tant qu’aucun adapta
 <!-- AUTO:LOOP-REG-001-SECONDARY-FULL-TEXT-RECOVERY-2026-09-22:END -->
 
 <!-- AUTO:LOOP-REG-001-CROSS-CATEGORY-SCAN-2026-09-22:START -->
-## [Unreleased] — Discovery AMF-UMOA cross-category — 2026-09-22
+## [Unreleased] — Résultat discovery AMF-UMOA cross-category — 2026-09-22
 
-### Added
+### Evidence
 
-- scanner borné de l'API officielle `actualite` sans filtre de catégorie ;
-- workflow dédié avec validation des témoins et frontières réglementaires ;
-- preuve machine prévue pour `CM/10/06/2022`.
+- 301 IDs officiels contrôlés ;
+- 202 objets valides ;
+- 0 erreur ;
+- 3/3 témoins récupérés ;
+- 0 correspondance exacte `CM/10/06/2022` ;
+- 1 correspondance sujet sanctions, limitée à la Décision 2016.
 
 ### Safety
 
-- aucune matérialisation binaire dans cette étape ;
-- aucune inférence de statut juridique ;
-- aucune activation de sanction, montant ou dépendance ;
-- `ready_for_submission=false`.
+La non-détection dans cette plage ne vaut ni inexistence ni non-applicabilité. Aucune activation réglementaire n'est effectuée.
 <!-- AUTO:LOOP-REG-001-CROSS-CATEGORY-SCAN-2026-09-22:END -->
+
+<!-- AUTO:LOOP-REG-001-CENTIF-TARGET-LINK-DISCOVERY-2026-09-22:START -->
+## Route CENTIF ciblée — 2026-09-22
+
+Un scanner institutionnel strictement borné est préparé pour les trois pages CENTIF connues :
+`www.centif.sn`, `site.centif.sn`, `jokoo.centif.sn`.
+
+Il recherche uniquement la référence `CM/10/06/2022`, extrait l'ancre correspondante et ne suit que les URLs cible hébergées sous `*.centif.sn`. Il inspecte le type de contenu et la signature PDF sans commiter de binaire.
+
+Statut : `PENDING_CENTIF_DISCOVERY_CI`.
+<!-- AUTO:LOOP-REG-001-CENTIF-TARGET-LINK-DISCOVERY-2026-09-22:END -->

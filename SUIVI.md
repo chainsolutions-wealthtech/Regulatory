@@ -818,9 +818,20 @@ La priorité `LOOP-REG-001` est reprise, avec `LOOP-DEV-001` préservée en paus
 <!-- AUTO:LOOP-REG-001-SECONDARY-FULL-TEXT-RECOVERY-2026-09-22:END -->
 
 <!-- AUTO:LOOP-REG-001-CROSS-CATEGORY-SCAN-2026-09-22:START -->
-## 2026-09-22 — Extension gouvernée de la recherche CM/10/06/2022
+## 2026-09-22 — Blind spot API AMF-UMOA fermé
 
-Après la découverte du miroir secondaire complet, l'analyse du scanner AMF-UMOA existant a montré qu'il ne recherche la cible qu'après classification d'un objet comme `Decision`. Une sous-boucle additive est donc ouverte pour éliminer ce blind spot sans modifier le catalogue canonique existant.
+Le scanner cross-category officiel a contrôlé 301 IDs (`1000000..1000300`) et récupéré 202 objets sans erreur. Les témoins 2016, 2021 et septembre 2022 sont tous retrouvés. `CM/10/06/2022` n'apparaît dans aucun objet de la plage, même hors catégorie `Decision`.
 
-Le nouveau scanner couvre `actualiteId=1000000..1000300` toutes catégories confondues, conserve des témoins connus et ne peut ni matérialiser un binaire ni activer un effet réglementaire. Le résultat sera persisté par CI avant toute nouvelle sélection d'action.
+Cette étape renforce la preuve que la récupération doit désormais viser une archive institutionnelle non indexée plutôt qu'un objet visible de l'API `actualite`.
 <!-- AUTO:LOOP-REG-001-CROSS-CATEGORY-SCAN-2026-09-22:END -->
+
+<!-- AUTO:LOOP-REG-001-CENTIF-TARGET-LINK-DISCOVERY-2026-09-22:START -->
+## Route CENTIF ciblée — 2026-09-22
+
+Un scanner institutionnel strictement borné est préparé pour les trois pages CENTIF connues :
+`www.centif.sn`, `site.centif.sn`, `jokoo.centif.sn`.
+
+Il recherche uniquement la référence `CM/10/06/2022`, extrait l'ancre correspondante et ne suit que les URLs cible hébergées sous `*.centif.sn`. Il inspecte le type de contenu et la signature PDF sans commiter de binaire.
+
+Statut : `PENDING_CENTIF_DISCOVERY_CI`.
+<!-- AUTO:LOOP-REG-001-CENTIF-TARGET-LINK-DISCOVERY-2026-09-22:END -->

@@ -215,19 +215,32 @@ Prochain mode : `INSTITUTIONAL_NON_INDEXED_DOCUMENT_RECOVERY_USING_FULL_TEXT_FIN
 <!-- AUTO:LOOP-REG-001-SECONDARY-FULL-TEXT-RECOVERY-2026-09-22:END -->
 
 <!-- AUTO:LOOP-REG-001-CROSS-CATEGORY-SCAN-2026-09-22:START -->
-## Recherche AMF-UMOA cross-category — 2026-09-22
+## Résultat du scan AMF-UMOA cross-category — 2026-09-22
 
-Une action sûre et bornée est sélectionnée avant de conclure à un blocage externe définitif :
+Le scan officiel `actualiteId=1000000..1000300` est terminé :
 
-`SCAN_OFFICIAL_AMF_UMOA_ACTUALITE_API_ACROSS_CATEGORIES_1000000_1000300`
+- résultat scanner : `PASS` ;
+- requêtes : `301` ;
+- objets récupérés : `202` ;
+- erreurs : `0` ;
+- témoins connus : `3/3 PASS` ;
+- correspondance exacte `CM/10/06/2022` : `0` ;
+- correspondance objet « sanctions pécuniaires » : `1`, uniquement `CM/SJ/O01/03/2016` ;
+- statut cible : `NOT_FOUND_IN_SCAN_RANGE`.
 
-Le scanner `scripts/discover_amf_umoa_sanctions_2022_api.py` recherche la référence `CM/10/06/2022` et l'objet sanctions pécuniaires dans tous les objets de la plage, sans filtrage préalable sur la catégorie `Decision`.
+Cette preuve ferme l'hypothèse d'un objet AMF-UMOA caché dans cette plage sous une autre catégorie, sans prouver l'inexistence du texte dans d'autres archives.
 
-Cette découverte :
-- ne matérialise aucun binaire ;
-- ne prouve aucun statut juridique ;
-- n'active aucune sanction ou exigence ;
-- maintient `ready_for_submission=false`.
-
-Si un objet exact est retrouvé avec un document officiel API, la prochaine action devient sa matérialisation et validation dans une boucle séparée. Sinon, le mode `INSTITUTIONAL_NON_INDEXED_DOCUMENT_RECOVERY_USING_FULL_TEXT_FINGERPRINT` reste applicable.
+La prochaine action unique devient :
+`DISCOVER_TARGET_LINK_FROM_KNOWN_CENTIF_INSTITUTIONAL_PAGES`.
 <!-- AUTO:LOOP-REG-001-CROSS-CATEGORY-SCAN-2026-09-22:END -->
+
+<!-- AUTO:LOOP-REG-001-CENTIF-TARGET-LINK-DISCOVERY-2026-09-22:START -->
+## Route CENTIF ciblée — 2026-09-22
+
+Un scanner institutionnel strictement borné est préparé pour les trois pages CENTIF connues :
+`www.centif.sn`, `site.centif.sn`, `jokoo.centif.sn`.
+
+Il recherche uniquement la référence `CM/10/06/2022`, extrait l'ancre correspondante et ne suit que les URLs cible hébergées sous `*.centif.sn`. Il inspecte le type de contenu et la signature PDF sans commiter de binaire.
+
+Statut : `PENDING_CENTIF_DISCOVERY_CI`.
+<!-- AUTO:LOOP-REG-001-CENTIF-TARGET-LINK-DISCOVERY-2026-09-22:END -->

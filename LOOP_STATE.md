@@ -312,16 +312,32 @@ Prochaine action unique : retrouver le même document via une archive institutio
 <!-- AUTO:LOOP-REG-001-SECONDARY-FULL-TEXT-RECOVERY-2026-09-22:END -->
 
 <!-- AUTO:LOOP-REG-001-CROSS-CATEGORY-SCAN-2026-09-22:START -->
-## LOOP-REG-001 — sous-boucle de découverte API cross-category
+## LOOP-REG-001 — résultat du scan API cross-category
 
-- baseline : `main@888d37815e8d104cae35f1c54bcb3c343357e59a` ;
-- action : scanner `actualiteId=1000000..1000300` sans filtrage par catégorie ;
-- témoins obligatoires : `1000179`, `1000182`, `1000184` ;
-- cible : `CM/10/06/2022` ;
-- preuve machine : `AMF_UMOA_CROSS_CATEGORY_SCAN_2026-09-22.json` ;
-- statut avant exécution : `PENDING_CI_DISCOVERY_RUN` ;
-- matérialisation binaire : `FORBIDDEN_IN_THIS_STEP` ;
-- relation juridique automatique : `FORBIDDEN` ;
+- baseline d'exécution : `ac1646ad3357320a9c567f2cfe358d6bf345f211` ;
+- preuve persistée : `79757d5ee1f2a18049d5075c114f8121850e5e01` après rebase sur l'état automatique courant ;
+- plage : `1000000..1000300` ;
+- requêtes : `301` ;
+- objets : `202` ;
+- erreurs : `0` ;
+- témoins : `1000179 / 1000182 / 1000184 = PASS` ;
+- cible exacte : `0` ;
+- candidat sanctions : `1000179` uniquement ;
+- résultat : `PASS / NOT_FOUND_IN_SCAN_RANGE` ;
+- matérialisation binaire : `NO` ;
 - sanctions/quantums : `INACTIVE` ;
 - `ready_for_submission=false`.
+
+La sous-hypothèse « objet cible présent dans la plage mais mal catégorisé » est fermée.
 <!-- AUTO:LOOP-REG-001-CROSS-CATEGORY-SCAN-2026-09-22:END -->
+
+<!-- AUTO:LOOP-REG-001-CENTIF-TARGET-LINK-DISCOVERY-2026-09-22:START -->
+## Route CENTIF ciblée — 2026-09-22
+
+Un scanner institutionnel strictement borné est préparé pour les trois pages CENTIF connues :
+`www.centif.sn`, `site.centif.sn`, `jokoo.centif.sn`.
+
+Il recherche uniquement la référence `CM/10/06/2022`, extrait l'ancre correspondante et ne suit que les URLs cible hébergées sous `*.centif.sn`. Il inspecte le type de contenu et la signature PDF sans commiter de binaire.
+
+Statut : `PENDING_CENTIF_DISCOVERY_CI`.
+<!-- AUTO:LOOP-REG-001-CENTIF-TARGET-LINK-DISCOVERY-2026-09-22:END -->
