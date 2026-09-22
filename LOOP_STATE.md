@@ -390,3 +390,27 @@ Regulatory CI run `35780822213` :
 - sanction activation : `FORBIDDEN` ;
 - `ready_for_submission=false`.
 <!-- AUTO:LOOP-REG-001-BCEAO-UEMOA-ARCHIVE-DISCOVERY-2026-09-22:END -->
+
+<!-- AUTO:LOOP-REG-001-UEMOA-DOWNLOAD-PORTAL-2026-09-22:START -->
+## Sous-boucle UEMOA download portal
+
+Baseline : `main@21490a4f8c9a29fd5a2e26f5c7e60edea8137d58`.
+
+Résultat BCEAO/UEMOA précédent :
+- `result=PASS` ;
+- `reachablePageCount=3` ;
+- `sanctionsSubjectPageCount=3` ;
+- `exactReferencePageCount=0` ;
+- `targetDocumentCandidateCount=0` ;
+- statut : `REVISION_CONTEXT_CONFIRMED_NO_TARGET_DOCUMENT_LINK`.
+
+Nouvelle action :
+- surface : `https://e-docucenter.uemoa.int/fr/telecharger-documents` et alias `www` ;
+- TLS : `VERIFIED_ONLY` ;
+- forms submitted : `NO` ;
+- linked documents fetched : `NO` ;
+- binary materialization : `NO` ;
+- legal inference : `FORBIDDEN` ;
+- sanction activation : `FORBIDDEN` ;
+- `ready_for_submission=false`.
+<!-- AUTO:LOOP-REG-001-UEMOA-DOWNLOAD-PORTAL-2026-09-22:END -->

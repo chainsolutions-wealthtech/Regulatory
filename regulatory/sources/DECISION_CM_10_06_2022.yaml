@@ -206,3 +206,23 @@ centif_target_link_discovery_2026_09_22:
   interpretation_boundary: >-
     La référence est bien présente sur les pages CENTIF, mais sans lien associé.
     Ces pages ne fournissent donc pas de route de récupération directe du binaire.
+
+bceao_uemoa_targeted_archive_discovery_2026_09_22:
+  method: KNOWN_AUTHORITATIVE_PAGES_DOCUMENT_LINK_INVENTORY
+  page_count: 3
+  reachable_page_count: 3
+  tls_verified_page_count: 3
+  sanctions_subject_page_count: 3
+  exact_reference_page_count: 0
+  target_document_candidate_count: 0
+  target_status: REVISION_CONTEXT_CONFIRMED_NO_TARGET_DOCUMENT_LINK
+  evidence: regulatory/review-evidence/SANCTIONS_2016_2022/BCEAO_UEMOA_TARGETED_ARCHIVE_DISCOVERY_2026-09-22.json
+  validation: regulatory/validation/BCEAO_UEMOA_TARGETED_ARCHIVE_DISCOVERY_VALIDATION_V0_1.json
+  next_institutional_surface:
+    authority: UEMOA_EDOCUCENTER
+    url: https://e-docucenter.uemoa.int/fr/telecharger-documents
+    status: TO_INSPECT_STATICALLY
+  interpretation_boundary: >-
+    Le contexte institutionnel de la révision de juin 2022 est confirmé, mais les
+    pages inspectées ne publient pas directement la décision cible. La surface de
+    téléchargement UEMOA doit être inspectée séparément sans inférer de contenu.

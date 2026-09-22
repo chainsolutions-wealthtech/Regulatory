@@ -413,3 +413,27 @@ Statut : `PENDING_CENTIF_DISCOVERY_CI`.
 - aucune activation réglementaire ;
 - `ready_for_submission=false`.
 <!-- AUTO:LOOP-REG-001-BCEAO-UEMOA-ARCHIVE-DISCOVERY-2026-09-22:END -->
+
+<!-- AUTO:LOOP-REG-001-UEMOA-DOWNLOAD-PORTAL-2026-09-22:START -->
+## [Unreleased] — UEMOA download portal discovery — 2026-09-22
+
+### Evidence
+
+- BCEAO/UEMOA targeted archive discovery : PASS ;
+- 3 pages accessibles TLS vérifié ;
+- contexte sanctions confirmé sur 3/3 ;
+- 0 référence exacte et 0 lien document cible ;
+- Regulatory CI `35784071755` : SUCCESS.
+
+### Added
+
+- scanner statique du portail officiel UEMOA « Télécharger documents » ;
+- inventaire des ancres, formulaires et indices d'endpoint sans soumission.
+
+### Safety
+
+- aucun formulaire soumis ;
+- aucun document téléchargé ;
+- aucune activation réglementaire ;
+- `ready_for_submission=false`.
+<!-- AUTO:LOOP-REG-001-UEMOA-DOWNLOAD-PORTAL-2026-09-22:END -->

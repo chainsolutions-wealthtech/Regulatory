@@ -439,3 +439,13 @@ La page CENTIF ne contenant aucun lien attaché à la référence, la recherche 
 
 La correction de persistance Regulatory CI avec `--autostash` a été validée par le run `35781341993` : SUCCESS. Les quatre CI du commit correctif sont GREEN.
 <!-- AUTO:LOOP-REG-001-BCEAO-UEMOA-ARCHIVE-DISCOVERY-2026-09-22:END -->
+
+<!-- AUTO:LOOP-REG-001-UEMOA-DOWNLOAD-PORTAL-2026-09-22:START -->
+## 2026-09-22 — Résultat BCEAO/UEMOA et passage au portail de téléchargement
+
+Le workflow `Discover BCEAO-UEMOA CM-10-06-2022 Archive Links` a réussi. Les trois pages institutionnelles sont accessibles avec TLS vérifié et les trois confirment le sujet des sanctions de juin 2022. Aucune n'expose la référence exacte ni un lien documentaire cible.
+
+Le seul chemin nouveau et institutionnel explicitement exposé est `/fr/telecharger-documents` sur E-DOCUCENTER UEMOA. Un scanner séparé est préparé pour inventorier sa surface statique sans soumettre de formulaire ni récupérer de fichier.
+
+La Regulatory CI associée au lot BCEAO/UEMOA est `35784071755 = SUCCESS`.
+<!-- AUTO:LOOP-REG-001-UEMOA-DOWNLOAD-PORTAL-2026-09-22:END -->

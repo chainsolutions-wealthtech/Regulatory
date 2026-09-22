@@ -289,3 +289,22 @@ Périmètre strict :
 
 Le scanner ne suit aucun lien, ne matérialise aucun binaire et n'infère aucun effet juridique. Il inventorie uniquement les liens documentaires exposés par ces pages avec TLS vérifié.
 <!-- AUTO:LOOP-REG-001-BCEAO-UEMOA-ARCHIVE-DISCOVERY-2026-09-22:END -->
+
+<!-- AUTO:LOOP-REG-001-UEMOA-DOWNLOAD-PORTAL-2026-09-22:START -->
+## Résultat BCEAO/UEMOA et prochaine porte institutionnelle
+
+Le scanner BCEAO/UEMOA a terminé `PASS` :
+
+- pages connues : `3` ;
+- pages accessibles en TLS vérifié : `3` ;
+- pages confirmant le sujet des sanctions pécuniaires : `3` ;
+- pages exposant la référence exacte `CM/10/06/2022` : `0` ;
+- liens documentaires candidats directement reliés à la cible : `0`.
+
+Les deux pages E-DOCUCENTER exposent cependant la route institutionnelle `/fr/telecharger-documents`.
+
+Prochaine action unique :
+`INSPECT_AUTHORITATIVE_UEMOA_DOWNLOAD_PORTAL_STATIC_SURFACE`.
+
+Cette étape inventorie uniquement le texte, les ancres, formulaires et indices d'endpoint du portail. Aucun formulaire n'est soumis et aucun document n'est téléchargé.
+<!-- AUTO:LOOP-REG-001-UEMOA-DOWNLOAD-PORTAL-2026-09-22:END -->

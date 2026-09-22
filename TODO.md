@@ -651,3 +651,16 @@ Statut : `PENDING_CENTIF_DISCOVERY_CI`.
 - [ ] Si un candidat exact existe, le valider et le matérialiser dans une étape séparée.
 - [ ] Sinon, conserver le verrou institutionnel non indexé et sélectionner une autre hypothèse vérifiable.
 <!-- AUTO:LOOP-REG-001-BCEAO-UEMOA-ARCHIVE-DISCOVERY-2026-09-22:END -->
+
+<!-- AUTO:LOOP-REG-001-UEMOA-DOWNLOAD-PORTAL-2026-09-22:START -->
+## UEMOA download portal
+
+- [x] Confirmer 3/3 pages BCEAO/UEMOA accessibles en TLS vérifié.
+- [x] Confirmer 3/3 pages avec contexte sanctions de juin 2022.
+- [x] Confirmer 0 lien direct vers la décision cible.
+- [x] Identifier la route officielle `/fr/telecharger-documents`.
+- [x] Préparer un scanner statique du portail.
+- [ ] Exécuter le workflow portail.
+- [ ] Inventorier formulaires et endpoints institutionnels exposés.
+- [ ] N'utiliser qu'un mécanisme exact et borné si le portail fournit une recherche officielle.
+<!-- AUTO:LOOP-REG-001-UEMOA-DOWNLOAD-PORTAL-2026-09-22:END -->

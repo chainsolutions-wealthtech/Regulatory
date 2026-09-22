@@ -859,3 +859,11 @@ Les hypothèses « objet AMF mal catégorisé » et « pièce jointe CENTIF dire
 
 La boucle sélectionne donc une route institutionnelle distincte : inventaire ciblé des liens des pages BCEAO/Conseil des Ministres et E-DOCUCENTER UEMOA déjà reliées à la révision de juin 2022.
 <!-- AUTO:LOOP-REG-001-BCEAO-UEMOA-ARCHIVE-DISCOVERY-2026-09-22:END -->
+
+<!-- AUTO:LOOP-REG-001-UEMOA-DOWNLOAD-PORTAL-2026-09-22:START -->
+## 2026-09-22 — BCEAO/UEMOA : contexte confirmé, aucun document direct
+
+La route BCEAO/UEMOA confirme à nouveau la révision de juin 2022 mais n'offre aucun lien direct vers `CM/10/06/2022`. Le portail E-DOCUCENTER propose toutefois une surface officielle « Télécharger documents », qui devient la prochaine hypothèse bornée.
+
+Cette progression ne modifie aucune règle active et conserve l'exigence d'un binaire institutionnel vérifié avant toute comparaison normative.
+<!-- AUTO:LOOP-REG-001-UEMOA-DOWNLOAD-PORTAL-2026-09-22:END -->

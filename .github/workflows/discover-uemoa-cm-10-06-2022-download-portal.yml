@@ -1,0 +1,83 @@
+name: Discover UEMOA CM-10-06-2022 Download Portal
+
+on:
+  push:
+    branches:
+      - main
+    paths:
+      - .github/workflows/discover-uemoa-cm-10-06-2022-download-portal.yml
+      - scripts/discover_uemoa_cm_10_06_2022_download_portal.py
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: uemoa-cm-10-06-2022-download-portal-main
+  cancel-in-progress: false
+
+jobs:
+  discover:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Configure Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      - name: Inspect authoritative UEMOA download portal
+        run: python3 scripts/discover_uemoa_cm_10_06_2022_download_portal.py
+
+      - name: Validate safety boundary
+        run: |
+          python3 - <<'PY'
+          import json
+          from pathlib import Path
+          evidence = json.loads(Path(
+              'regulatory/review-evidence/SANCTIONS_2016_2022/UEMOA_DOWNLOAD_PORTAL_DISCOVERY_2026-09-22.json'
+          ).read_text(encoding='utf-8'))
+          validation = json.loads(Path(
+              'regulatory/validation/UEMOA_DOWNLOAD_PORTAL_DISCOVERY_VALIDATION_V0_1.json'
+          ).read_text(encoding='utf-8'))
+          assert evidence['result'] == 'PASS'
+          assert validation['result'] == 'PASS'
+          for key in [
+              'authoritativePortalOnly', 'verifiedTlsOnly', 'formsNotSubmitted',
+              'linkedDocumentsNotFetched', 'binaryNotMaterialized',
+              'automaticRelationshipInferenceForbidden',
+              'automaticSanctionActivationForbidden', 'readyForSubmissionFalse'
+          ]:
+              assert validation['checks'][key] is True, key
+          PY
+
+      - name: Check textual integrity
+        run: git diff --check
+
+      - name: Upload discovery evidence
+        uses: actions/upload-artifact@v4
+        with:
+          name: uemoa-cm-10-06-2022-download-portal
+          retention-days: 30
+          if-no-files-found: error
+          path: |
+            regulatory/review-evidence/SANCTIONS_2016_2022/UEMOA_DOWNLOAD_PORTAL_DISCOVERY_2026-09-22.json
+            regulatory/validation/UEMOA_DOWNLOAD_PORTAL_DISCOVERY_VALIDATION_V0_1.json
+
+      - name: Commit generated discovery evidence
+        run: |
+          git config user.name 'regulatory-source-bot'
+          git config user.email 'regulatory-source-bot@users.noreply.github.com'
+          git add             regulatory/review-evidence/SANCTIONS_2016_2022/UEMOA_DOWNLOAD_PORTAL_DISCOVERY_2026-09-22.json             regulatory/validation/UEMOA_DOWNLOAD_PORTAL_DISCOVERY_VALIDATION_V0_1.json
+          if git diff --cached --quiet; then
+            echo 'No UEMOA portal evidence changes to commit.'
+          else
+            git commit -m 'chore: persist UEMOA sanctions download portal discovery'
+            git pull --rebase --autostash origin main
+            git push origin HEAD:main
+          fi
