@@ -1,0 +1,76 @@
+name: Recover UEMOA Bulletin 113 With Verified TLS
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - .github/workflows/recover-uemoa-bulletin-113-verified-tls.yml
+      - scripts/recover_uemoa_bulletin_113_verified_tls.py
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: uemoa-bulletin-113-verified-tls-main
+  cancel-in-progress: false
+
+jobs:
+  recover:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      - name: Repair missing issuer chain and fetch official Bulletin 113
+        run: python3 scripts/recover_uemoa_bulletin_113_verified_tls.py
+
+      - name: Validate fail-closed boundary
+        if: always()
+        run: |
+          python3 - <<'PY'
+          import json
+          from pathlib import Path
+          ep=Path('regulatory/review-evidence/SANCTIONS_2016_2022/UEMOA_BULLETIN_113_TLS_RECOVERY_2026-09-23.json')
+          vp=Path('regulatory/validation/UEMOA_BULLETIN_113_TLS_RECOVERY_VALIDATION_V0_1.json')
+          assert ep.exists() and vp.exists()
+          e=json.loads(ep.read_text())
+          v=json.loads(vp.read_text())
+          for k in [
+              'officialUrlOnly','tlsVerificationNeverDisabled','hostnameVerificationNeverDisabled',
+              'workflowRepositoryWriteDisabled','binaryNotCommittedByWorkflow',
+              'automaticRelationshipInferenceForbidden','automaticSanctionActivationForbidden',
+              'readyForSubmissionFalse'
+          ]:
+              assert v['checks'][k] is True,k
+          if e['result']=='PASS':
+              assert v['checks']['leafChainVerifiedToSystemRoot'] is True
+              assert v['checks']['officialPdfFetchedWithVerifiedTls'] is True
+              assert v['checks']['pdfMagicValid'] is True
+          PY
+
+      - run: git diff --check
+        if: always()
+
+      - name: Emit recovery evidence
+        if: always()
+        run: |
+          echo '=== UEMOA_BULLETIN_113_TLS_RECOVERY_EVIDENCE ==='
+          cat regulatory/review-evidence/SANCTIONS_2016_2022/UEMOA_BULLETIN_113_TLS_RECOVERY_2026-09-23.json || true
+          echo '=== UEMOA_BULLETIN_113_TLS_RECOVERY_VALIDATION ==='
+          cat regulatory/validation/UEMOA_BULLETIN_113_TLS_RECOVERY_VALIDATION_V0_1.json || true
+
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: uemoa-bulletin-113-verified-tls
+          retention-days: 30
+          if-no-files-found: warn
+          path: |
+            regulatory/review-evidence/SANCTIONS_2016_2022/UEMOA_BULLETIN_113_TLS_RECOVERY_2026-09-23.json
+            regulatory/validation/UEMOA_BULLETIN_113_TLS_RECOVERY_VALIDATION_V0_1.json
+            regulatory/review-evidence/SANCTIONS_2016_2022/uemoa_bulletin_113_q2_2022.pdf
+            regulatory/review-evidence/SANCTIONS_2016_2022/uemoa_bulletin_113_q2_2022.txt
