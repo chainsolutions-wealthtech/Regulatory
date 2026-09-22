@@ -347,3 +347,22 @@ Requêtes :
 
 Le workflow reste read-only. Aucun résultat ne sera suivi et aucun binaire ne sera téléchargé dans cette étape.
 <!-- AUTO:LOOP-REG-001-BCEAO-NATIVE-SEARCH-2026-09-22:END -->
+
+<!-- AUTO:LOOP-REG-001-BCEAO-EXACT-SEARCH-2026-09-22:START -->
+## BCEAO exact search — résultat et validation sémantique requise
+
+Les trois requêtes natives BCEAO ont terminé `PASS` :
+
+- `CM/10/06/2022` → 26 blocs résultat, 0 bloc cible ;
+- `CM 10 06 2022` → 8 blocs résultat, 0 bloc cible ;
+- `sanctions pécuniaires marché financier régional` → 26 blocs résultat, 0 bloc cible ;
+- correspondance exacte : `0` ;
+- correspondance sujet sanctions : `0`.
+
+La différence 26/8 montre que le paramètre influence le moteur, mais la présence de nombreux résultats génériques interdit de considérer immédiatement cette absence comme probante.
+
+Prochaine action unique :
+`VALIDATE_BCEAO_SEARCH_SEMANTICS_WITH_POSITIVE_AND_NEGATIVE_WITNESSES`.
+
+Le test utilisera une Décision BCEAO connue, une sentinelle impossible et la cible. L'absence de cible ne deviendra une preuve négative que si le témoin positif est retrouvé et la sentinelle négative renvoie zéro résultat.
+<!-- AUTO:LOOP-REG-001-BCEAO-EXACT-SEARCH-2026-09-22:END -->

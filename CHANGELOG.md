@@ -482,3 +482,24 @@ Statut : `PENDING_CENTIF_DISCOVERY_CI`.
 - aucune activation réglementaire ;
 - `ready_for_submission=false`.
 <!-- AUTO:LOOP-REG-001-BCEAO-NATIVE-SEARCH-2026-09-22:END -->
+
+<!-- AUTO:LOOP-REG-001-BCEAO-EXACT-SEARCH-2026-09-22:START -->
+## [Unreleased] — BCEAO exact search and semantics guard — 2026-09-22
+
+### Evidence
+
+- 3 recherches BCEAO natives exécutées ;
+- 0 bloc cible ;
+- volumes de résultats : 26 / 8 / 26.
+
+### Added
+
+- validation positive/négative du comportement du moteur BCEAO.
+
+### Safety
+
+- l'absence de résultat cible n'est pas encore traitée comme preuve d'absence ;
+- aucun résultat suivi ;
+- aucun binaire téléchargé ;
+- `ready_for_submission=false`.
+<!-- AUTO:LOOP-REG-001-BCEAO-EXACT-SEARCH-2026-09-22:END -->

@@ -692,3 +692,17 @@ Statut : `PENDING_CENTIF_DISCOVERY_CI`.
 - [ ] Si un bloc cible existe, inspecter ses URLs dans une étape read-only séparée.
 - [ ] Ne télécharger aucun document avant validation de l'URL institutionnelle cible.
 <!-- AUTO:LOOP-REG-001-BCEAO-NATIVE-SEARCH-2026-09-22:END -->
+
+<!-- AUTO:LOOP-REG-001-BCEAO-EXACT-SEARCH-2026-09-22:START -->
+## BCEAO search semantics validation
+
+- [x] Exécuter trois recherches exactes BCEAO.
+- [x] Confirmer 0 bloc résultat cible.
+- [x] Mesurer les volumes de résultats `26 / 8 / 26`.
+- [x] Refuser de promouvoir cette absence sans validation du filtre.
+- [x] Préparer un témoin positif connu.
+- [x] Préparer une sentinelle négative impossible.
+- [ ] Exécuter le test sémantique.
+- [ ] Si positif retrouvé + négatif zéro : qualifier l'absence cible comme preuve négative bornée.
+- [ ] Sinon : classer la recherche BCEAO comme non fiable pour une preuve d'absence.
+<!-- AUTO:LOOP-REG-001-BCEAO-EXACT-SEARCH-2026-09-22:END -->

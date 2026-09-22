@@ -1,0 +1,1046 @@
+{
+  "schemaVersion": "BCEAO_EXACT_SEARCH_DISCOVERY_V0_1",
+  "sourceId": "DECISION_CM_10_06_2022",
+  "reference": "CM/10/06/2022",
+  "method": "BCEAO_NATIVE_GET_SEARCH_BOUNDED_QUERIES",
+  "result": "PASS",
+  "searchAction": "https://www.bceao.int/fr/search-bceao",
+  "searchMethod": "GET",
+  "searchParameter": "search_api_fulltext",
+  "queries": [
+    "CM/10/06/2022",
+    "CM 10 06 2022",
+    "sanctions pécuniaires marché financier régional"
+  ],
+  "queryCount": 3,
+  "reachableQueryCount": 3,
+  "targetStatus": "SEARCH_RESULTS_PRESENT_NO_TARGET_BLOCK",
+  "matchedResultBlockCount": 0,
+  "exactReferenceResultBlockCount": 0,
+  "sanctionsResultBlockCount": 0,
+  "matchedResultBlocks": [],
+  "results": [
+    {
+      "status": "OK",
+      "query": "CM/10/06/2022",
+      "url": "https://www.bceao.int/fr/search-bceao?search_api_fulltext=CM%2F10%2F06%2F2022",
+      "finalUrl": "https://www.bceao.int/fr/search-bceao?search_api_fulltext=CM%2F10%2F06%2F2022",
+      "contentType": "text/html; charset=UTF-8",
+      "byteSize": 131741,
+      "sha256": "bb572089c41f23e39f69cfaaa7b3e13209c016cb13680a8aa12715fd1b5e1202",
+      "tlsVerified": true,
+      "pageTargetReferencePresent": false,
+      "pageSanctionsSubjectPresent": false,
+      "resultBlockCount": 26,
+      "targetResultBlockCount": 0,
+      "resultBlocks": [
+        {
+          "index": 1,
+          "class": "elemRes views-row",
+          "text": "07 Septembre 2026 Marchés des titres publics et privés Avis d'appel d'offres relatif à l'émission simultanée de Bons et Obligations du Trésor du Mali du 16 septembre 2026 Date limite de dépôt des dossiers 16 Septembre 2026",
+          "anchors": [
+            {
+              "text": "Avis d'appel d'offres relatif à l'émission simultanée de Bons et Obligations du Trésor du Mali du 16 septembre 2026",
+              "href": "/fr/appels-offres/avis-dappel-doffres-relatif-lemission-simultanee-de-bons-et-obligations-du-tresor-524",
+              "absoluteUrl": "https://www.bceao.int/fr/appels-offres/avis-dappel-doffres-relatif-lemission-simultanee-de-bons-et-obligations-du-tresor-524",
+              "host": "www.bceao.int"
+            }
+          ],
+          "targetReferenceMatch": false,
+          "sanctionsSubjectMatch": false,
+          "decisionHint": false
+        },
+        {
+          "index": 2,
+          "class": "elemRes views-row",
+          "text": "09 Septembre 2026 Marchés des titres publics et privés Avis d'appel d'offres relatif à l'émission simultanée de Bons et Obligations du Trésor de Côte d'Ivoire du 15 septembre 2026 Date limite de dépôt des dossiers 15 Septembre 2026",
+          "anchors": [
+            {
+              "text": "Avis d'appel d'offres relatif à l'émission simultanée de Bons et Obligations du Trésor de Côte d'Ivoire du 15 septembre 2026",
+              "href": "/fr/appels-offres/avis-dappel-doffres-relatif-lemission-simultanee-de-bons-et-obligations-du-tresor-525",
+              "absoluteUrl": "https://www.bceao.int/fr/appels-offres/avis-dappel-doffres-relatif-lemission-simultanee-de-bons-et-obligations-du-tresor-525",
+              "host": "www.bceao.int"
+            }
+          ],
+          "targetReferenceMatch": false,
+          "sanctionsSubjectMatch": false,
+          "decisionHint": false
+        },
+        {
+          "index": 3,
+          "class": "elemRes views-row",
+          "text": "25 Août 2026 Marchés des titres publics et privés Avis d'appel d'offres relatif à l'émission simultanée de Bons et Obligations du Trésor du Mali du 2 septembre 2026 Date limite de dépôt des dossiers 02 Septembre 2026",
+          "anchors": [
+            {
+              "text": "Avis d'appel d'offres relatif à l'émission simultanée de Bons et Obligations du Trésor du Mali du 2 septembre 2026",
+              "href": "/fr/appels-offres/avis-dappel-doffres-relatif-lemission-simultanee-de-bons-et-obligations-du-tresor-523",
+              "absoluteUrl": "https://www.bceao.int/fr/appels-offres/avis-dappel-doffres-relatif-lemission-simultanee-de-bons-et-obligations-du-tresor-523",
+              "host": "www.bceao.int"
+            }
+          ],
+          "targetReferenceMatch": false,
+          "sanctionsSubjectMatch": false,
+          "decisionHint": false
+        },
+        {
+          "index": 4,
+          "class": "elemRes views-row",
+          "text": "18 Septembre 2026 Marché Monétaire Avis d'appel d'offres hebdomadaire d'injection de liquidité n°38/H/2026 du 21 septembre 2026 Date limite de dépôt des dossiers 21 Septembre 2026",
+          "anchors": [
+            {
+              "text": "Avis d'appel d'offres hebdomadaire d'injection de liquidité n°38/H/2026 du 21 septembre 2026",
+              "href": "/fr/appels-offres/avis-dappel-doffres-hebdomadaire-dinjection-de-liquidite-ndeg38h2026-du-21-septembre",
+              "absoluteUrl": "https://www.bceao.int/fr/appels-offres/avis-dappel-doffres-hebdomadaire-dinjection-de-liquidite-ndeg38h2026-du-21-septembre",
+              "host": "www.bceao.int"
+            }
+          ],
+          "targetReferenceMatch": false,
+          "sanctionsSubjectMatch": false,
+          "decisionHint": false
+        },
+        {
+          "index": 5,
+          "class": "elemRes views-row",
+          "text": "11 Septembre 2026 Marché Monétaire Avis d'appel d'offres hebdomadaire d'injection de liquidité n°37/H/2026 du 14 septembre 2026 Date limite de dépôt des dossiers 14 Septembre 2026",
+          "anchors": [
+            {
+              "text": "Avis d'appel d'offres hebdomadaire d'injection de liquidité n°37/H/2026 du 14 septembre 2026",
+              "href": "/fr/appels-offres/avis-dappel-doffres-hebdomadaire-dinjection-de-liquidite-ndeg37h2026-du-14-septembre",
+              "absoluteUrl": "https://www.bceao.int/fr/appels-offres/avis-dappel-doffres-hebdomadaire-dinjection-de-liquidite-ndeg37h2026-du-14-septembre",
+              "host": "www.bceao.int"
+            }
+          ],
+          "targetReferenceMatch": false,
+          "sanctionsSubjectMatch": false,
+          "decisionHint": false
+        },
+        {
+          "index": 6,
+          "class": "elemRes views-row",
+          "text": "04 Septembre 2026 Marché Monétaire Avis d'appel d'offres hebdomadaire d'injection de liquidité n°36/H/2026 du 7 septembre 2026 Date limite de dépôt des dossiers 07 Septembre 2026",
+          "anchors": [
+            {
+              "text": "Avis d'appel d'offres hebdomadaire d'injection de liquidité n°36/H/2026 du 7 septembre 2026",
+              "href": "/fr/appels-offres/avis-dappel-doffres-hebdomadaire-dinjection-de-liquidite-ndeg36h2026-du-7-septembre",
+              "absoluteUrl": "https://www.bceao.int/fr/appels-offres/avis-dappel-doffres-hebdomadaire-dinjection-de-liquidite-ndeg36h2026-du-7-septembre",
+              "host": "www.bceao.int"
+            }
+          ],
+          "targetReferenceMatch": false,
+          "sanctionsSubjectMatch": false,
+          "decisionHint": false
+        },
+        {
+          "index": 7,
+          "class": "elemRes views-row",
+          "text": "21 Septembre 2026 Publications periodique, Bulletins Bulletin mensuel de statistiques - Juillet 2026",
+          "anchors": [
+            {
+              "text": "Bulletin mensuel de statistiques - Juillet 2026",
+              "href": "/sites/default/files/2026-09/Bulletin%20mensuel%20des%20statistiques%20-%20Juillet%202026.pdf",
+              "absoluteUrl": "https://www.bceao.int/sites/default/files/2026-09/Bulletin%20mensuel%20des%20statistiques%20-%20Juillet%202026.pdf",
+              "host": "www.bceao.int"
+            }
+          ],
+          "targetReferenceMatch": false,
+          "sanctionsSubjectMatch": false,
+          "decisionHint": false
+        },
+        {
+          "index": 8,
+          "class": "elemRes views-row",
+          "text": "16 Septembre 2026 Publications periodique, Rapports Rapport sur la Politique Monétaire dans l'UMOA - Septembre 2026",
+          "anchors": [
+            {
+              "text": "Rapport sur la Politique Monétaire dans l'UMOA - Septembre 2026",
+              "href": "/sites/default/files/2026-09/RAPPORT%20SUR%20LA%20POLITIQUE%20MONETAIRE%20DANS%20L%27UMOA%20-%20SEPTEMBRE%202026%20.pdf",
+              "absoluteUrl": "https://www.bceao.int/sites/default/files/2026-09/RAPPORT%20SUR%20LA%20POLITIQUE%20MONETAIRE%20DANS%20L%27UMOA%20-%20SEPTEMBRE%202026%20.pdf",
+              "host": "www.bceao.int"
+            }
+          ],
+          "targetReferenceMatch": false,
+          "sanctionsSubjectMatch": false,
+          "decisionHint": false
+        },
+        {
+          "index": 9,
+          "class": "elemRes views-row",
+          "text": "15 Septembre 2026 Publications periodique, Bulletins Bulletin trimestriel des statistiques - Juin 2026",
+          "anchors": [
+            {
+              "text": "Bulletin trimestriel des statistiques - Juin 2026",
+              "href": "/sites/default/files/2026-09/Bulletin%20Trimestriel%20des%20Statistiques%20-%20juin%202026.pdf",
+              "absoluteUrl": "https://www.bceao.int/sites/default/files/2026-09/Bulletin%20Trimestriel%20des%20Statistiques%20-%20juin%202026.pdf",
+              "host": "www.bceao.int"
+            }
+          ],
+          "targetReferenceMatch": false,
+          "sanctionsSubjectMatch": false,
+          "decisionHint": false
+        },
+        {
+          "index": 10,
+          "class": "elemRes views-row",
+          "text": "01 Février 2024 Réglementation bancaire Avis N°002-04-2023 relatif à l’exclusion temporaire des titres publics émis par les Etats de l’UMOA dans le calcul de la norme prudentielle portant sur les prêts aux principaux actionnaires, aux dirigeants, au personnel et aux commissaires aux comptes",
+          "anchors": [
+            {
+              "text": "Avis N°002-04-2023 relatif à l’exclusion temporaire des titres publics émis par les Etats de l’UMOA dans le calcul de la norme prudentielle portant sur les prêts aux principaux actionnaires, aux dirigeants, au personnel et aux commissaires aux comptes",
+              "href": "/sites/default/files/2024-02/AVIS%20N%C2%B0002-04-2023%20portant%20modification%20temporaire%20de%20la%20norme%20relative%20aux%20pr%C3%AAts%20aux%20principaux%20actionnaires.pdf",
+              "absoluteUrl": "https://www.bceao.int/sites/default/files/2024-02/AVIS%20N%C2%B0002-04-2023%20portant%20modification%20temporaire%20de%20la%20norme%20relative%20aux%20pr%C3%AAts%20aux%20principaux%20actionnaires.pdf",
+              "host": "www.bceao.int"
+            }
+          ],
+          "targetReferenceMatch": false,
+          "sanctionsSubjectMatch": false,
+          "decisionHint": false
+        },
+        {
+          "index": 11,
+          "class": "elemRes views-row",
+          "text": "01 Février 2024 Réglementation bancaire Avis N°001-01-2024 fixant le capital social minimum des banques et établissements financiers de crédit dans les Etats membres de l’Union Monétaire Ouest Africaine (UMOA)",
+          "anchors": [
+            {
+              "text": "Avis N°001-01-2024 fixant le capital social minimum des banques et établissements financiers de crédit dans les Etats membres de l’Union Monétaire Ouest Africaine (UMOA)",
+              "href": "/sites/default/files/2024-02/AVIS%20N%C2%B0001-01-2024%20FIXANT%20LE%20CAPITAL%20SOCIAL%20MINIMUM%20DES%20BANQUES%20ET%20%C3%89TABLISSEMENTS%20FINANCIERS%20DE%20CR%C3%89DIT%20DANS%20LES%20ETATS%20MEMBRES%20DE%20L%E2%80%99UMOA.pdf",
+              "absoluteUrl": "https://www.bceao.int/sites/default/files/2024-02/AVIS%20N%C2%B0001-01-2024%20FIXANT%20LE%20CAPITAL%20SOCIAL%20MINIMUM%20DES%20BANQUES%20ET%20%C3%89TABLISSEMENTS%20FINANCIERS%20DE%20CR%C3%89DIT%20DANS%20LES%20ETATS%20MEMBRES%20DE%20L%E2%80%99UMOA.pdf",
+              "host": "www.bceao.int"
+            }
+          ],
+          "targetReferenceMatch": false,
+          "sanctionsSubjectMatch": false,
+          "decisionHint": false
+        },
+        {
+          "index": 12,
+          "class": "elemRes views-row",
+          "text": "31 janvier 2024 Lutte contre le blanchiment de capitaux et le financement du terrorisme Décision n°021 du 21/12/2023/CM/UMOA fixant les montants des seuils pour la mise en oeuvre de la loi uniforme relative à la lutte contre le blanchiment de capitaux, le financement du terrorisme et de la prolifération des armes de destruction massive",
+          "anchors": [
+            {
+              "text": "Décision n°021 du 21/12/2023/CM/UMOA fixant les montants des seuils pour la mise en oeuvre de la loi uniforme relative à la lutte contre le blanchiment de capitaux, le financement du terrorisme et de la prolifération des armes de destruction massive",
+              "href": "/sites/default/files/2024-01/D%C3%A9cision%20N%C2%B021%20du%2021%20d%C3%A9cembre%202023%20fixant%20les%20montants%20seuils%20pour%20la%20mise%20en%20oeuvre%20de%20la%20loi%20uniforme%20relative%20%C3%A0%20la%20LBCFTFP.pdf",
+              "absoluteUrl": "https://www.bceao.int/sites/default/files/2024-01/D%C3%A9cision%20N%C2%B021%20du%2021%20d%C3%A9cembre%202023%20fixant%20les%20montants%20seuils%20pour%20la%20mise%20en%20oeuvre%20de%20la%20loi%20uniforme%20relative%20%C3%A0%20la%20LBCFTFP.pdf",
+              "host": "www.bceao.int"
+            }
+          ],
+          "targetReferenceMatch": false,
+          "sanctionsSubjectMatch": false,
+          "decisionHint": true
+        },
+        {
+          "index": 13,
+          "class": "elemRes views-row",
+          "text": "17 Septembre 2026 Communiqué relatif à la diffusion d’une vidéo frauduleuse utilisant l’image du Gouverneur de la BCEAO",
+          "anchors": [
+            {
+              "text": "Communiqué relatif à la diffusion d’une vidéo frauduleuse utilisant l’image du Gouverneur de la BCEAO",
+              "href": "/fr/communique-presse/communique-relatif-la-diffusion-dune-video-frauduleuse-utilisant-limage-du",
+              "absoluteUrl": "https://www.bceao.int/fr/communique-presse/communique-relatif-la-diffusion-dune-video-frauduleuse-utilisant-limage-du",
+              "host": "www.bceao.int"
+            }
+          ],
+          "targetReferenceMatch": false,
+          "sanctionsSubjectMatch": false,
+          "decisionHint": false
+        },
+        {
+          "index": 14,
+          "class": "elemRes views-row",
+          "text": "16 Septembre 2026 Homologation des API Business de la Plateforme Interopérable du Système de Paiement Instantané (PI-SPI) de l’Union Economique et Monétaire Ouest Africaine (UEMOA)",
+          "anchors": [
+            {
+              "text": "Homologation des API Business de la Plateforme Interopérable du Système de Paiement Instantané (PI-SPI) de l’Union Economique et Monétaire Ouest Africaine (UEMOA)",
+              "href": "/fr/communique-presse/homologation-des-api-business-de-la-plateforme-interoperable-du-systeme-de",
+              "absoluteUrl": "https://www.bceao.int/fr/communique-presse/homologation-des-api-business-de-la-plateforme-interoperable-du-systeme-de",
+              "host": "www.bceao.int"
+            }
+          ],
+          "targetReferenceMatch": false,
+          "sanctionsSubjectMatch": false,
+          "decisionHint": false
+        },
+        {
+          "index": 15,
+          "class": "elemRes views-row",
+          "text": "16 Septembre 2026 Liste des participants autorisés à ouvrir les services de PI-SPI au public au 16 septembre 2026",
+          "anchors": [
+            {
+              "text": "Liste des participants autorisés à ouvrir les services de PI-SPI au public au 16 septembre 2026",
+              "href": "/fr/communique-presse/liste-des-participants-autorises-ouvrir-les-services-de-pi-spi-au-public-au-16",
+              "absoluteUrl": "https://www.bceao.int/fr/communique-presse/liste-des-participants-autorises-ouvrir-les-services-de-pi-spi-au-public-au-16",
+              "host": "www.bceao.int"
+            }
+          ],
+          "targetReferenceMatch": false,
+          "sanctionsSubjectMatch": false,
+          "decisionHint": false
+        },
+        {
+          "index": 16,
+          "class": "elemRes views-row",
+          "text": "09 Septembre 2026 Réunion du Comité de Politique Monétaire de la BCEAO",
+          "anchors": [
+            {
+              "text": "Réunion du Comité de Politique Monétaire de la BCEAO",
+              "href": "/fr/evenement/reunion-du-comite-de-politique-monetaire-de-la-bceao-1",
+              "absoluteUrl": "https://www.bceao.int/fr/evenement/reunion-du-comite-de-politique-monetaire-de-la-bceao-1",
+              "host": "www.bceao.int"
+            }
+          ],
+          "targetReferenceMatch": false,
+          "sanctionsSubjectMatch": false,
+          "decisionHint": false
+        },
+        {
+          "index": 17,
+          "class": "elemRes views-row",
+          "text": "22 Juillet 2026 Cérémonie de présentation du Rapport annuel 2025 de la BCEAO",
+          "anchors": [
+            {
+              "text": "Cérémonie de présentation du Rapport annuel 2025 de la BCEAO",
+              "href": "/fr/evenement/ceremonie-de-presentation-du-rapport-annuel-2025-de-la-bceao",
+              "absoluteUrl": "https://www.bceao.int/fr/evenement/ceremonie-de-presentation-du-rapport-annuel-2025-de-la-bceao",
+              "host": "www.bceao.int"
+            }
+          ],
+          "targetReferenceMatch": false,
+          "sanctionsSubjectMatch": false,
+          "decisionHint": false
+        },
+        {
+          "index": 18,
+          "class": "elemRes views-row",
+          "text": "20 Juillet 2026 Séminaire des Journalistes économiques de l'UMOA",
+          "anchors": [
+            {
+              "text": "Séminaire des Journalistes économiques de l'UMOA",
+              "href": "/fr/evenement/seminaire-des-journalistes-economiques-de-lumoa",
+              "absoluteUrl": "https://www.bceao.int/fr/evenement/seminaire-des-journalistes-economiques-de-lumoa",
+              "host": "www.bceao.int"
+            }
+          ],
+          "targetReferenceMatch": false,
+          "sanctionsSubjectMatch": false,
+          "decisionHint": false
+        },
+        {
+          "index": 19,
+          "class": "elemBlcComm views-row",
+          "text": "le 09 Septembre 2026 Communiqué de presse de la réunion ordinaire du Comité de Politique Monétaire de la BCEAO tenue le 9 septembre 2026",
+          "anchors": [
+            {
+              "text": "le 09 Septembre 2026 Communiqué de presse de la réunion ordinaire du Comité de Politique Monétaire de la BCEAO tenue le 9 septembre 2026",
+              "href": "https://www.bceao.int/fr/communique-presse/communique-de-presse-de-la-reunion-ordinaire-du-comite-de-politique-monetaire-19",
+              "absoluteUrl": "https://www.bceao.int/fr/communique-presse/communique-de-presse-de-la-reunion-ordinaire-du-comite-de-politique-monetaire-19",
+              "host": "www.bceao.int"
+            }
+          ],
+          "targetReferenceMatch": false,
+          "sanctionsSubjectMatch": false,
+          "decisionHint": false
+        },
+        {
+          "index": 20,
+          "class": "elemBlcComm views-row",
+          "text": "le 10 juin 2026 Réunion ordinaire du Comité de Politique Monétaire de la BCEAO tenue le 10 juin 2026",
+          "anchors": [
+            {
+              "text": "le 10 juin 2026 Réunion ordinaire du Comité de Politique Monétaire de la BCEAO tenue le 10 juin 2026",
+              "href": "https://www.bceao.int/fr/communique-presse/reunion-ordinaire-du-comite-de-politique-monetaire-de-la-bceao-tenue-le-10-juin",
+              "absoluteUrl": "https://www.bceao.int/fr/communique-presse/reunion-ordinaire-du-comite-de-politique-monetaire-de-la-bceao-tenue-le-10-juin",
+              "host": "www.bceao.int"
+            }
+          ],
+          "targetReferenceMatch": false,
+          "sanctionsSubjectMatch": false,
+          "decisionHint": false
+        },
+        {
+          "index": 21,
+          "class": "elemBlcComm views-row",
+          "text": "le 04 Mars 2026 Réunion ordinaire du Comité de Politique Monétaire de la BCEAO tenue le 4 mars 2026",
+          "anchors": [
+            {
+              "text": "le 04 Mars 2026 Réunion ordinaire du Comité de Politique Monétaire de la BCEAO tenue le 4 mars 2026",
+              "href": "https://www.bceao.int/fr/communique-presse/reunion-ordinaire-du-comite-de-politique-monetaire-de-la-bceao-tenue-le-4-mars",
+              "absoluteUrl": "https://www.bceao.int/fr/communique-presse/reunion-ordinaire-du-comite-de-politique-monetaire-de-la-bceao-tenue-le-4-mars",
+              "host": "www.bceao.int"
+            }
+          ],
+          "targetReferenceMatch": false,
+          "sanctionsSubjectMatch": false,
+          "decisionHint": false
+        },
+        {
+          "index": 22,
+          "class": "elemBlcComm views-row",
+          "text": "le 03 décembre 2025 Réunion ordinaire du Comité de Politique Monétaire de la BCEAO tenue le 3 décembre 2025",
+          "anchors": [
+            {
+              "text": "le 03 décembre 2025 Réunion ordinaire du Comité de Politique Monétaire de la BCEAO tenue le 3 décembre 2025",
+              "href": "https://www.bceao.int/fr/communique-presse/reunion-ordinaire-du-comite-de-politique-monetaire-de-la-bceao-tenue-le-3",
+              "absoluteUrl": "https://www.bceao.int/fr/communique-presse/reunion-ordinaire-du-comite-de-politique-monetaire-de-la-bceao-tenue-le-3",
+              "host": "www.bceao.int"
+            }
+          ],
+          "targetReferenceMatch": false,
+          "sanctionsSubjectMatch": false,
+          "decisionHint": false
+        },
+        {
+          "index": 23,
+          "class": "bceaNewsComm views-row",
+          "text": "17 Septembre 2026 Communiqué relatif à la diffusion d’une vidéo frauduleuse utilisant l’image du Gouverneur de la BCEAO",
+          "anchors": [
+            {
+              "text": "Communiqué relatif à la diffusion d’une vidéo frauduleuse utilisant l’image du Gouverneur de la BCEAO",
+              "href": "/fr/communique-presse/communique-relatif-la-diffusion-dune-video-frauduleuse-utilisant-limage-du",
+              "absoluteUrl": "https://www.bceao.int/fr/communique-presse/communique-relatif-la-diffusion-dune-video-frauduleuse-utilisant-limage-du",
+              "host": "www.bceao.int"
+            }
+          ],
+          "targetReferenceMatch": false,
+          "sanctionsSubjectMatch": false,
+          "decisionHint": false
+        },
+        {
+          "index": 24,
+          "class": "bceaNewsComm views-row",
+          "text": "17 Septembre 2026 Communiqué relatif à la diffusion d’une vidéo frauduleuse utilisant l’image du Gouverneur de la BCEAO",
+          "anchors": [
+            {
+              "text": "Communiqué relatif à la diffusion d’une vidéo frauduleuse utilisant l’image du Gouverneur de la BCEAO",
+              "href": "/fr/communique-presse/communique-relatif-la-diffusion-dune-video-frauduleuse-utilisant-limage-du-0",
+              "absoluteUrl": "https://www.bceao.int/fr/communique-presse/communique-relatif-la-diffusion-dune-video-frauduleuse-utilisant-limage-du-0",
+              "host": "www.bceao.int"
+            }
+          ],
+          "targetReferenceMatch": false,
+          "sanctionsSubjectMatch": false,
+          "decisionHint": false
+        },
+        {
+          "index": 25,
+          "class": "bceaNewsComm views-row",
+          "text": "09 Septembre 2026 Réunion du Comité de Politique Monétaire de la BCEAO",
+          "anchors": [
+            {
+              "text": "Réunion du Comité de Politique Monétaire de la BCEAO",
+              "href": "/fr/evenement/reunion-du-comite-de-politique-monetaire-de-la-bceao-1",
+              "absoluteUrl": "https://www.bceao.int/fr/evenement/reunion-du-comite-de-politique-monetaire-de-la-bceao-1",
+              "host": "www.bceao.int"
+            }
+          ],
+          "targetReferenceMatch": false,
+          "sanctionsSubjectMatch": false,
+          "decisionHint": false
+        },
+        {
+          "index": 26,
+          "class": "bceaNewsComm views-row",
+          "text": "22 Juillet 2026 Cérémonie de présentation du Rapport annuel 2025 de la BCEAO",
+          "anchors": [
+            {
+              "text": "Cérémonie de présentation du Rapport annuel 2025 de la BCEAO",
+              "href": "/fr/evenement/ceremonie-de-presentation-du-rapport-annuel-2025-de-la-bceao",
+              "absoluteUrl": "https://www.bceao.int/fr/evenement/ceremonie-de-presentation-du-rapport-annuel-2025-de-la-bceao",
+              "host": "www.bceao.int"
+            }
+          ],
+          "targetReferenceMatch": false,
+          "sanctionsSubjectMatch": false,
+          "decisionHint": false
+        }
+      ],
+      "targetResultBlocks": []
+    },
+    {
+      "status": "OK",
+      "query": "CM 10 06 2022",
+      "url": "https://www.bceao.int/fr/search-bceao?search_api_fulltext=CM+10+06+2022",
+      "finalUrl": "https://www.bceao.int/fr/search-bceao?search_api_fulltext=CM+10+06+2022",
+      "contentType": "text/html; charset=UTF-8",
+      "byteSize": 128377,
+      "sha256": "28e0f5d58bf1acf62bf55ce8de109d7ed52983ccdd7099228174c2f26290de10",
+      "tlsVerified": true,
+      "pageTargetReferencePresent": true,
+      "pageSanctionsSubjectPresent": false,
+      "resultBlockCount": 8,
+      "targetResultBlockCount": 0,
+      "resultBlocks": [
+        {
+          "index": 1,
+          "class": "elemBlcComm views-row",
+          "text": "le 09 Septembre 2026 Communiqué de presse de la réunion ordinaire du Comité de Politique Monétaire de la BCEAO tenue le 9 septembre 2026",
+          "anchors": [
+            {
+              "text": "le 09 Septembre 2026 Communiqué de presse de la réunion ordinaire du Comité de Politique Monétaire de la BCEAO tenue le 9 septembre 2026",
+              "href": "https://www.bceao.int/fr/communique-presse/communique-de-presse-de-la-reunion-ordinaire-du-comite-de-politique-monetaire-19",
+              "absoluteUrl": "https://www.bceao.int/fr/communique-presse/communique-de-presse-de-la-reunion-ordinaire-du-comite-de-politique-monetaire-19",
+              "host": "www.bceao.int"
+            }
+          ],
+          "targetReferenceMatch": false,
+          "sanctionsSubjectMatch": false,
+          "decisionHint": false
+        },
+        {
+          "index": 2,
+          "class": "elemBlcComm views-row",
+          "text": "le 10 juin 2026 Réunion ordinaire du Comité de Politique Monétaire de la BCEAO tenue le 10 juin 2026",
+          "anchors": [
+            {
+              "text": "le 10 juin 2026 Réunion ordinaire du Comité de Politique Monétaire de la BCEAO tenue le 10 juin 2026",
+              "href": "https://www.bceao.int/fr/communique-presse/reunion-ordinaire-du-comite-de-politique-monetaire-de-la-bceao-tenue-le-10-juin",
+              "absoluteUrl": "https://www.bceao.int/fr/communique-presse/reunion-ordinaire-du-comite-de-politique-monetaire-de-la-bceao-tenue-le-10-juin",
+              "host": "www.bceao.int"
+            }
+          ],
+          "targetReferenceMatch": false,
+          "sanctionsSubjectMatch": false,
+          "decisionHint": false
+        },
+        {
+          "index": 3,
+          "class": "elemBlcComm views-row",
+          "text": "le 04 Mars 2026 Réunion ordinaire du Comité de Politique Monétaire de la BCEAO tenue le 4 mars 2026",
+          "anchors": [
+            {
+              "text": "le 04 Mars 2026 Réunion ordinaire du Comité de Politique Monétaire de la BCEAO tenue le 4 mars 2026",
+              "href": "https://www.bceao.int/fr/communique-presse/reunion-ordinaire-du-comite-de-politique-monetaire-de-la-bceao-tenue-le-4-mars",
+              "absoluteUrl": "https://www.bceao.int/fr/communique-presse/reunion-ordinaire-du-comite-de-politique-monetaire-de-la-bceao-tenue-le-4-mars",
+              "host": "www.bceao.int"
+            }
+          ],
+          "targetReferenceMatch": false,
+          "sanctionsSubjectMatch": false,
+          "decisionHint": false
+        },
+        {
+          "index": 4,
+          "class": "elemBlcComm views-row",
+          "text": "le 03 décembre 2025 Réunion ordinaire du Comité de Politique Monétaire de la BCEAO tenue le 3 décembre 2025",
+          "anchors": [
+            {
+              "text": "le 03 décembre 2025 Réunion ordinaire du Comité de Politique Monétaire de la BCEAO tenue le 3 décembre 2025",
+              "href": "https://www.bceao.int/fr/communique-presse/reunion-ordinaire-du-comite-de-politique-monetaire-de-la-bceao-tenue-le-3",
+              "absoluteUrl": "https://www.bceao.int/fr/communique-presse/reunion-ordinaire-du-comite-de-politique-monetaire-de-la-bceao-tenue-le-3",
+              "host": "www.bceao.int"
+            }
+          ],
+          "targetReferenceMatch": false,
+          "sanctionsSubjectMatch": false,
+          "decisionHint": false
+        },
+        {
+          "index": 5,
+          "class": "bceaNewsComm views-row",
+          "text": "17 Septembre 2026 Communiqué relatif à la diffusion d’une vidéo frauduleuse utilisant l’image du Gouverneur de la BCEAO",
+          "anchors": [
+            {
+              "text": "Communiqué relatif à la diffusion d’une vidéo frauduleuse utilisant l’image du Gouverneur de la BCEAO",
+              "href": "/fr/communique-presse/communique-relatif-la-diffusion-dune-video-frauduleuse-utilisant-limage-du",
+              "absoluteUrl": "https://www.bceao.int/fr/communique-presse/communique-relatif-la-diffusion-dune-video-frauduleuse-utilisant-limage-du",
+              "host": "www.bceao.int"
+            }
+          ],
+          "targetReferenceMatch": false,
+          "sanctionsSubjectMatch": false,
+          "decisionHint": false
+        },
+        {
+          "index": 6,
+          "class": "bceaNewsComm views-row",
+          "text": "17 Septembre 2026 Communiqué relatif à la diffusion d’une vidéo frauduleuse utilisant l’image du Gouverneur de la BCEAO",
+          "anchors": [
+            {
+              "text": "Communiqué relatif à la diffusion d’une vidéo frauduleuse utilisant l’image du Gouverneur de la BCEAO",
+              "href": "/fr/communique-presse/communique-relatif-la-diffusion-dune-video-frauduleuse-utilisant-limage-du-0",
+              "absoluteUrl": "https://www.bceao.int/fr/communique-presse/communique-relatif-la-diffusion-dune-video-frauduleuse-utilisant-limage-du-0",
+              "host": "www.bceao.int"
+            }
+          ],
+          "targetReferenceMatch": false,
+          "sanctionsSubjectMatch": false,
+          "decisionHint": false
+        },
+        {
+          "index": 7,
+          "class": "bceaNewsComm views-row",
+          "text": "09 Septembre 2026 Réunion du Comité de Politique Monétaire de la BCEAO",
+          "anchors": [
+            {
+              "text": "Réunion du Comité de Politique Monétaire de la BCEAO",
+              "href": "/fr/evenement/reunion-du-comite-de-politique-monetaire-de-la-bceao-1",
+              "absoluteUrl": "https://www.bceao.int/fr/evenement/reunion-du-comite-de-politique-monetaire-de-la-bceao-1",
+              "host": "www.bceao.int"
+            }
+          ],
+          "targetReferenceMatch": false,
+          "sanctionsSubjectMatch": false,
+          "decisionHint": false
+        },
+        {
+          "index": 8,
+          "class": "bceaNewsComm views-row",
+          "text": "22 Juillet 2026 Cérémonie de présentation du Rapport annuel 2025 de la BCEAO",
+          "anchors": [
+            {
+              "text": "Cérémonie de présentation du Rapport annuel 2025 de la BCEAO",
+              "href": "/fr/evenement/ceremonie-de-presentation-du-rapport-annuel-2025-de-la-bceao",
+              "absoluteUrl": "https://www.bceao.int/fr/evenement/ceremonie-de-presentation-du-rapport-annuel-2025-de-la-bceao",
+              "host": "www.bceao.int"
+            }
+          ],
+          "targetReferenceMatch": false,
+          "sanctionsSubjectMatch": false,
+          "decisionHint": false
+        }
+      ],
+      "targetResultBlocks": []
+    },
+    {
+      "status": "OK",
+      "query": "sanctions pécuniaires marché financier régional",
+      "url": "https://www.bceao.int/fr/search-bceao?search_api_fulltext=sanctions+p%C3%A9cuniaires+march%C3%A9+financier+r%C3%A9gional",
+      "finalUrl": "https://www.bceao.int/fr/search-bceao?search_api_fulltext=sanctions+p%C3%A9cuniaires+march%C3%A9+financier+r%C3%A9gional",
+      "contentType": "text/html; charset=UTF-8",
+      "byteSize": 132216,
+      "sha256": "f414d512c732840d201c4292cec8affab13c5bfc58725af0fb6055d872122db6",
+      "tlsVerified": true,
+      "pageTargetReferencePresent": false,
+      "pageSanctionsSubjectPresent": false,
+      "resultBlockCount": 26,
+      "targetResultBlockCount": 0,
+      "resultBlocks": [
+        {
+          "index": 1,
+          "class": "elemRes views-row",
+          "text": "07 Septembre 2026 Marchés des titres publics et privés Avis d'appel d'offres relatif à l'émission simultanée de Bons et Obligations du Trésor du Mali du 16 septembre 2026 Date limite de dépôt des dossiers 16 Septembre 2026",
+          "anchors": [
+            {
+              "text": "Avis d'appel d'offres relatif à l'émission simultanée de Bons et Obligations du Trésor du Mali du 16 septembre 2026",
+              "href": "/fr/appels-offres/avis-dappel-doffres-relatif-lemission-simultanee-de-bons-et-obligations-du-tresor-524",
+              "absoluteUrl": "https://www.bceao.int/fr/appels-offres/avis-dappel-doffres-relatif-lemission-simultanee-de-bons-et-obligations-du-tresor-524",
+              "host": "www.bceao.int"
+            }
+          ],
+          "targetReferenceMatch": false,
+          "sanctionsSubjectMatch": false,
+          "decisionHint": false
+        },
+        {
+          "index": 2,
+          "class": "elemRes views-row",
+          "text": "09 Septembre 2026 Marchés des titres publics et privés Avis d'appel d'offres relatif à l'émission simultanée de Bons et Obligations du Trésor de Côte d'Ivoire du 15 septembre 2026 Date limite de dépôt des dossiers 15 Septembre 2026",
+          "anchors": [
+            {
+              "text": "Avis d'appel d'offres relatif à l'émission simultanée de Bons et Obligations du Trésor de Côte d'Ivoire du 15 septembre 2026",
+              "href": "/fr/appels-offres/avis-dappel-doffres-relatif-lemission-simultanee-de-bons-et-obligations-du-tresor-525",
+              "absoluteUrl": "https://www.bceao.int/fr/appels-offres/avis-dappel-doffres-relatif-lemission-simultanee-de-bons-et-obligations-du-tresor-525",
+              "host": "www.bceao.int"
+            }
+          ],
+          "targetReferenceMatch": false,
+          "sanctionsSubjectMatch": false,
+          "decisionHint": false
+        },
+        {
+          "index": 3,
+          "class": "elemRes views-row",
+          "text": "25 Août 2026 Marchés des titres publics et privés Avis d'appel d'offres relatif à l'émission simultanée de Bons et Obligations du Trésor du Mali du 2 septembre 2026 Date limite de dépôt des dossiers 02 Septembre 2026",
+          "anchors": [
+            {
+              "text": "Avis d'appel d'offres relatif à l'émission simultanée de Bons et Obligations du Trésor du Mali du 2 septembre 2026",
+              "href": "/fr/appels-offres/avis-dappel-doffres-relatif-lemission-simultanee-de-bons-et-obligations-du-tresor-523",
+              "absoluteUrl": "https://www.bceao.int/fr/appels-offres/avis-dappel-doffres-relatif-lemission-simultanee-de-bons-et-obligations-du-tresor-523",
+              "host": "www.bceao.int"
+            }
+          ],
+          "targetReferenceMatch": false,
+          "sanctionsSubjectMatch": false,
+          "decisionHint": false
+        },
+        {
+          "index": 4,
+          "class": "elemRes views-row",
+          "text": "18 Septembre 2026 Marché Monétaire Avis d'appel d'offres hebdomadaire d'injection de liquidité n°38/H/2026 du 21 septembre 2026 Date limite de dépôt des dossiers 21 Septembre 2026",
+          "anchors": [
+            {
+              "text": "Avis d'appel d'offres hebdomadaire d'injection de liquidité n°38/H/2026 du 21 septembre 2026",
+              "href": "/fr/appels-offres/avis-dappel-doffres-hebdomadaire-dinjection-de-liquidite-ndeg38h2026-du-21-septembre",
+              "absoluteUrl": "https://www.bceao.int/fr/appels-offres/avis-dappel-doffres-hebdomadaire-dinjection-de-liquidite-ndeg38h2026-du-21-septembre",
+              "host": "www.bceao.int"
+            }
+          ],
+          "targetReferenceMatch": false,
+          "sanctionsSubjectMatch": false,
+          "decisionHint": false
+        },
+        {
+          "index": 5,
+          "class": "elemRes views-row",
+          "text": "11 Septembre 2026 Marché Monétaire Avis d'appel d'offres hebdomadaire d'injection de liquidité n°37/H/2026 du 14 septembre 2026 Date limite de dépôt des dossiers 14 Septembre 2026",
+          "anchors": [
+            {
+              "text": "Avis d'appel d'offres hebdomadaire d'injection de liquidité n°37/H/2026 du 14 septembre 2026",
+              "href": "/fr/appels-offres/avis-dappel-doffres-hebdomadaire-dinjection-de-liquidite-ndeg37h2026-du-14-septembre",
+              "absoluteUrl": "https://www.bceao.int/fr/appels-offres/avis-dappel-doffres-hebdomadaire-dinjection-de-liquidite-ndeg37h2026-du-14-septembre",
+              "host": "www.bceao.int"
+            }
+          ],
+          "targetReferenceMatch": false,
+          "sanctionsSubjectMatch": false,
+          "decisionHint": false
+        },
+        {
+          "index": 6,
+          "class": "elemRes views-row",
+          "text": "04 Septembre 2026 Marché Monétaire Avis d'appel d'offres hebdomadaire d'injection de liquidité n°36/H/2026 du 7 septembre 2026 Date limite de dépôt des dossiers 07 Septembre 2026",
+          "anchors": [
+            {
+              "text": "Avis d'appel d'offres hebdomadaire d'injection de liquidité n°36/H/2026 du 7 septembre 2026",
+              "href": "/fr/appels-offres/avis-dappel-doffres-hebdomadaire-dinjection-de-liquidite-ndeg36h2026-du-7-septembre",
+              "absoluteUrl": "https://www.bceao.int/fr/appels-offres/avis-dappel-doffres-hebdomadaire-dinjection-de-liquidite-ndeg36h2026-du-7-septembre",
+              "host": "www.bceao.int"
+            }
+          ],
+          "targetReferenceMatch": false,
+          "sanctionsSubjectMatch": false,
+          "decisionHint": false
+        },
+        {
+          "index": 7,
+          "class": "elemRes views-row",
+          "text": "21 Septembre 2026 Publications periodique, Bulletins Bulletin mensuel de statistiques - Juillet 2026",
+          "anchors": [
+            {
+              "text": "Bulletin mensuel de statistiques - Juillet 2026",
+              "href": "/sites/default/files/2026-09/Bulletin%20mensuel%20des%20statistiques%20-%20Juillet%202026.pdf",
+              "absoluteUrl": "https://www.bceao.int/sites/default/files/2026-09/Bulletin%20mensuel%20des%20statistiques%20-%20Juillet%202026.pdf",
+              "host": "www.bceao.int"
+            }
+          ],
+          "targetReferenceMatch": false,
+          "sanctionsSubjectMatch": false,
+          "decisionHint": false
+        },
+        {
+          "index": 8,
+          "class": "elemRes views-row",
+          "text": "16 Septembre 2026 Publications periodique, Rapports Rapport sur la Politique Monétaire dans l'UMOA - Septembre 2026",
+          "anchors": [
+            {
+              "text": "Rapport sur la Politique Monétaire dans l'UMOA - Septembre 2026",
+              "href": "/sites/default/files/2026-09/RAPPORT%20SUR%20LA%20POLITIQUE%20MONETAIRE%20DANS%20L%27UMOA%20-%20SEPTEMBRE%202026%20.pdf",
+              "absoluteUrl": "https://www.bceao.int/sites/default/files/2026-09/RAPPORT%20SUR%20LA%20POLITIQUE%20MONETAIRE%20DANS%20L%27UMOA%20-%20SEPTEMBRE%202026%20.pdf",
+              "host": "www.bceao.int"
+            }
+          ],
+          "targetReferenceMatch": false,
+          "sanctionsSubjectMatch": false,
+          "decisionHint": false
+        },
+        {
+          "index": 9,
+          "class": "elemRes views-row",
+          "text": "15 Septembre 2026 Publications periodique, Bulletins Bulletin trimestriel des statistiques - Juin 2026",
+          "anchors": [
+            {
+              "text": "Bulletin trimestriel des statistiques - Juin 2026",
+              "href": "/sites/default/files/2026-09/Bulletin%20Trimestriel%20des%20Statistiques%20-%20juin%202026.pdf",
+              "absoluteUrl": "https://www.bceao.int/sites/default/files/2026-09/Bulletin%20Trimestriel%20des%20Statistiques%20-%20juin%202026.pdf",
+              "host": "www.bceao.int"
+            }
+          ],
+          "targetReferenceMatch": false,
+          "sanctionsSubjectMatch": false,
+          "decisionHint": false
+        },
+        {
+          "index": 10,
+          "class": "elemRes views-row",
+          "text": "01 Février 2024 Réglementation bancaire Avis N°002-04-2023 relatif à l’exclusion temporaire des titres publics émis par les Etats de l’UMOA dans le calcul de la norme prudentielle portant sur les prêts aux principaux actionnaires, aux dirigeants, au personnel et aux commissaires aux comptes",
+          "anchors": [
+            {
+              "text": "Avis N°002-04-2023 relatif à l’exclusion temporaire des titres publics émis par les Etats de l’UMOA dans le calcul de la norme prudentielle portant sur les prêts aux principaux actionnaires, aux dirigeants, au personnel et aux commissaires aux comptes",
+              "href": "/sites/default/files/2024-02/AVIS%20N%C2%B0002-04-2023%20portant%20modification%20temporaire%20de%20la%20norme%20relative%20aux%20pr%C3%AAts%20aux%20principaux%20actionnaires.pdf",
+              "absoluteUrl": "https://www.bceao.int/sites/default/files/2024-02/AVIS%20N%C2%B0002-04-2023%20portant%20modification%20temporaire%20de%20la%20norme%20relative%20aux%20pr%C3%AAts%20aux%20principaux%20actionnaires.pdf",
+              "host": "www.bceao.int"
+            }
+          ],
+          "targetReferenceMatch": false,
+          "sanctionsSubjectMatch": false,
+          "decisionHint": false
+        },
+        {
+          "index": 11,
+          "class": "elemRes views-row",
+          "text": "01 Février 2024 Réglementation bancaire Avis N°001-01-2024 fixant le capital social minimum des banques et établissements financiers de crédit dans les Etats membres de l’Union Monétaire Ouest Africaine (UMOA)",
+          "anchors": [
+            {
+              "text": "Avis N°001-01-2024 fixant le capital social minimum des banques et établissements financiers de crédit dans les Etats membres de l’Union Monétaire Ouest Africaine (UMOA)",
+              "href": "/sites/default/files/2024-02/AVIS%20N%C2%B0001-01-2024%20FIXANT%20LE%20CAPITAL%20SOCIAL%20MINIMUM%20DES%20BANQUES%20ET%20%C3%89TABLISSEMENTS%20FINANCIERS%20DE%20CR%C3%89DIT%20DANS%20LES%20ETATS%20MEMBRES%20DE%20L%E2%80%99UMOA.pdf",
+              "absoluteUrl": "https://www.bceao.int/sites/default/files/2024-02/AVIS%20N%C2%B0001-01-2024%20FIXANT%20LE%20CAPITAL%20SOCIAL%20MINIMUM%20DES%20BANQUES%20ET%20%C3%89TABLISSEMENTS%20FINANCIERS%20DE%20CR%C3%89DIT%20DANS%20LES%20ETATS%20MEMBRES%20DE%20L%E2%80%99UMOA.pdf",
+              "host": "www.bceao.int"
+            }
+          ],
+          "targetReferenceMatch": false,
+          "sanctionsSubjectMatch": false,
+          "decisionHint": false
+        },
+        {
+          "index": 12,
+          "class": "elemRes views-row",
+          "text": "31 janvier 2024 Lutte contre le blanchiment de capitaux et le financement du terrorisme Décision n°021 du 21/12/2023/CM/UMOA fixant les montants des seuils pour la mise en oeuvre de la loi uniforme relative à la lutte contre le blanchiment de capitaux, le financement du terrorisme et de la prolifération des armes de destruction massive",
+          "anchors": [
+            {
+              "text": "Décision n°021 du 21/12/2023/CM/UMOA fixant les montants des seuils pour la mise en oeuvre de la loi uniforme relative à la lutte contre le blanchiment de capitaux, le financement du terrorisme et de la prolifération des armes de destruction massive",
+              "href": "/sites/default/files/2024-01/D%C3%A9cision%20N%C2%B021%20du%2021%20d%C3%A9cembre%202023%20fixant%20les%20montants%20seuils%20pour%20la%20mise%20en%20oeuvre%20de%20la%20loi%20uniforme%20relative%20%C3%A0%20la%20LBCFTFP.pdf",
+              "absoluteUrl": "https://www.bceao.int/sites/default/files/2024-01/D%C3%A9cision%20N%C2%B021%20du%2021%20d%C3%A9cembre%202023%20fixant%20les%20montants%20seuils%20pour%20la%20mise%20en%20oeuvre%20de%20la%20loi%20uniforme%20relative%20%C3%A0%20la%20LBCFTFP.pdf",
+              "host": "www.bceao.int"
+            }
+          ],
+          "targetReferenceMatch": false,
+          "sanctionsSubjectMatch": false,
+          "decisionHint": true
+        },
+        {
+          "index": 13,
+          "class": "elemRes views-row",
+          "text": "17 Septembre 2026 Communiqué relatif à la diffusion d’une vidéo frauduleuse utilisant l’image du Gouverneur de la BCEAO",
+          "anchors": [
+            {
+              "text": "Communiqué relatif à la diffusion d’une vidéo frauduleuse utilisant l’image du Gouverneur de la BCEAO",
+              "href": "/fr/communique-presse/communique-relatif-la-diffusion-dune-video-frauduleuse-utilisant-limage-du",
+              "absoluteUrl": "https://www.bceao.int/fr/communique-presse/communique-relatif-la-diffusion-dune-video-frauduleuse-utilisant-limage-du",
+              "host": "www.bceao.int"
+            }
+          ],
+          "targetReferenceMatch": false,
+          "sanctionsSubjectMatch": false,
+          "decisionHint": false
+        },
+        {
+          "index": 14,
+          "class": "elemRes views-row",
+          "text": "16 Septembre 2026 Homologation des API Business de la Plateforme Interopérable du Système de Paiement Instantané (PI-SPI) de l’Union Economique et Monétaire Ouest Africaine (UEMOA)",
+          "anchors": [
+            {
+              "text": "Homologation des API Business de la Plateforme Interopérable du Système de Paiement Instantané (PI-SPI) de l’Union Economique et Monétaire Ouest Africaine (UEMOA)",
+              "href": "/fr/communique-presse/homologation-des-api-business-de-la-plateforme-interoperable-du-systeme-de",
+              "absoluteUrl": "https://www.bceao.int/fr/communique-presse/homologation-des-api-business-de-la-plateforme-interoperable-du-systeme-de",
+              "host": "www.bceao.int"
+            }
+          ],
+          "targetReferenceMatch": false,
+          "sanctionsSubjectMatch": false,
+          "decisionHint": false
+        },
+        {
+          "index": 15,
+          "class": "elemRes views-row",
+          "text": "16 Septembre 2026 Liste des participants autorisés à ouvrir les services de PI-SPI au public au 16 septembre 2026",
+          "anchors": [
+            {
+              "text": "Liste des participants autorisés à ouvrir les services de PI-SPI au public au 16 septembre 2026",
+              "href": "/fr/communique-presse/liste-des-participants-autorises-ouvrir-les-services-de-pi-spi-au-public-au-16",
+              "absoluteUrl": "https://www.bceao.int/fr/communique-presse/liste-des-participants-autorises-ouvrir-les-services-de-pi-spi-au-public-au-16",
+              "host": "www.bceao.int"
+            }
+          ],
+          "targetReferenceMatch": false,
+          "sanctionsSubjectMatch": false,
+          "decisionHint": false
+        },
+        {
+          "index": 16,
+          "class": "elemRes views-row",
+          "text": "09 Septembre 2026 Réunion du Comité de Politique Monétaire de la BCEAO",
+          "anchors": [
+            {
+              "text": "Réunion du Comité de Politique Monétaire de la BCEAO",
+              "href": "/fr/evenement/reunion-du-comite-de-politique-monetaire-de-la-bceao-1",
+              "absoluteUrl": "https://www.bceao.int/fr/evenement/reunion-du-comite-de-politique-monetaire-de-la-bceao-1",
+              "host": "www.bceao.int"
+            }
+          ],
+          "targetReferenceMatch": false,
+          "sanctionsSubjectMatch": false,
+          "decisionHint": false
+        },
+        {
+          "index": 17,
+          "class": "elemRes views-row",
+          "text": "22 Juillet 2026 Cérémonie de présentation du Rapport annuel 2025 de la BCEAO",
+          "anchors": [
+            {
+              "text": "Cérémonie de présentation du Rapport annuel 2025 de la BCEAO",
+              "href": "/fr/evenement/ceremonie-de-presentation-du-rapport-annuel-2025-de-la-bceao",
+              "absoluteUrl": "https://www.bceao.int/fr/evenement/ceremonie-de-presentation-du-rapport-annuel-2025-de-la-bceao",
+              "host": "www.bceao.int"
+            }
+          ],
+          "targetReferenceMatch": false,
+          "sanctionsSubjectMatch": false,
+          "decisionHint": false
+        },
+        {
+          "index": 18,
+          "class": "elemRes views-row",
+          "text": "20 Juillet 2026 Séminaire des Journalistes économiques de l'UMOA",
+          "anchors": [
+            {
+              "text": "Séminaire des Journalistes économiques de l'UMOA",
+              "href": "/fr/evenement/seminaire-des-journalistes-economiques-de-lumoa",
+              "absoluteUrl": "https://www.bceao.int/fr/evenement/seminaire-des-journalistes-economiques-de-lumoa",
+              "host": "www.bceao.int"
+            }
+          ],
+          "targetReferenceMatch": false,
+          "sanctionsSubjectMatch": false,
+          "decisionHint": false
+        },
+        {
+          "index": 19,
+          "class": "elemBlcComm views-row",
+          "text": "le 09 Septembre 2026 Communiqué de presse de la réunion ordinaire du Comité de Politique Monétaire de la BCEAO tenue le 9 septembre 2026",
+          "anchors": [
+            {
+              "text": "le 09 Septembre 2026 Communiqué de presse de la réunion ordinaire du Comité de Politique Monétaire de la BCEAO tenue le 9 septembre 2026",
+              "href": "https://www.bceao.int/fr/communique-presse/communique-de-presse-de-la-reunion-ordinaire-du-comite-de-politique-monetaire-19",
+              "absoluteUrl": "https://www.bceao.int/fr/communique-presse/communique-de-presse-de-la-reunion-ordinaire-du-comite-de-politique-monetaire-19",
+              "host": "www.bceao.int"
+            }
+          ],
+          "targetReferenceMatch": false,
+          "sanctionsSubjectMatch": false,
+          "decisionHint": false
+        },
+        {
+          "index": 20,
+          "class": "elemBlcComm views-row",
+          "text": "le 10 juin 2026 Réunion ordinaire du Comité de Politique Monétaire de la BCEAO tenue le 10 juin 2026",
+          "anchors": [
+            {
+              "text": "le 10 juin 2026 Réunion ordinaire du Comité de Politique Monétaire de la BCEAO tenue le 10 juin 2026",
+              "href": "https://www.bceao.int/fr/communique-presse/reunion-ordinaire-du-comite-de-politique-monetaire-de-la-bceao-tenue-le-10-juin",
+              "absoluteUrl": "https://www.bceao.int/fr/communique-presse/reunion-ordinaire-du-comite-de-politique-monetaire-de-la-bceao-tenue-le-10-juin",
+              "host": "www.bceao.int"
+            }
+          ],
+          "targetReferenceMatch": false,
+          "sanctionsSubjectMatch": false,
+          "decisionHint": false
+        },
+        {
+          "index": 21,
+          "class": "elemBlcComm views-row",
+          "text": "le 04 Mars 2026 Réunion ordinaire du Comité de Politique Monétaire de la BCEAO tenue le 4 mars 2026",
+          "anchors": [
+            {
+              "text": "le 04 Mars 2026 Réunion ordinaire du Comité de Politique Monétaire de la BCEAO tenue le 4 mars 2026",
+              "href": "https://www.bceao.int/fr/communique-presse/reunion-ordinaire-du-comite-de-politique-monetaire-de-la-bceao-tenue-le-4-mars",
+              "absoluteUrl": "https://www.bceao.int/fr/communique-presse/reunion-ordinaire-du-comite-de-politique-monetaire-de-la-bceao-tenue-le-4-mars",
+              "host": "www.bceao.int"
+            }
+          ],
+          "targetReferenceMatch": false,
+          "sanctionsSubjectMatch": false,
+          "decisionHint": false
+        },
+        {
+          "index": 22,
+          "class": "elemBlcComm views-row",
+          "text": "le 03 décembre 2025 Réunion ordinaire du Comité de Politique Monétaire de la BCEAO tenue le 3 décembre 2025",
+          "anchors": [
+            {
+              "text": "le 03 décembre 2025 Réunion ordinaire du Comité de Politique Monétaire de la BCEAO tenue le 3 décembre 2025",
+              "href": "https://www.bceao.int/fr/communique-presse/reunion-ordinaire-du-comite-de-politique-monetaire-de-la-bceao-tenue-le-3",
+              "absoluteUrl": "https://www.bceao.int/fr/communique-presse/reunion-ordinaire-du-comite-de-politique-monetaire-de-la-bceao-tenue-le-3",
+              "host": "www.bceao.int"
+            }
+          ],
+          "targetReferenceMatch": false,
+          "sanctionsSubjectMatch": false,
+          "decisionHint": false
+        },
+        {
+          "index": 23,
+          "class": "bceaNewsComm views-row",
+          "text": "17 Septembre 2026 Communiqué relatif à la diffusion d’une vidéo frauduleuse utilisant l’image du Gouverneur de la BCEAO",
+          "anchors": [
+            {
+              "text": "Communiqué relatif à la diffusion d’une vidéo frauduleuse utilisant l’image du Gouverneur de la BCEAO",
+              "href": "/fr/communique-presse/communique-relatif-la-diffusion-dune-video-frauduleuse-utilisant-limage-du",
+              "absoluteUrl": "https://www.bceao.int/fr/communique-presse/communique-relatif-la-diffusion-dune-video-frauduleuse-utilisant-limage-du",
+              "host": "www.bceao.int"
+            }
+          ],
+          "targetReferenceMatch": false,
+          "sanctionsSubjectMatch": false,
+          "decisionHint": false
+        },
+        {
+          "index": 24,
+          "class": "bceaNewsComm views-row",
+          "text": "17 Septembre 2026 Communiqué relatif à la diffusion d’une vidéo frauduleuse utilisant l’image du Gouverneur de la BCEAO",
+          "anchors": [
+            {
+              "text": "Communiqué relatif à la diffusion d’une vidéo frauduleuse utilisant l’image du Gouverneur de la BCEAO",
+              "href": "/fr/communique-presse/communique-relatif-la-diffusion-dune-video-frauduleuse-utilisant-limage-du-0",
+              "absoluteUrl": "https://www.bceao.int/fr/communique-presse/communique-relatif-la-diffusion-dune-video-frauduleuse-utilisant-limage-du-0",
+              "host": "www.bceao.int"
+            }
+          ],
+          "targetReferenceMatch": false,
+          "sanctionsSubjectMatch": false,
+          "decisionHint": false
+        },
+        {
+          "index": 25,
+          "class": "bceaNewsComm views-row",
+          "text": "09 Septembre 2026 Réunion du Comité de Politique Monétaire de la BCEAO",
+          "anchors": [
+            {
+              "text": "Réunion du Comité de Politique Monétaire de la BCEAO",
+              "href": "/fr/evenement/reunion-du-comite-de-politique-monetaire-de-la-bceao-1",
+              "absoluteUrl": "https://www.bceao.int/fr/evenement/reunion-du-comite-de-politique-monetaire-de-la-bceao-1",
+              "host": "www.bceao.int"
+            }
+          ],
+          "targetReferenceMatch": false,
+          "sanctionsSubjectMatch": false,
+          "decisionHint": false
+        },
+        {
+          "index": 26,
+          "class": "bceaNewsComm views-row",
+          "text": "22 Juillet 2026 Cérémonie de présentation du Rapport annuel 2025 de la BCEAO",
+          "anchors": [
+            {
+              "text": "Cérémonie de présentation du Rapport annuel 2025 de la BCEAO",
+              "href": "/fr/evenement/ceremonie-de-presentation-du-rapport-annuel-2025-de-la-bceao",
+              "absoluteUrl": "https://www.bceao.int/fr/evenement/ceremonie-de-presentation-du-rapport-annuel-2025-de-la-bceao",
+              "host": "www.bceao.int"
+            }
+          ],
+          "targetReferenceMatch": false,
+          "sanctionsSubjectMatch": false,
+          "decisionHint": false
+        }
+      ],
+      "targetResultBlocks": []
+    }
+  ],
+  "boundary": {
+    "nativeContractOnly": true,
+    "exactlyThreeQueries": true,
+    "resultLinksFollowed": false,
+    "binaryMaterialized": false,
+    "workflowRepositoryWriteAllowed": false,
+    "automaticRelationshipInferenceAllowed": false,
+    "automaticSanctionActivationAllowed": false,
+    "readyForSubmissionMustRemainFalse": true
+  },
+  "nextAction": "If an exact or sanctions result block exposes specific BCEAO URLs, inspect only those exact URLs in a later read-only step. Otherwise do not widen the search arbitrarily."
+}

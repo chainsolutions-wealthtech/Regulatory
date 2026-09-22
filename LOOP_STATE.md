@@ -446,3 +446,26 @@ Découverte du contrat :
 
 Prochaine sous-boucle : trois recherches exactes, sans suivre les liens résultats. `ready_for_submission=false`.
 <!-- AUTO:LOOP-REG-001-BCEAO-NATIVE-SEARCH-2026-09-22:END -->
+
+<!-- AUTO:LOOP-REG-001-BCEAO-EXACT-SEARCH-2026-09-22:START -->
+## Sous-boucle BCEAO search semantics
+
+Baseline : `main@8fa4764a16c43d1191dddc614e82f4b7a3fb0c19`.
+
+BCEAO exact search :
+- `result=PASS` ;
+- `targetStatus=SEARCH_RESULTS_PRESENT_NO_TARGET_BLOCK` ;
+- `matchedResultBlockCount=0` ;
+- `exactReferenceResultBlockCount=0` ;
+- `sanctionsResultBlockCount=0` ;
+- résultat par requête : `26 / 8 / 26` blocs.
+
+Interprétation : `NEGATIVE_EVIDENCE_NOT_YET_PROMOTED`.
+
+Prochaine validation :
+- témoin positif connu ;
+- sentinelle négative impossible ;
+- cible `CM/10/06/2022` ;
+- workflow `READ_ONLY` ;
+- `ready_for_submission=false`.
+<!-- AUTO:LOOP-REG-001-BCEAO-EXACT-SEARCH-2026-09-22:END -->

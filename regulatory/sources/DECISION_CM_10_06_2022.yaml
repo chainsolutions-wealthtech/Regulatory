@@ -277,3 +277,17 @@ bceao_native_search_surface_2026_09_22:
     automatic_relationship_inference_allowed: false
     automatic_sanction_activation_allowed: false
     ready_for_submission_must_remain_false: true
+
+bceao_exact_search_2026_09_22:
+  method: BCEAO_NATIVE_GET_SEARCH_BOUNDED_QUERIES
+  result: PASS
+  query_count: 3
+  query_result_block_counts: [26, 8, 26]
+  matched_result_block_count: 0
+  exact_reference_result_block_count: 0
+  sanctions_result_block_count: 0
+  target_status: SEARCH_RESULTS_PRESENT_NO_TARGET_BLOCK
+  negative_evidence_status: NOT_YET_PROMOTED
+  evidence: regulatory/review-evidence/SANCTIONS_2016_2022/BCEAO_EXACT_SEARCH_DISCOVERY_2026-09-22.json
+  validation: regulatory/validation/BCEAO_EXACT_SEARCH_DISCOVERY_VALIDATION_V0_1.json
+  next_action: VALIDATE_BCEAO_SEARCH_SEMANTICS_WITH_POSITIVE_AND_NEGATIVE_WITNESSES

@@ -1,0 +1,18 @@
+{
+  "schemaVersion": "BCEAO_EXACT_SEARCH_DISCOVERY_VALIDATION_V0_1",
+  "result": "PASS",
+  "checks": {
+    "nativeContractOnly": true,
+    "exactlyThreeQueries": true,
+    "resultLinksNotFollowed": true,
+    "binaryNotMaterialized": true,
+    "workflowRepositoryWriteDisabled": true,
+    "automaticRelationshipInferenceForbidden": true,
+    "automaticSanctionActivationForbidden": true,
+    "readyForSubmissionFalse": true
+  },
+  "targetStatus": "SEARCH_RESULTS_PRESENT_NO_TARGET_BLOCK",
+  "matchedResultBlockCount": 0,
+  "exactReferenceResultBlockCount": 0,
+  "sanctionsResultBlockCount": 0
+}

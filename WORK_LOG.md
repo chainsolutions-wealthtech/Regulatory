@@ -473,3 +473,13 @@ La même page expose aussi `/fr/views/ajax` et des vues Drupal, mais celles-ci n
 
 Le lot a obtenu Regulatory CI, Security, Browser/Accessibility et Runtime Quality en SUCCESS sans concurrence d'écriture avec le scanner.
 <!-- AUTO:LOOP-REG-001-BCEAO-NATIVE-SEARCH-2026-09-22:END -->
+
+<!-- AUTO:LOOP-REG-001-BCEAO-EXACT-SEARCH-2026-09-22:START -->
+## 2026-09-22 — BCEAO exact search
+
+Le moteur natif BCEAO a été interrogé avec exactement trois requêtes via `search_api_fulltext`. Les trois requêtes sont accessibles en TLS vérifié, mais aucun bloc `views-row` ne contient la référence cible ni le sujet « sanctions pécuniaires ».
+
+Les volumes de résultats diffèrent : 26 blocs pour la référence slashée, 8 pour la référence espacée, 26 pour la requête métier. Le filtre agit donc au moins partiellement, mais les résultats génériques restent trop nombreux pour transformer l'absence de cible en preuve d'absence.
+
+Un validateur positif/négatif est ajouté avant toute conclusion.
+<!-- AUTO:LOOP-REG-001-BCEAO-EXACT-SEARCH-2026-09-22:END -->
