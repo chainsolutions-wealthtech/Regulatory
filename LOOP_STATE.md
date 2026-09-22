@@ -469,3 +469,21 @@ Prochaine validation :
 - workflow `READ_ONLY` ;
 - `ready_for_submission=false`.
 <!-- AUTO:LOOP-REG-001-BCEAO-EXACT-SEARCH-2026-09-22:END -->
+
+<!-- AUTO:LOOP-REG-001-BCEAO-SEARCH-SEMANTICS-2026-09-22:START -->
+## BCEAO search semantics — état final
+
+Baseline : `main@15a30cb875a44222ac25aef859ee7d79c56cdc51`.
+
+- workflow : `PASS` ;
+- positive witness recovered : `false` ;
+- negative sentinel zero blocks : `false` ;
+- search semantics : `SEARCH_FILTER_SEMANTICS_NOT_VALIDATED` ;
+- target interpretation : `TARGET_NOT_FOUND_BUT_SEARCH_NEGATIVE_EVIDENCE_UNRELIABLE` ;
+- absence cible promue en preuve : `NO` ;
+- binary materialized : `NO` ;
+- sanctions/quantums : `INACTIVE` ;
+- `ready_for_submission=false`.
+
+Prochaine surface BCEAO : `robots.txt` puis uniquement sitemaps déclarés.
+<!-- AUTO:LOOP-REG-001-BCEAO-SEARCH-SEMANTICS-2026-09-22:END -->

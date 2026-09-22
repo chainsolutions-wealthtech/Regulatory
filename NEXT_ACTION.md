@@ -366,3 +366,24 @@ Prochaine action unique :
 
 Le test utilisera une Décision BCEAO connue, une sentinelle impossible et la cible. L'absence de cible ne deviendra une preuve négative que si le témoin positif est retrouvé et la sentinelle négative renvoie zéro résultat.
 <!-- AUTO:LOOP-REG-001-BCEAO-EXACT-SEARCH-2026-09-22:END -->
+
+<!-- AUTO:LOOP-REG-001-BCEAO-SEARCH-SEMANTICS-2026-09-22:START -->
+## BCEAO — validation sémantique du moteur
+
+Le contrôle positif/négatif a terminé `PASS` côté exécution mais invalide l'usage du moteur comme preuve d'absence :
+
+- témoin positif connu retrouvé : `false` ;
+- sentinelle impossible avec zéro résultat : `false` ;
+- résultats témoin positif : `8` blocs ;
+- résultats sentinelle négative : `26` blocs ;
+- résultats cible : `26` blocs ;
+- sémantique : `SEARCH_FILTER_SEMANTICS_NOT_VALIDATED` ;
+- interprétation cible : `TARGET_NOT_FOUND_BUT_SEARCH_NEGATIVE_EVIDENCE_UNRELIABLE`.
+
+La route search BCEAO reste utile pour découverte opportuniste mais ne peut pas fermer le verrou documentaire.
+
+Prochaine action unique :
+`DISCOVER_BCEAO_ROBOTS_DECLARED_SITEMAP_SURFACE`.
+
+Seuls `robots.txt` et les sitemaps explicitement déclarés seront inspectés. Aucun sitemap ne sera deviné.
+<!-- AUTO:LOOP-REG-001-BCEAO-SEARCH-SEMANTICS-2026-09-22:END -->

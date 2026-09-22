@@ -889,3 +889,11 @@ La prochaine recherche est limitée à trois formulations déterministes et ne s
 
 Aucun résultat natif BCEAO ne porte `CM/10/06/2022` ou le sujet exact des sanctions pécuniaires dans les trois requêtes bornées. Toutefois, le moteur renvoie encore des résultats génériques. La boucle conserve donc un statut prudent et ajoute un test de sémantique du moteur avant de considérer cette route comme fermée.
 <!-- AUTO:LOOP-REG-001-BCEAO-EXACT-SEARCH-2026-09-22:END -->
+
+<!-- AUTO:LOOP-REG-001-BCEAO-SEARCH-SEMANTICS-2026-09-22:START -->
+## 2026-09-22 — BCEAO search : absence non probante
+
+Le mécanisme de recherche BCEAO a été découvert et testé correctement, mais son comportement ne permet pas d'établir une preuve d'absence : un témoin positif connu n'est pas isolé et une chaîne sentinelle inexistante retourne des résultats génériques.
+
+La route n'est donc pas considérée comme fermée juridiquement ; elle est simplement déclassée comme source de preuve négative. La recherche institutionnelle poursuit avec les surfaces d'indexation explicitement déclarées par BCEAO.
+<!-- AUTO:LOOP-REG-001-BCEAO-SEARCH-SEMANTICS-2026-09-22:END -->

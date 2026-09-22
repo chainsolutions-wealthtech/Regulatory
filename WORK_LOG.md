@@ -483,3 +483,18 @@ Les volumes de résultats diffèrent : 26 blocs pour la référence slashée, 8 
 
 Un validateur positif/négatif est ajouté avant toute conclusion.
 <!-- AUTO:LOOP-REG-001-BCEAO-EXACT-SEARCH-2026-09-22:END -->
+
+<!-- AUTO:LOOP-REG-001-BCEAO-SEARCH-SEMANTICS-2026-09-22:START -->
+## 2026-09-22 — Validation sémantique BCEAO
+
+Le moteur BCEAO a été éprouvé avec un témoin positif connu, une sentinelle impossible et la cible.
+
+Résultat :
+- le témoin positif n'est pas récupéré comme résultat correspondant ;
+- la sentinelle impossible renvoie néanmoins 26 blocs ;
+- la cible ne produit aucun bloc cible mais renvoie également 26 blocs.
+
+Conclusion technique : le moteur ne fournit pas une sémantique assez fiable pour transformer une non-correspondance en preuve négative. Aucun effet juridique n'est tiré de cette absence.
+
+La boucle sélectionne maintenant une surface d'indexation différente : robots/sitemap BCEAO, strictement déclarée.
+<!-- AUTO:LOOP-REG-001-BCEAO-SEARCH-SEMANTICS-2026-09-22:END -->

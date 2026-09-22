@@ -503,3 +503,24 @@ Statut : `PENDING_CENTIF_DISCOVERY_CI`.
 - aucun binaire téléchargé ;
 - `ready_for_submission=false`.
 <!-- AUTO:LOOP-REG-001-BCEAO-EXACT-SEARCH-2026-09-22:END -->
+
+<!-- AUTO:LOOP-REG-001-BCEAO-SEARCH-SEMANTICS-2026-09-22:START -->
+## [Unreleased] — BCEAO search semantics and sitemap route — 2026-09-22
+
+### Evidence
+
+- positive witness not recovered ;
+- impossible negative sentinel still returns 26 result blocks ;
+- BCEAO search semantics classified `NOT_VALIDATED`.
+
+### Added
+
+- read-only BCEAO robots/sitemap discovery.
+
+### Safety
+
+- target absence is not treated as negative legal evidence ;
+- no guessed sitemap ;
+- no binary download ;
+- `ready_for_submission=false`.
+<!-- AUTO:LOOP-REG-001-BCEAO-SEARCH-SEMANTICS-2026-09-22:END -->

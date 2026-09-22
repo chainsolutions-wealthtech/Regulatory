@@ -706,3 +706,17 @@ Statut : `PENDING_CENTIF_DISCOVERY_CI`.
 - [ ] Si positif retrouvé + négatif zéro : qualifier l'absence cible comme preuve négative bornée.
 - [ ] Sinon : classer la recherche BCEAO comme non fiable pour une preuve d'absence.
 <!-- AUTO:LOOP-REG-001-BCEAO-EXACT-SEARCH-2026-09-22:END -->
+
+<!-- AUTO:LOOP-REG-001-BCEAO-SEARCH-SEMANTICS-2026-09-22:START -->
+## BCEAO robots/sitemap
+
+- [x] Tester un témoin positif BCEAO.
+- [x] Tester une sentinelle négative.
+- [x] Confirmer que la recherche ne valide pas une sémantique de filtrage fiable.
+- [x] Interdire l'usage de l'absence cible comme preuve négative.
+- [x] Préparer un scanner read-only de `robots.txt`.
+- [ ] Exécuter le scanner robots BCEAO.
+- [ ] Inspecter uniquement les sitemaps explicitement déclarés.
+- [ ] Si un index sitemap existe, sélectionner ses enfants dans une étape séparée.
+- [ ] Ne télécharger aucun document pendant la découverte d'indexation.
+<!-- AUTO:LOOP-REG-001-BCEAO-SEARCH-SEMANTICS-2026-09-22:END -->

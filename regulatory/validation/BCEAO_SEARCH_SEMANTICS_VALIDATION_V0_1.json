@@ -1,0 +1,17 @@
+{
+  "schemaVersion": "BCEAO_SEARCH_SEMANTICS_VALIDATION_CHECK_V0_1",
+  "result": "PASS",
+  "checks": {
+    "exactlyThreeQueries": true,
+    "positiveWitnessTested": true,
+    "negativeSentinelTested": true,
+    "resultLinksNotFollowed": true,
+    "binaryNotMaterialized": true,
+    "workflowRepositoryWriteDisabled": true,
+    "automaticRelationshipInferenceForbidden": true,
+    "automaticSanctionActivationForbidden": true,
+    "readyForSubmissionFalse": true
+  },
+  "searchSemantics": "SEARCH_FILTER_SEMANTICS_NOT_VALIDATED",
+  "targetInterpretation": "TARGET_NOT_FOUND_BUT_SEARCH_NEGATIVE_EVIDENCE_UNRELIABLE"
+}

@@ -291,3 +291,18 @@ bceao_exact_search_2026_09_22:
   evidence: regulatory/review-evidence/SANCTIONS_2016_2022/BCEAO_EXACT_SEARCH_DISCOVERY_2026-09-22.json
   validation: regulatory/validation/BCEAO_EXACT_SEARCH_DISCOVERY_VALIDATION_V0_1.json
   next_action: VALIDATE_BCEAO_SEARCH_SEMANTICS_WITH_POSITIVE_AND_NEGATIVE_WITNESSES
+
+bceao_search_semantics_validation_2026_09_22:
+  method: BCEAO_NATIVE_SEARCH_POSITIVE_NEGATIVE_WITNESS_TEST
+  result: PASS
+  positive_witness_recovered: false
+  negative_sentinel_returned_zero_blocks: false
+  positive_result_block_count: 8
+  negative_result_block_count: 26
+  target_result_block_count: 26
+  search_semantics: SEARCH_FILTER_SEMANTICS_NOT_VALIDATED
+  target_interpretation: TARGET_NOT_FOUND_BUT_SEARCH_NEGATIVE_EVIDENCE_UNRELIABLE
+  target_absence_may_be_used_as_negative_evidence: false
+  evidence: regulatory/review-evidence/SANCTIONS_2016_2022/BCEAO_SEARCH_SEMANTICS_VALIDATION_2026-09-22.json
+  validation: regulatory/validation/BCEAO_SEARCH_SEMANTICS_VALIDATION_V0_1.json
+  next_action: DISCOVER_BCEAO_ROBOTS_DECLARED_SITEMAP_SURFACE
