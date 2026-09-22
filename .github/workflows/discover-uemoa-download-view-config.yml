@@ -1,0 +1,57 @@
+name: Discover UEMOA Download View Configuration
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - .github/workflows/discover-uemoa-download-view-config.yml
+      - scripts/discover_uemoa_download_view_config.py
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: uemoa-download-view-config-main
+  cancel-in-progress: false
+
+jobs:
+  discover:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+        with: {fetch-depth: 0}
+      - uses: actions/setup-python@v5
+        with: {python-version: '3.12'}
+      - name: Extract static Drupal view configuration
+        run: python3 scripts/discover_uemoa_download_view_config.py
+      - name: Validate discovery boundary
+        run: |
+          python3 - <<'PY'
+          import json
+          from pathlib import Path
+          e=json.loads(Path('regulatory/review-evidence/SANCTIONS_2016_2022/UEMOA_DOWNLOAD_VIEW_CONFIG_2026-09-22.json').read_text())
+          v=json.loads(Path('regulatory/validation/UEMOA_DOWNLOAD_VIEW_CONFIG_VALIDATION_V0_1.json').read_text())
+          assert e['result']=='PASS' and v['result']=='PASS'
+          for k in ['singleKnownPortalPageOnly','verifiedTlsOnly','ajaxNotInvoked','paginationNotPerformed','linkedDocumentsNotFetched','binaryNotMaterialized','automaticRelationshipInferenceForbidden','automaticSanctionActivationForbidden','readyForSubmissionFalse']:
+              assert v['checks'][k] is True,k
+          PY
+      - run: git diff --check
+      - uses: actions/upload-artifact@v4
+        with:
+          name: uemoa-download-view-config
+          retention-days: 30
+          path: |
+            regulatory/review-evidence/SANCTIONS_2016_2022/UEMOA_DOWNLOAD_VIEW_CONFIG_2026-09-22.json
+            regulatory/validation/UEMOA_DOWNLOAD_VIEW_CONFIG_VALIDATION_V0_1.json
+      - name: Persist view-config evidence
+        run: |
+          git config user.name 'regulatory-source-bot'
+          git config user.email 'regulatory-source-bot@users.noreply.github.com'
+          git add regulatory/review-evidence/SANCTIONS_2016_2022/UEMOA_DOWNLOAD_VIEW_CONFIG_2026-09-22.json regulatory/validation/UEMOA_DOWNLOAD_VIEW_CONFIG_VALIDATION_V0_1.json
+          if ! git diff --cached --quiet; then
+            git commit -m 'chore: persist UEMOA download view config'
+            git pull --rebase --autostash origin main
+            git push origin HEAD:main
+          fi
