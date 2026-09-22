@@ -1,32 +1,69 @@
 {
-  "schemaVersion": "CENTIF_TARGET_LINK_DISCOVERY_V0_1",
+  "schemaVersion": "CENTIF_TARGET_LINK_DISCOVERY_V0_2",
   "sourceId": "DECISION_CM_10_06_2022",
   "reference": "CM/10/06/2022",
-  "method": "TARGETED_INSTITUTIONAL_PAGE_AND_ANCHOR_DISCOVERY",
+  "method": "TARGETED_INSTITUTIONAL_PAGE_AND_ANCHOR_DISCOVERY_WITH_TLS_DIAGNOSTIC_FALLBACK",
   "result": "PASS",
-  "targetStatus": "REFERENCE_NOT_RETRIEVED_FROM_LIVE_PAGES",
+  "targetStatus": "REFERENCE_PRESENT_NO_TARGET_ANCHOR",
   "pages": [
     {
-      "status": "FETCH_ERROR",
+      "status": "OK",
       "url": "https://www.centif.sn/reglementation/fr/reglcommu",
-      "error": "<urlopen error [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: unable to get local issuer certificate (_ssl.c:1010)>"
+      "finalUrl": "https://www.centif.sn/reglementation/fr/reglcommu",
+      "contentType": "text/html; charset=UTF-8",
+      "byteSize": 71303,
+      "sha256": "5b935f1e67b0ae07fd5251d4ceffb43deb52abfb777cf47c05de691e341e4241",
+      "tlsVerified": false,
+      "transportWarning": "TLS_CERTIFICATE_VERIFICATION_BYPASSED_FOR_HTML_DISCOVERY_ONLY",
+      "verifiedAttemptError": "<urlopen error [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: unable to get local issuer certificate (_ssl.c:1010)>",
+      "targetReferencePresent": true,
+      "sanctionsSubjectPresent": true,
+      "anchorCount": 101,
+      "targetAnchors": [],
+      "targetContext": "écision n° 003 du 28/03/2024/CM/UMOA fixant les montants des seuils complémentaires pour la mise en œuvre de la loi uniforme relative à la LBC/FTP ; Décision n° 04/31/03/2023/CM/UMOA portant adoption du projet de loi uniforme relative à la LBC/FT/FPADM dans les Etats membres de l’UMOA ; DECISION n° CM / 10 / 06 / 2022 du Conseil des Ministres de l'Union Monétaire Ouest Africaine relative à la mise en œuvre du dispositif des sanctions pécuniaires applicables sur le marché financier régional de l'UMOA ; la Décision n° 26 du 02/07/2015/CM/UMOA portant adoption du Projet de Loi uniforme relative à la lutte contre le blanchiment de capitaux et le financement du terrorisme dans les Etats membres de l'Union monétaire Ouest africaine (UMOA); l' annexe à la Décision n° 26 du 02/07/2015/CM/UMOA portant adoption du pro"
     },
     {
-      "status": "FETCH_ERROR",
+      "status": "OK",
       "url": "https://site.centif.sn/reglementation/fr/reglcommu",
-      "error": "<urlopen error [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: unable to get local issuer certificate (_ssl.c:1010)>"
+      "finalUrl": "https://site.centif.sn/reglementation/fr/reglcommu",
+      "contentType": "text/html; charset=UTF-8",
+      "byteSize": 71311,
+      "sha256": "13c0242838f45069d65eb87c4640f8497a2859ec06990816114bce88836075d9",
+      "tlsVerified": false,
+      "transportWarning": "TLS_CERTIFICATE_VERIFICATION_BYPASSED_FOR_HTML_DISCOVERY_ONLY",
+      "verifiedAttemptError": "<urlopen error [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: unable to get local issuer certificate (_ssl.c:1010)>",
+      "targetReferencePresent": true,
+      "sanctionsSubjectPresent": true,
+      "anchorCount": 101,
+      "targetAnchors": [],
+      "targetContext": "écision n° 003 du 28/03/2024/CM/UMOA fixant les montants des seuils complémentaires pour la mise en œuvre de la loi uniforme relative à la LBC/FTP ; Décision n° 04/31/03/2023/CM/UMOA portant adoption du projet de loi uniforme relative à la LBC/FT/FPADM dans les Etats membres de l’UMOA ; DECISION n° CM / 10 / 06 / 2022 du Conseil des Ministres de l'Union Monétaire Ouest Africaine relative à la mise en œuvre du dispositif des sanctions pécuniaires applicables sur le marché financier régional de l'UMOA ; la Décision n° 26 du 02/07/2015/CM/UMOA portant adoption du Projet de Loi uniforme relative à la lutte contre le blanchiment de capitaux et le financement du terrorisme dans les Etats membres de l'Union monétaire Ouest africaine (UMOA); l' annexe à la Décision n° 26 du 02/07/2015/CM/UMOA portant adoption du pro"
     },
     {
-      "status": "FETCH_ERROR",
+      "status": "OK",
       "url": "https://jokoo.centif.sn/reglementation/fr/reglcommu",
-      "error": "<urlopen error [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: unable to get local issuer certificate (_ssl.c:1010)>"
+      "finalUrl": "https://jokoo.centif.sn/reglementation/fr/reglcommu",
+      "contentType": "text/html; charset=UTF-8",
+      "byteSize": 71319,
+      "sha256": "7e33e14591ba75091ba4d98a6269c5484bb848b1ff09a3806eea8818650235f8",
+      "tlsVerified": false,
+      "transportWarning": "TLS_CERTIFICATE_VERIFICATION_BYPASSED_FOR_HTML_DISCOVERY_ONLY",
+      "verifiedAttemptError": "<urlopen error [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: unable to get local issuer certificate (_ssl.c:1010)>",
+      "targetReferencePresent": true,
+      "sanctionsSubjectPresent": true,
+      "anchorCount": 101,
+      "targetAnchors": [],
+      "targetContext": "écision n° 003 du 28/03/2024/CM/UMOA fixant les montants des seuils complémentaires pour la mise en œuvre de la loi uniforme relative à la LBC/FTP ; Décision n° 04/31/03/2023/CM/UMOA portant adoption du projet de loi uniforme relative à la LBC/FT/FPADM dans les Etats membres de l’UMOA ; DECISION n° CM / 10 / 06 / 2022 du Conseil des Ministres de l'Union Monétaire Ouest Africaine relative à la mise en œuvre du dispositif des sanctions pécuniaires applicables sur le marché financier régional de l'UMOA ; la Décision n° 26 du 02/07/2015/CM/UMOA portant adoption du Projet de Loi uniforme relative à la lutte contre le blanchiment de capitaux et le financement du terrorisme dans les Etats membres de l'Union monétaire Ouest africaine (UMOA); l' annexe à la Décision n° 26 du 02/07/2015/CM/UMOA portant adoption du pro"
     }
   ],
   "targetAnchors": [],
   "linkedResponses": [],
+  "verifiedPageCount": 0,
+  "unverifiedDiscoveryPageCount": 3,
   "institutionalPdfLinkCount": 0,
   "boundary": {
     "onlyKnownCentifPagesFetched": true,
+    "unverifiedTlsAllowedForHtmlDiscoveryOnly": true,
+    "unverifiedTlsAllowedForTargetBinary": false,
     "onlyTargetAnchorsFollowed": true,
     "nonCentifTargetLinksFollowed": false,
     "binaryMaterializedInRepository": false,
@@ -38,5 +75,5 @@
     "humanComplianceReviewRequired": true,
     "readyForSubmissionMustRemainFalse": true
   },
-  "nextAction": "If an institutional PDF link is found, materialize and validate it in a separate governed step. If the reference is present without an anchor, preserve the non-indexed institutional recovery boundary."
+  "nextAction": "If a target href is discovered under unverified page transport, treat it only as a locator. The linked document must be fetched with verified TLS or through another authoritative transport before materialization or normative comparison."
 }

@@ -1,17 +1,21 @@
 {
-  "schemaVersion": "CENTIF_TARGET_LINK_DISCOVERY_VALIDATION_V0_1",
+  "schemaVersion": "CENTIF_TARGET_LINK_DISCOVERY_VALIDATION_V0_2",
   "result": "PASS",
   "checks": {
     "scopeIsRestrictedToKnownCentifPages": true,
+    "unverifiedTlsRestrictedToHtmlDiscovery": true,
+    "unverifiedTlsForbiddenForTargetBinary": true,
     "onlyTargetAnchorsFollowed": true,
     "binaryNotMaterialized": true,
     "automaticRelationshipInferenceForbidden": true,
     "automaticSanctionActivationForbidden": true,
     "readyForSubmissionFalse": true
   },
-  "targetStatus": "REFERENCE_NOT_RETRIEVED_FROM_LIVE_PAGES",
-  "reachablePageCount": 0,
-  "referencePageCount": 0,
+  "targetStatus": "REFERENCE_PRESENT_NO_TARGET_ANCHOR",
+  "reachablePageCount": 3,
+  "verifiedPageCount": 0,
+  "unverifiedDiscoveryPageCount": 3,
+  "referencePageCount": 3,
   "targetAnchorCount": 0,
   "institutionalPdfLinkCount": 0
 }
