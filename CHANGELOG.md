@@ -460,3 +460,25 @@ Statut : `PENDING_CENTIF_DISCOVERY_CI`.
 - aucune activation réglementaire ;
 - `ready_for_submission=false`.
 <!-- AUTO:LOOP-REG-001-UEMOA-SEARCH-CLOSURE-2026-09-22:END -->
+
+<!-- AUTO:LOOP-REG-001-BCEAO-NATIVE-SEARCH-2026-09-22:START -->
+## [Unreleased] — BCEAO native search discovery — 2026-09-22
+
+### Evidence
+
+- page BCEAO officielle récupérée avec TLS vérifié ;
+- formulaire natif `GET /fr/search-bceao` découvert ;
+- paramètre `search_api_fulltext` découvert ;
+- workflow de recherche read-only validé par CI.
+
+### Added
+
+- scanner borné de trois recherches BCEAO exactes.
+
+### Safety
+
+- aucun résultat suivi dans le scanner ;
+- aucun binaire téléchargé ;
+- aucune activation réglementaire ;
+- `ready_for_submission=false`.
+<!-- AUTO:LOOP-REG-001-BCEAO-NATIVE-SEARCH-2026-09-22:END -->

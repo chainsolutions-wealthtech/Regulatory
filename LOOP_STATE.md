@@ -429,3 +429,20 @@ Nouvelle action :
 
 Prochaine institution : BCEAO, à partir de la page officielle du Conseil des Ministres déjà vérifiée.
 <!-- AUTO:LOOP-REG-001-UEMOA-SEARCH-CLOSURE-2026-09-22:END -->
+
+<!-- AUTO:LOOP-REG-001-BCEAO-NATIVE-SEARCH-2026-09-22:START -->
+## Sous-boucle BCEAO native search
+
+Baseline vérifiée avant persistance : `main@5288495732e715cafb4d493c70d46c7cf81b7a64`.
+
+Découverte du contrat :
+- `result=PASS` ;
+- `targetStatus=NATIVE_SEARCH_SURFACE_CANDIDATES_FOUND` ;
+- formulaire sélectionné : `GET /fr/search-bceao` ;
+- paramètre : `search_api_fulltext` ;
+- source officielle TLS vérifiée : `YES` ;
+- workflow de découverte : `READ_ONLY` ;
+- repository write depuis le scanner : `NO`.
+
+Prochaine sous-boucle : trois recherches exactes, sans suivre les liens résultats. `ready_for_submission=false`.
+<!-- AUTO:LOOP-REG-001-BCEAO-NATIVE-SEARCH-2026-09-22:END -->

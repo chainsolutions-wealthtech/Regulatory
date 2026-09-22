@@ -1,0 +1,64 @@
+name: Discover BCEAO CM-10-06-2022 Exact Search
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - .github/workflows/discover-bceao-cm-10-06-2022-exact-search.yml
+      - scripts/discover_bceao_cm_10_06_2022_exact_search.py
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: bceao-cm-10-06-2022-exact-search-main
+  cancel-in-progress: false
+
+jobs:
+  discover:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      - name: Submit exactly three native BCEAO searches
+        run: python3 scripts/discover_bceao_cm_10_06_2022_exact_search.py
+
+      - name: Validate fail-closed boundary
+        run: |
+          python3 - <<'PY'
+          import json
+          from pathlib import Path
+          e=json.loads(Path('regulatory/review-evidence/SANCTIONS_2016_2022/BCEAO_EXACT_SEARCH_DISCOVERY_2026-09-22.json').read_text())
+          v=json.loads(Path('regulatory/validation/BCEAO_EXACT_SEARCH_DISCOVERY_VALIDATION_V0_1.json').read_text())
+          assert e['result']=='PASS' and v['result']=='PASS'
+          for k in [
+              'nativeContractOnly','exactlyThreeQueries','resultLinksNotFollowed',
+              'binaryNotMaterialized','workflowRepositoryWriteDisabled',
+              'automaticRelationshipInferenceForbidden',
+              'automaticSanctionActivationForbidden','readyForSubmissionFalse'
+          ]:
+              assert v['checks'][k] is True,k
+          PY
+
+      - run: git diff --check
+
+      - name: Emit evidence to workflow log
+        run: |
+          echo '=== BCEAO_EXACT_SEARCH_EVIDENCE ==='
+          cat regulatory/review-evidence/SANCTIONS_2016_2022/BCEAO_EXACT_SEARCH_DISCOVERY_2026-09-22.json
+          echo '=== BCEAO_EXACT_SEARCH_VALIDATION ==='
+          cat regulatory/validation/BCEAO_EXACT_SEARCH_DISCOVERY_VALIDATION_V0_1.json
+
+      - uses: actions/upload-artifact@v4
+        with:
+          name: bceao-cm-10-06-2022-exact-search
+          retention-days: 30
+          if-no-files-found: error
+          path: |
+            regulatory/review-evidence/SANCTIONS_2016_2022/BCEAO_EXACT_SEARCH_DISCOVERY_2026-09-22.json
+            regulatory/validation/BCEAO_EXACT_SEARCH_DISCOVERY_VALIDATION_V0_1.json

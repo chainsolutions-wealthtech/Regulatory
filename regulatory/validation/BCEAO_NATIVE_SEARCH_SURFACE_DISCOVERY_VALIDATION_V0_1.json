@@ -1,0 +1,23 @@
+{
+  "schemaVersion": "BCEAO_NATIVE_SEARCH_SURFACE_DISCOVERY_VALIDATION_V0_1",
+  "result": "PASS",
+  "checks": {
+    "singleKnownOfficialPageOnly": true,
+    "verifiedTlsOnly": true,
+    "formsNotSubmitted": true,
+    "endpointsNotFollowed": true,
+    "linkedDocumentsNotFetched": true,
+    "binaryNotMaterialized": true,
+    "workflowRepositoryWriteDisabled": true,
+    "automaticRelationshipInferenceForbidden": true,
+    "automaticSanctionActivationForbidden": true,
+    "readyForSubmissionFalse": true
+  },
+  "targetStatus": "NATIVE_SEARCH_SURFACE_CANDIDATES_FOUND",
+  "institutionalCandidateCount": 1,
+  "selectedCandidate": {
+    "action": "https://www.bceao.int/fr/search-bceao",
+    "method": "get",
+    "parameter": "search_api_fulltext"
+  }
+}

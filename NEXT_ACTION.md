@@ -324,3 +324,26 @@ La prochaine route institutionnelle devient :
 
 Interdiction maintenue de deviner une URL de document ou des paramètres AJAX non prouvés.
 <!-- AUTO:LOOP-REG-001-UEMOA-SEARCH-CLOSURE-2026-09-22:END -->
+
+<!-- AUTO:LOOP-REG-001-BCEAO-NATIVE-SEARCH-2026-09-22:START -->
+## BCEAO — moteur de recherche natif identifié
+
+La découverte read-only BCEAO a terminé `PASS`.
+
+Contrat institutionnel observé directement sur la page officielle du Conseil des Ministres :
+- action : `https://www.bceao.int/fr/search-bceao` ;
+- méthode : `GET` ;
+- paramètre : `search_api_fulltext` ;
+- TLS : vérifié ;
+- endpoint suivi pendant la découverte : `NO`.
+
+Prochaine action unique :
+`SUBMIT_THREE_BOUNDED_BCEAO_NATIVE_SEARCH_QUERIES`.
+
+Requêtes :
+1. `CM/10/06/2022`
+2. `CM 10 06 2022`
+3. `sanctions pécuniaires marché financier régional`
+
+Le workflow reste read-only. Aucun résultat ne sera suivi et aucun binaire ne sera téléchargé dans cette étape.
+<!-- AUTO:LOOP-REG-001-BCEAO-NATIVE-SEARCH-2026-09-22:END -->

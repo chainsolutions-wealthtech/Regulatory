@@ -875,3 +875,11 @@ Les surfaces publiques déterministes actuellement exposées par E-DOCUCENTER on
 
 La boucle ne transforme pas l'endpoint AJAX Gavias du bloc latéral en moteur documentaire sans preuve. La prochaine institution vérifiable est la BCEAO.
 <!-- AUTO:LOOP-REG-001-UEMOA-SEARCH-CLOSURE-2026-09-22:END -->
+
+<!-- AUTO:LOOP-REG-001-BCEAO-NATIVE-SEARCH-2026-09-22:START -->
+## 2026-09-22 — Route BCEAO désormais déterministe
+
+Après épuisement des surfaces UEMOA publiques vérifiables, la BCEAO fournit une surface native de recherche explicitement exposée sur sa page institutionnelle du 24 juin 2022. Le mécanisme retenu est exclusivement `GET /fr/search-bceao?search_api_fulltext=...`.
+
+La prochaine recherche est limitée à trois formulations déterministes et ne suivra aucun résultat dans le même lot.
+<!-- AUTO:LOOP-REG-001-BCEAO-NATIVE-SEARCH-2026-09-22:END -->

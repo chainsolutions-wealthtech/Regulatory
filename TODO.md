@@ -678,3 +678,17 @@ Statut : `PENDING_CENTIF_DISCOVERY_CI`.
 - [ ] Découvrir la surface de recherche native BCEAO depuis la page officielle connue.
 - [ ] Si BCEAO expose un mécanisme déterministe, l'interroger avec une recherche exacte et bornée.
 <!-- AUTO:LOOP-REG-001-UEMOA-SEARCH-CLOSURE-2026-09-22:END -->
+
+<!-- AUTO:LOOP-REG-001-BCEAO-NATIVE-SEARCH-2026-09-22:START -->
+## BCEAO exact institutional search
+
+- [x] Découvrir la surface de recherche depuis une page BCEAO déjà attestée.
+- [x] Confirmer TLS vérifié.
+- [x] Identifier `GET /fr/search-bceao`.
+- [x] Identifier le paramètre `search_api_fulltext`.
+- [x] Maintenir le workflow de recherche sans permission d'écriture.
+- [ ] Exécuter exactement trois recherches.
+- [ ] Parser uniquement les blocs de résultats Drupal.
+- [ ] Si un bloc cible existe, inspecter ses URLs dans une étape read-only séparée.
+- [ ] Ne télécharger aucun document avant validation de l'URL institutionnelle cible.
+<!-- AUTO:LOOP-REG-001-BCEAO-NATIVE-SEARCH-2026-09-22:END -->

@@ -257,3 +257,23 @@ uemoa_public_discovery_closure_2026_09_22:
     Les surfaces publiques UEMOA déterministes actuellement exposées n'ont pas
     fourni le binaire cible. Aucun endpoint ou URL non prouvé ne doit être deviné.
   next_action: DISCOVER_BCEAO_NATIVE_SEARCH_SURFACE_FROM_KNOWN_OFFICIAL_PAGE
+
+bceao_native_search_surface_2026_09_22:
+  method: KNOWN_BCEAO_PAGE_STATIC_SEARCH_SURFACE_DISCOVERY
+  result: PASS
+  target_status: NATIVE_SEARCH_SURFACE_CANDIDATES_FOUND
+  source_page_tls_verified: true
+  search:
+    action: https://www.bceao.int/fr/search-bceao
+    method: GET
+    parameter: search_api_fulltext
+  discovery_workflow_repository_write_allowed: false
+  evidence: regulatory/review-evidence/SANCTIONS_2016_2022/BCEAO_NATIVE_SEARCH_SURFACE_DISCOVERY_2026-09-22.json
+  validation: regulatory/validation/BCEAO_NATIVE_SEARCH_SURFACE_DISCOVERY_VALIDATION_V0_1.json
+  next_action: SUBMIT_THREE_BOUNDED_BCEAO_NATIVE_SEARCH_QUERIES
+  normative_boundary:
+    search_discovery_is_legal_status_proof: false
+    binary_materialized: false
+    automatic_relationship_inference_allowed: false
+    automatic_sanction_activation_allowed: false
+    ready_for_submission_must_remain_false: true

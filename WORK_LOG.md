@@ -463,3 +463,13 @@ La Regulatory CI associée au lot BCEAO/UEMOA est `35784071755 = SUCCESS`.
 
 La prochaine route est BCEAO native search discovery.
 <!-- AUTO:LOOP-REG-001-UEMOA-SEARCH-CLOSURE-2026-09-22:END -->
+
+<!-- AUTO:LOOP-REG-001-BCEAO-NATIVE-SEARCH-2026-09-22:START -->
+## 2026-09-22 — BCEAO native search surface
+
+Le workflow read-only `Discover BCEAO Native Search Surface` a identifié le formulaire officiel de recherche de la BCEAO. La page source expose `/fr/search-bceao` en GET avec l'input `search_api_fulltext`.
+
+La même page expose aussi `/fr/views/ajax` et des vues Drupal, mais celles-ci ne sont pas sélectionnées : le formulaire natif fournit un contrat suffisant et explicite. Aucun endpoint n'a été suivi lors de la découverte.
+
+Le lot a obtenu Regulatory CI, Security, Browser/Accessibility et Runtime Quality en SUCCESS sans concurrence d'écriture avec le scanner.
+<!-- AUTO:LOOP-REG-001-BCEAO-NATIVE-SEARCH-2026-09-22:END -->
