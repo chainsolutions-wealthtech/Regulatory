@@ -1,0 +1,15 @@
+{
+  "schemaVersion": "UEMOA_EXACT_SEARCH_RESULT_BLOCKS_VALIDATION_V0_2",
+  "result": "PASS",
+  "checks": {
+    "queryEchoExcluded": true,
+    "exactlyThreeQueries": true,
+    "resultLinksNotFollowed": true,
+    "binaryNotMaterialized": true,
+    "automaticRelationshipInferenceForbidden": true,
+    "automaticSanctionActivationForbidden": true,
+    "readyForSubmissionFalse": true
+  },
+  "targetStatus": "NO_TARGET_MATCH_IN_RESULT_BLOCKS",
+  "matchedResultBlockCount": 0
+}

@@ -1,0 +1,61 @@
+{
+  "schemaVersion": "UEMOA_EXACT_SEARCH_RESULT_BLOCKS_V0_2",
+  "sourceId": "DECISION_CM_10_06_2022",
+  "reference": "CM/10/06/2022",
+  "method": "AUTHORITATIVE_DRUPAL_SEARCH_RESULT_BLOCK_PARSER",
+  "result": "PASS",
+  "queryCount": 3,
+  "reachableQueryCount": 3,
+  "targetStatus": "NO_TARGET_MATCH_IN_RESULT_BLOCKS",
+  "matchedResultBlockCount": 0,
+  "exactReferenceResultBlockCount": 0,
+  "sanctionsResultBlockCount": 0,
+  "matchedResultBlocks": [],
+  "results": [
+    {
+      "status": "OK",
+      "query": "CM/10/06/2022",
+      "url": "https://e-docucenter.uemoa.int/fr/search/node?keys=CM%2F10%2F06%2F2022",
+      "finalUrl": "https://e-docucenter.uemoa.int/fr/search/node?keys=CM%2F10%2F06%2F2022",
+      "contentType": "text/html; charset=UTF-8",
+      "byteSize": 28224,
+      "sha256": "10fb297985ae0d8047c6a8281ccca4c96a59387881c2df1b84811e4ea93ed201",
+      "tlsVerified": true,
+      "resultBlockCount": 0,
+      "resultBlocks": []
+    },
+    {
+      "status": "OK",
+      "query": "CM 10 06 2022",
+      "url": "https://e-docucenter.uemoa.int/fr/search/node?keys=CM+10+06+2022",
+      "finalUrl": "https://e-docucenter.uemoa.int/fr/search/node?keys=CM+10+06+2022",
+      "contentType": "text/html; charset=UTF-8",
+      "byteSize": 29736,
+      "sha256": "feeea0ad5357b8a810438cea12377b959d99b40300270082fb1812cc809419b4",
+      "tlsVerified": true,
+      "resultBlockCount": 0,
+      "resultBlocks": []
+    },
+    {
+      "status": "OK",
+      "query": "sanctions pécuniaires marché financier régional",
+      "url": "https://e-docucenter.uemoa.int/fr/search/node?keys=sanctions+p%C3%A9cuniaires+march%C3%A9+financier+r%C3%A9gional",
+      "finalUrl": "https://e-docucenter.uemoa.int/fr/search/node?keys=sanctions+p%C3%A9cuniaires+march%C3%A9+financier+r%C3%A9gional",
+      "contentType": "text/html; charset=UTF-8",
+      "byteSize": 29265,
+      "sha256": "13e2a8ffedd1d448ebd2e658c68a0f0b2dede1fac8de64228252b169ad8cb6d2",
+      "tlsVerified": true,
+      "resultBlockCount": 0,
+      "resultBlocks": []
+    }
+  ],
+  "boundary": {
+    "queryEchoExcludedFromMatching": true,
+    "resultLinksFollowed": false,
+    "binaryMaterialized": false,
+    "automaticRelationshipInferenceAllowed": false,
+    "automaticSanctionActivationAllowed": false,
+    "readyForSubmissionMustRemainFalse": true
+  },
+  "nextAction": "If matched result blocks contain a specific institutional result URL, inspect only that exact URL in a later governed step."
+}
