@@ -140,3 +140,32 @@ notes:
   - "Le scan API officiel borné récupère exactement les dix Décisions actuellement exposées et ne contient pas CM/10/06/2022."
   - "Les quatre Décisions de septembre 2022 visibles dans la table AMF concernent d'autres objets et ne doivent pas être confondues avec CM/10/06/2022."
   - "Aucun montant, barème, seuil, catégorie de manquement ou effet juridique ne doit être activé avant lecture du binaire et comparaison 2016↔2022."
+
+secondary_full_text_mirror_discovery:
+  observed_on: 2026-09-22
+  status: FULL_TEXT_SECONDARY_MIRROR_DISCOVERED_NOT_NORMATIVE
+  source_type: SECONDARY_SPECIALIST_LEGAL_PUBLICATION_PDF
+  provider: LEXTENSO
+  url: "https://www.labase-lextenso.fr/sites/lextenso/files/lextenso_upload/umoa-dec._10-06-2022.pdf"
+  page_count_observed: 17
+  binary_materialized_in_repository: false
+  sha256: null
+  byte_size: null
+  visual_checks:
+    first_page_status: CONFIRMED
+    article_9_and_signature_page_status: CONFIRMED
+  structural_fingerprint:
+    articles_observed: 9
+    annex_1_title_observed: "CLASSIFICATION DES MANQUEMENTS"
+    annex_2_presence_observed: true
+  normative_boundary:
+    normative_use_allowed: false
+    legal_relationship_resolution_allowed: false
+    requirement_activation_allowed: false
+    sanction_amount_activation_allowed: false
+    automatic_enforcement_allowed: false
+    official_or_institutional_binary_still_required: true
+    human_legal_review_required: true
+    human_compliance_review_required: true
+    ready_for_submission_must_remain_false: true
+  evidence_file: regulatory/review-evidence/SANCTIONS_2016_2022/SECONDARY_FULL_TEXT_MIRROR_DISCOVERY_2026-09-22.yaml

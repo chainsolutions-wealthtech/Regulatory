@@ -1,0 +1,87 @@
+evidence_id: SANCTIONS_2022_SECONDARY_FULL_TEXT_MIRROR_DISCOVERY_2026_09_22
+review_date: 2026-09-22
+source_id: DECISION_CM_10_06_2022
+reference: "DECISION N° CM / 10 / 06 / 2022"
+status: SECONDARY_FULL_TEXT_MIRROR_DISCOVERED_NOT_NORMATIVE
+
+discovery:
+  provider: LEXTENSO
+  source_type: SECONDARY_SPECIALIST_LEGAL_PUBLICATION_PDF
+  url: "https://www.labase-lextenso.fr/sites/lextenso/files/lextenso_upload/umoa-dec._10-06-2022.pdf"
+  page_count_observed: 17
+  repository_binary_materialized: false
+  sha256: null
+  byte_size: null
+  note: >-
+    Le runtime de recherche a permis l'ouverture et l'inspection du PDF mais pas
+    la matérialisation de ses octets dans le dépôt. Aucun hash ni byte size n'est revendiqué.
+
+visual_review:
+  first_page:
+    reviewed: true
+    observations:
+      - "UNION MONETAIRE OUEST AFRICAINE / CONSEIL DES MINISTRES / LE PRESIDENT"
+      - "DECISION N° CM / 10 / 06 / 2022"
+      - "Objet attendu relatif au dispositif des sanctions pécuniaires"
+      - "Visa de CM/07/09/2021"
+      - "Visa d'une proposition de révision de CM/SJ/001/03/2016"
+  article_9_signature_page:
+    reviewed: true
+    observations:
+      - "Article 9 intitulé Entrée en vigueur"
+      - "Le miroir présente une entrée en vigueur à compter de la date de signature"
+      - "Le miroir présente une clause d'abrogation/remplacement des dispositions antérieures contraires, citant notamment CM/SJ/001/03/2016"
+      - "Fait à Dakar, le 24 juin 2022"
+      - "Signature visible au nom de Sani YAYA"
+
+structural_fingerprint:
+  articles_observed: 9
+  annex_1:
+    observed: true
+    title: "CLASSIFICATION DES MANQUEMENTS"
+  annex_2:
+    observed: true
+    scope: QUANTA_OR_GRIDS_OF_PECUNIARY_SANCTIONS
+  search_phrases:
+    - "DECISION N° CM / 10 / 06 / 2022"
+    - "proposition de révision de la Décision n° CM/SJ/001/03/2016"
+    - "Elle abroge et remplace toutes dispositions antérieures contraires traitant du même objet"
+    - "Fait à Dakar, le 24 juin 2022"
+    - "Sani YAYA"
+
+institutional_search_2026_09_22:
+  centif:
+    exact_reference_still_indexed: true
+    direct_reader_state: SERVER_ERROR_OBSERVED
+    institutional_pdf_recovered: false
+  bceao:
+    adoption_communique_confirmed: true
+    institutional_pdf_recovered: false
+  uemoa:
+    revision_context_confirmed: true
+    institutional_pdf_recovered: false
+  amf_umoa:
+    prior_current_decision_api_boundary_preserved: true
+    institutional_pdf_recovered: false
+  member_state_public_sources:
+    contextual_session_evidence_found: true
+    institutional_decision_pdf_recovered: false
+
+interpretation:
+  progress: >-
+    Le contenu et la structure du document recherché peuvent désormais servir
+    d'empreinte précise pour retrouver une copie institutionnelle non indexée.
+  legal_relationship_resolution: PENDING
+  official_or_institutional_binary_status: NOT_RECOVERED
+  next_acquisition_mode: INSTITUTIONAL_NON_INDEXED_DOCUMENT_RECOVERY_USING_FULL_TEXT_FINGERPRINT
+
+safety:
+  secondary_mirror_is_normative_source: false
+  secondary_mirror_may_activate_requirements: false
+  secondary_mirror_may_activate_sanction_amounts: false
+  automatic_relationship_inference_allowed: false
+  automatic_enforcement_allowed: false
+  official_or_institutional_binary_required_before_active_atomization: true
+  human_legal_review_required: true
+  human_compliance_review_required: true
+  ready_for_submission_must_remain_false: true

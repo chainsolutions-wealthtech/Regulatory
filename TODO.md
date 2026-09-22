@@ -571,3 +571,17 @@ Légende :
 
 Les anciennes cases non cochées plus bas sont conservées comme historique ; elles ne doivent plus être utilisées seules pour déduire l’état courant.
 <!-- AUTO:CURRENT-STATE-RECONCILIATION-V1:END -->
+
+<!-- AUTO:LOOP-REG-001-SECONDARY-FULL-TEXT-RECOVERY-2026-09-22:START -->
+## LOOP-REG-001 — récupération CM/10/06/2022
+
+- [x] Reprendre la boucle sur `main` sans branche ni PR.
+- [x] Revalider les preuves existantes 2016→2021→2022.
+- [x] Identifier une copie intégrale secondaire de `CM/10/06/2022`.
+- [x] Inspecter la référence, l'article 9, le bloc de signature et la présence des annexes.
+- [x] Enregistrer cette copie comme empreinte de recherche strictement non normative.
+- [ ] Retrouver le binaire officiel ou institutionnel équivalent.
+- [ ] Vérifier magic PDF, SHA-256, taille, pagination et extraction texte/OCR sur le binaire institutionnel.
+- [ ] Comparer formellement 2016↔2022 après acquisition institutionnelle.
+- [ ] Soumettre la relation, les catégories et les quantums aux revues Legal/Compliance avant toute activation.
+<!-- AUTO:LOOP-REG-001-SECONDARY-FULL-TEXT-RECOVERY-2026-09-22:END -->

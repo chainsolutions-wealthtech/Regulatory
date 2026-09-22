@@ -363,3 +363,11 @@ Validation : `CURRENT_STATE_RECONCILIATION_V1 = PASS`.
 
 `ready_for_submission=false` reste un invariant de schéma, runtime et génération. Les anciennes checklists restent des traces historiques ; ce bloc porte l’état courant attesté.
 <!-- AUTO:CURRENT-STATE-RECONCILIATION-V1:END -->
+
+<!-- AUTO:LOOP-REG-001-SECONDARY-FULL-TEXT-RECOVERY-2026-09-22:START -->
+## Overlay de priorité courant — LOOP-REG-001
+
+À la demande du propriétaire le 2026-09-22, la priorité revient à `LOOP-REG-001` pour fermer le verrou documentaire `CM/10/06/2022`.
+
+`LOOP-DEV-001` reste intégralement préservée et devient `PAUSED_BY_OWNER_PRIORITY_PRESERVED`. Une copie PDF secondaire complète de 17 pages fournit désormais une empreinte de recherche précise, mais elle reste non normative. L'itération n'est pas close tant que le binaire officiel/institutionnel n'est pas récupéré et vérifié.
+<!-- AUTO:LOOP-REG-001-SECONDARY-FULL-TEXT-RECOVERY-2026-09-22:END -->

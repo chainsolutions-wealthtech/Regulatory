@@ -806,3 +806,13 @@ Validation : `CURRENT_STATE_RECONCILIATION_V1 = PASS`.
 
 `ready_for_submission=false` reste un invariant de schéma, runtime et génération. Les anciennes checklists restent des traces historiques ; ce bloc porte l’état courant attesté.
 <!-- AUTO:CURRENT-STATE-RECONCILIATION-V1:END -->
+
+<!-- AUTO:LOOP-REG-001-SECONDARY-FULL-TEXT-RECOVERY-2026-09-22:START -->
+## 2026-09-22 — Reprise de LOOP-REG-001 et nouvelle empreinte CM/10/06/2022
+
+Le propriétaire a demandé de poursuivre Regulatory en Loop Engineering. La reprise est effectuée sur `main@d19e53843a1231382d745c20153520a06e9ad100`, sans branche ni PR.
+
+La recherche a identifié un PDF secondaire complet de 17 pages de la Décision `CM/10/06/2022`. L'inspection confirme la référence et l'objet attendus ainsi que la présence de l'article 9, du bloc de signature daté du 24 juin 2022 et des annexes. La provenance n'étant pas institutionnelle, cette copie est enregistrée uniquement comme `SECONDARY_FULL_TEXT_MIRROR_DISCOVERED_NOT_NORMATIVE`.
+
+La priorité `LOOP-REG-001` est reprise, avec `LOOP-DEV-001` préservée en pause de priorité. Le verrou restant demeure l'acquisition du binaire officiel ou institutionnel. Aucune règle, sanction ou soumission n'est activée.
+<!-- AUTO:LOOP-REG-001-SECONDARY-FULL-TEXT-RECOVERY-2026-09-22:END -->

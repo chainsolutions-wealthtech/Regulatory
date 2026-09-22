@@ -316,3 +316,21 @@ L’activation du driver PostgreSQL échoue explicitement tant qu’aucun adapta
 - aucune règle réglementaire nouvelle activée ;
 - `ready_for_submission=false` maintenu.
 <!-- AUTO:LOOP-DEV-001-ENGINE-BRANCH-COVERAGE-V1:END -->
+
+<!-- AUTO:LOOP-REG-001-SECONDARY-FULL-TEXT-RECOVERY-2026-09-22:START -->
+## [Unreleased] — Reprise réglementaire CM/10/06/2022 — 2026-09-22
+
+### Added
+
+- preuve de découverte d'un miroir PDF secondaire complet de 17 pages ;
+- empreinte textuelle pour la récupération institutionnelle ;
+- reprise explicite de `LOOP-REG-001`.
+
+### Preserved
+
+- exigence d'un binaire officiel/institutionnel avant atomisation active ;
+- absence d'activation de sanctions ou quantums ;
+- revues Legal/Compliance obligatoires ;
+- `ready_for_submission=false` ;
+- intégralité de `LOOP-DEV-001` et de ses preuves.
+<!-- AUTO:LOOP-REG-001-SECONDARY-FULL-TEXT-RECOVERY-2026-09-22:END -->

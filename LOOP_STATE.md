@@ -293,3 +293,20 @@ La boucle réglementaire sera reprise après la tranche de couverture standard o
 - soumission : `DISABLED` ;
 - production readiness sans acceptation cible : `FORBIDDEN`.
 <!-- AUTO:LOOP-DEV-001-POSTGRES-REPOSITORY-V1:END -->
+
+<!-- AUTO:LOOP-REG-001-SECONDARY-FULL-TEXT-RECOVERY-2026-09-22:START -->
+## Reprise de LOOP-REG-001 — 2026-09-22
+
+- priorité propriétaire : `LOOP-REG-001` reprise ;
+- `LOOP-DEV-001` : `PAUSED_BY_OWNER_PRIORITY_PRESERVED` ;
+- branche : `main` ;
+- HEAD de reprise : `d19e53843a1231382d745c20153520a06e9ad100` ;
+- nouvelle preuve : miroir PDF intégral secondaire de 17 pages ;
+- preuve : `SECONDARY_FULL_TEXT_MIRROR_DISCOVERED_NOT_NORMATIVE` ;
+- relation 2016↔2022 : `PENDING_OFFICIAL_OR_INSTITUTIONAL_BINARY_AND_HUMAN_REVIEW` ;
+- sanctions/quantums : `INACTIVE` ;
+- activation automatique : `FORBIDDEN` ;
+- `ready_for_submission=false`.
+
+Prochaine action unique : retrouver le même document via une archive institutionnelle en utilisant son empreinte textuelle.
+<!-- AUTO:LOOP-REG-001-SECONDARY-FULL-TEXT-RECOVERY-2026-09-22:END -->

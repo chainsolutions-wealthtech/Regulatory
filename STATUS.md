@@ -444,3 +444,13 @@ Validation : `CURRENT_STATE_RECONCILIATION_V1 = PASS`.
 
 `ready_for_submission=false` reste un invariant de schéma, runtime et génération. Les anciennes checklists restent des traces historiques ; ce bloc porte l’état courant attesté.
 <!-- AUTO:CURRENT-STATE-RECONCILIATION-V1:END -->
+
+<!-- AUTO:LOOP-REG-001-SECONDARY-FULL-TEXT-RECOVERY-2026-09-22:START -->
+## État réglementaire courant — 2026-09-22
+
+`LOOP-REG-001 = IN_PROGRESS_RESUMED_BY_OWNER`.
+
+Une copie PDF secondaire complète de `CM/10/06/2022` a été localisée et inspectée. Elle comporte 17 pages et expose la référence, l'objet, l'article 9, le bloc de signature du 24 juin 2022 ainsi que les annexes. Elle fournit une empreinte documentaire forte pour la récupération institutionnelle.
+
+Le bloqueur reste ouvert : la copie n'est pas hébergée par une autorité publique et reste `NOT_NORMATIVE`. Aucun effet juridique, montant, barème, exigence ou sanction n'est activé. Le binaire officiel/institutionnel et les revues Legal/Compliance restent requis. `ready_for_submission=false`.
+<!-- AUTO:LOOP-REG-001-SECONDARY-FULL-TEXT-RECOVERY-2026-09-22:END -->

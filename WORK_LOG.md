@@ -372,3 +372,19 @@ Aucune nouvelle branche, aucun force-push, aucune approbation juridique simulée
 - activation réglementaire automatique : `FORBIDDEN` ;
 - revues juridique et conformité : `PENDING`.
 <!-- AUTO:LOOP-GOV-002-GOVERNANCE-RECONCILIATION:END -->
+
+<!-- AUTO:LOOP-REG-001-SECONDARY-FULL-TEXT-RECOVERY-2026-09-22:START -->
+## 2026-09-22 — Reprise documentaire CM/10/06/2022
+
+1. Vérification de `main@d19e53843a1231382d745c20153520a06e9ad100` et de la baseline CI attestée `f6a11e6...`.
+2. Relecture des autorités et preuves SANCTIONS_2016_2022.
+3. Recherche ciblée CENTIF, BCEAO, UEMOA, AMF-UMOA et archives publiques.
+4. CENTIF reste indexé avec la référence exacte, mais aucun PDF institutionnel n'a été récupéré.
+5. Découverte d'un miroir PDF Lextenso de 17 pages portant la référence exacte.
+6. Inspection visuelle de la première page et de la page article 9/signature.
+7. Classement strict du miroir comme preuve secondaire non normative.
+8. Conservation du bloqueur officiel/institutionnel et de toutes les interdictions d'activation.
+9. Raffinement de la prochaine recherche par empreinte textuelle.
+
+Aucun code, schéma, règle active, montant de sanction ou statut de soumission n'est modifié.
+<!-- AUTO:LOOP-REG-001-SECONDARY-FULL-TEXT-RECOVERY-2026-09-22:END -->

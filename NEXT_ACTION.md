@@ -203,3 +203,13 @@ Conséquences :
 - aucune métadonnée technique de portail ne peut réactiver un texte explicitement abrogé par un acte normatif ;
 - revue juridique, conformité et fiscale humaines obligatoires lorsque requises ;
 - `ready_for_submission=false`.
+
+<!-- AUTO:LOOP-REG-001-SECONDARY-FULL-TEXT-RECOVERY-2026-09-22:START -->
+## Avancement de récupération documentaire — 2026-09-22
+
+La prochaine action ne change pas : obtenir un binaire officiel ou institutionnel de `CM/10/06/2022`.
+
+Un PDF intégral secondaire de 17 pages est désormais localisé chez Lextenso. Il montre la référence attendue, le corps de la Décision, l'article 9, le bloc de signature du 24 juin 2022 et les annexes. Cette copie est `SECONDARY_FULL_TEXT_MIRROR_DISCOVERED_NOT_NORMATIVE` et ne peut activer aucune règle ni résoudre juridiquement la relation 2016↔2022.
+
+Prochain mode : `INSTITUTIONAL_NON_INDEXED_DOCUMENT_RECOVERY_USING_FULL_TEXT_FINGERPRINT`. Preuve : `regulatory/review-evidence/SANCTIONS_2016_2022/SECONDARY_FULL_TEXT_MIRROR_DISCOVERY_2026-09-22.yaml`.
+<!-- AUTO:LOOP-REG-001-SECONDARY-FULL-TEXT-RECOVERY-2026-09-22:END -->

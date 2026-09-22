@@ -362,3 +362,15 @@ Validation : `CURRENT_STATE_RECONCILIATION_V1 = PASS`.
 
 `ready_for_submission=false` reste un invariant de schéma, runtime et génération. Les anciennes checklists restent des traces historiques ; ce bloc porte l’état courant attesté.
 <!-- AUTO:CURRENT-STATE-RECONCILIATION-V1:END -->
+
+<!-- AUTO:LOOP-REG-001-SECONDARY-FULL-TEXT-RECOVERY-2026-09-22:START -->
+## Handoff — LOOP-REG-001 repris le 2026-09-22
+
+Point de reprise : `main@d19e53843a1231382d745c20153520a06e9ad100`.
+
+Un miroir PDF secondaire complet de 17 pages de `CM/10/06/2022` est localisé chez Lextenso. Il fournit une empreinte de recherche mais ne satisfait pas l'exigence de source normative.
+
+À faire ensuite : retrouver le même binaire depuis une archive institutionnelle non indexée ou legacy, vérifier les octets, calculer SHA-256/taille/pagination, extraire le texte, puis préparer la comparaison 2016↔2022.
+
+Ne pas activer de quantums ni conclure juridiquement sur la seule copie secondaire. Maintenir `ready_for_submission=false`.
+<!-- AUTO:LOOP-REG-001-SECONDARY-FULL-TEXT-RECOVERY-2026-09-22:END -->
