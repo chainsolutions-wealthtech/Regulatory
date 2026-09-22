@@ -308,3 +308,19 @@ Prochaine action unique :
 
 Cette étape inventorie uniquement le texte, les ancres, formulaires et indices d'endpoint du portail. Aucun formulaire n'est soumis et aucun document n'est téléchargé.
 <!-- AUTO:LOOP-REG-001-UEMOA-DOWNLOAD-PORTAL-2026-09-22:END -->
+
+<!-- AUTO:LOOP-REG-001-UEMOA-SEARCH-CLOSURE-2026-09-22:START -->
+## Clôture des surfaces UEMOA publiques vérifiables — 2026-09-22
+
+Résultats accumulés :
+- portail `/fr/telecharger-documents` : `PASS`, aucune cible statique ;
+- recherche institutionnelle `/fr/search/node?keys=...` : `PASS`, aucun lien résultat portant la décision ;
+- parsing des blocs résultat : `PASS / NO_TARGET_MATCH_IN_RESULT_BLOCKS` ;
+- configuration Drupal : `PASS`, endpoint `/fr/custom/gavias_hook/ajax_view` présent mais rattaché au bloc latéral `liste-des-livres-sidebar-block-1`, donc non utilisé pour la décision ;
+- `robots.txt` : `PASS`, aucun sitemap déclaré.
+
+La prochaine route institutionnelle devient :
+`DISCOVER_BCEAO_NATIVE_SEARCH_SURFACE_FROM_KNOWN_OFFICIAL_PAGE`.
+
+Interdiction maintenue de deviner une URL de document ou des paramètres AJAX non prouvés.
+<!-- AUTO:LOOP-REG-001-UEMOA-SEARCH-CLOSURE-2026-09-22:END -->

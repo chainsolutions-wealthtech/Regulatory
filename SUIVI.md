@@ -867,3 +867,11 @@ La route BCEAO/UEMOA confirme à nouveau la révision de juin 2022 mais n'offre 
 
 Cette progression ne modifie aucune règle active et conserve l'exigence d'un binaire institutionnel vérifié avant toute comparaison normative.
 <!-- AUTO:LOOP-REG-001-UEMOA-DOWNLOAD-PORTAL-2026-09-22:END -->
+
+<!-- AUTO:LOOP-REG-001-UEMOA-SEARCH-CLOSURE-2026-09-22:START -->
+## 2026-09-22 — UEMOA : surface publique épuisée sans binaire cible
+
+Les surfaces publiques déterministes actuellement exposées par E-DOCUCENTER ont été explorées sans crawl libre : page de téléchargement, recherche native, blocs résultat, configuration Drupal et robots.txt. Elles confirment des éléments de contexte mais n'exposent pas le binaire `CM/10/06/2022`.
+
+La boucle ne transforme pas l'endpoint AJAX Gavias du bloc latéral en moteur documentaire sans preuve. La prochaine institution vérifiable est la BCEAO.
+<!-- AUTO:LOOP-REG-001-UEMOA-SEARCH-CLOSURE-2026-09-22:END -->

@@ -414,3 +414,18 @@ Nouvelle action :
 - sanction activation : `FORBIDDEN` ;
 - `ready_for_submission=false`.
 <!-- AUTO:LOOP-REG-001-UEMOA-DOWNLOAD-PORTAL-2026-09-22:END -->
+
+<!-- AUTO:LOOP-REG-001-UEMOA-SEARCH-CLOSURE-2026-09-22:START -->
+## État UEMOA après recherche bornée
+
+- UEMOA download portal : `NO_TARGET_TEXT_OR_LINK_ON_DOWNLOAD_PORTAL` ;
+- UEMOA exact search : `candidateCount=0` ;
+- UEMOA result blocks V0.2 : `NO_TARGET_MATCH_IN_RESULT_BLOCKS` ;
+- UEMOA Drupal view config : `configurationSignalPresent=true`, mais signal identifié comme bloc latéral non cible ;
+- UEMOA robots : `NO_SITEMAP_DECLARED_IN_ROBOTS` ;
+- binaire officiel/institutionnel cible : `NOT_RECOVERED` ;
+- activation réglementaire : `FORBIDDEN` ;
+- `ready_for_submission=false`.
+
+Prochaine institution : BCEAO, à partir de la page officielle du Conseil des Ministres déjà vérifiée.
+<!-- AUTO:LOOP-REG-001-UEMOA-SEARCH-CLOSURE-2026-09-22:END -->

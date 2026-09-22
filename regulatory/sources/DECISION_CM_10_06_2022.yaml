@@ -226,3 +226,34 @@ bceao_uemoa_targeted_archive_discovery_2026_09_22:
     Le contexte institutionnel de la révision de juin 2022 est confirmé, mais les
     pages inspectées ne publient pas directement la décision cible. La surface de
     téléchargement UEMOA doit être inspectée séparément sans inférer de contenu.
+
+uemoa_public_discovery_closure_2026_09_22:
+  download_portal:
+    result: PASS
+    target_status: NO_TARGET_TEXT_OR_LINK_ON_DOWNLOAD_PORTAL
+    evidence: regulatory/review-evidence/SANCTIONS_2016_2022/UEMOA_DOWNLOAD_PORTAL_DISCOVERY_2026-09-22.json
+  exact_search:
+    result: PASS
+    query_count: 3
+    candidate_count: 0
+    evidence: regulatory/review-evidence/SANCTIONS_2016_2022/UEMOA_EXACT_SEARCH_DISCOVERY_2026-09-22.json
+  result_block_validation:
+    result: PASS
+    target_status: NO_TARGET_MATCH_IN_RESULT_BLOCKS
+    matched_result_block_count: 0
+    evidence: regulatory/review-evidence/SANCTIONS_2016_2022/UEMOA_EXACT_SEARCH_RESULT_BLOCKS_2026-09-22.json
+  drupal_view_configuration:
+    result: PASS
+    ajax_endpoint_observed: /fr/custom/gavias_hook/ajax_view
+    identifiable_view_scope: liste-des-livres-sidebar-block-1
+    target_use_allowed: false
+    evidence: regulatory/review-evidence/SANCTIONS_2016_2022/UEMOA_DOWNLOAD_VIEW_CONFIG_2026-09-22.json
+  robots_sitemap:
+    result: PASS
+    sitemap_declared_count: 0
+    target_status: NO_SITEMAP_DECLARED_IN_ROBOTS
+    evidence: regulatory/review-evidence/SANCTIONS_2016_2022/UEMOA_ROBOTS_SITEMAP_DISCOVERY_2026-09-22.json
+  conclusion: >-
+    Les surfaces publiques UEMOA déterministes actuellement exposées n'ont pas
+    fourni le binaire cible. Aucun endpoint ou URL non prouvé ne doit être deviné.
+  next_action: DISCOVER_BCEAO_NATIVE_SEARCH_SURFACE_FROM_KNOWN_OFFICIAL_PAGE

@@ -437,3 +437,26 @@ Statut : `PENDING_CENTIF_DISCOVERY_CI`.
 - aucune activation réglementaire ;
 - `ready_for_submission=false`.
 <!-- AUTO:LOOP-REG-001-UEMOA-DOWNLOAD-PORTAL-2026-09-22:END -->
+
+<!-- AUTO:LOOP-REG-001-UEMOA-SEARCH-CLOSURE-2026-09-22:START -->
+## [Unreleased] — UEMOA public discovery closure — 2026-09-22
+
+### Evidence
+
+- exact institutional search : PASS ;
+- result-block parser : PASS, no target block ;
+- Drupal static configuration extraction : PASS ;
+- robots/sitemap discovery : PASS, no sitemap declared.
+
+### Decision
+
+- ne pas utiliser l'endpoint Gavias AJAX du bloc latéral pour rechercher la décision ;
+- poursuivre par découverte native BCEAO.
+
+### Safety
+
+- aucun URL binaire inventé ;
+- aucun téléchargement cible ;
+- aucune activation réglementaire ;
+- `ready_for_submission=false`.
+<!-- AUTO:LOOP-REG-001-UEMOA-SEARCH-CLOSURE-2026-09-22:END -->

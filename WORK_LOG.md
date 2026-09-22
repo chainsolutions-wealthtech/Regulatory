@@ -449,3 +449,17 @@ Le seul chemin nouveau et institutionnel explicitement exposé est `/fr/telechar
 
 La Regulatory CI associée au lot BCEAO/UEMOA est `35784071755 = SUCCESS`.
 <!-- AUTO:LOOP-REG-001-UEMOA-DOWNLOAD-PORTAL-2026-09-22:END -->
+
+<!-- AUTO:LOOP-REG-001-UEMOA-SEARCH-CLOSURE-2026-09-22:START -->
+## 2026-09-22 — Fermeture progressive des surfaces UEMOA
+
+1. Portail officiel de téléchargement inspecté statiquement : aucune cible.
+2. Moteur Drupal institutionnel découvert et interrogé avec trois requêtes bornées.
+3. Aucun lien résultat ne porte la référence cible ; les liens métier renvoient aux pages contextuelles déjà connues.
+4. Parser V0.2 ajouté pour exclure l'écho de requête : aucun bloc résultat cible.
+5. Configuration Drupal extraite : endpoint Gavias AJAX présent, mais la seule Vue identifiable correspond au carrousel latéral des livres et n'est pas promue comme source cible.
+6. robots.txt inspecté en TLS vérifié : aucun sitemap déclaré.
+7. Aucun PDF n'a été téléchargé et aucune URL de document n'a été devinée.
+
+La prochaine route est BCEAO native search discovery.
+<!-- AUTO:LOOP-REG-001-UEMOA-SEARCH-CLOSURE-2026-09-22:END -->

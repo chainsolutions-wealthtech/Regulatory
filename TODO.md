@@ -664,3 +664,17 @@ Statut : `PENDING_CENTIF_DISCOVERY_CI`.
 - [ ] Inventorier formulaires et endpoints institutionnels exposés.
 - [ ] N'utiliser qu'un mécanisme exact et borné si le portail fournit une recherche officielle.
 <!-- AUTO:LOOP-REG-001-UEMOA-DOWNLOAD-PORTAL-2026-09-22:END -->
+
+<!-- AUTO:LOOP-REG-001-UEMOA-SEARCH-CLOSURE-2026-09-22:START -->
+## Fin de la sous-boucle UEMOA publique
+
+- [x] Inspecter le portail de téléchargement UEMOA.
+- [x] Exécuter trois recherches institutionnelles exactes.
+- [x] Éliminer le faux positif lié à l'écho de requête.
+- [x] Vérifier la configuration Drupal sans appeler l'AJAX.
+- [x] Refuser d'utiliser l'AJAX du bloc latéral comme source de la décision.
+- [x] Inspecter robots.txt sans deviner de sitemap.
+- [x] Confirmer l'absence de sitemap déclaré.
+- [ ] Découvrir la surface de recherche native BCEAO depuis la page officielle connue.
+- [ ] Si BCEAO expose un mécanisme déterministe, l'interroger avec une recherche exacte et bornée.
+<!-- AUTO:LOOP-REG-001-UEMOA-SEARCH-CLOSURE-2026-09-22:END -->
