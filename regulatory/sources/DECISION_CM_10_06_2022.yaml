@@ -188,3 +188,21 @@ cross_category_api_scan_2026_09_22:
     L'absence de la référence dans cette plage toutes catégories confondues ferme
     l'hypothèse d'un objet mal catégorisé dans ce périmètre. Elle ne prouve ni
     l'inexistence du texte, ni son absence d'une archive institutionnelle distincte.
+
+centif_target_link_discovery_2026_09_22:
+  method: TARGETED_INSTITUTIONAL_PAGE_AND_ANCHOR_DISCOVERY_WITH_TLS_DIAGNOSTIC_FALLBACK
+  pages_checked: 3
+  reachable_with_verified_tls: 0
+  reachable_with_html_discovery_fallback: 3
+  reference_page_count: 3
+  target_anchor_count: 0
+  institutional_pdf_link_count: 0
+  target_status: REFERENCE_PRESENT_NO_TARGET_ANCHOR
+  evidence: regulatory/review-evidence/SANCTIONS_2016_2022/CENTIF_TARGET_LINK_DISCOVERY_2026-09-22.json
+  validation: regulatory/validation/CENTIF_TARGET_LINK_DISCOVERY_VALIDATION_V0_1.json
+  transport_boundary:
+    unverified_tls_for_html_discovery_only: true
+    unverified_tls_for_target_binary: false
+  interpretation_boundary: >-
+    La référence est bien présente sur les pages CENTIF, mais sans lien associé.
+    Ces pages ne fournissent donc pas de route de récupération directe du binaire.

@@ -377,3 +377,18 @@ Statut : `PENDING_CENTIF_DISCOVERY_CI`.
 - fallback non vérifié autorisé uniquement pour découvrir le HTML/href ;
 - récupération binaire par TLS non vérifié interdite.
 <!-- AUTO:LOOP-REG-001-CI-RACE-AND-CENTIF-TLS-2026-09-22:END -->
+
+<!-- AUTO:LOOP-REG-001-CI-AUTOSTASH-CENTIF-RESULT-2026-09-22:START -->
+## [Unreleased] — CENTIF discovery result + CI autostash — 2026-09-22
+
+### Evidence
+
+- référence `CM/10/06/2022` présente sur 3/3 pages CENTIF ;
+- 0 ancre cible ;
+- 0 lien PDF institutionnel exposé.
+
+### Fixed
+
+- le retry de persistance Regulatory CI utilise désormais `git pull --rebase --autostash` afin de supporter les sorties de génération non indexées ;
+- aucun force-push et aucune perte de worktree.
+<!-- AUTO:LOOP-REG-001-CI-AUTOSTASH-CENTIF-RESULT-2026-09-22:END -->

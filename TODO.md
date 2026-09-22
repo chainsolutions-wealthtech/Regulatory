@@ -624,3 +624,17 @@ Statut : `PENDING_CENTIF_DISCOVERY_CI`.
 - [ ] Exécuter CENTIF discovery V0.2.
 - [ ] Si un href est découvert, exiger un transport vérifié pour le document cible.
 <!-- AUTO:LOOP-REG-001-CI-RACE-AND-CENTIF-TLS-2026-09-22:END -->
+
+<!-- AUTO:LOOP-REG-001-CI-AUTOSTASH-CENTIF-RESULT-2026-09-22:START -->
+## Résultat CENTIF / correction CI V2
+
+- [x] Lire les trois pages CENTIF malgré le défaut de chaîne TLS, uniquement en mode discovery.
+- [x] Confirmer la présence de la référence sur les trois pages.
+- [x] Vérifier les 101 ancres de chaque page.
+- [x] Confirmer l'absence d'ancre cible et de PDF cible.
+- [x] Interdire tout usage normatif du transport TLS non vérifié.
+- [x] Diagnostiquer le second échec de persistance Regulatory CI.
+- [x] Préparer le rebase `--autostash`.
+- [ ] Obtenir Regulatory CI GREEN avec écriture concurrente.
+- [ ] Passer à une route institutionnelle distincte BCEAO/UEMOA.
+<!-- AUTO:LOOP-REG-001-CI-AUTOSTASH-CENTIF-RESULT-2026-09-22:END -->

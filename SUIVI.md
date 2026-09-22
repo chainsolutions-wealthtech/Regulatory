@@ -843,3 +843,11 @@ La CI principale a échoué après tous ses contrôles réussis, uniquement lors
 
 La première tentative CENTIF a simultanément identifié une chaîne TLS non validable depuis GitHub Actions. La recherche est poursuivie par un fallback de découverte HTML explicitement non fiable pour la preuve normative ; aucun PDF obtenu par transport non vérifié ne pourra être promu.
 <!-- AUTO:LOOP-REG-001-CI-RACE-AND-CENTIF-TLS-2026-09-22:END -->
+
+<!-- AUTO:LOOP-REG-001-CI-AUTOSTASH-CENTIF-RESULT-2026-09-22:START -->
+## 2026-09-22 — CENTIF : référence sans pièce jointe ; CI race-safe V2
+
+Les trois miroirs institutionnels CENTIF exposent bien `CM/10/06/2022` dans leur contenu HTML, mais la référence est du texte brut : aucune ancre ni pièce jointe n'est associée. Cette route ne peut donc pas fournir le binaire.
+
+La première correction de concurrence CI a identifié un second cas : un rebase de retry est bloqué par les modifications de rendu encore présentes dans le worktree. L'ajout de `--autostash` corrige ce point sans force-push, sans suppression de preuve et sans affaiblissement des tests.
+<!-- AUTO:LOOP-REG-001-CI-AUTOSTASH-CENTIF-RESULT-2026-09-22:END -->

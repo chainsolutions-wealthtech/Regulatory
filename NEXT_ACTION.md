@@ -254,3 +254,23 @@ Action corrective : rendre la persistance de Regulatory CI tolérante à cette c
 
 La prochaine recherche réglementaire reste la route CENTIF. Une seconde tentative de découverte autorise un fallback TLS non vérifié **uniquement pour lire le HTML et découvrir le href cible**. Tout binaire cible reste soumis à TLS vérifié avant matérialisation.
 <!-- AUTO:LOOP-REG-001-CI-RACE-AND-CENTIF-TLS-2026-09-22:END -->
+
+<!-- AUTO:LOOP-REG-001-CI-AUTOSTASH-CENTIF-RESULT-2026-09-22:START -->
+## Résultat CENTIF V0.2 et correction CI autostash — 2026-09-22
+
+CENTIF :
+- pages institutionnelles contrôlées : `3` ;
+- pages contenant `CM/10/06/2022` : `3` ;
+- ancres cible : `0` ;
+- liens PDF institutionnels : `0` ;
+- statut : `REFERENCE_PRESENT_NO_TARGET_ANCHOR` ;
+- TLS des trois surfaces : chaîne non validable depuis le runner ; fallback utilisé uniquement pour HTML de découverte.
+
+La page CENTIF confirme donc la référence en texte, mais n'expose aucun document lié.
+
+CI :
+- run `35780822213` : tous les contrôles fonctionnels passent, mais la persistance échoue lors du rebase car des sorties générées restent non indexées ;
+- correction : `git pull --rebase --autostash origin main`, toujours sans force-push.
+
+Après validation de cette correction, la prochaine route documentaire reste une archive institutionnelle différente : BCEAO/Conseil des Ministres ou UEMOA/archives, en exploitant l'empreinte intégrale déjà connue.
+<!-- AUTO:LOOP-REG-001-CI-AUTOSTASH-CENTIF-RESULT-2026-09-22:END -->

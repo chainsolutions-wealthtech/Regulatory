@@ -576,7 +576,7 @@ jobs:
                 exit 0
               fi
               echo "Generated-state push raced with another main writer; rebasing attempt ${attempt}/3." >&2
-              git pull --rebase origin main
+              git pull --rebase --autostash origin main
             done
             echo 'Unable to persist generated evidence after 3 non-force retries.' >&2
             exit 1

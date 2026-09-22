@@ -423,3 +423,11 @@ Le step 23 a créé localement `bf70b5e chore: refresh validation evidence and l
 
 En parallèle, le premier scanner CENTIF a établi un problème de chaîne de certificats TLS sur les trois surfaces connues. La V0.2 peut contourner ce défaut uniquement pour lire le HTML et identifier un lien ; le téléchargement cible reste strictement vérifié.
 <!-- AUTO:LOOP-REG-001-CI-RACE-AND-CENTIF-TLS-2026-09-22:END -->
+
+<!-- AUTO:LOOP-REG-001-CI-AUTOSTASH-CENTIF-RESULT-2026-09-22:START -->
+## 2026-09-22 — CENTIF V0.2 et deuxième correction de persistance CI
+
+Le scanner CENTIF V0.2 a récupéré les trois pages connues grâce à un fallback TLS limité au HTML. Les trois contiennent la référence exacte et l'objet sanctions, mais aucune n'attache la référence à une ancre : `101` ancres par page, `0` ancre cible, `0` lien PDF cible.
+
+Le retry de Regulatory CI a correctement détecté la course de push, mais `git pull --rebase` a été refusé car le worktree conservait des modifications de génération non indexées. La correction suivante utilise `git pull --rebase --autostash`, ce qui protège ces modifications tout en conservant un rebase non destructif. Aucun contrôle n'est supprimé ou contourné.
+<!-- AUTO:LOOP-REG-001-CI-AUTOSTASH-CENTIF-RESULT-2026-09-22:END -->

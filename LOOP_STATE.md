@@ -355,3 +355,22 @@ Statut : `PENDING_CENTIF_DISCOVERY_CI`.
 
 CENTIF V0.2 : TLS non vérifié autorisé uniquement pour découverte HTML ; interdit pour les octets cible. `ready_for_submission=false`.
 <!-- AUTO:LOOP-REG-001-CI-RACE-AND-CENTIF-TLS-2026-09-22:END -->
+
+<!-- AUTO:LOOP-REG-001-CI-AUTOSTASH-CENTIF-RESULT-2026-09-22:START -->
+## État correctif — CENTIF et CI
+
+CENTIF V0.2 :
+- `targetStatus=REFERENCE_PRESENT_NO_TARGET_ANCHOR` ;
+- `referencePageCount=3` ;
+- `targetAnchorCount=0` ;
+- `institutionalPdfLinkCount=0` ;
+- transport HTML non vérifié : `DISCOVERY_ONLY` ;
+- transport non vérifié pour binaire : `FORBIDDEN`.
+
+Regulatory CI run `35780822213` :
+- validations produit : `PASS` ;
+- échec final : `REBASE_BLOCKED_BY_UNSTAGED_GENERATED_CHANGES` ;
+- correction : `--autostash` sur le rebase de retry ;
+- force-push : `FORBIDDEN` ;
+- `ready_for_submission=false`.
+<!-- AUTO:LOOP-REG-001-CI-AUTOSTASH-CENTIF-RESULT-2026-09-22:END -->
