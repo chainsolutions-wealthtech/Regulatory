@@ -1,0 +1,527 @@
+{
+  "schemaVersion": "UEMOA_DOWNLOAD_PORTAL_DISCOVERY_V0_1",
+  "sourceId": "DECISION_CM_10_06_2022",
+  "reference": "CM/10/06/2022",
+  "method": "AUTHORITATIVE_DOWNLOAD_PORTAL_STATIC_DISCOVERY",
+  "result": "PASS",
+  "targetStatus": "NO_TARGET_TEXT_OR_LINK_ON_DOWNLOAD_PORTAL",
+  "pageCount": 2,
+  "reachablePageCount": 2,
+  "exactReferencePageCount": 0,
+  "sanctionsSubjectPageCount": 0,
+  "targetDocumentCandidates": [],
+  "pages": [
+    {
+      "status": "OK",
+      "url": "https://e-docucenter.uemoa.int/fr/telecharger-documents",
+      "finalUrl": "https://e-docucenter.uemoa.int/fr/telecharger-documents",
+      "contentType": "text/html; charset=UTF-8",
+      "byteSize": 40704,
+      "sha256": "3cdc8dffec5dae49bb4cc96a887db2dbc0ee7eceec8776e265b11064bc55b09e",
+      "tlsVerified": true,
+      "targetReferencePresent": false,
+      "sanctionsSubjectPresent": false,
+      "year2022Present": false,
+      "targetContext": null,
+      "sanctionsContext": null,
+      "anchorCount": 45,
+      "formCount": 1,
+      "scriptCount": 3,
+      "documentLikeLinks": [
+        {
+          "text": "TÉLÉCHARGER DOCUMENTS",
+          "href": "/fr/telecharger-documents",
+          "absoluteUrl": "https://e-docucenter.uemoa.int/fr/telecharger-documents",
+          "host": "e-docucenter.uemoa.int",
+          "pdfHint": false,
+          "targetReferenceHint": false,
+          "sanctionsHint": false,
+          "year2022Hint": false
+        },
+        {
+          "text": "Télécharger Documents",
+          "href": "/fr/telecharger-documents",
+          "absoluteUrl": "https://e-docucenter.uemoa.int/fr/telecharger-documents",
+          "host": "e-docucenter.uemoa.int",
+          "pdfHint": false,
+          "targetReferenceHint": false,
+          "sanctionsHint": false,
+          "year2022Hint": false
+        },
+        {
+          "text": "Télécharger",
+          "href": "/sites/default/files/2023-11/UEMOA-Manuel-de-reference-planification.pdf",
+          "absoluteUrl": "https://e-docucenter.uemoa.int/sites/default/files/2023-11/UEMOA-Manuel-de-reference-planification.pdf",
+          "host": "e-docucenter.uemoa.int",
+          "pdfHint": true,
+          "targetReferenceHint": false,
+          "sanctionsHint": false,
+          "year2022Hint": false
+        },
+        {
+          "text": "Télécharger",
+          "href": "/sites/default/files/2024-08/Recueil_texte_libre_circulation_edocucenter_12.pdf",
+          "absoluteUrl": "https://e-docucenter.uemoa.int/sites/default/files/2024-08/Recueil_texte_libre_circulation_edocucenter_12.pdf",
+          "host": "e-docucenter.uemoa.int",
+          "pdfHint": true,
+          "targetReferenceHint": false,
+          "sanctionsHint": false,
+          "year2022Hint": false
+        },
+        {
+          "text": "Télécharger",
+          "href": "/sites/default/files/2021-11/Reglement%20financier.pdf",
+          "absoluteUrl": "https://e-docucenter.uemoa.int/sites/default/files/2021-11/Reglement%20financier.pdf",
+          "host": "e-docucenter.uemoa.int",
+          "pdfHint": true,
+          "targetReferenceHint": false,
+          "sanctionsHint": false,
+          "year2022Hint": false
+        },
+        {
+          "text": "Télécharger",
+          "href": "/sites/default/files/2021-11/GUIDE_GAR_UEMOA_2021.pdf",
+          "absoluteUrl": "https://e-docucenter.uemoa.int/sites/default/files/2021-11/GUIDE_GAR_UEMOA_2021.pdf",
+          "host": "e-docucenter.uemoa.int",
+          "pdfHint": true,
+          "targetReferenceHint": false,
+          "sanctionsHint": false,
+          "year2022Hint": false
+        },
+        {
+          "text": "Télécharger",
+          "href": "/sites/default/files/2024-02/Charte-de-gestion-outils-budget-programme.pdf",
+          "absoluteUrl": "https://e-docucenter.uemoa.int/sites/default/files/2024-02/Charte-de-gestion-outils-budget-programme.pdf",
+          "host": "e-docucenter.uemoa.int",
+          "pdfHint": true,
+          "targetReferenceHint": false,
+          "sanctionsHint": false,
+          "year2022Hint": false
+        },
+        {
+          "text": "Télécharger",
+          "href": "/sites/default/files/2024-02/UEMOA_Guide-de-dialogue-edocucenter.pdf",
+          "absoluteUrl": "https://e-docucenter.uemoa.int/sites/default/files/2024-02/UEMOA_Guide-de-dialogue-edocucenter.pdf",
+          "host": "e-docucenter.uemoa.int",
+          "pdfHint": true,
+          "targetReferenceHint": false,
+          "sanctionsHint": false,
+          "year2022Hint": false
+        },
+        {
+          "text": "Télécharger",
+          "href": "/sites/default/files/2024-02/UEMOA_Guide-de-performances-edocucenter.pdf",
+          "absoluteUrl": "https://e-docucenter.uemoa.int/sites/default/files/2024-02/UEMOA_Guide-de-performances-edocucenter.pdf",
+          "host": "e-docucenter.uemoa.int",
+          "pdfHint": true,
+          "targetReferenceHint": false,
+          "sanctionsHint": false,
+          "year2022Hint": false
+        },
+        {
+          "text": "Télécharger",
+          "href": "/sites/default/files/2024-02/Brochure-STIG-edocucenter-UEMOA.pdf",
+          "absoluteUrl": "https://e-docucenter.uemoa.int/sites/default/files/2024-02/Brochure-STIG-edocucenter-UEMOA.pdf",
+          "host": "e-docucenter.uemoa.int",
+          "pdfHint": true,
+          "targetReferenceHint": false,
+          "sanctionsHint": false,
+          "year2022Hint": false
+        },
+        {
+          "text": "Télécharger",
+          "href": "/sites/default/files/2024-02/STRATEGIE-GENRE-UEMOA-edocucenter.pdf",
+          "absoluteUrl": "https://e-docucenter.uemoa.int/sites/default/files/2024-02/STRATEGIE-GENRE-UEMOA-edocucenter.pdf",
+          "host": "e-docucenter.uemoa.int",
+          "pdfHint": true,
+          "targetReferenceHint": false,
+          "sanctionsHint": false,
+          "year2022Hint": false
+        },
+        {
+          "text": "Télécharger",
+          "href": "https://e-docucenter.uemoa.int/sites/default/files/2025-03/UEMOA_Guide%20methodologique_V4.pdf",
+          "absoluteUrl": "https://e-docucenter.uemoa.int/sites/default/files/2025-03/UEMOA_Guide%20methodologique_V4.pdf",
+          "host": "e-docucenter.uemoa.int",
+          "pdfHint": true,
+          "targetReferenceHint": false,
+          "sanctionsHint": false,
+          "year2022Hint": false
+        },
+        {
+          "text": "Télécharger",
+          "href": "/sites/default/files/2024-08/Charte_archivage_des_Organes_de_UEMOA.pdf",
+          "absoluteUrl": "https://e-docucenter.uemoa.int/sites/default/files/2024-08/Charte_archivage_des_Organes_de_UEMOA.pdf",
+          "host": "e-docucenter.uemoa.int",
+          "pdfHint": true,
+          "targetReferenceHint": false,
+          "sanctionsHint": false,
+          "year2022Hint": false
+        },
+        {
+          "text": "Télécharger",
+          "href": "/sites/default/files/2024-08/UEMOA_Guide%20de%20legistique.pdf",
+          "absoluteUrl": "https://e-docucenter.uemoa.int/sites/default/files/2024-08/UEMOA_Guide%20de%20legistique.pdf",
+          "host": "e-docucenter.uemoa.int",
+          "pdfHint": true,
+          "targetReferenceHint": false,
+          "sanctionsHint": false,
+          "year2022Hint": false
+        },
+        {
+          "text": "Télécharger",
+          "href": "/sites/default/files/2024-09/UEMOA_TEC2022_V4.pdf",
+          "absoluteUrl": "https://e-docucenter.uemoa.int/sites/default/files/2024-09/UEMOA_TEC2022_V4.pdf",
+          "host": "e-docucenter.uemoa.int",
+          "pdfHint": true,
+          "targetReferenceHint": false,
+          "sanctionsHint": false,
+          "year2022Hint": false
+        },
+        {
+          "text": "Télécharger",
+          "href": "/sites/default/files/2024-12/UEMOA_Livre_Blanc.pdf",
+          "absoluteUrl": "https://e-docucenter.uemoa.int/sites/default/files/2024-12/UEMOA_Livre_Blanc.pdf",
+          "host": "e-docucenter.uemoa.int",
+          "pdfHint": true,
+          "targetReferenceHint": false,
+          "sanctionsHint": false,
+          "year2022Hint": false
+        },
+        {
+          "text": "Télécharger",
+          "href": "/sites/default/files/2024-12/UEMOA_Impact2030.pdf",
+          "absoluteUrl": "https://e-docucenter.uemoa.int/sites/default/files/2024-12/UEMOA_Impact2030.pdf",
+          "host": "e-docucenter.uemoa.int",
+          "pdfHint": true,
+          "targetReferenceHint": false,
+          "sanctionsHint": false,
+          "year2022Hint": false
+        },
+        {
+          "text": "Télécharger",
+          "href": "/sites/default/files/2026-05/UEMOA_Guide audit financier_V7.pdf",
+          "absoluteUrl": "https://e-docucenter.uemoa.int/sites/default/files/2026-05/UEMOA_Guide audit financier_V7.pdf",
+          "host": "e-docucenter.uemoa.int",
+          "pdfHint": true,
+          "targetReferenceHint": false,
+          "sanctionsHint": false,
+          "year2022Hint": false
+        }
+      ],
+      "forms": [
+        {
+          "action": "/fr/search/node",
+          "method": "get",
+          "id": "search-block-form",
+          "class": "search-form search-block-form",
+          "inputs": [
+            {
+              "tag": "input",
+              "name": "keys",
+              "type": "search",
+              "value": "",
+              "id": "edit-keys"
+            },
+            {
+              "tag": "input",
+              "name": null,
+              "type": "submit",
+              "value": "Search",
+              "id": "edit-submit"
+            }
+          ],
+          "absoluteAction": "https://e-docucenter.uemoa.int/fr/search/node",
+          "host": "e-docucenter.uemoa.int"
+        }
+      ],
+      "scriptHints": [
+        {
+          "src": "/sites/default/files/js/js_CXCc6_9EvUmt2WnapiHRj3NapugCvbGDCT6qU70y-iA.js",
+          "absoluteUrl": "https://e-docucenter.uemoa.int/sites/default/files/js/js_CXCc6_9EvUmt2WnapiHRj3NapugCvbGDCT6qU70y-iA.js",
+          "host": "e-docucenter.uemoa.int"
+        }
+      ],
+      "sourceEndpointHints": [
+        "//fonts.googleapis.com/css?family=Mukta",
+        "//fonts.googleapis.com/css?family=Open",
+        "/ajax_view",
+        "/fr/search/node",
+        "/fr/telecharger-documents",
+        "/search",
+        "/sites/default/files/js/js_CXCc6_9EvUmt2WnapiHRj3NapugCvbGDCT6qU70y-iA.js",
+        "https://e-docucenter.uemoa.int/fr/telecharger-documents",
+        "https://e-docucenter.uemoa.int/sites/default/files/2025-03/UEMOA_Guide%20methodologique_V4.pdf",
+        "https://e-docucenter.uemoa.int/themes/gavias_batiz/css/custom.css",
+        "https://e-docucenter.uemoa.int/themes/gavias_batiz/css/update.css",
+        "https://innoprox.com/",
+        "https://ogp.me/ns#",
+        "https://www.drupal.org)",
+        "https://www.googletagmanager.com/gtag/js?id=G-SK96LHW7Y0",
+        "https://www.uemoa.int/"
+      ]
+    },
+    {
+      "status": "OK",
+      "url": "https://www.e-docucenter.uemoa.int/fr/telecharger-documents",
+      "finalUrl": "https://www.e-docucenter.uemoa.int/fr/telecharger-documents",
+      "contentType": "text/html; charset=UTF-8",
+      "byteSize": 40720,
+      "sha256": "6c3dca60c38bd8fe70b3656ae7827a016504c63ebc803ef2ee0f541dd4b95e2a",
+      "tlsVerified": true,
+      "targetReferencePresent": false,
+      "sanctionsSubjectPresent": false,
+      "year2022Present": false,
+      "targetContext": null,
+      "sanctionsContext": null,
+      "anchorCount": 45,
+      "formCount": 1,
+      "scriptCount": 3,
+      "documentLikeLinks": [
+        {
+          "text": "TÉLÉCHARGER DOCUMENTS",
+          "href": "/fr/telecharger-documents",
+          "absoluteUrl": "https://www.e-docucenter.uemoa.int/fr/telecharger-documents",
+          "host": "www.e-docucenter.uemoa.int",
+          "pdfHint": false,
+          "targetReferenceHint": false,
+          "sanctionsHint": false,
+          "year2022Hint": false
+        },
+        {
+          "text": "Télécharger Documents",
+          "href": "/fr/telecharger-documents",
+          "absoluteUrl": "https://www.e-docucenter.uemoa.int/fr/telecharger-documents",
+          "host": "www.e-docucenter.uemoa.int",
+          "pdfHint": false,
+          "targetReferenceHint": false,
+          "sanctionsHint": false,
+          "year2022Hint": false
+        },
+        {
+          "text": "Télécharger",
+          "href": "/sites/default/files/2023-11/UEMOA-Manuel-de-reference-planification.pdf",
+          "absoluteUrl": "https://www.e-docucenter.uemoa.int/sites/default/files/2023-11/UEMOA-Manuel-de-reference-planification.pdf",
+          "host": "www.e-docucenter.uemoa.int",
+          "pdfHint": true,
+          "targetReferenceHint": false,
+          "sanctionsHint": false,
+          "year2022Hint": false
+        },
+        {
+          "text": "Télécharger",
+          "href": "/sites/default/files/2024-08/Recueil_texte_libre_circulation_edocucenter_12.pdf",
+          "absoluteUrl": "https://www.e-docucenter.uemoa.int/sites/default/files/2024-08/Recueil_texte_libre_circulation_edocucenter_12.pdf",
+          "host": "www.e-docucenter.uemoa.int",
+          "pdfHint": true,
+          "targetReferenceHint": false,
+          "sanctionsHint": false,
+          "year2022Hint": false
+        },
+        {
+          "text": "Télécharger",
+          "href": "/sites/default/files/2021-11/Reglement%20financier.pdf",
+          "absoluteUrl": "https://www.e-docucenter.uemoa.int/sites/default/files/2021-11/Reglement%20financier.pdf",
+          "host": "www.e-docucenter.uemoa.int",
+          "pdfHint": true,
+          "targetReferenceHint": false,
+          "sanctionsHint": false,
+          "year2022Hint": false
+        },
+        {
+          "text": "Télécharger",
+          "href": "/sites/default/files/2021-11/GUIDE_GAR_UEMOA_2021.pdf",
+          "absoluteUrl": "https://www.e-docucenter.uemoa.int/sites/default/files/2021-11/GUIDE_GAR_UEMOA_2021.pdf",
+          "host": "www.e-docucenter.uemoa.int",
+          "pdfHint": true,
+          "targetReferenceHint": false,
+          "sanctionsHint": false,
+          "year2022Hint": false
+        },
+        {
+          "text": "Télécharger",
+          "href": "/sites/default/files/2024-02/Charte-de-gestion-outils-budget-programme.pdf",
+          "absoluteUrl": "https://www.e-docucenter.uemoa.int/sites/default/files/2024-02/Charte-de-gestion-outils-budget-programme.pdf",
+          "host": "www.e-docucenter.uemoa.int",
+          "pdfHint": true,
+          "targetReferenceHint": false,
+          "sanctionsHint": false,
+          "year2022Hint": false
+        },
+        {
+          "text": "Télécharger",
+          "href": "/sites/default/files/2024-02/UEMOA_Guide-de-dialogue-edocucenter.pdf",
+          "absoluteUrl": "https://www.e-docucenter.uemoa.int/sites/default/files/2024-02/UEMOA_Guide-de-dialogue-edocucenter.pdf",
+          "host": "www.e-docucenter.uemoa.int",
+          "pdfHint": true,
+          "targetReferenceHint": false,
+          "sanctionsHint": false,
+          "year2022Hint": false
+        },
+        {
+          "text": "Télécharger",
+          "href": "/sites/default/files/2024-02/UEMOA_Guide-de-performances-edocucenter.pdf",
+          "absoluteUrl": "https://www.e-docucenter.uemoa.int/sites/default/files/2024-02/UEMOA_Guide-de-performances-edocucenter.pdf",
+          "host": "www.e-docucenter.uemoa.int",
+          "pdfHint": true,
+          "targetReferenceHint": false,
+          "sanctionsHint": false,
+          "year2022Hint": false
+        },
+        {
+          "text": "Télécharger",
+          "href": "/sites/default/files/2024-02/Brochure-STIG-edocucenter-UEMOA.pdf",
+          "absoluteUrl": "https://www.e-docucenter.uemoa.int/sites/default/files/2024-02/Brochure-STIG-edocucenter-UEMOA.pdf",
+          "host": "www.e-docucenter.uemoa.int",
+          "pdfHint": true,
+          "targetReferenceHint": false,
+          "sanctionsHint": false,
+          "year2022Hint": false
+        },
+        {
+          "text": "Télécharger",
+          "href": "/sites/default/files/2024-02/STRATEGIE-GENRE-UEMOA-edocucenter.pdf",
+          "absoluteUrl": "https://www.e-docucenter.uemoa.int/sites/default/files/2024-02/STRATEGIE-GENRE-UEMOA-edocucenter.pdf",
+          "host": "www.e-docucenter.uemoa.int",
+          "pdfHint": true,
+          "targetReferenceHint": false,
+          "sanctionsHint": false,
+          "year2022Hint": false
+        },
+        {
+          "text": "Télécharger",
+          "href": "https://e-docucenter.uemoa.int/sites/default/files/2025-03/UEMOA_Guide%20methodologique_V4.pdf",
+          "absoluteUrl": "https://e-docucenter.uemoa.int/sites/default/files/2025-03/UEMOA_Guide%20methodologique_V4.pdf",
+          "host": "e-docucenter.uemoa.int",
+          "pdfHint": true,
+          "targetReferenceHint": false,
+          "sanctionsHint": false,
+          "year2022Hint": false
+        },
+        {
+          "text": "Télécharger",
+          "href": "/sites/default/files/2024-08/Charte_archivage_des_Organes_de_UEMOA.pdf",
+          "absoluteUrl": "https://www.e-docucenter.uemoa.int/sites/default/files/2024-08/Charte_archivage_des_Organes_de_UEMOA.pdf",
+          "host": "www.e-docucenter.uemoa.int",
+          "pdfHint": true,
+          "targetReferenceHint": false,
+          "sanctionsHint": false,
+          "year2022Hint": false
+        },
+        {
+          "text": "Télécharger",
+          "href": "/sites/default/files/2024-08/UEMOA_Guide%20de%20legistique.pdf",
+          "absoluteUrl": "https://www.e-docucenter.uemoa.int/sites/default/files/2024-08/UEMOA_Guide%20de%20legistique.pdf",
+          "host": "www.e-docucenter.uemoa.int",
+          "pdfHint": true,
+          "targetReferenceHint": false,
+          "sanctionsHint": false,
+          "year2022Hint": false
+        },
+        {
+          "text": "Télécharger",
+          "href": "/sites/default/files/2024-09/UEMOA_TEC2022_V4.pdf",
+          "absoluteUrl": "https://www.e-docucenter.uemoa.int/sites/default/files/2024-09/UEMOA_TEC2022_V4.pdf",
+          "host": "www.e-docucenter.uemoa.int",
+          "pdfHint": true,
+          "targetReferenceHint": false,
+          "sanctionsHint": false,
+          "year2022Hint": false
+        },
+        {
+          "text": "Télécharger",
+          "href": "/sites/default/files/2024-12/UEMOA_Livre_Blanc.pdf",
+          "absoluteUrl": "https://www.e-docucenter.uemoa.int/sites/default/files/2024-12/UEMOA_Livre_Blanc.pdf",
+          "host": "www.e-docucenter.uemoa.int",
+          "pdfHint": true,
+          "targetReferenceHint": false,
+          "sanctionsHint": false,
+          "year2022Hint": false
+        },
+        {
+          "text": "Télécharger",
+          "href": "/sites/default/files/2024-12/UEMOA_Impact2030.pdf",
+          "absoluteUrl": "https://www.e-docucenter.uemoa.int/sites/default/files/2024-12/UEMOA_Impact2030.pdf",
+          "host": "www.e-docucenter.uemoa.int",
+          "pdfHint": true,
+          "targetReferenceHint": false,
+          "sanctionsHint": false,
+          "year2022Hint": false
+        },
+        {
+          "text": "Télécharger",
+          "href": "/sites/default/files/2026-05/UEMOA_Guide audit financier_V7.pdf",
+          "absoluteUrl": "https://www.e-docucenter.uemoa.int/sites/default/files/2026-05/UEMOA_Guide audit financier_V7.pdf",
+          "host": "www.e-docucenter.uemoa.int",
+          "pdfHint": true,
+          "targetReferenceHint": false,
+          "sanctionsHint": false,
+          "year2022Hint": false
+        }
+      ],
+      "forms": [
+        {
+          "action": "/fr/search/node",
+          "method": "get",
+          "id": "search-block-form",
+          "class": "search-form search-block-form",
+          "inputs": [
+            {
+              "tag": "input",
+              "name": "keys",
+              "type": "search",
+              "value": "",
+              "id": "edit-keys"
+            },
+            {
+              "tag": "input",
+              "name": null,
+              "type": "submit",
+              "value": "Search",
+              "id": "edit-submit"
+            }
+          ],
+          "absoluteAction": "https://www.e-docucenter.uemoa.int/fr/search/node",
+          "host": "www.e-docucenter.uemoa.int"
+        }
+      ],
+      "scriptHints": [
+        {
+          "src": "/sites/default/files/js/js_CXCc6_9EvUmt2WnapiHRj3NapugCvbGDCT6qU70y-iA.js",
+          "absoluteUrl": "https://www.e-docucenter.uemoa.int/sites/default/files/js/js_CXCc6_9EvUmt2WnapiHRj3NapugCvbGDCT6qU70y-iA.js",
+          "host": "www.e-docucenter.uemoa.int"
+        }
+      ],
+      "sourceEndpointHints": [
+        "//fonts.googleapis.com/css?family=Mukta",
+        "//fonts.googleapis.com/css?family=Open",
+        "/ajax_view",
+        "/fr/search/node",
+        "/fr/telecharger-documents",
+        "/search",
+        "/sites/default/files/js/js_CXCc6_9EvUmt2WnapiHRj3NapugCvbGDCT6qU70y-iA.js",
+        "https://e-docucenter.uemoa.int/sites/default/files/2025-03/UEMOA_Guide%20methodologique_V4.pdf",
+        "https://innoprox.com/",
+        "https://ogp.me/ns#",
+        "https://www.drupal.org)",
+        "https://www.e-docucenter.uemoa.int/fr/telecharger-documents",
+        "https://www.e-docucenter.uemoa.int/themes/gavias_batiz/css/custom.css",
+        "https://www.e-docucenter.uemoa.int/themes/gavias_batiz/css/update.css",
+        "https://www.googletagmanager.com/gtag/js?id=G-SK96LHW7Y0",
+        "https://www.uemoa.int/"
+      ]
+    }
+  ],
+  "boundary": {
+    "authoritativePortalOnly": true,
+    "verifiedTlsOnly": true,
+    "formsSubmitted": false,
+    "linkedDocumentsFetched": false,
+    "binaryMaterialized": false,
+    "discoveryIsLegalStatusProof": false,
+    "automaticRelationshipInferenceAllowed": false,
+    "automaticSanctionActivationAllowed": false,
+    "readyForSubmissionMustRemainFalse": true
+  },
+  "nextAction": "If the static portal exposes a target link, validate it separately. If it exposes a search form or endpoint hint, inspect only that exact institutional mechanism in a later bounded step without bulk crawling."
+}

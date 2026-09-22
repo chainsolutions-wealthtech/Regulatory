@@ -1,0 +1,21 @@
+{
+  "schemaVersion": "UEMOA_DOWNLOAD_PORTAL_DISCOVERY_VALIDATION_V0_1",
+  "result": "PASS",
+  "checks": {
+    "authoritativePortalOnly": true,
+    "verifiedTlsOnly": true,
+    "formsNotSubmitted": true,
+    "linkedDocumentsNotFetched": true,
+    "binaryNotMaterialized": true,
+    "automaticRelationshipInferenceForbidden": true,
+    "automaticSanctionActivationForbidden": true,
+    "readyForSubmissionFalse": true
+  },
+  "targetStatus": "NO_TARGET_TEXT_OR_LINK_ON_DOWNLOAD_PORTAL",
+  "reachablePageCount": 2,
+  "exactReferencePageCount": 0,
+  "sanctionsSubjectPageCount": 0,
+  "targetDocumentCandidateCount": 0,
+  "formCountTotal": 2,
+  "scriptHintCountTotal": 2
+}
