@@ -244,3 +244,13 @@ Il recherche uniquement la référence `CM/10/06/2022`, extrait l'ancre correspo
 
 Statut : `PENDING_CENTIF_DISCOVERY_CI`.
 <!-- AUTO:LOOP-REG-001-CENTIF-TARGET-LINK-DISCOVERY-2026-09-22:END -->
+
+<!-- AUTO:LOOP-REG-001-CI-RACE-AND-CENTIF-TLS-2026-09-22:START -->
+## Correction de concurrence CI + reprise CENTIF TLS — 2026-09-22
+
+Le run Regulatory CI `35780210020` a exécuté avec succès toutes les validations fonctionnelles jusqu'au dernier step de persistance. L'échec est exclusivement un rejet Git non-fast-forward : un workflow CENTIF avait poussé `20c2047623a6139bab6b178d82341540e1515deb` pendant que la CI préparait son commit généré.
+
+Action corrective : rendre la persistance de Regulatory CI tolérante à cette concurrence avec un retry borné `push → pull --rebase → push`, sans force-push et avec échec explicite en cas de conflit réel.
+
+La prochaine recherche réglementaire reste la route CENTIF. Une seconde tentative de découverte autorise un fallback TLS non vérifié **uniquement pour lire le HTML et découvrir le href cible**. Tout binaire cible reste soumis à TLS vérifié avant matérialisation.
+<!-- AUTO:LOOP-REG-001-CI-RACE-AND-CENTIF-TLS-2026-09-22:END -->

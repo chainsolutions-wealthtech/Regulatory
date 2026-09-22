@@ -362,3 +362,18 @@ Il recherche uniquement la référence `CM/10/06/2022`, extrait l'ancre correspo
 
 Statut : `PENDING_CENTIF_DISCOVERY_CI`.
 <!-- AUTO:LOOP-REG-001-CENTIF-TARGET-LINK-DISCOVERY-2026-09-22:END -->
+
+<!-- AUTO:LOOP-REG-001-CI-RACE-AND-CENTIF-TLS-2026-09-22:START -->
+## [Unreleased] — CI race safety et CENTIF TLS diagnostic — 2026-09-22
+
+### Fixed
+
+- persistance de Regulatory CI rendue résistante à une écriture concurrente sur `main` via retries bornés et rebase ;
+- aucun force-push n'est introduit.
+
+### Research
+
+- diagnostic explicite de la chaîne TLS CENTIF ;
+- fallback non vérifié autorisé uniquement pour découvrir le HTML/href ;
+- récupération binaire par TLS non vérifié interdite.
+<!-- AUTO:LOOP-REG-001-CI-RACE-AND-CENTIF-TLS-2026-09-22:END -->

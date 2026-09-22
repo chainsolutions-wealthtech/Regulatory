@@ -835,3 +835,11 @@ Il recherche uniquement la référence `CM/10/06/2022`, extrait l'ancre correspo
 
 Statut : `PENDING_CENTIF_DISCOVERY_CI`.
 <!-- AUTO:LOOP-REG-001-CENTIF-TARGET-LINK-DISCOVERY-2026-09-22:END -->
+
+<!-- AUTO:LOOP-REG-001-CI-RACE-AND-CENTIF-TLS-2026-09-22:START -->
+## 2026-09-22 — CI concurrente et transport CENTIF
+
+La CI principale a échoué après tous ses contrôles réussis, uniquement lors du push de sa preuve générée, à cause d'une écriture concurrente du workflow CENTIF. Ce défaut d'orchestration est corrigé sans force-push et sans affaiblir un contrôle.
+
+La première tentative CENTIF a simultanément identifié une chaîne TLS non validable depuis GitHub Actions. La recherche est poursuivie par un fallback de découverte HTML explicitement non fiable pour la preuve normative ; aucun PDF obtenu par transport non vérifié ne pourra être promu.
+<!-- AUTO:LOOP-REG-001-CI-RACE-AND-CENTIF-TLS-2026-09-22:END -->

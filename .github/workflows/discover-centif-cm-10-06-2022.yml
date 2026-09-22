@@ -50,6 +50,8 @@ jobs:
           assert evidence['result'] == 'PASS'
           assert validation['result'] == 'PASS'
           assert validation['checks']['scopeIsRestrictedToKnownCentifPages'] is True
+          assert validation['checks']['unverifiedTlsRestrictedToHtmlDiscovery'] is True
+          assert validation['checks']['unverifiedTlsForbiddenForTargetBinary'] is True
           assert validation['checks']['onlyTargetAnchorsFollowed'] is True
           assert validation['checks']['binaryNotMaterialized'] is True
           assert validation['checks']['automaticRelationshipInferenceForbidden'] is True
@@ -58,6 +60,8 @@ jobs:
 
           boundary = evidence['boundary']
           assert boundary['onlyKnownCentifPagesFetched'] is True
+          assert boundary['unverifiedTlsAllowedForHtmlDiscoveryOnly'] is True
+          assert boundary['unverifiedTlsAllowedForTargetBinary'] is False
           assert boundary['onlyTargetAnchorsFollowed'] is True
           assert boundary['binaryMaterializedInRepository'] is False
           assert boundary['automaticRelationshipInferenceAllowed'] is False
@@ -85,7 +89,7 @@ jobs:
           if git diff --cached --quiet; then
             echo 'No CENTIF discovery evidence changes to commit.'
           else
-            git commit -m 'chore: persist CENTIF sanctions decision link discovery'
+            git commit -m 'chore: refresh CENTIF sanctions decision link discovery'
             git pull --rebase origin main
             git push origin HEAD:main
           fi

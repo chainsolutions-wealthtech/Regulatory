@@ -571,5 +571,13 @@ jobs:
             echo 'No generated changes to commit.'
           else
             git commit -m 'chore: refresh validation evidence and loop state'
-            git push origin HEAD:main
+            for attempt in 1 2 3; do
+              if git push origin HEAD:main; then
+                exit 0
+              fi
+              echo "Generated-state push raced with another main writer; rebasing attempt ${attempt}/3." >&2
+              git pull --rebase origin main
+            done
+            echo 'Unable to persist generated evidence after 3 non-force retries.' >&2
+            exit 1
           fi

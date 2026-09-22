@@ -341,3 +341,17 @@ Il recherche uniquement la référence `CM/10/06/2022`, extrait l'ancre correspo
 
 Statut : `PENDING_CENTIF_DISCOVERY_CI`.
 <!-- AUTO:LOOP-REG-001-CENTIF-TARGET-LINK-DISCOVERY-2026-09-22:END -->
+
+<!-- AUTO:LOOP-REG-001-CI-RACE-AND-CENTIF-TLS-2026-09-22:START -->
+## Correction de la boucle — concurrence GitHub CI
+
+- run concerné : `35780210020` ;
+- validations métier/techniques avant persistance : `PASS` ;
+- step fautif : `Commit generated evidence and documentation` ;
+- cause : `NON_FAST_FORWARD_RACE_WITH_CONCURRENT_WORKFLOW_WRITER` ;
+- régression produit : `NO` ;
+- correction : retry borné avec `git pull --rebase origin main`, jamais de force-push ;
+- baseline corrective : `main@20c2047623a6139bab6b178d82341540e1515deb`.
+
+CENTIF V0.2 : TLS non vérifié autorisé uniquement pour découverte HTML ; interdit pour les octets cible. `ready_for_submission=false`.
+<!-- AUTO:LOOP-REG-001-CI-RACE-AND-CENTIF-TLS-2026-09-22:END -->

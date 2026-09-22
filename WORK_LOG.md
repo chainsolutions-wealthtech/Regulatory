@@ -413,3 +413,13 @@ Il recherche uniquement la référence `CM/10/06/2022`, extrait l'ancre correspo
 
 Statut : `PENDING_CENTIF_DISCOVERY_CI`.
 <!-- AUTO:LOOP-REG-001-CENTIF-TARGET-LINK-DISCOVERY-2026-09-22:END -->
+
+<!-- AUTO:LOOP-REG-001-CI-RACE-AND-CENTIF-TLS-2026-09-22:START -->
+## 2026-09-22 — Diagnostic et correction Regulatory CI
+
+Le run `35780210020` n'a révélé aucune défaillance des migrations, PostgreSQL, Next.js, API, moteurs, DOCX, rendu, invariants ou bundle. Les steps 1 à 22 ont réussi.
+
+Le step 23 a créé localement `bf70b5e chore: refresh validation evidence and loop state`, puis son push a été rejeté en non-fast-forward car le workflow CENTIF venait de pousser sur `main`. La correction ne modifie aucun contrôle : elle ajoute un rebase/retry borné avant réessai du push.
+
+En parallèle, le premier scanner CENTIF a établi un problème de chaîne de certificats TLS sur les trois surfaces connues. La V0.2 peut contourner ce défaut uniquement pour lire le HTML et identifier un lien ; le téléchargement cible reste strictement vérifié.
+<!-- AUTO:LOOP-REG-001-CI-RACE-AND-CENTIF-TLS-2026-09-22:END -->

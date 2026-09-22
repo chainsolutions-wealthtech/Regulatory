@@ -610,3 +610,17 @@ Il recherche uniquement la référence `CM/10/06/2022`, extrait l'ancre correspo
 
 Statut : `PENDING_CENTIF_DISCOVERY_CI`.
 <!-- AUTO:LOOP-REG-001-CENTIF-TARGET-LINK-DISCOVERY-2026-09-22:END -->
+
+<!-- AUTO:LOOP-REG-001-CI-RACE-AND-CENTIF-TLS-2026-09-22:START -->
+## Sous-boucle correction CI / CENTIF TLS
+
+- [x] Isoler la cause de l'échec Regulatory CI.
+- [x] Confirmer que tous les contrôles fonctionnels précédents ont réussi.
+- [x] Identifier la course de push non-fast-forward.
+- [x] Préparer un retry borné avec rebase, sans force-push.
+- [x] Diagnostiquer `CERTIFICATE_VERIFY_FAILED` sur les pages CENTIF.
+- [x] Préparer le fallback TLS non vérifié limité au HTML de découverte.
+- [ ] Vérifier Regulatory CI après correction.
+- [ ] Exécuter CENTIF discovery V0.2.
+- [ ] Si un href est découvert, exiger un transport vérifié pour le document cible.
+<!-- AUTO:LOOP-REG-001-CI-RACE-AND-CENTIF-TLS-2026-09-22:END -->
