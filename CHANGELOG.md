@@ -334,3 +334,20 @@ L’activation du driver PostgreSQL échoue explicitement tant qu’aucun adapta
 - `ready_for_submission=false` ;
 - intégralité de `LOOP-DEV-001` et de ses preuves.
 <!-- AUTO:LOOP-REG-001-SECONDARY-FULL-TEXT-RECOVERY-2026-09-22:END -->
+
+<!-- AUTO:LOOP-REG-001-CROSS-CATEGORY-SCAN-2026-09-22:START -->
+## [Unreleased] — Discovery AMF-UMOA cross-category — 2026-09-22
+
+### Added
+
+- scanner borné de l'API officielle `actualite` sans filtre de catégorie ;
+- workflow dédié avec validation des témoins et frontières réglementaires ;
+- preuve machine prévue pour `CM/10/06/2022`.
+
+### Safety
+
+- aucune matérialisation binaire dans cette étape ;
+- aucune inférence de statut juridique ;
+- aucune activation de sanction, montant ou dépendance ;
+- `ready_for_submission=false`.
+<!-- AUTO:LOOP-REG-001-CROSS-CATEGORY-SCAN-2026-09-22:END -->

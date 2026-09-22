@@ -585,3 +585,17 @@ Les anciennes cases non cochées plus bas sont conservées comme historique ; el
 - [ ] Comparer formellement 2016↔2022 après acquisition institutionnelle.
 - [ ] Soumettre la relation, les catégories et les quantums aux revues Legal/Compliance avant toute activation.
 <!-- AUTO:LOOP-REG-001-SECONDARY-FULL-TEXT-RECOVERY-2026-09-22:END -->
+
+<!-- AUTO:LOOP-REG-001-CROSS-CATEGORY-SCAN-2026-09-22:START -->
+## CM/10/06/2022 — scan API cross-category
+
+- [x] Identifier le blind spot du filtre `Decision` du scanner historique.
+- [x] Ajouter un scanner indépendant toutes catégories.
+- [x] Borner la plage à `1000000..1000300`.
+- [x] Ajouter les témoins `1000179`, `1000182`, `1000184`.
+- [x] Interdire la matérialisation et l'activation dans cette étape.
+- [ ] Exécuter le workflow de découverte.
+- [ ] Examiner la preuve machine et les candidats.
+- [ ] Si cible exacte trouvée : matérialiser le binaire officiel dans une étape séparée.
+- [ ] Sinon : conserver la récupération institutionnelle non indexée comme prochaine action.
+<!-- AUTO:LOOP-REG-001-CROSS-CATEGORY-SCAN-2026-09-22:END -->

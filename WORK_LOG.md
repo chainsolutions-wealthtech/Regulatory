@@ -388,3 +388,16 @@ Aucune nouvelle branche, aucun force-push, aucune approbation juridique simulée
 
 Aucun code, schéma, règle active, montant de sanction ou statut de soumission n'est modifié.
 <!-- AUTO:LOOP-REG-001-SECONDARY-FULL-TEXT-RECOVERY-2026-09-22:END -->
+
+<!-- AUTO:LOOP-REG-001-CROSS-CATEGORY-SCAN-2026-09-22:START -->
+## 2026-09-22 — Préparation du scan AMF-UMOA cross-category
+
+1. Baseline distante vérifiée à `888d37815e8d104cae35f1c54bcb3c343357e59a`.
+2. Le commit automatique précédent a uniquement réconcilié le SHA et le run Regulatory CI.
+3. Le catalogue Decision historique filtre les objets avec `is_decision()` avant la recherche de la référence cible.
+4. Ce filtre peut masquer un objet legacy mal catégorisé ou exposé sous une autre catégorie.
+5. Ajout d'un scanner séparé, borné, cross-category sur `1000000..1000300`.
+6. Ajout de témoins connus pour prouver la validité de la plage et du endpoint.
+7. Aucune matérialisation, aucune activation et aucune inférence juridique n'est autorisée dans cette étape.
+8. Un workflow dédié produit et persiste la preuve machine si le scan est valide.
+<!-- AUTO:LOOP-REG-001-CROSS-CATEGORY-SCAN-2026-09-22:END -->

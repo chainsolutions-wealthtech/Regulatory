@@ -213,3 +213,21 @@ Un PDF intégral secondaire de 17 pages est désormais localisé chez Lextenso. 
 
 Prochain mode : `INSTITUTIONAL_NON_INDEXED_DOCUMENT_RECOVERY_USING_FULL_TEXT_FINGERPRINT`. Preuve : `regulatory/review-evidence/SANCTIONS_2016_2022/SECONDARY_FULL_TEXT_MIRROR_DISCOVERY_2026-09-22.yaml`.
 <!-- AUTO:LOOP-REG-001-SECONDARY-FULL-TEXT-RECOVERY-2026-09-22:END -->
+
+<!-- AUTO:LOOP-REG-001-CROSS-CATEGORY-SCAN-2026-09-22:START -->
+## Recherche AMF-UMOA cross-category — 2026-09-22
+
+Une action sûre et bornée est sélectionnée avant de conclure à un blocage externe définitif :
+
+`SCAN_OFFICIAL_AMF_UMOA_ACTUALITE_API_ACROSS_CATEGORIES_1000000_1000300`
+
+Le scanner `scripts/discover_amf_umoa_sanctions_2022_api.py` recherche la référence `CM/10/06/2022` et l'objet sanctions pécuniaires dans tous les objets de la plage, sans filtrage préalable sur la catégorie `Decision`.
+
+Cette découverte :
+- ne matérialise aucun binaire ;
+- ne prouve aucun statut juridique ;
+- n'active aucune sanction ou exigence ;
+- maintient `ready_for_submission=false`.
+
+Si un objet exact est retrouvé avec un document officiel API, la prochaine action devient sa matérialisation et validation dans une boucle séparée. Sinon, le mode `INSTITUTIONAL_NON_INDEXED_DOCUMENT_RECOVERY_USING_FULL_TEXT_FINGERPRINT` reste applicable.
+<!-- AUTO:LOOP-REG-001-CROSS-CATEGORY-SCAN-2026-09-22:END -->

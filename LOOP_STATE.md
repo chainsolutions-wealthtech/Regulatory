@@ -310,3 +310,18 @@ La boucle réglementaire sera reprise après la tranche de couverture standard o
 
 Prochaine action unique : retrouver le même document via une archive institutionnelle en utilisant son empreinte textuelle.
 <!-- AUTO:LOOP-REG-001-SECONDARY-FULL-TEXT-RECOVERY-2026-09-22:END -->
+
+<!-- AUTO:LOOP-REG-001-CROSS-CATEGORY-SCAN-2026-09-22:START -->
+## LOOP-REG-001 — sous-boucle de découverte API cross-category
+
+- baseline : `main@888d37815e8d104cae35f1c54bcb3c343357e59a` ;
+- action : scanner `actualiteId=1000000..1000300` sans filtrage par catégorie ;
+- témoins obligatoires : `1000179`, `1000182`, `1000184` ;
+- cible : `CM/10/06/2022` ;
+- preuve machine : `AMF_UMOA_CROSS_CATEGORY_SCAN_2026-09-22.json` ;
+- statut avant exécution : `PENDING_CI_DISCOVERY_RUN` ;
+- matérialisation binaire : `FORBIDDEN_IN_THIS_STEP` ;
+- relation juridique automatique : `FORBIDDEN` ;
+- sanctions/quantums : `INACTIVE` ;
+- `ready_for_submission=false`.
+<!-- AUTO:LOOP-REG-001-CROSS-CATEGORY-SCAN-2026-09-22:END -->

@@ -816,3 +816,11 @@ La recherche a identifié un PDF secondaire complet de 17 pages de la Décision 
 
 La priorité `LOOP-REG-001` est reprise, avec `LOOP-DEV-001` préservée en pause de priorité. Le verrou restant demeure l'acquisition du binaire officiel ou institutionnel. Aucune règle, sanction ou soumission n'est activée.
 <!-- AUTO:LOOP-REG-001-SECONDARY-FULL-TEXT-RECOVERY-2026-09-22:END -->
+
+<!-- AUTO:LOOP-REG-001-CROSS-CATEGORY-SCAN-2026-09-22:START -->
+## 2026-09-22 — Extension gouvernée de la recherche CM/10/06/2022
+
+Après la découverte du miroir secondaire complet, l'analyse du scanner AMF-UMOA existant a montré qu'il ne recherche la cible qu'après classification d'un objet comme `Decision`. Une sous-boucle additive est donc ouverte pour éliminer ce blind spot sans modifier le catalogue canonique existant.
+
+Le nouveau scanner couvre `actualiteId=1000000..1000300` toutes catégories confondues, conserve des témoins connus et ne peut ni matérialiser un binaire ni activer un effet réglementaire. Le résultat sera persisté par CI avant toute nouvelle sélection d'action.
+<!-- AUTO:LOOP-REG-001-CROSS-CATEGORY-SCAN-2026-09-22:END -->

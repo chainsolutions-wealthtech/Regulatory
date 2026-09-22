@@ -1,0 +1,92 @@
+name: Discover AMF-UMOA Sanctions 2022 Cross-Category
+
+on:
+  push:
+    branches:
+      - main
+    paths:
+      - .github/workflows/discover-amf-umoa-sanctions-2022.yml
+      - scripts/discover_amf_umoa_sanctions_2022_api.py
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: amf-umoa-sanctions-2022-cross-category-main
+  cancel-in-progress: false
+
+jobs:
+  discover:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Configure Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      - name: Scan official AMF-UMOA API across categories
+        run: python3 scripts/discover_amf_umoa_sanctions_2022_api.py
+
+      - name: Validate discovery safety boundary
+        run: |
+          python3 - <<'PY'
+          import json
+          from pathlib import Path
+
+          evidence = json.loads(Path(
+              'regulatory/review-evidence/SANCTIONS_2016_2022/AMF_UMOA_CROSS_CATEGORY_SCAN_2026-09-22.json'
+          ).read_text(encoding='utf-8'))
+          validation = json.loads(Path(
+              'regulatory/validation/AMF_UMOA_SANCTIONS_2022_CROSS_CATEGORY_SCAN_VALIDATION_V0_1.json'
+          ).read_text(encoding='utf-8'))
+
+          assert evidence['result'] == 'PASS', evidence
+          assert validation['result'] == 'PASS', validation
+          assert validation['checks']['scanIsBounded'] is True
+          assert validation['checks']['knownWitnessesRecovered'] is True
+          assert validation['checks']['errorRateAcceptable'] is True
+          assert validation['checks']['discoveryDoesNotMaterializeBinary'] is True
+          assert validation['checks']['automaticRelationshipInferenceForbidden'] is True
+          assert validation['checks']['automaticSanctionActivationForbidden'] is True
+          assert validation['checks']['readyForSubmissionFalse'] is True
+
+          boundary = evidence['boundary']
+          assert boundary['crossCategoryDiscoveryIsLegalStatusProof'] is False
+          assert boundary['binaryMaterializationPerformed'] is False
+          assert boundary['automaticRelationshipInferenceAllowed'] is False
+          assert boundary['automaticSanctionAmountActivationAllowed'] is False
+          assert boundary['readyForSubmissionMustRemainFalse'] is True
+          PY
+
+      - name: Check textual integrity
+        run: git diff --check
+
+      - name: Upload discovery evidence
+        uses: actions/upload-artifact@v4
+        with:
+          name: amf-umoa-sanctions-2022-cross-category
+          retention-days: 30
+          if-no-files-found: error
+          path: |
+            regulatory/review-evidence/SANCTIONS_2016_2022/AMF_UMOA_CROSS_CATEGORY_SCAN_2026-09-22.json
+            regulatory/validation/AMF_UMOA_SANCTIONS_2022_CROSS_CATEGORY_SCAN_VALIDATION_V0_1.json
+
+      - name: Commit generated discovery evidence
+        run: |
+          git config user.name 'regulatory-source-bot'
+          git config user.email 'regulatory-source-bot@users.noreply.github.com'
+          git add             regulatory/review-evidence/SANCTIONS_2016_2022/AMF_UMOA_CROSS_CATEGORY_SCAN_2026-09-22.json             regulatory/validation/AMF_UMOA_SANCTIONS_2022_CROSS_CATEGORY_SCAN_VALIDATION_V0_1.json
+          if git diff --cached --quiet; then
+            echo 'No discovery evidence changes to commit.'
+          else
+            git commit -m 'chore: persist AMF-UMOA sanctions cross-category scan'
+            git pull --rebase origin main
+            git push origin HEAD:main
+          fi
