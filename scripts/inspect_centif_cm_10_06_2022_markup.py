@@ -1,12 +1,15 @@
 #!/usr/bin/env python3
-"""Inspect CENTIF raw markup for CM/10/06/2022 under repaired, verified TLS.
+"""Inspect CENTIF CM/10/06/2022 markup with fully verified repaired TLS.
 
-This is discovery-only. It repairs missing TLS intermediates through certificate
-AIA, verifies each CENTIF leaf to the system trust store, fetches only the three
-known CENTIF regulation pages, and inspects markup around the target reference.
-
-It does NOT follow discovered URLs, download a regulatory binary, infer legal
-status, or activate any regulatory rule.
+V0.2 extends issuer recovery to DER/PEM X.509 and PKCS#7 AIA bundles.
+Security invariants:
+- never disables TLS certificate verification;
+- never disables hostname verification;
+- follows only CA Issuers AIA URLs needed to build trust;
+- fetches only the three known CENTIF regulation pages;
+- does not follow target-adjacent application/document locators;
+- does not materialize a regulatory binary;
+- repository workflow remains read-only.
 """
 
 from __future__ import annotations
@@ -20,176 +23,489 @@ import subprocess
 import tempfile
 from html.parser import HTMLParser
 from pathlib import Path
-from urllib.parse import urlparse
+from urllib.parse import urljoin, urlparse
 from urllib.request import Request, urlopen
 
-ROOT=Path(__file__).resolve().parents[1]
-OUT=ROOT/"regulatory/review-evidence/SANCTIONS_2016_2022/CENTIF_TARGET_MARKUP_VERIFIED_TLS_2026-09-23.json"
-VAL=ROOT/"regulatory/validation/CENTIF_TARGET_MARKUP_VERIFIED_TLS_VALIDATION_V0_1.json"
-UA="Mozilla/5.0 RegulatoryCorpusBot/1.0"
-SYSTEM_CA=Path("/etc/ssl/certs/ca-certificates.crt")
-PAGES=[
- "https://www.centif.sn/reglementation/fr/reglcommu",
- "https://site.centif.sn/reglementation/fr/reglcommu",
- "https://jokoo.centif.sn/reglementation/fr/reglcommu",
+ROOT = Path(__file__).resolve().parents[1]
+OUT = ROOT / "regulatory/review-evidence/SANCTIONS_2016_2022/CENTIF_TARGET_MARKUP_VERIFIED_TLS_2026-09-23.json"
+VAL = ROOT / "regulatory/validation/CENTIF_TARGET_MARKUP_VERIFIED_TLS_VALIDATION_V0_2.json"
+SYSTEM_CA = Path("/etc/ssl/certs/ca-certificates.crt")
+UA = "Mozilla/5.0 RegulatoryCorpusBot/1.0"
+
+PAGES = [
+    "https://www.centif.sn/reglementation/fr/reglcommu",
+    "https://site.centif.sn/reglementation/fr/reglcommu",
+    "https://jokoo.centif.sn/reglementation/fr/reglcommu",
 ]
-TARGET_RE=re.compile(r"CM\s*/\s*10\s*/\s*06\s*/\s*2022",re.I)
-PDF_RE=re.compile(r"[^\s\"'<>]{0,300}\.pdf(?:[?][^\s\"'<>]*)?",re.I)
-ATTR_HINT_RE=re.compile(r"(href|src|url|uri|file|doc|download|onclick|data)",re.I)
 
-def run(args,input_text=None,timeout=60):
-    return subprocess.run(args,input=input_text,text=True,capture_output=True,timeout=timeout,check=False)
+TARGET_RE = re.compile(r"CM\s*/\s*10\s*/\s*06\s*/\s*2022", re.I)
+PDF_RE = re.compile(r"""[^\s"'<>]{0,400}\.pdf(?:\?[^\s"'<>]*)?""", re.I)
+LOCATOR_KEY_RE = re.compile(
+    r"(href|src|url|uri|file|fichier|doc|document|download|telecharg|onclick|data|id)",
+    re.I,
+)
 
-def pems(s):
-    return re.findall(r"-----BEGIN CERTIFICATE-----.*?-----END CERTIFICATE-----",s,re.S)
 
-def cert_meta(path):
-    cp=run(["openssl","x509","-in",str(path),"-noout","-subject","-issuer","-serial","-dates","-fingerprint","-sha256","-ext","authorityInfoAccess","-ext","subjectAltName"])
-    text=(cp.stdout+"\n"+cp.stderr).strip()
-    return {"returncode":cp.returncode,"text":text,"caIssuers":re.findall(r"CA Issuers\s*-\s*URI:([^\s,]+)",text,re.I)}
+def run(args: list[str], *, input_text: str | None = None, timeout: int = 60) -> subprocess.CompletedProcess[str]:
+    return subprocess.run(
+        args,
+        input=input_text,
+        text=True,
+        capture_output=True,
+        timeout=timeout,
+        check=False,
+    )
 
-def fetch_bytes(url,context=None,timeout=35):
-    req=Request(url,headers={"User-Agent":UA,"Accept":"*/*","Accept-Language":"fr-FR,fr;q=0.9"})
-    with urlopen(req,timeout=timeout,context=context) as r:
-        return r.read(),r.geturl(),r.headers.get("Content-Type")
 
-def cert_to_pem(raw,out):
-    der=out.with_suffix(".der");der.write_bytes(raw)
-    cp=run(["openssl","x509","-inform","DER","-in",str(der),"-out",str(out)])
-    if cp.returncode==0:return True,"DER"
-    cp=run(["openssl","x509","-inform","PEM","-in",str(der),"-out",str(out)])
-    return cp.returncode==0,("PEM" if cp.returncode==0 else "INVALID")
+def fetch_bytes(url: str, *, context: ssl.SSLContext | None = None, timeout: int = 35) -> tuple[bytes, str, str | None]:
+    req = Request(
+        url,
+        headers={
+            "User-Agent": UA,
+            "Accept": "*/*",
+            "Accept-Language": "fr-FR,fr;q=0.9,en;q=0.5",
+        },
+    )
+    with urlopen(req, timeout=timeout, context=context) as response:
+        return response.read(), response.geturl(), response.headers.get("Content-Type")
 
-def repaired_context(host,tmp):
-    sc=run(["openssl","s_client","-showcerts","-connect",f"{host}:443","-servername",host],input_text="",timeout=45)
-    blocks=pems(sc.stdout+"\n"+sc.stderr)
-    if not blocks:raise RuntimeError(f"No TLS certificate presented by {host}")
-    leaf=tmp/f"{host}-leaf.pem";leaf.write_text(blocks[0]+"\n")
-    inter=[]
-    for i,p in enumerate(blocks[1:]):
-        q=tmp/f"{host}-presented-{i}.pem";q.write_text(p+"\n");inter.append(q)
-    fetched=[];current=leaf;seen=set()
-    for depth in range(4):
-        meta=cert_meta(current)
-        url=next((u for u in meta["caIssuers"] if u not in seen),None)
-        if not url:break
-        seen.add(url)
-        try: raw,_,_=fetch_bytes(url,ssl.create_default_context() if url.startswith("https://") else None,30)
-        except Exception as exc:
-            fetched.append({"url":url,"status":"FETCH_ERROR","error":str(exc)});break
-        out=tmp/f"{host}-aia-{depth}.pem";ok,enc=cert_to_pem(raw,out)
-        rec={"url":url,"status":"PARSED" if ok else "INVALID_CERTIFICATE","encoding":enc,"byteSize":len(raw),"sha256":hashlib.sha256(raw).hexdigest()}
-        if not ok:fetched.append(rec);break
-        rec["metadata"]=cert_meta(out);fetched.append(rec);inter.append(out);current=out
-    chain=tmp/f"{host}-chain.pem"
-    chain.write_text("".join(p.read_text() for p in inter))
-    args=["openssl","verify","-CAfile",str(SYSTEM_CA)]
-    if inter:args+=["-untrusted",str(chain)]
-    args+=[str(leaf)]
-    vr=run(args)
-    verified=vr.returncode==0
-    if not verified:raise RuntimeError(f"TLS chain verification failed for {host}: {vr.stderr or vr.stdout}")
-    bundle=tmp/f"{host}-bundle.pem";bundle.write_bytes(SYSTEM_CA.read_bytes()+b"\n"+chain.read_bytes())
-    ctx=ssl.create_default_context(cafile=str(bundle));ctx.check_hostname=True;ctx.verify_mode=ssl.CERT_REQUIRED
-    return ctx,{
-      "presentedCertificateCount":len(blocks),
-      "leaf":cert_meta(leaf),
-      "fetchedIntermediates":fetched,
-      "chainVerified":True,
-      "verifyOutput":(vr.stdout+vr.stderr).strip(),
-    }
 
-class NodeParser(HTMLParser):
-    def __init__(self):
-        super().__init__(convert_charrefs=True)
-        self.stack=[];self.matches=[]
-    def handle_starttag(self,tag,attrs):
-        node={"tag":tag,"attrs":dict(attrs),"text":[],"descendantAttrs":[]}
-        for n in self.stack:n["descendantAttrs"].append({"tag":tag,"attrs":dict(attrs)})
-        self.stack.append(node)
-    def handle_startendtag(self,tag,attrs):
-        for n in self.stack:n["descendantAttrs"].append({"tag":tag,"attrs":dict(attrs)})
-    def handle_data(self,data):
-        for n in self.stack:n["text"].append(data)
-    def handle_endtag(self,tag):
-        if not self.stack:return
-        # Pop through matching tag defensively.
-        idx=next((i for i in range(len(self.stack)-1,-1,-1) if self.stack[i]["tag"]==tag),None)
-        if idx is None:return
-        closing=self.stack[idx:]
-        self.stack=self.stack[:idx]
-        for node in closing:
-            text=re.sub(r"\s+"," ",html.unescape(" ".join(node["text"]))).strip()
-            if TARGET_RE.search(text):
-                attrs=[{"tag":node["tag"],"attrs":node["attrs"]}]+node["descendantAttrs"]
-                self.matches.append({"tag":node["tag"],"text":text[:5000],"attributeInventory":attrs[:500]})
+def extract_pems(text: str) -> list[str]:
+    return re.findall(
+        r"-----BEGIN CERTIFICATE-----.*?-----END CERTIFICATE-----",
+        text,
+        flags=re.S,
+    )
 
-def candidates_from_matches(matches):
-    out=[]
-    seen=set()
-    for m in matches:
-        for item in m.get("attributeInventory",[]):
-            for k,v in item.get("attrs",{}).items():
-                if v is None:continue
-                sv=str(v)
-                if ATTR_HINT_RE.search(k) or ".pdf" in sv.lower() or "/" in sv:
-                    key=(item["tag"],k,sv)
-                    if key in seen:continue
-                    seen.add(key);out.append({"tag":item["tag"],"attribute":k,"value":sv})
-    return out[:500]
 
-def inspect(page,tmp):
-    host=urlparse(page).hostname
-    ctx,tls=repaired_context(host,tmp)
-    raw,final,ctype=fetch_bytes(page,ctx,45)
-    source=raw.decode("utf-8",errors="replace")
-    parser=NodeParser();parser.feed(source)
-    # Keep the smallest matching nodes first to avoid giant body/html wrappers.
-    matches=sorted(parser.matches,key=lambda x:len(x["text"]))
-    candidates=candidates_from_matches(matches[:20])
-    pdfStrings=sorted(set(PDF_RE.findall(source)))
-    literal=re.search(r"CM\s*/\s*10\s*/\s*06\s*/\s*2022",html.unescape(source),re.I)
-    rawContext=None
-    if literal:
-        s=max(0,literal.start()-4000);e=min(len(source),literal.end()+6000);rawContext=source[s:e]
+def cert_metadata(path: Path) -> dict[str, object]:
+    cp = run([
+        "openssl", "x509", "-in", str(path), "-noout",
+        "-subject", "-issuer", "-serial", "-dates",
+        "-fingerprint", "-sha256",
+        "-ext", "authorityInfoAccess",
+        "-ext", "subjectAltName",
+    ])
+    text = (cp.stdout + "\n" + cp.stderr).strip()
     return {
-      "url":page,"finalUrl":final,"contentType":ctype,"byteSize":len(raw),"sha256":hashlib.sha256(raw).hexdigest(),
-      "tlsVerified":True,"tls":tls,"targetNodeCount":len(matches),"targetNodes":matches[:20],
-      "candidateAttributesNearTarget":candidates,"pdfStringsInPage":pdfStrings[:200],"rawTargetContext":rawContext
+        "returncode": cp.returncode,
+        "text": text,
+        "caIssuers": re.findall(r"CA Issuers\s*-\s*URI:([^\s,]+)", text, flags=re.I),
     }
 
-def main():
-    results=[]
-    with tempfile.TemporaryDirectory(prefix="centif-tls-") as td:
-        tmp=Path(td)
+
+def parse_aia_certificates(raw: bytes, work: Path, prefix: str) -> tuple[list[Path], dict[str, object]]:
+    """Parse an AIA payload as X.509 or PKCS#7, returning PEM cert paths."""
+    raw_path = work / f"{prefix}.bin"
+    raw_path.write_bytes(raw)
+
+    attempts: list[dict[str, object]] = []
+
+    # DER X.509.
+    der_pem = work / f"{prefix}-x509-der.pem"
+    cp = run(["openssl", "x509", "-inform", "DER", "-in", str(raw_path), "-out", str(der_pem)])
+    attempts.append({"format": "X509_DER", "returncode": cp.returncode, "stderr": cp.stderr.strip()})
+    if cp.returncode == 0:
+        return [der_pem], {"format": "X509_DER", "attempts": attempts}
+
+    # PEM X.509.
+    pem_pem = work / f"{prefix}-x509-pem.pem"
+    cp = run(["openssl", "x509", "-inform", "PEM", "-in", str(raw_path), "-out", str(pem_pem)])
+    attempts.append({"format": "X509_PEM", "returncode": cp.returncode, "stderr": cp.stderr.strip()})
+    if cp.returncode == 0:
+        return [pem_pem], {"format": "X509_PEM", "attempts": attempts}
+
+    # DER PKCS#7.
+    p7_der = work / f"{prefix}-p7-der.pem"
+    cp = run([
+        "openssl", "pkcs7", "-inform", "DER", "-in", str(raw_path),
+        "-print_certs", "-out", str(p7_der),
+    ])
+    attempts.append({"format": "PKCS7_DER", "returncode": cp.returncode, "stderr": cp.stderr.strip()})
+    if cp.returncode == 0:
+        certs = extract_pems(p7_der.read_text(encoding="utf-8", errors="replace"))
+        paths: list[Path] = []
+        for i, pem in enumerate(certs):
+            p = work / f"{prefix}-p7-der-{i}.pem"
+            p.write_text(pem + "\n", encoding="utf-8")
+            paths.append(p)
+        if paths:
+            return paths, {"format": "PKCS7_DER", "certificateCount": len(paths), "attempts": attempts}
+
+    # PEM PKCS#7.
+    p7_pem = work / f"{prefix}-p7-pem.pem"
+    cp = run([
+        "openssl", "pkcs7", "-inform", "PEM", "-in", str(raw_path),
+        "-print_certs", "-out", str(p7_pem),
+    ])
+    attempts.append({"format": "PKCS7_PEM", "returncode": cp.returncode, "stderr": cp.stderr.strip()})
+    if cp.returncode == 0:
+        certs = extract_pems(p7_pem.read_text(encoding="utf-8", errors="replace"))
+        paths = []
+        for i, pem in enumerate(certs):
+            p = work / f"{prefix}-p7-pem-{i}.pem"
+            p.write_text(pem + "\n", encoding="utf-8")
+            paths.append(p)
+        if paths:
+            return paths, {"format": "PKCS7_PEM", "certificateCount": len(paths), "attempts": attempts}
+
+    return [], {"format": "UNPARSED", "attempts": attempts}
+
+
+def certificate_fingerprint(path: Path) -> str:
+    cp = run(["openssl", "x509", "-in", str(path), "-noout", "-fingerprint", "-sha256"])
+    return cp.stdout.strip()
+
+
+def build_verified_context(host: str, work: Path) -> tuple[ssl.SSLContext, dict[str, object]]:
+    sclient = run(
+        ["openssl", "s_client", "-showcerts", "-connect", f"{host}:443", "-servername", host],
+        input_text="",
+        timeout=45,
+    )
+    combined = sclient.stdout + "\n" + sclient.stderr
+    presented = extract_pems(combined)
+    if not presented:
+        raise RuntimeError(f"No server certificate presented by {host}")
+
+    presented_paths: list[Path] = []
+    for i, pem in enumerate(presented):
+        p = work / f"{host}-presented-{i}.pem"
+        p.write_text(pem + "\n", encoding="utf-8")
+        presented_paths.append(p)
+
+    leaf = presented_paths[0]
+    intermediates: list[Path] = presented_paths[1:]
+    fetched_records: list[dict[str, object]] = []
+    seen_urls: set[str] = set()
+    seen_cert_fingerprints: set[str] = {
+        certificate_fingerprint(p) for p in presented_paths
+    }
+
+    # Explore AIA chain breadth-first. A PKCS#7 bundle can contain several certs.
+    frontier: list[Path] = [leaf] + intermediates[:]
+    for depth in range(6):
+        if not frontier:
+            break
+        next_frontier: list[Path] = []
+        for cert in frontier:
+            meta = cert_metadata(cert)
+            for aia_url in meta.get("caIssuers", []):
+                if not isinstance(aia_url, str) or aia_url in seen_urls:
+                    continue
+                seen_urls.add(aia_url)
+                rec: dict[str, object] = {"url": aia_url, "depth": depth}
+                try:
+                    context = ssl.create_default_context() if aia_url.startswith("https://") else None
+                    raw, final_url, content_type = fetch_bytes(aia_url, context=context, timeout=30)
+                    rec.update({
+                        "status": "FETCHED",
+                        "finalUrl": final_url,
+                        "contentType": content_type,
+                        "byteSize": len(raw),
+                        "sha256": hashlib.sha256(raw).hexdigest(),
+                    })
+                except Exception as exc:  # noqa: BLE001
+                    rec.update({"status": "FETCH_ERROR", "error": str(exc)})
+                    fetched_records.append(rec)
+                    continue
+
+                paths, parse_info = parse_aia_certificates(raw, work, f"{host}-aia-{depth}-{len(fetched_records)}")
+                rec["parse"] = parse_info
+                accepted: list[dict[str, object]] = []
+                for p in paths:
+                    fp = certificate_fingerprint(p)
+                    if fp in seen_cert_fingerprints:
+                        accepted.append({"fingerprint": fp, "duplicate": True})
+                        continue
+                    seen_cert_fingerprints.add(fp)
+                    intermediates.append(p)
+                    next_frontier.append(p)
+                    accepted.append({
+                        "fingerprint": fp,
+                        "duplicate": False,
+                        "metadata": cert_metadata(p),
+                    })
+                rec["certificates"] = accepted
+                rec["status"] = "PARSED" if paths else "UNPARSED"
+                fetched_records.append(rec)
+        frontier = next_frontier
+
+    chain_path = work / f"{host}-intermediates.pem"
+    chain_path.write_text(
+        "".join(p.read_text(encoding="utf-8") for p in intermediates),
+        encoding="utf-8",
+    )
+
+    verify_args = ["openssl", "verify", "-CAfile", str(SYSTEM_CA)]
+    if intermediates:
+        verify_args += ["-untrusted", str(chain_path)]
+    verify_args += [str(leaf)]
+    verify = run(verify_args)
+    verified = verify.returncode == 0
+
+    diagnostic = {
+        "sClientReturnCode": sclient.returncode,
+        "sClientVerifyLines": [
+            line for line in combined.splitlines()
+            if "Verify return code" in line or "verify error" in line.lower()
+        ],
+        "presentedCertificateCount": len(presented_paths),
+        "leaf": cert_metadata(leaf),
+        "fetchedAiaObjects": fetched_records,
+        "intermediateCount": len(intermediates),
+        "chainVerification": {
+            "returncode": verify.returncode,
+            "stdout": verify.stdout.strip(),
+            "stderr": verify.stderr.strip(),
+            "verified": verified,
+        },
+    }
+
+    if not verified:
+        raise RuntimeError("TLS_CHAIN_NOT_VERIFIED|" + json.dumps(diagnostic, ensure_ascii=False))
+
+    repaired_bundle = work / f"{host}-repaired-ca.pem"
+    repaired_bundle.write_bytes(SYSTEM_CA.read_bytes() + b"\n" + chain_path.read_bytes())
+    context = ssl.create_default_context(cafile=str(repaired_bundle))
+    context.check_hostname = True
+    context.verify_mode = ssl.CERT_REQUIRED
+    return context, diagnostic
+
+
+class TargetMarkupParser(HTMLParser):
+    def __init__(self) -> None:
+        super().__init__(convert_charrefs=True)
+        self.stack: list[dict[str, object]] = []
+        self.target_nodes: list[dict[str, object]] = []
+
+    def handle_starttag(self, tag: str, attrs):
+        attr_dict = dict(attrs)
+        node = {
+            "tag": tag,
+            "attrs": attr_dict,
+            "textParts": [],
+            "descendants": [],
+        }
+        for ancestor in self.stack:
+            ancestor["descendants"].append({"tag": tag, "attrs": attr_dict})
+        self.stack.append(node)
+
+    def handle_startendtag(self, tag: str, attrs):
+        entry = {"tag": tag, "attrs": dict(attrs)}
+        for ancestor in self.stack:
+            ancestor["descendants"].append(entry)
+
+    def handle_data(self, data: str):
+        if not data:
+            return
+        for node in self.stack:
+            node["textParts"].append(data)
+
+    def handle_endtag(self, tag: str):
+        idx = next(
+            (i for i in range(len(self.stack) - 1, -1, -1) if self.stack[i]["tag"] == tag),
+            None,
+        )
+        if idx is None:
+            return
+        closing = self.stack[idx:]
+        self.stack = self.stack[:idx]
+        for node in closing:
+            text = re.sub(
+                r"\s+",
+                " ",
+                html.unescape(" ".join(node["textParts"])),
+            ).strip()
+            if TARGET_RE.search(text):
+                self.target_nodes.append({
+                    "tag": node["tag"],
+                    "attrs": node["attrs"],
+                    "text": text[:7000],
+                    "descendants": node["descendants"][:1000],
+                })
+
+
+def extract_locator_candidates(nodes: list[dict[str, object]], base_url: str) -> list[dict[str, object]]:
+    candidates: list[dict[str, object]] = []
+    seen: set[tuple[str, str, str]] = set()
+    for node in nodes:
+        inventory = [{"tag": node["tag"], "attrs": node["attrs"]}] + list(node.get("descendants", []))
+        for item in inventory:
+            tag = str(item.get("tag") or "")
+            attrs = item.get("attrs") or {}
+            if not isinstance(attrs, dict):
+                continue
+            for key, value in attrs.items():
+                if value is None:
+                    continue
+                text = str(value)
+                if not (LOCATOR_KEY_RE.search(str(key)) or ".pdf" in text.lower()):
+                    continue
+                uniq = (tag, str(key), text)
+                if uniq in seen:
+                    continue
+                seen.add(uniq)
+                absolute = urljoin(base_url, text) if text.startswith(("/", "./", "../")) else None
+                candidates.append({
+                    "tag": tag,
+                    "attribute": str(key),
+                    "value": text,
+                    "absoluteUrlIfPathLike": absolute,
+                })
+    return candidates[:1000]
+
+
+def inspect_page(page: str, work: Path) -> dict[str, object]:
+    host = urlparse(page).hostname or ""
+    context, tls = build_verified_context(host, work)
+    raw, final_url, content_type = fetch_bytes(page, context=context, timeout=45)
+    source = raw.decode("utf-8", errors="replace")
+    parser = TargetMarkupParser()
+    parser.feed(source)
+
+    nodes = sorted(parser.target_nodes, key=lambda x: len(str(x.get("text") or "")))
+    candidates = extract_locator_candidates(nodes[:30], final_url)
+
+    target_contexts: list[str] = []
+    decoded_source = html.unescape(source)
+    for match in TARGET_RE.finditer(decoded_source):
+        target_contexts.append(decoded_source[max(0, match.start()-5000):min(len(decoded_source), match.end()+8000)])
+        if len(target_contexts) >= 5:
+            break
+
+    pdf_strings = sorted(set(PDF_RE.findall(source)))
+
+    return {
+        "url": page,
+        "status": "OK",
+        "finalUrl": final_url,
+        "contentType": content_type,
+        "byteSize": len(raw),
+        "sha256": hashlib.sha256(raw).hexdigest(),
+        "tlsVerified": True,
+        "tls": tls,
+        "targetReferencePresent": bool(TARGET_RE.search(html.unescape(source))),
+        "targetNodeCount": len(nodes),
+        "targetNodes": nodes[:30],
+        "candidateLocatorsNearTarget": candidates,
+        "pdfStringsInPage": pdf_strings[:500],
+        "rawTargetContexts": target_contexts,
+    }
+
+
+def main() -> None:
+    OUT.parent.mkdir(parents=True, exist_ok=True)
+    VAL.parent.mkdir(parents=True, exist_ok=True)
+
+    pages: list[dict[str, object]] = []
+    with tempfile.TemporaryDirectory(prefix="centif-pki-") as td:
+        work = Path(td)
         for page in PAGES:
-            try:results.append(inspect(page,tmp))
-            except Exception as exc:results.append({"url":page,"status":"ERROR","error":str(exc),"tlsVerified":False})
-    candidates=[]
-    for r in results:candidates.extend(r.get("candidateAttributesNearTarget",[]))
-    status="TARGET_MARKUP_CANDIDATES_FOUND" if candidates else "TARGET_PRESENT_WITHOUT_MARKUP_DOWNLOAD_CANDIDATE"
-    reachable=sum(1 for r in results if r.get("tlsVerified") is True)
-    evidence={
-      "schemaVersion":"CENTIF_TARGET_MARKUP_VERIFIED_TLS_V0_1","sourceId":"DECISION_CM_10_06_2022",
-      "reference":"CM/10/06/2022","method":"AIA_REPAIRED_TLS_RAW_MARKUP_TARGET_INSPECTION",
-      "result":"PASS" if reachable else "INCOMPLETE","targetStatus":status,
-      "pageCount":len(PAGES),"verifiedTlsPageCount":reachable,"pages":results,
-      "candidateCount":len(candidates),"boundary":{
-        "knownCentifPagesOnly":True,"tlsVerificationDisabled":False,"hostnameVerificationDisabled":False,
-        "candidateUrlsFollowed":False,"binaryMaterialized":False,"workflowRepositoryWriteAllowed":False,
-        "automaticRelationshipInferenceAllowed":False,"automaticSanctionActivationAllowed":False,
-        "readyForSubmissionMustRemainFalse":True
-      },
-      "nextAction":"If a concrete target-adjacent institutional file/id/path is exposed, inspect only that exact locator in a separate read-only step."
-    }
-    validation={"schemaVersion":"CENTIF_TARGET_MARKUP_VERIFIED_TLS_VALIDATION_V0_1","result":evidence["result"],"checks":{
-      "knownCentifPagesOnly":True,"tlsVerificationNeverDisabled":True,"hostnameVerificationNeverDisabled":True,
-      "candidateUrlsNotFollowed":True,"binaryNotMaterialized":True,"workflowRepositoryWriteDisabled":True,
-      "automaticRelationshipInferenceForbidden":True,"automaticSanctionActivationForbidden":True,"readyForSubmissionFalse":True
-    },"targetStatus":status,"verifiedTlsPageCount":reachable,"candidateCount":len(candidates)}
-    OUT.parent.mkdir(parents=True,exist_ok=True);VAL.parent.mkdir(parents=True,exist_ok=True)
-    OUT.write_text(json.dumps(evidence,ensure_ascii=False,indent=2)+"\n");VAL.write_text(json.dumps(validation,ensure_ascii=False,indent=2)+"\n")
-    print(json.dumps({"result":evidence["result"],"targetStatus":status,"verifiedTlsPageCount":reachable,"candidateCount":len(candidates)},ensure_ascii=False))
-    if evidence["result"]!="PASS":raise SystemExit(2)
+            try:
+                pages.append(inspect_page(page, work))
+            except Exception as exc:  # noqa: BLE001
+                message = str(exc)
+                diag = None
+                if message.startswith("TLS_CHAIN_NOT_VERIFIED|"):
+                    try:
+                        diag = json.loads(message.split("|", 1)[1])
+                    except Exception:
+                        diag = {"raw": message}
+                pages.append({
+                    "url": page,
+                    "status": "ERROR",
+                    "error": message.split("|", 1)[0] if "|" in message else message,
+                    "tlsVerified": False,
+                    "tlsDiagnostic": diag,
+                })
 
-if __name__=="__main__":main()
+    verified_pages = [p for p in pages if p.get("tlsVerified") is True]
+    target_pages = [p for p in verified_pages if p.get("targetReferencePresent") is True]
+    candidates: list[dict[str, object]] = []
+    for page in target_pages:
+        for candidate in page.get("candidateLocatorsNearTarget", []):
+            candidates.append({
+                "sourcePage": page.get("url"),
+                **candidate,
+            })
+
+    if candidates:
+        target_status = "VERIFIED_TARGET_MARKUP_LOCATOR_CANDIDATES_FOUND"
+    elif target_pages:
+        target_status = "VERIFIED_TARGET_PRESENT_WITHOUT_MARKUP_LOCATOR"
+    elif verified_pages:
+        target_status = "VERIFIED_PAGES_RETRIEVED_TARGET_NOT_PRESENT"
+    else:
+        target_status = "CENTIF_TLS_CHAIN_STILL_NOT_VERIFIED"
+
+    result = "PASS" if verified_pages else "INCOMPLETE"
+
+    evidence = {
+        "schemaVersion": "CENTIF_TARGET_MARKUP_VERIFIED_TLS_V0_2",
+        "sourceId": "DECISION_CM_10_06_2022",
+        "reference": "CM/10/06/2022",
+        "method": "AIA_X509_PKCS7_REPAIRED_TLS_RAW_MARKUP_INSPECTION",
+        "result": result,
+        "targetStatus": target_status,
+        "pageCount": len(PAGES),
+        "verifiedTlsPageCount": len(verified_pages),
+        "verifiedTargetPageCount": len(target_pages),
+        "candidateCount": len(candidates),
+        "candidates": candidates,
+        "pages": pages,
+        "boundary": {
+            "knownCentifPagesOnly": True,
+            "tlsVerificationDisabled": False,
+            "hostnameVerificationDisabled": False,
+            "aiaUsedOnlyForCertificateChainRepair": True,
+            "candidateLocatorsFollowed": False,
+            "binaryMaterialized": False,
+            "workflowRepositoryWriteAllowed": False,
+            "automaticRelationshipInferenceAllowed": False,
+            "automaticSanctionActivationAllowed": False,
+            "readyForSubmissionMustRemainFalse": True,
+        },
+        "nextAction": (
+            "If a concrete institutional locator adjacent to CM/10/06/2022 is found, "
+            "inspect only that exact locator in a separate read-only step."
+        ),
+    }
+
+    validation = {
+        "schemaVersion": "CENTIF_TARGET_MARKUP_VERIFIED_TLS_VALIDATION_V0_2",
+        "result": result,
+        "checks": {
+            "knownCentifPagesOnly": True,
+            "tlsVerificationNeverDisabled": True,
+            "hostnameVerificationNeverDisabled": True,
+            "aiaRestrictedToCertificateChainRepair": True,
+            "candidateLocatorsNotFollowed": True,
+            "binaryNotMaterialized": True,
+            "workflowRepositoryWriteDisabled": True,
+            "automaticRelationshipInferenceForbidden": True,
+            "automaticSanctionActivationForbidden": True,
+            "readyForSubmissionFalse": True,
+        },
+        "targetStatus": target_status,
+        "verifiedTlsPageCount": len(verified_pages),
+        "verifiedTargetPageCount": len(target_pages),
+        "candidateCount": len(candidates),
+    }
+
+    OUT.write_text(json.dumps(evidence, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
+    VAL.write_text(json.dumps(validation, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
+    print(json.dumps({
+        "result": result,
+        "targetStatus": target_status,
+        "verifiedTlsPageCount": len(verified_pages),
+        "verifiedTargetPageCount": len(target_pages),
+        "candidateCount": len(candidates),
+    }, ensure_ascii=False))
+
+    if result != "PASS":
+        raise SystemExit(2)
+
+
+if __name__ == "__main__":
+    main()
