@@ -1,0 +1,16 @@
+{
+  "schemaVersion": "UEMOA_EXACT_SEARCH_DISCOVERY_VALIDATION_V0_1",
+  "result": "PASS",
+  "checks": {
+    "authoritativeSearchOnly": true,
+    "queryCountExactlyThree": true,
+    "resultLinksNotFollowed": true,
+    "binaryNotMaterialized": true,
+    "automaticRelationshipInferenceForbidden": true,
+    "automaticSanctionActivationForbidden": true,
+    "readyForSubmissionFalse": true
+  },
+  "targetStatus": "REFERENCE_PRESENT_IN_SEARCH_RESULTS_NO_MATCHED_ANCHOR",
+  "candidateCount": 0,
+  "reachableQueryCount": 3
+}
