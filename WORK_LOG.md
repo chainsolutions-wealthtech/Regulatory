@@ -357,9 +357,9 @@ Aucune nouvelle branche, aucun force-push, aucune approbation juridique simulée
 13. Clôture de `LOOP-GOV-002` et transmission à `LOOP-REG-001`.
 
 - branche canonique : `main` ;
-- HEAD source vérifié par la boucle : `647bc51e90ec661bb64fbee57eafc3d9017099ea` ;
+- HEAD source vérifié par la boucle : `fea83d65f47368c1b29b3c519bf8a4977f4eae72` ;
 - date du HEAD source : `2026-09-22` ;
-- run Regulatory CI : `35784491266` ;
+- run Regulatory CI : `35784850744` ;
 - validation API CIRC005 : `PASS` ;
 - compatibilité descendante des 10 collections structurées : `PASS` ;
 - persistance canonique des anciens payloads : `PASS` ;
