@@ -1,0 +1,65 @@
+name: Discover BCEAO Native Search Surface
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - .github/workflows/discover-bceao-native-search-surface.yml
+      - scripts/discover_bceao_native_search_surface.py
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: bceao-native-search-surface-main
+  cancel-in-progress: false
+
+jobs:
+  discover:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      - name: Discover BCEAO search surface without following it
+        run: python3 scripts/discover_bceao_native_search_surface.py
+
+      - name: Validate fail-closed boundary
+        run: |
+          python3 - <<'PY'
+          import json
+          from pathlib import Path
+          e=json.loads(Path('regulatory/review-evidence/SANCTIONS_2016_2022/BCEAO_NATIVE_SEARCH_SURFACE_DISCOVERY_2026-09-22.json').read_text())
+          v=json.loads(Path('regulatory/validation/BCEAO_NATIVE_SEARCH_SURFACE_DISCOVERY_VALIDATION_V0_1.json').read_text())
+          assert e['result']=='PASS' and v['result']=='PASS'
+          for k in [
+              'singleKnownOfficialPageOnly','verifiedTlsOnly','formsNotSubmitted',
+              'endpointsNotFollowed','linkedDocumentsNotFetched','binaryNotMaterialized',
+              'workflowRepositoryWriteDisabled','automaticRelationshipInferenceForbidden',
+              'automaticSanctionActivationForbidden','readyForSubmissionFalse'
+          ]:
+              assert v['checks'][k] is True,k
+          PY
+
+      - name: Check textual integrity
+        run: git diff --check
+
+      - name: Emit evidence to workflow log
+        run: |
+          echo '=== BCEAO_NATIVE_SEARCH_SURFACE_EVIDENCE ==='
+          cat regulatory/review-evidence/SANCTIONS_2016_2022/BCEAO_NATIVE_SEARCH_SURFACE_DISCOVERY_2026-09-22.json
+          echo '=== BCEAO_NATIVE_SEARCH_SURFACE_VALIDATION ==='
+          cat regulatory/validation/BCEAO_NATIVE_SEARCH_SURFACE_DISCOVERY_VALIDATION_V0_1.json
+
+      - uses: actions/upload-artifact@v4
+        with:
+          name: bceao-native-search-surface
+          retention-days: 30
+          if-no-files-found: error
+          path: |
+            regulatory/review-evidence/SANCTIONS_2016_2022/BCEAO_NATIVE_SEARCH_SURFACE_DISCOVERY_2026-09-22.json
+            regulatory/validation/BCEAO_NATIVE_SEARCH_SURFACE_DISCOVERY_VALIDATION_V0_1.json
