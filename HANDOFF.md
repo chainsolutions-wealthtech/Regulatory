@@ -10,9 +10,9 @@ Un nouvel agent doit reprendre depuis `00_START_HERE.md` et `GOVERNANCE.md`, res
 Ce chantier a renforcé la gouvernance **et** réparé une dette CI préexistante sans retirer les capacités legacy ni affaiblir le déterminisme PDF.
 
 - branche canonique : `main` ;
-- HEAD source vérifié par la boucle : `e9bfc65956ae7ee3f22847a69f668433f9252403` ;
+- HEAD source vérifié par la boucle : `647bc51e90ec661bb64fbee57eafc3d9017099ea` ;
 - date du HEAD source : `2026-09-22` ;
-- run Regulatory CI : `35784071755` ;
+- run Regulatory CI : `35784491266` ;
 - validation API CIRC005 : `PASS` ;
 - compatibilité descendante des 10 collections structurées : `PASS` ;
 - persistance canonique des anciens payloads : `PASS` ;
