@@ -1,0 +1,57 @@
+name: Validate UEMOA CM-10-06-2022 Search Result Blocks
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - .github/workflows/validate-uemoa-cm-10-06-2022-result-blocks.yml
+      - scripts/validate_uemoa_cm_10_06_2022_result_blocks.py
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: uemoa-cm-10-06-2022-result-blocks-main
+  cancel-in-progress: false
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+        with: {fetch-depth: 0}
+      - uses: actions/setup-python@v5
+        with: {python-version: '3.12'}
+      - name: Parse bounded search result blocks
+        run: python3 scripts/validate_uemoa_cm_10_06_2022_result_blocks.py
+      - name: Validate boundary
+        run: |
+          python3 - <<'PY'
+          import json
+          from pathlib import Path
+          e=json.loads(Path('regulatory/review-evidence/SANCTIONS_2016_2022/UEMOA_EXACT_SEARCH_RESULT_BLOCKS_2026-09-22.json').read_text())
+          v=json.loads(Path('regulatory/validation/UEMOA_EXACT_SEARCH_RESULT_BLOCKS_VALIDATION_V0_2.json').read_text())
+          assert e['result']=='PASS' and v['result']=='PASS'
+          for k in ['queryEchoExcluded','exactlyThreeQueries','resultLinksNotFollowed','binaryNotMaterialized','automaticRelationshipInferenceForbidden','automaticSanctionActivationForbidden','readyForSubmissionFalse']:
+              assert v['checks'][k] is True,k
+          PY
+      - run: git diff --check
+      - uses: actions/upload-artifact@v4
+        with:
+          name: uemoa-cm-10-06-2022-result-blocks
+          retention-days: 30
+          path: |
+            regulatory/review-evidence/SANCTIONS_2016_2022/UEMOA_EXACT_SEARCH_RESULT_BLOCKS_2026-09-22.json
+            regulatory/validation/UEMOA_EXACT_SEARCH_RESULT_BLOCKS_VALIDATION_V0_2.json
+      - name: Persist result-block evidence
+        run: |
+          git config user.name 'regulatory-source-bot'
+          git config user.email 'regulatory-source-bot@users.noreply.github.com'
+          git add regulatory/review-evidence/SANCTIONS_2016_2022/UEMOA_EXACT_SEARCH_RESULT_BLOCKS_2026-09-22.json regulatory/validation/UEMOA_EXACT_SEARCH_RESULT_BLOCKS_VALIDATION_V0_2.json
+          if ! git diff --cached --quiet; then
+            git commit -m 'chore: persist UEMOA search result-block evidence'
+            git pull --rebase --autostash origin main
+            git push origin HEAD:main
+          fi
