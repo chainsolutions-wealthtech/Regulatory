@@ -25,9 +25,9 @@
 - [ ] Ne jamais activer automatiquement montant, sanction, exigence ou dépendance sans les revues humaines prévues.
 
 - branche canonique : `main` ;
-- HEAD source vérifié par la boucle : `5da53073e334397137987916b4f69d5eeefed660` ;
+- HEAD source vérifié par la boucle : `583513ce1fe79cb022463469dd5d8d262cbc66e8` ;
 - date du HEAD source : `2026-09-23` ;
-- run Regulatory CI : `35795877805` ;
+- run Regulatory CI : `35796101188` ;
 - validation API CIRC005 : `PASS` ;
 - compatibilité descendante des 10 collections structurées : `PASS` ;
 - persistance canonique des anciens payloads : `PASS` ;
