@@ -1,0 +1,40 @@
+{
+  "schemaVersion": "AMF_UMOA_SANCTIONS_2022_CROSS_CATEGORY_SCAN_VALIDATION_V0_1",
+  "result": "PASS",
+  "checks": {
+    "scanIsBounded": true,
+    "knownWitnessesRecovered": true,
+    "errorRateAcceptable": true,
+    "discoveryDoesNotMaterializeBinary": true,
+    "automaticRelationshipInferenceForbidden": true,
+    "automaticSanctionActivationForbidden": true,
+    "readyForSubmissionFalse": true
+  },
+  "scanIdRange": [
+    1000000,
+    1000300
+  ],
+  "targetStatus": "NOT_FOUND_IN_SCAN_RANGE",
+  "exactReferenceMatchCount": 0,
+  "candidateCount": 1,
+  "witnessChecks": [
+    {
+      "actualiteId": 1000179,
+      "expectedReference": "CM/SJ/O01/03/2016",
+      "found": true,
+      "referenceMatches": true
+    },
+    {
+      "actualiteId": 1000182,
+      "expectedReference": "CM/07/09/2021",
+      "found": true,
+      "referenceMatches": true
+    },
+    {
+      "actualiteId": 1000184,
+      "expectedReference": "CM/13/09/2022",
+      "found": true,
+      "referenceMatches": true
+    }
+  ]
+}

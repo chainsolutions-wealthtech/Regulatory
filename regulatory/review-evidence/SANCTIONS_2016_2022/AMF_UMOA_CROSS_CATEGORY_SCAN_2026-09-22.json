@@ -1,0 +1,76 @@
+{
+  "schemaVersion": "AMF_UMOA_SANCTIONS_2022_CROSS_CATEGORY_SCAN_V0_1",
+  "authority": "AMF-UMOA",
+  "sourceApi": "https://www.amf-umoa.org/service/api/elastic/actualite",
+  "method": "OFFICIAL_FRONTEND_API_BOUNDED_CROSS_CATEGORY_SCAN",
+  "scanIdRange": [
+    1000000,
+    1000300
+  ],
+  "requestCount": 301,
+  "result": "PASS",
+  "targetReference": "CM/10/06/2022",
+  "targetStatus": "NOT_FOUND_IN_SCAN_RANGE",
+  "exactReferenceMatchCount": 0,
+  "sanctionsSubjectMatchCount": 1,
+  "objectCount": 202,
+  "errorCount": 0,
+  "errorRate": 0.0,
+  "statusCounts": {
+    "EMPTY": 99,
+    "OBJECT": 202
+  },
+  "witnessChecks": [
+    {
+      "actualiteId": 1000179,
+      "expectedReference": "CM/SJ/O01/03/2016",
+      "found": true,
+      "referenceMatches": true
+    },
+    {
+      "actualiteId": 1000182,
+      "expectedReference": "CM/07/09/2021",
+      "found": true,
+      "referenceMatches": true
+    },
+    {
+      "actualiteId": 1000184,
+      "expectedReference": "CM/13/09/2022",
+      "found": true,
+      "referenceMatches": true
+    }
+  ],
+  "candidates": [
+    {
+      "actualiteId": 1000179,
+      "status": "OBJECT",
+      "titre": "DECISION N° CM/SJ/O01/03/2016",
+      "resume": "DECISION N° CM/SJ/O01/03/2016 RELATIVE A LA MISE EN OEUVRE DU DISPOSITIF DES SANCTIONS PECUNIAIRES APPLICABLES SUR LE MARCHE FINANCIER REGIONAL DE L’UMOA",
+      "texte": "DECISION N° CM/SJ/O01/03/2016 RELATIVE A LA MISE EN OEUVRE DU DISPOSITIF DES SANCTIONS PECUNIAIRES APPLICABLES SUR LE MARCHE FINANCIER REGIONAL DE L’UMOA",
+      "categorie": "Decision",
+      "portalDate": "2016-03-24",
+      "portalValide": true,
+      "portalAbroge": false,
+      "documentUrl": "AC-DECISION-2023-3B578016-221F-496D-8C27-2B7D62DFB43E.pdf",
+      "docPresent": true,
+      "docBase64Sha256": "cce223ebb393331352b78f48f31fb0b5e780c178f2dff14abc018cc0c4ab7af9",
+      "targetReferenceMatch": false,
+      "sanctionsSubjectMatch": true,
+      "apiUrl": "https://www.amf-umoa.org/service/api/elastic/actualite?id=1000179&langue=fr",
+      "rawSha256": "1823c95164b11429a414d26c18512d339c97137bc6faa05f5031c03863e1168c"
+    }
+  ],
+  "boundary": {
+    "crossCategoryDiscoveryIsLegalStatusProof": false,
+    "portalAbrogeMetadataIsLegalStatusProof": false,
+    "binaryMaterializationPerformed": false,
+    "automaticRelationshipInferenceAllowed": false,
+    "automaticDependencyResolutionAllowed": false,
+    "automaticSanctionRuleActivationAllowed": false,
+    "automaticSanctionAmountActivationAllowed": false,
+    "humanLegalReviewRequired": true,
+    "humanComplianceReviewRequired": true,
+    "readyForSubmissionMustRemainFalse": true
+  },
+  "nextAction": "If an exact CM/10/06/2022 object with an official API document is found, materialize and independently validate that binary in a separate governed step. Otherwise preserve the institutional non-indexed recovery boundary."
+}
