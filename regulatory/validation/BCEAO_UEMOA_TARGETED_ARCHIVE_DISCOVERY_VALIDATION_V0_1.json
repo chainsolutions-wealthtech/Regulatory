@@ -1,0 +1,18 @@
+{
+  "schemaVersion": "BCEAO_UEMOA_TARGETED_ARCHIVE_DISCOVERY_VALIDATION_V0_1",
+  "result": "PASS",
+  "checks": {
+    "knownPagesOnly": true,
+    "verifiedTlsOnly": true,
+    "linkedDocumentsNotFetched": true,
+    "binaryNotMaterialized": true,
+    "automaticRelationshipInferenceForbidden": true,
+    "automaticSanctionActivationForbidden": true,
+    "readyForSubmissionFalse": true
+  },
+  "targetStatus": "REVISION_CONTEXT_CONFIRMED_NO_TARGET_DOCUMENT_LINK",
+  "reachablePageCount": 3,
+  "sanctionsSubjectPageCount": 3,
+  "exactReferencePageCount": 0,
+  "targetDocumentCandidateCount": 0
+}

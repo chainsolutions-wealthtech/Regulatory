@@ -1,0 +1,338 @@
+{
+  "schemaVersion": "BCEAO_UEMOA_TARGETED_ARCHIVE_DISCOVERY_V0_1",
+  "sourceId": "DECISION_CM_10_06_2022",
+  "reference": "CM/10/06/2022",
+  "method": "KNOWN_AUTHORITATIVE_PAGES_DOCUMENT_LINK_INVENTORY",
+  "result": "PASS",
+  "targetStatus": "REVISION_CONTEXT_CONFIRMED_NO_TARGET_DOCUMENT_LINK",
+  "pageCount": 3,
+  "reachablePageCount": 3,
+  "sanctionsSubjectPageCount": 3,
+  "exactReferencePageCount": 0,
+  "pages": [
+    {
+      "authority": "BCEAO",
+      "status": "OK",
+      "url": "https://www.bceao.int/fr/communique-presse/communique-de-presse-de-la-session-ordinaire-du-conseil-des-ministres-de-lunion-5",
+      "finalUrl": "https://www.bceao.int/fr/communique-presse/communique-de-presse-de-la-session-ordinaire-du-conseil-des-ministres-de-lunion-5",
+      "contentType": "text/html; charset=UTF-8",
+      "byteSize": 124485,
+      "sha256": "6b788f0663336fee7de1b04d9d317461b3e4e71f35f7268aa568063a0ccb0db4",
+      "tlsVerified": true,
+      "targetReferencePresent": false,
+      "sanctionsSubjectPresent": true,
+      "targetContext": null,
+      "sanctionsContext": "té du texte présenté par la Commission de l’UEMOA et a décidé de l’examiner à sa prochaine session. Au titre du CREPMF Le Conseil des Ministres de l’Union a procédé au renouvellement des mandats et à la nomination de nouveaux membres du Conseil Régional de l’Epargne Publique et des Marchés Financiers. Il a également adopté le dispositif révisé des sanctions pécuniaires applicables sur le marché financier régional de l’UMOA en vue, non seulement d’aligner ses dispositions, en ce qui concerne les mêmes agissements, sur celles de la Loi Uniforme relative aux infractions boursières, mais aussi de l’adapter aux évolutions nécessaires du cadre de régulation. Le Conseil a donné des orientations pour le choix de l’instrument à utiliser pour accompagner, au plan fiscal, les activités des entreprises de capital-investissement dans l’Union. Enfin, le Conseil a été informé de l’état de transposition par les Etats membres de la Loi Uniforme sur les infractions boursières et assimilées. Fait à Dakar, le 24 juin 2022 Le Président du Conseil des Ministres Sani YAYA Etats",
+      "anchorCount": 161,
+      "documentLikeLinks": [
+        {
+          "text": "Rapport sur la politique monétaire - Juin 2023",
+          "href": "https://www.bceao.int/sites/default/files/2023-07/Rapport%20sur%20la%20politique%20mone%CC%81taire%20-%20Juin%202023.pdf",
+          "absoluteUrl": "https://www.bceao.int/sites/default/files/2023-07/Rapport%20sur%20la%20politique%20mone%CC%81taire%20-%20Juin%202023.pdf",
+          "host": "www.bceao.int",
+          "pdfHint": true,
+          "targetReferenceHint": false,
+          "sanctionsHint": false
+        },
+        {
+          "text": "Télécharger",
+          "href": "https://www.bceao.int/sites/default/files/2023-07/Rapport%20sur%20la%20politique%20mone%CC%81taire%20-%20Juin%202023.pdf",
+          "absoluteUrl": "https://www.bceao.int/sites/default/files/2023-07/Rapport%20sur%20la%20politique%20mone%CC%81taire%20-%20Juin%202023.pdf",
+          "host": "www.bceao.int",
+          "pdfHint": true,
+          "targetReferenceHint": false,
+          "sanctionsHint": false
+        },
+        {
+          "text": "Rapport sur la politique monétaire - Mars 2023",
+          "href": "https://www.bceao.int/sites/default/files/2023-05/BCEAO%20-%20Rapport%20sur%20la%20politique%20mone%CC%81taire_Umoa_Mars_2023.pdf",
+          "absoluteUrl": "https://www.bceao.int/sites/default/files/2023-05/BCEAO%20-%20Rapport%20sur%20la%20politique%20mone%CC%81taire_Umoa_Mars_2023.pdf",
+          "host": "www.bceao.int",
+          "pdfHint": true,
+          "targetReferenceHint": false,
+          "sanctionsHint": false
+        },
+        {
+          "text": "Télécharger",
+          "href": "https://www.bceao.int/sites/default/files/2023-05/BCEAO%20-%20Rapport%20sur%20la%20politique%20mone%CC%81taire_Umoa_Mars_2023.pdf",
+          "absoluteUrl": "https://www.bceao.int/sites/default/files/2023-05/BCEAO%20-%20Rapport%20sur%20la%20politique%20mone%CC%81taire_Umoa_Mars_2023.pdf",
+          "host": "www.bceao.int",
+          "pdfHint": true,
+          "targetReferenceHint": false,
+          "sanctionsHint": false
+        },
+        {
+          "text": "Rapport sur la politique monétaire - Décembre 2022",
+          "href": "https://www.bceao.int/sites/default/files/2023-03/Rapport%20sur%20la%20politique%20mone%CC%81taire%20-%20D%C3%A9cembre%202022.pdf",
+          "absoluteUrl": "https://www.bceao.int/sites/default/files/2023-03/Rapport%20sur%20la%20politique%20mone%CC%81taire%20-%20D%C3%A9cembre%202022.pdf",
+          "host": "www.bceao.int",
+          "pdfHint": true,
+          "targetReferenceHint": false,
+          "sanctionsHint": false
+        },
+        {
+          "text": "Télécharger",
+          "href": "https://www.bceao.int/sites/default/files/2023-03/Rapport%20sur%20la%20politique%20mone%CC%81taire%20-%20D%C3%A9cembre%202022.pdf",
+          "absoluteUrl": "https://www.bceao.int/sites/default/files/2023-03/Rapport%20sur%20la%20politique%20mone%CC%81taire%20-%20D%C3%A9cembre%202022.pdf",
+          "host": "www.bceao.int",
+          "pdfHint": true,
+          "targetReferenceHint": false,
+          "sanctionsHint": false
+        },
+        {
+          "text": "Rapport sur la politique monétaire - Septembre 2022",
+          "href": "https://www.bceao.int/sites/default/files/2023-03/Rapport%20sur%20la%20politique%20mone%CC%81taire%20-%20Septembre%202022.pdf",
+          "absoluteUrl": "https://www.bceao.int/sites/default/files/2023-03/Rapport%20sur%20la%20politique%20mone%CC%81taire%20-%20Septembre%202022.pdf",
+          "host": "www.bceao.int",
+          "pdfHint": true,
+          "targetReferenceHint": false,
+          "sanctionsHint": false
+        },
+        {
+          "text": "Télécharger",
+          "href": "https://www.bceao.int/sites/default/files/2023-03/Rapport%20sur%20la%20politique%20mone%CC%81taire%20-%20Septembre%202022.pdf",
+          "absoluteUrl": "https://www.bceao.int/sites/default/files/2023-03/Rapport%20sur%20la%20politique%20mone%CC%81taire%20-%20Septembre%202022.pdf",
+          "host": "www.bceao.int",
+          "pdfHint": true,
+          "targetReferenceHint": false,
+          "sanctionsHint": false
+        },
+        {
+          "text": "Rapport sur la politique monétaire - Juin 2022",
+          "href": "https://www.bceao.int/sites/default/files/2023-03/Rapport%20sur%20la%20politique%20mone%CC%81taire%20-%20Juin%202022.pdf",
+          "absoluteUrl": "https://www.bceao.int/sites/default/files/2023-03/Rapport%20sur%20la%20politique%20mone%CC%81taire%20-%20Juin%202022.pdf",
+          "host": "www.bceao.int",
+          "pdfHint": true,
+          "targetReferenceHint": false,
+          "sanctionsHint": false
+        },
+        {
+          "text": "Télécharger",
+          "href": "https://www.bceao.int/sites/default/files/2023-03/Rapport%20sur%20la%20politique%20mone%CC%81taire%20-%20Juin%202022.pdf",
+          "absoluteUrl": "https://www.bceao.int/sites/default/files/2023-03/Rapport%20sur%20la%20politique%20mone%CC%81taire%20-%20Juin%202022.pdf",
+          "host": "www.bceao.int",
+          "pdfHint": true,
+          "targetReferenceHint": false,
+          "sanctionsHint": false
+        },
+        {
+          "text": "Taux directeurs de la BCEAO",
+          "href": "/fr/documents/taux-directeurs-de-la-bceao",
+          "absoluteUrl": "https://www.bceao.int/fr/documents/taux-directeurs-de-la-bceao",
+          "host": "www.bceao.int",
+          "pdfHint": false,
+          "targetReferenceHint": false,
+          "sanctionsHint": false
+        },
+        {
+          "text": "Evolution du marché interbancaire de l’UEMOA",
+          "href": "/fr/documents/evolution-du-marche-interbancaire-de-luemoa",
+          "absoluteUrl": "https://www.bceao.int/fr/documents/evolution-du-marche-interbancaire-de-luemoa",
+          "host": "www.bceao.int",
+          "pdfHint": false,
+          "targetReferenceHint": false,
+          "sanctionsHint": false
+        },
+        {
+          "text": "Opérations effectuées sur le marché interbancaire de l’UMOA",
+          "href": "/fr/documents/operations-effectuees-sur-le-marche-interbancaire-de-lumoa-0",
+          "absoluteUrl": "https://www.bceao.int/fr/documents/operations-effectuees-sur-le-marche-interbancaire-de-lumoa-0",
+          "host": "www.bceao.int",
+          "pdfHint": false,
+          "targetReferenceHint": false,
+          "sanctionsHint": false
+        },
+        {
+          "text": "Marché des titres publics et privés émis par appel public",
+          "href": "/fr/documents/marche-des-titres-publics-et-prives-emis-par-appel-public",
+          "absoluteUrl": "https://www.bceao.int/fr/documents/marche-des-titres-publics-et-prives-emis-par-appel-public",
+          "host": "www.bceao.int",
+          "pdfHint": false,
+          "targetReferenceHint": false,
+          "sanctionsHint": false
+        },
+        {
+          "text": "Conditions de banque",
+          "href": "/fr/documents/conditions-de-banque",
+          "absoluteUrl": "https://www.bceao.int/fr/documents/conditions-de-banque",
+          "host": "www.bceao.int",
+          "pdfHint": false,
+          "targetReferenceHint": false,
+          "sanctionsHint": false
+        },
+        {
+          "text": "Taux d'intérêt légal",
+          "href": "/fr/documents/taux-dinteret-legal",
+          "absoluteUrl": "https://www.bceao.int/fr/documents/taux-dinteret-legal",
+          "host": "www.bceao.int",
+          "pdfHint": false,
+          "targetReferenceHint": false,
+          "sanctionsHint": false
+        },
+        {
+          "text": "Document-cadre de Politique et de Stratégie régionale d'inclusion financière dans l'UEMOA sur la période 2025-2030",
+          "href": "/fr/documents/document-cadre-de-politique-et-de-strategie-regionale-dinclusion-financiere-dans-luemoa",
+          "absoluteUrl": "https://www.bceao.int/fr/documents/document-cadre-de-politique-et-de-strategie-regionale-dinclusion-financiere-dans-luemoa",
+          "host": "www.bceao.int",
+          "pdfHint": false,
+          "targetReferenceHint": false,
+          "sanctionsHint": false
+        },
+        {
+          "text": "Etablissements bancaires d'importance systémique",
+          "href": "/fr/documents/etablissements-bancaires-dimportance-systemique-dans-lumoa",
+          "absoluteUrl": "https://www.bceao.int/fr/documents/etablissements-bancaires-dimportance-systemique-dans-lumoa",
+          "host": "www.bceao.int",
+          "pdfHint": false,
+          "targetReferenceHint": false,
+          "sanctionsHint": false
+        },
+        {
+          "text": "Intermédiaires en Opérations de Banques",
+          "href": "/fr/documents/intermediaires-en-operations-de-banques",
+          "absoluteUrl": "https://www.bceao.int/fr/documents/intermediaires-en-operations-de-banques",
+          "host": "www.bceao.int",
+          "pdfHint": false,
+          "targetReferenceHint": false,
+          "sanctionsHint": false
+        },
+        {
+          "text": "Documents d’études et de recherche de la BCEAO",
+          "href": "/index.php/fr/publications/documents-detudes-et-de-recherche-de-la-bceao",
+          "absoluteUrl": "https://www.bceao.int/index.php/fr/publications/documents-detudes-et-de-recherche-de-la-bceao",
+          "host": "www.bceao.int",
+          "pdfHint": false,
+          "targetReferenceHint": false,
+          "sanctionsHint": false
+        },
+        {
+          "text": "Documents de travail",
+          "href": "/index.php/fr/publications/documents-de-travail",
+          "absoluteUrl": "https://www.bceao.int/index.php/fr/publications/documents-de-travail",
+          "host": "www.bceao.int",
+          "pdfHint": false,
+          "targetReferenceHint": false,
+          "sanctionsHint": false
+        },
+        {
+          "text": "Documents d’Etude et d’Analyse Economiques",
+          "href": "/index.php/fr/publications/documents-detude-et-danalyse-economiques",
+          "absoluteUrl": "https://www.bceao.int/index.php/fr/publications/documents-detude-et-danalyse-economiques",
+          "host": "www.bceao.int",
+          "pdfHint": false,
+          "targetReferenceHint": false,
+          "sanctionsHint": false
+        },
+        {
+          "text": "",
+          "href": "/fr/documents/credit-et-microfinance",
+          "absoluteUrl": "https://www.bceao.int/fr/documents/credit-et-microfinance",
+          "host": "www.bceao.int",
+          "pdfHint": false,
+          "targetReferenceHint": false,
+          "sanctionsHint": false
+        },
+        {
+          "text": "",
+          "href": "/fr/documents/inclusion-financiere",
+          "absoluteUrl": "https://www.bceao.int/fr/documents/inclusion-financiere",
+          "host": "www.bceao.int",
+          "pdfHint": false,
+          "targetReferenceHint": false,
+          "sanctionsHint": false
+        },
+        {
+          "text": "Allocution d'ouverture du Comité de Politique Monétaire de la BCEAO du 9 septembre 2026, prononcée par son Président Monsieur Jean-Claude Kassi BROU",
+          "href": "/fr/documents/allocution-douverture-du-comite-de-politique-monetaire-de-la-bceao-du-9-septembre-2026",
+          "absoluteUrl": "https://www.bceao.int/fr/documents/allocution-douverture-du-comite-de-politique-monetaire-de-la-bceao-du-9-septembre-2026",
+          "host": "www.bceao.int",
+          "pdfHint": false,
+          "targetReferenceHint": false,
+          "sanctionsHint": false
+        },
+        {
+          "text": "Mot introductif du Gouverneur Jean-Claude Kassi BROU lors de la cérémonie de présentation du rapport annuel 2025 de la BCEAO",
+          "href": "/fr/documents/mot-introductif-du-gouverneur-jean-claude-kassi-brou-lors-de-la-ceremonie-de-presentation",
+          "absoluteUrl": "https://www.bceao.int/fr/documents/mot-introductif-du-gouverneur-jean-claude-kassi-brou-lors-de-la-ceremonie-de-presentation",
+          "host": "www.bceao.int",
+          "pdfHint": false,
+          "targetReferenceHint": false,
+          "sanctionsHint": false
+        },
+        {
+          "text": "Allocution d'ouverture du Comité de Politique Monétaire de la BCEAO du 10 juin 2026, prononcée par son Président Monsieur Jean-Claude Kassi BROU",
+          "href": "/fr/documents/allocution-douverture-du-comite-de-politique-monetaire-de-la-bceao-du-10-juin-2026",
+          "absoluteUrl": "https://www.bceao.int/fr/documents/allocution-douverture-du-comite-de-politique-monetaire-de-la-bceao-du-10-juin-2026",
+          "host": "www.bceao.int",
+          "pdfHint": false,
+          "targetReferenceHint": false,
+          "sanctionsHint": false
+        }
+      ]
+    },
+    {
+      "authority": "UEMOA_EDOCUCENTER",
+      "status": "OK",
+      "url": "https://e-docucenter.uemoa.int/fr/27-principales-realisations-de-lunion",
+      "finalUrl": "https://e-docucenter.uemoa.int/fr/27-principales-realisations-de-lunion",
+      "contentType": "text/html; charset=UTF-8",
+      "byteSize": 85933,
+      "sha256": "45e1fd44bd456cf7f82460f1246b22d395d4e72899d2bd4b16d597f0fe8f6dfd",
+      "tlsVerified": true,
+      "targetReferencePresent": false,
+      "sanctionsSubjectPresent": true,
+      "targetContext": null,
+      "sanctionsContext": "dans l’UEMOA. L’AMF-UMOA a également publié divers textes dont un nouveau cadre d’émission de titres publics par syndication ainsi qu’un Guide relatif aux émissions d’obligations Vertes, Sociales et Durables sur le marché financier régional. En matière de protection des épargnants, le Conseil des Ministres a, en juin 2022, révisé le dispositif des sanctions pécuniaires applicables sur le marché financier régional afin de le mettre en cohérence avec les textes récemment adoptés. Le marché a été également doté d’une Loi Uniforme relative aux infractions boursières. Ce Texte communautaire, instrument juridique de répression adéquat applicable de façon uniforme dans tous les États de l’Union, offre aux investisseurs la garantie d’un marché transparent et intègre, qui détermine clairement l’interaction entre l’AMF-UMOA et les juridictions répressives nationales dans l’application de cette Loi et qui complète le dispositif de Lutte contre le Blanchiment de Capitaux et le Financement du Terrorisme (LBC/FT). Au niveau opérationnel, le nombre d’acteurs agréés s’es",
+      "anchorCount": 34,
+      "documentLikeLinks": [
+        {
+          "text": "TÉLÉCHARGER DOCUMENTS",
+          "href": "/fr/telecharger-documents",
+          "absoluteUrl": "https://e-docucenter.uemoa.int/fr/telecharger-documents",
+          "host": "e-docucenter.uemoa.int",
+          "pdfHint": false,
+          "targetReferenceHint": false,
+          "sanctionsHint": false
+        }
+      ]
+    },
+    {
+      "authority": "UEMOA_EDOCUCENTER",
+      "status": "OK",
+      "url": "https://www.e-docucenter.uemoa.int/fr/114-une-monnaie-commune-et-un-ecosysteme-financier-de-plus-en-plus-dynamique",
+      "finalUrl": "https://www.e-docucenter.uemoa.int/fr/114-une-monnaie-commune-et-un-ecosysteme-financier-de-plus-en-plus-dynamique",
+      "contentType": "text/html; charset=UTF-8",
+      "byteSize": 46100,
+      "sha256": "46fae6e14b8d45e82f619a043693778fe203b0c1a1f8a86fc941c5c3c423e64c",
+      "tlsVerified": true,
+      "targetReferencePresent": false,
+      "sanctionsSubjectPresent": true,
+      "targetContext": null,
+      "sanctionsContext": "dans l’UEMOA. L’AMF-UMOA a également publié divers textes dont un nouveau cadre d’émission de titres publics par syndication ainsi qu’un Guide relatif aux émissions d’obligations Vertes, Sociales et Durables sur le marché financier régional. En matière de protection des épargnants, le Conseil des Ministres a, en juin 2022, révisé le dispositif des sanctions pécuniaires applicables sur le marché financier régional afin de le mettre en cohérence avec les textes récemment adoptés. Le marché a été également doté d’une Loi Uniforme relative aux infractions boursières. Ce texte communautaire, instrument juridique de répression adéquat applicable de façon uniforme dans tous les États de l’Union, offre aux investisseurs la garantie d’un marché transparent et intègre, qui détermine clairement l’interaction entre l’AMF-UMOA et les juridictions répressives nationales dans l’application de cette Loi et qui complète le dispositif de Lutte contre le Blanchiment de Capitaux et le Financement du Terrorisme (LBC/FT). Au niveau opérationnel, le nombre d’acteurs agréés s’es",
+      "anchorCount": 34,
+      "documentLikeLinks": [
+        {
+          "text": "TÉLÉCHARGER DOCUMENTS",
+          "href": "/fr/telecharger-documents",
+          "absoluteUrl": "https://www.e-docucenter.uemoa.int/fr/telecharger-documents",
+          "host": "www.e-docucenter.uemoa.int",
+          "pdfHint": false,
+          "targetReferenceHint": false,
+          "sanctionsHint": false
+        }
+      ]
+    }
+  ],
+  "targetDocumentCandidates": [],
+  "boundary": {
+    "knownPagesOnly": true,
+    "verifiedTlsOnly": true,
+    "linkedDocumentsFetched": false,
+    "binaryMaterialized": false,
+    "discoveryIsLegalStatusProof": false,
+    "automaticRelationshipInferenceAllowed": false,
+    "automaticSanctionActivationAllowed": false,
+    "readyForSubmissionMustRemainFalse": true
+  },
+  "nextAction": "If a target document candidate is exposed, validate that exact authoritative URL in a separate step. Otherwise preserve the non-indexed archive recovery boundary."
+}
