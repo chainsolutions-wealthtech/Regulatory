@@ -720,3 +720,22 @@ Statut : `PENDING_CENTIF_DISCOVERY_CI`.
 - [ ] Si un index sitemap existe, sélectionner ses enfants dans une étape séparée.
 - [ ] Ne télécharger aucun document pendant la découverte d'indexation.
 <!-- AUTO:LOOP-REG-001-BCEAO-SEARCH-SEMANTICS-2026-09-22:END -->
+
+<!-- AUTO:FRONTEND-TARGET-ARCHITECTURE-2026-10-04:START -->
+## Frontend cible — plan directeur
+
+- [x] Inventorier le frontend Next.js/Atomic Design existant.
+- [x] Formaliser l'architecture frontend cible complète.
+- [x] Ajouter F1 : cockpit opérationnel transverse.
+- [x] Étendre navigation et test navigateur/accessibilité.
+- [ ] F2 — Données canoniques + provenance + concordance interactive.
+- [ ] F3 — Source Explorer, Requirement Explorer et Dependency Graph.
+- [ ] F4 — Clause Studio complet : versioning, diff, approbations, promotion gouvernée.
+- [ ] F5 — Centres de revue par rôle + tâches/commentaires.
+- [ ] F6 — Document Studio : générations, diff et provenance par paragraphe.
+- [ ] F7 — Référentiels UMOA et acteurs dynamiques.
+- [ ] F8 — Operations/Security : jobs, scanner, stockage, backups, observabilité.
+- [ ] F9 — Regulatory Change Intelligence avec impact analysis avant activation.
+- [ ] F10 — E2E cible, accessibilité manuelle, sécurité, performance et production acceptance.
+- [ ] Ne jamais exposer une action de soumission avant autorisation serveur et fermeture des gates humains/réglementaires.
+<!-- AUTO:FRONTEND-TARGET-ARCHITECTURE-2026-10-04:END -->

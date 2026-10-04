@@ -642,3 +642,11 @@ PostgreSQL est la source de vérité des métadonnées réglementaires et du cyc
 - promotion automatique : `FORBIDDEN` ;
 - `ready_for_submission` : `false`.
 <!-- AUTO:LOOP-DEV-001-POSTGRES-REPOSITORY-V1:END -->
+
+<!-- AUTO:FRONTEND-TARGET-ARCHITECTURE-2026-10-04:START -->
+## Frontend target architecture
+
+La cible détaillée du frontend est définie dans `docs/FRONTEND_TARGET_ARCHITECTURE.md`. Elle est additive : elle conserve Next.js App Router, Atomic Design, les repositories, le modèle canonique et les catalogues existants. Le frontend ne porte aucune règle normative autonome.
+
+F1 ajoute un cockpit transverse `/operations`. Les tranches suivantes ajoutent canonical-data/concordance, Regulatory Knowledge avancé, Clause Studio, centres de revue, Document Studio, référentiels, Operations/Security et Regulatory Change Intelligence.
+<!-- AUTO:FRONTEND-TARGET-ARCHITECTURE-2026-10-04:END -->

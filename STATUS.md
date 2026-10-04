@@ -454,3 +454,11 @@ Une copie PDF secondaire complète de `CM/10/06/2022` a été localisée et insp
 
 Le bloqueur reste ouvert : la copie n'est pas hébergée par une autorité publique et reste `NOT_NORMATIVE`. Aucun effet juridique, montant, barème, exigence ou sanction n'est activé. Le binaire officiel/institutionnel et les revues Legal/Compliance restent requis. `ready_for_submission=false`.
 <!-- AUTO:LOOP-REG-001-SECONDARY-FULL-TEXT-RECOVERY-2026-09-22:END -->
+
+<!-- AUTO:FRONTEND-TARGET-ARCHITECTURE-2026-10-04:START -->
+## Frontend cible et cockpit opérationnel — 2026-10-04
+
+Le frontend complet est désormais planifié dans `docs/FRONTEND_TARGET_ARCHITECTURE.md` en continuité de l'application Next.js/Atomic Design existante.
+
+Première tranche : route `/operations`, cockpit portefeuille/blockers/warnings/gates, carte des capacités et navigation enrichie. Aucun contrat API, modèle canonique ou règle réglementaire n'est modifié. La soumission reste désactivée et `ready_for_submission=false`.
+<!-- AUTO:FRONTEND-TARGET-ARCHITECTURE-2026-10-04:END -->

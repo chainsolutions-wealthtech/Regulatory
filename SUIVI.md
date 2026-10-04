@@ -897,3 +897,17 @@ Le mécanisme de recherche BCEAO a été découvert et testé correctement, mais
 
 La route n'est donc pas considérée comme fermée juridiquement ; elle est simplement déclassée comme source de preuve négative. La recherche institutionnelle poursuit avec les surfaces d'indexation explicitement déclarées par BCEAO.
 <!-- AUTO:LOOP-REG-001-BCEAO-SEARCH-SEMANTICS-2026-09-22:END -->
+
+<!-- AUTO:FRONTEND-TARGET-ARCHITECTURE-2026-10-04:START -->
+## 2026-10-04 — Architecture frontend cible et F1 cockpit
+
+À la demande du propriétaire, Regulatory est explicitement étendu jusqu'à un frontend complet sans recommencer l'application existante.
+
+- inventaire des routes et composants Atomic Design ;
+- conservation des parcours dashboard/projets/questionnaire/contrôles/preview/revues/preuves/imports/versions/bibliothèque/clauses/readiness ;
+- création de `docs/FRONTEND_TARGET_ARCHITECTURE.md` ;
+- création de `/operations` ;
+- extension du test Playwright/axe ;
+- aucune règle, sanction, source ou relation réglementaire activée ;
+- `ready_for_submission=false` maintenu.
+<!-- AUTO:FRONTEND-TARGET-ARCHITECTURE-2026-10-04:END -->

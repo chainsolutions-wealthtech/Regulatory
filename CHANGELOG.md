@@ -524,3 +524,16 @@ Statut : `PENDING_CENTIF_DISCOVERY_CI`.
 - no binary download ;
 - `ready_for_submission=false`.
 <!-- AUTO:LOOP-REG-001-BCEAO-SEARCH-SEMANTICS-2026-09-22:END -->
+
+<!-- AUTO:FRONTEND-TARGET-ARCHITECTURE-2026-10-04:START -->
+## 2026-10-04 — Frontend target architecture and operations cockpit
+
+### Added
+- target frontend architecture ;
+- `/operations` cockpit ;
+- navigation entry ;
+- browser/accessibility coverage.
+
+### Preserved
+Atomic Design, project repository contract, regulatory/catalog contracts, fail-closed review/evidence model and `ready_for_submission=false`.
+<!-- AUTO:FRONTEND-TARGET-ARCHITECTURE-2026-10-04:END -->
