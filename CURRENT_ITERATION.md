@@ -18,9 +18,9 @@ Résultats atteints :
 - prochaine action réglementaire propriétaire conservée.
 
 - branche canonique : `main` ;
-- HEAD source vérifié par la boucle : `e1c11e290674f0f201a0229867e109cfb657f711` ;
-- date du HEAD source : `2026-10-05` ;
-- run Regulatory CI : `37379160840` ;
+- HEAD source vérifié par la boucle : `dc83e5f30b3fc32a5c5e54de308d8c35880f6eb3` ;
+- date du HEAD source : `2026-10-06` ;
+- run Regulatory CI : `37379851228` ;
 - validation API CIRC005 : `PASS` ;
 - compatibilité descendante des 10 collections structurées : `PASS` ;
 - persistance canonique des anciens payloads : `PASS` ;
