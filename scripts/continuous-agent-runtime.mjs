@@ -590,6 +590,9 @@ async function reconcile() {
     .sort((a, b) => a.sequence - b.sequence)
     .find((candidate) => !completed.has(candidate.id)) ?? null;
 
+  state.status = next ? "SESSION_DRIVEN_ACTIVE" : "IDLE_SAFE_QUEUE_EMPTY";
+  state.nextTaskId = next?.id ?? null;
+
   checkpoint.sourceHead = plan.materialHead;
   checkpoint.recordedAt = nowIso();
   checkpoint.lastCompletedSlice = task.completionSlice;
@@ -598,6 +601,11 @@ async function reconcile() {
     runtimeQualityCI: "PASS",
     securityAndReviewPolicyCI: "PASS",
     browserAndAccessibilityCI: "PASS",
+  };
+  checkpoint.activeSlice = {
+    id: task.completionSlice,
+    materialHead: plan.materialHead,
+    state: "CLOSED",
   };
   checkpoint.nextSlice = next ? next.completionSlice : "SAFE_AUTONOMOUS_QUEUE_EMPTY";
   checkpoint.nextAuthorizedAction = next ? next.goal : "No further autonomous task is queued. Preserve state and wait for an explicitly governed task.";

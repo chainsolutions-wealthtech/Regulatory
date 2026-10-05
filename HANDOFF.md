@@ -451,3 +451,9 @@ Repair hypothesis: product output is correct; narrow only the assertion to the e
 
 Task remains `AWAITING_CI`.
 <!-- AUTO:F6-BROWSER-REPAIR-2026-10-05:END -->
+
+<!-- AUTO:RUNTIME-V2-RECONCILE-METADATA-FIX-2026-10-05:START -->
+## Runtime V2 metadata reconciliation
+
+Future session resumes must prefer `CHECKPOINT.nextSlice`, `CHECKPOINT.nextAuthorizedAction`, `STATE.nextTaskId`, current CI and writer lease. After reconciliation, `activeSlice` identifies the last closed validated slice and must not remain on an older frontend stage.
+<!-- AUTO:RUNTIME-V2-RECONCILE-METADATA-FIX-2026-10-05:END -->

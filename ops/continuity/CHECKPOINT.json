@@ -28,9 +28,9 @@
     "human legal/compliance/tax/risk/product reviews remain external"
   ],
   "activeSlice": {
-    "id": "F4_CLAUSE_STUDIO",
-    "materialHead": "9bae19a69d8cfbecc72fae4e642a0c8f944a84c2",
-    "state": "AWAITING_FINAL_BROWSER_GATE_WHILE_RUNTIME_BOOTSTRAPS"
+    "id": "F6_DOCUMENT_STUDIO_BASELINE",
+    "materialHead": "d89d9d71609e3da6459feab3b3f110afd6154774",
+    "state": "CLOSED"
   },
   "runtime": {
     "status": "SESSION_DRIVEN_ACTIVE",
@@ -39,6 +39,7 @@
     "taskQueue": "ops/agent-runtime/TASK_QUEUE.json",
     "state": "ops/agent-runtime/STATE.json",
     "leaseIssue": 2,
-    "lastReconciledTask": "TASK-F6-DOCUMENT-STUDIO-BASELINE"
+    "lastReconciledTask": "TASK-F6-DOCUMENT-STUDIO-BASELINE",
+    "nextTaskId": "TASK-F7-REFERENCE-DATA-EXPLORER"
   }
 }

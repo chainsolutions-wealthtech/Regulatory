@@ -677,3 +677,12 @@ The model job has no GitHub write credential. The write job has no OpenAI creden
 - submission capability;
 - `ready_for_submission=false`.
 <!-- AUTO:FRONTEND-F6-DOCUMENT-STUDIO-BASELINE-2026-10-05:END -->
+
+<!-- AUTO:RUNTIME-V2-RECONCILE-METADATA-FIX-2026-10-05:START -->
+## 2026-10-05 — Runtime V2 reconciliation metadata fix
+
+- reconciliation now persists `STATE.status=SESSION_DRIVEN_ACTIVE` when another queued session task exists;
+- `STATE.nextTaskId` records the next explicit queue item;
+- `CHECKPOINT.activeSlice` is closed on the just-validated material head instead of retaining stale historical slice metadata;
+- no product, regulatory or task-queue behavior changed.
+<!-- AUTO:RUNTIME-V2-RECONCILE-METADATA-FIX-2026-10-05:END -->

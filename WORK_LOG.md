@@ -573,3 +573,9 @@ La boucle sélectionne maintenant une surface d'indexation différente : robots/
 - preserved Document Studio and GenerationArtifactsPanel output;
 - active task remains F6 `AWAITING_CI`, attempt 2.
 <!-- AUTO:F6-BROWSER-REPAIR-2026-10-05:END -->
+
+<!-- AUTO:RUNTIME-V2-RECONCILE-METADATA-FIX-2026-10-05:START -->
+## 2026-10-05 — Runtime V2 metadata reconciliation fix
+
+Observed after F6 closure: `activeTask=null` and F6 completed, while `STATE.status` still carried the historical AWAITING_CI label and `CHECKPOINT.activeSlice` still referenced F4. Updated reconcile() to persist coherent session-driven metadata and corrected the current persisted state.
+<!-- AUTO:RUNTIME-V2-RECONCILE-METADATA-FIX-2026-10-05:END -->

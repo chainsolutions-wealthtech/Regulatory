@@ -1,6 +1,6 @@
 {
   "schemaVersion": "REGULATORY_CONTINUOUS_AGENT_STATE_V2",
-  "status": "SESSION_TASK_AWAITING_CI",
+  "status": "SESSION_DRIVEN_ACTIVE",
   "completedTaskIds": [
     "TASK-STATE-F4-CLOSE",
     "TASK-F5-REVIEW-CENTER-BASELINE",
@@ -12,8 +12,10 @@
   "lastRuntimeAction": {
     "at": "2026-10-05T22:19:53.523Z",
     "action": "TASK_RECONCILED",
-    "taskId": "TASK-F6-DOCUMENT-STUDIO-BASELINE"
+    "taskId": "TASK-F6-DOCUMENT-STUDIO-BASELINE",
+    "metadataReconciledAt": "2026-10-05T22:22:00Z"
   },
   "executionMode": "CHATGPT_SUBSCRIPTION_SESSION",
-  "apiModelInvocationDisabled": true
+  "apiModelInvocationDisabled": true,
+  "nextTaskId": "TASK-F7-REFERENCE-DATA-EXPLORER"
 }
