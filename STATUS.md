@@ -487,3 +487,11 @@ F3 ajoute une projection web déterministe et en lecture seule des registres exi
 - aucune inférence de relation, aucune activation réglementaire et aucune action de soumission ;
 - ready_for_submission=false maintenu.
 <!-- AUTO:FRONTEND-F3-REGULATORY-KNOWLEDGE-2026-10-05:END -->
+
+<!-- AUTO:CONTINUITY-WATCHDOG-2026-10-05:START -->
+## Continuité multi-session et watchdog — 2026-10-05
+
+Une couche repository-native surveille désormais la continuité indépendamment d'une session conversationnelle : checkpoint machine-readable, politique de stall/retry, workflow GitHub toutes les 30 minutes, détection workflows trop longs/échecs répétés/absence de progression/checkpoint divergent, et contrat pour un futur worker externe avec lease.
+
+Le watchdog ne modifie pas le code. Aucun droit réglementaire ou de soumission n'est élargi.
+<!-- AUTO:CONTINUITY-WATCHDOG-2026-10-05:END -->

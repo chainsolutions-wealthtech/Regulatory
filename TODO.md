@@ -764,3 +764,15 @@ Statut : `PENDING_CENTIF_DISCOVERY_CI`.
 - [x] Étendre les tests navigateur/accessibilité aux nouvelles surfaces.
 - [ ] F4 — finaliser Clause Studio : versions, diff, approbations et promotion gouvernée.
 <!-- AUTO:FRONTEND-F3-REGULATORY-KNOWLEDGE-2026-10-05:END -->
+
+<!-- AUTO:CONTINUITY-WATCHDOG-2026-10-05:START -->
+## Continuité / agents
+
+- [x] Définir un checkpoint canonique machine-readable.
+- [x] Ajouter une politique de stall/retry.
+- [x] Ajouter un watchdog GitHub toutes les 30 minutes.
+- [x] Détecter workflows bloqués, échecs répétés, absence de progression et checkpoint divergent.
+- [x] Définir le contrat d'un worker externe avec lease.
+- [ ] Raccorder un worker externe d'écriture lorsqu'une identité dédiée et un environnement d'exécution sont disponibles.
+- [ ] Ne jamais donner au watchdog lui-même la capacité de muter le code.
+<!-- AUTO:CONTINUITY-WATCHDOG-2026-10-05:END -->

@@ -1,0 +1,26 @@
+{
+  "schemaVersion": "REGULATORY_CONTINUITY_POLICY_V1",
+  "canonicalBranch": "main",
+  "watchdog": {
+    "workflowStallMinutes": 45,
+    "noMaterialProgressMinutes": 360,
+    "repeatedFailureThreshold": 2,
+    "recentRunWindow": 40,
+    "recentCommitWindow": 12,
+    "checkpointGraceMinutes": 90
+  },
+  "safety": {
+    "automaticBranchCreation": false,
+    "automaticForcePush": false,
+    "automaticHistoryRewrite": false,
+    "automaticRegulatoryActivation": false,
+    "automaticLegalApproval": false,
+    "automaticComplianceApproval": false,
+    "automaticSubmission": false,
+    "unattendedCodeMutationByWatchdog": false,
+    "readyForSubmissionMustRemainFalse": true
+  },
+  "ignoredCommitMessagePrefixes": [
+    "chore: refresh validation evidence and loop state"
+  ]
+}

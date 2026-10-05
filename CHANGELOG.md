@@ -566,3 +566,11 @@ No new write path, no regulatory activation, no project-specific coverage infere
 ### Safety
 No regulatory inference or activation is performed. Documentary resolution remains distinct from legal/compliance approval and ready_for_submission=false.
 <!-- AUTO:FRONTEND-F3-REGULATORY-KNOWLEDGE-2026-10-05:END -->
+
+<!-- AUTO:CONTINUITY-WATCHDOG-2026-10-05:START -->
+## 2026-10-05 — Continuity watchdog
+
+Added: repository-native watchdog, machine-readable policy/checkpoint, external-agent contract, ADR-0010.
+
+Safety: read-only watchdog; no branch creation, force push, regulatory activation or submission capability.
+<!-- AUTO:CONTINUITY-WATCHDOG-2026-10-05:END -->

@@ -374,3 +374,11 @@ Un miroir PDF secondaire complet de 17 pages de `CM/10/06/2022` est localisé ch
 
 Ne pas activer de quantums ni conclure juridiquement sur la seule copie secondaire. Maintenir `ready_for_submission=false`.
 <!-- AUTO:LOOP-REG-001-SECONDARY-FULL-TEXT-RECOVERY-2026-09-22:END -->
+
+<!-- AUTO:CONTINUITY-WATCHDOG-2026-10-05:START -->
+## Continuité de reprise — 2026-10-05
+
+Lire ops/continuity/CHECKPOINT.json après avoir vérifié le HEAD réel. Dernier slice fonctionnel fermé : F3 Regulatory Knowledge. Prochain slice : F4 Clause Studio.
+
+Le watchdog GitHub est observateur uniquement. Un futur worker externe suit ops/continuity/EXTERNAL_AGENT_CONTRACT.md et utilise un lease unique avant toute écriture.
+<!-- AUTO:CONTINUITY-WATCHDOG-2026-10-05:END -->

@@ -332,3 +332,9 @@ Données structurées
 + assistance IA encadrée
 + validation humaine
 ```
+
+<!-- AUTO:CONTINUITY-WATCHDOG-2026-10-05:START -->
+## ADR-0010 — Continuité multi-session et watchdog repository-native
+
+Décision acceptée : checkpoint, politique et watchdog read-only ; tout agent externe d'écriture doit respecter lease, main, CI et gates humains. Voir docs/adr/ADR-0010-continuity-watchdog-and-external-agent-contract.md.
+<!-- AUTO:CONTINUITY-WATCHDOG-2026-10-05:END -->

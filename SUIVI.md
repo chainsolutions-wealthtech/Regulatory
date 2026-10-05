@@ -947,3 +947,11 @@ Frontières préservées :
 
 Surfaces ajoutées : /regulatory-library/sources, /requirements et /dependencies.
 <!-- AUTO:FRONTEND-F3-REGULATORY-KNOWLEDGE-2026-10-05:END -->
+
+<!-- AUTO:CONTINUITY-WATCHDOG-2026-10-05:START -->
+## 2026-10-05 — Continuité indépendante des sessions
+
+Mise en place additive de POLICY.json, CHECKPOINT.json, protocole de reprise, contrat de worker externe, watchdog GitHub planifié et rapport JSON/Actions summary.
+
+Motif : empêcher qu'une limite de session fasse perdre le point de reprise ou provoque une répétition aveugle.
+<!-- AUTO:CONTINUITY-WATCHDOG-2026-10-05:END -->

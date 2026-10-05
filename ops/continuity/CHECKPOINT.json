@@ -1,0 +1,30 @@
+{
+  "schemaVersion": "REGULATORY_CONTINUITY_CHECKPOINT_V1",
+  "repository": "chainsolutions-wealthtech/Regulatory",
+  "branch": "main",
+  "sourceHead": "9f252c9885de89653586733ac7796966821b7c0d",
+  "recordedAt": "2026-10-05T23:06:00+02:00",
+  "lastCompletedSlice": "F3_REGULATORY_KNOWLEDGE",
+  "validationState": {
+    "regulatoryCI": "PASS",
+    "runtimeQualityCI": "PASS",
+    "securityAndReviewPolicyCI": "PASS",
+    "browserAndAccessibilityCI": "PASS"
+  },
+  "nextSlice": "F4_CLAUSE_STUDIO",
+  "nextAuthorizedAction": "Extend the existing tenant-scoped clause proposal lifecycle into a Clause Studio view with source/proposed diff, append-only timeline and explicit lifecycle gates, without granting CLAUSE_ACTIVATE.",
+  "invariants": [
+    "main only; no new branch",
+    "no force push or history rewrite",
+    "reuse existing clause lifecycle and PostgreSQL proposal repository",
+    "CLAUSE_ACTIVATE remains unavailable unless separately authorized",
+    "no automatic legal/compliance approval",
+    "no automatic regulatory activation",
+    "ready_for_submission=false"
+  ],
+  "externalBlockers": [
+    "CM/10/06/2022 institutional binary remains unresolved for LOOP-REG-001",
+    "production infrastructure/identity acceptance remains external",
+    "human legal/compliance/tax/risk/product reviews remain external"
+  ]
+}

@@ -387,3 +387,11 @@ Prochaine action unique :
 
 Seuls `robots.txt` et les sitemaps explicitement déclarés seront inspectés. Aucun sitemap ne sera deviné.
 <!-- AUTO:LOOP-REG-001-BCEAO-SEARCH-SEMANTICS-2026-09-22:END -->
+
+<!-- AUTO:CONTINUITY-WATCHDOG-2026-10-05:START -->
+## Extension de continuité
+
+La prochaine action fonctionnelle reste F4 Clause Studio : étendre le lifecycle de propositions existant avec comparaison source/proposition, timeline append-only et gates visibles, sans accorder CLAUSE_ACTIVATE.
+
+La couche de continuité garantit la reprise et détecte les stalls ; elle ne remplace pas l'action fonctionnelle.
+<!-- AUTO:CONTINUITY-WATCHDOG-2026-10-05:END -->

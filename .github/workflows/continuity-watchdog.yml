@@ -1,0 +1,43 @@
+name: Continuity Watchdog
+
+on:
+  schedule:
+    - cron: "*/30 * * * *"
+  workflow_dispatch:
+
+permissions:
+  actions: read
+  contents: read
+
+concurrency:
+  group: regulatory-continuity-watchdog
+  cancel-in-progress: true
+
+jobs:
+  observe:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - name: Checkout canonical main
+        uses: actions/checkout@v4
+        with:
+          ref: main
+          fetch-depth: 20
+
+      - name: Configure Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+
+      - name: Observe continuity state
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: node scripts/continuity-watchdog.mjs
+
+      - name: Upload continuity report
+        uses: actions/upload-artifact@v4
+        with:
+          name: regulatory-continuity-watchdog
+          path: continuity-watchdog-report.json
+          if-no-files-found: error
+          retention-days: 30
