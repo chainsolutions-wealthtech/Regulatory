@@ -2,17 +2,17 @@
   "schemaVersion": "REGULATORY_CONTINUITY_CHECKPOINT_V3",
   "repository": "chainsolutions-wealthtech/Regulatory",
   "branch": "main",
-  "sourceHead": "19e1bf8c0292ec9da041bf689d2c06ea839c0f67",
-  "recordedAt": "2026-10-05T23:50:00+02:00",
-  "lastCompletedSlice": "F4_CLAUSE_STUDIO",
+  "sourceHead": "dc83e5f30b3fc32a5c5e54de308d8c35880f6eb3",
+  "recordedAt": "2026-10-05T22:05:04.758Z",
+  "lastCompletedSlice": "F5_REVIEW_CENTER_BASELINE",
   "validationState": {
     "regulatoryCI": "PASS",
     "runtimeQualityCI": "PASS",
     "securityAndReviewPolicyCI": "PASS",
     "browserAndAccessibilityCI": "PASS"
   },
-  "nextSlice": "F5_REVIEW_CENTER_BASELINE",
-  "nextAuthorizedAction": "Open or resume a ChatGPT subscription session, claim the writer lease through the connected GitHub surface, and implement TASK-F5-REVIEW-CENTER-BASELINE. GitHub Actions must only supervise CI and reconcile state; no paid OpenAI API/Codex invocation is authorized.",
+  "nextSlice": "F5_REVIEW_CENTER_CONTEXTUAL_WORKFLOW",
+  "nextAuthorizedAction": "Extend the Review Center with safe filtering, project/context links, visible separation-of-duties information, and actionable read-only queues using the already implemented review state. Do not introduce notifications, approvals, or mutations that bypass existing APIs.",
   "invariants": [
     "main only; no new branch",
     "no force push or history rewrite",
@@ -39,10 +39,6 @@
     "taskQueue": "ops/agent-runtime/TASK_QUEUE.json",
     "state": "ops/agent-runtime/STATE.json",
     "leaseIssue": 2,
-    "paidOpenAIApiAllowed": false,
-    "codexActionAllowed": false,
-    "productCodeMutationInGithubActions": false,
-    "stateOnlyReconciliationInGithubActions": true,
-    "lastReconciledTask": "TASK-STATE-F4-CLOSE"
+    "lastReconciledTask": "TASK-F5-REVIEW-CENTER-BASELINE"
   }
 }

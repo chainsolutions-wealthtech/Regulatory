@@ -2,21 +2,14 @@
   "schemaVersion": "REGULATORY_CONTINUOUS_AGENT_STATE_V2",
   "status": "SESSION_TASK_AWAITING_CI",
   "completedTaskIds": [
-    "TASK-STATE-F4-CLOSE"
+    "TASK-STATE-F4-CLOSE",
+    "TASK-F5-REVIEW-CENTER-BASELINE"
   ],
-  "activeTask": {
-    "taskId": "TASK-F5-REVIEW-CENTER-BASELINE",
-    "status": "AWAITING_CI",
-    "attempt": 1,
-    "baseHead": "db86f31798cf79d05fd0537e70329919ab4f963a",
-    "executionSurface": "CHATGPT_GITHUB_CONNECTOR",
-    "startedAt": "2026-10-05T22:00:00Z",
-    "updatedAt": "2026-10-05T22:00:00Z"
-  },
-  "lastValidatedHead": "19e1bf8c0292ec9da041bf689d2c06ea839c0f67",
+  "activeTask": null,
+  "lastValidatedHead": "dc83e5f30b3fc32a5c5e54de308d8c35880f6eb3",
   "lastRuntimeAction": {
-    "at": "2026-10-05T22:00:00Z",
-    "action": "SESSION_CODE_COMMIT_PREPARED",
+    "at": "2026-10-05T22:05:04.684Z",
+    "action": "TASK_RECONCILED",
     "taskId": "TASK-F5-REVIEW-CENTER-BASELINE"
   },
   "executionMode": "CHATGPT_SUBSCRIPTION_SESSION",
