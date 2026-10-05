@@ -2,17 +2,17 @@
   "schemaVersion": "REGULATORY_CONTINUITY_CHECKPOINT_V3",
   "repository": "chainsolutions-wealthtech/Regulatory",
   "branch": "main",
-  "sourceHead": "dc83e5f30b3fc32a5c5e54de308d8c35880f6eb3",
-  "recordedAt": "2026-10-05T22:05:04.758Z",
-  "lastCompletedSlice": "F5_REVIEW_CENTER_BASELINE",
+  "sourceHead": "45a0ff6ea6ab06a5e0e1f8f401d73ae483cc91f1",
+  "recordedAt": "2026-10-05T22:11:35.824Z",
+  "lastCompletedSlice": "F5_REVIEW_CENTER_CONTEXTUAL_WORKFLOW",
   "validationState": {
     "regulatoryCI": "PASS",
     "runtimeQualityCI": "PASS",
     "securityAndReviewPolicyCI": "PASS",
     "browserAndAccessibilityCI": "PASS"
   },
-  "nextSlice": "F5_REVIEW_CENTER_CONTEXTUAL_WORKFLOW",
-  "nextAuthorizedAction": "Extend the Review Center with safe filtering, project/context links, visible separation-of-duties information, and actionable read-only queues using the already implemented review state. Do not introduce notifications, approvals, or mutations that bypass existing APIs.",
+  "nextSlice": "F6_DOCUMENT_STUDIO_BASELINE",
+  "nextAuthorizedAction": "Add a read-only Document Studio baseline inside each project using existing generation artifacts, manifests, preview and version history. Expose generation identity, artifacts, traceability and comparison entry points without changing generation semantics or enabling submission.",
   "invariants": [
     "main only; no new branch",
     "no force push or history rewrite",
@@ -39,6 +39,6 @@
     "taskQueue": "ops/agent-runtime/TASK_QUEUE.json",
     "state": "ops/agent-runtime/STATE.json",
     "leaseIssue": 2,
-    "lastReconciledTask": "TASK-F5-REVIEW-CENTER-BASELINE"
+    "lastReconciledTask": "TASK-F5-REVIEW-CENTER-CONTEXT"
   }
 }
