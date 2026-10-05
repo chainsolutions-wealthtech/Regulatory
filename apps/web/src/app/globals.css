@@ -64,3 +64,6 @@
 .clause-proposal-card__actions{margin-top:4px}
 @media(max-width:900px){.clause-lifecycle{grid-template-columns:repeat(2,minmax(0,1fr))}.clause-studio-grid{grid-template-columns:1fr}}
 @media(max-width:640px){.clause-lifecycle{grid-template-columns:1fr}.clause-compare-grid{grid-template-columns:1fr}.clause-source-card__heading,.clause-diff-card__heading,.clause-proposal-card__header{flex-direction:column}}
+
+/* F4-CLAUSE-LOCKED-CONTRAST-FIX-2026-10-05 */
+.clause-lifecycle__step--locked small{color:var(--text)}
