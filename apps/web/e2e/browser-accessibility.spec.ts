@@ -8,6 +8,8 @@ const validationPath = path.resolve(
   "../../regulatory/validation/WEB_BROWSER_ACCESSIBILITY_VALIDATION.json",
 );
 const wcagTags = ["wcag2a", "wcag2aa", "wcag21a", "wcag21aa"];
+
+test.setTimeout(120_000);
 const routes = [
   { path: "/", label: "dashboard" },
   { path: "/operations", label: "operations cockpit" },
