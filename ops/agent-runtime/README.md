@@ -1,57 +1,80 @@
-# Regulatory Continuous Agent Runtime
+# Regulatory Continuous Agent Runtime — V2
 
-Status: repository-native runtime installed. Coding is armed only when the OpenAI credential is present.
+Status: **SESSION_DRIVEN_ACTIVE**
 
-## What runs 24/7
+## Decision
 
-The GitHub workflow .github/workflows/continuous-agent-runtime.yml runs every 15 minutes and after each of the four validation workflows completes.
+Product code is written by ChatGPT under the user's existing ChatGPT subscription and persisted through the connected GitHub surface.
 
-The supervisor never keeps a model session alive indefinitely. It reconstructs state from Git, the checkpoint, the task queue, CI and the writer lease. It invokes Codex only when a bounded task is ready.
+No OpenAI API key is required. The workflow does not invoke Codex Action or any paid OpenAI API.
 
-## Security split
+## What remains 24/7
 
-The Codex job receives the OpenAI API key through the official Codex GitHub Action proxy and checks out the repository with persist-credentials=false.
+GitHub Actions remains the permanent supervisor. Every 15 minutes and after required CI workflows, it reconstructs:
 
-Codex never receives the GitHub write token.
+- canonical main HEAD;
+- checkpoint;
+- explicit safe task queue;
+- runtime state;
+- writer lease;
+- CI gates;
+- repeated failures and stalls.
 
-A later apply job, which has no OpenAI key, re-checks main, applies the generated patch, re-runs the policy gate and typecheck, commits, pushes, then explicitly dispatches all four CI gates.
+For a safe code task, the supervisor emits:
 
-## Required OpenAI credential
+`SESSION_REQUIRED`
 
-Create repository secret OPENAI_API_KEY from a dedicated OpenAI Platform project/key. The key must have the API permissions required for Codex/Responses usage.
+For a failed active task that can be repaired:
 
-Until the secret exists, the runtime remains active in observation/reconciliation mode and will not run a coding model.
+`SESSION_REPAIR_REQUIRED`
 
-## GitHub identity
+It never starts a coding model by itself.
 
-V1 uses the repository-scoped, short-lived GitHub Actions GITHUB_TOKEN and commits as regulatory-continuous-agent[bot]. This avoids a long-lived PAT.
+## Coding surface
 
-A dedicated GitHub App can replace the token later without changing the runtime contract. Do not add a personal PAT.
+The coding loop is:
 
-## Continuous loop
+1. ChatGPT session reads repository authorities and live HEAD.
+2. ChatGPT reads the current plan, task queue, state and checkpoint.
+3. ChatGPT claims GitHub issue #2 as the single writer lease.
+4. ChatGPT analyzes and edits through the connected GitHub surface.
+5. Before commit, ChatGPT re-checks main against the leased base HEAD.
+6. The code commit also records the active task as `AWAITING_CI`.
+7. ChatGPT releases the lease with the exact commit head and `PATCH_COMMITTED_AWAITING_CI`.
+8. GitHub CI runs independently.
+9. If all four required gates pass, GitHub Actions may perform state-only reconciliation.
+10. If a gate fails, the supervisor emits `SESSION_REPAIR_REQUIRED`; a later ChatGPT session repairs it.
 
-plan -> lease -> isolated Codex patch -> gate -> separate apply job -> commit -> explicit CI dispatch -> reconcile checkpoint -> release lease -> next task.
+## No API billing path
 
-Repeated failures, attempt limits, daily model/commit budgets, changed-file/line budgets and forbidden paths/content stop the loop automatically.
+The following are disabled by contract:
 
-## Safe queue
+- `OPENAI_API_KEY` dependency;
+- `openai/codex-action`;
+- model invocation inside GitHub Actions;
+- unattended product-code mutation by GitHub Actions.
 
-The queue is explicit at ops/agent-runtime/TASK_QUEUE.json. The runtime does not invent its own roadmap and does not auto-discover new tasks.
+This architecture uses the ChatGPT product surface for reasoning/coding and GitHub only for repository state, writes, CI and durable continuity.
 
-Current safe backlog is F4 reconciliation followed by F5 Review Center, F6 Document Studio, F7 Reference Data Explorer and F8 Operations/Security readiness.
+## Safe backlog
+
+The queue remains explicit under `ops/agent-runtime/TASK_QUEUE.json`.
+
+Current next code slice: `TASK-F5-REVIEW-CENTER-BASELINE`.
+
+The runtime does not invent a new roadmap when the queue is empty.
 
 ## Hard stops
 
-No autonomous runtime may:
+No ChatGPT session or workflow may:
+
 - create a branch;
 - force push or rewrite history;
-- modify the runtime policy or queue;
-- modify normative regulatory sources/requirements/registries;
-- change RBAC/workflow policies or database migrations;
-- enable ready_for_submission;
-- grant CLAUSE_ACTIVATE;
-- simulate human Legal/Compliance approval;
+- enable `ready_for_submission`;
+- grant `CLAUSE_ACTIVATE`;
+- simulate Legal/Compliance approval;
 - activate regulatory rules or sanctions;
-- deploy production infrastructure.
+- modify normative sources without governed review;
+- deploy production infrastructure without explicit authorization.
 
-When the safe queue is exhausted, the engine becomes IDLE_SAFE_QUEUE_EMPTY rather than inventing more work.
+The repository remains the durable memory. A conversation may disappear without losing the checkpoint, queue, lease or CI state.

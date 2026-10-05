@@ -802,3 +802,16 @@ Statut : `PENDING_CENTIF_DISCOVERY_CI`.
 - [ ] Observer le premier cycle autonome F4-close → F5 après armement du secret.
 - [ ] Remplacer optionnellement GITHUB_TOKEN par une GitHub App dédiée après validation du runtime V1.
 <!-- AUTO:CONTINUOUS-AGENT-RUNTIME-V1-2026-10-05:END -->
+
+<!-- AUTO:SESSION-DRIVEN-RUNTIME-V2-2026-10-05:START -->
+## Runtime ChatGPT abonnement
+
+- [x] Supprimer la dépendance runtime à `OPENAI_API_KEY`.
+- [x] Retirer `openai/codex-action` du workflow.
+- [x] Conserver le superviseur GitHub 24/7.
+- [x] Conserver lease, queue, CI, watchdog et checkpoint.
+- [x] Transformer les tâches CODE en `SESSION_REQUIRED`.
+- [x] Transformer les réparations en `SESSION_REPAIR_REQUIRED`.
+- [x] Autoriser seulement la réconciliation d'état automatique côté GitHub Actions.
+- [ ] Exécuter `TASK-F5-REVIEW-CENTER-BASELINE` depuis une session ChatGPT via le connecteur GitHub.
+<!-- AUTO:SESSION-DRIVEN-RUNTIME-V2-2026-10-05:END -->

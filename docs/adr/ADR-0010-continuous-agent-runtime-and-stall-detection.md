@@ -1,6 +1,6 @@
 # ADR-0010 — Continuous coding runtime, lease and stall detection
 
-Status: ACCEPTED
+Status: ACCEPTED — Superseded for code execution by ADR-0011
 Date: 2026-10-05
 
 ## Decision
@@ -52,3 +52,8 @@ ready_for_submission remains false.
 ## Consequence
 
 Loss of a ChatGPT session, model context, runner or individual Codex execution no longer loses project continuity. The next runtime cycle recovers from Git, checkpoint, CI, state and lease.
+
+
+## 2026-10-05 — Supersession note
+
+The lease, checkpoint, queue, CI and stall-detection decisions remain applicable. The Codex/OpenAI-API execution mechanism is superseded by ADR-0011 in favor of ChatGPT-subscription session-driven coding through the connected GitHub surface.

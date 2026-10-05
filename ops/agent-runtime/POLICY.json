@@ -1,5 +1,5 @@
 {
-  "schemaVersion": "REGULATORY_CONTINUOUS_AGENT_POLICY_V1",
+  "schemaVersion": "REGULATORY_CONTINUOUS_AGENT_POLICY_V2",
   "canonicalBranch": "main",
   "workflowName": "Continuous Agent Runtime",
   "leaseIssueNumber": 2,
@@ -17,8 +17,7 @@
     "runtimeFailureThreshold": 2
   },
   "budgets": {
-    "maxAgentRunsPerDay": 8,
-    "maxAutonomousCommitsPerDay": 6,
+    "maxSessionAttemptsPerTask": 3,
     "maxChangedFilesPerTask": 30,
     "maxChangedLinesPerTask": 1800
   },
@@ -30,7 +29,8 @@
     "automaticLegalApproval": false,
     "automaticComplianceApproval": false,
     "automaticSubmission": false,
-    "readyForSubmissionMustRemainFalse": true
+    "readyForSubmissionMustRemainFalse": true,
+    "unattendedCodeMutationByWorkflow": false
   },
   "globalForbiddenPathPatterns": [
     "^GOVERNANCE\\\\.md$",
@@ -67,5 +67,15 @@
   "ignoredCommitMessagePrefixes": [
     "chore: continuous agent checkpoint",
     "chore: continuous agent state"
-  ]
+  ],
+  "execution": {
+    "mode": "CHATGPT_SUBSCRIPTION_SESSION",
+    "reasoningSurface": "CHATGPT",
+    "repositoryWriteSurface": "CONNECTED_GITHUB",
+    "paidOpenAIApiAllowed": false,
+    "codexActionAllowed": false,
+    "githubActionsMayMutateProductCode": false,
+    "githubActionsMayPerformStateOnlyReconciliation": true,
+    "codeTasksRequireChatGPTSession": true
+  }
 }

@@ -395,3 +395,13 @@ La prochaine action fonctionnelle reste F4 Clause Studio : étendre le lifecycle
 
 La couche de continuité garantit la reprise et détecte les stalls ; elle ne remplace pas l'action fonctionnelle.
 <!-- AUTO:CONTINUITY-WATCHDOG-2026-10-05:END -->
+
+<!-- AUTO:SESSION-DRIVEN-RUNTIME-V2-2026-10-05:START -->
+## Frontend development track — next executable action
+
+`TASK-F5-REVIEW-CENTER-BASELINE`
+
+Execution contract: ChatGPT subscription session + connected GitHub surface. The GitHub supervisor must not invoke a paid model API.
+
+This frontend action does not replace the separately documented regulatory-source recovery action. Human/legal/regulatory blockers remain unchanged.
+<!-- AUTO:SESSION-DRIVEN-RUNTIME-V2-2026-10-05:END -->

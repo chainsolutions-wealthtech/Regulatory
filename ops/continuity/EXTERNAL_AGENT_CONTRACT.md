@@ -45,3 +45,23 @@ La queue autonome est explicite sous ops/agent-runtime/TASK_QUEUE.json. Aucun ag
 
 Le moteur relance explicitement les quatre gates après chaque commit autonome et ne passe à la tâche suivante qu'après réconciliation PASS.
 
+
+
+## Runtime V2 — ChatGPT subscription / GitHub connector — 2026-10-05
+
+ADR-0011 supersedes the V1 model-execution mechanism while preserving the lease, queue, checkpoint, CI and watchdog contract.
+
+Code tasks are no longer executed by Codex/OpenAI API in GitHub Actions.
+
+When the supervisor emits `SESSION_REQUIRED` or `SESSION_REPAIR_REQUIRED`, a ChatGPT subscription session must:
+1. re-read the mandatory repository authorities;
+2. observe the real current HEAD;
+3. claim issue #2 against that HEAD;
+4. implement only the queued bounded task through the connected GitHub surface;
+5. re-check HEAD before the atomic write;
+6. persist `STATE.activeTask.status = AWAITING_CI` with task id, attempt and committed head;
+7. release the lease as `PATCH_COMMITTED_AWAITING_CI`.
+
+GitHub Actions remains authorized for observation and state-only reconciliation after CI, but not unattended product-code mutation.
+
+No repository OpenAI API credential is required.

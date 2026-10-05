@@ -520,3 +520,18 @@ Un moteur de codage autonome repository-native est installé :
 
 Le moteur de code reste fail-closed tant que le secret OPENAI_API_KEY dédié n'est pas provisionné.
 <!-- AUTO:CONTINUOUS-AGENT-RUNTIME-V1-2026-10-05:END -->
+
+<!-- AUTO:SESSION-DRIVEN-RUNTIME-V2-2026-10-05:START -->
+## Runtime de développement — V2
+
+- mode : `CHATGPT_SUBSCRIPTION_SESSION`;
+- raisonnement/code : ChatGPT sous abonnement utilisateur ;
+- écriture : connecteur GitHub ;
+- OpenAI API dans GitHub Actions : `DISABLED`;
+- Codex Action : `DISABLED`;
+- supervision GitHub Actions : `ACTIVE`;
+- reconciliation état/checkpoint sans code : `ALLOWED`;
+- prochaine tranche code : `TASK-F5-REVIEW-CENTER-BASELINE`;
+- F4 Clause Studio : `CLOSED / 4 CI PASS`;
+- `ready_for_submission=false`.
+<!-- AUTO:SESSION-DRIVEN-RUNTIME-V2-2026-10-05:END -->

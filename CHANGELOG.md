@@ -599,3 +599,25 @@ Preserved: PostgreSQL tenant scope, append-only proposal versions, separation of
 ### Security
 The model job has no GitHub write credential. The write job has no OpenAI credential. Normative sources, RBAC/workflow policy, migrations, runtime policy/queue and submission activation are outside autonomous scope.
 <!-- AUTO:CONTINUOUS-AGENT-RUNTIME-V1-2026-10-05:END -->
+
+<!-- AUTO:SESSION-DRIVEN-RUNTIME-V2-2026-10-05:START -->
+## 2026-10-05 — Session-driven runtime V2
+
+### Changed
+- Code execution moved from Codex/OpenAI API in GitHub Actions to ChatGPT subscription sessions.
+- GitHub Actions retained as 24/7 supervisor and state-only reconciler.
+- Code-ready states now surface as `SESSION_REQUIRED` / `SESSION_REPAIR_REQUIRED`.
+
+### Removed from runtime execution path
+- `OPENAI_API_KEY` requirement.
+- `openai/codex-action`.
+- unattended product-code mutation from the continuous workflow.
+
+### Preserved
+- writer lease;
+- explicit safe task queue;
+- four CI gates;
+- checkpoint;
+- watchdog;
+- regulatory safety invariants.
+<!-- AUTO:SESSION-DRIVEN-RUNTIME-V2-2026-10-05:END -->

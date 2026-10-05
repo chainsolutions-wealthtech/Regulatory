@@ -268,8 +268,8 @@ async function plan() {
         mode = "BLOCKED";
         reason = "ACTIVE_TASK_MAX_ATTEMPTS_REACHED";
       } else {
-        mode = "REPAIR";
-        reason = "ACTIVE_TASK_CI_FAILED";
+        mode = "SESSION_REPAIR_REQUIRED";
+        reason = "ACTIVE_TASK_CI_FAILED_REQUIRES_CHATGPT_SESSION";
         attempt += 1;
       }
     } else if (ciClass.allPass) {
@@ -294,22 +294,16 @@ async function plan() {
       mode = "RECONCILE";
       reason = "STATE_ONLY_TASK_READY";
     } else {
-      mode = "CODE";
-      reason = "SAFE_CODE_TASK_READY";
+      mode = "SESSION_REQUIRED";
+      reason = "SAFE_CODE_TASK_READY_FOR_CHATGPT_SESSION";
       attempt = 1;
     }
   }
 
   const today = nowIso().slice(0, 10);
   const daily = state.dailyBudget?.date === today ? state.dailyBudget : { date: today, agentRuns: 0, commits: 0 };
-  if ((mode === "CODE" || mode === "REPAIR") && daily.agentRuns >= runtimePolicy.budgets.maxAgentRunsPerDay) {
-    mode = "BLOCKED";
-    reason = "DAILY_AGENT_RUN_BUDGET_REACHED";
-  }
-  if ((mode === "CODE" || mode === "REPAIR") && daily.commits >= runtimePolicy.budgets.maxAutonomousCommitsPerDay) {
-    mode = "BLOCKED";
-    reason = "DAILY_AUTONOMOUS_COMMIT_BUDGET_REACHED";
-  }
+  // V2: code/reparation are executed only inside a ChatGPT subscription session.
+  // GitHub Actions never invokes a paid model API and therefore does not enforce API-run budgets here.
 
   const plan = {
     schemaVersion: "REGULATORY_CONTINUOUS_AGENT_PLAN_V1",
@@ -343,8 +337,9 @@ async function plan() {
   };
   await writeJson("continuous-agent-plan.json", plan);
   await ghOutput("mode", mode);
-  await ghOutput("needs_write", ["CODE", "REPAIR", "RECONCILE"].includes(mode) ? "true" : "false");
-  await ghOutput("should_run_agent", ["CODE", "REPAIR"].includes(mode) ? "true" : "false");
+  await ghOutput("needs_write", mode === "RECONCILE" ? "true" : "false");
+  await ghOutput("needs_session", ["SESSION_REQUIRED", "SESSION_REPAIR_REQUIRED"].includes(mode) ? "true" : "false");
+  await ghOutput("should_run_agent", "false");
   await ghOutput("task_id", task?.id ?? "");
   await ghOutput("base_head", currentHead);
   await ghOutput("material_head", materialHead);
@@ -573,7 +568,7 @@ async function markAwaiting() {
   };
   state.lastRuntimeAction = {
     at: nowIso(),
-    action: plan.mode === "REPAIR" ? "REPAIR_COMMIT_PREPARED" : "CODE_COMMIT_PREPARED",
+    action: plan.mode === "SESSION_REPAIR_REQUIRED" ? "SESSION_REPAIR_COMMIT_PREPARED" : "SESSION_CODE_COMMIT_PREPARED",
     taskId: plan.task.id,
   };
   await writeJson("ops/agent-runtime/STATE.json", state);
@@ -607,7 +602,8 @@ async function reconcile() {
   checkpoint.nextSlice = next ? next.completionSlice : "SAFE_AUTONOMOUS_QUEUE_EMPTY";
   checkpoint.nextAuthorizedAction = next ? next.goal : "No further autonomous task is queued. Preserve state and wait for an explicitly governed task.";
   checkpoint.runtime = {
-    status: next ? "ACTIVE" : "IDLE_SAFE_QUEUE_EMPTY",
+    status: next ? "SESSION_DRIVEN_ACTIVE" : "IDLE_SAFE_QUEUE_EMPTY",
+    executionMode: "CHATGPT_SUBSCRIPTION_SESSION",
     workflow: ".github/workflows/continuous-agent-runtime.yml",
     taskQueue: "ops/agent-runtime/TASK_QUEUE.json",
     state: "ops/agent-runtime/STATE.json",

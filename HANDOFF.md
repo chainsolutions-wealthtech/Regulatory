@@ -396,3 +396,20 @@ The runtime may perform state-only F4 reconciliation without a model once all ga
 
 Do not bypass the queue, lease or four-gate reconciliation.
 <!-- AUTO:CONTINUOUS-AGENT-RUNTIME-V1-2026-10-05:END -->
+
+<!-- AUTO:SESSION-DRIVEN-RUNTIME-V2-2026-10-05:START -->
+## Handoff — Session-driven runtime V2
+
+Current code execution surface is ChatGPT subscription + connected GitHub.
+
+When returning in any ChatGPT session:
+1. observe current main, do not reuse a stale SHA;
+2. read checkpoint, runtime state, task queue and issue #2;
+3. if plan is `SESSION_REQUIRED` or `SESSION_REPAIR_REQUIRED`, claim the lease;
+4. perform exactly the queued bounded task;
+5. commit atomically on main and persist `AWAITING_CI`;
+6. release the lease;
+7. let GitHub CI and state reconciliation continue.
+
+Next code task: `TASK-F5-REVIEW-CENTER-BASELINE`.
+<!-- AUTO:SESSION-DRIVEN-RUNTIME-V2-2026-10-05:END -->

@@ -28,13 +28,12 @@ jobs:
     outputs:
       mode: ${{ steps.plan.outputs.mode }}
       needs_write: ${{ steps.plan.outputs.needs_write }}
-      should_run_agent: ${{ steps.plan.outputs.should_run_agent }}
+      needs_session: ${{ steps.plan.outputs.needs_session }}
       task_id: ${{ steps.plan.outputs.task_id }}
       base_head: ${{ steps.plan.outputs.base_head }}
       material_head: ${{ steps.plan.outputs.material_head }}
       attempt: ${{ steps.plan.outputs.attempt }}
       reason: ${{ steps.plan.outputs.reason }}
-      credential_ready: ${{ steps.credential.outputs.ready }}
     steps:
       - name: Checkout canonical main
         uses: actions/checkout@v5
@@ -48,24 +47,17 @@ jobs:
         with:
           node-version: "22"
 
-      - name: Build execution plan
+      - name: Build session-driven execution plan
         id: plan
         env:
           GITHUB_TOKEN: ${{ github.token }}
         run: node scripts/continuous-agent-runtime.mjs plan
 
-      - name: Detect OpenAI runtime credential
-        id: credential
-        env:
-          OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
+      - name: Publish ChatGPT session readiness
+        if: steps.plan.outputs.needs_session == 'true'
         shell: bash
         run: |
-          if [ -n "$OPENAI_API_KEY" ]; then
-            echo "ready=true" >> "$GITHUB_OUTPUT"
-          else
-            echo "ready=false" >> "$GITHUB_OUTPUT"
-            echo "::notice title=Continuous Agent waiting for OpenAI credential::Add repository secret OPENAI_API_KEY to arm coding tasks. State-only reconciliation remains available."
-          fi
+          echo "::notice title=ChatGPT subscription session required::Task ${{ steps.plan.outputs.task_id }} is ready. Execute it from ChatGPT with the connected GitHub surface; no OpenAI API/Codex job will be started."
 
       - name: Upload plan
         uses: actions/upload-artifact@v4
@@ -78,21 +70,20 @@ jobs:
         shell: bash
         run: |
           {
-            echo "# Continuous Agent Runtime"
+            echo "# Continuous Agent Runtime — session-driven V2"
             echo ""
             echo "- Mode: **${{ steps.plan.outputs.mode }}**"
             echo "- Reason: ${{ steps.plan.outputs.reason }}"
             echo "- Task: ${{ steps.plan.outputs.task_id || 'none' }}"
             echo "- Base HEAD: ${{ steps.plan.outputs.base_head }}"
             echo "- Material HEAD: ${{ steps.plan.outputs.material_head }}"
-            echo "- OpenAI credential ready: ${{ steps.credential.outputs.ready }}"
+            echo "- ChatGPT session required: ${{ steps.plan.outputs.needs_session }}"
+            echo "- Paid OpenAI API invocation: **disabled**"
           } >> "$GITHUB_STEP_SUMMARY"
 
   claim:
     needs: plan
-    if: >
-      needs.plan.outputs.needs_write == 'true' &&
-      (needs.plan.outputs.mode == 'RECONCILE' || needs.plan.outputs.credential_ready == 'true')
+    if: needs.plan.outputs.mode == 'RECONCILE' && needs.plan.outputs.needs_write == 'true'
     runs-on: ubuntu-latest
     timeout-minutes: 10
     permissions:
@@ -113,12 +104,12 @@ jobs:
         with:
           name: continuous-agent-plan-${{ github.run_id }}
 
-      - name: Derive worker identity
+      - name: Derive state-only worker identity
         id: worker
         shell: bash
-        run: echo "worker_id=gha:${GITHUB_RUN_ID}:${GITHUB_RUN_ATTEMPT}" >> "$GITHUB_OUTPUT"
+        run: echo "worker_id=gha-state:${GITHUB_RUN_ID}:${GITHUB_RUN_ATTEMPT}" >> "$GITHUB_OUTPUT"
 
-      - name: Claim writer lease
+      - name: Claim writer lease for state-only reconciliation
         id: claim
         env:
           GITHUB_TOKEN: ${{ github.token }}
@@ -163,7 +154,7 @@ jobs:
         id: commit
         shell: bash
         run: |
-          git config user.name "regulatory-continuous-agent[bot]"
+          git config user.name "regulatory-continuity[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           git add ops/agent-runtime/STATE.json ops/continuity/CHECKPOINT.json
           git diff --cached --check
@@ -175,166 +166,8 @@ jobs:
           git push origin HEAD:main
           echo "head=$(git rev-parse HEAD)" >> "$GITHUB_OUTPUT"
 
-  agent:
-    needs: [plan, claim]
-    if: >
-      needs.plan.outputs.should_run_agent == 'true' &&
-      needs.plan.outputs.credential_ready == 'true' &&
-      needs.claim.outputs.claimed == 'true'
-    runs-on: ubuntu-latest
-    timeout-minutes: 90
-    permissions:
-      contents: read
-    steps:
-      - name: Checkout exact leased HEAD without Git credentials
-        uses: actions/checkout@v5
-        with:
-          ref: ${{ needs.plan.outputs.base_head }}
-          fetch-depth: 0
-          persist-credentials: false
-
-      - name: Configure Node.js
-        uses: actions/setup-node@v4
-        with:
-          node-version: "22"
-
-      - uses: actions/download-artifact@v4
-        with:
-          name: continuous-agent-plan-${{ github.run_id }}
-
-      - name: Build bounded task prompt
-        env:
-          CONTINUOUS_AGENT_PLAN: continuous-agent-plan.json
-          PROMPT_OUTPUT: continuous-agent-task.md
-        run: node scripts/continuous-agent-runtime.mjs prompt
-
-      - name: Run Codex bounded coding worker
-        id: codex
-        uses: openai/codex-action@v1
-        with:
-          openai-api-key: ${{ secrets.OPENAI_API_KEY }}
-          prompt-file: continuous-agent-task.md
-          sandbox: workspace-write
-          effort: high
-          safety-strategy: drop-sudo
-          codex-args: '["--ephemeral"]'
-          output-file: continuous-agent-output.md
-
-      - name: Make untracked changes visible to diff gate
-        run: git add -N .
-
-      - name: Gate agent diff before it leaves the sandbox job
-        env:
-          CONTINUOUS_AGENT_PLAN: continuous-agent-plan.json
-          BASE_HEAD: ${{ needs.plan.outputs.base_head }}
-        run: node scripts/continuous-agent-runtime.mjs gate
-
-      - name: Package patch
-        shell: bash
-        run: |
-          git diff --binary --full-index ${{ needs.plan.outputs.base_head }} -- > continuous-agent.patch
-          test -s continuous-agent.patch
-
-      - name: Upload patch and evidence
-        uses: actions/upload-artifact@v4
-        with:
-          name: continuous-agent-patch-${{ github.run_id }}
-          retention-days: 14
-          path: |
-            continuous-agent.patch
-            continuous-agent-output.md
-            continuous-agent-gate-report.json
-            continuous-agent-task.md
-
-  apply:
-    needs: [plan, claim, agent]
-    if: needs.agent.result == 'success' && needs.claim.outputs.claimed == 'true'
-    runs-on: ubuntu-latest
-    timeout-minutes: 30
-    permissions:
-      actions: write
-      contents: write
-    outputs:
-      completed_head: ${{ steps.commit.outputs.head }}
-    steps:
-      - name: Checkout canonical main with write credential
-        uses: actions/checkout@v5
-        with:
-          ref: main
-          fetch-depth: 40
-
-      - uses: actions/download-artifact@v4
-        with:
-          name: continuous-agent-plan-${{ github.run_id }}
-
-      - uses: actions/download-artifact@v4
-        with:
-          name: continuous-agent-patch-${{ github.run_id }}
-
-      - name: Verify main still equals leased HEAD
-        shell: bash
-        run: |
-          git fetch origin main
-          CURRENT="$(git rev-parse origin/main)"
-          if [ "$CURRENT" != "${{ needs.plan.outputs.base_head }}" ]; then
-            echo "::error title=Continuous Agent stale patch::Expected ${{ needs.plan.outputs.base_head }}, found $CURRENT"
-            exit 1
-          fi
-          git reset --hard "$CURRENT"
-
-      - name: Apply sandbox patch
-        run: |
-          git apply --check continuous-agent.patch
-          git apply continuous-agent.patch
-          git diff --check
-
-      - name: Mark task awaiting CI
-        env:
-          CONTINUOUS_AGENT_PLAN: continuous-agent-plan.json
-        run: node scripts/continuous-agent-runtime.mjs mark-awaiting
-
-      - name: Re-run repository policy gate after patch application
-        env:
-          CONTINUOUS_AGENT_PLAN: continuous-agent-plan.json
-          BASE_HEAD: ${{ needs.plan.outputs.base_head }}
-        run: |
-          git add -N .
-          node scripts/continuous-agent-runtime.mjs gate
-
-      - name: Fast pre-commit validation for web changes
-        shell: bash
-        run: |
-          if git diff --name-only ${{ needs.plan.outputs.base_head }} -- | grep -q '^apps/web/'; then
-            npm run web:install
-            npm run generate:web-catalog
-            npm run web:typecheck
-          fi
-
-      - name: Commit governed agent change
-        id: commit
-        shell: bash
-        run: |
-          git config user.name "regulatory-continuous-agent[bot]"
-          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add -A
-          git diff --cached --check
-          git commit -m "agent(${{ needs.plan.outputs.task_id }}): governed autonomous slice"
-          git push origin HEAD:main
-          echo "head=$(git rev-parse HEAD)" >> "$GITHUB_OUTPUT"
-
-      - name: Explicitly dispatch all four validation gates
-        env:
-          GH_TOKEN: ${{ github.token }}
-        shell: bash
-        run: |
-          gh workflow run ci.yml --ref main
-          gh workflow run runtime-quality.yml --ref main
-          gh workflow run security-policy.yml --ref main
-          gh workflow run browser-accessibility.yml --ref main
-          gh workflow run continuity-watchdog.yml --ref main
-
   release:
-    needs: [plan, claim, reconcile, agent, apply]
+    needs: [plan, claim, reconcile]
     if: always() && needs.claim.result == 'success' && needs.claim.outputs.claimed == 'true'
     runs-on: ubuntu-latest
     timeout-minutes: 10
@@ -347,11 +180,11 @@ jobs:
           ref: main
           persist-credentials: false
 
-      - name: Release writer lease
+      - name: Release state-only writer lease
         env:
           GITHUB_TOKEN: ${{ github.token }}
           WORKER_ID: ${{ needs.claim.outputs.worker_id }}
           TASK_ID: ${{ needs.plan.outputs.task_id }}
-          COMPLETED_HEAD: ${{ needs.apply.outputs.completed_head || needs.reconcile.outputs.completed_head || needs.plan.outputs.base_head }}
-          OUTCOME: ${{ needs.apply.result == 'success' && 'PATCH_COMMITTED_AWAITING_CI' || needs.reconcile.result == 'success' && 'RECONCILED' || needs.agent.result == 'failure' && 'AGENT_FAILED' || needs.apply.result == 'failure' && 'APPLY_FAILED' || 'NO_WRITE' }}
+          COMPLETED_HEAD: ${{ needs.reconcile.outputs.completed_head || needs.plan.outputs.base_head }}
+          OUTCOME: ${{ needs.reconcile.result == 'success' && 'RECONCILED' || 'STATE_RECONCILIATION_FAILED' }}
         run: node scripts/continuous-agent-runtime.mjs release

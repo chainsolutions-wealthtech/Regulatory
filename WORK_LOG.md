@@ -513,3 +513,15 @@ La boucle sélectionne maintenant une surface d'indexation différente : robots/
 - added checkpoint reconciliation only after all gates PASS ;
 - preserved ready_for_submission=false and all human/regulatory stops.
 <!-- AUTO:CONTINUOUS-AGENT-RUNTIME-V1-2026-10-05:END -->
+
+<!-- AUTO:SESSION-DRIVEN-RUNTIME-V2-2026-10-05:START -->
+## 2026-10-05 — Runtime V2 migration
+
+- reobserved main and F4 checkpoint;
+- read mandatory governance and runtime authorities;
+- preserved queue, lease, watchdog and CI;
+- removed paid API/Codex execution from the continuous workflow;
+- introduced `SESSION_REQUIRED` and `SESSION_REPAIR_REQUIRED`;
+- documented ADR-0011;
+- kept `ready_for_submission=false`.
+<!-- AUTO:SESSION-DRIVEN-RUNTIME-V2-2026-10-05:END -->

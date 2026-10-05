@@ -982,3 +982,13 @@ Architecture mise en place :
 
 Aucune branche, aucun PAT personnel, aucune activation réglementaire et aucune approbation humaine simulée.
 <!-- AUTO:CONTINUOUS-AGENT-RUNTIME-V1-2026-10-05:END -->
+
+<!-- AUTO:SESSION-DRIVEN-RUNTIME-V2-2026-10-05:START -->
+## 2026-10-05 — Bascule vers le runtime ChatGPT abonnement
+
+Le propriétaire a choisi de ne pas utiliser de facturation OpenAI API pour le moteur de développement.
+
+La continuité 24/7 est conservée côté GitHub (watchdog, plan, queue, CI, checkpoint, lease), mais toute modification de code est désormais exécutée dans une session ChatGPT utilisant la surface GitHub connectée.
+
+Les états code deviennent `SESSION_REQUIRED` et `SESSION_REPAIR_REQUIRED`. Aucun workflow GitHub n'appelle un modèle ni ne modifie le code produit de manière autonome.
+<!-- AUTO:SESSION-DRIVEN-RUNTIME-V2-2026-10-05:END -->

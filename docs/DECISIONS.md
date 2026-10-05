@@ -338,3 +338,12 @@ Données structurées
 
 Décision acceptée : checkpoint, politique et watchdog read-only ; tout agent externe d'écriture doit respecter lease, main, CI et gates humains. Voir docs/adr/ADR-0010-continuity-watchdog-and-external-agent-contract.md.
 <!-- AUTO:CONTINUITY-WATCHDOG-2026-10-05:END -->
+
+
+## 2026-10-05 — ADR-0011 — ChatGPT subscription session-driven coding
+
+Decision: preserve the repository-native supervisor, queue, lease, checkpoint and CI loop while removing paid OpenAI API/Codex execution from GitHub Actions.
+
+Product code is implemented from ChatGPT under the owner's existing subscription through the connected GitHub surface. GitHub Actions may supervise and reconcile state only.
+
+Reference: `docs/adr/ADR-0011-chatgpt-subscription-session-driven-coding.md`.

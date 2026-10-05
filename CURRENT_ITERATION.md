@@ -381,3 +381,13 @@ The engine itself is repository-native and scheduled. It does not require an ope
 
 F4 remains the active product slice until final browser validation and TASK-STATE-F4-CLOSE reconciliation.
 <!-- AUTO:CONTINUOUS-AGENT-RUNTIME-V1-2026-10-05:END -->
+
+<!-- AUTO:SESSION-DRIVEN-RUNTIME-V2-2026-10-05:START -->
+## Current iteration — runtime V2
+
+F4 is closed and all four gates passed.
+
+Runtime mode is now `SESSION_DRIVEN_ACTIVE`. The repository supervisor remains permanent, but code waits for a ChatGPT subscription session.
+
+Next product slice: `F5_REVIEW_CENTER_BASELINE`.
+<!-- AUTO:SESSION-DRIVEN-RUNTIME-V2-2026-10-05:END -->
