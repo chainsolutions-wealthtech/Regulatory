@@ -67,3 +67,29 @@
 
 /* F4-CLAUSE-LOCKED-CONTRAST-FIX-2026-10-05 */
 .clause-lifecycle__step--locked small{color:var(--text)}
+
+/* F4-CLAUSE-STUDIO-MOBILE-INTRINSIC-WIDTH-FIX-2026-10-05 */
+.clause-studio-grid>*,
+.clause-source-card,
+.clause-diff-card,
+.clause-proposal-card,
+.clause-source-card__heading>div,
+.clause-diff-card__heading>div,
+.clause-proposal-card__header>div,
+.clause-lifecycle__step>div{min-width:0}
+.clause-studio-grid .field-control{min-width:0;max-width:100%}
+.clause-source-card__heading strong,
+.clause-source-card__heading small,
+.clause-diff-card__heading strong,
+.clause-diff-card__heading small,
+.clause-proposal-card__header strong,
+.clause-proposal-card__header small,
+.clause-lifecycle__step strong,
+.clause-lifecycle__step small{overflow-wrap:anywhere;word-break:break-word}
+@media(max-width:640px){
+  .clause-source-card__heading .badge,
+  .clause-diff-card__heading .badge,
+  .clause-proposal-card__header .badge{max-width:100%;white-space:normal;overflow-wrap:anywhere;text-align:left}
+  .clause-proposal-card__actions .button,
+  .button-row .button{max-width:100%;white-space:normal;text-align:center}
+}
