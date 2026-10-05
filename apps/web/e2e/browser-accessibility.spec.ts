@@ -20,6 +20,7 @@ const routes = [
   { path: "/regulatory-library/sources", label: "regulatory source explorer" },
   { path: "/regulatory-library/requirements", label: "regulatory requirement explorer" },
   { path: "/regulatory-library/dependencies", label: "regulatory dependency graph" },
+  { path: "/regulatory-library/clause-proposals", label: "clause studio" },
 ] as const;
 
 async function assertAccessible(page: Page, label: string) {
@@ -44,6 +45,12 @@ test("browser navigation, responsive layout and WCAG A/AA automated checks stay 
     await expect(page.locator("body")).toBeVisible();
     await assertAccessible(page, route.label);
   }
+
+  const clauseStudioResponse = await page.goto("/regulatory-library/clause-proposals");
+  expect(clauseStudioResponse?.ok()).toBe(true);
+  await expect(page.getByRole("button", { name: /activer|activation globale/i })).toHaveCount(0);
+  await expect(page.getByText("Activation globale interdite")).toBeVisible();
+  await assertAccessible(page, "clause studio activation gate");
 
   const evidenceResponse = await page.goto("/projects/united-capital-diamond/evidence");
   expect(evidenceResponse?.ok()).toBe(true);
@@ -96,6 +103,7 @@ test("browser navigation, responsive layout and WCAG A/AA automated checks stay 
       regulatorySourceExplorerRendered: true,
       regulatoryRequirementExplorerRendered: true,
       regulatoryDependencyGraphRendered: true,
+      clauseStudioRendered: true,
       evidenceRuntimeFailsClosedWithoutProductionDependencies: true,
       browserCannotSubmitScanVerdict: true,
       desktopAutomatedWcagAAndAaNoViolations: true,

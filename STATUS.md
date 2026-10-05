@@ -495,3 +495,11 @@ Une couche repository-native surveille désormais la continuité indépendamment
 
 Le watchdog ne modifie pas le code. Aucun droit réglementaire ou de soumission n'est élargi.
 <!-- AUTO:CONTINUITY-WATCHDOG-2026-10-05:END -->
+
+<!-- AUTO:FRONTEND-F4-CLAUSE-STUDIO-2026-10-05:START -->
+## Frontend F4 — Clause Studio — 2026-10-05
+
+F4 étend la surface de propositions existante sans changer le lifecycle serveur : comparaison source/proposition, diff, timeline append-only, états DRAFT → LEGAL_REVIEW_REQUIRED → APPROVED et gate ACTIVE visible mais fermé.
+
+Aucune route ACTIVATE, aucun grant CLAUSE_ACTIVATE, aucune activation globale et aucune modification du catalogue de clauses ne sont ajoutés. ready_for_submission=false reste inchangé.
+<!-- AUTO:FRONTEND-F4-CLAUSE-STUDIO-2026-10-05:END -->

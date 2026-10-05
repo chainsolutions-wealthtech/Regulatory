@@ -955,3 +955,11 @@ Mise en place additive de POLICY.json, CHECKPOINT.json, protocole de reprise, co
 
 Motif : empêcher qu'une limite de session fasse perdre le point de reprise ou provoque une répétition aveugle.
 <!-- AUTO:CONTINUITY-WATCHDOG-2026-10-05:END -->
+
+<!-- AUTO:FRONTEND-F4-CLAUSE-STUDIO-2026-10-05:START -->
+## 2026-10-05 — F4 Clause Studio
+
+Réutilisation du repository PostgreSQL tenant-scoped et du moteur clause-lifecycle existants. Le frontend ajoute diff avant création, comparaison de chaque proposition avec sa source, timeline des versions, statistiques et exposition explicite du gate d'activation fermé.
+
+La séparation des tâches auteur/approbateur et l'historique append-only restent l'autorité serveur.
+<!-- AUTO:FRONTEND-F4-CLAUSE-STUDIO-2026-10-05:END -->

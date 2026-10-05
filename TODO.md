@@ -776,3 +776,15 @@ Statut : `PENDING_CENTIF_DISCOVERY_CI`.
 - [ ] Raccorder un worker externe d'écriture lorsqu'une identité dédiée et un environnement d'exécution sont disponibles.
 - [ ] Ne jamais donner au watchdog lui-même la capacité de muter le code.
 <!-- AUTO:CONTINUITY-WATCHDOG-2026-10-05:END -->
+
+<!-- AUTO:FRONTEND-F4-CLAUSE-STUDIO-2026-10-05:START -->
+## Frontend F4
+
+- [x] Transformer Propositions de clauses en Clause Studio sans second workflow.
+- [x] Ajouter comparaison source/proposition et diff.
+- [x] Afficher timeline append-only et acteurs.
+- [x] Exposer clairement le lifecycle et le gate ACTIVE fermé.
+- [x] Ajouter la route Clause Studio à la recette navigateur/mobile.
+- [ ] N'accorder CLAUSE_ACTIVATE que via décision séparée, politique RBAC et validation humaine explicite.
+- [ ] F5 — Centres de revue par rôle + tâches/commentaires.
+<!-- AUTO:FRONTEND-F4-CLAUSE-STUDIO-2026-10-05:END -->

@@ -193,3 +193,11 @@ Le générateur lit les catalogues API institutionnels versionnés, les métadon
 
 Aucun composant React ne résout une dépendance, n'active une exigence ou ne transforme une matérialisation en validation juridique.
 <!-- AUTO:FRONTEND-F3-REGULATORY-KNOWLEDGE-2026-10-05:END -->
+
+<!-- AUTO:FRONTEND-F4-CLAUSE-STUDIO-2026-10-05:START -->
+## 14. F4 implémenté — Clause Studio
+
+La route /regulatory-library/clause-proposals devient le Clause Studio et réutilise le lifecycle existant. Elle ne crée aucun mécanisme parallèle.
+
+Le Studio compare la source immuable au texte proposé, expose l'historique append-only, montre les acteurs et garde ACTIVE comme gate fermé puisque CLAUSE_ACTIVATE n'a aucun grant.
+<!-- AUTO:FRONTEND-F4-CLAUSE-STUDIO-2026-10-05:END -->

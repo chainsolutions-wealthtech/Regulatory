@@ -27,3 +27,40 @@
   .coverage-table__row{gap:12px;align-items:flex-start;flex-direction:column}
   .coverage-table__row .project-row__issues{width:100%;justify-content:flex-start}
 }
+
+/* FRONTEND-F4-CLAUSE-STUDIO-2026-10-05 */
+.clause-lifecycle{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:10px;margin:0 0 24px}
+.clause-lifecycle__step{display:flex;gap:10px;align-items:flex-start;padding:14px;border:1px solid var(--border);border-radius:12px;background:var(--muted)}
+.clause-lifecycle__step--locked{border-style:dashed;background:var(--dangerSoft)}
+.clause-lifecycle__index{display:grid;place-items:center;flex:0 0 25px;width:25px;height:25px;border-radius:50%;background:var(--primary);color:#fff;font-size:10px;font-weight:850}
+.clause-lifecycle__step--locked .clause-lifecycle__index{background:var(--danger)}
+.clause-lifecycle__step strong,.clause-lifecycle__step small{display:block}
+.clause-lifecycle__step strong{font-size:12px}
+.clause-lifecycle__step small{margin-top:4px;color:var(--soft);font-size:10px;line-height:1.4}
+.clause-studio-grid{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:24px;align-items:start}
+.clause-source-card,.clause-diff-card,.clause-proposal-card{padding:20px;border:1px solid var(--border);border-radius:14px;background:#fff}
+.clause-source-card__heading,.clause-diff-card__heading,.clause-proposal-card__header{display:flex;justify-content:space-between;gap:14px;align-items:flex-start}
+.clause-source-card__heading strong,.clause-source-card__heading small,.clause-diff-card__heading strong,.clause-diff-card__heading small,.clause-proposal-card__header strong,.clause-proposal-card__header small{display:block}
+.clause-source-card__heading small,.clause-diff-card__heading small,.clause-proposal-card__header small{margin-top:4px;color:var(--soft);font-size:10px}
+.clause-source-card>p,.clause-diff-card__empty{color:var(--text);font-size:12px;line-height:1.65;white-space:pre-wrap}
+.clause-diff{margin-top:16px;padding:16px;border:1px solid var(--border);border-radius:12px;background:var(--muted);font-family:ui-monospace,SFMono-Regular,Consolas,monospace;font-size:11px;line-height:1.7;white-space:pre-wrap;overflow-wrap:anywhere}
+.clause-diff ins{padding:1px 2px;background:var(--successSoft);color:var(--success);text-decoration:none}
+.clause-diff del{padding:1px 2px;background:var(--dangerSoft);color:var(--danger)}
+.clause-proposal-list{display:grid;gap:18px}
+.clause-compare-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px;margin-top:18px}
+.clause-compare-grid>div{min-width:0;padding:16px;border:1px solid var(--border);border-radius:12px;background:var(--muted)}
+.clause-column-label{display:block;color:var(--soft);font-size:10px;font-weight:800;text-transform:uppercase}
+.clause-compare-grid p{font-size:12px;line-height:1.65;white-space:pre-wrap;overflow-wrap:anywhere}
+.clause-compare-grid small{color:var(--soft);font-size:10px;overflow-wrap:anywhere}
+.clause-diff-details{margin-top:14px}
+.clause-diff-details summary{cursor:pointer;color:var(--primary);font-size:12px;font-weight:800}
+.clause-timeline{display:grid;gap:0;margin:20px 0 0;padding:0;list-style:none}
+.clause-timeline li{position:relative;display:grid;grid-template-columns:18px minmax(0,1fr);gap:10px;padding:0 0 18px}
+.clause-timeline li:not(:last-child):before{content:"";position:absolute;left:6px;top:14px;bottom:0;width:2px;background:var(--border)}
+.clause-timeline__dot{position:relative;z-index:1;width:14px;height:14px;border:3px solid var(--primarySoft);border-radius:50%;background:var(--primary)}
+.clause-timeline strong,.clause-timeline small{display:block}
+.clause-timeline strong{font-size:11px}
+.clause-timeline small{margin-top:3px;color:var(--soft);font-size:9px;overflow-wrap:anywhere}
+.clause-proposal-card__actions{margin-top:4px}
+@media(max-width:900px){.clause-lifecycle{grid-template-columns:repeat(2,minmax(0,1fr))}.clause-studio-grid{grid-template-columns:1fr}}
+@media(max-width:640px){.clause-lifecycle{grid-template-columns:1fr}.clause-compare-grid{grid-template-columns:1fr}.clause-source-card__heading,.clause-diff-card__heading,.clause-proposal-card__header{flex-direction:column}}

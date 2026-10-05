@@ -574,3 +574,11 @@ Added: repository-native watchdog, machine-readable policy/checkpoint, external-
 
 Safety: read-only watchdog; no branch creation, force push, regulatory activation or submission capability.
 <!-- AUTO:CONTINUITY-WATCHDOG-2026-10-05:END -->
+
+<!-- AUTO:FRONTEND-F4-CLAUSE-STUDIO-2026-10-05:START -->
+## 2026-10-05 — Frontend F4 Clause Studio
+
+Added: governed source/proposal diff, proposal timeline, lifecycle rail and activation gate visibility.
+
+Preserved: PostgreSQL tenant scope, append-only proposal versions, separation of duties, immutable global catalog and ready_for_submission=false.
+<!-- AUTO:FRONTEND-F4-CLAUSE-STUDIO-2026-10-05:END -->
