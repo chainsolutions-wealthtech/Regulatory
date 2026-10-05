@@ -71,7 +71,7 @@ test("browser navigation, responsive layout and WCAG A/AA automated checks stay 
   const documentStudioResponse = await page.goto("/projects/united-capital-diamond/document-studio");
   expect(documentStudioResponse?.ok()).toBe(true);
   await expect(page.getByRole("heading", { name: "Document Studio" })).toBeVisible();
-  await expect(page.getByText("ready_for_submission=false")).toBeVisible();
+  await expect(page.getByText("ready_for_submission=false", { exact: true })).toBeVisible();
   await expect(page.getByRole("button", { name: /générer|soumettre|envoyer/i })).toHaveCount(0);
   await assertAccessible(page, "document studio remains read-only");
 

@@ -9,17 +9,18 @@
   "activeTask": {
     "taskId": "TASK-F6-DOCUMENT-STUDIO-BASELINE",
     "status": "AWAITING_CI",
-    "attempt": 1,
-    "baseHead": "606293f4b10bfbb6eb27069d6ea442e57eeda667",
+    "attempt": 2,
+    "baseHead": "857a8847fe42d7fa77e11c67341acf819ae0ef1f",
     "executionSurface": "CHATGPT_GITHUB_CONNECTOR",
     "startedAt": "2026-10-05T22:15:00Z",
-    "updatedAt": "2026-10-05T22:15:00Z"
+    "updatedAt": "2026-10-05T22:20:00Z"
   },
   "lastValidatedHead": "45a0ff6ea6ab06a5e0e1f8f401d73ae483cc91f1",
   "lastRuntimeAction": {
-    "at": "2026-10-05T22:15:00Z",
-    "action": "SESSION_CODE_COMMIT_PREPARED",
-    "taskId": "TASK-F6-DOCUMENT-STUDIO-BASELINE"
+    "at": "2026-10-05T22:20:00Z",
+    "action": "SESSION_REPAIR_COMMIT_PREPARED",
+    "taskId": "TASK-F6-DOCUMENT-STUDIO-BASELINE",
+    "hypothesis": "PLAYWRIGHT_STRICT_SELECTOR_AMBIGUITY_ONLY"
   },
   "executionMode": "CHATGPT_SUBSCRIPTION_SESSION",
   "apiModelInvocationDisabled": true

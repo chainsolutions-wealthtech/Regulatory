@@ -441,3 +441,13 @@ Task `TASK-F6-DOCUMENT-STUDIO-BASELINE` is committed as `AWAITING_CI`.
 
 The Studio is an aggregation surface only. If CI requires repair, do not move generation logic into the UI and do not add any submit/generate mutation to this page.
 <!-- AUTO:FRONTEND-F6-DOCUMENT-STUDIO-BASELINE-2026-10-05:END -->
+
+<!-- AUTO:F6-BROWSER-REPAIR-2026-10-05:START -->
+## F6 Browser repair — attempt 2
+
+Observed failure: Playwright strict-mode ambiguity because `ready_for_submission=false` is intentionally rendered both by the Document Studio guardrail and the reused GenerationArtifactsPanel.
+
+Repair hypothesis: product output is correct; narrow only the assertion to the exact badge text. No product code or document semantics changed.
+
+Task remains `AWAITING_CI`.
+<!-- AUTO:F6-BROWSER-REPAIR-2026-10-05:END -->

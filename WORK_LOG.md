@@ -563,3 +563,13 @@ La boucle sélectionne maintenant une surface d'indexation différente : robots/
 - persisted task as `AWAITING_CI`;
 - no generation or submission semantics changed.
 <!-- AUTO:FRONTEND-F6-DOCUMENT-STUDIO-BASELINE-2026-10-05:END -->
+
+<!-- AUTO:F6-BROWSER-REPAIR-2026-10-05:START -->
+## 2026-10-05 — F6 browser repair attempt 2
+
+- observed Browser/Accessibility failure directly from job logs;
+- confirmed two legitimate text matches, not a UI regression;
+- changed only the Playwright selector to `exact: true`;
+- preserved Document Studio and GenerationArtifactsPanel output;
+- active task remains F6 `AWAITING_CI`, attempt 2.
+<!-- AUTO:F6-BROWSER-REPAIR-2026-10-05:END -->
