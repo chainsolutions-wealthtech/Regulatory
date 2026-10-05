@@ -1,0 +1,178 @@
+{
+  "schemaVersion": "REGULATORY_CONTINUOUS_AGENT_TASK_QUEUE_V1",
+  "strategy": "EXPLICIT_SAFE_BACKLOG_ONLY",
+  "autoDiscoverTasks": false,
+  "tasks": [
+    {
+      "sequence": 10,
+      "id": "TASK-STATE-F4-CLOSE",
+      "kind": "STATE_ONLY",
+      "enabled": true,
+      "completionSlice": "F4_CLAUSE_STUDIO",
+      "commitMessage": "reconcile F4 and arm continuous runtime",
+      "goal": "After all four required CI gates pass on the current material baseline, reconcile the persistent checkpoint to F4 Clause Studio and arm the continuous runtime without changing product code.",
+      "allowedPathPrefixes": [
+        "ops/agent-runtime/STATE.json",
+        "ops/continuity/CHECKPOINT.json"
+      ],
+      "forbiddenPathPrefixes": [],
+      "validationHints": [
+        "No model invocation.",
+        "All four required CI gates must already be PASS."
+      ]
+    },
+    {
+      "sequence": 20,
+      "id": "TASK-F5-REVIEW-CENTER-BASELINE",
+      "kind": "CODE",
+      "enabled": true,
+      "completionSlice": "F5_REVIEW_CENTER_BASELINE",
+      "commitMessage": "add governed cross-project review center baseline",
+      "goal": "Build the first read-only role-based Review Center surface from the existing review/workflow repositories and APIs. Reuse existing RBAC/workflow semantics, add navigation and accessibility coverage, and do not create new approval powers, database migrations, or automatic decisions.",
+      "allowedPathPrefixes": [
+        "apps/web/src/app/reviews/",
+        "apps/web/src/components/",
+        "apps/web/src/domain/",
+        "apps/web/src/server/",
+        "apps/web/e2e/",
+        "apps/web/src/app/globals.css",
+        "docs/FRONTEND_TARGET_ARCHITECTURE.md",
+        "STATUS.md",
+        "SUIVI.md",
+        "TODO.md",
+        "CHANGELOG.md",
+        "HANDOFF.md",
+        "WORK_LOG.md"
+      ],
+      "forbiddenPathPrefixes": [
+        "apps/web/src/app/api/regulatory/clause-proposals/"
+      ],
+      "validationHints": [
+        "Run web typecheck.",
+        "Preserve server-side authorization.",
+        "Extend Playwright/axe coverage."
+      ]
+    },
+    {
+      "sequence": 30,
+      "id": "TASK-F5-REVIEW-CENTER-CONTEXT",
+      "kind": "CODE",
+      "enabled": true,
+      "completionSlice": "F5_REVIEW_CENTER_CONTEXTUAL_WORKFLOW",
+      "commitMessage": "extend review center with contextual work queues",
+      "goal": "Extend the Review Center with safe filtering, project/context links, visible separation-of-duties information, and actionable read-only queues using the already implemented review state. Do not introduce notifications, approvals, or mutations that bypass existing APIs.",
+      "allowedPathPrefixes": [
+        "apps/web/src/app/reviews/",
+        "apps/web/src/components/",
+        "apps/web/src/domain/",
+        "apps/web/e2e/",
+        "apps/web/src/app/globals.css",
+        "docs/FRONTEND_TARGET_ARCHITECTURE.md",
+        "STATUS.md",
+        "SUIVI.md",
+        "TODO.md",
+        "CHANGELOG.md",
+        "HANDOFF.md",
+        "WORK_LOG.md"
+      ],
+      "forbiddenPathPrefixes": [],
+      "validationHints": [
+        "Run web typecheck.",
+        "Extend browser/mobile accessibility checks.",
+        "Keep all decisions human and server-authorized."
+      ]
+    },
+    {
+      "sequence": 40,
+      "id": "TASK-F6-DOCUMENT-STUDIO-BASELINE",
+      "kind": "CODE",
+      "enabled": true,
+      "completionSlice": "F6_DOCUMENT_STUDIO_BASELINE",
+      "commitMessage": "add read-only document studio baseline",
+      "goal": "Add a read-only Document Studio baseline inside each project using existing generation artifacts, manifests, preview and version history. Expose generation identity, artifacts, traceability and comparison entry points without changing generation semantics or enabling submission.",
+      "allowedPathPrefixes": [
+        "apps/web/src/app/projects/",
+        "apps/web/src/components/",
+        "apps/web/src/domain/",
+        "apps/web/src/server/",
+        "apps/web/e2e/",
+        "apps/web/src/app/globals.css",
+        "docs/FRONTEND_TARGET_ARCHITECTURE.md",
+        "STATUS.md",
+        "SUIVI.md",
+        "TODO.md",
+        "CHANGELOG.md",
+        "HANDOFF.md",
+        "WORK_LOG.md"
+      ],
+      "forbiddenPathPrefixes": [
+        "src/composer/",
+        "src/engine/"
+      ],
+      "validationHints": [
+        "Reuse existing generation data.",
+        "Run web typecheck.",
+        "Keep ready_for_submission=false."
+      ]
+    },
+    {
+      "sequence": 50,
+      "id": "TASK-F7-REFERENCE-DATA-EXPLORER",
+      "kind": "CODE",
+      "enabled": true,
+      "completionSlice": "F7_REFERENCE_DATA_EXPLORER",
+      "commitMessage": "add governed reference data explorer",
+      "goal": "Add a read-only Reference Data explorer for the already materialized static UMOA member-state and XOF baseline. Clearly distinguish static verified baseline from dynamic actors/calendars that are not materialized. Do not invent or scrape new reference data.",
+      "allowedPathPrefixes": [
+        "apps/web/src/app/reference-data/",
+        "apps/web/src/components/",
+        "apps/web/src/domain/",
+        "apps/web/e2e/",
+        "apps/web/src/app/globals.css",
+        "docs/FRONTEND_TARGET_ARCHITECTURE.md",
+        "STATUS.md",
+        "SUIVI.md",
+        "TODO.md",
+        "CHANGELOG.md",
+        "HANDOFF.md",
+        "WORK_LOG.md"
+      ],
+      "forbiddenPathPrefixes": [],
+      "validationHints": [
+        "Use only existing versioned reference data.",
+        "Run web typecheck.",
+        "Add accessibility coverage."
+      ]
+    },
+    {
+      "sequence": 60,
+      "id": "TASK-F8-OPERATIONS-SECURITY-READINESS",
+      "kind": "CODE",
+      "enabled": true,
+      "completionSlice": "F8_OPERATIONS_SECURITY_READINESS",
+      "commitMessage": "extend operations cockpit with governed readiness",
+      "goal": "Extend the existing operations cockpit with read-only runtime/security readiness using existing health/readiness contracts and documented deployment states. Distinguish IMPLEMENTED, TESTED, CONFIGURED, ACTIVATED, DEPLOYED and PRODUCTION_VERIFIED. Never imply production readiness from configuration alone.",
+      "allowedPathPrefixes": [
+        "apps/web/src/app/operations/",
+        "apps/web/src/components/",
+        "apps/web/src/domain/",
+        "apps/web/src/server/",
+        "apps/web/e2e/",
+        "apps/web/src/app/globals.css",
+        "docs/FRONTEND_TARGET_ARCHITECTURE.md",
+        "STATUS.md",
+        "SUIVI.md",
+        "TODO.md",
+        "CHANGELOG.md",
+        "HANDOFF.md",
+        "WORK_LOG.md"
+      ],
+      "forbiddenPathPrefixes": [],
+      "validationHints": [
+        "Reuse existing health/readiness endpoints.",
+        "Run web typecheck.",
+        "Do not activate production services."
+      ]
+    }
+  ]
+}

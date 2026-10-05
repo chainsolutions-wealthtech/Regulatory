@@ -371,3 +371,13 @@ Validation : `CURRENT_STATE_RECONCILIATION_V1 = PASS`.
 
 `LOOP-DEV-001` reste intégralement préservée et devient `PAUSED_BY_OWNER_PRIORITY_PRESERVED`. Une copie PDF secondaire complète de 17 pages fournit désormais une empreinte de recherche précise, mais elle reste non normative. L'itération n'est pas close tant que le binaire officiel/institutionnel n'est pas récupéré et vérifié.
 <!-- AUTO:LOOP-REG-001-SECONDARY-FULL-TEXT-RECOVERY-2026-09-22:END -->
+
+<!-- AUTO:CONTINUOUS-AGENT-RUNTIME-V1-2026-10-05:START -->
+## Current iteration — continuous runtime bootstrap
+
+State: RUNTIME_BOOTSTRAP_IMPLEMENTED_WAITING_FOR_VALIDATION_AND_OPENAI_CREDENTIAL.
+
+The engine itself is repository-native and scheduled. It does not require an open ChatGPT session. Until OPENAI_API_KEY exists, only observe/reconcile paths run; coding remains fail-closed.
+
+F4 remains the active product slice until final browser validation and TASK-STATE-F4-CLOSE reconciliation.
+<!-- AUTO:CONTINUOUS-AGENT-RUNTIME-V1-2026-10-05:END -->

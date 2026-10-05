@@ -1,0 +1,17 @@
+{
+  "schemaVersion": "REGULATORY_CONTINUOUS_AGENT_STATE_V1",
+  "status": "BOOTSTRAPPING",
+  "completedTaskIds": [],
+  "activeTask": null,
+  "lastValidatedHead": "9bae19a69d8cfbecc72fae4e642a0c8f944a84c2",
+  "lastRuntimeAction": {
+    "at": "2026-10-05T21:20:00Z",
+    "action": "RUNTIME_BOOTSTRAP_PREPARED",
+    "taskId": "RUNTIME_BOOTSTRAP_V1"
+  },
+  "dailyBudget": {
+    "date": "2026-10-05",
+    "agentRuns": 0,
+    "commits": 0
+  }
+}

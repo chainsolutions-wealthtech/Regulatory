@@ -34,3 +34,14 @@ Le worker s'arrête sur décision propriétaire, source normative manquante, rev
 ## Fournisseur
 
 Le protocole est indépendant du fournisseur. Un runner GitHub, un service sur VPS ou un orchestrateur externe peut l'implémenter. Les credentials restent hors dépôt.
+
+## Runtime exécutable V1 — 2026-10-05
+
+Le contrat est désormais appliqué par .github/workflows/continuous-agent-runtime.yml et scripts/continuous-agent-runtime.mjs.
+
+Le job modèle est isolé du credential GitHub d'écriture. Il produit uniquement un patch soumis aux guardrails. Un job séparé revalide le HEAD, le diff et le typecheck avant commit.
+
+La queue autonome est explicite sous ops/agent-runtime/TASK_QUEUE.json. Aucun agent n'est autorisé à inventer sa propre prochaine tâche quand cette queue est vide.
+
+Le moteur relance explicitement les quatre gates après chaque commit autonome et ne passe à la tâche suivante qu'après réconciliation PASS.
+

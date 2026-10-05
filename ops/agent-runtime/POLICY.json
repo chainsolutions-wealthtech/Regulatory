@@ -1,0 +1,71 @@
+{
+  "schemaVersion": "REGULATORY_CONTINUOUS_AGENT_POLICY_V1",
+  "canonicalBranch": "main",
+  "workflowName": "Continuous Agent Runtime",
+  "leaseIssueNumber": 2,
+  "leaseMinutes": 90,
+  "recentCommitWindow": 30,
+  "recentRunWindow": 100,
+  "requiredWorkflows": [
+    "Regulatory CI",
+    "Runtime Quality CI",
+    "Security and Review Policy CI",
+    "Browser and Accessibility CI"
+  ],
+  "loopDetection": {
+    "maxAttemptsPerTask": 3,
+    "runtimeFailureThreshold": 2
+  },
+  "budgets": {
+    "maxAgentRunsPerDay": 8,
+    "maxAutonomousCommitsPerDay": 6,
+    "maxChangedFilesPerTask": 30,
+    "maxChangedLinesPerTask": 1800
+  },
+  "safety": {
+    "automaticBranchCreation": false,
+    "automaticForcePush": false,
+    "automaticHistoryRewrite": false,
+    "automaticRegulatoryActivation": false,
+    "automaticLegalApproval": false,
+    "automaticComplianceApproval": false,
+    "automaticSubmission": false,
+    "readyForSubmissionMustRemainFalse": true
+  },
+  "globalForbiddenPathPatterns": [
+    "^GOVERNANCE\\\\.md$",
+    "^SOURCE_OF_TRUTH\\\\.md$",
+    "^AGENTS\\\\.md$",
+    "^00_START_HERE\\\\.md$",
+    "^ops/continuity/POLICY\\\\.json$",
+    "^ops/agent-runtime/POLICY\\\\.json$",
+    "^ops/agent-runtime/TASK_QUEUE\\\\.json$",
+    "^\\\\.github/workflows/continuous-agent-runtime\\\\.yml$",
+    "^database/migrations/",
+    "^policies/rbac/",
+    "^policies/workflow/",
+    "^regulatory/materialized/",
+    "^regulatory/sources/",
+    "^regulatory/requirements/",
+    "^regulatory/registries/"
+  ],
+  "protectedDeletionPaths": [
+    "GOVERNANCE.md",
+    "SOURCE_OF_TRUTH.md",
+    "AGENTS.md",
+    "00_START_HERE.md",
+    "ops/continuity/",
+    "docs/adr/"
+  ],
+  "forbiddenAddedLinePatterns": [
+    "ready_for_submission\\\\s*[:=]\\\\s*true",
+    "readyForSubmission\\\\s*[:=]\\\\s*true",
+    "CLAUSE_ACTIVATE",
+    "automatic[A-Za-z_ -]*(legal|compliance|regulatory)[A-Za-z_ -]*approval[A-Za-z_ -]*[:=]\\\\s*true",
+    "force\\\\s*:\\\\s*true"
+  ],
+  "ignoredCommitMessagePrefixes": [
+    "chore: continuous agent checkpoint",
+    "chore: continuous agent state"
+  ]
+}

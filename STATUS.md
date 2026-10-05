@@ -503,3 +503,20 @@ F4 étend la surface de propositions existante sans changer le lifecycle serveur
 
 Aucune route ACTIVATE, aucun grant CLAUSE_ACTIVATE, aucune activation globale et aucune modification du catalogue de clauses ne sont ajoutés. ready_for_submission=false reste inchangé.
 <!-- AUTO:FRONTEND-F4-CLAUSE-STUDIO-2026-10-05:END -->
+
+<!-- AUTO:CONTINUOUS-AGENT-RUNTIME-V1-2026-10-05:START -->
+## Continuous Agent Runtime V1 — 2026-10-05
+
+Un moteur de codage autonome repository-native est installé :
+- GitHub Actions superviseur toutes les 15 minutes + workflow_run ;
+- queue de tâches sûre explicite ;
+- lease unique via issue #2 ;
+- Codex sandbox sans credential GitHub d'écriture ;
+- patch contrôlé puis appliqué dans un job séparé ;
+- budgets et détection de boucle ;
+- dispatch explicite des 4 CI après chaque commit autonome ;
+- checkpoint réconcilié uniquement après 4/4 PASS ;
+- aucune autorité réglementaire, juridique ou de soumission déléguée.
+
+Le moteur de code reste fail-closed tant que le secret OPENAI_API_KEY dédié n'est pas provisionné.
+<!-- AUTO:CONTINUOUS-AGENT-RUNTIME-V1-2026-10-05:END -->

@@ -382,3 +382,17 @@ Lire ops/continuity/CHECKPOINT.json après avoir vérifié le HEAD réel. Dernie
 
 Le watchdog GitHub est observateur uniquement. Un futur worker externe suit ops/continuity/EXTERNAL_AGENT_CONTRACT.md et utilise un lease unique avant toute écriture.
 <!-- AUTO:CONTINUITY-WATCHDOG-2026-10-05:END -->
+
+<!-- AUTO:CONTINUOUS-AGENT-RUNTIME-V1-2026-10-05:START -->
+## Handoff Continuous Agent Runtime V1
+
+Runtime: .github/workflows/continuous-agent-runtime.yml.
+Queue: ops/agent-runtime/TASK_QUEUE.json.
+State: ops/agent-runtime/STATE.json.
+Policy: ops/agent-runtime/POLICY.json.
+Lease: GitHub issue #2.
+
+The runtime may perform state-only F4 reconciliation without a model once all gates pass. Coding tasks require repository secret OPENAI_API_KEY. After the key is present, the next safe coding task is F5 Review Center baseline.
+
+Do not bypass the queue, lease or four-gate reconciliation.
+<!-- AUTO:CONTINUOUS-AGENT-RUNTIME-V1-2026-10-05:END -->

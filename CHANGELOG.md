@@ -582,3 +582,20 @@ Added: governed source/proposal diff, proposal timeline, lifecycle rail and acti
 
 Preserved: PostgreSQL tenant scope, append-only proposal versions, separation of duties, immutable global catalog and ready_for_submission=false.
 <!-- AUTO:FRONTEND-F4-CLAUSE-STUDIO-2026-10-05:END -->
+
+<!-- AUTO:CONTINUOUS-AGENT-RUNTIME-V1-2026-10-05:START -->
+## 2026-10-05 — Continuous Agent Runtime V1
+
+### Added
+- repository-native 24/7 supervisor ;
+- official Codex GitHub Action worker ;
+- explicit safe task queue ;
+- runtime state machine ;
+- writer lease enforcement ;
+- bounded diff policy gate ;
+- repeated-failure and budget stops ;
+- four-gate CI dispatch and checkpoint reconciliation.
+
+### Security
+The model job has no GitHub write credential. The write job has no OpenAI credential. Normative sources, RBAC/workflow policy, migrations, runtime policy/queue and submission activation are outside autonomous scope.
+<!-- AUTO:CONTINUOUS-AGENT-RUNTIME-V1-2026-10-05:END -->

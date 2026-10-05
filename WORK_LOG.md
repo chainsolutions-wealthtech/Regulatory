@@ -498,3 +498,18 @@ Conclusion technique : le moteur ne fournit pas une sémantique assez fiable pou
 
 La boucle sélectionne maintenant une surface d'indexation différente : robots/sitemap BCEAO, strictement déclarée.
 <!-- AUTO:LOOP-REG-001-BCEAO-SEARCH-SEMANTICS-2026-09-22:END -->
+
+<!-- AUTO:CONTINUOUS-AGENT-RUNTIME-V1-2026-10-05:START -->
+## 2026-10-05 — Continuous Agent Runtime V1
+
+- read governance and continuity authorities ;
+- claimed writer lease against main@565395e91ee7a6e0b9d370b9e5d708046934232f ;
+- designed explicit safe queue and state machine ;
+- separated model and write credentials ;
+- added Codex patch sandbox and post-model diff gate ;
+- added stale-head rejection before write ;
+- added pre-commit typecheck for web changes ;
+- added explicit four-CI dispatch ;
+- added checkpoint reconciliation only after all gates PASS ;
+- preserved ready_for_submission=false and all human/regulatory stops.
+<!-- AUTO:CONTINUOUS-AGENT-RUNTIME-V1-2026-10-05:END -->

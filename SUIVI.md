@@ -963,3 +963,22 @@ Réutilisation du repository PostgreSQL tenant-scoped et du moteur clause-lifecy
 
 La séparation des tâches auteur/approbateur et l'historique append-only restent l'autorité serveur.
 <!-- AUTO:FRONTEND-F4-CLAUSE-STUDIO-2026-10-05:END -->
+
+<!-- AUTO:CONTINUOUS-AGENT-RUNTIME-V1-2026-10-05:START -->
+## 2026-10-05 — Installation du moteur continu 24/7
+
+Architecture mise en place :
+1. Continuous Agent Runtime planifié et event-driven ;
+2. séparation OpenAI credential / GitHub write credential ;
+3. task queue F4-close puis F5/F6/F7/F8 sûrs ;
+4. writer lease GitHub obligatoire ;
+5. guardrail de chemins, contenu, taille de diff et suppressions ;
+6. limite de tentatives et budgets journaliers ;
+7. Codex officiel en sandbox workspace-write ;
+8. revalidation du HEAD avant application ;
+9. typecheck web pré-commit quand nécessaire ;
+10. dispatch explicite des quatre CI ;
+11. checkpoint uniquement après succès complet.
+
+Aucune branche, aucun PAT personnel, aucune activation réglementaire et aucune approbation humaine simulée.
+<!-- AUTO:CONTINUOUS-AGENT-RUNTIME-V1-2026-10-05:END -->

@@ -788,3 +788,17 @@ Statut : `PENDING_CENTIF_DISCOVERY_CI`.
 - [ ] N'accorder CLAUSE_ACTIVATE que via décision séparée, politique RBAC et validation humaine explicite.
 - [ ] F5 — Centres de revue par rôle + tâches/commentaires.
 <!-- AUTO:FRONTEND-F4-CLAUSE-STUDIO-2026-10-05:END -->
+
+<!-- AUTO:CONTINUOUS-AGENT-RUNTIME-V1-2026-10-05:START -->
+## Continuous Agent Runtime
+
+- [x] Installer le superviseur GitHub Actions permanent.
+- [x] Installer queue, état, lease et loop detector.
+- [x] Séparer le job modèle du job disposant du credential GitHub d'écriture.
+- [x] Ajouter guardrails de paths/contenu/diff.
+- [x] Ajouter dispatch explicite des 4 gates après commit autonome.
+- [x] Ajouter réconciliation automatique du checkpoint.
+- [ ] Provisionner le secret OpenAI dédié OPENAI_API_KEY.
+- [ ] Observer le premier cycle autonome F4-close → F5 après armement du secret.
+- [ ] Remplacer optionnellement GITHUB_TOKEN par une GitHub App dédiée après validation du runtime V1.
+<!-- AUTO:CONTINUOUS-AGENT-RUNTIME-V1-2026-10-05:END -->

@@ -21,6 +21,8 @@
     "readyForSubmissionMustRemainFalse": true
   },
   "ignoredCommitMessagePrefixes": [
-    "chore: refresh validation evidence and loop state"
+    "chore: refresh validation evidence and loop state",
+    "chore: continuous agent checkpoint",
+    "chore: continuous agent state"
   ]
 }
