@@ -2,17 +2,17 @@
   "schemaVersion": "REGULATORY_CONTINUITY_CHECKPOINT_V3",
   "repository": "chainsolutions-wealthtech/Regulatory",
   "branch": "main",
-  "sourceHead": "45a0ff6ea6ab06a5e0e1f8f401d73ae483cc91f1",
-  "recordedAt": "2026-10-05T22:11:35.824Z",
-  "lastCompletedSlice": "F5_REVIEW_CENTER_CONTEXTUAL_WORKFLOW",
+  "sourceHead": "d89d9d71609e3da6459feab3b3f110afd6154774",
+  "recordedAt": "2026-10-05T22:19:53.595Z",
+  "lastCompletedSlice": "F6_DOCUMENT_STUDIO_BASELINE",
   "validationState": {
     "regulatoryCI": "PASS",
     "runtimeQualityCI": "PASS",
     "securityAndReviewPolicyCI": "PASS",
     "browserAndAccessibilityCI": "PASS"
   },
-  "nextSlice": "F6_DOCUMENT_STUDIO_BASELINE",
-  "nextAuthorizedAction": "Add a read-only Document Studio baseline inside each project using existing generation artifacts, manifests, preview and version history. Expose generation identity, artifacts, traceability and comparison entry points without changing generation semantics or enabling submission.",
+  "nextSlice": "F7_REFERENCE_DATA_EXPLORER",
+  "nextAuthorizedAction": "Add a read-only Reference Data explorer for the already materialized static UMOA member-state and XOF baseline. Clearly distinguish static verified baseline from dynamic actors/calendars that are not materialized. Do not invent or scrape new reference data.",
   "invariants": [
     "main only; no new branch",
     "no force push or history rewrite",
@@ -39,6 +39,6 @@
     "taskQueue": "ops/agent-runtime/TASK_QUEUE.json",
     "state": "ops/agent-runtime/STATE.json",
     "leaseIssue": 2,
-    "lastReconciledTask": "TASK-F5-REVIEW-CENTER-CONTEXT"
+    "lastReconciledTask": "TASK-F6-DOCUMENT-STUDIO-BASELINE"
   }
 }
