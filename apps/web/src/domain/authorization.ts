@@ -126,6 +126,30 @@ export function rolesForAction(action: ProspectusAction): ProspectusRole[] {
     .toSorted();
 }
 
+
+export type SeparationOfDutiesRule = {
+  id: string;
+  description: string;
+  actions: ProspectusAction[];
+};
+
+/**
+ * Projection read-only des règles de séparation des tâches de la politique
+ * canonique. Les vues peuvent les expliquer sans recopier ni réinterpréter
+ * les grants RBAC.
+ */
+export function separationOfDutiesRules(): SeparationOfDutiesRule[] {
+  return (rbacPolicy.separationOfDuties as readonly {
+    id: string;
+    description: string;
+    actions: readonly ProspectusAction[];
+  }[]).map((rule) => ({
+    id: rule.id,
+    description: rule.description,
+    actions: [...rule.actions],
+  }));
+}
+
 export function roleCanDecideReview(role: ProspectusRole, reviewRole: ProspectusRole): boolean {
   const action = `REVIEW_DECIDE_${reviewRole}` as ProspectusAction;
   return allActions.includes(action) && actionsForRoles([role]).includes(action);

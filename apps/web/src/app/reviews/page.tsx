@@ -1,10 +1,21 @@
-import { ReviewCenterTemplate, type ReviewCenterEntry } from "@/components/templates/ReviewCenterTemplate";
+import {
+  ReviewCenterTemplate,
+  type ReviewCenterEntry,
+} from "@/components/templates/ReviewCenterTemplate";
+import { normalizeReviewCenterFilters } from "@/domain/review-center";
 import { reviewRepository } from "@/server/reviews";
 import { projectRepository } from "@/server/storage";
 
 export const dynamic = "force-dynamic";
 
-export default async function ReviewCenterPage() {
+type SearchParams = Record<string, string | string[] | undefined>;
+
+export default async function ReviewCenterPage({
+  searchParams,
+}: {
+  searchParams: Promise<SearchParams>;
+}) {
+  const filters = normalizeReviewCenterFilters(await searchParams);
   let projects: Awaited<ReturnType<typeof projectRepository.listProjects>> = [];
   let portfolioUnavailable = false;
 
@@ -28,6 +39,7 @@ export default async function ReviewCenterPage() {
   return (
     <ReviewCenterTemplate
       entries={entries}
+      filters={filters}
       portfolioUnavailable={portfolioUnavailable}
       reviewDriver={reviewRepository.driver}
     />

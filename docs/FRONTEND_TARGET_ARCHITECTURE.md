@@ -219,3 +219,18 @@ Principes :
 
 Cette tranche ne remplace pas le `ReviewWorkspacePanel` projet : elle fournit uniquement la vue portefeuille demandée par F5.
 <!-- AUTO:FRONTEND-F5-REVIEW-CENTER-BASELINE-2026-10-05:END -->
+
+<!-- AUTO:FRONTEND-F5-REVIEW-CENTER-CONTEXT-2026-10-05:START -->
+## 16. F5 contextuel — files, filtres et séparation des tâches
+
+Le Centre de revues conserve sa frontière read-only et ajoute :
+- filtres GET bornés par recherche, rôle et statut ouvert ;
+- ordre contextuel des files : correction demandée, échéance dépassée, en cours, à prendre ;
+- liens explicites vers projet, revue, contrôles et preuves ;
+- contexte de scope affiché uniquement par noms de clés ;
+- projection des règles de séparation des tâches depuis la politique RBAC canonique ;
+- aucune duplication des grants ni nouvelle autorité métier ;
+- aucune notification ou mutation transverse.
+
+Les décisions restent humaines et contrôlées par les endpoints/repositories existants.
+<!-- AUTO:FRONTEND-F5-REVIEW-CENTER-CONTEXT-2026-10-05:END -->

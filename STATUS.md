@@ -551,3 +551,16 @@ Le moteur de code reste fail-closed tant que le secret OPENAI_API_KEY dédié n'
 
 État : `AWAITING_CI`.
 <!-- AUTO:FRONTEND-F5-REVIEW-CENTER-BASELINE-2026-10-05:END -->
+
+<!-- AUTO:FRONTEND-F5-REVIEW-CENTER-CONTEXT-2026-10-05:START -->
+## F5 Review Center contextuel — en attente de CI
+
+- filtres read-only : recherche, rôle, statut ouvert ;
+- priorité dérivée uniquement de l'état/dueAt existants ;
+- liens contexte : projet, revue, contrôles, preuves ;
+- règles SoD : projetées depuis `PROSPECTUS_RBAC_V1.json` via le domaine ;
+- mutations/notifications nouvelles : aucune ;
+- `ready_for_submission=false`.
+
+État : `AWAITING_CI`.
+<!-- AUTO:FRONTEND-F5-REVIEW-CENTER-CONTEXT-2026-10-05:END -->

@@ -828,3 +828,15 @@ Statut : `PENDING_CENTIF_DISCOVERY_CI`.
 - [ ] Fermer F5 baseline uniquement après les quatre CI PASS.
 - [ ] Poursuivre ensuite la tranche F5 contextuelle selon la queue gouvernée.
 <!-- AUTO:FRONTEND-F5-REVIEW-CENTER-BASELINE-2026-10-05:END -->
+
+<!-- AUTO:FRONTEND-F5-REVIEW-CENTER-CONTEXT-2026-10-05:START -->
+## F5 contextuel
+
+- [x] Ajouter filtres rôle/statut/recherche sans mutation.
+- [x] Prioriser visuellement corrections, retards et travaux en cours.
+- [x] Ajouter liens projet/revue/contrôles/preuves.
+- [x] Exposer la séparation des tâches depuis RBAC, sans recopier les grants.
+- [x] Tester la projection SoD.
+- [x] Étendre Playwright/axe et responsive.
+- [ ] Fermer la tranche uniquement après 4/4 CI PASS.
+<!-- AUTO:FRONTEND-F5-REVIEW-CENTER-CONTEXT-2026-10-05:END -->

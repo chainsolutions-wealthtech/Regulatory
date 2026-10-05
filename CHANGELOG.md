@@ -641,3 +641,21 @@ The model job has no GitHub write credential. The write job has no OpenAI creden
 - human approval requirements;
 - `ready_for_submission=false`.
 <!-- AUTO:FRONTEND-F5-REVIEW-CENTER-BASELINE-2026-10-05:END -->
+
+<!-- AUTO:FRONTEND-F5-REVIEW-CENTER-CONTEXT-2026-10-05:START -->
+## 2026-10-05 — F5 contextual review queues
+
+### Added
+- bounded GET filters for review queues;
+- urgency ordering from existing request status/due date;
+- project/review/controls/evidence context links;
+- read-only separation-of-duties projection from canonical RBAC policy;
+- domain and browser/accessibility validation.
+
+### Unchanged
+- review mutation endpoints;
+- RBAC grants;
+- workflow transitions;
+- database schema;
+- submission gate.
+<!-- AUTO:FRONTEND-F5-REVIEW-CENTER-CONTEXT-2026-10-05:END -->

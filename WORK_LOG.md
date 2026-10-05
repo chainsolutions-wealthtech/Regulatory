@@ -538,3 +538,15 @@ La boucle sélectionne maintenant une surface d'indexation différente : robots/
 - persisted runtime task as `AWAITING_CI`;
 - no database, regulatory rule, approval power or submission change.
 <!-- AUTO:FRONTEND-F5-REVIEW-CENTER-BASELINE-2026-10-05:END -->
+
+<!-- AUTO:FRONTEND-F5-REVIEW-CENTER-CONTEXT-2026-10-05:START -->
+## 2026-10-05 — TASK-F5-REVIEW-CENTER-CONTEXT
+
+- claimed writer lease at `94b9ba4cbf7ac23ca3261a276813334874758cd0`;
+- added bounded GET filtering and contextual links;
+- added urgency projection from existing status/dueAt;
+- exposed SoD through a read-only domain helper over canonical RBAC;
+- added integration assertions for SoD projection;
+- extended browser/mobile accessibility coverage;
+- persisted task state as `AWAITING_CI`.
+<!-- AUTO:FRONTEND-F5-REVIEW-CENTER-CONTEXT-2026-10-05:END -->

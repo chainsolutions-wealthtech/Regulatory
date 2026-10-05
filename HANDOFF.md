@@ -425,3 +425,11 @@ Review center is a read-only projection. Do not mark F5 complete until Regulator
 
 If CI fails, resume as `SESSION_REPAIR_REQUIRED` with a new hypothesis.
 <!-- AUTO:FRONTEND-F5-REVIEW-CENTER-BASELINE-2026-10-05:END -->
+
+<!-- AUTO:FRONTEND-F5-REVIEW-CENTER-CONTEXT-2026-10-05:START -->
+## Handoff — F5 contextual review queues
+
+Task `TASK-F5-REVIEW-CENTER-CONTEXT` committed from ChatGPT session and must remain `AWAITING_CI` until all four required gates pass.
+
+No new decision or notification mechanism was introduced. Any CI repair must preserve the read-only boundary and derive SoD only from the canonical RBAC policy.
+<!-- AUTO:FRONTEND-F5-REVIEW-CENTER-CONTEXT-2026-10-05:END -->

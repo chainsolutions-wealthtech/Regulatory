@@ -54,6 +54,19 @@ test("browser navigation, responsive layout and WCAG A/AA automated checks stay 
   await expect(page.getByRole("button", { name: /approuver|rejeter|décider|transition/i })).toHaveCount(0);
   await assertAccessible(page, "review center is read-only");
 
+  const filteredReviewCenter = await page.goto(
+    "/reviews?role=COMPLIANCE&status=CHANGES_REQUESTED&q=diamond",
+  );
+  expect(filteredReviewCenter?.ok()).toBe(true);
+  await expect(page.locator('select[name="role"]')).toHaveValue("COMPLIANCE");
+  await expect(page.locator('select[name="status"]')).toHaveValue("CHANGES_REQUESTED");
+  await expect(page.locator('input[name="q"]')).toHaveValue("diamond");
+  await expect(page.getByRole("heading", { name: "Séparation des tâches" })).toBeVisible();
+  await expect(page.getByText("PRODUCT_CANNOT_SELF_APPROVE_COMPLIANCE")).toBeVisible();
+  await expect(page.getByRole("button", { name: /approuver|rejeter|décider|transition/i })).toHaveCount(0);
+  await assertNoHorizontalOverflow(page, "review center contextual filters");
+  await assertAccessible(page, "review center contextual filters stay read-only");
+
   const clauseStudioResponse = await page.goto("/regulatory-library/clause-proposals");
   expect(clauseStudioResponse?.ok()).toBe(true);
   await expect(page.getByRole("button", { name: /activer|activation globale/i })).toHaveCount(0);
@@ -106,6 +119,8 @@ test("browser navigation, responsive layout and WCAG A/AA automated checks stay 
       operationsCockpitRendered: true,
       reviewCenterRendered: true,
       reviewCenterReadOnly: true,
+      reviewCenterContextFiltersReadOnly: true,
+      reviewCenterSeparationOfDutiesVisible: true,
       projectWorkspaceRendered: true,
       canonicalDataRendered: true,
       regulatoryConcordanceRendered: true,

@@ -116,3 +116,30 @@
   .review-center-project-actions{width:100%;justify-content:flex-start}
   .review-center-project-actions .button{max-width:100%;white-space:normal}
 }
+
+/* FRONTEND-F5-REVIEW-CENTER-CONTEXT-2026-10-05 */
+.review-center-filters{display:grid;grid-template-columns:minmax(0,1.6fr) minmax(150px,.7fr) minmax(180px,.8fr) auto;gap:14px;align-items:end}
+.review-center-filters label{display:grid;gap:7px;min-width:0;color:var(--soft);font-size:11px;font-weight:750}
+.review-center-filters__actions{display:flex;gap:8px;align-items:center;flex-wrap:wrap}
+.review-request-item__body{min-width:0;flex:1}
+.review-request-item__title{display:flex;align-items:flex-start;justify-content:space-between;gap:10px;min-width:0}
+.review-request-item__title strong{min-width:0;overflow-wrap:anywhere}
+.review-request-context{display:flex;gap:6px;flex-wrap:wrap;justify-content:flex-end}
+.review-request-context a{display:inline-flex;align-items:center;min-height:30px;padding:0 9px;border:1px solid var(--border2);border-radius:9px;background:#fff;color:var(--primary);font-size:10px;font-weight:800}
+.review-request-context a:hover{text-decoration:underline}
+.review-sod-list{display:grid;gap:10px}
+.review-sod-item{display:flex;align-items:flex-start;justify-content:space-between;gap:18px;padding:15px;border:1px solid var(--border);border-radius:12px;background:var(--muted)}
+.review-sod-item>div:first-child{min-width:0;flex:1}
+.review-sod-item strong{overflow-wrap:anywhere}
+.review-sod-item p{margin:5px 0 0;color:var(--soft);font-size:11px;line-height:1.5}
+@media(max-width:1000px){.review-center-filters{grid-template-columns:repeat(2,minmax(0,1fr))}.review-center-filters__actions{align-self:end}}
+@media(max-width:640px){
+  .review-center-filters{grid-template-columns:1fr}
+  .review-center-filters__actions{width:100%}
+  .review-center-filters__actions .button{flex:1;white-space:normal}
+  .review-request-item__title,.review-sod-item{flex-direction:column}
+  .review-request-context{justify-content:flex-start;width:100%}
+  .review-request-context a{flex:1;justify-content:center;min-width:0}
+  .review-sod-item .review-center-guardrails{width:100%}
+  .review-sod-item .badge{max-width:100%;white-space:normal;overflow-wrap:anywhere}
+}

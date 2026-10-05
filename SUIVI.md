@@ -1002,3 +1002,11 @@ Le travail réutilise les repositories et workflows existants. La vue globale n'
 
 Ajouts : navigation globale, page `/reviews`, template de file par rôle, portefeuille de revue, fail-closed local et couverture Playwright/axe.
 <!-- AUTO:FRONTEND-F5-REVIEW-CENTER-BASELINE-2026-10-05:END -->
+
+<!-- AUTO:FRONTEND-F5-REVIEW-CENTER-CONTEXT-2026-10-05:START -->
+## 2026-10-05 — F5 Review Center contextuel
+
+La seconde tranche F5 enrichit le centre transverse sans étendre son autorité. Les filtres sont des paramètres GET bornés ; les demandes sont ordonnées à partir du statut et de l'échéance déjà persistés.
+
+La séparation des tâches est désormais visible à partir de la politique RBAC canonique, avec test de projection. Les liens de contexte restent des navigations vers les surfaces projet existantes.
+<!-- AUTO:FRONTEND-F5-REVIEW-CENTER-CONTEXT-2026-10-05:END -->

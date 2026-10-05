@@ -2,6 +2,7 @@ import {
   actionsForRoles,
   authorize,
   roleCanDecideReview,
+  separationOfDutiesRules,
   type AuthorizationSubject,
   type ProspectusRole,
 } from "@/domain/authorization";
@@ -80,6 +81,23 @@ assert(
 assert(roleCanDecideReview("LEGAL", "LEGAL"), "Legal must decide legal review.");
 assert(!roleCanDecideReview("PRODUCT", "LEGAL"), "Product must not decide legal review.");
 assert(actionsForRoles(["READER"]).includes("PROJECT_READ"), "Reader must inherit project read.");
+const projectedSeparationRules = separationOfDutiesRules();
+assert(
+  projectedSeparationRules.some(
+    (rule) =>
+      rule.id === "PRODUCT_CANNOT_SELF_APPROVE_COMPLIANCE" &&
+      rule.actions.includes("REVIEW_DECIDE_COMPLIANCE"),
+  ),
+  "Review center must expose the compliance self-approval separation rule.",
+);
+assert(
+  projectedSeparationRules.some(
+    (rule) =>
+      rule.id === "SUBMISSION_DISABLED_V1" &&
+      rule.actions.includes("SUBMISSION_SEND"),
+  ),
+  "Review center must expose the submission-disabled separation rule.",
+);
 
 const baseContext: WorkflowEvaluationContext = {
   actorRoles: ["PRODUCT"],
@@ -169,6 +187,7 @@ const validation = {
     automaticInternalFreezeDenied: true,
     distinctApproversRequired: true,
     humanInternalFreezeAllowedWithThreeApprovers: true,
+    separationOfDutiesProjectionPreserved: true,
   },
   caveat:
     "Validation des politiques et du moteur. Elle ne configure aucun fournisseur d’identité, aucune signature ni aucune soumission réglementaire.",
