@@ -564,3 +564,18 @@ Le moteur de code reste fail-closed tant que le secret OPENAI_API_KEY dédié n'
 
 État : `AWAITING_CI`.
 <!-- AUTO:FRONTEND-F5-REVIEW-CENTER-CONTEXT-2026-10-05:END -->
+
+<!-- AUTO:FRONTEND-F6-DOCUMENT-STUDIO-BASELINE-2026-10-05:START -->
+## F6 Document Studio baseline — en attente de CI
+
+- nouvelle surface projet : `/document-studio`;
+- génération : lecture uniquement du snapshot existant ;
+- artefacts : repository existant ;
+- traçabilité : références persistées uniquement ;
+- versions/diff : repository existant et lien de comparaison ;
+- génération automatique : aucune ;
+- soumission : aucune ;
+- `ready_for_submission=false`.
+
+État : `AWAITING_CI`.
+<!-- AUTO:FRONTEND-F6-DOCUMENT-STUDIO-BASELINE-2026-10-05:END -->

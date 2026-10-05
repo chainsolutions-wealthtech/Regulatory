@@ -1010,3 +1010,11 @@ La seconde tranche F5 enrichit le centre transverse sans étendre son autorité.
 
 La séparation des tâches est désormais visible à partir de la politique RBAC canonique, avec test de projection. Les liens de contexte restent des navigations vers les surfaces projet existantes.
 <!-- AUTO:FRONTEND-F5-REVIEW-CENTER-CONTEXT-2026-10-05:END -->
+
+<!-- AUTO:FRONTEND-F6-DOCUMENT-STUDIO-BASELINE-2026-10-05:START -->
+## 2026-10-05 — F6 Document Studio baseline
+
+Document Studio est ajouté comme agrégateur read-only des capacités déjà existantes. Il ne remplace ni l'aperçu ni les repositories d'artefacts/versions et n'introduit aucune sémantique documentaire parallèle.
+
+La surface expose l'identité de génération, les livrables persistés, les références de traçabilité, les points d'entrée concordance/contrôles et l'historique comparatif.
+<!-- AUTO:FRONTEND-F6-DOCUMENT-STUDIO-BASELINE-2026-10-05:END -->

@@ -659,3 +659,21 @@ The model job has no GitHub write credential. The write job has no OpenAI creden
 - database schema;
 - submission gate.
 <!-- AUTO:FRONTEND-F5-REVIEW-CENTER-CONTEXT-2026-10-05:END -->
+
+<!-- AUTO:FRONTEND-F6-DOCUMENT-STUDIO-BASELINE-2026-10-05:START -->
+## 2026-10-05 — F6 Document Studio baseline
+
+### Added
+- project-level read-only Document Studio;
+- generation identity and manifest/reference projection;
+- persisted artifact panel reuse;
+- version history and comparison entry point;
+- project navigation and browser/accessibility coverage.
+
+### Unchanged
+- generation engine;
+- artifact persistence semantics;
+- version persistence;
+- submission capability;
+- `ready_for_submission=false`.
+<!-- AUTO:FRONTEND-F6-DOCUMENT-STUDIO-BASELINE-2026-10-05:END -->

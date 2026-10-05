@@ -433,3 +433,11 @@ Task `TASK-F5-REVIEW-CENTER-CONTEXT` committed from ChatGPT session and must rem
 
 No new decision or notification mechanism was introduced. Any CI repair must preserve the read-only boundary and derive SoD only from the canonical RBAC policy.
 <!-- AUTO:FRONTEND-F5-REVIEW-CENTER-CONTEXT-2026-10-05:END -->
+
+<!-- AUTO:FRONTEND-F6-DOCUMENT-STUDIO-BASELINE-2026-10-05:START -->
+## Handoff — F6 Document Studio baseline
+
+Task `TASK-F6-DOCUMENT-STUDIO-BASELINE` is committed as `AWAITING_CI`.
+
+The Studio is an aggregation surface only. If CI requires repair, do not move generation logic into the UI and do not add any submit/generate mutation to this page.
+<!-- AUTO:FRONTEND-F6-DOCUMENT-STUDIO-BASELINE-2026-10-05:END -->

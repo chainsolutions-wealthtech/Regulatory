@@ -17,6 +17,7 @@ const routes = [
   { path: "/projects/united-capital-diamond", label: "project workspace" },
   { path: "/projects/united-capital-diamond/canonical-data", label: "canonical data" },
   { path: "/projects/united-capital-diamond/concordance", label: "regulatory concordance" },
+  { path: "/projects/united-capital-diamond/document-studio", label: "document studio" },
   { path: "/regulatory-library", label: "regulatory library" },
   { path: "/regulatory-library/sources", label: "regulatory source explorer" },
   { path: "/regulatory-library/requirements", label: "regulatory requirement explorer" },
@@ -66,6 +67,13 @@ test("browser navigation, responsive layout and WCAG A/AA automated checks stay 
   await expect(page.getByRole("button", { name: /approuver|rejeter|décider|transition/i })).toHaveCount(0);
   await assertNoHorizontalOverflow(page, "review center contextual filters");
   await assertAccessible(page, "review center contextual filters stay read-only");
+
+  const documentStudioResponse = await page.goto("/projects/united-capital-diamond/document-studio");
+  expect(documentStudioResponse?.ok()).toBe(true);
+  await expect(page.getByRole("heading", { name: "Document Studio" })).toBeVisible();
+  await expect(page.getByText("ready_for_submission=false")).toBeVisible();
+  await expect(page.getByRole("button", { name: /générer|soumettre|envoyer/i })).toHaveCount(0);
+  await assertAccessible(page, "document studio remains read-only");
 
   const clauseStudioResponse = await page.goto("/regulatory-library/clause-proposals");
   expect(clauseStudioResponse?.ok()).toBe(true);
@@ -124,6 +132,8 @@ test("browser navigation, responsive layout and WCAG A/AA automated checks stay 
       projectWorkspaceRendered: true,
       canonicalDataRendered: true,
       regulatoryConcordanceRendered: true,
+      documentStudioRendered: true,
+      documentStudioReadOnly: true,
       regulatoryLibraryRendered: true,
       regulatorySourceExplorerRendered: true,
       regulatoryRequirementExplorerRendered: true,

@@ -550,3 +550,16 @@ La boucle sélectionne maintenant une surface d'indexation différente : robots/
 - extended browser/mobile accessibility coverage;
 - persisted task state as `AWAITING_CI`.
 <!-- AUTO:FRONTEND-F5-REVIEW-CENTER-CONTEXT-2026-10-05:END -->
+
+<!-- AUTO:FRONTEND-F6-DOCUMENT-STUDIO-BASELINE-2026-10-05:START -->
+## 2026-10-05 — TASK-F6-DOCUMENT-STUDIO-BASELINE
+
+- claimed writer lease at `606293f4b10bfbb6eb27069d6ea442e57eeda667`;
+- inspected preview, artifact and version repositories;
+- added read-only Document Studio route/template;
+- reused GenerationArtifactsPanel and project version history;
+- added project navigation and traceability references;
+- added Playwright/axe coverage;
+- persisted task as `AWAITING_CI`;
+- no generation or submission semantics changed.
+<!-- AUTO:FRONTEND-F6-DOCUMENT-STUDIO-BASELINE-2026-10-05:END -->

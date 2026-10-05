@@ -840,3 +840,16 @@ Statut : `PENDING_CENTIF_DISCOVERY_CI`.
 - [x] Étendre Playwright/axe et responsive.
 - [ ] Fermer la tranche uniquement après 4/4 CI PASS.
 <!-- AUTO:FRONTEND-F5-REVIEW-CENTER-CONTEXT-2026-10-05:END -->
+
+<!-- AUTO:FRONTEND-F6-DOCUMENT-STUDIO-BASELINE-2026-10-05:START -->
+## F6 — Document Studio
+
+- [x] Ajouter la route projet `/document-studio`.
+- [x] Réutiliser `generationArtifactRepository`.
+- [x] Réutiliser `projectVersionRepository`.
+- [x] Exposer identité de génération et statut documentaire.
+- [x] Exposer références de traçabilité sans fabriquer d'artefact.
+- [x] Ajouter les points d'entrée aperçu/concordance/contrôles/versions.
+- [x] Ajouter navigation projet et tests navigateur/accessibilité.
+- [ ] Fermer F6 uniquement après 4/4 CI PASS.
+<!-- AUTO:FRONTEND-F6-DOCUMENT-STUDIO-BASELINE-2026-10-05:END -->

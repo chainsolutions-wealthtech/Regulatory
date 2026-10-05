@@ -234,3 +234,19 @@ Le Centre de revues conserve sa frontière read-only et ajoute :
 
 Les décisions restent humaines et contrôlées par les endpoints/repositories existants.
 <!-- AUTO:FRONTEND-F5-REVIEW-CENTER-CONTEXT-2026-10-05:END -->
+
+<!-- AUTO:FRONTEND-F6-DOCUMENT-STUDIO-BASELINE-2026-10-05:START -->
+## 17. F6 baseline — Document Studio
+
+La route `/projects/{projectId}/document-studio` assemble en lecture seule les contrats existants :
+- identité de la dernière génération persistée ;
+- statut documentaire et readiness de revue ;
+- artefacts via `generationArtifactRepository` ;
+- références de snapshot/manifeste sans inventer de fichier absent ;
+- liens vers aperçu, concordance et contrôles ;
+- historique et comparaison via `projectVersionRepository` ;
+- drivers de persistance visibles ;
+- aucun bouton de génération ou de soumission dans le Studio.
+
+Le moteur de génération, les formats produits et `ready_for_submission=false` restent inchangés.
+<!-- AUTO:FRONTEND-F6-DOCUMENT-STUDIO-BASELINE-2026-10-05:END -->
