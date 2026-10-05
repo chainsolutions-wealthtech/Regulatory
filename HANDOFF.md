@@ -413,3 +413,15 @@ When returning in any ChatGPT session:
 
 Next code task: `TASK-F5-REVIEW-CENTER-BASELINE`.
 <!-- AUTO:SESSION-DRIVEN-RUNTIME-V2-2026-10-05:END -->
+
+<!-- AUTO:FRONTEND-F5-REVIEW-CENTER-BASELINE-2026-10-05:START -->
+## Handoff — F5 Review Center baseline
+
+Task: `TASK-F5-REVIEW-CENTER-BASELINE`.
+Execution: ChatGPT subscription + connected GitHub.
+State at commit: `AWAITING_CI`.
+
+Review center is a read-only projection. Do not mark F5 complete until Regulatory CI, Runtime Quality CI, Security and Review Policy CI, and Browser and Accessibility CI are all PASS on the material code head.
+
+If CI fails, resume as `SESSION_REPAIR_REQUIRED` with a new hypothesis.
+<!-- AUTO:FRONTEND-F5-REVIEW-CENTER-BASELINE-2026-10-05:END -->

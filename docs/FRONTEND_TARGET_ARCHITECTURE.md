@@ -201,3 +201,21 @@ La route /regulatory-library/clause-proposals devient le Clause Studio et réuti
 
 Le Studio compare la source immuable au texte proposé, expose l'historique append-only, montre les acteurs et garde ACTIVE comme gate fermé puisque CLAUSE_ACTIVATE n'a aucun grant.
 <!-- AUTO:FRONTEND-F4-CLAUSE-STUDIO-2026-10-05:END -->
+
+<!-- AUTO:FRONTEND-F5-REVIEW-CENTER-BASELINE-2026-10-05:START -->
+## 15. F5 baseline — Centre de revues transverse
+
+La route `/reviews` projette les workspaces de revue existants en lecture seule.
+
+Principes :
+- aucune nouvelle table, migration ou permission ;
+- lecture via les repositories projet/revue existants ;
+- files spécialisées RISK, OPERATIONS, COMPLIANCE, LEGAL, TAX et SECURITY ;
+- rôles de décision affichés depuis la politique RBAC existante ;
+- lien vers la surface projet pour toute action ;
+- aucun bouton d'approbation, rejet, transition ou commentaire transverse ;
+- fail-closed lorsque PostgreSQL/OIDC n'est pas disponible ;
+- `ready_for_submission=false`.
+
+Cette tranche ne remplace pas le `ReviewWorkspacePanel` projet : elle fournit uniquement la vue portefeuille demandée par F5.
+<!-- AUTO:FRONTEND-F5-REVIEW-CENTER-BASELINE-2026-10-05:END -->

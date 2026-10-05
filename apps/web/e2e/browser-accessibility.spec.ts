@@ -13,6 +13,7 @@ test.setTimeout(120_000);
 const routes = [
   { path: "/", label: "dashboard" },
   { path: "/operations", label: "operations cockpit" },
+  { path: "/reviews", label: "review center" },
   { path: "/projects/united-capital-diamond", label: "project workspace" },
   { path: "/projects/united-capital-diamond/canonical-data", label: "canonical data" },
   { path: "/projects/united-capital-diamond/concordance", label: "regulatory concordance" },
@@ -45,6 +46,13 @@ test("browser navigation, responsive layout and WCAG A/AA automated checks stay 
     await expect(page.locator("body")).toBeVisible();
     await assertAccessible(page, route.label);
   }
+
+  const reviewCenterResponse = await page.goto("/reviews");
+  expect(reviewCenterResponse?.ok()).toBe(true);
+  await expect(page.getByRole("heading", { name: "Centre de revues" })).toBeVisible();
+  await expect(page.getByText("Lecture transverse uniquement")).toBeVisible();
+  await expect(page.getByRole("button", { name: /approuver|rejeter|décider|transition/i })).toHaveCount(0);
+  await assertAccessible(page, "review center is read-only");
 
   const clauseStudioResponse = await page.goto("/regulatory-library/clause-proposals");
   expect(clauseStudioResponse?.ok()).toBe(true);
@@ -96,6 +104,8 @@ test("browser navigation, responsive layout and WCAG A/AA automated checks stay 
     checks: {
       dashboardRendered: true,
       operationsCockpitRendered: true,
+      reviewCenterRendered: true,
+      reviewCenterReadOnly: true,
       projectWorkspaceRendered: true,
       canonicalDataRendered: true,
       regulatoryConcordanceRendered: true,

@@ -93,3 +93,26 @@
   .clause-proposal-card__actions .button,
   .button-row .button{max-width:100%;white-space:normal;text-align:center}
 }
+
+/* FRONTEND-F5-REVIEW-CENTER-BASELINE-2026-10-05 */
+.review-center-guardrails{display:flex;flex-wrap:wrap;gap:8px}
+.review-role-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:24px}
+.review-role-card{min-width:0}
+.review-role-card .section-heading>div{min-width:0}
+.review-role-card .section-heading p{overflow-wrap:anywhere}
+.review-request-list{display:grid;gap:10px}
+.review-request-item{display:flex;align-items:center;justify-content:space-between;gap:16px;padding:14px;border:1px solid var(--border);border-radius:12px;background:var(--muted)}
+.review-request-item>div{min-width:0}
+.review-request-item strong,.review-request-item small{display:block}
+.review-request-item small{margin-top:4px;color:var(--soft);font-size:10px;line-height:1.45;overflow-wrap:anywhere;word-break:break-word}
+.review-role-card__empty{padding:22px 16px}
+.review-center-project-row>div:first-child{min-width:0;overflow-wrap:anywhere}
+.review-center-project-actions{display:flex;align-items:center;justify-content:flex-end;gap:8px;flex-wrap:wrap;min-width:0}
+@media(max-width:900px){.review-role-grid{grid-template-columns:1fr}}
+@media(max-width:640px){
+  .review-request-item{align-items:stretch;flex-direction:column}
+  .review-request-item .button{width:100%;white-space:normal}
+  .review-center-project-row{align-items:flex-start;flex-direction:column}
+  .review-center-project-actions{width:100%;justify-content:flex-start}
+  .review-center-project-actions .button{max-width:100%;white-space:normal}
+}

@@ -111,7 +111,7 @@ export function OperationsCockpitTemplate({ projects }: { projects: ProjectSumma
           <div className="split-grid">
             <div className="next-action-card"><div><strong>Composer</strong><p>Questionnaire, canonique, contrôles, preview et documents.</p></div><Link className="button button--secondary button--sm" href="/projects">Projets</Link></div>
             <div className="next-action-card"><div><strong>Regulatory Knowledge</strong><p>Sources, exigences, versions, dépendances et clauses.</p></div><Link className="button button--secondary button--sm" href="/regulatory-library">Bibliothèque</Link></div>
-            <div className="next-action-card"><div><strong>Review & Evidence</strong><p>Preuves, imports, décisions, séparation des tâches et audit.</p></div><Badge tone="warning">Par projet</Badge></div>
+            <div className="next-action-card"><div><strong>Review & Evidence</strong><p>Preuves, imports, décisions, séparation des tâches et audit.</p></div><Link className="button button--secondary button--sm" href="/reviews">Centre de revues</Link></div>
             <div className="next-action-card"><div><strong>Operations & Security</strong><p>Readiness, identité, stockage, scanner, backups et observabilité.</p></div><Link className="button button--secondary button--sm" href="/settings">Paramètres</Link></div>
           </div>
         </section>

@@ -535,3 +535,19 @@ Le moteur de code reste fail-closed tant que le secret OPENAI_API_KEY dédié n'
 - F4 Clause Studio : `CLOSED / 4 CI PASS`;
 - `ready_for_submission=false`.
 <!-- AUTO:SESSION-DRIVEN-RUNTIME-V2-2026-10-05:END -->
+
+<!-- AUTO:FRONTEND-F5-REVIEW-CENTER-BASELINE-2026-10-05:START -->
+## F5 Review Center baseline — implémentation en attente de CI
+
+- route globale : `/reviews`;
+- projection : read-only depuis `projectRepository` et `reviewRepository`;
+- files : RISK, OPERATIONS, COMPLIANCE, LEGAL, TAX, SECURITY ;
+- autorité RBAC : inchangée ;
+- mutations transverses : aucune ;
+- migration DB : aucune ;
+- identité simulée : aucune ;
+- fallback local : fail-closed ;
+- `ready_for_submission=false`.
+
+État : `AWAITING_CI`.
+<!-- AUTO:FRONTEND-F5-REVIEW-CENTER-BASELINE-2026-10-05:END -->

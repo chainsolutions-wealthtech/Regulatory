@@ -815,3 +815,16 @@ Statut : `PENDING_CENTIF_DISCOVERY_CI`.
 - [x] Autoriser seulement la réconciliation d'état automatique côté GitHub Actions.
 - [ ] Exécuter `TASK-F5-REVIEW-CENTER-BASELINE` depuis une session ChatGPT via le connecteur GitHub.
 <!-- AUTO:SESSION-DRIVEN-RUNTIME-V2-2026-10-05:END -->
+
+<!-- AUTO:FRONTEND-F5-REVIEW-CENTER-BASELINE-2026-10-05:START -->
+## F5 — Centres de revue
+
+- [x] Ajouter la route globale `/reviews`.
+- [x] Réutiliser les workspaces/repositories existants.
+- [x] Grouper les demandes ouvertes par rôle existant.
+- [x] Exposer les rôles de décision depuis RBAC sans dupliquer les grants.
+- [x] Rester strictement read-only au niveau transverse.
+- [x] Ajouter navigation et tests browser/accessibilité.
+- [ ] Fermer F5 baseline uniquement après les quatre CI PASS.
+- [ ] Poursuivre ensuite la tranche F5 contextuelle selon la queue gouvernée.
+<!-- AUTO:FRONTEND-F5-REVIEW-CENTER-BASELINE-2026-10-05:END -->

@@ -10,6 +10,7 @@ export function AppSidebar({ active = "dashboard" }: { active?: AppNavigationKey
         <NavItem href="/" icon="dashboard" label="Tableau de bord" active={active === "dashboard"} />
         <NavItem href="/operations" icon="dashboard" label="Cockpit opérationnel" active={active === "operations"} />
         <NavItem href="/projects" icon="folder" label="Projets de prospectus" active={active === "projects"} />
+        <NavItem href="/reviews" icon="shield" label="Centre de revues" active={active === "reviews"} />
         <NavItem href="/regulatory-library" icon="shield" label="Bibliothèque réglementaire" active={active === "library"} />
         <NavItem href="/regulatory-library/clause-proposals" icon="shield" label="Propositions de clauses" active={active === "library-admin"} />
         <NavItem href="/settings" icon="settings" label="Paramètres" active={active === "settings"} />

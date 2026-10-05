@@ -1,7 +1,7 @@
 import type { ReactNode } from "react";
 import { AppSidebar } from "./AppSidebar";
 
-export type AppNavigationKey = "dashboard" | "operations" | "projects" | "library" | "library-admin" | "settings";
+export type AppNavigationKey = "dashboard" | "operations" | "projects" | "reviews" | "library" | "library-admin" | "settings";
 
 export function AppShell({
   children,

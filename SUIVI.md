@@ -992,3 +992,13 @@ La continuité 24/7 est conservée côté GitHub (watchdog, plan, queue, CI, che
 
 Les états code deviennent `SESSION_REQUIRED` et `SESSION_REPAIR_REQUIRED`. Aucun workflow GitHub n'appelle un modèle ni ne modifie le code produit de manière autonome.
 <!-- AUTO:SESSION-DRIVEN-RUNTIME-V2-2026-10-05:END -->
+
+<!-- AUTO:FRONTEND-F5-REVIEW-CENTER-BASELINE-2026-10-05:START -->
+## 2026-10-05 — F5 Review Center baseline
+
+Première tranche du Centre de revues transverse implémentée depuis une session ChatGPT via le connecteur GitHub.
+
+Le travail réutilise les repositories et workflows existants. La vue globale n'ajoute aucun pouvoir de décision : toute mutation reste dans le workspace projet et sous contrôle serveur OIDC/RBAC/SoD.
+
+Ajouts : navigation globale, page `/reviews`, template de file par rôle, portefeuille de revue, fail-closed local et couverture Playwright/axe.
+<!-- AUTO:FRONTEND-F5-REVIEW-CENTER-BASELINE-2026-10-05:END -->

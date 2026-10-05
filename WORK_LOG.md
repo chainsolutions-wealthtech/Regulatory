@@ -525,3 +525,16 @@ La boucle sélectionne maintenant une surface d'indexation différente : robots/
 - documented ADR-0011;
 - kept `ready_for_submission=false`.
 <!-- AUTO:SESSION-DRIVEN-RUNTIME-V2-2026-10-05:END -->
+
+<!-- AUTO:FRONTEND-F5-REVIEW-CENTER-BASELINE-2026-10-05:START -->
+## 2026-10-05 — TASK-F5-REVIEW-CENTER-BASELINE
+
+- observed runtime `SESSION_REQUIRED`;
+- claimed issue #2 against `db86f31798cf79d05fd0537e70329919ab4f963a`;
+- reused existing project/review repositories, review types, workflow and RBAC;
+- added a read-only global center without new mutation API;
+- added main navigation and Operations link;
+- added responsive/mobile and axe coverage;
+- persisted runtime task as `AWAITING_CI`;
+- no database, regulatory rule, approval power or submission change.
+<!-- AUTO:FRONTEND-F5-REVIEW-CENTER-BASELINE-2026-10-05:END -->

@@ -621,3 +621,23 @@ The model job has no GitHub write credential. The write job has no OpenAI creden
 - watchdog;
 - regulatory safety invariants.
 <!-- AUTO:SESSION-DRIVEN-RUNTIME-V2-2026-10-05:END -->
+
+<!-- AUTO:FRONTEND-F5-REVIEW-CENTER-BASELINE-2026-10-05:START -->
+## 2026-10-05 — F5 Review Center baseline
+
+### Added
+- global read-only `/reviews` center;
+- role queues projected from existing review workspaces;
+- RBAC decision-role visibility;
+- portfolio links to project review workspaces;
+- fail-closed local/demo state;
+- browser/accessibility coverage.
+
+### Unchanged
+- review mutation APIs;
+- workflow transitions;
+- RBAC grants;
+- database schema;
+- human approval requirements;
+- `ready_for_submission=false`.
+<!-- AUTO:FRONTEND-F5-REVIEW-CENTER-BASELINE-2026-10-05:END -->
