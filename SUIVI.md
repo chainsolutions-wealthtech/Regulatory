@@ -718,9 +718,9 @@ La méthode de travail du dépôt est consolidée : `main` est la branche canoni
 Une défaillance CI antérieure au chantier a été traitée selon la boucle `BASELINE → DIAGNOSTIC → CORRECTION CIBLÉE → VÉRIFICATION`. La compatibilité descendante des structures historiques a été conservée, tandis que le déterminisme PDF a été renforcé par la normalisation du seul champ volatile prouvé `/DocChecksum`.
 
 - branche canonique : `main` ;
-- HEAD source vérifié par la boucle : `c2cb38900dd3e6894cf7687e0310ce01dd463626` ;
-- date du HEAD source : `2026-10-04` ;
-- run Regulatory CI : `37234037178` ;
+- HEAD source vérifié par la boucle : `c8e69f0bddc3239093aa74e6a7cbebeb32425ea6` ;
+- date du HEAD source : `2026-10-05` ;
+- run Regulatory CI : `37350738155` ;
 - validation API CIRC005 : `PASS` ;
 - compatibilité descendante des 10 collections structurées : `PASS` ;
 - persistance canonique des anciens payloads : `PASS` ;
