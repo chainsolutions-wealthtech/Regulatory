@@ -15,3 +15,15 @@
 .traceability-meta{min-width:0}
 .traceability-meta .badge{max-width:100%;white-space:normal;overflow-wrap:anywhere;word-break:break-word;text-align:left}
 @media(max-width:640px){.traceability-meta{width:100%}}
+
+/* REGULATORY-KNOWLEDGE-MOBILE-WRAP-2026-10-05 */
+.detail-list dd{min-width:0;overflow-wrap:anywhere;word-break:break-word;text-align:right}
+.coverage-table__row>div:first-child{min-width:0;overflow-wrap:anywhere;word-break:break-word}
+.coverage-table__row .project-row__issues{min-width:0;flex-wrap:wrap;justify-content:flex-end}
+.coverage-table__row .project-row__issues .badge{max-width:100%;white-space:normal;overflow-wrap:anywhere;word-break:break-word;text-align:left}
+@media(max-width:640px){
+  .detail-list div{align-items:flex-start;flex-direction:column}
+  .detail-list dd{text-align:left}
+  .coverage-table__row{gap:12px;align-items:flex-start;flex-direction:column}
+  .coverage-table__row .project-row__issues{width:100%;justify-content:flex-start}
+}
