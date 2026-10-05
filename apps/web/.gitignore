@@ -2,4 +2,5 @@
 node_modules/
 .local-data/
 src/generated/regulatory-catalog.json
+src/generated/regulatory-knowledge.json
 *.log

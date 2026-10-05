@@ -316,6 +316,7 @@ jobs:
           const docx = await readJson(`${root}/docx-manifest.json`);
           const render = await readJson(`${root}/render-manifest.json`);
           const catalog = await readJson('regulatory/validation/CIRC005_WEB_CATALOG_VALIDATION.json');
+          const knowledge = await readJson('regulatory/validation/REGULATORY_KNOWLEDGE_WEB_CATALOG_VALIDATION.json');
           const api = await readJson('regulatory/validation/CIRC005_WEB_API_INTEGRATION_VALIDATION.json');
           const postgres = await readJson('regulatory/validation/POSTGRESQL_CORE_VALIDATION.json');
           const repository = await readJson('regulatory/validation/POSTGRESQL_REPOSITORY_VALIDATION.json');
@@ -351,6 +352,35 @@ jobs:
           if (render.page_count !== 10) throw new Error(`Expected 10 rendered pages, got ${render.page_count}`);
           if (catalog.status !== 'PASS' || catalog.requirementCount !== 62) {
             throw new Error('Regulatory web catalog validation failed');
+          }
+          if (
+            knowledge.status !== 'PASS' ||
+            knowledge.validationId !== 'REGULATORY_KNOWLEDGE_WEB_CATALOG_VALIDATION_V1' ||
+            knowledge.counts.instructions !== 65 ||
+            knowledge.counts.circulars !== 39 ||
+            knowledge.counts.decisions !== 10 ||
+            knowledge.counts.inst066Candidates !== 111 ||
+            knowledge.counts.dependencyOccurrences !== 49 ||
+            knowledge.counts.dependencyResolvedDocumentary !== 33 ||
+            knowledge.counts.dependencyUnresolvedDocumentary !== 16
+          ) {
+            throw new Error('Regulatory knowledge web catalog validation failed');
+          }
+          for (const check of [
+            'sourceCatalogDeclaredCountsMatchEntries',
+            'inst066CandidateCount111',
+            'inst066CandidatesActivationForbidden',
+            'dependencyCounts49_33_16',
+            'dependencyActivationForbidden',
+            'documentaryResolutionIsNotActivation',
+            'automaticDependencyResolutionForbidden',
+            'automaticRequirementActivationForbidden',
+            'humanLegalReviewRequired',
+            'humanComplianceReviewRequired',
+            'readyForSubmissionRemainsFalse',
+            'generatedProjectionReadOnly',
+          ]) {
+            if (knowledge.checks?.[check] !== true) throw new Error(`Regulatory knowledge invariant failed: ${check}`);
           }
           if (api.status !== 'PASS' || api.validationId !== 'CIRC005_WEB_API_INTEGRATION_VALIDATION_V4') {
             throw new Error('Web API V4 integration validation failed');
@@ -506,6 +536,7 @@ jobs:
             examples/generated/united-capital-diamond/generation-manifest.json
             examples/generated/united-capital-diamond/concordance.json
             regulatory/validation/CIRC005_WEB_CATALOG_VALIDATION.json
+            regulatory/validation/REGULATORY_KNOWLEDGE_WEB_CATALOG_VALIDATION.json
             regulatory/validation/CIRC005_WEB_API_INTEGRATION_VALIDATION.json
             regulatory/validation/POSTGRESQL_CORE_VALIDATION.json
             regulatory/validation/POSTGRESQL_REPOSITORY_VALIDATION.json
@@ -546,6 +577,7 @@ jobs:
             scripts/materialize-clause-registry.mjs \
             regulatory/catalogs/CLAUSE_CATALOG_V0_1.json \
             regulatory/validation/CIRC005_WEB_CATALOG_VALIDATION.json \
+            regulatory/validation/REGULATORY_KNOWLEDGE_WEB_CATALOG_VALIDATION.json \
             regulatory/validation/CIRC005_WEB_API_INTEGRATION_VALIDATION.json \
             regulatory/validation/POSTGRESQL_CORE_VALIDATION.json \
             regulatory/validation/POSTGRESQL_REPOSITORY_VALIDATION.json \

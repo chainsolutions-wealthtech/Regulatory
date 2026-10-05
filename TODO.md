@@ -752,3 +752,15 @@ Statut : `PENDING_CENTIF_DISCOVERY_CI`.
 - [ ] F3 — Requirement Explorer.
 - [ ] F3 — Dependency Graph avec relations candidates clairement séparées des relations validées.
 <!-- AUTO:FRONTEND-F2-CANONICAL-CONCORDANCE-2026-10-05:END -->
+
+<!-- AUTO:FRONTEND-F3-REGULATORY-KNOWLEDGE-2026-10-05:START -->
+## Frontend F3
+
+- [x] Générer un catalogue Regulatory Knowledge déterministe depuis les registres versionnés.
+- [x] Ajouter Source Explorer.
+- [x] Ajouter Requirement Explorer.
+- [x] Ajouter Dependency Graph.
+- [x] Séparer explicitement registre, matérialisation, candidat, résolution documentaire et activation.
+- [x] Étendre les tests navigateur/accessibilité aux nouvelles surfaces.
+- [ ] F4 — finaliser Clause Studio : versions, diff, approbations et promotion gouvernée.
+<!-- AUTO:FRONTEND-F3-REGULATORY-KNOWLEDGE-2026-10-05:END -->

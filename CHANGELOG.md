@@ -551,3 +551,18 @@ Atomic Design, project repository contract, regulatory/catalog contracts, fail-c
 ### Safety
 No new write path, no regulatory activation, no project-specific coverage inference, ready_for_submission=false.
 <!-- AUTO:FRONTEND-F2-CANONICAL-CONCORDANCE-2026-10-05:END -->
+
+<!-- AUTO:FRONTEND-F3-REGULATORY-KNOWLEDGE-2026-10-05:START -->
+## 2026-10-05 — Frontend F3 Regulatory Knowledge
+
+### Added
+- deterministic regulatory-knowledge web generator and validation ;
+- Source Explorer ;
+- Requirement Explorer ;
+- Dependency Graph ;
+- Regulatory Knowledge sub-navigation ;
+- CI invariants for 65/39/10 sources, 111 INST066 candidates and 49/33/16 dependencies.
+
+### Safety
+No regulatory inference or activation is performed. Documentary resolution remains distinct from legal/compliance approval and ready_for_submission=false.
+<!-- AUTO:FRONTEND-F3-REGULATORY-KNOWLEDGE-2026-10-05:END -->

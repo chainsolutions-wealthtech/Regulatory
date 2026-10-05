@@ -1,6 +1,7 @@
 import { Badge } from "@/components/atoms/Badge";
 import { AppHeader } from "@/components/organisms/AppHeader";
 import { AppShell } from "@/components/organisms/AppShell";
+import { RegulatoryKnowledgeNav } from "@/components/organisms/RegulatoryKnowledgeNav";
 import { StatCard } from "@/components/molecules/StatCard";
 import { CLAUSE_CATALOG, CLAUSE_CATALOG_METADATA } from "@/domain/clause-catalog";
 import {
@@ -36,6 +37,7 @@ export function RegulatoryLibraryTemplate() {
         title="Bibliothèque réglementaire"
         description="Vue en lecture seule des exigences et clauses réellement consommées par le questionnaire et le compositeur. Les statuts affichés ne valent ni approbation juridique ni activation automatique."
       />
+      <RegulatoryKnowledgeNav active="overview" />
       <div className="page-stack">
         <section className="stat-grid">
           <StatCard label="Exigences" value={CATALOG_METADATA.requirementCount} detail={CATALOG_METADATA.rulePack} tone="info" />

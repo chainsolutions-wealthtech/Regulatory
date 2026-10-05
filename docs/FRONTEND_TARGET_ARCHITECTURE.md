@@ -180,3 +180,16 @@ La route /projects/{projectId}/concordance construit un crosswalk en lecture seu
 
 Les vues n'écrivent aucune donnée et ne créent aucune règle de couverture propre. defaultCoverageStatus est présenté explicitement comme statut du catalogue, distinct de l'état factuel du projet.
 <!-- AUTO:FRONTEND-F2-CANONICAL-CONCORDANCE-2026-10-05:END -->
+
+<!-- AUTO:FRONTEND-F3-REGULATORY-KNOWLEDGE-2026-10-05:START -->
+## 13. F3 implémenté — Regulatory Knowledge
+
+F3 ajoute trois explorateurs read-only issus d'un catalogue généré et hashé :
+- /regulatory-library/sources ;
+- /regulatory-library/requirements ;
+- /regulatory-library/dependencies.
+
+Le générateur lit les catalogues API institutionnels versionnés, les métadonnées des sources matérialisées, les 111 candidats INST066 et l'état courant des 49 dépendances. Il vérifie les frontières fail-closed avant de produire la projection web.
+
+Aucun composant React ne résout une dépendance, n'active une exigence ou ne transforme une matérialisation en validation juridique.
+<!-- AUTO:FRONTEND-F3-REGULATORY-KNOWLEDGE-2026-10-05:END -->

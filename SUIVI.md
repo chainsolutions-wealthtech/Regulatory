@@ -929,3 +929,21 @@ Travaux :
 
 Le chantier réglementaire LOOP-REG-001 et son bloqueur CM/10/06/2022 restent inchangés.
 <!-- AUTO:FRONTEND-F2-CANONICAL-CONCORDANCE-2026-10-05:END -->
+
+<!-- AUTO:FRONTEND-F3-REGULATORY-KNOWLEDGE-2026-10-05:START -->
+## 2026-10-05 — F3 Regulatory Knowledge
+
+F3 réutilise exclusivement les artefacts versionnés du dépôt et les projette via un générateur déterministe.
+
+Frontières préservées :
+- entrée de registre ≠ validation juridique ;
+- source matérialisée ≠ activation ;
+- résolution documentaire ≠ activation d'exigence ;
+- candidat INST066 ≠ exigence active ;
+- Legal + Compliance restent obligatoires ;
+- automaticDependencyResolutionAllowed=false ;
+- automaticRequirementActivationAllowed=false ;
+- ready_for_submission=false.
+
+Surfaces ajoutées : /regulatory-library/sources, /requirements et /dependencies.
+<!-- AUTO:FRONTEND-F3-REGULATORY-KNOWLEDGE-2026-10-05:END -->

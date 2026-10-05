@@ -475,3 +475,15 @@ F2 est implémenté comme projection read-only du domaine existant :
 - aucune écriture, aucune nouvelle règle normative et aucune couverture projet inventée ;
 - ready_for_submission=false maintenu.
 <!-- AUTO:FRONTEND-F2-CANONICAL-CONCORDANCE-2026-10-05:END -->
+
+<!-- AUTO:FRONTEND-F3-REGULATORY-KNOWLEDGE-2026-10-05:START -->
+## Frontend F3 — Regulatory Knowledge — 2026-10-05
+
+F3 ajoute une projection web déterministe et en lecture seule des registres existants :
+- Source Explorer : 65 instructions, 39 circulaires, 10 décisions et sources matérialisées ;
+- Requirement Explorer : 62 exigences CIRC005 applicatives séparées des 111 candidats INST066 inactifs ;
+- Dependency Graph : 49 dépendances INST066, dont 33 résolues documentairement et 16 non résolues ;
+- générateur dédié avec digest et validation machine ;
+- aucune inférence de relation, aucune activation réglementaire et aucune action de soumission ;
+- ready_for_submission=false maintenu.
+<!-- AUTO:FRONTEND-F3-REGULATORY-KNOWLEDGE-2026-10-05:END -->
