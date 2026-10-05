@@ -1,0 +1,31 @@
+{
+  "validationId": "REGULATORY_KNOWLEDGE_WEB_CATALOG_VALIDATION_V1",
+  "status": "PASS",
+  "catalogDigest": "d4a7503c86c0edf37403da4aa893e78f1fc37c9cb60c73d5a878aa3a3b291ab5",
+  "counts": {
+    "instructions": 65,
+    "circulars": 39,
+    "decisions": 10,
+    "registrySources": 114,
+    "materializedSources": 4,
+    "inst066Candidates": 111,
+    "dependencyOccurrences": 49,
+    "dependencyResolvedDocumentary": 33,
+    "dependencyUnresolvedDocumentary": 16
+  },
+  "checks": {
+    "sourceCatalogDeclaredCountsMatchEntries": true,
+    "inst066CandidateCount111": true,
+    "inst066CandidatesActivationForbidden": true,
+    "dependencyCounts49_33_16": true,
+    "dependencyActivationForbidden": true,
+    "documentaryResolutionIsNotActivation": true,
+    "automaticDependencyResolutionForbidden": true,
+    "automaticRequirementActivationForbidden": true,
+    "humanLegalReviewRequired": true,
+    "humanComplianceReviewRequired": true,
+    "readyForSubmissionRemainsFalse": true,
+    "generatedProjectionReadOnly": true
+  },
+  "caveat": "Projection déterministe des artefacts versionnés du dépôt. Un élément de registre, une matérialisation ou une résolution documentaire ne constitue pas à lui seul une validation juridique, une activation réglementaire ou une autorisation de soumission."
+}
