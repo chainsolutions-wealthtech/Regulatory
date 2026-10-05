@@ -462,3 +462,16 @@ Le frontend complet est désormais planifié dans `docs/FRONTEND_TARGET_ARCHITEC
 
 Première tranche : route `/operations`, cockpit portefeuille/blockers/warnings/gates, carte des capacités et navigation enrichie. Aucun contrat API, modèle canonique ou règle réglementaire n'est modifié. La soumission reste désactivée et `ready_for_submission=false`.
 <!-- AUTO:FRONTEND-TARGET-ARCHITECTURE-2026-10-04:END -->
+
+<!-- AUTO:FRONTEND-F2-CANONICAL-CONCORDANCE-2026-10-05:START -->
+## Frontend F2 — données canoniques et concordance — 2026-10-05
+
+F2 est implémenté comme projection read-only du domaine existant :
+- /projects/{projectId}/canonical-data ;
+- /projects/{projectId}/concordance ;
+- snapshot construit par buildCanonicalSnapshot() ;
+- provenance question/source/revue/exigence par chemin canonique ;
+- crosswalk exigence → question → donnée → clause → section → rôle de revue ;
+- aucune écriture, aucune nouvelle règle normative et aucune couverture projet inventée ;
+- ready_for_submission=false maintenu.
+<!-- AUTO:FRONTEND-F2-CANONICAL-CONCORDANCE-2026-10-05:END -->

@@ -537,3 +537,17 @@ Statut : `PENDING_CENTIF_DISCOVERY_CI`.
 ### Preserved
 Atomic Design, project repository contract, regulatory/catalog contracts, fail-closed review/evidence model and `ready_for_submission=false`.
 <!-- AUTO:FRONTEND-TARGET-ARCHITECTURE-2026-10-04:END -->
+
+<!-- AUTO:FRONTEND-F2-CANONICAL-CONCORDANCE-2026-10-05:START -->
+## 2026-10-05 — Frontend F2
+
+### Added
+- project canonical-data workspace ;
+- project regulatory concordance workspace ;
+- read-only provenance and crosswalk rendering ;
+- responsive traceability styles ;
+- browser/accessibility coverage for both routes.
+
+### Safety
+No new write path, no regulatory activation, no project-specific coverage inference, ready_for_submission=false.
+<!-- AUTO:FRONTEND-F2-CANONICAL-CONCORDANCE-2026-10-05:END -->

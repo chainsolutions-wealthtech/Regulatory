@@ -4,7 +4,9 @@ import { Icon } from "@/components/atoms/Icon";
 export type ProjectWorkspaceSection =
   | "overview"
   | "questionnaire"
+  | "canonical-data"
   | "controls"
+  | "concordance"
   | "preview"
   | "reviews"
   | "evidence"
@@ -19,7 +21,9 @@ const items: Array<{
 }> = [
   { segment: "", key: "overview", label: "Vue d’ensemble", icon: "dashboard" },
   { segment: "/questionnaire", key: "questionnaire", label: "Questionnaire", icon: "document" },
+  { segment: "/canonical-data", key: "canonical-data", label: "Données canoniques", icon: "folder" },
   { segment: "/controls", key: "controls", label: "Contrôles", icon: "shield" },
+  { segment: "/concordance", key: "concordance", label: "Concordance", icon: "shield" },
   { segment: "/preview", key: "preview", label: "Aperçu", icon: "folder" },
   { segment: "/reviews", key: "reviews", label: "Revues", icon: "shield" },
   { segment: "/evidence", key: "evidence", label: "Preuves", icon: "shield" },

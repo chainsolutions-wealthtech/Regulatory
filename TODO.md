@@ -739,3 +739,16 @@ Statut : `PENDING_CENTIF_DISCOVERY_CI`.
 - [ ] F10 — E2E cible, accessibilité manuelle, sécurité, performance et production acceptance.
 - [ ] Ne jamais exposer une action de soumission avant autorisation serveur et fermeture des gates humains/réglementaires.
 <!-- AUTO:FRONTEND-TARGET-ARCHITECTURE-2026-10-04:END -->
+
+<!-- AUTO:FRONTEND-F2-CANONICAL-CONCORDANCE-2026-10-05:START -->
+## Frontend F2
+
+- [x] Exposer les données canoniques en lecture seule.
+- [x] Afficher provenance, source, review status et exigences.
+- [x] Exposer la concordance réglementaire projet.
+- [x] Relier exigences, questions, chemins canoniques, clauses, sections et rôles.
+- [x] Étendre la couverture navigateur/accessibilité.
+- [ ] F3 — Source Explorer.
+- [ ] F3 — Requirement Explorer.
+- [ ] F3 — Dependency Graph avec relations candidates clairement séparées des relations validées.
+<!-- AUTO:FRONTEND-F2-CANONICAL-CONCORDANCE-2026-10-05:END -->

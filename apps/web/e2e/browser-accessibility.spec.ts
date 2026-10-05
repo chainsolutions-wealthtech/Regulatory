@@ -12,6 +12,8 @@ const routes = [
   { path: "/", label: "dashboard" },
   { path: "/operations", label: "operations cockpit" },
   { path: "/projects/united-capital-diamond", label: "project workspace" },
+  { path: "/projects/united-capital-diamond/canonical-data", label: "canonical data" },
+  { path: "/projects/united-capital-diamond/concordance", label: "regulatory concordance" },
   { path: "/regulatory-library", label: "regulatory library" },
 ] as const;
 
@@ -58,7 +60,7 @@ test("browser navigation, responsive layout and WCAG A/AA automated checks stay 
   expect(forbiddenScanRoute.status()).toBe(404);
 
   await page.setViewportSize({ width: 390, height: 844 });
-  for (const route of [routes[0], routes[1], routes[2]]) {
+  for (const route of [routes[0], routes[1], routes[2], routes[3], routes[4]]) {
     const response = await page.goto(route.path);
     expect(response?.ok(), `${route.label} mobile must load successfully`).toBe(true);
     await assertNoHorizontalOverflow(page, `${route.label} mobile`);
@@ -83,6 +85,8 @@ test("browser navigation, responsive layout and WCAG A/AA automated checks stay 
       dashboardRendered: true,
       operationsCockpitRendered: true,
       projectWorkspaceRendered: true,
+      canonicalDataRendered: true,
+      regulatoryConcordanceRendered: true,
       regulatoryLibraryRendered: true,
       evidenceRuntimeFailsClosedWithoutProductionDependencies: true,
       browserCannotSubmitScanVerdict: true,

@@ -166,3 +166,17 @@ Extensions : command palette, filtres persistants, drawers de détail, timeline,
 - aucune API ou modèle canonique modifié ;
 - aucune règle réglementaire modifiée ;
 - `ready_for_submission=false` préservé.
+
+<!-- AUTO:FRONTEND-F2-CANONICAL-CONCORDANCE-2026-10-05:START -->
+## 12. F2 implémenté — Canonical Data + Concordance
+
+F2 est maintenant matérialisé dans le workspace projet.
+
+### Données canoniques
+La route /projects/{projectId}/canonical-data réutilise le snapshot canonique du compositeur et expose les chemins, valeurs, questions, sources, review statuses et exigences liées.
+
+### Concordance
+La route /projects/{projectId}/concordance construit un crosswalk en lecture seule depuis les registres existants : exigence, question, chemins canoniques, clauses, section documentaire et rôles de revue.
+
+Les vues n'écrivent aucune donnée et ne créent aucune règle de couverture propre. defaultCoverageStatus est présenté explicitement comme statut du catalogue, distinct de l'état factuel du projet.
+<!-- AUTO:FRONTEND-F2-CANONICAL-CONCORDANCE-2026-10-05:END -->

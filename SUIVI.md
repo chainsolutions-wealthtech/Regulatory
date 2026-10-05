@@ -911,3 +911,21 @@ La route n'est donc pas considérée comme fermée juridiquement ; elle est simp
 - aucune règle, sanction, source ou relation réglementaire activée ;
 - `ready_for_submission=false` maintenu.
 <!-- AUTO:FRONTEND-TARGET-ARCHITECTURE-2026-10-04:END -->
+
+<!-- AUTO:FRONTEND-F2-CANONICAL-CONCORDANCE-2026-10-05:START -->
+## 2026-10-05 — F2 Canonical Data + Concordance
+
+Suite de F1 après validation des quatre CI.
+
+Travaux :
+1. ajout de deux onglets projet : Données canoniques et Concordance ;
+2. réutilisation exclusive de buildCanonicalSnapshot, REGULATORY_REQUIREMENTS, getQuestionById et CLAUSE_CATALOG ;
+3. traçabilité read-only champ → question → exigence ;
+4. concordance read-only exigence → question → chemins canoniques → clauses → output section → rôles de revue ;
+5. distinction explicite entre présence de donnée, review status et defaultCoverageStatus du catalogue ;
+6. extension Playwright/axe desktop et mobile ;
+7. aucune mutation du modèle, du repository, des API ou des règles ;
+8. ready_for_submission=false.
+
+Le chantier réglementaire LOOP-REG-001 et son bloqueur CM/10/06/2022 restent inchangés.
+<!-- AUTO:FRONTEND-F2-CANONICAL-CONCORDANCE-2026-10-05:END -->
