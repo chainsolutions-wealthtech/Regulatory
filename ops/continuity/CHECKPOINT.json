@@ -2,17 +2,17 @@
   "schemaVersion": "REGULATORY_CONTINUITY_CHECKPOINT_V2",
   "repository": "chainsolutions-wealthtech/Regulatory",
   "branch": "main",
-  "sourceHead": "565395e91ee7a6e0b9d370b9e5d708046934232f",
-  "recordedAt": "2026-10-05T23:20:00+02:00",
-  "lastCompletedSlice": "F3_REGULATORY_KNOWLEDGE",
+  "sourceHead": "19e1bf8c0292ec9da041bf689d2c06ea839c0f67",
+  "recordedAt": "2026-10-05T21:44:30.732Z",
+  "lastCompletedSlice": "F4_CLAUSE_STUDIO",
   "validationState": {
     "regulatoryCI": "PASS",
     "runtimeQualityCI": "PASS",
     "securityAndReviewPolicyCI": "PASS",
     "browserAndAccessibilityCI": "PASS"
   },
-  "nextSlice": "CONTINUOUS_AGENT_RUNTIME_BOOTSTRAP",
-  "nextAuthorizedAction": "Validate the continuous runtime bootstrap and remaining F4 browser gate, then let TASK-STATE-F4-CLOSE reconcile F4 before autonomous F5 work begins.",
+  "nextSlice": "F5_REVIEW_CENTER_BASELINE",
+  "nextAuthorizedAction": "Build the first read-only role-based Review Center surface from the existing review/workflow repositories and APIs. Reuse existing RBAC/workflow semantics, add navigation and accessibility coverage, and do not create new approval powers, database migrations, or automatic decisions.",
   "invariants": [
     "main only; no new branch",
     "no force push or history rewrite",
@@ -33,13 +33,11 @@
     "state": "AWAITING_FINAL_BROWSER_GATE_WHILE_RUNTIME_BOOTSTRAPS"
   },
   "runtime": {
-    "status": "BOOTSTRAPPING",
+    "status": "ACTIVE",
     "workflow": ".github/workflows/continuous-agent-runtime.yml",
-    "policy": "ops/agent-runtime/POLICY.json",
-    "queue": "ops/agent-runtime/TASK_QUEUE.json",
+    "taskQueue": "ops/agent-runtime/TASK_QUEUE.json",
     "state": "ops/agent-runtime/STATE.json",
     "leaseIssue": 2,
-    "modelWriteTokenSeparation": true,
-    "readyForCodingCredential": false
+    "lastReconciledTask": "TASK-STATE-F4-CLOSE"
   }
 }
