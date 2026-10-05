@@ -13,9 +13,9 @@
 - visibilité GitHub actuellement observée : `public`, visibilité souhaitée par le propriétaire : `TO_VERIFY`.
 
 - branche canonique : `main` ;
-- HEAD source vérifié par la boucle : `c8e69f0bddc3239093aa74e6a7cbebeb32425ea6` ;
+- HEAD source vérifié par la boucle : `55ca52320f378c54ed271b85e695570f8affc5b6` ;
 - date du HEAD source : `2026-10-05` ;
-- run Regulatory CI : `37350738155` ;
+- run Regulatory CI : `37351125527` ;
 - validation API CIRC005 : `PASS` ;
 - compatibilité descendante des 10 collections structurées : `PASS` ;
 - persistance canonique des anciens payloads : `PASS` ;
