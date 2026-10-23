@@ -15,19 +15,27 @@
   "destination": {
     "server": "s1",
     "pleskSubscription": "wealthtechinnovations.com",
-    "host": "wealthtechinnovations.com",
-    "urlPath": "/regulatory",
-    "url": "https://wealthtechinnovations.com/regulatory",
-    "documentRoot": "/var/www/vhosts/wealthtechinnovations.com/httpdocs",
-    "applicationDirectory": "UNRESOLVED_REQUIRE_SERVER_PREFLIGHT"
+    "host": "regulatory.wealthtechinnovations.com",
+    "urlPath": "/",
+    "url": "https://regulatory.wealthtechinnovations.com/",
+    "documentRoot": "UNRESOLVED_REQUIRE_PLESK_PREFLIGHT",
+    "applicationDirectory": "UNRESOLVED_REQUIRE_SERVER_PREFLIGHT",
+    "subdomain": {
+      "parentDomain": "wealthtechinnovations.com",
+      "label": "regulatory",
+      "fqdn": "regulatory.wealthtechinnovations.com",
+      "pleskDocumentRoot": "/regulatory",
+      "provisioningServer": "s1"
+    }
   },
   "application": {
     "type": "nextjs",
     "workspace": "apps/web",
     "nodeMajorMinimum": 22,
-    "basePath": "/regulatory",
+    "basePath": "/",
     "buildCommand": "npm run check:web",
-    "startCommand": "npm run web:start"
+    "startCommand": "npm run web:start",
+    "basePathMode": "root-on-dedicated-subdomain"
   },
   "safety": {
     "allowAutomaticProvisioning": false,
@@ -41,6 +49,6 @@
   },
   "tracking": {
     "mcpIssue": "https://github.com/Patricked-code/MCP/issues/349",
-    "note": "Declarative deployment request only. No server permission, directory creation, or deployment is implied."
+    "note": "Primary target is dedicated subdomain. Legacy /regulatory path is optional and not authorized for automatic rewrite. Declarative request only; no provisioning or deployment implied."
   }
 }
