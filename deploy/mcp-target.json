@@ -1,0 +1,46 @@
+{
+  "schemaVersion": 1,
+  "kind": "mcp-governed-deployment-target",
+  "status": "REQUESTED_NOT_PROVISIONED",
+  "source": {
+    "repository": "chainsolutions-wealthtech/Regulatory",
+    "branch": "main"
+  },
+  "orchestrator": {
+    "repository": "Patricked-code/MCP",
+    "mode": "server-native-ssh-bridge",
+    "endpoint": "https://mcp.wealthtechinnovations.com/mcp",
+    "authorization": "server-side-governed-admission-required"
+  },
+  "destination": {
+    "server": "s1",
+    "pleskSubscription": "wealthtechinnovations.com",
+    "host": "wealthtechinnovations.com",
+    "urlPath": "/regulatory",
+    "url": "https://wealthtechinnovations.com/regulatory",
+    "documentRoot": "/var/www/vhosts/wealthtechinnovations.com/httpdocs",
+    "applicationDirectory": "UNRESOLVED_REQUIRE_SERVER_PREFLIGHT"
+  },
+  "application": {
+    "type": "nextjs",
+    "workspace": "apps/web",
+    "nodeMajorMinimum": 22,
+    "basePath": "/regulatory",
+    "buildCommand": "npm run check:web",
+    "startCommand": "npm run web:start"
+  },
+  "safety": {
+    "allowAutomaticProvisioning": false,
+    "requireServerSideAllowlist": true,
+    "requireFreshPreflight": true,
+    "requireGovernedClaimAndLock": true,
+    "requireExactCommitSha": true,
+    "requireHealthAndRollback": true,
+    "forbidSecretsInRepository": true,
+    "forbidOtherVhostChanges": true
+  },
+  "tracking": {
+    "mcpIssue": "https://github.com/Patricked-code/MCP/issues/349",
+    "note": "Declarative deployment request only. No server permission, directory creation, or deployment is implied."
+  }
+}
