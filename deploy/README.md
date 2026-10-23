@@ -8,7 +8,7 @@ Statut : **préparé dans le dépôt ; admission et déploiement S1 non attesté
 - Déclaration machine : [mcp-target.json](mcp-target.json).
 - Orchestrateur existant : `https://mcp.wealthtechinnovations.com/mcp` (MCP WealthTech / SSH Bridge).
 - Serveur cible : S1, abonnement Plesk `wealthtechinnovations.com`.
-- URL souhaitée : `https://wealthtechinnovations.com/regulatory`.
+- URL souhaitée : `https://regulatory.wealthtechinnovations.com/`.
 - Le chemin applicatif réel et le port d'écoute doivent être attribués par le serveur après préflight, et ne sont pas présumés.
 
 ## Contrat d'exécution
@@ -18,8 +18,8 @@ Le serveur MCP conserve les identifiants GitHub et SSH **côté serveur**. Aucun
 1. Vérifier les autorités MCP, l'allowlist S1, le propriétaire du vhost, les conflits de chemin et les symlinks.
 2. Admettre le projet dans le registre du serveur, avec identité, claim, lock et preuve d'autorisation.
 3. Résoudre un répertoire applicatif isolé, un port local et les dépendances PostgreSQL/S3/OIDC ; ne pas modifier les autres vhosts.
-4. Récupérer un commit GitHub immuable, puis construire avec `REGULATORY_BASE_PATH=/regulatory` et Node.js >=22. La variable est **requise pendant le build** Next.js.
-5. Installer une configuration de reverse proxy pour `/regulatory` et ses sous-chemins, compatible avec Plesk et les règles existantes ; ne pas réécrire le vhost entier.
+4. Récupérer un commit GitHub immuable, puis construire avec Node.js >=22, **sans** `REGULATORY_BASE_PATH=/regulatory` pour le sous-domaine dédié. Le `basePath` Next.js reste `/`.
+5. Installer une configuration de reverse proxy pour la racine `/` du **seul vhost** `regulatory.wealthtechinnovations.com`, compatible avec Plesk ; ne pas réécrire les autres vhosts. Le chemin historique `/regulatory` est optionnel et n'est pas autorisé implicitement.
 6. Tester les API, les assets Next.js, l'authentification, les redirections, la santé applicative et HTTPS.
 7. Attester le SHA GitHub réellement déployé, journaliser les changements et conserver un rollback exploitable.
 
@@ -30,7 +30,7 @@ Le fichier `mcp-target.json` est **déclaratif** : il ne constitue pas un jeton 
 - `npm run web:install`
 - `npm run generate:web-catalog`
 - `npm run web:typecheck`
-- `REGULATORY_BASE_PATH=/regulatory npm run web:build`
+- `npm run web:build` (sans `REGULATORY_BASE_PATH=/regulatory` pour la cible dédiée)
 - `npm run web:test:api` dans un environnement de test adapté et isolé.
 
 Les scripts et services externes doivent être contrôlés avant exécution sur S1. Ne jamais déclarer l'application conforme aux exigences réglementaires ni `ready_for_submission=true` par le seul fait d'un déploiement technique.
