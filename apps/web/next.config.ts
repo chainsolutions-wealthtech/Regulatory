@@ -36,6 +36,10 @@ const securityHeaders = [
 const nextConfig: NextConfig = {
   reactStrictMode: true,
   poweredByHeader: false,
+  // Set at build time for the S1 /regulatory deployment; local development stays at /.
+  ...(process.env.REGULATORY_BASE_PATH === "/regulatory"
+    ? { basePath: "/regulatory" }
+    : {}),
   turbopack: {
     root: repositoryRoot,
   },
