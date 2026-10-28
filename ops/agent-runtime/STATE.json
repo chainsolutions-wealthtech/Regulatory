@@ -1,30 +1,24 @@
 {
   "schemaVersion": "REGULATORY_CONTINUOUS_AGENT_STATE_V2",
-  "status": "SESSION_DRIVEN_ACTIVE",
+  "status": "IDLE_SAFE_QUEUE_EMPTY",
   "completedTaskIds": [
     "TASK-STATE-F4-CLOSE",
     "TASK-F5-REVIEW-CENTER-BASELINE",
     "TASK-F5-REVIEW-CENTER-CONTEXT",
     "TASK-F6-DOCUMENT-STUDIO-BASELINE",
-    "TASK-F7-REFERENCE-DATA-EXPLORER"
+    "TASK-F7-REFERENCE-DATA-EXPLORER",
+    "TASK-F8-OPERATIONS-SECURITY-READINESS"
   ],
-  "activeTask": {
-    "taskId": "TASK-F8-OPERATIONS-SECURITY-READINESS",
-    "status": "AWAITING_CI",
-    "attempt": 2,
-    "baseHead": "556e313a8599f4d273a4840d83b7d2af886961ab",
-    "startedAt": "2026-10-28T01:28:24.519Z",
-    "updatedAt": "2026-10-28T01:33:02.014Z"
-  },
-  "lastValidatedHead": "1c55e84d6e4df11fd5569bbe501164cf7f1c91ef",
+  "activeTask": null,
+  "lastValidatedHead": "05f82c5c5fffb0310f6d6ba794680c1eea081347",
   "lastRuntimeAction": {
-    "at": "2026-10-28T01:33:02.014Z",
-    "action": "SESSION_REPAIR_COMMIT_PREPARED",
+    "at": "2026-10-28T01:35:41.785Z",
+    "action": "TASK_RECONCILED",
     "taskId": "TASK-F8-OPERATIONS-SECURITY-READINESS"
   },
   "executionMode": "CHATGPT_SUBSCRIPTION_SESSION",
   "apiModelInvocationDisabled": true,
-  "nextTaskId": "TASK-F8-OPERATIONS-SECURITY-READINESS",
+  "nextTaskId": null,
   "dailyBudget": {
     "date": "2026-10-28",
     "agentRuns": 4,
