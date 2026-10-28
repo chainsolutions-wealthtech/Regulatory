@@ -6,6 +6,7 @@ import { AppShell } from "@/components/organisms/AppShell";
 import { CATALOG_METADATA, REGULATORY_REQUIREMENTS } from "@/domain/regulatory-catalog";
 import { CLAUSE_CATALOG_METADATA } from "@/domain/clause-catalog";
 import type { ProjectSummary } from "@/domain/types";
+import type { RuntimeDependencyState, RuntimeReadiness } from "@/server/observability/runtime-health";
 
 function projectStatusLabel(status: ProjectSummary["status"]): string {
   const labels: Record<ProjectSummary["status"], string> = {
@@ -25,7 +26,22 @@ function priorityTone(project: ProjectSummary): "danger" | "warning" | "success"
   return "success";
 }
 
-export function OperationsCockpitTemplate({ projects }: { projects: ProjectSummary[] }) {
+const dependencyNames = {
+  postgresql: "PostgreSQL",
+  oidc: "Identité OIDC",
+  evidence: "Stockage des preuves",
+  scanner: "Service de scan",
+} as const;
+
+const dependencyKeys = ["postgresql", "oidc", "evidence", "scanner"] as const;
+
+function readinessTone(value: RuntimeDependencyState): "success" | "warning" | "danger" {
+  if (value === "READY") return "success";
+  if (value === "CONFIGURED" || value === "DEVELOPMENT_ONLY") return "warning";
+  return "danger";
+}
+
+export function OperationsCockpitTemplate({ projects, readiness }: { projects: ProjectSummary[]; readiness: RuntimeReadiness }) {
   const blockers = projects.reduce((sum, project) => sum + project.blockers, 0);
   const warnings = projects.reduce((sum, project) => sum + project.warnings, 0);
   const reviewPending = REGULATORY_REQUIREMENTS.filter((requirement) =>
@@ -92,6 +108,81 @@ export function OperationsCockpitTemplate({ projects }: { projects: ProjectSumma
             </div>
             <div className="form-panel__actions"><Link className="button button--secondary" href="/settings">Voir les gates runtime</Link></div>
           </div>
+        </section>
+
+        <section className="content-section" aria-labelledby="operations-readiness-heading">
+          <div className="section-heading">
+            <div>
+              <h2 id="operations-readiness-heading">Préparation opérationnelle — preuves runtime</h2>
+              <p>Projection en lecture seule du même contrat que l’API de readiness. Une configuration présente ne démontre ni son activation réelle ni une recette de production.</p>
+            </div>
+            <Badge tone="warning">Production non attestée</Badge>
+          </div>
+          <div className="coverage-table">
+            {dependencyKeys.map((key) => {
+              const state = readiness.dependencies[key];
+              return (
+                <div className="coverage-table__row" key={key}>
+                  <div>
+                    <strong>{dependencyNames[key]}</strong>
+                    <div><small>État retourné par le contrôleur serveur, sans valeur de secret.</small></div>
+                  </div>
+                  <Badge tone={readinessTone(state)}>{state}</Badge>
+                </div>
+              );
+            })}
+            <div className="coverage-table__row">
+              <div><strong>Readiness applicative</strong><div><small>La disponibilité locale ne prouve pas la conformité à l’environnement cible.</small></div></div>
+              <Badge tone={readiness.ready ? "success" : "danger"}>{readiness.ready ? "READY" : "BLOCKED"}</Badge>
+            </div>
+            <div className="coverage-table__row">
+              <div><strong>PRODUCTION_VERIFIED</strong><div><small>Nécessite les preuves externes d’identité, scanner, stockage, sauvegarde, supervision et déploiement réel.</small></div></div>
+              <Badge tone="danger">{readiness.productionReady ? "ATTESTÉ" : "NON_ATTESTÉ"}</Badge>
+            </div>
+            <div className="coverage-table__row">
+              <div><strong>Soumission réglementaire</strong><div><small>Aucun résultat de cette page ne lève les gates juridiques, conformité et régulateur.</small></div></div>
+              <Badge tone="danger">ready_for_submission=false</Badge>
+            </div>
+          </div>
+          <div className="section-heading">
+            <div>
+              <h3>Distinction des étapes de preuve</h3>
+              <p>IMPLEMENTED et TESTED décrivent le logiciel et sa CI ; CONFIGURED décrit la présence de configuration ; ACTIVATED, DEPLOYED et PRODUCTION_VERIFIED nécessitent des attestations indépendantes.</p>
+            </div>
+          </div>
+          <div className="coverage-table">
+            {(["IMPLEMENTED", "TESTED", "CONFIGURED", "ACTIVATED", "DEPLOYED", "PRODUCTION_VERIFIED"] as const).map((stage) => (
+              <div className="coverage-table__row" key={stage}>
+                <div><strong>{stage}</strong><div><small>{stage === "CONFIGURED" ? "Voir les dépendances réellement observées ci-dessus." : "Aucune validation automatique d’une étape supérieure à partir des étapes inférieures."}</small></div></div>
+                <Badge tone="neutral">Vérification distincte</Badge>
+              </div>
+            ))}
+          </div>
+          <div className="section-heading">
+            <div>
+              <h3>Blocages et paramètres manquants</h3>
+              <p>Seuls les codes de contrôle et noms de paramètres sont exposés, jamais leurs valeurs.</p>
+            </div>
+          </div>
+          {readiness.blockers.length > 0 || readiness.missingConfiguration.length > 0 ? (
+            <div className="coverage-table">
+              {readiness.blockers.map((code) => (
+                <div className="coverage-table__row" key={`blocker:${code}`}>
+                  <div><strong>{code}</strong><div><small>Condition de readiness non satisfaite.</small></div></div>
+                  <Badge tone="danger">Bloquant</Badge>
+                </div>
+              ))}
+              {readiness.missingConfiguration.map((name) => (
+                <div className="coverage-table__row" key={`missing:${name}`}>
+                  <div><strong>{name}</strong><div><small>Variable absente, sa valeur n’est pas consultable ici.</small></div></div>
+                  <Badge tone="warning">Manquante</Badge>
+                </div>
+              ))}
+            </div>
+          ) : (
+            <p>Aucun manque de configuration détecté ; les validations de production demeurent distinctes et nécessaires.</p>
+          )}
+          <div className="form-panel__actions"><Link href="/settings" className="button button--secondary">Consulter les paramètres non secrets</Link></div>
         </section>
 
         <section className="content-section">

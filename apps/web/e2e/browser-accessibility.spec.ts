@@ -49,6 +49,14 @@ test("browser navigation, responsive layout and WCAG A/AA automated checks stay 
     await assertAccessible(page, route.label);
   }
 
+  const operationsResponse = await page.goto("/operations");
+  expect(operationsResponse?.ok()).toBe(true);
+  await expect(page.getByRole("heading", { name: "Préparation opérationnelle — preuves runtime" })).toBeVisible();
+  await expect(page.getByText("PRODUCTION_VERIFIED", { exact: true })).toBeVisible();
+  await expect(page.getByText("ready_for_submission=false", { exact: true })).toBeVisible();
+  await expect(page.getByRole("button", { name: /déployer|approuver|activer.*production/i })).toHaveCount(0);
+  await assertAccessible(page, "operations security readiness is informational only");
+
   const reviewCenterResponse = await page.goto("/reviews");
   expect(reviewCenterResponse?.ok()).toBe(true);
   await expect(page.getByRole("heading", { name: "Centre de revues" })).toBeVisible();
@@ -135,6 +143,7 @@ test("browser navigation, responsive layout and WCAG A/AA automated checks stay 
     checks: {
       dashboardRendered: true,
       operationsCockpitRendered: true,
+      operationsRuntimeSecurityReadinessReadOnly: true,
       reviewCenterRendered: true,
       reviewCenterReadOnly: true,
       reviewCenterContextFiltersReadOnly: true,

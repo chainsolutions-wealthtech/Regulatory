@@ -1037,3 +1037,12 @@ La surface expose l'identité de génération, les livrables persistés, les ré
 - **Réparation bornée** : restreindre l'assertion aux seules lignes de la section `reference-dynamic-heading`. Conservation intégrale des contrôles navigation, accessibilité, mobile, absence d'actions de soumission et de la page F7.
 - **Autres gates de la première tentative** : Regulatory CI / Runtime Quality / Security and Review = `SUCCESS` sur `9db19c0`. La CI navigateur reste `FAIL` sur cette tentative ; la réparation doit repasser les quatre gates sur un HEAD exact avant admission `DONE`.
 - **NEXT_ACTION** : relancer/observer les quatre gates de la nouvelle révision, préserver `ready_for_submission=false`, puis réconciliation automate seulement si toutes réussissent.
+
+
+## 2026-10-28 — TASK-F8-OPERATIONS-SECURITY-READINESS (session-driven, AWAITING_CI)
+
+- **Tâche canonique** : `TASK-F8-OPERATIONS-SECURITY-READINESS`, dernière tranche activable de la file actuelle. Base `ccf40521f7497cad3a0913922ed7129f79ef9ea2`, writer lease Regulatory #2, branche `main` conservée.
+- **Implémentation bornée** : le cockpit `/operations` projette le contrat `evaluateRuntimeReadiness` déjà utilisé par `GET /api/health/ready`, avec une seule sonde `SELECT 1` du pool existant lorsque PostgreSQL est activé. Aucun service, schema ou droit nouveau.
+- **Prudence** : statuts PostgreSQL/OIDC/stockage/scanner, codes de blocage et *noms* de variables uniquement ; valeurs et secrets jamais rendus. `IMPLEMENTED/TESTED/CONFIGURED/ACTIVATED/DEPLOYED/PRODUCTION_VERIFIED` ne sont pas confondus ; configuration seule ne vaut jamais preuve de production. `ready_for_submission=false` conservé.
+- **Tests** : ajout d'une recette Playwright/Axe pour la section, les limites de preuve et l'absence d'actions de déploiement/approbation. CI exact HEAD **à exécuter et vérifier avant tout `DONE`**.
+- **NEXT_ACTION** : inspecter les quatre CI obligatoires, réparer un éventuel échec sous un nouveau lease F8, puis laisser la supervision du dépôt réconcilier l'état et le checkpoint. Les gates humaines/infrastructure et l'intégration S1 restent externes.
