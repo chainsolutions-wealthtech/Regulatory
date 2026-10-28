@@ -1018,3 +1018,13 @@ Document Studio est ajouté comme agrégateur read-only des capacités déjà ex
 
 La surface expose l'identité de génération, les livrables persistés, les références de traçabilité, les points d'entrée concordance/contrôles et l'historique comparatif.
 <!-- AUTO:FRONTEND-F6-DOCUMENT-STUDIO-BASELINE-2026-10-05:END -->
+
+
+## 2026-10-28 — TASK-F7-REFERENCE-DATA-EXPLORER (session-driven, AWAITING_CI)
+
+- **Source autoritative** : `ops/agent-runtime/TASK_QUEUE.json`, tâche `TASK-F7-REFERENCE-DATA-EXPLORER` sur `main`, parent vérifié `5a7a5752194eb6610c8716d30ee2451dc8dc79f3`.
+- **Writer lease** : issue #2, `CHATGPT-REGULATORY-F7-20261028`, périmètre frontend lecture seule ; aucune branche ni nouveau modèle réglementaire.
+- **Changement borné** : ajout de `/reference-data`, projection depuis `MEMBER_STATES` et l'option `APP_FUND_CURRENCY=XOF` existantes, familles dynamiques explicitement non matérialisées, navigation et recette Playwright/WCAG.
+- **Invariants** : aucun acteur fictif, calendrier fictif, règle réglementaire ou capacité d'approbation/soumission introduite ; `ready_for_submission=false` conservé. Les contrats existants restent en place.
+- **État de preuve** : code préparé sous lease sur le HEAD ci-dessus ; CI complète et revue sécurité/qualité **à vérifier après commit**. Ne pas déclarer `F7 DONE` sur ce seul enregistrement.
+- **NEXT_ACTION** : inspecter les quatre gates CI au commit exact, traiter tout échec en conservant le même mandat, puis laisser le superviseur effectuer la réconciliation d'état et sélectionner F8 si admissible.

@@ -13,6 +13,7 @@ export function AppSidebar({ active = "dashboard" }: { active?: AppNavigationKey
         <NavItem href="/reviews" icon="shield" label="Centre de revues" active={active === "reviews"} />
         <NavItem href="/regulatory-library" icon="shield" label="Bibliothèque réglementaire" active={active === "library"} />
         <NavItem href="/regulatory-library/clause-proposals" icon="shield" label="Propositions de clauses" active={active === "library-admin"} />
+        <NavItem href="/reference-data" icon="folder" label="Référentiels" active={active === "reference-data"} />
         <NavItem href="/settings" icon="settings" label="Paramètres" active={active === "settings"} />
       </nav>
       <div className="sidebar__footer">

@@ -7,15 +7,26 @@
     "TASK-F5-REVIEW-CENTER-CONTEXT",
     "TASK-F6-DOCUMENT-STUDIO-BASELINE"
   ],
-  "activeTask": null,
+  "activeTask": {
+    "taskId": "TASK-F7-REFERENCE-DATA-EXPLORER",
+    "status": "AWAITING_CI",
+    "attempt": 1,
+    "baseHead": "5a7a5752194eb6610c8716d30ee2451dc8dc79f3",
+    "startedAt": "2026-10-28T01:17:24.701Z",
+    "updatedAt": "2026-10-28T01:17:24.701Z"
+  },
   "lastValidatedHead": "d89d9d71609e3da6459feab3b3f110afd6154774",
   "lastRuntimeAction": {
-    "at": "2026-10-05T22:19:53.523Z",
-    "action": "TASK_RECONCILED",
-    "taskId": "TASK-F6-DOCUMENT-STUDIO-BASELINE",
-    "metadataReconciledAt": "2026-10-05T22:22:00Z"
+    "at": "2026-10-28T01:17:24.701Z",
+    "action": "SESSION_CODE_COMMIT_PREPARED",
+    "taskId": "TASK-F7-REFERENCE-DATA-EXPLORER"
   },
   "executionMode": "CHATGPT_SUBSCRIPTION_SESSION",
   "apiModelInvocationDisabled": true,
-  "nextTaskId": "TASK-F7-REFERENCE-DATA-EXPLORER"
+  "nextTaskId": "TASK-F7-REFERENCE-DATA-EXPLORER",
+  "dailyBudget": {
+    "date": "2026-10-28",
+    "agentRuns": 1,
+    "commits": 1
+  }
 }

@@ -19,6 +19,7 @@ const routes = [
   { path: "/projects/united-capital-diamond/concordance", label: "regulatory concordance" },
   { path: "/projects/united-capital-diamond/document-studio", label: "document studio" },
   { path: "/regulatory-library", label: "regulatory library" },
+  { path: "/reference-data", label: "reference data explorer" },
   { path: "/regulatory-library/sources", label: "regulatory source explorer" },
   { path: "/regulatory-library/requirements", label: "regulatory requirement explorer" },
   { path: "/regulatory-library/dependencies", label: "regulatory dependency graph" },
@@ -74,6 +75,15 @@ test("browser navigation, responsive layout and WCAG A/AA automated checks stay 
   await expect(page.getByText("ready_for_submission=false", { exact: true })).toBeVisible();
   await expect(page.getByRole("button", { name: /générer|soumettre|envoyer/i })).toHaveCount(0);
   await assertAccessible(page, "document studio remains read-only");
+
+  const referenceResponse = await page.goto("/reference-data");
+  expect(referenceResponse?.ok()).toBe(true);
+  await expect(page.getByRole("heading", { name: "Référentiels", exact: true })).toBeVisible();
+  await expect(page.getByRole("heading", { name: "États membres — base statique" })).toBeVisible();
+  await expect(page.getByText("Franc CFA BCEAO (XOF)")).toBeVisible();
+  await expect(page.getByText("Non matérialisé")).toHaveCount(5);
+  await expect(page.getByRole("button", { name: /ajouter|valider|activer|soumettre/i })).toHaveCount(0);
+  await assertAccessible(page, "reference explorer remains read-only");
 
   const clauseStudioResponse = await page.goto("/regulatory-library/clause-proposals");
   expect(clauseStudioResponse?.ok()).toBe(true);
@@ -135,6 +145,7 @@ test("browser navigation, responsive layout and WCAG A/AA automated checks stay 
       documentStudioRendered: true,
       documentStudioReadOnly: true,
       regulatoryLibraryRendered: true,
+      referenceDataReadOnlyRendered: true,
       regulatorySourceExplorerRendered: true,
       regulatoryRequirementExplorerRendered: true,
       regulatoryDependencyGraphRendered: true,
