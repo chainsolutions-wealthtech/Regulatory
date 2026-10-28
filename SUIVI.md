@@ -1028,3 +1028,12 @@ La surface expose l'identité de génération, les livrables persistés, les ré
 - **Invariants** : aucun acteur fictif, calendrier fictif, règle réglementaire ou capacité d'approbation/soumission introduite ; `ready_for_submission=false` conservé. Les contrats existants restent en place.
 - **État de preuve** : code préparé sous lease sur le HEAD ci-dessus ; CI complète et revue sécurité/qualité **à vérifier après commit**. Ne pas déclarer `F7 DONE` sur ce seul enregistrement.
 - **NEXT_ACTION** : inspecter les quatre gates CI au commit exact, traiter tout échec en conservant le même mandat, puis laisser le superviseur effectuer la réconciliation d'état et sélectionner F8 si admissible.
+
+
+## 2026-10-28 — TASK-F7 : correction de recette navigateur (AWAITING_CI, essai 2)
+
+- **Base actuelle** : `145b99611623b15af5fc113c97dcbb2a2d9d7aeb` (après le commit automatique de preuves postérieures à F7) ; lease de réparation distinct sur issue #2, aucune branche créée.
+- **Échec vérifié** : [Browser and Accessibility CI #40614151477](https://github.com/chainsolutions-wealthtech/Regulatory/actions/runs/40614151477), simple assertion de comptage `getByText("Non matérialisé")` : 7 occurrences sur toute la page au lieu de 5 lignes dynamiques attendues.
+- **Réparation bornée** : restreindre l'assertion aux seules lignes de la section `reference-dynamic-heading`. Conservation intégrale des contrôles navigation, accessibilité, mobile, absence d'actions de soumission et de la page F7.
+- **Autres gates de la première tentative** : Regulatory CI / Runtime Quality / Security and Review = `SUCCESS` sur `9db19c0`. La CI navigateur reste `FAIL` sur cette tentative ; la réparation doit repasser les quatre gates sur un HEAD exact avant admission `DONE`.
+- **NEXT_ACTION** : relancer/observer les quatre gates de la nouvelle révision, préserver `ready_for_submission=false`, puis réconciliation automate seulement si toutes réussissent.

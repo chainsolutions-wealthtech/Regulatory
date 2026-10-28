@@ -81,7 +81,7 @@ test("browser navigation, responsive layout and WCAG A/AA automated checks stay 
   await expect(page.getByRole("heading", { name: "Référentiels", exact: true })).toBeVisible();
   await expect(page.getByRole("heading", { name: "États membres — base statique" })).toBeVisible();
   await expect(page.getByText("Franc CFA BCEAO (XOF)")).toBeVisible();
-  await expect(page.getByText("Non matérialisé")).toHaveCount(5);
+  await expect(page.locator('section[aria-labelledby="reference-dynamic-heading"] .coverage-table__row')).toHaveCount(5);
   await expect(page.getByRole("button", { name: /ajouter|valider|activer|soumettre/i })).toHaveCount(0);
   await assertAccessible(page, "reference explorer remains read-only");
 
