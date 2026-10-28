@@ -52,7 +52,7 @@ test("browser navigation, responsive layout and WCAG A/AA automated checks stay 
   const operationsResponse = await page.goto("/operations");
   expect(operationsResponse?.ok()).toBe(true);
   await expect(page.getByRole("heading", { name: "Préparation opérationnelle — preuves runtime" })).toBeVisible();
-  await expect(page.getByText("PRODUCTION_VERIFIED", { exact: true })).toBeVisible();
+  await expect(page.getByText("PRODUCTION_VERIFIED", { exact: true }).first()).toBeVisible();
   await expect(page.getByText("ready_for_submission=false", { exact: true })).toBeVisible();
   await expect(page.getByRole("button", { name: /déployer|approuver|activer.*production/i })).toHaveCount(0);
   await assertAccessible(page, "operations security readiness is informational only");

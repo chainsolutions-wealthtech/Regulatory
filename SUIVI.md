@@ -1046,3 +1046,11 @@ La surface expose l'identité de génération, les livrables persistés, les ré
 - **Prudence** : statuts PostgreSQL/OIDC/stockage/scanner, codes de blocage et *noms* de variables uniquement ; valeurs et secrets jamais rendus. `IMPLEMENTED/TESTED/CONFIGURED/ACTIVATED/DEPLOYED/PRODUCTION_VERIFIED` ne sont pas confondus ; configuration seule ne vaut jamais preuve de production. `ready_for_submission=false` conservé.
 - **Tests** : ajout d'une recette Playwright/Axe pour la section, les limites de preuve et l'absence d'actions de déploiement/approbation. CI exact HEAD **à exécuter et vérifier avant tout `DONE`**.
 - **NEXT_ACTION** : inspecter les quatre CI obligatoires, réparer un éventuel échec sous un nouveau lease F8, puis laisser la supervision du dépôt réconcilier l'état et le checkpoint. Les gates humaines/infrastructure et l'intégration S1 restent externes.
+
+
+## 2026-10-28 — F8 : correction de recette Browser CI (essai 2, AWAITING_CI)
+
+- **RED vérifié** : [CI Browser #40615274567](https://github.com/chainsolutions-wealthtech/Regulatory/actions/runs/40615274567) sur `ac0610d71602013328c7b323e2fd0bdc609785b3`: assertion globale `getByText("PRODUCTION_VERIFIED")` résout deux occurrences légitimes (statut + étapes) et viole le strict mode Playwright. Les trois autres gates étaient SUCCESS.
+- **Correctif sans effet métier** : sélecteur de test `.first()` pour vérifier la visibilité du premier statut présent, sans supprimer aucun autre statut ou examen d’accessibilité. Aucun changement frontend ni API, et aucune activation sécurité/production.
+- **Lease** : issue #2, worker `CHATGPT-REGULATORY-F8-REPAIR-20261028`, base `556e313a8599f4d273a4840d83b7d2af886961ab`, branche `main` unique, commit à valider par les quatre CI avant `DONE`.
+- **NEXT_ACTION** : observer les quatre gates du HEAD correctif, puis la réconciliation du runtime ; `ready_for_submission=false` conserve son statut.
